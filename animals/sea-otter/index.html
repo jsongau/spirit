@@ -246,18 +246,28 @@
   <section class="pf-section">
     <p class="pf-eyebrow">Bonds</p>
     <h2>Who this animal meets</h2>
-    <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:0 0 8px">Natural allies</h3><div class="pf-links"><a href="/animals/water-deer/">Water Deer</a><a href="/animals/walrus/">Walrus</a><a href="/animals/capybara/">Capybara</a></div>
+    <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:0 0 8px">Natural allies</h3><div class="pf-links"><a href="/animals/water-deer/">Water Deer</a><a href="/animals/elephant-seal/">Elephant Seal</a><a href="/animals/capybara/">Capybara</a></div>
     <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:18px 0 8px">Growth through contrast</h3><div class="pf-links"><a href="/animals/humpback-whale/">Humpback Whale</a><a href="/animals/emperor-penguin/">Emperor Penguin</a></div>
     <p class="pf-note">Compatibility describes the pattern of a bond, not whether two people should stay together. <a href="/match.html">Test two birthdays in the Match Oracle.</a></p>
   </section>
 
   
+  <section class="pf-section">
+    <p class="pf-eyebrow">The same crossing</p>
+    <h2>Public figures born at this crossing</h2>
+    <p>Each of these people was born a Cancer by the Western zodiac, in the Chinese Year of the Rabbit. By the Primal Animal system, that crossing reads as the Sea Otter. If your birthday lands here too, you share the crossing with them.</p>
+    <ul class="pf-list">
+      <li><strong style="color:var(--moon)">Cheryl Ladd</strong> &middot; born July 12, 1951, actress</li><li><strong style="color:var(--moon)">50 Cent</strong> &middot; born July 6, 1975, rapper</li><li><strong style="color:var(--moon)">Tobey Maguire</strong> &middot; born June 27, 1975, actor</li><li><strong style="color:var(--moon)">Lionel Messi</strong> &middot; born June 24, 1987, footballer</li>
+    </ul>
+    <p style="margin-top:14px"><button class="btn ghost" id="celebShare" type="button">Share your famous crossing</button></p>
+    <p class="pf-note">Birth dates are public information. The people named here are not affiliated with Primal Animal and have not endorsed it. We note only their Western Sun sign and Chinese year animal, both of which follow from a public birth date. The Primal Animal reading is our own interpretive system, not a statement about any individual.</p>
+  </section>
 
   <section class="pf-section">
     <p class="pf-eyebrow">Neighboring animals</p>
     <h2>Explore the crossings nearby</h2>
     <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:0 0 8px">Other Cancer animals</h3>
-    <div class="pf-links"><a href="/animals/hermit-crab/">Hermit Crab</a><a href="/animals/asian-elephant/">Asian Elephant</a><a href="/animals/sun-bear/">Sun Bear</a><a href="/animals/humpback-whale/">Humpback Whale</a><a href="/animals/chambered-nautilus/">Chambered Nautilus</a><a href="/animals/green-sea-turtle/">Green Sea Turtle</a><a href="/animals/water-deer/">Water Deer</a><a href="/animals/kinkajou/">Kinkajou</a><a href="/animals/emperor-penguin/">Emperor Penguin</a><a href="/animals/walrus/">Walrus</a><a href="/animals/capybara/">Capybara</a></div>
+    <div class="pf-links"><a href="/animals/coconut-crab/">Coconut Crab</a><a href="/animals/asian-elephant/">Asian Elephant</a><a href="/animals/moon-bear/">Moon Bear</a><a href="/animals/humpback-whale/">Humpback Whale</a><a href="/animals/chambered-nautilus/">Chambered Nautilus</a><a href="/animals/green-sea-turtle/">Green Sea Turtle</a><a href="/animals/water-deer/">Water Deer</a><a href="/animals/kinkajou/">Kinkajou</a><a href="/animals/emperor-penguin/">Emperor Penguin</a><a href="/animals/elephant-seal/">Elephant Seal</a><a href="/animals/capybara/">Capybara</a></div>
     <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:18px 0 8px">Other Rabbit animals</h3>
     <div class="pf-links"><a href="/animals/springbok/">Springbok</a><a href="/animals/pika/">Pika</a><a href="/animals/fennec-fox/">Fennec Fox</a><a href="/animals/golden-pheasant/">Golden Pheasant</a><a href="/animals/harvest-mouse/">Harvest Mouse</a><a href="/animals/crowned-crane/">Crowned Crane</a><a href="/animals/pallass-cat/">Pallas's Cat</a><a href="/animals/arctic-hare/">Arctic Hare</a><a href="/animals/yellow-footed-rock-wallaby/">Yellow-footed Rock-wallaby</a><a href="/animals/axolotl/">Axolotl</a><a href="/animals/moon-jellyfish/">Moon Jellyfish</a></div>
     <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:18px 0 8px">Hubs</h3>
@@ -311,7 +321,7 @@
   // share your famous crossing (public facts only, no endorsement claim)
   var cs=document.getElementById('celebShare');
   if(cs) cs.addEventListener('click', async function(){
-    var names=[];
+    var names=["Cheryl Ladd","50 Cent"];
     var text="I was born a Cancer in the Year of the Rabbit, the same crossing as "+names.join(" and ")+". The Primal Animal system calls it the Sea Otter. What are you? "+location.href;
     try{ if(navigator.share){ await navigator.share({title:"Primal Animal", text:text}); } else { await navigator.clipboard.writeText(text); if(window.GAME&&GAME.toast) GAME.toast("Copied","Share your crossing"); } }catch(e){}
   });

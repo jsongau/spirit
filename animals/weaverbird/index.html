@@ -252,6 +252,16 @@
   </section>
 
   
+  <section class="pf-section">
+    <p class="pf-eyebrow">The same crossing</p>
+    <h2>Public figures born at this crossing</h2>
+    <p>Each of these people was born a Virgo by the Western zodiac, in the Chinese Year of the Rooster. By the Primal Animal system, that crossing reads as the Weaverbird. If your birthday lands here too, you share the crossing with them.</p>
+    <ul class="pf-list">
+      <li><strong style="color:var(--moon)">Beyonce</strong> &middot; born September 4, 1981, singer</li><li><strong style="color:var(--moon)">Niall Horan</strong> &middot; born September 13, 1993, singer</li>
+    </ul>
+    <p style="margin-top:14px"><button class="btn ghost" id="celebShare" type="button">Share your famous crossing</button></p>
+    <p class="pf-note">Birth dates are public information. The people named here are not affiliated with Primal Animal and have not endorsed it. We note only their Western Sun sign and Chinese year animal, both of which follow from a public birth date. The Primal Animal reading is our own interpretive system, not a statement about any individual.</p>
+  </section>
 
   <section class="pf-section">
     <p class="pf-eyebrow">Neighboring animals</p>
@@ -259,7 +269,7 @@
     <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:0 0 8px">Other Virgo animals</h3>
     <div class="pf-links"><a href="/animals/leafcutter-ant/">Leafcutter Ant</a><a href="/animals/beaver/">Beaver</a><a href="/animals/dragonfly/">Dragonfly</a><a href="/animals/harvest-mouse/">Harvest Mouse</a><a href="/animals/archerfish/">Archerfish</a><a href="/animals/trapdoor-spider/">Trapdoor Spider</a><a href="/animals/sanderling/">Sanderling</a><a href="/animals/alpine-marmot/">Alpine Marmot</a><a href="/animals/new-caledonian-crow/">New Caledonian Crow</a><a href="/animals/border-collie/">Border Collie</a><a href="/animals/short-beaked-echidna/">Short-beaked Echidna</a></div>
     <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:18px 0 8px">Other Rooster animals</h3>
-    <div class="pf-links"><a href="/animals/southern-cassowary/">Southern Cassowary</a><a href="/animals/superb-bird-of-paradise/">Superb Bird-of-Paradise</a><a href="/animals/magpie/">Magpie</a><a href="/animals/emperor-penguin/">Emperor Penguin</a><a href="/animals/guianan-cock-of-the-rock/">Guianan Cock-of-the-rock</a><a href="/animals/satin-bowerbird/">Satin Bowerbird</a><a href="/animals/praying-mantis/">Praying Mantis</a><a href="/animals/kori-bustard/">Kori Bustard</a><a href="/animals/andean-condor/">Andean Condor</a><a href="/animals/hoatzin/">Hoatzin</a><a href="/animals/mandarin-dragonet/">Mandarin Dragonet</a></div>
+    <div class="pf-links"><a href="/animals/southern-cassowary/">Southern Cassowary</a><a href="/animals/superb-bird-of-paradise/">Superb Bird-of-Paradise</a><a href="/animals/magpie/">Magpie</a><a href="/animals/emperor-penguin/">Emperor Penguin</a><a href="/animals/guianan-cock-of-the-rock/">Guianan Cock-of-the-rock</a><a href="/animals/satin-bowerbird/">Satin Bowerbird</a><a href="/animals/devils-flower-mantis/">Devil's Flower Mantis</a><a href="/animals/kori-bustard/">Kori Bustard</a><a href="/animals/andean-condor/">Andean Condor</a><a href="/animals/hoatzin/">Hoatzin</a><a href="/animals/mandarin-dragonet/">Mandarin Dragonet</a></div>
     <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:18px 0 8px">Hubs</h3>
     <div class="pf-links">
       <a href="/western-zodiac/virgo/">Virgo sign</a>
@@ -311,7 +321,7 @@
   // share your famous crossing (public facts only, no endorsement claim)
   var cs=document.getElementById('celebShare');
   if(cs) cs.addEventListener('click', async function(){
-    var names=[];
+    var names=["Beyonce","Niall Horan"];
     var text="I was born a Virgo in the Year of the Rooster, the same crossing as "+names.join(" and ")+". The Primal Animal system calls it the Weaverbird. What are you? "+location.href;
     try{ if(navigator.share){ await navigator.share({title:"Primal Animal", text:text}); } else { await navigator.clipboard.writeText(text); if(window.GAME&&GAME.toast) GAME.toast("Copied","Share your crossing"); } }catch(e){}
   });

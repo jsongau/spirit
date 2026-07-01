@@ -246,20 +246,30 @@
   <section class="pf-section">
     <p class="pf-eyebrow">Bonds</p>
     <h2>Who this animal meets</h2>
-    <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:0 0 8px">Natural allies</h3><div class="pf-links"><a href="/animals/sun-bear/">Sun Bear</a><a href="/animals/sea-otter/">Sea Otter</a><a href="/animals/water-deer/">Water Deer</a></div>
+    <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:0 0 8px">Natural allies</h3><div class="pf-links"><a href="/animals/moon-bear/">Moon Bear</a><a href="/animals/sea-otter/">Sea Otter</a><a href="/animals/water-deer/">Water Deer</a></div>
     <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:18px 0 8px">Growth through contrast</h3><div class="pf-links"><a href="/animals/chambered-nautilus/">Chambered Nautilus</a><a href="/animals/kinkajou/">Kinkajou</a></div>
     <p class="pf-note">Compatibility describes the pattern of a bond, not whether two people should stay together. <a href="/match.html">Test two birthdays in the Match Oracle.</a></p>
   </section>
 
   
+  <section class="pf-section">
+    <p class="pf-eyebrow">The same crossing</p>
+    <h2>Public figures born at this crossing</h2>
+    <p>Each of these people was born a Cancer by the Western zodiac, in the Chinese Year of the Pig. By the Primal Animal system, that crossing reads as the Capybara. If your birthday lands here too, you share the crossing with them.</p>
+    <ul class="pf-list">
+      <li><strong style="color:var(--moon)">Missy Elliott</strong> &middot; born July 1, 1971, rapper and producer</li><li><strong style="color:var(--moon)">Sandra Oh</strong> &middot; born July 20, 1971, actress</li><li><strong style="color:var(--moon)">Katrina Kaif</strong> &middot; born July 16, 1983, actress</li>
+    </ul>
+    <p style="margin-top:14px"><button class="btn ghost" id="celebShare" type="button">Share your famous crossing</button></p>
+    <p class="pf-note">Birth dates are public information. The people named here are not affiliated with Primal Animal and have not endorsed it. We note only their Western Sun sign and Chinese year animal, both of which follow from a public birth date. The Primal Animal reading is our own interpretive system, not a statement about any individual.</p>
+  </section>
 
   <section class="pf-section">
     <p class="pf-eyebrow">Neighboring animals</p>
     <h2>Explore the crossings nearby</h2>
     <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:0 0 8px">Other Cancer animals</h3>
-    <div class="pf-links"><a href="/animals/hermit-crab/">Hermit Crab</a><a href="/animals/asian-elephant/">Asian Elephant</a><a href="/animals/sun-bear/">Sun Bear</a><a href="/animals/sea-otter/">Sea Otter</a><a href="/animals/humpback-whale/">Humpback Whale</a><a href="/animals/chambered-nautilus/">Chambered Nautilus</a><a href="/animals/green-sea-turtle/">Green Sea Turtle</a><a href="/animals/water-deer/">Water Deer</a><a href="/animals/kinkajou/">Kinkajou</a><a href="/animals/emperor-penguin/">Emperor Penguin</a><a href="/animals/walrus/">Walrus</a></div>
+    <div class="pf-links"><a href="/animals/coconut-crab/">Coconut Crab</a><a href="/animals/asian-elephant/">Asian Elephant</a><a href="/animals/moon-bear/">Moon Bear</a><a href="/animals/sea-otter/">Sea Otter</a><a href="/animals/humpback-whale/">Humpback Whale</a><a href="/animals/chambered-nautilus/">Chambered Nautilus</a><a href="/animals/green-sea-turtle/">Green Sea Turtle</a><a href="/animals/water-deer/">Water Deer</a><a href="/animals/kinkajou/">Kinkajou</a><a href="/animals/emperor-penguin/">Emperor Penguin</a><a href="/animals/elephant-seal/">Elephant Seal</a></div>
     <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:18px 0 8px">Other Pig animals</h3>
-    <div class="pf-links"><a href="/animals/white-lipped-peccary/">White-lipped Peccary</a><a href="/animals/tapir/">Tapir</a><a href="/animals/binturong/">Binturong</a><a href="/animals/babirusa/">Babirusa</a><a href="/animals/short-beaked-echidna/">Short-beaked Echidna</a><a href="/animals/flamingo/">Flamingo</a><a href="/animals/hippopotamus/">Hippopotamus</a><a href="/animals/warthog/">Warthog</a><a href="/animals/european-badger/">European Badger</a><a href="/animals/platypus/">Platypus</a><a href="/animals/manatee/">Manatee</a></div>
+    <div class="pf-links"><a href="/animals/white-lipped-peccary/">White-lipped Peccary</a><a href="/animals/tapir/">Tapir</a><a href="/animals/binturong/">Binturong</a><a href="/animals/babirusa/">Babirusa</a><a href="/animals/short-beaked-echidna/">Short-beaked Echidna</a><a href="/animals/roseate-spoonbill/">Roseate Spoonbill</a><a href="/animals/hippopotamus/">Hippopotamus</a><a href="/animals/warthog/">Warthog</a><a href="/animals/european-badger/">European Badger</a><a href="/animals/platypus/">Platypus</a><a href="/animals/manatee/">Manatee</a></div>
     <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:18px 0 8px">Hubs</h3>
     <div class="pf-links">
       <a href="/western-zodiac/cancer/">Cancer sign</a>
@@ -311,7 +321,7 @@
   // share your famous crossing (public facts only, no endorsement claim)
   var cs=document.getElementById('celebShare');
   if(cs) cs.addEventListener('click', async function(){
-    var names=[];
+    var names=["Missy Elliott","Sandra Oh"];
     var text="I was born a Cancer in the Year of the Pig, the same crossing as "+names.join(" and ")+". The Primal Animal system calls it the Capybara. What are you? "+location.href;
     try{ if(navigator.share){ await navigator.share({title:"Primal Animal", text:text}); } else { await navigator.clipboard.writeText(text); if(window.GAME&&GAME.toast) GAME.toast("Copied","Share your crossing"); } }catch(e){}
   });

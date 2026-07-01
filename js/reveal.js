@@ -23,7 +23,7 @@ window.CINEMA = (function () {
       <div class="flash"></div>
       <div class="bloom"><div class="rays"></div>
         <div class="cross"><span data-cs></span><b>+</b><span data-ce></span></div>
-        <h2 data-name>Snail</h2><div class="ess" data-ess></div></div>
+        <h2 data-name>…</h2><div class="ess" data-ess></div></div>
       <button class="btn cinema-cta" type="button">See my full reading</button>`;
     document.body.appendChild(root);
     cv = root.querySelector(".cv"); ctx = cv.getContext("2d");
