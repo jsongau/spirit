@@ -128,7 +128,11 @@ PNAV.MAP = [
 PNAV.FEATURED = { href: "/circle.html", title: "Read your circle of three", blurb: "Compare two friends one to one, then read the whole group." };
 
 /* Canonical origin for absolute URLs (breadcrumb JSON-LD, etc.).
-   One constant here; Phase 6 unifies every origin across the build. */
+   Client-side JS, so this stays a literal (it cannot import build/config.mjs).
+   It must hold the SAME value as DOMAIN in build/config.mjs. PHASE 8 CUTOVER:
+   flip this literal to https://zodianimal.com in lockstep with DOMAIN and the
+   llms.txt URLs. The stale-origin gate in build/audit-links.mjs fails the
+   build if this and DOMAIN ever disagree at ship time. */
 PNAV.ORIGIN = "https://spirit-omega.vercel.app";
 
 /* Per-hub sub-navigation + breadcrumb source of truth.
