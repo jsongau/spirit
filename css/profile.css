@@ -56,4 +56,9 @@
 footer.pf-foot{padding:50px 0 90px; border-top:1px solid var(--line); margin-top:50px; color:var(--muted); font-size:.86rem; text-align:center}
 .pf-disc{font-size:.78rem; color:#7c7d92; max-width:64ch; margin:14px auto 0}
 
+.acct-cta{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  border:1px dashed var(--line);border-radius:14px;padding:16px 20px;margin:26px 0 0}
+.acct-cta p{margin:0;color:var(--body);font-size:.92rem}
+.acct-cta a{white-space:nowrap}
+
 @media(prefers-reduced-motion:reduce){ *{scroll-behavior:auto} }

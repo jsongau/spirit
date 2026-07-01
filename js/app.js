@@ -73,7 +73,7 @@
       const sg=c.primal.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
       state.recent=(state.recent||[]).filter(r=>r.primal!==c.primal);
       state.recent.unshift({primal:c.primal,slug:sg});
-      state.recent=state.recent.slice(0,5); save(state); renderRecent();
+      state.recent=state.recent.slice(0,5); save(state); renderRecent(); renderToday();
     }catch(e){}
     const r=ENGINE.reading(c), mp=ENGINE.moonPhase();
     $("#animalName").textContent=c.primal;
@@ -92,6 +92,25 @@
   }
 
   /* ---------- WIRE ---------- */
+  function renderToday(){
+    const strip=$("#todayStrip"); if(!strip||!window.ENGINE) return;
+    const mp=ENGINE.moonPhase();
+    if(state.birth){
+      const c=ENGINE.compute(state.birth); if(!c){ strip.hidden=true; return; }
+      const e=ORACLE.EAST[c.animal], da=ENGINE.dayAnimal(new Date());
+      const fav=e.trine.indexOf(da)>=0||e.secret===da, cau=e.clash===da||e.harm===da;
+      const quality=fav?"a favorable day":cau?"a day to move gently":"a steady day";
+      $("#todayLead").textContent="You are the "+c.primal+". Today is "+quality+".";
+      $("#todaySub").innerHTML="Day of the "+da+". Tonight the Moon is a "+mp.name+", a good night to "+mp.advice+".";
+      $("#todayCta").hidden=false;
+    } else {
+      $("#todayLead").textContent="Tonight the Moon is a "+mp.name+".";
+      $("#todaySub").textContent="A good night to "+mp.advice+". Find your animal to make today personal.";
+      $("#todayCta").hidden=true;
+    }
+    strip.hidden=false;
+  }
+
   function renderRecent(){
     const el=$("#recentOpened"); if(!el) return;
     if(!state.recent||!state.recent.length){ el.textContent=""; return; }
@@ -99,7 +118,7 @@
   }
 
   function init(){
-    checkReturn(); renderEye(); renderRecent();
+    checkReturn(); renderEye(); renderRecent(); renderToday();
 
     const form=$("#birthForm");
     if(form) form.addEventListener("submit",(e)=>{

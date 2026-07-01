@@ -17,6 +17,7 @@ PNAV.MAP = [
   ]},
   { h: "Sky", items: [
     ["moon.html", "The Moon", "The current phase, charging, and the lunar calendar"],
+    ["best-days.html", "Best days", "The favorable and cautious days ahead for you"],
     ["moon/phases/", "Moon phases", "What each of the eight phases favors"],
     ["daily.html", "Today's reading", "A short reading keyed to tonight's Moon"]
   ]},
