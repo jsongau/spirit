@@ -214,6 +214,9 @@
     if (!exists) {
       s.seen.unshift({ slug: slug, name: name || slug, at: Date.now() });
       writeGame(s);
+      // View layer hook (meter.js). Backward compatible: dispatch after a
+      // successful discovery write so the awakening meter repaints live.
+      try { window.dispatchEvent(new CustomEvent("po:awaken")); } catch (e) {}
     }
     // recompute badges (may fire a milestone), then return total
     evaluate(s);

@@ -149,3 +149,294 @@
 /* ---- CTA ---- */
 .awaken-cta{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:18px}
 .awaken-cta .btn{min-width:220px; text-align:center}
+
+/* ============================================================
+   THE SPIRIT METER  (Phase 5, Agent B)
+   ------------------------------------------------------------
+   The fill-the-spirit awakening meter: the visible face of the
+   data GAME already tracks. Agent A's meter.js paints this exact
+   markup and only ever writes the custom property --awaken (a
+   number 0 to 1) plus data-tier / data-state. This stylesheet
+   owns everything the eye sees.
+
+   The metaphor reuses this page's great-eye: a spirit orb whose
+   lids LIFT and whose iris/ray ring BRIGHTENS and GROWS as
+   --awaken approaches 1. Openness is the fill. A sleeper's eye is
+   nearly closed and dim; an awakened eye is wide, haloed, and
+   ringed with slow rays.
+
+   Token-only (no hardcoded hex). The module carries its own
+   amethyst accent so it reads as the third-eye / awakening domain
+   wherever it is dropped (rail, awakening page, nav), independent
+   of the surrounding section accent.
+   ============================================================ */
+
+/* 1. Register the fill so it can interpolate smoothly rather than
+   snapping between values. Falls back to a plain inherited custom
+   property where @property is unsupported (still works, no tween). */
+@property --awaken {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+/* ------------------------------------------------------------
+   2. The rail module: .spirit-meter
+   ------------------------------------------------------------ */
+.spirit-meter{
+  /* awakening is amethyst / third-eye, set locally so the orb glows
+     violet regardless of the section it is dropped into */
+  --accent:        var(--amethyst);
+  --accent-bright: var(--amethyst-bright);
+  --accent-dim:    var(--amethyst-dim);
+  /* a clamped copy of the fill for openness math, kept in [0,1] */
+  --lift: clamp(0, var(--awaken, 0), 1);
+
+  display:grid; justify-items:center; gap:var(--s-3);
+  text-align:center;
+  padding:var(--s-5) var(--s-4);
+  border:1px solid var(--line);
+  border-radius:var(--r-3);
+  background:
+    radial-gradient(120% 90% at 50% 0%,
+      oklch(from var(--accent) l c h / 0.06), transparent 70%),
+    var(--panel);
+}
+
+/* ---- the spirit orb (the great eye, driven by --awaken) ---- */
+.spirit-orb{
+  position:relative;
+  width:min(180px, 60%);
+  aspect-ratio:1.6 / 1;
+  border-radius:50% / 62%;
+  overflow:hidden;
+  /* the almond well */
+  background:
+    radial-gradient(ellipse at 50% 48%,
+      oklch(from var(--accent) 0.28 c h) 0%,
+      var(--ink) 74%);
+  border:1px solid var(--line);
+  /* outer halo grows and warms with awakening */
+  box-shadow:
+    0 0 calc(20px + 80px * var(--lift))
+      oklch(from var(--accent) l c h / calc(0.14 + 0.34 * var(--lift))),
+    inset 0 0 44px oklch(0 0 0 / 0.6);
+  transition:box-shadow var(--dur-slow) var(--ease-out);
+}
+
+/* the iris: a violet disc whose size and brightness track the fill */
+.spirit-orb::before{
+  content:"";
+  position:absolute; inset:0; margin:auto;
+  /* iris grows from a sliver (sleeper) to a full pupil-of-light (awakened) */
+  width:calc(22% + 34% * var(--lift));
+  aspect-ratio:1; border-radius:50%;
+  background:
+    radial-gradient(circle at 42% 36%,
+      var(--accent-bright),
+      var(--accent) 52%,
+      oklch(from var(--accent) 0.30 c h) 100%);
+  box-shadow:
+    0 0 calc(16px + 46px * var(--lift))
+      oklch(from var(--accent) l c h / calc(0.35 + 0.5 * var(--lift))),
+    inset 0 0 20px oklch(0 0 0 / 0.45);
+  opacity:calc(0.45 + 0.55 * var(--lift));
+  transition:
+    width var(--dur-slow) var(--ease-out),
+    opacity var(--dur-slow) var(--ease-out),
+    box-shadow var(--dur-slow) var(--ease-out);
+}
+
+/* the two lids: they LIFT (retract to the rim) as --awaken rises.
+   At awaken 0 the lids meet in the middle (eye shut, 50% each);
+   at awaken 1 they retract to a thin rim (about 6% each). */
+.spirit-orb::after{
+  content:"";
+  position:absolute; left:-2%; right:-2%; top:-2%; bottom:-2%;
+  border-radius:50% / 62%;
+  /* two solid ink lids drawn as top+bottom bands; the visible band
+     height is (50% openness lost) so it shrinks as --lift grows */
+  --lidH: calc(6% + 44% * (1 - var(--lift)));
+  background:
+    linear-gradient(180deg, var(--ink) 0, var(--ink-2) 100%) top / 100% var(--lidH) no-repeat,
+    linear-gradient(0deg,   var(--ink) 0, var(--ink-2) 100%) bottom / 100% var(--lidH) no-repeat;
+  pointer-events:none;
+  transition:--lidH var(--dur-cine) var(--ease-out);
+}
+
+/* ---- the legible readout ---- */
+.spirit-count{
+  margin:0;
+  font-family:var(--mono);
+  font-size:var(--fs-small, .8125rem);
+  letter-spacing:.06em;
+  /* legible as TEXT, never light-only: solid ivory on the panel */
+  color:var(--ivory);
+}
+.spirit-count strong{ color:var(--moon); font-weight:700; }
+
+.spirit-tier{
+  margin:0;
+  font-family:var(--serif);
+  font-size:clamp(1.4rem, 3.2vw, 1.9rem);
+  line-height:1.05;
+  color:var(--moon);
+  text-shadow:0 0 32px oklch(from var(--accent) l c h / calc(0.18 + 0.3 * var(--lift)));
+}
+
+.spirit-next{
+  margin:0;
+  max-width:34ch;
+  font-family:var(--sans);
+  font-size:var(--fs-small, .8125rem);
+  line-height:1.5;
+  color:var(--muted);
+}
+
+/* the asleep prompt: shown only when meter.js sets data-state="asleep" */
+.spirit-begin{
+  margin:0;
+  font-family:var(--serif); font-style:italic;
+  font-size:var(--fs-lead, 1.2rem);
+  color:var(--accent-bright);
+}
+
+/* ------------------------------------------------------------
+   3. State: asleep vs awake
+   meter.js toggles data-state. In the asleep state we dim the orb
+   and show only the begin prompt; the count/tier/next are the awake
+   readout. We hide by state so the markup is always present (no JS
+   removal needed) and no-JS shows the begin prompt by default.
+   ------------------------------------------------------------ */
+.spirit-meter .spirit-begin{ display:none; }
+.spirit-meter[data-state="asleep"] .spirit-begin{ display:block; }
+.spirit-meter[data-state="asleep"] .spirit-count,
+.spirit-meter[data-state="asleep"] .spirit-tier,
+.spirit-meter[data-state="asleep"] .spirit-next{ display:none; }
+.spirit-meter[data-state="asleep"] .spirit-orb{ filter:saturate(.5) brightness(.72); }
+
+/* no-JS / unset state: treat as asleep so the page shows the invite */
+.spirit-meter:not([data-state]) .spirit-count,
+.spirit-meter:not([data-state]) .spirit-tier,
+.spirit-meter:not([data-state]) .spirit-next{ display:none; }
+.spirit-meter:not([data-state]) .spirit-begin{ display:block; }
+
+/* ------------------------------------------------------------
+   4. Per-tier deepening. Each tier warms and widens the glow a
+   little more; the fill math above already scales continuously,
+   this adds a discrete step of presence per named threshold.
+   ------------------------------------------------------------ */
+.spirit-meter[data-tier="sleeper"]{  --tier-glow:0.00; }
+.spirit-meter[data-tier="stirring"]{ --tier-glow:0.10; }
+.spirit-meter[data-tier="waking"]{   --tier-glow:0.20; }
+.spirit-meter[data-tier="awakened"]{ --tier-glow:0.34; }
+
+.spirit-meter[data-tier] .spirit-orb{
+  box-shadow:
+    0 0 calc(20px + 80px * var(--lift) + 40px * var(--tier-glow, 0))
+      oklch(from var(--accent) l c h / calc(0.14 + 0.34 * var(--lift) + var(--tier-glow, 0))),
+    inset 0 0 44px oklch(0 0 0 / 0.6);
+}
+
+/* the awakened eye earns the ray ring, always on at the top tier */
+.spirit-meter[data-tier="awakened"] .spirit-orb::before{
+  opacity:1;
+}
+
+/* ------------------------------------------------------------
+   5. The nav orb: .spirit-orb--mini
+   A small openness-tracking orb that sits inside .pn-orb in the
+   bar. Same fill language, shrunk to a chip. aria-label is on the
+   element from meter.js, so no CSS tooltip is needed.
+   ------------------------------------------------------------ */
+.pn-orb .spirit-orb--mini{ display:inline-block; }
+
+.spirit-orb--mini{
+  --accent:        var(--amethyst);
+  --accent-bright: var(--amethyst-bright);
+  --lift: clamp(0, var(--awaken, 0), 1);
+  position:relative;
+  width:22px; height:22px;
+  border-radius:50%;
+  overflow:hidden;
+  vertical-align:middle;
+  background:
+    radial-gradient(circle at 50% 46%,
+      oklch(from var(--accent) 0.30 c h) 0%, var(--ink) 78%);
+  border:1px solid var(--line);
+  box-shadow:
+    0 0 calc(2px + 10px * var(--lift))
+      oklch(from var(--accent) l c h / calc(0.25 + 0.45 * var(--lift)));
+  transition:box-shadow var(--dur) var(--ease-out);
+}
+/* mini iris grows with the fill */
+.spirit-orb--mini::before{
+  content:"";
+  position:absolute; inset:0; margin:auto;
+  width:calc(28% + 46% * var(--lift));
+  aspect-ratio:1; border-radius:50%;
+  background:radial-gradient(circle at 42% 38%, var(--accent-bright), var(--accent) 60%);
+  opacity:calc(0.5 + 0.5 * var(--lift));
+  transition:width var(--dur) var(--ease-out), opacity var(--dur) var(--ease-out);
+}
+/* mini lids: same lift language, thinner */
+.spirit-orb--mini::after{
+  content:"";
+  position:absolute; left:-1px; right:-1px; top:-1px; bottom:-1px;
+  --lidH: calc(8% + 42% * (1 - var(--lift)));
+  background:
+    linear-gradient(180deg, var(--ink), var(--ink-2)) top / 100% var(--lidH) no-repeat,
+    linear-gradient(0deg,   var(--ink), var(--ink-2)) bottom / 100% var(--lidH) no-repeat;
+  transition:--lidH var(--dur-slow) var(--ease-out);
+}
+/* keyboard focus: a clear ring, no color-only cue */
+.pn-orb:focus-visible .spirit-orb--mini,
+.spirit-orb--mini:focus-visible{
+  outline:2px solid var(--accent-bright);
+  outline-offset:2px;
+}
+
+/* ------------------------------------------------------------
+   6. Motion. All ambient motion (the breathing glow pulse and the
+   slow ray spin) lives behind prefers-reduced-motion: no-preference.
+   The fill itself is a --awaken tween via @property and is treated
+   as enhancement too, collapsed in the reduce block below.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference){
+  /* a slow, shallow breath on the whole orb, quickening slightly as
+     the eye opens (duration shrinks with the fill) */
+  .spirit-meter[data-state="awake"] .spirit-orb{
+    animation:spiritBreath calc(7s - 2s * var(--lift)) var(--ease-io) infinite;
+  }
+  /* the iris drifts a touch brighter and back, scaled by the fill */
+  .spirit-meter[data-state="awake"] .spirit-orb::before{
+    animation:spiritIris 6s var(--ease-io) infinite;
+  }
+}
+
+@keyframes spiritBreath{
+  0%,100%{ transform:scale(1); }
+  50%{ transform:scale(1.02); }
+}
+@keyframes spiritIris{
+  0%,100%{ filter:brightness(1); }
+  50%{ filter:brightness(calc(1 + 0.18 * var(--lift))); }
+}
+
+/* ------------------------------------------------------------
+   7. Reduced motion: show the fill STATICALLY, no pulse, no spin,
+   no lid tween. Openness still reflects --awaken (it is state, not
+   motion) but every transition and animation is removed so nothing
+   moves. The count text and tier remain fully legible.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce){
+  .spirit-meter .spirit-orb,
+  .spirit-meter .spirit-orb::before,
+  .spirit-meter .spirit-orb::after,
+  .spirit-orb--mini,
+  .spirit-orb--mini::before,
+  .spirit-orb--mini::after{
+    transition:none !important;
+    animation:none !important;
+  }
+}
