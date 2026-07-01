@@ -10,7 +10,7 @@
 .pn-dd.open{opacity:1; visibility:visible; transform:none; pointer-events:auto}
 
 .pn-dd-mount{max-width:1140px; margin:0 auto; padding:0 26px 22px}
-.pn-dd-inner{background:linear-gradient(180deg,#161832,#0d0f1d);
+.pn-dd-inner{background:linear-gradient(180deg,var(--dd-bg1),var(--dd-bg2));
   border:1px solid var(--line,#2a2c44); border-radius:18px;
   box-shadow:0 40px 90px rgba(0,0,0,.55);
   padding:30px 34px 34px}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/theme.js"></script>
+<title>Year finder: look up any animal by birth year · Primal Animal</title>
+<meta name="description" content="Pick any year to see its twelve Primal Animal crossings, or enter birthdays to look up your friends' animals in seconds.">
+<meta property="og:title" content="Year finder · Primal Animal">
+<meta property="og:description" content="Pick a year and see all twelve crossings, or look up your friends by their birthday.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/oracle.css">
+<style>
+  .yf-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; margin-top:18px}
+  .yf-cell{display:block; text-decoration:none; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px 16px; transition:border-color .15s, transform .15s}
+  .yf-cell:hover{border-color:var(--brass); transform:translateY(-2px)}
+  .yf-cell .nm{font-family:var(--serif); font-size:1.2rem; color:var(--moon); line-height:1.1}
+  .yf-cell .sub{font-size:.74rem; color:var(--muted); letter-spacing:.04em; margin-top:4px}
+  .yf-seam{background:var(--panel2); border:1px solid var(--line); border-radius:12px; padding:14px 18px; margin-top:16px; color:var(--body); font-size:.92rem}
+  .yf-seam b{color:var(--moon)}
+  .yf-list{list-style:none; padding:0; margin:16px 0 0; display:grid; gap:8px}
+  .yf-row{display:flex; align-items:center; justify-content:space-between; gap:12px; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:12px 16px; flex-wrap:wrap}
+  .yf-row .who{color:var(--body); font-size:.9rem}
+  .yf-row .an{font-family:var(--serif); font-size:1.25rem; color:var(--moon)}
+  .yf-row a{color:var(--brass-bright); font-size:.82rem}
+  .yf-row .rm{background:transparent; border:none; color:var(--muted); cursor:pointer; font-size:1.1rem; line-height:1}
+  select{background:var(--field-bg); border:1px solid var(--line); color:var(--ivory); padding:14px 16px; border-radius:11px; font-size:1rem; font-family:var(--sans)}
+  .yf-count{color:var(--muted); font-size:.82rem; margin-top:10px}
+</style>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="wrap">
+
+  <section class="hero" style="padding-top:24px">
+    <p class="eyebrow">Year finder</p>
+    <h1 style="color:var(--moon)">Look up anyone's animal</h1>
+    <p class="lede">Enter a birthday to find a friend's Primal Animal, or pick a year to see all twelve crossings at once. Nothing is saved anywhere unless you keep a list, and that stays on this device.</p>
+  </section>
+
+  <section class="band" style="margin-top:20px; border-top:none; padding-top:0">
+    <p class="eyebrow">Look up a friend</p>
+    <h2>Add birthdays, build a list</h2>
+    <form id="lookupForm">
+      <div class="field" style="max-width:620px">
+        <input type="text" id="who" placeholder="Name or label (optional)" aria-label="Name or label" style="flex:1 1 160px; background:var(--field-bg); border:1px solid var(--line); color:var(--ivory); padding:14px 16px; border-radius:11px; font-family:var(--sans)">
+        <input type="date" id="who-date" required min="1940-01-01" max="2032-12-31" aria-label="Date of birth">
+        <button class="btn" type="submit">Add to list</button>
+      </div>
+      <p class="msg" id="lookupMsg"></p>
+    </form>
+    <ul class="yf-list" id="lookupList"></ul>
+    <p class="yf-count" id="lookupCount"></p>
+  </section>
+
+  <section class="band">
+    <p class="eyebrow">Browse by year</p>
+    <h2>Every crossing in a year</h2>
+    <div class="field" style="max-width:320px">
+      <label for="yearSel" style="position:absolute; left:-9999px">Choose a year</label>
+      <select id="yearSel"></select>
+    </div>
+    <div id="yearSeam"></div>
+    <div class="yf-grid" id="yearGrid"></div>
+  </section>
+
+  <footer>
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <p class="disclaimer">A tradition of meaning for reflection, not medical, psychological, financial, or legal advice. The Chinese year begins at the lunar New Year, so a birthday in January or early February may belong to the previous year's animal. The exact lookup above accounts for this.</p>
+  </footer>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(function(){
+  var O = ORACLE, E = ENGINE;
+  var $ = function(s){ return document.querySelector(s); };
+  var slug = function(n){ return n.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,""); };
+  var MONTHS = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+  /* ---- friend lookup list (persists on this device only) ---- */
+  var KEY = "po_circle";
+  function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch(e){ return []; } }
+  function save(a){ try { localStorage.setItem(KEY, JSON.stringify(a)); } catch(e){} }
+  var people = load();
+
+  function renderList(){
+    var ul = $("#lookupList"); ul.innerHTML = "";
+    people.forEach(function(p, i){
+      var c = E.compute(p.date); if(!c) return;
+      var li = document.createElement("li"); li.className = "yf-row";
+      li.innerHTML = '<span class="an">'+c.primal+'</span>'+
+        '<span class="who">'+(p.who ? p.who+" · " : "")+c.sign+' and the '+c.animal+'</span>'+
+        '<span><a href="animals/'+slug(c.primal)+'/">Open</a> '+
+        '<button class="rm" data-i="'+i+'" aria-label="Remove">&times;</button></span>';
+      ul.appendChild(li);
+    });
+    $("#lookupCount").textContent = people.length ? people.length + (people.length===1?" person on your list":" people on your list") : "";
+    ul.querySelectorAll(".rm").forEach(function(b){ b.addEventListener("click", function(){ people.splice(+b.dataset.i,1); save(people); renderList(); }); });
+  }
+
+  $("#lookupForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var d = $("#who-date").value, who = $("#who").value.trim();
+    var c = E.compute(d);
+    if(!c){ $("#lookupMsg").textContent = "Enter a valid date of birth."; return; }
+    $("#lookupMsg").textContent = "";
+    people.push({ who: who, date: d }); save(people); renderList();
+    $("#who").value = ""; $("#who-date").value = "";
+  });
+  renderList();
+
+  /* ---- browse by year ---- */
+  var sel = $("#yearSel");
+  for(var y=1940; y<=2032; y++){ var o=document.createElement("option"); o.value=y; o.textContent=y; sel.appendChild(o); }
+  sel.value = "1990";
+
+  function renderYear(y){
+    y = +y;
+    var main = E.yearAnimal(y, 7, 1).animal;      // animal for most of the year (after New Year)
+    var prev = E.yearAnimal(y, 1, 1).animal;      // animal for early January (before New Year)
+    var col = O.CHINESE_ORDER.indexOf(main);
+    var grid = $("#yearGrid"); grid.innerHTML = "";
+    O.WEST_ORDER.forEach(function(sign){
+      var nm = O.GRID[sign][col];
+      var a = document.createElement("a"); a.className = "yf-cell"; a.href = "animals/"+slug(nm)+"/";
+      a.innerHTML = '<span class="nm">'+nm+'</span><span class="sub">'+sign+' '+O.GLYPH_WEST[sign]+'</span>';
+      grid.appendChild(a);
+    });
+    var cny = O.CNY[y];
+    var seam = $("#yearSeam");
+    if(cny && prev !== main){
+      seam.className = "yf-seam";
+      seam.innerHTML = 'In '+y+', the Year of the <b>'+main+'</b> began on <b>'+MONTHS[cny[0]]+' '+cny[1]+'</b>. '+
+        'Anyone born before that date belongs to the previous year, the <b>'+prev+'</b>. The grid below shows the '+main+' crossings; use the exact lookup above for early-year birthdays.';
+    } else { seam.className=""; seam.innerHTML=""; }
+  }
+  sel.addEventListener("change", function(){ renderYear(sel.value); });
+  renderYear(sel.value);
+
+  /* ---- starfield (dark theme only; hidden by CSS in light) ---- */
+  var cv=$("#sky"); if(cv){ var x=cv.getContext("2d"); function sz(){cv.width=innerWidth;cv.height=Math.max(innerHeight,document.body.scrollHeight);} sz(); addEventListener("resize",sz);
+    var red=(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)||false; var N=red?70:130;
+    var st=Array.from({length:N},function(){return{x:Math.random()*cv.width,y:Math.random()*cv.height,r:Math.random()*1.3+0.2,a:Math.random(),s:Math.random()*0.02+0.004};});
+    (function f(){x.clearRect(0,0,cv.width,cv.height);for(var i=0;i<st.length;i++){var s=st[i];if(!red)s.a+=s.s;var al=0.3+Math.abs(Math.sin(s.a))*0.5;x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fillStyle="rgba(245,236,210,"+al+")";x.fill();}if(!document.hidden)requestAnimationFrame(f);})();
+  }
+})();
+</script>
+</body>
+</html>

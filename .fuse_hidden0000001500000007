@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Today's reading: your Primal Animal and the Moon overhead</title>
+<meta name="description" content="A short daily reading drawn from your Primal Animal and tonight's Moon phase. Read today's sky, see the week ahead, and come back tomorrow.">
+<meta property="og:title" content="Today's reading at the Primal Oracle">
+<meta property="og:description" content="Your animal, the Moon phase, and one small practice for today. A mirror for reflection, drawn fresh each day in your browser.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/daily.css">
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <nav>
+      <a href="index.html">Find your animal</a>
+      <a href="menagerie.html">All 144 animals</a>
+      <a href="match.html">Test a match</a>
+      <a href="daily.html" class="here">Today</a>
+      <a href="moon.html">The Moon</a>
+      <a href="learn.html">How it works</a>
+    </nav>
+  </header>
+
+  <section class="dayHero">
+    <span class="eyebrow">Today's reading</span>
+    <h1>Read today's sky</h1>
+    <p class="stamp" id="dateStamp"></p>
+  </section>
+
+  <!-- DATE GATE: shown only when no birth date is saved -->
+  <div class="gate" id="gate" style="display:none">
+    <h3>Read today's sky</h3>
+    <p class="dim">Enter your date of birth once. The Oracle remembers it in this browser so tomorrow opens straight to your reading. Nothing is sent anywhere.</p>
+    <div class="gateRow">
+      <input type="date" id="birthDate" min="1940-01-01" max="2032-12-31" aria-label="Date of birth">
+      <button class="btn" id="readBtn" type="button">Read today's sky</button>
+    </div>
+    <p class="gateMsg" id="gateMsg"></p>
+  </div>
+
+  <!-- READING -->
+  <div class="reading" id="reading">
+
+    <div class="crown">
+      <span class="glyph" id="glyph"></span>
+      <span class="who" id="who">
+        <span id="animalName"></span>
+        <small id="signLine"></small>
+      </span>
+      <span class="cn" id="cn"></span>
+    </div>
+
+    <p class="moonLine" id="moonLine"></p>
+
+    <div class="guidance"><p id="guidance"></p></div>
+
+    <div class="practice">
+      <span class="mark">✦</span>
+      <div class="body">
+        <h4>Today's single practice</h4>
+        <p id="practice"></p>
+      </div>
+    </div>
+
+    <!-- 7-DAY OUTLOOK -->
+    <div class="weekWrap">
+      <h3>The week ahead</h3>
+      <p class="dim">Seven nights of Moon, so you can see the tide before it arrives.</p>
+      <div class="week" id="week"></div>
+    </div>
+
+    <!-- SHARE -->
+    <div class="share">
+      <h3>Share today's reading</h3>
+      <p class="dim">Send a friend the line of your day and ask what the Moon is asking of them.</p>
+      <div class="shareBox">
+        <input id="shareLine" readonly aria-label="Today's reading to share">
+        <button class="btn" id="shareBtn" type="button">Share my reading</button>
+        <button class="btn ghost" id="copyBtn" type="button">Copy</button>
+      </div>
+    </div>
+
+    <p class="tomorrow">Come back tomorrow. The sky turns, and the reading turns with it.</p>
+
+    <div class="ctaRow">
+      <a class="btn" href="index.html">See my full reading</a>
+      <a class="btn ghost" href="moon.html">Read the Moon</a>
+    </div>
+
+    <p class="caveat">This is meaning and reflection, not prediction. Read it as a mirror you can act on, not a forecast of what is fixed.</p>
+
+  </div>
+
+  <footer>
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <p>Find your Primal Animal, read where you stand, and see who you match. Built on the fusion of the Chinese and Western zodiacs.</p>
+    <p class="disclaimer">This is a tradition of meaning for reflection and entertainment. It is not medical, psychological, financial, or legal advice. The Primal Animal framework is adapted from the Primal Zodiac tradition. Stones and lunar practices are presented as cultural tradition, not as treatment.</p>
+  </footer>
+
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/nav.js"></script>
+<script>
+/* ============================================================
+   THE PRIMAL ORACLE — daily reading layer
+   Self-contained page logic. Uses window.ENGINE + window.ORACLE.
+   Shares the "primal_oracle_v1" localStorage object with the rest
+   of the site, merging only the `birth` key so rites/streak survive.
+   ============================================================ */
+(function(){
+  "use strict";
+  const $ = (s)=>document.querySelector(s);
+  const O = window.ORACLE, E = window.ENGINE;
+
+  /* ---- shared store ---- */
+  const KEY = "primal_oracle_v1";
+  function load(){ try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return {}; } }
+  function save(s){ try{ localStorage.setItem(KEY, JSON.stringify(s)); }catch(e){} }
+  function saveBirth(birth){
+    const s = load();        // re-read so we merge against the freshest copy
+    s.birth = birth;         // set only birth; rites, streak, email, etc. are untouched
+    save(s);
+  }
+
+  /* ---- deterministic seed ----
+     A small string hash (FNV-1a style) of "YYYY-MM-DD|PrimalName".
+     Same person + same calendar day always yields the same number, so the
+     reading is stable through the day and rerolls when either the date or
+     the animal changes. Used to pick phrasing variants below. ---- */
+  function seedOf(dayKey, animal){
+    const str = dayKey + "|" + animal;
+    let h = 2166136261;
+    for (let i=0;i<str.length;i++){ h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); }
+    return (h >>> 0);
+  }
+  function pick(arr, seed, salt){
+    // mix the seed with a per-slot salt so different sentence slots vary independently
+    let x = (seed ^ Math.imul(salt+1, 2654435761)) >>> 0;
+    x ^= x << 13; x >>>= 0; x ^= x >> 17; x ^= x << 5; x >>>= 0;
+    return arr[x % arr.length];
+  }
+  const dayKeyOf = (d)=> d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+
+  /* ---- phase family: which way the tide is moving ---- */
+  function familyOf(name){
+    if (name === "Full Moon") return "full";
+    if (name === "New Moon" || name.indexOf("Waxing") === 0 || name === "First Quarter") return "waxing";
+    return "waning"; // Waning Gibbous, Last Quarter, Waning Crescent
+  }
+
+  /* ---- phrasing libraries keyed by phase family ---- */
+  const OPENERS = {
+    waxing: [
+      "The Moon is filling, and so the day favours beginning.",
+      "Light is gathering overhead, which makes this a day to start rather than wait.",
+      "The sky is on the rise tonight, so the small first move is the right one."
+    ],
+    full: [
+      "The Moon is at its fullest, and the day asks you to be seen and then to let something go.",
+      "Everything is lit tonight, which makes this a day for showing up plainly and releasing what is finished.",
+      "The full Moon pulls everything to the surface, so be visible, then set down what you have carried long enough."
+    ],
+    waning: [
+      "The Moon is thinning, and the day favours rest and the quiet letting go.",
+      "Light is drawing back overhead, so this is a day to close, to clear, and to forgive.",
+      "The sky is emptying tonight, which makes this a day to put things down rather than pick more up."
+    ]
+  };
+  const MIDDLES = {
+    waxing: [
+      "Your gift for {light} wants somewhere to point. Choose one thing and give it your first hour.",
+      "The instinct to {instinct} is an engine today; aim it at a single beginning and ignore the rest.",
+      "{Light} is your daylight strength, and a rising Moon rewards using it early rather than perfectly."
+    ],
+    full: [
+      "Your gift for {light} is meant to be witnessed now, not stored. Let one person actually see it.",
+      "The instinct to {instinct} can tip into holding on; under a full Moon, that is the thing to release.",
+      "{Light} reaches its height when you stop hiding it, and a full Moon is permission to be plainly seen."
+    ],
+    waning: [
+      "Your gift for {light} does its quietest work in retreat; spend it on tending, not proving.",
+      "The instinct to {instinct} has earned a pause. Let the cycle thin out before you ask more of yourself.",
+      "{Light} is still yours in the dark of the Moon, but today it looks like rest, not effort."
+    ]
+  };
+  const SHADOWS = {
+    waxing: [
+      "Watch for {shadow}; it speaks in the reasonable voice that tells you to wait one more day.",
+      "Your shadow today is {shadow}, and it loves to dress a delay up as good sense.",
+      "If something stalls you, look for {shadow} underneath it before you call the pause wisdom."
+    ],
+    full: [
+      "Watch for {shadow}; under a full Moon it grows loud and asks to be fed instead of named.",
+      "Your shadow today is {shadow}, and the bright Moon will tempt it into a scene. Name it instead.",
+      "When feeling runs high tonight, {shadow} will try to drive. Notice the wheel, then take it back."
+    ],
+    waning: [
+      "Watch for {shadow}; in the thinning light it disguises avoidance as much-needed rest.",
+      "Your shadow today is {shadow}, and it will call quitting by the kinder name of letting go.",
+      "Rest is the work now, but {shadow} can turn it into hiding. Rest on purpose, not in retreat."
+    ]
+  };
+  const CLOSERS = {
+    waxing: [
+      "What you need underneath the wanting is {need}, so make today's first step serve that.",
+      "Feed the real need, which is {need}, and let the smaller cravings wait their turn.",
+      "Begin in the direction of {need}, even if the step is almost too small to count."
+    ],
+    full: [
+      "What you need underneath the wanting is {need}; let the fullness show you whether you are getting it.",
+      "Be seen in the direction of {need}, not in the direction of applause.",
+      "Release whatever stands between you and {need}, and let the rest of the noise fall away."
+    ],
+    waning: [
+      "What you need underneath the wanting is {need}, and rest is how you make room for it.",
+      "Let go of one thing that blocks {need}, and call that enough for today.",
+      "Move toward {need} by subtraction now, putting down rather than reaching."
+    ]
+  };
+
+  /* one concrete action keyed to the phase ---- */
+  const PRACTICE = {
+    waxing: [
+      "Write down one small beginning and do the very first step of it before noon.",
+      "Say a single clear yes to something you have been circling, then act on it today.",
+      "Spend ten minutes starting the thing you keep meaning to start. Just the first ten."
+    ],
+    full: [
+      "Tell one trusted person something true that you usually keep to yourself.",
+      "Name one finished thing out loud and let it be done. Mark the ending somehow.",
+      "Step into a little visibility today, then release a worry you have outgrown."
+    ],
+    waning: [
+      "Rest without earning it first. Take twenty unhurried minutes and feel no guilt.",
+      "Clear one small thing you no longer use, and forgive one thing you keep replaying.",
+      "Cut one quiet loss today, gently, and thank it on the way out."
+    ]
+  };
+
+  function fill(tpl, w, e){
+    return tpl
+      .replace(/\{light\}/g,  w.light)
+      .replace(/\{Light\}/g,  w.light.charAt(0).toUpperCase()+w.light.slice(1))
+      .replace(/\{instinct\}/g, e.instinct)
+      .replace(/\{shadow\}/g, e.shadow)
+      .replace(/\{need\}/g,   w.need);
+  }
+
+  /* ---- moon glyphs for the week strip ---- */
+  const ORB = {
+    "New Moon":"🌑","Waxing Crescent":"🌒","First Quarter":"🌓","Waxing Gibbous":"🌔",
+    "Full Moon":"🌕","Waning Gibbous":"🌖","Last Quarter":"🌗","Waning Crescent":"🌘"
+  };
+  const DOW = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
+  /* ---- render the whole reading ---- */
+  function render(birth){
+    const c = E.compute(birth);
+    if (!c){ return false; }
+
+    const today = new Date();
+    const mp = E.moonPhase(today);
+    const fam = familyOf(mp.name);
+    const w = O.WEST[c.sign], e = O.EAST[c.animal];
+
+    const dayKey = dayKeyOf(today);
+    const seed = seedOf(dayKey, c.primal);
+
+    // header
+    $("#glyph").textContent = c.glyph;
+    $("#cn").textContent = c.cn;
+    $("#animalName").textContent = c.primal;
+    $("#signLine").textContent = c.sign + " sun, year of the " + c.animal;
+
+    const longDate = today.toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric",year:"numeric"});
+    $("#dateStamp").textContent = longDate;
+
+    // moon line
+    $("#moonLine").innerHTML = "Tonight the Moon is a <b>"+mp.name+"</b>. It favours the work to "+mp.advice+".";
+
+    // guidance paragraph, four seeded sentences
+    const sentences = [
+      fill(pick(OPENERS[fam], seed, 1), w, e),
+      fill(pick(MIDDLES[fam], seed, 2), w, e),
+      fill(pick(SHADOWS[fam], seed, 3), w, e),
+      fill(pick(CLOSERS[fam], seed, 4), w, e)
+    ];
+    $("#guidance").textContent = sentences.join(" ");
+
+    // single practice
+    $("#practice").textContent = fill(pick(PRACTICE[fam], seed, 5), w, e);
+
+    // share line
+    $("#shareLine").value = "My reading today: as a "+c.primal+" under a "+mp.name+", the day favours to "+mp.advice+". Read yours at the Primal Oracle.";
+
+    // 7-day strip
+    const week = $("#week"); week.innerHTML = "";
+    for (let i=0;i<7;i++){
+      const d = new Date(today.getFullYear(), today.getMonth(), today.getDate()+i, 12, 0, 0);
+      const p = E.moonPhase(d);
+      const cell = document.createElement("div");
+      cell.className = "day" + (i===0 ? " today" : "");
+      cell.innerHTML =
+        '<div class="dow">'+DOW[d.getDay()]+'</div>'+
+        '<div class="num">'+d.getDate()+'</div>'+
+        '<div class="orb">'+(ORB[p.name]||"🌙")+'</div>'+
+        '<div class="ph">'+p.name+'</div>'+
+        (i===0 ? '<div class="tag">Today</div>' : '');
+      week.appendChild(cell);
+    }
+
+    $("#gate").style.display = "none";
+    $("#reading").classList.add("show");
+    return true;
+  }
+
+  /* ---- wire ---- */
+  function showGate(){
+    $("#gate").style.display = "block";
+    $("#reading").classList.remove("show");
+  }
+
+  function init(){
+    const stamp = new Date().toLocaleDateString(undefined,{weekday:"long",month:"long",day:"numeric",year:"numeric"});
+    $("#dateStamp").textContent = stamp;
+
+    const s = load();
+    if (s.birth && render(s.birth)){
+      // returning reader: straight to today's reading
+    } else {
+      showGate();
+    }
+
+    $("#readBtn").addEventListener("click", ()=>{
+      const v = $("#birthDate").value;
+      const c = v ? E.compute(v) : null;
+      if (!c){ $("#gateMsg").textContent = "Enter your date of birth to read today's sky."; return; }
+      $("#gateMsg").textContent = "";
+      saveBirth(v);            // merge into the shared store, keep rites/streak
+      render(v);
+    });
+
+    $("#shareBtn").addEventListener("click", async ()=>{
+      const text = $("#shareLine").value;
+      try{
+        if (navigator.share){ await navigator.share({title:"The Primal Oracle", text}); }
+        else { await navigator.clipboard.writeText(text); toast("Copied to clipboard","share it with a friend"); }
+      }catch(e){}
+    });
+    $("#copyBtn").addEventListener("click", async ()=>{
+      try{ await navigator.clipboard.writeText($("#shareLine").value); toast("Copied to clipboard","send it to someone today"); }catch(e){}
+    });
+
+    runStars();
+  }
+
+  function toast(title, sub){
+    const t = $("#toast"); if(!t) return;
+    t.innerHTML = "<strong>"+title+"</strong><span>"+sub+"</span>"; t.classList.add("show");
+    clearTimeout(t._h); t._h = setTimeout(()=>t.classList.remove("show"), 2400);
+  }
+
+  /* ---- starfield (same pattern as app.js) ---- */
+  function runStars(){
+    const cv = $("#sky"); if(!cv) return; const ctx = cv.getContext("2d");
+    function size(){ cv.width = innerWidth; cv.height = Math.max(innerHeight, document.body.scrollHeight); }
+    size(); addEventListener("resize", size);
+    const N = Math.min(180, Math.floor(innerWidth/8));
+    const stars = Array.from({length:N},()=>({x:Math.random()*cv.width,y:Math.random()*cv.height,r:Math.random()*1.4+0.2,a:Math.random(),s:Math.random()*0.02+0.004}));
+    (function frame(){ ctx.clearRect(0,0,cv.width,cv.height);
+      for(const st of stars){ st.a+=st.s; const al=0.35+Math.abs(Math.sin(st.a))*0.55;
+        ctx.beginPath(); ctx.arc(st.x,st.y,st.r,0,7); ctx.fillStyle=`rgba(245,236,210,${al})`; ctx.fill(); }
+      requestAnimationFrame(frame); })();
+  }
+
+  document.addEventListener("DOMContentLoaded", init);
+})();
+</script>
+</body>
+</html>

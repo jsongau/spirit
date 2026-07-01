@@ -20,9 +20,9 @@
 .pf-section{padding:30px 0; border-top:1px solid var(--line)}
 .pf-section h2{font-family:var(--serif); font-size:1.9rem; color:var(--moon); margin:0 0 6px}
 .pf-eyebrow{font-size:.7rem; letter-spacing:.3em; text-transform:uppercase; color:var(--brass); margin:0 0 14px}
-.pf-section p{color:#d3d3e2; margin:0 0 14px; line-height:1.7}
+.pf-section p{color:var(--body); margin:0 0 14px; line-height:1.7}
 .pf-list{list-style:none; padding:0; margin:0; display:grid; gap:10px}
-.pf-list li{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px 18px; color:#d8d8e6}
+.pf-list li{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px 18px; color:var(--body)}
 
 .pf-gates{display:grid; gap:14px}
 .pf-gate{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:20px 22px}
@@ -35,14 +35,14 @@
 .pf-card{background:var(--panel2,#1b1e33); border:1px solid var(--line); border-radius:14px; padding:20px 22px}
 .pf-card h3{font-family:var(--serif); color:var(--moon); font-size:1.25rem; margin:0 0 10px}
 .pf-chips{display:flex; flex-wrap:wrap; gap:10px; list-style:none; padding:0; margin:0}
-.pf-chips li{background:#0c0e1a; border:1px solid var(--line); color:var(--brass-bright); border-radius:999px; padding:8px 14px; font-size:.9rem}
+.pf-chips li{background:var(--field-bg); border:1px solid var(--line); color:var(--brass-bright); border-radius:999px; padding:8px 14px; font-size:.9rem}
 .pf-chips li small{display:block; color:var(--muted); font-size:.72rem}
 
 .pf-stones{display:grid; gap:12px}
 .pf-stone{display:grid; grid-template-columns:auto 1fr; gap:6px 14px; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px 18px}
 .pf-stone .role{grid-column:1; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--brass); align-self:center}
 .pf-stone .nm{grid-column:2; font-family:var(--serif); font-size:1.15rem; color:var(--moon)}
-.pf-stone .why{grid-column:1 / -1; color:#cfcfe0; font-size:.92rem}
+.pf-stone .why{grid-column:1 / -1; color:var(--body); font-size:.92rem}
 .pf-stone .care{grid-column:1 / -1; color:var(--muted); font-size:.8rem}
 
 .pf-links{display:flex; flex-wrap:wrap; gap:10px}

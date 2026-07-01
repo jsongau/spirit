@@ -4,7 +4,7 @@
    ============================================================ */
 
 .pn-bar{position:sticky; top:0; z-index:120; backdrop-filter:blur(10px);
-  background:linear-gradient(180deg, rgba(10,11,20,.94), rgba(10,11,20,.66));
+  background:var(--nav-bg);
   border-bottom:1px solid var(--line,#2a2c44)}
 .pn-inner{max-width:1140px; margin:0 auto; padding:16px 26px; display:flex; align-items:center; gap:26px}
 
@@ -28,7 +28,7 @@
 /* right-side tools */
 .pn-tools{display:flex; align-items:center; gap:12px; margin-left:auto}
 .pn-chip{display:inline-flex; align-items:center; gap:8px; padding:8px 13px; border-radius:999px;
-  border:1px solid var(--line,#2a2c44); background:rgba(21,23,40,.6); color:var(--ivory,#ece7d8);
+  border:1px solid var(--line,#2a2c44); background:var(--chip-bg); color:var(--ivory,#ece7d8);
   font:500 .82rem/1 var(--sans,sans-serif); text-decoration:none; white-space:nowrap; transition:border-color .18s, color .18s}
 .pn-chip:hover{border-color:var(--brass,#d6c18c); color:var(--moon,#f5ecd2)}
 .pn-chip .v{color:var(--brass-bright,#efe2b4)}
