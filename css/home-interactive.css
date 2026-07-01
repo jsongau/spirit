@@ -1,0 +1,113 @@
+/* ============================================================
+   home-interactive.css — styles unique to home.js widgets.
+   Scoped to the hooks home.js wires; safe to load even if a
+   given hook is absent (rules simply match nothing).
+   All motion is guarded behind prefers-reduced-motion.
+   Colors use existing tokens (tokens.css): --brass, --brass-bright,
+   --accent, --glow, --moon, --muted, --line, --panel.
+   ============================================================ */
+
+/* ---------- identity rail: sigil slot ---------- */
+#identity-sigil {
+  /* give the inlined sigil's custom props a resolvable home even if a
+     parent has not set them; tokens.css defines the real values at :root */
+  --accent: var(--brass, #d6c18c);
+  --accent-soft: var(--brass-bright, #efe2b4);
+  --glow: var(--amethyst, #6b5cc4);
+  display: block;
+  width: clamp(72px, 40%, 120px);
+  aspect-ratio: 1 / 1;
+  margin: 4px 0 10px;
+  line-height: 0;
+  color: var(--brass, #d6c18c); /* currentColor fallback for <img> sigils */
+}
+#identity-sigil svg,
+#identity-sigil img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* if the slot ever falls back to a bare glyph char */
+#identity-sigil:not(:has(svg)):not(:has(img)) {
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--brass-bright, #efe2b4);
+}
+
+/* ---------- identity name + pairing ---------- */
+#identity-name .id-animal {
+  font-family: var(--serif, Georgia, serif);
+  color: var(--moon, #f5ecd2);
+  display: block;
+}
+#identity-name .id-pairing {
+  display: block;
+  margin-top: 4px;
+  font-size: .82rem;
+  letter-spacing: .02em;
+  color: var(--muted, #adaec2);
+}
+
+/* lifecycle state hooks (Agent A owns the base card styling;
+   these only tune what home.js toggles) */
+#identity-card.is-invitation .id-pairing { display: none; }
+
+/* ---------- proverb band: the "back to today" link ---------- */
+#proverb-today {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: .82rem;
+  color: var(--brass-bright, #efe2b4);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+#proverb-today[hidden] { display: none; }
+
+/* proverb slot fade (JS sets opacity; keep the transition off for RM) */
+#proverb-slot { opacity: 1; }
+
+/* ---------- menagerie preview: hover lift + focus + "yours" ---------- */
+#menagerie-preview [data-slug],
+#menagerie-preview .peekCard,
+#menagerie-preview .menagerie-cell {
+  outline: none;
+}
+#menagerie-preview [data-slug]:focus-visible,
+#menagerie-preview .peekCard:focus-visible,
+#menagerie-preview .menagerie-cell:focus-visible {
+  outline: 2px solid var(--brass-bright, #efe2b4);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* the visitor's own cell glows */
+#menagerie-preview .is-yours {
+  box-shadow: 0 0 0 1px var(--brass, #d6c18c), 0 0 26px rgba(214, 193, 140, .28);
+  border-radius: 8px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #menagerie-preview .is-lifted {
+    transform: translateY(-4px);
+    transition: transform .28s var(--ease-out, ease), box-shadow .28s ease;
+  }
+  #proverb-slot { transition: opacity .32s ease; }
+  #menagerie-preview [data-slug],
+  #menagerie-preview .peekCard,
+  #menagerie-preview .menagerie-cell {
+    transition: transform .28s var(--ease-out, ease), box-shadow .28s ease;
+  }
+  #menagerie-preview .is-yours.is-lifted {
+    transform: translateY(-4px);
+  }
+}
+
+/* reduced motion: no lift transform, keep the glow (state, not motion) */
+@media (prefers-reduced-motion: reduce) {
+  #menagerie-preview .is-lifted { transform: none; }
+  #proverb-slot { transition: none; }
+}
