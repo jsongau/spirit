@@ -1,0 +1,95 @@
+/* ============================================================
+   THE PRIMAL ORACLE — moon page
+   Lunar practice: live phase, eight phases, charging, 2026 sky.
+   Builds on oracle.css variables. Does not edit oracle.css.
+   ============================================================ */
+
+/* ---- intro ---- */
+.moonIntro{padding:48px 0 14px; text-align:center}
+.moonIntro h1{color:var(--moon); margin:14px auto 12px; max-width:16ch}
+.moonIntro h1 em{font-style:italic; color:var(--brass)}
+.moonIntro .lede{margin:0 auto 8px}
+
+/* ---- live moon module ---- */
+.liveMoon{display:grid; grid-template-columns:auto 1fr; gap:34px; align-items:center;
+  background:linear-gradient(180deg,var(--panel),var(--ink2)); border:1px solid var(--line);
+  border-radius:20px; padding:34px; margin:26px 0 18px; box-shadow:0 30px 80px rgba(0,0,0,.45)}
+@media(max-width:640px){.liveMoon{grid-template-columns:1fr; text-align:center; justify-items:center; padding:28px 22px}}
+
+.moonStage{width:188px; height:188px; position:relative; flex:0 0 auto}
+.moonStage canvas{width:188px; height:188px; display:block; border-radius:50%;
+  box-shadow:0 0 70px rgba(245,236,210,.3)}
+
+.liveCopy .eyebrow{margin-bottom:10px}
+.liveCopy .phaseName{font-family:var(--serif); font-size:clamp(2rem,5vw,2.8rem); color:var(--moon); margin:2px 0 6px}
+.liveCopy .favors{font-family:var(--serif); font-style:italic; font-size:1.32rem; color:var(--brass-bright); margin:0 0 14px; max-width:40ch}
+.liveCopy .meta{display:flex; flex-wrap:wrap; gap:10px; margin:0}
+@media(max-width:640px){.liveCopy .meta{justify-content:center}}
+.liveCopy .chip{background:#0c0e1a; border:1px solid var(--line); color:var(--brass-bright);
+  padding:7px 14px; border-radius:999px; font-size:.82rem}
+.liveCopy .chip b{color:var(--moon); font-weight:600}
+
+/* ---- section scaffolding ---- */
+.moonBand{padding:54px 0; border-top:1px solid var(--line); margin-top:40px}
+.moonBand > .eyebrow{margin-bottom:8px}
+.moonBand h2{color:var(--moon); margin-bottom:10px}
+.moonBand .intro{max-width:66ch; margin:0 0 26px}
+
+/* ---- eight phases card set ---- */
+.phaseGrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px}
+.phaseCard{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px}
+.phaseCard .pico{width:42px; height:42px; margin-bottom:14px}
+.phaseCard h3{font-size:1.3rem; color:var(--brass-bright); margin-bottom:6px}
+.phaseCard .role{font-size:.72rem; text-transform:uppercase; letter-spacing:.18em; color:var(--brass); margin:0 0 8px}
+.phaseCard p{margin:0; font-size:.96rem; color:#cfcfe0}
+
+/* ---- charging crystals ---- */
+.chargeGrid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+@media(max-width:760px){.chargeGrid{grid-template-columns:1fr}}
+.chargeCard{background:var(--panel2); border:1px solid var(--line); border-radius:14px; padding:26px}
+.chargeCard h3{font-size:1.4rem; color:var(--moon); margin-bottom:10px}
+.chargeCard p{margin:0 0 12px}
+.chargeCard p:last-child{margin-bottom:0}
+.lunarList{list-style:none; margin:0 0 12px; padding:0; display:flex; flex-wrap:wrap; gap:10px}
+.lunarList li{background:#0c0e1a; border:1px solid var(--line); color:var(--brass-bright);
+  padding:8px 14px; border-radius:999px; font-size:.9rem}
+.safetyNote{margin-top:14px; border:1px solid rgba(201,138,166,.4); border-radius:12px;
+  padding:14px 16px; background:rgba(201,138,166,.07)}
+.safetyNote strong{color:var(--rose); font-family:var(--serif); font-size:1.05rem; display:block; margin-bottom:4px}
+.safetyNote p{margin:0; font-size:.92rem; color:#d8d8e6}
+.safetyNote .dryStones{margin:8px 0 0; color:var(--muted); font-size:.86rem}
+
+/* ---- 2026 sky tables ---- */
+.skyTable{width:100%; border-collapse:collapse; margin:0 0 14px;
+  background:var(--panel); border:1px solid var(--line); border-radius:14px; overflow:hidden}
+.skyTable caption{text-align:left; font-family:var(--serif); color:var(--brass-bright);
+  font-size:1.25rem; padding:6px 2px 14px}
+.skyTable th,.skyTable td{text-align:left; padding:13px 16px; border-bottom:1px solid var(--line); font-size:.92rem}
+.skyTable thead th{font-family:var(--sans); text-transform:uppercase; letter-spacing:.12em;
+  font-size:.68rem; color:var(--brass); font-weight:600}
+.skyTable tbody tr:last-child td{border-bottom:none}
+.skyTable td b{color:var(--moon); font-weight:600}
+.skyTable .total{color:var(--twin); font-weight:600}
+.tableScroll{overflow-x:auto; margin-bottom:6px}
+
+.moonNames{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin-top:6px}
+.nameCard{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px 18px}
+.nameCard .mon{font-size:.68rem; text-transform:uppercase; letter-spacing:.16em; color:var(--brass); margin:0 0 3px}
+.nameCard h4{font-family:var(--serif); color:var(--moon); font-size:1.18rem; margin:0 0 4px}
+.nameCard p{margin:0; font-size:.86rem; color:var(--muted)}
+
+/* ---- ritual ---- */
+.ritual{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:4px}
+.ritualStep{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:24px; position:relative}
+.ritualStep .num{font-family:var(--serif); font-size:2.2rem; color:var(--brass); line-height:1; opacity:.5}
+.ritualStep h3{font-size:1.25rem; color:var(--brass-bright); margin:8px 0 6px}
+.ritualStep p{margin:0; font-size:.96rem; color:#cfcfe0}
+
+/* ---- caveat + cta ---- */
+.caveat{max-width:70ch; margin:0; color:var(--muted); font-size:.94rem}
+.caveat b{color:var(--ivory); font-weight:600}
+
+.moonCta{text-align:center; padding:56px 0 10px; border-top:1px solid var(--line); margin-top:40px}
+.moonCta h2{color:var(--moon); margin-bottom:10px}
+.moonCta p{max-width:54ch; margin:0 auto 22px}
+.ctaRow{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}

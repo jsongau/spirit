@@ -1,0 +1,79 @@
+/* ============================================================
+   THE PRIMAL ORACLE — page-specific styles
+   For match.html and learn.html only. Reuses oracle.css tokens.
+   Does not redefine anything already in oracle.css.
+   ============================================================ */
+
+/* ---------- MATCH: result card ---------- */
+#matchResult{opacity:0; max-height:0; overflow:hidden; transition:opacity .6s ease}
+#matchResult.show{opacity:1; max-height:none; overflow:visible; margin-top:46px}
+
+.matchCard{background:linear-gradient(180deg,var(--panel),var(--ink2)); border:1px solid var(--line);
+  border-radius:18px; padding:34px 30px 30px; box-shadow:0 30px 80px rgba(0,0,0,.45)}
+
+/* the two animals */
+.matchHead{display:flex; align-items:center; justify-content:center; gap:26px; flex-wrap:wrap; margin-bottom:22px}
+.mAnimal{text-align:center; min-width:160px}
+.mLabel{display:block; font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-bottom:8px}
+.mGlyphRow{display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:6px}
+.mGlyph{font-family:var(--serif); font-size:1.9rem; color:var(--brass)}
+.mCn{font-size:1.5rem; color:var(--brass-bright); opacity:.85}
+.mPrimal{font-family:var(--serif); font-size:1.9rem; color:var(--moon); line-height:1.1}
+.mMeta{font-size:.82rem; color:var(--muted); letter-spacing:.06em; margin-top:4px; text-transform:uppercase}
+.matchHead .amp{color:var(--brass); font-family:var(--serif); font-size:1.8rem}
+
+/* big tier badge */
+.bigTier{font-size:1.25rem; padding:11px 26px; margin:6px auto 18px}
+
+/* score */
+.scoreRow{display:flex; align-items:baseline; justify-content:center; gap:8px; margin-top:4px}
+.scoreNum{font-family:var(--serif); font-size:clamp(3rem,9vw,4.6rem); color:var(--moon); line-height:1;
+  text-shadow:0 0 40px rgba(245,236,210,.25)}
+.scoreOf{font-family:var(--serif); font-size:1.3rem; color:var(--muted)}
+.scoreTrack{height:8px; max-width:420px; margin:14px auto 4px; background:#0c0e1a; border:1px solid var(--line);
+  border-radius:99px; overflow:hidden}
+.scoreTrack i{display:block; height:100%; background:linear-gradient(90deg,var(--violet),var(--brass)); transition:width .8s ease}
+
+.mSub{font-family:var(--serif); color:var(--brass-bright); font-size:1.35rem; text-align:center;
+  margin:30px 0 12px}
+
+/* guidance prose */
+.guidance{max-width:62ch; margin:0 auto 12px; font-family:var(--serif); font-style:italic;
+  font-size:1.18rem; line-height:1.6; color:var(--ivory); text-align:center}
+.guidance.honest{font-style:normal; font-family:var(--sans); font-size:.92rem; color:var(--muted)}
+.mDates{text-align:center; margin:0 auto 12px; font-size:.84rem; letter-spacing:.04em}
+
+/* ---------- MATCH: method + tier grids ---------- */
+.methodGrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px}
+.methodCard{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px}
+.methodCard h3{font-size:1.25rem; color:var(--brass-bright); margin-bottom:8px}
+.methodCard p{margin:0; font-size:.96rem}
+
+.tierGrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px}
+.tierCard{background:var(--panel2); border:1px solid var(--line); border-radius:14px; padding:24px}
+.tierCard .tierBadge{margin:0 0 12px}
+.tierCard p{margin:0; font-size:.96rem}
+.tierNote{max-width:64ch; margin:24px auto 0; text-align:center; font-size:.9rem}
+
+/* ---------- LEARN page ---------- */
+.learnHero{padding-bottom:8px}
+.learnBody{padding-top:46px}
+.learnBody .prose{max-width:72ch; margin:0 auto}
+.proseH2{font-family:var(--serif); color:var(--moon); font-size:clamp(1.6rem,3.4vw,2.2rem);
+  margin:42px 0 10px; line-height:1.15}
+.proseH2:first-child{margin-top:0}
+.learnBody .prose p{margin:0 0 16px; font-size:1.06rem}
+
+.gateList{margin:8px 0 18px; padding-left:1.3em; color:#cfcfe0}
+.gateList li{margin:0 0 10px; font-size:1.04rem; line-height:1.6}
+.gateList strong{color:var(--brass-bright); font-weight:600}
+
+/* ---------- CTA band ---------- */
+.ctaBand{text-align:center}
+.ctaBand .lede{text-align:center; margin-left:auto; margin-right:auto}
+.ctaRow{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:6px}
+
+@media(max-width:520px){
+  .matchHead{gap:14px}
+  .matchHead .amp{order:0}
+}

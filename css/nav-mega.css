@@ -1,0 +1,34 @@
+/* ============================================================
+   THE PRIMAL ORACLE — dropdown mega panel
+   Opens under the bar. Generous spacing, not cramped.
+   ============================================================ */
+
+.pn-dd{position:absolute; left:0; right:0; top:100%; z-index:119;
+  opacity:0; visibility:hidden; transform:translateY(-10px);
+  transition:opacity .2s ease, transform .22s ease, visibility .2s;
+  pointer-events:none}
+.pn-dd.open{opacity:1; visibility:visible; transform:none; pointer-events:auto}
+
+.pn-dd-mount{max-width:1140px; margin:0 auto; padding:0 26px 22px}
+.pn-dd-inner{background:linear-gradient(180deg,#161832,#0d0f1d);
+  border:1px solid var(--line,#2a2c44); border-radius:18px;
+  box-shadow:0 40px 90px rgba(0,0,0,.55);
+  padding:30px 34px 34px}
+
+.pn-dd-eyebrow{font:600 .7rem/1 var(--sans,sans-serif); letter-spacing:.3em; text-transform:uppercase;
+  color:var(--brass,#d6c18c); margin-bottom:22px}
+
+.pn-dd-cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px}
+
+.dd-card{display:block; text-decoration:none; padding:22px 24px; border-radius:14px;
+  border:1px solid rgba(214,193,140,.12); background:rgba(255,255,255,.015);
+  transition:border-color .18s ease, background .18s ease, transform .18s ease}
+.dd-card:hover{border-color:rgba(214,193,140,.42); background:rgba(214,193,140,.05); transform:translateY(-2px)}
+.dd-card .t{display:block; font-family:var(--serif,serif); font-size:1.4rem; color:var(--moon,#f5ecd2); line-height:1.15}
+.dd-card .d{display:block; margin-top:8px; font:400 .9rem/1.5 var(--sans,sans-serif); color:var(--muted,#9a9bb0)}
+.dd-card.active{border-color:rgba(214,193,140,.5)}
+.dd-card.active .t{color:var(--brass-bright,#efe2b4)}
+
+@media(prefers-reduced-motion:reduce){
+  .pn-dd,.dd-card{transition:none}
+}

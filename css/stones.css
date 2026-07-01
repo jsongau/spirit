@@ -1,0 +1,107 @@
+/* ============================================================
+   THE PRIMAL ORACLE — stones page
+   Layers on oracle.css. Reuses its tokens; never overrides them.
+   ============================================================ */
+
+/* ---- intro ---- */
+.stIntro{padding:40px 0 8px; max-width:62ch}
+.stIntro h1{color:var(--moon); margin:12px 0 14px}
+.stIntro h1 em{font-style:italic; color:var(--brass)}
+.stIntro .lede{margin:0; text-align:left}
+
+/* ---- keeper-stone finder ---- */
+.finder{margin:26px 0 8px}
+.finderCard{
+  background:linear-gradient(180deg,var(--panel),var(--ink2));
+  border:1px solid var(--line); border-radius:18px; padding:30px;
+  box-shadow:0 30px 80px rgba(0,0,0,.45)
+}
+.finderCard h3{font-size:1.5rem; color:var(--moon); margin-bottom:6px}
+.finderCard .field{max-width:560px}
+
+.keeperResult{margin-top:24px; border-top:1px solid var(--line); padding-top:22px;
+  animation:stRise .6s ease both}
+.keeperLine{font-family:var(--serif); font-size:1.28rem; font-style:italic;
+  color:var(--brass-bright); max-width:54ch; margin:0 0 18px}
+.keeperLine b{font-style:normal; color:var(--moon)}
+
+.chips{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px}
+.chip{background:#0c0e1a; border:1px solid var(--line); border-radius:13px; padding:15px 16px;
+  transition:border-color .2s ease, transform .2s ease}
+.chip:hover{border-color:var(--brass); transform:translateY(-2px)}
+.chipName{display:block; font-family:var(--serif); font-size:1.22rem; color:var(--moon); margin-bottom:4px}
+.chipMean{display:block; font-size:.88rem; color:#cfcfe0; line-height:1.5}
+
+.sunStone{display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 12px; margin:20px 0 4px;
+  background:linear-gradient(180deg,var(--panel2),var(--ink2)); border:1px solid var(--line);
+  border-radius:13px; padding:16px 18px}
+.sunLabel{font-family:var(--sans); text-transform:uppercase; letter-spacing:.22em; font-size:.68rem;
+  color:var(--brass); font-weight:600}
+.sunName{font-family:var(--serif); font-size:1.4rem; color:var(--moon)}
+.sunMean{flex:1 1 260px; font-size:.9rem; color:#cfcfe0}
+
+@keyframes stRise{from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none}}
+
+/* ---- library ---- */
+.grp{font-family:var(--serif); color:var(--brass-bright); font-size:1.5rem; margin:34px 0 4px}
+.grp:first-of-type{margin-top:18px}
+.grpNote{margin:6px 0 0; max-width:60ch}
+
+.libGrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; margin-top:14px}
+.libCard{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:20px 20px 22px;
+  transition:border-color .2s ease, transform .2s ease}
+.libCard:hover{border-color:var(--brass); transform:translateY(-2px)}
+.libCard h4{font-family:var(--serif); font-size:1.3rem; color:var(--moon); margin:0 0 7px}
+.libCard .ess{font-family:var(--serif); font-style:italic; color:var(--brass-bright); font-size:1.02rem; margin:0 0 9px}
+.libCard .use{margin:0; font-size:.9rem; color:#cfcfe0; line-height:1.55}
+
+/* ---- lunar keystones ---- */
+.lunarGrid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px}
+@media(max-width:720px){.lunarGrid{grid-template-columns:1fr}}
+.lunarCard{position:relative; overflow:hidden;
+  background:linear-gradient(180deg,var(--panel2),var(--ink2));
+  border:1px solid rgba(214,193,140,.32); border-radius:16px; padding:26px}
+.lunarGlow{position:absolute; top:-60px; right:-60px; width:180px; height:180px; border-radius:50%;
+  background:radial-gradient(circle, rgba(245,236,210,.22), transparent 70%); pointer-events:none}
+.lunarCard h4{font-family:var(--serif); font-size:1.55rem; color:var(--moon); margin:0 0 6px}
+.lunarCard .ess{font-family:var(--serif); font-style:italic; color:var(--brass-bright); font-size:1.12rem; margin:0 0 12px}
+.lunarCard .depth{margin:0; font-size:.96rem; color:#d8d8e6; line-height:1.62}
+
+/* ---- cleansing & charging ---- */
+.careGrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin:8px 0 22px}
+.careCard{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px}
+.careCard h4{font-family:var(--serif); font-size:1.32rem; color:var(--brass-bright); margin:0 0 10px}
+.careCard ul{margin:8px 0 0; padding-left:1.1em}
+.careCard li{margin:0 0 8px; font-size:.92rem; color:#cfcfe0; line-height:1.55}
+.careCard li b{color:var(--moon); font-weight:600}
+.careCard.danger{border-color:rgba(201,138,166,.4)}
+.careCard.danger h4{color:var(--rose)}
+
+.tagList{list-style:none; display:flex; flex-wrap:wrap; gap:8px; padding:0 !important; margin-top:12px !important}
+.tagList li{background:#0c0e1a; border:1px solid var(--line); color:var(--brass-bright);
+  padding:6px 13px; border-radius:999px; font-size:.84rem; margin:0 !important}
+.rule{font-size:.82rem; color:var(--muted); margin:14px 0 0; line-height:1.5}
+
+.rhythm{font-family:var(--serif); font-style:italic; font-size:1.3rem; color:var(--brass-bright);
+  max-width:58ch; margin:6px 0 18px}
+.careNote{font-size:.82rem; color:#7c7d92; max-width:70ch; margin:0;
+  border-left:2px solid var(--line); padding-left:14px}
+
+/* ---- birthstone honesty ---- */
+#birthstone .prose{max-width:68ch}
+#birthstone .prose p{margin:0 0 14px}
+
+/* ---- CTA ---- */
+.ctaBand{padding-top:48px}
+.ctaGrid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+@media(max-width:640px){.ctaGrid{grid-template-columns:1fr}}
+.ctaCard{display:block; background:linear-gradient(180deg,var(--panel2),var(--ink2));
+  border:1px solid var(--line); border-radius:16px; padding:28px;
+  transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease}
+.ctaCard:hover{border-color:var(--brass); transform:translateY(-3px); box-shadow:0 18px 44px rgba(0,0,0,.45)}
+.ctaIcon{display:block; font-size:1.8rem; color:var(--brass); margin-bottom:8px}
+.ctaCard h3{font-family:var(--serif); font-size:1.55rem; color:var(--moon); margin:0 0 8px}
+.ctaCard p{margin:0; font-size:.95rem; color:#cfcfe0}
+
+/* ---- nav current ---- */
+.top nav a[aria-current="page"]{color:var(--moon)}

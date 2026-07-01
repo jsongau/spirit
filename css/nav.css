@@ -1,0 +1,53 @@
+/* ============================================================
+   THE PRIMAL ORACLE — mega navigation
+   Injected on every page by nav.js. Uses oracle.css variables.
+   ============================================================ */
+
+.pn-bar{position:sticky; top:0; z-index:120; backdrop-filter:blur(10px);
+  background:linear-gradient(180deg, rgba(10,11,20,.92), rgba(10,11,20,.6));
+  border-bottom:1px solid var(--line,#2a2c44)}
+.pn-inner{max-width:1080px; margin:0 auto; padding:14px 22px; display:flex; align-items:center; gap:18px}
+.pn-brand{font-family:var(--serif,serif); font-size:1.3rem; letter-spacing:.5px; color:var(--moon,#f5ecd2); white-space:nowrap}
+.pn-brand b{color:var(--brass,#d6c18c)}
+.pn-links{display:flex; align-items:center; gap:4px; margin-left:auto; flex-wrap:wrap}
+.pn-links a{font:500 .86rem/1 var(--sans,sans-serif); color:var(--muted,#9a9bb0); padding:9px 13px;
+  border-radius:999px; letter-spacing:.02em; white-space:nowrap; transition:color .18s, background .18s}
+.pn-links a:hover{color:var(--moon,#f5ecd2); background:rgba(214,193,140,.08)}
+.pn-links a.active{color:var(--ink,#0a0b14); background:linear-gradient(180deg,var(--brass-bright,#efe2b4),var(--brass,#d6c18c))}
+.pn-explore{cursor:pointer; border:1px solid var(--line,#2a2c44); background:transparent;
+  color:var(--brass-bright,#efe2b4); padding:9px 15px; border-radius:999px; font:600 .86rem/1 var(--sans,sans-serif)}
+.pn-explore:hover{border-color:var(--brass,#d6c18c)}
+.pn-burger{display:none; margin-left:auto; background:transparent; border:1px solid var(--line,#2a2c44);
+  color:var(--moon,#f5ecd2); border-radius:10px; width:42px; height:38px; cursor:pointer; font-size:1.1rem}
+
+/* mega panel */
+.pn-mega{position:fixed; inset:0; z-index:130; display:none; background:rgba(5,6,12,.72); backdrop-filter:blur(4px)}
+.pn-mega.open{display:block; animation:pnFade .25s ease}
+@keyframes pnFade{from{opacity:0} to{opacity:1}}
+.pn-mega .sheet{max-width:1080px; margin:0 auto; background:linear-gradient(180deg,#14162a,#0c0e1a);
+  border:1px solid var(--line,#2a2c44); border-top:none; border-radius:0 0 20px 20px; padding:30px 26px 34px;
+  box-shadow:0 40px 90px rgba(0,0,0,.6); animation:pnDrop .3s cubic-bezier(.2,.8,.2,1)}
+@keyframes pnDrop{from{transform:translateY(-16px); opacity:.4} to{transform:none; opacity:1}}
+.pn-mega .top{display:flex; align-items:center; justify-content:space-between; margin-bottom:18px}
+.pn-mega .top .pn-brand{font-size:1.4rem}
+.pn-close{background:transparent; border:1px solid var(--line,#2a2c44); color:var(--moon,#f5ecd2);
+  border-radius:999px; padding:8px 16px; cursor:pointer; font:600 .82rem/1 var(--sans,sans-serif)}
+.pn-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px}
+@media(max-width:860px){.pn-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.pn-grid{grid-template-columns:1fr}}
+.pn-col h5{font:600 .7rem/1 var(--sans,sans-serif); letter-spacing:.28em; text-transform:uppercase;
+  color:var(--brass,#d6c18c); margin:0 0 12px}
+.pn-col a{display:block; text-decoration:none; padding:10px 0; border-top:1px solid rgba(214,193,140,.1)}
+.pn-col a .t{font-family:var(--serif,serif); font-size:1.12rem; color:var(--moon,#f5ecd2)}
+.pn-col a .d{font:400 .8rem/1.4 var(--sans,sans-serif); color:var(--muted,#9a9bb0)}
+.pn-col a:hover .t{color:var(--brass-bright,#efe2b4)}
+.pn-col a.active .t{color:var(--brass-bright,#efe2b4)}
+.pn-col a.active .t::after{content:" ·"; color:var(--brass,#d6c18c)}
+
+@media(max-width:760px){
+  .pn-links{display:none}
+  .pn-burger{display:block}
+}
+
+/* keep page content clear of the sticky bar when an in-page header also exists */
+body.pn-has-bar{scroll-padding-top:74px}

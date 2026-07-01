@@ -1,0 +1,120 @@
+/* ============================================================
+   THE PRIMAL ORACLE — mobile slide-in nav drawer
+   Reuses tokens from oracle.css (--ink, --panel, --line,
+   --brass, --brass-bright, --moon, --ivory, --muted,
+   --serif, --sans).
+   DOM: .pn-drawer > .drawer-sheet
+        .pn-dtop (brand + .pn-dclose)
+        .pn-dgroup > .pn-dhead(button) + .pn-dbody > a.pn-dlink
+        .pn-dtools (chip links)
+   ============================================================ */
+
+/* ---- backdrop ---- */
+.pn-drawer{
+  position:fixed; inset:0; z-index:140; display:none;
+  background:rgba(8,9,18,.62);
+  -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+}
+.pn-drawer.open{display:block}
+
+/* ---- sheet ---- */
+.drawer-sheet{
+  position:absolute; top:0; right:0; height:100%;
+  width:min(360px,88vw);
+  background:linear-gradient(180deg,var(--panel),var(--ink));
+  border-left:1px solid var(--line);
+  overflow-y:auto;
+  padding:18px 18px 40px;
+  box-shadow:-30px 0 80px rgba(0,0,0,.55);
+}
+.pn-drawer.open .drawer-sheet{
+  animation:pnDrawerIn .32s cubic-bezier(.22,.61,.36,1) both;
+}
+@keyframes pnDrawerIn{
+  from{transform:translateX(100%)}
+  to{transform:translateX(0)}
+}
+
+/* ---- top: brand + close ---- */
+.pn-dtop{
+  display:flex; align-items:center; justify-content:space-between;
+  margin-bottom:14px;
+}
+.pn-dtop .brand,
+.pn-dtop > .pn-dbrand{
+  font-family:var(--serif); font-size:1.3rem; letter-spacing:.5px;
+  color:var(--moon);
+}
+.pn-dclose{
+  appearance:none; cursor:pointer;
+  background:transparent;
+  border:1px solid var(--line); border-radius:999px;
+  color:var(--moon);
+  font-family:var(--sans); font-size:.82rem; line-height:1;
+  padding:8px 14px;
+  transition:border-color .2s ease, color .2s ease;
+}
+.pn-dclose:hover{border-color:var(--brass); color:var(--brass-bright)}
+
+/* ---- accordion group ---- */
+.pn-dgroup{border-top:1px solid var(--line)}
+
+.pn-dhead{
+  appearance:none; cursor:pointer;
+  width:100%;
+  background:transparent; border:none;
+  text-align:left;
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  font-family:var(--serif); font-size:1.15rem; color:var(--moon);
+  padding:14px 2px;
+}
+.pn-dhead:hover{color:var(--brass-bright)}
+
+.pn-dhead .chev{
+  flex:0 0 auto;
+  color:var(--brass);
+  font-size:.8rem; line-height:1;
+  transition:transform .28s ease;
+}
+.pn-dgroup.open .pn-dhead .chev{transform:rotate(180deg)}
+
+/* ---- accordion body ---- */
+.pn-dbody{
+  max-height:0; overflow:hidden;
+  transition:max-height .34s ease;
+}
+.pn-dgroup.open .pn-dbody{max-height:1200px}
+
+/* ---- links ---- */
+.pn-dlink{
+  display:block; text-decoration:none;
+  padding:9px 6px;
+  color:var(--ivory);
+  transition:color .18s ease;
+}
+.pn-dlink:hover{color:var(--brass-bright)}
+.pn-dlink.active{color:var(--brass-bright)}
+
+.pn-dlink .d{
+  display:block;
+  font-family:var(--sans); font-size:.78rem;
+  color:var(--muted); letter-spacing:.02em;
+  margin-top:2px;
+}
+
+/* ---- bottom chip tools ---- */
+.pn-dtools{
+  display:flex; flex-wrap:wrap; gap:10px;
+  margin-top:22px; padding-top:18px;
+  border-top:1px solid var(--line);
+}
+.pn-dtools a{
+  text-decoration:none;
+  background:#0c0e1a;
+  border:1px solid var(--line); border-radius:999px;
+  color:var(--brass-bright);
+  font-family:var(--sans); font-size:.84rem; letter-spacing:.02em;
+  padding:8px 14px;
+  transition:border-color .2s ease, color .2s ease;
+}
+.pn-dtools a:hover{border-color:var(--brass); color:var(--moon)}

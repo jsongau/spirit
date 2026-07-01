@@ -1,0 +1,49 @@
+/* ============================================================
+   THE PRIMAL ORACLE — animal.html page styles
+   Page-specific only. The design system lives in oracle.css;
+   this file reuses its variables, .btn, .card, .gate, .gates,
+   .stoneList, .eyebrow, .wrap, .duo, .shareBox.
+   ============================================================ */
+
+/* ---- date-form fallback (mirrors .reader spacing) ---- */
+.animalForm{margin:60px auto}
+
+/* ---- hero ---- */
+.aHero{padding:54px 0 20px; text-align:center}
+.aHero .eyebrow{display:block; margin-bottom:18px}
+
+.halves{display:flex; align-items:center; justify-content:center; gap:clamp(18px,5vw,54px); margin:6px 0 26px; flex-wrap:wrap}
+.halves .half{display:flex; flex-direction:column; align-items:center; gap:6px; min-width:120px}
+.halves .mark{font-family:var(--serif); font-size:clamp(3rem,9vw,4.6rem); line-height:1;
+  color:var(--moon); text-shadow:0 0 40px rgba(245,236,210,.25)}
+.halves .mark.glyph{color:var(--brass)}
+.halves .halfName{font-family:var(--serif); font-size:1.5rem; color:var(--ivory); letter-spacing:.3px}
+.halves .halfSub{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted)}
+.halves .amp{font-family:var(--serif); font-size:2.2rem; color:var(--brass); opacity:.8; align-self:center}
+
+.bigName{font-size:clamp(3rem,11vw,7rem); color:var(--moon); margin:6px 0 10px;
+  text-shadow:0 0 50px rgba(245,236,210,.25); animation:rise .9s ease both}
+.aHero .essence{font-family:var(--serif); font-style:italic; font-size:1.5rem; color:var(--brass-bright);
+  max-width:34ch; margin:0 auto}
+
+/* ---- section rhythm ---- */
+.aSection{padding:48px 0 0; border-top:1px solid var(--line); margin-top:54px}
+.aSection > .eyebrow{display:block; margin-bottom:8px}
+.aSection h2{color:var(--moon); margin-bottom:10px}
+.aSection .lede{text-align:left; margin:0 0 24px}
+.aSection .gates{margin-top:8px}
+
+/* ---- match lines ---- */
+.matchLines{list-style:none; margin:0; padding:0; display:grid; gap:10px; max-width:64ch}
+.matchLines li{display:flex; gap:16px; align-items:baseline; flex-wrap:wrap;
+  background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px 18px}
+.matchLines .lab{font-family:var(--serif); color:var(--brass-bright); font-size:1.12rem;
+  flex:0 0 150px; letter-spacing:.3px}
+.matchLines .bod{color:#cfcfe0; font-size:.96rem; flex:1 1 220px}
+
+@media(max-width:560px){
+  .matchLines .lab{flex-basis:100%}
+}
+
+/* ---- share message ---- */
+#shareSection .msg{margin-top:12px}

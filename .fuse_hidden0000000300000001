@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Primal Oracle: find your Primal Animal from Chinese and Western zodiac</title>
+<meta name="description" content="Enter your date of birth to find your Primal Animal, the single creature where your Chinese zodiac year and Western Sun sign meet. Read your five gates, get your stones, and test a match.">
+<meta property="og:title" content="The Primal Oracle: find your Primal Animal">
+<meta property="og:description" content="Your Chinese year animal and your Western Sun sign combine into one Primal Animal out of 144. Find yours, read it, and see who you match.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/oracle.css">
+<link rel="stylesheet" href="css/reveal.css">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What is a Primal Animal?","acceptedAnswer":{"@type":"Answer","text":"A Primal Animal is the single creature you get when you combine your Western Sun sign with your Chinese zodiac year. There are 144 combinations, and each one has its own animal. Cancer combined with the Year of the Snake, for example, is the Snail."}},
+    {"@type":"Question","name":"How do I find my Primal Animal?","acceptedAnswer":{"@type":"Answer","text":"Enter your date of birth. The Oracle reads your Sun sign from the month and day, your Chinese year animal from the year and the lunar New Year date, and crosses them on the 144 grid to name your animal."}},
+    {"@type":"Question","name":"Is this fortune telling or science?","acceptedAnswer":{"@type":"Answer","text":"The animal grid and the readings are a tradition of meaning, not a science of prediction. The Moon phase and astronomy used here are real and checkable. Use the reading as a mirror, not a forecast."}}
+  ]
+}
+</script>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <nav>
+      <a href="#read">Find your animal</a>
+      <a href="menagerie.html">All 144 animals</a>
+      <a href="match.html">Test a match</a>
+      <a href="learn.html">How it works</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="eyebrow">Two skies, one animal</p>
+    <h1>You were born under <em>two zodiacs</em>. Meet the animal where they cross.</h1>
+    <p class="lede">Your Western Sun sign reads your daylight self. Your Chinese year animal reads your instinct. Cross them and you get one of 144 Primal Animals. Find yours, read where you stand, and see who you match.</p>
+
+    <div class="wheel" aria-hidden="true">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="ring r3"></div>
+      <div class="glyphs">
+        <span style="transform:rotate(0deg) translateY(-168px)">♈</span>
+        <span style="transform:rotate(30deg) translateY(-168px)">♉</span>
+        <span style="transform:rotate(60deg) translateY(-168px)">♊</span>
+        <span style="transform:rotate(90deg) translateY(-168px)">♋</span>
+        <span style="transform:rotate(120deg) translateY(-168px)">♌</span>
+        <span style="transform:rotate(150deg) translateY(-168px)">♍</span>
+        <span style="transform:rotate(180deg) translateY(-168px)">♎</span>
+        <span style="transform:rotate(210deg) translateY(-168px)">♏</span>
+        <span style="transform:rotate(240deg) translateY(-168px)">♐</span>
+        <span style="transform:rotate(270deg) translateY(-168px)">♑</span>
+        <span style="transform:rotate(300deg) translateY(-168px)">♒</span>
+        <span style="transform:rotate(330deg) translateY(-168px)">♓</span>
+      </div>
+      <div class="core"><div class="moonball"></div></div>
+    </div>
+
+    <!-- READER FORM -->
+    <div class="reader" id="read">
+      <h3>Read the wheel</h3>
+      <p class="dim">Enter your date of birth. Nothing is sent anywhere; the reading is drawn in your browser.</p>
+      <form id="birthForm">
+        <div class="field">
+          <input type="date" id="birthDate" required min="1940-01-01" max="2032-12-31" aria-label="Date of birth">
+          <button class="btn" type="submit">Reveal my animal</button>
+        </div>
+        <p class="msg" id="formMsg"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <div id="resultWrap">
+    <div class="reveal">
+      <div class="cross" id="cross"></div>
+      <h2 class="big" id="animalName">✦</h2>
+      <p class="essence" id="animalEssence"></p>
+      <p class="mt"><a class="btn ghost" id="animalLink" href="#">Open my full animal page</a></p>
+    </div>
+
+    <div class="gates" id="gates"></div>
+
+    <div class="duo" id="stonesSection">
+      <div class="card">
+        <h3>Your keeper stones</h3>
+        <ul class="stoneList" id="stones"></ul>
+        <p class="hint">Charge them on the full moon. Carry the one that calls loudest.</p>
+      </div>
+      <div class="card">
+        <h3>The Moon tonight</h3>
+        <p id="moonNow"></p>
+      </div>
+    </div>
+
+    <!-- SHARE -->
+    <div class="card" id="shareSection">
+      <h3>Pass the Oracle onward</h3>
+      <p class="dim">Send your animal to someone and wonder out loud whether you match.</p>
+      <div class="shareBox">
+        <input id="shareLine" readonly aria-label="Share text">
+        <button class="btn" id="shareBtn" type="button">Share my animal</button>
+        <button class="btn ghost" id="copyBtn" type="button">Copy</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPATIBILITY -->
+  <section class="band" id="matchSection">
+    <p class="eyebrow">Two animals, one wheel</p>
+    <h2>Test a match</h2>
+    <p class="lede">Enter two dates of birth. The Oracle scores the pair across the Chinese trines, secret friends, clashes, and harms, then across the Western elements, and names the bond.</p>
+    <form id="matchForm">
+      <div class="matchGrid">
+        <div><label for="mDateA">First person</label><input type="date" id="mDateA" required min="1940-01-01" max="2032-12-31"></div>
+        <div><label for="mDateB">Second person</label><input type="date" id="mDateB" required min="1940-01-01" max="2032-12-31"></div>
+        <button class="btn" type="submit">Test the match</button>
+      </div>
+    </form>
+    <div id="matchResult"></div>
+  </section>
+
+  <!-- EMAIL -->
+  <section class="band">
+    <p class="eyebrow">Moon notes</p>
+    <h2>Get a note each new moon</h2>
+    <p class="lede">One short message at each new moon: the phase, what it favors, and a single practice for your animal. No more than the Moon sends.</p>
+    <form id="mailForm">
+      <div class="field" style="max-width:520px">
+        <input type="email" id="email" placeholder="you@email.com" aria-label="Email address">
+        <button class="btn" type="submit">Join the moon notes</button>
+      </div>
+      <p class="msg" id="mailMsg" style="color:var(--brass-bright)"></p>
+    </form>
+  </section>
+
+  <!-- SEO / EXPLAINER -->
+  <section class="band" id="learn">
+    <div class="prose">
+      <p class="eyebrow">How it works</p>
+      <h2>From two zodiacs to one animal</h2>
+      <p>The Western zodiac follows the Sun across the year and gives you a Sun sign. The Chinese zodiac follows a twelve year cycle counted by the lunar calendar and gives you a year animal. Most people only ever learn one half. The Primal Animal is what you get when you put the two halves together.</p>
+      <p>There are twelve Sun signs and twelve year animals, so there are 144 possible combinations. Each one is named for a single creature. A Cancer born in the Year of the Snake is a Snail. An Aries born in the Year of the Dragon is a Tyrannosaurus Rex. The animal is not a blend you have to interpret. It is the shape the two forces settle into once they stop pulling against each other.</p>
+
+      <h3>What the reading gives you</h3>
+      <p>Each reading answers five questions in order: where you stand now, what you need soon, how to plan the near season, what to be aware of, and what your highest form looks like. The last one matters most. Every animal has a version ruled by its fear and a version that has turned that fear into strength. The reading points you toward the second one.</p>
+
+      <h3>Why the Moon runs through all of it</h3>
+      <p>Cancer is ruled by the Moon. The Chinese year begins on a new moon. The reading times your next moves to the Moon overhead, because a tide you can read is a tide you can move with. Your stones are charged by moonlight. The Moon is the thread that ties the two skies together.</p>
+
+      <dl class="faq">
+        <dt>What is a Primal Animal?</dt>
+        <dd>The single creature you get when you combine your Western Sun sign with your Chinese zodiac year. There are 144, and each has its own reading.</dd>
+        <dt>How accurate is the year animal?</dt>
+        <dd>The Chinese year starts at the lunar New Year, not January 1, so a birthday in January or early February may belong to the previous animal. The Oracle accounts for the New Year date for every year from 1940 to 2032.</dd>
+        <dt>Is this prediction or meaning?</dt>
+        <dd>The animal grid and the readings are a tradition of meaning, not a forecast. The Moon phase and astronomy are real and checkable. Read the result as a mirror you can act on.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <footer>
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <p>Find your Primal Animal, read where you stand, and see who you match. Built on the fusion of the Chinese and Western zodiacs.</p>
+    <p class="disclaimer">This is a tradition of meaning for reflection and entertainment. It is not medical, psychological, financial, or legal advice. The Primal Animal framework is adapted from the Primal Zodiac tradition. Stones and lunar practices are presented as cultural tradition, not as treatment.</p>
+  </footer>
+
+</div>
+
+<!-- THIRD EYE HUD -->
+<aside class="eyeHud" aria-label="Your awakening">
+  <div class="eye"><span class="iris"></span><span class="lid" id="eyeLid"></span></div>
+  <div class="meta">
+    <div class="lab" id="eyeLabel">Sleeper · 0%</div>
+    <div class="desc" id="eyeDesc">The eye is closed. The animal is still a rumor.</div>
+    <div class="track"><i id="eyeBar"></i></div>
+  </div>
+  <ul class="rites">
+    <li class="rite" data-rite="revealed">Name your animal</li>
+    <li class="rite" data-rite="read">Read your five gates</li>
+    <li class="rite" data-rite="stones">Receive your stones</li>
+    <li class="rite" data-rite="match">Test a match</li>
+    <li class="rite" data-rite="shared">Pass the Oracle onward</li>
+    <li class="rite" data-rite="returned">Return on a new day</li>
+  </ul>
+  <div class="streakRow">Return streak: <strong id="streak">1 day</strong></div>
+</aside>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
