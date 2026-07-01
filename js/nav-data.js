@@ -31,3 +31,136 @@ PNAV.MAP = [
 ];
 
 PNAV.FEATURED = { href: "/circle.html", title: "Read your circle of three", blurb: "Compare two friends one to one, then read the whole group." };
+
+/* Canonical origin for absolute URLs (breadcrumb JSON-LD, etc.).
+   One constant here; Phase 6 unifies every origin across the build. */
+PNAV.ORIGIN = "https://spirit-omega.vercel.app";
+
+/* Per-hub sub-navigation + breadcrumb source of truth.
+   Keyed by the section's first path segment. Each hub:
+     label  human breadcrumb text for the hub root crumb
+     root   the hub landing URL (crumb 2 links here)
+     items  sibling links for the sub-nav row, in display order.
+            The item whose href matches the current page is marked
+            aria-current="page". An empty items[] suppresses the sub-nav
+            row and emits only the breadcrumb.
+   The build (apply-nav.mjs) reads this to inject the pn-sub bar and the
+   BreadcrumbList JSON-LD, so the visible trail and the schema never drift.
+   Copy rule: no arrows, no dashes in any label. */
+PNAV.HUBS = {
+  "western-zodiac": {
+    label: "Western Zodiac", root: "/western-zodiac/",
+    items: [
+      ["/western-zodiac/", "Overview"],
+      ["/western-zodiac/aries/", "Aries"],
+      ["/western-zodiac/taurus/", "Taurus"],
+      ["/western-zodiac/gemini/", "Gemini"],
+      ["/western-zodiac/cancer/", "Cancer"],
+      ["/western-zodiac/leo/", "Leo"],
+      ["/western-zodiac/virgo/", "Virgo"],
+      ["/western-zodiac/libra/", "Libra"],
+      ["/western-zodiac/scorpio/", "Scorpio"],
+      ["/western-zodiac/sagittarius/", "Sagittarius"],
+      ["/western-zodiac/capricorn/", "Capricorn"],
+      ["/western-zodiac/aquarius/", "Aquarius"],
+      ["/western-zodiac/pisces/", "Pisces"]
+    ]
+  },
+  "chinese-zodiac": {
+    label: "Chinese Zodiac", root: "/chinese-zodiac/",
+    items: [
+      ["/chinese-zodiac/", "Overview"],
+      ["/chinese-zodiac/rat/", "Rat"],
+      ["/chinese-zodiac/ox/", "Ox"],
+      ["/chinese-zodiac/tiger/", "Tiger"],
+      ["/chinese-zodiac/rabbit/", "Rabbit"],
+      ["/chinese-zodiac/dragon/", "Dragon"],
+      ["/chinese-zodiac/snake/", "Snake"],
+      ["/chinese-zodiac/horse/", "Horse"],
+      ["/chinese-zodiac/goat/", "Goat"],
+      ["/chinese-zodiac/monkey/", "Monkey"],
+      ["/chinese-zodiac/rooster/", "Rooster"],
+      ["/chinese-zodiac/dog/", "Dog"],
+      ["/chinese-zodiac/pig/", "Pig"]
+    ]
+  },
+  "horoscopes": {
+    label: "Horoscopes", root: "/horoscopes/",
+    items: [
+      ["/horoscopes/", "Overview"],
+      ["/daily.html", "Today"],
+      ["/best-days.html", "Best days"],
+      ["/moon.html", "The Moon"]
+    ]
+  },
+  "proverbs": {
+    label: "Proverbs", root: "/proverbs/",
+    items: [
+      ["/proverbs/", "Overview"]
+    ]
+  },
+  "feng-shui": {
+    label: "Feng Shui", root: "/feng-shui/",
+    items: [
+      ["/feng-shui/", "Overview"],
+      ["/feng-shui/five-elements/", "Five phases"],
+      ["/feng-shui/yin-yang/", "Yin and yang"],
+      ["/feng-shui/bagua/", "Bagua"],
+      ["/feng-shui/eight-directions/", "Eight directions"],
+      ["/feng-shui/compass/", "Compass"],
+      ["/feng-shui/schools/", "Schools"],
+      ["/feng-shui/flying-stars/", "Flying stars"],
+      ["/feng-shui/kua-number/", "Kua number"],
+      ["/feng-shui/lineage/", "Lineage"],
+      ["/feng-shui/your-animal/", "Your animal"],
+      ["/feng-shui/bedroom/", "Bedroom"],
+      ["/feng-shui/front-door/", "Front door"],
+      ["/feng-shui/colors/", "Colors"],
+      ["/feng-shui/office-desk/", "Office and desk"],
+      ["/feng-shui/wealth-corner/", "Wealth corner"]
+    ]
+  },
+  "directions": {
+    label: "The Directions", root: "/directions/",
+    items: [
+      ["/directions/", "Overview"],
+      ["/directions/celestial-animals/", "Celestial animals"],
+      ["/directions/commanding-position/", "Commanding position"]
+    ]
+  },
+  "cosmology": {
+    label: "Cosmology", root: "/cosmology/",
+    items: [
+      ["/cosmology/", "Overview"],
+      ["/cosmology/yijing/", "Yijing"],
+      ["/cosmology/stems-and-branches/", "Stems and branches"],
+      ["/cosmology/four-pillars/", "Four Pillars"],
+      ["/cosmology/luoshu/", "Luo Shu"]
+    ]
+  },
+  "elements": {
+    label: "The Elements", root: "/elements/fire/",
+    items: [
+      ["/elements/fire/", "Fire"],
+      ["/elements/earth/", "Earth"],
+      ["/elements/air/", "Air"],
+      ["/elements/water/", "Water"]
+    ]
+  },
+  "moon": {
+    label: "The Moon", root: "/moon.html",
+    items: [
+      ["/moon.html", "Tonight"],
+      ["/moon/phases/", "The eight phases"],
+      ["/moon/phases/new-moon/", "New"],
+      ["/moon/phases/waxing-crescent/", "Waxing crescent"],
+      ["/moon/phases/first-quarter/", "First quarter"],
+      ["/moon/phases/waxing-gibbous/", "Waxing gibbous"],
+      ["/moon/phases/full-moon/", "Full"],
+      ["/moon/phases/waning-gibbous/", "Waning gibbous"],
+      ["/moon/phases/last-quarter/", "Last quarter"],
+      ["/moon/phases/waning-crescent/", "Waning crescent"],
+      ["/best-days.html", "Best days"]
+    ]
+  }
+};

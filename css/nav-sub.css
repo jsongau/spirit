@@ -1,0 +1,206 @@
+/* ============================================================
+   nav-sub.css  —  Zodianimal.com sub-head bar (Phase 2)
+   ------------------------------------------------------------
+   Styles the build-injected `<nav class="pn-sub">` band that Agent B
+   emits directly beneath the fixed top bar `.pn-bar`. It carries two
+   rows generated from PNAV.HUBS:
+
+     row 1  <ol class="pn-crumb">   breadcrumb trail, slash-separated
+     row 2  <ul class="pn-subnav">  sibling links, horizontal scroller
+
+   Markup contract (do not restyle away from it):
+     <nav class="pn-sub" aria-label="Section">
+       <ol class="pn-crumb"> <li><a href>..</a></li> ... <li aria-current="page">Leaf</li> </ol>
+       <ul class="pn-subnav"> <li><a href>..</a></li> ... <li><a href aria-current="page">..</a></li> </ul>
+     </nav>
+
+   All color/space/motion reads design tokens from tokens.css. No hex.
+   The breadcrumb separator is a literal forward slash, injected via CSS.
+   ============================================================ */
+
+/* Height the fixed top bar occupies. The sub bar tucks directly beneath
+   it. .pn-bar is padding 16px + ~1 line of content ≈ 62px; body sets
+   scroll-padding-top:82px. Keep one knob so both stay in sync. */
+:root {
+  --pn-bar-h: 62px;
+  --pn-sub-focus: var(--brass-bright, #efe2b4);
+}
+
+/* ---- The band ---------------------------------------------------- */
+.pn-sub {
+  /* full-width band under the top bar */
+  position: sticky;
+  top: var(--pn-bar-h);
+  z-index: 110; /* below .pn-bar (120), above page content */
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2, .5rem);
+  padding: var(--s-3, .75rem) 0 var(--s-2, .5rem);
+  background: color-mix(in oklch, var(--ink, #0d0e18) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line, rgba(214,193,140,.16));
+  font-family: var(--sans, sans-serif);
+}
+
+/* keep the two rows on the same measure/padding as the top bar inner */
+.pn-crumb,
+.pn-subnav {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: clamp(1.25rem, 4vw, 1.625rem);
+  box-sizing: border-box;
+}
+
+/* ---- Row 1: breadcrumb ------------------------------------------- */
+.pn-crumb {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2, .5rem);
+  font-size: .8125rem;
+  letter-spacing: .01em;
+  color: var(--muted, #adaec2);
+}
+
+.pn-crumb li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2, .5rem);
+  min-width: 0;
+}
+
+/* literal forward-slash separator between crumbs (never a dash or arrow) */
+.pn-crumb li + li::before {
+  content: "/";
+  color: var(--faint, #7f8096);
+  font-size: .8em;
+  line-height: 1;
+  opacity: .7;
+}
+
+.pn-crumb a {
+  color: var(--muted, #adaec2);
+  text-decoration: none;
+  border-radius: var(--r-1, 8px);
+  transition: color var(--dur-fast, 180ms) var(--ease-out, ease);
+}
+.pn-crumb a:hover {
+  color: var(--moon, #f6efd8);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--accent, #d6c18c);
+}
+
+/* the current page: not a link, a stronger token color */
+.pn-crumb [aria-current="page"] {
+  color: var(--ivory, #ece7d8);
+  font-weight: 500;
+  /* let a long final crumb truncate rather than push the row */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---- Row 2: sibling sub-nav scroller ----------------------------- */
+.pn-subnav {
+  list-style: none;
+  display: flex;
+  align-items: stretch;
+  gap: var(--s-1, .25rem);
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  /* soft edge fades so cut-off items read as "more to scroll" */
+  --pn-fade: 24px;
+  -webkit-mask-image: linear-gradient(
+    to right, transparent 0, #000 var(--pn-fade),
+    #000 calc(100% - var(--pn-fade)), transparent 100%);
+  mask-image: linear-gradient(
+    to right, transparent 0, #000 var(--pn-fade),
+    #000 calc(100% - var(--pn-fade)), transparent 100%);
+}
+.pn-subnav::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+.pn-subnav li {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.pn-subnav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* touch target */
+  padding: var(--s-2, .5rem) var(--s-4, 1rem);
+  border-radius: var(--r-pill, 999px);
+  font-size: .84rem;
+  line-height: 1;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  color: var(--muted, #adaec2);
+  text-decoration: none;
+  background: transparent;
+  transition: color var(--dur-fast, 180ms) var(--ease-out, ease),
+              background var(--dur-fast, 180ms) var(--ease-out, ease);
+}
+.pn-subnav a:hover {
+  color: var(--moon, #f6efd8);
+  background: var(--accent-soft, rgba(214,193,140,.16));
+}
+
+/* the current sibling, clearly marked */
+.pn-subnav [aria-current="page"] {
+  color: var(--ink, #0d0e18);
+  background: var(--accent, #d6c18c);
+  font-weight: 600;
+}
+.pn-subnav [aria-current="page"]:hover {
+  color: var(--ink, #0d0e18);
+  background: var(--accent-bright, #efe2b4);
+}
+
+/* visible focus for keyboard users on both rows (no outline removal) */
+.pn-crumb a:focus-visible,
+.pn-subnav a:focus-visible {
+  outline: 2px solid var(--pn-sub-focus);
+  outline-offset: 2px;
+  border-radius: var(--r-1, 8px);
+}
+
+/* ---- Responsive collapse ----------------------------------------- */
+@media (max-width: 640px) {
+  .pn-sub {
+    /* on mobile the top bar wraps taller; nudge the sticky offset */
+    --pn-bar-h: 58px;
+    gap: var(--s-1, .25rem);
+    padding-top: var(--s-2, .5rem);
+  }
+  .pn-crumb {
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  /* keep Home and the current page visible; truncate a long middle crumb */
+  .pn-crumb li:not(:first-child):not(:last-child) a {
+    max-width: 8ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .pn-subnav a {
+    padding-inline: var(--s-3, .75rem);
+  }
+}
+
+/* ---- Reduced motion: no scroll animation, no transitions --------- */
+@media (prefers-reduced-motion: reduce) {
+  .pn-subnav {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+  }
+  .pn-crumb a,
+  .pn-subnav a {
+    transition: none;
+  }
+}
