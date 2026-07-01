@@ -1,34 +1,285 @@
 /* ============================================================
-   THE PRIMAL ORACLE — dropdown mega panel
-   Opens under the bar. Generous spacing, not cramped.
+   nav-mega.css  —  Zodianimal.com card-free glyph mega-nav
+   ------------------------------------------------------------
+   Phase 3. The bar hosts seven typographic groups. Each group's
+   panel is a single wide almanac sheet that drops under the bar:
+   no cards, no boxes, no shadows on rows. Hierarchy comes only
+   from the type scale (serif name over muted sub-label) and the
+   brass hairlines (--line). Each row is anchored by an inline SVG
+   glyph that inherits currentColor and the row's hover state.
+
+   Markup contract (pre-rendered by build/apply-nav.mjs, Agent A):
+     header.pn-bar > .pn-inner > nav.pn-nav
+       .pn-item > button.pn-trigger[data-group][aria-haspopup][aria-expanded]
+       .pn-tools > .pn-orb[data-orb]           (hidden; Phase 5 fills it)
+     .pn-panel[data-group][data-accent] hidden
+       .pn-panel-eyebrow
+       .pn-cols > .pn-col > (.pn-col-title)
+         a.pn-row > span.pn-glyph>svg + span.pn-row-name + span.pn-row-sub
+       .pn-panel-foot
+     nav.pn-crawl  (hidden flat mirror, no-JS routing fallback)
+
+   Panels are shown by nav.js via a `.open` class (hidden removed).
+   All tokens come from tokens.css; no hard-coded hex here. Copy in
+   ::before/::after content never uses arrows or dashes.
    ============================================================ */
 
-.pn-dd{position:absolute; left:0; right:0; top:100%; z-index:119;
-  opacity:0; visibility:hidden; transform:translateY(-10px);
-  transition:opacity .2s ease, transform .22s ease, visibility .2s;
-  pointer-events:none}
-.pn-dd.open{opacity:1; visibility:visible; transform:none; pointer-events:auto}
+/* ------------------------------------------------------------
+   1. Trigger bar (7 groups). Serif-adjacent, quiet chrome that
+   recedes. Reuses .pn-trigger geometry from nav-core.css; here
+   we only refine the open state, focus ring, and touch target.
+   ------------------------------------------------------------ */
+.pn-item { position: relative; }
 
-.pn-dd-mount{max-width:1140px; margin:0 auto; padding:0 26px 22px}
-.pn-dd-inner{background:linear-gradient(180deg,var(--dd-bg1),var(--dd-bg2));
-  border:1px solid var(--line,#2a2c44); border-radius:18px;
-  box-shadow:0 40px 90px rgba(0,0,0,.55);
-  padding:30px 34px 34px}
+.pn-trigger {
+  min-height: 44px;                 /* touch target */
+  color: var(--muted);
+  transition: color var(--dur-fast) var(--ease-io),
+              background var(--dur-fast) var(--ease-io);
+}
+.pn-trigger:hover { color: var(--moon); background: var(--accent-soft); }
 
-.pn-dd-eyebrow{font:600 .7rem/1 var(--sans,sans-serif); letter-spacing:.3em; text-transform:uppercase;
-  color:var(--brass,#d6c18c); margin-bottom:22px}
+/* the open group takes the domain accent so the bar echoes the panel */
+.pn-trigger[aria-expanded="true"] { color: var(--accent-bright); background: var(--accent-soft); }
+.pn-trigger[aria-expanded="true"] .chev { transform: rotate(-135deg) translateY(1px); }
 
-.pn-dd-cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px}
+/* visible keyboard focus, brass-bright, never removed */
+.pn-trigger:focus-visible,
+.pn-row:focus-visible {
+  outline: 2px solid var(--brass-bright);
+  outline-offset: 2px;
+  border-radius: var(--r-1);
+}
 
-.dd-card{display:block; text-decoration:none; padding:22px 24px; border-radius:14px;
-  border:1px solid rgba(214,193,140,.12); background:rgba(255,255,255,.015);
-  transition:border-color .18s ease, background .18s ease, transform .18s ease}
-.dd-card:hover{border-color:rgba(214,193,140,.42); background:rgba(214,193,140,.05); transform:translateY(-2px)}
-.dd-card .t{display:block; font-family:var(--serif,serif); font-size:1.4rem; color:var(--moon,#f5ecd2); line-height:1.15}
-.dd-card .d{display:block; margin-top:8px; font:400 .9rem/1.5 var(--sans,sans-serif); color:var(--muted,#9a9bb0)}
-.dd-card.active{border-color:rgba(214,193,140,.5)}
-.dd-card.active .t{color:var(--brass-bright,#efe2b4)}
+/* legacy dropdown mount left in the shell by the build; keep it inert */
+.pn-dd { display: none; }
+/* the accent of the trigger follows its own group so the bar hint matches */
+.pn-item[data-accent="jade"]     .pn-trigger { --accent: var(--jade);     --accent-bright: var(--jade-bright); }
+.pn-item[data-accent="silver"]   .pn-trigger { --accent: var(--silver);   --accent-bright: var(--silver-bright); }
+.pn-item[data-accent="amethyst"] .pn-trigger { --accent: var(--amethyst); --accent-bright: var(--amethyst-bright); }
+.pn-item[data-accent="rose"]     .pn-trigger { --accent: var(--rose);     --accent-bright: var(--rose-bright); }
+.pn-item[data-accent="teal"]     .pn-trigger { --accent: var(--teal);     --accent-bright: var(--teal-bright); }
+.pn-item[data-accent="brass"]    .pn-trigger { --accent: var(--brass);    --accent-bright: var(--brass-bright); }
 
-@media(prefers-reduced-motion:reduce){
-  .pn-dd,.dd-card{transition:none}
+/* ------------------------------------------------------------
+   2. The panel drop surface. One wide typographic sheet anchored
+   to the bar, spanning the viewport. --panel background, a single
+   hairline at the top for separation from the bar. No border, no
+   radius, no card. It fades and rises on open (motion gated below).
+   ------------------------------------------------------------ */
+.pn-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 119;
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+  box-shadow: var(--e-2);           /* soft drop under the sheet, not on rows */
+  padding: var(--s-6) 0 var(--s-7);
+}
+/* hidden until hydrated; nav.js removes [hidden] and adds .open */
+.pn-panel[hidden] { display: none; }
+
+/* the panel's direct children are the content rail; center them to the
+   bar's measure and pad the gutters. The panel itself stays full-bleed. */
+.pn-panel > .pn-panel-eyebrow,
+.pn-panel > .pn-cols,
+.pn-panel > .pn-panel-foot {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+  box-sizing: border-box;
+}
+
+/* the eyebrow: uppercase kicker in the domain accent, doc 01 voice */
+.pn-panel-eyebrow {
+  font: 600 var(--fs-eyebrow, .72rem)/1.3 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  color: var(--accent);
+  margin: 0 0 var(--s-5);
+  max-width: 52ch;
+}
+
+/* ------------------------------------------------------------
+   3. Columns. Responsive multi-column layout. Hairlines between
+   columns carry the structure (never boxes). .pn-cols-2 / -3 are
+   optional density hints; the base is auto-fit so it always fits.
+   ------------------------------------------------------------ */
+.pn-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0 var(--s-6);
+}
+.pn-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pn-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.pn-col { min-width: 0; }
+/* hairline rule between columns from the second column onward */
+.pn-col + .pn-col { border-left: 1px solid var(--line-soft); padding-left: var(--s-6); }
+
+.pn-col-title {
+  font: 600 var(--fs-eyebrow, .72rem)/1.2 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  color: var(--muted);
+  margin: 0 0 var(--s-3);
+  padding-bottom: var(--s-2);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+/* ------------------------------------------------------------
+   4. Rows. The heart of the card-free design: a fixed glyph box +
+   serif name + muted sub-label. Separation is a hairline between
+   rows and a soft accent wash on hover, nothing more.
+   ------------------------------------------------------------ */
+.pn-row {
+  display: grid;
+  grid-template-columns: 1.6em 1fr;
+  grid-template-rows: auto auto;
+  align-items: baseline;
+  column-gap: var(--s-3);
+  min-height: 44px;                 /* touch target */
+  padding: var(--s-2) var(--s-3);
+  margin-inline: calc(var(--s-3) * -1);
+  text-decoration: none;
+  color: var(--ivory);
+  border-bottom: 1px solid var(--line-soft);
+  transition: background var(--dur-fast) var(--ease-io),
+              color var(--dur-fast) var(--ease-io);
+}
+.pn-row:last-child { border-bottom: 0; }
+
+.pn-row:hover,
+.pn-row:focus-visible {
+  background: var(--accent-soft);
+  color: var(--moon);
+}
+/* current page marker: accent name + italic, so meaning is not color-only */
+.pn-row.active,
+.pn-row[aria-current="page"] { color: var(--moon); }
+.pn-row.active .pn-row-name,
+.pn-row[aria-current="page"] .pn-row-name { color: var(--accent-bright); font-style: italic; }
+.pn-row.active .pn-glyph,
+.pn-row[aria-current="page"] .pn-glyph { color: var(--accent-bright); }
+
+/* the glyph box: fixed size, spans both rows, inherits currentColor */
+.pn-glyph {
+  grid-row: 1 / 3;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4em;
+  height: 1.4em;
+  color: var(--accent);
+  flex: 0 0 auto;
+  transition: color var(--dur-fast) var(--ease-io);
+}
+.pn-glyph svg { width: 100%; height: 100%; display: block; fill: none; stroke: currentColor; }
+.pn-glyph svg [fill]:not([fill="none"]) { fill: currentColor; }
+.pn-row:hover .pn-glyph { color: var(--accent-bright); }
+
+.pn-row-name {
+  grid-column: 2;
+  font: 500 var(--fs-h3, 1.35rem)/1.15 var(--serif);
+  color: inherit;
+}
+.pn-row-sub {
+  grid-column: 2;
+  font: 400 .72rem/1.3 var(--sans);
+  letter-spacing: .06em;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* ------------------------------------------------------------
+   5. Panel foot. A quiet full-width link, hairline over it, that
+   points at the domain hub. Serif, accent on hover.
+   ------------------------------------------------------------ */
+.pn-panel-foot {
+  margin-top: var(--s-5);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--line);
+}
+.pn-panel-foot a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font: 500 var(--fs-lead, 1.2rem)/1.2 var(--serif);
+  font-style: italic;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-io);
+}
+.pn-panel-foot a:hover { color: var(--accent-bright); }
+.pn-panel-foot a:focus-visible {
+  outline: 2px solid var(--brass-bright);
+  outline-offset: 2px;
+  border-radius: var(--r-1);
+}
+
+/* ------------------------------------------------------------
+   6. Per-element accent scoping. Each panel glows its own domain
+   hue by re-pointing --accent (and its ramp) from the matched
+   tokens. --accent-soft re-derives from the new --accent in OKLCH
+   browsers automatically. Six ramps.
+   ------------------------------------------------------------ */
+.pn-panel[data-accent="jade"]     { --accent: var(--jade);     --accent-bright: var(--jade-bright);     --accent-dim: var(--jade-dim); }
+.pn-panel[data-accent="silver"]   { --accent: var(--silver);   --accent-bright: var(--silver-bright);   --accent-dim: var(--silver-dim); }
+.pn-panel[data-accent="amethyst"] { --accent: var(--amethyst); --accent-bright: var(--amethyst-bright); --accent-dim: var(--amethyst-dim); }
+.pn-panel[data-accent="rose"]     { --accent: var(--rose);     --accent-bright: var(--rose-bright);     --accent-dim: var(--rose-dim); }
+.pn-panel[data-accent="teal"]     { --accent: var(--teal);     --accent-bright: var(--teal-bright);     --accent-dim: var(--teal-dim); }
+.pn-panel[data-accent="brass"]    { --accent: var(--brass);    --accent-bright: var(--brass-bright);    --accent-dim: var(--brass-dim); }
+
+/* ------------------------------------------------------------
+   7. The nav orb slot (Phase 5 fills it). Kept out of the flow
+   until then so the bar reads clean.
+   ------------------------------------------------------------ */
+.pn-orb[data-orb] { display: none; }
+
+/* ------------------------------------------------------------
+   8. The crawlable flat mirror stays visually hidden. It is the
+   no-JS routing fallback: real anchors, off-screen but in the DOM.
+   ------------------------------------------------------------ */
+.pn-crawl {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.pn-crawl[hidden] { display: none; }
+
+/* ------------------------------------------------------------
+   9. Motion. Fade up 6px on open, 160ms ease-out (doc 03 sec 6).
+   Only inside no-preference; reduced motion gets an instant,
+   opacity-only appearance with no transform.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  .pn-panel.open {
+    animation: pnPanelIn 160ms var(--ease-out) both;
+  }
+  @keyframes pnPanelIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pn-panel,
+  .pn-trigger,
+  .pn-row,
+  .pn-glyph,
+  .pn-panel-foot { transition: none; animation: none; }
+}
+
+/* ------------------------------------------------------------
+   10. Below the bar breakpoint the panels never show inline; the
+   mobile drawer (nav-drawer.css) takes over. Hide panels + bar nav
+   so a stray .open cannot leak onto a small screen.
+   ------------------------------------------------------------ */
+@media (max-width: 900px) {
+  .pn-panel { display: none !important; }
 }

@@ -1,33 +1,128 @@
 /* THE PRIMAL ORACLE — navigation site map (v2). Data only, on window.PNAV. */
 window.PNAV = window.PNAV || { features: {} };
 
+/* Seven-group card-free glyph mega-nav (doc 03 section 2).
+   Each group:
+     key      stable id (also the panel data-group anchor family)
+     h        bar label (also the panel aria-label)
+     accent   per-domain accent ramp: jade | silver | amethyst | rose | teal | brass
+     eyebrow  optional lede sentence at the top of the panel
+     foot     optional [href, label] closing link line
+     layout   "list" | "two-col" | "three-col" — a CSS class only, no logic
+     cols     optional array of {title?, items:[...]} for multi-column panels;
+              when absent, `items` is treated as one implicit column.
+     items    item = [href, name, sub?, glyph?]
+                href   real destination (always a literal <a href> in served HTML)
+                name   serif row name
+                sub    optional muted sub-label (date band, trait word, note)
+                glyph  optional key into PNAV.GLYPHS (data/glyphs-inline.json)
+   Copy rule: no arrows, no dashes; date bands read "Mar 21 to Apr 19". */
 PNAV.MAP = [
-  { h: "Discover", items: [
-    ["/index.html", "Find your animal", "Read your date of birth into one of 144 animals"],
-    ["/menagerie.html", "All 144 animals", "Browse every Sun sign and year animal"],
-    ["/year.html", "Year finder", "Pick any year and look up friends by their birth year"]
-  ]},
-  { h: "Bonds", items: [
-    ["/match.html", "Test a match", "Score any two people across both zodiacs"],
-    ["/circle.html", "Circle of three", "Add three people and read the whole group together"],
-    ["/vs.html", "Challenge a friend", "Reveal, match, and dare a friend to find their animal"]
-  ]},
-  { h: "Live with it", items: [
-    ["/habitat/", "The Habitat", "Feng Shui and environment for your animal"],
-    ["/feng-shui/", "Feng Shui", "The wind-water art of placement, tied to your animal"],
-    ["/directions/", "The Directions", "The four celestial animals and the commanding position"],
-    ["/cosmology/", "Cosmology", "The Yijing, the Luo Shu, stems and branches, the Four Pillars"],
-    ["/stones.html", "Keeper stones", "Your stones and the wider crystal library"]
-  ]},
-  { h: "Sky", items: [
-    ["/moon.html", "The Moon", "The current phase, charging, and the lunar calendar"],
-    ["/best-days.html", "Best days", "The favorable and cautious days ahead for you"],
-    ["/moon/phases/", "Moon phases", "What each of the eight phases favors"],
-    ["/daily.html", "Today's reading", "A short reading keyed to tonight's Moon"]
-  ]},
-  { h: "Understand", items: [
-    ["/learn.html", "How it works", "The two zodiacs, the Moon, and the reading"]
-  ]}
+  { key: "oracle", h: "The Oracle", accent: "brass",
+    eyebrow: "Read your birthday into one of 144 animals.",
+    layout: "two-col",
+    cols: [
+      { title: "Begin", items: [
+        ["/index.html", "Find your animal"],
+        ["/menagerie.html", "All 144 animals"],
+        ["/year.html", "Year finder"],
+        ["/learn.html", "What is a Primal Animal"]
+      ]},
+      { title: "Together", items: [
+        ["/circle.html", "Circle of three"],
+        ["/match.html", "Test a match"],
+        ["/vs.html", "Challenge a friend"]
+      ]}
+    ]
+  },
+  { key: "western", h: "Western Signs", accent: "amethyst",
+    eyebrow: "Your Sun sign, the outer half of your animal.",
+    foot: ["/western-zodiac/", "The whole Western wheel"],
+    layout: "two-col",
+    items: [
+      ["/western-zodiac/aries/",       "Aries",       "Mar 21 to Apr 19", "aries"],
+      ["/western-zodiac/taurus/",      "Taurus",      "Apr 20 to May 20", "taurus"],
+      ["/western-zodiac/gemini/",      "Gemini",      "May 21 to Jun 20", "gemini"],
+      ["/western-zodiac/cancer/",      "Cancer",      "Jun 21 to Jul 22", "cancer"],
+      ["/western-zodiac/leo/",         "Leo",         "Jul 23 to Aug 22", "leo"],
+      ["/western-zodiac/virgo/",       "Virgo",       "Aug 23 to Sep 22", "virgo"],
+      ["/western-zodiac/libra/",       "Libra",       "Sep 23 to Oct 22", "libra"],
+      ["/western-zodiac/scorpio/",     "Scorpio",     "Oct 23 to Nov 21", "scorpio"],
+      ["/western-zodiac/sagittarius/", "Sagittarius", "Nov 22 to Dec 21", "sagittarius"],
+      ["/western-zodiac/capricorn/",   "Capricorn",   "Dec 22 to Jan 19", "capricorn"],
+      ["/western-zodiac/aquarius/",    "Aquarius",    "Jan 20 to Feb 18", "aquarius"],
+      ["/western-zodiac/pisces/",      "Pisces",      "Feb 19 to Mar 20", "pisces"]
+    ]
+  },
+  { key: "chinese", h: "Chinese Years", accent: "jade",
+    eyebrow: "Your birth year, the inner half of your animal.",
+    foot: ["/chinese-zodiac/", "The whole Chinese cycle"],
+    layout: "two-col",
+    items: [
+      ["/chinese-zodiac/rat/",     "Rat",     "quick",  "rat"],
+      ["/chinese-zodiac/ox/",      "Ox",      "steady", "ox"],
+      ["/chinese-zodiac/tiger/",   "Tiger",   "bold",   "tiger"],
+      ["/chinese-zodiac/rabbit/",  "Rabbit",  "gentle", "rabbit"],
+      ["/chinese-zodiac/dragon/",  "Dragon",  "vast",   "dragon"],
+      ["/chinese-zodiac/snake/",   "Snake",   "subtle", "snake"],
+      ["/chinese-zodiac/horse/",   "Horse",   "free",   "horse"],
+      ["/chinese-zodiac/goat/",    "Goat",    "tender", "goat"],
+      ["/chinese-zodiac/monkey/",  "Monkey",  "clever", "monkey"],
+      ["/chinese-zodiac/rooster/", "Rooster", "exact",  "rooster"],
+      ["/chinese-zodiac/dog/",     "Dog",     "loyal",  "dog"],
+      ["/chinese-zodiac/pig/",     "Pig",     "open",   "pig"]
+    ]
+  },
+  { key: "horoscopes", h: "Horoscopes", accent: "silver",
+    eyebrow: "Readings that move with the sky, not fixed forecasts.",
+    layout: "list",
+    items: [
+      ["/daily.html",     "Today's reading",      "keyed to tonight's Moon",        "moon-full"],
+      ["/best-days.html", "Best days ahead",      "the favorable days for you"],
+      ["/moon.html",      "The Moon tonight",     "the current phase",              "moon-waxing-crescent"],
+      ["/horoscopes/",    "Your sign this season", "pick your sign"],
+      ["/horoscopes/",    "We read the sky as reflection, not prediction."]
+    ]
+  },
+  { key: "living-arts", h: "The Living Arts", accent: "rose",
+    eyebrow: "Arrange the world around your animal.",
+    layout: "three-col",
+    cols: [
+      { title: "Feng Shui", items: [
+        ["/feng-shui/",               "The Feng Shui hub"],
+        ["/feng-shui/five-elements/", "The five phases"],
+        ["/feng-shui/bagua/",         "The bagua"],
+        ["/feng-shui/kua-number/",    "Your Kua number"]
+      ]},
+      { title: "Directions and Cosmos", items: [
+        ["/directions/",                    "The Directions"],
+        ["/directions/celestial-animals/", "The four celestial animals"],
+        ["/cosmology/",                     "Cosmology"],
+        ["/cosmology/four-pillars/",        "The Four Pillars"]
+      ]},
+      { title: "Home and Stones", items: [
+        ["/habitat/",        "The Habitat"],
+        ["/stones.html",     "Keeper stones"],
+        ["/elements/fire/",  "The five elements"]
+      ]}
+    ]
+  },
+  { key: "sky", h: "The Sky", accent: "teal",
+    eyebrow: "The Moon and the calendar of favorable days.",
+    layout: "list",
+    items: [
+      ["/moon.html",      "The Moon tonight", "the current phase",   "moon-full"],
+      ["/moon/phases/",   "The eight phases", "what each one favors", "moon-first-quarter"],
+      ["/best-days.html", "Best days",        "the days ahead for you"],
+      ["/daily.html",     "Today's reading",  "keyed to tonight's Moon"]
+    ]
+  },
+  { key: "learn", h: "How it works", accent: "brass",
+    layout: "list",
+    items: [
+      ["/learn.html", "How it works", "The two zodiacs, the Moon, and the reading"]
+    ]
+  }
 ];
 
 PNAV.FEATURED = { href: "/circle.html", title: "Read your circle of three", blurb: "Compare two friends one to one, then read the whole group." };

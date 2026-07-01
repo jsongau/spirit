@@ -1,120 +1,216 @@
 /* ============================================================
-   THE PRIMAL ORACLE — mobile slide-in nav drawer
-   Reuses tokens from oracle.css (--ink, --panel, --line,
-   --brass, --brass-bright, --moon, --ivory, --muted,
-   --serif, --sans).
-   DOM: .pn-drawer > .drawer-sheet
-        .pn-dtop (brand + .pn-dclose)
-        .pn-dgroup > .pn-dhead(button) + .pn-dbody > a.pn-dlink
-        .pn-dtools (chip links)
+   nav-drawer.css  —  Zodianimal.com mobile accordion drawer
+   ------------------------------------------------------------
+   Phase 3. Below the bar breakpoint the .pn-burger opens a
+   full-height drawer. The seven groups stack as an accordion; each
+   group header is a <button aria-expanded> disclosure that reveals
+   that group's rows (glyph + serif name + muted sub) as an
+   edge-to-edge stacked list. Same card-free language as the desktop
+   panels: hairlines and type, never boxes.
+
+   Markup nav.js hydrates into (built from the pre-rendered panels):
+     .pn-drawer[role=dialog][aria-modal]        (backdrop + top layer)
+       .pn-drawer-sheet
+         .pn-drawer-top ( .pn-drawer-brand + button.pn-drawer-close )
+         .pn-acc
+           .pn-acc-group[data-accent]
+             button.pn-acc-head[aria-expanded]  ( label + .pn-acc-chev )
+             .pn-acc-body   ( cloned a.pn-row rows )
+
+   All tokens from tokens.css. No hard-coded hex. No arrows or dashes
+   in content strings. 44px minimum touch targets throughout.
    ============================================================ */
 
-/* ---- backdrop ---- */
-.pn-drawer{
-  position:fixed; inset:0; z-index:140; display:none;
-  background:rgba(8,9,18,.62);
-  -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+/* ------------------------------------------------------------
+   1. Backdrop. Fixed, dim, blurred. Only shown when .open.
+   ------------------------------------------------------------ */
+.pn-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 140;
+  display: none;
+  background: oklch(0.10 0.02 275 / 0.62);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
-.pn-drawer.open{display:block}
+.pn-drawer.open { display: block; }
 
-/* ---- sheet ---- */
-.drawer-sheet{
-  position:absolute; top:0; right:0; height:100%;
-  width:min(360px,88vw);
-  background:linear-gradient(180deg,var(--panel),var(--ink));
-  border-left:1px solid var(--line);
-  overflow-y:auto;
-  padding:18px 18px 40px;
-  box-shadow:-30px 0 80px rgba(0,0,0,.55);
-}
-.pn-drawer.open .drawer-sheet{
-  animation:pnDrawerIn .32s cubic-bezier(.22,.61,.36,1) both;
-}
-@keyframes pnDrawerIn{
-  from{transform:translateX(100%)}
-  to{transform:translateX(0)}
-}
-
-/* ---- top: brand + close ---- */
-.pn-dtop{
-  display:flex; align-items:center; justify-content:space-between;
-  margin-bottom:14px;
-}
-.pn-dtop .brand,
-.pn-dtop > .pn-dbrand{
-  font-family:var(--serif); font-size:1.3rem; letter-spacing:.5px;
-  color:var(--moon);
-}
-.pn-dclose{
-  appearance:none; cursor:pointer;
-  background:transparent;
-  border:1px solid var(--line); border-radius:999px;
-  color:var(--moon);
-  font-family:var(--sans); font-size:.82rem; line-height:1;
-  padding:8px 14px;
-  transition:border-color .2s ease, color .2s ease;
-}
-.pn-dclose:hover{border-color:var(--brass); color:var(--brass-bright)}
-
-/* ---- accordion group ---- */
-.pn-dgroup{border-top:1px solid var(--line)}
-
-.pn-dhead{
-  appearance:none; cursor:pointer;
-  width:100%;
-  background:transparent; border:none;
-  text-align:left;
-  display:flex; align-items:center; justify-content:space-between; gap:10px;
-  font-family:var(--serif); font-size:1.15rem; color:var(--moon);
-  padding:14px 2px;
-}
-.pn-dhead:hover{color:var(--brass-bright)}
-
-.pn-dhead .chev{
-  flex:0 0 auto;
-  color:var(--brass);
-  font-size:.8rem; line-height:1;
-  transition:transform .28s ease;
-}
-.pn-dgroup.open .pn-dhead .chev{transform:rotate(180deg)}
-
-/* ---- accordion body ---- */
-.pn-dbody{
-  max-height:0; overflow:hidden;
-  transition:max-height .34s ease;
-}
-.pn-dgroup.open .pn-dbody{max-height:1200px}
-
-/* ---- links ---- */
-.pn-dlink{
-  display:block; text-decoration:none;
-  padding:9px 6px;
-  color:var(--ivory);
-  transition:color .18s ease;
-}
-.pn-dlink:hover{color:var(--brass-bright)}
-.pn-dlink.active{color:var(--brass-bright)}
-
-.pn-dlink .d{
-  display:block;
-  font-family:var(--sans); font-size:.78rem;
-  color:var(--muted); letter-spacing:.02em;
-  margin-top:2px;
+/* ------------------------------------------------------------
+   2. The sheet. Slides from the right, full height, scrollable.
+   ------------------------------------------------------------ */
+.pn-drawer-sheet {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(400px, 90vw);
+  background: linear-gradient(180deg, var(--panel), var(--ink));
+  border-left: 1px solid var(--line);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--s-4) var(--s-4) var(--s-8);
+  box-shadow: var(--e-3);
 }
 
-/* ---- bottom chip tools ---- */
-.pn-dtools{
-  display:flex; flex-wrap:wrap; gap:10px;
-  margin-top:22px; padding-top:18px;
-  border-top:1px solid var(--line);
+/* ------------------------------------------------------------
+   3. Top row: brand + close. Close is a real 44px button.
+   ------------------------------------------------------------ */
+.pn-drawer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding-block: var(--s-2) var(--s-4);
+  margin-bottom: var(--s-2);
+  border-bottom: 1px solid var(--line);
 }
-.pn-dtools a{
-  text-decoration:none;
-  background:#0c0e1a;
-  border:1px solid var(--line); border-radius:999px;
-  color:var(--brass-bright);
-  font-family:var(--sans); font-size:.84rem; letter-spacing:.02em;
-  padding:8px 14px;
-  transition:border-color .2s ease, color .2s ease;
+.pn-drawer-brand {
+  font: 500 var(--fs-h3, 1.3rem)/1 var(--serif);
+  letter-spacing: .5px;
+  color: var(--moon);
+  text-decoration: none;
 }
-.pn-dtools a:hover{border-color:var(--brass); color:var(--moon)}
+.pn-drawer-brand b { color: var(--brass); font-weight: 500; }
+
+.pn-drawer-close {
+  appearance: none;
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 var(--s-4);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  color: var(--moon);
+  font: 500 .82rem/1 var(--sans);
+  transition: border-color var(--dur-fast) var(--ease-io),
+              color var(--dur-fast) var(--ease-io);
+}
+.pn-drawer-close:hover { border-color: var(--brass); color: var(--brass-bright); }
+.pn-drawer-close:focus-visible { outline: 2px solid var(--brass-bright); outline-offset: 2px; }
+
+/* ------------------------------------------------------------
+   4. Accordion group. Per-group accent scoping mirrors the desktop
+   panels, so each domain glows its own hue in the drawer too.
+   ------------------------------------------------------------ */
+.pn-acc-group { border-bottom: 1px solid var(--line); }
+
+.pn-acc-group[data-accent="jade"]     { --accent: var(--jade);     --accent-bright: var(--jade-bright); }
+.pn-acc-group[data-accent="silver"]   { --accent: var(--silver);   --accent-bright: var(--silver-bright); }
+.pn-acc-group[data-accent="amethyst"] { --accent: var(--amethyst); --accent-bright: var(--amethyst-bright); }
+.pn-acc-group[data-accent="rose"]     { --accent: var(--rose);     --accent-bright: var(--rose-bright); }
+.pn-acc-group[data-accent="teal"]     { --accent: var(--teal);     --accent-bright: var(--teal-bright); }
+.pn-acc-group[data-accent="brass"]    { --accent: var(--brass);    --accent-bright: var(--brass-bright); }
+
+/* ------------------------------------------------------------
+   5. Group header (disclosure button). Full-width, 44px+, serif.
+   ------------------------------------------------------------ */
+.pn-acc-head {
+  appearance: none;
+  cursor: pointer;
+  width: 100%;
+  min-height: 52px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-1);
+  font: 500 var(--fs-h3, 1.2rem)/1.15 var(--serif);
+  color: var(--moon);
+  transition: color var(--dur-fast) var(--ease-io);
+}
+.pn-acc-head:hover { color: var(--accent-bright); }
+.pn-acc-head:focus-visible { outline: 2px solid var(--brass-bright); outline-offset: 2px; border-radius: var(--r-1); }
+.pn-acc-head[aria-expanded="true"] { color: var(--accent-bright); }
+
+/* the chevron: a css caret, no arrow glyph in content */
+.pn-acc-chev {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  opacity: .7;
+  transition: transform var(--dur-fast) var(--ease-io);
+}
+.pn-acc-head[aria-expanded="true"] .pn-acc-chev { transform: rotate(-135deg) translateY(2px); }
+
+/* ------------------------------------------------------------
+   6. Accordion body. Collapsed by default; nav.js toggles .open on
+   the group. Rows are the same .pn-row as desktop, edge to edge.
+   ------------------------------------------------------------ */
+.pn-acc-body {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height var(--dur) var(--ease-io);
+}
+.pn-acc-group.open .pn-acc-body { max-height: 200vh; }
+
+.pn-acc-body .pn-eyebrow-sub {
+  font: 400 .8rem/1.45 var(--sans);
+  color: var(--muted);
+  padding: 0 var(--s-1) var(--s-3);
+  margin: 0;
+}
+
+/* rows inside the drawer: edge to edge, hairline separated, 44px+ */
+.pn-acc-body .pn-row {
+  margin-inline: 0;
+  padding: var(--s-3) var(--s-2);
+  min-height: 48px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.pn-acc-body .pn-row:last-child { border-bottom: 0; }
+
+/* the drawer foot link reuses .pn-panel-foot styling but block width */
+.pn-acc-body .pn-panel-foot {
+  margin-top: var(--s-3);
+  min-height: 48px;
+}
+
+/* single-link groups (How it works) render as a plain row header link */
+.pn-acc-link {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  padding: var(--s-3) var(--s-1);
+  font: 500 var(--fs-h3, 1.2rem)/1.15 var(--serif);
+  color: var(--moon);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  transition: color var(--dur-fast) var(--ease-io);
+}
+.pn-acc-link:hover { color: var(--brass-bright); }
+.pn-acc-link:focus-visible { outline: 2px solid var(--brass-bright); outline-offset: 2px; border-radius: var(--r-1); }
+
+/* ------------------------------------------------------------
+   7. Motion. Sheet slides in; gated behind no-preference. Reduced
+   motion: the sheet and accordion appear instantly.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  .pn-drawer.open .pn-drawer-sheet {
+    animation: pnDrawerIn var(--dur) var(--ease-out) both;
+  }
+  @keyframes pnDrawerIn {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(0); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pn-drawer.open .pn-drawer-sheet { animation: none; }
+  .pn-acc-body { transition: none; }
+  .pn-acc-chev,
+  .pn-acc-head,
+  .pn-acc-link,
+  .pn-drawer-close { transition: none; }
+}
+
+/* the drawer only ever exists below the bar breakpoint */
+@media (min-width: 901px) {
+  .pn-drawer { display: none !important; }
+}
