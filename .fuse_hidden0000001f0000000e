@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src="js/theme.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stones: your keeper crystals and the healing-stone library of the Primal Oracle</title>
+<meta name="description" content="Enter your date of birth to find your keeper stones and your Sun-sign birthstone, then read the library of major healing crystals, how to cleanse and charge them, and the honest history of the monthly birthstone list.">
+<meta property="og:title" content="Stones: keeper crystals and the healing-stone library">
+<meta property="og:description" content="Find your keeper stones, read what each major crystal is traditionally worked with, and learn how to cleanse and charge them by the Moon.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/oracle.css">
+<link rel="stylesheet" href="css/stones.css">
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <nav>
+      <a href="index.html">Find your animal</a>
+      <a href="menagerie.html">All 144 animals</a>
+      <a href="match.html">Test a match</a>
+      <a href="moon.html">The Moon</a>
+      <a href="stones.html" aria-current="page">Stones</a>
+      <a href="learn.html">How it works</a>
+    </nav>
+  </header>
+
+  <!-- INTRO -->
+  <section class="stIntro">
+    <p class="eyebrow">The lapidary</p>
+    <h1>Your <em>keeper stones</em>, and the library that holds them</h1>
+    <p class="lede">Long before crystal healing became a phrase in a shop window, the human animal reached for the mineral world to steady itself. A stone is a fixed point you can carry, a piece of deep-time patience small enough to pocket. Enter your date of birth and the Oracle names the stones the tradition assigns to you, then read the full cabinet below.</p>
+  </section>
+
+  <!-- KEEPER-STONE FINDER -->
+  <section class="finder" id="finder">
+    <div class="finderCard">
+      <h3>Find your keeper stones</h3>
+      <p class="dim">Nothing is sent anywhere. The reading is drawn in your browser, and your date is remembered here so the page can greet you on your return.</p>
+      <form id="stoneForm">
+        <div class="field">
+          <input type="date" id="stoneDate" required min="1940-01-01" max="2032-12-31" aria-label="Date of birth">
+          <button class="btn" type="submit">Find my keeper stones</button>
+        </div>
+        <p class="msg" id="stoneMsg"></p>
+      </form>
+
+      <div id="keeperResult" class="keeperResult" hidden>
+        <p class="keeperLine" id="keeperLine"></p>
+        <div class="chips" id="chips"></div>
+        <div class="sunStone" id="sunStone"></div>
+        <p class="hint">Carry the one that calls loudest. Charge them on the full moon, cleanse them at the dark moon, and dedicate one at the new moon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STONE LIBRARY -->
+  <section class="band" id="library">
+    <p class="eyebrow">The stone library</p>
+    <h2>Healing crystals and their meanings</h2>
+    <p class="lede">Each entry gives a one-line essence and what the stone is traditionally worked with for. You will not need all of them. Most people settle, over years, into a chosen few.</p>
+
+    <h3 class="grp">The masters and all-purpose stones</h3>
+    <div class="libGrid" id="grpMasters"></div>
+
+    <h3 class="grp">Love and the heart</h3>
+    <div class="libGrid" id="grpLove"></div>
+
+    <h3 class="grp">Protection and grounding</h3>
+    <div class="libGrid" id="grpProtect"></div>
+
+    <h3 class="grp">Intuition, voice and vision</h3>
+    <div class="libGrid" id="grpIntuit"></div>
+
+    <h3 class="grp">Abundance and will</h3>
+    <div class="libGrid" id="grpAbund"></div>
+
+    <h3 class="grp">The lunar keystones</h3>
+    <p class="dim grpNote">Two stones earn extra depth, because this library is built around a Moon-ruled animal. They belong to the Snail by birthright.</p>
+    <div class="lunarGrid" id="grpLunar"></div>
+  </section>
+
+  <!-- CLEANSING & CHARGING -->
+  <section class="band" id="care">
+    <p class="eyebrow">Cleansing and charging</p>
+    <h2>How to keep a stone</h2>
+    <p class="lede">The tradition holds that stones gather the energy around them and need clearing, then charging to restore their intent. Choose a method by the stone's hardness and chemistry, not by preference. The wrong method ruins the stone.</p>
+
+    <div class="careGrid">
+      <div class="careCard">
+        <h4>Methods that harm nothing</h4>
+        <ul>
+          <li><b>Smoke.</b> Pass the stone through sage, cedar, or palo santo. The universal safe method, and the one to reach for when in doubt.</li>
+          <li><b>Sound.</b> A singing bowl, bell, or tuning fork never touches the surface, so nothing can be damaged.</li>
+          <li><b>Selenite.</b> Rest a tired stone on a selenite plate overnight for a dry, gentle, passive cleanse.</li>
+          <li><b>Moonlight.</b> Set the stones out under the moon. Gentle, sun-free, and matched to a lunar life.</li>
+        </ul>
+      </div>
+
+      <div class="careCard danger">
+        <h4>The never-wet list</h4>
+        <p class="dim">These are soft, soluble, or metallic, and water pits or dissolves them. Cleanse with smoke, sound, or selenite instead.</p>
+        <ul class="tagList">
+          <li>Selenite</li><li>Halite</li><li>Malachite</li><li>Azurite</li>
+          <li>Pyrite</li><li>Hematite</li><li>Lepidolite</li><li>Calcite</li>
+          <li>Kyanite</li><li>Turquoise</li><li>Opal</li>
+        </ul>
+        <p class="rule">Rule of thumb: stones at Mohs hardness 7 and above, essentially the quartz family, take a brief rinse. Below that, ask before you wet. Never drink water that has touched a toxic or soluble stone.</p>
+      </div>
+
+      <div class="careCard danger">
+        <h4>The no-sun fade list</h4>
+        <p class="dim">UV light breaks down the trace minerals that give these stones their color, and the fading is permanent. Charge them by moonlight, not sunlight, and keep them out of a hot window.</p>
+        <ul class="tagList">
+          <li>Amethyst</li><li>Citrine</li><li>Rose Quartz</li>
+          <li>Smoky Quartz</li><li>Fluorite</li><li>Aquamarine</li><li>Kunzite</li>
+        </ul>
+        <p class="rule">This is the single best reason the lunar tradition prefers moonlight for charging. It never bleaches a thing.</p>
+      </div>
+    </div>
+
+    <p class="rhythm">A clean rhythm for a lunar life: cleanse at the dark moon, charge at the full, dedicate at the new. The stones then run on the same tide your nervous system already does.</p>
+    <p class="careNote">This is a tradition of meaning for reflection, the same as the rest of the Oracle. It is folklore, ritual, and the genuine power of focused attention. None of it is medical advice. Crystals do not diagnose, treat, or cure disease, and they never replace care from a qualified professional.</p>
+  </section>
+
+  <!-- BIRTHSTONE HONESTY -->
+  <section class="band" id="birthstone">
+    <p class="eyebrow">The birthstone, honestly</p>
+    <h2>Where the monthly list really comes from</h2>
+    <div class="prose">
+      <p>The list most people know, the one engraved inside lockets and set into mother's rings, was not handed down from antiquity. It was standardized in August 1912 by American jewelers, the National Association of Jewelers, at a meeting in Kansas City, then amended over the decades. Alexandrite, citrine, and pink tourmaline were added in 1952. Tanzanite joined December in 2002. Spinel joined August in 2016.</p>
+      <p>The committee favored transparent, sellable gems, which is why some older opaque stones such as December's lapis lazuli were quietly retired. The meaning is real either way, because people have always made stones mean things, and that making is the oldest magic we have. But meaning and fact are different rooms, and the Oracle keeps the door between them open.</p>
+      <p>Your Sun-sign stone, shown above with your keeper set, descends from a different and older root than the monthly calendar, the twelve gems of Aaron's breastplate later mapped onto the signs. Because that mapping happened many times in many hands, zodiac stones genuinely vary by tradition. Anyone who tells you there is one correct stone for your sign is selling certainty the history does not support.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="band ctaBand">
+    <div class="ctaGrid">
+      <a class="ctaCard" href="moon.html">
+        <span class="ctaIcon" aria-hidden="true">☾</span>
+        <h3>Charge them by the Moon</h3>
+        <p>Read the moonlight method, the full-moon nights, and why the Moon runs through all of it.</p>
+      </a>
+      <a class="ctaCard" href="index.html">
+        <span class="ctaIcon" aria-hidden="true">✦</span>
+        <h3>Find your animal</h3>
+        <p>Enter your date of birth and meet the single creature where your two zodiacs cross.</p>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <p>Find your Primal Animal, read where you stand, and see who you match. Built on the fusion of the Chinese and Western zodiacs.</p>
+    <p class="disclaimer">This is a tradition of meaning for reflection and entertainment. It is not medical, psychological, financial, or legal advice. The Primal Animal framework is adapted from the Primal Zodiac tradition. Stones and lunar practices are presented as cultural tradition, not as treatment.</p>
+  </footer>
+
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(function () {
+  "use strict";
+  const O = ORACLE;
+  const $ = (s) => document.querySelector(s);
+  const LS_KEY = "primal_oracle_v1";
+
+  /* ---------- starfield (matched to the rest of the site) ---------- */
+  (function runStars(){
+    const cv = $("#sky"); if (!cv) return;
+    const ctx = cv.getContext("2d");
+    function size(){ cv.width = innerWidth; cv.height = Math.max(innerHeight, document.body.scrollHeight); }
+    size(); addEventListener("resize", size);
+    const N = Math.min(160, Math.floor(innerWidth / 9));
+    const stars = Array.from({length:N}, () => ({
+      x: Math.random()*cv.width, y: Math.random()*cv.height,
+      r: Math.random()*1.4 + 0.2, a: Math.random(), s: Math.random()*0.02 + 0.004
+    }));
+    (function frame(){
+      ctx.clearRect(0,0,cv.width,cv.height);
+      for (const st of stars){
+        st.a += st.s; const al = 0.35 + Math.abs(Math.sin(st.a))*0.55;
+        ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, 7);
+        ctx.fillStyle = `rgba(245,236,210,${al})`; ctx.fill();
+      }
+      requestAnimationFrame(frame);
+    })();
+  })();
+
+  /* ---------- safe localStorage helpers ---------- */
+  function readStore(){
+    try { return JSON.parse(localStorage.getItem(LS_KEY)) || {}; }
+    catch (e) { return {}; }
+  }
+  function writeBirth(dateStr){
+    try {
+      const obj = readStore();
+      obj.birth = dateStr;
+      localStorage.setItem(LS_KEY, JSON.stringify(obj));
+    } catch (e) { /* storage may be unavailable; fail quietly */ }
+  }
+
+  /* ---------- one-line meanings, drawn from chamber 14 ----------
+     Stones listed in the library carry the chamber's own wording.
+     Stones the reading can return that are not in the library get a
+     short, tasteful line written for this page. ---------- */
+  const MEANING = {
+    "Moonstone":"Captured moonlight; intuition, emotional balance, and new beginnings.",
+    "Labradorite":"The aurora in stone; protection that keeps you receptive while it guards.",
+    "Black Tourmaline":"The bouncer; blocks negativity and grounds fear from the outside in.",
+    "Rose Quartz":"The heart's stone; unhurried self-love, compassion, and softened grief.",
+    "Carnelian":"Warm blood-orange; creativity, courage, and restored drive.",
+    "Citrine":"Bottled sunlight; wealth, optimism, and personal will.",
+    "Tiger's Eye":"Courage with focus; grounded ambition and protection in action.",
+    "Amethyst":"Sober clarity; calm, sleep, intuition, and breaking compulsions.",
+    "Lapis Lazuli":"Royal blue; inner wisdom, honest speech, and meditation insight.",
+    "Obsidian":"Volcanic glass; shadow work, cutting cords, and fierce protection.",
+    "Turquoise":"The sky-stone; protection in travel, healing, and honest speech.",
+    "Garnet":"Slow fire; devotion, vitality, and courage in love and work.",
+    "Aquamarine":"Calm sea-water; courage to speak and clarity under emotion.",
+    "Amazonite":"The peacekeeper; calm words and the balance of heart and speech.",
+    "Hematite":"Iron weight; grounding, stability, and scattered energy pulled down.",
+    "Smoky Quartz":"The gentle transmuter; grounds anxiety without walling you off.",
+    "Green Jade":"The stone of heaven; serene fortune, harmony, and steady luck.",
+    "Clear Quartz":"The master amplifier; raises the volume of any intention beside it.",
+    "Pearl":"Born of the tide; gentleness, motherhood, and a soul steadied through change.",
+    "Ammonite (fossil)":"A spiral shell turned to permanent stone; keeps energy and fortune flowing."
+  };
+  function meaningFor(name){
+    return MEANING[name] || "A traditional ally for focus and intention; carry it for what you mean to keep.";
+  }
+
+  /* ---------- the library, lightly grouped, from chamber 14 ---------- */
+  const LIBRARY = {
+    masters: [
+      ["Clear Quartz","The master amplifier; the blank page of the mineral world.","Amplifying any intention, clarifying the mind, and powering up other stones."],
+      ["Selenite","Liquid light; the self-cleansing stone.","Clearing stagnant energy, mental clarity, and charging other crystals. Never wet."],
+      ["Amethyst","Sober clarity; the spiritual quieter.","Calm, sleep, intuition, and breaking compulsions. Fades in sun."],
+      ["Smoky Quartz","The gentle transmuter; grounding without armor.","Releasing heavy moods and turning negativity into something usable."],
+      ["Fluorite","The mental tuning-fork; order from chaos.","Focus, study, and decluttering the mind. Can fade in sun."]
+    ],
+    love: [
+      ["Rose Quartz","The heart's stone; unconditional, unhurried love.","Self-love, repairing trust, and opening to being loved. Fades in sun."],
+      ["Green Aventurine","The quiet optimist; the luck of the heart.","Heart-centered prosperity, calming anger, and gentle good fortune."],
+      ["Rhodonite","The wound-tender; love after injury.","Forgiveness, emotional recovery, and releasing resentment."],
+      ["Garnet","Slow fire; devotion and vitality.","Passion, commitment, and courage in love and work."]
+    ],
+    protect: [
+      ["Black Tourmaline","The bouncer; shields from the outside in.","Blocking negativity, grounding fear, and shielding from interference."],
+      ["Obsidian","Volcanic glass; the unflinching mirror.","Shadow work, cutting cords, and fierce protection."],
+      ["Hematite","Iron weight; the anchor.","Grounding, stability, and pulling scattered energy into the body."],
+      ["Black Onyx","The composed sentinel; strength under strain.","Steadiness in grief or stress, willpower, and quiet defense."],
+      ["Jasper","The supreme nurturer; the stone of endurance.","Sustaining you through stress, grounding, and steadiness over the long haul."]
+    ],
+    intuit: [
+      ["Lapis Lazuli","Royal blue; the truth-teller.","Inner wisdom, intuition, honest speech, and meditation insight."],
+      ["Sodalite","The level head; logic married to intuition.","Self-trust, clear thinking, and truthful expression."],
+      ["Aquamarine","Calm sea-water; the soother of speech.","Courage to speak, calm under emotion, and clear communication."],
+      ["Kyanite","The aligner; never needs cleansing.","Aligning all chakras, deep meditation, and calm communication."],
+      ["Amazonite","The peacekeeper; the soothing teal.","Calming words and balancing heart and speech."]
+    ],
+    abund: [
+      ["Citrine","Bottled sunlight; the merchant's stone.","Wealth, manifestation, and confidence in commerce. Fades in sun."],
+      ["Pyrite","Fool's gold, real nerve; the manifesting metal.","Abundance, drive, and self-worth. Never wet, since it rusts."],
+      ["Tiger's Eye","Courage with focus; the warrior's calm.","Confidence, decisiveness, and grounded ambition."],
+      ["Jade","The stone of heaven; serene fortune.","Prosperity, harmony, and steady luck, prized for millennia in Chinese tradition."],
+      ["Carnelian","Warm blood-orange; lit vitality.","Creativity, courage, motivation, and restored drive."]
+    ]
+  };
+
+  const LUNAR = [
+    ["Moonstone","Captured moonlight; the stone of new beginnings.",
+     "Moonstone is feldspar with a soft inner glow called adularescence, light that floats inside the gem and rolls across its surface as you tilt it, exactly the way the Moon shines by borrowed light. It is worked with for intuition, emotional balance, cyclical change, and the divine feminine. Where another person might choose a birthstone, the lunar Snail simply belongs to this one. Carry it through a full cycle and it becomes a companion to the new-moon practice, a thing to hold while you tell one true thing to one chosen person."],
+    ["Labradorite","The aurora in stone; the seer's shield.",
+     "Labradorite is the storm-grey feldspar that erupts in peacock blue and gold when light hits it at the right angle. Inuit lore held that the northern lights were once trapped inside the rock until a hunter struck them free, and the stone still wears the leftover aurora. It is the tradition's premier stone of transformation and a protector of the open intuitive. Most protection stones wall you off; labradorite is said to let you stay porous and perceptive without being flooded, a shell that breathes. Pair it with moonstone for lunar intuition with a guard on the door."]
+  ];
+
+  function card(name, essence, use){
+    const el = document.createElement("article");
+    el.className = "libCard";
+    el.innerHTML =
+      '<h4>' + name + '</h4>' +
+      '<p class="ess">' + essence + '</p>' +
+      '<p class="use">' + use + '</p>';
+    return el;
+  }
+  function fill(id, list){
+    const wrap = $(id); if (!wrap) return;
+    const frag = document.createDocumentFragment();
+    list.forEach((row) => frag.appendChild(card(row[0], row[1], row[2])));
+    wrap.appendChild(frag);
+  }
+  fill("#grpMasters", LIBRARY.masters);
+  fill("#grpLove",    LIBRARY.love);
+  fill("#grpProtect", LIBRARY.protect);
+  fill("#grpIntuit",  LIBRARY.intuit);
+  fill("#grpAbund",   LIBRARY.abund);
+
+  (function fillLunar(){
+    const wrap = $("#grpLunar");
+    const frag = document.createDocumentFragment();
+    LUNAR.forEach((row) => {
+      const el = document.createElement("article");
+      el.className = "lunarCard";
+      el.innerHTML =
+        '<div class="lunarGlow" aria-hidden="true"></div>' +
+        '<h4>' + row[0] + '</h4>' +
+        '<p class="ess">' + row[1] + '</p>' +
+        '<p class="depth">' + row[2] + '</p>';
+      frag.appendChild(el);
+    });
+    wrap.appendChild(frag);
+  })();
+
+  /* ---------- the keeper-stone finder ---------- */
+  const form = $("#stoneForm");
+  const input = $("#stoneDate");
+  const msg = $("#stoneMsg");
+  const result = $("#keeperResult");
+
+  function render(dateStr){
+    const c = ENGINE.compute(dateStr);
+    if (!c){ msg.textContent = "That date did not read. Try another."; return false; }
+
+    const r = ENGINE.reading(c);
+    const stones = (r.stones || []).filter(Boolean);
+
+    $("#keeperLine").innerHTML =
+      'Your animal is the <b>' + c.primal + '</b>, ' + c.sign +
+      ' crossed with the Year of the ' + c.animal + '. These are the stones the tradition keeps for you.';
+
+    const chips = $("#chips");
+    chips.innerHTML = "";
+    stones.forEach((name) => {
+      const chip = document.createElement("div");
+      chip.className = "chip";
+      chip.innerHTML =
+        '<span class="chipName">' + name + '</span>' +
+        '<span class="chipMean">' + meaningFor(name) + '</span>';
+      chips.appendChild(chip);
+    });
+
+    const sun = O.SUN_STONE[c.sign];
+    $("#sunStone").innerHTML =
+      '<span class="sunLabel">Your Sun-sign birthstone</span>' +
+      '<span class="sunName">' + sun + '</span>' +
+      '<span class="sunMean">' + meaningFor(sun) + '</span>';
+
+    result.hidden = false;
+    msg.textContent = "";
+    return true;
+  }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    const v = input.value;
+    if (!v){ msg.textContent = "Enter your date of birth first."; return; }
+    if (render(v)) writeBirth(v);
+  });
+
+  /* ---------- prefill on return ---------- */
+  (function prefill(){
+    const obj = readStore();
+    if (obj && typeof obj.birth === "string" && obj.birth){
+      input.value = obj.birth;
+      render(obj.birth);
+    }
+  })();
+})();
+</script>
+</body>
+</html>

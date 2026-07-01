@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/theme.js"></script>
+<title>Best days: your favorable and cautious days ahead · Primal Animal</title>
+<meta name="description" content="Each day carries its own Chinese animal. See the favorable days ahead for your Primal Animal, the days that ask for patience, and the moon phase that serves you.">
+<meta property="og:title" content="Best days · Primal Animal">
+<meta property="og:description" content="Your favorable and cautious days ahead, from the day's Chinese animal and the Moon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/oracle.css">
+<style>
+  .bd-head{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+  @media(max-width:640px){.bd-head{grid-template-columns:1fr}}
+  .bd-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .bd-card h3{font-family:var(--serif);color:var(--moon);font-size:1.25rem;margin:0 0 8px}
+  .bd-card p{margin:0;color:var(--body);font-size:.94rem}
+  .bd-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+  @media(max-width:720px){.bd-cols{grid-template-columns:1fr}}
+  .bd-list{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px}
+  .bd-day{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+  .bd-day .date{text-align:center;min-width:52px}
+  .bd-day .date .dow{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+  .bd-day .date .num{font-family:var(--serif);font-size:1.5rem;color:var(--moon);line-height:1}
+  .bd-day .meta{font-size:.9rem;color:var(--body)}
+  .bd-day .meta b{color:var(--moon);font-weight:600}
+  .bd-fav .date .num{color:var(--twin)}
+  .bd-cau{opacity:.85}
+  .bd-cau .date .num{color:var(--rose)}
+  .bd-note{color:var(--muted);font-size:.82rem;margin-top:10px}
+  /* subtle account CTA */
+  .acct-cta{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    border:1px dashed var(--line);border-radius:14px;padding:16px 20px;margin-top:26px;background:transparent}
+  .acct-cta p{margin:0;color:var(--body);font-size:.92rem}
+  .acct-cta a{white-space:nowrap}
+</style>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="wrap">
+
+  <section class="hero" style="padding-top:24px">
+    <p class="eyebrow">Best days</p>
+    <h1 style="color:var(--moon)">The days that favor you</h1>
+    <p class="lede">In the Chinese tradition each day carries its own animal. Days ruled by your allies tend to favor connection and fresh starts. Days ruled by your opposite ask for a little patience. Enter your birthday to read the season ahead.</p>
+    <div class="reader" style="margin-top:20px">
+      <form id="bdForm">
+        <div class="field">
+          <input type="date" id="bdDate" required min="1940-01-01" max="2032-12-31" aria-label="Date of birth">
+          <button class="btn" type="submit">Read my days</button>
+        </div>
+        <p class="msg" id="bdMsg"></p>
+      </form>
+    </div>
+  </section>
+
+  <div id="bdResult" hidden>
+    <section class="band" style="border-top:none;padding-top:0">
+      <div class="bd-head">
+        <div class="bd-card"><h3 id="bdAnimal">—</h3><p id="bdIntro"></p></div>
+        <div class="bd-card"><h3>The moon that serves you</h3><p id="bdMoon"></p></div>
+      </div>
+
+      <div class="bd-cols">
+        <div>
+          <p class="eyebrow" style="color:var(--twin)">Favorable days</p>
+          <ul class="bd-list" id="bdFav"></ul>
+        </div>
+        <div>
+          <p class="eyebrow" style="color:var(--rose)">Move gently</p>
+          <ul class="bd-list" id="bdCau"></ul>
+        </div>
+      </div>
+      <p class="bd-note">Symbolic timing for reflection, not a promise about any day. Computed from each day's Chinese animal in your browser.</p>
+
+      <div class="acct-cta">
+        <p><strong style="color:var(--moon)">Want a quiet nudge before each favorable day?</strong> Member accounts are coming, with saved days, reminders, and deeper readings.</p>
+        <a class="btn ghost" href="account.html">See what members get</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <p class="disclaimer">A tradition of meaning for reflection, not medical, psychological, financial, or legal advice. The day's animal follows the Chinese sexagenary calendar; the reading is symbolic.</p>
+  </footer>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(function(){
+  var O=ORACLE, E=ENGINE, $=function(s){return document.querySelector(s);};
+  var MOON={Fire:{power:"Full Moon",rest:"Waning Crescent"},Earth:{power:"First Quarter",rest:"Waning Crescent"},Air:{power:"Waxing Crescent",rest:"Last Quarter"},Water:{power:"New Moon",rest:"Full Moon"}};
+
+  function fmtDow(d){return d.toLocaleDateString(undefined,{weekday:"short"});}
+  function fmtNum(d){return d.getDate();}
+  function fmtMon(d){return d.toLocaleDateString(undefined,{month:"short"});}
+
+  function render(c){
+    var e=O.EAST[c.animal];
+    var fav={}; e.trine.forEach(function(a){fav[a]="a trine ally";}); fav[e.secret]="your secret friend";
+    var cau={}; cau[e.clash]="a clash"; cau[e.harm]="a quiet harm";
+    var favList=[], cauList=[];
+    var from=new Date();
+    for(var i=1;i<=120 && (favList.length<8||cauList.length<5);i++){
+      var d=new Date(from.getTime()+i*86400000); var da=E.dayAnimal(d);
+      if(fav[da]&&favList.length<8) favList.push({d:d,animal:da,why:fav[da]});
+      else if(cau[da]&&cauList.length<5) cauList.push({d:d,animal:da,why:cau[da]});
+    }
+    $("#bdAnimal").textContent=c.primal;
+    $("#bdIntro").innerHTML="As a "+c.animal+"-natured soul ("+c.sign+" Sun), your allies are the "+e.trine.join(", the ")+", and your secret friend the "+e.secret+". Days they rule tend to favor you.";
+    var el=(O.WEST[c.sign]&&O.WEST[c.sign].element)||"Water"; var mp=MOON[el]||MOON.Water;
+    $("#bdMoon").innerHTML="Your power phase is the <b style=\"color:var(--moon)\">"+mp.power+"</b>; your rest phase is the <b style=\"color:var(--moon)\">"+mp.rest+"</b>. Plant on your power phase, protect your rest on the other.";
+
+    function row(x,cls){return '<li class="bd-day '+cls+'"><span class="date"><span class="dow">'+fmtDow(x.d)+'</span><span class="num">'+fmtNum(x.d)+'</span><span class="dow">'+fmtMon(x.d)+'</span></span>'+
+      '<span class="meta">Day of the <b>'+x.animal+'</b>, '+x.why+'</span></li>';}
+    $("#bdFav").innerHTML=favList.length?favList.map(function(x){return row(x,"bd-fav");}).join(""):'<li class="bd-note">No standout days in the next four months; steady ground.</li>';
+    $("#bdCau").innerHTML=cauList.length?cauList.map(function(x){return row(x,"bd-cau");}).join(""):'<li class="bd-note">No caution days ahead worth flagging.</li>';
+    var rw=$("#bdResult"); rw.hidden=false; if(rw.scrollIntoView) rw.scrollIntoView({behavior:"smooth",block:"start"});
+  }
+
+  $("#bdForm").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var c=E.compute($("#bdDate").value);
+    if(!c){$("#bdMsg").textContent="Enter a valid date of birth.";return;}
+    $("#bdMsg").textContent=""; render(c);
+  });
+
+  // prefill from a saved profile if present
+  try{ var raw=localStorage.getItem("primal_oracle_v1"); if(raw){ var st=JSON.parse(raw); if(st&&st.birth){ $("#bdDate").value=st.birth; var c=E.compute(st.birth); if(c) render(c); } } }catch(e){}
+
+  var cv=$("#sky"); if(cv){ var x=cv.getContext("2d"); function sz(){cv.width=innerWidth;cv.height=Math.max(innerHeight,document.body.scrollHeight);} sz(); addEventListener("resize",sz);
+    var red=(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)||false; var N=red?70:120;
+    var st2=Array.from({length:N},function(){return{x:Math.random()*cv.width,y:Math.random()*cv.height,r:Math.random()*1.3+0.2,a:Math.random(),s:Math.random()*0.02+0.004};});
+    (function f(){x.clearRect(0,0,cv.width,cv.height);for(var i=0;i<st2.length;i++){var s=st2[i];if(!red)s.a+=s.s;var al=0.3+Math.abs(Math.sin(s.a))*0.5;x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fillStyle="rgba(245,236,210,"+al+")";x.fill();}if(!document.hidden)requestAnimationFrame(f);})();
+  }
+})();
+</script>
+</body>
+</html>

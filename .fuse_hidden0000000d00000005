@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src="js/theme.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Third Eye awakening: the Primal Oracle progression and sacred practices</title>
+<meta name="description" content="Watch the Third Eye open as you move from Sleeper to All-Seeing. See your saved progress, learn the five awakening levels, the seven clairs, and the sacred practices that open the brow: meditation, breathwork, grounding, and the Moon Salutation.">
+<meta property="og:title" content="The Third Eye awakening">
+<meta property="og:description" content="Your progress through the Primal Oracle, the five levels, the seven clairs, and the practices that open the eye.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/oracle.css">
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/awakening.css">
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <nav>
+      <a href="index.html">Find your animal</a>
+      <a href="menagerie.html">All 144 animals</a>
+      <a href="match.html">Test a match</a>
+      <a href="daily.html">Today</a>
+      <a href="awakening.html">Awakening</a>
+      <a href="learn.html">How it works</a>
+    </nav>
+  </header>
+
+  <!-- HERO: the great eye -->
+  <section class="awaken-hero">
+    <p class="eyebrow">The Third Eye</p>
+    <h1>The eye opens as <em>you read</em>.</h1>
+    <p class="lede">Every rite you complete in the Oracle opens the lid a little further. This is where you watch it happen, see exactly where you stand, and learn the practices the tradition uses to open the inner sight for real.</p>
+
+    <div class="greatEye" id="greatEye" aria-hidden="true">
+      <div class="almond">
+        <span class="rays"></span>
+        <span class="iris"></span>
+        <span class="pupil"></span>
+        <span class="glint"></span>
+        <span class="lidTop"><i class="lash"></i></span>
+        <span class="lidBottom"><i class="lash"></i></span>
+      </div>
+    </div>
+
+    <div class="eyeReadout">
+      <div class="level" id="eyeLevel">Sleeper</div>
+      <div class="pct" id="eyePct">0 percent open</div>
+      <div class="meaning" id="eyeMeaning">The eye is closed. The animal is still a rumor.</div>
+      <div class="track"><i id="eyeBar"></i></div>
+      <p class="closedNote" id="closedNote" hidden>Nothing is saved yet. Begin on the <a href="index.html">home page</a> by naming your animal, and the eye will start to open.</p>
+    </div>
+
+    <!-- the six rites -->
+    <div class="riteGrid" id="riteGrid"></div>
+    <p class="streakLine" id="streakLine" hidden>Return streak: <strong id="streakVal">1 day</strong></p>
+  </section>
+
+  <!-- THE FIVE LEVELS -->
+  <section class="awaken-sec">
+    <p class="eyebrow">The path</p>
+    <h2>Five levels of awakening</h2>
+    <p class="intro">Openness runs from zero to one hundred. As it climbs, the eye passes through five named states. Your current level is marked below.</p>
+
+    <div class="levelPath" id="levelPath"></div>
+  </section>
+
+  <!-- THE SEVEN CLAIRS -->
+  <section class="awaken-sec">
+    <p class="eyebrow">The unseen senses</p>
+    <h2>The seven clairs</h2>
+    <p class="intro">The word is French: <em>clair</em>, meaning clear. The clairs are the channels the intuitive tradition treats as a sixth sense most people own faintly and a few own loudly. Held as belief, not as fact, and the vocabulary is precise.</p>
+
+    <div class="clairGrid">
+      <article class="clair">
+        <h4>Clairvoyance</h4><span class="clear">Clear seeing</span>
+        <p>Images, scenes, or symbols arriving in the mind's eye, said to reach beyond physical sight.</p>
+      </article>
+      <article class="clair">
+        <h4>Clairaudience</h4><span class="clear">Clear hearing</span>
+        <p>An inner voice, a name, a phrase: sound or words received with no physical source.</p>
+      </article>
+      <article class="clair gift">
+        <h4>Clairsentience</h4><span class="clear">Clear feeling</span>
+        <p>Sensing the emotion or energy of a person or place in your own body. The empath's channel, and the gift the tradition names for the water signs of Cancer, Scorpio, and Pisces, who are said to feel intuition before they think it.</p>
+        <span class="tag">The water-sign gift</span>
+      </article>
+      <article class="clair">
+        <h4>Claircognizance</h4><span class="clear">Clear knowing</span>
+        <p>A sudden, sourceless certainty: knowing a thing to be true with no chain of reasoning behind it.</p>
+      </article>
+      <article class="clair">
+        <h4>Clairtangency</h4><span class="clear">Clear touching</span>
+        <p>Also called psychometry. Reading the history of an object through handling and contact.</p>
+      </article>
+      <article class="clair">
+        <h4>Clairgustance</h4><span class="clear">Clear tasting</span>
+        <p>A flavour perceived with nothing in the mouth, said to carry a memory or a presence.</p>
+      </article>
+      <article class="clair">
+        <h4>Clairalience</h4><span class="clear">Clear smelling</span>
+        <p>A scent with no physical source. The classic example is a departed person's perfume.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SACRED PRACTICES -->
+  <section class="awaken-sec">
+    <p class="eyebrow">Tune the instrument</p>
+    <h2>Practices to open the eye</h2>
+    <p class="intro">If divination listens, these disciplines tune the instrument. They are described here on their own terms, with respect, as the practices traditions across the world use to clear and steady awareness. Take the experience seriously and keep your discernment lit.</p>
+
+    <div class="practiceGrid">
+      <article class="practice">
+        <p class="label">Stillness</p>
+        <h3>Meditation</h3>
+        <p>Resting attention on a single point, the breath, a word, the body, or open awareness itself, to settle the mind. Its gains for focus, anxiety, and rest are among the best attested of anything here.</p>
+      </article>
+
+      <article class="practice">
+        <p class="label">The breath</p>
+        <h3>Breathwork</h3>
+        <p>Deliberate work with the pattern of the breath, with roots in the yogic art of pranayama. The calming rule the tradition gives is a longer exhale than inhale, which quiets the tide on a high-feeling day.</p>
+      </article>
+
+      <article class="practice">
+        <p class="label">The brow centre</p>
+        <h3>The Third Eye, or Ajna</h3>
+        <p>In the yogic chakra system, seven energy centres run along the spine. The sixth, at the brow, is the Ajna, named for intuition, insight, and inner sight. It is the seat this whole page borrows its name from, and the centre these practices aim to open.</p>
+      </article>
+
+      <article class="practice">
+        <p class="label">Coming back to earth</p>
+        <h3>Grounding</h3>
+        <p>Returning attention firmly to the body and the present moment. It is the steady floor beneath all the rest, recommended whenever subtler work stirs more than you can comfortably hold.</p>
+      </article>
+
+      <article class="practice feature">
+        <div>
+          <p class="label">The lunar practice</p>
+          <h3>The Moon Salutation</h3>
+          <p>Chandra Namaskar is the lunar twin of the Sun Salutation. Where the Sun sequence heats and rises, the Moon sequence stays low to the earth, cools, calms, and restores. It flows sideways along the mat through grounding shapes, building to a central pose and then unwinding back down the other side, honouring the Moon's waxing and waning in the body itself.</p>
+          <p>Move slowly with the breath leading: inhale to extend and open, exhale to fold and release. Practise it in the evening, or most powerfully on the full moon or under moonlight, as a balm for stress, tiredness, and an overheated mind.</p>
+        </div>
+        <div class="moonArc">
+          <svg viewBox="0 0 260 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M20 110 Q130 -10 240 110" fill="none" stroke="var(--line)" stroke-width="1"/>
+            <circle cx="20" cy="110" r="5" fill="var(--brass)"/>
+            <circle cx="76" cy="58" r="4" fill="var(--brass)" opacity="0.7"/>
+            <circle cx="130" cy="34" r="8" fill="none" stroke="var(--brass)" stroke-width="1.2"/>
+            <path d="M130 26 a8 8 0 0 0 0 16 a6 6 0 0 1 0 -16" fill="var(--moon)"/>
+            <circle cx="184" cy="58" r="4" fill="var(--brass)" opacity="0.7"/>
+            <circle cx="240" cy="110" r="5" fill="var(--brass)"/>
+          </svg>
+        </div>
+      </article>
+    </div>
+
+    <div class="caveat" style="margin-top:28px">
+      <p>A clear and respectful caveat. Everything on this page is offered as a cultural and spiritual survey for reflection and wellbeing, presented as belief rather than fact. The practices here have shaped art, medicine, and religion for millennia and are meaningful to vast numbers of living people, yet their claims about the world are not, to date, scientifically established. Much of it, meditation, breathwork, grounding, and the steady holding of intention, is genuinely good for a person and needs no metaphysics to justify. None of it is medical, psychological, or therapeutic advice. The lens is for seeing. The hands are still your own.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="awaken-sec">
+    <p class="eyebrow" style="text-align:center">Carry it forward</p>
+    <h2 style="text-align:center">Open the eye a little further</h2>
+    <p class="intro" style="margin:0 auto 24px; text-align:center">Each rite raises your openness. Start by naming your animal, then return often to keep the streak alive.</p>
+    <div class="awaken-cta">
+      <a class="btn" href="index.html">Meet your animal</a>
+      <a class="btn ghost" href="daily.html">Read today's sky</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <p>Find your Primal Animal, read where you stand, and see who you match. Built on the fusion of the Chinese and Western zodiacs.</p>
+    <p class="disclaimer">This is a tradition of meaning for reflection and entertainment. It is not medical, psychological, financial, or legal advice. The practices described here are presented as cultural and spiritual belief, not as established fact and not as treatment. The Primal Animal framework is adapted from the Primal Zodiac tradition.</p>
+  </footer>
+
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/nav.js"></script>
+<script>
+/* ============================================================
+   Awakening page: reads saved progress, drives the great eye.
+   Mirrors RITES, LEVELS, openness, and levelOf from app.js.
+   Read-only: it does not award rites, it only reflects them.
+   ============================================================ */
+(function(){
+  "use strict";
+  var $ = function(s,r){ return (r||document).querySelector(s); };
+
+  var KEY = "primal_oracle_v1";
+  function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ return {}; } }
+
+  var RITES = [
+    { id:"revealed", label:"Name your animal",       hint:"Enter your date of birth on the home page.", pts:20 },
+    { id:"read",     label:"Read your five gates",   hint:"Open the gates of your animal's reading.",   pts:20 },
+    { id:"stones",   label:"Receive your stones",    hint:"Let your keeper stones be drawn for you.",    pts:15 },
+    { id:"match",    label:"Test a match",           hint:"Score a pair on the match page.",             pts:20 },
+    { id:"shared",   label:"Pass the Oracle onward", hint:"Share or copy your animal for someone.",      pts:15 },
+    { id:"returned", label:"Return on a new day",    hint:"Come back on another day to keep the streak.",pts:10 }
+  ];
+  var LEVELS = [
+    [0,   "Sleeper",   "The eye is closed. The animal is still a rumor."],
+    [25,  "Stirring",  "The eye flickers. You have met your animal."],
+    [50,  "Seeing",    "The eye half-opens. The pattern starts to rhyme."],
+    [75,  "Awakened",  "The eye is open. You read yourself from the outside."],
+    [100, "All-Seeing","The eye is full. Every sky agrees on you."]
+  ];
+
+  var state = load(); state.rites = state.rites || {};
+
+  function openness(){ var p=0; RITES.forEach(function(r){ if(state.rites[r.id]) p+=r.pts; }); return Math.min(100,p); }
+  function levelOf(p){ var cur=LEVELS[0]; for(var i=0;i<LEVELS.length;i++){ if(p>=LEVELS[i][0]) cur=LEVELS[i]; } return cur; }
+
+  var p = openness();
+  var L = levelOf(p);
+  var anySaved = RITES.some(function(r){ return !!state.rites[r.id]; }) || !!state.lastVisit;
+
+  /* great eye */
+  var eye = $("#greatEye");
+  var open = p/100;                       // 0 closed .. 1 fully open
+  var lidScale = 1 - open;                // each lid shrinks toward the rim as we open
+  $(".lidTop", eye).style.transform   = "scaleY(" + lidScale.toFixed(3) + ")";
+  $(".lidBottom", eye).style.transform = "scaleY(" + lidScale.toFixed(3) + ")";
+  if (p >= 75) eye.classList.add("rays-on");
+
+  /* readout */
+  $("#eyeLevel").textContent   = L[1];
+  $("#eyePct").textContent     = p + " percent open";
+  $("#eyeMeaning").textContent = L[2];
+  setTimeout(function(){ $("#eyeBar").style.width = p + "%"; }, 60);
+
+  if (!anySaved){ $("#closedNote").hidden = false; }
+
+  /* rite cards */
+  var grid = $("#riteGrid");
+  grid.innerHTML = RITES.map(function(r){
+    var done = !!state.rites[r.id];
+    return '<div class="riteCard' + (done ? ' done' : '') + '">' +
+             '<span class="mark"></span>' +
+             '<div class="body"><h4>' + r.label + '</h4><p>' + (done ? "Done" : r.hint) + '</p></div>' +
+             '<span class="pts">' + r.pts + ' pts</span>' +
+           '</div>';
+  }).join("");
+
+  /* streak */
+  if (state.streak){
+    var n = state.streak;
+    $("#streakLine").hidden = false;
+    $("#streakVal").textContent = n + (n === 1 ? " day" : " days");
+  }
+
+  /* the five-level path */
+  var path = $("#levelPath");
+  path.innerHTML = LEVELS.map(function(lv){
+    var here = (lv[1] === L[1]);
+    return '<div class="levelStep' + (here ? ' here' : '') + '">' +
+             '<span class="dot"></span>' +
+             '<div class="name">' + lv[1] +
+               '<span class="pctTag">' + lv[0] + ' percent</span>' +
+               (here ? '<span class="youAreHere">You are here</span>' : '') +
+             '</div>' +
+             '<p>' + lv[2] + '</p>' +
+           '</div>';
+  }).join("");
+
+  /* starfield, same field the home page draws */
+  (function runStars(){
+    var cv = $("#sky"); if(!cv) return; var ctx = cv.getContext("2d");
+    function size(){ cv.width = innerWidth; cv.height = Math.max(innerHeight, document.body.scrollHeight); }
+    size(); addEventListener("resize", size);
+    var N = Math.min(180, Math.floor(innerWidth/8));
+    var stars = Array.from({length:N}, function(){ return {x:Math.random()*cv.width, y:Math.random()*cv.height, r:Math.random()*1.4+0.2, a:Math.random(), s:Math.random()*0.02+0.004}; });
+    (function frame(){
+      ctx.clearRect(0,0,cv.width,cv.height);
+      for(var i=0;i<stars.length;i++){ var st=stars[i]; st.a+=st.s; var al=0.35+Math.abs(Math.sin(st.a))*0.55;
+        ctx.beginPath(); ctx.arc(st.x,st.y,st.r,0,7); ctx.fillStyle="rgba(245,236,210,"+al+")"; ctx.fill(); }
+      requestAnimationFrame(frame);
+    })();
+  })();
+})();
+</script>
+</body>
+</html>

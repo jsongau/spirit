@@ -124,6 +124,9 @@
   function init(){
     checkReturn(); renderEye(); renderRecent(); renderToday();
 
+    const clearBtn=$("#clearDate");
+    if(clearBtn) clearBtn.addEventListener("click",()=>{ const b=$("#birthDate"); if(b){ b.value=""; b.focus(); } const m=$("#formMsg"); if(m) m.textContent=""; });
+
     const form=$("#birthForm");
     if(form) form.addEventListener("submit",(e)=>{
       e.preventDefault();

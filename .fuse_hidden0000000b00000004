@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src="js/theme.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title id="pageTitle">The Primal Oracle: your Primal Animal profile</title>
+<meta name="description" id="pageDesc" content="A full profile for a single Primal Animal: its essence, five gates, keeper stones, tonight's Moon, and who it matches across the Chinese trines.">
+<meta property="og:title" content="The Primal Oracle: a Primal Animal profile" id="ogTitle">
+<meta property="og:description" content="One animal where your Chinese year and Western Sun sign meet. Read its five gates, its stones, and who it matches." id="ogDesc">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/oracle.css">
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/animal.css">
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <nav>
+      <a href="index.html">Find your animal</a>
+      <a href="menagerie.html">All 144 animals</a>
+      <a href="match.html">Test a match</a>
+      <a href="learn.html">How it works</a>
+    </nav>
+  </header>
+
+  <!-- DATE FORM (shown only when no params resolve to an animal) -->
+  <section class="reader animalForm" id="askDate" hidden>
+    <h3>Name an animal first</h3>
+    <p class="dim">Enter a date of birth and the Oracle will open its full profile.</p>
+    <form id="dateForm">
+      <div class="field">
+        <input type="date" id="dateInput" required min="1940-01-01" max="2032-12-31" aria-label="Date of birth">
+        <button class="btn" type="submit">Open the profile</button>
+      </div>
+      <p class="msg" id="dateMsg"></p>
+    </form>
+  </section>
+
+  <!-- PROFILE -->
+  <main id="profile" hidden>
+
+    <!-- HERO -->
+    <section class="aHero">
+      <p class="eyebrow" id="heroEyebrow">One animal, two skies</p>
+      <div class="halves">
+        <div class="half">
+          <div class="mark" id="eastCn">蛇</div>
+          <div class="halfName" id="eastName">Snake</div>
+          <div class="halfSub" id="eastSub">Year animal</div>
+        </div>
+        <div class="amp" aria-hidden="true">+</div>
+        <div class="half">
+          <div class="mark glyph" id="westGlyph">♋</div>
+          <div class="halfName" id="westName">Cancer</div>
+          <div class="halfSub">Sun sign</div>
+        </div>
+      </div>
+      <h1 class="bigName" id="primalName">✦</h1>
+      <p class="essence" id="essence"></p>
+      <p class="mt"><button class="btn" id="replayBtn" type="button">Replay the reveal</button></p>
+    </section>
+
+    <!-- FIVE GATES -->
+    <section class="aSection">
+      <p class="eyebrow">The five gates</p>
+      <h2>Your reading, in order</h2>
+      <div class="gates" id="gates"></div>
+    </section>
+
+    <!-- STONES + MOON -->
+    <section class="aSection">
+      <div class="duo">
+        <div class="card">
+          <h3>Keeper stones</h3>
+          <ul class="stoneList" id="stones"></ul>
+          <p class="hint">Charge them on the full moon. Carry the one that calls loudest.</p>
+        </div>
+        <div class="card">
+          <h3>The Moon tonight</h3>
+          <p id="moonNow"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATCHES -->
+    <section class="aSection">
+      <p class="eyebrow">Two animals, one wheel</p>
+      <h2>Who this animal matches</h2>
+      <p class="lede" id="matchLede">Across the Chinese cycle, every animal keeps allies, one secret friend, one clash, and one quiet harm. Here is where the year animal stands.</p>
+      <ul class="matchLines" id="matchLines"></ul>
+      <p class="mt"><a class="btn ghost" href="match.html">Test a match</a></p>
+    </section>
+
+    <!-- SHARE -->
+    <section class="aSection">
+      <div class="card" id="shareSection">
+        <h3>Pass the Oracle onward</h3>
+        <p class="dim">Send this animal to someone and wonder out loud whether you match.</p>
+        <div class="shareBox">
+          <input id="shareLine" readonly aria-label="Share text">
+          <button class="btn" id="shareBtn" type="button">Share my animal</button>
+          <button class="btn ghost" id="cardBtn" type="button">Download my card</button>
+          <button class="btn ghost" id="copyBtn" type="button">Copy</button>
+        </div>
+        <p class="msg" id="shareMsg" style="color:var(--brass-bright)"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <p>Find your Primal Animal, read where you stand, and see who you match. Built on the fusion of the Chinese and Western zodiacs.</p>
+    <p class="disclaimer">This is a tradition of meaning for reflection and entertainment. It is not medical, psychological, financial, or legal advice. The Primal Animal framework is adapted from the Primal Zodiac tradition. Stones and lunar practices are presented as cultural tradition, not as treatment.</p>
+  </footer>
+
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/card.js"></script>
+<script>
+/* ============================================================
+   THE PRIMAL ORACLE — single-animal profile page
+   Reads URL params, resolves a compute result, renders the page.
+   Depends on window.ENGINE, window.ORACLE, window.CINEMA.
+   ============================================================ */
+(function () {
+  "use strict";
+  const $ = (s, r=document) => r.querySelector(s);
+
+  /* ---------- resolve the animal from URL params ---------- */
+  function resolve() {
+    const p = new URLSearchParams(location.search);
+
+    // 1) full date
+    const d = p.get("d");
+    if (d) { const c = ENGINE.compute(d); if (c) return c; }
+
+    // 2) explicit sign + animal
+    const sign = p.get("sign"), animal = p.get("animal");
+    if (sign && animal && ORACLE.WEST[sign] && ORACLE.EAST[animal]) {
+      return ENGINE.fromSignAnimal(sign, animal);
+    }
+
+    // 3) primal animal name
+    if (animal && !sign) {
+      const loc = ENGINE.locate(animal);
+      if (loc) return ENGINE.fromSignAnimal(loc.sign, loc.animal);
+    }
+
+    return null;
+  }
+
+  /* ---------- toast ---------- */
+  function pulse(title, sub) {
+    const t = $("#toast"); if (!t) return;
+    t.innerHTML = `<strong>${title}</strong><span>${sub}</span>`;
+    t.classList.add("show");
+    clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), 2600);
+  }
+
+  /* ---------- escape for safe insertion ---------- */
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, m => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]));
+  }
+
+  /* ---------- render the profile ---------- */
+  function render(c) {
+    const r = ENGINE.reading(c);
+    const mp = ENGINE.moonPhase();
+    const elemPrefix = c.noElement ? "" : (c.element + " ");
+    const eastSub = c.noElement ? "Year animal" : (c.element + " year animal");
+
+    // meta + title
+    const title = "The " + c.primal + ": a Primal Animal of " + c.sign + " and the " + c.animal;
+    document.title = title;
+    $("#pageTitle").textContent = title;
+    const desc = "The " + c.primal + " is where " + c.sign + " meets the Year of the " + c.animal +
+      ". Read its essence, five gates, keeper stones, tonight's Moon, and who it matches.";
+    $("#pageDesc").setAttribute("content", desc);
+    $("#ogTitle").setAttribute("content", "The " + c.primal);
+    $("#ogDesc").setAttribute("content", desc);
+
+    // hero halves
+    $("#eastCn").textContent = c.cn;
+    $("#eastName").textContent = c.animal;
+    $("#eastSub").textContent = eastSub;
+    $("#westGlyph").textContent = c.glyph;
+    $("#westName").textContent = c.sign;
+    $("#heroEyebrow").textContent = c.sign + " crossed with the " + c.animal;
+
+    // name + essence
+    $("#primalName").textContent = c.primal;
+    $("#essence").textContent = r.essence;
+
+    // gates
+    const g = $("#gates"); g.innerHTML = "";
+    r.gates.forEach((x, i) => {
+      const a = document.createElement("article");
+      a.className = "gate";
+      a.style.animationDelay = (0.08 * i) + "s";
+      a.innerHTML = `<h4>${esc(x.t)}</h4><p>${esc(x.b)}</p>`;
+      g.appendChild(a);
+    });
+
+    // stones
+    $("#stones").innerHTML = r.stones.map(s => `<li>${esc(s)}</li>`).join("");
+
+    // moon
+    $("#moonNow").innerHTML = `Tonight the Moon is a <strong>${esc(mp.name)}</strong> (${mp.age} days into its cycle). A good night to ${esc(mp.advice)}.`;
+
+    // matches, from ORACLE.EAST[animal]
+    const e = ORACLE.EAST[c.animal];
+    const lines = [];
+    if (e.trine && e.trine.length) {
+      lines.push({ label: "Trine allies", body: "The " + e.trine.join(" and the ") + " (San He). The strongest natural bond." });
+    }
+    if (e.secret) lines.push({ label: "Secret friend", body: "The " + e.secret + " (Liu He). An easy, balancing fit." });
+    if (e.clash) lines.push({ label: "A clash", body: "The " + e.clash + " (Liu Chong). Opposed energies, to be handled with care." });
+    if (e.harm) lines.push({ label: "A quiet harm", body: "The " + e.harm + " (Liu Hai). Watch for slow corrosion." });
+    $("#matchLines").innerHTML = lines.map(l =>
+      `<li><span class="lab">${esc(l.label)}</span><span class="bod">${esc(l.body)}</span></li>`).join("");
+    $("#matchLede").textContent = "Across the Chinese cycle, the " + c.animal +
+      " keeps its allies, one secret friend, one clash, and one quiet harm. Here is where this animal stands.";
+
+    // share line
+    const shareElem = c.noElement ? "" : (c.element + " ");
+    $("#shareLine").value = "My Primal Animal is the " + c.primal + " (" + c.sign + " and the " +
+      shareElem + c.animal + "). Find yours at the Primal Oracle.";
+
+    // reveal the profile
+    $("#askDate").hidden = true;
+    $("#profile").hidden = false;
+
+    wireShare(c);
+    wireReplay(c);
+  }
+
+  /* ---------- share + copy ---------- */
+  function wireShare(c) {
+    const text = () => $("#shareLine").value;
+    $("#shareBtn").onclick = async () => {
+      try {
+        if (navigator.share) { await navigator.share({ title: "The Primal Oracle", text: text() }); }
+        else { await navigator.clipboard.writeText(text()); pulse("Copied to clipboard", "share it with a friend"); }
+      } catch (e) {}
+    };
+    $("#copyBtn").onclick = async () => {
+      try { await navigator.clipboard.writeText(text()); pulse("Copied to clipboard", "send it to someone you wonder about"); }
+      catch (e) {}
+    };
+    const cb = $("#cardBtn");
+    if (cb) cb.onclick = async () => {
+      if (!window.PCARD) return;
+      cb.textContent = "Drawing your card"; cb.disabled = true;
+      try { await PCARD.shareAnimal(c); pulse("Your card is ready", "save it or send it on"); } catch (e) {}
+      cb.textContent = "Download my card"; cb.disabled = false;
+    };
+  }
+
+  /* ---------- replay the cinematic reveal ---------- */
+  function wireReplay(c) {
+    const btn = $("#replayBtn");
+    btn.onclick = () => { if (window.CINEMA) CINEMA.run(c, () => {}); };
+  }
+
+  /* ---------- date form fallback ---------- */
+  function showForm() {
+    $("#profile").hidden = true;
+    $("#askDate").hidden = false;
+    $("#dateForm").addEventListener("submit", (ev) => {
+      ev.preventDefault();
+      const v = $("#dateInput").value;
+      if (!ENGINE.compute(v)) { $("#dateMsg").textContent = "Please enter a date of birth to open a profile."; return; }
+      location.search = "?d=" + encodeURIComponent(v);
+    });
+  }
+
+  /* ---------- starfield (simplified runStars) ---------- */
+  function runStars() {
+    const cv = $("#sky"); if (!cv) return;
+    const ctx = cv.getContext("2d");
+    function size() { cv.width = innerWidth; cv.height = Math.max(innerHeight, document.body.scrollHeight); }
+    size(); addEventListener("resize", size);
+    const N = Math.min(180, Math.floor(innerWidth / 8));
+    const stars = Array.from({ length: N }, () => ({
+      x: Math.random() * cv.width, y: Math.random() * cv.height,
+      r: Math.random() * 1.4 + 0.2, a: Math.random(), s: Math.random() * 0.02 + 0.004
+    }));
+    (function frame() {
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      for (const st of stars) {
+        st.a += st.s; const al = 0.35 + Math.abs(Math.sin(st.a)) * 0.55;
+        ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, 7);
+        ctx.fillStyle = `rgba(245,236,210,${al})`; ctx.fill();
+      }
+      requestAnimationFrame(frame);
+    })();
+  }
+
+  /* ---------- init ---------- */
+  function init() {
+    const c = resolve();
+    if (c) render(c); else showForm();
+    runStars();
+  }
+  document.addEventListener("DOMContentLoaded", init);
+})();
+</script>
+</body>
+</html>

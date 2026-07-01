@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src="js/theme.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All 144 Primal Animals: the menagerie of the Primal Oracle</title>
+<meta name="description" content="Browse all 144 Primal Animals, the full menagerie where every Western Sun sign meets every Chinese zodiac year. Filter by sign or year animal, search by name, and open any animal's reading.">
+<meta property="og:title" content="All 144 Primal Animals: the menagerie">
+<meta property="og:description" content="The complete gallery of 144 Primal Animals, one creature for every pairing of Sun sign and Chinese year animal. Filter, search, and read each one.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/oracle.css">
+<link rel="stylesheet" href="css/menagerie.css">
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <nav>
+      <a href="index.html">Find your animal</a>
+      <a href="menagerie.html">All 144 animals</a>
+      <a href="match.html">Test a match</a>
+      <a href="learn.html">How it works</a>
+    </nav>
+  </header>
+
+  <!-- INTRO -->
+  <section class="menIntro">
+    <p class="eyebrow">The menagerie</p>
+    <h1>All <em>144</em> Primal Animals</h1>
+    <p class="lede">The menagerie is the full set of creatures, one for every place where a Western Sun sign crosses a Chinese zodiac year. Twelve signs and twelve year animals make 144 pairings, and each pairing settles into a single animal with its own reading.</p>
+    <p class="menNote">For example, Cancer crossed with the Year of the Snake is the <b>Snail</b>. Use the filters below to walk the grid by sign or by year animal, or type a name to find one creature.</p>
+  </section>
+
+  <!-- FILTERS -->
+  <section class="filters" aria-label="Filter the menagerie">
+    <div class="filterRow">
+      <div class="filterGroup">
+        <label for="fSign">Sun sign</label>
+        <select id="fSign" aria-label="Filter by Sun sign"></select>
+      </div>
+      <div class="filterGroup">
+        <label for="fAnimal">Year animal</label>
+        <select id="fAnimal" aria-label="Filter by Year animal"></select>
+      </div>
+      <div class="filterGroup grow">
+        <label for="fSearch">Search by name</label>
+        <input type="search" id="fSearch" placeholder="Try snail, fox, or owl" aria-label="Search Primal Animals by name">
+      </div>
+    </div>
+    <div class="filterMeta">
+      <p class="count" id="count" aria-live="polite"></p>
+      <button class="clearBtn" id="clearBtn" type="button">Clear filters</button>
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <main>
+    <div class="menGrid" id="grid"></div>
+    <div class="empty" id="empty" hidden>
+      <h3>No animal here</h3>
+      <p class="dim">Nothing matches that combination yet. Clear the filters and try another path through the grid.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <p>Find your Primal Animal, read where you stand, and see who you match. Built on the fusion of the Chinese and Western zodiacs.</p>
+    <p class="disclaimer">This is a tradition of meaning for reflection and entertainment. It is not medical, psychological, financial, or legal advice. The Primal Animal framework is adapted from the Primal Zodiac tradition. Stones and lunar practices are presented as cultural tradition, not as treatment.</p>
+  </footer>
+
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(function () {
+  "use strict";
+  const O = ORACLE;
+  const $ = (s) => document.querySelector(s);
+
+  /* ---------- simplified starfield (from app.js runStars) ---------- */
+  (function runStars(){
+    const cv = $("#sky"); if (!cv) return;
+    const ctx = cv.getContext("2d");
+    function size(){ cv.width = innerWidth; cv.height = Math.max(innerHeight, document.body.scrollHeight); }
+    size(); addEventListener("resize", size);
+    const N = Math.min(160, Math.floor(innerWidth / 9));
+    const stars = Array.from({length:N}, () => ({
+      x: Math.random()*cv.width, y: Math.random()*cv.height,
+      r: Math.random()*1.4 + 0.2, a: Math.random(), s: Math.random()*0.02 + 0.004
+    }));
+    (function frame(){
+      ctx.clearRect(0,0,cv.width,cv.height);
+      for (const st of stars){
+        st.a += st.s; const al = 0.35 + Math.abs(Math.sin(st.a))*0.55;
+        ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, 7);
+        ctx.fillStyle = `rgba(245,236,210,${al})`; ctx.fill();
+      }
+      requestAnimationFrame(frame);
+    })();
+  })();
+
+  /* ---------- build the 144 cards from data ---------- */
+  const grid = $("#grid");
+  const cells = []; // {name, sign, animal, signGlyph, cnGlyph, hay}
+  const frag = document.createDocumentFragment();
+
+  O.WEST_ORDER.forEach((sign) => {
+    O.CHINESE_ORDER.forEach((animal, colIndex) => {
+      const name = O.GRID[sign][colIndex];
+      const signGlyph = O.GLYPH_WEST[sign];
+      const cnGlyph = O.CN_EAST[animal];
+
+      const a = document.createElement("a");
+      a.className = "beast";
+      a.href = "/animals/" + name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") + "/";
+
+      a.innerHTML =
+        '<div class="glyphRow"><span class="west">' + signGlyph + '</span>' +
+        '<span class="dot"></span><span class="cn">' + cnGlyph + '</span></div>' +
+        '<h2 class="pname">' + name + '</h2>' +
+        '<p class="pair"><span>' + sign + '</span> and the Year of the <span>' + animal + '</span></p>' +
+        '<span class="open">Read the ' + name + '</span>';
+
+      frag.appendChild(a);
+      cells.push({ el: a, sign, animal, hay: name.toLowerCase() });
+    });
+  });
+  grid.appendChild(frag);
+
+  /* ---------- populate the filter selects ---------- */
+  const fSign = $("#fSign"), fAnimal = $("#fAnimal"), fSearch = $("#fSearch");
+
+  function opt(value, text){ const o = document.createElement("option"); o.value = value; o.textContent = text; return o; }
+
+  fSign.appendChild(opt("", "All Sun signs"));
+  O.WEST_ORDER.forEach((s) => fSign.appendChild(opt(s, O.GLYPH_WEST[s] + "  " + s)));
+
+  fAnimal.appendChild(opt("", "All year animals"));
+  O.CHINESE_ORDER.forEach((a) => fAnimal.appendChild(opt(a, O.CN_EAST[a] + "  " + a)));
+
+  /* ---------- instant filtering ---------- */
+  const countEl = $("#count"), emptyEl = $("#empty");
+  const TOTAL = cells.length;
+
+  function apply(){
+    const sign = fSign.value;
+    const animal = fAnimal.value;
+    const q = fSearch.value.trim().toLowerCase();
+    let shown = 0;
+
+    for (const c of cells){
+      const ok = (!sign || c.sign === sign) &&
+                 (!animal || c.animal === animal) &&
+                 (!q || c.hay.indexOf(q) !== -1);
+      c.el.hidden = !ok;
+      if (ok) shown++;
+    }
+
+    countEl.innerHTML = "Showing <b>" + shown + "</b> of " + TOTAL;
+    emptyEl.hidden = shown !== 0;
+  }
+
+  fSign.addEventListener("change", apply);
+  fAnimal.addEventListener("change", apply);
+  fSearch.addEventListener("input", apply);
+
+  $("#clearBtn").addEventListener("click", function(){
+    fSign.value = ""; fAnimal.value = ""; fSearch.value = "";
+    apply();
+  });
+
+  apply();
+})();
+</script>
+</body>
+</html>

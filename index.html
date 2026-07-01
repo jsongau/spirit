@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script src="js/theme.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Primal Oracle: find your Primal Animal from Chinese and Western zodiac</title>
 <meta name="description" content="Enter your date of birth to find your Primal Animal, the single creature where your Chinese zodiac year and Western Sun sign meet. Read your five gates, get your stones, and test a match.">
@@ -114,6 +113,7 @@
         <div class="field">
           <input type="date" id="birthDate" required min="1940-01-01" max="2032-12-31" aria-label="Date of birth">
           <button class="btn" type="submit">Reveal my animal</button>
+          <button class="btn ghost" id="clearDate" type="button" aria-label="Clear the date">Clear</button>
         </div>
         <p class="msg" id="formMsg"></p>
       </form>

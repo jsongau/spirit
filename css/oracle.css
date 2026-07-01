@@ -4,33 +4,6 @@
    ============================================================ */
 
 :root{
-  /* LIGHT theme is the default */
-  --ink:#f6f1e6;
-  --ink2:#efe7d6;
-  --panel:#fffdf8;
-  --panel2:#f4eede;
-  --line:rgba(58,46,18,.16);
-  --brass:#9a7c3b;
-  --brass-bright:#7a5f22;
-  --moon:#2b2518;
-  --ivory:#332e22;
-  --muted:#6f6853;
-  --body:#413b2c;
-  --field-bg:#fbf7ee;
-  --bg-glow:#efe6d3;
-  --nav-bg:rgba(246,241,230,.9);
-  --dd-bg1:#fffdf8; --dd-bg2:#f4eede;
-  --chip-bg:rgba(255,255,255,.72);
-  --violet:#6b5cc4;
-  --rose:#a8486c;
-  --twin:#2c8570;
-  /* gold action button, identical in both themes */
-  --btn-1:#efe2b4; --btn-2:#d6c18c; --btn-text:#1a160a;
-  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
-  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  --maxw:1080px;
-}
-:root[data-theme="dark"]{
   --ink:#0a0b14;
   --ink2:#10121f;
   --panel:#151728;
@@ -47,8 +20,13 @@
   --nav-bg:rgba(10,11,20,.92);
   --dd-bg1:#161832; --dd-bg2:#0d0f1d;
   --chip-bg:rgba(21,23,40,.6);
+  --violet:#6b5cc4;
   --rose:#c98aa6;
   --twin:#7fe0c8;
+  --btn-1:#efe2b4; --btn-2:#d6c18c; --btn-text:#1a160a;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --maxw:1080px;
 }
 
 *{box-sizing:border-box}
@@ -62,8 +40,6 @@ body{
   transition:background-color .3s ease, color .3s ease;
 }
 #sky{position:fixed; inset:0; z-index:0; pointer-events:none}
-/* the starfield belongs to the night; hide it in light theme */
-:root:not([data-theme="dark"]) #sky{display:none}
 .wrap{position:relative; z-index:1; max-width:var(--maxw); margin:0 auto; padding:0 22px}
 
 h1,h2,h3,h4{font-family:var(--serif); font-weight:600; letter-spacing:.3px; line-height:1.12; margin:0}

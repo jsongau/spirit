@@ -129,22 +129,6 @@ window.PNAV = window.PNAV || { features: {} };
     const tools = bar.querySelector(".pn-tools");
     const burger = bar.querySelector(".pn-burger");
 
-    // theme toggle (light default, dark on request)
-    const themeBtn = document.createElement("button");
-    themeBtn.type = "button"; themeBtn.className = "pn-chip pn-theme";
-    themeBtn.setAttribute("aria-label", "Toggle light or dark theme");
-    function syncTheme(){
-      const d = (window.THEME && THEME.current) ? THEME.current() : (document.documentElement.getAttribute("data-theme") || "light");
-      themeBtn.innerHTML = '<span class="v" aria-hidden="true">' + (d === "dark" ? "☾" : "☀") + '</span><span class="lbl">' + (d === "dark" ? "Dark" : "Light") + '</span>';
-      themeBtn.setAttribute("aria-pressed", d === "dark" ? "true" : "false");
-    }
-    themeBtn.addEventListener("click", function(){
-      if (window.THEME) { THEME.toggle(); }
-      else { const el = document.documentElement; el.setAttribute("data-theme", el.getAttribute("data-theme") === "dark" ? "light" : "dark"); }
-      syncTheme();
-    });
-    tools.appendChild(themeBtn);
-    PNAV.syncTheme = syncTheme; syncTheme();
 
     // mobile drawer
     const drawer = document.createElement("div");
