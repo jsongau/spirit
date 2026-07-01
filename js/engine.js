@@ -137,5 +137,73 @@ window.ENGINE = (function () {
     return { score, tier, notes };
   }
 
-  return { compute, fromSignAnimal, locate, reading, essence, moonPhase, compatibility, sunSign, yearAnimal, element, primalOf };
+  // ---- Chinese day-animal (earthly branch of the day) ----
+  // Verified: B = 1 + (JDN + 1) mod 12, anchored to JDN 2458511 = a Rat (Zi) day.
+  function jdn(y, m, d) {
+    const a = Math.floor((14 - m) / 12), yy = y + 4800 - a, mm = m + 12 * a - 3;
+    return d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - Math.floor(yy / 100) + Math.floor(yy / 400) - 32045;
+  }
+  function dayAnimal(dt) {
+    const J = jdn(dt.getFullYear(), dt.getMonth() + 1, dt.getDate());
+    return O.CHINESE_ORDER[(((J + 1) % 12) + 12) % 12];
+  }
+  // Upcoming favorable and caution days for a given Chinese sign.
+  function bestDays(sign, from, days) {
+    const e = O.EAST[sign];
+    const fav = e.trine.concat([e.secret]), cau = [e.clash, e.harm];
+    const out = { favorable: [], caution: [] };
+    for (let i = 1; i <= (days || 60); i++) {
+      const d = new Date(from.getTime() + i * 86400000);
+      const da = dayAnimal(d);
+      if (fav.indexOf(da) >= 0 && out.favorable.length < 5) {
+        out.favorable.push({ date: d, animal: da, relation: e.trine.indexOf(da) >= 0 ? "a trine ally" : "your secret friend" });
+      } else if (cau.indexOf(da) >= 0 && out.caution.length < 3) {
+        out.caution.push({ date: d, animal: da, relation: da === e.clash ? "a clash" : "a quiet harm" });
+      }
+    }
+    return out;
+  }
+
+  // ---- Circle: pairwise matches + a group-of-three reading ----
+  const TRINES = [["Rat","Dragon","Monkey"],["Ox","Snake","Rooster"],["Tiger","Horse","Dog"],["Rabbit","Goat","Pig"]];
+  function circle(people) {
+    const pairs = [];
+    for (let i = 0; i < people.length; i++)
+      for (let j = i + 1; j < people.length; j++) {
+        const m = compatibility(people[i], people[j]);
+        pairs.push({ i, j, a: people[i], b: people[j], score: m.score, tier: m.tier, notes: m.notes });
+      }
+    const res = { pairs };
+    if (people.length === 3) {
+      const chin = people.map(p => p.animal);
+      const allTrine = TRINES.some(t => chin.every(a => t.indexOf(a) >= 0));
+      const scores = pairs.map(p => p.score);
+      const avg = Math.round((scores[0] + scores[1] + scores[2]) / 3);
+      const minS = Math.min.apply(null, scores);
+      const weak = scores.filter(s => s < 10).length;
+      let archetype, blurb, practice;
+      if (allTrine) { archetype = "The True Trine";
+        blurb = "All three of you share one of the Chinese trines. This is the rarest circle: an instinctive, low-friction harmony where you move at a similar pace and want similar things. The risk is comfort. A circle this easy can stop growing because nothing forces it to.";
+        practice = "Once a season, do something none of you would have chosen alone."; }
+      else if (minS >= 13) { archetype = "The Woven Circle";
+        blurb = "Every pair here is strong on its own, so the three of you weave into something steady. Each edge holds. The work is to keep all three of you in the room at once, so it never quietly becomes two friends and a guest.";
+        practice = "When you gather, let the quietest of the three choose what you do."; }
+      else if (weak === 1) { archetype = "The Two and One";
+        blurb = "Two of you lock in fast; the third meets the circle through friction. That is not a flaw. The one who fits least often sees the other two most clearly. The danger is the pair closing ranks and leaving the third outside the joke.";
+        practice = "Let the outer one speak first when the three of you decide anything."; }
+      else if (weak >= 2) { archetype = "The Friction Triangle";
+        blurb = "This circle runs hot. More than one pair here is built on contrast, so being together takes real attention. Handled with honesty it sharpens each of you; handled carelessly it splinters. Nothing about this triangle is lukewarm.";
+        practice = "Name the friction out loud early, before it names itself."; }
+      else { archetype = "The Open Circle";
+        blurb = "A workable, mixed circle: some pairs flow, some take effort, none are locked. This is the most common and the most flexible triangle. What it becomes depends almost entirely on how much the three of you tend it.";
+        practice = "Meet on purpose, not only by accident, and it deepens."; }
+      const sums = [0, 0, 0];
+      pairs.forEach(p => { sums[p.i] += p.score; sums[p.j] += p.score; });
+      const anchorIndex = sums.indexOf(Math.max.apply(null, sums));
+      res.group = { archetype, blurb, practice, avg, anchorIndex, allTrine };
+    }
+    return res;
+  }
+
+  return { compute, fromSignAnimal, locate, reading, essence, moonPhase, compatibility, sunSign, yearAnimal, element, primalOf, dayAnimal, bestDays, circle };
 })();

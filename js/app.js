@@ -67,7 +67,14 @@
   function renderResult(c){
     last=c;
     // save the profile locally so the whole site personalizes from the first reveal
-    try{ const v=$("#birthDate").value; if(v){ state.birth=v; save(state); } }catch(e){}
+    try{ const v=$("#birthDate").value; if(v){ state.birth=v; } }catch(e){}
+    // record recently opened animals (this visitor's own history, local only)
+    try{
+      const sg=c.primal.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
+      state.recent=(state.recent||[]).filter(r=>r.primal!==c.primal);
+      state.recent.unshift({primal:c.primal,slug:sg});
+      state.recent=state.recent.slice(0,5); save(state); renderRecent();
+    }catch(e){}
     const r=ENGINE.reading(c), mp=ENGINE.moonPhase();
     $("#animalName").textContent=c.primal;
     $("#animalEssence").textContent=r.essence;
@@ -85,8 +92,14 @@
   }
 
   /* ---------- WIRE ---------- */
+  function renderRecent(){
+    const el=$("#recentOpened"); if(!el) return;
+    if(!state.recent||!state.recent.length){ el.textContent=""; return; }
+    el.innerHTML="You recently opened: "+state.recent.map(r=>'<a href="animals/'+r.slug+'/">'+r.primal+'</a>').join(", ");
+  }
+
   function init(){
-    checkReturn(); renderEye();
+    checkReturn(); renderEye(); renderRecent();
 
     const form=$("#birthForm");
     if(form) form.addEventListener("submit",(e)=>{

@@ -14,6 +14,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/oracle.css">
 <link rel="stylesheet" href="css/reveal.css">
+<style>
+  .peekGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:18px}
+  .peekCard{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;transition:border-color .15s,transform .15s}
+  .peekCard:hover{border-color:var(--brass);transform:translateY(-2px)}
+  .peekCard .pn{font-family:var(--serif);font-size:1.25rem;color:var(--moon);line-height:1.1}
+  .peekCard .ps{font-size:.72rem;color:var(--muted);margin-top:4px;letter-spacing:.03em}
+  .pathsGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+  .pathCard{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .pathCard h3{font-family:var(--serif);color:var(--brass-bright);font-size:1.2rem;margin:0 0 4px}
+  .pathCard p{margin:0;font-size:.9rem;color:var(--body)}
+  .btnRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+</style>
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -117,6 +129,49 @@
       </div>
     </div>
   </div>
+
+  <!-- MENAGERIE PREVIEW -->
+  <section class="band" id="peek">
+    <p class="eyebrow">Inside the Menagerie</p>
+    <h2>144 animals, one is yours</h2>
+    <p class="lede">A glimpse of the creatures waiting at the crossings. Enter your birthday above to find which one is you, or wander the whole menagerie.</p>
+    <div class="peekGrid">
+      <a class="peekCard" href="animals/snail/"><span class="pn">Snail</span><span class="ps">Cancer and the Snake</span></a>
+      <a class="peekCard" href="animals/owl/"><span class="pn">Owl</span><span class="ps">Scorpio and the Rooster</span></a>
+      <a class="peekCard" href="animals/butterfly/"><span class="pn">Butterfly</span><span class="ps">Libra and the Rabbit</span></a>
+      <a class="peekCard" href="animals/tyrannosaurus-rex/"><span class="pn">Tyrannosaurus Rex</span><span class="ps">Aries and the Dragon</span></a>
+      <a class="peekCard" href="animals/yak/"><span class="pn">Yak</span><span class="ps">Taurus and the Ox</span></a>
+      <a class="peekCard" href="animals/turtle/"><span class="pn">Turtle</span><span class="ps">Cancer and the Rabbit</span></a>
+    </div>
+    <p class="hint" id="recentOpened"></p>
+    <p class="mt"><a class="btn ghost" href="menagerie.html">Browse all 144 animals</a></p>
+  </section>
+
+  <!-- WHAT YOUR ANIMAL OPENS -->
+  <section class="band">
+    <p class="eyebrow">What your animal opens</p>
+    <h2>Not a label. A map.</h2>
+    <div class="pathsGrid">
+      <div class="pathCard"><h3>Nature</h3><p>How you move, decide, and protect what matters.</p></div>
+      <div class="pathCard"><h3>Shadow</h3><p>The fault your own strength turns into under pressure.</p></div>
+      <div class="pathCard"><h3>Awakening</h3><p>The same strength, integrated and awake.</p></div>
+      <div class="pathCard"><h3>Habitat</h3><p>Direction, colors, and rooms that suit your animal.</p></div>
+      <div class="pathCard"><h3>Bonds</h3><p>Who meets you easily, and who meets you through friction.</p></div>
+      <div class="pathCard"><h3>Rhythm</h3><p>The moon phase and the days that serve you.</p></div>
+    </div>
+  </section>
+
+  <!-- COMPARE WITH FRIENDS -->
+  <section class="band" id="compareBand">
+    <p class="eyebrow">Bring your people</p>
+    <h2>Some animals recognize each other at once</h2>
+    <p class="lede">Find a friend's animal by their birthday, test the two of you one to one, then read three of you together as a circle.</p>
+    <div class="btnRow">
+      <a class="btn" href="year.html">Look up a friend</a>
+      <a class="btn ghost" href="match.html">Test a match</a>
+      <a class="btn ghost" href="circle.html">Read a circle of three</a>
+    </div>
+  </section>
 
   <!-- COMPATIBILITY -->
   <section class="band" id="matchSection">

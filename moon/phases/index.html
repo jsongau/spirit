@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="../../">
+<script src="js/theme.js"></script>
+<title>Moon phases: what each one favors · Primal Animal</title>
+<meta name="description" content="The eight moon phases and the practice each one favors, from the new moon to the waning crescent.">
+<link rel="canonical" href="">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Moon phases: what each one favors · Primal Animal">
+<meta property="og:description" content="The eight moon phases and the practice each one favors, from the new moon to the waning crescent.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/oracle.css">
+<link rel="stylesheet" href="css/profile.css">
+
+<script>window.PN_HERE="hub";</script>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<main class="pf-wrap">
+
+  <header class="pf-hero">
+    <p class="pf-eyebrow">The Moon</p>
+    <h1 class="pf-name">The eight phases</h1>
+    <p class="pf-essence">The Moon breathes once a month, from dark to full and back. Each phase favors a different kind of action.</p>
+  </header>
+  <section class="pf-section"><div class="pn-dd-cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px"><a class="dd-card" href="moon/phases/new-moon/"><span class="t">New Moon</span><span class="d">The sky is dark and the cycle begins. A private, unlit start.</span></a><a class="dd-card" href="moon/phases/waxing-crescent/"><span class="t">Waxing Crescent</span><span class="d">The first sliver of light. The intention takes its first shape.</span></a><a class="dd-card" href="moon/phases/first-quarter/"><span class="t">First Quarter</span><span class="d">Half-lit and rising. The moment resistance shows up.</span></a><a class="dd-card" href="moon/phases/waxing-gibbous/"><span class="t">Waxing Gibbous</span><span class="d">Nearly full. The tedious middle where things get refined.</span></a><a class="dd-card" href="moon/phases/full-moon/"><span class="t">Full Moon</span><span class="d">Fully lit, all night. The peak, and the release.</span></a><a class="dd-card" href="moon/phases/waning-gibbous/"><span class="t">Waning Gibbous</span><span class="d">Just past full. The turn toward giving back.</span></a><a class="dd-card" href="moon/phases/last-quarter/"><span class="t">Last Quarter</span><span class="d">Half-lit and falling. Time to clear the deck.</span></a><a class="dd-card" href="moon/phases/waning-crescent/"><span class="t">Waning Crescent</span><span class="d">The last thin light before dark. Rest, not effort.</span></a></div>
+    <p class="pf-note" style="margin-top:18px"><a href="moon.html">See the Moon tonight</a> &middot; <a href="index.html">Find your animal for a personal version</a></p></section>
+</main>
+<footer class="pf-foot">
+  <div>The Primal <b style="color:var(--brass)">Oracle</b></div>
+  <p class="pf-disc">A tradition of meaning for reflection, not medical, psychological, financial, or legal advice. Elements, directions, colors, stones, and Moon practices are symbolic and cultural, not treatments or guarantees.</p>
+</footer>
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(function(){var cv=document.getElementById('sky');if(!cv)return;var x=cv.getContext('2d');function sz(){cv.width=innerWidth;cv.height=Math.max(innerHeight,document.body.scrollHeight);}sz();addEventListener('resize',sz);
+var red=(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)||false;var N=red?70:130;
+var st=Array.from({length:N},function(){return{x:Math.random()*cv.width,y:Math.random()*cv.height,r:Math.random()*1.3+0.2,a:Math.random(),s:Math.random()*0.02+0.004};});
+(function f(){x.clearRect(0,0,cv.width,cv.height);for(var i=0;i<st.length;i++){var s=st[i];if(!red)s.a+=s.s;var al=0.3+Math.abs(Math.sin(s.a))*0.5;x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fillStyle='rgba(245,236,210,'+al+')';x.fill();}if(!document.hidden)requestAnimationFrame(f);})();})();
+</script>
+</body>
+</html>

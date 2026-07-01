@@ -71,6 +71,13 @@
       <a href="moon/phases/waning-crescent/">Rest phase: Waning Crescent</a>
     </div>
   </section>
+  <section class="pf-section">
+    <p class="pf-eyebrow">Best days</p>
+    <h2>Favorable days ahead</h2>
+    <p>In the Chinese tradition each day carries its own animal. Days ruled by the Dog's allies tend to favor connection and fresh starts; days ruled by its opposite ask for a little patience.</p>
+    <ul class="pf-list" id="pf-bestdays"><li class="pf-note">Reading the calendar…</li></ul>
+    <p class="pf-note">Symbolic timing for reflection, not a promise about any day. Computed from the day's Chinese animal in your browser.</p>
+  </section>
 </main>
 
 <footer class="pf-foot">
@@ -93,6 +100,17 @@
     try{ await PCARD.shareAnimal(c); }catch(e){}
     b.textContent=t; b.disabled=false;
   });
+  // best days ahead (computed from the day's Chinese animal)
+  try{ if(window.ENGINE && ENGINE.bestDays){
+    var bd=ENGINE.bestDays("Dog", new Date(), 60);
+    var bl=document.getElementById('pf-bestdays');
+    if(bl){ var fmt=function(d){return d.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'});};
+      var h='';
+      bd.favorable.forEach(function(x){h+='<li><strong style="color:var(--moon)">'+fmt(x.date)+'</strong> &middot; day of the '+x.animal+', '+x.relation+'</li>';});
+      bd.caution.forEach(function(x){h+='<li style="opacity:.72">'+fmt(x.date)+' &middot; day of the '+x.animal+', '+x.relation+' day; move gently</li>';});
+      if(!h) h='<li>Steady ground ahead; no standout days in the next two months.</li>';
+      bl.innerHTML=h;
+    } } }catch(e){}
   // tiny starfield
   var cv=document.getElementById('sky'); if(cv){var x=cv.getContext('2d');function sz(){cv.width=innerWidth;cv.height=Math.max(innerHeight,document.body.scrollHeight);}sz();addEventListener('resize',sz);
     var red=(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)||false; var N=red?80:140;
