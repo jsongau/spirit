@@ -1,0 +1,157 @@
+/* ============================================================
+   a11y.css  —  Zodianimal.com corrective accessibility layer (Phase 9)
+   ------------------------------------------------------------
+   A small, sitewide, non-visual-regressing layer that closes the
+   gaps found in the Phase 9 static a11y gate (see
+   docs/redesign/09-a11y-perf-report.md). It is injected sitewide by
+   build/apply-assets.mjs and MUST load AFTER tokens.css (so tokens
+   resolve) and after the component CSS (so these correctives win by
+   later-source order at equal specificity where intended).
+
+   Rules of this file:
+     - Token colors only. No hard-coded hex. If a token pairing is
+       itself below AA, that is reported to the caller, never patched
+       by editing tokens.css from here.
+     - Additive and corrective only. It adds focus rings, a reduced-
+       motion safety net, a skip-link fallback, and forced-colors
+       safety. It does not restyle any component.
+     - No arrows or dashes in any content string.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. A single strong :focus-visible standard for every
+   interactive element.
+   Component files (nav-mega, nav-drawer, nav-sub, awakening) already
+   ring their own controls; this is the SAFETY NET for everything they
+   do not cover: .btn, the reader and match form inputs, the descent
+   doors, peek and path cards, hub and menagerie links, footer links,
+   and any bare <a>/<button>. Keyboard-only (:focus-visible) so mouse
+   users see no change and the visual design is untouched.
+   The ring is token-colored and pairs a solid outline with an offset,
+   so focus is never signalled by color alone.
+   ------------------------------------------------------------ */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent-bright, var(--brass-bright));
+  outline-offset: 2px;
+  border-radius: var(--r-1, 8px);
+}
+
+/* The reader and match inputs are the one place a component file
+   actively removed the ring (oracle.css sets input:focus{outline:none}).
+   Restore a real, visible, keyboard focus indicator there. Both a ring
+   AND the existing brass border change now carry the state, so it is
+   not color-only. Higher specificity than the bare oracle.css rule so
+   this wins regardless of load order. */
+input[type="date"]:focus-visible,
+input[type="email"]:focus-visible,
+input[type="text"]:focus-visible,
+input[type="search"]:focus-visible {
+  outline: 2px solid var(--accent-bright, var(--brass-bright));
+  outline-offset: 2px;
+}
+
+/* A non-visible-only :focus fallback for the rare UA or interaction
+   path that does not resolve :focus-visible. Kept subtle so pointer
+   focus stays quiet, but never zero. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus {
+  outline-color: var(--accent-bright, var(--brass-bright));
+}
+
+/* ------------------------------------------------------------
+   2. Skip-link default.
+   oracle.css already styles .skip-link and every page ships the
+   "Skip to content" anchor first in the static nav block. This is a
+   token-safe FALLBACK so the skip link is always present and visible
+   on focus even on a page that somehow lacks the oracle.css rule.
+   ------------------------------------------------------------ */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 300;
+  background: var(--panel, #151728);
+  color: var(--moon, #f5ecd2);
+  padding: 10px 16px;
+  border: 1px solid var(--accent, var(--brass, #d6c18c));
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  left: 0;
+  outline: 2px solid var(--accent-bright, var(--brass-bright));
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------
+   3. Reduced-motion safety net (the master gate, doc 10 section 3a).
+   Component layers gate their own effects, but the base oracle.css
+   carries un-gated motion: the two infinitely spinning hero wheel
+   rings, the "rise" entrance on the result and gates, and a body
+   background transition. Under reduce we zero any lingering transition
+   and animation and hold the END STATE, so nothing disappears and no
+   content is motion-only. Scoped to not touch the intentionally static
+   final layouts the component files already define.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Hold the end state of the specific base-CSS effects so the reveal
+     result and gates are fully visible immediately, not stuck mid
+     entrance. */
+  #resultWrap.show,
+  .reveal h2.big,
+  .gate {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* The infinite decorative wheel rings must come to rest, not freeze
+     at a random angle mid spin. */
+  .wheel .ring.r2,
+  .wheel .ring.r3 {
+    animation: none !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   4. Forced-colors / high-contrast safety (doc 10 section 3d).
+   In Windows high-contrast and other forced-colors modes, let system
+   colors through and make sure focus and the current breadcrumb item
+   never lose their indication. We only add a system outline; we do not
+   override any author color, so meaning is preserved.
+   ------------------------------------------------------------ */
+@media (forced-colors: active) {
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid CanvasText;
+    outline-offset: 2px;
+  }
+
+  /* The mega-nav glyphs, sigils, and constellation art fill from
+     var(--accent); forced-colors flattens custom properties, so pin
+     their stroke and fill to a system color to keep the line-work
+     visible rather than vanishing. Decorative aria-hidden art is
+     unaffected semantically; this only keeps it from disappearing. */
+  .glyph [stroke],
+  .pf-sigil [stroke] {
+    stroke: CanvasText;
+  }
+  .glyph [fill]:not([fill="none"]),
+  .pf-sigil [fill]:not([fill="none"]) {
+    forced-color-adjust: auto;
+  }
+
+  /* Keep the current breadcrumb crumb distinguishable when author
+     color is dropped: it is already marked with aria-current in the
+     DOM, so add a non-color cue. */
+  .pn-crumb [aria-current="page"] {
+    outline: 1px dotted CanvasText;
+    outline-offset: 2px;
+  }
+}
