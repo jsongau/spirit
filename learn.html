@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="css/oracle.css">
 <link rel="stylesheet" href="css/reveal.css">
 <link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/learn-widgets.css">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -34,7 +35,10 @@
 <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/fraunces/v37/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U.woff2" crossorigin data-pn-assets="fraunces-preload">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap" data-pn-assets="gf-css2">
 <link rel="stylesheet" href="/css/awakening.css" data-pn-assets="/css/awakening.css">
+<link rel="stylesheet" href="/css/micro.css" data-pn-assets="/css/micro.css">
+<link rel="stylesheet" href="/css/view-transitions.css" data-pn-assets="/css/view-transitions.css">
 <script src="/js/meter.js" defer data-pn-assets="meter-js"></script>
+<script src="/js/micro.js" defer data-pn-assets="micro-js"></script>
 <!--pn-assets:end-->
 <!--pn-css:start-->
 <link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
@@ -127,6 +131,43 @@
       <p>There are twelve Western Sun signs and twelve Chinese year animals. Every Sun sign can pair with every animal, so the full grid holds twelve rows of twelve, which is one hundred and forty four combinations. Each cell of that grid is a distinct Primal Animal with its own name and its own reading. Your date of birth points to exactly one cell. The month and day fix your Sun sign, the year and the lunar calendar fix your year animal, and where those two lines meet on the grid is your animal.</p>
       <p>Because the grid is a true cross rather than a blend, two people who share a Sun sign can be very different animals, and two people who share a year animal can be very different too. It takes both coordinates to name the creature, which is part of why the result so often feels more specific than either system alone.</p>
 
+      <!-- INTERACTIVE LEARNING WIDGETS (Phase 7). Each mount carries a static, meaningful no-JS fallback. -->
+      <section class="lw-band" aria-label="Try the crossing yourself">
+        <div class="lw-grid">
+
+          <div class="lw-widget" id="cross-skies-widget">
+            <p class="lw-eyebrow">Try it</p>
+            <h3 class="lw-title">Cross two skies</h3>
+            <p class="lw-note">Pick a Western sign and a Chinese year animal to see the single Primal Animal they make.</p>
+            <div class="lw-controls">
+              <label class="lw-field"><span>Western Sun sign</span>
+                <select class="lw-select" data-lw-sign aria-label="Western Sun sign"></select>
+              </label>
+              <label class="lw-field"><span>Chinese year animal</span>
+                <select class="lw-select" data-lw-animal aria-label="Chinese year animal"></select>
+              </label>
+            </div>
+            <div class="lw-result" data-lw-result>
+              <p class="lw-fallback">Every one of the twelve signs crosses every one of the twelve animals, so a Cancer born in the Year of the Snake becomes the Chambered Nautilus. <a href="/menagerie.html">Browse all 144 animals</a> to see every crossing.</p>
+            </div>
+          </div>
+
+          <div class="lw-widget" id="spin-wheel-widget">
+            <p class="lw-eyebrow">Or wander</p>
+            <h3 class="lw-title">Spin the wheel</h3>
+            <p class="lw-note">Not sure where to start? Let the wheel choose a crossing for you to meet.</p>
+            <div class="lw-controls">
+              <button class="lw-spin" type="button" data-lw-spin>Spin the wheel</button>
+            </div>
+            <div class="lw-result" data-lw-result>
+              <p class="lw-fallback">A spin lands you on one of the 144 animals at random, a calm way to explore. <a href="/menagerie.html">Open the full menagerie</a> to meet them all in order.</p>
+            </div>
+            <p class="lw-live sr-only" data-lw-live role="status" aria-live="polite"></p>
+          </div>
+
+        </div>
+      </section>
+
       <h2 class="proseH2">The lunar New Year boundary</h2>
       <p>This is the detail that trips up most quick zodiac tools. The Chinese year does not begin on January 1. It begins at the lunar New Year, the second new moon after the winter solstice, which falls somewhere between late January and the middle of February and moves a little every year. Anyone born in that early window can belong to the previous year's animal rather than the one their calendar year suggests.</p>
       <p>Someone born on the second of February, for instance, may be a Tiger or an Ox depending on which side of the New Year their birthday landed that year. The Oracle settles this by carrying the real lunar New Year date for every year from 1940 to 2032 and checking your birthday against it before it names your animal. It is a small correction that changes the answer for millions of people, and getting it right is the difference between a guess and a reading.</p>
@@ -192,6 +233,7 @@
 
 <script src="js/data.js"></script>
 <script src="js/engine.js"></script>
+<script src="js/learn-widgets.js" defer></script>
 <script src="js/nav.js" defer></script>
 <script>
 (function () {

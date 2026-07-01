@@ -19,6 +19,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/oracle.css">
 <link rel="stylesheet" href="/css/profile.css">
+<link rel="stylesheet" href="/css/animal.css">
+<style>@view-transition { navigation: auto; }</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"The Kea · Gemini and the Year of the Monkey · Primal Animal","description":"The Kea is the Primal Animal of Gemini crossed with the Year of the Monkey. Read its nature, shadow, awakened form, Habitat, and Keeper Stones.","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Primal Animal","item":"/"},{"@type":"ListItem","position":2,"name":"The Menagerie","item":"/animals/"},{"@type":"ListItem","position":3,"name":"The Kea","item":"/animals/kea/"}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://spirit-omega.vercel.app/animals/kea/#article","headline":"The Kea: Gemini and the Year of the Monkey","alternateName":"Gemini and the Year of the Monkey","description":"The Kea is the Primal Animal of Gemini crossed with the Year of the Monkey. Read its nature, shadow, awakened form, Habitat, and Keeper Stones.","url":"https://spirit-omega.vercel.app/animals/kea/","inLanguage":"en","isPartOf":{"@id":"https://spirit-omega.vercel.app/#website"},"publisher":{"@id":"https://spirit-omega.vercel.app/#organization"},"author":{"@id":"https://spirit-omega.vercel.app/#organization"},"image":"https://spirit-omega.vercel.app/social/og/kea.png","about":[{"@type":"Thing","name":"Gemini (Western zodiac sign)"},{"@type":"Thing","name":"Year of the Monkey (Chinese zodiac)"}],"keywords":"Gemini and the Year of the Monkey, Gemini Monkey combination, Primal Zodiac Animal, Kea"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://spirit-omega.vercel.app/animals/kea/#faq","isPartOf":{"@id":"https://spirit-omega.vercel.app/#website"},"mainEntity":[{"@type":"Question","name":"What is the Kea in the Primal Zodiac?","acceptedAnswer":{"@type":"Answer","text":"The Kea is the Primal Zodiac Animal of Gemini and the Year of the Monkey. It is the single creature at the crossing of the Western Sun sign Gemini and the Chinese zodiac Year of the Monkey, one of 144 combinations, and its reading is a lens for reflection rather than a forecast of events."}},{"@type":"Question","name":"What signs make the Kea?","acceptedAnswer":{"@type":"Answer","text":"The Kea is made by crossing two zodiacs: the Western Sun sign Gemini and the Chinese zodiac Year of the Monkey. The month and day of a birthday set the Gemini half and the year, read against the lunar calendar, sets the Monkey half."}},{"@type":"Question","name":"Which animals does the Kea get along with?","acceptedAnswer":{"@type":"Answer","text":"Its natural allies are Meerkat, Superb Lyrebird, Cuttlefish, the crossings its instincts trust on sight. Contrast with other crossings is not a warning but a mirror for self-knowledge."}}]}</script>
@@ -31,7 +33,10 @@
 <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/fraunces/v37/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U.woff2" crossorigin data-pn-assets="fraunces-preload">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap" data-pn-assets="gf-css2">
 <link rel="stylesheet" href="/css/awakening.css" data-pn-assets="/css/awakening.css">
+<link rel="stylesheet" href="/css/micro.css" data-pn-assets="/css/micro.css">
+<link rel="stylesheet" href="/css/view-transitions.css" data-pn-assets="/css/view-transitions.css">
 <script src="/js/meter.js" defer data-pn-assets="meter-js"></script>
+<script src="/js/micro.js" defer data-pn-assets="micro-js"></script>
 <!--pn-assets:end-->
 <!--pn-css:start-->
 <link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
@@ -100,9 +105,9 @@
 <!--pn-sub:end-->
 <canvas id="sky" aria-hidden="true"></canvas>
 <main class="pf-wrap" id="pn-main" tabindex="-1">
-  <header class="pf-hero">
+  <header class="pf-hero" style="--i: 0">
     <div class="pf-cross"><span class="g">♊</span> <b>Gemini</b> <span aria-hidden="true">and</span> <span class="g">猴</span> <b>Year of the Monkey</b></div>
-    <svg class="pf-sigil" viewBox="0 0 120 120" role="img" aria-label="Sigil of the Kea" xmlns="http://www.w3.org/2000/svg">
+    <svg class="pf-sigil" style="view-transition-name: sigil-kea" viewBox="0 0 120 120" role="img" aria-label="Sigil of the Kea" xmlns="http://www.w3.org/2000/svg">
   <circle cx="60" cy="60" r="54" fill="none" stroke="#d6c18c" stroke-width="1.5" opacity="0.7"/>
   <circle cx="60" cy="60" r="46" fill="none" stroke="#d6c18c" stroke-width="0.75" opacity="0.35"/>
   <text x="60" y="52" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#f5ecd2" opacity="0.9">猴</text>
@@ -124,13 +129,13 @@
     <p class="pf-note">Your birth-year element is revealed only when you enter a date. The element above is the animal's symbolic element.</p>
   </header>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 1">
     <p class="pf-eyebrow">Why this animal</p>
     <h2>Why the Kea carries this crossing</h2>
     <p>The kea is the world's only true alpine parrot, an olive-green bird of the New Zealand mountains famous for tearing into anything it can reach, solving puzzles that stump most animals, and making a play call so contagious that other kea hear it and start playing too. It is bold, brilliant, and endlessly, destructively curious. That is Gemini's quick, restless mind meeting the Monkey's playful cleverness, a creature that cannot leave a latch alone and lights up any flock it joins.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 2">
     <p class="pf-eyebrow">Two zodiacs, one animal</p>
     <h2>What each half brings</h2>
     <div class="pf-grid2">
@@ -139,31 +144,31 @@
     </div>
   </section>
 
-  <section class="pf-section" id="nature">
+  <section class="pf-section" style="--i: 3" id="nature">
     <p class="pf-eyebrow">The crossing</p>
     <h2>Where Gemini and Monkey meet</h2>
     <p>Together they make a brilliant, playful investigator who cannot leave the world alone. You take things apart to see how they work, you make a game of nearly everything, and your energy is contagious in a flock. You are the joy of a room and, when the curiosity runs unchecked, sometimes the reason something in it is now in pieces.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 4">
     <p class="pf-eyebrow">Nature</p>
     <h2>How this shows up in you</h2>
     <p>Your first instinct with anything new is to get into it, test it, and find the latch, and a closed box is a personal invitation. You think fast, get bored faster, and turn dull moments into games to survive them. You are socially bold and genuinely funny, and your play pulls others into playing whether they meant to or not. You would rather cause a little cheerful chaos than sit still and quiet, and stillness is the one puzzle you have never wanted to solve.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 5">
     <p class="pf-eyebrow">Gifts</p>
     <h2>What this animal does well</h2>
     <ul class="pf-list"><li>You solve problems by playful tinkering that a serious, head-on approach would walk right past.</li><li>You lift the energy of any group, turning a flat room into a game and pulling tired people into it.</li><li>You learn astonishingly fast by handling and testing, so you understand new things from the inside rather than the manual.</li></ul>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 6">
     <p class="pf-eyebrow">Protective instinct</p>
     <h2>What this animal guards, and how</h2>
     <p>You protect the aliveness of your flock, refusing to let a room go dull or a spirit go flat, and you use play as the thing that keeps everyone loose and connected. Your guarding looks like mischief, and it is really a refusal to let the people around you go numb.</p>
   </section>
 
-  <section class="pf-section" id="shadow">
+  <section class="pf-section" style="--i: 7" id="shadow">
     <p class="pf-eyebrow">Shadow</p>
     <h2>How it distorts under pressure</h2>
     <p><strong style="color:var(--moon)">What trips it.</strong> Boredom, confinement, or a still and serious moment that gives your restless curiosity nothing to take apart.</p>
@@ -171,14 +176,14 @@
     <p><strong style="color:var(--moon)">What it costs.</strong> The people who wanted your steady attention get your busy hands instead, and they learn they cannot hold a serious moment with you. You stay endlessly entertained and quietly unmet, the life of the room and a stranger to its depth.</p>
   </section>
 
-  <section class="pf-section" id="awakened">
+  <section class="pf-section" style="--i: 8" id="awakened">
     <p class="pf-eyebrow">Awakened form</p>
     <h2>The same strength, integrated</h2>
     <p>The awakened Kea keeps the brilliance and the play and stops using them to flee the still moment. You learn that stillness is not the death of fun but a room your curiosity has never explored, and that staying in a serious moment is its own kind of clever. You still take the world apart and light up the flock, and you can now sit in the quiet with someone and find it is not empty at all.</p>
     <div class="pf-card" style="margin-top:16px"><h3>One practice to begin</h3><p>Near the new moon, stay inside one still, serious moment for its full length without reaching for a game or a new thing to solve, and let the quiet be the puzzle.</p></div>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 9">
     <p class="pf-eyebrow">The five gates</p>
     <h2>A reading in five doors</h2>
     <div class="pf-gates">
@@ -190,7 +195,7 @@
     </div>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 10">
     <p class="pf-eyebrow">The Habitat</p>
     <h2>Living with your animal</h2>
     <p>An Air nature that races and needs Water and Earth to give it depth and a place to land. [Traditional] The high country teaches that Water deepens and Earth steadies a mind that never stops moving. [Primal] For the Kea, keep one calm Water cue and one grounded, still corner near your busy space, so the curiosity has somewhere to settle when the puzzles are done.</p>
@@ -216,7 +221,7 @@
     <p class="pf-note">Feng Shui elements here are symbolic. They support intention and act as visual reminders. They are not claims that any object, color, or direction produces wealth, health, romance, or success.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 11">
     <p class="pf-eyebrow">Keeper Stones</p>
     <h2>Symbolic materials for this animal</h2>
     <div class="pf-stones">
@@ -229,7 +234,7 @@
     <p class="pf-note">Stones are cultural and symbolic tools, not medical treatment. Some are unsafe in water or fade in sunlight; a few can be brittle around children or pets. Follow the care note for each.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 12">
     <p class="pf-eyebrow">Moon rhythm</p>
     <h2>Working with the phases</h2>
     <ul class="pf-list">
@@ -240,7 +245,7 @@
     </ul>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 13">
     <p class="pf-eyebrow">In relationship</p>
     <h2>How this animal shows up with others</h2>
     <div class="pf-grid2">
@@ -253,7 +258,7 @@
   </section>
 
   
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 14">
     <p class="pf-eyebrow">Direction</p>
     <h2>Where to face</h2>
     <div class="pf-grid2">
@@ -266,14 +271,14 @@
     </div>
     <p class="pf-note">A direction is a reflective cue, not a rule. Adapt it when a room cannot follow it.</p>
   </section>
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 15">
     <p class="pf-eyebrow">Nourishment</p>
     <h2>How this animal eats well</h2>
     <p>Your guiding flavor is <strong style="color:var(--moon)">sour and awakening</strong>, leaning light. This suits crisp vegetables, bright and fermented foods, and small varied plates. A gentle counterweight is skipping meals while busy, then grazing on whatever is nearest.</p>
     <div class="pf-card"><h3>The table ritual</h3><p>The meal you actually chose, not the one the day handed you. <span class="pf-note" style="display:block;margin-top:8px">Strongest in spring.</span></p></div>
     <p class="pf-note">This is symbolic and cultural, not nutrition or medical advice. No food heals or guarantees anything, and this is never a diet.</p>
   </section>
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 16">
     <p class="pf-eyebrow">Moon for you</p>
     <h2>The phase that serves you</h2>
     <p>Your ideas gather at the waxing crescent, the time to say one clear yes. At the last quarter, close the open tabs and let a few threads go.</p>
@@ -282,7 +287,7 @@
       <a href="/moon/phases/last-quarter/">Rest phase: Last Quarter</a>
     </div>
   </section>
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 17">
     <p class="pf-eyebrow">Best days</p>
     <h2>Favorable days ahead</h2>
     <p>In the Chinese tradition each day carries its own animal. Days ruled by the Monkey's allies tend to favor connection and fresh starts; days ruled by its opposite ask for a little patience.</p>
@@ -294,7 +299,7 @@
     <a class="btn ghost" href="/account.html">See what members get</a>
   </div>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 18">
     <p class="pf-eyebrow">Bonds</p>
     <h2>Who this animal meets</h2>
     <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:0 0 8px">Natural allies</h3><div class="pf-links"><a href="/animals/meerkat/">Meerkat</a><a href="/animals/superb-lyrebird/">Superb Lyrebird</a><a href="/animals/cuttlefish/">Cuttlefish</a></div>
@@ -305,7 +310,7 @@
   
 
   
-  <section class="pf-section pf-descent" aria-label="Continue your descent">
+  <section class="pf-section pf-descent" style="--i: 19" aria-label="Continue your descent">
     <p class="pf-eyebrow">Continue your descent</p>
     <h2>Six ways onward from the Kea</h2>
     <p>Each crossing opens onto others. These are meanings to explore for reflection, not verdicts. Contrast is a mirror for self-knowledge, never a warning.</p>
@@ -332,7 +337,7 @@
     </div></div>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 20">
     <p class="pf-eyebrow">Where this sits</p>
     <h2>Climb back up the system</h2>
     <p>The Kea is one crossing of two zodiacs. Follow either half up to its hub, or step back to the whole set.</p>
@@ -346,7 +351,7 @@
   </section>
 
   
-  <section class="pf-section" id="faq" aria-label="Questions about the Kea">
+  <section class="pf-section" style="--i: 21" id="faq" aria-label="Questions about the Kea">
     <p class="pf-eyebrow">Common questions</p>
     <h2>Questions about the Kea</h2>
     <div class="pf-faq">
@@ -354,14 +359,14 @@
     </div>
   </section>
 
-  <section class="pf-section pf-explore">
+  <section class="pf-section pf-explore" style="--i: 22">
     <p class="pf-eyebrow">Explore</p>
     <h2>An interaction made only for the Kea</h2>
     <p>A high mountain scattered with locked boxes, latches, and puzzles you open by touch. Six of them hold your curiosity, your cleverness, your boldness, your play, your shadow, and your awakening, and each springs open with a bright, satisfying click. But the last box is empty and still, and staying inside it, solving nothing, is what finally lights the whole mountain, with you at the calm center of your own noise.</p>
     <p class="pf-note">This experience is being built for phones. For now, here is the concept that will guide it.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 23">
     <div class="pf-sharecard">
       <p class="pf-eyebrow">Your result, in one line</p>
       <p class="pf-shareline">I am the Kea: I turn the whole world into a puzzle and light up every flock I join. Gemini's quick mind with the Monkey's play.</p>

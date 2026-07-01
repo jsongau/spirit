@@ -19,6 +19,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/oracle.css">
 <link rel="stylesheet" href="/css/profile.css">
+<link rel="stylesheet" href="/css/animal.css">
+<style>@view-transition { navigation: auto; }</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"The Common Swift · Gemini and the Year of the Horse · Primal Animal","description":"The Common Swift is the Primal Animal of Gemini crossed with the Year of the Horse. Read its nature, shadow, awakened form, Habitat, and Keeper Stones.","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Primal Animal","item":"/"},{"@type":"ListItem","position":2,"name":"The Menagerie","item":"/animals/"},{"@type":"ListItem","position":3,"name":"The Common Swift","item":"/animals/common-swift/"}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://spirit-omega.vercel.app/animals/common-swift/#article","headline":"The Common Swift: Gemini and the Year of the Horse","alternateName":"Gemini and the Year of the Horse","description":"The Common Swift is the Primal Animal of Gemini crossed with the Year of the Horse. Read its nature, shadow, awakened form, Habitat, and Keeper Stones.","url":"https://spirit-omega.vercel.app/animals/common-swift/","inLanguage":"en","isPartOf":{"@id":"https://spirit-omega.vercel.app/#website"},"publisher":{"@id":"https://spirit-omega.vercel.app/#organization"},"author":{"@id":"https://spirit-omega.vercel.app/#organization"},"image":"https://spirit-omega.vercel.app/social/og/common-swift.png","about":[{"@type":"Thing","name":"Gemini (Western zodiac sign)"},{"@type":"Thing","name":"Year of the Horse (Chinese zodiac)"}],"keywords":"Gemini and the Year of the Horse, Gemini Horse combination, Primal Zodiac Animal, Common Swift"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://spirit-omega.vercel.app/animals/common-swift/#faq","isPartOf":{"@id":"https://spirit-omega.vercel.app/#website"},"mainEntity":[{"@type":"Question","name":"What is the Common Swift in the Primal Zodiac?","acceptedAnswer":{"@type":"Answer","text":"The Common Swift is the Primal Zodiac Animal of Gemini and the Year of the Horse. It is the single creature at the crossing of the Western Sun sign Gemini and the Chinese zodiac Year of the Horse, one of 144 combinations, and its reading is a lens for reflection rather than a forecast of events."}},{"@type":"Question","name":"What signs make the Common Swift?","acceptedAnswer":{"@type":"Answer","text":"The Common Swift is made by crossing two zodiacs: the Western Sun sign Gemini and the Chinese zodiac Year of the Horse. The month and day of a birthday set the Gemini half and the year, read against the lunar calendar, sets the Horse half."}},{"@type":"Question","name":"Which animals does the Common Swift get along with?","acceptedAnswer":{"@type":"Answer","text":"Its natural allies are Serval, Gelada, African Grey Parrot, the crossings its instincts trust on sight. Contrast with other crossings is not a warning but a mirror for self-knowledge."}}]}</script>
@@ -31,7 +33,10 @@
 <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/fraunces/v37/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U.woff2" crossorigin data-pn-assets="fraunces-preload">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap" data-pn-assets="gf-css2">
 <link rel="stylesheet" href="/css/awakening.css" data-pn-assets="/css/awakening.css">
+<link rel="stylesheet" href="/css/micro.css" data-pn-assets="/css/micro.css">
+<link rel="stylesheet" href="/css/view-transitions.css" data-pn-assets="/css/view-transitions.css">
 <script src="/js/meter.js" defer data-pn-assets="meter-js"></script>
+<script src="/js/micro.js" defer data-pn-assets="micro-js"></script>
 <!--pn-assets:end-->
 <!--pn-css:start-->
 <link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
@@ -100,9 +105,9 @@
 <!--pn-sub:end-->
 <canvas id="sky" aria-hidden="true"></canvas>
 <main class="pf-wrap" id="pn-main" tabindex="-1">
-  <header class="pf-hero">
+  <header class="pf-hero" style="--i: 0">
     <div class="pf-cross"><span class="g">♊</span> <b>Gemini</b> <span aria-hidden="true">and</span> <span class="g">马</span> <b>Year of the Horse</b></div>
-    <svg class="pf-sigil" viewBox="0 0 120 120" role="img" aria-label="Sigil of the Common Swift" xmlns="http://www.w3.org/2000/svg">
+    <svg class="pf-sigil" style="view-transition-name: sigil-common-swift" viewBox="0 0 120 120" role="img" aria-label="Sigil of the Common Swift" xmlns="http://www.w3.org/2000/svg">
   <circle cx="60" cy="60" r="54" fill="none" stroke="#d6c18c" stroke-width="1.5" opacity="0.7"/>
   <circle cx="60" cy="60" r="46" fill="none" stroke="#d6c18c" stroke-width="0.75" opacity="0.35"/>
   <text x="60" y="52" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#f5ecd2" opacity="0.9">马</text>
@@ -124,13 +129,13 @@
     <p class="pf-note">Your birth-year element is revealed only when you enter a date. The element above is the animal's symbolic element.</p>
   </header>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 1">
     <p class="pf-eyebrow">Why this animal</p>
     <h2>Why the Common Swift carries this crossing</h2>
     <p>The common swift spends almost its entire life airborne: it eats, drinks, mates, and sleeps on the wing, and some individuals have been tracked flying for ten months without landing. Its feet are vestigial, almost useless on the ground. It is the fastest bird in sustained level flight. It lands only to nest. That is Gemini's relentless aerial intelligence meeting the Horse's free-spirited need for speed and open space, a creature who made the sky its permanent home and touches earth only when there is something irreplaceable waiting there.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 2">
     <p class="pf-eyebrow">Two zodiacs, one animal</p>
     <h2>What each half brings</h2>
     <div class="pf-grid2">
@@ -139,31 +144,31 @@
     </div>
   </section>
 
-  <section class="pf-section" id="nature">
+  <section class="pf-section" style="--i: 3" id="nature">
     <p class="pf-eyebrow">The crossing</p>
     <h2>Where Gemini and Horse meet</h2>
     <p>Together they make a creature of sustained motion, someone for whom staying airborne is not escape but native state, and landing feels voluntary rather than necessary. You are at your most alive when you are in flight, and you have organized your life so that very little requires you to come down. The question underneath is whether the thing worth landing for has your attention, or whether you are planning the next flight before the current one ends.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 4">
     <p class="pf-eyebrow">Nature</p>
     <h2>How this shows up in you</h2>
     <p>Your first instinct when a situation feels heavy or static is to get airborne, to find movement, the next conversation, the next city, the next project, the next idea. You are not running from things so much as you are built for the altitude, and the altitude genuinely suits you. You cover enormous range with less effort than other people spend on staying still. The pattern here is that the sky becomes a place to live rather than a place to pass through, and the thing waiting on the ground, the irreplaceable one, keeps waiting while you circle.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 5">
     <p class="pf-eyebrow">Gifts</p>
     <h2>What this animal does well</h2>
     <ul class="pf-list"><li>You cover ground at a speed that gives you a wider view than anyone who stays in one place, and you bring the full range of that view back into every conversation.</li><li>You sustain motion through long stretches that would ground other people, needing less rest and less stability than most because the movement itself is restorative.</li><li>You arrive exactly when something is needed and bring information from three other places in your wings, which makes you extraordinarily useful at the moment of touch.</li></ul>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 6">
     <p class="pf-eyebrow">Protective instinct</p>
     <h2>What this animal guards, and how</h2>
     <p>You protect your freedom by staying airborne, keeping your options open and your altitude sufficient that nothing can close in. Landing is a choice you make deliberately, which means no one can make it for you.</p>
   </section>
 
-  <section class="pf-section" id="shadow">
+  <section class="pf-section" style="--i: 7" id="shadow">
     <p class="pf-eyebrow">Shadow</p>
     <h2>How it distorts under pressure</h2>
     <p><strong style="color:var(--moon)">What trips it.</strong> A commitment that requires you to land and stay landed, to be somewhere specific and stationary for longer than the emergency requires.</p>
@@ -171,14 +176,14 @@
     <p><strong style="color:var(--moon)">What it costs.</strong> You have seen everything from the air and built nothing you can return to, and the nesting site stays empty because you kept not quite having time to come down. The freedom is real and the cost is company.</p>
   </section>
 
-  <section class="pf-section" id="awakened">
+  <section class="pf-section" style="--i: 8" id="awakened">
     <p class="pf-eyebrow">Awakened form</p>
     <h2>The same strength, integrated</h2>
     <p>The awakened Swift keeps the flight and lands with intention. You find that coming down does not end the motion but changes its quality, that the nest is not a cage but the only place where the speed becomes a story you can tell someone. You still spend most of your time airborne, and you land at the thing that is worth it.</p>
     <div class="pf-card" style="margin-top:16px"><h3>One practice to begin</h3><p>Near the new moon, identify the one thing that is worth landing for right now, and land on it for one full day without planning the next flight.</p></div>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 9">
     <p class="pf-eyebrow">The five gates</p>
     <h2>A reading in five doors</h2>
     <div class="pf-gates">
@@ -190,7 +195,7 @@
     </div>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 10">
     <p class="pf-eyebrow">The Habitat</p>
     <h2>Living with your animal</h2>
     <p>An Air nature in full expression that needs one Earth anchor and Water to carry it between the two. [Traditional] Air in excess dries the roots; Earth grounds the flier; Water carries without stopping. [Primal] For the Swift, one substantial Earth object marks the nesting site in an otherwise light, open, airy home.</p>
@@ -216,7 +221,7 @@
     <p class="pf-note">Feng Shui elements here are symbolic. They support intention and act as visual reminders. They are not claims that any object, color, or direction produces wealth, health, romance, or success.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 11">
     <p class="pf-eyebrow">Keeper Stones</p>
     <h2>Symbolic materials for this animal</h2>
     <div class="pf-stones">
@@ -229,7 +234,7 @@
     <p class="pf-note">Stones are cultural and symbolic tools, not medical treatment. Some are unsafe in water or fade in sunlight; a few can be brittle around children or pets. Follow the care note for each.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 12">
     <p class="pf-eyebrow">Moon rhythm</p>
     <h2>Working with the phases</h2>
     <ul class="pf-list">
@@ -240,7 +245,7 @@
     </ul>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 13">
     <p class="pf-eyebrow">In relationship</p>
     <h2>How this animal shows up with others</h2>
     <div class="pf-grid2">
@@ -253,7 +258,7 @@
   </section>
 
   
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 14">
     <p class="pf-eyebrow">Direction</p>
     <h2>Where to face</h2>
     <div class="pf-grid2">
@@ -266,14 +271,14 @@
     </div>
     <p class="pf-note">A direction is a reflective cue, not a rule. Adapt it when a room cannot follow it.</p>
   </section>
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 15">
     <p class="pf-eyebrow">Nourishment</p>
     <h2>How this animal eats well</h2>
     <p>Your guiding flavor is <strong style="color:var(--moon)">sour and awakening</strong>, leaning light. This suits crisp vegetables, bright and fermented foods, and small varied plates. A gentle counterweight is skipping meals while busy, then grazing on whatever is nearest.</p>
     <div class="pf-card"><h3>The table ritual</h3><p>The meal you actually chose, not the one the day handed you. <span class="pf-note" style="display:block;margin-top:8px">Strongest in spring.</span></p></div>
     <p class="pf-note">This is symbolic and cultural, not nutrition or medical advice. No food heals or guarantees anything, and this is never a diet.</p>
   </section>
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 16">
     <p class="pf-eyebrow">Moon for you</p>
     <h2>The phase that serves you</h2>
     <p>Your ideas gather at the waxing crescent, the time to say one clear yes. At the last quarter, close the open tabs and let a few threads go.</p>
@@ -282,7 +287,7 @@
       <a href="/moon/phases/last-quarter/">Rest phase: Last Quarter</a>
     </div>
   </section>
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 17">
     <p class="pf-eyebrow">Best days</p>
     <h2>Favorable days ahead</h2>
     <p>In the Chinese tradition each day carries its own animal. Days ruled by the Horse's allies tend to favor connection and fresh starts; days ruled by its opposite ask for a little patience.</p>
@@ -294,7 +299,7 @@
     <a class="btn ghost" href="/account.html">See what members get</a>
   </div>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 18">
     <p class="pf-eyebrow">Bonds</p>
     <h2>Who this animal meets</h2>
     <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:0 0 8px">Natural allies</h3><div class="pf-links"><a href="/animals/serval/">Serval</a><a href="/animals/gelada/">Gelada</a><a href="/animals/african-grey-parrot/">African Grey Parrot</a></div>
@@ -305,7 +310,7 @@
   
 
   
-  <section class="pf-section pf-descent" aria-label="Continue your descent">
+  <section class="pf-section pf-descent" style="--i: 19" aria-label="Continue your descent">
     <p class="pf-eyebrow">Continue your descent</p>
     <h2>Six ways onward from the Common Swift</h2>
     <p>Each crossing opens onto others. These are meanings to explore for reflection, not verdicts. Contrast is a mirror for self-knowledge, never a warning.</p>
@@ -332,7 +337,7 @@
     </div></div>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 20">
     <p class="pf-eyebrow">Where this sits</p>
     <h2>Climb back up the system</h2>
     <p>The Common Swift is one crossing of two zodiacs. Follow either half up to its hub, or step back to the whole set.</p>
@@ -346,7 +351,7 @@
   </section>
 
   
-  <section class="pf-section" id="faq" aria-label="Questions about the Common Swift">
+  <section class="pf-section" style="--i: 21" id="faq" aria-label="Questions about the Common Swift">
     <p class="pf-eyebrow">Common questions</p>
     <h2>Questions about the Common Swift</h2>
     <div class="pf-faq">
@@ -354,14 +359,14 @@
     </div>
   </section>
 
-  <section class="pf-section pf-explore">
+  <section class="pf-section pf-explore" style="--i: 22">
     <p class="pf-eyebrow">Explore</p>
     <h2>An interaction made only for the Common Swift</h2>
     <p>A wide open sky at dusk, six swifts in formation: your range, your speed, your intelligence, your freedom, your shadow, your awakening. Five of them are still flying when the light goes. The sixth banks down toward a warm rough surface on the cliff face and lands, just for tonight, and the rest of the formation finally knows where the center is.</p>
     <p class="pf-note">This experience is being built for phones. For now, here is the concept that will guide it.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 23">
     <div class="pf-sharecard">
       <p class="pf-eyebrow">Your result, in one line</p>
       <p class="pf-shareline">I am the Common Swift: I am built for the air and I keep landing only for the one thing that grounds me. Gemini's range with the Horse's freedom.</p>

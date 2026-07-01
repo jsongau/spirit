@@ -19,6 +19,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/oracle.css">
 <link rel="stylesheet" href="/css/profile.css">
+<link rel="stylesheet" href="/css/animal.css">
+<style>@view-transition { navigation: auto; }</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"The Reindeer · Aquarius and the Year of the Ox · Primal Animal","description":"The Reindeer is the Primal Animal of Aquarius crossed with the Year of the Ox. Read its nature, shadow, awakened form, Habitat, and Keeper Stones.","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Primal Animal","item":"/"},{"@type":"ListItem","position":2,"name":"The Menagerie","item":"/animals/"},{"@type":"ListItem","position":3,"name":"The Reindeer","item":"/animals/reindeer/"}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://spirit-omega.vercel.app/animals/reindeer/#article","headline":"The Reindeer: Aquarius and the Year of the Ox","alternateName":"Aquarius and the Year of the Ox","description":"The Reindeer is the Primal Animal of Aquarius crossed with the Year of the Ox. Read its nature, shadow, awakened form, Habitat, and Keeper Stones.","url":"https://spirit-omega.vercel.app/animals/reindeer/","inLanguage":"en","isPartOf":{"@id":"https://spirit-omega.vercel.app/#website"},"publisher":{"@id":"https://spirit-omega.vercel.app/#organization"},"author":{"@id":"https://spirit-omega.vercel.app/#organization"},"image":"https://spirit-omega.vercel.app/social/og/reindeer.png","about":[{"@type":"Thing","name":"Aquarius (Western zodiac sign)"},{"@type":"Thing","name":"Year of the Ox (Chinese zodiac)"}],"keywords":"Aquarius and the Year of the Ox, Aquarius Ox combination, Primal Zodiac Animal, Reindeer"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://spirit-omega.vercel.app/animals/reindeer/#faq","isPartOf":{"@id":"https://spirit-omega.vercel.app/#website"},"mainEntity":[{"@type":"Question","name":"What is the Reindeer in the Primal Zodiac?","acceptedAnswer":{"@type":"Answer","text":"The Reindeer is the Primal Zodiac Animal of Aquarius and the Year of the Ox. It is the single creature at the crossing of the Western Sun sign Aquarius and the Chinese zodiac Year of the Ox, one of 144 combinations, and its reading is a lens for reflection rather than a forecast of events."}},{"@type":"Question","name":"What signs make the Reindeer?","acceptedAnswer":{"@type":"Answer","text":"The Reindeer is made by crossing two zodiacs: the Western Sun sign Aquarius and the Chinese zodiac Year of the Ox. The month and day of a birthday set the Aquarius half and the year, read against the lunar calendar, sets the Ox half."}},{"@type":"Question","name":"Which animals does the Reindeer get along with?","acceptedAnswer":{"@type":"Answer","text":"Its natural allies are Naked Mole Rat, Electric Eel, Hoatzin, the crossings its instincts trust on sight. Contrast with other crossings is not a warning but a mirror for self-knowledge."}}]}</script>
@@ -31,7 +33,10 @@
 <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/fraunces/v37/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U.woff2" crossorigin data-pn-assets="fraunces-preload">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap" data-pn-assets="gf-css2">
 <link rel="stylesheet" href="/css/awakening.css" data-pn-assets="/css/awakening.css">
+<link rel="stylesheet" href="/css/micro.css" data-pn-assets="/css/micro.css">
+<link rel="stylesheet" href="/css/view-transitions.css" data-pn-assets="/css/view-transitions.css">
 <script src="/js/meter.js" defer data-pn-assets="meter-js"></script>
+<script src="/js/micro.js" defer data-pn-assets="micro-js"></script>
 <!--pn-assets:end-->
 <!--pn-css:start-->
 <link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
@@ -100,9 +105,9 @@
 <!--pn-sub:end-->
 <canvas id="sky" aria-hidden="true"></canvas>
 <main class="pf-wrap" id="pn-main" tabindex="-1">
-  <header class="pf-hero">
+  <header class="pf-hero" style="--i: 0">
     <div class="pf-cross"><span class="g">♒</span> <b>Aquarius</b> <span aria-hidden="true">and</span> <span class="g">牛</span> <b>Year of the Ox</b></div>
-    <svg class="pf-sigil" viewBox="0 0 120 120" role="img" aria-label="Sigil of the Reindeer" xmlns="http://www.w3.org/2000/svg">
+    <svg class="pf-sigil" style="view-transition-name: sigil-reindeer" viewBox="0 0 120 120" role="img" aria-label="Sigil of the Reindeer" xmlns="http://www.w3.org/2000/svg">
   <circle cx="60" cy="60" r="54" fill="none" stroke="#d6c18c" stroke-width="1.5" opacity="0.7"/>
   <circle cx="60" cy="60" r="46" fill="none" stroke="#d6c18c" stroke-width="0.75" opacity="0.35"/>
   <text x="60" y="52" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#f5ecd2" opacity="0.9">牛</text>
@@ -124,13 +129,13 @@
     <p class="pf-note">Your birth-year element is revealed only when you enter a date. The element above is the animal's symbolic element.</p>
   </header>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 1">
     <p class="pf-eyebrow">Why this animal</p>
     <h2>Why the Reindeer carries this crossing</h2>
     <p>The reindeer pulls off something no other deer manages: females grow antlers too, both sexes sharing the outward marker of status and season, and both sexes undertake the largest land migration on earth, moving thousands of miles through weather that would kill most animals. They see in ultraviolet, their eyes actually shifting color in winter to detect lichen and predators the human eye would miss entirely. The reindeer is the herd animal with an independent perceptual life, the creature that migrates with the collective and sees things the collective cannot. That is Aquarius's independent vision meeting the Ox's patient, methodical endurance.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 2">
     <p class="pf-eyebrow">Two zodiacs, one animal</p>
     <h2>What each half brings</h2>
     <div class="pf-grid2">
@@ -139,31 +144,31 @@
     </div>
   </section>
 
-  <section class="pf-section" id="nature">
+  <section class="pf-section" style="--i: 3" id="nature">
     <p class="pf-eyebrow">The crossing</p>
     <h2>Where Aquarius and Ox meet</h2>
     <p>Together they make a creature of immense endurance who migrates with the collective and perceives things the collective cannot. You keep pace with the herd and see in frequencies the herd does not have, and the tension between those two facts runs through everything you do. The quiet question underneath is whether you are leading or just watching the herd from inside it.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 4">
     <p class="pf-eyebrow">Nature</p>
     <h2>How this shows up in you</h2>
     <p>Your first instinct is to match the pace of whatever group you belong to, contributing your full strength to the shared crossing while privately tracking things no one else in the herd notices. You are patient and steady in a way that looks like agreement but is actually a long, slow independent assessment. You are slow to trust and methodical about it, building reliability through accumulated evidence rather than feeling. Under pressure you tend to lower your head and keep moving, which is genuinely effective and can also be a way to avoid naming what you see. The pattern here is that you carry a perceptual advantage you have never quite found the language for.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 5">
     <p class="pf-eyebrow">Gifts</p>
     <h2>What this animal does well</h2>
     <ul class="pf-list"><li>You sustain effort across distances that exhaust everyone else, covering impossible ground through sheer patient endurance without drama or collapse.</li><li>You perceive things the group around you does not, patterns, threats, possibilities at the edge of the visible spectrum, and you do this so quietly that people are startled when you surface the observation.</li><li>You maintain reliability across long seasons, building trust by showing up the same way time after time until the herd knows you without having to think about it.</li></ul>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 6">
     <p class="pf-eyebrow">Protective instinct</p>
     <h2>What this animal guards, and how</h2>
     <p>You protect the herd by tracking what it cannot see and keeping pace so no one migrates alone. You stay close enough to warn and far enough ahead in attention to spot the drift before the herd hits it.</p>
   </section>
 
-  <section class="pf-section" id="shadow">
+  <section class="pf-section" style="--i: 7" id="shadow">
     <p class="pf-eyebrow">Shadow</p>
     <h2>How it distorts under pressure</h2>
     <p><strong style="color:var(--moon)">What trips it.</strong> A moment when what you see contradicts where the herd is going, and the cost of naming it is the warmth of belonging.</p>
@@ -171,14 +176,14 @@
     <p><strong style="color:var(--moon)">What it costs.</strong> The herd arrives at a place you saw coming and cannot understand why you did not say something. You end up carrying the accuracy of your perception as a private weight, right about what you saw and alone with having held it.</p>
   </section>
 
-  <section class="pf-section" id="awakened">
+  <section class="pf-section" style="--i: 8" id="awakened">
     <p class="pf-eyebrow">Awakened form</p>
     <h2>The same strength, integrated</h2>
     <p>The awakened Reindeer keeps the endurance and the perceptual range and stops using the herd's pace as a reason to stay quiet. You learn that what you see is not yours to protect; it belongs to the migration, and naming it is not breaking formation but doing the actual work of the crossing. You still keep pace and still see ahead, and you say the thing out loud.</p>
     <div class="pf-card" style="margin-top:16px"><h3>One practice to begin</h3><p>Near the new moon, name one thing you have been quietly tracking that the people around you have not yet seen, plainly, to one person in your current herd.</p></div>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 9">
     <p class="pf-eyebrow">The five gates</p>
     <h2>A reading in five doors</h2>
     <div class="pf-gates">
@@ -190,7 +195,7 @@
     </div>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 10">
     <p class="pf-eyebrow">The Habitat</p>
     <h2>Living with your animal</h2>
     <p>An Air nature that needs wide open space to think in and Water to stay in contact with feeling rather than analysis alone. [Traditional] Air circulates best when given room and a little Water to moderate its speed. [Primal] For the Reindeer, keep the space wide and open, with one still water feature that pulls the attention inward, a bowl or small fountain, so the long-distance perceptual mind has somewhere to rest between crossings.</p>
@@ -216,7 +221,7 @@
     <p class="pf-note">Feng Shui elements here are symbolic. They support intention and act as visual reminders. They are not claims that any object, color, or direction produces wealth, health, romance, or success.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 11">
     <p class="pf-eyebrow">Keeper Stones</p>
     <h2>Symbolic materials for this animal</h2>
     <div class="pf-stones">
@@ -229,7 +234,7 @@
     <p class="pf-note">Stones are cultural and symbolic tools, not medical treatment. Some are unsafe in water or fade in sunlight; a few can be brittle around children or pets. Follow the care note for each.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 12">
     <p class="pf-eyebrow">Moon rhythm</p>
     <h2>Working with the phases</h2>
     <ul class="pf-list">
@@ -240,7 +245,7 @@
     </ul>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 13">
     <p class="pf-eyebrow">In relationship</p>
     <h2>How this animal shows up with others</h2>
     <div class="pf-grid2">
@@ -253,7 +258,7 @@
   </section>
 
   
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 14">
     <p class="pf-eyebrow">Direction</p>
     <h2>Where to face</h2>
     <div class="pf-grid2">
@@ -266,14 +271,14 @@
     </div>
     <p class="pf-note">A direction is a reflective cue, not a rule. Adapt it when a room cannot follow it.</p>
   </section>
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 15">
     <p class="pf-eyebrow">Nourishment</p>
     <h2>How this animal eats well</h2>
     <p>Your guiding flavor is <strong style="color:var(--moon)">sour and awakening</strong>, leaning light. This suits crisp vegetables, bright and fermented foods, and small varied plates. A gentle counterweight is skipping meals while busy, then grazing on whatever is nearest.</p>
     <div class="pf-card"><h3>The table ritual</h3><p>The meal you actually chose, not the one the day handed you. <span class="pf-note" style="display:block;margin-top:8px">Strongest in spring.</span></p></div>
     <p class="pf-note">This is symbolic and cultural, not nutrition or medical advice. No food heals or guarantees anything, and this is never a diet.</p>
   </section>
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 16">
     <p class="pf-eyebrow">Moon for you</p>
     <h2>The phase that serves you</h2>
     <p>Your ideas gather at the waxing crescent, the time to say one clear yes. At the last quarter, close the open tabs and let a few threads go.</p>
@@ -282,7 +287,7 @@
       <a href="/moon/phases/last-quarter/">Rest phase: Last Quarter</a>
     </div>
   </section>
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 17">
     <p class="pf-eyebrow">Best days</p>
     <h2>Favorable days ahead</h2>
     <p>In the Chinese tradition each day carries its own animal. Days ruled by the Ox's allies tend to favor connection and fresh starts; days ruled by its opposite ask for a little patience.</p>
@@ -294,7 +299,7 @@
     <a class="btn ghost" href="/account.html">See what members get</a>
   </div>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 18">
     <p class="pf-eyebrow">Bonds</p>
     <h2>Who this animal meets</h2>
     <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:0 0 8px">Natural allies</h3><div class="pf-links"><a href="/animals/naked-mole-rat/">Naked Mole Rat</a><a href="/animals/electric-eel/">Electric Eel</a><a href="/animals/hoatzin/">Hoatzin</a></div>
@@ -305,7 +310,7 @@
   
 
   
-  <section class="pf-section pf-descent" aria-label="Continue your descent">
+  <section class="pf-section pf-descent" style="--i: 19" aria-label="Continue your descent">
     <p class="pf-eyebrow">Continue your descent</p>
     <h2>Six ways onward from the Reindeer</h2>
     <p>Each crossing opens onto others. These are meanings to explore for reflection, not verdicts. Contrast is a mirror for self-knowledge, never a warning.</p>
@@ -332,7 +337,7 @@
     </div></div>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 20">
     <p class="pf-eyebrow">Where this sits</p>
     <h2>Climb back up the system</h2>
     <p>The Reindeer is one crossing of two zodiacs. Follow either half up to its hub, or step back to the whole set.</p>
@@ -346,7 +351,7 @@
   </section>
 
   
-  <section class="pf-section" id="faq" aria-label="Questions about the Reindeer">
+  <section class="pf-section" style="--i: 21" id="faq" aria-label="Questions about the Reindeer">
     <p class="pf-eyebrow">Common questions</p>
     <h2>Questions about the Reindeer</h2>
     <div class="pf-faq">
@@ -354,14 +359,14 @@
     </div>
   </section>
 
-  <section class="pf-section pf-explore">
+  <section class="pf-section pf-explore" style="--i: 22">
     <p class="pf-eyebrow">Explore</p>
     <h2>An interaction made only for the Reindeer</h2>
     <p>A wide tundra crossing at blue winter light, a herd moving in steady formation with six aspects moving alongside: your endurance, your perceptual range, your patience, your silence, your shadow, and your awakening. Five move in easy formation. The sixth, the one that carries what you have been quietly tracking, lags slightly behind until you say the thing out loud, and when you do, it catches up and the whole migration arrives somewhere better than the route it had been following.</p>
     <p class="pf-note">This experience is being built for phones. For now, here is the concept that will guide it.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 23">
     <div class="pf-sharecard">
       <p class="pf-eyebrow">Your result, in one line</p>
       <p class="pf-shareline">I am the Reindeer: I migrate with the herd and see in frequencies it cannot, and I am learning to say what I see before the crossing costs us. Aquarius with the Ox's patient endurance.</p>

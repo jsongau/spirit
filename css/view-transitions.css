@@ -1,0 +1,65 @@
+/* ------------------------------------------------------------------
+   view-transitions.css
+   Cross-document (MPA) View Transitions for the Primal Oracle.
+
+   Purpose: when a visitor moves between the menagerie grid and an
+   animal page, the clicked card's sigil morphs into that animal's hero
+   sigil, while the rest of the page cross-fades. The per-slug morph is
+   keyed on `view-transition-name: sigil-<slug>`, which the animal page
+   stamps on its hero sigil (generate-pages.mjs) and the menagerie stamps
+   on the clicked card just before navigation.
+
+   This file is injected sitewide. It is harmless on pages that carry no
+   `sigil-<slug>` element: they simply get the gentle root cross-fade,
+   and browsers without cross-document View Transitions ignore the whole
+   at-rule and navigate instantly. Everything is off under reduced motion.
+   ------------------------------------------------------------------ */
+
+/* Opt this document into cross-document view transitions. Ignored
+   silently by browsers that do not support it, so navigation still
+   works as a normal instant page load. */
+@view-transition {
+  navigation: auto;
+}
+
+/* Default root transition: a gentle cross-fade for the non-shared
+   content. Kept short so it never delays the destination's LCP. The
+   shared `sigil-<slug>` elements morph on top of this automatically
+   because they carry a matching view-transition-name on both pages. */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) {
+    animation: pnRootFadeOut 180ms ease both;
+  }
+  ::view-transition-new(root) {
+    animation: pnRootFadeIn 260ms ease both;
+  }
+
+  /* The shared sigil morph. The group is what actually flies and
+     resizes between the card mark and the hero sigil; give it an easing
+     and duration that reads as a deliberate "card turning over" rather
+     than a snap. The wildcard matches every sigil-<slug> group. */
+  ::view-transition-group(*) {
+    animation-duration: 360ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.3, 1);
+  }
+
+  @keyframes pnRootFadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+  @keyframes pnRootFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+}
+
+/* Reduced motion: no cross-fade, no morph, no group movement. The
+   transition becomes an instant swap and the destination renders in
+   its final state. This is the master kill switch per doc 10. */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

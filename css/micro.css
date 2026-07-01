@@ -1,0 +1,296 @@
+/* ============================================================
+   micro.css  —  Zodianimal.com global micro-interactions (Phase 7)
+   ------------------------------------------------------------
+   Builder 2 of 4. Native-first hover, glyph, card-lighting, and
+   glyph-tooltip polish. Everything here is:
+     - token colored (no hard-coded hex; reads tokens.css vars)
+     - OFF under prefers-reduced-motion with the end state intact
+     - wrapped in @supports where it uses a non-universal feature
+     - keyboard reachable (every hover reveal also fires on
+       :focus-visible / :focus-within)
+   Copy in content strings never uses arrows or dashes.
+
+   Scope note: this file is injected sitewide, so every selector is
+   namespaced to a known hook (.pn-glyph, .pf-sigil, .beast,
+   .pf-descent-card, .glyph-trigger, .glyph-pop) and never touches
+   bare elements. It layers ON TOP of existing nav interactions in
+   nav-mega.css (which already color .pn-row / .pn-glyph on hover);
+   here we only add the animated glow and a gentle rotation, so the
+   two compose without fighting.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   0. Typed custom properties for smooth, interpolatable glyph
+   motion. Where @property is unsupported (older Firefox) these
+   fall back to plain custom properties: the value still applies,
+   it simply snaps instead of tweening, which is a fine baseline.
+   ------------------------------------------------------------ */
+@property --pn-glow {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --pn-spin {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@property --pn-halo {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+/* ============================================================
+   1. GLYPH HOVER GLOW + GENTLE ROTATION
+   ------------------------------------------------------------
+   Targets the mega-nav / hub zodiac glyphs (.pn-glyph svg) and
+   the per-animal sigil marks (.pf-sigil, svg.sigil). A slow,
+   subtle rotation and an accent drop-shadow glow, both driven
+   by @property custom props so they interpolate premium-smooth.
+   Motion is gated to no-preference; the glow (a state change,
+   not motion) survives reduced-motion as a static end state.
+   ============================================================ */
+
+/* base: expose the animatable props on the mark, no visible change.
+   NOTE: the HERO sigil (.pf-hero .pf-sigil) is deliberately EXCLUDED
+   from the persistent rotation transform below, because the build
+   stamps `view-transition-name: sigil-<slug>` on it and gives it its
+   own draw-on entrance in animal.css. A live transform on a
+   view-transition-named element distorts the cross-page morph and
+   fights the entrance animation, so on the hero we only glow, never
+   rotate. Non-hero sigils and standalone `svg.sigil` links still get
+   the full glow + gentle drift. */
+.pn-glyph > svg,
+.pf-sigil,
+svg.sigil {
+  --pn-glow: 0px;
+  --pn-spin: 0deg;
+  transition:
+    --pn-glow var(--dur, 320ms) var(--ease-io, ease),
+    --pn-spin var(--dur-slow, 640ms) var(--ease-out, ease),
+    filter var(--dur, 320ms) var(--ease-io, ease);
+  will-change: filter;
+}
+
+/* the sigil is a whole SVG; rotate it as a unit from its center.
+   Excludes the hero sigil (view-transition morph target). */
+.pf-sigil:not(.pf-hero .pf-sigil),
+svg.sigil {
+  transform-box: view-box;
+  transform-origin: center;
+  transform: rotate(var(--pn-spin));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* glow radius grows and the mark drifts a few degrees on hover/focus.
+     The nav glyph lives inside a focusable .pn-row, so :focus-within on
+     the row drives it too, giving keyboard parity for free. */
+  .pn-row:hover  .pn-glyph > svg,
+  .pn-row:focus-within .pn-glyph > svg,
+  .pn-glyph > svg:hover {
+    --pn-glow: 10px;
+    --pn-spin: 8deg;
+    filter: drop-shadow(0 0 var(--pn-glow) var(--accent-soft));
+  }
+
+  /* sigil marks: a slower, larger, more ceremonial drift + halo */
+  a:hover > .pf-sigil,
+  a:focus-visible > .pf-sigil,
+  .pf-sigil:hover,
+  .pf-hero:hover .pf-sigil,
+  .pf-hero:focus-within .pf-sigil,
+  a:hover > svg.sigil,
+  a:focus-visible > svg.sigil,
+  svg.sigil:hover {
+    --pn-glow: 16px;
+    --pn-spin: 6deg;
+    filter: drop-shadow(0 0 var(--pn-glow) var(--accent-soft));
+  }
+}
+
+/* Reduced motion: keep a calm STATIC glow on hover/focus (a legible
+   state change, no rotation, no transition). End state intact. */
+@media (prefers-reduced-motion: reduce) {
+  .pn-glyph > svg,
+  .pf-sigil,
+  svg.sigil { transition: none; transform: none; }
+
+  .pn-row:hover  .pn-glyph > svg,
+  .pn-row:focus-within .pn-glyph > svg,
+  a:hover > .pf-sigil,
+  a:focus-visible > .pf-sigil,
+  .pf-hero:hover .pf-sigil,
+  .pf-hero:focus-within .pf-sigil,
+  a:hover > svg.sigil,
+  a:focus-visible > svg.sigil {
+    filter: drop-shadow(0 0 8px var(--accent-soft));
+  }
+}
+
+/* ============================================================
+   2. :has() CARD / ROW LIGHTING  (focus-and-hover led)
+   ------------------------------------------------------------
+   When a card or nav row is hovered or focused, subtly light it
+   and dim its siblings so attention concentrates. Uses :has() on
+   the container so the effect is driven by descendant focus with
+   no JS. A no-:has() fallback below keeps plain :hover lighting.
+   ============================================================ */
+
+/* ---- 2a. Descent mesh cards (.pf-descent-cards holds .pf-descent-card) */
+@supports selector(:has(*)) {
+  /* dim the whole cluster while one of its cards is engaged */
+  .pf-descent-cards:has(.pf-descent-card:hover) .pf-descent-card,
+  .pf-descent-cards:has(.pf-descent-card:focus-visible) .pf-descent-card {
+    opacity: 0.55;
+    transition: opacity var(--dur, 320ms) var(--ease-io, ease);
+  }
+  /* then restore full presence to the engaged card and add a hairline glow */
+  .pf-descent-cards .pf-descent-card:hover,
+  .pf-descent-cards .pf-descent-card:focus-visible {
+    opacity: 1;
+    box-shadow: 0 0 24px var(--accent-soft);
+  }
+
+  /* ---- 2b. Menagerie cells (.menGrid holds .beast anchors) */
+  .menGrid:has(.beast:hover) .beast,
+  .menGrid:has(.beast:focus-visible) .beast {
+    opacity: 0.6;
+    transition: opacity var(--dur, 320ms) var(--ease-io, ease);
+  }
+  .menGrid .beast:hover,
+  .menGrid .beast:focus-visible { opacity: 1; }
+
+  /* ---- 2c. Mega-nav column: dim the sibling rows of the active row */
+  .pn-col:has(.pn-row:hover) .pn-row,
+  .pn-col:has(.pn-row:focus-visible) .pn-row {
+    opacity: 0.62;
+    transition: opacity var(--dur-fast, 180ms) var(--ease-io, ease);
+  }
+  .pn-col .pn-row:hover,
+  .pn-col .pn-row:focus-visible { opacity: 1; }
+}
+
+/* Fallback for browsers without :has(): no sibling dimming, but the
+   engaged element still gets its own lift, so the interaction reads. */
+@supports not selector(:has(*)) {
+  .pf-descent-card:hover,
+  .pf-descent-card:focus-visible { box-shadow: 0 0 24px var(--accent-soft); }
+}
+
+/* Reduced motion: keep the lighting (opacity/shadow are not motion)
+   but drop its transition so nothing eases. */
+@media (prefers-reduced-motion: reduce) {
+  .pf-descent-cards .pf-descent-card,
+  .menGrid .beast,
+  .pn-col .pn-row { transition: none; }
+}
+
+/* ============================================================
+   3. NATIVE POPOVER GLYPH TOOLTIPS  (optional, opt-in per glyph)
+   ------------------------------------------------------------
+   A small definition tooltip for a glyph, using the native
+   Popover API + CSS anchor() positioning. The trigger is a real
+   <button class="glyph-trigger" popovertarget="..."> so it is
+   keyboard focusable and Escape / light-dismiss come free.
+
+   Progressive enhancement ladder:
+     1. Best:  popover + anchor positioning, tethered above trigger.
+     2. Good:  popover with no anchor support, centered fixed panel.
+     3. Base:  no popover support at all. micro.js falls the trigger
+               back to a title attribute so the meaning is still
+               conveyed; the panel stays display:none and inert.
+   ============================================================ */
+
+/* the trigger: quiet, inherits accent, gets a real focus ring */
+.glyph-trigger {
+  appearance: none;
+  cursor: help;
+  background: transparent;
+  border: 0;
+  padding: 0 0.1em;
+  color: var(--accent, var(--brass));
+  font: inherit;
+  border-radius: var(--r-1, 8px);
+  transition: color var(--dur-fast, 180ms) var(--ease-io, ease);
+}
+.glyph-trigger:hover,
+.glyph-trigger:focus-visible { color: var(--accent-bright, var(--brass-bright)); }
+.glyph-trigger:focus-visible {
+  outline: 2px solid var(--brass-bright);
+  outline-offset: 2px;
+}
+
+/* the popover panel: a small almanac slip, token colored */
+.glyph-pop {
+  margin: 0;
+  max-width: 22rem;
+  padding: var(--s-3, 0.75rem) var(--s-4, 1rem);
+  background: var(--panel-2, var(--panel));
+  color: var(--ivory);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2, 14px);
+  box-shadow: var(--e-2);
+  font: 400 0.9rem/1.45 var(--sans);
+}
+.glyph-pop b,
+.glyph-pop strong { color: var(--accent-bright, var(--brass-bright)); font-weight: 600; }
+
+/* base fallback position (tier 2): a fixed panel centered near the top,
+   used when anchor positioning is not available. */
+.glyph-pop:popover-open {
+  position: fixed;
+  inset: auto;
+  top: 20vh;
+  left: 50%;
+  translate: -50% 0;
+}
+
+/* tier 1: anchor positioning. The trigger names an anchor; the panel
+   tethers just above it. position-area keeps it out of JS math. */
+@supports (anchor-name: --a) {
+  .glyph-trigger { anchor-name: var(--glyph-anchor, --glyphAnchor); }
+  .glyph-pop:popover-open {
+    position: fixed;
+    position-anchor: var(--glyph-anchor, --glyphAnchor);
+    position-area: top;
+    inset: auto;
+    left: auto;
+    translate: none;
+    margin-bottom: 0.4rem;
+    /* if there is no room above, flip below */
+    position-try-fallbacks: flip-block;
+  }
+}
+
+/* enter/exit for the popover, motion gated. Uses @starting-style so it
+   animates up from display:none in pure CSS where supported. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (transition-behavior: allow-discrete) {
+    .glyph-pop {
+      opacity: 0;
+      transform: translateY(4px);
+      transition:
+        opacity var(--dur-fast, 180ms) var(--ease-out, ease),
+        transform var(--dur-fast, 180ms) var(--ease-out, ease),
+        overlay var(--dur-fast, 180ms) allow-discrete,
+        display var(--dur-fast, 180ms) allow-discrete;
+    }
+    .glyph-pop:popover-open { opacity: 1; transform: none; }
+    @starting-style {
+      .glyph-pop:popover-open { opacity: 0; transform: translateY(4px); }
+    }
+  }
+}
+
+/* Reduced motion: the popover appears instantly, fully legible. */
+@media (prefers-reduced-motion: reduce) {
+  .glyph-pop { transition: none; transform: none; opacity: 1; }
+}
+
+/* Forced-colors safety: let system colors through for the tooltip so
+   meaning survives high-contrast mode. */
+@media (forced-colors: active) {
+  .glyph-pop { border: 1px solid CanvasText; box-shadow: none; }
+  .glyph-trigger:focus-visible { outline-color: Highlight; }
+}

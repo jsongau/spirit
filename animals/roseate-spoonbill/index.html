@@ -19,6 +19,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/oracle.css">
 <link rel="stylesheet" href="/css/profile.css">
+<link rel="stylesheet" href="/css/animal.css">
+<style>@view-transition { navigation: auto; }</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"The Roseate Spoonbill · Libra and the Year of the Pig · Primal Animal","description":"Libra meets the Pig in the Roseate Spoonbill: color produced by what you gather, warmth given communally, and the honest audit of what has been feeding you.","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Primal Animal","item":"/"},{"@type":"ListItem","position":2,"name":"The Menagerie","item":"/animals/"},{"@type":"ListItem","position":3,"name":"The Roseate Spoonbill","item":"/animals/roseate-spoonbill/"}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://spirit-omega.vercel.app/animals/roseate-spoonbill/#article","headline":"The Roseate Spoonbill: Libra and the Year of the Pig","alternateName":"Libra and the Year of the Pig","description":"Libra meets the Pig in the Roseate Spoonbill: color produced by what you gather, warmth given communally, and the honest audit of what has been feeding you.","url":"https://spirit-omega.vercel.app/animals/roseate-spoonbill/","inLanguage":"en","isPartOf":{"@id":"https://spirit-omega.vercel.app/#website"},"publisher":{"@id":"https://spirit-omega.vercel.app/#organization"},"author":{"@id":"https://spirit-omega.vercel.app/#organization"},"image":"https://spirit-omega.vercel.app/social/og/roseate-spoonbill.png","about":[{"@type":"Thing","name":"Libra (Western zodiac sign)"},{"@type":"Thing","name":"Year of the Pig (Chinese zodiac)"}],"keywords":"Libra and the Year of the Pig, Libra Pig combination, Primal Zodiac Animal, Roseate Spoonbill"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://spirit-omega.vercel.app/animals/roseate-spoonbill/#faq","isPartOf":{"@id":"https://spirit-omega.vercel.app/#website"},"mainEntity":[{"@type":"Question","name":"What is the Roseate Spoonbill in the Primal Zodiac?","acceptedAnswer":{"@type":"Answer","text":"The Roseate Spoonbill is the Primal Zodiac Animal of Libra and the Year of the Pig. It is the single creature at the crossing of the Western Sun sign Libra and the Chinese zodiac Year of the Pig, one of 144 combinations, and its reading is a lens for reflection rather than a forecast of events."}},{"@type":"Question","name":"What signs make the Roseate Spoonbill?","acceptedAnswer":{"@type":"Answer","text":"The Roseate Spoonbill is made by crossing two zodiacs: the Western Sun sign Libra and the Chinese zodiac Year of the Pig. The month and day of a birthday set the Libra half and the year, read against the lunar calendar, sets the Pig half."}},{"@type":"Question","name":"Which animals does the Roseate Spoonbill get along with?","acceptedAnswer":{"@type":"Answer","text":"Its natural allies are Arabian Oryx, Crowned Crane, Dik-dik, the crossings its instincts trust on sight. Contrast with other crossings is not a warning but a mirror for self-knowledge."}}]}</script>
@@ -31,7 +33,10 @@
 <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/fraunces/v37/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U.woff2" crossorigin data-pn-assets="fraunces-preload">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap" data-pn-assets="gf-css2">
 <link rel="stylesheet" href="/css/awakening.css" data-pn-assets="/css/awakening.css">
+<link rel="stylesheet" href="/css/micro.css" data-pn-assets="/css/micro.css">
+<link rel="stylesheet" href="/css/view-transitions.css" data-pn-assets="/css/view-transitions.css">
 <script src="/js/meter.js" defer data-pn-assets="meter-js"></script>
+<script src="/js/micro.js" defer data-pn-assets="micro-js"></script>
 <!--pn-assets:end-->
 <!--pn-css:start-->
 <link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
@@ -100,9 +105,9 @@
 <!--pn-sub:end-->
 <canvas id="sky" aria-hidden="true"></canvas>
 <main class="pf-wrap" id="pn-main" tabindex="-1">
-  <header class="pf-hero">
+  <header class="pf-hero" style="--i: 0">
     <div class="pf-cross"><span class="g">♎</span> <b>Libra</b> <span aria-hidden="true">and</span> <span class="g">猪</span> <b>Year of the Pig</b></div>
-    <svg class="pf-sigil" viewBox="0 0 120 120" role="img" aria-label="Sigil of the Roseate Spoonbill" xmlns="http://www.w3.org/2000/svg">
+    <svg class="pf-sigil" style="view-transition-name: sigil-roseate-spoonbill" viewBox="0 0 120 120" role="img" aria-label="Sigil of the Roseate Spoonbill" xmlns="http://www.w3.org/2000/svg">
   <circle cx="60" cy="60" r="54" fill="none" stroke="#d6c18c" stroke-width="1.5" opacity="0.7"/>
   <circle cx="60" cy="60" r="46" fill="none" stroke="#d6c18c" stroke-width="0.75" opacity="0.35"/>
   <text x="60" y="52" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#f5ecd2" opacity="0.9">猪</text>
@@ -124,13 +129,13 @@
     <p class="pf-note">Your birth-year element is revealed only when you enter a date. The element above is the animal's symbolic element.</p>
   </header>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 1">
     <p class="pf-eyebrow">Why this animal</p>
     <h2>Why the Roseate Spoonbill carries this crossing</h2>
     <p>The roseate spoonbill's pink is not its own; it comes from the carotenoid pigments in the crustaceans it filters from warm shallow water, and remove the diet and the color fades to white. It feeds by sweeping a broad spatula-shaped bill side to side through the shallows, sensing prey by touch in water it cannot see through, and it does this with an unhurried, elegant grace. It wades and nests in warm sociable colonies, at ease among its own. That combination of color-through-intake, the balanced sweeping search for nourishment, and communal warmth maps precisely to Libra's beauty-seeking Venusian nature meeting the Pig's warm, generous, sincere, and deeply social instincts.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 2">
     <p class="pf-eyebrow">Two zodiacs, one animal</p>
     <h2>What each half brings</h2>
     <div class="pf-grid2">
@@ -139,31 +144,31 @@
     </div>
   </section>
 
-  <section class="pf-section" id="nature">
+  <section class="pf-section" style="--i: 3" id="nature">
     <p class="pf-eyebrow">The crossing</p>
     <h2>Where Libra and Pig meet</h2>
     <p>Together they make someone who is vivid because of what they have genuinely gathered, who searches for nourishment with a balanced, unhurried grace rather than grabbing at it, and who cannot sustain their color without the warmth of community. You feed by touch, sweeping patiently through what you cannot fully see, trusting the balanced motion to find what sustains you. The quiet question underneath is whether you have been sweeping through shallows rich enough to produce the color you are capable of.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 4">
     <p class="pf-eyebrow">Nature</p>
     <h2>How this shows up in you</h2>
     <p>Your first instinct in any environment is to move through it with a balanced, unhurried grace and to find where the warmth and the community are, because your capacity for the vivid depends on the quality of what you gather. You search by feel, sweeping patiently through situations you cannot fully see into, trusting the even motion to surface what you need. You are genuinely generous, taking in what others offer and returning it as something more graceful. Under pressure you tend to lean into community rather than withdraw, which is the correct instinct but can become dependence if the shallows are the wrong ones. The pattern here is that your color tells the truth about your diet, and the diet is the people and places and experiences you have let yourself be nourished by.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 5">
     <p class="pf-eyebrow">Gifts</p>
     <h2>What this animal does well</h2>
     <ul class="pf-list"><li>You brighten what you gather, taking the ordinary offerings of the world and your relationships and returning them as something vivid, graceful, and distinctly yours.</li><li>You find nourishment by feel in situations others cannot see through, sweeping patiently and evenly until what sustains you surfaces, which makes you steady where others grab and miss.</li><li>Your communal warmth makes the people around you feel that their presence is genuinely required, not just convenient, which is one of the rarest gifts in social life.</li></ul>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 6">
     <p class="pf-eyebrow">Protective instinct</p>
     <h2>What this animal guards, and how</h2>
     <p>You protect the community with a warmth so total and so gracefully given that it reads as the natural condition of the group rather than a choice. Threaten the community and the graceful sweep becomes something firmer and more deliberate.</p>
   </section>
 
-  <section class="pf-section" id="shadow">
+  <section class="pf-section" style="--i: 7" id="shadow">
     <p class="pf-eyebrow">Shadow</p>
     <h2>How it distorts under pressure</h2>
     <p><strong style="color:var(--moon)">What trips it.</strong> Any environment or relationship that is draining the color rather than feeding it, and the difficulty of admitting this when you have invested your warmth and your grace there.</p>
@@ -171,14 +176,14 @@
     <p><strong style="color:var(--moon)">What it costs.</strong> You are generous enough to keep sweeping long past the point where the shallows have gone barren, and your color fades so gradually that you are sometimes the last to see it. Other people see it before you do.</p>
   </section>
 
-  <section class="pf-section" id="awakened">
+  <section class="pf-section" style="--i: 8" id="awakened">
     <p class="pf-eyebrow">Awakened form</p>
     <h2>The same strength, integrated</h2>
     <p>In the awakened form you audit the shallows. You assess what you are gathering and whether it is producing the color you know you are capable of. You leave the thin water that has stopped feeding you and move to the shallows that are rich, and you do it with the same balanced grace you bring to everything, without guilt, because the spoonbill owes the water nothing: the relationship was always about nourishment, not obligation.</p>
     <div class="pf-card" style="margin-top:16px"><h3>One practice to begin</h3><p>On the night of the full moon, look at yourself honestly and name one relationship or environment that has been fading your color, and name one that has been deepening it. Then choose one graceful action that moves toward the latter.</p></div>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 9">
     <p class="pf-eyebrow">The five gates</p>
     <h2>A reading in five doors</h2>
     <div class="pf-gates">
@@ -190,7 +195,7 @@
     </div>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 10">
     <p class="pf-eyebrow">The Habitat</p>
     <h2>Living with your animal</h2>
     <p>[Traditional] Water and Air combine for the spoonbill's crossing, the warm shallow flat meeting the Pig's sociable warmth. Earth provides the stability of the mudflat and the mangrove root. Metal should be warm gold and copper rather than cold steel. [Primal] Warm, communal interiors with genuine color and a sense of ease. The home should absorb the warmth of the people who gather in it and show it, and it should invite the unhurried movement the spoonbill lives by.</p>
@@ -216,7 +221,7 @@
     <p class="pf-note">Feng Shui elements here are symbolic. They support intention and act as visual reminders. They are not claims that any object, color, or direction produces wealth, health, romance, or success.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 11">
     <p class="pf-eyebrow">Keeper Stones</p>
     <h2>Symbolic materials for this animal</h2>
     <div class="pf-stones">
@@ -229,7 +234,7 @@
     <p class="pf-note">Stones are cultural and symbolic tools, not medical treatment. Some are unsafe in water or fade in sunlight; a few can be brittle around children or pets. Follow the care note for each.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 12">
     <p class="pf-eyebrow">Moon rhythm</p>
     <h2>Working with the phases</h2>
     <ul class="pf-list">
@@ -240,7 +245,7 @@
     </ul>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 13">
     <p class="pf-eyebrow">In relationship</p>
     <h2>How this animal shows up with others</h2>
     <div class="pf-grid2">
@@ -253,7 +258,7 @@
   </section>
 
   
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 14">
     <p class="pf-eyebrow">Direction</p>
     <h2>Where to face</h2>
     <div class="pf-grid2">
@@ -266,14 +271,14 @@
     </div>
     <p class="pf-note">A direction is a reflective cue, not a rule. Adapt it when a room cannot follow it.</p>
   </section>
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 15">
     <p class="pf-eyebrow">Nourishment</p>
     <h2>How this animal eats well</h2>
     <p>Your guiding flavor is <strong style="color:var(--moon)">sour and awakening</strong>, leaning light. This suits crisp vegetables, bright and fermented foods, and small varied plates. A gentle counterweight is skipping meals while busy, then grazing on whatever is nearest.</p>
     <div class="pf-card"><h3>The table ritual</h3><p>The meal you actually chose, not the one the day handed you. <span class="pf-note" style="display:block;margin-top:8px">Strongest in spring.</span></p></div>
     <p class="pf-note">This is symbolic and cultural, not nutrition or medical advice. No food heals or guarantees anything, and this is never a diet.</p>
   </section>
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 16">
     <p class="pf-eyebrow">Moon for you</p>
     <h2>The phase that serves you</h2>
     <p>Your ideas gather at the waxing crescent, the time to say one clear yes. At the last quarter, close the open tabs and let a few threads go.</p>
@@ -282,7 +287,7 @@
       <a href="/moon/phases/last-quarter/">Rest phase: Last Quarter</a>
     </div>
   </section>
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 17">
     <p class="pf-eyebrow">Best days</p>
     <h2>Favorable days ahead</h2>
     <p>In the Chinese tradition each day carries its own animal. Days ruled by the Pig's allies tend to favor connection and fresh starts; days ruled by its opposite ask for a little patience.</p>
@@ -294,7 +299,7 @@
     <a class="btn ghost" href="/account.html">See what members get</a>
   </div>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 18">
     <p class="pf-eyebrow">Bonds</p>
     <h2>Who this animal meets</h2>
     <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:0 0 8px">Natural allies</h3><div class="pf-links"><a href="/animals/arabian-oryx/">Arabian Oryx</a><a href="/animals/crowned-crane/">Crowned Crane</a><a href="/animals/dik-dik/">Dik-dik</a></div>
@@ -305,7 +310,7 @@
   
 
   
-  <section class="pf-section pf-descent" aria-label="Continue your descent">
+  <section class="pf-section pf-descent" style="--i: 19" aria-label="Continue your descent">
     <p class="pf-eyebrow">Continue your descent</p>
     <h2>Six ways onward from the Roseate Spoonbill</h2>
     <p>Each crossing opens onto others. These are meanings to explore for reflection, not verdicts. Contrast is a mirror for self-knowledge, never a warning.</p>
@@ -332,7 +337,7 @@
     </div></div>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 20">
     <p class="pf-eyebrow">Where this sits</p>
     <h2>Climb back up the system</h2>
     <p>The Roseate Spoonbill is one crossing of two zodiacs. Follow either half up to its hub, or step back to the whole set.</p>
@@ -346,7 +351,7 @@
   </section>
 
   
-  <section class="pf-section" id="faq" aria-label="Questions about the Roseate Spoonbill">
+  <section class="pf-section" style="--i: 21" id="faq" aria-label="Questions about the Roseate Spoonbill">
     <p class="pf-eyebrow">Common questions</p>
     <h2>Questions about the Roseate Spoonbill</h2>
     <div class="pf-faq">
@@ -354,14 +359,14 @@
     </div>
   </section>
 
-  <section class="pf-section pf-explore">
+  <section class="pf-section pf-explore" style="--i: 22">
     <p class="pf-eyebrow">Explore</p>
     <h2>An interaction made only for the Roseate Spoonbill</h2>
     <p>A vast warm shallow flat at low sun, the water rose and gold. A colony of spoonbills wades in community, each sweeping its broad bill in an unhurried arc, the collective pink luminous against the pale flat. Six aspects rise as particles of color from the flock: Vividity, Community, Gathering, Warmth, Grace, Audit. Each rises when touched and names itself. Audit rises last, a single particle drifting slightly apart from the flock, at the edge of the flat where the water thins to nothing.</p>
     <p class="pf-note">This experience is being built for phones. For now, here is the concept that will guide it.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 23">
     <div class="pf-sharecard">
       <p class="pf-eyebrow">Your result, in one line</p>
       <p class="pf-shareline">I am the Roseate Spoonbill: everything vivid about me is something I gathered from the shallows and made my own. Libra with the Year of the Pig.</p>

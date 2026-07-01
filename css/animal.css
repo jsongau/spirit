@@ -47,3 +47,115 @@
 
 /* ---- share message ---- */
 #shareSection .msg{margin-top:12px}
+
+/* ============================================================
+   PHASE 7 — animal-page reveal choreography (doc 04, section 2.4)
+   ------------------------------------------------------------
+   The generated profile pages (build/generate-pages.mjs) render the
+   hero (.pf-hero), the reading sections (.pf-section), the hero sigil
+   (.pf-sigil), and the Phase 6 descent module (.pf-descent, itself a
+   .pf-section). The build stamps a document-order index custom
+   property `--i: N` on the hero and every major .pf-section so a
+   gentle scroll-driven staggered entrance can key off it.
+
+   Contract honored here (doc 10, section 3e):
+   1. JS OFF / no build change: content is fully present and visible.
+      Nothing below sets opacity:0 outside the enhancement guard, so
+      the default rendering shows every section at rest.
+   2. Unsupported: the stagger lives inside
+      @supports (animation-timeline: view()). Browsers without
+      scroll-driven animations skip the whole block and show static,
+      fully visible sections.
+   3. prefers-reduced-motion: reduce: the enhancement is additionally
+      gated behind @media (prefers-reduced-motion: no-preference), and
+      an explicit reduce block forces the end state (opacity:1, no
+      transform, no draw-on). Motion is off; content is intact.
+   4. Keyboard operable: this is decorative entrance only; it changes
+      nothing about focus, tab order, or reachability.
+   5. AA contrast / no color-only meaning: colors are token-only and
+      unchanged by the animation (only opacity and transform move).
+   6. No INP/CLS: scroll-driven animations run on the compositor with
+      no scroll listener; the end state matches static layout, so no
+      space reflows (no CLS) and the main thread stays free (no INP).
+   Token colors only; no hard-coded hex.
+   ============================================================ */
+
+/* Enhancement layer: only where scroll-driven animations exist AND
+   the visitor has not asked for reduced motion. Everything inside is
+   purely additive over the already-visible static page. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+
+    /* Staged section entrance. Each section rises and fades in as it
+       scrolls into view; --i (set in the built HTML) offsets the start
+       of its range so sections cascade rather than move in lockstep.
+       We animate from the hidden state to the resting (natural) state,
+       so if the timeline never advances the section still ends visible
+       is NOT relied upon: instead we scope this only inside the guard,
+       and the un-guarded default keeps sections visible. */
+    .pf-hero,
+    .pf-section {
+      animation: pf-section-rise linear both;
+      animation-timeline: view();
+      /* start a touch later for each subsequent section for a soft
+         cascade; clamp so deep sections do not stall off-screen. */
+      animation-range: entry calc(4% + min(var(--i, 0) * 2%, 24%))
+                       cover  calc(28% + min(var(--i, 0) * 2%, 24%));
+    }
+
+    /* The hero should be settled almost immediately on load (it is at
+       or near the top), so give it a shorter, earlier range. */
+    .pf-hero {
+      animation-range: entry 0% entry 100%;
+    }
+
+    @keyframes pf-section-rise {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    /* Hero sigil draw-on and fade. The sigil strokes trace on and the
+       whole mark fades up as the hero settles. Uses only transform,
+       opacity and stroke-dashoffset, all compositor/paint-cheap. */
+    .pf-hero .pf-sigil {
+      animation: pf-sigil-in 1.1s cubic-bezier(.22, 1, .3, 1) both;
+    }
+    .pf-hero .pf-sigil circle[stroke] {
+      stroke-dasharray: 340;
+      stroke-dashoffset: 340;
+      animation: pf-sigil-draw 1.4s ease .15s both;
+    }
+    @keyframes pf-sigil-in {
+      from { opacity: 0; transform: scale(.92) rotate(-4deg); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes pf-sigil-draw {
+      to { stroke-dashoffset: 0; }
+    }
+  }
+}
+
+/* Explicit reduced-motion end state. Even though the enhancement is
+   gated above, we assert the resting state here so any inherited or
+   future motion on these elements is neutralized when reduce is asked
+   for. Content and its final appearance are guaranteed. */
+@media (prefers-reduced-motion: reduce) {
+  .pf-hero,
+  .pf-section,
+  .pf-hero .pf-sigil,
+  .pf-hero .pf-sigil circle[stroke] {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}
+
+/* Cross-page view transitions (doc 04, section 2.6). The @view-transition
+   at-rule is emitted inline by the generator so navigation between the
+   menagerie grid and an animal page can morph the shared sigil
+   (view-transition-name: sigil-<slug>, stamped on the hero sigil in the
+   build). The reduced-motion kill switch for ::view-transition-group /
+   -old / -new lives centrally in view-transitions.css (injected sitewide
+   by apply-assets), so it is intentionally NOT duplicated here to avoid
+   two files owning the same reduce rule. */

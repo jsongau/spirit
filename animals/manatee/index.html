@@ -19,6 +19,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/oracle.css">
 <link rel="stylesheet" href="/css/profile.css">
+<link rel="stylesheet" href="/css/animal.css">
+<style>@view-transition { navigation: auto; }</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"The Manatee · Pisces and the Year of the Pig · Primal Animal","description":"The Manatee is the Primal Animal of Pisces crossed with the Year of the Pig. Read its nature, shadow, awakened form, Habitat, and Keeper Stones.","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Primal Animal","item":"/"},{"@type":"ListItem","position":2,"name":"The Menagerie","item":"/animals/"},{"@type":"ListItem","position":3,"name":"The Manatee","item":"/animals/manatee/"}]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","@id":"https://spirit-omega.vercel.app/animals/manatee/#article","headline":"The Manatee: Pisces and the Year of the Pig","alternateName":"Pisces and the Year of the Pig","description":"The Manatee is the Primal Animal of Pisces crossed with the Year of the Pig. Read its nature, shadow, awakened form, Habitat, and Keeper Stones.","url":"https://spirit-omega.vercel.app/animals/manatee/","inLanguage":"en","isPartOf":{"@id":"https://spirit-omega.vercel.app/#website"},"publisher":{"@id":"https://spirit-omega.vercel.app/#organization"},"author":{"@id":"https://spirit-omega.vercel.app/#organization"},"image":"https://spirit-omega.vercel.app/social/og/manatee.png","about":[{"@type":"Thing","name":"Pisces (Western zodiac sign)"},{"@type":"Thing","name":"Year of the Pig (Chinese zodiac)"}],"keywords":"Pisces and the Year of the Pig, Pisces Pig combination, Primal Zodiac Animal, Manatee"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://spirit-omega.vercel.app/animals/manatee/#faq","isPartOf":{"@id":"https://spirit-omega.vercel.app/#website"},"mainEntity":[{"@type":"Question","name":"What is the Manatee in the Primal Zodiac?","acceptedAnswer":{"@type":"Answer","text":"The Manatee is the Primal Zodiac Animal of Pisces and the Year of the Pig. It is the single creature at the crossing of the Western Sun sign Pisces and the Chinese zodiac Year of the Pig, one of 144 combinations, and its reading is a lens for reflection rather than a forecast of events."}},{"@type":"Question","name":"What signs make the Manatee?","acceptedAnswer":{"@type":"Answer","text":"The Manatee is made by crossing two zodiacs: the Western Sun sign Pisces and the Chinese zodiac Year of the Pig. The month and day of a birthday set the Pisces half and the year, read against the lunar calendar, sets the Pig half."}},{"@type":"Question","name":"Which animals does the Manatee get along with?","acceptedAnswer":{"@type":"Answer","text":"Its natural allies are Leopard Seal, Moon Jellyfish, Angelfish, the crossings its instincts trust on sight. Contrast with other crossings is not a warning but a mirror for self-knowledge."}}]}</script>
@@ -31,7 +33,10 @@
 <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/fraunces/v37/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U.woff2" crossorigin data-pn-assets="fraunces-preload">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap" data-pn-assets="gf-css2">
 <link rel="stylesheet" href="/css/awakening.css" data-pn-assets="/css/awakening.css">
+<link rel="stylesheet" href="/css/micro.css" data-pn-assets="/css/micro.css">
+<link rel="stylesheet" href="/css/view-transitions.css" data-pn-assets="/css/view-transitions.css">
 <script src="/js/meter.js" defer data-pn-assets="meter-js"></script>
+<script src="/js/micro.js" defer data-pn-assets="micro-js"></script>
 <!--pn-assets:end-->
 <!--pn-css:start-->
 <link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
@@ -100,9 +105,9 @@
 <!--pn-sub:end-->
 <canvas id="sky" aria-hidden="true"></canvas>
 <main class="pf-wrap" id="pn-main" tabindex="-1">
-  <header class="pf-hero">
+  <header class="pf-hero" style="--i: 0">
     <div class="pf-cross"><span class="g">♓</span> <b>Pisces</b> <span aria-hidden="true">and</span> <span class="g">猪</span> <b>Year of the Pig</b></div>
-    <svg class="pf-sigil" viewBox="0 0 120 120" role="img" aria-label="Sigil of the Manatee" xmlns="http://www.w3.org/2000/svg">
+    <svg class="pf-sigil" style="view-transition-name: sigil-manatee" viewBox="0 0 120 120" role="img" aria-label="Sigil of the Manatee" xmlns="http://www.w3.org/2000/svg">
   <circle cx="60" cy="60" r="54" fill="none" stroke="#d6c18c" stroke-width="1.5" opacity="0.7"/>
   <circle cx="60" cy="60" r="46" fill="none" stroke="#d6c18c" stroke-width="0.75" opacity="0.35"/>
   <text x="60" y="52" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#f5ecd2" opacity="0.9">猪</text>
@@ -124,13 +129,13 @@
     <p class="pf-note">Your birth-year element is revealed only when you enter a date. The element above is the animal's symbolic element.</p>
   </header>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 1">
     <p class="pf-eyebrow">Why this animal</p>
     <h2>Why the Manatee carries this crossing</h2>
     <p>The manatee is a gentle giant with no natural predators before humans, grazing slowly on seagrass, rolling over for belly scratches in the wild, deeply tactile and utterly peaceful. That is Pisces crossed with the Pig: a soft, feeling, boundary-open nature paired with a sincere, generous, warm, sometimes naive one. It moves through the world in complete trust, expecting no harm, offering affection freely, at peace by default. No other animal is so warmly, openly, defenselessly gentle.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 2">
     <p class="pf-eyebrow">Two zodiacs, one animal</p>
     <h2>What each half brings</h2>
     <div class="pf-grid2">
@@ -139,31 +144,31 @@
     </div>
   </section>
 
-  <section class="pf-section" id="nature">
+  <section class="pf-section" style="--i: 3" id="nature">
     <p class="pf-eyebrow">The crossing</p>
     <h2>Where Pisces and Pig meet</h2>
     <p>Together they make a warm, trusting, defenselessly gentle nature that expects no harm and offers affection openly, at peace unless something truly breaks that trust. You are the one who rolls over for a belly scratch in a world that does not always deserve it. The quiet question underneath: if you trust everything by default, how will you ever know which trust was earned?</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 4">
     <p class="pf-eyebrow">Nature</p>
     <h2>How this shows up in you</h2>
     <p>Your first instinct is to trust, to move slowly and warmly through the world expecting kindness and offering affection freely, at peace by default and open to touch. You feel the way Pisces does and give the way the Pig does, so you meet the world with no armor and no suspicion, assuming others are as sincere as you are. The pattern is that your openness is your whole nature, and it leaves you undefended against the few who take advantage of a heart that never learned to guard itself. You would rather be hurt than harden. Under pressure you stay soft and trusting even when softness costs you, because guarding does not come naturally and never has.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 5">
     <p class="pf-eyebrow">Gifts</p>
     <h2>What this animal does well</h2>
     <ul class="pf-list"><li>You bring a rare, defenseless warmth that puts people at ease and makes affection feel safe and simple.</li><li>You trust and give freely, offering a sincere generosity that most people ration and you never do.</li><li>You carry a deep, unforced peace that steadies whole rooms just by being present in them.</li></ul>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 6">
     <p class="pf-eyebrow">Protective instinct</p>
     <h2>What this animal guards, and how</h2>
     <p>Your protection is almost none, and that is the point; you meet the world open and trusting, offering affection freely rather than guarding yourself. You would rather stay soft and occasionally be hurt than harden into someone who suspects.</p>
   </section>
 
-  <section class="pf-section" id="shadow">
+  <section class="pf-section" style="--i: 7" id="shadow">
     <p class="pf-eyebrow">Shadow</p>
     <h2>How it distorts under pressure</h2>
     <p><strong style="color:var(--moon)">What trips it.</strong> A moment that asks you to notice someone has not earned your trust and to hold it back, when holding back feels like betraying your own nature.</p>
@@ -171,14 +176,14 @@
     <p><strong style="color:var(--moon)">What it costs.</strong> You end up quietly wounded by the few who exploited a trust you gave everyone equally, peaceful on the surface and worn down underneath, unsure how to stay open without staying prey.</p>
   </section>
 
-  <section class="pf-section" id="awakened">
+  <section class="pf-section" style="--i: 8" id="awakened">
     <p class="pf-eyebrow">Awakened form</p>
     <h2>The same strength, integrated</h2>
     <p>The awakened manatee keeps the warmth and the trusting peace and stops handing that trust to everyone equally. You still meet the world open, and now you notice who has earned your soft belly and who has not, and you hold the line with the few who would harm it. You learn that one boundary does not harden you, it lets your gentleness survive contact with the world. You are just as warm, and no longer defenseless where it counts.</p>
     <div class="pf-card" style="margin-top:16px"><h3>One practice to begin</h3><p>On the new moon, near water, name one person who has not earned your trust and hold one small boundary with them, without guilt.</p></div>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 9">
     <p class="pf-eyebrow">The five gates</p>
     <h2>A reading in five doors</h2>
     <div class="pf-gates">
@@ -190,7 +195,7 @@
     </div>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 10">
     <p class="pf-eyebrow">The Habitat</p>
     <h2>Living with your animal</h2>
     <p>A Water nature with no banks against the world. [Traditional] Water needs Earth to give it a shore and Fire to give it the warmth to hold one; open Water floods with anything that enters. [Primal] For the manatee, keep one solid grounding element and one warm point that can hold a line in a soft warm room, so your trust has a shore and does not spill toward everyone equally.</p>
@@ -216,7 +221,7 @@
     <p class="pf-note">Feng Shui elements here are symbolic. They support intention and act as visual reminders. They are not claims that any object, color, or direction produces wealth, health, romance, or success.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 11">
     <p class="pf-eyebrow">Keeper Stones</p>
     <h2>Symbolic materials for this animal</h2>
     <div class="pf-stones">
@@ -229,7 +234,7 @@
     <p class="pf-note">Stones are cultural and symbolic tools, not medical treatment. Some are unsafe in water or fade in sunlight; a few can be brittle around children or pets. Follow the care note for each.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 12">
     <p class="pf-eyebrow">Moon rhythm</p>
     <h2>Working with the phases</h2>
     <ul class="pf-list">
@@ -240,7 +245,7 @@
     </ul>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 13">
     <p class="pf-eyebrow">In relationship</p>
     <h2>How this animal shows up with others</h2>
     <div class="pf-grid2">
@@ -253,7 +258,7 @@
   </section>
 
   
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 14">
     <p class="pf-eyebrow">Direction</p>
     <h2>Where to face</h2>
     <div class="pf-grid2">
@@ -266,14 +271,14 @@
     </div>
     <p class="pf-note">A direction is a reflective cue, not a rule. Adapt it when a room cannot follow it.</p>
   </section>
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 15">
     <p class="pf-eyebrow">Nourishment</p>
     <h2>How this animal eats well</h2>
     <p>Your guiding flavor is <strong style="color:var(--moon)">salty and deep</strong>, leaning gently warming. This suits soups, sea vegetables, beans, and slow-cooked warmth. A gentle counterweight is too much cold or raw food when you are already pulling inward.</p>
     <div class="pf-card"><h3>The table ritual</h3><p>The shared bowl, eaten with someone else in the room. <span class="pf-note" style="display:block;margin-top:8px">Strongest in winter.</span></p></div>
     <p class="pf-note">This is symbolic and cultural, not nutrition or medical advice. No food heals or guarantees anything, and this is never a diet.</p>
   </section>
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 16">
     <p class="pf-eyebrow">Moon for you</p>
     <h2>The phase that serves you</h2>
     <p>You are strongest in the dark of the new moon, where feeling is private and honest. The full moon can flood a water nature, so at the peak, protect your rest rather than perform.</p>
@@ -282,7 +287,7 @@
       <a href="/moon/phases/full-moon/">Rest phase: Full Moon</a>
     </div>
   </section>
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 17">
     <p class="pf-eyebrow">Best days</p>
     <h2>Favorable days ahead</h2>
     <p>In the Chinese tradition each day carries its own animal. Days ruled by the Pig's allies tend to favor connection and fresh starts; days ruled by its opposite ask for a little patience.</p>
@@ -294,7 +299,7 @@
     <a class="btn ghost" href="/account.html">See what members get</a>
   </div>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 18">
     <p class="pf-eyebrow">Bonds</p>
     <h2>Who this animal meets</h2>
     <h3 style="font-family:var(--serif);color:var(--brass-bright);font-size:1.15rem;margin:0 0 8px">Natural allies</h3><div class="pf-links"><a href="/animals/leopard-seal/">Leopard Seal</a><a href="/animals/moon-jellyfish/">Moon Jellyfish</a><a href="/animals/angelfish/">Angelfish</a></div>
@@ -305,7 +310,7 @@
   
 
   
-  <section class="pf-section pf-descent" aria-label="Continue your descent">
+  <section class="pf-section pf-descent" style="--i: 19" aria-label="Continue your descent">
     <p class="pf-eyebrow">Continue your descent</p>
     <h2>Six ways onward from the Manatee</h2>
     <p>Each crossing opens onto others. These are meanings to explore for reflection, not verdicts. Contrast is a mirror for self-knowledge, never a warning.</p>
@@ -332,7 +337,7 @@
     </div></div>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 20">
     <p class="pf-eyebrow">Where this sits</p>
     <h2>Climb back up the system</h2>
     <p>The Manatee is one crossing of two zodiacs. Follow either half up to its hub, or step back to the whole set.</p>
@@ -346,7 +351,7 @@
   </section>
 
   
-  <section class="pf-section" id="faq" aria-label="Questions about the Manatee">
+  <section class="pf-section" style="--i: 21" id="faq" aria-label="Questions about the Manatee">
     <p class="pf-eyebrow">Common questions</p>
     <h2>Questions about the Manatee</h2>
     <div class="pf-faq">
@@ -354,14 +359,14 @@
     </div>
   </section>
 
-  <section class="pf-section pf-explore">
+  <section class="pf-section pf-explore" style="--i: 22">
     <p class="pf-eyebrow">Explore</p>
     <h2>An interaction made only for the Manatee</h2>
     <p>A warm sunlit shallow where a gentle giant grazes among seagrass. Six strands hold your warmth, your trust, your protectiveness, your way of communicating, your shadow, and your awakening. Each floats fully open. As you set one earned boundary at each strand, it grows a soft shore and glows steadier, until the whole shallow holds its shape and the Discerning Gentle grazes there, warm and no longer defenseless where it counts.</p>
     <p class="pf-note">This experience is being built for phones. For now, here is the concept that will guide it.</p>
   </section>
 
-  <section class="pf-section">
+  <section class="pf-section" style="--i: 23">
     <div class="pf-sharecard">
       <p class="pf-eyebrow">Your result, in one line</p>
       <p class="pf-shareline">I am the Manatee: so gentle and trusting I never learned the world could hurt me. Pisces with the Pig.</p>
