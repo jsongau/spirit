@@ -121,7 +121,7 @@
 
       const a = document.createElement("a");
       a.className = "beast";
-      a.href = "animals/" + name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") + "/";
+      a.href = "/animals/" + name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") + "/";
 
       a.innerHTML =
         '<div class="glyphRow"><span class="west">' + signGlyph + '</span>' +

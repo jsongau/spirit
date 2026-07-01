@@ -11,32 +11,29 @@ window.PNAV = window.PNAV || { features: {} };
   "use strict";
   const PNAV = window.PNAV;
 
-  const CSS = ["css/nav-core.css", "css/nav-mega.css", "css/nav-drawer.css"];
-  const JS  = ["js/nav-data.js", "js/nav-search.js", "js/nav-moon.js",
-               "js/nav-me.js", "js/nav-progress.js", "js/nav-drawer.js", "js/nav-a11y.js"];
+  // Root-relative asset paths so the nav works from any URL depth (no <base> reliance).
+  const CSS = ["/css/nav-core.css", "/css/nav-mega.css", "/css/nav-drawer.css"];
+  const JS  = ["/js/nav-data.js", "/js/nav-search.js", "/js/nav-moon.js",
+               "/js/nav-me.js", "/js/nav-progress.js", "/js/nav-drawer.js", "/js/nav-a11y.js"];
 
   const FALLBACK_MAP = [
     { h:"Discover", items:[
-      ["index.html","Find your animal","Read your birth date into one of 144 animals"],
-      ["menagerie.html","All 144 animals","Browse every Sun sign and year animal"],
-      ["daily.html","Today's reading","A short reading keyed to tonight's Moon"]]},
-    { h:"Connect", items:[["match.html","Test a match","Score any two people across both zodiacs"]]},
+      ["/index.html","Find your animal","Read your birth date into one of 144 animals"],
+      ["/menagerie.html","All 144 animals","Browse every Sun sign and year animal"],
+      ["/daily.html","Today's reading","A short reading keyed to tonight's Moon"]]},
+    { h:"Connect", items:[["/match.html","Test a match","Score any two people across both zodiacs"]]},
     { h:"Practice", items:[
-      ["moon.html","The Moon","Phases, charging, and the lunar calendar"],
-      ["stones.html","Your stones","Keeper stones and the crystal library"],
-      ["awakening.html","Awakening","The Third Eye path and sacred practice"]]},
-    { h:"Understand", items:[["learn.html","How it works","The two zodiacs, the Moon, and the reading"]]}
+      ["/moon.html","The Moon","Phases, charging, and the lunar calendar"],
+      ["/stones.html","Your stones","Keeper stones and the crystal library"],
+      ["/awakening.html","Awakening","The Third Eye path and sacred practice"]]},
+    { h:"Understand", items:[["/learn.html","How it works","The two zodiacs, the Moon, and the reading"]]}
   ];
 
-  const here = ((window.PN_HERE || location.pathname.split("/").pop() || "index.html")).toLowerCase() || "index.html";
+  // Normalize any href/path to its bare page key for active-state comparison.
+  function baseOf(s){ s=(s||"").toLowerCase().replace(/[#?].*$/,""); if(s.endsWith("/")) s+="index.html"; return s.split("/").filter(Boolean).pop()||"index.html"; }
+  const here = baseOf(window.PN_HERE || location.pathname);
   PNAV.here = here;
-  PNAV.isActive = (href) => {
-    const h = (href||"").toLowerCase();
-    if (h === here) return true;
-    if (here === "" && h === "index.html") return true;
-    if (here === "animal.html" && h === "menagerie.html") return true;
-    return false;
-  };
+  PNAV.isActive = (href) => baseOf(href) === here;
 
   function loadCss(href){
     return new Promise((res)=>{
@@ -66,7 +63,7 @@ window.PNAV = window.PNAV || { features: {} };
     bar.className = "pn-bar"; bar.setAttribute("role","banner");
     bar.innerHTML =
       `<div class="pn-inner">
-         <a class="pn-brand" href="index.html">The Primal <b>Oracle</b></a>
+         <a class="pn-brand" href="/index.html">The Primal <b>Oracle</b></a>
          <nav class="pn-nav" aria-label="Primary"></nav>
          <div class="pn-tools"></div>
          <button class="pn-burger" type="button" aria-label="Open menu">&#9776;</button>

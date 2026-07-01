@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/theme.js"></script>
+<title>Circle of three: how you and two friends fit together · Primal Animal</title>
+<meta name="description" content="Add you and two friends to see every one-to-one match, then read your group of three as a circle: the archetype, the anchor, and one practice for the three of you.">
+<meta property="og:title" content="Circle of three · Primal Animal">
+<meta property="og:description" content="Compare three people one to one, then read the whole circle together.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/oracle.css">
+<style>
+  .cir-people{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:8px}
+  .cir-p{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 16px;flex-wrap:wrap}
+  .cir-p .an{font-family:var(--serif);font-size:1.3rem;color:var(--moon)}
+  .cir-p .who{color:var(--body);font-size:.88rem}
+  .cir-p .rm{background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:1.2rem;line-height:1}
+  .cir-hint{color:var(--muted);font-size:.86rem;margin-top:10px}
+  .cir-pairs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px}
+  .cir-pair{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:18px 20px;text-align:center}
+  .cir-pair .names{font-family:var(--serif);font-size:1.2rem;color:var(--moon);margin-bottom:8px}
+  .cir-pair .names small{color:var(--muted);font-family:var(--sans);font-size:.72rem;display:block}
+  .cir-badge{display:inline-block;padding:6px 14px;border-radius:999px;font-weight:600;font-size:.82rem;border:1px solid var(--line);margin-bottom:8px}
+  .cir-pair .note{color:var(--body);font-size:.86rem;margin:0}
+  .cir-svg{display:block;max-width:420px;margin:10px auto 0;width:100%}
+  .cir-node{fill:var(--panel);stroke:var(--brass);stroke-width:2}
+  .cir-nodelabel{font-family:var(--serif);fill:var(--moon);font-size:15px;text-anchor:middle}
+  .cir-group{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;margin-top:22px;text-align:center}
+  .cir-group h2{font-family:var(--serif);color:var(--moon);font-size:clamp(2rem,5vw,2.8rem);margin:0}
+  .cir-group .arch-sub{color:var(--muted);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+  .cir-group p{color:var(--body);max-width:56ch;margin:14px auto}
+  .cir-group .role{color:var(--brass-bright);font-family:var(--serif);font-size:1.15rem;margin-top:10px}
+  .cir-group .practice{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px 18px;max-width:52ch;margin:16px auto 0;color:var(--body)}
+  .tier-TwinFlame{color:var(--twin);border-color:var(--twin)} .stroke-TwinFlame{stroke:var(--twin)}
+  .tier-Strong{color:var(--brass-bright)} .stroke-Strong{stroke:var(--brass)}
+  .tier-Workable{color:var(--ivory)} .stroke-Workable{stroke:var(--muted)}
+  .tier-Friction{color:var(--rose)} .stroke-Friction{stroke:var(--rose)}
+  .tier-KarmicLesson{color:var(--rose)} .stroke-KarmicLesson{stroke:var(--rose)}
+</style>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="wrap">
+
+  <section class="hero" style="padding-top:24px">
+    <p class="eyebrow">Circle of three</p>
+    <h1 style="color:var(--moon)">You, and two people you know</h1>
+    <p class="lede">Add yourself and two friends. See how each pair fits one to one, then read the three of you together as a circle. Names and birthdays stay on this device.</p>
+  </section>
+
+  <section class="band" style="border-top:none;padding-top:0;margin-top:14px">
+    <p class="eyebrow">Build your circle</p>
+    <h2>Add up to three people</h2>
+    <form id="addForm">
+      <div class="field" style="max-width:620px">
+        <input type="text" id="pName" placeholder="Name (optional)" aria-label="Name" style="flex:1 1 150px;background:var(--field-bg);border:1px solid var(--line);color:var(--ivory);padding:14px 16px;border-radius:11px;font-family:var(--sans)">
+        <input type="date" id="pDate" required min="1940-01-01" max="2032-12-31" aria-label="Date of birth">
+        <button class="btn" type="submit" id="addBtn">Add to circle</button>
+      </div>
+      <p class="msg" id="addMsg"></p>
+    </form>
+    <ul class="cir-people" id="people"></ul>
+    <p class="cir-hint" id="hint"></p>
+    <p style="margin-top:14px"><button class="btn ghost" id="shareBtn" type="button">Share this circle</button></p>
+    <p class="msg" id="shareMsg" style="color:var(--brass-bright)"></p>
+  </section>
+
+  <section class="band" id="pairsSection" hidden>
+    <p class="eyebrow">One to one</p>
+    <h2>How each pair fits</h2>
+    <div class="cir-pairs" id="pairs"></div>
+  </section>
+
+  <section id="groupSection" hidden>
+    <div class="cir-group" id="group"></div>
+  </section>
+
+  <footer>
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <p class="disclaimer">Compatibility describes the pattern of a bond, not whether people should be together. This is a tradition of meaning for reflection, not advice about your relationships.</p>
+  </footer>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(function(){
+  var E = ENGINE, $ = function(s){ return document.querySelector(s); };
+  var slug = function(n){ return n.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,""); };
+  var KEY = "po_circle";
+  function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch(e){ return []; } }
+  function save(a){ try { localStorage.setItem(KEY, JSON.stringify(a)); } catch(e){} }
+  var people = load();
+
+  function computed(){ return people.map(function(p){ return { p:p, c:E.compute(p.date) }; }).filter(function(x){ return x.c; }); }
+
+  function render(){
+    var ul = $("#people"); ul.innerHTML = "";
+    people.forEach(function(p, i){
+      var c = E.compute(p.date); if(!c) return;
+      var li = document.createElement("li"); li.className = "cir-p";
+      li.innerHTML = '<span class="an">'+c.primal+'</span>'+
+        '<span class="who">'+(p.who ? p.who+" · " : "")+c.sign+' and the '+c.animal+'</span>'+
+        '<button class="rm" data-i="'+i+'" aria-label="Remove">&times;</button>';
+      ul.appendChild(li);
+    });
+    ul.querySelectorAll(".rm").forEach(function(b){ b.addEventListener("click", function(){ people.splice(+b.dataset.i,1); save(people); render(); }); });
+    var n = people.length;
+    $("#hint").textContent = n===0 ? "Add yourself first, then a friend, then a third person." :
+      n===1 ? "One so far. Add a friend to see your first match." :
+      n===2 ? "Two in the circle. Add a third to read the whole group." :
+      n>=3 ? "Your circle is complete. Remove someone to swap them out." : "";
+    $("#addBtn").disabled = n>=3;
+
+    var cd = computed();
+    // pairwise
+    var pairsWrap = $("#pairs"), pairsSec = $("#pairsSection");
+    if(cd.length>=2){
+      pairsSec.hidden = false; pairsWrap.innerHTML = "";
+      var r = E.circle(cd.map(function(x){return x.c;}));
+      r.pairs.forEach(function(pr){
+        var who = function(k){ return cd[k].p.who || cd[k].c.primal; };
+        var t = pr.tier.replace(/\s/g,"");
+        var el = document.createElement("div"); el.className = "cir-pair";
+        el.innerHTML = '<div class="names">'+cd[pr.i].c.primal+' &amp; '+cd[pr.j].c.primal+
+          '<small>'+who(pr.i)+' and '+who(pr.j)+'</small></div>'+
+          '<div class="cir-badge tier-'+t+'">'+pr.tier+' · '+pr.score+'/18</div>'+
+          '<p class="note">'+(pr.notes[0]||"")+'.</p>';
+        pairsWrap.appendChild(el);
+      });
+    } else { pairsSec.hidden = true; }
+
+    // group of three
+    var gSec = $("#groupSection"), g = $("#group");
+    if(cd.length===3){
+      gSec.hidden = false;
+      var res = E.circle(cd.map(function(x){return x.c;}));
+      var grp = res.group, names = cd.map(function(x){ return x.p.who || x.c.primal; });
+      var anchor = names[grp.anchorIndex];
+      // triangle svg with edges colored by tier
+      var pts = [[210,40],[40,300],[380,300]];
+      function edge(i,j){ var pr = res.pairs.find(function(p){return (p.i===i&&p.j===j)||(p.i===j&&p.j===i);});
+        var t = pr.tier.replace(/\s/g,"");
+        return '<line x1="'+pts[i][0]+'" y1="'+pts[i][1]+'" x2="'+pts[j][0]+'" y2="'+pts[j][1]+'" class="stroke-'+t+'" stroke-width="3" opacity="0.8"/>'; }
+      function node(i){ return '<circle cx="'+pts[i][0]+'" cy="'+pts[i][1]+'" r="30" class="cir-node"/>'+
+        '<text x="'+pts[i][0]+'" y="'+(pts[i][1]-40)+'" class="cir-nodelabel">'+cd[i].c.primal+'</text>'; }
+      var svg = '<svg class="cir-svg" viewBox="0 0 420 340" role="img" aria-label="Your circle of three, edges show each pair\'s bond">'+
+        edge(0,1)+edge(1,2)+edge(0,2)+node(0)+node(1)+node(2)+'</svg>';
+      g.innerHTML = svg +
+        '<p class="arch-sub">Your circle is</p>'+
+        '<h2>'+grp.archetype+'</h2>'+
+        '<p>'+grp.blurb+'</p>'+
+        '<p class="role">'+anchor+' is the anchor, the one the other two most naturally hold onto.</p>'+
+        '<p class="practice"><strong style="color:var(--moon)">One practice for the three of you.</strong> '+grp.practice+'</p>';
+    } else { gSec.hidden = true; }
+  }
+
+  $("#addForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    if(people.length>=3){ $("#addMsg").textContent = "A circle holds three. Remove someone to add another."; return; }
+    var c = E.compute($("#pDate").value);
+    if(!c){ $("#addMsg").textContent = "Enter a valid date of birth."; return; }
+    $("#addMsg").textContent = "";
+    people.push({ who: $("#pName").value.trim(), date: $("#pDate").value }); save(people); render();
+    $("#pName").value = ""; $("#pDate").value = "";
+  });
+
+  $("#shareBtn").addEventListener("click", async function(){
+    var cd = computed();
+    var text = cd.length ? "My circle on the Primal Oracle: " + cd.map(function(x){return (x.p.who?x.p.who+" the ":"the ")+x.c.primal;}).join(", ") + ". Add yours and see how we fit." : "Find your Primal Animal and build a circle.";
+    try{ if(navigator.share){ await navigator.share({ title:"Circle of three", text:text, url: location.href }); }
+      else { await navigator.clipboard.writeText(text + " " + location.href); $("#shareMsg").textContent = "Copied. Send it to your circle."; } }catch(e){}
+  });
+
+  render();
+
+  // starfield (dark theme only)
+  var cv=$("#sky"); if(cv){ var x=cv.getContext("2d"); function sz(){cv.width=innerWidth;cv.height=Math.max(innerHeight,document.body.scrollHeight);} sz(); addEventListener("resize",sz);
+    var red=(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)||false; var N=red?70:120;
+    var st=Array.from({length:N},function(){return{x:Math.random()*cv.width,y:Math.random()*cv.height,r:Math.random()*1.3+0.2,a:Math.random(),s:Math.random()*0.02+0.004};});
+    (function f(){x.clearRect(0,0,cv.width,cv.height);for(var i=0;i<st.length;i++){var s=st[i];if(!red)s.a+=s.s;var al=0.3+Math.abs(Math.sin(s.a))*0.5;x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fillStyle="rgba(245,236,210,"+al+")";x.fill();}if(!document.hidden)requestAnimationFrame(f);})();
+  }
+})();
+</script>
+</body>
+</html>

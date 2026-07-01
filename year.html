@@ -94,7 +94,7 @@
       var li = document.createElement("li"); li.className = "yf-row";
       li.innerHTML = '<span class="an">'+c.primal+'</span>'+
         '<span class="who">'+(p.who ? p.who+" · " : "")+c.sign+' and the '+c.animal+'</span>'+
-        '<span><a href="animals/'+slug(c.primal)+'/">Open</a> '+
+        '<span><a href="/animals/'+slug(c.primal)+'/">Open</a> '+
         '<button class="rm" data-i="'+i+'" aria-label="Remove">&times;</button></span>';
       ul.appendChild(li);
     });
@@ -126,7 +126,7 @@
     var grid = $("#yearGrid"); grid.innerHTML = "";
     O.WEST_ORDER.forEach(function(sign){
       var nm = O.GRID[sign][col];
-      var a = document.createElement("a"); a.className = "yf-cell"; a.href = "animals/"+slug(nm)+"/";
+      var a = document.createElement("a"); a.className = "yf-cell"; a.href = "/animals/"+slug(nm)+"/";
       a.innerHTML = '<span class="nm">'+nm+'</span><span class="sub">'+sign+' '+O.GLYPH_WEST[sign]+'</span>';
       grid.appendChild(a);
     });

@@ -128,7 +128,7 @@
 
       var chip = document.createElement("a");
       chip.className = "pn-chip";
-      chip.setAttribute("href", "awakening.html");
+      chip.setAttribute("href", "/awakening.html");
       chip.setAttribute("data-pnp", "1");
       chip.title = "Awakening: " + level + " (" + openness + "%)";
 

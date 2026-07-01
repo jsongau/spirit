@@ -77,7 +77,7 @@
     }catch(e){}
     // viral challenge link + gamified discovery
     const shareSlug=c.primal.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
-    try{ const cb=$("#challengeBtn"); if(cb) cb.href="vs.html?with="+shareSlug; }catch(e){}
+    try{ const cb=$("#challengeBtn"); if(cb) cb.href="/vs.html?with="+shareSlug; }catch(e){}
     try{ if(window.GAME){ GAME.discovered(shareSlug,c.primal); GAME.celebrate({text:"You met the "+c.primal}); } }catch(e){}
     const r=ENGINE.reading(c), mp=ENGINE.moonPhase();
     $("#animalName").textContent=c.primal;
@@ -89,7 +89,7 @@
     $("#stones").innerHTML=r.stones.map(s=>`<li>${s}</li>`).join("");
     $("#moonNow").innerHTML=`Tonight the Moon is a <strong>${mp.name}</strong> (${mp.age} days into its cycle). A good night to ${mp.advice}.`;
     $("#shareLine").value=`My Primal Animal is the ${c.primal} (${c.sign} + ${c.element} ${c.animal}). Find yours at the Primal Oracle.`;
-    $("#animalLink").href="animals/"+c.primal.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"")+"/";
+    $("#animalLink").href="/animals/"+c.primal.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"")+"/";
     awaken("revealed");
     $("#resultWrap").classList.add("show");
     $("#resultWrap").scrollIntoView({behavior:"smooth",block:"start"});
@@ -118,7 +118,7 @@
   function renderRecent(){
     const el=$("#recentOpened"); if(!el) return;
     if(!state.recent||!state.recent.length){ el.textContent=""; return; }
-    el.innerHTML="You recently opened: "+state.recent.map(r=>'<a href="animals/'+r.slug+'/">'+r.primal+'</a>').join(", ");
+    el.innerHTML="You recently opened: "+state.recent.map(r=>'<a href="/animals/'+r.slug+'/">'+r.primal+'</a>').join(", ");
   }
 
   function init(){

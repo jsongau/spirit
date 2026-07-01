@@ -74,7 +74,7 @@ PNAV.features.moon = function (ctx) {
 
   const a = document.createElement("a");
   a.className = "pn-chip";
-  a.href = "moon.html";
+  a.href = "/moon.html";
   a.setAttribute("title", sentence);
   a.setAttribute("aria-label", "The Moon tonight: " + sentence);
   a.innerHTML =

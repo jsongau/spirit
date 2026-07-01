@@ -49,7 +49,7 @@ PNAV.features.me = function (ctx) {
   if (result && result.primal) {
     chip = document.createElement("a");
     chip.className = "pn-chip";
-    chip.href = "animals/" + result.primal.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") + "/";
+    chip.href = "/animals/" + result.primal.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") + "/";
 
     var glyph = document.createElement("span");
     glyph.className = "v pnme-glyph";
@@ -67,7 +67,7 @@ PNAV.features.me = function (ctx) {
   } else {
     chip = document.createElement("a");
     chip.className = "pn-chip";
-    chip.href = "index.html";
+    chip.href = "/index.html";
 
     var spark = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     spark.setAttribute("viewBox", "0 0 24 24");
