@@ -68,7 +68,7 @@ const ORACLE = (function () {
     Leo:         ["Golden Lion Tamarin", "Banteng", "Harpy Eagle", "Golden Pheasant", "Rhinoceros Hornbill", "King Cobra", "Blackbuck", "Barbary Sheep", "Mandrill", "Guianan Cock-of-the-rock", "Dhole", "Babirusa"],
     Virgo:       ["Leafcutter Ant", "Beaver", "Dragonfly", "Harvest Mouse", "Archerfish", "Trapdoor Spider", "Sanderling", "Alpine Marmot", "New Caledonian Crow", "Weaverbird", "Border Collie", "Short-beaked Echidna"],
     Libra:       ["Red Panda", "Mute Swan", "Arabian Oryx", "Crowned Crane", "Giant Manta Ray", "Ribbon Eel", "Impala", "Dik-dik", "Bonobo", "Satin Bowerbird", "Gibbon", "Roseate Spoonbill"],
-    Scorpio:     ["Philippine Tarsier", "Giant Salamander", "Clouded Leopard", "Pallas's Cat", "Komodo Dragon", "Moray Eel", "Orca", "Snow Leopard", "Aye-aye", "Devil's Flower Mantis", "Tasmanian Devil", "Hippopotamus"],
+    Scorpio:     ["Philippine Tarsier", "Giant Salamander", "Clouded Leopard", "Pallas's Cat", "Komodo Dragon", "Moray Eel", "Orca", "Snow Leopard", "Aye-aye", "Devil's Flower Mantis", "Tasmanian Devil", "Red River Hog"],
     Sagittarius: ["Jerboa", "Wildebeest", "Caracal", "Arctic Hare", "Frigatebird", "Sidewinder", "Albatross", "Saiga Antelope", "Spider Monkey", "Kori Bustard", "Culpeo", "Warthog"],
     Capricorn:   ["Damaraland Mole-rat", "Takin", "Mountain Lion", "Yellow-footed Rock-wallaby", "Bearded Vulture", "Mangshan Pit Viper", "Mountain Zebra", "Markhor", "Japanese Macaque", "Andean Condor", "Tibetan Mastiff", "European Badger"],
     Aquarius:    ["Naked Mole Rat", "Reindeer", "Maned Wolf", "Axolotl", "Mantis Shrimp", "Electric Eel", "Kiang", "Kakapo", "Raven", "Hoatzin", "African Wild Dog", "Platypus"],
