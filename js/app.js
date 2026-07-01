@@ -75,6 +75,10 @@
       state.recent.unshift({primal:c.primal,slug:sg});
       state.recent=state.recent.slice(0,5); save(state); renderRecent(); renderToday();
     }catch(e){}
+    // viral challenge link + gamified discovery
+    const shareSlug=c.primal.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
+    try{ const cb=$("#challengeBtn"); if(cb) cb.href="vs.html?with="+shareSlug; }catch(e){}
+    try{ if(window.GAME){ GAME.discovered(shareSlug,c.primal); GAME.celebrate({text:"You met the "+c.primal}); } }catch(e){}
     const r=ENGINE.reading(c), mp=ENGINE.moonPhase();
     $("#animalName").textContent=c.primal;
     $("#animalEssence").textContent=r.essence;

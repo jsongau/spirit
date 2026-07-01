@@ -9,7 +9,8 @@ PNAV.MAP = [
   ]},
   { h: "Bonds", items: [
     ["match.html", "Test a match", "Score any two people across both zodiacs"],
-    ["circle.html", "Circle of three", "Add three people and read the whole group together"]
+    ["circle.html", "Circle of three", "Add three people and read the whole group together"],
+    ["vs.html", "Challenge a friend", "Reveal, match, and dare a friend to find their animal"]
   ]},
   { h: "Live with it", items: [
     ["habitat/", "The Habitat", "Feng Shui and environment for your animal"],

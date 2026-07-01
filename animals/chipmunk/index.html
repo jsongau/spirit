@@ -13,6 +13,11 @@
 <meta property="og:title" content="The Chipmunk · Gemini and the Year of the Rat · Primal Animal">
 <meta property="og:description" content="The Chipmunk is the Primal Animal of Gemini crossed with the Year of the Rat. Discover its nature, shadow, awakened form, Habitat, and Keeper Stones.">
 <meta property="og:url" content="animals/chipmunk/">
+<meta property="og:image" content="https://animal-two-psi.vercel.app/social/og/chipmunk.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://animal-two-psi.vercel.app/social/og/chipmunk.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/oracle.css">
@@ -37,6 +42,7 @@
     <p>The full profile of the Chipmunk is being written. Here is what its element already tells us, and you can read a live reading for this crossing now.</p>
     <div class="pf-actions">
       <a class="btn" href="animal.html?sign=Gemini&amp;animal=Rat">Read this crossing now</a>
+      <a class="btn ghost" href="vs.html?with=chipmunk">Challenge a friend</a>
       <a class="btn ghost" href="index.html">Find your animal</a>
     </div>
     <p class="pf-note"><a href="menagerie.html">Return to the full Menagerie</a></p>
@@ -93,8 +99,10 @@
 <script src="js/engine.js"></script>
 <script src="js/card.js"></script>
 <script src="js/nav.js"></script>
+<script src="js/game.js" defer></script>
 <script>
 (function(){
+  addEventListener('load',function(){ try{ if(window.GAME) GAME.discovered("chipmunk", "Chipmunk"); }catch(e){} });
   var b=document.getElementById('pfShare');
   if(b) b.addEventListener('click', async function(){
     if(!window.ENGINE||!window.PCARD) return;
