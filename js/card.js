@@ -109,7 +109,7 @@ window.PCARD = (function () {
 
   async function drawMatch(a,b,m){
     await fonts(); const { cv, x } = ctxOf(); bg(x);
-    const tierCol = { "Twin Flame":C.twin, "Strong":C.brassB, "Workable":C.ivory, "Friction":C.rose, "Karmic Lesson":"#c97f7f" }[m.tier]||C.brassB;
+    const tierCol = { "Deep Recognition":C.twin, "Strong":C.brassB, "Workable":C.ivory, "Friction":C.rose, "Hard Teacher":"#c97f7f" }[m.tier]||C.brassB;
     eyebrow(x,"The Primal Oracle",150);
     x.fillStyle=C.muted; x.font=sans(600,26); x.textAlign="center"; drawWith(x,"A match reading",250);
 

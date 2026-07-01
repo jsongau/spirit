@@ -13,7 +13,7 @@
   --brass-bright:#efe2b4;
   --moon:#f5ecd2;
   --ivory:#ece7d8;
-  --muted:#9a9bb0;
+  --muted:#adaec2;
   --body:#cfcfe0;
   --field-bg:#0c0e1a;
   --bg-glow:#1a1c33;
@@ -162,11 +162,11 @@ section.band{padding:64px 0; border-top:1px solid var(--line); margin-top:60px}
 .matchHead .amp{color:var(--brass); font-family:var(--serif); font-size:1.4rem}
 .tierBadge{display:inline-block; padding:8px 18px; border-radius:999px; font-weight:600; letter-spacing:.04em;
   border:1px solid var(--line); margin:0 auto 16px; text-align:center; width:fit-content; display:block}
-.tier-TwinFlame{color:var(--twin); border-color:rgba(127,224,200,.5)}
+.tier-DeepRecognition{color:var(--twin); border-color:rgba(127,224,200,.5)}
 .tier-Strong{color:var(--brass-bright)}
 .tier-Workable{color:var(--ivory)}
 .tier-Friction{color:var(--rose)}
-.tier-KarmicLesson{color:#c97f7f}
+.tier-HardTeacher{color:#c97f7f}
 .matchNotes{list-style:none; padding:0; margin:0 auto; max-width:60ch; display:grid; gap:8px}
 .matchNotes li{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:11px 15px; font-size:.92rem}
 
@@ -183,7 +183,7 @@ section.band{padding:64px 0; border-top:1px solid var(--line); margin-top:60px}
 
 footer{padding:50px 0 90px; border-top:1px solid var(--line); margin-top:60px; color:var(--muted); font-size:.86rem}
 footer .brand{font-size:1.1rem}
-.disclaimer{font-size:.78rem; color:#7c7d92; max-width:70ch; margin-top:14px}
+.disclaimer{font-size:.78rem; color:#9092a6; max-width:70ch; margin-top:14px}
 
 /* toast */
 #toast{position:fixed; left:50%; bottom:28px; transform:translateX(-50%) translateY(30px); z-index:50;
@@ -203,4 +203,12 @@ footer .brand{font-size:1.1rem}
 .sf-col ul{list-style:none; margin:0; padding:0; display:grid; gap:8px}
 .sf-col a{color:var(--muted); font-size:.9rem; text-decoration:none}
 .sf-col a:hover{color:var(--moon)}
-.sf-note{max-width:var(--maxw); margin:30px auto 0; color:#7c7d92; font-size:.78rem}
+.sf-note{max-width:var(--maxw); margin:30px auto 0; color:#9092a6; font-size:.78rem}
+
+/* ---- accessibility baseline (doc 19) ---- */
+:focus-visible{outline:2px solid var(--brass-bright); outline-offset:2px; border-radius:4px}
+.skip-link{position:absolute; left:-9999px; top:0; z-index:300; background:var(--panel); color:var(--moon); padding:10px 16px; border:1px solid var(--brass); border-radius:0 0 10px 0}
+.skip-link:focus{left:0}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms!important; animation-iteration-count:1!important; transition-duration:.001ms!important; scroll-behavior:auto!important}
+}

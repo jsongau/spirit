@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test a match: Primal Animal compatibility from Chinese and Western zodiac</title>
+<meta name="description" content="Enter two dates of birth to score a match across the Chinese trines, secret friends, clashes, and harms, plus the Western elements. See the tier, the score out of 18, and honest guidance for the bond.">
+<meta property="og:title" content="Test a Primal Animal match">
+<meta property="og:description" content="Score any pair across four Chinese systems and the Western elements. Twin Flame to Karmic Lesson, with honest relationship guidance for each.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/oracle.css">
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <nav>
+      <a href="index.html">Find your animal</a>
+      <a href="menagerie.html">All 144 animals</a>
+      <a href="match.html">Test a match</a>
+      <a href="learn.html">How it works</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="eyebrow">Two animals, one wheel</p>
+    <h1>See how <em>your two animals</em> read one another.</h1>
+    <p class="lede">Enter two dates of birth. The Oracle scores the pair across the four Chinese systems and the Western elements, names the tier, and tells you honestly what the bond can carry. Compatibility supports a relationship. It does not make one.</p>
+
+    <!-- MATCH FORM -->
+    <div class="reader" id="matchPanel">
+      <h3>Test the match</h3>
+      <p class="dim">Nothing is sent anywhere. The score is drawn in your browser.</p>
+      <form id="matchForm">
+        <div class="matchGrid">
+          <div>
+            <label for="mDateA">You</label>
+            <input type="date" id="mDateA" required min="1940-01-01" max="2032-12-31" aria-label="Your date of birth">
+          </div>
+          <div>
+            <label for="mDateB">Them</label>
+            <input type="date" id="mDateB" required min="1940-01-01" max="2032-12-31" aria-label="Their date of birth">
+          </div>
+          <button class="btn" type="submit">Test the match</button>
+        </div>
+        <p class="msg" id="matchMsg"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <div id="matchResult" aria-live="polite"></div>
+
+  <!-- HOW THE SCORE IS BUILT -->
+  <section class="band" id="method">
+    <p class="eyebrow">Why the score is earned</p>
+    <h2>What the Oracle weighs</h2>
+    <p class="lede">The pair is read across four Chinese relationships and the Western element logic. Each one moves the score, so the tier reflects a real structure rather than a guess.</p>
+
+    <div class="methodGrid">
+      <div class="methodCard">
+        <h3>Trines, San He</h3>
+        <p>The twelve animals fall into four triangles of three. Animals in the same triangle share a rhythm and a way of moving through the world. A match inside a trine earns the strongest natural lift, because the pull is steady and needs little translation.</p>
+      </div>
+      <div class="methodCard">
+        <h3>Secret friends, Liu He</h3>
+        <p>Six pairs are bound as secret friends, animals that quietly complete and steady each other. The fit is easy and balancing in a way that is felt more than explained, and the Oracle weights it as highly as a trine.</p>
+      </div>
+      <div class="methodCard">
+        <h3>Clashes, Liu Chong</h3>
+        <p>Each animal sits directly across from one other on the wheel. That opposite is its clash, an energy aimed in the contrary direction. A clash is not a verdict, but it does ask for care, patience, and a willingness to translate.</p>
+      </div>
+      <div class="methodCard">
+        <h3>Harms, Liu Hai</h3>
+        <p>Six pairs carry a quieter strain, a harm that works slowly rather than loudly. Nothing breaks at once. The Oracle counts it as a small drag, the kind of friction worth naming early so it never gets to corrode.</p>
+      </div>
+      <div class="methodCard">
+        <h3>Western elements</h3>
+        <p>Each Sun sign carries Fire, Earth, Air, or Water. Shared elements feel the world the same way. Fire with Air and Earth with Water complement and feed each other. Fire with Water and Earth with Air run at different temperatures and need more bridging.</p>
+      </div>
+      <div class="methodCard">
+        <h3>Modes</h3>
+        <p>Signs also split into starters, sustainers, and shifters. Two different modes mean one person opens a thing and another keeps it alive. Two of the same mode can move as one or lock into a standoff, so the Oracle nudges the score either way.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE FIVE TIERS -->
+  <section class="band" id="tiers">
+    <p class="eyebrow">The five tiers</p>
+    <h2>What each result means</h2>
+    <p class="lede">Every match lands in one of five tiers. None of them is a sentence. The highest still has to be tended, and the hardest can become the most honest bond two people ever build.</p>
+
+    <div class="tierGrid">
+      <div class="tierCard">
+        <span class="tierBadge tier-TwinFlame">Twin Flame</span>
+        <p>The structure is rare and almost effortless. You recognize each other early and the recognition holds. The risk in a bond this easy is that you stop tending it, sure it will hold itself. It will not. Keep choosing each other on the ordinary days and this becomes the kind of love other people quietly study. The wheel opened the door. Walking through it daily is still yours to do.</p>
+      </div>
+      <div class="tierCard">
+        <span class="tierBadge tier-Strong">Strong</span>
+        <p>The bones are good. You move at compatible speeds and your instincts mostly agree, which means your disagreements are about the world, not about each other. Trust that foundation enough to be honest inside it. A strong match rewards directness and grows dull under politeness. Say the true thing kindly and often, and this bond deepens for years rather than coasting on its early shine.</p>
+      </div>
+      <div class="tierCard">
+        <span class="tierBadge tier-Workable">Workable</span>
+        <p>There is real ground here and a few honest gaps. Nothing carries you automatically, which is its own gift, because a workable match teaches both people how to choose. Name where your rhythms differ and build small agreements around them. Couples in this tier often outlast the effortless ones, precisely because they learned to do on purpose what the easy pairs were handed for free.</p>
+      </div>
+      <div class="tierCard">
+        <span class="tierBadge tier-Friction">Friction</span>
+        <p>You pull in different directions, and that tension is not the same as doom. Friction can make heat or it can make wear. The difference is whether you treat the gap as a problem to win or a difference to respect. Slow down at the edges where you grind, get specific about what each of you actually needs, and let the contrast sharpen you both rather than divide you.</p>
+      </div>
+      <div class="tierCard">
+        <span class="tierBadge tier-KarmicLesson">Karmic Lesson</span>
+        <p>This is the hard, instructive kind of bond. Something in the pairing keeps handing each of you the exact lesson you came here to learn, usually through the other person. It can wound and it can free, sometimes both. A karmic match asks for unusual honesty, firm boundaries, and the humility to grow. Held well, it changes you. Held badly, it repeats. Go in with your eyes open.</p>
+      </div>
+    </div>
+
+    <p class="dim tierNote">A note that holds for every tier: the score reads the shape two natures make, not the choices two people make. Attention, honesty, and repair build a relationship. The wheel only tells you what raw material you are working with.</p>
+  </section>
+
+  <footer>
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <p>Find your Primal Animal, read where you stand, and see who you match. Built on the fusion of the Chinese and Western zodiacs.</p>
+    <p class="disclaimer">This is a tradition of meaning for reflection and entertainment. It is not medical, psychological, financial, or legal advice. The Primal Animal framework is adapted from the Primal Zodiac tradition. Stones and lunar practices are presented as cultural tradition, not as treatment.</p>
+  </footer>
+
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/card.js"></script>
+<script>
+(function () {
+  "use strict";
+  const $ = (s, r = document) => r.querySelector(s);
+
+  /* ---------- STARFIELD ---------- */
+  (function runStars(){
+    const cv = $("#sky"); if (!cv) return; const ctx = cv.getContext("2d");
+    function size(){ cv.width = innerWidth; cv.height = Math.max(innerHeight, document.body.scrollHeight); }
+    size(); addEventListener("resize", size);
+    const N = Math.min(180, Math.floor(innerWidth / 8));
+    const stars = Array.from({length:N}, () => ({
+      x: Math.random()*cv.width, y: Math.random()*cv.height,
+      r: Math.random()*1.4+0.3, a: Math.random()*6.28, s: Math.random()*0.02+0.004
+    }));
+    (function frame(){ ctx.clearRect(0,0,cv.width,cv.height);
+      for (const st of stars){ st.a += st.s; const al = 0.35 + Math.abs(Math.sin(st.a))*0.55;
+        ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, 7); ctx.fillStyle = `rgba(245,236,210,${al})`; ctx.fill(); }
+      requestAnimationFrame(frame); })();
+  })();
+
+  /* ---------- TIER GUIDANCE (one short paragraph per tier) ---------- */
+  const GUIDANCE = {
+    "Twin Flame": "You recognize each other early, and the recognition holds. A bond this easy tempts you to stop tending it, certain it will hold itself, and it will not. Keep choosing each other on the ordinary days. The wheel opened the door. Walking through it is still your work.",
+    "Strong": "The bones are good. You move at compatible speeds and your instincts mostly agree, so your quarrels are about the world rather than about each other. Trust that ground enough to be plainly honest inside it, because a strong match grows dull under politeness and deepens under truth told kindly.",
+    "Workable": "There is real ground here and a few honest gaps, and nothing carries you automatically. That is its own gift. Name where your rhythms differ and build small agreements around them. Pairs who learn to do on purpose what the easy matches were handed for free tend to outlast them.",
+    "Friction": "You pull in different directions, and tension is not the same as doom. Friction can make heat or it can make wear, and the difference is whether you treat the gap as a contest to win or a difference to respect. Slow down where you grind, get specific about what each of you needs, and let the contrast sharpen you both.",
+    "Karmic Lesson": "This is the hard, instructive kind of bond, the one that keeps handing each of you the lesson you came to learn, usually through the other person. It can wound and it can free. Go in with clear eyes, firm boundaries, and the humility to grow. Held well it changes you. Held badly it repeats."
+  };
+
+  /* ---------- HELPERS ---------- */
+  function fmtDate(d){
+    return d.toLocaleDateString(undefined, { year:"numeric", month:"long", day:"numeric" });
+  }
+  function animalBlock(c, label){
+    return `<div class="mAnimal">
+      <small class="mLabel">${label}</small>
+      <div class="mGlyphRow"><span class="mGlyph">${c.glyph}</span><span class="mCn">${c.cn}</span></div>
+      <div class="mPrimal">${c.primal}</div>
+      <div class="mMeta">${c.sign} &middot; ${c.animal}</div>
+    </div>`;
+  }
+
+  /* ---------- MATCH ---------- */
+  const form = $("#matchForm");
+  const out = $("#matchResult");
+  const msg = $("#matchMsg");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    msg.textContent = "";
+    const dateA = $("#mDateA").value, dateB = $("#mDateB").value;
+    if (!dateA || !dateB){ msg.textContent = "Enter both dates of birth to test the match."; return; }
+
+    const a = ENGINE.compute(dateA), b = ENGINE.compute(dateB);
+    if (!a || !b){ msg.textContent = "One of those dates did not read. Check and try again."; return; }
+    const m = ENGINE.compatibility(a, b);
+
+    const tierClass = "tier-" + m.tier.replace(/\s/g, "");
+    const notes = m.notes.map(n => `<li>${n}</li>`).join("");
+    const guidance = GUIDANCE[m.tier] || "";
+    const shareLine = `Our Primal match is ${m.tier}: the ${a.primal} and the ${b.primal}, scoring ${m.score} of 18. Test yours at The Primal Oracle.`;
+
+    out.innerHTML = `
+      <div class="matchCard">
+        <div class="matchHead">
+          ${animalBlock(a, "You")}
+          <span class="amp">&amp;</span>
+          ${animalBlock(b, "Them")}
+        </div>
+
+        <span class="tierBadge bigTier ${tierClass}">${m.tier}</span>
+
+        <div class="scoreRow">
+          <span class="scoreNum">${m.score}</span>
+          <span class="scoreOf">of 18</span>
+        </div>
+        <div class="scoreTrack"><i style="width:${Math.max(0, Math.min(100, Math.round(m.score / 18 * 100)))}%"></i></div>
+
+        <h3 class="mSub">What the wheel weighed</h3>
+        <ul class="matchNotes">${notes}</ul>
+
+        <h3 class="mSub">Guidance for this bond</h3>
+        <p class="guidance">${guidance}</p>
+        <p class="guidance honest">Compatibility supports a bond. It does not make one. What you build from here is yours.</p>
+
+        <h3 class="mSub">Share this match</h3>
+        <p class="dim mDates">${fmtDate(a.date)} and ${fmtDate(b.date)}</p>
+        <div class="shareBox">
+          <input id="shareLine" readonly aria-label="Share text" value="${shareLine.replace(/"/g, "&quot;")}">
+          <button class="btn" id="shareBtn" type="button">Share this match</button>
+          <button class="btn ghost" id="cardBtn" type="button">Download match card</button>
+          <button class="btn ghost" id="copyBtn" type="button">Copy</button>
+        </div>
+        <p class="msg" id="shareMsg" style="color:var(--brass-bright)"></p>
+      </div>`;
+
+    out.classList.add("show");
+    out.scrollIntoView({ behavior:"smooth", block:"start" });
+
+    const shareMsg = $("#shareMsg");
+    $("#shareBtn").addEventListener("click", async () => {
+      if (navigator.share){
+        try { await navigator.share({ title:"The Primal Oracle", text: shareLine, url: location.href }); }
+        catch (err) { /* user dismissed */ }
+      } else {
+        copyShare();
+      }
+    });
+    $("#copyBtn").addEventListener("click", copyShare);
+    const cb = $("#cardBtn");
+    if (cb) cb.addEventListener("click", async () => {
+      if (!window.PCARD) return;
+      cb.textContent = "Drawing your card"; cb.disabled = true;
+      try { await PCARD.shareMatch(a, b, m); shareMsg.textContent = "Your match card is ready."; } catch (e) {}
+      cb.textContent = "Download match card"; cb.disabled = false;
+    });
+    async function copyShare(){
+      try { await navigator.clipboard.writeText(shareLine); shareMsg.textContent = "Copied. Send it to them."; }
+      catch (err) { const el = $("#shareLine"); el.select(); document.execCommand && document.execCommand("copy"); shareMsg.textContent = "Copied. Send it to them."; }
+    }
+  });
+})();
+</script>
+<nav class="sitemap-footer" aria-label="Explore Spirit Omega">
+  <div class="sf-inner">
+    <div class="sf-col"><h3>Discover</h3><ul><li><a href="/">Find your animal</a></li><li><a href="/menagerie.html">All 144 animals</a></li><li><a href="/year.html">Year finder</a></li><li><a href="/daily.html">Today's reading</a></li><li><a href="/vs.html">Challenge a friend</a></li></ul></div>
+    <div class="sf-col"><h3>Relationships</h3><ul><li><a href="/match.html">Test a match</a></li><li><a href="/circle.html">Circle of three</a></li><li><a href="/learn.html">How it works</a></li></ul></div>
+    <div class="sf-col"><h3>Live with it</h3><ul><li><a href="/habitat/">The Habitat</a></li><li><a href="/stones.html">Keeper stones</a></li><li><a href="/directions/">Directions</a></li><li><a href="/best-days.html">Best days</a></li></ul></div>
+    <div class="sf-col"><h3>The Moon</h3><ul><li><a href="/moon.html">The Moon tonight</a></li><li><a href="/moon/phases/">The eight phases</a></li><li><a href="/moon/phases/new-moon/">New Moon</a></li><li><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a></li><li><a href="/moon/phases/first-quarter/">First Quarter</a></li><li><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a></li></ul></div>
+    <div class="sf-col"><h3>Western signs</h3><ul><li><a href="/western-zodiac/aries/">Aries animals</a></li><li><a href="/western-zodiac/taurus/">Taurus animals</a></li><li><a href="/western-zodiac/gemini/">Gemini animals</a></li><li><a href="/western-zodiac/cancer/">Cancer animals</a></li><li><a href="/western-zodiac/leo/">Leo animals</a></li><li><a href="/western-zodiac/virgo/">Virgo animals</a></li></ul></div>
+    <div class="sf-col"><h3>Western signs</h3><ul><li><a href="/western-zodiac/libra/">Libra animals</a></li><li><a href="/western-zodiac/scorpio/">Scorpio animals</a></li><li><a href="/western-zodiac/sagittarius/">Sagittarius animals</a></li><li><a href="/western-zodiac/capricorn/">Capricorn animals</a></li><li><a href="/western-zodiac/aquarius/">Aquarius animals</a></li><li><a href="/western-zodiac/pisces/">Pisces animals</a></li></ul></div>
+    <div class="sf-col"><h3>Chinese years</h3><ul><li><a href="/chinese-zodiac/rat/">Rat animals</a></li><li><a href="/chinese-zodiac/ox/">Ox animals</a></li><li><a href="/chinese-zodiac/tiger/">Tiger animals</a></li><li><a href="/chinese-zodiac/rabbit/">Rabbit animals</a></li><li><a href="/chinese-zodiac/dragon/">Dragon animals</a></li><li><a href="/chinese-zodiac/snake/">Snake animals</a></li></ul></div>
+    <div class="sf-col"><h3>Chinese years</h3><ul><li><a href="/chinese-zodiac/horse/">Horse animals</a></li><li><a href="/chinese-zodiac/goat/">Goat animals</a></li><li><a href="/chinese-zodiac/monkey/">Monkey animals</a></li><li><a href="/chinese-zodiac/rooster/">Rooster animals</a></li><li><a href="/chinese-zodiac/dog/">Dog animals</a></li><li><a href="/chinese-zodiac/pig/">Pig animals</a></li></ul></div>
+    <div class="sf-col"><h3>Elements</h3><ul><li><a href="/elements/fire/">Fire element</a></li><li><a href="/elements/earth/">Earth element</a></li><li><a href="/elements/air/">Air element</a></li><li><a href="/elements/water/">Water element</a></li></ul></div>
+  </div>
+  <p class="sf-note">Spirit Omega, The Primal Oracle. A tradition of meaning for reflection, not medical, psychological, financial, or legal advice.</p>
+</nav>
+</body>
+</html>

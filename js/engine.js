@@ -133,7 +133,7 @@ window.ENGINE = (function () {
     else if (elb === -2) notes.push("Friction Sun-elements: different operating temperatures");
     const md = MODE[cA.sign] !== MODE[cB.sign] ? 1 : -1; score += md;
     notes.push(md===1 ? "Different modes: one starts, one sustains" : "Same mode: two of a kind, watch for gridlock");
-    let tier = score>=16?"Twin Flame":score>=13?"Strong":score>=10?"Workable":score>=7?"Friction":"Karmic Lesson";
+    let tier = score>=16?"Deep Recognition":score>=13?"Strong":score>=10?"Workable":score>=7?"Friction":"Hard Teacher";
     return { score, tier, notes };
   }
 

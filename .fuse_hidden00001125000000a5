@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What are you? Reveal your Primal Animal and match it to a friend</title>
+<meta name="description" content="A friend named their Primal Animal. Reveal yours from your birth date and see how the two of you read one another, then challenge someone back.">
+<meta property="og:title" content="What are you? Reveal your Primal Animal">
+<meta property="og:description" content="Reveal your animal, see how you two match across the Chinese and Western zodiacs, then send it to someone who thinks they know you.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://spirit-omega.vercel.app/social/home-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://spirit-omega.vercel.app/social/home-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/oracle.css">
+<style>
+  /* ---- vs page: self-contained styling ---- */
+  .vsHero{padding:38px 0 20px; text-align:center}
+  .vsHero .eyebrow{margin-bottom:12px}
+  .vsHero h1{color:var(--moon); margin:6px auto 14px; max-width:18ch}
+  .vsHero h1 em{font-style:italic; color:var(--brass)}
+
+  .sharerCard{display:inline-flex; flex-direction:column; align-items:center; gap:2px;
+    background:linear-gradient(180deg,var(--panel),var(--ink2)); border:1px solid var(--line);
+    border-radius:18px; padding:22px 34px; margin:6px auto 26px; box-shadow:0 24px 60px rgba(0,0,0,.4)}
+  .sharerCard .glyphRow{display:flex; align-items:center; gap:12px; font-family:var(--serif)}
+  .sharerCard .glyph{font-size:2.1rem; color:var(--brass)}
+  .sharerCard .cn{font-size:1.9rem; color:var(--moon)}
+  .sharerCard .name{font-family:var(--serif); font-size:1.9rem; color:var(--moon); margin-top:4px}
+  .sharerCard .meta{font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+  .sharerCard small.lab{font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:var(--brass); margin-bottom:8px}
+
+  .revealPanel{background:linear-gradient(180deg,var(--panel),var(--ink2)); border:1px solid var(--line);
+    border-radius:18px; padding:28px; max-width:520px; margin:0 auto; box-shadow:0 30px 80px rgba(0,0,0,.45)}
+  .revealPanel h3{font-size:1.4rem; color:var(--moon); margin-bottom:4px}
+  .revealPanel .field{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap}
+
+  /* countdown reveal */
+  #stage{margin-top:44px}
+  .countdown{text-align:center; font-family:var(--serif); color:var(--brass);
+    font-size:clamp(3rem,14vw,7rem); line-height:1; min-height:1.1em;
+    text-shadow:0 0 40px rgba(214,193,140,.4)}
+  .countdown.pop{animation:cdPop .5s ease both}
+  @keyframes cdPop{0%{opacity:0; transform:scale(.5)} 40%{opacity:1; transform:scale(1.08)} 100%{transform:scale(1)}}
+
+  .visitorReveal{text-align:center}
+  .visitorReveal .eyebrow{margin-bottom:8px}
+  .visitorReveal .vGlyphRow{display:flex; align-items:center; justify-content:center; gap:14px; font-family:var(--serif); margin:4px 0}
+  .visitorReveal .vGlyph{font-size:2.4rem; color:var(--brass)}
+  .visitorReveal .vCn{font-size:2.2rem; color:var(--moon)}
+  .visitorReveal h2.big{font-size:clamp(2.4rem,8vw,4.6rem); color:var(--moon); margin:2px 0 4px;
+    text-shadow:0 0 50px rgba(245,236,210,.25); animation:vRise .9s ease both}
+  .visitorReveal .vMeta{font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+  @keyframes vRise{from{opacity:0; transform:translateY(20px) scale(.96)} to{opacity:1; transform:none}}
+
+  /* the match block */
+  .matchBlock{margin:34px auto 0; max-width:560px; text-align:center; opacity:0; transform:translateY(16px);
+    transition:opacity .6s ease, transform .6s ease}
+  .matchBlock.in{opacity:1; transform:none}
+  .versus{display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; margin-bottom:20px}
+  .versus .side{font-family:var(--serif)}
+  .versus .side .nm{font-size:1.35rem; color:var(--moon); display:block}
+  .versus .side small{display:block; font-family:var(--sans); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+  .versus .amp{color:var(--brass); font-family:var(--serif); font-size:1.5rem}
+
+  .bigTier{display:block; width:fit-content; margin:0 auto 6px; padding:12px 28px; border-radius:999px;
+    font-family:var(--serif); font-size:clamp(1.8rem,6vw,2.8rem); letter-spacing:.02em; font-weight:600;
+    border:1px solid var(--line); animation:tierLand .7s cubic-bezier(.2,.8,.2,1.2) both}
+  @keyframes tierLand{0%{opacity:0; transform:scale(.7)} 60%{opacity:1; transform:scale(1.06)} 100%{transform:scale(1)}}
+  .tier-TwinFlame{color:var(--twin); border-color:rgba(127,224,200,.55); box-shadow:0 0 40px rgba(127,224,200,.25)}
+  .tier-Strong{color:var(--brass-bright); box-shadow:0 0 34px rgba(214,193,140,.2)}
+  .tier-Workable{color:var(--ivory)}
+  .tier-Friction{color:var(--rose)}
+  .tier-KarmicLesson{color:#c97f7f}
+
+  .scoreRow{display:flex; align-items:baseline; justify-content:center; gap:8px; margin:10px 0 4px}
+  .scoreRow .num{font-family:var(--serif); font-size:2.6rem; color:var(--moon)}
+  .scoreRow .of{color:var(--muted); font-size:.9rem; letter-spacing:.08em}
+  .scoreTrack{height:8px; background:var(--field-bg); border:1px solid var(--line); border-radius:99px; overflow:hidden; max-width:320px; margin:6px auto 0}
+  .scoreTrack i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--brass),var(--brass-bright)); transition:width 1s ease}
+
+  .topNote{font-family:var(--serif); font-style:italic; font-size:1.3rem; color:var(--brass-bright);
+    max-width:34ch; margin:20px auto 4px}
+  .honest{font-size:.86rem; color:var(--muted); max-width:44ch; margin:10px auto 0}
+
+  .ctaRow{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:26px 0 6px}
+  .ctaRow .btn{flex:0 1 auto}
+  .beg{font-family:var(--serif); font-style:italic; color:var(--brass); font-size:1.15rem; margin:22px auto 2px; max-width:34ch}
+  .msg{min-height:1.2em; color:var(--brass-bright); font-size:.86rem; margin-top:10px; text-align:center}
+
+  .fullLink{display:block; margin-top:8px; font-size:.9rem}
+</style>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <nav>
+      <a href="index.html">Find your animal</a>
+      <a href="menagerie.html">All 144 animals</a>
+      <a href="match.html">Test a match</a>
+      <a href="learn.html">How it works</a>
+    </nav>
+  </header>
+
+  <section class="vsHero">
+    <p class="eyebrow" id="eyebrow">A challenge from a friend</p>
+    <h1 id="heroTitle">Find your animal, then <em>challenge your friends</em>.</h1>
+
+    <!-- sharer card only shows when ?with is present -->
+    <div class="sharerCard" id="sharerCard" hidden>
+      <small class="lab" id="sharerLab">Someone is</small>
+      <div class="glyphRow"><span class="glyph" id="sGlyph"></span><span class="cn" id="sCn"></span></div>
+      <div class="name" id="sName"></div>
+      <div class="meta" id="sMeta"></div>
+    </div>
+
+    <div class="revealPanel">
+      <h3 id="panelHead">Reveal yours</h3>
+      <p class="dim" id="panelSub">Nothing is sent anywhere. Your animal is drawn in your browser.</p>
+      <form id="revealForm">
+        <div class="field">
+          <input type="date" id="vDate" required min="1940-01-01" max="2032-12-31" aria-label="Your date of birth">
+          <button class="btn" type="submit" id="revealBtn">Reveal mine</button>
+        </div>
+        <p class="msg" id="formMsg" style="color:var(--rose)"></p>
+      </form>
+    </div>
+  </section>
+
+  <div id="stage" aria-live="polite"></div>
+
+  <footer>
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <p>Find your Primal Animal, read where you stand, and see who you match. Built on the fusion of the Chinese and Western zodiacs.</p>
+    <p class="disclaimer">This is a tradition of meaning for reflection and entertainment. It is not medical, psychological, financial, or legal advice. Compatibility reads the shape two natures make, never the choices two people make.</p>
+  </footer>
+
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/game.js" defer></script>
+<script>
+(function () {
+  "use strict";
+  const $ = (s, r = document) => r.querySelector(s);
+  const O = (typeof ORACLE !== "undefined") ? ORACLE : window.ORACLE, E = (typeof ENGINE !== "undefined") ? ENGINE : window.ENGINE;
+
+  /* ---------- STARFIELD (dark theme only, reduced-motion safe) ---------- */
+  (function runStars(){
+    const cv = $("#sky"); if (!cv) return;
+    const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const ctx = cv.getContext && cv.getContext("2d"); if (!ctx) return;
+    function size(){ cv.width = innerWidth; cv.height = Math.max(innerHeight, document.body.scrollHeight); }
+    size(); addEventListener("resize", size);
+    const N = Math.min(160, Math.floor(innerWidth / 9));
+    const stars = Array.from({length:N}, () => ({
+      x: Math.random()*cv.width, y: Math.random()*cv.height,
+      r: Math.random()*1.4+0.3, a: Math.random()*6.28, s: Math.random()*0.02+0.004
+    }));
+    function paint(twinkle){
+      ctx.clearRect(0,0,cv.width,cv.height);
+      for (const st of stars){ if (twinkle) st.a += st.s; const al = 0.35 + Math.abs(Math.sin(st.a))*0.55;
+        ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, 7); ctx.fillStyle = `rgba(245,236,210,${al})`; ctx.fill(); }
+    }
+    if (reduce){ paint(false); return; }
+    (function frame(){ paint(true); requestAnimationFrame(frame); })();
+  })();
+
+  /* ---------- helpers ---------- */
+  function esc(s){ return String(s).replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c])); }
+  function slugify(name){ return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
+
+  // Build slug -> primal-name map from the 144 grid.
+  const SLUG_TO_NAME = {};
+  O.WEST_ORDER.forEach(sign => O.GRID[sign].forEach(name => { SLUG_TO_NAME[slugify(name)] = name; }));
+
+  const TIER_CLASS = t => "tier-" + t.replace(/\s/g, "");
+  function reduceMotion(){ return window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches; }
+
+  /* ---------- read the query ---------- */
+  const params = new URLSearchParams(location.search);
+  const withSlug = (params.get("with") || "").trim().toLowerCase();
+  const rawName = params.get("n") || "";
+  const friendName = rawName.trim().slice(0, 40);
+
+  let sharer = null; // { primal, sign, animal, glyph, cn }
+  if (withSlug && SLUG_TO_NAME[withSlug]) {
+    const primalName = SLUG_TO_NAME[withSlug];
+    const loc = E.locate(primalName);
+    if (loc) {
+      sharer = { primal: primalName, sign: loc.sign, animal: loc.animal,
+                 glyph: O.GLYPH_WEST[loc.sign], cn: O.CN_EAST[loc.animal] };
+    }
+  }
+
+  /* ---------- configure hero for the two modes ---------- */
+  if (sharer) {
+    const whoIs = friendName ? (esc(friendName) + " is") : "Someone is";
+    $("#eyebrow").textContent = "A challenge from a friend";
+    $("#heroTitle").innerHTML = whoIs + " the <em>" + esc(sharer.primal) + "</em>. What are you?";
+    $("#sharerLab").textContent = whoIs;
+    $("#sGlyph").textContent = sharer.glyph;
+    $("#sCn").textContent = sharer.cn;
+    $("#sName").textContent = sharer.primal;
+    $("#sMeta").textContent = sharer.sign + " · " + sharer.animal;
+    $("#sharerCard").hidden = false;
+    $("#panelHead").textContent = "Reveal yours";
+    $("#revealBtn").textContent = "Reveal mine";
+  } else {
+    $("#eyebrow").textContent = "The challenge";
+    $("#heroTitle").innerHTML = "Find your animal, then <em>challenge your friends</em>.";
+    $("#panelHead").textContent = "Reveal your animal";
+    $("#panelSub").textContent = "Enter your birth date. Your animal is drawn in your browser, never sent anywhere.";
+    $("#revealBtn").textContent = "Reveal my animal";
+  }
+
+  /* ---------- build a share link + text (birth date never included) ---------- */
+  function shareURLFor(slug){
+    const base = location.origin + location.pathname; // .../vs.html
+    return base + "?with=" + encodeURIComponent(slug);
+  }
+  function shareTextFor(primal, url){
+    return "I'm the " + primal + ". What are you? See how we match: " + url;
+  }
+  async function doShare(primal, url){
+    const text = shareTextFor(primal, url);
+    if (navigator.share) {
+      try { await navigator.share({ title: "The Primal Oracle", text: text, url: url }); return "shared"; }
+      catch (err) { if (err && err.name === "AbortError") return "dismissed"; }
+    }
+    try { await navigator.clipboard.writeText(text); return "copied"; }
+    catch (err) {
+      const ta = document.createElement("textarea"); ta.value = text; document.body.appendChild(ta);
+      ta.select(); try { document.execCommand("copy"); } catch(e){} ta.remove(); return "copied";
+    }
+  }
+
+  /* ---------- countdown, then a callback ---------- */
+  function countdown(done){
+    const stage = $("#stage");
+    if (reduceMotion()) { done(); return; }
+    stage.innerHTML = '<div class="countdown" id="cd"></div>';
+    const el = $("#cd");
+    const beats = ["3", "2", "1", "✦"]; // 3,2,1, then a small star
+    let i = 0;
+    function tick(){
+      if (i >= beats.length) { done(); return; }
+      el.textContent = beats[i];
+      el.classList.remove("pop"); void el.offsetWidth; el.classList.add("pop");
+      i++; setTimeout(tick, 620);
+    }
+    tick();
+  }
+
+  /* ---------- the match block (shown only in ?with mode) ---------- */
+  function renderMatch(container, me, m){
+    const tc = TIER_CLASS(m.tier);
+    const pct = Math.max(0, Math.min(100, Math.round(m.score / 18 * 100)));
+    const topNote = (m.notes && m.notes.length) ? m.notes[0] : "";
+    const mySlug = slugify(me.primal);
+    const friendLabel = friendName ? esc(friendName) : "Your friend";
+
+    const block = document.createElement("div");
+    block.className = "matchBlock";
+    block.innerHTML =
+      '<div class="versus">' +
+        '<span class="side"><small>You</small><span class="nm">' + esc(me.primal) + '</span></span>' +
+        '<span class="amp">&amp;</span>' +
+        '<span class="side"><small>' + friendLabel + '</small><span class="nm">' + esc(sharer.primal) + '</span></span>' +
+      '</div>' +
+      '<span class="bigTier ' + tc + '">' + m.tier + '</span>' +
+      '<div class="scoreRow"><span class="num">' + m.score + '</span><span class="of">of 18</span></div>' +
+      '<div class="scoreTrack"><i id="mTrack"></i></div>' +
+      (topNote ? '<p class="topNote">' + esc(topNote) + '</p>' : '') +
+      '<p class="honest">Compatibility reads the pattern two natures make. It never tells you to be together, or not. What you build from here is yours.</p>' +
+      '<p class="beg">Send this to someone who thinks they know you.</p>' +
+      '<div class="ctaRow">' +
+        '<button class="btn" id="challengeBack" type="button">Challenge someone back</button>' +
+        '<button class="btn ghost" id="shareMatch" type="button">Share this match</button>' +
+      '</div>' +
+      '<a class="fullLink" href="match.html">Read the full match</a>' +
+      '<p class="msg" id="matchMsg"></p>';
+    container.appendChild(block);
+
+    requestAnimationFrame(() => { block.classList.add("in"); setTimeout(() => { const t = $("#mTrack"); if (t) t.style.width = pct + "%"; }, 220); });
+
+    if (window.GAME && typeof window.GAME.celebrate === "function") { try { window.GAME.celebrate(); } catch(e){} }
+
+    const msg = $("#matchMsg");
+    const myURL = shareURLFor(mySlug);
+    $("#challengeBack").addEventListener("click", async () => {
+      const r = await doShare(me.primal, myURL);
+      if (r === "copied") msg.textContent = "Link copied. Send it and see who matches you.";
+      else if (r === "shared") msg.textContent = "Sent. Now wait for their reveal.";
+    });
+    $("#shareMatch").addEventListener("click", async () => {
+      // Sharing the match still shares only the visitor's slug, no dates.
+      const r = await doShare(me.primal, myURL);
+      if (r === "copied") msg.textContent = "Copied. Send it to them.";
+      else if (r === "shared") msg.textContent = "Shared.";
+    });
+
+    block.scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "center" });
+  }
+
+  /* ---------- the challenge builder (shown only in no-?with mode) ---------- */
+  function renderChallengeBuilder(container, me){
+    const mySlug = slugify(me.primal);
+    const myURL = shareURLFor(mySlug);
+    const block = document.createElement("div");
+    block.className = "matchBlock";
+    block.innerHTML =
+      '<div class="visitorReveal">' +
+        '<p class="eyebrow">You are the</p>' +
+        '<div class="vGlyphRow"><span class="vGlyph">' + me.glyph + '</span><span class="vCn">' + me.cn + '</span></div>' +
+        '<h2 class="big">' + esc(me.primal) + '</h2>' +
+        '<div class="vMeta">' + me.sign + ' · ' + me.animal + '</div>' +
+      '</div>' +
+      '<p class="beg">Now find out who matches you. Send this to someone who thinks they know you.</p>' +
+      '<div class="ctaRow">' +
+        '<button class="btn" id="challengeFriend" type="button">Challenge a friend</button>' +
+        '<a class="btn ghost" href="index.html">Read my full reading</a>' +
+      '</div>' +
+      '<p class="msg" id="matchMsg"></p>';
+    container.appendChild(block);
+    requestAnimationFrame(() => block.classList.add("in"));
+
+    if (window.GAME && typeof window.GAME.celebrate === "function") { try { window.GAME.celebrate(); } catch(e){} }
+
+    const msg = $("#matchMsg");
+    $("#challengeFriend").addEventListener("click", async () => {
+      const r = await doShare(me.primal, myURL);
+      if (r === "copied") msg.textContent = "Link copied. Send it and see how you two read.";
+      else if (r === "shared") msg.textContent = "Sent. Now wait for their reveal.";
+    });
+    block.scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "center" });
+  }
+
+  /* ---------- reveal a visitor animal (no ?with): glyph + name land first ---------- */
+  function renderVisitorReveal(container, me, then){
+    const rv = document.createElement("div");
+    rv.className = "visitorReveal";
+    rv.innerHTML =
+      '<p class="eyebrow">You are the</p>' +
+      '<div class="vGlyphRow"><span class="vGlyph">' + me.glyph + '</span><span class="vCn">' + me.cn + '</span></div>' +
+      '<h2 class="big">' + esc(me.primal) + '</h2>' +
+      '<div class="vMeta">' + me.sign + ' · ' + me.animal + '</div>';
+    container.appendChild(rv);
+    setTimeout(then, reduceMotion() ? 0 : 900);
+  }
+
+  /* ---------- form submit ---------- */
+  $("#revealForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const msg = $("#formMsg"); msg.textContent = "";
+    const dateStr = $("#vDate").value;
+    if (!dateStr) { msg.textContent = "Enter your date of birth to reveal your animal."; return; }
+    const me = E.compute(dateStr);
+    if (!me) { msg.textContent = "That date did not read. Check it and try again."; return; }
+
+    const stage = $("#stage");
+    stage.innerHTML = "";
+
+    countdown(() => {
+      stage.innerHTML = "";
+      if (sharer) {
+        // dramatic: name lands, then the match animates in
+        renderVisitorReveal(stage, me, () => {
+          const m = E.compatibility(me, sharer);
+          renderMatch(stage, me, m);
+        });
+      } else {
+        // challenge builder: reveal + challenge button
+        renderChallengeBuilder(stage, me);
+      }
+    });
+  });
+})();
+</script>
+<nav class="sitemap-footer" aria-label="Explore Spirit Omega">
+  <div class="sf-inner">
+    <div class="sf-col"><h3>Discover</h3><ul><li><a href="/">Find your animal</a></li><li><a href="/menagerie.html">All 144 animals</a></li><li><a href="/year.html">Year finder</a></li><li><a href="/daily.html">Today's reading</a></li><li><a href="/vs.html">Challenge a friend</a></li></ul></div>
+    <div class="sf-col"><h3>Relationships</h3><ul><li><a href="/match.html">Test a match</a></li><li><a href="/circle.html">Circle of three</a></li><li><a href="/learn.html">How it works</a></li></ul></div>
+    <div class="sf-col"><h3>Live with it</h3><ul><li><a href="/habitat/">The Habitat</a></li><li><a href="/stones.html">Keeper stones</a></li><li><a href="/directions/">Directions</a></li><li><a href="/best-days.html">Best days</a></li></ul></div>
+    <div class="sf-col"><h3>The Moon</h3><ul><li><a href="/moon.html">The Moon tonight</a></li><li><a href="/moon/phases/">The eight phases</a></li><li><a href="/moon/phases/new-moon/">New Moon</a></li><li><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a></li><li><a href="/moon/phases/first-quarter/">First Quarter</a></li><li><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a></li></ul></div>
+    <div class="sf-col"><h3>Western signs</h3><ul><li><a href="/western-zodiac/aries/">Aries animals</a></li><li><a href="/western-zodiac/taurus/">Taurus animals</a></li><li><a href="/western-zodiac/gemini/">Gemini animals</a></li><li><a href="/western-zodiac/cancer/">Cancer animals</a></li><li><a href="/western-zodiac/leo/">Leo animals</a></li><li><a href="/western-zodiac/virgo/">Virgo animals</a></li></ul></div>
+    <div class="sf-col"><h3>Western signs</h3><ul><li><a href="/western-zodiac/libra/">Libra animals</a></li><li><a href="/western-zodiac/scorpio/">Scorpio animals</a></li><li><a href="/western-zodiac/sagittarius/">Sagittarius animals</a></li><li><a href="/western-zodiac/capricorn/">Capricorn animals</a></li><li><a href="/western-zodiac/aquarius/">Aquarius animals</a></li><li><a href="/western-zodiac/pisces/">Pisces animals</a></li></ul></div>
+    <div class="sf-col"><h3>Chinese years</h3><ul><li><a href="/chinese-zodiac/rat/">Rat animals</a></li><li><a href="/chinese-zodiac/ox/">Ox animals</a></li><li><a href="/chinese-zodiac/tiger/">Tiger animals</a></li><li><a href="/chinese-zodiac/rabbit/">Rabbit animals</a></li><li><a href="/chinese-zodiac/dragon/">Dragon animals</a></li><li><a href="/chinese-zodiac/snake/">Snake animals</a></li></ul></div>
+    <div class="sf-col"><h3>Chinese years</h3><ul><li><a href="/chinese-zodiac/horse/">Horse animals</a></li><li><a href="/chinese-zodiac/goat/">Goat animals</a></li><li><a href="/chinese-zodiac/monkey/">Monkey animals</a></li><li><a href="/chinese-zodiac/rooster/">Rooster animals</a></li><li><a href="/chinese-zodiac/dog/">Dog animals</a></li><li><a href="/chinese-zodiac/pig/">Pig animals</a></li></ul></div>
+    <div class="sf-col"><h3>Elements</h3><ul><li><a href="/elements/fire/">Fire element</a></li><li><a href="/elements/earth/">Earth element</a></li><li><a href="/elements/air/">Air element</a></li><li><a href="/elements/water/">Water element</a></li></ul></div>
+  </div>
+  <p class="sf-note">Spirit Omega, The Primal Oracle. A tradition of meaning for reflection, not medical, psychological, financial, or legal advice.</p>
+</nav>
+</body>
+</html>

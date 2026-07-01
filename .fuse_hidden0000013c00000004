@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src="js/theme.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Primal Oracle: find your Primal Animal from Chinese and Western zodiac</title>
+<meta name="description" content="Enter your date of birth to find your Primal Animal, the single creature where your Chinese zodiac year and Western Sun sign meet. Read your five gates, get your stones, and test a match.">
+<meta property="og:title" content="The Primal Oracle: find your Primal Animal">
+<meta property="og:description" content="Your Chinese year animal and your Western Sun sign combine into one Primal Animal out of 144. Find yours, read it, and see who you match.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://animal-two-psi.vercel.app/">
+<meta property="og:url" content="https://animal-two-psi.vercel.app/">
+<meta property="og:site_name" content="The Primal Oracle">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://animal-two-psi.vercel.app/social/home-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Primal Oracle: find the one animal where your Chinese zodiac year and Western Sun sign cross, out of 144.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Primal Oracle: find your Primal Animal">
+<meta name="twitter:description" content="Your Chinese year animal and your Western Sun sign combine into one Primal Animal out of 144. Find yours free, read it, and see who you match.">
+<meta name="twitter:image" content="https://animal-two-psi.vercel.app/social/home-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/oracle.css">
+<link rel="stylesheet" href="css/reveal.css">
+<style>
+  .peekGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:18px}
+  .peekCard{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;transition:border-color .15s,transform .15s}
+  .peekCard:hover{border-color:var(--brass);transform:translateY(-2px)}
+  .peekCard .pn{font-family:var(--serif);font-size:1.25rem;color:var(--moon);line-height:1.1}
+  .peekCard .ps{font-size:.72rem;color:var(--muted);margin-top:4px;letter-spacing:.03em}
+  .pathsGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+  .pathCard{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .pathCard h3{font-family:var(--serif);color:var(--brass-bright);font-size:1.2rem;margin:0 0 4px}
+  .pathCard p{margin:0;font-size:.9rem;color:var(--body)}
+  .btnRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .today{display:flex;align-items:center;gap:18px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin:22px auto 0;max-width:720px;flex-wrap:wrap}
+  .today-moon{width:46px;height:46px;border-radius:50%;flex:0 0 auto;background:radial-gradient(circle at 35% 30%,#fffaf0,#d9cfa6 55%,#b6ac82 100%);box-shadow:0 0 24px rgba(245,236,210,.25)}
+  .today-body{flex:1 1 240px}
+  .today-lead{margin:0;font-family:var(--serif);font-size:1.3rem;color:var(--moon);line-height:1.2}
+  .today-sub{margin:5px 0 0;color:var(--body);font-size:.9rem}
+  .today .btn{white-space:nowrap}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","@id":"https://animal-two-psi.vercel.app/#website","url":"https://animal-two-psi.vercel.app/","name":"The Primal Oracle","alternateName":"Primal Animal","description":"Find your Primal Animal, the single creature where your Chinese zodiac year and your Western Sun sign meet, out of 144 combinations.","inLanguage":"en","publisher":{"@id":"https://animal-two-psi.vercel.app/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://animal-two-psi.vercel.app/#read?dob={birth_date}"},"query-input":"required name=birth_date"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://animal-two-psi.vercel.app/#organization","name":"The Primal Oracle","alternateName":"Primal Animal","url":"https://animal-two-psi.vercel.app/","description":"The Primal Oracle fuses the Chinese zodiac year and the Western Sun sign into one of 144 Primal Animals, with readings, compatibility matching, and lunar-timing guidance. Meaning and reflection, not prediction.","knowsAbout":["Chinese zodiac","Western zodiac","Sun sign astrology","Chinese year animals","Lunar New Year","Zodiac compatibility","Primal Animal"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","@id":"https://animal-two-psi.vercel.app/#app","name":"The Primal Oracle","applicationCategory":"LifestyleApplication","operatingSystem":"Web browser","url":"https://animal-two-psi.vercel.app/","browserRequirements":"Requires JavaScript. Runs entirely in the browser; no birth date is sent to a server.","description":"A free tool that combines your Chinese zodiac year and your Western Sun sign into one of 144 Primal Animals. Enter your date of birth to find your animal, read its five gates, and test compatibility with someone else.","featureList":["Find your Primal Animal from your date of birth","144 combinations of Chinese zodiac year and Western Sun sign","Correct lunar New Year boundary for 1940 to 2032","Compatibility test between two birth dates","Moon phase and lunar timing"],"isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://animal-two-psi.vercel.app/#organization"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","@id":"https://animal-two-psi.vercel.app/#faq","mainEntity":[
+{"@type":"Question","name":"What is a Primal Animal?","acceptedAnswer":{"@type":"Answer","text":"A Primal Animal is the single creature you get when you combine your Western Sun sign with your Chinese zodiac year. Twelve Sun signs cross twelve year animals to make 144 combinations, and each combination is named for its own animal. A Cancer born in the Year of the Snake, for example, is the Snail."}},
+{"@type":"Question","name":"How do I find my Primal Animal?","acceptedAnswer":{"@type":"Answer","text":"Enter your date of birth into the Primal Oracle. It reads your Western Sun sign from the month and day, reads your Chinese year animal from the year and the real lunar New Year date, and crosses the two on the 144 grid to name your animal. The lookup is free and runs entirely in your browser."}},
+{"@type":"Question","name":"What animal is Cancer and Snake?","acceptedAnswer":{"@type":"Answer","text":"In the Primal Animal system, a Cancer born in the Year of the Snake is the Snail. The Snail is one of the 144 Primal Animals, each of which is a distinct crossing of one Western Sun sign with one Chinese zodiac year."}},
+{"@type":"Question","name":"How does the lunar New Year boundary affect my Chinese year animal?","acceptedAnswer":{"@type":"Answer","text":"The Chinese year begins at the lunar New Year, not on January 1, and that date shifts between late January and mid February each year. A birthday in that early window can belong to the previous year's animal. The Primal Oracle uses the real lunar New Year date for every year from 1940 to 2032, so it names the correct animal for people born near the boundary."}},
+{"@type":"Question","name":"Is the Primal Animal accurate, or is it prediction?","acceptedAnswer":{"@type":"Answer","text":"The astronomy is real and checkable: the Sun signs, the lunar New Year dates for 1940 to 2032, the twelve-year cycle, and the Moon phase. The animal grid and the readings built on top of them are a tradition of meaning for reflection, not a forecast. Read your animal as a mirror you can act on, not a prediction of what will happen."}},
+{"@type":"Question","name":"Is the Primal Oracle free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Finding your Primal Animal, reading it, and testing a match are all free, with no account required. The tool runs in your browser and your date of birth is not sent to any server."}}
+]}
+</script>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <nav>
+      <a href="#read">Find your animal</a>
+      <a href="menagerie.html">All 144 animals</a>
+      <a href="match.html">Test a match</a>
+      <a href="learn.html">How it works</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="eyebrow">Two skies, one animal</p>
+    <h1>You were born under <em>two zodiacs</em>. Meet the animal where they cross.</h1>
+    <p class="lede">Your Western Sun sign reads your daylight self. Your Chinese year animal reads your instinct. Cross them and you get one of 144 Primal Animals. Find yours, read where you stand, and see who you match.</p>
+
+    <div class="wheel" aria-hidden="true">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="ring r3"></div>
+      <div class="glyphs">
+        <span style="transform:rotate(0deg) translateY(-168px)">♈</span>
+        <span style="transform:rotate(30deg) translateY(-168px)">♉</span>
+        <span style="transform:rotate(60deg) translateY(-168px)">♊</span>
+        <span style="transform:rotate(90deg) translateY(-168px)">♋</span>
+        <span style="transform:rotate(120deg) translateY(-168px)">♌</span>
+        <span style="transform:rotate(150deg) translateY(-168px)">♍</span>
+        <span style="transform:rotate(180deg) translateY(-168px)">♎</span>
+        <span style="transform:rotate(210deg) translateY(-168px)">♏</span>
+        <span style="transform:rotate(240deg) translateY(-168px)">♐</span>
+        <span style="transform:rotate(270deg) translateY(-168px)">♑</span>
+        <span style="transform:rotate(300deg) translateY(-168px)">♒</span>
+        <span style="transform:rotate(330deg) translateY(-168px)">♓</span>
+      </div>
+      <div class="core"><div class="moonball"></div></div>
+    </div>
+
+    <!-- READER FORM -->
+    <div class="reader" id="read">
+      <h3>Read the wheel</h3>
+      <p class="dim">Enter your date of birth. Nothing is sent anywhere; the reading is drawn in your browser.</p>
+      <form id="birthForm">
+        <div class="field">
+          <input type="date" id="birthDate" required min="1940-01-01" max="2032-12-31" aria-label="Date of birth">
+          <button class="btn" type="submit">Reveal my animal</button>
+        </div>
+        <p class="msg" id="formMsg"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- TODAY STRIP -->
+  <section class="today" id="todayStrip" hidden>
+    <div class="today-moon" id="todayMoon"></div>
+    <div class="today-body">
+      <p class="today-lead" id="todayLead"></p>
+      <p class="today-sub" id="todaySub"></p>
+    </div>
+    <a class="btn ghost" id="todayCta" href="best-days.html">See your best days</a>
+  </section>
+
+  <!-- RESULT -->
+  <div id="resultWrap">
+    <div class="reveal">
+      <div class="cross" id="cross"></div>
+      <h2 class="big" id="animalName">✦</h2>
+      <p class="essence" id="animalEssence"></p>
+      <p class="mt"><a class="btn ghost" id="animalLink" href="#">Open my full animal page</a></p>
+    </div>
+
+    <div class="gates" id="gates"></div>
+
+    <div class="duo" id="stonesSection">
+      <div class="card">
+        <h3>Your keeper stones</h3>
+        <ul class="stoneList" id="stones"></ul>
+        <p class="hint">Charge them on the full moon. Carry the one that calls loudest.</p>
+      </div>
+      <div class="card">
+        <h3>The Moon tonight</h3>
+        <p id="moonNow"></p>
+      </div>
+    </div>
+
+    <!-- SHARE -->
+    <div class="card" id="shareSection">
+      <h3>Pass the Oracle onward</h3>
+      <p class="dim">Send your animal to someone and wonder out loud whether you match.</p>
+      <div class="shareBox">
+        <input id="shareLine" readonly aria-label="Share text">
+        <a class="btn" id="challengeBtn" href="vs.html">Challenge a friend</a>
+        <button class="btn ghost" id="shareBtn" type="button">Share my animal</button>
+        <button class="btn ghost" id="cardBtn" type="button">Download my card</button>
+        <button class="btn ghost" id="copyBtn" type="button">Copy</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI-ANSWERABLE CORE -->
+  <section class="band" id="what-it-is">
+    <div class="prose">
+      <p class="eyebrow">In one paragraph</p>
+      <h2>What a Primal Animal is</h2>
+      <p>A <strong>Primal Animal</strong> is the single creature you get when you combine your <strong>Western Sun sign</strong> with your <strong>Chinese zodiac year</strong>. There are twelve Sun signs and twelve year animals, so the grid holds <strong>144 combinations</strong>, and each one is named for its own animal. Your date of birth points to exactly one cell: the month and day fix your Sun sign, the year and the <strong>lunar New Year</strong> date fix your year animal, and where those two lines cross is your Primal Animal. A Cancer born in the Year of the Snake is the <strong>Snail</strong>. An Aries born in the Year of the Dragon is the <strong>Tyrannosaurus Rex</strong>.</p>
+
+      <h3>How to find yours</h3>
+      <p>Enter your date of birth in the reader above. The Oracle reads your Sun sign, reads your Chinese year animal against the real lunar New Year date for your birth year, and names your animal on the 144 grid. It is free, needs no account, and runs entirely in your browser, so your birth date is never sent anywhere.</p>
+
+      <h3>Why the lunar New Year boundary matters</h3>
+      <p>The Chinese year does not begin on January 1. It begins at the lunar New Year, which falls between late January and the middle of February and moves a little each year. A birthday in that window can belong to the previous year's animal, so someone born on February 2 may be a Tiger or an Ox depending on the year. The Oracle carries the real New Year date for every year from 1940 to 2032 and checks your birthday against it before it names your animal.</p>
+
+      <h3>Meaning, not prediction</h3>
+      <p>The astronomy here is real and checkable: the Sun signs, the lunar New Year dates, the twelve-year cycle, and the Moon phase overhead. The animal grid and the readings built on top of them are a tradition of meaning, a structured way to look at yourself, not a forecast. Read your animal as a mirror you can act on rather than a fortune you wait for.</p>
+
+      <dl class="faq">
+        <dt>What animal is Cancer and Snake?</dt>
+        <dd>The Snail. It is one of the 144 Primal Animals, the crossing of the Sun sign Cancer with the Chinese Year of the Snake. <a href="animals/snail/">Read the Snail</a>.</dd>
+        <dt>Is there a free Primal Animal calculator?</dt>
+        <dd>Yes. The reader on this page is free, needs no sign-up, and computes your animal in your browser. Enter a date of birth to find yours, or <a href="menagerie.html">browse all 144 animals</a>.</dd>
+        <dt>How is this different from a normal horoscope?</dt>
+        <dd>A normal horoscope usually reads one system, most often the Western Sun sign. The Primal Animal crosses two whole traditions, the Western solar zodiac and the Chinese lunar and Jovian zodiac, into one figure that speaks to both your daylight self and your instinct. <a href="learn.html">How it works</a>.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- MENAGERIE PREVIEW -->
+  <section class="band" id="peek">
+    <p class="eyebrow">Inside the Menagerie</p>
+    <h2>144 animals, one is yours</h2>
+    <p class="lede">A glimpse of the creatures waiting at the crossings. Enter your birthday above to find which one is you, or wander the whole menagerie.</p>
+    <div class="peekGrid">
+      <a class="peekCard" href="animals/snail/"><span class="pn">Snail</span><span class="ps">Cancer and the Snake</span></a>
+      <a class="peekCard" href="animals/owl/"><span class="pn">Owl</span><span class="ps">Scorpio and the Rooster</span></a>
+      <a class="peekCard" href="animals/butterfly/"><span class="pn">Butterfly</span><span class="ps">Libra and the Rabbit</span></a>
+      <a class="peekCard" href="animals/tyrannosaurus-rex/"><span class="pn">Tyrannosaurus Rex</span><span class="ps">Aries and the Dragon</span></a>
+      <a class="peekCard" href="animals/yak/"><span class="pn">Yak</span><span class="ps">Taurus and the Ox</span></a>
+      <a class="peekCard" href="animals/turtle/"><span class="pn">Turtle</span><span class="ps">Cancer and the Rabbit</span></a>
+    </div>
+    <p class="hint" id="recentOpened"></p>
+    <p class="hint" data-game-collection></p>
+    <p class="mt"><a class="btn ghost" href="menagerie.html">Browse all 144 animals</a></p>
+  </section>
+
+  <!-- WHAT YOUR ANIMAL OPENS -->
+  <section class="band">
+    <p class="eyebrow">What your animal opens</p>
+    <h2>Not a label. A map.</h2>
+    <div class="pathsGrid">
+      <div class="pathCard"><h3>Nature</h3><p>How you move, decide, and protect what matters.</p></div>
+      <div class="pathCard"><h3>Shadow</h3><p>The fault your own strength turns into under pressure.</p></div>
+      <div class="pathCard"><h3>Awakening</h3><p>The same strength, integrated and awake.</p></div>
+      <div class="pathCard"><h3>Habitat</h3><p>Direction, colors, and rooms that suit your animal.</p></div>
+      <div class="pathCard"><h3>Bonds</h3><p>Who meets you easily, and who meets you through friction.</p></div>
+      <div class="pathCard"><h3>Rhythm</h3><p>The moon phase and the days that serve you.</p></div>
+    </div>
+  </section>
+
+  <!-- COMPARE WITH FRIENDS -->
+  <section class="band" id="compareBand">
+    <p class="eyebrow">Bring your people</p>
+    <h2>Some animals recognize each other at once</h2>
+    <p class="lede">Find a friend's animal by their birthday, test the two of you one to one, then read three of you together as a circle.</p>
+    <div class="btnRow">
+      <a class="btn" href="year.html">Look up a friend</a>
+      <a class="btn ghost" href="match.html">Test a match</a>
+      <a class="btn ghost" href="circle.html">Read a circle of three</a>
+    </div>
+  </section>
+
+  <!-- COMPATIBILITY -->
+  <section class="band" id="matchSection">
+    <p class="eyebrow">Two animals, one wheel</p>
+    <h2>Test a match</h2>
+    <p class="lede">Enter two dates of birth. The Oracle scores the pair across the Chinese trines, secret friends, clashes, and harms, then across the Western elements, and names the bond.</p>
+    <form id="matchForm">
+      <div class="matchGrid">
+        <div><label for="mDateA">First person</label><input type="date" id="mDateA" required min="1940-01-01" max="2032-12-31"></div>
+        <div><label for="mDateB">Second person</label><input type="date" id="mDateB" required min="1940-01-01" max="2032-12-31"></div>
+        <button class="btn" type="submit">Test the match</button>
+      </div>
+    </form>
+    <div id="matchResult"></div>
+  </section>
+
+  <!-- EMAIL -->
+  <section class="band">
+    <p class="eyebrow">Moon notes</p>
+    <h2>Moon Notes, opening soon</h2>
+    <p class="lede">One short reflection at each new moon: the phase, what it favors, and a practice for your animal. The mailing is not sending yet. Leave your email to be first when it opens. Your address is stored only on this device for now.</p>
+    <form id="mailForm">
+      <div class="field" style="max-width:520px">
+        <input type="email" id="email" placeholder="you@email.com" aria-label="Email address">
+        <button class="btn" type="submit">Join the waitlist</button>
+      </div>
+      <p class="msg" id="mailMsg" style="color:var(--brass-bright)"></p>
+    </form>
+  </section>
+
+  <!-- SEO / EXPLAINER -->
+  <section class="band" id="learn">
+    <div class="prose">
+      <p class="eyebrow">How it works</p>
+      <h2>From two zodiacs to one animal</h2>
+      <p>The Western zodiac follows the Sun across the year and gives you a Sun sign. The Chinese zodiac follows a twelve year cycle counted by the lunar calendar and gives you a year animal. Most people only ever learn one half. The Primal Animal is what you get when you put the two halves together.</p>
+      <p>There are twelve Sun signs and twelve year animals, so there are 144 possible combinations. Each one is named for a single creature. A Cancer born in the Year of the Snake is a Snail. An Aries born in the Year of the Dragon is a Tyrannosaurus Rex. The animal is not a blend you have to interpret. It is the shape the two forces settle into once they stop pulling against each other.</p>
+
+      <h3>What the reading gives you</h3>
+      <p>Each reading answers five questions in order: where you stand now, what you need soon, how to plan the near season, what to be aware of, and what your highest form looks like. The last one matters most. Every animal has a version ruled by its fear and a version that has turned that fear into strength. The reading points you toward the second one.</p>
+
+      <h3>Why the Moon runs through all of it</h3>
+      <p>Cancer is ruled by the Moon. The Chinese year begins on a new moon. The reading times your next moves to the Moon overhead, because a tide you can read is a tide you can move with. Your stones are charged by moonlight. The Moon is the thread that ties the two skies together.</p>
+
+      <dl class="faq">
+        <dt>What is a Primal Animal?</dt>
+        <dd>The single creature you get when you combine your Western Sun sign with your Chinese zodiac year. There are 144, and each has its own reading.</dd>
+        <dt>How accurate is the year animal?</dt>
+        <dd>The Chinese year starts at the lunar New Year, not January 1, so a birthday in January or early February may belong to the previous animal. The Oracle accounts for the New Year date for every year from 1940 to 2032.</dd>
+        <dt>Is this prediction or meaning?</dt>
+        <dd>The animal grid and the readings are a tradition of meaning, not a forecast. The Moon phase and astronomy are real and checkable. Read the result as a mirror you can act on.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <footer>
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <p>Find your Primal Animal, read where you stand, and see who you match. Built on the fusion of the Chinese and Western zodiacs.</p>
+    <p class="disclaimer">This is a tradition of meaning for reflection and entertainment. It is not medical, psychological, financial, or legal advice. The Primal Animal framework is adapted from the Primal Zodiac tradition. Stones and lunar practices are presented as cultural tradition, not as treatment.</p>
+  </footer>
+
+</div>
+
+<!-- THIRD EYE HUD -->
+<aside class="eyeHud" aria-label="Your awakening">
+  <div class="eye"><span class="iris"></span><span class="lid" id="eyeLid"></span></div>
+  <div class="meta">
+    <div class="lab" id="eyeLabel">Sleeper · 0%</div>
+    <div class="desc" id="eyeDesc">The eye is closed. The animal is still a rumor.</div>
+    <div class="track"><i id="eyeBar"></i></div>
+  </div>
+  <ul class="rites">
+    <li class="rite" data-rite="revealed">Name your animal</li>
+    <li class="rite" data-rite="read">Read your five gates</li>
+    <li class="rite" data-rite="stones">Receive your stones</li>
+    <li class="rite" data-rite="match">Test a match</li>
+    <li class="rite" data-rite="shared">Pass the Oracle onward</li>
+    <li class="rite" data-rite="returned">Return on a new day</li>
+  </ul>
+  <div class="streakRow">Return streak: <strong id="streak">1 day</strong></div>
+</aside>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/card.js"></script>
+<script src="js/app.js"></script>
+<script src="js/home-fx.js" defer></script>
+<script src="js/game.js" defer></script>
+</body>
+</html>
