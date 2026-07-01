@@ -1,0 +1,163 @@
+/* ============================================================
+   type.css  —  Zodianimal.com type system (Phase 0)
+   ------------------------------------------------------------
+   Fraunces (variable optical display serif, the "oracle voice")
+   over Geist / Inter (humanist grotesque body), with Space Mono
+   as the whisper for cosmological data. See
+   docs/redesign/01-design-language-2026.md section 1 and
+   docs/redesign/10-tech-stack-performance-a11y-2026.md (2e, font CLS).
+
+   Family stacks (--serif/--sans/--mono) live in tokens.css.
+   The Fraunces + Geist + Space Mono web fonts are requested via the
+   Google Fonts CSS2 <link> that build/apply-assets.mjs injects into
+   <head> with font-display:swap, plus the hero preload for Fraunces.
+
+   FONT LOADING STATUS
+   -------------------
+   Binary WOFF2 download from fonts.gstatic.com is blocked in this
+   build environment, so we ship the Google Fonts CSS2 <link> now.
+   Every family below ALSO has a metrics-matched local fallback
+   @font-face (size-adjust + ascent/descent/line-gap overrides) so the
+   swap from the system fallback to the web font causes no layout shift
+   (CLS well under 0.05). The @font-face src points at local() system
+   fonts only, so it costs zero network and never FOITs.
+
+   TODO (follow-up, tracked): self-host subset Latin WOFF2 under
+   site/fonts/ for Fraunces (opsz+wght), Geist (wght), and Space Mono,
+   swap the Google <link> in apply-assets.mjs for local @font-face src,
+   and preload the hero Fraunces file. Keep these fallback faces; they
+   remain the CLS guard after self-hosting.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Metrics-matched fallback @font-face.
+   Each "<Family> Fallback" renders from a local system font but is
+   scaled with size-adjust and the vertical-metric overrides so its
+   box matches the real web font. It is named as the LAST family in
+   each element's font stack (via the utility classes / element rules
+   below) so the browser paints it during swap with no reflow.
+   Override values derived from published font metrics (unitsPerEm,
+   ascent, descent, lineGap, and average glyph advance).
+   ------------------------------------------------------------ */
+
+/* Fraunces (display serif) matched against Georgia/Times */
+@font-face {
+  font-family: "Fraunces Fallback";
+  src: local("Georgia"), local("Times New Roman");
+  size-adjust: 106%;
+  ascent-override: 92%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+
+/* Geist / body grotesque matched against system Arial-metrics fallback.
+   Geist and Inter share near-identical metrics to Arial; one face covers
+   both since Inter is the ship-now body and Geist the upgrade. */
+@font-face {
+  font-family: "Geist Fallback";
+  src: local("Arial"), local("Helvetica Neue"), local("Helvetica");
+  size-adjust: 97%;
+  ascent-override: 96%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+
+/* Space Mono matched against a system monospace */
+@font-face {
+  font-family: "Space Mono Fallback";
+  src: local("Menlo"), local("Consolas"), local("Courier New");
+  size-adjust: 96%;
+  ascent-override: 105%;
+  descent-override: 31%;
+  line-gap-override: 0%;
+}
+
+/* ------------------------------------------------------------
+   Re-declare the family stacks with the metrics-matched fallback
+   appended just before the generic system fonts, so the swap is
+   invisible. tokens.css defines the base --serif/--sans/--mono; here
+   we extend them with the fallback face. Kept as separate vars so we
+   never mutate the contract names in tokens.css.
+   ------------------------------------------------------------ */
+:root {
+  --serif: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
+  --sans:  "Geist", "Inter", "Geist Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono:  "Space Mono", "Space Mono Fallback", ui-monospace, "SFMono-Regular", monospace;
+
+  /* ------------------------------------------------------------
+     Fluid, editorial type scale (doc 01 section 1).
+     Big display-to-body contrast on purpose; clamp() so the hero
+     breathes on large screens without breaking mobile.
+     ------------------------------------------------------------ */
+  --fs-hero:    clamp(3.2rem, 9vw, 8rem);      /* animal name, homepage fold */
+  --fs-display: clamp(2.4rem, 5.5vw, 4.5rem);  /* section openers */
+  --fs-h2:      clamp(1.7rem, 3.4vw, 2.6rem);  /* sub-sections */
+  --fs-h3:      clamp(1.25rem, 2vw, 1.55rem);  /* card titles */
+  --fs-lead:    clamp(1.2rem, 2.4vw, 1.75rem); /* essence / italic lede */
+  --fs-body:    clamp(1rem, 1.1vw, 1.125rem);  /* readings */
+  --fs-small:   .8125rem;                       /* meta, captions */
+  --fs-eyebrow: .72rem;                          /* uppercase kickers */
+
+  /* line-heights and tracking used across the type helpers */
+  --lh-display: 1.08;   /* display serif: 1.05 to 1.12 */
+  --lh-body:    1.65;
+  --track-eyebrow: .34em;
+}
+
+/* ------------------------------------------------------------
+   Opt-in type utilities (additive; do not restyle existing pages).
+   Later phases apply these classes; existing oracle.css rules keep
+   working because we do not touch their selectors here.
+   ------------------------------------------------------------ */
+.font-serif { font-family: var(--serif); }
+.font-sans  { font-family: var(--sans); }
+.font-mono  { font-family: var(--mono); }
+
+.t-hero {
+  font-family: var(--serif);
+  font-optical-sizing: auto;   /* Fraunces opsz axis engages at size */
+  font-weight: 560;
+  font-size: var(--fs-hero);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+.t-display {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 560;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  text-wrap: balance;
+}
+.t-h2 { font-family: var(--serif); font-weight: 600; font-size: var(--fs-h2); line-height: var(--lh-display); text-wrap: balance; }
+.t-h3 { font-family: var(--serif); font-weight: 600; font-size: var(--fs-h3); line-height: 1.15; }
+
+.t-lead {
+  font-family: var(--serif);
+  font-style: italic;               /* the reserved "oracle voice" */
+  font-size: var(--fs-lead);
+  line-height: 1.3;
+  color: var(--brass-bright);
+}
+.t-body {
+  font-family: var(--sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+.t-small { font-size: var(--fs-small); color: var(--muted); }
+.t-eyebrow {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: var(--fs-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: var(--track-eyebrow);
+  color: var(--accent);
+}
+.t-data {   /* cosmological figures: dates, counts, 144, moon %, Kua numbers */
+  font-family: var(--mono);
+  font-size: var(--fs-small);
+  letter-spacing: .02em;
+  color: var(--muted);
+}

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Proverb Library, Chinese Wisdom for Your Animal | Spirit Omega</title>
+<meta name="description" content="A library of fifteen Chinese proverbs, each with per-character pinyin, a literal translation, its meaning, a soulful reflection, and the Chinese-zodiac animal we tie it to. Read the tradition that stands behind your Primal Animal.">
+<link rel="canonical" href="https://spirit-omega.vercel.app/proverbs/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Proverb Library, Chinese Wisdom for Your Animal | Spirit Omega">
+<meta property="og:description" content="A library of fifteen Chinese proverbs, each with per-character pinyin, a literal translation, its meaning, a soulful reflection, and the Chinese-zodiac animal we tie it to.">
+<meta property="og:url" content="https://spirit-omega.vercel.app/proverbs/">
+<meta property="og:site_name" content="The Primal Oracle">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+.pf-proverb{margin:28px 0;padding:24px 26px;border-left:3px solid var(--brass,#d6c18c);background:linear-gradient(90deg,rgba(214,193,140,.08),transparent);border-radius:0 14px 14px 0}
+.pf-proverb-zh{font-family:"Ma Shan Zheng","Noto Serif SC",var(--serif,serif);font-size:clamp(2.4rem,8vw,3.4rem);line-height:1.8;color:var(--moon,#f5ecd2);margin:0 0 14px;letter-spacing:.04em}
+.pf-proverb-zh ruby{margin:0 3px}
+.pf-proverb-zh rt{font-family:"Inter",system-ui,sans-serif;font-size:.62rem;color:var(--brass-bright,#efe2b4);font-weight:500;letter-spacing:.02em}
+.pf-proverb-zh .cx-punct{font-size:.7em;opacity:.55}
+.pf-proverb-lit,.pf-proverb-mean{margin:3px 0;color:var(--body);max-width:64ch;font-size:.95rem}
+.pf-proverb-lit .k,.pf-proverb-mean .k{display:inline-block;min-width:82px;color:var(--brass-bright,#efe2b4);font-size:.72rem;text-transform:uppercase;letter-spacing:.09em}
+.pf-proverb-soul{margin:14px 0 10px;color:var(--moon,#f5ecd2);font-family:var(--serif,serif);font-size:1.18rem;font-style:italic;max-width:60ch;line-height:1.55}
+.pf-proverb-note{color:var(--muted,#9a9bb0);font-size:.85rem;margin:0}
+.pf-proverb{scroll-margin-top:96px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://spirit-omega.vercel.app/proverbs/#page",
+      "url": "https://spirit-omega.vercel.app/proverbs/",
+      "name": "The Proverb Library",
+      "description": "A library of fifteen Chinese proverbs, each with per-character pinyin, a literal translation, its meaning, a soulful reflection, and the Chinese-zodiac animal we tie it to.",
+      "isPartOf": { "@type": "WebSite", "name": "The Primal Oracle", "url": "https://spirit-omega.vercel.app/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://spirit-omega.vercel.app/" },
+        { "@type": "ListItem", "position": 2, "name": "Proverbs", "item": "https://spirit-omega.vercel.app/proverbs/" }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Chinese proverbs",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "heaven's timing, earth's advantage, human harmony", "item": "https://spirit-omega.vercel.app/proverbs/#tianshi" },
+        { "@type": "ListItem", "position": 2, "name": "the highest good is like water", "item": "https://spirit-omega.vercel.app/proverbs/#water" },
+        { "@type": "ListItem", "position": 3, "name": "the frontier old man loses his horse", "item": "https://spirit-omega.vercel.app/proverbs/#saiweng" },
+        { "@type": "ListItem", "position": 4, "name": "follow its self-so", "item": "https://spirit-omega.vercel.app/proverbs/#ziran" },
+        { "@type": "ListItem", "position": 5, "name": "family harmonious, ten thousand affairs flourish", "item": "https://spirit-omega.vercel.app/proverbs/#jiahe" },
+        { "@type": "ListItem", "position": 6, "name": "a thousand-li road begins beneath the feet", "item": "https://spirit-omega.vercel.app/proverbs/#qianli" },
+        { "@type": "ListItem", "position": 7, "name": "thick virtue carries things", "item": "https://spirit-omega.vercel.app/proverbs/#houde" },
+        { "@type": "ListItem", "position": 8, "name": "the water arrives, the channel forms", "item": "https://spirit-omega.vercel.app/proverbs/#shuidao" },
+        { "@type": "ListItem", "position": 9, "name": "through tranquility, reach the far", "item": "https://spirit-omega.vercel.app/proverbs/#ningjing" },
+        { "@type": "ListItem", "position": 10, "name": "drink water, think of its source", "item": "https://spirit-omega.vercel.app/proverbs/#yinshui" },
+        { "@type": "ListItem", "position": 11, "name": "fallen leaves return to the roots", "item": "https://spirit-omega.vercel.app/proverbs/#luoye" },
+        { "@type": "ListItem", "position": 12, "name": "guard the stump, wait for the rabbit", "item": "https://spirit-omega.vercel.app/proverbs/#shouzhu" },
+        { "@type": "ListItem", "position": 13, "name": "accumulate few, become many", "item": "https://spirit-omega.vercel.app/proverbs/#jishao" },
+        { "@type": "ListItem", "position": 14, "name": "when a thing reaches its extreme, it reverses", "item": "https://spirit-omega.vercel.app/proverbs/#wuji" },
+        { "@type": "ListItem", "position": 15, "name": "warm the old, know the new", "item": "https://spirit-omega.vercel.app/proverbs/#wenzhi" }
+      ]
+    }
+  ]
+}
+</script>
+<script>window.PN_HERE="proverbs";</script>
+<!--pn-assets:start-->
+<link rel="stylesheet" href="/css/tokens.css" data-pn-assets="/css/tokens.css">
+<link rel="stylesheet" href="/css/type.css" data-pn-assets="/css/type.css">
+<link rel="preconnect" href="https://fonts.googleapis.com" data-pn-assets="gf-pre1">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin data-pn-assets="gf-pre2">
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/fraunces/v37/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U.woff2" crossorigin data-pn-assets="fraunces-preload">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap" data-pn-assets="gf-css2">
+<!--pn-assets:end-->
+<!--pn-css:start-->
+<link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
+<link rel="stylesheet" href="/css/nav-mega.css" data-pn="/css/nav-mega.css">
+<link rel="stylesheet" href="/css/nav-drawer.css" data-pn="/css/nav-drawer.css">
+<!--pn-css:end-->
+</head>
+<body class="pn-has-bar">
+<!--pn-static:start-->
+<a class="skip-link" href="#pn-main">Skip to content</a>
+<header class="pn-bar" role="banner" data-static>
+  <div class="pn-inner">
+    <a class="pn-brand" href="/index.html">The Primal <b>Oracle</b></a>
+    <nav class="pn-nav" aria-label="Primary">
+        <div class="pn-item"><button class="pn-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-group="0">Discover<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item"><button class="pn-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-group="1">Bonds<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item"><button class="pn-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-group="2">Live with it<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item"><button class="pn-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-group="3">Sky<span class="chev" aria-hidden="true"></span></button></div>
+        <a class="pn-link" href="/learn.html">How it works</a>
+    </nav>
+    <div class="pn-tools"></div>
+    <button class="pn-burger" type="button" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </div>
+  <div class="pn-dd" data-dd><div class="pn-dd-mount"></div></div>
+  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/index.html">Find your animal</a><a href="/menagerie.html">All 144 animals</a><a href="/year.html">Year finder</a><a href="/match.html">Test a match</a><a href="/circle.html">Circle of three</a><a href="/vs.html">Challenge a friend</a><a href="/habitat/">The Habitat</a><a href="/feng-shui/">Feng Shui</a><a href="/directions/">The Directions</a><a href="/cosmology/">Cosmology</a><a href="/stones.html">Keeper stones</a><a href="/moon.html">The Moon</a><a href="/best-days.html">Best days</a><a href="/moon/phases/">Moon phases</a><a href="/daily.html">Today's reading</a><a href="/learn.html">How it works</a></nav>
+</header>
+<!--pn-static:end-->
+<canvas id="sky" aria-hidden="true"></canvas>
+<main class="pf-wrap" id="pn-main" tabindex="-1">
+<nav class="pf-crumb" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">/</span> <a href="/proverbs/">Proverbs</a></nav>
+<header class="pf-hero"><p class="pf-eyebrow">古語, old sayings</p><h1 class="pf-name" style="font-size:clamp(2rem,6vw,3rem)">The Proverb Library</h1><p class="pf-essence">Fifteen Chinese proverbs, each read slowly. You get the characters with per-character pinyin, the literal words, the meaning the saying carries, a soulful reflection, and the Chinese-zodiac animal we tie it to. The pairings are our own reading, offered in respect of a living tradition.</p></header>
+<section class="pf-section"><p class="pf-eyebrow">How to read this</p><h2>A saying, then its soul</h2><p>Each entry opens with the Chinese line in calligraphy, then walks down through the literal words, the meaning, and a reflection you can carry. The small note at the end links to the Year we pair the proverb with. These proverbs are the deep material behind the Chinese half of your Primal Animal, so read them as roots, not fortunes.</p></section>
+
+<aside class="pf-proverb" id="tianshi" aria-label="Chinese proverb">
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>天<rt>tiān</rt></ruby><ruby>時<rt>shí</rt></ruby><ruby>地<rt>dì</rt></ruby><ruby>利<rt>lì</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>和<rt>hé</rt></ruby></p>
+    <p class="pf-proverb-lit"><span class="k">Literally</span> heaven's timing, earth's advantage, human harmony</p>
+    <p class="pf-proverb-mean"><span class="k">Meaning</span> The three conditions of success align: the right timing, a favorable place, and united people.</p>
+    <p class="pf-proverb-soul">Nothing great stands on timing alone, or place alone, or people alone. It stands where the three lean together, and place is the one you can arrange with your own hands.</p>
+    <p class="pf-proverb-note">A proverb we tie to the <a href="/chinese-zodiac/dragon/">Year of the Dragon</a>. The pairing is our own reading, not tradition.</p>
+  </aside>
+
+<aside class="pf-proverb" id="water" aria-label="Chinese proverb">
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>上<rt>shàng</rt></ruby><ruby>善<rt>shàn</rt></ruby><ruby>若<rt>ruò</rt></ruby><ruby>水<rt>shuǐ</rt></ruby></p>
+    <p class="pf-proverb-lit"><span class="k">Literally</span> the highest good is like water</p>
+    <p class="pf-proverb-mean"><span class="k">Meaning</span> The finest virtue is like water, which benefits all things and flows to the low places without contending.</p>
+    <p class="pf-proverb-soul">Water asks for nothing and shapes everything. It sinks to the low room others avoid and turns even that into a home. To be strong like water is to stop contending and still reach everywhere.</p>
+    <p class="pf-proverb-note">A proverb we tie to the <a href="/chinese-zodiac/rat/">Year of the Rat</a>. The pairing is our own reading, not tradition.</p>
+  </aside>
+
+<aside class="pf-proverb" id="saiweng" aria-label="Chinese proverb">
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>塞<rt>sài</rt></ruby><ruby>翁<rt>wēng</rt></ruby><ruby>失<rt>shī</rt></ruby><ruby>馬<rt>mǎ</rt></ruby></p>
+    <p class="pf-proverb-lit"><span class="k">Literally</span> the frontier old man loses his horse</p>
+    <p class="pf-proverb-mean"><span class="k">Meaning</span> A blessing can wear the face of loss; fortune and misfortune cannot be judged in the moment.</p>
+    <p class="pf-proverb-soul">You cannot read a morning by noon. The loss that empties you today may be the door you walk through next spring, so hold both grief and hope loosely.</p>
+    <p class="pf-proverb-note">A proverb we tie to the <a href="/chinese-zodiac/horse/">Year of the Horse</a>. The pairing is our own reading, not tradition.</p>
+  </aside>
+
+<aside class="pf-proverb" id="ziran" aria-label="Chinese proverb">
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>順<rt>shùn</rt></ruby><ruby>其<rt>qí</rt></ruby><ruby>自<rt>zì</rt></ruby><ruby>然<rt>rán</rt></ruby></p>
+    <p class="pf-proverb-lit"><span class="k">Literally</span> follow its self-so</p>
+    <p class="pf-proverb-mean"><span class="k">Meaning</span> Let nature take its course; work with a thing rather than force it.</p>
+    <p class="pf-proverb-soul">A room has its own light and its own flow, and so do you. The art is not to force either into a shape, but to move with what is already there until the two agree.</p>
+    <p class="pf-proverb-note">A proverb we tie to the <a href="/chinese-zodiac/monkey/">Year of the Monkey</a>. The pairing is our own reading, not tradition.</p>
+  </aside>
+
+<aside class="pf-proverb" id="jiahe" aria-label="Chinese proverb">
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>家<rt>jiā</rt></ruby><ruby>和<rt>hé</rt></ruby><ruby>萬<rt>wàn</rt></ruby><ruby>事<rt>shì</rt></ruby><ruby>興<rt>xīng</rt></ruby></p>
+    <p class="pf-proverb-lit"><span class="k">Literally</span> family harmonious, ten thousand affairs flourish</p>
+    <p class="pf-proverb-mean"><span class="k">Meaning</span> When the household is at peace, everything else succeeds.</p>
+    <p class="pf-proverb-soul">Fix the house and the world grows quieter. When the people under one roof are at peace, the ten thousand small troubles outside lose their teeth.</p>
+    <p class="pf-proverb-note">A proverb we tie to the <a href="/chinese-zodiac/rabbit/">Year of the Rabbit</a>. The pairing is our own reading, not tradition.</p>
+  </aside>
+
+<aside class="pf-proverb" id="qianli" aria-label="Chinese proverb">
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>千<rt>qiān</rt></ruby><ruby>里<rt>lǐ</rt></ruby><ruby>之<rt>zhī</rt></ruby><ruby>行<rt>xíng</rt></ruby><span class="cx-punct">，</span><ruby>始<rt>shǐ</rt></ruby><ruby>於<rt>yú</rt></ruby><ruby>足<rt>zú</rt></ruby><ruby>下<rt>xià</rt></ruby></p>
+    <p class="pf-proverb-lit"><span class="k">Literally</span> a thousand-li road begins beneath the feet</p>
+    <p class="pf-proverb-mean"><span class="k">Meaning</span> Every great undertaking starts with a single step.</p>
+    <p class="pf-proverb-soul">The far place frightens only from a distance. Stand at your own threshold, take the single step in front of you, and the thousand miles begin to belong to you.</p>
+    <p class="pf-proverb-note">A proverb we tie to the <a href="/chinese-zodiac/snake/">Year of the Snake</a>. The pairing is our own reading, not tradition.</p>
+  </aside>
+
+<aside class="pf-proverb" id="houde" aria-label="Chinese proverb">
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>厚<rt>hòu</rt></ruby><ruby>德<rt>dé</rt></ruby><ruby>載<rt>zài</rt></ruby><ruby>物<rt>wù</rt></ruby></p>
+    <p class="pf-proverb-lit"><span class="k">Literally</span> thick virtue carries things</p>
+    <p class="pf-proverb-mean"><span class="k">Meaning</span> As the earth bears everything, deep virtue supports all around it.</p>
+    <p class="pf-proverb-soul">The earth never refuses a thing set upon it. To carry others the way the ground carries you is not weakness; it is the deepest strength a person can hold.</p>
+    <p class="pf-proverb-note">A proverb we tie to the <a href="/chinese-zodiac/ox/">Year of the Ox</a>. The pairing is our own reading, not tradition.</p>
+  </aside>
+
+<aside class="pf-proverb" id="shuidao" aria-label="Chinese proverb">
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>水<rt>shuǐ</rt></ruby><ruby>到<rt>dào</rt></ruby><ruby>渠<rt>qú</rt></ruby><ruby>成<rt>chéng</rt></ruby></p>
+    <p class="pf-proverb-lit"><span class="k">Literally</span> the water arrives, the channel forms</p>
+    <p class="pf-proverb-mean"><span class="k">Meaning</span> When conditions are ripe, results follow without forcing.</p>
+    <p class="pf-proverb-soul">Stop digging the channel and tend the water instead. When the flow is full enough, the path it needs appears on its own, and what you wanted arrives without a fight.</p>
+    <p class="pf-proverb-note">A proverb we tie to the <a href="/chinese-zodiac/ox/">Year of the Ox</a>. The pairing is our own reading, not tradition.</p>
+  </aside>
+
+<aside class="pf-proverb" id="ningjing" aria-label="Chinese proverb">
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>寧<rt>níng</rt></ruby><ruby>靜<rt>jìng</rt></ruby><ruby>致<rt>zhì</rt></ruby><ruby>遠<rt>yuǎn</rt></ruby></p>
+    <p class="pf-proverb-lit"><span class="k">Literally</span> through tranquility, reach the far</p>
+    <p class="pf-proverb-mean"><span class="k">Meaning</span> Only a calm, undistracted mind accomplishes far-reaching aims.</p>
+    <p class="pf-proverb-soul">You cannot see far from a shaking place. Quiet the room and quiet the mind, and the horizon you were straining toward comes into view on its own.</p>
+    <p class="pf-proverb-note">A proverb we tie to the <a href="/chinese-zodiac/snake/">Year of the Snake</a>. The pairing is our own reading, not tradition.</p>
+  </aside>
+
+<aside class="pf-proverb" id="yinshui" aria-label="Chinese proverb">
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>飲<rt>yǐn</rt></ruby><ruby>水<rt>shuǐ</rt></ruby><ruby>思<rt>sī</rt></ruby><ruby>源<rt>yuán</rt></ruby></p>
+    <p class="pf-proverb-lit"><span class="k">Literally</span> drink water, think of its source</p>
+    <p class="pf-proverb-mean"><span class="k">Meaning</span> Remember your roots and honor those who made your good fortune possible.</p>
+    <p class="pf-proverb-soul">Every cup you drink was carried to you by someone. To remember the spring is to keep the water sweet, and to keep yourself whole.</p>
+    <p class="pf-proverb-note">A proverb we tie to the <a href="/chinese-zodiac/pig/">Year of the Pig</a>. The pairing is our own reading, not tradition.</p>
+  </aside>
+
+<aside class="pf-proverb" id="luoye" aria-label="Chinese proverb">
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>落<rt>luò</rt></ruby><ruby>葉<rt>yè</rt></ruby><ruby>歸<rt>guī</rt></ruby><ruby>根<rt>gēn</rt></ruby></p>
+    <p class="pf-proverb-lit"><span class="k">Literally</span> fallen leaves return to the roots</p>
+    <p class="pf-proverb-mean"><span class="k">Meaning</span> All things are drawn back toward their origin and their home.</p>
+    <p class="pf-proverb-soul">However far the wind takes a leaf, the root is where it is going. There is no shame in the turn toward home; it is the shape the whole year was making.</p>
+    <p class="pf-proverb-note">A proverb we tie to the <a href="/chinese-zodiac/goat/">Year of the Goat</a>. The pairing is our own reading, not tradition.</p>
+  </aside>
+
+<aside class="pf-proverb" id="shouzhu" aria-label="Chinese proverb">
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>守<rt>shǒu</rt></ruby><ruby>株<rt>zhū</rt></ruby><ruby>待<rt>dài</rt></ruby><ruby>兔<rt>tù</rt></ruby></p>
+    <p class="pf-proverb-lit"><span class="k">Literally</span> guard the stump, wait for the rabbit</p>
+    <p class="pf-proverb-mean"><span class="k">Meaning</span> A caution against idle hope where effort is needed; arrange your space to act, not to wait.</p>
+    <p class="pf-proverb-soul">Luck that came once will not return to the same still hand. Arrange your life to move toward what you want, not to sit by the stump waiting for it to fall again.</p>
+    <p class="pf-proverb-note">A proverb we tie to the <a href="/chinese-zodiac/rabbit/">Year of the Rabbit</a>. The pairing is our own reading, not tradition.</p>
+  </aside>
+
+<aside class="pf-proverb" id="jishao" aria-label="Chinese proverb">
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>積<rt>jī</rt></ruby><ruby>少<rt>shǎo</rt></ruby><ruby>成<rt>chéng</rt></ruby><ruby>多<rt>duō</rt></ruby></p>
+    <p class="pf-proverb-lit"><span class="k">Literally</span> accumulate few, become many</p>
+    <p class="pf-proverb-mean"><span class="k">Meaning</span> Many small things gathered steadily become much; abundance is built grain by grain.</p>
+    <p class="pf-proverb-soul">No one gathers a harvest in a day. Abundance is patient arithmetic, a little added and a little kept, until the small becomes a weight you can lean on.</p>
+    <p class="pf-proverb-note">A proverb we tie to the <a href="/chinese-zodiac/ox/">Year of the Ox</a>. The pairing is our own reading, not tradition.</p>
+  </aside>
+
+<aside class="pf-proverb" id="wuji" aria-label="Chinese proverb">
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>物<rt>wù</rt></ruby><ruby>極<rt>jí</rt></ruby><ruby>必<rt>bì</rt></ruby><ruby>反<rt>fǎn</rt></ruby></p>
+    <p class="pf-proverb-lit"><span class="k">Literally</span> when a thing reaches its extreme, it reverses</p>
+    <p class="pf-proverb-mean"><span class="k">Meaning</span> Anything pushed to its limit turns into its opposite.</p>
+    <p class="pf-proverb-soul">Push anything far enough and it turns into its opposite. The height that will not stop climbing is already leaning toward the fall, so learn when full is full.</p>
+    <p class="pf-proverb-note">A proverb we tie to the <a href="/chinese-zodiac/monkey/">Year of the Monkey</a>. The pairing is our own reading, not tradition.</p>
+  </aside>
+
+<aside class="pf-proverb" id="wenzhi" aria-label="Chinese proverb">
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>溫<rt>wēn</rt></ruby><ruby>故<rt>gù</rt></ruby><ruby>知<rt>zhī</rt></ruby><ruby>新<rt>xīn</rt></ruby></p>
+    <p class="pf-proverb-lit"><span class="k">Literally</span> warm the old, know the new</p>
+    <p class="pf-proverb-mean"><span class="k">Meaning</span> Reviewing what you have learned yields fresh understanding.</p>
+    <p class="pf-proverb-soul">The old ground still has new things in it. Turn over what you already know with fresh attention and it yields a harvest you missed the first time.</p>
+    <p class="pf-proverb-note">A proverb we tie to the <a href="/chinese-zodiac/ox/">Year of the Ox</a>. The pairing is our own reading, not tradition.</p>
+  </aside>
+
+<section class="pf-section"><p class="pf-eyebrow">The tie-in</p><h2>Proverbs and your animal</h2><p>These sayings are the intellectual root of the Chinese half of the system. Each one leans toward a Year and its animal, and each Year is one half of a Primal Animal. Follow a proverb to its Year, then find the whole creature it belongs to.</p><p class="pf-note">Wander the twelve years on <a href="/chinese-zodiac/rat/">the Chinese zodiac</a>, or find your own Primal Animal on <a href="/">the Oracle</a> and meet it in <a href="/menagerie.html">the Menagerie of all 144 animals</a>.</p></section>
+</main>
+<script src="/js/data.js"></script>
+<script src="/js/engine.js"></script>
+<script src="/js/nav.js" defer></script>
+<script>
+(function(){var cv=document.getElementById('sky');if(!cv)return;var x=cv.getContext('2d');function sz(){cv.width=innerWidth;cv.height=Math.max(innerHeight,document.body.scrollHeight);}sz();addEventListener('resize',sz);
+var red=(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)||false;var N=red?60:120;
+var st=Array.from({length:N},function(){return{x:Math.random()*cv.width,y:Math.random()*cv.height,r:Math.random()*1.3+0.2,a:Math.random(),s:Math.random()*0.02+0.004};});
+(function f(){x.clearRect(0,0,cv.width,cv.height);for(var i=0;i<st.length;i++){var s=st[i];if(!red)s.a+=s.s;var al=0.3+Math.abs(Math.sin(s.a))*0.5;x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fillStyle='rgba(245,236,210,'+al+')';x.fill();}if(!document.hidden)requestAnimationFrame(f);})();})();
+</script>
+<nav class="sitemap-footer" aria-label="Explore Spirit Omega">
+  <div class="sf-inner">
+    <div class="sf-col"><h3>Discover</h3><ul><li><a href="/">Find your animal</a></li><li><a href="/menagerie.html">All 144 animals</a></li><li><a href="/year.html">Year finder</a></li><li><a href="/daily.html">Today's reading</a></li><li><a href="/horoscopes/">Horoscopes</a></li><li><a href="/vs.html">Challenge a friend</a></li></ul></div>
+    <div class="sf-col"><h3>The zodiacs</h3><ul><li><a href="/western-zodiac/">Western zodiac</a></li><li><a href="/chinese-zodiac/">Chinese zodiac</a></li><li><a href="/proverbs/">Chinese proverbs</a></li></ul></div>
+    <div class="sf-col"><h3>Relationships</h3><ul><li><a href="/match.html">Test a match</a></li><li><a href="/circle.html">Circle of three</a></li><li><a href="/learn.html">How it works</a></li></ul></div>
+    <div class="sf-col"><h3>Live with it</h3><ul><li><a href="/habitat/">The Habitat</a></li><li><a href="/feng-shui/">Feng Shui</a></li><li><a href="/directions/">Directions</a></li><li><a href="/cosmology/">Cosmology</a></li><li><a href="/stones.html">Keeper stones</a></li><li><a href="/best-days.html">Best days</a></li></ul></div>
+    <div class="sf-col"><h3>The Moon</h3><ul><li><a href="/moon.html">The Moon tonight</a></li><li><a href="/moon/phases/">The eight phases</a></li><li><a href="/moon/phases/new-moon/">New Moon</a></li><li><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a></li><li><a href="/moon/phases/first-quarter/">First Quarter</a></li><li><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a></li></ul></div>
+    <div class="sf-col"><h3>Western signs</h3><ul><li><a href="/western-zodiac/aries/">Aries animals</a></li><li><a href="/western-zodiac/taurus/">Taurus animals</a></li><li><a href="/western-zodiac/gemini/">Gemini animals</a></li><li><a href="/western-zodiac/cancer/">Cancer animals</a></li><li><a href="/western-zodiac/leo/">Leo animals</a></li><li><a href="/western-zodiac/virgo/">Virgo animals</a></li></ul></div>
+    <div class="sf-col"><h3>Western signs</h3><ul><li><a href="/western-zodiac/libra/">Libra animals</a></li><li><a href="/western-zodiac/scorpio/">Scorpio animals</a></li><li><a href="/western-zodiac/sagittarius/">Sagittarius animals</a></li><li><a href="/western-zodiac/capricorn/">Capricorn animals</a></li><li><a href="/western-zodiac/aquarius/">Aquarius animals</a></li><li><a href="/western-zodiac/pisces/">Pisces animals</a></li></ul></div>
+    <div class="sf-col"><h3>Chinese years</h3><ul><li><a href="/chinese-zodiac/rat/">Rat animals</a></li><li><a href="/chinese-zodiac/ox/">Ox animals</a></li><li><a href="/chinese-zodiac/tiger/">Tiger animals</a></li><li><a href="/chinese-zodiac/rabbit/">Rabbit animals</a></li><li><a href="/chinese-zodiac/dragon/">Dragon animals</a></li><li><a href="/chinese-zodiac/snake/">Snake animals</a></li></ul></div>
+    <div class="sf-col"><h3>Chinese years</h3><ul><li><a href="/chinese-zodiac/horse/">Horse animals</a></li><li><a href="/chinese-zodiac/goat/">Goat animals</a></li><li><a href="/chinese-zodiac/monkey/">Monkey animals</a></li><li><a href="/chinese-zodiac/rooster/">Rooster animals</a></li><li><a href="/chinese-zodiac/dog/">Dog animals</a></li><li><a href="/chinese-zodiac/pig/">Pig animals</a></li></ul></div>
+    <div class="sf-col"><h3>Elements</h3><ul><li><a href="/elements/fire/">Fire element</a></li><li><a href="/elements/earth/">Earth element</a></li><li><a href="/elements/air/">Air element</a></li><li><a href="/elements/water/">Water element</a></li></ul></div>
+  </div>
+  <p class="sf-note">Spirit Omega, The Primal Oracle. A tradition of meaning for reflection, not medical, psychological, financial, or legal advice.</p>
+</nav>
+</body>
+</html>

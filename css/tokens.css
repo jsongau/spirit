@@ -1,0 +1,131 @@
+/* ============================================================
+   tokens.css  —  Zodianimal.com design tokens (Phase 0)
+   ------------------------------------------------------------
+   The OKLCH token system from docs/redesign/01-design-language-2026.md
+   (section 2). This file is the SHARED CONTRACT: later phases and the
+   SVG glyph/sigil system reference these variable names verbatim. Do
+   not rename any token below; sections may only OVERRIDE --accent and
+   its ramp to re-tint a domain (see the .section--* helpers at the end).
+
+   Load order: injected render-blocking into <head> by build/apply-assets.mjs
+   so it is FOUC-free and establishes the base layer every page inherits.
+
+   OKLCH is Baseline (~93 to 95% of 2026 browsers). A hex fallback block
+   ships via `@supports not (color: oklch())` for the remainder.
+   No hard-coded hex lives in page geometry; geometry reads these tokens.
+   ============================================================ */
+
+:root {
+  /* ---- Celestial base (dark-first) ---- */
+  --ink:        oklch(0.16 0.03 275);    /* page base, warm indigo-black */
+  --ink-2:      oklch(0.20 0.035 275);   /* raised base */
+  --panel:      oklch(0.25 0.04 273);    /* card */
+  --panel-2:    oklch(0.30 0.045 272);   /* card raised / hover */
+  --field:      oklch(0.14 0.03 276);    /* inputs, wells */
+  --line:       oklch(0.80 0.06 85 / 0.16);  /* hairline, brass-tinted */
+  --line-soft:  oklch(0.80 0.06 85 / 0.08);
+
+  /* ---- Ink on dark ---- */
+  --moon:       oklch(0.96 0.02 90);     /* headline white-gold */
+  --ivory:      oklch(0.92 0.02 88);     /* default text */
+  --body-text:  oklch(0.84 0.02 280);    /* long-form body */
+  --muted:      oklch(0.70 0.02 280);    /* meta */
+  --faint:      oklch(0.55 0.02 280);    /* captions, disabled */
+
+  /* ---- Brand accent: BRASS / MOONLIGHT (Animal, the hero color) ---- */
+  --brass-dim:    oklch(0.62 0.09 85);
+  --brass:        oklch(0.78 0.11 85);
+  --brass-bright: oklch(0.90 0.09 88);
+
+  /* ---- Per-element accent ramps (matched L/C so hues behave alike) ---- */
+  --jade-dim:     oklch(0.58 0.10 160);  --jade:     oklch(0.74 0.12 160);  --jade-bright:     oklch(0.88 0.10 162);  /* feng shui */
+  --silver-dim:   oklch(0.62 0.05 250);  --silver:   oklch(0.80 0.06 250);  --silver-bright:   oklch(0.92 0.05 250);  /* moon */
+  --amethyst-dim: oklch(0.55 0.13 300);  --amethyst: oklch(0.70 0.15 300);  --amethyst-bright: oklch(0.85 0.12 302);  /* third eye / awakening */
+  --rose-dim:     oklch(0.60 0.11 30);   --rose:     oklch(0.75 0.13 30);   --rose-bright:     oklch(0.88 0.10 32);   /* directions */
+  --teal-dim:     oklch(0.55 0.08 210);  --teal:     oklch(0.72 0.10 210);  --teal-bright:     oklch(0.86 0.08 212);  /* cosmology */
+
+  /* ---- Section accent hook (sections override this one var) ---- */
+  --accent:        var(--brass);
+  --accent-dim:    var(--brass-dim);
+  --accent-bright: var(--brass-bright);
+  /* soft wash of the current accent for hovers, glyph fills, hairline glows */
+  --accent-soft:   oklch(from var(--accent) l c h / 0.16);
+
+  /* ---- Signals ---- */
+  --glow: oklch(0.30 0.06 275);          /* radial hero glow, behind grain */
+
+  /* ---- Texture (doc 01 section 4 reserves these; doc 06 owns the layer) ---- */
+  --grain-opacity: 0.04;
+
+  /* ---- Type stacks (families load in type.css) ---- */
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans:  "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono:  "Space Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* ---- Spacing (non-linear; --s-8..10 are the "editorial silence" tokens) ---- */
+  --s-1:.25rem; --s-2:.5rem; --s-3:.75rem; --s-4:1rem; --s-5:1.5rem;
+  --s-6:2rem; --s-7:3rem; --s-8:5rem; --s-9:8rem; --s-10:13rem;
+
+  /* ---- Radius / elevation ---- */
+  --r-1:8px; --r-2:14px; --r-3:22px; --r-pill:999px;
+  --e-1: 0 1px 2px oklch(0 0 0 / .4);
+  --e-2: 0 8px 30px oklch(0 0 0 / .45);
+  --e-3: 0 20px 60px oklch(0 0 0 / .55), 0 0 40px var(--glow);
+
+  /* ---- Motion (personality lives in doc 01 section 5) ---- */
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);      /* entrances: settle into place */
+  --ease-io:   cubic-bezier(0.65, 0, 0.35, 1);     /* state / toggles */
+  --dur-fast: 180ms; --dur: 320ms; --dur-slow: 640ms; --dur-cine: 1100ms;
+
+  /* ---- Layout ---- */
+  --maxw: 1200px;
+  --measure: 66ch;
+}
+
+/* ------------------------------------------------------------
+   Hex fallback for the ~5% of browsers without OKLCH.
+   Only the surfaces and accents that geometry reads are mapped;
+   the ramps collapse to their base stop. --accent-soft loses its
+   relative-color form and falls back to a fixed brass tint.
+   ------------------------------------------------------------ */
+@supports not (color: oklch(0% 0 0)) {
+  :root {
+    --ink:#0d0e18; --ink-2:#131523; --panel:#1a1c30; --panel-2:#22253d;
+    --field:#0c0e1a;
+    --line:rgba(214,193,140,.16); --line-soft:rgba(214,193,140,.08);
+
+    --moon:#f6efd8; --ivory:#ece7d8; --body-text:#cfcfe0;
+    --muted:#adaec2; --faint:#7f8096;
+
+    --brass-dim:#a8925c; --brass:#d6c18c; --brass-bright:#efe2b4;
+
+    --jade-dim:#4f8f6f;     --jade:#78c39c;     --jade-bright:#a9e6c6;
+    --silver-dim:#7f93bd;   --silver:#aebfe0;   --silver-bright:#d6e2f5;
+    --amethyst-dim:#8a5fb0; --amethyst:#b184d6;  --amethyst-bright:#d6b9f0;
+    --rose-dim:#c07f78;     --rose:#e3a196;     --rose-bright:#f5c8bd;
+    --teal-dim:#4f8296;     --teal:#78b3c6;     --teal-bright:#a9d6e6;
+
+    --accent:#d6c18c; --accent-dim:#a8925c; --accent-bright:#efe2b4;
+    --accent-soft:rgba(214,193,140,.16);
+
+    --glow:#1a1c33;
+
+    --e-1: 0 1px 2px rgba(0,0,0,.4);
+    --e-2: 0 8px 30px rgba(0,0,0,.45);
+    --e-3: 0 20px 60px rgba(0,0,0,.55), 0 0 40px var(--glow);
+  }
+}
+
+/* ------------------------------------------------------------
+   Section accent scoping. Any orbital domain sets --accent (and
+   its ramp) and everything inside inherits the hue. --accent-soft
+   re-derives from the new --accent automatically in OKLCH browsers;
+   the hex fallback keeps the brass tint (acceptable for the 5%).
+   ------------------------------------------------------------ */
+.section--animal    { --accent: var(--brass);    --accent-bright: var(--brass-bright);    --accent-dim: var(--brass-dim); }
+.section--fengshui  { --accent: var(--jade);     --accent-bright: var(--jade-bright);     --accent-dim: var(--jade-dim); }
+.section--moon      { --accent: var(--silver);   --accent-bright: var(--silver-bright);   --accent-dim: var(--silver-dim); }
+.section--awakening { --accent: var(--amethyst); --accent-bright: var(--amethyst-bright); --accent-dim: var(--amethyst-dim); }
+.section--thirdeye  { --accent: var(--amethyst); --accent-bright: var(--amethyst-bright); --accent-dim: var(--amethyst-dim); }
+.section--directions{ --accent: var(--rose);     --accent-bright: var(--rose-bright);     --accent-dim: var(--rose-dim); }
+.section--cosmology { --accent: var(--teal);     --accent-bright: var(--teal-bright);     --accent-dim: var(--teal-dim); }
