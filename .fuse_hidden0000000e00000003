@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How it works: what a Primal Animal is and how two zodiacs combine</title>
+<meta name="description" content="A grounded guide to the Primal Animal: how the Western Sun sign and the Chinese year animal combine into one of 144 creatures, why the lunar New Year boundary matters, how the Moon ties the two skies together, and how to read the five gates.">
+<meta property="og:title" content="How the Primal Oracle works">
+<meta property="og:description" content="What a Primal Animal is, how 12 by 12 makes 144, the lunar New Year boundary, the role of the Moon, and the five-gate reading. Meaning, not prediction.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/oracle.css">
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/pages.css">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What is a Primal Animal?","acceptedAnswer":{"@type":"Answer","text":"A Primal Animal is the single creature you get when you combine your Western Sun sign with your Chinese zodiac year. Twelve Sun signs cross twelve year animals to make 144 combinations, and each one is named for its own animal. A Cancer born in the Year of the Snake, for example, is the Snail."}},
+    {"@type":"Question","name":"Why might my Chinese year animal differ from what I expected?","acceptedAnswer":{"@type":"Answer","text":"The Chinese year begins at the lunar New Year, not on January 1, and that date shifts between late January and the middle of February each year. A birthday in January or early February can therefore belong to the previous year's animal. The Oracle uses the real lunar New Year date for every year from 1940 to 2032."}},
+    {"@type":"Question","name":"Is the Primal Animal prediction or meaning?","acceptedAnswer":{"@type":"Answer","text":"The animal grid and the readings are a tradition of meaning for reflection, not a science of prediction. The astronomy used, such as the Moon phase, is real and checkable. Read your animal as a mirror you can act on, not a forecast of what will happen."}},
+    {"@type":"Question","name":"How is the Primal Animal different from a regular horoscope?","acceptedAnswer":{"@type":"Answer","text":"A regular horoscope usually reads one system at a time, most often the Western Sun sign. The Primal Animal crosses two whole traditions, the Western solar zodiac and the Chinese lunar and Jovian zodiac, into a single figure, so it describes both your daylight self and your instinct in one creature."}}
+  ]
+}
+</script>
+<!--pn-css:start-->
+<link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
+<link rel="stylesheet" href="/css/nav-mega.css" data-pn="/css/nav-mega.css">
+<link rel="stylesheet" href="/css/nav-drawer.css" data-pn="/css/nav-drawer.css">
+<!--pn-css:end-->
+</head>
+<body class="pn-has-bar">
+<!--pn-static:start-->
+<a class="skip-link" href="#pn-main">Skip to content</a>
+<header class="pn-bar" role="banner" data-static>
+  <div class="pn-inner">
+    <a class="pn-brand" href="/index.html">The Primal <b>Oracle</b></a>
+    <nav class="pn-nav" aria-label="Primary">
+        <div class="pn-item"><button class="pn-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-group="0">Discover<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item"><button class="pn-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-group="1">Bonds<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item"><button class="pn-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-group="2">Live with it<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item"><button class="pn-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-group="3">Sky<span class="chev" aria-hidden="true"></span></button></div>
+        <a class="pn-link active" href="/learn.html">How it works</a>
+    </nav>
+    <div class="pn-tools"></div>
+    <button class="pn-burger" type="button" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </div>
+  <div class="pn-dd" data-dd><div class="pn-dd-mount"></div></div>
+  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/index.html">Find your animal</a><a href="/menagerie.html">All 144 animals</a><a href="/year.html">Year finder</a><a href="/match.html">Test a match</a><a href="/circle.html">Circle of three</a><a href="/vs.html">Challenge a friend</a><a href="/habitat/">The Habitat</a><a href="/stones.html">Keeper stones</a><a href="/moon.html">The Moon</a><a href="/best-days.html">Best days</a><a href="/moon/phases/">Moon phases</a><a href="/daily.html">Today's reading</a><a href="/learn.html">How it works</a></nav>
+</header>
+<!--pn-static:end-->
+<a id="pn-main" tabindex="-1"></a>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <nav>
+      <a href="index.html">Find your animal</a>
+      <a href="menagerie.html">All 144 animals</a>
+      <a href="match.html">Test a match</a>
+      <a href="learn.html">How it works</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero learnHero">
+    <p class="eyebrow">How it works</p>
+    <h1>You were born under <em>two skies</em>. This is how they cross.</h1>
+    <p class="lede">The Primal Animal is what you get when your Western Sun sign meets your Chinese year animal. This page explains where the figure comes from, why the Moon runs through all of it, and why the reading describes meaning rather than predicting the future.</p>
+  </section>
+
+  <!-- EDITORIAL LONG-FORM -->
+  <article class="band learnBody">
+    <div class="prose">
+
+      <h2 class="proseH2">What a Primal Animal is</h2>
+      <p>Most people grow up knowing one half of their sky. In the West you learn your Sun sign, the constellation the Sun stood in on the day you were born. Across much of East Asia you learn your year animal, the creature that rules the lunar year of your birth. The two systems describe different things and almost never speak to one another.</p>
+      <p>The Primal Animal is the figure that appears when you place both at once. Your Sun sign reads your daylight self, the face you turn toward the world and the way you reach for what you want. Your year animal reads your instinct, the first thing you do under pressure before thought catches up. Cross the two and you get a single creature that holds both at the same time. A Cancer born in the Year of the Snake is the Snail. An Aries born in the Year of the Dragon is the Tyrannosaurus Rex. The animal is not a riddle to decode. It is the shape the two forces settle into once they stop pulling against each other.</p>
+
+      <h2 class="proseH2">How twelve by twelve makes 144</h2>
+      <p>There are twelve Western Sun signs and twelve Chinese year animals. Every Sun sign can pair with every animal, so the full grid holds twelve rows of twelve, which is one hundred and forty four combinations. Each cell of that grid is a distinct Primal Animal with its own name and its own reading. Your date of birth points to exactly one cell. The month and day fix your Sun sign, the year and the lunar calendar fix your year animal, and where those two lines meet on the grid is your animal.</p>
+      <p>Because the grid is a true cross rather than a blend, two people who share a Sun sign can be very different animals, and two people who share a year animal can be very different too. It takes both coordinates to name the creature, which is part of why the result so often feels more specific than either system alone.</p>
+
+      <h2 class="proseH2">The lunar New Year boundary</h2>
+      <p>This is the detail that trips up most quick zodiac tools. The Chinese year does not begin on January 1. It begins at the lunar New Year, the second new moon after the winter solstice, which falls somewhere between late January and the middle of February and moves a little every year. Anyone born in that early window can belong to the previous year's animal rather than the one their calendar year suggests.</p>
+      <p>Someone born on the second of February, for instance, may be a Tiger or an Ox depending on which side of the New Year their birthday landed that year. The Oracle settles this by carrying the real lunar New Year date for every year from 1940 to 2032 and checking your birthday against it before it names your animal. It is a small correction that changes the answer for millions of people, and getting it right is the difference between a guess and a reading.</p>
+
+      <h2 class="proseH2">Why the Moon runs through everything</h2>
+      <p>The Moon is the thread that ties the two skies together, and it is not a decoration here. Cancer, the sign that sits at the hinge of the year, is ruled by the Moon. The Chinese year itself begins on a new moon, which is why the New Year date drifts with the lunar calendar rather than the solar one. The reading then times your next moves to the Moon overhead, because a tide you can read is a tide you can move with, and your keeper stones are charged under moonlight by tradition.</p>
+      <p>So the Moon appears at three depths at once. It rules the Western sign that anchors the wheel. It opens the Chinese year. And it sets the rhythm the reading asks you to move by. Two traditions that share almost nothing else both bend around the same light, which is why the Oracle leans on it to hold them together.</p>
+
+      <h2 class="proseH2">The five gates of a reading</h2>
+      <p>Every reading answers five questions in a fixed order, and the order matters as much as the answers. Each one is a gate you pass through.</p>
+      <ol class="gateList">
+        <li><strong>Where you stand now.</strong> An honest read of the ground under your feet today, before any advice.</li>
+        <li><strong>What you need soon.</strong> The real need underneath the craving that usually stands in for it.</li>
+        <li><strong>How to plan the near season.</strong> One small private move, one visible step, one larger commitment, tied to the Moon.</li>
+        <li><strong>What to be aware of.</strong> The shadow that arrives wearing the face of good sense rather than the face of an enemy.</li>
+        <li><strong>Your highest form.</strong> The version of your animal that keeps every gift and is no longer driven by the one fear beneath it.</li>
+      </ol>
+      <p>The last gate is the one that matters most. Every animal has a form ruled by its fear and a form that has turned that fear into strength. The reading exists to point you toward the second one and to give you a single practice small enough to actually keep.</p>
+
+      <h2 class="proseH2">Three astrologies, one figure</h2>
+      <p>The Primal Animal stands at the meeting point of more than two traditions. Western astrology is solar. It follows the Sun through the twelve signs across the year and reads the season of your birth. Chinese astrology is lunar and Jovian. Its years are counted by the Moon and its great cycle of twelve tracks roughly the orbit of Jupiter, the slow giant that takes about twelve years to circle the Sun, which is why the year animals turn on a twelve year wheel.</p>
+      <p>Behind both, as heritage, sits a third reckoning: the lunar mansions, the twenty eight stations the Moon passes through as it moves across the sky in a month. This way of dividing the heavens runs through Arabic, Indian, and Chinese astronomy alike, and it is the older lunar grammar that the year-and-month systems grew out of. The Oracle does not cast a mansion chart for you, but it names the lineage honestly, because the Moon you are asked to move with is the same Moon those twenty eight stations were drawn to map.</p>
+
+      <h2 class="proseH2">Meaning, not prediction</h2>
+      <p>One honest line to end on. The astronomy in this tool is real. The Moon phase, the lunar New Year dates, the solar signs, and the twelve year cycle are all checkable facts of the sky. The animal grid and the readings built on top of them are something different. They are a tradition of meaning, a structured way to look at yourself, not a forecast of what is going to happen.</p>
+      <p>Read your animal as a mirror you can act on rather than a fortune you have to wait for. Nothing here decides your week, your relationship, or your choices. It offers a frame, a vocabulary, and a few practices. What you do inside that frame is entirely yours.</p>
+
+      <!-- FAQ -->
+      <h2 class="proseH2">Common questions</h2>
+      <dl class="faq">
+        <dt>What is a Primal Animal?</dt>
+        <dd>The single creature you get when you combine your Western Sun sign with your Chinese year animal. Twelve signs cross twelve animals to make 144, and each one has its own name and reading.</dd>
+        <dt>Why might my Chinese year animal differ from what I expected?</dt>
+        <dd>The Chinese year starts at the lunar New Year, not on January 1, and that date moves between late January and mid February. A birthday in that window can belong to the previous animal. The Oracle uses the real New Year date for every year from 1940 to 2032.</dd>
+        <dt>Is the Primal Animal prediction or meaning?</dt>
+        <dd>It is a tradition of meaning for reflection. The astronomy, such as the Moon phase, is real and checkable, but the animal and the reading are a mirror, not a forecast.</dd>
+        <dt>How is this different from a regular horoscope?</dt>
+        <dd>A regular horoscope usually reads one system at a time. The Primal Animal crosses two whole traditions into one figure, so it speaks to both your daylight self and your instinct at once.</dd>
+      </dl>
+    </div>
+  </article>
+
+  <!-- CALL TO ACTION -->
+  <section class="band ctaBand">
+    <p class="eyebrow">Where to go next</p>
+    <h2>Read your own animal</h2>
+    <p class="lede">You have the map. Now find your place on it, or wander the whole menagerie first.</p>
+    <div class="ctaRow">
+      <a class="btn" href="index.html">Find your animal</a>
+      <a class="btn ghost" href="menagerie.html">Browse all 144 animals</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <p>Find your Primal Animal, read where you stand, and see who you match. Built on the fusion of the Chinese and Western zodiacs.</p>
+    <p class="disclaimer">This is a tradition of meaning for reflection and entertainment. It is not medical, psychological, financial, or legal advice. The Primal Animal framework is adapted from the Primal Zodiac tradition. Stones and lunar practices are presented as cultural tradition, not as treatment.</p>
+  </footer>
+
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/nav.js" defer></script>
+<script>
+(function () {
+  "use strict";
+  const cv = document.querySelector("#sky"); if (!cv) return;
+  const ctx = cv.getContext("2d");
+  function size(){ cv.width = innerWidth; cv.height = Math.max(innerHeight, document.body.scrollHeight); }
+  size(); addEventListener("resize", size);
+  const N = Math.min(180, Math.floor(innerWidth / 8));
+  const stars = Array.from({length:N}, () => ({
+    x: Math.random()*cv.width, y: Math.random()*cv.height,
+    r: Math.random()*1.4+0.3, a: Math.random()*6.28, s: Math.random()*0.02+0.004
+  }));
+  (function frame(){ ctx.clearRect(0,0,cv.width,cv.height);
+    for (const st of stars){ st.a += st.s; const al = 0.35 + Math.abs(Math.sin(st.a))*0.55;
+      ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, 7); ctx.fillStyle = `rgba(245,236,210,${al})`; ctx.fill(); }
+    requestAnimationFrame(frame); })();
+})();
+</script>
+<nav class="sitemap-footer" aria-label="Explore Spirit Omega">
+  <div class="sf-inner">
+    <div class="sf-col"><h3>Discover</h3><ul><li><a href="/">Find your animal</a></li><li><a href="/menagerie.html">All 144 animals</a></li><li><a href="/year.html">Year finder</a></li><li><a href="/daily.html">Today's reading</a></li><li><a href="/vs.html">Challenge a friend</a></li></ul></div>
+    <div class="sf-col"><h3>Relationships</h3><ul><li><a href="/match.html">Test a match</a></li><li><a href="/circle.html">Circle of three</a></li><li><a href="/learn.html">How it works</a></li></ul></div>
+    <div class="sf-col"><h3>Live with it</h3><ul><li><a href="/habitat/">The Habitat</a></li><li><a href="/stones.html">Keeper stones</a></li><li><a href="/directions/">Directions</a></li><li><a href="/best-days.html">Best days</a></li></ul></div>
+    <div class="sf-col"><h3>The Moon</h3><ul><li><a href="/moon.html">The Moon tonight</a></li><li><a href="/moon/phases/">The eight phases</a></li><li><a href="/moon/phases/new-moon/">New Moon</a></li><li><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a></li><li><a href="/moon/phases/first-quarter/">First Quarter</a></li><li><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a></li></ul></div>
+    <div class="sf-col"><h3>Western signs</h3><ul><li><a href="/western-zodiac/aries/">Aries animals</a></li><li><a href="/western-zodiac/taurus/">Taurus animals</a></li><li><a href="/western-zodiac/gemini/">Gemini animals</a></li><li><a href="/western-zodiac/cancer/">Cancer animals</a></li><li><a href="/western-zodiac/leo/">Leo animals</a></li><li><a href="/western-zodiac/virgo/">Virgo animals</a></li></ul></div>
+    <div class="sf-col"><h3>Western signs</h3><ul><li><a href="/western-zodiac/libra/">Libra animals</a></li><li><a href="/western-zodiac/scorpio/">Scorpio animals</a></li><li><a href="/western-zodiac/sagittarius/">Sagittarius animals</a></li><li><a href="/western-zodiac/capricorn/">Capricorn animals</a></li><li><a href="/western-zodiac/aquarius/">Aquarius animals</a></li><li><a href="/western-zodiac/pisces/">Pisces animals</a></li></ul></div>
+    <div class="sf-col"><h3>Chinese years</h3><ul><li><a href="/chinese-zodiac/rat/">Rat animals</a></li><li><a href="/chinese-zodiac/ox/">Ox animals</a></li><li><a href="/chinese-zodiac/tiger/">Tiger animals</a></li><li><a href="/chinese-zodiac/rabbit/">Rabbit animals</a></li><li><a href="/chinese-zodiac/dragon/">Dragon animals</a></li><li><a href="/chinese-zodiac/snake/">Snake animals</a></li></ul></div>
+    <div class="sf-col"><h3>Chinese years</h3><ul><li><a href="/chinese-zodiac/horse/">Horse animals</a></li><li><a href="/chinese-zodiac/goat/">Goat animals</a></li><li><a href="/chinese-zodiac/monkey/">Monkey animals</a></li><li><a href="/chinese-zodiac/rooster/">Rooster animals</a></li><li><a href="/chinese-zodiac/dog/">Dog animals</a></li><li><a href="/chinese-zodiac/pig/">Pig animals</a></li></ul></div>
+    <div class="sf-col"><h3>Elements</h3><ul><li><a href="/elements/fire/">Fire element</a></li><li><a href="/elements/earth/">Earth element</a></li><li><a href="/elements/air/">Air element</a></li><li><a href="/elements/water/">Water element</a></li></ul></div>
+  </div>
+  <p class="sf-note">Spirit Omega, The Primal Oracle. A tradition of meaning for reflection, not medical, psychological, financial, or legal advice.</p>
+</nav>
+</body>
+</html>

@@ -142,7 +142,7 @@ window.PCARD = (function () {
       if(navigator.canShare&&navigator.canShare({files:[file]})){ await navigator.share({files:[file],text}); return true; } }catch(e){}
     save(cv,name); return false;
   }
-  const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g,"-");
+  const slug = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/['’]/g,"").replace(/[^a-z0-9]+/g,"-");
 
   return {
     async downloadAnimal(c){ const cv=await drawAnimal(c); save(cv,"primal-"+slug(c.primal)+".png"); },

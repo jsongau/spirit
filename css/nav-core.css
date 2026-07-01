@@ -37,6 +37,10 @@
   color:var(--moon,#f5ecd2); border-radius:11px; width:44px; height:40px; cursor:pointer; font-size:1.15rem}
 
 body.pn-has-bar{scroll-padding-top:82px}
+/* the pre-rendered bar supersedes any legacy simple header */
+body.pn-has-bar header.top{display:none}
+/* crawlable section links: real anchors, not shown to sighted users */
+.pn-crawl[hidden]{display:none}
 
 /* responsive: fold nav + tools into the drawer as space tightens */
 @media(max-width:1040px){ .pn-chip .lbl{display:none} .pn-chip{padding:8px 10px} }

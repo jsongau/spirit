@@ -70,13 +70,13 @@
     try{ const v=$("#birthDate").value; if(v){ state.birth=v; } }catch(e){}
     // record recently opened animals (this visitor's own history, local only)
     try{
-      const sg=c.primal.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
+      const sg=c.primal.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/['’]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
       state.recent=(state.recent||[]).filter(r=>r.primal!==c.primal);
       state.recent.unshift({primal:c.primal,slug:sg});
       state.recent=state.recent.slice(0,5); save(state); renderRecent(); renderToday();
     }catch(e){}
     // viral challenge link + gamified discovery
-    const shareSlug=c.primal.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
+    const shareSlug=c.primal.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/['’]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
     try{ const cb=$("#challengeBtn"); if(cb) cb.href="/vs.html?with="+shareSlug; }catch(e){}
     try{ if(window.GAME){ GAME.discovered(shareSlug,c.primal); GAME.celebrate({text:"You met the "+c.primal}); } }catch(e){}
     const r=ENGINE.reading(c), mp=ENGINE.moonPhase();
@@ -89,10 +89,23 @@
     $("#stones").innerHTML=r.stones.map(s=>`<li>${s}</li>`).join("");
     $("#moonNow").innerHTML=`Tonight the Moon is a <strong>${mp.name}</strong> (${mp.age} days into its cycle). A good night to ${mp.advice}.`;
     $("#shareLine").value=`My Primal Animal is the ${c.primal} (${c.sign} + ${c.element} ${c.animal}). Find yours at the Primal Oracle.`;
-    $("#animalLink").href="/animals/"+c.primal.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"")+"/";
+    $("#animalLink").href="/animals/"+c.primal.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/['’]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"")+"/";
+    // theme the result in the animal's atmosphere and open the three descent doors
+    try{
+      const animalPath="/animals/"+shareSlug+"/";
+      const d=$("#descent"); if(d) d.setAttribute("data-animal",shareSlug);
+      const dn=$("#doorNature"),ds=$("#doorShadow"),da=$("#doorAwaken"),dw=$("#descentDoors");
+      if(dn) dn.href=animalPath+"#nature";
+      if(ds) ds.href=animalPath+"#shadow";
+      if(da) da.href=animalPath+"#awakened";
+      if(dw) dw.hidden=false;
+    }catch(e){}
     awaken("revealed");
+    try{ document.body.setAttribute("data-has-result","1"); }catch(e){}
     $("#resultWrap").classList.add("show");
     $("#resultWrap").scrollIntoView({behavior:"smooth",block:"start"});
+    // staged reveal enhancement (skips if a cinematic reveal already ran)
+    try{ if(window.revealSequence && !window.CINEMA){ window.revealSequence($("#resultWrap"),{name:c.primal}); } }catch(e){}
   }
 
   /* ---------- WIRE ---------- */

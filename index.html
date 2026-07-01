@@ -25,6 +25,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/oracle.css">
 <link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/atmosphere.css">
+<link rel="stylesheet" href="css/descent.css">
 <style>
   .peekGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:18px}
   .peekCard{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;transition:border-color .15s,transform .15s}
@@ -54,16 +56,41 @@
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","@id":"https://spirit-omega.vercel.app/#faq","mainEntity":[
-{"@type":"Question","name":"What is a Primal Animal?","acceptedAnswer":{"@type":"Answer","text":"A Primal Animal is the single creature you get when you combine your Western Sun sign with your Chinese zodiac year. Twelve Sun signs cross twelve year animals to make 144 combinations, and each combination is named for its own animal. A Cancer born in the Year of the Snake, for example, is the Snail."}},
+{"@type":"Question","name":"What is a Primal Animal?","acceptedAnswer":{"@type":"Answer","text":"A Primal Animal is the single creature you get when you combine your Western Sun sign with your Chinese zodiac year. Twelve Sun signs cross twelve year animals to make 144 combinations, and each combination is named for its own animal. A Cancer born in the Year of the Snake, for example, is the Chambered Nautilus."}},
 {"@type":"Question","name":"How do I find my Primal Animal?","acceptedAnswer":{"@type":"Answer","text":"Enter your date of birth into the Primal Oracle. It reads your Western Sun sign from the month and day, reads your Chinese year animal from the year and the real lunar New Year date, and crosses the two on the 144 grid to name your animal. The lookup is free and runs entirely in your browser."}},
-{"@type":"Question","name":"What animal is Cancer and Snake?","acceptedAnswer":{"@type":"Answer","text":"In the Primal Animal system, a Cancer born in the Year of the Snake is the Snail. The Snail is one of the 144 Primal Animals, each of which is a distinct crossing of one Western Sun sign with one Chinese zodiac year."}},
+{"@type":"Question","name":"What animal is Cancer and Snake?","acceptedAnswer":{"@type":"Answer","text":"In the Primal Animal system, a Cancer born in the Year of the Snake is the Chambered Nautilus. It is one of the 144 Primal Animals, each of which is a distinct crossing of one Western Sun sign with one Chinese zodiac year."}},
 {"@type":"Question","name":"How does the lunar New Year boundary affect my Chinese year animal?","acceptedAnswer":{"@type":"Answer","text":"The Chinese year begins at the lunar New Year, not on January 1, and that date shifts between late January and mid February each year. A birthday in that early window can belong to the previous year's animal. The Primal Oracle uses the real lunar New Year date for every year from 1940 to 2032, so it names the correct animal for people born near the boundary."}},
 {"@type":"Question","name":"Is the Primal Animal accurate, or is it prediction?","acceptedAnswer":{"@type":"Answer","text":"The astronomy is real and checkable: the Sun signs, the lunar New Year dates for 1940 to 2032, the twelve-year cycle, and the Moon phase. The animal grid and the readings built on top of them are a tradition of meaning for reflection, not a forecast. Read your animal as a mirror you can act on, not a prediction of what will happen."}},
 {"@type":"Question","name":"Is the Primal Oracle free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Finding your Primal Animal, reading it, and testing a match are all free, with no account required. The tool runs in your browser and your date of birth is not sent to any server."}}
 ]}
 </script>
+<!--pn-css:start-->
+<link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
+<link rel="stylesheet" href="/css/nav-mega.css" data-pn="/css/nav-mega.css">
+<link rel="stylesheet" href="/css/nav-drawer.css" data-pn="/css/nav-drawer.css">
+<!--pn-css:end-->
 </head>
-<body>
+<body class="pn-has-bar">
+<!--pn-static:start-->
+<a class="skip-link" href="#pn-main">Skip to content</a>
+<header class="pn-bar" role="banner" data-static>
+  <div class="pn-inner">
+    <a class="pn-brand" href="/index.html">The Primal <b>Oracle</b></a>
+    <nav class="pn-nav" aria-label="Primary">
+        <div class="pn-item"><button class="pn-trigger active" type="button" aria-haspopup="true" aria-expanded="false" data-group="0">Discover<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item"><button class="pn-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-group="1">Bonds<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item"><button class="pn-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-group="2">Live with it<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item"><button class="pn-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-group="3">Sky<span class="chev" aria-hidden="true"></span></button></div>
+        <a class="pn-link" href="/learn.html">How it works</a>
+    </nav>
+    <div class="pn-tools"></div>
+    <button class="pn-burger" type="button" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </div>
+  <div class="pn-dd" data-dd><div class="pn-dd-mount"></div></div>
+  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/index.html">Find your animal</a><a href="/menagerie.html">All 144 animals</a><a href="/year.html">Year finder</a><a href="/match.html">Test a match</a><a href="/circle.html">Circle of three</a><a href="/vs.html">Challenge a friend</a><a href="/habitat/">The Habitat</a><a href="/feng-shui/">Feng Shui</a><a href="/directions/">The Directions</a><a href="/cosmology/">Cosmology</a><a href="/stones.html">Keeper stones</a><a href="/moon.html">The Moon</a><a href="/best-days.html">Best days</a><a href="/moon/phases/">Moon phases</a><a href="/daily.html">Today's reading</a><a href="/learn.html">How it works</a></nav>
+</header>
+<!--pn-static:end-->
+<a id="pn-main" tabindex="-1"></a>
 <canvas id="sky" aria-hidden="true"></canvas>
 
 <div class="wrap">
@@ -80,9 +107,9 @@
 
   <!-- HERO -->
   <section class="hero">
-    <p class="eyebrow">Two skies, one animal</p>
-    <h1>You were born under <em>two zodiacs</em>. Meet the animal where they cross.</h1>
-    <p class="lede">Your Western Sun sign reads your daylight self. Your Chinese year animal reads your instinct. Cross them and you get one of 144 Primal Animals. Find yours, read where you stand, and see who you match.</p>
+    <p class="eyebrow">Two zodiacs, one animal</p>
+    <h1>The animal you buried is <em>still breathing</em>.</h1>
+    <p class="lede">Your Western Sun sign crosses your Chinese birth year to name one of 144 original animal archetypes. You have carried this shape for years; today you can finally see it.</p>
 
     <div class="wheel" aria-hidden="true">
       <div class="ring r1"></div>
@@ -131,6 +158,8 @@
   </section>
 
   <!-- RESULT -->
+  <div class="descent" id="descent">
+  <p class="sr-only" data-seq-live aria-live="polite"></p>
   <div id="resultWrap">
     <div class="reveal">
       <div class="cross" id="cross"></div>
@@ -138,6 +167,15 @@
       <p class="essence" id="animalEssence"></p>
       <p class="mt"><a class="btn ghost" id="animalLink" href="#">Open my full animal page</a></p>
     </div>
+
+    <nav class="descent-doors" id="descentDoors" aria-label="Choose your descent" hidden>
+      <p class="eyebrow">Choose your descent</p>
+      <div class="doorRow">
+        <a class="door" id="doorNature" href="#"><span class="dn">Nature</span><span class="dh">What comes naturally, before the world interferes.</span></a>
+        <a class="door" id="doorShadow" href="#"><span class="dn">Shadow</span><span class="dh">What your protection becomes when fear leads.</span></a>
+        <a class="door" id="doorAwaken" href="#"><span class="dn">Awakening</span><span class="dh">The same strength, awake and yours to move.</span></a>
+      </div>
+    </nav>
 
     <div class="gates" id="gates"></div>
 
@@ -166,13 +204,14 @@
       </div>
     </div>
   </div>
+  </div>
 
   <!-- AI-ANSWERABLE CORE -->
   <section class="band" id="what-it-is">
     <div class="prose">
       <p class="eyebrow">In one paragraph</p>
       <h2>What a Primal Animal is</h2>
-      <p>A <strong>Primal Animal</strong> is the single creature you get when you combine your <strong>Western Sun sign</strong> with your <strong>Chinese zodiac year</strong>. There are twelve Sun signs and twelve year animals, so the grid holds <strong>144 combinations</strong>, and each one is named for its own animal. Your date of birth points to exactly one cell: the month and day fix your Sun sign, the year and the <strong>lunar New Year</strong> date fix your year animal, and where those two lines cross is your Primal Animal. A Cancer born in the Year of the Snake is the <strong>Snail</strong>. An Aries born in the Year of the Dragon is the <strong>Tyrannosaurus Rex</strong>.</p>
+      <p>A <strong>Primal Animal</strong> is the single creature you get when you combine your <strong>Western Sun sign</strong> with your <strong>Chinese zodiac year</strong>. There are twelve Sun signs and twelve year animals, so the grid holds <strong>144 combinations</strong>, and each one is named for its own animal. Your date of birth points to exactly one cell: the month and day fix your Sun sign, the year and the <strong>lunar New Year</strong> date fix your year animal, and where those two lines cross is your Primal Animal. A Cancer born in the Year of the Snake is the <strong>Chambered Nautilus</strong>. A Cancer born in the Year of the Monkey is the <strong>Kinkajou</strong>.</p>
 
       <h3>How to find yours</h3>
       <p>Enter your date of birth in the reader above. The Oracle reads your Sun sign, reads your Chinese year animal against the real lunar New Year date for your birth year, and names your animal on the 144 grid. It is free, needs no account, and runs entirely in your browser, so your birth date is never sent anywhere.</p>
@@ -185,7 +224,7 @@
 
       <dl class="faq">
         <dt>What animal is Cancer and Snake?</dt>
-        <dd>The Snail. It is one of the 144 Primal Animals, the crossing of the Sun sign Cancer with the Chinese Year of the Snake. <a href="animals/snail/">Read the Snail</a>.</dd>
+        <dd>The Chambered Nautilus. It is one of the 144 Primal Animals, the crossing of the Sun sign Cancer with the Chinese Year of the Snake. <a href="animals/chambered-nautilus/">Read the Chambered Nautilus</a>.</dd>
         <dt>Is there a free Primal Animal calculator?</dt>
         <dd>Yes. The reader on this page is free, needs no sign-up, and computes your animal in your browser. Enter a date of birth to find yours, or <a href="menagerie.html">browse all 144 animals</a>.</dd>
         <dt>How is this different from a normal horoscope?</dt>
@@ -200,12 +239,12 @@
     <h2>144 animals, one is yours</h2>
     <p class="lede">A glimpse of the creatures waiting at the crossings. Enter your birthday above to find which one is you, or wander the whole menagerie.</p>
     <div class="peekGrid">
-      <a class="peekCard" href="animals/snail/"><span class="pn">Snail</span><span class="ps">Cancer and the Snake</span></a>
-      <a class="peekCard" href="animals/owl/"><span class="pn">Owl</span><span class="ps">Scorpio and the Rooster</span></a>
-      <a class="peekCard" href="animals/butterfly/"><span class="pn">Butterfly</span><span class="ps">Libra and the Rabbit</span></a>
-      <a class="peekCard" href="animals/tyrannosaurus-rex/"><span class="pn">Tyrannosaurus Rex</span><span class="ps">Aries and the Dragon</span></a>
-      <a class="peekCard" href="animals/yak/"><span class="pn">Yak</span><span class="ps">Taurus and the Ox</span></a>
-      <a class="peekCard" href="animals/turtle/"><span class="pn">Turtle</span><span class="ps">Cancer and the Rabbit</span></a>
+      <a class="peekCard" href="animals/chambered-nautilus/"><span class="pn">Chambered Nautilus</span><span class="ps">Cancer and the Snake</span></a>
+      <a class="peekCard" href="animals/kinkajou/"><span class="pn">Kinkajou</span><span class="ps">Cancer and the Monkey</span></a>
+      <a class="peekCard" href="animals/snow-leopard/"><span class="pn">Snow Leopard</span><span class="ps">Scorpio and the Goat</span></a>
+      <a class="peekCard" href="animals/axolotl/"><span class="pn">Axolotl</span><span class="ps">Aquarius and the Rabbit</span></a>
+      <a class="peekCard" href="animals/orca/"><span class="pn">Orca</span><span class="ps">Scorpio and the Horse</span></a>
+      <a class="peekCard" href="animals/capybara/"><span class="pn">Capybara</span><span class="ps">Cancer and the Pig</span></a>
     </div>
     <p class="hint" id="recentOpened"></p>
     <p class="hint" data-game-collection></p>
@@ -273,7 +312,7 @@
       <p class="eyebrow">How it works</p>
       <h2>From two zodiacs to one animal</h2>
       <p>The Western zodiac follows the Sun across the year and gives you a Sun sign. The Chinese zodiac follows a twelve year cycle counted by the lunar calendar and gives you a year animal. Most people only ever learn one half. The Primal Animal is what you get when you put the two halves together.</p>
-      <p>There are twelve Sun signs and twelve year animals, so there are 144 possible combinations. Each one is named for a single creature. A Cancer born in the Year of the Snake is a Snail. An Aries born in the Year of the Dragon is a Tyrannosaurus Rex. The animal is not a blend you have to interpret. It is the shape the two forces settle into once they stop pulling against each other.</p>
+      <p>There are twelve Sun signs and twelve year animals, so there are 144 possible combinations. Each one is named for a single creature. A Cancer born in the Year of the Snake is the Chambered Nautilus. A Cancer born in the Year of the Monkey is the Kinkajou. The animal is not a blend you have to interpret. It is the shape the two forces settle into once they stop pulling against each other.</p>
 
       <h3>What the reading gives you</h3>
       <p>Each reading answers five questions in order: where you stand now, what you need soon, how to plan the near season, what to be aware of, and what your highest form looks like. The last one matters most. Every animal has a version ruled by its fear and a version that has turned that fear into strength. The reading points you toward the second one.</p>
@@ -295,7 +334,7 @@
   <footer>
     <div class="brand">The Primal <b>Oracle</b></div>
     <p>Find your Primal Animal, read where you stand, and see who you match. Built on the fusion of the Chinese and Western zodiacs.</p>
-    <p class="disclaimer">This is a tradition of meaning for reflection and entertainment. It is not medical, psychological, financial, or legal advice. The Primal Animal framework is adapted from the Primal Zodiac tradition. Stones and lunar practices are presented as cultural tradition, not as treatment.</p>
+    <p class="disclaimer">This is a tradition of meaning for reflection and entertainment. It is not medical, psychological, financial, or legal advice. The 144 Primal Animal mapping and readings are original to Spirit Omega. Stones and lunar practices are presented as cultural tradition, not as treatment.</p>
   </footer>
 
 </div>
@@ -323,17 +362,19 @@
 
 <script src="js/data.js"></script>
 <script src="js/engine.js"></script>
-<script src="js/nav.js"></script>
+<script src="js/nav.js" defer></script>
+<script src="js/reveal-seq.js"></script>
 <script src="js/reveal.js"></script>
 <script src="js/card.js"></script>
 <script src="js/app.js"></script>
 <script src="js/home-fx.js" defer></script>
+<script src="js/stage-bar.js" defer></script>
 <script src="js/game.js" defer></script>
 <nav class="sitemap-footer" aria-label="Explore Spirit Omega">
   <div class="sf-inner">
     <div class="sf-col"><h3>Discover</h3><ul><li><a href="/">Find your animal</a></li><li><a href="/menagerie.html">All 144 animals</a></li><li><a href="/year.html">Year finder</a></li><li><a href="/daily.html">Today's reading</a></li><li><a href="/vs.html">Challenge a friend</a></li></ul></div>
     <div class="sf-col"><h3>Relationships</h3><ul><li><a href="/match.html">Test a match</a></li><li><a href="/circle.html">Circle of three</a></li><li><a href="/learn.html">How it works</a></li></ul></div>
-    <div class="sf-col"><h3>Live with it</h3><ul><li><a href="/habitat/">The Habitat</a></li><li><a href="/stones.html">Keeper stones</a></li><li><a href="/directions/">Directions</a></li><li><a href="/best-days.html">Best days</a></li></ul></div>
+    <div class="sf-col"><h3>Live with it</h3><ul><li><a href="/habitat/">The Habitat</a></li><li><a href="/feng-shui/">Feng Shui</a></li><li><a href="/directions/">Directions</a></li><li><a href="/cosmology/">Cosmology</a></li><li><a href="/stones.html">Keeper stones</a></li><li><a href="/best-days.html">Best days</a></li></ul></div>
     <div class="sf-col"><h3>The Moon</h3><ul><li><a href="/moon.html">The Moon tonight</a></li><li><a href="/moon/phases/">The eight phases</a></li><li><a href="/moon/phases/new-moon/">New Moon</a></li><li><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a></li><li><a href="/moon/phases/first-quarter/">First Quarter</a></li><li><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a></li></ul></div>
     <div class="sf-col"><h3>Western signs</h3><ul><li><a href="/western-zodiac/aries/">Aries animals</a></li><li><a href="/western-zodiac/taurus/">Taurus animals</a></li><li><a href="/western-zodiac/gemini/">Gemini animals</a></li><li><a href="/western-zodiac/cancer/">Cancer animals</a></li><li><a href="/western-zodiac/leo/">Leo animals</a></li><li><a href="/western-zodiac/virgo/">Virgo animals</a></li></ul></div>
     <div class="sf-col"><h3>Western signs</h3><ul><li><a href="/western-zodiac/libra/">Libra animals</a></li><li><a href="/western-zodiac/scorpio/">Scorpio animals</a></li><li><a href="/western-zodiac/sagittarius/">Sagittarius animals</a></li><li><a href="/western-zodiac/capricorn/">Capricorn animals</a></li><li><a href="/western-zodiac/aquarius/">Aquarius animals</a></li><li><a href="/western-zodiac/pisces/">Pisces animals</a></li></ul></div>

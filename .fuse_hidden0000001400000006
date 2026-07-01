@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Moon: phases, charging crystals, and the 2026 sky | The Primal Oracle</title>
+<meta name="description" content="The Moon tonight, drawn at its true illuminated fraction, plus the eight phases and what each is for, how to charge crystals in moonlight, the 2026 eclipses and named full moons, and a simple monthly ritual.">
+<meta property="og:title" content="The Moon: phases, charging, and the 2026 sky">
+<meta property="og:description" content="See the Moon tonight at its real fraction, read the eight phases, charge your stones in moonlight, and track the 2026 eclipses and full moons.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/oracle.css">
+<link rel="stylesheet" href="css/moon.css">
+<!--pn-css:start-->
+<link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
+<link rel="stylesheet" href="/css/nav-mega.css" data-pn="/css/nav-mega.css">
+<link rel="stylesheet" href="/css/nav-drawer.css" data-pn="/css/nav-drawer.css">
+<!--pn-css:end-->
+</head>
+<body class="pn-has-bar">
+<!--pn-static:start-->
+<a class="skip-link" href="#pn-main">Skip to content</a>
+<header class="pn-bar" role="banner" data-static>
+  <div class="pn-inner">
+    <a class="pn-brand" href="/index.html">The Primal <b>Oracle</b></a>
+    <nav class="pn-nav" aria-label="Primary">
+        <div class="pn-item"><button class="pn-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-group="0">Discover<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item"><button class="pn-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-group="1">Bonds<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item"><button class="pn-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-group="2">Live with it<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item"><button class="pn-trigger active" type="button" aria-haspopup="true" aria-expanded="false" data-group="3">Sky<span class="chev" aria-hidden="true"></span></button></div>
+        <a class="pn-link" href="/learn.html">How it works</a>
+    </nav>
+    <div class="pn-tools"></div>
+    <button class="pn-burger" type="button" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </div>
+  <div class="pn-dd" data-dd><div class="pn-dd-mount"></div></div>
+  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/index.html">Find your animal</a><a href="/menagerie.html">All 144 animals</a><a href="/year.html">Year finder</a><a href="/match.html">Test a match</a><a href="/circle.html">Circle of three</a><a href="/vs.html">Challenge a friend</a><a href="/habitat/">The Habitat</a><a href="/stones.html">Keeper stones</a><a href="/moon.html">The Moon</a><a href="/best-days.html">Best days</a><a href="/moon/phases/">Moon phases</a><a href="/daily.html">Today's reading</a><a href="/learn.html">How it works</a></nav>
+</header>
+<!--pn-static:end-->
+<a id="pn-main" tabindex="-1"></a>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <nav>
+      <a href="index.html">Find your animal</a>
+      <a href="menagerie.html">All 144 animals</a>
+      <a href="match.html">Test a match</a>
+      <a href="moon.html">The Moon</a>
+      <a href="learn.html">How it works</a>
+    </nav>
+  </header>
+
+  <!-- INTRO -->
+  <section class="moonIntro">
+    <p class="eyebrow">The tides you already run on</p>
+    <h1>Read your life by <em>the Moon</em></h1>
+    <p class="lede">The Moon makes no light of its own. It is a mirror, turning its sunlit half toward you a little more each night, then a little less. Learn to read that rhythm and the moods that once felt random start to keep a schedule you can plan around.</p>
+  </section>
+
+  <!-- LIVE MOON -->
+  <section aria-label="The Moon tonight">
+    <div class="liveMoon">
+      <div class="moonStage">
+        <canvas id="moonCanvas" width="376" height="376" role="img" aria-label="The Moon tonight at its current phase"></canvas>
+      </div>
+      <div class="liveCopy">
+        <p class="eyebrow">The Moon tonight</p>
+        <p class="phaseName" id="phaseName">Reading the sky</p>
+        <p class="favors" id="phaseFavors">Drawing the Moon at its true fraction for tonight.</p>
+        <p class="meta">
+          <span class="chip">Illuminated <b id="illumPct">--</b></span>
+          <span class="chip">Moon age <b id="moonAge">--</b></span>
+          <span class="chip">Synodic month <b>29.53 days</b></span>
+        </p>
+      </div>
+    </div>
+    <p class="caveat" style="margin:0 4px 4px">The fraction and age above are computed live from tonight's date against the 29.53 day synodic month, so the disc you see is the disc overhead. Real astronomy, drawn for you each time you visit.</p>
+  </section>
+
+  <!-- EIGHT PHASES -->
+  <section class="moonBand" id="phases">
+    <p class="eyebrow">The eight phases</p>
+    <h2>One breath, eight movements</h2>
+    <p class="intro">Think of the cycle as a single breath: a dark inhale, a bright exhale. Each phase favours a different kind of action. Plan launches and hard conversations for the waxing half, new toward full, and keep releases, endings, and rest for the waning half, full toward dark.</p>
+    <div class="phaseGrid" id="phaseGrid"></div>
+  </section>
+
+  <!-- CHARGING CRYSTALS -->
+  <section class="moonBand" id="charging">
+    <p class="eyebrow">The moonlit altar</p>
+    <h2>Charge your stones in moonlight</h2>
+    <p class="intro">To charge a stone is to refill it, to return it to a clean and intentional state after it has done its work. Moonlight is the gentlest way, and unlike the Sun it takes nothing away. It is safe for every crystal, including the water-sensitive and the light-fragile, which is why it is the method to default to when you are unsure.</p>
+    <div class="chargeGrid">
+      <div class="chargeCard">
+        <h3>How to do it</h3>
+        <p><b>Best phase.</b> The full Moon charges for peak power, clarity, and release. The new Moon charges for intention and fresh starts. The full Moon's light is held strong for a day or two on either side, so a cloudy peak is no failure.</p>
+        <p><b>Overnight.</b> Set the stones out at dusk and collect them at or before dawn. Cleanse first to empty, then charge to refill, holding an intention as the light pools on them.</p>
+        <p><b>The one hard rule.</b> Retrieve them before harsh direct sunlight reaches them. Morning sun fades the colour of amethyst, rose quartz, citrine, and others over time. Moon yes, hard noon no. A clouded morning buys you time; a bright one does not.</p>
+      </div>
+      <div class="chargeCard">
+        <h3>Stones that love the Moon</h3>
+        <p class="dim" style="margin-bottom:12px">Lunar by temperament, these are the ones to set out first.</p>
+        <ul class="lunarList">
+          <li>Moonstone</li>
+          <li>Selenite</li>
+          <li>Labradorite</li>
+          <li>Clear quartz</li>
+        </ul>
+        <p style="font-size:.92rem">Moonstone is the Moon's own stone, held to grow stronger in lunar light. Selenite is named for Selene and is self-cleansing. Labradorite sparkles under moonlight and risks no fading there. Clear quartz loves any phase and magnifies whatever intention you set beside it.</p>
+
+        <h3 style="margin-top:18px">Moon water, in brief</h3>
+        <p style="font-size:.92rem">Fill a glass vessel, set it under the full Moon overnight, name your purpose as you place it, and retrieve it before strong sun. Use it to cleanse a space, refresh non-porous stones, water plants with intention, or sit beside it for full-moon reflection.</p>
+
+        <div class="safetyNote">
+          <strong>Keep some stones out of the water</strong>
+          <p>Several stones are unsafe submerged, and a few are genuinely toxic. The elegant workaround is to set the stone beside the jar, not inside it. Selenite charges by proximity to the moonlight, not by contact with the water.</p>
+          <p class="dryStones">Keep these dry: selenite, malachite, calcite, halite, fluorite, celestite, pyrite, hematite, and labradorite. Reserve in-water stones for the reliably water-safe, like clear quartz, amethyst, and rose quartz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2026 SKY -->
+  <section class="moonBand" id="sky2026">
+    <p class="eyebrow">Your timing this year</p>
+    <h2>The 2026 sky</h2>
+    <p class="intro">Eclipses are amplified new and full moons; they tend to accelerate beginnings and endings. Treat them as hinge points, not emergencies. Each month's full Moon also carries an old agricultural name, a ready-made theme for that cycle's intention.</p>
+
+    <div class="tableScroll">
+      <table class="skyTable">
+        <caption>The four 2026 eclipses</caption>
+        <thead>
+          <tr><th>Date</th><th>Event</th><th>Visible from</th><th>Read it as</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Feb 17, 2026</b></td>
+            <td>Annular solar eclipse</td>
+            <td>Antarctica</td>
+            <td>A hidden beginning; plant something no one sees yet.</td>
+          </tr>
+          <tr>
+            <td><b>Mar 2 to 3, 2026</b></td>
+            <td><span class="total">Total</span> lunar eclipse, Worm Moon</td>
+            <td>Asia, Australia, Pacific, Americas</td>
+            <td>A major release; something completes whether you are ready or not.</td>
+          </tr>
+          <tr>
+            <td><b>Aug 12, 2026</b></td>
+            <td><span class="total">Total</span> solar eclipse</td>
+            <td>Greenland, Iceland, Spain, Russia, Portugal; partial across Europe, Africa, North America</td>
+            <td>A decisive new chapter; the boldest seed of the year.</td>
+          </tr>
+          <tr>
+            <td><b>Aug 27 to 28, 2026</b></td>
+            <td>Partial lunar eclipse, Sturgeon Moon</td>
+            <td>Varies by region</td>
+            <td>A deadline to honour; have the work hung by now.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-family:var(--serif); color:var(--brass-bright); font-size:1.4rem; margin:26px 0 8px">The named full moons</h3>
+    <p class="dim" style="margin:0 0 16px; max-width:60ch">Northern Hemisphere names, each one a theme to hang the cycle's intention upon.</p>
+    <div class="moonNames" id="moonNames"></div>
+  </section>
+
+  <!-- RITUAL -->
+  <section class="moonBand" id="ritual">
+    <p class="eyebrow">A simple monthly ritual</p>
+    <h2>Four touch-points a cycle</h2>
+    <p class="intro">The rite needs no special apparatus, only a candle, a journal, and a charged stone. Live a few cycles this way and you notice the thing every Moon-ruled creature eventually learns: you were never moody, you were tidal. And a tide you can read is a tide you can ride.</p>
+    <div class="ritual">
+      <div class="ritualStep">
+        <div class="num">1</div>
+        <h3>New moon, plant</h3>
+        <p>Write one private intention for the cycle, specific and present-tense, as if already true. Hold a charged moonstone or clear quartz as you write. Keep the seed small enough to actually plant.</p>
+      </div>
+      <div class="ritualStep">
+        <div class="num">2</div>
+        <h3>First quarter, push</h3>
+        <p>Take the one action that scares you a little. Make the hard call, build the thing, move through the first resistance while the light is still climbing.</p>
+      </div>
+      <div class="ritualStep">
+        <div class="num">3</div>
+        <h3>Full moon, release</h3>
+        <p>Let yourself be seen. Ship it, show it, or celebrate it, and feel it fully. Then write down what is finished and, safely, burn or tear the paper to release it.</p>
+      </div>
+      <div class="ritualStep">
+        <div class="num">4</div>
+        <h3>Dark moon, rest</h3>
+        <p>Withdraw and reflect without guilt. Rest is wisdom in its right phase, not avoidance. Sit still long enough to hear yourself, and prepare the next seed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAVEAT -->
+  <section class="moonBand" id="caveat">
+    <p class="eyebrow">A word of honesty</p>
+    <h2>Tradition and reflection, not medicine</h2>
+    <p class="caveat">This is a tradition of meaning, not a science of prediction, and nothing here is medical, psychological, or financial advice. Crystals do not cure and moon water does not heal a body. What these practices do well is give a feeling creature a structure to hold: a way to mark a beginning, name a release, and sit still long enough to hear yourself. <b>The phases, the fraction overhead, and the 2026 eclipses are real astronomy, checkable against any almanac.</b> The rest is a lens. Use the lens to see; use your own hands to build.</p>
+  </section>
+
+  <!-- CTA -->
+  <section class="moonCta">
+    <p class="eyebrow">Carry it further</p>
+    <h2>Tie the Moon to your animal</h2>
+    <p>Your Primal Animal comes with keeper stones meant to be charged on the full moon. Find the animal first, then meet the stones that answer to it.</p>
+    <div class="ctaRow">
+      <a class="btn" href="index.html">Find your animal</a>
+      <a class="btn ghost" href="stones.html">See your stones</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="brand">The Primal <b>Oracle</b></div>
+    <p>Find your Primal Animal, read where you stand, and see who you match. Built on the fusion of the Chinese and Western zodiacs.</p>
+    <p class="disclaimer">This is a tradition of meaning for reflection and entertainment. It is not medical, psychological, financial, or legal advice. The Primal Animal framework is adapted from the Primal Zodiac tradition. Stones and lunar practices are presented as cultural tradition, not as treatment.</p>
+  </footer>
+
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/nav.js" defer></script>
+<script>
+(function () {
+  "use strict";
+  const $ = (s) => document.querySelector(s);
+
+  /* ---------- starfield (matches app.js runStars) ---------- */
+  (function runStars(){
+    const cv = $("#sky"); if (!cv) return;
+    const ctx = cv.getContext("2d");
+    function size(){ cv.width = innerWidth; cv.height = Math.max(innerHeight, document.body.scrollHeight); }
+    size(); addEventListener("resize", size);
+    const N = Math.min(160, Math.floor(innerWidth / 9));
+    const stars = Array.from({length:N}, () => ({
+      x: Math.random()*cv.width, y: Math.random()*cv.height,
+      r: Math.random()*1.4 + 0.2, a: Math.random(), s: Math.random()*0.02 + 0.004
+    }));
+    (function frame(){
+      ctx.clearRect(0,0,cv.width,cv.height);
+      for (const st of stars){
+        st.a += st.s; const al = 0.35 + Math.abs(Math.sin(st.a))*0.55;
+        ctx.beginPath(); ctx.arc(st.x, st.y, st.r, 0, 7);
+        ctx.fillStyle = `rgba(245,236,210,${al})`; ctx.fill();
+      }
+      requestAnimationFrame(frame);
+    })();
+  })();
+
+  /* ---------- LIVE MOON: phase name, advice, drawn fraction ---------- */
+  const phase = ENGINE.moonPhase();           // { name, advice, frac, age }
+  const synodic = 29.530588853;
+  const age = phase.age;
+
+  // Illuminated fraction of the disc: 0 at new, 1 at full, back to 0.
+  // frac runs 0..1 across the synodic month; illumination follows a cosine.
+  const illum = (1 - Math.cos(2 * Math.PI * phase.frac)) / 2;
+  const waxing = phase.frac < 0.5;            // true new->full, false full->new
+
+  $("#phaseName").textContent   = phase.name;
+  $("#phaseFavors").textContent = "This phase favours " + phase.advice + ".";
+  $("#illumPct").textContent    = Math.round(illum * 100) + "%";
+  $("#moonAge").textContent     = age + (age === 1 ? " day" : " days");
+
+  drawMoon($("#moonCanvas"), phase.frac, waxing);
+
+  // Render the lit Moon by overlaying a shadow whose terminator matches the phase.
+  function drawMoon(cv, frac, isWaxing){
+    const ctx = cv.getContext("2d");
+    const W = cv.width, H = cv.height, R = W / 2 - 6, cx = W / 2, cy = H / 2;
+    ctx.clearRect(0, 0, W, H);
+
+    // soft halo
+    const halo = ctx.createRadialGradient(cx, cy, R * 0.6, cx, cy, R * 1.18);
+    halo.addColorStop(0, "rgba(245,236,210,0.18)");
+    halo.addColorStop(1, "rgba(245,236,210,0)");
+    ctx.fillStyle = halo;
+    ctx.beginPath(); ctx.arc(cx, cy, R * 1.18, 0, Math.PI * 2); ctx.fill();
+
+    // lit disc
+    const lit = ctx.createRadialGradient(cx - R*0.32, cy - R*0.3, R*0.1, cx, cy, R);
+    lit.addColorStop(0, "#fffaf0");
+    lit.addColorStop(0.55, "#e8dcb6");
+    lit.addColorStop(1, "#c2b487");
+    ctx.save();
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.clip();
+    ctx.fillStyle = lit;
+    ctx.fillRect(0, 0, W, H);
+
+    // faint maria for texture
+    ctx.fillStyle = "rgba(120,108,80,0.16)";
+    [[ -0.28,-0.18,0.20],[0.22,0.08,0.16],[-0.06,0.34,0.13],[0.34,-0.34,0.10]]
+      .forEach(([dx,dy,r]) => { ctx.beginPath(); ctx.arc(cx+dx*R, cy+dy*R, r*R, 0, Math.PI*2); ctx.fill(); });
+
+    // shadow: phase angle 0=new, PI=full
+    const phaseAngle = 2 * Math.PI * frac;       // 0..2PI
+    // terminator half-width as a fraction of R, signed
+    const k = Math.cos(phaseAngle);              // 1 at new, -1 at full
+    ctx.fillStyle = "rgba(8,9,18,0.93)";
+    ctx.beginPath();
+    // draw the dark region as the union of a half-disc and a half-ellipse,
+    // sweeping the terminator from one limb to the other across the cycle.
+    const steps = 120;
+    for (let i = 0; i <= steps; i++){
+      const t = -Math.PI/2 + (i/steps) * Math.PI;        // outer limb, top to bottom
+      const x = cx + (isWaxing ? -1 : 1) * R * Math.cos(t);
+      const y = cy + R * Math.sin(t);
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    for (let i = steps; i >= 0; i--){
+      const t = -Math.PI/2 + (i/steps) * Math.PI;         // terminator curve
+      const x = cx + (isWaxing ? -1 : 1) * R * k * Math.cos(t);
+      const y = cy + R * Math.sin(t);
+      ctx.lineTo(x, y);
+    }
+    ctx.closePath(); ctx.fill();
+    ctx.restore();
+
+    // crisp rim
+    ctx.strokeStyle = "rgba(214,193,140,0.45)"; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.stroke();
+  }
+
+  /* ---------- EIGHT PHASES card set ---------- */
+  const PHASES = [
+    ["New Moon",        "seed, intention",   "Begin, plant, set a private intention, open the door an inch."],
+    ["Waxing Crescent", "gather, commit",    "Take the first small step, gather what you need, say one yes."],
+    ["First Quarter",   "decide, push",      "Act through resistance, make the hard call, build."],
+    ["Waxing Gibbous",  "refine, persevere", "Edit and adjust, stay the course when it gets tedious."],
+    ["Full Moon",       "reveal, release",   "Be seen, launch, celebrate, release what is finished, feel fully."],
+    ["Waning Gibbous",  "share, give thanks","Teach, give back, debrief, express gratitude."],
+    ["Last Quarter",    "release, forgive",  "Cut losses, let go, forgive, clear the deck."],
+    ["Waning Crescent", "rest, surrender",   "Withdraw without guilt, rest, reflect, prepare the next seed."]
+  ];
+  function phaseIcon(idx){
+    // mini glyph: lit fraction matching position in the cycle
+    const frac = idx / 8;
+    const ill = (1 - Math.cos(2 * Math.PI * frac)) / 2;
+    const wax = frac < 0.5;
+    const c = document.createElement("canvas");
+    c.className = "pico"; c.width = 84; c.height = 84;
+    drawMoon(c, frac, wax);
+    return c;
+  }
+  const grid = $("#phaseGrid");
+  PHASES.forEach(([name, role, body], i) => {
+    const card = document.createElement("div");
+    card.className = "phaseCard";
+    card.appendChild(phaseIcon(i));
+    const h = document.createElement("h3"); h.textContent = name; card.appendChild(h);
+    const r = document.createElement("p"); r.className = "role"; r.textContent = role; card.appendChild(r);
+    const p = document.createElement("p"); p.textContent = body; card.appendChild(p);
+    grid.appendChild(card);
+  });
+
+  /* ---------- NAMED FULL MOONS ---------- */
+  const MOONS = [
+    ["January","Wolf Moon","Endurance, the lean season, loyalty to your pack."],
+    ["February","Snow Moon","Stillness, conservation, deep rest."],
+    ["March","Worm Moon","Thaw, first stirrings, breaking ground."],
+    ["April","Pink Moon","First bloom, fresh starts, tenderness."],
+    ["May","Flower Moon","Abundance, fertility, full expression."],
+    ["June","Strawberry Moon","Sweetness, harvest of early effort, gratitude."],
+    ["July","Buck Moon","Growth, new strength, ambition."],
+    ["August","Sturgeon Moon","Abundance, gathering, readiness."],
+    ["September","Harvest Moon","Reaping, completion, taking stock."],
+    ["October","Hunter's Moon","Preparation, provisioning, focus."],
+    ["November","Beaver Moon","Building, securing, shelter."],
+    ["December","Cold Moon","Retreat, reflection, the long dark."]
+  ];
+  const names = $("#moonNames");
+  MOONS.forEach(([mon, name, theme]) => {
+    const card = document.createElement("div");
+    card.className = "nameCard";
+    card.innerHTML = '<p class="mon">' + mon + '</p><h4>' + name + '</h4><p>' + theme + '</p>';
+    names.appendChild(card);
+  });
+})();
+</script>
+<nav class="sitemap-footer" aria-label="Explore Spirit Omega">
+  <div class="sf-inner">
+    <div class="sf-col"><h3>Discover</h3><ul><li><a href="/">Find your animal</a></li><li><a href="/menagerie.html">All 144 animals</a></li><li><a href="/year.html">Year finder</a></li><li><a href="/daily.html">Today's reading</a></li><li><a href="/vs.html">Challenge a friend</a></li></ul></div>
+    <div class="sf-col"><h3>Relationships</h3><ul><li><a href="/match.html">Test a match</a></li><li><a href="/circle.html">Circle of three</a></li><li><a href="/learn.html">How it works</a></li></ul></div>
+    <div class="sf-col"><h3>Live with it</h3><ul><li><a href="/habitat/">The Habitat</a></li><li><a href="/stones.html">Keeper stones</a></li><li><a href="/directions/">Directions</a></li><li><a href="/best-days.html">Best days</a></li></ul></div>
+    <div class="sf-col"><h3>The Moon</h3><ul><li><a href="/moon.html">The Moon tonight</a></li><li><a href="/moon/phases/">The eight phases</a></li><li><a href="/moon/phases/new-moon/">New Moon</a></li><li><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a></li><li><a href="/moon/phases/first-quarter/">First Quarter</a></li><li><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a></li></ul></div>
+    <div class="sf-col"><h3>Western signs</h3><ul><li><a href="/western-zodiac/aries/">Aries animals</a></li><li><a href="/western-zodiac/taurus/">Taurus animals</a></li><li><a href="/western-zodiac/gemini/">Gemini animals</a></li><li><a href="/western-zodiac/cancer/">Cancer animals</a></li><li><a href="/western-zodiac/leo/">Leo animals</a></li><li><a href="/western-zodiac/virgo/">Virgo animals</a></li></ul></div>
+    <div class="sf-col"><h3>Western signs</h3><ul><li><a href="/western-zodiac/libra/">Libra animals</a></li><li><a href="/western-zodiac/scorpio/">Scorpio animals</a></li><li><a href="/western-zodiac/sagittarius/">Sagittarius animals</a></li><li><a href="/western-zodiac/capricorn/">Capricorn animals</a></li><li><a href="/western-zodiac/aquarius/">Aquarius animals</a></li><li><a href="/western-zodiac/pisces/">Pisces animals</a></li></ul></div>
+    <div class="sf-col"><h3>Chinese years</h3><ul><li><a href="/chinese-zodiac/rat/">Rat animals</a></li><li><a href="/chinese-zodiac/ox/">Ox animals</a></li><li><a href="/chinese-zodiac/tiger/">Tiger animals</a></li><li><a href="/chinese-zodiac/rabbit/">Rabbit animals</a></li><li><a href="/chinese-zodiac/dragon/">Dragon animals</a></li><li><a href="/chinese-zodiac/snake/">Snake animals</a></li></ul></div>
+    <div class="sf-col"><h3>Chinese years</h3><ul><li><a href="/chinese-zodiac/horse/">Horse animals</a></li><li><a href="/chinese-zodiac/goat/">Goat animals</a></li><li><a href="/chinese-zodiac/monkey/">Monkey animals</a></li><li><a href="/chinese-zodiac/rooster/">Rooster animals</a></li><li><a href="/chinese-zodiac/dog/">Dog animals</a></li><li><a href="/chinese-zodiac/pig/">Pig animals</a></li></ul></div>
+    <div class="sf-col"><h3>Elements</h3><ul><li><a href="/elements/fire/">Fire element</a></li><li><a href="/elements/earth/">Earth element</a></li><li><a href="/elements/air/">Air element</a></li><li><a href="/elements/water/">Water element</a></li></ul></div>
+  </div>
+  <p class="sf-note">Spirit Omega, The Primal Oracle. A tradition of meaning for reflection, not medical, psychological, financial, or legal advice.</p>
+</nav>
+</body>
+</html>

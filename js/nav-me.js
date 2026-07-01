@@ -49,7 +49,7 @@ PNAV.features.me = function (ctx) {
   if (result && result.primal) {
     chip = document.createElement("a");
     chip.className = "pn-chip";
-    chip.href = "/animals/" + result.primal.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") + "/";
+    chip.href = "/animals/" + result.primal.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/['’]/g,"").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") + "/";
 
     var glyph = document.createElement("span");
     glyph.className = "v pnme-glyph";

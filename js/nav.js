@@ -1,8 +1,11 @@
 /* ============================================================
-   THE PRIMAL ORACLE — mega navigation ORCHESTRATOR
-   One include per page: <script src="js/nav.js"></script>
-   Dropdown mega-nav: top-level groups open a roomy panel under
-   the bar. Single-item groups render as plain links.
+   THE PRIMAL ORACLE — mega navigation ORCHESTRATOR (v3)
+   One include per page: <script src="/js/nav.js" defer></script>
+   The top bar is now PRE-RENDERED into the initial HTML by
+   build/apply-nav.mjs. This script HYDRATES that static bar:
+   it wires the dropdown panels, the mobile drawer, and the
+   feature chips. If no static bar is present (older page), it
+   falls back to building one from scratch.
    ============================================================ */
 
 window.PNAV = window.PNAV || { features: {} };
@@ -11,7 +14,8 @@ window.PNAV = window.PNAV || { features: {} };
   "use strict";
   const PNAV = window.PNAV;
 
-  // Root-relative asset paths so the nav works from any URL depth (no <base> reliance).
+  // Nav CSS is normally pre-injected into <head> by apply-nav.mjs.
+  // These stay as a fallback for any page that lacks the static bar.
   const CSS = ["/css/nav-core.css", "/css/nav-mega.css", "/css/nav-drawer.css"];
   const JS  = ["/js/nav-data.js", "/js/nav-search.js", "/js/nav-moon.js",
                "/js/nav-me.js", "/js/nav-progress.js", "/js/nav-drawer.js", "/js/nav-a11y.js"];
@@ -29,11 +33,10 @@ window.PNAV = window.PNAV || { features: {} };
     { h:"Understand", items:[["/learn.html","How it works","The two zodiacs, the Moon, and the reading"]]}
   ];
 
-  // Normalize any href/path to its bare page key for active-state comparison.
-  function baseOf(s){ s=(s||"").toLowerCase().replace(/[#?].*$/,""); if(s.endsWith("/")) s+="index.html"; return s.split("/").filter(Boolean).pop()||"index.html"; }
-  const here = baseOf(window.PN_HERE || location.pathname);
+  function norm(s){ s=(s||"").toLowerCase().replace(/[#?].*$/,""); if(!s.startsWith("/")) s="/"+s; if(s.endsWith("/")) s+="index.html"; return s; }
+  const here = norm(location.pathname);
   PNAV.here = here;
-  PNAV.isActive = (href) => baseOf(href) === here;
+  PNAV.isActive = (href) => norm(href) === here;
 
   function loadCss(href){
     return new Promise((res)=>{
@@ -52,12 +55,10 @@ window.PNAV = window.PNAV || { features: {} };
 
   function groupActive(g){ return g.items.some(it=>PNAV.isActive(it[0])); }
 
-  function buildSkeleton(){
-    document.body.classList.add("pn-has-bar");
+  /* ---- build the bar from scratch (fallback only) ---- */
+  function buildBar(MAP){
     const old = document.querySelector("header.top");
     if (old) old.style.display = "none";
-
-    const MAP = PNAV.MAP || FALLBACK_MAP;
 
     const bar = document.createElement("header");
     bar.className = "pn-bar"; bar.setAttribute("role","banner");
@@ -66,16 +67,12 @@ window.PNAV = window.PNAV || { features: {} };
          <a class="pn-brand" href="/index.html">The Primal <b>Oracle</b></a>
          <nav class="pn-nav" aria-label="Primary"></nav>
          <div class="pn-tools"></div>
-         <button class="pn-burger" type="button" aria-label="Open menu">&#9776;</button>
+         <button class="pn-burger" type="button" aria-label="Open menu" aria-expanded="false">&#9776;</button>
        </div>
        <div class="pn-dd" data-dd><div class="pn-dd-mount"></div></div>`;
     document.body.insertBefore(bar, document.body.firstChild);
 
     const navEl = bar.querySelector(".pn-nav");
-    const dd    = bar.querySelector(".pn-dd");
-    const ddMount = bar.querySelector(".pn-dd-mount");
-
-    // build top-level items
     MAP.forEach((g, i) => {
       if (g.items.length === 1) {
         const [h,t] = g.items[0];
@@ -90,6 +87,17 @@ window.PNAV = window.PNAV || { features: {} };
         navEl.appendChild(item);
       }
     });
+    return bar;
+  }
+
+  /* ---- shared wiring: dropdowns, drawer, feature modules ---- */
+  function wire(bar, MAP){
+    document.body.classList.add("pn-has-bar");
+    const navEl   = bar.querySelector(".pn-nav");
+    const dd      = bar.querySelector(".pn-dd");
+    const ddMount = bar.querySelector(".pn-dd-mount");
+    const tools   = bar.querySelector(".pn-tools");
+    const burger  = bar.querySelector(".pn-burger");
 
     function ddHTML(g){
       return `<div class="pn-dd-inner">
@@ -125,19 +133,14 @@ window.PNAV = window.PNAV || { features: {} };
     document.addEventListener("keydown",(e)=>{ if(e.key==="Escape"){ closeDD(); closeDrawer(); }});
     document.addEventListener("click",(e)=>{ if(!bar.contains(e.target)) closeDD(); });
 
-    // tools row gets the chips from feature modules; keep a slot ref
-    const tools = bar.querySelector(".pn-tools");
-    const burger = bar.querySelector(".pn-burger");
-
-
     // mobile drawer
     const drawer = document.createElement("div");
-    drawer.className="pn-drawer"; drawer.setAttribute("role","dialog"); drawer.setAttribute("aria-label","Menu");
+    drawer.className="pn-drawer"; drawer.setAttribute("role","dialog"); drawer.setAttribute("aria-label","Menu"); drawer.setAttribute("aria-modal","true");
     drawer.innerHTML = `<div class="drawer-sheet"></div>`;
     document.body.appendChild(drawer);
 
-    const openDrawer = ()=>{ drawer.classList.add("open"); document.body.style.overflow="hidden"; document.dispatchEvent(new CustomEvent("pn:drawer-open")); };
-    const closeDrawer = ()=>{ drawer.classList.remove("open"); document.body.style.overflow=""; document.dispatchEvent(new CustomEvent("pn:drawer-close")); };
+    const openDrawer = ()=>{ drawer.classList.add("open"); burger.setAttribute("aria-expanded","true"); document.body.style.overflow="hidden"; document.dispatchEvent(new CustomEvent("pn:drawer-open")); };
+    const closeDrawer = ()=>{ drawer.classList.remove("open"); burger.setAttribute("aria-expanded","false"); document.body.style.overflow=""; document.dispatchEvent(new CustomEvent("pn:drawer-close")); };
     burger.addEventListener("click", openDrawer);
     drawer.addEventListener("click",(e)=>{ if(e.target===drawer) closeDrawer(); });
 
@@ -154,9 +157,13 @@ window.PNAV = window.PNAV || { features: {} };
   }
 
   async function boot(){
+    const staticBar = document.querySelector("header.pn-bar[data-static]");
+    // load feature JS always; load CSS only if not already present (fallback pages)
     await Promise.all(CSS.map(loadCss));
     for (const s of JS) { await loadJs(s); }
-    buildSkeleton();
+    const MAP = PNAV.MAP || FALLBACK_MAP;
+    const bar = staticBar || buildBar(MAP);
+    wire(bar, MAP);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

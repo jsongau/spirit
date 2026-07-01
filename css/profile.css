@@ -62,3 +62,9 @@ footer.pf-foot{padding:50px 0 90px; border-top:1px solid var(--line); margin-top
 .acct-cta a{white-space:nowrap}
 
 @media(prefers-reduced-motion:reduce){ *{scroll-behavior:auto} }
+
+/* ---- flagship 30-section additions ---- */
+.pf-explore{background:linear-gradient(180deg, rgba(214,193,140,.06), rgba(20,23,43,.25)); border:1px solid var(--line,#2a2c44); border-radius:16px; padding:26px}
+.pf-sharecard{border:1px solid var(--brass,#d6c18c); border-radius:16px; padding:26px; text-align:center; background:rgba(214,193,140,.05)}
+.pf-shareline{font-family:var(--serif,serif); font-size:1.5rem; line-height:1.35; color:var(--moon,#f5ecd2); margin:6px 0 18px}
+@media(max-width:560px){ .pf-shareline{font-size:1.25rem} }

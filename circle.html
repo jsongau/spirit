@@ -38,8 +38,33 @@
   .tier-Friction{color:var(--rose)} .stroke-Friction{stroke:var(--rose)}
   .tier-HardTeacher{color:var(--rose)} .stroke-HardTeacher{stroke:var(--rose)}
 </style>
+<!--pn-css:start-->
+<link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
+<link rel="stylesheet" href="/css/nav-mega.css" data-pn="/css/nav-mega.css">
+<link rel="stylesheet" href="/css/nav-drawer.css" data-pn="/css/nav-drawer.css">
+<!--pn-css:end-->
 </head>
-<body>
+<body class="pn-has-bar">
+<!--pn-static:start-->
+<a class="skip-link" href="#pn-main">Skip to content</a>
+<header class="pn-bar" role="banner" data-static>
+  <div class="pn-inner">
+    <a class="pn-brand" href="/index.html">The Primal <b>Oracle</b></a>
+    <nav class="pn-nav" aria-label="Primary">
+        <div class="pn-item"><button class="pn-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-group="0">Discover<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item"><button class="pn-trigger active" type="button" aria-haspopup="true" aria-expanded="false" data-group="1">Bonds<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item"><button class="pn-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-group="2">Live with it<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item"><button class="pn-trigger" type="button" aria-haspopup="true" aria-expanded="false" data-group="3">Sky<span class="chev" aria-hidden="true"></span></button></div>
+        <a class="pn-link" href="/learn.html">How it works</a>
+    </nav>
+    <div class="pn-tools"></div>
+    <button class="pn-burger" type="button" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </div>
+  <div class="pn-dd" data-dd><div class="pn-dd-mount"></div></div>
+  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/index.html">Find your animal</a><a href="/menagerie.html">All 144 animals</a><a href="/year.html">Year finder</a><a href="/match.html">Test a match</a><a href="/circle.html">Circle of three</a><a href="/vs.html">Challenge a friend</a><a href="/habitat/">The Habitat</a><a href="/feng-shui/">Feng Shui</a><a href="/directions/">The Directions</a><a href="/cosmology/">Cosmology</a><a href="/stones.html">Keeper stones</a><a href="/moon.html">The Moon</a><a href="/best-days.html">Best days</a><a href="/moon/phases/">Moon phases</a><a href="/daily.html">Today's reading</a><a href="/learn.html">How it works</a></nav>
+</header>
+<!--pn-static:end-->
+<a id="pn-main" tabindex="-1"></a>
 <canvas id="sky" aria-hidden="true"></canvas>
 <div class="wrap">
 
@@ -84,11 +109,11 @@
 
 <script src="js/data.js"></script>
 <script src="js/engine.js"></script>
-<script src="js/nav.js"></script>
+<script src="js/nav.js" defer></script>
 <script>
 (function(){
   var E = ENGINE, $ = function(s){ return document.querySelector(s); };
-  var slug = function(n){ return n.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,""); };
+  var slug = function(n){ return n.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/['’]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,""); };
   var KEY = "po_circle";
   function load(){ try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch(e){ return []; } }
   function save(a){ try { localStorage.setItem(KEY, JSON.stringify(a)); } catch(e){} }
@@ -188,7 +213,7 @@
   <div class="sf-inner">
     <div class="sf-col"><h3>Discover</h3><ul><li><a href="/">Find your animal</a></li><li><a href="/menagerie.html">All 144 animals</a></li><li><a href="/year.html">Year finder</a></li><li><a href="/daily.html">Today's reading</a></li><li><a href="/vs.html">Challenge a friend</a></li></ul></div>
     <div class="sf-col"><h3>Relationships</h3><ul><li><a href="/match.html">Test a match</a></li><li><a href="/circle.html">Circle of three</a></li><li><a href="/learn.html">How it works</a></li></ul></div>
-    <div class="sf-col"><h3>Live with it</h3><ul><li><a href="/habitat/">The Habitat</a></li><li><a href="/stones.html">Keeper stones</a></li><li><a href="/directions/">Directions</a></li><li><a href="/best-days.html">Best days</a></li></ul></div>
+    <div class="sf-col"><h3>Live with it</h3><ul><li><a href="/habitat/">The Habitat</a></li><li><a href="/feng-shui/">Feng Shui</a></li><li><a href="/directions/">Directions</a></li><li><a href="/cosmology/">Cosmology</a></li><li><a href="/stones.html">Keeper stones</a></li><li><a href="/best-days.html">Best days</a></li></ul></div>
     <div class="sf-col"><h3>The Moon</h3><ul><li><a href="/moon.html">The Moon tonight</a></li><li><a href="/moon/phases/">The eight phases</a></li><li><a href="/moon/phases/new-moon/">New Moon</a></li><li><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a></li><li><a href="/moon/phases/first-quarter/">First Quarter</a></li><li><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a></li></ul></div>
     <div class="sf-col"><h3>Western signs</h3><ul><li><a href="/western-zodiac/aries/">Aries animals</a></li><li><a href="/western-zodiac/taurus/">Taurus animals</a></li><li><a href="/western-zodiac/gemini/">Gemini animals</a></li><li><a href="/western-zodiac/cancer/">Cancer animals</a></li><li><a href="/western-zodiac/leo/">Leo animals</a></li><li><a href="/western-zodiac/virgo/">Virgo animals</a></li></ul></div>
     <div class="sf-col"><h3>Western signs</h3><ul><li><a href="/western-zodiac/libra/">Libra animals</a></li><li><a href="/western-zodiac/scorpio/">Scorpio animals</a></li><li><a href="/western-zodiac/sagittarius/">Sagittarius animals</a></li><li><a href="/western-zodiac/capricorn/">Capricorn animals</a></li><li><a href="/western-zodiac/aquarius/">Aquarius animals</a></li><li><a href="/western-zodiac/pisces/">Pisces animals</a></li></ul></div>

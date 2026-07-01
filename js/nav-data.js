@@ -14,6 +14,9 @@ PNAV.MAP = [
   ]},
   { h: "Live with it", items: [
     ["/habitat/", "The Habitat", "Feng Shui and environment for your animal"],
+    ["/feng-shui/", "Feng Shui", "The wind-water art of placement, tied to your animal"],
+    ["/directions/", "The Directions", "The four celestial animals and the commanding position"],
+    ["/cosmology/", "Cosmology", "The Yijing, the Luo Shu, stems and branches, the Four Pillars"],
     ["/stones.html", "Keeper stones", "Your stones and the wider crystal library"]
   ]},
   { h: "Sky", items: [

@@ -61,18 +61,18 @@ const ORACLE = (function () {
   const WEST_ORDER = ["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"];
 
   const GRID = {
-    Aries:       ["Piranha","Hippopotamus","Rhinoceros","Llama","Tyrannosaurus Rex","Praying Mantis","Hammerhead Shark","Catfish","Gorilla","Goldfinch","Doberman Pinscher","Dodo"],
-    Taurus:      ["Squirrel","Yak","Wolf","Hedgehog","Rattlesnake","Jackal","Kangaroo","Buffalo","Ostrich","Beaver","Seagull","Wombat"],
-    Gemini:      ["Chipmunk","Coyote","Chimpanzee","Toucan","Hummingbird","Lemur","Great White Shark","Centipede","Seal","Parrot","Deer","Cricket"],
-    Cancer:      ["Seahorse","Black Bear","Vampire Bat","Turtle","Hornet","Snail","Hermit Crab","Duck","Emperor Tamarin","Iguana","Pit Bull","Lobster"],
-    Leo:         ["Otter","Sun Bear","Wolverine","Angora Rabbit","Orca","Fox","Hyena","Swan","Ferret","Peacock","Shih Tzu","Quetzal"],
-    Virgo:       ["Mouse","Sea Star","Narwhal","Earthworm","Polar Bear","Jellyfish","Giraffe","Flamingo","Penguin","Corgi","Salamander","Gazelle"],
-    Libra:       ["Vulture","Elephant","Tasmanian Devil","Butterfly","Porcupine","Ladybug","Goose","Clownfish","Axolotl","Pelican","Crane","Marmot"],
-    Scorpio:     ["Anaconda","Platypus","Honey Badger","Koala","Jaguar","Anglerfish","Dragonfly","Panda","Raven","Owl","Octopus","Squid"],
-    Sagittarius: ["Skunk","Raccoon","Mongoose","Sugar Glider","Whale","Tarantula","Dove","Tortoise","Roadrunner","Swordfish","Golden Retriever","Camel"],
-    Capricorn:   ["Aardvark","Ant","Komodo Dragon","Weaver Finch","Eagle","Alligator","Salmon","Mole","Woodpecker","Bee","Boxer","Spider"],
-    Aquarius:    ["Meerkat","Walrus","Panther","Sloth","Leopard","Boa Constrictor","Unicorn","Handfish","Dolphin","Bird-of-Paradise","Chameleon","Pufferfish"],
-    Pisces:      ["Lemming","Moose","Stingray","Silkworm","Firefly","Frog","Gecko","Leafy Seadragon","Cheetah","Ocelot","Tarsier","Zebra"]
+    Aries:       ["Mongoose", "Cape Buffalo", "Wolverine", "Springbok", "Secretary Bird", "Loggerhead Shrike", "Pronghorn", "Chamois", "Kookaburra", "Southern Cassowary", "Dingo", "White-lipped Peccary"],
+    Taurus:      ["Wombat", "Musk Ox", "Southern White Rhinoceros", "Pika", "Galápagos Tortoise", "Pangolin", "Moose", "Tibetan Antelope", "Orangutan", "Superb Bird-of-Paradise", "Anatolian Shepherd", "Tapir"],
+    Gemini:      ["Meerkat", "Prairie Dog", "Serval", "Fennec Fox", "Superb Lyrebird", "Cuttlefish", "Common Swift", "Gelada", "Kea", "Magpie", "African Grey Parrot", "Binturong"],
+    Cancer:      ["Hermit Crab", "Asian Elephant", "Sun Bear", "Sea Otter", "Humpback Whale", "Chambered Nautilus", "Green Sea Turtle", "Water Deer", "Kinkajou", "Emperor Penguin", "Walrus", "Capybara"],
+    Leo:         ["Golden Lion Tamarin", "Banteng", "Harpy Eagle", "Golden Pheasant", "Rhinoceros Hornbill", "King Cobra", "Blackbuck", "Barbary Sheep", "Mandrill", "Guianan Cock-of-the-rock", "Dhole", "Babirusa"],
+    Virgo:       ["Leafcutter Ant", "Beaver", "Dragonfly", "Harvest Mouse", "Archerfish", "Trapdoor Spider", "Sanderling", "Alpine Marmot", "New Caledonian Crow", "Weaverbird", "Border Collie", "Short-beaked Echidna"],
+    Libra:       ["Red Panda", "Mute Swan", "Arabian Oryx", "Crowned Crane", "Giant Manta Ray", "Ribbon Eel", "Impala", "Dik-dik", "Bonobo", "Satin Bowerbird", "Gibbon", "Flamingo"],
+    Scorpio:     ["Philippine Tarsier", "Giant Salamander", "Clouded Leopard", "Pallas's Cat", "Komodo Dragon", "Moray Eel", "Orca", "Snow Leopard", "Aye-aye", "Praying Mantis", "Tasmanian Devil", "Hippopotamus"],
+    Sagittarius: ["Jerboa", "Wildebeest", "Caracal", "Arctic Hare", "Frigatebird", "Sidewinder", "Albatross", "Saiga Antelope", "Spider Monkey", "Kori Bustard", "Coyote", "Warthog"],
+    Capricorn:   ["Damaraland Mole-rat", "Takin", "Mountain Lion", "Yellow-footed Rock-wallaby", "Bearded Vulture", "Mangshan Pit Viper", "Mountain Zebra", "Markhor", "Japanese Macaque", "Andean Condor", "Tibetan Mastiff", "European Badger"],
+    Aquarius:    ["Naked Mole Rat", "Reindeer", "Maned Wolf", "Axolotl", "Mantis Shrimp", "Electric Eel", "Kiang", "Kakapo", "Raven", "Hoatzin", "African Wild Dog", "Platypus"],
+    Pisces:      ["Star-nosed Mole", "Dugong", "Leopard Seal", "Moon Jellyfish", "Whale Shark", "Leafy Seadragon", "Seahorse", "Angelfish", "Dumbo Octopus", "Mandarin Dragonet", "Dolphin", "Manatee"]
   };
 
   /* ---- Lunar New Year boundary dates (effective Year-animal switch) ----
@@ -93,19 +93,10 @@ const ORACLE = (function () {
     2028:[1,26],2029:[2,13],2030:[2,3],2031:[1,23],2032:[2,11]
   };
 
-  /* ---- A deeper, hand-written reading for the Snail (Cancer + Snake) ---- */
-  const DEEP = {
-    Snail: {
-      essence:"the soft seer who carries home on his back",
-      stand:"You feel everything at a depth almost no one around you registers, and you have made a quiet art of not letting it show. That concealment kept you safe and made you sharp. It is also the wall between you and what you most want.",
-      need:"To be let in. Not to let out, which you have trained against for years, but to be helped. One or two people permitted inside the shell, on purpose, while the door is open and you are not pretending to be fine.",
-      plan:"Tell one person you already trust one true sentence you would normally seal away. Then choose one path in front of you and stop shopping for a better one for a full lunar cycle. Plant the shell. Stay.",
-      beware:"The seal that calls itself self-protection. When something touches you unexpectedly you retract, then narrate the retreat as wisdom. A real pause has a return date. A flinch does not. Watch your moods and your sudden urges to start over.",
-      godly:"The Snail awake still feels everything, but shows the weather instead of hiding it, and finds that showing it is what lets people love the real thing. The shell becomes a door you open and close at will. You carry home wherever you go, so there is no room you cannot make safe by entering it.",
-      keystone:"Once each lunar cycle, near the new moon, tell one chosen person one true thing. Twelve true things a year. In three years you are a freer creature.",
-      stones:["Moonstone","Labradorite","Ammonite (fossil)","Black Tourmaline","Rose Quartz"]
-    }
-  };
+  /* ---- Hand-written deep readings, keyed by primal name. Empty during the
+     naming swap; authored readings now live in data/animals-authored*.json
+     and reach pages through the build, not this object. ---- */
+  const DEEP = {};
 
   /* ---- Glyphs for the reveal ---- */
   const GLYPH_WEST = { Aries:"♈", Taurus:"♉", Gemini:"♊", Cancer:"♋", Leo:"♌", Virgo:"♍", Libra:"♎", Scorpio:"♏", Sagittarius:"♐", Capricorn:"♑", Aquarius:"♒", Pisces:"♓" };
