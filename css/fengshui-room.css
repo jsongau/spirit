@@ -215,11 +215,16 @@
    ghost link set apart on the far right. A hairline top divider ties
    it to the board above.
    ============================================================ */
+/* The toolbar now lives in the right rail, below the critique cards, so it
+   stacks in a narrow column: the action pills share a wrapping row, and the
+   demoted Reset sits on its own line, right-aligned. */
 .fsr-toolbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: var(--s-3, 0.75rem);
-  padding: var(--s-3, 0.75rem) clamp(2px, 1vw, 10px) 0;
+  margin-top: var(--s-4, 1rem);
+  padding: var(--s-4, 1rem) 0 0;
   border-top: 1px solid transparent;
   border-image: var(--fsr-hairline-accent) 1;
 }
@@ -227,14 +232,15 @@
   display: flex;
   align-items: center;
   gap: var(--s-2, 0.5rem);
-  flex: 1 1 auto;
+  width: 100%;
   flex-wrap: wrap;
 }
-/* reset lives apart, pushed to the far right */
+.fsr-toolbar-actions .fsr-btn { flex: 1 1 auto; }
+/* reset lives apart, on its own line, pushed to the far right */
 .fsr-toolbar-reset {
-  flex: 0 0 auto;
-  margin-left: auto;
+  width: 100%;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
 

@@ -90,6 +90,17 @@ PNAV.DYN = (function () {
   return { todayLabel: todayLabel, moonPhaseName: moonPhaseName,
            yearBand: yearBand, moonInfo: moonInfo };
 })();
+/* Item tuple: [href, name, sub?, glyph?, dyn?, cal?, opts?]
+     cal   optional Chinese calligraphy character (6th slot). apply-nav
+           renders it as <span class="pn-glyph pn-cal"> (the row's glyph
+           box carries the character, serif, accent-tinted).
+     opts  optional object on the 7th slot: { sign, featured }.
+             sign      value baked as data-sign on the row (Western signs)
+                       so nav.js can light today's sun sign.
+             featured  true bakes the is-featured class on the row.
+   Groups may also carry a `feature` object (a .pn-feature aside beside a
+   pn-split list) and/or a `cta` object (the free e-book card), rendered
+   generically by apply-nav.mjs panelHTML. See that file for the shapes. */
 PNAV.MAP = [
   { key: "find", h: "Find yours", cls: "pn-find", accent: "brass",
     layout: "list",
@@ -97,7 +108,7 @@ PNAV.MAP = [
       ["/index.html#read", "Find yours"]
     ]
   },
-  { key: "explore", h: "Explore", accent: "brass",
+  { key: "explore", h: "Explore", accent: "teal",
     eyebrow: "Everything the wheel opens, one animal at the center",
     foot: ["/menagerie.html", "See all 144 animals"],
     layout: "explore",
@@ -114,11 +125,6 @@ PNAV.MAP = [
         ["/chinese-zodiac/", "Eastern wing"],
         ["/zodiac/",         "Zodiac crossings"],
         ["/menagerie.html",  "Rare crossings"]
-      ]},
-      { title: "Bonds", mark: "❦", items: [
-        ["/match.html",  "Test a match"],
-        ["/vs.html",     "Challenge a friend"],
-        ["/circle.html", "Circle of three"]
       ]},
       { title: "The Moon", mark: "☾", items: [
         ["/moon.html",        "The Moon tonight", PNAV.DYN.moonPhaseName(), null, "moon-phase"],
@@ -167,43 +173,108 @@ PNAV.MAP = [
       ]}
     ]
   },
-  { key: "menagerie", h: "Menagerie", accent: "brass",
-    eyebrow: "The Menagerie. Every animal, both wings.",
-    foot: ["/menagerie.html", "See all 144 animals"],
-    layout: "wings",
+  { key: "zodiac", h: "Zodiac", accent: "brass",
+    eyebrow: "The Eastern wheel, your birth year's animal",
+    foot: ["/chinese-zodiac/", "See the Eastern wheel"],
+    layout: "east",
+    feature: { eyebrow: "The year turns", title: "Year of the Fire Horse",
+      body: "2026. Once in sixty years the Horse catches fire, a year that rewards the bold and scorches the hesitant. If the Horse is yours, this is your decade's hinge.",
+      href: "/chinese-zodiac/fire-horse-2026/", link: "Read the Fire Horse", watermark: "馬" },
     cols: [
-      { title: "Western wing", mark: "☉", items: [
-        ["/western-zodiac/aries/",       "Aries",       "Mar 21 to Apr 19", "aries"],
-        ["/western-zodiac/taurus/",      "Taurus",      "Apr 20 to May 20", "taurus"],
-        ["/western-zodiac/gemini/",      "Gemini",      "May 21 to Jun 20", "gemini"],
-        ["/western-zodiac/cancer/",      "Cancer",      "Jun 21 to Jul 22", "cancer"],
-        ["/western-zodiac/leo/",         "Leo",         "Jul 23 to Aug 22", "leo"],
-        ["/western-zodiac/virgo/",       "Virgo",       "Aug 23 to Sep 22", "virgo"],
-        ["/western-zodiac/libra/",       "Libra",       "Sep 23 to Oct 22", "libra"],
-        ["/western-zodiac/scorpio/",     "Scorpio",     "Oct 23 to Nov 21", "scorpio"],
-        ["/western-zodiac/sagittarius/", "Sagittarius", "Nov 22 to Dec 21", "sagittarius"],
-        ["/western-zodiac/capricorn/",   "Capricorn",   "Dec 22 to Jan 19", "capricorn"],
-        ["/western-zodiac/aquarius/",    "Aquarius",    "Jan 20 to Feb 18", "aquarius"],
-        ["/western-zodiac/pisces/",      "Pisces",      "Feb 19 to Mar 20", "pisces"]
+      { items: [
+        ["/chinese-zodiac/horse/",   "Horse",   "2026 · Fire Horse",   "horse",   "cn-years-6",  "马", { featured: true }],
+        ["/chinese-zodiac/rat/",     "Rat",     PNAV.DYN.yearBand(0),  "rat",     "cn-years-0",  "鼠"],
+        ["/chinese-zodiac/ox/",      "Ox",      PNAV.DYN.yearBand(1),  "ox",      "cn-years-1",  "牛"],
+        ["/chinese-zodiac/tiger/",   "Tiger",   PNAV.DYN.yearBand(2),  "tiger",   "cn-years-2",  "虎"],
+        ["/chinese-zodiac/rabbit/",  "Rabbit",  PNAV.DYN.yearBand(3),  "rabbit",  "cn-years-3",  "兔"],
+        ["/chinese-zodiac/dragon/",  "Dragon",  PNAV.DYN.yearBand(4),  "dragon",  "cn-years-4",  "龙"],
+        ["/chinese-zodiac/snake/",   "Snake",   PNAV.DYN.yearBand(5),  "snake",   "cn-years-5",  "蛇"],
+        ["/chinese-zodiac/goat/",    "Goat",    PNAV.DYN.yearBand(7),  "goat",    "cn-years-7",  "羊"],
+        ["/chinese-zodiac/monkey/",  "Monkey",  PNAV.DYN.yearBand(8),  "monkey",  "cn-years-8",  "猴"],
+        ["/chinese-zodiac/rooster/", "Rooster", PNAV.DYN.yearBand(9),  "rooster", "cn-years-9",  "鸡"],
+        ["/chinese-zodiac/dog/",     "Dog",     PNAV.DYN.yearBand(10), "dog",     "cn-years-10", "狗"],
+        ["/chinese-zodiac/pig/",     "Pig",     PNAV.DYN.yearBand(11), "pig",     "cn-years-11", "猪"]
+      ]}
+    ],
+    chips: [
+      { label: "Eastern wing", cal: true, items: [
+        ["/chinese-zodiac/rat/",     "鼠", "Rat"],
+        ["/chinese-zodiac/ox/",      "牛", "Ox"],
+        ["/chinese-zodiac/tiger/",   "虎", "Tiger"],
+        ["/chinese-zodiac/rabbit/",  "兔", "Rabbit"],
+        ["/chinese-zodiac/dragon/",  "龙", "Dragon"],
+        ["/chinese-zodiac/snake/",   "蛇", "Snake"],
+        ["/chinese-zodiac/horse/",   "马", "Horse"],
+        ["/chinese-zodiac/goat/",    "羊", "Goat"],
+        ["/chinese-zodiac/monkey/",  "猴", "Monkey"],
+        ["/chinese-zodiac/rooster/", "鸡", "Rooster"],
+        ["/chinese-zodiac/dog/",     "狗", "Dog"],
+        ["/chinese-zodiac/pig/",     "猪", "Pig"]
+      ]}
+    ]
+  },
+  { key: "horoscope", h: "Horoscope", accent: "amethyst",
+    eyebrow: "The Western wheel, the sky on your birthday",
+    foot: ["/horoscopes/", "All horoscopes, sign by sign"],
+    layout: "west",
+    feature: { eyebrow: "", title: "", body: "", href: "/daily.html",
+      link: "Read today's horoscope", today: true },
+    cols: [
+      { items: [
+        ["/western-zodiac/aries/",       "Aries",       "Mar 21 to Apr 19", "aries",       null, null, { sign: "aries" }],
+        ["/western-zodiac/taurus/",      "Taurus",      "Apr 20 to May 20", "taurus",      null, null, { sign: "taurus" }],
+        ["/western-zodiac/gemini/",      "Gemini",      "May 21 to Jun 20", "gemini",      null, null, { sign: "gemini" }],
+        ["/western-zodiac/cancer/",      "Cancer",      "Jun 21 to Jul 22", "cancer",      null, null, { sign: "cancer" }],
+        ["/western-zodiac/leo/",         "Leo",         "Jul 23 to Aug 22", "leo",         null, null, { sign: "leo" }],
+        ["/western-zodiac/virgo/",       "Virgo",       "Aug 23 to Sep 22", "virgo",       null, null, { sign: "virgo" }],
+        ["/western-zodiac/libra/",       "Libra",       "Sep 23 to Oct 22", "libra",       null, null, { sign: "libra" }],
+        ["/western-zodiac/scorpio/",     "Scorpio",     "Oct 23 to Nov 21", "scorpio",     null, null, { sign: "scorpio" }],
+        ["/western-zodiac/sagittarius/", "Sagittarius", "Nov 22 to Dec 21", "sagittarius", null, null, { sign: "sagittarius" }],
+        ["/western-zodiac/capricorn/",   "Capricorn",   "Dec 22 to Jan 19", "capricorn",   null, null, { sign: "capricorn" }],
+        ["/western-zodiac/aquarius/",    "Aquarius",    "Jan 20 to Feb 18", "aquarius",    null, null, { sign: "aquarius" }],
+        ["/western-zodiac/pisces/",      "Pisces",      "Feb 19 to Mar 20", "pisces",      null, null, { sign: "pisces" }]
+      ]}
+    ],
+    chips: [
+      { label: "The twelve signs", items: [
+        ["/western-zodiac/aries/",       "♈", "Aries"],
+        ["/western-zodiac/taurus/",      "♉", "Taurus"],
+        ["/western-zodiac/gemini/",      "♊", "Gemini"],
+        ["/western-zodiac/cancer/",      "♋", "Cancer"],
+        ["/western-zodiac/leo/",         "♌", "Leo"],
+        ["/western-zodiac/virgo/",       "♍", "Virgo"],
+        ["/western-zodiac/libra/",       "♎", "Libra"],
+        ["/western-zodiac/scorpio/",     "♏", "Scorpio"],
+        ["/western-zodiac/sagittarius/", "♐", "Sagittarius"],
+        ["/western-zodiac/capricorn/",   "♑", "Capricorn"],
+        ["/western-zodiac/aquarius/",    "♒", "Aquarius"],
+        ["/western-zodiac/pisces/",      "♓", "Pisces"]
+      ]}
+    ]
+  },
+  { key: "sage", h: "Sage Wisdom", accent: "jade",
+    eyebrow: "The craft, what you do with your animal",
+    foot: ["/feng-shui/", "All of feng shui"],
+    layout: "sage",
+    cta: { tag: "Free · Feng Shui e-book", title: "Your animal's placement guide",
+      body: "Where to sleep, work, and rest, mapped to your animal. Free when you create a Zodi account.",
+      href: "/account.html", link: "Create free account", note: "opening soon" },
+    cols: [
+      { title: "Stones", mark: "◆", items: [
+        ["/stones.html",                             "Keeper stones"],
+        ["/traditions/birthstones-and-moonstone/",   "Birthstones and moonstone"],
+        ["/traditions/stones-for-your-animal/",      "Stones for your animal"]
       ]},
-      { title: "Eastern wing", mark: "☾", items: [
-        ["/chinese-zodiac/rat/",     "Rat",     PNAV.DYN.yearBand(0),  "rat",     "cn-years-0"],
-        ["/chinese-zodiac/ox/",      "Ox",      PNAV.DYN.yearBand(1),  "ox",      "cn-years-1"],
-        ["/chinese-zodiac/tiger/",   "Tiger",   PNAV.DYN.yearBand(2),  "tiger",   "cn-years-2"],
-        ["/chinese-zodiac/rabbit/",  "Rabbit",  PNAV.DYN.yearBand(3),  "rabbit",  "cn-years-3"],
-        ["/chinese-zodiac/dragon/",  "Dragon",  PNAV.DYN.yearBand(4),  "dragon",  "cn-years-4"],
-        ["/chinese-zodiac/snake/",   "Snake",   PNAV.DYN.yearBand(5),  "snake",   "cn-years-5"],
-        ["/chinese-zodiac/horse/",   "Horse",   PNAV.DYN.yearBand(6),  "horse",   "cn-years-6"],
-        ["/chinese-zodiac/goat/",    "Goat",    PNAV.DYN.yearBand(7),  "goat",    "cn-years-7"],
-        ["/chinese-zodiac/monkey/",  "Monkey",  PNAV.DYN.yearBand(8),  "monkey",  "cn-years-8"],
-        ["/chinese-zodiac/rooster/", "Rooster", PNAV.DYN.yearBand(9),  "rooster", "cn-years-9"],
-        ["/chinese-zodiac/dog/",     "Dog",     PNAV.DYN.yearBand(10), "dog",     "cn-years-10"],
-        ["/chinese-zodiac/pig/",     "Pig",     PNAV.DYN.yearBand(11), "pig",     "cn-years-11"]
+      { title: "Feng shui", mark: "卦", items: [
+        ["/feng-shui/bagua/",       "The bagua"],
+        ["/feng-shui/five-elements/", "Five phases"],
+        ["/feng-shui/kua-number/",  "Your Kua number"],
+        ["/directions/",            "Directions"]
       ]},
-      { title: "Begin here", mark: "✦", items: [
-        ["/menagerie.html", "All 144 animals", "the whole grid, both wings"],
-        ["/year.html",      "Year finder",     "any birthday, named"],
-        ["/learn.html",     "How it works",    "the two zodiacs, the Moon, and the reading"]
+      { title: "Proverbs and lore", mark: "❦", items: [
+        ["/proverbs/",    "Proverbs"],
+        ["/traditions/",  "Traditions"],
+        ["/habitat/",     "The Habitat"]
       ]}
     ]
   },
@@ -257,7 +328,10 @@ PNAV.CRAWL_EXTRA = [
   ["/directions/celestial-animals/", "The four celestial animals"],
   ["/cosmology/",                    "Cosmology"],
   ["/cosmology/four-pillars/",       "The Four Pillars"],
-  ["/elements/fire/",                "The five elements"]
+  ["/elements/fire/",                "The five elements"],
+  /* dropped when the standalone Menagerie group folded into Explore +
+     Zodiac; keep it linked so no crawlable destination is lost. */
+  ["/learn.html",                    "How it works"]
 ];
 
 PNAV.FEATURED = { href: "/circle.html", title: "Read your circle of three", blurb: "Compare two friends one to one, then read the whole group." };

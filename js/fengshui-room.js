@@ -596,7 +596,6 @@
 
   hero.appendChild(header);
   hero.appendChild(boardWrap);
-  hero.appendChild(toolbar);
 
   /* --- RIGHT rail: critiques, Kua pro layer, share card --- */
   var rail = document.createElement("div");
@@ -612,6 +611,7 @@
   readout.setAttribute("aria-live", "polite");
   readout.setAttribute("aria-atomic", "false");
   rail.appendChild(readout);
+  rail.appendChild(toolbar);   // controls live in the rail, below the critique cards
 
   // action pills into the toolbar; Reset is a small ghost link set apart
   var btnCheck = mkBtn("Check my placement", "fsr-btn fsr-btn-primary");
