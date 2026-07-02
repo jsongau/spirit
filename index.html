@@ -109,7 +109,7 @@
 <a class="skip-link" href="#pn-main">Skip to content</a>
 <header class="pn-bar" role="banner" data-static>
   <div class="pn-inner">
-    <a class="pn-brand" href="/index.html">Zodi <b>Animal</b><span class="pn-tagline">Unlock your Zodiac Animal</span></a>
+    <a class="pn-brand" href="/index.html">Zodi <b>Animals</b><span class="pn-tagline">Unlock your Zodiac Animal</span></a>
     <nav class="pn-nav" aria-label="Primary">
         <a class="pn-link pn-find active" href="/index.html#read">Find yours</a>
         <div class="pn-item" data-accent="brass"><button class="pn-trigger active" type="button" data-group="1" aria-haspopup="true" aria-expanded="false">Explore<span class="chev" aria-hidden="true"></span></button></div>
@@ -119,6 +119,7 @@
     </nav>
     <div class="pn-tools">
       <div class="pn-orb" data-orb hidden aria-hidden="true"></div>
+      <a class="pn-id" data-id-chip href="/index.html" hidden></a>
       <div class="pn-moonwrap">
         <button class="pn-moon" type="button" data-moon-chip aria-haspopup="true" aria-expanded="false" aria-controls="pn-moonpop" hidden></button>
         <div class="pn-moonpop" id="pn-moonpop" data-moon-pop role="region" aria-label="Moon phase tonight" hidden>
@@ -128,6 +129,7 @@
           <a class="pnm-link" href="/moon.html">Read the Moon tonight</a>
         </div>
       </div>
+      <a class="pn-ring" data-ring-slot href="/awakening.html" hidden></a>
       <button class="pn-theme" type="button" data-theme-toggle aria-label="Switch theme">&#9680;</button>
       <a class="pn-cta" href="/index.html#read">Reveal my animal <span aria-hidden="true">&#10022;</span></a>
     </div>
@@ -452,18 +454,20 @@
        home.js wires the identity ids; meter.js paints #awakening-slot;
        home-v4.js drives the share row, unlocks card, and moon card. -->
   <aside id="identity-rail" aria-label="Your identity and awakening">
+    <!-- MERGED IDENTITY MODULE: sigil + name + pairing + share row +
+         primary CTA + quiet Start over live in ONE hero card. home.js
+         still owns #identity-name / #identity-sigil / .identity-*;
+         home-v4.js owns #rail-share, the CTA mode, and the reset. -->
     <div id="identity-card" class="section--animal" data-state="invitation">
       <p class="rail-kicker">Your animal</p>
       <div id="identity-sigil" aria-hidden="true"><span class="identity-sigil-wait">✦</span></div>
       <p id="identity-name">Not yet named</p>
       <p class="identity-pairing" hidden></p>
       <p class="identity-invite">Enter your birth date to name your Primal Zodiac Animal.</p>
-      <button id="identity-share" type="button">Reveal my animal <span aria-hidden="true">✦</span></button>
-    </div>
 
     <!-- share icon row (canvas sharing widget): always available. Shares the
          generic invitation before the reveal; home-v4.js personalizes it after. -->
-    <div id="rail-share" class="rail-card">
+    <div id="rail-share" class="identity-shareblock">
       <p class="rail-kicker rail-kicker--sec">Share</p>
       <div class="shareRow">
         <a data-share="sms" href="#" title="Send by text message" aria-label="Send by text message">
@@ -486,6 +490,23 @@
           <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14"></path><path d="M19 5L5 19"></path></svg></span>
           <span class="lbl">X</span>
         </a>
+      </div>
+    </div>
+
+      <button id="identity-share" type="button">Reveal my animal <span aria-hidden="true">✦</span></button>
+
+      <!-- quiet reset: shown only while data-state="revealed" (CSS gate);
+           two-step confirm wired by home-v4.js. It clears the reveal keys
+           and reloads so every existing painter (home.js rail, home-v4
+           unlocks/share/CTA, app.js eye, meter.js) reboots from clean
+           storage — no second source of truth. -->
+      <div class="identity-reset">
+        <button id="identity-reset" type="button">Start over</button>
+        <span class="identity-reset-confirm" hidden>
+          <span class="q">Clear your animal from this device?</span>
+          <button id="identity-reset-yes" type="button">Yes, clear it</button>
+          <button id="identity-reset-no" type="button">Keep it</button>
+        </span>
       </div>
     </div>
 
@@ -537,7 +558,7 @@
   <div class="omf-moonrise" aria-hidden="true"><span class="omf-moonball"></span><span class="omf-hairline"></span></div>
   <div class="omf-field">
     <div class="omf-brandrow">
-      <span class="omf-wordmark">Zodi <b>Animal</b></span>
+      <span class="omf-wordmark">Zodi <b>Animals</b></span>
       <p class="omf-blurb">Find your Primal Animal, read where you stand, and see who you match. Built on the fusion of the Chinese and Western zodiacs.</p>
     </div>
     <nav class="sitemap-footer" aria-label="Explore Spirit Omega">

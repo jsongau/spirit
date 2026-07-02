@@ -1,6 +1,15 @@
-/* The Primal Oracle: Third Eye awakening meter for the nav bar.
+/* The Primal Oracle: Third Eye awakening ring for the nav bar.
    Contract: PNAV.features.progress(ctx)
-   - ctx.tools: right-side slot. Insert the chip BEFORE ctx.explore.
+   - The build (apply-nav.mjs) pre-renders an empty, hidden slot
+     <a class="pn-ring" data-ring-slot href="/awakening.html" hidden>
+     in .pn-tools, between the moon chip and the theme toggle. This
+     feature FILLS that slot: a small SVG ring with the openness %
+     centered inside it (grid stack in nav-core.css, no absolute
+     positioning). Nothing is ever blind-inserted into the bar.
+   - The tooltip (title/aria-label) explains the number. Clicking
+     opens the page's Third Eye HUD (.eyeHud) when one is present
+     and visible; otherwise the anchor navigates to /awakening.html.
+   - All colors come from nav-core.css tokens (no injected styles).
    Defensive throughout: this module never throws. */
 (function () {
   "use strict";
@@ -56,31 +65,13 @@
     return "Sleeper";
   }
 
-  function injectStyle() {
-    try {
-      if (document.getElementById("pnp-style")) return;
-      var css =
-        ".pnp-ring{display:inline-block;vertical-align:middle;line-height:0}" +
-        ".pnp-ring svg{display:block;transform:rotate(-90deg)}" +
-        ".pnp-track{stroke:rgba(140,120,170,0.30)}" +
-        ".pnp-fill{stroke:#b08d57;transition:stroke-dasharray .4s ease}" +
-        ".pn-chip[data-pnp] .lbl{margin-left:6px;font-size:12px;font-weight:600;letter-spacing:.02em;color:#7c5cbf}";
-      var style = document.createElement("style");
-      style.id = "pnp-style";
-      style.type = "text/css";
-      style.appendChild(document.createTextNode(css));
-      (document.head || document.documentElement).appendChild(style);
-    } catch (e) {
-      /* never throw */
-    }
-  }
-
   function buildRing(openness) {
-    // ~20px ring. radius chosen so circumference is friendly.
-    var size = 20;
+    // 34px ring inside the 38px slot; stroke and colors from CSS
+    // (.pnp-track / .pnp-fill in nav-core.css, tokens only).
+    var size = 34;
     var stroke = 3;
-    var r = (size - stroke) / 2; // 8.5
-    var c = 2 * Math.PI * r; // circumference
+    var r = (size - stroke) / 2;
+    var c = 2 * Math.PI * r;
     var dash = (Math.max(0, Math.min(100, openness)) / 100) * c;
     var cx = size / 2;
 
@@ -89,6 +80,8 @@
     svg.setAttribute("width", String(size));
     svg.setAttribute("height", String(size));
     svg.setAttribute("viewBox", "0 0 " + size + " " + size);
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("focusable", "false");
 
     var track = document.createElementNS(svgns, "circle");
     track.setAttribute("class", "pnp-track");
@@ -110,40 +103,58 @@
 
     svg.appendChild(track);
     svg.appendChild(fill);
+    return svg;
+  }
 
-    var wrap = document.createElement("span");
-    wrap.className = "pnp-ring";
-    wrap.appendChild(svg);
-    return wrap;
+  function hudVisible(hud) {
+    if (!hud) return false;
+    try {
+      return !!(hud.offsetWidth || hud.offsetHeight || hud.getClientRects().length);
+    } catch (e) {
+      return false;
+    }
   }
 
   PNAV.features.progress = function (ctx) {
     try {
       if (!ctx || !ctx.tools) return;
 
-      injectStyle();
+      var scope = ctx.bar || document;
+      var slot = scope.querySelector("[data-ring-slot]");
+      if (!slot) return; /* no pre-rendered slot: nothing to hydrate */
 
       var openness = readOpenness();
       var level = levelFor(openness);
 
-      var chip = document.createElement("a");
-      chip.className = "pn-chip";
-      chip.setAttribute("href", "/awakening.html");
-      chip.setAttribute("data-pnp", "1");
-      chip.title = "Awakening: " + level + " (" + openness + "%)";
+      slot.textContent = "";
+      slot.appendChild(buildRing(openness));
 
-      chip.appendChild(buildRing(openness));
+      var pct = document.createElement("span");
+      pct.className = "pn-ring-pct";
+      pct.setAttribute("aria-hidden", "true");
+      pct.textContent = openness + "%";
+      slot.appendChild(pct);
 
-      var lbl = document.createElement("span");
-      lbl.className = "lbl";
-      lbl.textContent = openness + "%";
-      chip.appendChild(lbl);
+      var line = "Awakening: " + level + ", " + openness +
+        "% of the rites complete. The Third Eye opens as you finish them.";
+      slot.title = line;
+      slot.setAttribute("aria-label", line);
 
-      if (ctx.explore && ctx.explore.parentNode === ctx.tools) {
-        ctx.tools.insertBefore(chip, ctx.explore);
-      } else {
-        ctx.tools.appendChild(chip);
-      }
+      slot.hidden = false;
+
+      // Click: open the page's HUD when it exists and is visible;
+      // otherwise the anchor follows its href to /awakening.html.
+      slot.addEventListener("click", function (e) {
+        try {
+          var hud = document.querySelector(".eyeHud");
+          if (!hudVisible(hud)) return; /* navigate */
+          e.preventDefault();
+          if (hud.classList.contains("is-collapsed")) hud.click();
+          try { hud.focus(); } catch (err) {}
+        } catch (err) {
+          /* fall through to navigation */
+        }
+      });
     } catch (e) {
       /* never throw */
     }

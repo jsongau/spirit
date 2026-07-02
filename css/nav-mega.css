@@ -12,6 +12,10 @@
      header.pn-bar > .pn-inner > nav.pn-nav
        .pn-item > button.pn-trigger[data-group][aria-haspopup][aria-expanded]
        .pn-tools > .pn-orb[data-orb]           (hidden; Phase 5 fills it)
+       .pn-tools > a.pn-id[data-id-chip] + .pn-moonwrap + a.pn-ring[data-ring-slot]
+                 + button.pn-theme + a.pn-cta  (right cluster; nav-core.css.
+                 NOTE: the bar chips do NOT use .pn-chip — that class is
+                 the 32px round PANEL wing-strip chip below, glyph only)
      .pn-panel[data-group][data-accent] hidden
        .pn-panel-eyebrow
        .pn-cols > .pn-col > (.pn-col-title)

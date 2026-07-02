@@ -336,6 +336,17 @@
 
     paintShare(a, revealed);
     paintRevealCta(revealed);
+    tidyPairing(a, revealed);
+  }
+
+  /* keep the pairing line in the canvas "Sign × Year" mono format after
+     home.js paints it ("Cancer and the Water Snake" → "Cancer × Snake 蛇").
+     Idempotent; runs on the same events/poll home.js repaints on. */
+  function tidyPairing(a, revealed) {
+    if (!revealed || !a || !a.sign || !a.animal) return;
+    var line = a.sign + " × " + a.animal + (a.cn ? " " + a.cn : "");
+    var el = $("#identity-name .id-pairing");
+    if (el && el.textContent !== line) el.textContent = line;
   }
 
   /* ============================================================
@@ -381,8 +392,33 @@
     try { window.dispatchEvent(new CustomEvent("po:awaken")); } catch (e) {}
   }
 
+  // one clipboard path for the rail row, the modal, and Instagram copies
+  function copyPlain(text, done) {
+    function legacy() {
+      try {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.parentNode.removeChild(ta);
+        if (done) done();
+      } catch (e) {}
+    }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { if (done) done(); })
+          .catch(legacy);
+        return;
+      }
+    } catch (e) {}
+    legacy();
+  }
+
   function copyLine(text, btn) {
-    var done = function () {
+    copyPlain(text, function () {
       if (btn) {
         var lbl = $(".lbl", btn);
         if (lbl) {
@@ -392,24 +428,7 @@
         }
       }
       markShared();
-    };
-    try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(done).catch(function () {});
-        return;
-      }
-    } catch (e) {}
-    try {
-      var ta = document.createElement("textarea");
-      ta.value = text;
-      ta.style.position = "absolute";
-      ta.style.left = "-9999px";
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand("copy");
-      ta.parentNode.removeChild(ta);
-      done();
-    } catch (e) {}
+    });
   }
 
   var shareWired = false;
@@ -480,8 +499,7 @@
       e.stopPropagation(); // capture phase: home.js's own handler never runs
       var a = resolveAnimal();
       if (a && a.primal) {
-        var slug = slugOf(a);
-        location.href = "/vs.html" + (slug ? "?with=" + encodeURIComponent(slug) : "");
+        openChallengeModal(a, btn);
         return;
       }
       // pre-reveal: walk them to the reader and focus the first segment
@@ -498,6 +516,211 @@
         }, REDUCE ? 0 : 350);
       }
     }, true);
+  }
+
+  /* ============================================================
+     5c. CHALLENGE MODAL — "Send this to someone". Opens from the
+     rail CTA and from #challengeBtn once an animal is named (both
+     keep working as plain links/buttons with JS off or pre-reveal).
+     Token-styled panel, blurred backdrop, Esc / backdrop / ✕ close,
+     focus trap, aria-modal, scroll lock.
+     ============================================================ */
+  var chModal = null, chOpener = null, chKeyHandler = null;
+
+  function challengeUrl(a) {
+    var slug = slugOf(a);
+    var origin = "https://spirit-omega.vercel.app";
+    try { if (location.origin && location.origin.indexOf("http") === 0) origin = location.origin; } catch (e) {}
+    return origin + "/vs.html" + (slug ? "?with=" + encodeURIComponent(slug) : "");
+  }
+
+  function challengeLine(a, url) {
+    var mid = (a.sign && a.animal) ? (a.sign + " × " + a.animal + ". ") : "";
+    return "I am the " + a.primal + ". " + mid + "What are you? " + url;
+  }
+
+  var CH_ICONS = {
+    sms: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="4"></rect><path d="M8 17v4l4-4"></path></svg>',
+    email: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="M4 7l8 6 8-6"></path></svg>',
+    x: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14"></path><path d="M19 5L5 19"></path></svg>',
+    instagram: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"></circle></svg>'
+  };
+
+  function buildChallengeModal() {
+    if (chModal) return chModal;
+    chModal = document.createElement("div");
+    chModal.className = "v4-modal";
+    chModal.id = "challengeModal";
+    chModal.hidden = true;
+    chModal.innerHTML =
+      '<div class="v4-modal-backdrop" data-close></div>' +
+      '<div class="v4-modal-panel" role="dialog" aria-modal="true" aria-labelledby="challengeModalTitle">' +
+        '<button class="v4-modal-close" type="button" data-close aria-label="Close">&#10005;</button>' +
+        '<p class="v4-modal-kicker">Challenge a friend</p>' +
+        '<h3 class="v4-modal-title" id="challengeModalTitle">Send this to someone</h3>' +
+        '<p class="v4-modal-sub"></p>' +
+        '<div class="v4-copyrow">' +
+          '<input id="challengeUrl" readonly aria-label="Your challenge link">' +
+          '<button id="challengeCopy" type="button">Copy</button>' +
+        '</div>' +
+        '<div class="v4-modal-actions">' +
+          '<a data-modal-share="sms" href="#"><span class="ic">' + CH_ICONS.sms + '</span>SMS</a>' +
+          '<a data-modal-share="email" href="#"><span class="ic">' + CH_ICONS.email + '</span>Email</a>' +
+          '<a data-modal-share="x" href="#" target="_blank" rel="noopener"><span class="ic">' + CH_ICONS.x + '</span>X</a>' +
+          '<button data-modal-share="instagram" type="button"><span class="ic">' + CH_ICONS.instagram + '</span>Instagram</button>' +
+        '</div>' +
+        '<p class="v4-modal-note">They answer with a birthday. The wheel names the pair.</p>' +
+      '</div>';
+    document.body.appendChild(chModal);
+
+    $all("[data-close]", chModal).forEach(function (el) {
+      on(el, "click", closeChallengeModal);
+    });
+
+    var copyBtn = $("#challengeCopy", chModal);
+    on(copyBtn, "click", function () {
+      var input = $("#challengeUrl", chModal);
+      copyPlain(input ? input.value : "", function () {
+        copyBtn.classList.add("is-copied");
+        copyBtn.textContent = "Copied ✓";
+        window.setTimeout(function () {
+          copyBtn.classList.remove("is-copied");
+          copyBtn.textContent = "Copy";
+        }, 1800);
+        markShared();
+      });
+    });
+
+    on($('[data-modal-share="instagram"]', chModal), "click", function () {
+      copyPlain(chModal._line || "", function () {
+        toast("Caption copied", "Paste it in Instagram.");
+        markShared();
+      });
+    });
+    ["sms", "email", "x"].forEach(function (k) {
+      on($('[data-modal-share="' + k + '"]', chModal), "click", markShared);
+    });
+
+    return chModal;
+  }
+
+  function openChallengeModal(a, opener) {
+    if (!a || !a.primal) return;
+    var m = buildChallengeModal();
+    var url = challengeUrl(a);
+    m._line = challengeLine(a, url);
+
+    var input = $("#challengeUrl", m);
+    if (input) input.value = url;
+    var sub = $(".v4-modal-sub", m);
+    if (sub) sub.textContent = "You are the " + a.primal + ". Send the link; whoever opens it answers with a birthday and the wheel reads the pair.";
+
+    var sms = $('[data-modal-share="sms"]', m);
+    var email = $('[data-modal-share="email"]', m);
+    var x = $('[data-modal-share="x"]', m);
+    if (sms) sms.href = "sms:?&body=" + encodeURIComponent(m._line);
+    if (email) email.href = "mailto:?subject=" + encodeURIComponent("What animal are you?") + "&body=" + encodeURIComponent(m._line);
+    if (x) x.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(m._line);
+
+    chOpener = opener || document.activeElement;
+    m.hidden = false;
+    document.body.classList.add("v4-modal-open");
+    var first = $("#challengeCopy", m) || $(".v4-modal-close", m);
+    if (first) { try { first.focus(); } catch (e) {} }
+
+    chKeyHandler = function (e) {
+      if (e.key === "Escape") { e.preventDefault(); closeChallengeModal(); return; }
+      if (e.key !== "Tab") return;
+      var f = $all('a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])', m);
+      if (!f.length) return;
+      var head = f[0], tail = f[f.length - 1];
+      var inside = m.contains(document.activeElement);
+      if (e.shiftKey && (document.activeElement === head || !inside)) {
+        e.preventDefault(); tail.focus();
+      } else if (!e.shiftKey && (document.activeElement === tail || !inside)) {
+        e.preventDefault(); head.focus();
+      }
+    };
+    document.addEventListener("keydown", chKeyHandler, true);
+  }
+
+  function closeChallengeModal() {
+    if (!chModal || chModal.hidden) return;
+    chModal.hidden = true;
+    document.body.classList.remove("v4-modal-open");
+    if (chKeyHandler) {
+      document.removeEventListener("keydown", chKeyHandler, true);
+      chKeyHandler = null;
+    }
+    if (chOpener && chOpener.focus) { try { chOpener.focus(); } catch (e) {} }
+    chOpener = null;
+  }
+
+  // the result section's "Challenge a friend" opens the same modal
+  // (pre-reveal / JS-off it stays the plain /vs.html link)
+  function initChallengeBtn() {
+    var btn = $("#challengeBtn");
+    if (!btn) return;
+    on(btn, "click", function (e) {
+      var a = resolveAnimal();
+      if (!a || !a.primal) return; // let the link navigate
+      if (e && e.preventDefault) e.preventDefault();
+      openChallengeModal(a, btn);
+    });
+  }
+
+  /* ============================================================
+     5d. START OVER — a quiet reset with a confirm step. Clears the
+     reveal keys inside the SITE'S OWN storage (primal_oracle_v1:
+     birth / recent / rites; po_game: seen / celebrated — the exact
+     keys app.js, home.js, game.js and meter.js read) and reloads,
+     so every existing painter reboots from clean storage: rail back
+     to the invitation, CTA back to "Reveal my animal", unlock cards
+     re-veil, share row generic, eye asleep. No second source of
+     truth — an in-place repaint would leak, because app.js and
+     meter.js hold in-memory copies that re-save the old state.
+     (email + streak/lastVisit survive; they are not reveal state.)
+     ============================================================ */
+  function resetOracle() {
+    try {
+      var o = JSON.parse(localStorage.getItem("primal_oracle_v1") || "{}") || {};
+      delete o.birth; delete o.recent; delete o.rites;
+      localStorage.setItem("primal_oracle_v1", JSON.stringify(o));
+    } catch (e) {
+      try { localStorage.removeItem("primal_oracle_v1"); } catch (e2) {}
+    }
+    try {
+      var g = JSON.parse(localStorage.getItem("po_game") || "{}") || {};
+      delete g.seen; delete g.celebrated;
+      localStorage.setItem("po_game", JSON.stringify(g));
+    } catch (e) {
+      try { localStorage.removeItem("po_game"); } catch (e2) {}
+    }
+    try { location.replace(location.pathname); }
+    catch (e) { try { location.reload(); } catch (e2) {} }
+  }
+
+  function initReset() {
+    var start = $("#identity-reset");
+    var confirmRow = $(".identity-reset-confirm");
+    var yes = $("#identity-reset-yes");
+    var no = $("#identity-reset-no");
+    if (!start || !confirmRow || !yes || !no) return;
+
+    function arm(open) {
+      start.hidden = open;
+      confirmRow.hidden = !open;
+      try { (open ? no : start).focus(); } catch (e) {}
+    }
+    on(start, "click", function () { arm(true); });
+    on(no, "click", function () { arm(false); });
+    on(document, "keydown", function (e) {
+      if (e.key === "Escape" && !confirmRow.hidden) arm(false);
+    });
+    on(yes, "click", function () {
+      yes.disabled = true;
+      resetOracle();
+    });
   }
 
   /* ============================================================
@@ -592,6 +815,8 @@
     try { initSegments(); } catch (e) {}
     try { initHud(); } catch (e) {}
     try { initRevealCta(); } catch (e) {}
+    try { initChallengeBtn(); } catch (e) {}
+    try { initReset(); } catch (e) {}
     try { initBarCta(); } catch (e) {}
     try { paintUnlocks(); } catch (e) {}
 

@@ -277,13 +277,47 @@ window.PNAV = window.PNAV || { features: {} };
     const brandLink = doc.createElement("a");
     brandLink.className = "pn-drawer-brand";
     brandLink.href = "/index.html";
-    brandLink.innerHTML = brand ? brand.innerHTML : "The Primal <b>Oracle</b>";
+    brandLink.innerHTML = brand ? brand.innerHTML : "Zodi <b>Animals</b>";
     const closeBtn = doc.createElement("button");
     closeBtn.type = "button";
     closeBtn.className = "pn-drawer-close";
     closeBtn.textContent = "Close";
     top.append(brandLink, closeBtn);
     sheet.appendChild(top);
+
+    /* tool chips strip: the bar's identity chip, moon chip, and
+       awakening ring land here so the responsive collapse ladder
+       (<1280px ring, <1100px identity, <900px whole bar) loses
+       nothing. Rebuilt on every open so the clones always match the
+       live bar state (styled by nav-core.css, .pn-drawer-chips). */
+    const chipStrip = doc.createElement("div");
+    chipStrip.className = "pn-drawer-chips";
+    sheet.appendChild(chipStrip);
+
+    function syncChips() {
+      chipStrip.textContent = "";
+      const id = bar.querySelector("[data-id-chip]");
+      if (id && !id.hidden && id.firstChild) {
+        const c = id.cloneNode(true);
+        c.hidden = false;
+        chipStrip.appendChild(c);
+      }
+      const mc = bar.querySelector("[data-moon-chip]");
+      if (mc && !mc.hidden && mc.firstChild) {
+        const a = doc.createElement("a");
+        a.className = "pn-moon";
+        a.href = "/moon.html";
+        a.title = mc.title || "The Moon tonight";
+        a.innerHTML = mc.innerHTML;
+        chipStrip.appendChild(a);
+      }
+      const ring = bar.querySelector("[data-ring-slot]");
+      if (ring && !ring.hidden && ring.firstChild) {
+        const c = ring.cloneNode(true);
+        c.hidden = false;
+        chipStrip.appendChild(c);
+      }
+    }
 
     /* accordion: one group per pre-rendered panel */
     const acc = doc.createElement("div");
@@ -379,6 +413,7 @@ window.PNAV = window.PNAV || { features: {} };
 
     function open() {
       lastFocus = doc.activeElement;
+      syncChips();
       drawer.classList.add("open");
       burger.setAttribute("aria-expanded", "true");
       doc.body.style.overflow = "hidden";

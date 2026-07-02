@@ -51,7 +51,7 @@ body.home-v4 {
    ------------------------------------------------------------ */
 .omv4-sub {
   position: sticky;
-  top: var(--pn-bar-h, 62px);
+  top: var(--pn-bar-h, 64px); /* same fallback as every other consumer */
   z-index: 40;
   background: color-mix(in oklab, var(--ink-2) 88%, transparent);
   backdrop-filter: blur(10px);
@@ -174,13 +174,23 @@ body.home-v4 {
 @media (min-width: 900px) {
   /* the identity rail sits flush against the LEFT viewport edge (24px
      gutter), not centered inside a 1280px shell; the content column
-     takes the freed room but stays capped for measure. */
+     starts immediately after the rail + ONE consistent 48px gutter and
+     stays capped for measure — anchored LEFT, never centered. */
   .home-v4 .home-shell {
+    --v4-rail-top: clamp(48px, 7vh, 80px); /* = hero padding-top, so the
+                                              rail's first card starts
+                                              level with the hero eyebrow */
     grid-template-columns: [rail] 300px [main] minmax(0, 1fr);
     max-width: none;
     padding-inline: 24px clamp(16px, 3vw, 32px);
+    column-gap: 48px;
   }
-  .home-v4 .home-main { grid-column: main; grid-row: 1; max-width: 1080px; }
+  .home-v4 .home-main {
+    grid-column: main;
+    grid-row: 1;
+    max-width: 1080px;
+    justify-self: start; /* left edge locks to rail + gutter, always */
+  }
   /* keep the sticky sub-bar on the same left gutter so the rhythm holds */
   .omv4-sub-inner {
     max-width: none;
@@ -188,24 +198,39 @@ body.home-v4 {
   }
   /* the rail is a PLAIN sticky flex column: no max-height, no inner
      scroller (the old hidden-scrollbar clip read as cards stacking on
-     one another in screenshots). Sticky top = bar + sub-bar + breath,
-     all from shared knobs: --pn-bar-h (nav) and --v4-sub-h (measured
-     from .omv4-sub by home-v4.js; 48px is its min-height fallback). */
+     one another in screenshots). Its top padding exists ONLY so the
+     first card sits level with the hero eyebrow at rest; the sticky
+     top subtracts that same padding, so when stuck the first CARD (not
+     the dead padding) sits 12px under the bar + sub-bar. Shared knobs
+     only: --pn-bar-h (nav) and --v4-sub-h (measured from .omv4-sub by
+     home-v4.js; 48px is its min-height fallback). */
   .home-v4 #identity-rail {
     grid-column: rail;
     grid-row: 1;
     position: sticky;
-    top: calc(var(--pn-bar-h, 64px) + var(--v4-sub-h, 48px) + 16px);
+    top: calc(var(--pn-bar-h, 64px) + var(--v4-sub-h, 48px) + 12px - var(--v4-rail-top, 48px));
     align-self: start;
     max-height: none;
     overflow: visible;
-    padding-block: 32px;
+    padding-block: var(--v4-rail-top, 48px) 32px;
     order: 0;
   }
   .home-v4 .rail-jump { display: block; }
   .home-v4 .home-dock { display: none; }
   .home-v4.pn-has-bar { padding-bottom: 0; }
 }
+
+/* ---- one shared LEFT column edge for everything in the main column.
+   home.css zig-zags even-numbered bands (`margin-inline-start: auto`
+   on their .prose) toward the middle/right; on the v4 homepage every
+   eyebrow, H2, paragraph, FAQ block, and the reader card hang from
+   the SAME left edge. Measure stays comfortable but left-anchored. */
+.home-v4 .home-main > .band:nth-of-type(even) .prose,
+.home-v4 .home-main > .band.band--right,
+.home-v4 .home-main .prose {
+  margin-inline: 0;
+}
+.home-v4 .home-main .prose { max-width: 70ch; }
 
 /* ------------------------------------------------------------
    3. Rail cards (canvas left rail)
@@ -256,6 +281,32 @@ body.home-v4 {
   background: linear-gradient(135deg, var(--accent-soft), transparent);
   border: 1px solid var(--line-soft);
   color: var(--accent);
+  /* alive: a slow breathing glow + an occasional shimmer sweep.
+     CSS only; both are stilled under prefers-reduced-motion. */
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 0 14px var(--accent-soft);
+  animation: v4-sigil-glow 6.5s ease-in-out infinite;
+}
+.home-v4 #identity-sigil::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 42%, rgba(255, 255, 255, .16) 50%, transparent 58%) no-repeat;
+  background-size: 240% 100%;
+  background-position: 190% 0;
+  animation: v4-sigil-shimmer 7.5s ease-in-out infinite;
+}
+@keyframes v4-sigil-glow {
+  0%, 100% { box-shadow: 0 0 12px var(--accent-soft); }
+  50%      { box-shadow: 0 0 26px var(--accent-soft), 0 0 52px var(--season-soft); }
+}
+@keyframes v4-sigil-shimmer {
+  0%, 72%   { background-position: 190% 0; }
+  92%, 100% { background-position: -90% 0; }
 }
 .home-v4 .identity-sigil-wait { font-family: var(--serif); font-size: 2rem; color: var(--accent); }
 .home-v4 #identity-name {
@@ -317,9 +368,76 @@ body.home-v4 {
 }
 .home-v4 #identity-share:active { transform: scale(.97); }
 
-/* share icon row (canvas sharing widget, appears after reveal) */
+/* quiet "Start over" reset: hidden until home.js flips the card to
+   data-state="revealed"; a two-step confirm before anything clears */
+.home-v4 .identity-reset { display: none; }
+.home-v4 #identity-card[data-state="revealed"] .identity-reset {
+  display: block;
+  margin-top: 2px;
+}
+.home-v4 #identity-reset {
+  background: none;
+  border: 0;
+  padding: 4px 0;
+  cursor: pointer;
+  font: 400 .72rem/1 var(--sans);
+  color: var(--faint);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color .2s ease;
+}
+.home-v4 #identity-reset:hover,
+.home-v4 #identity-reset:focus-visible { color: var(--rose); }
+.home-v4 .identity-reset-confirm {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font: 400 .72rem/1.5 var(--sans);
+  color: var(--muted);
+}
+.home-v4 .identity-reset-confirm[hidden] { display: none; }
+.home-v4 .identity-reset-confirm .q { flex: 1 1 100%; }
+.home-v4 .identity-reset-confirm button {
+  background: var(--field);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  color: var(--ivory);
+  font: 600 .68rem/1 var(--sans);
+  padding: 7px 12px;
+  cursor: pointer;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.home-v4 .identity-reset-confirm button:hover,
+.home-v4 .identity-reset-confirm button:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px var(--accent-soft);
+}
+.home-v4 #identity-reset-yes { border-color: var(--rose); color: var(--rose); }
+.home-v4 #identity-reset-yes:hover,
+.home-v4 #identity-reset-yes:focus-visible {
+  border-color: var(--rose);
+  box-shadow: 0 0 10px var(--rose);
+}
+
+/* share icon row (canvas sharing widget) — now lives INSIDE the
+   merged identity card, separated by a hairline; no panel-in-a-panel */
 .home-v4 #rail-share[hidden] { display: none; }
-.home-v4 #rail-share { animation: omv4-rise .5s ease both; }
+.home-v4 #rail-share {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-soft);
+  background: none;
+  border-inline: 0;
+  border-bottom: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding-inline: 0;
+  padding-bottom: 0;
+}
 .home-v4 .shareRow { display: flex; justify-content: space-between; gap: 4px; }
 .home-v4 .shareRow > a,
 .home-v4 .shareRow > button {
@@ -760,8 +878,24 @@ body.home-v4 {
   border-radius: 16px;
   padding: 20px;
   opacity: .75;
-  transition: opacity .3s ease, border-color .3s ease;
+  transition: opacity .3s ease, border-color .3s ease,
+              transform .25s var(--ease-io, ease), box-shadow .25s var(--ease-io, ease);
 }
+/* hover = SHINE, never dim: even a still-locked card lights up under
+   the cursor — full presence, accent border, soft glow, slight lift,
+   and the little tag glyph brightens. (Nothing on this page may lower
+   opacity or filter on hover; this is the inversion of the old dim.) */
+.home-v4 .unlockCard:hover,
+.home-v4 .unlockCard:focus-within {
+  opacity: 1;
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px var(--accent-soft);
+}
+.home-v4 .unlockCard:hover .u-tag,
+.home-v4 .unlockCard:focus-within .u-tag { color: var(--accent-bright); }
+.home-v4 .unlockCard:hover h3,
+.home-v4 .unlockCard:focus-within h3 { color: var(--moon); }
 .home-v4 .unlockCard .u-tag {
   margin: 0 0 6px;
   font: 400 .62rem/1 var(--mono);
@@ -951,6 +1085,172 @@ body.home-v4 {
 }
 
 /* ------------------------------------------------------------
+   12b. Challenge share modal (home-v4.js builds + wires it).
+   Token-styled panel over a blurred backdrop; Esc / backdrop /
+   close button all dismiss; focus is trapped while open.
+   ------------------------------------------------------------ */
+body.v4-modal-open { overflow: hidden; }
+.v4-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200; /* above pn-bar (120) and the eye HUD (60) */
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.v4-modal[hidden] { display: none; }
+.v4-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in oklab, var(--ink) 64%, transparent);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+@supports not (background: color-mix(in oklab, red, blue)) {
+  .v4-modal-backdrop { background: var(--ink); opacity: .84; }
+}
+.v4-modal-panel {
+  position: relative;
+  z-index: 1;
+  width: min(520px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: clamp(22px, 4vw, 30px);
+  box-shadow: var(--e-2);
+  animation: omv4-rise .35s var(--ease-io, ease) both;
+}
+.v4-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: 1px solid var(--line-soft);
+  border-radius: 50%;
+  color: var(--muted);
+  font-size: .85rem;
+  cursor: pointer;
+  transition: border-color .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.v4-modal-close:hover,
+.v4-modal-close:focus-visible {
+  border-color: var(--accent);
+  color: var(--moon);
+  box-shadow: 0 0 12px var(--accent-soft);
+}
+.v4-modal-kicker {
+  margin: 0 0 8px;
+  font: 600 .66rem/1 var(--sans);
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--season);
+}
+.v4-modal-title {
+  margin: 0 0 6px;
+  font: 560 1.65rem/1.15 var(--serif);
+  font-optical-sizing: auto;
+  color: var(--moon);
+}
+.v4-modal-sub {
+  margin: 0 0 18px;
+  font-size: .88rem;
+  line-height: 1.55;
+  color: var(--body-text);
+}
+.v4-copyrow { display: flex; gap: 8px; flex-wrap: wrap; }
+.v4-copyrow input {
+  flex: 1 1 200px;
+  min-width: 0;
+  height: 50px;
+  padding: 0 14px;
+  background: var(--field);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--moon);
+  font: 400 .84rem/1 var(--mono);
+}
+.v4-copyrow input:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+/* the big Copy: same gradient + sheen contract as the identity CTA */
+#challengeCopy {
+  flex: 0 0 auto;
+  height: 50px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background:
+    linear-gradient(105deg, rgba(255,255,255,0) 42%, rgba(255,255,255,.5) 50%, rgba(255,255,255,0) 58%) no-repeat,
+    linear-gradient(135deg, var(--cta-g1), var(--cta-g2));
+  background-size: 220% 100%, 180% 180%;
+  background-position: -160% 50%, 0% 50%;
+  color: var(--cta-text);
+  font: 700 .88rem/1 var(--sans);
+  box-shadow: 0 4px 16px var(--accent-soft);
+  transition: transform .25s var(--ease-io, ease), box-shadow .25s var(--ease-io, ease);
+}
+#challengeCopy:hover,
+#challengeCopy:focus-visible {
+  animation: om-sheen .7s ease forwards;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px var(--accent-soft), 0 0 0 3px var(--sec-soft);
+}
+#challengeCopy:active { transform: scale(.97); }
+#challengeCopy.is-copied {
+  background: var(--accent-soft);
+  color: var(--moon);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+.v4-modal-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+}
+.v4-modal-actions a,
+.v4-modal-actions button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 6px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: var(--ivory);
+  text-decoration: none;
+  cursor: pointer;
+  font: 500 .7rem/1 var(--sans);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.v4-modal-actions a:hover,
+.v4-modal-actions a:focus-visible,
+.v4-modal-actions button:hover,
+.v4-modal-actions button:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 14px var(--accent-soft);
+  transform: translateY(-2px);
+}
+.v4-modal-actions .ic { line-height: 0; color: var(--accent); }
+.v4-modal-note {
+  margin: 14px 0 0;
+  font: 400 .72rem/1.5 var(--mono);
+  color: var(--faint);
+}
+@media (max-width: 420px) {
+  .v4-modal-actions { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ------------------------------------------------------------
    13. Motion guard
    ------------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
@@ -962,6 +1262,16 @@ body.home-v4 {
   .home-v4 #rail-share,
   .home-v4 .eyeHud { animation: none !important; }
   .home-v4 #identity-share:hover { animation: none; transform: none; }
+  /* the sigil rests at its quiet glow; no breathing, no shimmer sweep */
+  .home-v4 #identity-sigil { animation: none; }
+  .home-v4 #identity-sigil::after { animation: none; }
+  .home-v4 .unlockCard:hover,
+  .home-v4 .unlockCard:focus-within { transform: none; }
+  .v4-modal-panel { animation: none; }
+  #challengeCopy:hover,
+  #challengeCopy:focus-visible { animation: none; transform: none; }
+  .v4-modal-actions a:hover,
+  .v4-modal-actions button:hover { transform: none; }
 }
 
 /* ------------------------------------------------------------

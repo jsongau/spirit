@@ -1,7 +1,12 @@
 /* ============================================================
-   THE PRIMAL ORACLE — menagerie page
+   THE PRIMAL ORACLE — menagerie page (v2)
    Browse all 144 Primal Animals. Inherits the celestial palette
-   and tokens from oracle.css; this file only adds gallery parts.
+   and tokens from oracle.css / tokens.css; every color in here
+   rides a token so the page follows whichever theme is active.
+
+   v2 pass: level card rows (reserved name space + baseline-pinned
+   pair line), shine-not-dim hover, per-card brief line, grid/list
+   views, sort, and a two-card compare mode with a quick panel.
    ============================================================ */
 
 /* ---- intro header ---- */
@@ -13,19 +18,39 @@
 
 /* ---- filter bar ---- */
 .filters{position:sticky; top:0; z-index:5; padding:18px 0;
-  background:linear-gradient(180deg, rgba(10,11,20,.92), rgba(10,11,20,.78) 70%, rgba(10,11,20,0));
+  background:linear-gradient(180deg,
+    color-mix(in srgb, var(--ink) 92%, transparent),
+    color-mix(in srgb, var(--ink) 78%, transparent) 70%,
+    transparent);
   backdrop-filter:blur(6px); margin-bottom:8px}
 .filterRow{display:flex; flex-wrap:wrap; gap:14px 22px; align-items:flex-end}
 .filterGroup{display:flex; flex-direction:column; gap:6px}
-.filterGroup label{font-size:.7rem; text-transform:uppercase; letter-spacing:.16em; color:var(--muted)}
+.filterGroup label,
+.filterGroup .tlab{font-size:.7rem; text-transform:uppercase; letter-spacing:.16em; color:var(--muted)}
 .filterGroup select,
 .filterGroup input[type=search]{
-  background:#0c0e1a; border:1px solid var(--line); color:var(--ivory);
+  background:var(--field-bg); border:1px solid var(--line); color:var(--ivory);
   padding:11px 14px; border-radius:11px; font-size:.95rem; font-family:var(--sans); min-width:170px}
 .filterGroup select:focus,
 .filterGroup input[type=search]:focus{outline:none; border-color:var(--brass)}
 .filterGroup.grow{flex:1 1 220px}
 .filterGroup.grow input[type=search]{width:100%}
+
+/* second toolbar row: view / sort / compare (revealed by JS) */
+.toolRow{display:flex; flex-wrap:wrap; gap:14px 22px; align-items:flex-end; margin-top:14px}
+.toolRow[hidden]{display:none}
+.segCtl{display:inline-flex; border:1px solid var(--line); border-radius:11px;
+  overflow:hidden; background:var(--field-bg)}
+.segBtn{appearance:none; border:0; background:transparent; cursor:pointer;
+  color:var(--muted); padding:10px 16px; font-family:var(--sans); font-size:.85rem;
+  letter-spacing:.03em; transition:color .2s ease, background-color .2s ease}
+.segBtn + .segBtn{border-left:1px solid var(--line)}
+.segBtn:hover{color:var(--moon)}
+.segBtn:focus-visible{outline:2px solid var(--brass); outline-offset:-2px}
+.segBtn[aria-pressed="true"]{background:color-mix(in srgb, var(--brass) 18%, transparent); color:var(--moon)}
+.cmpToggle{border:1px solid var(--line); border-radius:11px; background:var(--field-bg)}
+.cmpToggle[aria-pressed="true"]{border-color:var(--brass);
+  background:color-mix(in srgb, var(--brass) 18%, transparent); color:var(--moon)}
 
 .filterMeta{display:flex; align-items:center; justify-content:space-between; gap:14px;
   flex-wrap:wrap; margin-top:14px}
@@ -40,31 +65,138 @@
 .menGrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
   gap:16px; margin:18px 0 24px}
 
-.beast{position:relative; display:flex; flex-direction:column; gap:10px;
+/* Card anatomy. Flex column with a fixed rhythm so every row scans level:
+   glyph row on top, the name gets a reserved two-line block, the brief
+   clamps to two lines, and the pair line is pinned to the card floor. */
+.beast{position:relative; display:flex; flex-direction:column; gap:8px;
   background:linear-gradient(180deg,var(--panel),var(--ink2));
-  border:1px solid var(--line); border-radius:16px; padding:22px 20px 20px;
-  color:inherit; text-decoration:none;
-  transition:transform .2s ease, border-color .2s ease, box-shadow .25s ease}
-.beast:hover{transform:translateY(-4px); border-color:var(--brass);
-  box-shadow:0 22px 50px rgba(0,0,0,.5)}
-.beast:focus-visible{outline:none; border-color:var(--brass);
-  box-shadow:0 0 0 2px rgba(214,193,140,.4)}
+  border:1px solid var(--line); border-radius:16px; padding:22px 20px 18px;
+  color:inherit; text-decoration:none}
+#grid .beast[hidden]{display:none}
 
 .beast .glyphRow{display:flex; align-items:center; gap:10px; font-size:1.5rem;
-  font-family:var(--serif); color:var(--brass); line-height:1}
-.beast .glyphRow .cn{font-size:1.35rem; color:var(--brass-bright)}
+  font-family:var(--serif); color:var(--brass); line-height:1;
+  transition:color .2s ease}
+.beast .glyphRow .cn{font-size:1.35rem; color:var(--brass-bright); transition:color .2s ease}
 .beast .glyphRow .dot{width:4px; height:4px; border-radius:50%; background:var(--line)}
 
-.beast .pname{font-family:var(--serif); font-weight:600; color:var(--moon);
-  font-size:1.5rem; line-height:1.1; margin:0}
+.beast .pname{font-family:var(--serif); font-weight:600; color:var(--ivory);
+  font-size:1.5rem; line-height:1.1; margin:0; min-height:2.2em; /* two lines reserved */
+  transition:color .2s ease}
+.beast .brief{margin:0; font-size:.8rem; line-height:1.45; color:var(--muted);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden}
 .beast .pair{margin:auto 0 0; font-size:.78rem; color:var(--muted);
-  letter-spacing:.04em; padding-top:8px}
+  letter-spacing:.04em; padding-top:10px}
 .beast .pair span{color:var(--ivory)}
 
-.beast .open{font-size:.78rem; color:var(--brass); letter-spacing:.04em;
-  opacity:0; transform:translateY(4px); transition:opacity .2s ease, transform .2s ease}
-.beast:hover .open,
-.beast:focus-visible .open{opacity:1; transform:none}
+/* the "Read …" span is a list-view affordance; grid view hides it */
+.beast .open{display:none; font-size:.78rem; color:var(--brass); letter-spacing:.04em; white-space:nowrap}
+
+/* ---- hover & focus: shine, never dim ----
+   The id selector outranks micro.css's .menGrid:has() sibling-dimming
+   (and its transition override) so siblings hold full strength and the
+   engaged card lifts and glows. No opacity or filter reductions here. */
+#grid .beast{opacity:1;
+  transition:transform .2s ease, border-color .2s ease, box-shadow .25s ease}
+#grid:has(.beast:hover) .beast,
+#grid:has(.beast:focus-visible) .beast{opacity:1}
+
+.beast:hover,
+.beast:focus-visible{transform:translateY(-2px); border-color:var(--brass);
+  box-shadow:0 10px 28px color-mix(in srgb, var(--ink) 55%, transparent),
+             0 0 22px color-mix(in srgb, var(--brass) 20%, transparent)}
+.beast:focus-visible{outline:none;
+  box-shadow:0 10px 28px color-mix(in srgb, var(--ink) 55%, transparent),
+             0 0 22px color-mix(in srgb, var(--brass) 20%, transparent),
+             0 0 0 2px color-mix(in srgb, var(--brass) 60%, transparent)}
+.beast:hover .glyphRow,
+.beast:focus-visible .glyphRow{color:var(--brass-bright)}
+.beast:hover .glyphRow .cn,
+.beast:focus-visible .glyphRow .cn{color:var(--moon)}
+.beast:hover .pname,
+.beast:focus-visible .pname{color:var(--moon)}
+
+/* ---- list view (single-column rows) ---- */
+#grid.isList{display:flex; flex-direction:column; gap:10px}
+#grid.isList .beast{display:grid; align-items:center;
+  grid-template-columns:auto minmax(0,1.1fr) minmax(0,.9fr) minmax(0,1.5fr) auto;
+  grid-template-areas:"g n p b o"; column-gap:18px; row-gap:4px; padding:14px 18px}
+#grid.isList .beast[hidden]{display:none}
+#grid.isList .glyphRow{grid-area:g; font-size:1.2rem; gap:8px}
+#grid.isList .glyphRow .cn{font-size:1.1rem}
+#grid.isList .beastSigil{margin-left:0}
+#grid.isList .pname{grid-area:n; min-height:0; font-size:1.15rem; line-height:1.2}
+#grid.isList .pair{grid-area:p; margin:0; padding:0}
+#grid.isList .brief{grid-area:b; -webkit-line-clamp:2}
+#grid.isList .open{grid-area:o; display:inline-block; justify-self:end}
+#grid.isList .openMore{display:none} /* row shows a compact "Read →" */
+#grid.isList .beast:hover,
+#grid.isList .beast:focus-visible{transform:translateY(-1px)}
+
+@media(max-width:720px){
+  #grid.isList .beast{grid-template-columns:auto minmax(0,1fr) auto;
+    grid-template-areas:"g n o" "g p o" "b b b"; column-gap:14px}
+  #grid.isList .brief{margin-top:2px}
+}
+
+/* ---- compare mode ---- */
+#grid.cmpOn .beast{cursor:pointer}
+.beast.isSel{border-color:var(--brass);
+  box-shadow:0 0 0 2px color-mix(in srgb, var(--brass) 70%, transparent),
+             0 0 22px color-mix(in srgb, var(--brass) 18%, transparent)}
+.beast.isSel::after{content:"✓"; position:absolute; top:10px; right:10px;
+  width:22px; height:22px; border-radius:50%; display:grid; place-items:center;
+  background:var(--brass); color:var(--ink); font-size:.8rem; font-weight:700;
+  font-family:var(--sans); line-height:1}
+#grid.isList .beast.isSel::after{top:50%; transform:translateY(-50%)}
+
+/* floating action pill */
+.cmpBar{position:fixed; left:50%; bottom:18px; transform:translateX(-50%); z-index:60;
+  display:flex; align-items:center; gap:10px; padding:10px 12px 10px 18px;
+  max-width:calc(100vw - 24px); border-radius:999px;
+  background:color-mix(in srgb, var(--ink) 88%, transparent);
+  border:1px solid var(--brass); backdrop-filter:blur(8px);
+  box-shadow:0 12px 40px color-mix(in srgb, var(--ink) 70%, transparent)}
+.cmpBar[hidden]{display:none}
+.cmpBarText{margin:0; font-size:.85rem; color:var(--ivory);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.cmpBarText[hidden]{display:none}
+.cmpGo{appearance:none; border:0; cursor:pointer; border-radius:999px; padding:9px 16px;
+  background:linear-gradient(180deg,var(--btn-1),var(--btn-2)); color:var(--btn-text);
+  font-family:var(--sans); font-weight:600; font-size:.85rem; letter-spacing:.02em;
+  max-width:62vw; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.cmpGo[hidden]{display:none}
+.cmpGo:focus-visible{outline:2px solid var(--moon); outline-offset:2px}
+.cmpExit{appearance:none; cursor:pointer; background:transparent; border:1px solid var(--line);
+  color:var(--muted); border-radius:50%; width:28px; height:28px; flex:0 0 auto;
+  font-size:.8rem; line-height:1; display:grid; place-items:center}
+.cmpExit:hover{border-color:var(--brass); color:var(--moon)}
+
+/* quick side-by-side panel, anchored above the pill */
+.cmpPanel{position:fixed; left:50%; bottom:74px; transform:translateX(-50%); z-index:59;
+  width:min(560px, calc(100vw - 20px)); padding:16px; border-radius:18px;
+  background:linear-gradient(180deg,var(--panel),var(--ink2));
+  border:1px solid var(--brass);
+  box-shadow:0 24px 70px color-mix(in srgb, var(--ink) 75%, transparent)}
+.cmpPanel[hidden]{display:none}
+.cmpPanel:focus{outline:none}
+.cmpCards{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px}
+.cmpMini{border:1px solid var(--line); border-radius:14px; padding:12px;
+  background:color-mix(in srgb, var(--ink) 40%, transparent); min-width:0}
+.cmpMiniGlyphs{margin:0; font-family:var(--serif); font-size:1.15rem; color:var(--brass); line-height:1}
+.cmpMiniName{font-family:var(--serif); color:var(--moon); font-size:1.15rem;
+  line-height:1.15; margin:6px 0 10px; overflow-wrap:break-word}
+.cmpRows{margin:0; display:grid; gap:5px}
+.cmpRows div{display:flex; align-items:baseline; justify-content:space-between; gap:10px}
+.cmpRows dt{color:var(--muted); text-transform:uppercase; letter-spacing:.14em; font-size:.6rem}
+.cmpRows dd{margin:0; color:var(--ivory); font-size:.8rem; text-align:right; min-width:0}
+.cmpFoot{display:flex; align-items:center; justify-content:space-between; gap:10px;
+  margin-top:14px; flex-wrap:wrap}
+.cmpLink{font-size:.82rem; color:var(--brass-bright); letter-spacing:.02em}
+.cmpLink:hover{color:var(--moon)}
+.cmpClose{appearance:none; cursor:pointer; background:transparent; border:1px solid var(--line);
+  color:var(--muted); border-radius:999px; padding:7px 14px; font-size:.78rem; font-family:var(--sans)}
+.cmpClose:hover{border-color:var(--brass); color:var(--moon)}
 
 /* ---- empty state ---- */
 .empty{text-align:center; padding:60px 0 80px; color:var(--muted)}
@@ -72,6 +204,17 @@
 
 @media(max-width:520px){
   .menGrid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:12px}
-  .beast{padding:18px 16px 16px}
+  .beast{padding:18px 16px 14px}
   .beast .pname{font-size:1.3rem}
+  .cmpBar{bottom:12px}
+  .cmpPanel{bottom:64px; padding:12px}
+  .cmpCards{gap:8px}
+}
+
+/* ---- reduced motion: keep the glow, drop the movement ---- */
+@media (prefers-reduced-motion: reduce){
+  #grid .beast{transition:none}
+  .beast:hover, .beast:focus-visible{transform:none}
+  #grid.isList .beast:hover, #grid.isList .beast:focus-visible{transform:none}
+  .segBtn, .clearBtn{transition:none}
 }

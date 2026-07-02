@@ -1,7 +1,18 @@
 /* ============================================================
    THE PRIMAL ORACLE — nav core (the sticky bar), canvas v3 skin
-   Canvas-template-v2 bar: 64px, wordmark | Find yours | Explore
-   | Menagerie | Bonds | Moon | moon chip | theme | CTA.
+   Canvas-template-v2 bar: 64px. Wordmark "Zodi Animals" hard left
+   (20px gutter), then Find yours | Explore | Menagerie | Bonds |
+   Moon, then the right cluster — a plain spaced flex row with a
+   fixed order and NO absolute positioning (popovers excepted):
+     [identity chip .pn-id] [moon chip .pn-moon] [awakening ring
+     .pn-ring] [theme toggle .pn-theme] [CTA .pn-cta]
+   Every chip is its own inflexible box (flex:0 0 auto); the only
+   shrinking element in the bar is .pn-nav (min-width:0, scrolls
+   under a fade mask), so the cluster can never overlap.
+   Collapse ladder: <1280px the ring leaves the bar, <1100px the
+   identity chip leaves, <900px the burger drawer takes over; the
+   drawer's .pn-drawer-chips strip (cloned by nav.js on open)
+   carries the dropped chips so nothing is lost.
    Tokens only (tokens.css); both themes resolve.
    ============================================================ */
 
@@ -15,9 +26,12 @@
 /* one deterministic bar height: the shared knob every sticky offset
    reads (nav-sub.css declares --pn-bar-h:64px; nav.js re-measures).
    The inner row is knob minus the 1px bottom border, so the bar's
-   full rendered height equals the knob exactly. */
-.pn-inner{max-width:1280px; margin:0 auto; height:calc(var(--pn-bar-h, 64px) - 1px);
-  padding:0 clamp(16px, 3vw, 32px); display:flex; align-items:center; gap:16px}
+   full rendered height equals the knob exactly.
+   Full-bleed row: the wordmark sits HARD LEFT on a fixed 20px
+   gutter (no centered max-width cap), so at wide viewports the
+   middle nav and the right cluster get all the freed room. */
+.pn-inner{max-width:none; margin:0; height:calc(var(--pn-bar-h, 64px) - 1px);
+  padding:0 clamp(16px, 3vw, 32px) 0 20px; display:flex; align-items:center; gap:16px}
 
 .pn-brand{font-family:var(--serif,serif); font-size:1.2rem; letter-spacing:.4px;
   color:var(--moon,#f5ecd2); white-space:nowrap; text-decoration:none; flex:0 0 auto}
@@ -45,11 +59,38 @@
 .pn-trigger.expanded .chev{transform:rotate(-135deg) translateY(1px)}
 .pn-item{position:relative}
 
-/* right-side tools: moon chip + theme toggle + primary CTA */
-.pn-tools{display:flex; align-items:center; gap:10px; margin-left:auto; flex:0 0 auto}
+/* right-side tools: [identity chip] [moon chip] [awakening ring]
+   [theme toggle] [CTA]. A plain spaced flex row: every chip is an
+   inflexible box (flex:0 0 auto), separation comes ONLY from the
+   flex gap, and nothing in here is absolutely positioned except
+   the moon popover. Hidden slots are hard-off so an empty slot can
+   never cost a gap or catch a click. */
+.pn-tools{display:flex; align-items:center; gap:10px; margin-left:auto; flex:0 0 auto; min-width:0}
+.pn-tools > [hidden]{display:none !important}
+/* the chips set their own display, which would beat the UA [hidden]
+   rule outside .pn-tools (drawer clones et al.); keep hidden hard-off */
+.pn-id[hidden],.pn-ring[hidden]{display:none}
+
+/* identity chip: compact glyph avatar + short animal name. The
+   label truncates with ellipsis at 140px; the full line lives in
+   title/aria-label (nav-me.js). Hidden entirely until a reveal. */
+.pn-id{display:inline-flex; align-items:center; gap:7px; height:38px; padding:0 12px 0 7px;
+  max-width:200px; flex:0 0 auto; min-width:0;
+  background:transparent; border:1px solid var(--line); border-radius:var(--r-pill,999px);
+  color:var(--ivory); font:500 .78rem/1 var(--sans,sans-serif); letter-spacing:.01em;
+  text-decoration:none; white-space:nowrap;
+  transition:border-color .2s ease, color .2s ease, background .2s ease}
+.pn-id:hover,.pn-id:focus-visible{border-color:var(--accent); color:var(--moon); background:var(--accent-soft)}
+.pn-id .pn-id-glyph{display:inline-flex; align-items:center; justify-content:center;
+  width:24px; height:24px; flex:0 0 auto; border-radius:50%;
+  border:1px solid var(--line-soft); background:var(--accent-soft);
+  font-size:.85rem; line-height:1}
+.pn-id .lbl{display:block; max-width:140px; min-width:0;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
 
 .pn-moonwrap{position:relative; flex:0 0 auto}
 .pn-moon{display:inline-flex; align-items:center; gap:7px; height:38px; padding:0 12px;
+  flex:0 0 auto; text-decoration:none;
   background:transparent; border:1px solid var(--line); border-radius:var(--r-pill,999px);
   color:var(--muted); font:400 .68rem/1 var(--mono,monospace); cursor:pointer; white-space:nowrap;
   transition:border-color .2s ease, color .2s ease, background .2s ease}
@@ -74,6 +115,22 @@
   .pn-moonpop{animation:pnPopIn .2s ease both}
   @keyframes pnPopIn{from{opacity:0; transform:translateY(-6px) scale(.99)} to{opacity:1; transform:none}}
 }
+
+/* awakening ring: a 38px slot holding a 34px SVG ring with the
+   openness % stacked in its center via grid (grid-area 1/1 on both
+   children), NOT absolute positioning. Filled by nav-progress.js;
+   ring colors are tokens here, never in JS. */
+.pn-ring{display:inline-grid; place-items:center; width:38px; height:38px; flex:0 0 auto;
+  border-radius:50%; text-decoration:none; color:var(--ivory); cursor:pointer;
+  transition:background .2s ease, color .2s ease, box-shadow .2s ease}
+.pn-ring > *{grid-area:1 / 1}
+.pn-ring svg{display:block; transform:rotate(-90deg)}
+.pn-ring .pnp-track{stroke:var(--line)}
+.pn-ring .pnp-fill{stroke:var(--accent); transition:stroke-dasharray .4s ease}
+.pn-ring .pn-ring-pct{font:700 .5rem/1 var(--mono,monospace); color:var(--ivory);
+  letter-spacing:0; pointer-events:none}
+.pn-ring:hover,.pn-ring:focus-visible{background:var(--accent-soft); color:var(--moon)}
+.pn-ring:hover .pnp-fill,.pn-ring:focus-visible .pnp-fill{stroke:var(--accent-bright,var(--accent))}
 
 .pn-theme{appearance:none; width:38px; height:38px; padding:0;
   display:inline-flex; align-items:center; justify-content:center;
@@ -114,10 +171,28 @@ body.pn-has-bar header.top{display:none}
   .pn-theme:hover,.pn-theme:focus-visible{transform:none}
   .pn-cta:hover,.pn-cta:focus-visible{animation:none; transform:none}
   .pn-moonpop{animation:none}
+  .pn-ring .pnp-fill{transition:none}
 }
 
-/* responsive: fold nav into the drawer as space tightens */
+/* the drawer's tool-chip strip: nav.js clones the bar's identity
+   chip, moon chip, and awakening ring here on every open, so the
+   chips dropped by the collapse ladder below are never lost. The
+   chips reuse their bar classes (.pn-id/.pn-moon/.pn-ring above);
+   this block only lays the strip out. Lives here, not in
+   nav-drawer.css, because the chips and their ladder are owned by
+   this file. */
+.pn-drawer-chips{display:flex; flex-wrap:wrap; align-items:center; gap:10px;
+  padding:var(--s-2,.5rem) 0 var(--s-3,.75rem); margin-bottom:var(--s-2,.5rem);
+  border-bottom:1px solid var(--line-soft)}
+.pn-drawer-chips:empty{display:none; border:0; margin:0; padding:0}
+.pn-drawer-chips .pn-id{max-width:100%}
+.pn-drawer-chips .pn-id .lbl{max-width:240px}
+
+/* responsive collapse ladder: chips leave the BAR (never the
+   drawer strip) as space tightens, widest first */
+@media(max-width:1279px){ .pn-bar .pn-tools .pn-ring{display:none} }
 @media(max-width:1180px){ .pn-cta{padding:0 14px} }
+@media(max-width:1099px){ .pn-bar .pn-tools .pn-id{display:none} }
 @media(max-width:900px){
   .pn-nav{display:none}
   .pn-burger{display:block}
