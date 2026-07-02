@@ -409,6 +409,75 @@ window.PNAV = window.PNAV || { features: {} };
       acc.appendChild(group);
     });
 
+    /* ---- sub-nav context ("This section") ----------------------------
+       Surface the current page's sibling sub-nav inside the drawer so a
+       small-screen reader can jump between siblings without the sticky
+       horizontal scroller. Cloned from the real .pn-subnav anchors, so
+       routing is identical. New .pn-has-drop parents get their .pn-subdrop
+       children rendered inline, full-width, right beneath the parent link
+       (no popover on mobile). Guarded: no .pn-subnav (a page with no
+       sub-nav, or "Overview" dropped so the strip is absent) => skipped,
+       nothing references a removed node. */
+    const subNav = doc.querySelector(".pn-sub .pn-subnav");
+    const subItems = subNav
+      ? Array.prototype.slice.call(subNav.querySelectorAll(":scope > li"))
+      : [];
+    if (subItems.length) {
+      const sGroup = doc.createElement("div");
+      sGroup.className = "pn-acc-group pn-acc-section";
+
+      const sBodyId = "pn-acc-section";
+      const sHead = doc.createElement("button");
+      sHead.type = "button";
+      sHead.className = "pn-acc-head";
+      // open by default so the current section's siblings are visible.
+      sHead.setAttribute("aria-expanded", "true");
+      sHead.setAttribute("aria-controls", sBodyId);
+      sHead.innerHTML =
+        '<span>This section</span><span class="pn-acc-chev" aria-hidden="true"></span>';
+
+      const sBody = doc.createElement("div");
+      sBody.className = "pn-acc-body";
+      sBody.id = sBodyId;
+
+      subItems.forEach((li) => {
+        const parentLink = li.querySelector(":scope > a");
+        if (!parentLink) return;
+        const a = doc.createElement("a");
+        a.className = "pn-acc-sublink";
+        a.href = parentLink.getAttribute("href") || "#";
+        a.textContent = (parentLink.textContent || "").trim();
+        if (parentLink.getAttribute("aria-current") === "page") {
+          a.setAttribute("aria-current", "page");
+        }
+        sBody.appendChild(a);
+        // .pn-has-drop parent: append its child links inline, full-width.
+        const drop = li.querySelector(":scope > .pn-subdrop");
+        if (drop) {
+          drop.querySelectorAll(":scope > li > a").forEach((child) => {
+            const ca = doc.createElement("a");
+            ca.className = "pn-acc-sublink pn-acc-subchild";
+            ca.href = child.getAttribute("href") || "#";
+            ca.textContent = (child.textContent || "").trim();
+            if (child.getAttribute("aria-current") === "page") {
+              ca.setAttribute("aria-current", "page");
+            }
+            sBody.appendChild(ca);
+          });
+        }
+      });
+
+      sHead.addEventListener("click", () => {
+        const open = sGroup.classList.toggle("open");
+        sHead.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+
+      sGroup.classList.add("open"); // match aria-expanded=true default
+      sGroup.append(sHead, sBody);
+      // put section context at the TOP of the accordion (above the groups)
+      acc.insertBefore(sGroup, acc.firstChild);
+    }
+
     doc.body.appendChild(drawer);
 
     /* ---- focus trap ---- */
@@ -540,12 +609,31 @@ window.PNAV = window.PNAV || { features: {} };
   }
 
   /* =========================================================
-     THE WELD BIND — toggle html.pn-bound past a small scroll, so
-     the sub-bar lights its igniting brass seam and the join tightens
-     (styles in nav-sub.css / nav-core.css). A throttled rAF scroll
-     listener keeps it 60fps. A one-shot spark sweeps the seam once on
-     each fresh bind (html.pn-sealing), suppressed under reduced motion.
-     The spark element is injected here so the served HTML stays clean.
+     THE WELD BIND + SCROLL SHOOTING-STAR PROGRESS.
+
+     Two things live on the one throttled rAF scroll pass:
+
+       1) html.pn-bound — toggled past a small scroll (24px) so the
+          sub-bar lights its igniting brass seam and the join tightens
+          (styles in nav-sub.css / nav-core.css). A one-shot spark
+          sweeps the seam once on each FRESH bind (html.pn-sealing),
+          suppressed under reduced motion. The .pn-seam-spark element
+          is injected here so the served HTML stays clean.
+
+       2) A CONTINUOUS scroll-progress shooting star riding the seam.
+          We inject <div class="pn-progress"><i class="pn-progress-star">
+          as the first child of .pn-sub and drive it purely through two
+          custom properties on :root that the CSS (nav-sub.css, other
+          agent) reads:
+            --pn-scroll  0..1  document scroll fraction (position + fill)
+            --pn-beam    0..~1 brightness/scale curve: rises to 1 by 75%
+                               of the page, then dims to ~0.15 at the end.
+          We ONLY set the vars, inject the element, and toggle classes;
+          all visual styling is the CSS agent's job.
+
+     60fps: the vars are numbers, the seam uses opacity/transform only.
+     Reduced motion: --pn-scroll still tracks (static fill shows depth)
+     but --pn-beam is pinned to a calm constant so nothing pulses.
      ========================================================= */
   function initWeld() {
     var sub = doc.querySelector(".pn-sub");
@@ -554,13 +642,27 @@ window.PNAV = window.PNAV || { features: {} };
     var bound = false;
     var sealTimer = null;
 
-    // inject the travelling spark once (decoration only; JS-driven)
+    // inject the travelling ignition spark once (decoration only; JS-driven)
     if (sub && !sub.querySelector(".pn-seam-spark")) {
       var spark = doc.createElement("span");
       spark.className = "pn-seam-spark";
       spark.setAttribute("aria-hidden", "true");
       sub.appendChild(spark);
     }
+
+    // inject the continuous scroll-progress star as the FIRST child of
+    // .pn-sub (so it rides the seam at the band's top edge). Purely
+    // decorative + aria-hidden; the CSS reads --pn-scroll / --pn-beam.
+    if (sub && !sub.querySelector(".pn-progress")) {
+      var prog = doc.createElement("div");
+      prog.className = "pn-progress";
+      prog.setAttribute("aria-hidden", "true");
+      var star = doc.createElement("i");
+      star.className = "pn-progress-star";
+      prog.appendChild(star);
+      sub.insertBefore(prog, sub.firstChild);
+    }
+
     // clear the one-shot seal class when its sweep ends (retrigger-safe)
     if (sub) {
       sub.addEventListener("animationend", function (e) {
@@ -585,17 +687,215 @@ window.PNAV = window.PNAV || { features: {} };
       }
     }
 
+    function clamp01(n) { return n < 0 ? 0 : n > 1 ? 1 : n; }
+
+    // the scrollable distance can be 0 on short pages; guard the divide.
+    function scrollFraction(scrollTop) {
+      var max = doc.documentElement.scrollHeight - window.innerHeight;
+      if (!(max > 0)) return 0;
+      return clamp01(scrollTop / max);
+    }
+
+    function update() {
+      var scrollTop = window.pageYOffset || doc.documentElement.scrollTop || 0;
+      setBound(scrollTop > THRESHOLD);
+
+      var p = scrollFraction(scrollTop);
+      root.style.setProperty("--pn-scroll", p.toFixed(4));
+
+      if (reduceMotion()) {
+        // static, restful: fill still shows depth, brightness holds calm.
+        root.style.setProperty("--pn-beam", "0.5");
+      } else {
+        // brightness rises to 1 by 75% of the page, then eases down to
+        // ~0.15 at the very bottom (the star "burns out" as you land).
+        var beam = p <= 0.75 ? (p / 0.75) : (1 - ((p - 0.75) / 0.25) * 0.85);
+        root.style.setProperty("--pn-beam", beam.toFixed(3));
+      }
+    }
+
     var ticking = false;
     function onScroll() {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(function () {
-        setBound((window.pageYOffset || doc.documentElement.scrollTop || 0) > THRESHOLD);
+        update();
         ticking = false;
       });
     }
     window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll(); // set initial state (e.g. reloads mid-page)
+    // scrollHeight changes on resize (reflow / font swap / rotate), so the
+    // fraction must be recomputed; reuse the same throttled path.
+    window.addEventListener("resize", onScroll, { passive: true });
+    update(); // set initial state (e.g. reloads mid-page, short pages)
+  }
+
+  /* =========================================================
+     SUB-NAV DROPDOWNS — progressive enhancement over the build's
+     `<li class="pn-sub-item pn-has-drop">` markup:
+
+       <li class="pn-sub-item pn-has-drop">
+         <a class="pn-sub-link" aria-haspopup="true" aria-expanded="false"
+            href="/parent/">Label<span class="pn-sub-caret"></span></a>
+         <ul class="pn-subdrop"> …child <a> links… </ul>
+       </li>
+
+     With JS OFF the parent <a href> just navigates and the children
+     are real crawlable anchors — nothing here is required to route.
+
+     Behavior:
+       - DESKTOP (hover-capable / fine pointer): mouseenter opens the
+         drop (data-open + aria-expanded=true); mouseleave closes after
+         a ~140ms grace. Keyboard: focus-in opens; Escape closes and
+         returns focus to the parent link; Tab-out (focus leaves the
+         item) closes.
+       - MOBILE / touch (no hover): a tap on the parent .pn-sub-link of
+         a .pn-has-drop item TOGGLES the drop and does NOT navigate
+         (preventDefault) — the parent page stays reachable via the
+         breadcrumb and the drop's own child links. Touch-only, so a
+         mouse user's click still follows the link.
+       - Only ONE sub-drop open at a time; outside click/tap closes;
+         Escape closes.
+
+     No-op (and no listeners bound) when a page has no .pn-has-drop item,
+     so pages without sub-nav dropdowns never error. Independent of the
+     top-level mega-panel logic and the .pn-subnav horizontal scroller.
+     ========================================================= */
+  function initSubDrops(bar) {
+    var scope = bar || doc;
+    var items = Array.prototype.slice.call(
+      scope.querySelectorAll(".pn-sub-item.pn-has-drop")
+    );
+    if (!items.length) return; // page has no sub-nav dropdowns: nothing to wire
+
+    // hover-capable pointer? (desktop). matchMedia guarded for old engines.
+    var canHover = !!(window.matchMedia &&
+      (matchMedia("(hover: hover) and (pointer: fine)").matches));
+
+    var openItem = null;
+    var closeTimer = null;
+
+    function linkOf(li) { return li.querySelector(":scope > .pn-sub-link"); }
+
+    function setOpen(li, on) {
+      if (on) {
+        if (li.hasAttribute("data-open")) return;
+        li.setAttribute("data-open", "");
+      } else {
+        if (!li.hasAttribute("data-open")) return;
+        li.removeAttribute("data-open");
+      }
+      var a = linkOf(li);
+      if (a) a.setAttribute("aria-expanded", on ? "true" : "false");
+    }
+
+    function closeAll(except) {
+      clearTimeout(closeTimer);
+      items.forEach(function (li) { if (li !== except) setOpen(li, false); });
+      if (openItem && openItem !== except) openItem = null;
+    }
+
+    function dropOf(li) { return li.querySelector(":scope > .pn-subdrop"); }
+    /* the drop is position:fixed (so the tab-row overflow can't clip it);
+       park it under its tab, clamped into the viewport. */
+    function positionDrop(li) {
+      var a = linkOf(li), d = dropOf(li);
+      if (!a || !d) return;
+      var r = a.getBoundingClientRect();
+      var vw = window.innerWidth || doc.documentElement.clientWidth || 360;
+      var dw = d.offsetWidth || 200;
+      var left = Math.max(8, Math.min(r.left, vw - dw - 8));
+      d.style.left = Math.round(left) + "px";
+      d.style.top = Math.round(r.bottom + 4) + "px";
+    }
+
+    function open(li) {
+      clearTimeout(closeTimer);
+      if (openItem && openItem !== li) setOpen(openItem, false);
+      setOpen(li, true);
+      openItem = li;
+      positionDrop(li);
+    }
+
+    function close(li, returnFocus) {
+      clearTimeout(closeTimer);
+      setOpen(li, false);
+      if (openItem === li) openItem = null;
+      if (returnFocus) {
+        var a = linkOf(li);
+        if (a) { try { a.focus(); } catch (e) {} }
+      }
+    }
+
+    // keep an open fixed-position drop glued to its tab as the sticky
+    // sub-bar shifts (scroll) or the viewport changes (resize)
+    window.addEventListener("scroll", function () { if (openItem) positionDrop(openItem); }, { passive: true });
+    window.addEventListener("resize", function () { if (openItem) positionDrop(openItem); });
+
+    items.forEach(function (li) {
+      var link = linkOf(li);
+      if (!link) return;
+
+      /* ---- desktop hover-intent ---- */
+      if (canHover) {
+        li.addEventListener("mouseenter", function () { open(li); });
+        li.addEventListener("mouseleave", function () {
+          clearTimeout(closeTimer);
+          closeTimer = setTimeout(function () { close(li, false); }, 140);
+        });
+      }
+
+      /* ---- touch / no-hover: tapping the parent link toggles, no nav ----
+         Only intercept when this is genuinely a non-hover (touch) context:
+         a mouse user on a hybrid device still follows the href. We detect
+         via the event's own pointerType where available, falling back to
+         the media query. */
+      link.addEventListener("click", function (e) {
+        var touchLike =
+          (e.pointerType && e.pointerType !== "mouse") ||
+          (!e.pointerType && !canHover);
+        if (!touchLike) return; // desktop mouse: let the link navigate
+        e.preventDefault();      // the caret only — do NOT leave the page
+        if (li.hasAttribute("data-open")) close(li, false);
+        else open(li);
+      });
+
+      /* ---- keyboard: focus-in opens; Tab-out closes; Escape closes ----
+         Focus-driven open is device-independent (a keyboard user gets the
+         drop whether or not the device reports hover). open() is idempotent
+         so this never fights the mouseenter path on hybrid devices. */
+      li.addEventListener("focusin", function () { open(li); });
+      li.addEventListener("focusout", function (e) {
+        // if focus left this item entirely, close it (Tab-out)
+        var to = e.relatedTarget;
+        if (to && li.contains(to)) return;
+        close(li, false);
+      });
+      li.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && li.hasAttribute("data-open")) {
+          e.preventDefault();
+          e.stopPropagation();      // don't also collapse the mega-nav
+          close(li, true);          // return focus to the parent link
+        } else if (e.key === "ArrowDown" && e.target === link) {
+          // keyboard affordance: ArrowDown from the parent link opens the
+          // drop (Enter/Space still navigate to the parent href as normal).
+          e.preventDefault();
+          open(li);
+        }
+      });
+    });
+
+    /* ---- outside click / tap closes; single-open already enforced ---- */
+    doc.addEventListener("click", function (e) {
+      if (!openItem) return;
+      if (openItem.contains(e.target)) return;
+      closeAll();
+    });
+
+    /* ---- Escape anywhere closes the open drop (belt + braces) ---- */
+    doc.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && openItem) closeAll();
+    });
   }
 
   /* =========================================================
@@ -692,7 +992,8 @@ window.PNAV = window.PNAV || { features: {} };
     initMoonChip(bar, panels);
     refreshDyn();     // after the drawer clone so both copies update
     initHoroscope();  // after the clone too: light today's sign in both
-    initWeld();       // scroll-bound seam ignite
+    initWeld();       // scroll-bound seam ignite + shooting-star progress
+    initSubDrops(bar);// sub-nav dropdown hover/tap/keyboard behavior
 
     // Escape also closes the drawer if it happens to be open (belt + braces)
     doc.addEventListener("keydown", (e) => {

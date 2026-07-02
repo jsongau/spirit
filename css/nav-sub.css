@@ -41,8 +41,10 @@
   z-index: 110; /* below .pn-bar (120), above page content */
   display: flex;
   flex-direction: column;
-  background: color-mix(in oklch, var(--ink, #0d0e18) 88%, transparent);
-  backdrop-filter: blur(10px);
+  /* NOTE: no backdrop-filter here — it establishes a containing block that
+     would clip the position:fixed sub-nav dropdown. A more opaque bg keeps
+     the bar legible over scrolling content without the blur. */
+  background: color-mix(in oklch, var(--ink, #0d0e18) 94%, transparent);
   border-bottom: 1px solid var(--line, rgba(214,193,140,.16));
   font-family: var(--sans, sans-serif);
   transition: background var(--dur, 320ms) var(--ease-out, ease),
@@ -52,23 +54,38 @@
 /* PRIMARY strip: the sub-menu tabs */
 .pn-sub-primary { width: 100%; }
 
-/* CRUMB strip: recessed, quieter, its own hairline-topped band below */
+/* CRUMB strip: recessed, quieter, its own hairline-topped band below.
+   A subtly LIGHTER, fading gradient (hair brighter than the sub-bar at the
+   top, dissolving to transparent toward the page) reads it as its own quiet
+   recessed shelf — distinct from the tabs above and the content below —
+   while the top hairline keeps the hard join. color-mix over --ink/--panel,
+   with a flat hex fallback for engines without color-mix. */
 .pn-sub-crumb {
   width: 100%;
   border-top: 1px solid var(--line-soft, rgba(214,193,140,.08));
-  background: color-mix(in oklch, var(--ink, #0d0e18) 55%, transparent);
+  background:
+    linear-gradient(
+      to bottom,
+      color-mix(in oklch, var(--panel, #1a1c30) 32%, transparent),
+      color-mix(in oklch, var(--ink,   #0d0e18) 18%, transparent) 55%,
+      transparent);
 }
 @supports not (background: color-mix(in oklch, red, blue)) {
-  .pn-sub-crumb { background: rgba(0,0,0,.22); }
+  .pn-sub-crumb {
+    background: linear-gradient(to bottom, rgba(34,37,61,.34), rgba(0,0,0,.14) 55%, transparent);
+  }
 }
 
-/* keep both rows on the same measure/padding as the top bar inner */
+/* keep both rows hard-left on the SAME left edge as the top bar's .pn-inner
+   (wordmark gutter). No centered measure cap: "Overview…Pisces" and
+   "Home / …" begin directly under the wordmark. .pn-subnav keeps its
+   horizontal scroller (declared below). */
 .pn-crumb,
 .pn-subnav {
-  max-width: 1140px;
+  max-width: none;
   width: 100%;
-  margin: 0 auto;
-  padding-inline: clamp(1.25rem, 4vw, 1.625rem);
+  margin: 0;
+  padding-inline: clamp(18px, 2.2vw, 34px);
   box-sizing: border-box;
 }
 .pn-subnav { padding-block: var(--s-2, .5rem); }
@@ -108,11 +125,13 @@
   border-radius: var(--r-1, 8px);
   transition: color var(--dur-fast, 180ms) var(--ease-out, ease);
 }
-.pn-crumb a:hover {
+.pn-crumb a:hover,
+.pn-crumb a:focus-visible {
   color: var(--moon, #f6efd8);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-color: var(--accent, #d6c18c);
+  text-shadow: 0 0 10px oklch(0.90 0.09 88 / .45);
 }
 
 /* the current page: not a link, a stronger token color */
@@ -124,6 +143,11 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/* PRIMARY strip keeps overflow visible so a sub-nav dropdown can spill
+   downward past the tab row; the horizontal scroll clip lives on the inner
+   .pn-subnav only (see below). The progress seam is positioned against it. */
+.pn-sub-primary { position: relative; overflow: visible; }
 
 /* ---- Row 2: sibling sub-nav scroller ----------------------------- */
 .pn-subnav {
@@ -188,6 +212,7 @@
   color: var(--moon, #f6efd8);
   transform: translateY(-1px);
   background: transparent;
+  text-shadow: 0 0 10px oklch(0.90 0.09 88 / .4);
 }
 .pn-subnav a:hover::after,
 .pn-subnav a:focus-visible::after {
@@ -297,12 +322,217 @@ html.pn-sealing .pn-sub .pn-seam-spark {
   100% { opacity: 0; transform: translateX(calc(100vw - 20px)) scaleX(1); }
 }
 
+/* ---- THE SCROLL SHOOTING-STAR (progress on the seam) ------------- */
+/* nav.js injects `<div class="pn-progress"><i class="pn-progress-star"></i></div>`
+   as the FIRST child of .pn-sub, sets --pn-scroll (0->1 page fraction) and
+   --pn-beam (0->1 brightness) on <html>, and toggles html.pn-bound. The
+   track spans the seam between the top bar and the sub-nav; it coexists with
+   the base .pn-sub::before hairline (that stays the resting line). 60fps:
+   width / left / opacity / transform / box-shadow only. */
+.pn-progress {
+  position: absolute;
+  top: -1px;              /* sit on the seam, over .pn-sub::before */
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 7;             /* above the sub background + the ::before seam (5/6) */
+  pointer-events: none;
+}
+/* the FILLED track: left edge -> the star head, brass gradient */
+.pn-progress::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: calc(var(--pn-scroll, 0) * 100%);
+  background: linear-gradient(90deg,
+    transparent,
+    var(--brass-dim, #a8925c) 40%,
+    var(--brass, #d6c18c) 82%,
+    var(--brass-bright, #efe2b4));
+  border-radius: 2px;
+  opacity: calc(.35 + var(--pn-beam, 0) * .55);
+}
+/* the beaming comet head: a warm brass -> cool-white core with a horizontal
+   trailing tail, parked at the scroll fraction. Its opacity, glow spread and
+   scale all ride --pn-beam so it blazes mid-scroll and fades toward the end. */
+.pn-progress-star {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--pn-scroll, 0) * 100%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  /* cool-white core over a warm brass halo */
+  background:
+    radial-gradient(closest-side, #fff, var(--brass-bright, #efe2b4) 45%, transparent 78%);
+  transform: translate(-50%, -50%) scale(calc(.7 + var(--pn-beam, 0) * .6));
+  opacity: calc(.25 + var(--pn-beam, 0) * .75);
+  box-shadow:
+    0 0 calc(4px + var(--pn-beam, 0) * 12px) oklch(0.90 0.09 88 / .85),
+    0 0 calc(2px + var(--pn-beam, 0) * 5px)  #fff;
+  transition: opacity var(--dur-fast, 180ms) linear;
+}
+@supports not (color: oklch(from white l c h)) {
+  .pn-progress-star {
+    box-shadow:
+      0 0 calc(4px + var(--pn-beam, 0) * 12px) var(--brass-bright, #efe2b4),
+      0 0 calc(2px + var(--pn-beam, 0) * 5px)  #fff;
+  }
+}
+/* the trailing tail: a short horizontal comet streak dragging left of the head */
+.pn-progress-star::before {
+  content: "";
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  height: 2px;
+  width: calc(18px + var(--pn-beam, 0) * 34px);
+  transform: translateY(-50%);
+  background: linear-gradient(270deg,
+    var(--brass-bright, #efe2b4),
+    var(--brass, #d6c18c) 35%,
+    transparent);
+  border-radius: 2px;
+  opacity: calc(.2 + var(--pn-beam, 0) * .7);
+}
+
+/* ---- SUB-NAV DROPDOWN (items with children) ---------------------- */
+/* apply-nav emits: li.pn-sub-item.pn-has-drop > a.pn-sub-link[aria-haspopup]
+   (Label + span.pn-sub-caret) + ul.pn-subdrop > li > a.pn-subdrop-link.
+   The parent li gets .pn-has-current when a child is the current page, and
+   [data-open] when JS opens it. Shown on [data-open] OR hover/focus-within
+   (desktop). The tab-row base look (.pn-subnav a) still applies to
+   .pn-sub-link since it is an <a> inside .pn-subnav. */
+.pn-sub-item { position: relative; }
+
+/* the caret: a small chevron that flips when the drop is open */
+.pn-sub-caret {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 5px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+  opacity: .7;
+  transition: transform var(--dur-fast, 180ms) var(--ease-out, ease),
+              opacity var(--dur-fast, 180ms) var(--ease-out, ease);
+}
+.pn-sub-link:hover .pn-sub-caret,
+.pn-sub-link:focus-visible .pn-sub-caret,
+.pn-sub-item[data-open] .pn-sub-caret,
+.pn-sub-item:hover .pn-sub-caret,
+.pn-sub-item:focus-within .pn-sub-caret { opacity: 1; }
+.pn-sub-item[data-open] .pn-sub-caret,
+.pn-sub-link[aria-expanded="true"] .pn-sub-caret {
+  transform: rotate(-135deg) translateY(1px);
+}
+
+/* the hidden dropdown panel: dark surface, hairline, radius, soft shadow.
+   Renders downward, absolutely, below the item. High z-index so it clears
+   the sub background even if the JS portals it under .pn-sub. */
+.pn-subdrop {
+  position: fixed;            /* fixed so the tab-row's overflow can't clip it; nav.js sets top/left */
+  z-index: 130;               /* above bar (120) */
+  min-width: 200px;
+  margin: 0;
+  padding: var(--s-1, .25rem);
+  list-style: none;
+  background: var(--panel, #1a1c30);
+  border: 1px solid var(--line, rgba(214,193,140,.16));
+  border-radius: var(--r-2, 14px);
+  box-shadow: var(--e-2, 0 8px 30px rgba(0,0,0,.45));
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity var(--dur-fast, 180ms) var(--ease-out, ease),
+              transform var(--dur-fast, 180ms) var(--ease-out, ease),
+              visibility 0s linear var(--dur-fast, 180ms);
+}
+/* Shown ONLY via [data-open] (nav.js sets it on hover/focus/tap AND positions
+   the fixed panel first, so there is no unpositioned flash). */
+.pn-sub-item[data-open] > .pn-subdrop {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+.pn-subdrop li { margin: 0; }
+
+/* dropdown rows: quiet by default, IGNITE on hover (per #3) — brighten to
+   moon, warm wash, lit-underline glow, a small nudge. Never dim. */
+.pn-subdrop-link {
+  position: relative;
+  display: block;
+  padding: 9px 12px;
+  border-radius: var(--r-1, 8px);
+  font-family: var(--serif, serif);
+  font-size: .88rem;
+  line-height: 1.25;
+  color: var(--muted, #adaec2);
+  text-decoration: none;
+  transition: color var(--dur-fast, 180ms) var(--ease-out, ease),
+              background var(--dur-fast, 180ms) var(--ease-out, ease),
+              transform var(--dur-fast, 180ms) var(--ease-out, ease),
+              text-shadow var(--dur-fast, 180ms) var(--ease-out, ease);
+}
+.pn-subdrop-link:hover,
+.pn-subdrop-link:focus-visible {
+  color: var(--moon, #f6efd8);
+  background: var(--accent-soft, rgba(214,193,140,.16));
+  transform: translateX(3px);
+  text-shadow: 0 0 10px oklch(0.90 0.09 88 / .4);
+}
+.pn-subdrop-link:focus-visible {
+  outline: 2px solid var(--pn-sub-focus);
+  outline-offset: 2px;
+}
+/* current child inside the drop: brightened italic + a lit dot */
+.pn-subdrop-link[aria-current="page"] {
+  color: var(--moon, #f6efd8);
+  font-style: italic;
+  font-weight: 560;
+}
+
+/* the parent tab when a child is the current page: the lit active treatment
+   (brightened + a lit underline + the ember star), matching aria-current tabs */
+.pn-has-current > .pn-sub-link {
+  color: var(--moon, #f6efd8);
+  font-style: italic;
+  font-weight: 560;
+}
+.pn-has-current > .pn-sub-link::after {
+  left: 12px;
+  right: 12px;
+  background: linear-gradient(90deg, transparent, var(--brass-bright, #efe2b4), transparent);
+  box-shadow: 0 0 10px oklch(0.90 0.09 88 / .6);
+}
+.pn-has-current > .pn-sub-link::before {
+  content: "\2726"; /* ✦ */
+  position: absolute;
+  top: 6px;
+  right: 3px;
+  font-size: 8px;
+  color: var(--brass-bright, #efe2b4);
+  text-shadow: 0 0 7px oklch(0.90 0.09 88 / .8);
+}
+
 /* ---- Responsive collapse ----------------------------------------- */
 @media (max-width: 640px) {
   .pn-sub {
     /* the sticky offset comes from the shared :root --pn-bar-h knob
        (measured by nav.js); no local override, it would desync */
     padding-top: var(--s-2, .5rem);
+  }
+  /* dropdown expands inline / full-width; tap to open (JS sets [data-open]).
+     No hover-open on touch — only the explicit open state shows it. */
+  /* stays a fixed panel (nav.js positions + width-clamps it); tap-to-open
+     only — the [data-open] rule above is the sole reveal on touch */
+  .pn-subdrop {
+    min-width: 180px;
+    max-width: calc(100vw - 16px);
   }
   .pn-crumb {
     flex-wrap: nowrap;
@@ -336,4 +566,24 @@ html.pn-sealing .pn-sub .pn-seam-spark {
     transform: scaleX(1);
   }
   .pn-sub .pn-seam-spark { display: none !important; }
+
+  /* progress: a static thin fill tracking --pn-scroll; no comet travel,
+     no glow pulse. The star head + tail are suppressed entirely. */
+  .pn-progress::before { opacity: .5; }
+  .pn-progress-star {
+    opacity: 0 !important;
+    box-shadow: none !important;
+    transition: none;
+  }
+  .pn-progress-star::before { display: none; }
+
+  /* dropdown: still opens (visibility/opacity), just no rise/nudge transforms */
+  .pn-subdrop { transition: none; transform: none; }
+  .pn-sub-item[data-open] > .pn-subdrop,
+  .pn-sub-item:hover > .pn-subdrop,
+  .pn-sub-item:focus-within > .pn-subdrop { transform: none; }
+  .pn-subdrop-link { transition: color var(--dur-fast, 180ms) linear; }
+  .pn-subdrop-link:hover,
+  .pn-subdrop-link:focus-visible { transform: none; }
+  .pn-sub-caret { transition: none; }
 }

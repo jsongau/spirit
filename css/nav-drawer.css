@@ -214,6 +214,64 @@
 .pn-acc-link:focus-visible { outline: 2px solid var(--brass-bright); outline-offset: 2px; border-radius: var(--r-1); }
 
 /* ------------------------------------------------------------
+   6b. "This section" group. nav.js clones the current page's sibling
+   sub-nav (the sticky horizontal scroller) into a drawer accordion so
+   small screens can jump between siblings vertically. Parents that have
+   a .pn-subdrop get their children rendered INLINE, full-width, indented
+   one step — no popover on touch. Open by default (nav.js sets .open +
+   aria-expanded=true). Same hairline-and-type language, 44px+ targets,
+   and it never introduces a horizontal scroll box.
+   ------------------------------------------------------------ */
+.pn-acc-section { --accent: var(--brass); --accent-bright: var(--brass-bright); }
+
+.pn-acc-sublink {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+  padding: var(--s-3) var(--s-2);
+  font: 400 1rem/1.3 var(--serif);
+  color: var(--moon);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-soft);
+  transition: color var(--dur-fast) var(--ease-io);
+  /* no fixed width / white-space:nowrap => wraps instead of scrolling */
+  word-break: break-word;
+}
+.pn-acc-sublink:last-child { border-bottom: 0; }
+.pn-acc-sublink:hover { color: var(--accent-bright); }
+.pn-acc-sublink:focus-visible {
+  outline: 2px solid var(--brass-bright);
+  outline-offset: -2px;
+  border-radius: var(--r-1);
+}
+/* the current sibling reads brighter + italic (meaning is never color-only) */
+.pn-acc-sublink[aria-current="page"] {
+  color: var(--ivory);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* child of a .pn-subdrop parent: indented one step, quieter, smaller */
+.pn-acc-subchild {
+  padding-left: var(--s-5, 1.5rem);
+  font-size: .92rem;
+  color: var(--muted);
+}
+.pn-acc-subchild::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 5px;
+  height: 5px;
+  margin-right: var(--s-2);
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .5;
+}
+.pn-acc-subchild:hover { color: var(--accent-bright); }
+.pn-acc-subchild[aria-current="page"] { color: var(--ivory); font-style: italic; }
+
+/* ------------------------------------------------------------
    7. Motion. Sheet slides in; gated behind no-preference. Reduced
    motion: the sheet and accordion appear instantly.
    ------------------------------------------------------------ */
@@ -232,6 +290,8 @@
   .pn-acc-chev,
   .pn-acc-head,
   .pn-acc-link,
+  .pn-acc-sublink,
+  .pn-acc-subchild,
   .pn-drawer-close { transition: none; }
 }
 

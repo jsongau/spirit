@@ -272,24 +272,33 @@ PNAV.MAP = [
         ["/feng-shui/kua-number/",  "Your Kua number"],
         ["/directions/",            "Directions"]
       ]},
-      { title: "Proverbs and lore", mark: "❦", items: [
-        ["/proverbs/",    "The Proverb Pond", "Chinese proverbs, pronounced"],
-        ["/traditions/",  "Traditions"],
-        ["/habitat/",     "The Habitat"]
+      /* The Proverb Pond, opened out. The overview + Study + Collection
+         sit in their own column; the twelve ponds follow, grouped by life
+         area (Self, People, World). Each pond keeps a plain-keyword label;
+         nav-mega.css paints a colored dot in the row's empty glyph box. */
+      { title: "The Proverb Pond", mark: "❦", items: [
+        ["/proverbs/",       "The Proverb Pond", "Chinese proverbs, pronounced"],
+        ["/proverbs/study/", "Study the proverbs"],
+        ["/proverbs/",       "The whole collection", "all 87 proverbs"],
+        ["/traditions/",     "Traditions"]
       ]},
-      { title: "The Proverb Pond, by theme", mark: "❦", items: [
-        ["/proverbs/wealth-and-work/",            "Money and work"],
-        ["/proverbs/home-and-family/",            "Family and roots"],
-        ["/proverbs/nature-and-seasons/",         "Health and nature"],
-        ["/proverbs/friendship-and-trust/",       "Friendship and trust"],
-        ["/proverbs/the-way-of-water/",           "The way of water"],
-        ["/proverbs/timing-and-fortune/",         "Fate and fortune"],
-        ["/proverbs/perseverance/",               "Perseverance"],
-        ["/proverbs/courage/",                    "Courage"],
-        ["/proverbs/wisdom-and-learning/",        "Wisdom and learning"],
-        ["/proverbs/harmony-and-virtue/",         "Harmony and virtue"],
-        ["/proverbs/humility-and-self-mastery/",  "Humility"],
-        ["/proverbs/adversity-and-resilience/",   "Adversity"]
+      { title: "Ponds · Self", mark: "水", items: [
+        ["/proverbs/the-way-of-water/", "The Tao"],
+        ["/proverbs/timing-and-fortune/", "Fate"],
+        ["/proverbs/perseverance/",     "Perseverance"],
+        ["/proverbs/courage/",          "Courage"]
+      ]},
+      { title: "Ponds · People", mark: "仁", items: [
+        ["/proverbs/home-and-family/",          "Family"],
+        ["/proverbs/friendship-and-trust/",     "Friendship"],
+        ["/proverbs/wisdom-and-learning/",      "Wisdom"],
+        ["/proverbs/humility-and-self-mastery/", "Humility"]
+      ]},
+      { title: "Ponds · World", mark: "地", items: [
+        ["/proverbs/wealth-and-work/",          "Money"],
+        ["/proverbs/nature-and-seasons/",       "Health"],
+        ["/proverbs/harmony-and-virtue/",       "Harmony"],
+        ["/proverbs/adversity-and-resilience/", "Adversity"]
       ]}
     ]
   },
@@ -364,9 +373,20 @@ PNAV.ORIGIN = "https://spirit-omega.vercel.app";
      label  human breadcrumb text for the hub root crumb
      root   the hub landing URL (crumb 2 links here)
      items  sibling links for the sub-nav row, in display order.
-            The item whose href matches the current page is marked
-            aria-current="page". An empty items[] suppresses the sub-nav
-            row and emits only the breadcrumb.
+            Each item is EITHER
+              [href, label]            a plain sub-nav link, OR
+              [href, label, children]  a sub-nav link that ALSO opens a
+                                       dropdown of child links, where
+                                       `children` is an array of [href, label].
+            The parent [href] stays a real anchor (crawlable, no-JS still
+            navigates to it); the children render as real anchors inside a
+            .pn-subdrop. apply-nav.mjs marks aria-current="page" on whichever
+            anchor (parent OR a child) matches the current page, and tags the
+            parent <li> with class pn-has-current when a child is the match so
+            CSS can light the trail. The item whose href equals the hub root
+            ("Overview") is DROPPED from the visible sub-nav row (the breadcrumb
+            + JSON-LD still link hub.root). An empty items[] suppresses the
+            sub-nav row entirely and emits only the breadcrumb.
    The build (apply-nav.mjs) reads this to inject the pn-sub bar and the
    BreadcrumbList JSON-LD, so the visible trail and the schema never drift.
    Copy rule: no arrows, no dashes in any label. */
@@ -425,20 +445,24 @@ PNAV.HUBS = {
     ]
   },
   "proverbs": {
+    /* Sibling sub-nav for the twelve ponds, ordered to mirror the mega-nav
+       panel: the whole collection first, then the Self, People, and World
+       ponds in the same run, then Study. Labels are the plain keywords so
+       the anchor text wins the plain search. */
     label: "Chinese Proverbs", root: "/proverbs/",
     items: [
       ["/proverbs/", "All 87"],
-      ["/proverbs/wealth-and-work/", "Money"],
-      ["/proverbs/home-and-family/", "Family"],
-      ["/proverbs/nature-and-seasons/", "Health"],
-      ["/proverbs/friendship-and-trust/", "Friendship"],
       ["/proverbs/the-way-of-water/", "The Tao"],
       ["/proverbs/timing-and-fortune/", "Fate"],
       ["/proverbs/perseverance/", "Perseverance"],
       ["/proverbs/courage/", "Courage"],
+      ["/proverbs/home-and-family/", "Family"],
+      ["/proverbs/friendship-and-trust/", "Friendship"],
       ["/proverbs/wisdom-and-learning/", "Wisdom"],
-      ["/proverbs/harmony-and-virtue/", "Harmony"],
       ["/proverbs/humility-and-self-mastery/", "Humility"],
+      ["/proverbs/wealth-and-work/", "Money"],
+      ["/proverbs/nature-and-seasons/", "Health"],
+      ["/proverbs/harmony-and-virtue/", "Harmony"],
       ["/proverbs/adversity-and-resilience/", "Adversity"],
       ["/proverbs/study/", "Study"]
     ]
@@ -446,22 +470,35 @@ PNAV.HUBS = {
   "feng-shui": {
     label: "Feng Shui", root: "/feng-shui/",
     items: [
+      /* Overview (the /feng-shui/ root) is dropped from the visible row by
+         apply-nav; the breadcrumb still links it. The flat 16 spokes are
+         regrouped into parent items with dropdowns of their child links. */
       ["/feng-shui/", "Overview"],
-      ["/feng-shui/five-elements/", "Five phases"],
-      ["/feng-shui/yin-yang/", "Yin and yang"],
-      ["/feng-shui/bagua/", "Bagua"],
-      ["/feng-shui/eight-directions/", "Eight directions"],
-      ["/feng-shui/compass/", "Compass"],
-      ["/feng-shui/schools/", "Schools"],
-      ["/feng-shui/flying-stars/", "Flying stars"],
-      ["/feng-shui/kua-number/", "Kua number"],
-      ["/feng-shui/lineage/", "Lineage"],
-      ["/feng-shui/your-animal/", "Your animal"],
-      ["/feng-shui/bedroom/", "Bedroom"],
-      ["/feng-shui/front-door/", "Front door"],
-      ["/feng-shui/colors/", "Colors"],
-      ["/feng-shui/office-desk/", "Office and desk"],
-      ["/feng-shui/wealth-corner/", "Wealth corner"]
+      ["/feng-shui/bagua/", "The bagua", [
+        ["/feng-shui/bagua/", "Bagua map"],
+        ["/feng-shui/eight-directions/", "Eight directions"],
+        ["/feng-shui/compass/", "Compass"],
+        ["/feng-shui/flying-stars/", "Flying stars"]
+      ]],
+      ["/feng-shui/five-elements/", "Five phases", [
+        ["/feng-shui/five-elements/", "Five phases"],
+        ["/feng-shui/yin-yang/", "Yin and yang"]
+      ]],
+      ["/feng-shui/kua-number/", "Your Kua", [
+        ["/feng-shui/kua-number/", "Kua number"],
+        ["/feng-shui/your-animal/", "Your animal"]
+      ]],
+      ["/feng-shui/bedroom/", "In the home", [
+        ["/feng-shui/bedroom/", "Bedroom"],
+        ["/feng-shui/front-door/", "Front door"],
+        ["/feng-shui/office-desk/", "Office and desk"],
+        ["/feng-shui/wealth-corner/", "Wealth corner"],
+        ["/feng-shui/colors/", "Colors"]
+      ]],
+      ["/feng-shui/schools/", "Lineage", [
+        ["/feng-shui/schools/", "Schools"],
+        ["/feng-shui/lineage/", "Lineage"]
+      ]]
     ]
   },
   "directions": {

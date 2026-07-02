@@ -70,7 +70,19 @@
   function pickVoice() {
     if (!window.speechSynthesis) return;
     var vs = speechSynthesis.getVoices() || [];
-    zhVoice = vs.filter(function (v) { return /^zh\b|zh[-_]/i.test(v.lang) || /Chinese|中文|普通话|國語/i.test(v.name); })[0] || null;
+    var best = null, bs = -1;
+    for (var i = 0; i < vs.length; i++) {
+      var v = vs[i], nm = (v.name || "").toLowerCase(), lg = (v.lang || "").toLowerCase();
+      if (!(/^zh\b|zh[-_]/.test(lg) || /chinese|中文|普通话|国语|國語|mandarin/i.test(v.name || ""))) continue;
+      var sc = 0;
+      if (/tingting|ting-ting|meijia|mei-jia|sinji|li-mu|yu-shu|han-?yu/.test(nm)) sc += 100; // Apple premium (Safari/macOS)
+      if (/google/.test(nm)) sc += 60;                                                        // Google network voice (Chrome)
+      if (/普通话|mandarin|zh-cn|zh_cn|cmn/.test(nm + lg)) sc += 25;                            // Mandarin over Cantonese/Taiwan
+      if (v.localService === false) sc += 12;                                                 // network voices are usually clearer
+      if (/female|woman/.test(nm)) sc += 4;
+      if (sc > bs) { bs = sc; best = v; }
+    }
+    zhVoice = best;
   }
   if (window.speechSynthesis) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
   function speak(text, btn) {
@@ -520,6 +532,16 @@
     if (!document.hidden && !reduce) raf = requestAnimationFrame(step);
   }
   function ripple(x, y) { ripples.push({ x: x, y: y, rad: 2, life: 1 }); }
+  /* after a draw, bring the full-width reveal into view (it sits below the
+     pond in the new layout, so on a stacked/mobile view it can be off screen) */
+  function revealIntoView() {
+    if (!reveal || !reveal.scrollIntoView) return;
+    var r = reveal.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    if (r.top < 0 || r.bottom > vh) {
+      try { reveal.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" }); } catch (e) {}
+    }
+  }
   function nudgeKoiToward(x, y) {
     // send the nearest koi darting toward the touch, then draw
     var best = null, bd = 1e9;
@@ -555,12 +577,14 @@
       ripple(x, y); nudgeKoiToward(x, y);
       pond.classList.add("is-drawn");
       draw(true);
+      revealIntoView();
     });
   }
   if (drawBtn) drawBtn.addEventListener("click", function () {
     pond.classList.add("is-drawn");
     if (ctx) ripple(W * (0.3 + Math.random() * 0.4), H * (0.3 + Math.random() * 0.4));
     draw(true);
+    revealIntoView();
   });
 
   /* seed the reveal with today's proverb so it is never empty */

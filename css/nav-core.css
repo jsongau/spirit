@@ -146,8 +146,11 @@
   background:transparent; border:1px solid var(--line); border-radius:var(--r-pill,999px);
   color:var(--ivory); font:500 .78rem/1 var(--sans,sans-serif); letter-spacing:.01em;
   text-decoration:none; white-space:nowrap;
-  transition:border-color .2s ease, color .2s ease, background .2s ease}
-.pn-id:hover,.pn-id:focus-visible{border-color:var(--accent); color:var(--moon); background:var(--accent-soft)}
+  transition:border-color .2s ease, color .2s ease, background .2s ease,
+             box-shadow .2s ease, transform var(--dur-fast,180ms) var(--ease-out,ease)}
+/* ignite (never dim): brass rim, moon text, warm wash + a lift and a soft bloom */
+.pn-id:hover,.pn-id:focus-visible{border-color:var(--accent); color:var(--moon); background:var(--accent-soft);
+  transform:translateY(-1px); box-shadow:0 0 16px -3px var(--accent-soft)}
 .pn-id .pn-id-glyph{display:inline-flex; align-items:center; justify-content:center;
   width:24px; height:24px; flex:0 0 auto; border-radius:50%;
   border:1px solid var(--line-soft); background:var(--accent-soft);
@@ -160,8 +163,11 @@
   flex:0 0 auto; text-decoration:none;
   background:transparent; border:1px solid var(--line); border-radius:var(--r-pill,999px);
   color:var(--muted); font:400 .68rem/1 var(--mono,monospace); cursor:pointer; white-space:nowrap;
-  transition:border-color .2s ease, color .2s ease, background .2s ease}
-.pn-moon:hover,.pn-moon[aria-expanded="true"]{border-color:var(--accent); color:var(--moon)}
+  transition:border-color .2s ease, color .2s ease, background .2s ease,
+             box-shadow .2s ease, transform var(--dur-fast,180ms) var(--ease-out,ease)}
+/* ignite: brass rim, moon text, a lift and a soft bloom (never dim) */
+.pn-moon:hover,.pn-moon:focus-visible,.pn-moon[aria-expanded="true"]{border-color:var(--accent); color:var(--moon);
+  transform:translateY(-1px); box-shadow:0 0 16px -3px var(--accent-soft)}
 .pn-moon[aria-expanded="true"]{background:var(--accent-soft)}
 .pn-moon .g{font-size:1rem; line-height:1}
 .pn-moon[hidden]{display:none}
@@ -176,8 +182,9 @@
 .pn-moonpop .pnm-pct{margin:0; font:400 .68rem/1.4 var(--mono); color:var(--muted)}
 .pn-moonpop .pnm-meaning{margin:0 0 6px; font:400 .85rem/1.55 var(--sans); color:var(--body-text)}
 .pn-moonpop .pnm-favors{margin:0 0 12px; font:600 .8rem/1.4 var(--sans); color:var(--season)}
-.pn-moonpop .pnm-link{font:600 .8rem/1 var(--sans); color:var(--accent); text-decoration:none}
-.pn-moonpop .pnm-link:hover{color:var(--accent-bright)}
+.pn-moonpop .pnm-link{font:600 .8rem/1 var(--sans); color:var(--accent); text-decoration:none;
+  transition:color var(--dur-fast,180ms) var(--ease-out,ease), text-shadow var(--dur-fast,180ms) var(--ease-out,ease)}
+.pn-moonpop .pnm-link:hover,.pn-moonpop .pnm-link:focus-visible{color:var(--accent-bright); text-shadow:0 0 12px var(--accent-soft)}
 @media (prefers-reduced-motion: no-preference){
   .pn-moonpop{animation:pnPopIn .2s ease both}
   @keyframes pnPopIn{from{opacity:0; transform:translateY(-6px) scale(.99)} to{opacity:1; transform:none}}
@@ -189,14 +196,17 @@
    ring colors are tokens here, never in JS. */
 .pn-ring{display:inline-grid; place-items:center; width:38px; height:38px; flex:0 0 auto;
   border-radius:50%; text-decoration:none; color:var(--ivory); cursor:pointer;
-  transition:background .2s ease, color .2s ease, box-shadow .2s ease}
+  transition:background .2s ease, color .2s ease, box-shadow .2s ease,
+             transform var(--dur-fast,180ms) var(--ease-out,ease)}
 .pn-ring > *{grid-area:1 / 1}
 .pn-ring svg{display:block; transform:rotate(-90deg)}
 .pn-ring .pnp-track{stroke:var(--line)}
-.pn-ring .pnp-fill{stroke:var(--accent); transition:stroke-dasharray .4s ease}
+.pn-ring .pnp-fill{stroke:var(--accent); transition:stroke-dasharray .4s ease, stroke .2s ease}
 .pn-ring .pn-ring-pct{font:700 .5rem/1 var(--mono,monospace); color:var(--ivory);
   letter-spacing:0; pointer-events:none}
-.pn-ring:hover,.pn-ring:focus-visible{background:var(--accent-soft); color:var(--moon)}
+/* ignite: warm wash, moon text, brighter ring fill + a soft bloom (never dim) */
+.pn-ring:hover,.pn-ring:focus-visible{background:var(--accent-soft); color:var(--moon);
+  box-shadow:0 0 16px -3px var(--accent-soft)}
 .pn-ring:hover .pnp-fill,.pn-ring:focus-visible .pnp-fill{stroke:var(--accent-bright,var(--accent))}
 
 /* the theme toggle chip is retired (dark-only); if a stale page
@@ -265,6 +275,13 @@ html.pn-bound .pn-bar::after{content:""; position:absolute; left:0; right:0; bot
   .pn-moonpop{animation:none}
   .pn-ring .pnp-fill{transition:none}
   html.pn-bound .pn-bar{transition:none}
+  /* triggers/links still brighten (color set on :hover); drop only the lift */
+  .pn-link:hover,.pn-trigger:hover,
+  .pn-link:focus-visible,.pn-trigger:focus-visible,
+  .pn-trigger[aria-expanded="true"]{transform:none}
+  .pn-id:hover,.pn-id:focus-visible,
+  .pn-moon:hover,.pn-moon:focus-visible{transform:none}
+  .pn-stone{transition:none}
 }
 
 /* the drawer's tool-chip strip: nav.js clones the bar's identity

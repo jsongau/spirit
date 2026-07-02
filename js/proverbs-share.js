@@ -5,6 +5,36 @@
   "use strict";
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* Shared best-quality Mandarin speak, used by every proverb speaker button.
+     Ranks the available voices so Chrome picks its Google Mandarin voice (or the
+     clearest it has) instead of the robotic default. Safari exposes Apple's
+     Tingting / Meijia, which win the ranking, which is why Safari already sounds
+     natural. Nothing can give Chrome Apple's voice, but this gets its best one. */
+  window.zaSpeak = function (text, btn) {
+    if (!window.speechSynthesis || !text) return;
+    try {
+      var vs = speechSynthesis.getVoices() || [];
+      var best = null, bs = -1;
+      for (var i = 0; i < vs.length; i++) {
+        var v = vs[i], nm = (v.name || "").toLowerCase(), lg = (v.lang || "").toLowerCase();
+        if (!(/^zh\b|zh[-_]/.test(lg) || /chinese|中文|普通话|国语|國語|mandarin/i.test(v.name || ""))) continue;
+        var sc = 0;
+        if (/tingting|ting-ting|meijia|mei-jia|sinji|li-mu|yu-shu|han-?yu/.test(nm)) sc += 100;
+        if (/google/.test(nm)) sc += 60;
+        if (/普通话|mandarin|zh-cn|zh_cn|cmn/.test(nm + lg)) sc += 25;
+        if (v.localService === false) sc += 12;
+        if (/female|woman/.test(nm)) sc += 4;
+        if (sc > bs) { bs = sc; best = v; }
+      }
+      var u = new SpeechSynthesisUtterance(text);
+      u.lang = "zh-CN"; u.rate = 0.78;
+      if (best) u.voice = best;
+      speechSynthesis.cancel(); speechSynthesis.speak(u);
+      if (btn) { btn.classList.add("is-saying"); u.onend = u.onerror = function () { btn.classList.remove("is-saying"); }; }
+    } catch (e) {}
+  };
+  if (window.speechSynthesis) { try { speechSynthesis.getVoices(); } catch (e) {} } // warm Chrome's async voice list
+
   /* ---------- runtime style (one injection) ---------- */
   function injectStyle() {
     if (document.getElementById("pv-share-style")) return;
