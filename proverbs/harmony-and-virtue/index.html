@@ -63,7 +63,7 @@
 /* mobile / tablet: the rail becomes a horizontal swipe strip of pills,
    pinned under the breadcrumb, never covering the content */
 @media (max-width:959px){
-  .pv-rail{position:sticky;top:56px;z-index:6;margin:0 -20px 8px;padding:10px 16px;
+  .pv-rail{position:sticky;top:calc(var(--pn-stack-h, 150px) + 10px);z-index:6;margin:0 -20px 8px;padding:10px 16px;
     background:linear-gradient(180deg,rgba(10,12,22,.94),rgba(10,12,22,.8));border-bottom:1px solid rgba(214,193,140,.14);
     backdrop-filter:blur(8px)}
   .pv-rail-head{display:none}

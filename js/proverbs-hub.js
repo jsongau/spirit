@@ -329,6 +329,65 @@
     apply();
   });
 
+  /* ---------- filter bar: manual toggle + auto-collapse on scroll ----------
+     The sticky bar is tall enough to hide cards once scrolled, so it collapses
+     to just its header row. Two independent signals drive that:
+       .is-collapsed  the reader tapped the toggle (their explicit choice)
+       .is-compact    auto: they scrolled down past the bar's sticky point
+     A manual toggle is honored (userSet) until they return to the very top,
+     where auto takes back over. The scroll handler is rAF-throttled. */
+  (function () {
+    var controls = document.querySelector(".pv-controls");
+    var toggle = document.getElementById("pvFilterToggle");
+    if (!controls) return;
+
+    var userSet = false; // has the reader made an explicit choice this scroll session
+
+    // "open" means the body is visible: neither collapse signal is set
+    function isOpen() {
+      return !controls.classList.contains("is-collapsed") && !controls.classList.contains("is-compact");
+    }
+    function setOpen(open) {
+      controls.classList.toggle("is-collapsed", !open);
+      if (open) controls.classList.remove("is-compact");
+      if (toggle) toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+
+    if (toggle) toggle.addEventListener("click", function () {
+      userSet = true;
+      setOpen(!isOpen());
+    });
+
+    // auto: collapse to the header once the reader scrolls below the bar's top
+    var ticking = false;
+    function evaluate() {
+      ticking = false;
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      var top = 0;
+      try { top = controls.getBoundingClientRect().top + y; } catch (e) {}
+      var stickTop = 56; // matches .pv-controls top offset
+      if (y <= Math.max(0, top - stickTop - 8)) {
+        // back at/above the bar's resting place: auto takes over again
+        userSet = false;
+        controls.classList.remove("is-compact", "is-collapsed");
+        if (toggle) toggle.setAttribute("aria-expanded", "true");
+        return;
+      }
+      if (userSet) return; // respect the reader's explicit choice while scrolled
+      // scrolled down and no manual override: compact it so the grid shows
+      controls.classList.add("is-compact");
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
+    }
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      if (window.requestAnimationFrame) requestAnimationFrame(evaluate);
+      else setTimeout(evaluate, 100);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    evaluate();
+  })();
+
   /* ---------- background starfield behind the whole page ---------- */
   (function () {
     var cv = document.getElementById("sky"); if (!cv || !cv.getContext) return;

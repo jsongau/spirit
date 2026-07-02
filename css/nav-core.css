@@ -234,7 +234,7 @@
 
 /* anchor jumps clear the sticky bar; --pn-bar-h is the shared knob
    declared in nav-sub.css and measured live by nav.js */
-body.pn-has-bar{scroll-padding-top:calc(var(--pn-bar-h, 64px) + 20px)}
+body.pn-has-bar{scroll-padding-top:calc(var(--pn-stack-h, 150px) + 12px)}
 /* the pre-rendered bar supersedes any legacy simple header */
 body.pn-has-bar header.top{display:none}
 /* crawlable section links: real anchors, not shown to sighted users */

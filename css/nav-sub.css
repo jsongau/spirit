@@ -28,6 +28,12 @@
    value on :root, belt and braces. */
 :root {
   --pn-bar-h: 64px;
+  /* FULL sticky stack = the fixed bar + the sticky sub-band (sub-nav +
+     breadcrumb). nav.js measures the real .pn-sub and overrides this exactly
+     (bar-only on pages with no sub-band, like the homepage). Everything that
+     sticks below the nav or scroll-pads to an anchor must clear THIS, not just
+     --pn-bar-h, or the stack covers the page's own content. */
+  --pn-stack-h: calc(var(--pn-bar-h) + 86px);
   --pn-sub-focus: var(--brass-bright, #efe2b4);
 }
 

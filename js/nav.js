@@ -981,11 +981,22 @@ window.PNAV = window.PNAV || { features: {} };
      ========================================================= */
   function syncBarHeight(bar) {
     let raf = 0;
+    // the sticky sub-band under the bar: the hub sub-nav + breadcrumb (.pn-sub)
+    // on inner pages, or the homepage's section sub-nav (.omv4-sub). Only one
+    // exists per page, so summing their heights is safe (the other is 0).
+    const sub = doc.querySelector(".pn-sub");
+    const hsub = doc.querySelector(".omv4-sub");
     const apply = () => {
       raf = 0;
       try {
         const h = bar.getBoundingClientRect().height;
         if (h > 0) doc.documentElement.style.setProperty("--pn-bar-h", h + "px");
+        // FULL sticky stack = bar + whatever sticky sub-band the page carries.
+        // Anything that sticks below the nav or scroll-pads to an anchor must
+        // clear THIS, not just the bar, or the stack covers the page content.
+        const subH = (sub ? sub.getBoundingClientRect().height : 0)
+                   + (hsub ? hsub.getBoundingClientRect().height : 0);
+        doc.documentElement.style.setProperty("--pn-stack-h", ((h > 0 ? h : 64) + subH) + "px");
       } catch (e) {}
     };
     const queue = () => { if (!raf) raf = requestAnimationFrame(apply); };
