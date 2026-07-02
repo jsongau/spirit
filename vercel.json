@@ -1,0 +1,774 @@
+{
+  "redirects": [
+    {
+      "source": "/animals/cape-buffalo",
+      "destination": "/animals/sun-bear/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/cape-buffalo/",
+      "destination": "/animals/sun-bear/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/chamois",
+      "destination": "/animals/wallcreeper/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/chamois/",
+      "destination": "/animals/wallcreeper/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/southern-cassowary",
+      "destination": "/animals/cassowary/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/southern-cassowary/",
+      "destination": "/animals/cassowary/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/dingo",
+      "destination": "/animals/giant-otter/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/dingo/",
+      "destination": "/animals/giant-otter/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/white-lipped-peccary",
+      "destination": "/animals/honey-badger/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/white-lipped-peccary/",
+      "destination": "/animals/honey-badger/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/wombat",
+      "destination": "/animals/aardwolf/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/wombat/",
+      "destination": "/animals/aardwolf/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/musk-ox",
+      "destination": "/animals/giant-clam/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/musk-ox/",
+      "destination": "/animals/giant-clam/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/southern-white-rhinoceros",
+      "destination": "/animals/sable-antelope/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/southern-white-rhinoceros/",
+      "destination": "/animals/sable-antelope/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/pika",
+      "destination": "/animals/koala/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/pika/",
+      "destination": "/animals/koala/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/tibetan-antelope",
+      "destination": "/animals/snow-petrel/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/tibetan-antelope/",
+      "destination": "/animals/snow-petrel/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/orangutan",
+      "destination": "/animals/ringtail/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/orangutan/",
+      "destination": "/animals/ringtail/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/anatolian-shepherd",
+      "destination": "/animals/banded-mongoose/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/anatolian-shepherd/",
+      "destination": "/animals/banded-mongoose/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/tapir",
+      "destination": "/animals/bongo/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/tapir/",
+      "destination": "/animals/bongo/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/prairie-dog",
+      "destination": "/animals/three-wattled-bellbird/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/prairie-dog/",
+      "destination": "/animals/three-wattled-bellbird/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/serval",
+      "destination": "/animals/bat-eared-fox/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/serval/",
+      "destination": "/animals/bat-eared-fox/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/common-swift",
+      "destination": "/animals/swift/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/common-swift/",
+      "destination": "/animals/swift/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/gelada",
+      "destination": "/animals/rock-wren/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/gelada/",
+      "destination": "/animals/rock-wren/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/magpie",
+      "destination": "/animals/fork-tailed-drongo/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/magpie/",
+      "destination": "/animals/fork-tailed-drongo/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/binturong",
+      "destination": "/animals/cacomistle/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/binturong/",
+      "destination": "/animals/cacomistle/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/water-deer",
+      "destination": "/animals/glasswing-butterfly/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/water-deer/",
+      "destination": "/animals/glasswing-butterfly/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/kinkajou",
+      "destination": "/animals/spotted-cuscus/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/kinkajou/",
+      "destination": "/animals/spotted-cuscus/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/elephant-seal",
+      "destination": "/animals/ribbon-seal/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/elephant-seal/",
+      "destination": "/animals/ribbon-seal/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/banteng",
+      "destination": "/animals/spotted-hyena/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/banteng/",
+      "destination": "/animals/spotted-hyena/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/king-cobra",
+      "destination": "/animals/blue-ringed-octopus/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/king-cobra/",
+      "destination": "/animals/blue-ringed-octopus/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/blackbuck",
+      "destination": "/animals/paradise-riflebird/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/blackbuck/",
+      "destination": "/animals/paradise-riflebird/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/barbary-sheep",
+      "destination": "/animals/golden-brushtail-possum/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/barbary-sheep/",
+      "destination": "/animals/golden-brushtail-possum/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/mandrill",
+      "destination": "/animals/regal-jumping-spider/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/mandrill/",
+      "destination": "/animals/regal-jumping-spider/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/guianan-cock-of-the-rock",
+      "destination": "/animals/sunset-moth/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/guianan-cock-of-the-rock/",
+      "destination": "/animals/sunset-moth/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/dhole",
+      "destination": "/animals/sunbittern/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/dhole/",
+      "destination": "/animals/sunbittern/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/babirusa",
+      "destination": "/animals/golden-snub-nosed-monkey/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/babirusa/",
+      "destination": "/animals/golden-snub-nosed-monkey/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/harvest-mouse",
+      "destination": "/animals/penduline-tit/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/harvest-mouse/",
+      "destination": "/animals/penduline-tit/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/sanderling",
+      "destination": "/animals/avocet/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/sanderling/",
+      "destination": "/animals/avocet/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/alpine-marmot",
+      "destination": "/animals/clarks-nutcracker/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/alpine-marmot/",
+      "destination": "/animals/clarks-nutcracker/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/border-collie",
+      "destination": "/animals/cleaner-wrasse/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/border-collie/",
+      "destination": "/animals/cleaner-wrasse/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/short-beaked-echidna",
+      "destination": "/animals/star-nosed-mole/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/short-beaked-echidna/",
+      "destination": "/animals/star-nosed-mole/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/mute-swan",
+      "destination": "/animals/swan/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/mute-swan/",
+      "destination": "/animals/swan/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/ribbon-eel",
+      "destination": "/animals/paradise-tanager/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/ribbon-eel/",
+      "destination": "/animals/paradise-tanager/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/impala",
+      "destination": "/animals/flamingo/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/impala/",
+      "destination": "/animals/flamingo/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/dik-dik",
+      "destination": "/animals/luna-moth/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/dik-dik/",
+      "destination": "/animals/luna-moth/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/bonobo",
+      "destination": "/animals/kissing-gourami/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/bonobo/",
+      "destination": "/animals/kissing-gourami/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/gibbon",
+      "destination": "/animals/duetting-frog/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/gibbon/",
+      "destination": "/animals/duetting-frog/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/philippine-tarsier",
+      "destination": "/animals/tarsier/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/philippine-tarsier/",
+      "destination": "/animals/tarsier/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/clouded-leopard",
+      "destination": "/animals/giant-centipede/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/clouded-leopard/",
+      "destination": "/animals/giant-centipede/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/komodo-dragon",
+      "destination": "/animals/gila-monster/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/komodo-dragon/",
+      "destination": "/animals/gila-monster/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/moray-eel",
+      "destination": "/animals/slow-loris/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/moray-eel/",
+      "destination": "/animals/slow-loris/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/aye-aye",
+      "destination": "/animals/elephantnose-fish/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/aye-aye/",
+      "destination": "/animals/elephantnose-fish/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/red-river-hog",
+      "destination": "/animals/deep-sea-anglerfish/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/red-river-hog/",
+      "destination": "/animals/deep-sea-anglerfish/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/jerboa",
+      "destination": "/animals/sandgrouse/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/jerboa/",
+      "destination": "/animals/sandgrouse/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/wildebeest",
+      "destination": "/animals/arctic-tern/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/wildebeest/",
+      "destination": "/animals/arctic-tern/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/caracal",
+      "destination": "/animals/lanner-falcon/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/caracal/",
+      "destination": "/animals/lanner-falcon/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/arctic-hare",
+      "destination": "/animals/flying-fish/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/arctic-hare/",
+      "destination": "/animals/flying-fish/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/sidewinder",
+      "destination": "/animals/sand-cat/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/sidewinder/",
+      "destination": "/animals/sand-cat/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/saiga-antelope",
+      "destination": "/animals/bar-headed-goose/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/saiga-antelope/",
+      "destination": "/animals/bar-headed-goose/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/spider-monkey",
+      "destination": "/animals/coati/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/spider-monkey/",
+      "destination": "/animals/coati/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/kori-bustard",
+      "destination": "/animals/roadrunner/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/kori-bustard/",
+      "destination": "/animals/roadrunner/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/culpeo",
+      "destination": "/animals/caracara/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/culpeo/",
+      "destination": "/animals/caracara/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/warthog",
+      "destination": "/animals/tree-kangaroo/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/warthog/",
+      "destination": "/animals/tree-kangaroo/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/damaraland-mole-rat",
+      "destination": "/animals/marbled-polecat/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/damaraland-mole-rat/",
+      "destination": "/animals/marbled-polecat/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/takin",
+      "destination": "/animals/shoebill/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/takin/",
+      "destination": "/animals/shoebill/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/mountain-lion",
+      "destination": "/animals/stellers-sea-eagle/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/mountain-lion/",
+      "destination": "/animals/stellers-sea-eagle/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/yellow-footed-rock-wallaby",
+      "destination": "/animals/mountain-pygmy-possum/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/yellow-footed-rock-wallaby/",
+      "destination": "/animals/mountain-pygmy-possum/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/mangshan-pit-viper",
+      "destination": "/animals/tuatara/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/mangshan-pit-viper/",
+      "destination": "/animals/tuatara/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/mountain-zebra",
+      "destination": "/animals/siberian-crane/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/mountain-zebra/",
+      "destination": "/animals/siberian-crane/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/markhor",
+      "destination": "/animals/hercules-beetle/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/markhor/",
+      "destination": "/animals/hercules-beetle/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/japanese-macaque",
+      "destination": "/animals/snowy-owl/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/japanese-macaque/",
+      "destination": "/animals/snowy-owl/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/tibetan-mastiff",
+      "destination": "/animals/tibetan-blue-bear/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/tibetan-mastiff/",
+      "destination": "/animals/tibetan-blue-bear/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/european-badger",
+      "destination": "/animals/giant-armadillo/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/european-badger/",
+      "destination": "/animals/giant-armadillo/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/naked-mole-rat",
+      "destination": "/animals/sonoran-desert-toad/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/naked-mole-rat/",
+      "destination": "/animals/sonoran-desert-toad/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/reindeer",
+      "destination": "/animals/vulturine-guineafowl/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/reindeer/",
+      "destination": "/animals/vulturine-guineafowl/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/electric-eel",
+      "destination": "/animals/portuguese-man-o-war/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/electric-eel/",
+      "destination": "/animals/portuguese-man-o-war/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/kiang",
+      "destination": "/animals/sailfish/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/kiang/",
+      "destination": "/animals/sailfish/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/african-wild-dog",
+      "destination": "/animals/vampire-bat/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/african-wild-dog/",
+      "destination": "/animals/vampire-bat/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/star-nosed-mole",
+      "destination": "/animals/vampire-squid/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/star-nosed-mole/",
+      "destination": "/animals/vampire-squid/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/dugong",
+      "destination": "/animals/narwhal/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/dugong/",
+      "destination": "/animals/narwhal/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/leafy-seadragon",
+      "destination": "/animals/glass-frog/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/leafy-seadragon/",
+      "destination": "/animals/glass-frog/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/angelfish",
+      "destination": "/animals/ghost-pipefish/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/angelfish/",
+      "destination": "/animals/ghost-pipefish/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/manatee",
+      "destination": "/animals/blue-glaucus/",
+      "permanent": true
+    },
+    {
+      "source": "/animals/manatee/",
+      "destination": "/animals/blue-glaucus/",
+      "permanent": true
+    }
+  ]
+}

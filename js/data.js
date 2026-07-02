@@ -61,18 +61,18 @@ const ORACLE = (function () {
   const WEST_ORDER = ["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"];
 
   const GRID = {
-    Aries:       ["Fossa", "Cape Buffalo", "Wolverine", "Springbok", "Secretary Bird", "Loggerhead Shrike", "Pronghorn", "Chamois", "Kookaburra", "Southern Cassowary", "Dingo", "White-lipped Peccary"],
-    Taurus:      ["Wombat", "Musk Ox", "Southern White Rhinoceros", "Pika", "Galápagos Tortoise", "Pangolin", "Moose", "Tibetan Antelope", "Orangutan", "Superb Bird-of-Paradise", "Anatolian Shepherd", "Tapir"],
-    Gemini:      ["Meerkat", "Prairie Dog", "Serval", "Fennec Fox", "Superb Lyrebird", "Cuttlefish", "Common Swift", "Gelada", "Kea", "Magpie", "African Grey Parrot", "Binturong"],
-    Cancer:      ["Coconut Crab", "Asian Elephant", "Moon Bear", "Sea Otter", "Humpback Whale", "Chambered Nautilus", "Green Sea Turtle", "Water Deer", "Kinkajou", "Emperor Penguin", "Elephant Seal", "Capybara"],
-    Leo:         ["Golden Lion Tamarin", "Banteng", "Harpy Eagle", "Golden Pheasant", "Rhinoceros Hornbill", "King Cobra", "Blackbuck", "Barbary Sheep", "Mandrill", "Guianan Cock-of-the-rock", "Dhole", "Babirusa"],
-    Virgo:       ["Leafcutter Ant", "Beaver", "Dragonfly", "Harvest Mouse", "Archerfish", "Trapdoor Spider", "Sanderling", "Alpine Marmot", "New Caledonian Crow", "Weaverbird", "Border Collie", "Short-beaked Echidna"],
-    Libra:       ["Red Panda", "Mute Swan", "Arabian Oryx", "Crowned Crane", "Giant Manta Ray", "Ribbon Eel", "Impala", "Dik-dik", "Bonobo", "Satin Bowerbird", "Gibbon", "Roseate Spoonbill"],
-    Scorpio:     ["Philippine Tarsier", "Giant Salamander", "Clouded Leopard", "Pallas's Cat", "Komodo Dragon", "Moray Eel", "Orca", "Snow Leopard", "Aye-aye", "Devil's Flower Mantis", "Tasmanian Devil", "Red River Hog"],
-    Sagittarius: ["Jerboa", "Wildebeest", "Caracal", "Arctic Hare", "Frigatebird", "Sidewinder", "Albatross", "Saiga Antelope", "Spider Monkey", "Kori Bustard", "Culpeo", "Warthog"],
-    Capricorn:   ["Damaraland Mole-rat", "Takin", "Mountain Lion", "Yellow-footed Rock-wallaby", "Bearded Vulture", "Mangshan Pit Viper", "Mountain Zebra", "Markhor", "Japanese Macaque", "Andean Condor", "Tibetan Mastiff", "European Badger"],
-    Aquarius:    ["Naked Mole Rat", "Reindeer", "Maned Wolf", "Axolotl", "Mantis Shrimp", "Electric Eel", "Kiang", "Kakapo", "Raven", "Hoatzin", "African Wild Dog", "Platypus"],
-    Pisces:      ["Star-nosed Mole", "Dugong", "Leopard Seal", "Moon Jellyfish", "Whale Shark", "Leafy Seadragon", "Sea Angel", "Angelfish", "Dumbo Octopus", "Mandarin Dragonet", "Beluga", "Manatee"]
+    Aries:       ["Fossa", "Sun Bear", "Wolverine", "Springbok", "Secretary Bird", "Loggerhead Shrike", "Pronghorn", "Wallcreeper", "Kookaburra", "Cassowary", "Giant Otter", "Honey Badger"],
+    Taurus:      ["Aardwolf", "Giant Clam", "Sable Antelope", "Koala", "Galápagos Tortoise", "Pangolin", "Moose", "Snow Petrel", "Ringtail", "Superb Bird of Paradise", "Banded Mongoose", "Bongo"],
+    Gemini:      ["Meerkat", "Three-wattled Bellbird", "Bat-eared Fox", "Fennec Fox", "Superb Lyrebird", "Cuttlefish", "Swift", "Rock Wren", "Kea", "Fork-tailed Drongo", "African Grey Parrot", "Cacomistle"],
+    Cancer:      ["Coconut Crab", "Asian Elephant", "Moon Bear", "Sea Otter", "Humpback Whale", "Chambered Nautilus", "Green Sea Turtle", "Glasswing Butterfly", "Spotted Cuscus", "Emperor Penguin", "Ribbon Seal", "Capybara"],
+    Leo:         ["Golden Lion Tamarin", "Spotted Hyena", "Harpy Eagle", "Golden Pheasant", "Rhinoceros Hornbill", "Blue-ringed Octopus", "Paradise Riflebird", "Golden Brushtail Possum", "Regal Jumping Spider", "Sunset Moth", "Sunbittern", "Golden Snub-nosed Monkey"],
+    Virgo:       ["Leafcutter Ant", "Beaver", "Dragonfly", "Penduline Tit", "Archerfish", "Trapdoor Spider", "Avocet", "Clark's Nutcracker", "New Caledonian Crow", "Weaverbird", "Cleaner Wrasse", "Star-nosed Mole"],
+    Libra:       ["Red Panda", "Swan", "Arabian Oryx", "Crowned Crane", "Giant Manta Ray", "Paradise Tanager", "Flamingo", "Luna Moth", "Kissing Gourami", "Satin Bowerbird", "Duetting Frog", "Roseate Spoonbill"],
+    Scorpio:     ["Tarsier", "Giant Salamander", "Giant Centipede", "Pallas's Cat", "Gila Monster", "Slow Loris", "Orca", "Snow Leopard", "Elephantnose Fish", "Devil's Flower Mantis", "Tasmanian Devil", "Deep Sea Anglerfish"],
+    Sagittarius: ["Sandgrouse", "Arctic Tern", "Lanner Falcon", "Flying Fish", "Frigatebird", "Sand Cat", "Albatross", "Bar-headed Goose", "Coati", "Roadrunner", "Caracara", "Tree Kangaroo"],
+    Capricorn:   ["Marbled Polecat", "Shoebill", "Steller's Sea Eagle", "Mountain Pygmy Possum", "Bearded Vulture", "Tuatara", "Siberian Crane", "Hercules Beetle", "Snowy Owl", "Andean Condor", "Tibetan Blue Bear", "Giant Armadillo"],
+    Aquarius:    ["Sonoran Desert Toad", "Vulturine Guineafowl", "Maned Wolf", "Axolotl", "Mantis Shrimp", "Portuguese Man o' War", "Sailfish", "Kakapo", "Raven", "Hoatzin", "Vampire Bat", "Platypus"],
+    Pisces:      ["Vampire Squid", "Narwhal", "Leopard Seal", "Moon Jellyfish", "Whale Shark", "Glass Frog", "Sea Angel", "Ghost Pipefish", "Dumbo Octopus", "Mandarin Dragonet", "Beluga", "Blue Glaucus"]
   };
 
   /* ---- Lunar New Year boundary dates (effective Year-animal switch) ----

@@ -1,0 +1,622 @@
+/* ============================================================
+   fengshui-office.css — the Office Feng Shui interactive cluster.
+
+   Styles four tools (Office Diagnostic, Peach Blossom finder,
+   Five-Element color picker, Wealth-object guide), the per-method
+   quizzes, and the confetti / fortune celebration layer, in the
+   dark-glow design language shared with fengshui-room.css.
+
+   Everything is prefixed .fso- so it never collides with the
+   .fsr-* room tool or the .pf-* page shell. Colors ride the site
+   dark-glow tokens with hex fallbacks so the cluster reads right
+   even before tokens.css loads. Motion is opacity + transform
+   only, every animation guarded by prefers-reduced-motion.
+
+   Symbolic cultural guidance, meaning not prediction. Never a promise.
+   ============================================================ */
+
+/* ============================================================
+   0. SCOPED HELPER TOKENS  (self-contained; hex fallbacks first)
+   ============================================================ */
+.fso-tool {
+  /* dark-glow palette, from /feng-shui/office-desk/ and tokens.css */
+  --fso-moon:        var(--moon, #f5ecd2);
+  --fso-ivory:       var(--ivory, #ece7d8);
+  --fso-body:        var(--body-text, var(--body, #cfcfe0));
+  --fso-muted:       var(--muted, #9a9bb0);
+  --fso-faint:       var(--faint, #7f8096);
+  --fso-brass:       var(--brass, #d6c18c);
+  --fso-brass-bright:var(--brass-bright, #efe2b4);
+  --fso-line:        var(--line, #2a2c44);
+  --fso-field:       var(--field-bg, #0f1020);
+  --fso-panel:       var(--panel, #1a1c30);
+  --fso-panel-2:     var(--panel-2, #22253d);
+  --fso-ink:         var(--ink, #0d0e18);
+  --fso-ink-2:       var(--ink-2, #131523);
+
+  /* the office cluster reads jade like the feng-shui section */
+  --fso-accent:      var(--accent, var(--jade, #78c39c));
+  --fso-accent-dim:  var(--accent-dim, var(--jade-dim, #4f8f6f));
+  --fso-accent-bright:var(--accent-bright, var(--jade-bright, #a9e6c6));
+  --fso-accent-soft: var(--accent-soft, rgba(120, 195, 156, 0.18));
+  --fso-cta-text:    var(--cta-text, #0c1512);
+
+  /* feedback tones (calm, never alarming) */
+  --fso-good:  var(--jade, #78c39c);
+  --fso-warn:  var(--brass-bright, #efe2b4);
+  --fso-bad:   var(--rose, #e3a196);
+  --fso-tip:   var(--silver, #aebfe0);
+
+  /* literal architectural palette for the diagnostic room */
+  --fso-floor:   #14161f;
+  --fso-floor-2: #191c28;
+  --fso-grid:    rgba(214, 193, 140, 0.06);
+  --fso-wall:    #3a3d52;
+  --fso-window:  #8fbfe6;
+  --fso-window-2:#bfe0f7;
+  --fso-beam:    #7a5c46;
+  --fso-mirror:  #a9d6e6;
+  --fso-desk:    #2b2f42;
+  --fso-desk-2:  #353a52;
+  --fso-linen:   #cdbf9a;
+
+  --fso-serif: var(--serif, "Fraunces", Georgia, serif);
+  --fso-sans:  var(--sans, "Geist", "Inter", -apple-system, system-ui, sans-serif);
+  --fso-mono:  var(--mono, "Space Mono", ui-monospace, monospace);
+  --fso-r1: var(--r-1, 8px);
+  --fso-r2: var(--r-2, 14px);
+  --fso-r3: var(--r-3, 22px);
+  --fso-pill: var(--r-pill, 999px);
+
+  --fso-glow: 0 0 18px var(--fso-accent-soft);
+  --fso-ember: 0 0 8px var(--fso-accent-soft);
+  --fso-dur: var(--dur, 320ms);
+  --fso-dur-fast: var(--dur-fast, 180ms);
+  --fso-ease: var(--ease-io, cubic-bezier(0.4, 0, 0.2, 1));
+
+  display: block;
+  margin: var(--s-6, 2rem) 0;
+}
+
+/* ============================================================
+   1. THE TOOL AS A LEVEL-3 RAISED SURFACE (shared shell)
+   ============================================================ */
+.fso-tool.fso-ready {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(620px 380px at 82% -12%, var(--fso-accent-soft), transparent 68%),
+    linear-gradient(168deg, var(--fso-panel-2), var(--fso-panel) 72%);
+  border: 1px solid var(--fso-line);
+  border-radius: var(--fso-r3);
+  box-shadow: var(--e-2, 0 8px 30px rgba(0, 0, 0, 0.4));
+  padding: clamp(1rem, 3.2vw, 2.25rem);
+  overflow: hidden;
+}
+/* moonlit top rim — the raised-surface signature */
+.fso-tool.fso-ready::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 7%; right: 7%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent,
+    color-mix(in oklab, var(--fso-accent) 42%, transparent) 30%,
+    color-mix(in oklab, var(--fso-accent) 42%, transparent) 70%, transparent);
+  pointer-events: none;
+}
+@supports not (color: color-mix(in oklab, red, blue)) {
+  .fso-tool.fso-ready::after { background: linear-gradient(90deg, transparent, var(--fso-accent-soft) 30%, var(--fso-accent-soft) 70%, transparent); }
+}
+
+/* ---- the eyebrow + title shared across hydrated tools ---- */
+.fso-eyebrow {
+  font: 400 0.7rem/1 var(--fso-mono);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--fso-accent);
+  margin: 0 0 8px;
+}
+.fso-title {
+  font: 560 clamp(1.3rem, 3.4vw, 1.7rem)/1.18 var(--fso-serif);
+  color: var(--fso-moon);
+  margin: 0 0 8px;
+  text-wrap: balance;
+}
+.fso-lede {
+  color: var(--fso-body);
+  max-width: 62ch;
+  margin: 0 0 var(--s-5, 1.5rem);
+  font-size: 0.95rem;
+  line-height: 1.62;
+}
+.fso-lede b { color: var(--fso-moon); font-weight: 600; }
+
+/* ---- the honest-voice claim line, on every tool ---- */
+.fso-claim {
+  margin: var(--s-5, 1.5rem) 0 0;
+  padding-top: var(--s-4, 1rem);
+  border-top: 1px solid var(--fso-line);
+  color: var(--fso-muted);
+  font: 400 0.8rem/1.6 var(--fso-mono);
+  letter-spacing: 0.02em;
+  max-width: 68ch;
+}
+.fso-tool.fso-ready .fso-claim { color: var(--fso-muted); }
+
+/* ============================================================
+   2. FALLBACK — server-rendered, crawlable, hidden once hydrated
+   ============================================================ */
+.fso-fallback { display: block; }
+.fso-tool.fso-ready .fso-fallback { display: none; }
+
+.fso-fallback-eyebrow {
+  font: 400 0.7rem/1 var(--fso-mono);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--fso-accent);
+  margin: 0 0 8px;
+}
+.fso-fallback-title {
+  font: 560 1.25rem/1.2 var(--fso-serif);
+  color: var(--fso-moon);
+  margin: 0 0 8px;
+}
+.fso-fallback-lede,
+.fso-fallback-note {
+  color: var(--fso-body);
+  max-width: 64ch;
+  font-size: 0.92rem;
+  line-height: 1.62;
+  margin: 0 0 14px;
+}
+.fso-fallback-note b { color: var(--fso-moon); }
+.fso-fallback-list { margin: 0 0 14px; padding-left: 18px; color: var(--fso-body); font-size: 0.92rem; line-height: 1.6; }
+.fso-fallback-list li { margin: 5px 0; }
+.fso-fallback-list b { color: var(--fso-moon); font-weight: 600; }
+.fso-fallback-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 14px;
+  font-size: 0.9rem;
+}
+.fso-fallback-table th,
+.fso-fallback-table td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--fso-line);
+  color: var(--fso-body);
+}
+.fso-fallback-table th { color: var(--fso-brass-bright); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.04em; }
+.fso-fallback-cap {
+  color: var(--fso-muted);
+  font: 400 0.78rem/1.5 var(--fso-mono);
+  letter-spacing: 0.04em;
+  margin: 12px 0 0;
+}
+
+/* ============================================================
+   3. DIAGNOSTIC — the desk-on-a-grid tool  (mirrors .fsr- board)
+   ============================================================ */
+.fso-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.14fr) minmax(288px, 0.86fr);
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+  align-items: start;
+}
+@media (max-width: 760px) {
+  .fso-stage { grid-template-columns: 1fr; gap: var(--s-5, 1.5rem); }
+}
+
+.fso-board-wrap {
+  position: relative;
+  border: 1px solid var(--fso-line);
+  border-radius: var(--fso-r2);
+  background:
+    radial-gradient(130% 100% at 16% -6%, var(--fso-accent-soft), transparent 60%),
+    linear-gradient(180deg, var(--fso-floor-2), var(--fso-floor) 70%);
+  padding: clamp(6px, 1.4vw, 12px);
+  box-shadow: var(--e-1, 0 2px 12px rgba(0, 0, 0, 0.3));
+  isolation: isolate;
+}
+.fso-board {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--fso-r2) - 5px);
+  outline: none;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.fso-board:focus-visible {
+  box-shadow: 0 0 0 3px var(--sec-soft, rgba(174, 191, 224, 0.30)), var(--fso-glow);
+}
+
+/* --- svg room --- */
+.fso-g-room { pointer-events: none; }
+.fso-g-fix { pointer-events: none; }
+.fso-g-compass { pointer-events: none; }
+.fso-floor { fill: var(--fso-floor-2); }
+.fso-grid { stroke: var(--fso-grid); stroke-width: 1; }
+.fso-wall { fill: none; stroke: var(--fso-wall); stroke-width: 7; stroke-linejoin: round; }
+
+.fso-door-gap { stroke: var(--fso-floor-2); stroke-width: 10; }
+.fso-door-line { stroke: var(--fso-accent); stroke-width: 5; stroke-linecap: round; }
+.fso-door-arc { fill: none; stroke: var(--fso-accent); stroke-width: 1.2; stroke-dasharray: 3 4; opacity: 0.5; }
+.fso-window { stroke: var(--fso-window); stroke-width: 5; stroke-linecap: round; opacity: 0.9; }
+.fso-mirror { stroke: var(--fso-mirror); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 2 3; }
+.fso-beam { fill: var(--fso-beam); opacity: 0.42; }
+
+.fso-fixlabel { font: 700 10px var(--fso-mono); letter-spacing: 0.14em; fill: var(--fso-muted); }
+.fso-door-text { fill: var(--fso-accent-bright); }
+.fso-window-text { fill: var(--fso-window-2); }
+.fso-mirror-text { fill: var(--fso-mirror); }
+.fso-beam-text { fill: var(--fso-linen); opacity: 0.85; }
+.fso-peach-text { fill: var(--fso-brass-bright); }
+.fso-wealth-text { fill: var(--fso-accent-bright); }
+
+.fso-sight { stroke-width: 2; stroke-dasharray: 5 5; opacity: 0.85; stroke-linecap: round; }
+.fso-sight.is-clear { stroke: var(--fso-good); }
+.fso-sight.is-blocked { stroke: var(--fso-bad); opacity: 0.7; }
+
+/* peach-blossom + wealth markers, drawn on the grid when a picker feeds them */
+.fso-peach-marker { fill: none; stroke: var(--fso-brass-bright); stroke-width: 2; stroke-dasharray: 2 3; opacity: 0.9; }
+.fso-peach-dot { fill: var(--fso-brass-bright); }
+.fso-wealth-marker { fill: var(--fso-accent-soft); stroke: var(--fso-accent-bright); stroke-width: 1.4; }
+
+/* --- the desk --- */
+.fso-g-desk { cursor: grab; }
+.fso-g-desk.is-dragging { cursor: grabbing; }
+.fso-desk-frame {
+  fill: var(--fso-desk);
+  stroke: var(--fso-linen);
+  stroke-width: 1.5;
+  stroke-opacity: 0.6;
+  transition: stroke var(--fso-dur) var(--fso-ease), stroke-opacity var(--fso-dur) var(--fso-ease);
+}
+.fso-desk-top { fill: var(--fso-desk-2); }
+.fso-seat { fill: var(--fso-linen); opacity: 0.9; }
+.fso-chairback { fill: #e9e2cc; opacity: 0.85; }
+.fso-desk-hit { fill: transparent; }
+.fso-desk-label { font: 700 9px var(--fso-mono); letter-spacing: 0.12em; pointer-events: none; }
+.fso-label-seat { fill: #1a160a; }
+.fso-label-work { fill: var(--fso-muted); }
+.fso-board:focus-visible .fso-desk-frame,
+.fso-g-desk.is-dragging .fso-desk-frame,
+.fso-g-desk.is-desk-hover .fso-desk-frame { stroke: var(--fso-accent); stroke-opacity: 1; }
+
+/* rotate handle on the desk, hidden at rest, revealed on hover/focus */
+.fso-rotate { opacity: 0; cursor: grab; transition: opacity var(--fso-dur) var(--fso-ease); pointer-events: auto; }
+.fso-rotate:active { cursor: grabbing; }
+.fso-g-desk.is-desk-hover .fso-rotate,
+svg.fso-board:focus .fso-rotate,
+svg.fso-board:focus-visible .fso-rotate { opacity: 1; }
+.fso-rotate circle, .fso-rotate path { stroke: var(--fso-accent-bright); }
+.fso-rotate-bg { fill: rgba(13, 14, 24, 0.62); }
+.fso-rotate-hit { fill: transparent; stroke: none; }
+
+/* --- side panel --- */
+.fso-side { display: flex; flex-direction: column; gap: var(--s-5, 1.5rem); }
+
+/* compass ring (peach / wealth / seat direction) */
+.fso-ring { fill: none; stroke: var(--fso-accent-dim); stroke-width: 1; stroke-dasharray: 1.5 6; opacity: 0.5; }
+.fso-compass-tick { font: 700 10px var(--fso-mono); fill: var(--fso-faint); letter-spacing: 0.06em; }
+.fso-compass-tick.is-fav { fill: var(--fso-brass-bright); }
+.fso-compass-dot.is-fav { fill: var(--fso-brass-bright); }
+
+.fso-meter {
+  position: relative;
+  background:
+    radial-gradient(120% 120% at 100% 0%, var(--fso-accent-soft), transparent 52%),
+    var(--fso-field);
+  border: 1px solid var(--fso-line);
+  border-radius: var(--fso-r2);
+  padding: var(--s-4, 1rem) var(--s-5, 1.5rem) var(--s-5, 1.5rem);
+  overflow: hidden;
+}
+.fso-meter-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-3, 0.75rem); margin-bottom: var(--s-4, 1rem); }
+.fso-meter-label { font: 400 0.68rem/1.3 var(--fso-mono); letter-spacing: 0.24em; text-transform: uppercase; color: var(--fso-muted); }
+.fso-score { font: 500 2rem/0.9 var(--fso-serif); color: var(--fso-moon); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.fso-score small { font: 400 0.85rem var(--fso-mono); color: var(--fso-muted); margin-left: 2px; }
+.fso-bar { position: relative; height: 9px; border-radius: var(--fso-pill); background: rgba(13, 14, 24, 0.7); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4); overflow: hidden; }
+.fso-bar > i { display: block; height: 100%; width: 0%; border-radius: inherit; background: var(--fso-accent-dim); transition: width var(--fso-dur) var(--ease-out, ease), background-color var(--fso-dur) var(--fso-ease); }
+.fso-bar > i.is-low { background: var(--fso-brass); }
+.fso-bar > i.is-mid { background: linear-gradient(90deg, var(--fso-accent-dim), var(--fso-accent)); }
+.fso-bar > i.is-high { background: linear-gradient(90deg, var(--fso-accent), var(--fso-accent-bright)); box-shadow: 0 0 14px var(--fso-accent-soft); }
+
+/* readout: feedback chips with a leading tone dot */
+.fso-readout { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-3, 0.75rem); }
+.fso-line {
+  position: relative;
+  padding: 11px 14px 11px 32px;
+  border: 1px solid var(--fso-line);
+  border-left-width: 2px;
+  border-radius: var(--fso-r1);
+  background: rgba(19, 21, 35, 0.7);
+  color: var(--fso-body);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.fso-line::before { content: ""; position: absolute; left: 13px; top: 16px; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.fso-line b { color: var(--fso-moon); font-weight: 600; }
+.fso-line-good { color: var(--fso-ivory); border-left-color: color-mix(in oklab, var(--fso-good) 55%, var(--fso-line)); }
+.fso-line-good::before { background: var(--fso-good); box-shadow: var(--fso-ember); }
+.fso-line-warn { border-left-color: color-mix(in oklab, var(--fso-warn) 50%, var(--fso-line)); }
+.fso-line-warn::before { background: var(--fso-warn); }
+.fso-line-bad { border-left-color: color-mix(in oklab, var(--fso-bad) 50%, var(--fso-line)); }
+.fso-line-bad::before { background: var(--fso-bad); }
+.fso-line-tip { border-left-color: color-mix(in oklab, var(--fso-tip) 45%, var(--fso-line)); }
+.fso-line-tip::before { background: var(--fso-tip); }
+@supports not (color: color-mix(in oklab, red, blue)) {
+  .fso-line-good, .fso-line-warn, .fso-line-bad, .fso-line-tip { border-left-color: var(--fso-line); }
+}
+
+/* nudge pad (keyboard-accessible desk movement) */
+.fso-nudge { border: 1px solid var(--fso-line); border-radius: var(--fso-r2); padding: 12px 14px; background: var(--fso-panel); }
+.fso-nudge-head { font: 400 0.68rem/1 var(--fso-mono); letter-spacing: 0.2em; text-transform: uppercase; color: var(--fso-muted); margin: 0 0 8px; }
+.fso-pad { display: grid; grid-template-columns: repeat(3, 42px); grid-auto-rows: 40px; gap: 6px; justify-content: start; align-items: center; }
+.fso-pad .fso-btn { padding: 0; height: 40px; min-height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+.fso-pad .fso-sp { visibility: hidden; }
+.fso-nudge-hint { color: var(--fso-muted); font-size: 0.78rem; margin: 10px 0 0; line-height: 1.5; }
+
+/* account gate, invitation not wall */
+.fso-gate { border: 1px dashed var(--fso-line); border-radius: var(--fso-r1); padding: 12px 14px; background: var(--fso-field); color: var(--fso-muted); font-size: 0.85rem; line-height: 1.55; }
+.fso-gate b { color: var(--fso-body); }
+
+/* ============================================================
+   4. CONTROLS + BUTTONS  (shared by diagnostic + pickers)
+   ============================================================ */
+.fso-controls { display: flex; flex-wrap: wrap; gap: var(--s-2, 0.5rem); }
+.fso-btn {
+  appearance: none;
+  cursor: pointer;
+  font: 600 0.85rem/1 var(--fso-sans);
+  color: var(--fso-ivory);
+  background: var(--fso-panel);
+  border: 1px solid var(--fso-line);
+  border-radius: var(--fso-r1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  min-height: 44px;
+  transition: border-color var(--fso-dur-fast) var(--fso-ease), color var(--fso-dur-fast) var(--fso-ease),
+              background-color var(--fso-dur-fast) var(--fso-ease), transform var(--fso-dur-fast) var(--fso-ease);
+}
+.fso-btn:hover { border-color: var(--fso-accent); color: var(--fso-moon); transform: translateY(-1px); }
+.fso-btn:focus-visible { outline: none; border-color: var(--fso-accent); box-shadow: 0 0 0 3px var(--sec-soft, rgba(174, 191, 224, 0.30)), var(--fso-glow); }
+.fso-btn:active { transform: translateY(0); }
+.fso-btn.is-on { border-color: var(--fso-accent); color: var(--fso-accent-bright); background: var(--fso-accent-soft); }
+.fso-btn-primary {
+  color: var(--fso-cta-text);
+  background: linear-gradient(135deg, var(--fso-accent-bright), var(--fso-accent));
+  border-color: transparent;
+  box-shadow: 0 4px 18px var(--fso-accent-soft);
+}
+.fso-btn-primary:hover, .fso-btn-primary:focus-visible { color: var(--fso-cta-text); transform: translateY(-2px); box-shadow: 0 10px 30px var(--fso-accent-soft), 0 0 0 3px var(--sec-soft, rgba(174, 191, 224, 0.30)); }
+.fso-btn-primary:active { transform: translateY(0) scale(0.98); }
+
+/* ============================================================
+   5. PICKERS  (peach / colors / wealth share the chip pattern)
+   ============================================================ */
+.fso-picker { display: block; }
+.fso-picker-prompt { font: 400 0.72rem/1 var(--fso-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--fso-muted); margin: 0 0 12px; }
+.fso-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 var(--s-5, 1.5rem); }
+.fso-chip {
+  appearance: none;
+  cursor: pointer;
+  font: 500 0.9rem/1 var(--fso-sans);
+  color: var(--fso-body);
+  background: var(--fso-field);
+  border: 1px solid var(--fso-line);
+  border-radius: var(--fso-pill);
+  padding: 0 16px;
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: border-color var(--fso-dur-fast) var(--fso-ease), color var(--fso-dur-fast) var(--fso-ease),
+              background-color var(--fso-dur-fast) var(--fso-ease), transform var(--fso-dur-fast) var(--fso-ease);
+}
+.fso-chip:hover { border-color: var(--fso-accent); color: var(--fso-moon); transform: translateY(-1px); }
+.fso-chip:focus-visible { outline: none; border-color: var(--fso-accent); box-shadow: 0 0 0 3px var(--sec-soft, rgba(174, 191, 224, 0.30)); }
+.fso-chip[aria-pressed="true"] {
+  color: var(--fso-cta-text);
+  background: linear-gradient(180deg, var(--fso-accent-bright), var(--fso-accent));
+  border-color: transparent;
+  box-shadow: 0 2px 12px var(--fso-accent-soft);
+}
+.fso-chip .fso-chip-zh { font-family: var(--fso-serif); font-size: 1rem; }
+/* a swatch dot on the element chips */
+.fso-chip .fso-chip-swatch { width: 11px; height: 11px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25); flex: 0 0 auto; }
+
+/* --- the reveal card, shared by all three pickers --- */
+.fso-reveal {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(560px 340px at 18% -14%, var(--fso-accent-soft), transparent 66%),
+    linear-gradient(168deg, var(--fso-panel-2), var(--fso-panel) 72%);
+  border: 1px solid var(--fso-accent-dim);
+  border-radius: var(--fso-r2);
+  padding: var(--s-5, 1.5rem);
+  box-shadow: var(--e-2, 0 8px 30px rgba(0, 0, 0, 0.4));
+  overflow: hidden;
+}
+.fso-reveal[hidden] { display: none; }
+.fso-reveal::after { content: ""; position: absolute; top: 0; left: 8%; right: 8%; height: 1px; background: var(--fso-accent-soft); pointer-events: none; }
+.fso-reveal-eyebrow { font: 400 0.7rem/1 var(--fso-mono); letter-spacing: 0.2em; text-transform: uppercase; color: var(--fso-accent); margin: 0 0 8px; }
+.fso-reveal-headline { font: 500 1.5rem/1.2 var(--fso-serif); color: var(--fso-moon); margin: 0 0 6px; }
+.fso-reveal-headline .fso-zh { color: var(--fso-brass-bright); }
+.fso-reveal-sub { color: var(--fso-muted); font-size: 0.86rem; line-height: 1.5; margin: 0 0 var(--s-4, 1rem); }
+.fso-reveal-body { color: var(--fso-body); font-size: 0.92rem; line-height: 1.62; margin: 0 0 var(--s-3, 0.75rem); }
+.fso-reveal-body b { color: var(--fso-moon); }
+.fso-reveal-ritual {
+  border-left: 2px solid var(--fso-accent-dim);
+  padding: 4px 0 4px 14px;
+  margin: 0 0 var(--s-3, 0.75rem);
+  color: var(--fso-body);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.fso-reveal-note { color: var(--fso-muted); font-size: 0.82rem; line-height: 1.55; margin: var(--s-3, 0.75rem) 0 0; }
+
+/* the color swatch strip inside the colors reveal */
+.fso-swatches { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 var(--s-4, 1rem); }
+.fso-swatch { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.fso-swatch-chip { width: 52px; height: 52px; border-radius: var(--fso-r1); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 2px 10px rgba(0, 0, 0, 0.35); }
+.fso-swatch-name { font: 400 0.7rem/1 var(--fso-mono); letter-spacing: 0.06em; color: var(--fso-muted); }
+
+/* a small direction dial in the peach / wealth reveal */
+.fso-dial { display: block; width: 128px; height: 128px; margin: 0 0 var(--s-4, 1rem); }
+
+/* ============================================================
+   6. QUIZ  (hydrated from window.FSO_LEARN by method)
+   ============================================================ */
+.fso-quiz {
+  position: relative;
+  background:
+    radial-gradient(120% 100% at 100% 0%, var(--fso-accent-soft), transparent 55%),
+    linear-gradient(168deg, var(--fso-panel-2), var(--fso-panel) 74%);
+  border: 1px solid var(--fso-line);
+  border-radius: var(--fso-r2);
+  padding: clamp(1rem, 2.6vw, 1.5rem);
+  margin: var(--s-6, 2rem) 0;
+  overflow: hidden;
+}
+.fso-quiz[hidden] { display: none; }
+.fso-quiz-eyebrow { font: 400 0.68rem/1 var(--fso-mono); letter-spacing: 0.2em; text-transform: uppercase; color: var(--fso-accent); margin: 0 0 10px; display: flex; align-items: center; gap: 10px; }
+.fso-quiz-tag { color: var(--fso-muted); }
+.fso-quiz-q { font: 500 1.12rem/1.4 var(--fso-serif); color: var(--fso-moon); margin: 0 0 var(--s-4, 1rem); text-wrap: balance; }
+.fso-quiz-options { display: grid; gap: 8px; margin: 0 0 var(--s-3, 0.75rem); }
+.fso-opt {
+  appearance: none;
+  text-align: left;
+  cursor: pointer;
+  font: 400 0.94rem/1.45 var(--fso-sans);
+  color: var(--fso-body);
+  background: var(--fso-field);
+  border: 1px solid var(--fso-line);
+  border-radius: var(--fso-r1);
+  padding: 12px 14px 12px 44px;
+  position: relative;
+  transition: border-color var(--fso-dur-fast) var(--fso-ease), color var(--fso-dur-fast) var(--fso-ease),
+              background-color var(--fso-dur-fast) var(--fso-ease);
+}
+.fso-opt::before {
+  content: attr(data-key);
+  position: absolute;
+  left: 12px; top: 50%;
+  transform: translateY(-50%);
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--fso-line);
+  color: var(--fso-muted);
+  font: 600 0.72rem/22px var(--fso-mono);
+  text-align: center;
+}
+.fso-opt:hover:not(:disabled) { border-color: var(--fso-accent); color: var(--fso-moon); }
+.fso-opt:focus-visible { outline: none; border-color: var(--fso-accent); box-shadow: 0 0 0 3px var(--sec-soft, rgba(174, 191, 224, 0.30)); }
+.fso-opt:disabled { cursor: default; }
+.fso-opt.is-correct { border-color: color-mix(in oklab, var(--fso-good) 60%, var(--fso-line)); background: color-mix(in oklab, var(--fso-good) 12%, var(--fso-field)); color: var(--fso-ivory); }
+.fso-opt.is-correct::before { border-color: var(--fso-good); color: var(--fso-good); }
+.fso-opt.is-wrong { border-color: color-mix(in oklab, var(--fso-bad) 55%, var(--fso-line)); background: color-mix(in oklab, var(--fso-bad) 10%, var(--fso-field)); }
+.fso-opt.is-wrong::before { border-color: var(--fso-bad); color: var(--fso-bad); }
+@supports not (color: color-mix(in oklab, red, blue)) {
+  .fso-opt.is-correct { border-color: var(--fso-good); }
+  .fso-opt.is-wrong { border-color: var(--fso-bad); }
+}
+.fso-quiz-explain {
+  margin: var(--s-3, 0.75rem) 0 0;
+  padding: 12px 14px;
+  border-radius: var(--fso-r1);
+  border: 1px solid var(--fso-line);
+  border-left: 2px solid var(--fso-accent-dim);
+  background: rgba(19, 21, 35, 0.7);
+  color: var(--fso-body);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.fso-quiz-explain[hidden] { display: none; }
+.fso-quiz-explain b { color: var(--fso-moon); }
+.fso-quiz-fortune { display: block; margin-top: 8px; color: var(--fso-accent-bright); font-style: italic; font-family: var(--fso-serif); font-size: 0.96rem; }
+
+/* progress across methods, a quiet meter under the quiz */
+.fso-quiz-progress { display: flex; align-items: center; gap: 10px; margin: var(--s-4, 1rem) 0 0; }
+.fso-quiz-progress-track { flex: 1; height: 6px; border-radius: var(--fso-pill); background: rgba(13, 14, 24, 0.7); overflow: hidden; }
+.fso-quiz-progress-fill { display: block; height: 100%; width: 0%; border-radius: inherit; background: linear-gradient(90deg, var(--fso-accent), var(--fso-accent-bright)); transition: width var(--fso-dur) var(--ease-out, ease); }
+.fso-quiz-progress-label { font: 400 0.72rem/1 var(--fso-mono); letter-spacing: 0.08em; color: var(--fso-muted); white-space: nowrap; }
+
+/* ============================================================
+   7. CONFETTI / FORTUNE  (self-contained canvas overlay)
+   ============================================================ */
+.fso-confetti-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 60;
+}
+/* the fortune toast, surfaced on celebrations */
+.fso-fortune {
+  position: fixed;
+  left: 50%;
+  bottom: clamp(20px, 6vh, 56px);
+  transform: translateX(-50%) translateY(12px);
+  max-width: min(90vw, 480px);
+  z-index: 61;
+  padding: 14px 22px;
+  border-radius: var(--fso-pill);
+  border: 1px solid var(--fso-accent-dim);
+  background:
+    radial-gradient(120% 180% at 50% -40%, var(--fso-accent-soft), transparent 70%),
+    linear-gradient(168deg, var(--fso-panel-2, #22253d), var(--fso-panel, #1a1c30) 74%);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(214, 193, 140, 0.08);
+  color: var(--fso-moon, #f5ecd2);
+  font: italic 500 1.02rem/1.45 var(--fso-serif, Georgia, serif);
+  text-align: center;
+  opacity: 0;
+  transition: opacity var(--fso-dur) var(--fso-ease), transform var(--fso-dur) var(--ease-out, ease);
+}
+.fso-fortune.is-show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.fso-fortune .fso-fortune-mark { display: block; font: 400 0.62rem/1 var(--fso-mono, monospace); letter-spacing: 0.24em; text-transform: uppercase; color: var(--fso-accent, #78c39c); margin-bottom: 6px; font-style: normal; }
+
+/* reduced-motion: a static flourish (a glow) replaces flying motes */
+.fso-flourish {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0;
+  background:
+    radial-gradient(60% 50% at 50% 42%, var(--fso-accent-soft), transparent 70%);
+}
+.fso-flourish.is-show { opacity: 1; }
+
+/* ============================================================
+   8. MOTION  —  entrance, guarded by prefers-reduced-motion
+   ============================================================ */
+@keyframes fso-rise { from { opacity: 0; transform: translateY(12px) scale(0.99); } to { opacity: 1; transform: none; } }
+.fso-rise { animation: fso-rise var(--dur-slow, 560ms) var(--ease-out, ease) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fso-rise { animation: none; }
+  .fso-g-desk, .fso-desk-frame, .fso-rotate, .fso-bar > i, .fso-btn, .fso-chip, .fso-opt,
+  .fso-quiz-progress-fill, .fso-fortune, .fso-reveal { transition: none; }
+  .fso-btn:hover, .fso-btn-primary:hover, .fso-chip:hover { transform: none; }
+  .fso-fortune { transition: opacity 200ms linear; }
+  .fso-fortune.is-show { transform: translateX(-50%) translateY(0); }
+}
+
+/* ============================================================
+   9. MOBILE
+   ============================================================ */
+@media (max-width: 760px) {
+  .fso-tool.fso-ready { padding: clamp(0.85rem, 4vw, 1.25rem); border-radius: var(--fso-r2); }
+  .fso-controls .fso-btn { flex: 1 1 auto; }
+  .fso-meter { padding: var(--s-4, 1rem); }
+}
+@media (max-width: 420px) {
+  .fso-score { font-size: 1.8rem; }
+  .fso-swatch-chip { width: 44px; height: 44px; }
+}

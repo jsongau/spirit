@@ -17,14 +17,19 @@
 <style>
 
 .pf-proverb{margin:28px 0;padding:24px 26px;border-left:3px solid var(--brass,#d6c18c);background:linear-gradient(90deg,rgba(214,193,140,.08),transparent);border-radius:0 14px 14px 0}
-.pf-proverb-zh{font-family:"Ma Shan Zheng","Noto Serif SC",var(--serif,serif);font-size:clamp(2.4rem,8vw,3.4rem);line-height:1.8;color:var(--moon,#f5ecd2);margin:0 0 14px;letter-spacing:.04em}
+.pf-proverb-zh{font-family:"Ma Shan Zheng","Noto Serif SC",var(--serif,serif);font-size:clamp(2.4rem,8vw,3.4rem);line-height:1.8;color:var(--moon,#f5ecd2);margin:0 0 14px;letter-spacing:.04em;display:flex;align-items:center;gap:.35em;flex-wrap:wrap}
 .pf-proverb-zh ruby{margin:0 3px}
 .pf-proverb-zh rt{font-family:"Inter",system-ui,sans-serif;font-size:.62rem;color:var(--brass-bright,#efe2b4);font-weight:500;letter-spacing:.02em}
 .pf-proverb-zh .cx-punct{font-size:.7em;opacity:.55}
+.pf-say{flex:0 0 auto;display:inline-grid;place-items:center;width:2rem;height:2rem;padding:0;border-radius:50%;border:1px solid rgba(214,193,140,.4);background:rgba(214,193,140,.08);color:var(--brass-bright,#efe2b4);cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s;-webkit-tap-highlight-color:transparent}
+.pf-say:hover{background:rgba(214,193,140,.2);transform:scale(1.08)}
+.pf-say.is-saying{animation:pf-say-pulse 1s ease-in-out infinite;box-shadow:0 0 0 0 rgba(214,193,140,.5)}
+@keyframes pf-say-pulse{0%{box-shadow:0 0 0 0 rgba(214,193,140,.45)}70%{box-shadow:0 0 0 10px rgba(214,193,140,0)}100%{box-shadow:0 0 0 0 rgba(214,193,140,0)}}
 .pf-proverb-lit,.pf-proverb-mean{margin:3px 0;color:var(--body);max-width:64ch;font-size:.95rem}
 .pf-proverb-lit .k,.pf-proverb-mean .k{display:inline-block;min-width:82px;color:var(--brass-bright,#efe2b4);font-size:.72rem;text-transform:uppercase;letter-spacing:.09em}
 .pf-proverb-soul{margin:14px 0 10px;color:var(--moon,#f5ecd2);font-family:var(--serif,serif);font-size:1.18rem;font-style:italic;max-width:60ch;line-height:1.55}
 .pf-proverb-note{color:var(--muted,#9a9bb0);font-size:.85rem;margin:0}
+@media (prefers-reduced-motion:reduce){.pf-say.is-saying{animation:none}}
 .cx-square{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:340px;margin:16px 0}
 .cx-square div{aspect-ratio:1;display:grid;place-items:center;border:1px solid var(--line,#2a2c44);border-radius:10px;background:var(--panel2,#12131f);font-family:var(--serif,serif);font-size:1.6rem;color:var(--moon)}
 .cx-square div.mid{border-color:var(--brass,#d6c18c);color:var(--brass-bright,#efe2b4)}
@@ -138,7 +143,9 @@
   <a href="/feng-shui/">The Feng Shui hub</a>
 </div></section>
 <aside class="pf-proverb" aria-label="Chinese proverb">
-    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>上<rt>shàng</rt></ruby><ruby>善<rt>shàn</rt></ruby><ruby>若<rt>ruò</rt></ruby><ruby>水<rt>shuǐ</rt></ruby></p>
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>上<rt>shàng</rt></ruby><ruby>善<rt>shàn</rt></ruby><ruby>若<rt>ruò</rt></ruby><ruby>水<rt>shuǐ</rt></ruby><button type="button" class="pf-say" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="上善若水" onclick="try{if(window.speechSynthesis){var u=new SpeechSynthesisUtterance(this.dataset.say);u.lang='zh-CN';u.rate=.78;speechSynthesis.cancel();speechSynthesis.speak(u);this.classList.add('is-saying');var b=this;u.onend=function(){b.classList.remove('is-saying')};}}catch(e){}">
+    <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button></p>
     <p class="pf-proverb-lit"><span class="k">Literally</span> the highest good is like water</p>
     <p class="pf-proverb-mean"><span class="k">Meaning</span> The finest virtue is like water, which benefits all things and flows to the low places without contending.</p>
     <p class="pf-proverb-soul">Water asks for nothing and shapes everything. It sinks to the low room others avoid and turns even that into a home. To be strong like water is to stop contending and still reach everywhere.</p>

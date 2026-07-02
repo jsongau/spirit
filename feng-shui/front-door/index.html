@@ -17,19 +17,25 @@
 <style>
 
 .pf-proverb{margin:28px 0;padding:24px 26px;border-left:3px solid var(--brass,#d6c18c);background:linear-gradient(90deg,rgba(214,193,140,.08),transparent);border-radius:0 14px 14px 0}
-.pf-proverb-zh{font-family:"Ma Shan Zheng","Noto Serif SC",var(--serif,serif);font-size:clamp(2.4rem,8vw,3.4rem);line-height:1.8;color:var(--moon,#f5ecd2);margin:0 0 14px;letter-spacing:.04em}
+.pf-proverb-zh{font-family:"Ma Shan Zheng","Noto Serif SC",var(--serif,serif);font-size:clamp(2.4rem,8vw,3.4rem);line-height:1.8;color:var(--moon,#f5ecd2);margin:0 0 14px;letter-spacing:.04em;display:flex;align-items:center;gap:.35em;flex-wrap:wrap}
 .pf-proverb-zh ruby{margin:0 3px}
 .pf-proverb-zh rt{font-family:"Inter",system-ui,sans-serif;font-size:.62rem;color:var(--brass-bright,#efe2b4);font-weight:500;letter-spacing:.02em}
 .pf-proverb-zh .cx-punct{font-size:.7em;opacity:.55}
+.pf-say{flex:0 0 auto;display:inline-grid;place-items:center;width:2rem;height:2rem;padding:0;border-radius:50%;border:1px solid rgba(214,193,140,.4);background:rgba(214,193,140,.08);color:var(--brass-bright,#efe2b4);cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s;-webkit-tap-highlight-color:transparent}
+.pf-say:hover{background:rgba(214,193,140,.2);transform:scale(1.08)}
+.pf-say.is-saying{animation:pf-say-pulse 1s ease-in-out infinite;box-shadow:0 0 0 0 rgba(214,193,140,.5)}
+@keyframes pf-say-pulse{0%{box-shadow:0 0 0 0 rgba(214,193,140,.45)}70%{box-shadow:0 0 0 10px rgba(214,193,140,0)}100%{box-shadow:0 0 0 0 rgba(214,193,140,0)}}
 .pf-proverb-lit,.pf-proverb-mean{margin:3px 0;color:var(--body);max-width:64ch;font-size:.95rem}
 .pf-proverb-lit .k,.pf-proverb-mean .k{display:inline-block;min-width:82px;color:var(--brass-bright,#efe2b4);font-size:.72rem;text-transform:uppercase;letter-spacing:.09em}
 .pf-proverb-soul{margin:14px 0 10px;color:var(--moon,#f5ecd2);font-family:var(--serif,serif);font-size:1.18rem;font-style:italic;max-width:60ch;line-height:1.55}
 .pf-proverb-note{color:var(--muted,#9a9bb0);font-size:.85rem;margin:0}
+@media (prefers-reduced-motion:reduce){.pf-say.is-saying{animation:none}}
 .kua-form{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:16px 0}
 .kua-form label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:4px}
 .kua-form input[type=date]{padding:10px;border-radius:10px;border:1px solid var(--line,#2a2c44);background:var(--field-bg,#0f1020);color:var(--moon)}
 .kua-sex{display:flex;gap:14px;align-items:center;color:var(--body)}
 </style>
+
 <script>window.PN_HERE="feng-shui";</script>
 <!--pn-assets:start-->
 <script data-pn-assets="theme-boot">(function(){try{var m=new Date().getMonth();var s=m>=2&&m<=4?"spring":m>=5&&m<=7?"summer":m>=8&&m<=10?"autumn":"winter";var d=document.documentElement;d.dataset.theme="dark";d.dataset.season=s;}catch(e){}})();</script>
@@ -128,7 +134,9 @@
 <header class="pf-hero"><p class="pf-eyebrow">氣口, the mouth of qi</p><h1 class="pf-name" style="font-size:clamp(2rem,6vw,3rem)">The Feng Shui Front Door</h1><p class="pf-essence">The main entrance is where most energy and opportunity is believed to enter a home.</p></header><section class="pf-section"><p class="pf-eyebrow">Keep the entry open</p><h2>The mouth of qi</h2><p>Tradition asks that the front door open fully, stay clean, and be well lit, since a blocked or dim entry is thought to weaken the welcome. The path up to the door is treated as part of the entry and kept clear. You want slow, gathering energy here, not a fast straight rush.</p></section><section class="pf-section"><p class="pf-eyebrow">The piercing hall</p><h2>When the door lines up with a back opening</h2><p>穿堂煞 describes a front door that lines up directly with a back door, a large window, or a long straight hallway, so that energy rushes in and straight out. To slow and turn the flow, place a console, a screen, a plant, or a round rug between the two openings. A mirror aimed straight at the open front door is usually discouraged, since it is said to push arriving energy away; a side-wall mirror that widens the entry is more often accepted.</p></section><section class="pf-section"><p class="pf-eyebrow">Door color by direction</p><h2>The five phases at the threshold</h2><p>Compass feng shui pairs each facing direction, read standing in the doorway looking out, with a phase and its colors: south, fire, red or orange; north, water, black or deep blue; east and southeast, wood, green; west and northwest, metal, white, gray, or gold; southwest and northeast, earth, yellow, brown, or beige. These are traditional associations, and your taste and the home's style still matter.</p>
     <p class="pf-note">Schools disagree on mirrors and on color systems; treat this as cultural guidance, not a rule.</p></section>
 <aside class="pf-proverb" aria-label="Chinese proverb">
-    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>千<rt>qiān</rt></ruby><ruby>里<rt>lǐ</rt></ruby><ruby>之<rt>zhī</rt></ruby><ruby>行<rt>xíng</rt></ruby><span class="cx-punct">，</span><ruby>始<rt>shǐ</rt></ruby><ruby>於<rt>yú</rt></ruby><ruby>足<rt>zú</rt></ruby><ruby>下<rt>xià</rt></ruby></p>
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>千<rt>qiān</rt></ruby><ruby>里<rt>lǐ</rt></ruby><ruby>之<rt>zhī</rt></ruby><ruby>行<rt>xíng</rt></ruby><span class="cx-punct">，</span><ruby>始<rt>shǐ</rt></ruby><ruby>於<rt>yú</rt></ruby><ruby>足<rt>zú</rt></ruby><ruby>下<rt>xià</rt></ruby><button type="button" class="pf-say" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="千里之行，始於足下" onclick="try{if(window.speechSynthesis){var u=new SpeechSynthesisUtterance(this.dataset.say);u.lang='zh-CN';u.rate=.78;speechSynthesis.cancel();speechSynthesis.speak(u);this.classList.add('is-saying');var b=this;u.onend=function(){b.classList.remove('is-saying')};}}catch(e){}">
+    <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button></p>
     <p class="pf-proverb-lit"><span class="k">Literally</span> a thousand-li road begins beneath the feet</p>
     <p class="pf-proverb-mean"><span class="k">Meaning</span> Every great undertaking starts with a single step.</p>
     <p class="pf-proverb-soul">The far place frightens only from a distance. Stand at your own threshold, take the single step in front of you, and the thousand miles begin to belong to you.</p>
@@ -137,7 +145,7 @@
 <section class="pf-section">
   <p class="pf-eyebrow">Keep exploring</p>
   <h2>More of the Feng Shui hub</h2>
-  <div class="pf-links"><a href="/feng-shui/">Feng Shui, the hub</a><a href="/feng-shui/five-elements/">The Five Phases</a><a href="/feng-shui/yin-yang/">Yin and Yang</a><a href="/feng-shui/bagua/">The Bagua</a><a href="/feng-shui/eight-directions/">The Eight Directions</a><a href="/feng-shui/compass/">The Compass and 24 Mountains</a><a href="/feng-shui/schools/">The Schools</a><a href="/feng-shui/flying-stars/">Flying Stars</a><a href="/feng-shui/kua-number/">Your Kua Number</a><a href="/feng-shui/lineage/">Monks and Lineage</a><a href="/feng-shui/your-animal/">Feng Shui and Your Animal</a><a href="/feng-shui/bedroom/">The Bedroom</a><a href="/feng-shui/colors/">Feng Shui Colors</a><a href="/feng-shui/office-desk/">The Office and Desk</a><a href="/feng-shui/wealth-corner/">The Wealth Corner</a></div>
+  <div class="pf-links"><a href="/feng-shui/">Feng Shui, the hub</a><a href="/feng-shui/five-elements/">The Five Phases</a><a href="/feng-shui/yin-yang/">Yin and Yang</a><a href="/feng-shui/bagua/">The Bagua</a><a href="/feng-shui/eight-directions/">The Eight Directions</a><a href="/feng-shui/compass/">The Compass and 24 Mountains</a><a href="/feng-shui/schools/">The Schools</a><a href="/feng-shui/flying-stars/">Flying Stars</a><a href="/feng-shui/kua-number/">Your Kua Number</a><a href="/feng-shui/lineage/">Monks and Lineage</a><a href="/feng-shui/your-animal/">Feng Shui and Your Animal</a><a href="/feng-shui/bedroom/">The Bedroom</a><a href="/feng-shui/commanding-position/">The Commanding Position</a><a href="/feng-shui/colors/">Feng Shui Colors</a><a href="/feng-shui/office-desk/">The Office and Desk</a><a href="/feng-shui/office/">Office Feng Shui, the cluster</a><a href="/feng-shui/wealth-corner/">The Wealth Corner</a></div>
   <p class="pf-note">See how this shapes your own space in <a href="/habitat/">the Habitat</a>, or find your animal on <a href="/">the Oracle</a>.</p>
 </section>
 </main>

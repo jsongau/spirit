@@ -17,19 +17,25 @@
 <style>
 
 .pf-proverb{margin:28px 0;padding:24px 26px;border-left:3px solid var(--brass,#d6c18c);background:linear-gradient(90deg,rgba(214,193,140,.08),transparent);border-radius:0 14px 14px 0}
-.pf-proverb-zh{font-family:"Ma Shan Zheng","Noto Serif SC",var(--serif,serif);font-size:clamp(2.4rem,8vw,3.4rem);line-height:1.8;color:var(--moon,#f5ecd2);margin:0 0 14px;letter-spacing:.04em}
+.pf-proverb-zh{font-family:"Ma Shan Zheng","Noto Serif SC",var(--serif,serif);font-size:clamp(2.4rem,8vw,3.4rem);line-height:1.8;color:var(--moon,#f5ecd2);margin:0 0 14px;letter-spacing:.04em;display:flex;align-items:center;gap:.35em;flex-wrap:wrap}
 .pf-proverb-zh ruby{margin:0 3px}
 .pf-proverb-zh rt{font-family:"Inter",system-ui,sans-serif;font-size:.62rem;color:var(--brass-bright,#efe2b4);font-weight:500;letter-spacing:.02em}
 .pf-proverb-zh .cx-punct{font-size:.7em;opacity:.55}
+.pf-say{flex:0 0 auto;display:inline-grid;place-items:center;width:2rem;height:2rem;padding:0;border-radius:50%;border:1px solid rgba(214,193,140,.4);background:rgba(214,193,140,.08);color:var(--brass-bright,#efe2b4);cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s;-webkit-tap-highlight-color:transparent}
+.pf-say:hover{background:rgba(214,193,140,.2);transform:scale(1.08)}
+.pf-say.is-saying{animation:pf-say-pulse 1s ease-in-out infinite;box-shadow:0 0 0 0 rgba(214,193,140,.5)}
+@keyframes pf-say-pulse{0%{box-shadow:0 0 0 0 rgba(214,193,140,.45)}70%{box-shadow:0 0 0 10px rgba(214,193,140,0)}100%{box-shadow:0 0 0 0 rgba(214,193,140,0)}}
 .pf-proverb-lit,.pf-proverb-mean{margin:3px 0;color:var(--body);max-width:64ch;font-size:.95rem}
 .pf-proverb-lit .k,.pf-proverb-mean .k{display:inline-block;min-width:82px;color:var(--brass-bright,#efe2b4);font-size:.72rem;text-transform:uppercase;letter-spacing:.09em}
 .pf-proverb-soul{margin:14px 0 10px;color:var(--moon,#f5ecd2);font-family:var(--serif,serif);font-size:1.18rem;font-style:italic;max-width:60ch;line-height:1.55}
 .pf-proverb-note{color:var(--muted,#9a9bb0);font-size:.85rem;margin:0}
+@media (prefers-reduced-motion:reduce){.pf-say.is-saying{animation:none}}
 .kua-form{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:16px 0}
 .kua-form label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:4px}
 .kua-form input[type=date]{padding:10px;border-radius:10px;border:1px solid var(--line,#2a2c44);background:var(--field-bg,#0f1020);color:var(--moon)}
 .kua-sex{display:flex;gap:14px;align-items:center;color:var(--body)}
 </style>
+
 <script>window.PN_HERE="feng-shui";</script>
 <!--pn-assets:start-->
 <script data-pn-assets="theme-boot">(function(){try{var m=new Date().getMonth();var s=m>=2&&m<=4?"spring":m>=5&&m<=7?"summer":m>=8&&m<=10?"autumn":"winter";var d=document.documentElement;d.dataset.theme="dark";d.dataset.season=s;}catch(e){}})();</script>
@@ -132,9 +138,13 @@
       <div class="pf-card"><h3>The compass</h3><p>The luópán, the eight directions, and the twenty-four mountains where the zodiac sits. <a href="/feng-shui/compass/">Read the compass</a>.</p></div>
       <div class="pf-card"><h3>The schools</h3><p>Form and Compass, the four celestial animals, and Flying Stars. <a href="/feng-shui/schools/">Read the schools</a>.</p></div>
       <div class="pf-card"><h3>Your Kua number</h3><p>Your four favorable directions from birth year. <a href="/feng-shui/kua-number/">Find your Kua</a>.</p></div>
-    </div></section><section class="pf-section"><p class="pf-eyebrow">The tie-in</p><h2>Feng shui and your animal</h2><p>Your year animal is one of the twelve Earthly Branches, and each branch is a compass direction. Your Primal Animal carries a symbolic element that sets its colors and materials. Together they make a Habitat you can arrange with intention. <a href="/feng-shui/your-animal/">See how feng shui ties to your animal</a>.</p></section>
+    </div></section><section class="pf-section"><p class="pf-eyebrow">The workspace</p><h2>Office feng shui, seat by seat</h2><p>Where you sit decides how a room works on you. Office feng shui arranges a desk so the day gathers behind you instead of rushing past, and it turns on one idea: the commanding position, a solid mountain, 靠山 (kào shān), at your back and an open bright hall, 明堂 (míng táng), in front. From that seat you see the door without sitting in its line, and nothing important can approach unseen.</p>
+    <p>The cluster walks nine methods in turn, seat by seat, and carries a live <a href="/feng-shui/office/">Office Diagnostic</a> that scores your desk from zero to a hundred and names the traditional fix for every flag. It reads the desk by its five-phase, 五行, colors, points you to your <a href="/feng-shui/office/peach-blossom-direction/">peach-blossom direction</a>, 桃花位, set by your own animal, and places the wealth guardians, 貔貅, 麒麟, 龍龜, 金蟾, each facing the way tradition gives it.</p>
+    <p>Start at the <a href="/feng-shui/office/">office feng shui cluster</a>, or go straight to the wall at <a href="/feng-shui/office/back-to-door/">never sit with your back to the door</a>, the desk at <a href="/feng-shui/office/desk-and-colors/">choosing the desk, colors and shape</a>, and the shelf at <a href="/feng-shui/office/wealth-objects/">the wealth position and its objects</a>. None of it promises an outcome; it is placement offered for reflection.</p></section><section class="pf-section"><p class="pf-eyebrow">The tie-in</p><h2>Feng shui and your animal</h2><p>Your year animal is one of the twelve Earthly Branches, and each branch is a compass direction. Your Primal Animal carries a symbolic element that sets its colors and materials. Together they make a Habitat you can arrange with intention. <a href="/feng-shui/your-animal/">See how feng shui ties to your animal</a>.</p></section>
 <aside class="pf-proverb" aria-label="Chinese proverb">
-    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>天<rt>tiān</rt></ruby><ruby>時<rt>shí</rt></ruby><ruby>地<rt>dì</rt></ruby><ruby>利<rt>lì</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>和<rt>hé</rt></ruby></p>
+    <p class="pf-proverb-zh" lang="zh-Hant"><ruby>天<rt>tiān</rt></ruby><ruby>時<rt>shí</rt></ruby><ruby>地<rt>dì</rt></ruby><ruby>利<rt>lì</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>和<rt>hé</rt></ruby><button type="button" class="pf-say" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="天時地利人和" onclick="try{if(window.speechSynthesis){var u=new SpeechSynthesisUtterance(this.dataset.say);u.lang='zh-CN';u.rate=.78;speechSynthesis.cancel();speechSynthesis.speak(u);this.classList.add('is-saying');var b=this;u.onend=function(){b.classList.remove('is-saying')};}}catch(e){}">
+    <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button></p>
     <p class="pf-proverb-lit"><span class="k">Literally</span> heaven's timing, earth's advantage, human harmony</p>
     <p class="pf-proverb-mean"><span class="k">Meaning</span> The three conditions of success align: the right timing, a favorable place, and united people.</p>
     <p class="pf-proverb-soul">Nothing great stands on timing alone, or place alone, or people alone. It stands where the three lean together, and place is the one you can arrange with your own hands.</p>
@@ -143,7 +153,7 @@
 <section class="pf-section">
   <p class="pf-eyebrow">Keep exploring</p>
   <h2>More of the Feng Shui hub</h2>
-  <div class="pf-links"><a href="/feng-shui/five-elements/">The Five Phases</a><a href="/feng-shui/yin-yang/">Yin and Yang</a><a href="/feng-shui/bagua/">The Bagua</a><a href="/feng-shui/eight-directions/">The Eight Directions</a><a href="/feng-shui/compass/">The Compass and 24 Mountains</a><a href="/feng-shui/schools/">The Schools</a><a href="/feng-shui/flying-stars/">Flying Stars</a><a href="/feng-shui/kua-number/">Your Kua Number</a><a href="/feng-shui/lineage/">Monks and Lineage</a><a href="/feng-shui/your-animal/">Feng Shui and Your Animal</a><a href="/feng-shui/bedroom/">The Bedroom</a><a href="/feng-shui/front-door/">The Front Door</a><a href="/feng-shui/colors/">Feng Shui Colors</a><a href="/feng-shui/office-desk/">The Office and Desk</a><a href="/feng-shui/wealth-corner/">The Wealth Corner</a></div>
+  <div class="pf-links"><a href="/feng-shui/five-elements/">The Five Phases</a><a href="/feng-shui/yin-yang/">Yin and Yang</a><a href="/feng-shui/bagua/">The Bagua</a><a href="/feng-shui/eight-directions/">The Eight Directions</a><a href="/feng-shui/compass/">The Compass and 24 Mountains</a><a href="/feng-shui/schools/">The Schools</a><a href="/feng-shui/flying-stars/">Flying Stars</a><a href="/feng-shui/kua-number/">Your Kua Number</a><a href="/feng-shui/lineage/">Monks and Lineage</a><a href="/feng-shui/your-animal/">Feng Shui and Your Animal</a><a href="/feng-shui/bedroom/">The Bedroom</a><a href="/feng-shui/commanding-position/">The Commanding Position</a><a href="/feng-shui/front-door/">The Front Door</a><a href="/feng-shui/colors/">Feng Shui Colors</a><a href="/feng-shui/office-desk/">The Office and Desk</a><a href="/feng-shui/office/">Office Feng Shui, the cluster</a><a href="/feng-shui/wealth-corner/">The Wealth Corner</a></div>
   <p class="pf-note">See how this shapes your own space in <a href="/habitat/">the Habitat</a>, or find your animal on <a href="/">the Oracle</a>.</p>
 </section>
 </main>
