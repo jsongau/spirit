@@ -3,14 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chinese Proverbs on Nature, Seasons and Health with Pinyin &amp; Meaning | The Proverb Pond</title>
-<meta name="description" content="Chinese proverbs on nature, the seasons, longevity, and health, each with pinyin, meaning, classical source, and a Mandarin reading.">
+<title>Chinese Proverbs About Health, Nature &amp; Long Life | Zodi Animal</title>
+<meta name="description" content="Chinese proverbs about health, nature and long life, in hanzi with pinyin and meaning. 养生, the mean, 笑一笑十年少 and living in step with the seasons, sourced and explained.">
 <link rel="canonical" href="https://spirit-omega.vercel.app/proverbs/nature-and-seasons/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chinese Proverbs on Nature, Seasons and Health">
-<meta property="og:description" content="Chinese proverbs on nature, the seasons, longevity, and health, each with pinyin, meaning, classical source, and a Mandarin reading.">
+<meta property="og:title" content="Chinese Proverbs About Health, Nature &amp; Long Life">
+<meta property="og:description" content="Chinese proverbs about health, nature and long life, in hanzi with pinyin and meaning. 养生, the mean, 笑一笑十年少 and living in step with the seasons, sourced and explained.">
 <meta property="og:url" content="https://spirit-omega.vercel.app/proverbs/nature-and-seasons/">
 <meta property="og:site_name" content="The Primal Oracle">
+<meta property="og:image" content="https://spirit-omega.vercel.app/social/og/pond-nature-and-seasons.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://spirit-omega.vercel.app/social/og/pond-nature-and-seasons.png">
+<meta name="theme-color" content="#93B06A">
 <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/oracle.css">
 <link rel="stylesheet" href="/css/profile.css">
@@ -30,60 +36,146 @@
 .pf-proverb-soul{margin:14px 0 10px;color:var(--moon,#f5ecd2);font-family:var(--serif,serif);font-size:1.18rem;font-style:italic;max-width:60ch;line-height:1.55}
 .pf-proverb-note{color:var(--muted,#9a9bb0);font-size:.85rem;margin:0}
 @media (prefers-reduced-motion:reduce){.pf-say.is-saying{animation:none}}
-.pt-wrap{max-width:1180px;margin:0 auto;padding:0 20px 80px}
+.pv-share{display:inline-block;margin-top:8px;font-size:.78rem;color:var(--brass-bright,#efe2b4);background:none;border:0;cursor:pointer;border-bottom:1px solid rgba(214,193,140,.4);padding:0 0 1px;font-family:inherit}
+.pv-share:hover{color:var(--moon,#f5ecd2)}
+
+.pv-rail{align-self:start}
+.pv-rail-head{font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.18em;font-size:.62rem;color:var(--muted,#9a9bb0);margin:0 0 12px;padding:0 4px}
+.pv-rail-list{display:flex;flex-direction:column;gap:3px}
+.pv-rail-row{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:12px;text-decoration:none;
+  border:1px solid transparent;border-left:3px solid transparent;transition:background .18s,border-color .18s,transform .18s}
+.pv-rail-row:hover{background:rgba(214,193,140,.06);transform:translateX(2px)}
+.pv-rail-row:focus-visible{outline:none;border-color:var(--brass,#d6c18c);background:rgba(214,193,140,.06)}
+.pv-rail-dot{flex:0 0 auto;width:11px;height:11px;border-radius:50%;background:var(--row-accent,#d6c18c);
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--row-accent,#d6c18c) 22%,transparent)}
+.pv-rail-dot-all{background:linear-gradient(135deg,#efe2b4,#d6c18c);box-shadow:0 0 0 3px rgba(214,193,140,.2)}
+.pv-rail-name{flex:1 1 auto;display:flex;flex-direction:column;gap:1px;font-family:var(--font-display,"Fraunces",serif);
+  color:var(--body,#c8c9de);font-size:.96rem;line-height:1.2}
+.pv-rail-kw{font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;font-size:.56rem;color:var(--muted,#9a9bb0)}
+.pv-rail-n{flex:0 0 auto;font-family:"Space Mono",ui-monospace,monospace;font-size:.72rem;color:var(--muted,#9a9bb0);letter-spacing:.03em}
+.pv-rail-row:hover .pv-rail-name{color:var(--moon,#f5ecd2)}
+.pv-rail-row.is-active{background:color-mix(in srgb,var(--row-accent,#d6c18c) 12%,transparent);border-left-color:var(--row-accent,#d6c18c)}
+.pv-rail-row.is-active .pv-rail-name{color:var(--moon,#f5ecd2)}
+.pv-rail-row.is-active .pv-rail-n{color:var(--row-accent,#d6c18c)}
+.pv-rail-all{--row-accent:var(--brass,#d6c18c)}
+.pv-rail-all.is-active{background:rgba(214,193,140,.12);border-left-color:var(--brass,#d6c18c)}
+
+/* mobile / tablet: the rail becomes a horizontal swipe strip of pills,
+   pinned under the breadcrumb, never covering the content */
+@media (max-width:959px){
+  .pv-rail{position:sticky;top:56px;z-index:6;margin:0 -20px 8px;padding:10px 16px;
+    background:linear-gradient(180deg,rgba(10,12,22,.94),rgba(10,12,22,.8));border-bottom:1px solid rgba(214,193,140,.14);
+    backdrop-filter:blur(8px)}
+  .pv-rail-head{display:none}
+  .pv-rail-list{flex-direction:row;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}
+  .pv-rail-list::-webkit-scrollbar{display:none}
+  .pv-rail-row{flex:0 0 auto;border:1px solid rgba(214,193,140,.22);border-left:1px solid rgba(214,193,140,.22);
+    border-radius:999px;padding:8px 14px;gap:8px;white-space:nowrap}
+  .pv-rail-row:hover{transform:none}
+  .pv-rail-kw{display:none}
+  .pv-rail-n{opacity:.7}
+  .pv-rail-row.is-active{border-color:var(--row-accent,#d6c18c);border-left-color:var(--row-accent,#d6c18c);
+    background:color-mix(in srgb,var(--row-accent,#d6c18c) 16%,transparent)}
+}
+@media (prefers-reduced-motion:reduce){.pv-rail-row{transition:none}}
+
+.pt-wrap{max-width:1240px;margin:0 auto;padding:0 20px 80px}
 .pt-crumb{margin:14px 0 6px;font-size:.85rem;color:var(--muted,#9a9bb0)}
 .pt-crumb a{color:var(--brass-bright,#efe2b4);text-decoration:none}
 .pt-crumb b{color:var(--body,#c8c9de);font-weight:500}
-.pt-hero{padding:26px 0 6px;max-width:74ch}
-.pt-eyebrow{font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.22em;font-size:.7rem;color:var(--brass-bright,#efe2b4);margin:0 0 10px}
+
+/* the two-column layout: sticky rail left, content right */
+.pv-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px;align-items:start;margin-top:6px}
+.pv-layout > .pv-rail{position:sticky;top:78px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:4px}
+.pv-main{min-width:0}
+@media (max-width:959px){.pv-layout{display:block}.pv-layout > .pv-rail{position:sticky;max-height:none;overflow:visible;padding-right:0}}
+
+/* per-pond accent flourishes over the unchanging dark base */
+.pt-hero{padding:22px 0 6px;max-width:74ch}
+.pt-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.2em;font-size:.7rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));margin:0 0 12px}
+.pt-eyebrow .pt-koi{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;
+  font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-size:.9rem;letter-spacing:0;color:var(--pond-accent,#efe2b4);
+  background:color-mix(in srgb,var(--pond-accent,#d6c18c) 16%,transparent);
+  box-shadow:0 0 0 1px color-mix(in srgb,var(--pond-accent,#d6c18c) 40%,transparent),0 0 22px -6px var(--pond-accent,#d6c18c)}
 .pt-hero h1{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(2rem,5.5vw,3.2rem);line-height:1.06;margin:0 0 16px;color:var(--moon,#f5ecd2)}
+.pt-hero h1 .pt-flourish{display:block;width:66px;height:3px;margin-top:14px;border-radius:2px;
+  background:linear-gradient(90deg,var(--pond-accent,#d6c18c),transparent)}
 .pt-answer{margin:0 0 8px}
-.pt-answer h2{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(1.35rem,3.4vw,1.7rem);color:var(--moon,#f5ecd2);margin:0 0 10px}
-.pt-answer p{color:var(--body,#c8c9de);font-size:1.12rem;line-height:1.62;margin:0}
-.pt-chapter{margin:30px 0 8px;max-width:66ch}
-.pt-chapter p{color:var(--body,#c8c9de);font-size:1.05rem;line-height:1.68;margin:0 0 16px}
-.pt-chapter p.pt-quote{color:var(--moon,#f5ecd2);font-family:var(--font-display,"Fraunces",serif);font-style:italic;font-size:1.32rem;line-height:1.5;border-left:3px solid var(--brass,#d6c18c);padding-left:18px;margin:22px 0}
-.pt-section-head{margin:50px 0 6px}
+.pt-answer p{color:var(--body,#c8c9de);font-size:1.14rem;line-height:1.62;margin:0}
+.pt-answer .pt-lede-zh{font-family:"Ma Shan Zheng","Noto Serif SC",serif;color:var(--pond-accent,var(--brass,#d6c18c));font-size:1.15em;letter-spacing:.02em}
+
+.pt-chapter{margin:34px 0 8px;max-width:66ch}
+.pt-chapter p{color:var(--body,#c8c9de);font-size:1.05rem;line-height:1.72;margin:0 0 18px}
+.pt-chapter p.pt-quote{color:var(--moon,#f5ecd2);font-family:var(--font-display,"Fraunces",serif);font-style:italic;font-size:1.34rem;line-height:1.5;border-left:3px solid var(--pond-accent,var(--brass,#d6c18c));padding-left:18px;margin:26px 0}
+
+.pt-section-head{margin:46px 0 6px}
 .pt-section-head h2{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(1.5rem,4vw,2.1rem);color:var(--moon,#f5ecd2);margin:0}
 .pt-section-head p{color:var(--muted,#9a9bb0);margin:6px 0 0}
-.pt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:22px}
+
+/* key-ideas glossary chips */
+.pv-gloss{margin:8px 0 0}
+.pv-gloss-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:16px}
+.pv-gloss-chip{padding:16px 18px;border-radius:14px;border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 26%,rgba(214,193,140,.16));
+  background:linear-gradient(180deg,rgba(20,22,40,.5),rgba(12,14,26,.5))}
+.pv-gloss-han{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-size:1.7rem;color:var(--moon,#f5ecd2);letter-spacing:.04em;margin-right:8px}
+.pv-gloss-py{font-family:"Space Mono",ui-monospace,monospace;font-size:.72rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));letter-spacing:.04em}
+.pv-gloss-def{display:block;margin-top:8px;color:var(--body,#c8c9de);font-size:.92rem;line-height:1.55}
+
+/* the pond's search box + card grid */
+.pt-searchwrap{margin:22px 0 4px;position:relative}
+.pt-search{width:100%;padding:13px 16px 13px 44px;border-radius:12px;border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 30%,rgba(214,193,140,.28));background:rgba(8,10,20,.7);color:var(--moon,#f5ecd2);font-size:1rem}
+.pt-search::placeholder{color:var(--muted,#9a9bb0)}
+.pt-search:focus{outline:none;border-color:var(--pond-accent,var(--brass,#d6c18c));box-shadow:0 0 0 3px color-mix(in srgb,var(--pond-accent,#d6c18c) 18%,transparent)}
+.pt-searchwrap svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--muted,#9a9bb0);pointer-events:none}
+.pt-searchcount{margin:10px 0 0;font-family:"Space Mono",ui-monospace,monospace;font-size:.74rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));letter-spacing:.03em}
+
+.pt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:20px}
 .pv-card{position:relative;padding:22px 22px 18px;border-radius:16px;
-  background:linear-gradient(180deg,rgba(20,22,40,.55),rgba(12,14,26,.55));border:1px solid rgba(214,193,140,.16);
+  background:linear-gradient(180deg,rgba(20,22,40,.55),rgba(12,14,26,.55));
+  border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 20%,rgba(214,193,140,.16));
   transition:transform .25s,border-color .25s,box-shadow .25s}
-.pv-card:hover{transform:translateY(-3px);border-color:rgba(214,193,140,.4);box-shadow:0 24px 50px -30px rgba(0,0,0,.9)}
+.pv-card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--pond-accent,#d6c18c) 55%,rgba(214,193,140,.4));box-shadow:0 24px 50px -30px rgba(0,0,0,.9)}
+.pv-card[hidden]{display:none}
 .pv-zh{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-size:clamp(2rem,6vw,2.7rem);line-height:1.55;color:var(--moon,#f5ecd2);margin:0 0 6px;letter-spacing:.04em;display:flex;align-items:center;gap:.22em;flex-wrap:wrap}
-.pv-zh ruby rt{font-family:"Inter",system-ui,sans-serif;font-size:.3em;color:var(--brass-bright,#efe2b4);font-weight:500}
+.pv-zh ruby rt{font-family:"Inter",system-ui,sans-serif;font-size:.3em;color:var(--pond-accent,var(--brass-bright,#efe2b4));font-weight:500}
 .pv-zh .cx-punct{opacity:.5}
-.pv-pinyin{font-family:"Space Mono",ui-monospace,monospace;color:var(--brass-bright,#efe2b4);letter-spacing:.05em;font-size:.8rem;margin:0 0 8px}
+.pv-pinyin{font-family:"Space Mono",ui-monospace,monospace;color:var(--pond-accent,var(--brass-bright,#efe2b4));letter-spacing:.05em;font-size:.8rem;margin:0 0 8px}
 .pv-lit{color:var(--muted,#9a9bb0);font-style:italic;margin:0 0 8px;font-size:.9rem}
 .pv-mean{color:var(--body,#c8c9de);margin:0 0 10px;font-size:.96rem;line-height:1.5}
 .pv-soul{color:var(--moon,#f5ecd2);font-family:var(--font-display,"Fraunces",serif);font-style:italic;font-size:1.02rem;line-height:1.5;margin:0 0 14px}
 .pv-tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
-.pv-tag{font-size:.68rem;letter-spacing:.02em;color:var(--brass-bright,#efe2b4);background:rgba(214,193,140,.08);border:1px solid rgba(214,193,140,.2);border-radius:6px;padding:3px 8px;text-decoration:none}
-.pv-tag-animal:hover{background:rgba(214,193,140,.2)}
+.pv-tag{font-size:.68rem;letter-spacing:.02em;color:var(--pond-accent,var(--brass-bright,#efe2b4));background:color-mix(in srgb,var(--pond-accent,#d6c18c) 10%,rgba(214,193,140,.08));border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 32%,rgba(214,193,140,.2));border-radius:6px;padding:3px 8px;text-decoration:none}
+.pv-tag-animal:hover{background:color-mix(in srgb,var(--pond-accent,#d6c18c) 22%,rgba(214,193,140,.2))}
 .pv-src{color:var(--muted,#9a9bb0);font-size:.76rem;margin:0}
-.pv-src .k{text-transform:uppercase;letter-spacing:.08em;font-size:.66rem;color:var(--brass-bright,#efe2b4);margin-right:6px}
-.pv-more{display:inline-block;margin-top:10px;font-size:.78rem;color:var(--brass-bright,#efe2b4);text-decoration:none;border-bottom:1px solid rgba(214,193,140,.4)}
+.pv-src .k{text-transform:uppercase;letter-spacing:.08em;font-size:.66rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));margin-right:6px}
+.pv-card-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;flex-wrap:wrap}
+.pv-more{display:inline-block;font-size:.78rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 40%,rgba(214,193,140,.4))}
 .pv-more:hover{color:var(--moon,#f5ecd2)}
-.pt-faq{margin:60px auto 0;max-width:760px}
+.pv-share-btn{display:inline-flex;align-items:center;gap:6px;font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.1em;font-size:.62rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));background:color-mix(in srgb,var(--pond-accent,#d6c18c) 9%,rgba(214,193,140,.06));border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 34%,rgba(214,193,140,.28));border-radius:999px;padding:6px 12px;cursor:pointer;transition:background .18s,border-color .18s}
+.pv-share-btn:hover{background:color-mix(in srgb,var(--pond-accent,#d6c18c) 20%,rgba(214,193,140,.16));color:var(--moon,#f5ecd2)}
+.pt-empty{text-align:center;color:var(--muted,#9a9bb0);padding:40px 20px;font-family:var(--font-display,"Fraunces",serif);font-size:1.15rem}
+.pt-empty[hidden]{display:none}
+
+.pt-faq{margin:56px 0 0;max-width:760px}
 .pt-faq h2{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(1.5rem,4vw,2.1rem);color:var(--moon,#f5ecd2);margin:0 0 18px}
 .pt-qa{margin:0 0 20px}
-.pt-qa h3{color:var(--brass-bright,#efe2b4);font-size:1.05rem;margin:0 0 6px}
+.pt-qa h3{color:var(--pond-accent,var(--brass-bright,#efe2b4));font-size:1.05rem;margin:0 0 6px}
 .pt-qa p{color:var(--body,#c8c9de);line-height:1.6;margin:0;max-width:66ch}
-.pt-explore{margin:52px 0 0;padding:24px;border-radius:16px;border:1px solid rgba(214,193,140,.18);background:rgba(12,14,26,.5)}
+
+.pt-explore{margin:52px 0 0;padding:24px;border-radius:16px;border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 22%,rgba(214,193,140,.18));background:rgba(12,14,26,.5)}
 .pt-explore h2{font-family:var(--font-display,"Fraunces",serif);font-weight:560;color:var(--moon,#f5ecd2);margin:0 0 8px;font-size:1.3rem}
 .pt-explore p{color:var(--body,#c8c9de);line-height:1.66;margin:0 0 12px;max-width:74ch}
-.pt-explore a{color:var(--brass-bright,#efe2b4)}
+.pt-explore a{color:var(--pond-accent,var(--brass-bright,#efe2b4))}
 .pt-siblings{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-wrap:wrap;gap:8px}
-.pt-siblings a{display:inline-block;font-size:.82rem;color:var(--brass-bright,#efe2b4);background:rgba(214,193,140,.08);border:1px solid rgba(214,193,140,.22);border-radius:999px;padding:6px 13px;text-decoration:none}
-.pt-siblings a:hover{border-color:var(--brass,#d6c18c);color:var(--moon,#f5ecd2)}
-.pt-years a{color:var(--brass-bright,#efe2b4);text-decoration:none;margin-right:14px;white-space:nowrap}
+.pt-siblings a{display:inline-block;font-size:.82rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));background:color-mix(in srgb,var(--pond-accent,#d6c18c) 10%,rgba(214,193,140,.08));border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 30%,rgba(214,193,140,.22));border-radius:999px;padding:6px 13px;text-decoration:none}
+.pt-siblings a:hover{border-color:var(--pond-accent,var(--brass,#d6c18c));color:var(--moon,#f5ecd2)}
+.pt-years a{color:var(--pond-accent,var(--brass-bright,#efe2b4));text-decoration:none;margin-right:14px;white-space:nowrap}
 .pt-years a:hover{color:var(--moon,#f5ecd2);text-decoration:underline}
 .pt-foot{margin-top:40px}
 .pt-foot .pf-disc{color:var(--muted,#9a9bb0);font-size:.85rem;max-width:80ch}
-@media (prefers-reduced-motion:reduce){.pv-card{transition:none}.pf-say.is-saying{animation:none}}
+@media (prefers-reduced-motion:reduce){.pv-card{transition:none}.pf-say.is-saying{animation:none}.pv-share-btn{transition:none}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","@id":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://spirit-omega.vercel.app/"},{"@type":"ListItem","position":2,"name":"The Proverb Pond","item":"https://spirit-omega.vercel.app/proverbs/"},{"@type":"ListItem","position":3,"name":"Nature, Seasons & Health","item":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/"}]},{"@type":"CollectionPage","@id":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/#page","url":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/","name":"Chinese Proverbs on Nature, Seasons and Health","description":"Chinese proverbs on nature, the seasons, longevity, and health, each with pinyin, meaning, classical source, and a Mandarin reading.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"The Primal Oracle","url":"https://spirit-omega.vercel.app/"},"about":{"@type":"Thing","name":"Chinese proverbs on Nature, Seasons & Health"}},{"@type":"ItemList","@id":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/#list","name":"Chinese Proverbs on Nature, Seasons and Health","numberOfItems":7,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"CreativeWork","name":"一年之計在於春，一日之計在於晨 (yī nián zhī jì zài yú chūn, yī rì zhī jì zài yú chén)","alternateName":"a year's plan rests in spring; a day's plan rests in the morning","text":"Begin at the beginning: the whole shape of a year or a day is set by what you do at its first hour.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/#p-yi-nian-zhi-ji-zai-yu-chun"}},{"@type":"ListItem","position":2,"item":{"@type":"CreativeWork","name":"月有陰晴圓缺 (yuè yǒu yīn qíng yuán quē)","alternateName":"the moon has its shadow and light, its fullness and its waning","text":"Like human grief and joy, the moon waxes and wanes; imperfection is the natural order.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/#p-moon-has-shadow-and-light"}},{"@type":"ListItem","position":3,"item":{"@type":"CreativeWork","name":"笑一笑，十年少 (xiào yī xiào, shí nián shào)","alternateName":"one laugh, ten years younger","text":"A light heart keeps the body young; laughter is medicine, and worry is what ages you.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/#p-xiao-yi-xiao-shi-nian-shao"}},{"@type":"ListItem","position":4,"item":{"@type":"CreativeWork","name":"飯後百步走，活到九十九 (fàn hòu bǎi bù zǒu, huó dào jiǔ shí jiǔ)","alternateName":"walk a hundred steps after a meal, live to ninety-nine","text":"Small, gentle, regular movement is the quiet secret of a long life; don't sit still after you eat.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/#p-fan-hou-bai-bu-zou"}},{"@type":"ListItem","position":5,"item":{"@type":"CreativeWork","name":"天下無不散之筵席 (tiān xià wú bù sàn zhī yán xí)","alternateName":"under heaven there is no banquet that does not break up","text":"Every gathering, however warm, must eventually end.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/#p-no-banquet-that-does-not-end"}},{"@type":"ListItem","position":6,"item":{"@type":"CreativeWork","name":"歲寒，然後知松柏之後凋也 (suì hán, rán hòu zhī sōng bǎi zhī hòu diāo yě)","alternateName":"only when the year turns cold do we know the pine and cypress are the last to wither","text":"Character shows in hard seasons; the ones who hold their color when everything else fades are revealed only by the cold.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/#p-sui-han-song-bai"}},{"@type":"ListItem","position":7,"item":{"@type":"CreativeWork","name":"飲食有節，起居有常 (yǐn shí yǒu jié, qǐ jū yǒu cháng)","alternateName":"eat and drink with measure, rise and rest with regularity","text":"Health is built on moderation and rhythm: temperate at the table, steady in the hours you keep.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/#p-yin-shi-you-jie-qi-ju-you-chang"}}]},{"@type":"FAQPage","@id":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/#faq","mainEntity":[{"@type":"Question","name":"What do Chinese proverbs say about nature, seasons and health?","acceptedAnswer":{"@type":"Answer","text":"They say a year's plan rests in spring and a day's in the morning. The moon has its shadow and light, so imperfection is the natural order. Walk a hundred steps after a meal and live to ninety-nine. Eat with measure, rise and rest with rhythm. Health here is quiet, built in ordinary habits and the turning of seasons."}},{"@type":"Question","name":"What does 一年之計在於春 mean?","acceptedAnswer":{"@type":"Answer","text":"Yī nián zhī jì zài yú chūn, a year's plan rests in spring, with its pair, a day's plan rests in the morning. Begin at the beginning: the whole shape of a year or a day is set by what you do at its first hour."}},{"@type":"Question","name":"What do the proverbs say about health and longevity?","acceptedAnswer":{"@type":"Answer","text":"They favor rhythm over drama. 飲食有節，起居有常 asks you to eat with measure and keep steady hours, and 飯後百步走，活到九十九 credits a gentle walk after meals. The body tallies every habit and spends the saved years back on you."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","@id":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://spirit-omega.vercel.app/"},{"@type":"ListItem","position":2,"name":"The Proverb Pond","item":"https://spirit-omega.vercel.app/proverbs/"},{"@type":"ListItem","position":3,"name":"Nature, Seasons & Health","item":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/"}]},{"@type":"CollectionPage","@id":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/#page","url":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/","name":"Chinese Proverbs About Health, Nature & Long Life","description":"Chinese proverbs about health, nature and long life, in hanzi with pinyin and meaning. 养生, the mean, 笑一笑十年少 and living in step with the seasons, sourced and explained.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"The Primal Oracle","url":"https://spirit-omega.vercel.app/"},"about":{"@type":"Thing","name":"Chinese proverbs on Nature, Seasons & Health"}},{"@type":"ItemList","@id":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/#list","name":"Chinese Proverbs About Health, Nature & Long Life","numberOfItems":7,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"CreativeWork","name":"一年之計在於春，一日之計在於晨 (yī nián zhī jì zài yú chūn, yī rì zhī jì zài yú chén)","alternateName":"a year's plan rests in spring; a day's plan rests in the morning","text":"Begin at the beginning: the whole shape of a year or a day is set by what you do at its first hour.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/say/yi-nian-zhi-ji-zai-yu-chun/"}},{"@type":"ListItem","position":2,"item":{"@type":"CreativeWork","name":"月有陰晴圓缺 (yuè yǒu yīn qíng yuán quē)","alternateName":"the moon has its shadow and light, its fullness and its waning","text":"Like human grief and joy, the moon waxes and wanes; imperfection is the natural order.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/say/moon-has-shadow-and-light/"}},{"@type":"ListItem","position":3,"item":{"@type":"CreativeWork","name":"笑一笑，十年少 (xiào yī xiào, shí nián shào)","alternateName":"one laugh, ten years younger","text":"A light heart keeps the body young; laughter is medicine, and worry is what ages you.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/say/xiao-yi-xiao-shi-nian-shao/"}},{"@type":"ListItem","position":4,"item":{"@type":"CreativeWork","name":"飯後百步走，活到九十九 (fàn hòu bǎi bù zǒu, huó dào jiǔ shí jiǔ)","alternateName":"walk a hundred steps after a meal, live to ninety-nine","text":"Small, gentle, regular movement is the quiet secret of a long life; don't sit still after you eat.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/say/fan-hou-bai-bu-zou/"}},{"@type":"ListItem","position":5,"item":{"@type":"CreativeWork","name":"天下無不散之筵席 (tiān xià wú bù sàn zhī yán xí)","alternateName":"under heaven there is no banquet that does not break up","text":"Every gathering, however warm, must eventually end.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/say/no-banquet-that-does-not-end/"}},{"@type":"ListItem","position":6,"item":{"@type":"CreativeWork","name":"歲寒，然後知松柏之後凋也 (suì hán, rán hòu zhī sōng bǎi zhī hòu diāo yě)","alternateName":"only when the year turns cold do we know the pine and cypress are the last to wither","text":"Character shows in hard seasons; the ones who hold their color when everything else fades are revealed only by the cold.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/say/sui-han-song-bai/"}},{"@type":"ListItem","position":7,"item":{"@type":"CreativeWork","name":"飲食有節，起居有常 (yǐn shí yǒu jié, qǐ jū yǒu cháng)","alternateName":"eat and drink with measure, rise and rest with regularity","text":"Health is built on moderation and rhythm: temperate at the table, steady in the hours you keep.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/say/yin-shi-you-jie-qi-ju-you-chang/"}}]},{"@type":"FAQPage","@id":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/#faq","mainEntity":[{"@type":"Question","name":"What is the Chinese proverb about health and long life?","acceptedAnswer":{"@type":"Answer","text":"飯後百步走，活到九十九 (fàn hòu bǎi bù zǒu, huó dào jiǔ shí jiǔ), walk a hundred steps after a meal and live to ninety-nine, is a beloved folk saying. It captures the whole 養生 idea that gentle, regular habits, not heroic effort, are the quiet secret of a long life. The Mandarin searcher looks for 养生谚语, health-cultivation proverbs."}},{"@type":"Question","name":"What is the Chinese view of health and balance?","acceptedAnswer":{"@type":"Answer","text":"Health is seen as balance and rhythm. The medical version is 陰陽 (yīnyáng) equilibrium, and the ethical version is 中庸 (zhōngyōng), the doctrine of the mean, whose rule 過猶不及 says going too far is as bad as falling short. Wellbeing means living in measure and in step with the seasons, an idea called 天人合一, the unity of nature and person."}},{"@type":"Question","name":"Is there a Chinese proverb about the seasons?","acceptedAnswer":{"@type":"Answer","text":"Yes. 一年之計在於春，一日之計在於晨 (yī nián zhī jì zài yú chūn, yī rì zhī jì zài yú chén), the year's plan lies in spring and the day's plan in the morning, is the best known. It teaches that the shape of a whole season or day is set by what you do at its beginning, and it reflects a deeply agrarian sense of timing."}},{"@type":"Question","name":"What does the moon proverb 月有阴晴圆缺 mean?","acceptedAnswer":{"@type":"Answer","text":"月有陰晴圓缺 (yuè yǒu yīn qíng yuán quē), from Su Shi, means the moon has its shadow and light, its fullness and its waning. Paired with the line that people know grief and joy, parting and reunion, it teaches that change and imperfection are the natural order, and that peace comes from accepting the cycle rather than fighting it."}}]}]}</script>
 <script>window.PN_HERE="proverbs";</script>
 <!--pn-assets:start-->
 <script data-pn-assets="theme-boot">(function(){try{var m=new Date().getMonth();var s=m>=2&&m<=4?"spring":m>=5&&m<=7?"summer":m>=8&&m<=10?"autumn":"winter";var d=document.documentElement;d.dataset.theme="dark";d.dataset.season=s;}catch(e){}})();</script>
@@ -111,7 +203,7 @@
 <link rel="stylesheet" href="/css/a11y.css" data-pn="/css/a11y.css">
 <!--pn-css:end-->
 <!--pn-crumb-ld:start-->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://spirit-omega.vercel.app/"},{"@type":"ListItem","position":2,"name":"Proverbs","item":"https://spirit-omega.vercel.app/proverbs/"},{"@type":"ListItem","position":3,"name":"Chinese Proverbs on Nature, Seasons and Health with Pinyin &amp; Meaning","item":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://spirit-omega.vercel.app/"},{"@type":"ListItem","position":2,"name":"Proverbs","item":"https://spirit-omega.vercel.app/proverbs/"},{"@type":"ListItem","position":3,"name":"Chinese Proverbs About Health, Nature &amp; Long Life","item":"https://spirit-omega.vercel.app/proverbs/nature-and-seasons/"}]}</script>
 <!--pn-crumb-ld:end-->
 </head>
 <body class="pn-has-bar">
@@ -126,7 +218,7 @@
         <div class="pn-item" data-accent="teal"><button class="pn-trigger" type="button" data-group="1" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Explore<span class="chev" aria-hidden="true"></span></button></div>
         <div class="pn-item" data-accent="brass"><button class="pn-trigger" type="button" data-group="2" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Zodiac<span class="chev" aria-hidden="true"></span></button></div>
         <div class="pn-item" data-accent="amethyst"><button class="pn-trigger" type="button" data-group="3" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Horoscope<span class="chev" aria-hidden="true"></span></button></div>
-        <div class="pn-item" data-accent="jade"><button class="pn-trigger" type="button" data-group="4" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Sage Wisdom<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="jade"><button class="pn-trigger active" type="button" data-group="4" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Sage Wisdom<span class="chev" aria-hidden="true"></span></button></div>
         <div class="pn-item" data-accent="rose"><button class="pn-trigger" type="button" data-group="5" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Bonds<span class="chev" aria-hidden="true"></span></button></div>
         <div class="pn-item" data-accent="silver"><button class="pn-trigger" type="button" data-group="6" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Moon<span class="chev" aria-hidden="true"></span></button></div>
     </nav>
@@ -173,7 +265,7 @@
   </div>
   <div class="pn-panel pn-panel-sage" data-group="4" data-accent="jade" role="region" aria-label="Sage Wisdom" hidden>
     <p class="pn-panel-eyebrow">The craft, what you do with your animal</p>
-    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Stones</p><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/traditions/birthstones-and-moonstone/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Birthstones and moonstone</span></a><a class="pn-row" href="/traditions/stones-for-your-animal/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Stones for your animal</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">卦</span> Feng shui</p><a class="pn-row" href="/feng-shui/bagua/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The bagua</span></a><a class="pn-row" href="/feng-shui/five-elements/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Five phases</span></a><a class="pn-row" href="/feng-shui/kua-number/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your Kua number</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">❦</span> Proverbs and lore</p><a class="pn-row" href="/proverbs/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Proverbs</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a></div></div>
+    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Stones</p><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/traditions/birthstones-and-moonstone/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Birthstones and moonstone</span></a><a class="pn-row" href="/traditions/stones-for-your-animal/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Stones for your animal</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">卦</span> Feng shui</p><a class="pn-row" href="/feng-shui/bagua/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The bagua</span></a><a class="pn-row" href="/feng-shui/five-elements/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Five phases</span></a><a class="pn-row" href="/feng-shui/kua-number/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your Kua number</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">❦</span> Proverbs and lore</p><a class="pn-row" href="/proverbs/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Proverb Pond</span><span class="pn-row-sub">Chinese proverbs, pronounced</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">❦</span> The Proverb Pond, by theme</p><a class="pn-row" href="/proverbs/wealth-and-work/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Money and work</span></a><a class="pn-row" href="/proverbs/home-and-family/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Family and roots</span></a><a class="pn-row active" href="/proverbs/nature-and-seasons/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Health and nature</span></a><a class="pn-row" href="/proverbs/friendship-and-trust/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Friendship and trust</span></a><a class="pn-row" href="/proverbs/the-way-of-water/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The way of water</span></a><a class="pn-row" href="/proverbs/timing-and-fortune/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Fate and fortune</span></a><a class="pn-row" href="/proverbs/perseverance/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Perseverance</span></a><a class="pn-row" href="/proverbs/courage/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Courage</span></a><a class="pn-row" href="/proverbs/wisdom-and-learning/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Wisdom and learning</span></a><a class="pn-row" href="/proverbs/harmony-and-virtue/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Harmony and virtue</span></a><a class="pn-row" href="/proverbs/humility-and-self-mastery/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Humility</span></a><a class="pn-row" href="/proverbs/adversity-and-resilience/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Adversity</span></a></div></div>
     <div class="pn-panel-cta"><div class="pn-ebook"><span class="pn-ebook-tag">Free · Feng Shui e-book</span><h3 class="pn-ebook-title">Your animal's placement guide</h3><p class="pn-ebook-body">Where to sleep, work, and rest, mapped to your animal. Free when you create a Zodi account.</p><a class="pn-ebook-link" href="/account.html">Create free account <span class="pn-ebook-note">opening soon</span></a></div></div>
     <div class="pn-panel-foot"><a href="/feng-shui/">All of feng shui</a></div>
   </div>
@@ -187,34 +279,151 @@
     <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> Tonight</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-full" viewBox="0 0 24 24" role="img" aria-labelledby="moon-full-t moon-full-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-full-t">Full moon</title><desc id="moon-full-d">The whole disc lit.</desc><circle cx="12" cy="12" r="9" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Waning Gibbous</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days ahead</span><span class="pn-row-sub">the favorable days for you</span></a><a class="pn-row" href="/awakening.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Awakening</span><span class="pn-row-sub">the path from fear to strength</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◐</span> The eight phases</p><a class="pn-row" href="/moon/phases/new-moon/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-new" viewBox="0 0 24 24" role="img" aria-labelledby="moon-new-t moon-new-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-new-t">New moon</title><desc id="moon-new-d">The dark disc of the new moon.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">New Moon</span></a><a class="pn-row" href="/moon/phases/waxing-crescent/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waxing-crescent" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waxing-crescent-t moon-waxing-crescent-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waxing-crescent-t">Waxing crescent moon</title><desc id="moon-waxing-crescent-d">A thin lit crescent on the right.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A6.36 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waxing Crescent</span></a><a class="pn-row" href="/moon/phases/first-quarter/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-first-quarter" viewBox="0 0 24 24" role="img" aria-labelledby="moon-first-quarter-t moon-first-quarter-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-first-quarter-t">First quarter moon</title><desc id="moon-first-quarter-d">The right half lit.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A0 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">First Quarter</span></a><a class="pn-row" href="/moon/phases/waxing-gibbous/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waxing-gibbous" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waxing-gibbous-t moon-waxing-gibbous-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waxing-gibbous-t">Waxing gibbous moon</title><desc id="moon-waxing-gibbous-d">Most of the disc lit, growing.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A6.36 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waxing Gibbous</span></a><a class="pn-row" href="/moon/phases/full-moon/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-full" viewBox="0 0 24 24" role="img" aria-labelledby="moon-full-t moon-full-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-full-t">Full moon</title><desc id="moon-full-d">The whole disc lit.</desc><circle cx="12" cy="12" r="9" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Full Moon</span></a><a class="pn-row" href="/moon/phases/waning-gibbous/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waning-gibbous" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waning-gibbous-t moon-waning-gibbous-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waning-gibbous-t">Waning gibbous moon</title><desc id="moon-waning-gibbous-d">Most of the disc lit, shrinking.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A6.36 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waning Gibbous</span></a><a class="pn-row" href="/moon/phases/last-quarter/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-last-quarter" viewBox="0 0 24 24" role="img" aria-labelledby="moon-last-quarter-t moon-last-quarter-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-last-quarter-t">Last quarter moon</title><desc id="moon-last-quarter-d">The left half lit.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A0 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Last Quarter</span></a><a class="pn-row" href="/moon/phases/waning-crescent/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waning-crescent" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waning-crescent-t moon-waning-crescent-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waning-crescent-t">Waning crescent moon</title><desc id="moon-waning-crescent-d">A thin lit crescent on the left.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A6.36 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waning Crescent</span></a></div></div>
     <div class="pn-panel-foot"><a href="/moon.html">Read the Moon tonight in full</a></div>
   </div>
-  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/index.html#read">Find yours</a><a href="/index.html">Find your animal</a><a href="/daily.html">Today's reading</a><a href="/year.html">Year finder</a><a href="/account.html">Your account</a><a href="/menagerie.html">All 144 animals</a><a href="/western-zodiac/">Western wing</a><a href="/chinese-zodiac/">Eastern wing</a><a href="/zodiac/">Zodiac crossings</a><a href="/moon.html">The Moon tonight</a><a href="/moon/phases/">The eight phases</a><a href="/moon/in-your-sign/">Moon in your sign</a><a href="/best-days.html">Best days</a><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a><a href="/feng-shui/">Feng shui</a><a href="/habitat/">The Habitat</a><a href="/stones.html">Keeper stones</a><a href="/directions/">Directions</a><a href="/traditions/">Traditions</a><a href="/chinese-zodiac/horse/">Horse</a><a href="/chinese-zodiac/rat/">Rat</a><a href="/chinese-zodiac/ox/">Ox</a><a href="/chinese-zodiac/tiger/">Tiger</a><a href="/chinese-zodiac/rabbit/">Rabbit</a><a href="/chinese-zodiac/dragon/">Dragon</a><a href="/chinese-zodiac/snake/">Snake</a><a href="/chinese-zodiac/goat/">Goat</a><a href="/chinese-zodiac/monkey/">Monkey</a><a href="/chinese-zodiac/rooster/">Rooster</a><a href="/chinese-zodiac/dog/">Dog</a><a href="/chinese-zodiac/pig/">Pig</a><a href="/western-zodiac/aries/">Aries</a><a href="/western-zodiac/taurus/">Taurus</a><a href="/western-zodiac/gemini/">Gemini</a><a href="/western-zodiac/cancer/">Cancer</a><a href="/western-zodiac/leo/">Leo</a><a href="/western-zodiac/virgo/">Virgo</a><a href="/western-zodiac/libra/">Libra</a><a href="/western-zodiac/scorpio/">Scorpio</a><a href="/western-zodiac/sagittarius/">Sagittarius</a><a href="/western-zodiac/capricorn/">Capricorn</a><a href="/western-zodiac/aquarius/">Aquarius</a><a href="/western-zodiac/pisces/">Pisces</a><a href="/traditions/birthstones-and-moonstone/">Birthstones and moonstone</a><a href="/traditions/stones-for-your-animal/">Stones for your animal</a><a href="/feng-shui/bagua/">The bagua</a><a href="/feng-shui/five-elements/">Five phases</a><a href="/feng-shui/kua-number/">Your Kua number</a><a href="/proverbs/">Proverbs</a><a href="/match.html">Test a match</a><a href="/vs.html">Challenge a friend</a><a href="/circle.html">Circle of three</a><a href="/awakening.html">The Awakening</a><a href="/moon/phases/new-moon/">New Moon</a><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a><a href="/moon/phases/first-quarter/">First Quarter</a><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a><a href="/moon/phases/full-moon/">Full Moon</a><a href="/moon/phases/waning-gibbous/">Waning Gibbous</a><a href="/moon/phases/last-quarter/">Last Quarter</a><a href="/moon/phases/waning-crescent/">Waning Crescent</a><a href="/horoscopes/">All horoscopes, sign by sign</a><a href="/feng-shui/your-animal/">Feng shui for your animal</a><a href="/directions/celestial-animals/">The four celestial animals</a><a href="/cosmology/">Cosmology</a><a href="/cosmology/four-pillars/">The Four Pillars</a><a href="/elements/fire/">The five elements</a><a href="/learn.html">How it works</a></nav>
+  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/index.html#read">Find yours</a><a href="/index.html">Find your animal</a><a href="/daily.html">Today's reading</a><a href="/year.html">Year finder</a><a href="/account.html">Your account</a><a href="/menagerie.html">All 144 animals</a><a href="/western-zodiac/">Western wing</a><a href="/chinese-zodiac/">Eastern wing</a><a href="/zodiac/">Zodiac crossings</a><a href="/moon.html">The Moon tonight</a><a href="/moon/phases/">The eight phases</a><a href="/moon/in-your-sign/">Moon in your sign</a><a href="/best-days.html">Best days</a><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a><a href="/feng-shui/">Feng shui</a><a href="/habitat/">The Habitat</a><a href="/stones.html">Keeper stones</a><a href="/directions/">Directions</a><a href="/traditions/">Traditions</a><a href="/chinese-zodiac/horse/">Horse</a><a href="/chinese-zodiac/rat/">Rat</a><a href="/chinese-zodiac/ox/">Ox</a><a href="/chinese-zodiac/tiger/">Tiger</a><a href="/chinese-zodiac/rabbit/">Rabbit</a><a href="/chinese-zodiac/dragon/">Dragon</a><a href="/chinese-zodiac/snake/">Snake</a><a href="/chinese-zodiac/goat/">Goat</a><a href="/chinese-zodiac/monkey/">Monkey</a><a href="/chinese-zodiac/rooster/">Rooster</a><a href="/chinese-zodiac/dog/">Dog</a><a href="/chinese-zodiac/pig/">Pig</a><a href="/western-zodiac/aries/">Aries</a><a href="/western-zodiac/taurus/">Taurus</a><a href="/western-zodiac/gemini/">Gemini</a><a href="/western-zodiac/cancer/">Cancer</a><a href="/western-zodiac/leo/">Leo</a><a href="/western-zodiac/virgo/">Virgo</a><a href="/western-zodiac/libra/">Libra</a><a href="/western-zodiac/scorpio/">Scorpio</a><a href="/western-zodiac/sagittarius/">Sagittarius</a><a href="/western-zodiac/capricorn/">Capricorn</a><a href="/western-zodiac/aquarius/">Aquarius</a><a href="/western-zodiac/pisces/">Pisces</a><a href="/traditions/birthstones-and-moonstone/">Birthstones and moonstone</a><a href="/traditions/stones-for-your-animal/">Stones for your animal</a><a href="/feng-shui/bagua/">The bagua</a><a href="/feng-shui/five-elements/">Five phases</a><a href="/feng-shui/kua-number/">Your Kua number</a><a href="/proverbs/">The Proverb Pond</a><a href="/proverbs/wealth-and-work/">Money and work</a><a href="/proverbs/home-and-family/">Family and roots</a><a href="/proverbs/nature-and-seasons/">Health and nature</a><a href="/proverbs/friendship-and-trust/">Friendship and trust</a><a href="/proverbs/the-way-of-water/">The way of water</a><a href="/proverbs/timing-and-fortune/">Fate and fortune</a><a href="/proverbs/perseverance/">Perseverance</a><a href="/proverbs/courage/">Courage</a><a href="/proverbs/wisdom-and-learning/">Wisdom and learning</a><a href="/proverbs/harmony-and-virtue/">Harmony and virtue</a><a href="/proverbs/humility-and-self-mastery/">Humility</a><a href="/proverbs/adversity-and-resilience/">Adversity</a><a href="/match.html">Test a match</a><a href="/vs.html">Challenge a friend</a><a href="/circle.html">Circle of three</a><a href="/awakening.html">The Awakening</a><a href="/moon/phases/new-moon/">New Moon</a><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a><a href="/moon/phases/first-quarter/">First Quarter</a><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a><a href="/moon/phases/full-moon/">Full Moon</a><a href="/moon/phases/waning-gibbous/">Waning Gibbous</a><a href="/moon/phases/last-quarter/">Last Quarter</a><a href="/moon/phases/waning-crescent/">Waning Crescent</a><a href="/horoscopes/">All horoscopes, sign by sign</a><a href="/feng-shui/your-animal/">Feng shui for your animal</a><a href="/directions/celestial-animals/">The four celestial animals</a><a href="/cosmology/">Cosmology</a><a href="/cosmology/four-pillars/">The Four Pillars</a><a href="/elements/fire/">The five elements</a><a href="/learn.html">How it works</a></nav>
 </header>
 <!--pn-static:end-->
 <!--pn-sub:start-->
 <nav class="pn-sub" aria-label="Section">
   <div class="pn-sub-primary"><ul class="pn-subnav"><li><a href="/proverbs/">Overview</a></li></ul></div>
-  <div class="pn-sub-crumb"><ol class="pn-crumb"><li><a href="/">Home</a></li><li><a href="/proverbs/">Proverbs</a></li><li aria-current="page">Chinese Proverbs on Nature, Seasons and Health with Pinyin &amp;amp; Meaning</li></ol></div>
+  <div class="pn-sub-crumb"><ol class="pn-crumb"><li><a href="/">Home</a></li><li><a href="/proverbs/">Proverbs</a></li><li aria-current="page">Chinese Proverbs About Health, Nature &amp;amp; Long Life</li></ol></div>
 </nav>
 <!--pn-sub:end-->
 <canvas id="sky" aria-hidden="true"></canvas>
-<main class="pt-wrap" id="pn-main" tabindex="-1">
+<main class="pt-wrap" style="--pond-accent:#93B06A" id="pn-main" tabindex="-1">
   <nav class="pt-crumb" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">/</span> <a href="/proverbs/">The Proverb Pond</a> <span aria-hidden="true">/</span> <b>Nature, Seasons &amp; Health</b></nav>
-  <header class="pt-hero">
-    <p class="pt-eyebrow">節 · nature and seasons</p>
-    <h1>Chinese Proverbs on Nature, Seasons and Health</h1>
-    <div class="pt-answer">
-      <h2>What do Chinese proverbs say about nature, seasons and health?</h2>
-      <p>They say a year's plan rests in spring and a day's in the morning. The moon has its shadow and light, so imperfection is the natural order. Walk a hundred steps after a meal and live to ninety-nine. Eat with measure, rise and rest with rhythm. Health here is quiet, built in ordinary habits and the turning of seasons.</p>
+  <div class="pv-layout">
+    <nav class="pv-rail" aria-label="Browse the ponds">
+    <p class="pv-rail-head">The ponds</p>
+    <div class="pv-rail-list">
+    <a class="pv-rail-row pv-rail-all" href="/proverbs/">
+      <span class="pv-rail-dot pv-rail-dot-all" aria-hidden="true"></span>
+      <span class="pv-rail-name">The whole pond</span>
+      <span class="pv-rail-n">87</span>
+    </a>
+    <a class="pv-rail-row" href="/proverbs/the-way-of-water/" style="--row-accent:#2FB8C6">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">The Way of Water<span class="pv-rail-kw">Water &amp; the Tao</span></span>
+      <span class="pv-rail-n">2</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/timing-and-fortune/" style="--row-accent:#9B7BD8">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Timing &amp; Fortune's Turning<span class="pv-rail-kw">Fate &amp; luck</span></span>
+      <span class="pv-rail-n">12</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/perseverance/" style="--row-accent:#D19A4E">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Perseverance &amp; the Long Road<span class="pv-rail-kw">Perseverance</span></span>
+      <span class="pv-rail-n">4</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/courage/" style="--row-accent:#D9534F">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Courage &amp; Decisive Action<span class="pv-rail-kw">Courage</span></span>
+      <span class="pv-rail-n">3</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/home-and-family/" style="--row-accent:#5FBF8F">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Home, Family &amp; Roots<span class="pv-rail-kw">Family &amp; roots</span></span>
+      <span class="pv-rail-n">8</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/wisdom-and-learning/" style="--row-accent:#6C7BD6">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Wisdom &amp; Learning<span class="pv-rail-kw">Wisdom &amp; learning</span></span>
+      <span class="pv-rail-n">3</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/harmony-and-virtue/" style="--row-accent:#E0C471">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Harmony, Virtue &amp; Balance<span class="pv-rail-kw">Harmony &amp; virtue</span></span>
+      <span class="pv-rail-n">4</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/wealth-and-work/" style="--row-accent:#E8B53A">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Wealth, Work &amp; Diligence<span class="pv-rail-kw">Money &amp; work</span></span>
+      <span class="pv-rail-n">14</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/friendship-and-trust/" style="--row-accent:#E08AA0">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Friendship, Trust &amp; Speech<span class="pv-rail-kw">Friendship &amp; trust</span></span>
+      <span class="pv-rail-n">12</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/humility-and-self-mastery/" style="--row-accent:#8FA3BF">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Humility &amp; Self-Mastery<span class="pv-rail-kw">Humility</span></span>
+      <span class="pv-rail-n">13</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/adversity-and-resilience/" style="--row-accent:#4F9E77">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Adversity &amp; Resilience<span class="pv-rail-kw">Adversity</span></span>
+      <span class="pv-rail-n">5</span>
+    </a>
+<a class="pv-rail-row is-active" href="/proverbs/nature-and-seasons/" aria-current="page" style="--row-accent:#93B06A">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Nature, Seasons &amp; Health<span class="pv-rail-kw">Health &amp; seasons</span></span>
+      <span class="pv-rail-n">7</span>
+    </a>
     </div>
-  </header>
-  <section class="pt-chapter" aria-label="A reading">
-    <p>Whatever the year becomes is decided in the thaw, and whatever the day becomes is decided before you are fully awake. The opening moment is doing quiet, permanent work while you think nothing has started yet.</p><p>You have been quietly ashamed that you cannot hold onto a full feeling, that joy keeps thinning back toward dark. The moon has never once managed it either, and no one calls the moon a failure. Longevity hides in the hundred unhurried steps after supper.</p><p class="pt-quote">The body keeps no secrets; it silently tallies every late night and every meal you did not need.</p>
+  </nav>
+    <div class="pv-main">
+      <header class="pt-hero">
+        <p class="pt-eyebrow"><span class="pt-koi" lang="zh-Hant">節</span> The Nature and Seasons pond</p>
+        <h1>Chinese Proverbs About Health, Nature &amp; Long Life<span class="pt-flourish" aria-hidden="true"></span></h1>
+        <div class="pt-answer">
+          <p>Chinese proverbs about health and nature treat wellbeing as living in step with the world. Eat and rest with measure (饮食有节，起居有常), keep a light heart to stay young (笑一笑，十年少), move gently after meals, and accept that all things wax and wane like the moon. Health is rhythm, moderation, and harmony with the seasons. <span class="pt-lede-zh" lang="zh-Hant">In Chinese, people search this as 养生之道.</span></p>
+        </div>
+      </header>
+      <section class="pt-chapter" aria-label="Why this matters in Chinese culture">
+        <p>In Chinese thought, health is not just the absence of illness. It is a way of living in tune with the world, and it has a name, 養生 (yǎngshēng), the nurturing of life. This is one of the oldest projects in the culture, and its philosophical charter is a chapter of the Zhuangzi actually titled The Secret of Caring for Life. There, nourishing life is not about perfecting the body through force. It is about moving with the grain of things, skillfully and without strain, the way a good cook's blade finds the gaps in the joint rather than hacking through bone. Health, in this reading, is a kind of ease, a refusal to fight the current of your own nature.</p>
+    <p>The medical tradition made the same idea practical. The opening chapter of the Yellow Emperor's Inner Canon, the founding text of Chinese medicine, asks why the ancients lived past a hundred while people now wear out early, and answers with a recipe that still reads like sound advice: they patterned themselves on yin and yang, ate and drank with measure, kept regular hours, and did not exhaust themselves, so body and spirit stayed whole and they lived out their full natural span, 天年 (tiānnián), the years heaven allotted them. That single passage gives this pond one of its plainest proverbs, 飲食有節，起居有常, eat and drink with measure, rise and rest with regularity. Health here is not a heroic effort. It is a steady rhythm, kept day after day.</p>
+    <p>Balance is the principle underneath all of it, and it has two faces. The medical face is 陰陽 (yīnyáng), the equilibrium of the two forces whose harmony is health and whose disturbance is illness. The ethical face is 中庸 (zhōngyōng), the Confucian doctrine of the mean, and its blunt corollary 過猶不及, going too far is as bad as falling short. Overeating and starving are both failures of the same rule. The deepest frame joining nature and person is 天人合一 (tiān rén hé yī), the unity of heaven and humanity, the shared Daoist and Confucian conviction that a human being is continuous with nature and is well only when keeping pace with its rhythms. The year has a rhythm too, caught in the farmer's line 一年之計在於春, the whole year's plan lies in spring. You set the shape of a season, or a day, by what you do at its first hour.</p>
+    <p>Nature also teaches acceptance, and the Chinese tradition is unusually clear-eyed about it. In his Mid-Autumn lyric, Su Shi writes that people know parting and reunion just as the moon has its dark and bright, its fullness and its waning, and that this has never been something you could hold perfect. Imperfection and change are the order of things, not a flaw to grieve. Endurance has its own emblem in the evergreens: Confucius said that only when the year turns cold do we learn that the pine and cypress are the last to wither. Character, like health, shows in the hard season. And folk wisdom sums the whole ethic up with a grin in 笑一笑，十年少, one good laugh and you are ten years younger, worry being the thing that truly ages you. For the zodiac reader, the gentle Rabbit keeps the seasonal proverbs and the moon's changing face, while the tireless Horse keeps the walker's secret, 飯後百步走，活到九十九, a hundred steps after a meal and you live to ninety-nine. A life of meaning here is a life lived in measure, and in time with the world.</p>
+        <p class="pt-quote">Health is not a heroic effort but a steady rhythm, eating with measure and keeping regular hours until you reach the years heaven allotted you.</p>
+      </section>
+      <section class="pv-gloss" aria-label="Key ideas in this pond">
+    <div class="pt-section-head"><h2>Key ideas</h2><p>The words the tradition leans on here, in hanzi with their sound.</p></div>
+    <div class="pv-gloss-grid"><div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">養生</span>
+      <span class="pv-gloss-py">yǎngshēng</span>
+      <span class="pv-gloss-def">nurturing life; the whole tradition of health cultivation and preventive care</span>
+    </div>
+<div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">中庸</span>
+      <span class="pv-gloss-py">zhōngyōng</span>
+      <span class="pv-gloss-def">the doctrine of the mean; moderation between excess and deficiency</span>
+    </div>
+<div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">陰陽</span>
+      <span class="pv-gloss-py">yīnyáng</span>
+      <span class="pv-gloss-def">the two complementary forces; health is their balance, illness their disturbance</span>
+    </div>
+<div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">天人合一</span>
+      <span class="pv-gloss-py">tiān rén hé yī</span>
+      <span class="pv-gloss-def">the unity of heaven and humanity; living in accord with nature and the seasons</span>
+    </div>
+<div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">節</span>
+      <span class="pv-gloss-py">jié</span>
+      <span class="pv-gloss-def">measure, restraint; also the seasonal node, tying moderation to the turning year</span>
+    </div>
+<div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">天年</span>
+      <span class="pv-gloss-py">tiānnián</span>
+      <span class="pv-gloss-def">the natural lifespan heaven allots; the full span that 養生 aims to reach</span>
+    </div></div>
   </section>
-  <div class="pt-section-head">
-    <h2>The 7 proverbs of Nature, Seasons &amp; Health</h2>
-    <p>Each with its sound, its literal sense, its meaning, a reading, and its classical source. Press the speaker to hear any line in Mandarin.</p>
-  </div>
-  <div class="pt-grid" role="list"><article class="pv-card" id="p-yi-nian-zhi-ji-zai-yu-chun">
+      <div class="pt-section-head">
+        <h2>The 7 proverbs of the Nature and Seasons pond</h2>
+        <p>Each with its sound, its literal sense, its meaning, a reading, and its classical source. Press the speaker to hear any line in Mandarin, or share the one that lands.</p>
+      </div>
+      <div class="pt-searchwrap">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-3.2-3.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <input id="ptSearch" type="search" class="pt-search" placeholder="Search this pond by word, meaning, or sound" aria-label="Search the proverbs in this pond" autocomplete="off">
+      </div>
+      <p class="pt-searchcount" id="ptCount" aria-live="polite">7 proverbs</p>
+      <div class="pt-grid" id="ptGrid" role="list"><article class="pv-card" id="p-yi-nian-zhi-ji-zai-yu-chun"
+    data-cat="yanyu" data-orient="future"
+    data-animal="Rabbit" data-el="Wood" data-q="一年之計在於春，一日之計在於晨 一年之计在于春，一日之计在于晨 yi nian zhi ji zai yu chun, yi ri zhi ji zai yu chen a year's plan rests in spring; a day's plan rests in the morning begin at the beginning: the whole shape of a year or a day is set by what you do at its first hour. 諺語 proverb rabbit wood"
+    data-share data-trad="一年之計在於春，一日之計在於晨" data-pinyin="yī nián zhī jì zài yú chūn, yī rì zhī jì zài yú chén"
+    data-literal="a year's plan rests in spring; a day's plan rests in the morning" data-meaning="Begin at the beginning: the whole shape of a year or a day is set by what you do at its first hour." data-url="https://spirit-omega.vercel.app/proverbs/say/yi-nian-zhi-ji-zai-yu-chun/">
     <p class="pv-zh" lang="zh-Hant"><ruby>一<rt>yī</rt></ruby><ruby>年<rt>nián</rt></ruby><ruby>之<rt>zhī</rt></ruby><ruby>計<rt>jì</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>於<rt>yú</rt></ruby><ruby>春<rt>chūn</rt></ruby><span class="cx-punct">，</span><ruby>一<rt>yī</rt></ruby><ruby>日<rt>rì</rt></ruby><ruby>之<rt>zhī</rt></ruby><ruby>計<rt>jì</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>於<rt>yú</rt></ruby><ruby>晨<rt>chén</rt></ruby><button type="button" class="pf-say" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="一年之計在於春，一日之計在於晨" onclick="try{if(window.speechSynthesis){var u=new SpeechSynthesisUtterance(this.dataset.say);u.lang='zh-CN';u.rate=.78;speechSynthesis.cancel();speechSynthesis.speak(u);this.classList.add('is-saying');var b=this;u.onend=function(){b.classList.remove('is-saying')};}}catch(e){}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></p>
     <p class="pv-pinyin">yī nián zhī jì zài yú chūn, yī rì zhī jì zài yú chén</p>
     <p class="pv-lit">a year's plan rests in spring; a day's plan rests in the morning</p>
@@ -227,9 +436,16 @@
       <a class="pv-tag pv-tag-animal" href="/chinese-zodiac/rabbit/">兔 Year of the Rabbit</a>
     </div>
     <p class="pv-src"><span class="k">Source</span> folk proverb; recorded in 《增廣賢文》, echoing the Liang-dynasty 《纂要》</p>
-    <a class="pv-more" href="/proverbs/say/yi-nian-zhi-ji-zai-yu-chun/">Read the whole line</a>
+    <div class="pv-card-foot">
+      <a class="pv-more" href="/proverbs/say/yi-nian-zhi-ji-zai-yu-chun/">Read the whole line</a>
+      <button type="button" class="pv-share-btn" aria-label="Share this proverb" title="Share this proverb"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M14 9V5.5L20.5 12 14 18.5V15c-4.2 0-7 1.2-9 4 .8-4.5 3.3-8 9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Share</span></button>
+    </div>
   </article>
-<article class="pv-card" id="p-moon-has-shadow-and-light">
+<article class="pv-card" id="p-moon-has-shadow-and-light"
+    data-cat="poetic" data-orient="present"
+    data-animal="Rabbit" data-el="Water" data-q="月有陰晴圓缺 月有阴晴圆缺 yue you yin qing yuan que the moon has its shadow and light, its fullness and its waning like human grief and joy, the moon waxes and wanes; imperfection is the natural order. 詩詞 verse rabbit water"
+    data-share data-trad="月有陰晴圓缺" data-pinyin="yuè yǒu yīn qíng yuán quē"
+    data-literal="the moon has its shadow and light, its fullness and its waning" data-meaning="Like human grief and joy, the moon waxes and wanes; imperfection is the natural order." data-url="https://spirit-omega.vercel.app/proverbs/say/moon-has-shadow-and-light/">
     <p class="pv-zh" lang="zh-Hant"><ruby>月<rt>yuè</rt></ruby><ruby>有<rt>yǒu</rt></ruby><ruby>陰<rt>yīn</rt></ruby><ruby>晴<rt>qíng</rt></ruby><ruby>圓<rt>yuán</rt></ruby><ruby>缺<rt>quē</rt></ruby><button type="button" class="pf-say" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="月有陰晴圓缺" onclick="try{if(window.speechSynthesis){var u=new SpeechSynthesisUtterance(this.dataset.say);u.lang='zh-CN';u.rate=.78;speechSynthesis.cancel();speechSynthesis.speak(u);this.classList.add('is-saying');var b=this;u.onend=function(){b.classList.remove('is-saying')};}}catch(e){}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></p>
     <p class="pv-pinyin">yuè yǒu yīn qíng yuán quē</p>
     <p class="pv-lit">the moon has its shadow and light, its fullness and its waning</p>
@@ -242,9 +458,16 @@
       <a class="pv-tag pv-tag-animal" href="/chinese-zodiac/rabbit/">兔 Year of the Rabbit</a>
     </div>
     <p class="pv-src"><span class="k">Source</span> Su Shi 蘇軾, 水調歌頭</p>
-    <a class="pv-more" href="/proverbs/say/moon-has-shadow-and-light/">Read the whole line</a>
+    <div class="pv-card-foot">
+      <a class="pv-more" href="/proverbs/say/moon-has-shadow-and-light/">Read the whole line</a>
+      <button type="button" class="pv-share-btn" aria-label="Share this proverb" title="Share this proverb"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M14 9V5.5L20.5 12 14 18.5V15c-4.2 0-7 1.2-9 4 .8-4.5 3.3-8 9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Share</span></button>
+    </div>
   </article>
-<article class="pv-card" id="p-xiao-yi-xiao-shi-nian-shao">
+<article class="pv-card" id="p-xiao-yi-xiao-shi-nian-shao"
+    data-cat="yanyu" data-orient="present"
+    data-animal="Rabbit" data-el="Fire" data-q="笑一笑，十年少 笑一笑，十年少 xiao yi xiao, shi nian shao one laugh, ten years younger a light heart keeps the body young; laughter is medicine, and worry is what ages you. 諺語 proverb rabbit fire"
+    data-share data-trad="笑一笑，十年少" data-pinyin="xiào yī xiào, shí nián shào"
+    data-literal="one laugh, ten years younger" data-meaning="A light heart keeps the body young; laughter is medicine, and worry is what ages you." data-url="https://spirit-omega.vercel.app/proverbs/say/xiao-yi-xiao-shi-nian-shao/">
     <p class="pv-zh" lang="zh-Hant"><ruby>笑<rt>xiào</rt></ruby><ruby>一<rt>yī</rt></ruby><ruby>笑<rt>xiào</rt></ruby><span class="cx-punct">，</span><ruby>十<rt>shí</rt></ruby><ruby>年<rt>nián</rt></ruby><ruby>少<rt>shào</rt></ruby><button type="button" class="pf-say" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="笑一笑，十年少" onclick="try{if(window.speechSynthesis){var u=new SpeechSynthesisUtterance(this.dataset.say);u.lang='zh-CN';u.rate=.78;speechSynthesis.cancel();speechSynthesis.speak(u);this.classList.add('is-saying');var b=this;u.onend=function(){b.classList.remove('is-saying')};}}catch(e){}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></p>
     <p class="pv-pinyin">xiào yī xiào, shí nián shào</p>
     <p class="pv-lit">one laugh, ten years younger</p>
@@ -257,9 +480,16 @@
       <a class="pv-tag pv-tag-animal" href="/chinese-zodiac/rabbit/">兔 Year of the Rabbit</a>
     </div>
     <p class="pv-src"><span class="k">Source</span> folk health proverb (養生諺語); full form 笑一笑，十年少；愁一愁，白了頭</p>
-    <a class="pv-more" href="/proverbs/say/xiao-yi-xiao-shi-nian-shao/">Read the whole line</a>
+    <div class="pv-card-foot">
+      <a class="pv-more" href="/proverbs/say/xiao-yi-xiao-shi-nian-shao/">Read the whole line</a>
+      <button type="button" class="pv-share-btn" aria-label="Share this proverb" title="Share this proverb"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M14 9V5.5L20.5 12 14 18.5V15c-4.2 0-7 1.2-9 4 .8-4.5 3.3-8 9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Share</span></button>
+    </div>
   </article>
-<article class="pv-card" id="p-fan-hou-bai-bu-zou">
+<article class="pv-card" id="p-fan-hou-bai-bu-zou"
+    data-cat="yanyu" data-orient="future"
+    data-animal="Horse" data-el="Earth" data-q="飯後百步走，活到九十九 饭后百步走，活到九十九 fan hou bai bu zou, huo dao jiu shi jiu walk a hundred steps after a meal, live to ninety-nine small, gentle, regular movement is the quiet secret of a long life; don't sit still after you eat. 諺語 proverb horse earth"
+    data-share data-trad="飯後百步走，活到九十九" data-pinyin="fàn hòu bǎi bù zǒu, huó dào jiǔ shí jiǔ"
+    data-literal="walk a hundred steps after a meal, live to ninety-nine" data-meaning="Small, gentle, regular movement is the quiet secret of a long life; don't sit still after you eat." data-url="https://spirit-omega.vercel.app/proverbs/say/fan-hou-bai-bu-zou/">
     <p class="pv-zh" lang="zh-Hant"><ruby>飯<rt>fàn</rt></ruby><ruby>後<rt>hòu</rt></ruby><ruby>百<rt>bǎi</rt></ruby><ruby>步<rt>bù</rt></ruby><ruby>走<rt>zǒu</rt></ruby><span class="cx-punct">，</span><ruby>活<rt>huó</rt></ruby><ruby>到<rt>dào</rt></ruby><ruby>九<rt>jiǔ</rt></ruby><ruby>十<rt>shí</rt></ruby><ruby>九<rt>jiǔ</rt></ruby><button type="button" class="pf-say" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="飯後百步走，活到九十九" onclick="try{if(window.speechSynthesis){var u=new SpeechSynthesisUtterance(this.dataset.say);u.lang='zh-CN';u.rate=.78;speechSynthesis.cancel();speechSynthesis.speak(u);this.classList.add('is-saying');var b=this;u.onend=function(){b.classList.remove('is-saying')};}}catch(e){}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></p>
     <p class="pv-pinyin">fàn hòu bǎi bù zǒu, huó dào jiǔ shí jiǔ</p>
     <p class="pv-lit">walk a hundred steps after a meal, live to ninety-nine</p>
@@ -272,9 +502,16 @@
       <a class="pv-tag pv-tag-animal" href="/chinese-zodiac/horse/">馬 Year of the Horse</a>
     </div>
     <p class="pv-src"><span class="k">Source</span> folk health proverb (養生諺語)</p>
-    <a class="pv-more" href="/proverbs/say/fan-hou-bai-bu-zou/">Read the whole line</a>
+    <div class="pv-card-foot">
+      <a class="pv-more" href="/proverbs/say/fan-hou-bai-bu-zou/">Read the whole line</a>
+      <button type="button" class="pv-share-btn" aria-label="Share this proverb" title="Share this proverb"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M14 9V5.5L20.5 12 14 18.5V15c-4.2 0-7 1.2-9 4 .8-4.5 3.3-8 9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Share</span></button>
+    </div>
   </article>
-<article class="pv-card" id="p-no-banquet-that-does-not-end">
+<article class="pv-card" id="p-no-banquet-that-does-not-end"
+    data-cat="suyu" data-orient="present"
+    data-animal="Rooster" data-el="Metal" data-q="天下無不散之筵席 天下无不散之筵席 tian xia wu bu san zhi yan xi under heaven there is no banquet that does not break up every gathering, however warm, must eventually end. 俗語 saying rooster metal"
+    data-share data-trad="天下無不散之筵席" data-pinyin="tiān xià wú bù sàn zhī yán xí"
+    data-literal="under heaven there is no banquet that does not break up" data-meaning="Every gathering, however warm, must eventually end." data-url="https://spirit-omega.vercel.app/proverbs/say/no-banquet-that-does-not-end/">
     <p class="pv-zh" lang="zh-Hant"><ruby>天<rt>tiān</rt></ruby><ruby>下<rt>xià</rt></ruby><ruby>無<rt>wú</rt></ruby><ruby>不<rt>bù</rt></ruby><ruby>散<rt>sàn</rt></ruby><ruby>之<rt>zhī</rt></ruby><ruby>筵<rt>yán</rt></ruby><ruby>席<rt>xí</rt></ruby><button type="button" class="pf-say" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="天下無不散之筵席" onclick="try{if(window.speechSynthesis){var u=new SpeechSynthesisUtterance(this.dataset.say);u.lang='zh-CN';u.rate=.78;speechSynthesis.cancel();speechSynthesis.speak(u);this.classList.add('is-saying');var b=this;u.onend=function(){b.classList.remove('is-saying')};}}catch(e){}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></p>
     <p class="pv-pinyin">tiān xià wú bù sàn zhī yán xí</p>
     <p class="pv-lit">under heaven there is no banquet that does not break up</p>
@@ -287,9 +524,16 @@
       <a class="pv-tag pv-tag-animal" href="/chinese-zodiac/rooster/">雞 Year of the Rooster</a>
     </div>
     <p class="pv-src"><span class="k">Source</span> 醒世恆言</p>
-    <a class="pv-more" href="/proverbs/say/no-banquet-that-does-not-end/">Read the whole line</a>
+    <div class="pv-card-foot">
+      <a class="pv-more" href="/proverbs/say/no-banquet-that-does-not-end/">Read the whole line</a>
+      <button type="button" class="pv-share-btn" aria-label="Share this proverb" title="Share this proverb"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M14 9V5.5L20.5 12 14 18.5V15c-4.2 0-7 1.2-9 4 .8-4.5 3.3-8 9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Share</span></button>
+    </div>
   </article>
-<article class="pv-card" id="p-sui-han-song-bai">
+<article class="pv-card" id="p-sui-han-song-bai"
+    data-cat="poetic" data-orient="present"
+    data-animal="Dog" data-el="Wood" data-q="歲寒，然後知松柏之後凋也 岁寒，然后知松柏之后凋也 sui han, ran hou zhi song bai zhi hou diao ye only when the year turns cold do we know the pine and cypress are the last to wither character shows in hard seasons; the ones who hold their color when everything else fades are revealed only by the cold. 詩詞 verse dog wood"
+    data-share data-trad="歲寒，然後知松柏之後凋也" data-pinyin="suì hán, rán hòu zhī sōng bǎi zhī hòu diāo yě"
+    data-literal="only when the year turns cold do we know the pine and cypress are the last to wither" data-meaning="Character shows in hard seasons; the ones who hold their color when everything else fades are revealed only by the cold." data-url="https://spirit-omega.vercel.app/proverbs/say/sui-han-song-bai/">
     <p class="pv-zh" lang="zh-Hant"><ruby>歲<rt>suì</rt></ruby><ruby>寒<rt>hán</rt></ruby><span class="cx-punct">，</span><ruby>然<rt>rán</rt></ruby><ruby>後<rt>hòu</rt></ruby><ruby>知<rt>zhī</rt></ruby><ruby>松<rt>sōng</rt></ruby><ruby>柏<rt>bǎi</rt></ruby><ruby>之<rt>zhī</rt></ruby><ruby>後<rt>hòu</rt></ruby><ruby>凋<rt>diāo</rt></ruby><ruby>也<rt>yě</rt></ruby><button type="button" class="pf-say" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="歲寒，然後知松柏之後凋也" onclick="try{if(window.speechSynthesis){var u=new SpeechSynthesisUtterance(this.dataset.say);u.lang='zh-CN';u.rate=.78;speechSynthesis.cancel();speechSynthesis.speak(u);this.classList.add('is-saying');var b=this;u.onend=function(){b.classList.remove('is-saying')};}}catch(e){}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></p>
     <p class="pv-pinyin">suì hán, rán hòu zhī sōng bǎi zhī hòu diāo yě</p>
     <p class="pv-lit">only when the year turns cold do we know the pine and cypress are the last to wither</p>
@@ -302,9 +546,16 @@
       <a class="pv-tag pv-tag-animal" href="/chinese-zodiac/dog/">狗 Year of the Dog</a>
     </div>
     <p class="pv-src"><span class="k">Source</span> 《論語·子罕》 (Analects 9.28)</p>
-    <a class="pv-more" href="/proverbs/say/sui-han-song-bai/">Read the whole line</a>
+    <div class="pv-card-foot">
+      <a class="pv-more" href="/proverbs/say/sui-han-song-bai/">Read the whole line</a>
+      <button type="button" class="pv-share-btn" aria-label="Share this proverb" title="Share this proverb"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M14 9V5.5L20.5 12 14 18.5V15c-4.2 0-7 1.2-9 4 .8-4.5 3.3-8 9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Share</span></button>
+    </div>
   </article>
-<article class="pv-card" id="p-yin-shi-you-jie-qi-ju-you-chang">
+<article class="pv-card" id="p-yin-shi-you-jie-qi-ju-you-chang"
+    data-cat="poetic" data-orient="present"
+    data-animal="Pig" data-el="Earth" data-q="飲食有節，起居有常 饮食有节，起居有常 yin shi you jie, qi ju you chang eat and drink with measure, rise and rest with regularity health is built on moderation and rhythm: temperate at the table, steady in the hours you keep. 詩詞 verse pig earth"
+    data-share data-trad="飲食有節，起居有常" data-pinyin="yǐn shí yǒu jié, qǐ jū yǒu cháng"
+    data-literal="eat and drink with measure, rise and rest with regularity" data-meaning="Health is built on moderation and rhythm: temperate at the table, steady in the hours you keep." data-url="https://spirit-omega.vercel.app/proverbs/say/yin-shi-you-jie-qi-ju-you-chang/">
     <p class="pv-zh" lang="zh-Hant"><ruby>飲<rt>yǐn</rt></ruby><ruby>食<rt>shí</rt></ruby><ruby>有<rt>yǒu</rt></ruby><ruby>節<rt>jié</rt></ruby><span class="cx-punct">，</span><ruby>起<rt>qǐ</rt></ruby><ruby>居<rt>jū</rt></ruby><ruby>有<rt>yǒu</rt></ruby><ruby>常<rt>cháng</rt></ruby><button type="button" class="pf-say" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="飲食有節，起居有常" onclick="try{if(window.speechSynthesis){var u=new SpeechSynthesisUtterance(this.dataset.say);u.lang='zh-CN';u.rate=.78;speechSynthesis.cancel();speechSynthesis.speak(u);this.classList.add('is-saying');var b=this;u.onend=function(){b.classList.remove('is-saying')};}}catch(e){}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></p>
     <p class="pv-pinyin">yǐn shí yǒu jié, qǐ jū yǒu cháng</p>
     <p class="pv-lit">eat and drink with measure, rise and rest with regularity</p>
@@ -317,19 +568,30 @@
       <a class="pv-tag pv-tag-animal" href="/chinese-zodiac/pig/">豬 Year of the Pig</a>
     </div>
     <p class="pv-src"><span class="k">Source</span> 《黃帝內經·素問·上古天真論》 (Huangdi Neijing / Yellow Emperor's Inner Canon)</p>
-    <a class="pv-more" href="/proverbs/say/yin-shi-you-jie-qi-ju-you-chang/">Read the whole line</a>
+    <div class="pv-card-foot">
+      <a class="pv-more" href="/proverbs/say/yin-shi-you-jie-qi-ju-you-chang/">Read the whole line</a>
+      <button type="button" class="pv-share-btn" aria-label="Share this proverb" title="Share this proverb"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M14 9V5.5L20.5 12 14 18.5V15c-4.2 0-7 1.2-9 4 .8-4.5 3.3-8 9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Share</span></button>
+    </div>
   </article></div>
-  <section class="pt-faq" aria-label="About these proverbs">
-    <h2>Questions readers ask</h2>
-    <div class="pt-qa"><h3>What do Chinese proverbs say about nature, seasons and health?</h3><p>They say a year's plan rests in spring and a day's in the morning. The moon has its shadow and light, so imperfection is the natural order. Walk a hundred steps after a meal and live to ninety-nine. Eat with measure, rise and rest with rhythm. Health here is quiet, built in ordinary habits and the turning of seasons.</p></div><div class="pt-qa"><h3>What does 一年之計在於春 mean?</h3><p>Yī nián zhī jì zài yú chūn, a year's plan rests in spring, with its pair, a day's plan rests in the morning. Begin at the beginning: the whole shape of a year or a day is set by what you do at its first hour.</p></div><div class="pt-qa"><h3>What do the proverbs say about health and longevity?</h3><p>They favor rhythm over drama. 飲食有節，起居有常 asks you to eat with measure and keep steady hours, and 飯後百步走，活到九十九 credits a gentle walk after meals. The body tallies every habit and spends the saved years back on you.</p></div>
-  </section>
-  <section class="pt-explore" aria-label="Keep reading">
-    <h2>Read on</h2>
-    <p>Every line here lives in the wider <a href="/proverbs/">Proverb Pond</a>, where all eighty-seven proverbs wait with their sound, their meaning, and a reading of their own. From the pond you can draw one at random or filter the whole library by theme, type, and zodiac year.</p>
-    <p>Follow the thread into a neighboring chapter, or see the twelve years in the <a href="/chinese-zodiac/">Chinese zodiac</a>. You can also <a href="/">find your Primal Animal</a> and let it lead you to a proverb worth keeping.</p>
-    <ul class="pt-siblings"><li><a href="/proverbs/the-way-of-water/">The Way of Water</a></li><li><a href="/proverbs/timing-and-fortune/">Timing &amp; Fortune's Turning</a></li><li><a href="/proverbs/perseverance/">Perseverance &amp; the Long Road</a></li></ul>
+      <p class="pt-empty" id="ptEmpty" hidden>No proverb in this pond matches that. Clear the search to see them all.</p>
+      <section class="pt-faq" aria-label="Questions readers ask">
+        <h2>Questions readers ask</h2>
+        <div class="pt-qa"><h3>What is the Chinese proverb about health and long life?</h3><p>飯後百步走，活到九十九 (fàn hòu bǎi bù zǒu, huó dào jiǔ shí jiǔ), walk a hundred steps after a meal and live to ninety-nine, is a beloved folk saying. It captures the whole 養生 idea that gentle, regular habits, not heroic effort, are the quiet secret of a long life. The Mandarin searcher looks for 养生谚语, health-cultivation proverbs.</p></div>
+        <div class="pt-qa"><h3>What is the Chinese view of health and balance?</h3><p>Health is seen as balance and rhythm. The medical version is 陰陽 (yīnyáng) equilibrium, and the ethical version is 中庸 (zhōngyōng), the doctrine of the mean, whose rule 過猶不及 says going too far is as bad as falling short. Wellbeing means living in measure and in step with the seasons, an idea called 天人合一, the unity of nature and person.</p></div>
+        <div class="pt-qa"><h3>Is there a Chinese proverb about the seasons?</h3><p>Yes. 一年之計在於春，一日之計在於晨 (yī nián zhī jì zài yú chūn, yī rì zhī jì zài yú chén), the year's plan lies in spring and the day's plan in the morning, is the best known. It teaches that the shape of a whole season or day is set by what you do at its beginning, and it reflects a deeply agrarian sense of timing.</p></div>
+        <div class="pt-qa"><h3>What does the moon proverb 月有阴晴圆缺 mean?</h3><p>月有陰晴圓缺 (yuè yǒu yīn qíng yuán quē), from Su Shi, means the moon has its shadow and light, its fullness and its waning. Paired with the line that people know grief and joy, parting and reunion, it teaches that change and imperfection are the natural order, and that peace comes from accepting the cycle rather than fighting it.</p></div>
+      </section>
+      <section class="pt-explore" aria-label="Wander to another pond">
+    <h2>Wander to another pond</h2>
+    <p>Every line here lives in the wider <a href="/proverbs/">Proverb Pond</a>, where all eighty-seven proverbs wait with their sound, their meaning, and a reading of their own. Draw one from the water at random, or walk the whole set in order along the <a href="/proverbs/study/">Path of Mastery</a>.</p>
+    <p>Follow the thread into a neighboring pond, or see the twelve years in the <a href="/chinese-zodiac/">Chinese zodiac</a>. You can also <a href="/">find your Primal Animal</a> and let it lead you to a proverb worth keeping.</p>
+    <ul class="pt-siblings"><li><a href="/proverbs/the-way-of-water/">Taoist proverbs on the way of water</a></li>
+<li><a href="/proverbs/timing-and-fortune/">Chinese proverbs about fate and luck</a></li>
+<li><a href="/proverbs/perseverance/">Chinese proverbs about perseverance</a></li></ul>
     <p>Years these proverbs speak to: <span class="pt-years"><a href="/chinese-zodiac/rabbit/">兔 Rabbit</a><a href="/chinese-zodiac/horse/">馬 Horse</a><a href="/chinese-zodiac/rooster/">雞 Rooster</a><a href="/chinese-zodiac/dog/">狗 Dog</a><a href="/chinese-zodiac/pig/">豬 Pig</a></span></p>
   </section>
+    </div>
+  </div>
   <footer class="pt-foot pf-foot">
     <div>The Primal <b style="color:var(--brass,#d6c18c)">Oracle</b></div>
     <p class="pf-disc">These proverbs are living Chinese cultural heritage, presented with per-character pinyin and their classical sources out of respect for the tradition. Meanings are given faithfully; the pairing of a proverb to a Chinese zodiac year is our own reading for reflection, not tradition, and nothing here is medical, psychological, financial, or legal advice.</p>
@@ -349,9 +611,34 @@ for(var i=0;i<st.length;i++){var s=st[i];if(!reduce)s.a+=s.s;var al=0.25+Math.ab
 if(!document.hidden&&!reduce)requestAnimationFrame(f);})();
 })();
 </script>
+<script>
+(function(){
+  var box=document.getElementById("ptSearch");
+  var grid=document.getElementById("ptGrid");
+  if(!box||!grid)return;
+  var cards=Array.prototype.slice.call(grid.querySelectorAll(".pv-card"));
+  var count=document.getElementById("ptCount");
+  var empty=document.getElementById("ptEmpty");
+  var total=cards.length;
+  function norm(s){return String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
+  function run(){
+    var q=norm(box.value.trim());
+    var shown=0;
+    for(var i=0;i<cards.length;i++){
+      var ok=!q||cards[i].getAttribute("data-q").indexOf(q)!==-1;
+      cards[i].hidden=!ok;
+      if(ok)shown++;
+    }
+    if(count)count.textContent=(shown===total?total+" proverbs":shown+" of "+total);
+    if(empty)empty.hidden=shown!==0;
+  }
+  box.addEventListener("input",run);
+})();
+</script>
 <script src="/js/data.js"></script>
 <script src="/js/engine.js"></script>
 <script src="/js/nav.js" defer></script>
+<script src="/js/proverbs-share.js" defer></script>
 <!--om-footer:start-->
 <footer class="om-footer">
   <div class="omf-moonrise" aria-hidden="true"><span class="omf-moonball"></span><span class="omf-hairline"></span></div>

@@ -769,6 +769,406 @@
       "source": "/animals/manatee/",
       "destination": "/animals/blue-glaucus/",
       "permanent": true
+    },
+    {
+      "source": "/proverbs/money",
+      "destination": "/proverbs/wealth-and-work/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/money/",
+      "destination": "/proverbs/wealth-and-work/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/wealth",
+      "destination": "/proverbs/wealth-and-work/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/wealth/",
+      "destination": "/proverbs/wealth-and-work/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/prosperity",
+      "destination": "/proverbs/wealth-and-work/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/prosperity/",
+      "destination": "/proverbs/wealth-and-work/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/success",
+      "destination": "/proverbs/wealth-and-work/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/success/",
+      "destination": "/proverbs/wealth-and-work/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/work",
+      "destination": "/proverbs/wealth-and-work/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/work/",
+      "destination": "/proverbs/wealth-and-work/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/family",
+      "destination": "/proverbs/home-and-family/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/family/",
+      "destination": "/proverbs/home-and-family/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/parents",
+      "destination": "/proverbs/home-and-family/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/parents/",
+      "destination": "/proverbs/home-and-family/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/home",
+      "destination": "/proverbs/home-and-family/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/home/",
+      "destination": "/proverbs/home-and-family/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/love",
+      "destination": "/proverbs/home-and-family/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/love/",
+      "destination": "/proverbs/home-and-family/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/health",
+      "destination": "/proverbs/nature-and-seasons/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/health/",
+      "destination": "/proverbs/nature-and-seasons/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/life",
+      "destination": "/proverbs/nature-and-seasons/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/life/",
+      "destination": "/proverbs/nature-and-seasons/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/longevity",
+      "destination": "/proverbs/nature-and-seasons/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/longevity/",
+      "destination": "/proverbs/nature-and-seasons/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/happiness",
+      "destination": "/proverbs/nature-and-seasons/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/happiness/",
+      "destination": "/proverbs/nature-and-seasons/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/friendship",
+      "destination": "/proverbs/friendship-and-trust/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/friendship/",
+      "destination": "/proverbs/friendship-and-trust/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/friends",
+      "destination": "/proverbs/friendship-and-trust/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/friends/",
+      "destination": "/proverbs/friendship-and-trust/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/trust",
+      "destination": "/proverbs/friendship-and-trust/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/trust/",
+      "destination": "/proverbs/friendship-and-trust/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/loyalty",
+      "destination": "/proverbs/friendship-and-trust/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/loyalty/",
+      "destination": "/proverbs/friendship-and-trust/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/tao",
+      "destination": "/proverbs/the-way-of-water/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/tao/",
+      "destination": "/proverbs/the-way-of-water/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/taoist",
+      "destination": "/proverbs/the-way-of-water/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/taoist/",
+      "destination": "/proverbs/the-way-of-water/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/taoism",
+      "destination": "/proverbs/the-way-of-water/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/taoism/",
+      "destination": "/proverbs/the-way-of-water/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/fate",
+      "destination": "/proverbs/timing-and-fortune/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/fate/",
+      "destination": "/proverbs/timing-and-fortune/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/luck",
+      "destination": "/proverbs/timing-and-fortune/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/luck/",
+      "destination": "/proverbs/timing-and-fortune/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/fortune",
+      "destination": "/proverbs/timing-and-fortune/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/fortune/",
+      "destination": "/proverbs/timing-and-fortune/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/destiny",
+      "destination": "/proverbs/timing-and-fortune/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/destiny/",
+      "destination": "/proverbs/timing-and-fortune/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/patience",
+      "destination": "/proverbs/perseverance/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/patience/",
+      "destination": "/proverbs/perseverance/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/persistence",
+      "destination": "/proverbs/perseverance/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/persistence/",
+      "destination": "/proverbs/perseverance/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/bravery",
+      "destination": "/proverbs/courage/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/bravery/",
+      "destination": "/proverbs/courage/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/determination",
+      "destination": "/proverbs/courage/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/determination/",
+      "destination": "/proverbs/courage/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/wisdom",
+      "destination": "/proverbs/wisdom-and-learning/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/wisdom/",
+      "destination": "/proverbs/wisdom-and-learning/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/learning",
+      "destination": "/proverbs/wisdom-and-learning/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/learning/",
+      "destination": "/proverbs/wisdom-and-learning/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/knowledge",
+      "destination": "/proverbs/wisdom-and-learning/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/knowledge/",
+      "destination": "/proverbs/wisdom-and-learning/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/harmony",
+      "destination": "/proverbs/harmony-and-virtue/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/harmony/",
+      "destination": "/proverbs/harmony-and-virtue/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/virtue",
+      "destination": "/proverbs/harmony-and-virtue/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/virtue/",
+      "destination": "/proverbs/harmony-and-virtue/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/balance",
+      "destination": "/proverbs/harmony-and-virtue/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/balance/",
+      "destination": "/proverbs/harmony-and-virtue/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/humility",
+      "destination": "/proverbs/humility-and-self-mastery/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/humility/",
+      "destination": "/proverbs/humility-and-self-mastery/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/discipline",
+      "destination": "/proverbs/humility-and-self-mastery/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/discipline/",
+      "destination": "/proverbs/humility-and-self-mastery/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/adversity",
+      "destination": "/proverbs/adversity-and-resilience/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/adversity/",
+      "destination": "/proverbs/adversity-and-resilience/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/resilience",
+      "destination": "/proverbs/adversity-and-resilience/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/resilience/",
+      "destination": "/proverbs/adversity-and-resilience/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/strength",
+      "destination": "/proverbs/adversity-and-resilience/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/strength/",
+      "destination": "/proverbs/adversity-and-resilience/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/hardship",
+      "destination": "/proverbs/adversity-and-resilience/",
+      "permanent": true
+    },
+    {
+      "source": "/proverbs/hardship/",
+      "destination": "/proverbs/adversity-and-resilience/",
+      "permanent": true
     }
   ]
 }

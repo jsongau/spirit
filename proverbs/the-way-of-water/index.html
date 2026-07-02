@@ -3,14 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chinese Proverbs on the Way of Water with Pinyin &amp; Meaning | The Proverb Pond</title>
-<meta name="description" content="Chinese proverbs on the way of water, wu wei, and the strength that never contends, each with pinyin, meaning, source, and a Mandarin reading.">
+<title>Taoist Proverbs &amp; the Way of Water | Zodi Animal</title>
+<meta name="description" content="Taoist proverbs about water, wu wei and going with the flow, in hanzi with pinyin and meaning. 上善若水, 顺其自然 and Laozi's way of yielding, sourced and explained.">
 <link rel="canonical" href="https://spirit-omega.vercel.app/proverbs/the-way-of-water/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chinese Proverbs on the Way of Water">
-<meta property="og:description" content="Chinese proverbs on the way of water, wu wei, and the strength that never contends, each with pinyin, meaning, source, and a Mandarin reading.">
+<meta property="og:title" content="Taoist Proverbs &amp; the Way of Water">
+<meta property="og:description" content="Taoist proverbs about water, wu wei and going with the flow, in hanzi with pinyin and meaning. 上善若水, 顺其自然 and Laozi's way of yielding, sourced and explained.">
 <meta property="og:url" content="https://spirit-omega.vercel.app/proverbs/the-way-of-water/">
 <meta property="og:site_name" content="The Primal Oracle">
+<meta property="og:image" content="https://spirit-omega.vercel.app/social/og/pond-the-way-of-water.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://spirit-omega.vercel.app/social/og/pond-the-way-of-water.png">
+<meta name="theme-color" content="#2FB8C6">
 <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/oracle.css">
 <link rel="stylesheet" href="/css/profile.css">
@@ -30,60 +36,146 @@
 .pf-proverb-soul{margin:14px 0 10px;color:var(--moon,#f5ecd2);font-family:var(--serif,serif);font-size:1.18rem;font-style:italic;max-width:60ch;line-height:1.55}
 .pf-proverb-note{color:var(--muted,#9a9bb0);font-size:.85rem;margin:0}
 @media (prefers-reduced-motion:reduce){.pf-say.is-saying{animation:none}}
-.pt-wrap{max-width:1180px;margin:0 auto;padding:0 20px 80px}
+.pv-share{display:inline-block;margin-top:8px;font-size:.78rem;color:var(--brass-bright,#efe2b4);background:none;border:0;cursor:pointer;border-bottom:1px solid rgba(214,193,140,.4);padding:0 0 1px;font-family:inherit}
+.pv-share:hover{color:var(--moon,#f5ecd2)}
+
+.pv-rail{align-self:start}
+.pv-rail-head{font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.18em;font-size:.62rem;color:var(--muted,#9a9bb0);margin:0 0 12px;padding:0 4px}
+.pv-rail-list{display:flex;flex-direction:column;gap:3px}
+.pv-rail-row{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:12px;text-decoration:none;
+  border:1px solid transparent;border-left:3px solid transparent;transition:background .18s,border-color .18s,transform .18s}
+.pv-rail-row:hover{background:rgba(214,193,140,.06);transform:translateX(2px)}
+.pv-rail-row:focus-visible{outline:none;border-color:var(--brass,#d6c18c);background:rgba(214,193,140,.06)}
+.pv-rail-dot{flex:0 0 auto;width:11px;height:11px;border-radius:50%;background:var(--row-accent,#d6c18c);
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--row-accent,#d6c18c) 22%,transparent)}
+.pv-rail-dot-all{background:linear-gradient(135deg,#efe2b4,#d6c18c);box-shadow:0 0 0 3px rgba(214,193,140,.2)}
+.pv-rail-name{flex:1 1 auto;display:flex;flex-direction:column;gap:1px;font-family:var(--font-display,"Fraunces",serif);
+  color:var(--body,#c8c9de);font-size:.96rem;line-height:1.2}
+.pv-rail-kw{font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;font-size:.56rem;color:var(--muted,#9a9bb0)}
+.pv-rail-n{flex:0 0 auto;font-family:"Space Mono",ui-monospace,monospace;font-size:.72rem;color:var(--muted,#9a9bb0);letter-spacing:.03em}
+.pv-rail-row:hover .pv-rail-name{color:var(--moon,#f5ecd2)}
+.pv-rail-row.is-active{background:color-mix(in srgb,var(--row-accent,#d6c18c) 12%,transparent);border-left-color:var(--row-accent,#d6c18c)}
+.pv-rail-row.is-active .pv-rail-name{color:var(--moon,#f5ecd2)}
+.pv-rail-row.is-active .pv-rail-n{color:var(--row-accent,#d6c18c)}
+.pv-rail-all{--row-accent:var(--brass,#d6c18c)}
+.pv-rail-all.is-active{background:rgba(214,193,140,.12);border-left-color:var(--brass,#d6c18c)}
+
+/* mobile / tablet: the rail becomes a horizontal swipe strip of pills,
+   pinned under the breadcrumb, never covering the content */
+@media (max-width:959px){
+  .pv-rail{position:sticky;top:56px;z-index:6;margin:0 -20px 8px;padding:10px 16px;
+    background:linear-gradient(180deg,rgba(10,12,22,.94),rgba(10,12,22,.8));border-bottom:1px solid rgba(214,193,140,.14);
+    backdrop-filter:blur(8px)}
+  .pv-rail-head{display:none}
+  .pv-rail-list{flex-direction:row;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}
+  .pv-rail-list::-webkit-scrollbar{display:none}
+  .pv-rail-row{flex:0 0 auto;border:1px solid rgba(214,193,140,.22);border-left:1px solid rgba(214,193,140,.22);
+    border-radius:999px;padding:8px 14px;gap:8px;white-space:nowrap}
+  .pv-rail-row:hover{transform:none}
+  .pv-rail-kw{display:none}
+  .pv-rail-n{opacity:.7}
+  .pv-rail-row.is-active{border-color:var(--row-accent,#d6c18c);border-left-color:var(--row-accent,#d6c18c);
+    background:color-mix(in srgb,var(--row-accent,#d6c18c) 16%,transparent)}
+}
+@media (prefers-reduced-motion:reduce){.pv-rail-row{transition:none}}
+
+.pt-wrap{max-width:1240px;margin:0 auto;padding:0 20px 80px}
 .pt-crumb{margin:14px 0 6px;font-size:.85rem;color:var(--muted,#9a9bb0)}
 .pt-crumb a{color:var(--brass-bright,#efe2b4);text-decoration:none}
 .pt-crumb b{color:var(--body,#c8c9de);font-weight:500}
-.pt-hero{padding:26px 0 6px;max-width:74ch}
-.pt-eyebrow{font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.22em;font-size:.7rem;color:var(--brass-bright,#efe2b4);margin:0 0 10px}
+
+/* the two-column layout: sticky rail left, content right */
+.pv-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px;align-items:start;margin-top:6px}
+.pv-layout > .pv-rail{position:sticky;top:78px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:4px}
+.pv-main{min-width:0}
+@media (max-width:959px){.pv-layout{display:block}.pv-layout > .pv-rail{position:sticky;max-height:none;overflow:visible;padding-right:0}}
+
+/* per-pond accent flourishes over the unchanging dark base */
+.pt-hero{padding:22px 0 6px;max-width:74ch}
+.pt-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.2em;font-size:.7rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));margin:0 0 12px}
+.pt-eyebrow .pt-koi{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;
+  font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-size:.9rem;letter-spacing:0;color:var(--pond-accent,#efe2b4);
+  background:color-mix(in srgb,var(--pond-accent,#d6c18c) 16%,transparent);
+  box-shadow:0 0 0 1px color-mix(in srgb,var(--pond-accent,#d6c18c) 40%,transparent),0 0 22px -6px var(--pond-accent,#d6c18c)}
 .pt-hero h1{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(2rem,5.5vw,3.2rem);line-height:1.06;margin:0 0 16px;color:var(--moon,#f5ecd2)}
+.pt-hero h1 .pt-flourish{display:block;width:66px;height:3px;margin-top:14px;border-radius:2px;
+  background:linear-gradient(90deg,var(--pond-accent,#d6c18c),transparent)}
 .pt-answer{margin:0 0 8px}
-.pt-answer h2{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(1.35rem,3.4vw,1.7rem);color:var(--moon,#f5ecd2);margin:0 0 10px}
-.pt-answer p{color:var(--body,#c8c9de);font-size:1.12rem;line-height:1.62;margin:0}
-.pt-chapter{margin:30px 0 8px;max-width:66ch}
-.pt-chapter p{color:var(--body,#c8c9de);font-size:1.05rem;line-height:1.68;margin:0 0 16px}
-.pt-chapter p.pt-quote{color:var(--moon,#f5ecd2);font-family:var(--font-display,"Fraunces",serif);font-style:italic;font-size:1.32rem;line-height:1.5;border-left:3px solid var(--brass,#d6c18c);padding-left:18px;margin:22px 0}
-.pt-section-head{margin:50px 0 6px}
+.pt-answer p{color:var(--body,#c8c9de);font-size:1.14rem;line-height:1.62;margin:0}
+.pt-answer .pt-lede-zh{font-family:"Ma Shan Zheng","Noto Serif SC",serif;color:var(--pond-accent,var(--brass,#d6c18c));font-size:1.15em;letter-spacing:.02em}
+
+.pt-chapter{margin:34px 0 8px;max-width:66ch}
+.pt-chapter p{color:var(--body,#c8c9de);font-size:1.05rem;line-height:1.72;margin:0 0 18px}
+.pt-chapter p.pt-quote{color:var(--moon,#f5ecd2);font-family:var(--font-display,"Fraunces",serif);font-style:italic;font-size:1.34rem;line-height:1.5;border-left:3px solid var(--pond-accent,var(--brass,#d6c18c));padding-left:18px;margin:26px 0}
+
+.pt-section-head{margin:46px 0 6px}
 .pt-section-head h2{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(1.5rem,4vw,2.1rem);color:var(--moon,#f5ecd2);margin:0}
 .pt-section-head p{color:var(--muted,#9a9bb0);margin:6px 0 0}
-.pt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:22px}
+
+/* key-ideas glossary chips */
+.pv-gloss{margin:8px 0 0}
+.pv-gloss-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:16px}
+.pv-gloss-chip{padding:16px 18px;border-radius:14px;border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 26%,rgba(214,193,140,.16));
+  background:linear-gradient(180deg,rgba(20,22,40,.5),rgba(12,14,26,.5))}
+.pv-gloss-han{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-size:1.7rem;color:var(--moon,#f5ecd2);letter-spacing:.04em;margin-right:8px}
+.pv-gloss-py{font-family:"Space Mono",ui-monospace,monospace;font-size:.72rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));letter-spacing:.04em}
+.pv-gloss-def{display:block;margin-top:8px;color:var(--body,#c8c9de);font-size:.92rem;line-height:1.55}
+
+/* the pond's search box + card grid */
+.pt-searchwrap{margin:22px 0 4px;position:relative}
+.pt-search{width:100%;padding:13px 16px 13px 44px;border-radius:12px;border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 30%,rgba(214,193,140,.28));background:rgba(8,10,20,.7);color:var(--moon,#f5ecd2);font-size:1rem}
+.pt-search::placeholder{color:var(--muted,#9a9bb0)}
+.pt-search:focus{outline:none;border-color:var(--pond-accent,var(--brass,#d6c18c));box-shadow:0 0 0 3px color-mix(in srgb,var(--pond-accent,#d6c18c) 18%,transparent)}
+.pt-searchwrap svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--muted,#9a9bb0);pointer-events:none}
+.pt-searchcount{margin:10px 0 0;font-family:"Space Mono",ui-monospace,monospace;font-size:.74rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));letter-spacing:.03em}
+
+.pt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:20px}
 .pv-card{position:relative;padding:22px 22px 18px;border-radius:16px;
-  background:linear-gradient(180deg,rgba(20,22,40,.55),rgba(12,14,26,.55));border:1px solid rgba(214,193,140,.16);
+  background:linear-gradient(180deg,rgba(20,22,40,.55),rgba(12,14,26,.55));
+  border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 20%,rgba(214,193,140,.16));
   transition:transform .25s,border-color .25s,box-shadow .25s}
-.pv-card:hover{transform:translateY(-3px);border-color:rgba(214,193,140,.4);box-shadow:0 24px 50px -30px rgba(0,0,0,.9)}
+.pv-card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--pond-accent,#d6c18c) 55%,rgba(214,193,140,.4));box-shadow:0 24px 50px -30px rgba(0,0,0,.9)}
+.pv-card[hidden]{display:none}
 .pv-zh{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-size:clamp(2rem,6vw,2.7rem);line-height:1.55;color:var(--moon,#f5ecd2);margin:0 0 6px;letter-spacing:.04em;display:flex;align-items:center;gap:.22em;flex-wrap:wrap}
-.pv-zh ruby rt{font-family:"Inter",system-ui,sans-serif;font-size:.3em;color:var(--brass-bright,#efe2b4);font-weight:500}
+.pv-zh ruby rt{font-family:"Inter",system-ui,sans-serif;font-size:.3em;color:var(--pond-accent,var(--brass-bright,#efe2b4));font-weight:500}
 .pv-zh .cx-punct{opacity:.5}
-.pv-pinyin{font-family:"Space Mono",ui-monospace,monospace;color:var(--brass-bright,#efe2b4);letter-spacing:.05em;font-size:.8rem;margin:0 0 8px}
+.pv-pinyin{font-family:"Space Mono",ui-monospace,monospace;color:var(--pond-accent,var(--brass-bright,#efe2b4));letter-spacing:.05em;font-size:.8rem;margin:0 0 8px}
 .pv-lit{color:var(--muted,#9a9bb0);font-style:italic;margin:0 0 8px;font-size:.9rem}
 .pv-mean{color:var(--body,#c8c9de);margin:0 0 10px;font-size:.96rem;line-height:1.5}
 .pv-soul{color:var(--moon,#f5ecd2);font-family:var(--font-display,"Fraunces",serif);font-style:italic;font-size:1.02rem;line-height:1.5;margin:0 0 14px}
 .pv-tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
-.pv-tag{font-size:.68rem;letter-spacing:.02em;color:var(--brass-bright,#efe2b4);background:rgba(214,193,140,.08);border:1px solid rgba(214,193,140,.2);border-radius:6px;padding:3px 8px;text-decoration:none}
-.pv-tag-animal:hover{background:rgba(214,193,140,.2)}
+.pv-tag{font-size:.68rem;letter-spacing:.02em;color:var(--pond-accent,var(--brass-bright,#efe2b4));background:color-mix(in srgb,var(--pond-accent,#d6c18c) 10%,rgba(214,193,140,.08));border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 32%,rgba(214,193,140,.2));border-radius:6px;padding:3px 8px;text-decoration:none}
+.pv-tag-animal:hover{background:color-mix(in srgb,var(--pond-accent,#d6c18c) 22%,rgba(214,193,140,.2))}
 .pv-src{color:var(--muted,#9a9bb0);font-size:.76rem;margin:0}
-.pv-src .k{text-transform:uppercase;letter-spacing:.08em;font-size:.66rem;color:var(--brass-bright,#efe2b4);margin-right:6px}
-.pv-more{display:inline-block;margin-top:10px;font-size:.78rem;color:var(--brass-bright,#efe2b4);text-decoration:none;border-bottom:1px solid rgba(214,193,140,.4)}
+.pv-src .k{text-transform:uppercase;letter-spacing:.08em;font-size:.66rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));margin-right:6px}
+.pv-card-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;flex-wrap:wrap}
+.pv-more{display:inline-block;font-size:.78rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 40%,rgba(214,193,140,.4))}
 .pv-more:hover{color:var(--moon,#f5ecd2)}
-.pt-faq{margin:60px auto 0;max-width:760px}
+.pv-share-btn{display:inline-flex;align-items:center;gap:6px;font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.1em;font-size:.62rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));background:color-mix(in srgb,var(--pond-accent,#d6c18c) 9%,rgba(214,193,140,.06));border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 34%,rgba(214,193,140,.28));border-radius:999px;padding:6px 12px;cursor:pointer;transition:background .18s,border-color .18s}
+.pv-share-btn:hover{background:color-mix(in srgb,var(--pond-accent,#d6c18c) 20%,rgba(214,193,140,.16));color:var(--moon,#f5ecd2)}
+.pt-empty{text-align:center;color:var(--muted,#9a9bb0);padding:40px 20px;font-family:var(--font-display,"Fraunces",serif);font-size:1.15rem}
+.pt-empty[hidden]{display:none}
+
+.pt-faq{margin:56px 0 0;max-width:760px}
 .pt-faq h2{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(1.5rem,4vw,2.1rem);color:var(--moon,#f5ecd2);margin:0 0 18px}
 .pt-qa{margin:0 0 20px}
-.pt-qa h3{color:var(--brass-bright,#efe2b4);font-size:1.05rem;margin:0 0 6px}
+.pt-qa h3{color:var(--pond-accent,var(--brass-bright,#efe2b4));font-size:1.05rem;margin:0 0 6px}
 .pt-qa p{color:var(--body,#c8c9de);line-height:1.6;margin:0;max-width:66ch}
-.pt-explore{margin:52px 0 0;padding:24px;border-radius:16px;border:1px solid rgba(214,193,140,.18);background:rgba(12,14,26,.5)}
+
+.pt-explore{margin:52px 0 0;padding:24px;border-radius:16px;border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 22%,rgba(214,193,140,.18));background:rgba(12,14,26,.5)}
 .pt-explore h2{font-family:var(--font-display,"Fraunces",serif);font-weight:560;color:var(--moon,#f5ecd2);margin:0 0 8px;font-size:1.3rem}
 .pt-explore p{color:var(--body,#c8c9de);line-height:1.66;margin:0 0 12px;max-width:74ch}
-.pt-explore a{color:var(--brass-bright,#efe2b4)}
+.pt-explore a{color:var(--pond-accent,var(--brass-bright,#efe2b4))}
 .pt-siblings{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-wrap:wrap;gap:8px}
-.pt-siblings a{display:inline-block;font-size:.82rem;color:var(--brass-bright,#efe2b4);background:rgba(214,193,140,.08);border:1px solid rgba(214,193,140,.22);border-radius:999px;padding:6px 13px;text-decoration:none}
-.pt-siblings a:hover{border-color:var(--brass,#d6c18c);color:var(--moon,#f5ecd2)}
-.pt-years a{color:var(--brass-bright,#efe2b4);text-decoration:none;margin-right:14px;white-space:nowrap}
+.pt-siblings a{display:inline-block;font-size:.82rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));background:color-mix(in srgb,var(--pond-accent,#d6c18c) 10%,rgba(214,193,140,.08));border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 30%,rgba(214,193,140,.22));border-radius:999px;padding:6px 13px;text-decoration:none}
+.pt-siblings a:hover{border-color:var(--pond-accent,var(--brass,#d6c18c));color:var(--moon,#f5ecd2)}
+.pt-years a{color:var(--pond-accent,var(--brass-bright,#efe2b4));text-decoration:none;margin-right:14px;white-space:nowrap}
 .pt-years a:hover{color:var(--moon,#f5ecd2);text-decoration:underline}
 .pt-foot{margin-top:40px}
 .pt-foot .pf-disc{color:var(--muted,#9a9bb0);font-size:.85rem;max-width:80ch}
-@media (prefers-reduced-motion:reduce){.pv-card{transition:none}.pf-say.is-saying{animation:none}}
+@media (prefers-reduced-motion:reduce){.pv-card{transition:none}.pf-say.is-saying{animation:none}.pv-share-btn{transition:none}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","@id":"https://spirit-omega.vercel.app/proverbs/the-way-of-water/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://spirit-omega.vercel.app/"},{"@type":"ListItem","position":2,"name":"The Proverb Pond","item":"https://spirit-omega.vercel.app/proverbs/"},{"@type":"ListItem","position":3,"name":"The Way of Water","item":"https://spirit-omega.vercel.app/proverbs/the-way-of-water/"}]},{"@type":"CollectionPage","@id":"https://spirit-omega.vercel.app/proverbs/the-way-of-water/#page","url":"https://spirit-omega.vercel.app/proverbs/the-way-of-water/","name":"Chinese Proverbs on the Way of Water","description":"Chinese proverbs on the way of water, wu wei, and the strength that never contends, each with pinyin, meaning, source, and a Mandarin reading.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"The Primal Oracle","url":"https://spirit-omega.vercel.app/"},"about":{"@type":"Thing","name":"Chinese proverbs on The Way of Water"}},{"@type":"ItemList","@id":"https://spirit-omega.vercel.app/proverbs/the-way-of-water/#list","name":"Chinese Proverbs on the Way of Water","numberOfItems":2,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"CreativeWork","name":"上善若水 (shàng shàn ruò shuǐ)","alternateName":"the highest good is like water","text":"The finest virtue is like water, which benefits all things and flows to the low places without contending.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/the-way-of-water/#p-water"}},{"@type":"ListItem","position":2,"item":{"@type":"CreativeWork","name":"順其自然 (shùn qí zì rán)","alternateName":"follow its self-so","text":"Let nature take its course; work with a thing rather than force it.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/the-way-of-water/#p-ziran"}}]},{"@type":"FAQPage","@id":"https://spirit-omega.vercel.app/proverbs/the-way-of-water/#faq","mainEntity":[{"@type":"Question","name":"What do Chinese proverbs say about the way of water?","acceptedAnswer":{"@type":"Answer","text":"They say the highest good is like water. Water benefits everything, settles into the low places others avoid, and shapes stone without ever contending. The Daoist ideal here is wu wei, effortless action: stop forcing a thing, move with what is already there, and you reach everywhere the hard way never could."}},{"@type":"Question","name":"What is wu wei?","acceptedAnswer":{"@type":"Answer","text":"Wu wei is the Daoist idea of effortless action, of moving with the grain of a situation rather than against it. It is not doing nothing. It is doing without forcing, the way water finds its own way downhill and shapes the land without a fight."}},{"@type":"Question","name":"Which proverb best captures the way of water?","acceptedAnswer":{"@type":"Answer","text":"上善若水, shàng shàn ruò shuǐ, the highest good is like water, from the Tao Te Ching. It holds the whole idea in four characters: the finest virtue benefits all things, keeps to the low places, and never contends."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","@id":"https://spirit-omega.vercel.app/proverbs/the-way-of-water/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://spirit-omega.vercel.app/"},{"@type":"ListItem","position":2,"name":"The Proverb Pond","item":"https://spirit-omega.vercel.app/proverbs/"},{"@type":"ListItem","position":3,"name":"The Way of Water","item":"https://spirit-omega.vercel.app/proverbs/the-way-of-water/"}]},{"@type":"CollectionPage","@id":"https://spirit-omega.vercel.app/proverbs/the-way-of-water/#page","url":"https://spirit-omega.vercel.app/proverbs/the-way-of-water/","name":"Taoist Proverbs & the Way of Water","description":"Taoist proverbs about water, wu wei and going with the flow, in hanzi with pinyin and meaning. 上善若水, 顺其自然 and Laozi's way of yielding, sourced and explained.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"The Primal Oracle","url":"https://spirit-omega.vercel.app/"},"about":{"@type":"Thing","name":"Chinese proverbs on The Way of Water"}},{"@type":"ItemList","@id":"https://spirit-omega.vercel.app/proverbs/the-way-of-water/#list","name":"Taoist Proverbs & the Way of Water","numberOfItems":2,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"CreativeWork","name":"上善若水 (shàng shàn ruò shuǐ)","alternateName":"the highest good is like water","text":"The finest virtue is like water, which benefits all things and flows to the low places without contending.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/say/water/"}},{"@type":"ListItem","position":2,"item":{"@type":"CreativeWork","name":"順其自然 (shùn qí zì rán)","alternateName":"follow its self-so","text":"Let nature take its course; work with a thing rather than force it.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/say/ziran/"}}]},{"@type":"FAQPage","@id":"https://spirit-omega.vercel.app/proverbs/the-way-of-water/#faq","mainEntity":[{"@type":"Question","name":"What does wu wei actually mean?","acceptedAnswer":{"@type":"Answer","text":"无为 (wúwéi) means effortless action or non-forcing, not doing nothing. It is acting so in tune with the moment that striving falls away. The Daodejing puts it as a paradox: the Way does nothing, yet nothing is left undone. It takes real practice to unlearn the habit of forcing."}},{"@type":"Question","name":"What is the Taoist proverb about water?","acceptedAnswer":{"@type":"Answer","text":"上善若水 (shàng shàn ruò shuǐ), the highest good is like water, from chapter eight of the Tao Te Ching. Water benefits everything, seeks the low places others avoid, and contends with nothing, so Laozi calls it the closest thing to the Way itself."}},{"@type":"Question","name":"What does \"go with the flow\" mean in Chinese?","acceptedAnswer":{"@type":"Answer","text":"The everyday phrase is 顺其自然 (shùn qí zì rán), let nature take its course. It is the practical face of the Daoist idea of 自然, moving with the grain of a situation instead of straining against it, and trusting that the right shape appears once you stop forcing."}},{"@type":"Question","name":"Why does Laozi say the soft overcomes the hard?","acceptedAnswer":{"@type":"Answer","text":"Chapter seventy-eight observes that nothing is softer than water, yet nothing wears down stone better. Softness, 柔 (róu), outlasts and outmaneuvers force because it does not resist head-on. It flows around, waits, and prevails by not fighting, which is why yielding is treated as strength."}}]}]}</script>
 <script>window.PN_HERE="proverbs";</script>
 <!--pn-assets:start-->
 <script data-pn-assets="theme-boot">(function(){try{var m=new Date().getMonth();var s=m>=2&&m<=4?"spring":m>=5&&m<=7?"summer":m>=8&&m<=10?"autumn":"winter";var d=document.documentElement;d.dataset.theme="dark";d.dataset.season=s;}catch(e){}})();</script>
@@ -111,7 +203,7 @@
 <link rel="stylesheet" href="/css/a11y.css" data-pn="/css/a11y.css">
 <!--pn-css:end-->
 <!--pn-crumb-ld:start-->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://spirit-omega.vercel.app/"},{"@type":"ListItem","position":2,"name":"Proverbs","item":"https://spirit-omega.vercel.app/proverbs/"},{"@type":"ListItem","position":3,"name":"Chinese Proverbs on the Way of Water with Pinyin &amp; Meaning","item":"https://spirit-omega.vercel.app/proverbs/the-way-of-water/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://spirit-omega.vercel.app/"},{"@type":"ListItem","position":2,"name":"Proverbs","item":"https://spirit-omega.vercel.app/proverbs/"},{"@type":"ListItem","position":3,"name":"Taoist Proverbs &amp; the Way of Water","item":"https://spirit-omega.vercel.app/proverbs/the-way-of-water/"}]}</script>
 <!--pn-crumb-ld:end-->
 </head>
 <body class="pn-has-bar">
@@ -126,7 +218,7 @@
         <div class="pn-item" data-accent="teal"><button class="pn-trigger" type="button" data-group="1" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Explore<span class="chev" aria-hidden="true"></span></button></div>
         <div class="pn-item" data-accent="brass"><button class="pn-trigger" type="button" data-group="2" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Zodiac<span class="chev" aria-hidden="true"></span></button></div>
         <div class="pn-item" data-accent="amethyst"><button class="pn-trigger" type="button" data-group="3" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Horoscope<span class="chev" aria-hidden="true"></span></button></div>
-        <div class="pn-item" data-accent="jade"><button class="pn-trigger" type="button" data-group="4" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Sage Wisdom<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="jade"><button class="pn-trigger active" type="button" data-group="4" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Sage Wisdom<span class="chev" aria-hidden="true"></span></button></div>
         <div class="pn-item" data-accent="rose"><button class="pn-trigger" type="button" data-group="5" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Bonds<span class="chev" aria-hidden="true"></span></button></div>
         <div class="pn-item" data-accent="silver"><button class="pn-trigger" type="button" data-group="6" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Moon<span class="chev" aria-hidden="true"></span></button></div>
     </nav>
@@ -173,7 +265,7 @@
   </div>
   <div class="pn-panel pn-panel-sage" data-group="4" data-accent="jade" role="region" aria-label="Sage Wisdom" hidden>
     <p class="pn-panel-eyebrow">The craft, what you do with your animal</p>
-    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Stones</p><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/traditions/birthstones-and-moonstone/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Birthstones and moonstone</span></a><a class="pn-row" href="/traditions/stones-for-your-animal/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Stones for your animal</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">卦</span> Feng shui</p><a class="pn-row" href="/feng-shui/bagua/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The bagua</span></a><a class="pn-row" href="/feng-shui/five-elements/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Five phases</span></a><a class="pn-row" href="/feng-shui/kua-number/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your Kua number</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">❦</span> Proverbs and lore</p><a class="pn-row" href="/proverbs/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Proverbs</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a></div></div>
+    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Stones</p><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/traditions/birthstones-and-moonstone/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Birthstones and moonstone</span></a><a class="pn-row" href="/traditions/stones-for-your-animal/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Stones for your animal</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">卦</span> Feng shui</p><a class="pn-row" href="/feng-shui/bagua/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The bagua</span></a><a class="pn-row" href="/feng-shui/five-elements/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Five phases</span></a><a class="pn-row" href="/feng-shui/kua-number/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your Kua number</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">❦</span> Proverbs and lore</p><a class="pn-row" href="/proverbs/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Proverb Pond</span><span class="pn-row-sub">Chinese proverbs, pronounced</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">❦</span> The Proverb Pond, by theme</p><a class="pn-row" href="/proverbs/wealth-and-work/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Money and work</span></a><a class="pn-row" href="/proverbs/home-and-family/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Family and roots</span></a><a class="pn-row" href="/proverbs/nature-and-seasons/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Health and nature</span></a><a class="pn-row" href="/proverbs/friendship-and-trust/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Friendship and trust</span></a><a class="pn-row active" href="/proverbs/the-way-of-water/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The way of water</span></a><a class="pn-row" href="/proverbs/timing-and-fortune/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Fate and fortune</span></a><a class="pn-row" href="/proverbs/perseverance/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Perseverance</span></a><a class="pn-row" href="/proverbs/courage/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Courage</span></a><a class="pn-row" href="/proverbs/wisdom-and-learning/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Wisdom and learning</span></a><a class="pn-row" href="/proverbs/harmony-and-virtue/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Harmony and virtue</span></a><a class="pn-row" href="/proverbs/humility-and-self-mastery/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Humility</span></a><a class="pn-row" href="/proverbs/adversity-and-resilience/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Adversity</span></a></div></div>
     <div class="pn-panel-cta"><div class="pn-ebook"><span class="pn-ebook-tag">Free · Feng Shui e-book</span><h3 class="pn-ebook-title">Your animal's placement guide</h3><p class="pn-ebook-body">Where to sleep, work, and rest, mapped to your animal. Free when you create a Zodi account.</p><a class="pn-ebook-link" href="/account.html">Create free account <span class="pn-ebook-note">opening soon</span></a></div></div>
     <div class="pn-panel-foot"><a href="/feng-shui/">All of feng shui</a></div>
   </div>
@@ -187,34 +279,151 @@
     <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> Tonight</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-full" viewBox="0 0 24 24" role="img" aria-labelledby="moon-full-t moon-full-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-full-t">Full moon</title><desc id="moon-full-d">The whole disc lit.</desc><circle cx="12" cy="12" r="9" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Waning Gibbous</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days ahead</span><span class="pn-row-sub">the favorable days for you</span></a><a class="pn-row" href="/awakening.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Awakening</span><span class="pn-row-sub">the path from fear to strength</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◐</span> The eight phases</p><a class="pn-row" href="/moon/phases/new-moon/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-new" viewBox="0 0 24 24" role="img" aria-labelledby="moon-new-t moon-new-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-new-t">New moon</title><desc id="moon-new-d">The dark disc of the new moon.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">New Moon</span></a><a class="pn-row" href="/moon/phases/waxing-crescent/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waxing-crescent" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waxing-crescent-t moon-waxing-crescent-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waxing-crescent-t">Waxing crescent moon</title><desc id="moon-waxing-crescent-d">A thin lit crescent on the right.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A6.36 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waxing Crescent</span></a><a class="pn-row" href="/moon/phases/first-quarter/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-first-quarter" viewBox="0 0 24 24" role="img" aria-labelledby="moon-first-quarter-t moon-first-quarter-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-first-quarter-t">First quarter moon</title><desc id="moon-first-quarter-d">The right half lit.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A0 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">First Quarter</span></a><a class="pn-row" href="/moon/phases/waxing-gibbous/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waxing-gibbous" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waxing-gibbous-t moon-waxing-gibbous-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waxing-gibbous-t">Waxing gibbous moon</title><desc id="moon-waxing-gibbous-d">Most of the disc lit, growing.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A6.36 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waxing Gibbous</span></a><a class="pn-row" href="/moon/phases/full-moon/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-full" viewBox="0 0 24 24" role="img" aria-labelledby="moon-full-t moon-full-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-full-t">Full moon</title><desc id="moon-full-d">The whole disc lit.</desc><circle cx="12" cy="12" r="9" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Full Moon</span></a><a class="pn-row" href="/moon/phases/waning-gibbous/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waning-gibbous" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waning-gibbous-t moon-waning-gibbous-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waning-gibbous-t">Waning gibbous moon</title><desc id="moon-waning-gibbous-d">Most of the disc lit, shrinking.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A6.36 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waning Gibbous</span></a><a class="pn-row" href="/moon/phases/last-quarter/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-last-quarter" viewBox="0 0 24 24" role="img" aria-labelledby="moon-last-quarter-t moon-last-quarter-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-last-quarter-t">Last quarter moon</title><desc id="moon-last-quarter-d">The left half lit.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A0 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Last Quarter</span></a><a class="pn-row" href="/moon/phases/waning-crescent/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waning-crescent" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waning-crescent-t moon-waning-crescent-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waning-crescent-t">Waning crescent moon</title><desc id="moon-waning-crescent-d">A thin lit crescent on the left.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A6.36 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waning Crescent</span></a></div></div>
     <div class="pn-panel-foot"><a href="/moon.html">Read the Moon tonight in full</a></div>
   </div>
-  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/index.html#read">Find yours</a><a href="/index.html">Find your animal</a><a href="/daily.html">Today's reading</a><a href="/year.html">Year finder</a><a href="/account.html">Your account</a><a href="/menagerie.html">All 144 animals</a><a href="/western-zodiac/">Western wing</a><a href="/chinese-zodiac/">Eastern wing</a><a href="/zodiac/">Zodiac crossings</a><a href="/moon.html">The Moon tonight</a><a href="/moon/phases/">The eight phases</a><a href="/moon/in-your-sign/">Moon in your sign</a><a href="/best-days.html">Best days</a><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a><a href="/feng-shui/">Feng shui</a><a href="/habitat/">The Habitat</a><a href="/stones.html">Keeper stones</a><a href="/directions/">Directions</a><a href="/traditions/">Traditions</a><a href="/chinese-zodiac/horse/">Horse</a><a href="/chinese-zodiac/rat/">Rat</a><a href="/chinese-zodiac/ox/">Ox</a><a href="/chinese-zodiac/tiger/">Tiger</a><a href="/chinese-zodiac/rabbit/">Rabbit</a><a href="/chinese-zodiac/dragon/">Dragon</a><a href="/chinese-zodiac/snake/">Snake</a><a href="/chinese-zodiac/goat/">Goat</a><a href="/chinese-zodiac/monkey/">Monkey</a><a href="/chinese-zodiac/rooster/">Rooster</a><a href="/chinese-zodiac/dog/">Dog</a><a href="/chinese-zodiac/pig/">Pig</a><a href="/western-zodiac/aries/">Aries</a><a href="/western-zodiac/taurus/">Taurus</a><a href="/western-zodiac/gemini/">Gemini</a><a href="/western-zodiac/cancer/">Cancer</a><a href="/western-zodiac/leo/">Leo</a><a href="/western-zodiac/virgo/">Virgo</a><a href="/western-zodiac/libra/">Libra</a><a href="/western-zodiac/scorpio/">Scorpio</a><a href="/western-zodiac/sagittarius/">Sagittarius</a><a href="/western-zodiac/capricorn/">Capricorn</a><a href="/western-zodiac/aquarius/">Aquarius</a><a href="/western-zodiac/pisces/">Pisces</a><a href="/traditions/birthstones-and-moonstone/">Birthstones and moonstone</a><a href="/traditions/stones-for-your-animal/">Stones for your animal</a><a href="/feng-shui/bagua/">The bagua</a><a href="/feng-shui/five-elements/">Five phases</a><a href="/feng-shui/kua-number/">Your Kua number</a><a href="/proverbs/">Proverbs</a><a href="/match.html">Test a match</a><a href="/vs.html">Challenge a friend</a><a href="/circle.html">Circle of three</a><a href="/awakening.html">The Awakening</a><a href="/moon/phases/new-moon/">New Moon</a><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a><a href="/moon/phases/first-quarter/">First Quarter</a><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a><a href="/moon/phases/full-moon/">Full Moon</a><a href="/moon/phases/waning-gibbous/">Waning Gibbous</a><a href="/moon/phases/last-quarter/">Last Quarter</a><a href="/moon/phases/waning-crescent/">Waning Crescent</a><a href="/horoscopes/">All horoscopes, sign by sign</a><a href="/feng-shui/your-animal/">Feng shui for your animal</a><a href="/directions/celestial-animals/">The four celestial animals</a><a href="/cosmology/">Cosmology</a><a href="/cosmology/four-pillars/">The Four Pillars</a><a href="/elements/fire/">The five elements</a><a href="/learn.html">How it works</a></nav>
+  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/index.html#read">Find yours</a><a href="/index.html">Find your animal</a><a href="/daily.html">Today's reading</a><a href="/year.html">Year finder</a><a href="/account.html">Your account</a><a href="/menagerie.html">All 144 animals</a><a href="/western-zodiac/">Western wing</a><a href="/chinese-zodiac/">Eastern wing</a><a href="/zodiac/">Zodiac crossings</a><a href="/moon.html">The Moon tonight</a><a href="/moon/phases/">The eight phases</a><a href="/moon/in-your-sign/">Moon in your sign</a><a href="/best-days.html">Best days</a><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a><a href="/feng-shui/">Feng shui</a><a href="/habitat/">The Habitat</a><a href="/stones.html">Keeper stones</a><a href="/directions/">Directions</a><a href="/traditions/">Traditions</a><a href="/chinese-zodiac/horse/">Horse</a><a href="/chinese-zodiac/rat/">Rat</a><a href="/chinese-zodiac/ox/">Ox</a><a href="/chinese-zodiac/tiger/">Tiger</a><a href="/chinese-zodiac/rabbit/">Rabbit</a><a href="/chinese-zodiac/dragon/">Dragon</a><a href="/chinese-zodiac/snake/">Snake</a><a href="/chinese-zodiac/goat/">Goat</a><a href="/chinese-zodiac/monkey/">Monkey</a><a href="/chinese-zodiac/rooster/">Rooster</a><a href="/chinese-zodiac/dog/">Dog</a><a href="/chinese-zodiac/pig/">Pig</a><a href="/western-zodiac/aries/">Aries</a><a href="/western-zodiac/taurus/">Taurus</a><a href="/western-zodiac/gemini/">Gemini</a><a href="/western-zodiac/cancer/">Cancer</a><a href="/western-zodiac/leo/">Leo</a><a href="/western-zodiac/virgo/">Virgo</a><a href="/western-zodiac/libra/">Libra</a><a href="/western-zodiac/scorpio/">Scorpio</a><a href="/western-zodiac/sagittarius/">Sagittarius</a><a href="/western-zodiac/capricorn/">Capricorn</a><a href="/western-zodiac/aquarius/">Aquarius</a><a href="/western-zodiac/pisces/">Pisces</a><a href="/traditions/birthstones-and-moonstone/">Birthstones and moonstone</a><a href="/traditions/stones-for-your-animal/">Stones for your animal</a><a href="/feng-shui/bagua/">The bagua</a><a href="/feng-shui/five-elements/">Five phases</a><a href="/feng-shui/kua-number/">Your Kua number</a><a href="/proverbs/">The Proverb Pond</a><a href="/proverbs/wealth-and-work/">Money and work</a><a href="/proverbs/home-and-family/">Family and roots</a><a href="/proverbs/nature-and-seasons/">Health and nature</a><a href="/proverbs/friendship-and-trust/">Friendship and trust</a><a href="/proverbs/the-way-of-water/">The way of water</a><a href="/proverbs/timing-and-fortune/">Fate and fortune</a><a href="/proverbs/perseverance/">Perseverance</a><a href="/proverbs/courage/">Courage</a><a href="/proverbs/wisdom-and-learning/">Wisdom and learning</a><a href="/proverbs/harmony-and-virtue/">Harmony and virtue</a><a href="/proverbs/humility-and-self-mastery/">Humility</a><a href="/proverbs/adversity-and-resilience/">Adversity</a><a href="/match.html">Test a match</a><a href="/vs.html">Challenge a friend</a><a href="/circle.html">Circle of three</a><a href="/awakening.html">The Awakening</a><a href="/moon/phases/new-moon/">New Moon</a><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a><a href="/moon/phases/first-quarter/">First Quarter</a><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a><a href="/moon/phases/full-moon/">Full Moon</a><a href="/moon/phases/waning-gibbous/">Waning Gibbous</a><a href="/moon/phases/last-quarter/">Last Quarter</a><a href="/moon/phases/waning-crescent/">Waning Crescent</a><a href="/horoscopes/">All horoscopes, sign by sign</a><a href="/feng-shui/your-animal/">Feng shui for your animal</a><a href="/directions/celestial-animals/">The four celestial animals</a><a href="/cosmology/">Cosmology</a><a href="/cosmology/four-pillars/">The Four Pillars</a><a href="/elements/fire/">The five elements</a><a href="/learn.html">How it works</a></nav>
 </header>
 <!--pn-static:end-->
 <!--pn-sub:start-->
 <nav class="pn-sub" aria-label="Section">
   <div class="pn-sub-primary"><ul class="pn-subnav"><li><a href="/proverbs/">Overview</a></li></ul></div>
-  <div class="pn-sub-crumb"><ol class="pn-crumb"><li><a href="/">Home</a></li><li><a href="/proverbs/">Proverbs</a></li><li aria-current="page">Chinese Proverbs on the Way of Water with Pinyin &amp;amp; Meaning</li></ol></div>
+  <div class="pn-sub-crumb"><ol class="pn-crumb"><li><a href="/">Home</a></li><li><a href="/proverbs/">Proverbs</a></li><li aria-current="page">Taoist Proverbs &amp;amp; the Way of Water</li></ol></div>
 </nav>
 <!--pn-sub:end-->
 <canvas id="sky" aria-hidden="true"></canvas>
-<main class="pt-wrap" id="pn-main" tabindex="-1">
+<main class="pt-wrap" style="--pond-accent:#2FB8C6" id="pn-main" tabindex="-1">
   <nav class="pt-crumb" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">/</span> <a href="/proverbs/">The Proverb Pond</a> <span aria-hidden="true">/</span> <b>The Way of Water</b></nav>
-  <header class="pt-hero">
-    <p class="pt-eyebrow">水 · the way of water</p>
-    <h1>Chinese Proverbs on the Way of Water</h1>
-    <div class="pt-answer">
-      <h2>What do Chinese proverbs say about the way of water?</h2>
-      <p>They say the highest good is like water. Water benefits everything, settles into the low places others avoid, and shapes stone without ever contending. The Daoist ideal here is wu wei, effortless action: stop forcing a thing, move with what is already there, and you reach everywhere the hard way never could.</p>
+  <div class="pv-layout">
+    <nav class="pv-rail" aria-label="Browse the ponds">
+    <p class="pv-rail-head">The ponds</p>
+    <div class="pv-rail-list">
+    <a class="pv-rail-row pv-rail-all" href="/proverbs/">
+      <span class="pv-rail-dot pv-rail-dot-all" aria-hidden="true"></span>
+      <span class="pv-rail-name">The whole pond</span>
+      <span class="pv-rail-n">87</span>
+    </a>
+    <a class="pv-rail-row is-active" href="/proverbs/the-way-of-water/" aria-current="page" style="--row-accent:#2FB8C6">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">The Way of Water<span class="pv-rail-kw">Water &amp; the Tao</span></span>
+      <span class="pv-rail-n">2</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/timing-and-fortune/" style="--row-accent:#9B7BD8">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Timing &amp; Fortune's Turning<span class="pv-rail-kw">Fate &amp; luck</span></span>
+      <span class="pv-rail-n">12</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/perseverance/" style="--row-accent:#D19A4E">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Perseverance &amp; the Long Road<span class="pv-rail-kw">Perseverance</span></span>
+      <span class="pv-rail-n">4</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/courage/" style="--row-accent:#D9534F">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Courage &amp; Decisive Action<span class="pv-rail-kw">Courage</span></span>
+      <span class="pv-rail-n">3</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/home-and-family/" style="--row-accent:#5FBF8F">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Home, Family &amp; Roots<span class="pv-rail-kw">Family &amp; roots</span></span>
+      <span class="pv-rail-n">8</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/wisdom-and-learning/" style="--row-accent:#6C7BD6">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Wisdom &amp; Learning<span class="pv-rail-kw">Wisdom &amp; learning</span></span>
+      <span class="pv-rail-n">3</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/harmony-and-virtue/" style="--row-accent:#E0C471">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Harmony, Virtue &amp; Balance<span class="pv-rail-kw">Harmony &amp; virtue</span></span>
+      <span class="pv-rail-n">4</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/wealth-and-work/" style="--row-accent:#E8B53A">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Wealth, Work &amp; Diligence<span class="pv-rail-kw">Money &amp; work</span></span>
+      <span class="pv-rail-n">14</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/friendship-and-trust/" style="--row-accent:#E08AA0">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Friendship, Trust &amp; Speech<span class="pv-rail-kw">Friendship &amp; trust</span></span>
+      <span class="pv-rail-n">12</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/humility-and-self-mastery/" style="--row-accent:#8FA3BF">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Humility &amp; Self-Mastery<span class="pv-rail-kw">Humility</span></span>
+      <span class="pv-rail-n">13</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/adversity-and-resilience/" style="--row-accent:#4F9E77">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Adversity &amp; Resilience<span class="pv-rail-kw">Adversity</span></span>
+      <span class="pv-rail-n">5</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/nature-and-seasons/" style="--row-accent:#93B06A">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Nature, Seasons &amp; Health<span class="pv-rail-kw">Health &amp; seasons</span></span>
+      <span class="pv-rail-n">7</span>
+    </a>
     </div>
-  </header>
-  <section class="pt-chapter" aria-label="A reading">
-    <p>Water is the teacher the old Daoists kept returning to. It seeks no high seat. It flows down to the room everyone else has left, and it makes even that a home. Nothing is softer, and nothing wears harder ground away.</p><p>You have spent effort pushing against a current that was never going to yield to force. The way of water asks the opposite of you. Find the low line, move with the shape of things, and let the channel form once the flow is full enough.</p><p class="pt-quote">To be strong like water is to stop contending and still arrive everywhere.</p>
+  </nav>
+    <div class="pv-main">
+      <header class="pt-hero">
+        <p class="pt-eyebrow"><span class="pt-koi" lang="zh-Hant">水</span> The Way of Water pond</p>
+        <h1>Taoist Proverbs &amp; the Way of Water<span class="pt-flourish" aria-hidden="true"></span></h1>
+        <div class="pt-answer">
+          <p>Taoist proverbs about water teach that yielding is a form of strength. Water benefits everything and contends with nothing, so the highest good is said to be like water (上善若水). To live well is to stop forcing and move with the grain of things, letting nature take its course (顺其自然) the way a channel forms once the water is full. <span class="pt-lede-zh" lang="zh-Hant">In Chinese, people look this up as 顺其自然.</span></p>
+        </div>
+      </header>
+      <section class="pt-chapter" aria-label="Why this matters in Chinese culture">
+        <p>There is a reason the oldest Chinese book about power keeps pointing at a puddle. Daoism, 道家 (dàojiā), takes its name from the 道 (dào), the Way, the pattern by which everything quietly unfolds. Its founding text, the 道德經 (Dàodéjīng, or Tao Te Ching), gathered from many hands and dated by its earliest excavated slips to the late fourth century BCE, does not tell you to conquer your life. It tells you to stop fighting it. And when Laozi reaches for one image to carry the whole idea, he reaches for water.</p>
+    <p>Chapter eight gives the line the pond is built on: 上善若水 (shàng shàn ruò shuǐ), the highest good is like water. Water benefits the ten thousand things and does not contend, 不争 (bùzhēng), and it settles into the low places everyone else avoids. That is the lesson hidden in plain sight. Water gets everywhere precisely because it does not push. It is soft, 柔 (róu), and softness is not weakness here but the deepest kind of power. Chapter seventy-eight makes the paradox explicit: nothing under heaven is softer than water, yet nothing is better at wearing down what is hard and strong. The weak overcomes the strong, the soft overcomes the hard. You have felt this whenever forcing an outcome made it worse and letting it breathe let it arrive.</p>
+    <p>At the center of this way of moving is 无为 (wúwéi), often mistranslated as doing nothing. It is not laziness and it is not surrender. It is effortless action, acting without the friction of ego and over-control, moving so cleanly with the moment that the effort disappears. The Daodejing states the riddle directly: the Way does nothing, yet nothing is left undone. And here is the part people miss. Wu wei has to be cultivated. It takes practice to unlearn the habit of straining. The state it flows from is 自然 (zìrán), self-so, the naturalness of a thing following its own grain. Hence the famous line 道法自然, the Dao follows what is natural. Wu wei is how you act; ziran is the order you fall into step with.</p>
+    <p>For a life of meaning this reframes almost everything you were taught about winning. You do not have to overpower a situation to prevail in it. You can yield, wait, take the low place, and still reach everywhere the water reaches. When conditions are ripe the result comes on its own, the way a channel forms once the stream is full, 水到渠成. Among the animals, the quiet Rat carries this water wisdom of moving unseen and shaping everything it touches, and the clever Monkey carries the art of 顺其自然, working with what is already there rather than forcing it into a shape. To walk the Way of Water is to trade the exhaustion of control for the strange, patient strength of flow.</p>
+        <p class="pt-quote">Water asks for nothing and shapes everything, and that is the whole secret of getting your way without a fight.</p>
+      </section>
+      <section class="pv-gloss" aria-label="Key ideas in this pond">
+    <div class="pt-section-head"><h2>Key ideas</h2><p>The words the tradition leans on here, in hanzi with their sound.</p></div>
+    <div class="pv-gloss-grid"><div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">道</span>
+      <span class="pv-gloss-py">dào</span>
+      <span class="pv-gloss-def">the Way; the source and pattern of all that is, the grain of reality you align with</span>
+    </div>
+<div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">无为</span>
+      <span class="pv-gloss-py">wúwéi</span>
+      <span class="pv-gloss-def">effortless action, non-forcing; acting in harmony with the moment, not passivity</span>
+    </div>
+<div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">自然</span>
+      <span class="pv-gloss-py">zìrán</span>
+      <span class="pv-gloss-def">self-so, naturalness, spontaneity; things unfolding by their own nature</span>
+    </div>
+<div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">水</span>
+      <span class="pv-gloss-py">shuǐ</span>
+      <span class="pv-gloss-def">water; Laozi's master image, soft yet unstoppable, nourishing, seeking the low ground</span>
+    </div>
+<div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">柔</span>
+      <span class="pv-gloss-py">róu</span>
+      <span class="pv-gloss-def">soft, yielding, supple; the quality that overcomes the hard and strong</span>
+    </div>
+<div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">不争</span>
+      <span class="pv-gloss-py">bùzhēng</span>
+      <span class="pv-gloss-def">non-contention; benefiting all while competing with none</span>
+    </div></div>
   </section>
-  <div class="pt-section-head">
-    <h2>The 2 proverbs of The Way of Water</h2>
-    <p>Each with its sound, its literal sense, its meaning, a reading, and its classical source. Press the speaker to hear any line in Mandarin.</p>
-  </div>
-  <div class="pt-grid" role="list"><article class="pv-card" id="p-water">
+      <div class="pt-section-head">
+        <h2>The 2 proverbs of the Way of Water pond</h2>
+        <p>Each with its sound, its literal sense, its meaning, a reading, and its classical source. Press the speaker to hear any line in Mandarin, or share the one that lands.</p>
+      </div>
+      <div class="pt-searchwrap">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-3.2-3.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <input id="ptSearch" type="search" class="pt-search" placeholder="Search this pond by word, meaning, or sound" aria-label="Search the proverbs in this pond" autocomplete="off">
+      </div>
+      <p class="pt-searchcount" id="ptCount" aria-live="polite">2 proverbs</p>
+      <div class="pt-grid" id="ptGrid" role="list"><article class="pv-card" id="p-water"
+    data-cat="poetic" data-orient="present"
+    data-animal="Rat" data-el="Water" data-q="上善若水 上善若水 shang shan ruo shui the highest good is like water the finest virtue is like water, which benefits all things and flows to the low places without contending. 詩詞 verse rat water"
+    data-share data-trad="上善若水" data-pinyin="shàng shàn ruò shuǐ"
+    data-literal="the highest good is like water" data-meaning="The finest virtue is like water, which benefits all things and flows to the low places without contending." data-url="https://spirit-omega.vercel.app/proverbs/say/water/">
     <p class="pv-zh" lang="zh-Hant"><ruby>上<rt>shàng</rt></ruby><ruby>善<rt>shàn</rt></ruby><ruby>若<rt>ruò</rt></ruby><ruby>水<rt>shuǐ</rt></ruby><button type="button" class="pf-say" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="上善若水" onclick="try{if(window.speechSynthesis){var u=new SpeechSynthesisUtterance(this.dataset.say);u.lang='zh-CN';u.rate=.78;speechSynthesis.cancel();speechSynthesis.speak(u);this.classList.add('is-saying');var b=this;u.onend=function(){b.classList.remove('is-saying')};}}catch(e){}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></p>
     <p class="pv-pinyin">shàng shàn ruò shuǐ</p>
     <p class="pv-lit">the highest good is like water</p>
@@ -227,9 +436,16 @@
       <a class="pv-tag pv-tag-animal" href="/chinese-zodiac/rat/">鼠 Year of the Rat</a>
     </div>
     <p class="pv-src"><span class="k">Source</span> Tao Te Ching 道德經, ch. 8 (Laozi)</p>
-    <a class="pv-more" href="/proverbs/say/water/">Read the whole line</a>
+    <div class="pv-card-foot">
+      <a class="pv-more" href="/proverbs/say/water/">Read the whole line</a>
+      <button type="button" class="pv-share-btn" aria-label="Share this proverb" title="Share this proverb"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M14 9V5.5L20.5 12 14 18.5V15c-4.2 0-7 1.2-9 4 .8-4.5 3.3-8 9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Share</span></button>
+    </div>
   </article>
-<article class="pv-card" id="p-ziran">
+<article class="pv-card" id="p-ziran"
+    data-cat="suyu" data-orient="present"
+    data-animal="Monkey" data-el="Water" data-q="順其自然 顺其自然 shun qi zi ran follow its self-so let nature take its course; work with a thing rather than force it. 俗語 saying monkey water"
+    data-share data-trad="順其自然" data-pinyin="shùn qí zì rán"
+    data-literal="follow its self-so" data-meaning="Let nature take its course; work with a thing rather than force it." data-url="https://spirit-omega.vercel.app/proverbs/say/ziran/">
     <p class="pv-zh" lang="zh-Hant"><ruby>順<rt>shùn</rt></ruby><ruby>其<rt>qí</rt></ruby><ruby>自<rt>zì</rt></ruby><ruby>然<rt>rán</rt></ruby><button type="button" class="pf-say" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="順其自然" onclick="try{if(window.speechSynthesis){var u=new SpeechSynthesisUtterance(this.dataset.say);u.lang='zh-CN';u.rate=.78;speechSynthesis.cancel();speechSynthesis.speak(u);this.classList.add('is-saying');var b=this;u.onend=function(){b.classList.remove('is-saying')};}}catch(e){}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></p>
     <p class="pv-pinyin">shùn qí zì rán</p>
     <p class="pv-lit">follow its self-so</p>
@@ -242,19 +458,30 @@
       <a class="pv-tag pv-tag-animal" href="/chinese-zodiac/monkey/">猴 Year of the Monkey</a>
     </div>
     <p class="pv-src"><span class="k">Source</span> Daoist idiom (zìrán)</p>
-    <a class="pv-more" href="/proverbs/say/ziran/">Read the whole line</a>
+    <div class="pv-card-foot">
+      <a class="pv-more" href="/proverbs/say/ziran/">Read the whole line</a>
+      <button type="button" class="pv-share-btn" aria-label="Share this proverb" title="Share this proverb"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M14 9V5.5L20.5 12 14 18.5V15c-4.2 0-7 1.2-9 4 .8-4.5 3.3-8 9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Share</span></button>
+    </div>
   </article></div>
-  <section class="pt-faq" aria-label="About these proverbs">
-    <h2>Questions readers ask</h2>
-    <div class="pt-qa"><h3>What do Chinese proverbs say about the way of water?</h3><p>They say the highest good is like water. Water benefits everything, settles into the low places others avoid, and shapes stone without ever contending. The Daoist ideal here is wu wei, effortless action: stop forcing a thing, move with what is already there, and you reach everywhere the hard way never could.</p></div><div class="pt-qa"><h3>What is wu wei?</h3><p>Wu wei is the Daoist idea of effortless action, of moving with the grain of a situation rather than against it. It is not doing nothing. It is doing without forcing, the way water finds its own way downhill and shapes the land without a fight.</p></div><div class="pt-qa"><h3>Which proverb best captures the way of water?</h3><p>上善若水, shàng shàn ruò shuǐ, the highest good is like water, from the Tao Te Ching. It holds the whole idea in four characters: the finest virtue benefits all things, keeps to the low places, and never contends.</p></div>
-  </section>
-  <section class="pt-explore" aria-label="Keep reading">
-    <h2>Read on</h2>
-    <p>Every line here lives in the wider <a href="/proverbs/">Proverb Pond</a>, where all eighty-seven proverbs wait with their sound, their meaning, and a reading of their own. From the pond you can draw one at random or filter the whole library by theme, type, and zodiac year.</p>
-    <p>Follow the thread into a neighboring chapter, or see how place shapes fortune in <a href="/feng-shui/">Feng Shui</a>. You can also <a href="/">find your Primal Animal</a> and let it lead you to a proverb worth keeping.</p>
-    <ul class="pt-siblings"><li><a href="/proverbs/timing-and-fortune/">Timing &amp; Fortune's Turning</a></li><li><a href="/proverbs/perseverance/">Perseverance &amp; the Long Road</a></li><li><a href="/proverbs/courage/">Courage &amp; Decisive Action</a></li></ul>
+      <p class="pt-empty" id="ptEmpty" hidden>No proverb in this pond matches that. Clear the search to see them all.</p>
+      <section class="pt-faq" aria-label="Questions readers ask">
+        <h2>Questions readers ask</h2>
+        <div class="pt-qa"><h3>What does wu wei actually mean?</h3><p>无为 (wúwéi) means effortless action or non-forcing, not doing nothing. It is acting so in tune with the moment that striving falls away. The Daodejing puts it as a paradox: the Way does nothing, yet nothing is left undone. It takes real practice to unlearn the habit of forcing.</p></div>
+        <div class="pt-qa"><h3>What is the Taoist proverb about water?</h3><p>上善若水 (shàng shàn ruò shuǐ), the highest good is like water, from chapter eight of the Tao Te Ching. Water benefits everything, seeks the low places others avoid, and contends with nothing, so Laozi calls it the closest thing to the Way itself.</p></div>
+        <div class="pt-qa"><h3>What does "go with the flow" mean in Chinese?</h3><p>The everyday phrase is 顺其自然 (shùn qí zì rán), let nature take its course. It is the practical face of the Daoist idea of 自然, moving with the grain of a situation instead of straining against it, and trusting that the right shape appears once you stop forcing.</p></div>
+        <div class="pt-qa"><h3>Why does Laozi say the soft overcomes the hard?</h3><p>Chapter seventy-eight observes that nothing is softer than water, yet nothing wears down stone better. Softness, 柔 (róu), outlasts and outmaneuvers force because it does not resist head-on. It flows around, waits, and prevails by not fighting, which is why yielding is treated as strength.</p></div>
+      </section>
+      <section class="pt-explore" aria-label="Wander to another pond">
+    <h2>Wander to another pond</h2>
+    <p>Every line here lives in the wider <a href="/proverbs/">Proverb Pond</a>, where all eighty-seven proverbs wait with their sound, their meaning, and a reading of their own. Draw one from the water at random, or walk the whole set in order along the <a href="/proverbs/study/">Path of Mastery</a>.</p>
+    <p>Follow the thread into a neighboring pond, or see how place shapes fortune in <a href="/feng-shui/">Feng Shui</a>. You can also <a href="/">find your Primal Animal</a> and let it lead you to a proverb worth keeping.</p>
+    <ul class="pt-siblings"><li><a href="/proverbs/timing-and-fortune/">Chinese proverbs about fate and luck</a></li>
+<li><a href="/proverbs/perseverance/">Chinese proverbs about perseverance</a></li>
+<li><a href="/proverbs/courage/">Chinese proverbs about courage</a></li></ul>
     <p>Years these proverbs speak to: <span class="pt-years"><a href="/chinese-zodiac/rat/">鼠 Rat</a><a href="/chinese-zodiac/monkey/">猴 Monkey</a><a href="/chinese-zodiac/ox/">牛 Ox</a></span></p>
   </section>
+    </div>
+  </div>
   <footer class="pt-foot pf-foot">
     <div>The Primal <b style="color:var(--brass,#d6c18c)">Oracle</b></div>
     <p class="pf-disc">These proverbs are living Chinese cultural heritage, presented with per-character pinyin and their classical sources out of respect for the tradition. Meanings are given faithfully; the pairing of a proverb to a Chinese zodiac year is our own reading for reflection, not tradition, and nothing here is medical, psychological, financial, or legal advice.</p>
@@ -274,9 +501,34 @@ for(var i=0;i<st.length;i++){var s=st[i];if(!reduce)s.a+=s.s;var al=0.25+Math.ab
 if(!document.hidden&&!reduce)requestAnimationFrame(f);})();
 })();
 </script>
+<script>
+(function(){
+  var box=document.getElementById("ptSearch");
+  var grid=document.getElementById("ptGrid");
+  if(!box||!grid)return;
+  var cards=Array.prototype.slice.call(grid.querySelectorAll(".pv-card"));
+  var count=document.getElementById("ptCount");
+  var empty=document.getElementById("ptEmpty");
+  var total=cards.length;
+  function norm(s){return String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
+  function run(){
+    var q=norm(box.value.trim());
+    var shown=0;
+    for(var i=0;i<cards.length;i++){
+      var ok=!q||cards[i].getAttribute("data-q").indexOf(q)!==-1;
+      cards[i].hidden=!ok;
+      if(ok)shown++;
+    }
+    if(count)count.textContent=(shown===total?total+" proverbs":shown+" of "+total);
+    if(empty)empty.hidden=shown!==0;
+  }
+  box.addEventListener("input",run);
+})();
+</script>
 <script src="/js/data.js"></script>
 <script src="/js/engine.js"></script>
 <script src="/js/nav.js" defer></script>
+<script src="/js/proverbs-share.js" defer></script>
 <!--om-footer:start-->
 <footer class="om-footer">
   <div class="omf-moonrise" aria-hidden="true"><span class="omf-moonball"></span><span class="omf-hairline"></span></div>

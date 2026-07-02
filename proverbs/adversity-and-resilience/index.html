@@ -3,14 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chinese Proverbs on Adversity and Resilience with Pinyin &amp; Meaning | The Proverb Pond</title>
-<meta name="description" content="Chinese proverbs on adversity, resilience, and enduring hardship, each with pinyin, meaning, classical source, and a Mandarin reading.">
+<title>Chinese Proverbs About Adversity &amp; Resilience | Zodi Animal</title>
+<meta name="description" content="Chinese proverbs about adversity, hardship and resilience, in hanzi with pinyin and meaning. 卧薪尝胆, 天将降大任, the pine in winter and more, sourced and explained.">
 <link rel="canonical" href="https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chinese Proverbs on Adversity and Resilience">
-<meta property="og:description" content="Chinese proverbs on adversity, resilience, and enduring hardship, each with pinyin, meaning, classical source, and a Mandarin reading.">
+<meta property="og:title" content="Chinese Proverbs About Adversity &amp; Resilience">
+<meta property="og:description" content="Chinese proverbs about adversity, hardship and resilience, in hanzi with pinyin and meaning. 卧薪尝胆, 天将降大任, the pine in winter and more, sourced and explained.">
 <meta property="og:url" content="https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/">
 <meta property="og:site_name" content="The Primal Oracle">
+<meta property="og:image" content="https://spirit-omega.vercel.app/social/og/pond-adversity-and-resilience.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://spirit-omega.vercel.app/social/og/pond-adversity-and-resilience.png">
+<meta name="theme-color" content="#4F9E77">
 <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/oracle.css">
 <link rel="stylesheet" href="/css/profile.css">
@@ -30,60 +36,146 @@
 .pf-proverb-soul{margin:14px 0 10px;color:var(--moon,#f5ecd2);font-family:var(--serif,serif);font-size:1.18rem;font-style:italic;max-width:60ch;line-height:1.55}
 .pf-proverb-note{color:var(--muted,#9a9bb0);font-size:.85rem;margin:0}
 @media (prefers-reduced-motion:reduce){.pf-say.is-saying{animation:none}}
-.pt-wrap{max-width:1180px;margin:0 auto;padding:0 20px 80px}
+.pv-share{display:inline-block;margin-top:8px;font-size:.78rem;color:var(--brass-bright,#efe2b4);background:none;border:0;cursor:pointer;border-bottom:1px solid rgba(214,193,140,.4);padding:0 0 1px;font-family:inherit}
+.pv-share:hover{color:var(--moon,#f5ecd2)}
+
+.pv-rail{align-self:start}
+.pv-rail-head{font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.18em;font-size:.62rem;color:var(--muted,#9a9bb0);margin:0 0 12px;padding:0 4px}
+.pv-rail-list{display:flex;flex-direction:column;gap:3px}
+.pv-rail-row{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:12px;text-decoration:none;
+  border:1px solid transparent;border-left:3px solid transparent;transition:background .18s,border-color .18s,transform .18s}
+.pv-rail-row:hover{background:rgba(214,193,140,.06);transform:translateX(2px)}
+.pv-rail-row:focus-visible{outline:none;border-color:var(--brass,#d6c18c);background:rgba(214,193,140,.06)}
+.pv-rail-dot{flex:0 0 auto;width:11px;height:11px;border-radius:50%;background:var(--row-accent,#d6c18c);
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--row-accent,#d6c18c) 22%,transparent)}
+.pv-rail-dot-all{background:linear-gradient(135deg,#efe2b4,#d6c18c);box-shadow:0 0 0 3px rgba(214,193,140,.2)}
+.pv-rail-name{flex:1 1 auto;display:flex;flex-direction:column;gap:1px;font-family:var(--font-display,"Fraunces",serif);
+  color:var(--body,#c8c9de);font-size:.96rem;line-height:1.2}
+.pv-rail-kw{font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;font-size:.56rem;color:var(--muted,#9a9bb0)}
+.pv-rail-n{flex:0 0 auto;font-family:"Space Mono",ui-monospace,monospace;font-size:.72rem;color:var(--muted,#9a9bb0);letter-spacing:.03em}
+.pv-rail-row:hover .pv-rail-name{color:var(--moon,#f5ecd2)}
+.pv-rail-row.is-active{background:color-mix(in srgb,var(--row-accent,#d6c18c) 12%,transparent);border-left-color:var(--row-accent,#d6c18c)}
+.pv-rail-row.is-active .pv-rail-name{color:var(--moon,#f5ecd2)}
+.pv-rail-row.is-active .pv-rail-n{color:var(--row-accent,#d6c18c)}
+.pv-rail-all{--row-accent:var(--brass,#d6c18c)}
+.pv-rail-all.is-active{background:rgba(214,193,140,.12);border-left-color:var(--brass,#d6c18c)}
+
+/* mobile / tablet: the rail becomes a horizontal swipe strip of pills,
+   pinned under the breadcrumb, never covering the content */
+@media (max-width:959px){
+  .pv-rail{position:sticky;top:56px;z-index:6;margin:0 -20px 8px;padding:10px 16px;
+    background:linear-gradient(180deg,rgba(10,12,22,.94),rgba(10,12,22,.8));border-bottom:1px solid rgba(214,193,140,.14);
+    backdrop-filter:blur(8px)}
+  .pv-rail-head{display:none}
+  .pv-rail-list{flex-direction:row;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}
+  .pv-rail-list::-webkit-scrollbar{display:none}
+  .pv-rail-row{flex:0 0 auto;border:1px solid rgba(214,193,140,.22);border-left:1px solid rgba(214,193,140,.22);
+    border-radius:999px;padding:8px 14px;gap:8px;white-space:nowrap}
+  .pv-rail-row:hover{transform:none}
+  .pv-rail-kw{display:none}
+  .pv-rail-n{opacity:.7}
+  .pv-rail-row.is-active{border-color:var(--row-accent,#d6c18c);border-left-color:var(--row-accent,#d6c18c);
+    background:color-mix(in srgb,var(--row-accent,#d6c18c) 16%,transparent)}
+}
+@media (prefers-reduced-motion:reduce){.pv-rail-row{transition:none}}
+
+.pt-wrap{max-width:1240px;margin:0 auto;padding:0 20px 80px}
 .pt-crumb{margin:14px 0 6px;font-size:.85rem;color:var(--muted,#9a9bb0)}
 .pt-crumb a{color:var(--brass-bright,#efe2b4);text-decoration:none}
 .pt-crumb b{color:var(--body,#c8c9de);font-weight:500}
-.pt-hero{padding:26px 0 6px;max-width:74ch}
-.pt-eyebrow{font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.22em;font-size:.7rem;color:var(--brass-bright,#efe2b4);margin:0 0 10px}
+
+/* the two-column layout: sticky rail left, content right */
+.pv-layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px;align-items:start;margin-top:6px}
+.pv-layout > .pv-rail{position:sticky;top:78px;max-height:calc(100vh - 96px);overflow-y:auto;padding-right:4px}
+.pv-main{min-width:0}
+@media (max-width:959px){.pv-layout{display:block}.pv-layout > .pv-rail{position:sticky;max-height:none;overflow:visible;padding-right:0}}
+
+/* per-pond accent flourishes over the unchanging dark base */
+.pt-hero{padding:22px 0 6px;max-width:74ch}
+.pt-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.2em;font-size:.7rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));margin:0 0 12px}
+.pt-eyebrow .pt-koi{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;
+  font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-size:.9rem;letter-spacing:0;color:var(--pond-accent,#efe2b4);
+  background:color-mix(in srgb,var(--pond-accent,#d6c18c) 16%,transparent);
+  box-shadow:0 0 0 1px color-mix(in srgb,var(--pond-accent,#d6c18c) 40%,transparent),0 0 22px -6px var(--pond-accent,#d6c18c)}
 .pt-hero h1{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(2rem,5.5vw,3.2rem);line-height:1.06;margin:0 0 16px;color:var(--moon,#f5ecd2)}
+.pt-hero h1 .pt-flourish{display:block;width:66px;height:3px;margin-top:14px;border-radius:2px;
+  background:linear-gradient(90deg,var(--pond-accent,#d6c18c),transparent)}
 .pt-answer{margin:0 0 8px}
-.pt-answer h2{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(1.35rem,3.4vw,1.7rem);color:var(--moon,#f5ecd2);margin:0 0 10px}
-.pt-answer p{color:var(--body,#c8c9de);font-size:1.12rem;line-height:1.62;margin:0}
-.pt-chapter{margin:30px 0 8px;max-width:66ch}
-.pt-chapter p{color:var(--body,#c8c9de);font-size:1.05rem;line-height:1.68;margin:0 0 16px}
-.pt-chapter p.pt-quote{color:var(--moon,#f5ecd2);font-family:var(--font-display,"Fraunces",serif);font-style:italic;font-size:1.32rem;line-height:1.5;border-left:3px solid var(--brass,#d6c18c);padding-left:18px;margin:22px 0}
-.pt-section-head{margin:50px 0 6px}
+.pt-answer p{color:var(--body,#c8c9de);font-size:1.14rem;line-height:1.62;margin:0}
+.pt-answer .pt-lede-zh{font-family:"Ma Shan Zheng","Noto Serif SC",serif;color:var(--pond-accent,var(--brass,#d6c18c));font-size:1.15em;letter-spacing:.02em}
+
+.pt-chapter{margin:34px 0 8px;max-width:66ch}
+.pt-chapter p{color:var(--body,#c8c9de);font-size:1.05rem;line-height:1.72;margin:0 0 18px}
+.pt-chapter p.pt-quote{color:var(--moon,#f5ecd2);font-family:var(--font-display,"Fraunces",serif);font-style:italic;font-size:1.34rem;line-height:1.5;border-left:3px solid var(--pond-accent,var(--brass,#d6c18c));padding-left:18px;margin:26px 0}
+
+.pt-section-head{margin:46px 0 6px}
 .pt-section-head h2{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(1.5rem,4vw,2.1rem);color:var(--moon,#f5ecd2);margin:0}
 .pt-section-head p{color:var(--muted,#9a9bb0);margin:6px 0 0}
-.pt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:22px}
+
+/* key-ideas glossary chips */
+.pv-gloss{margin:8px 0 0}
+.pv-gloss-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:16px}
+.pv-gloss-chip{padding:16px 18px;border-radius:14px;border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 26%,rgba(214,193,140,.16));
+  background:linear-gradient(180deg,rgba(20,22,40,.5),rgba(12,14,26,.5))}
+.pv-gloss-han{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-size:1.7rem;color:var(--moon,#f5ecd2);letter-spacing:.04em;margin-right:8px}
+.pv-gloss-py{font-family:"Space Mono",ui-monospace,monospace;font-size:.72rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));letter-spacing:.04em}
+.pv-gloss-def{display:block;margin-top:8px;color:var(--body,#c8c9de);font-size:.92rem;line-height:1.55}
+
+/* the pond's search box + card grid */
+.pt-searchwrap{margin:22px 0 4px;position:relative}
+.pt-search{width:100%;padding:13px 16px 13px 44px;border-radius:12px;border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 30%,rgba(214,193,140,.28));background:rgba(8,10,20,.7);color:var(--moon,#f5ecd2);font-size:1rem}
+.pt-search::placeholder{color:var(--muted,#9a9bb0)}
+.pt-search:focus{outline:none;border-color:var(--pond-accent,var(--brass,#d6c18c));box-shadow:0 0 0 3px color-mix(in srgb,var(--pond-accent,#d6c18c) 18%,transparent)}
+.pt-searchwrap svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--muted,#9a9bb0);pointer-events:none}
+.pt-searchcount{margin:10px 0 0;font-family:"Space Mono",ui-monospace,monospace;font-size:.74rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));letter-spacing:.03em}
+
+.pt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:20px}
 .pv-card{position:relative;padding:22px 22px 18px;border-radius:16px;
-  background:linear-gradient(180deg,rgba(20,22,40,.55),rgba(12,14,26,.55));border:1px solid rgba(214,193,140,.16);
+  background:linear-gradient(180deg,rgba(20,22,40,.55),rgba(12,14,26,.55));
+  border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 20%,rgba(214,193,140,.16));
   transition:transform .25s,border-color .25s,box-shadow .25s}
-.pv-card:hover{transform:translateY(-3px);border-color:rgba(214,193,140,.4);box-shadow:0 24px 50px -30px rgba(0,0,0,.9)}
+.pv-card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--pond-accent,#d6c18c) 55%,rgba(214,193,140,.4));box-shadow:0 24px 50px -30px rgba(0,0,0,.9)}
+.pv-card[hidden]{display:none}
 .pv-zh{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-size:clamp(2rem,6vw,2.7rem);line-height:1.55;color:var(--moon,#f5ecd2);margin:0 0 6px;letter-spacing:.04em;display:flex;align-items:center;gap:.22em;flex-wrap:wrap}
-.pv-zh ruby rt{font-family:"Inter",system-ui,sans-serif;font-size:.3em;color:var(--brass-bright,#efe2b4);font-weight:500}
+.pv-zh ruby rt{font-family:"Inter",system-ui,sans-serif;font-size:.3em;color:var(--pond-accent,var(--brass-bright,#efe2b4));font-weight:500}
 .pv-zh .cx-punct{opacity:.5}
-.pv-pinyin{font-family:"Space Mono",ui-monospace,monospace;color:var(--brass-bright,#efe2b4);letter-spacing:.05em;font-size:.8rem;margin:0 0 8px}
+.pv-pinyin{font-family:"Space Mono",ui-monospace,monospace;color:var(--pond-accent,var(--brass-bright,#efe2b4));letter-spacing:.05em;font-size:.8rem;margin:0 0 8px}
 .pv-lit{color:var(--muted,#9a9bb0);font-style:italic;margin:0 0 8px;font-size:.9rem}
 .pv-mean{color:var(--body,#c8c9de);margin:0 0 10px;font-size:.96rem;line-height:1.5}
 .pv-soul{color:var(--moon,#f5ecd2);font-family:var(--font-display,"Fraunces",serif);font-style:italic;font-size:1.02rem;line-height:1.5;margin:0 0 14px}
 .pv-tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
-.pv-tag{font-size:.68rem;letter-spacing:.02em;color:var(--brass-bright,#efe2b4);background:rgba(214,193,140,.08);border:1px solid rgba(214,193,140,.2);border-radius:6px;padding:3px 8px;text-decoration:none}
-.pv-tag-animal:hover{background:rgba(214,193,140,.2)}
+.pv-tag{font-size:.68rem;letter-spacing:.02em;color:var(--pond-accent,var(--brass-bright,#efe2b4));background:color-mix(in srgb,var(--pond-accent,#d6c18c) 10%,rgba(214,193,140,.08));border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 32%,rgba(214,193,140,.2));border-radius:6px;padding:3px 8px;text-decoration:none}
+.pv-tag-animal:hover{background:color-mix(in srgb,var(--pond-accent,#d6c18c) 22%,rgba(214,193,140,.2))}
 .pv-src{color:var(--muted,#9a9bb0);font-size:.76rem;margin:0}
-.pv-src .k{text-transform:uppercase;letter-spacing:.08em;font-size:.66rem;color:var(--brass-bright,#efe2b4);margin-right:6px}
-.pv-more{display:inline-block;margin-top:10px;font-size:.78rem;color:var(--brass-bright,#efe2b4);text-decoration:none;border-bottom:1px solid rgba(214,193,140,.4)}
+.pv-src .k{text-transform:uppercase;letter-spacing:.08em;font-size:.66rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));margin-right:6px}
+.pv-card-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;flex-wrap:wrap}
+.pv-more{display:inline-block;font-size:.78rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 40%,rgba(214,193,140,.4))}
 .pv-more:hover{color:var(--moon,#f5ecd2)}
-.pt-faq{margin:60px auto 0;max-width:760px}
+.pv-share-btn{display:inline-flex;align-items:center;gap:6px;font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.1em;font-size:.62rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));background:color-mix(in srgb,var(--pond-accent,#d6c18c) 9%,rgba(214,193,140,.06));border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 34%,rgba(214,193,140,.28));border-radius:999px;padding:6px 12px;cursor:pointer;transition:background .18s,border-color .18s}
+.pv-share-btn:hover{background:color-mix(in srgb,var(--pond-accent,#d6c18c) 20%,rgba(214,193,140,.16));color:var(--moon,#f5ecd2)}
+.pt-empty{text-align:center;color:var(--muted,#9a9bb0);padding:40px 20px;font-family:var(--font-display,"Fraunces",serif);font-size:1.15rem}
+.pt-empty[hidden]{display:none}
+
+.pt-faq{margin:56px 0 0;max-width:760px}
 .pt-faq h2{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(1.5rem,4vw,2.1rem);color:var(--moon,#f5ecd2);margin:0 0 18px}
 .pt-qa{margin:0 0 20px}
-.pt-qa h3{color:var(--brass-bright,#efe2b4);font-size:1.05rem;margin:0 0 6px}
+.pt-qa h3{color:var(--pond-accent,var(--brass-bright,#efe2b4));font-size:1.05rem;margin:0 0 6px}
 .pt-qa p{color:var(--body,#c8c9de);line-height:1.6;margin:0;max-width:66ch}
-.pt-explore{margin:52px 0 0;padding:24px;border-radius:16px;border:1px solid rgba(214,193,140,.18);background:rgba(12,14,26,.5)}
+
+.pt-explore{margin:52px 0 0;padding:24px;border-radius:16px;border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 22%,rgba(214,193,140,.18));background:rgba(12,14,26,.5)}
 .pt-explore h2{font-family:var(--font-display,"Fraunces",serif);font-weight:560;color:var(--moon,#f5ecd2);margin:0 0 8px;font-size:1.3rem}
 .pt-explore p{color:var(--body,#c8c9de);line-height:1.66;margin:0 0 12px;max-width:74ch}
-.pt-explore a{color:var(--brass-bright,#efe2b4)}
+.pt-explore a{color:var(--pond-accent,var(--brass-bright,#efe2b4))}
 .pt-siblings{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-wrap:wrap;gap:8px}
-.pt-siblings a{display:inline-block;font-size:.82rem;color:var(--brass-bright,#efe2b4);background:rgba(214,193,140,.08);border:1px solid rgba(214,193,140,.22);border-radius:999px;padding:6px 13px;text-decoration:none}
-.pt-siblings a:hover{border-color:var(--brass,#d6c18c);color:var(--moon,#f5ecd2)}
-.pt-years a{color:var(--brass-bright,#efe2b4);text-decoration:none;margin-right:14px;white-space:nowrap}
+.pt-siblings a{display:inline-block;font-size:.82rem;color:var(--pond-accent,var(--brass-bright,#efe2b4));background:color-mix(in srgb,var(--pond-accent,#d6c18c) 10%,rgba(214,193,140,.08));border:1px solid color-mix(in srgb,var(--pond-accent,#d6c18c) 30%,rgba(214,193,140,.22));border-radius:999px;padding:6px 13px;text-decoration:none}
+.pt-siblings a:hover{border-color:var(--pond-accent,var(--brass,#d6c18c));color:var(--moon,#f5ecd2)}
+.pt-years a{color:var(--pond-accent,var(--brass-bright,#efe2b4));text-decoration:none;margin-right:14px;white-space:nowrap}
 .pt-years a:hover{color:var(--moon,#f5ecd2);text-decoration:underline}
 .pt-foot{margin-top:40px}
 .pt-foot .pf-disc{color:var(--muted,#9a9bb0);font-size:.85rem;max-width:80ch}
-@media (prefers-reduced-motion:reduce){.pv-card{transition:none}.pf-say.is-saying{animation:none}}
+@media (prefers-reduced-motion:reduce){.pv-card{transition:none}.pf-say.is-saying{animation:none}.pv-share-btn{transition:none}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","@id":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://spirit-omega.vercel.app/"},{"@type":"ListItem","position":2,"name":"The Proverb Pond","item":"https://spirit-omega.vercel.app/proverbs/"},{"@type":"ListItem","position":3,"name":"Adversity & Resilience","item":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/"}]},{"@type":"CollectionPage","@id":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/#page","url":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/","name":"Chinese Proverbs on Adversity and Resilience","description":"Chinese proverbs on adversity, resilience, and enduring hardship, each with pinyin, meaning, classical source, and a Mandarin reading.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"The Primal Oracle","url":"https://spirit-omega.vercel.app/"},"about":{"@type":"Thing","name":"Chinese proverbs on Adversity & Resilience"}},{"@type":"ItemList","@id":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/#list","name":"Chinese Proverbs on Adversity and Resilience","numberOfItems":5,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"CreativeWork","name":"天將降大任於斯人也，必先苦其心志 (tiān jiāng jiàng dà rèn yú sī rén yě, bì xiān kǔ qí xīn zhì)","alternateName":"when Heaven is about to lay a great charge on a person, it first embitters their heart and will","text":"Great responsibility is preceded by suffering that hardens the mind; the ordeal is the training, not the punishment.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/#p-tian-jiang-jiang-da-ren"}},{"@type":"ListItem","position":2,"item":{"@type":"CreativeWork","name":"臥薪嘗膽 (wò xīn cháng dǎn)","alternateName":"sleep on brushwood, taste gall","text":"Endure self-imposed hardship and never let comfort dull your resolve, so you can rise from defeat.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/#p-wo-xin-chang-dan"}},{"@type":"ListItem","position":3,"item":{"@type":"CreativeWork","name":"千磨萬擊還堅勁，任爾東西南北風 (qiān mó wàn jī hái jiān jìng, rèn ěr dōng xī nán běi fēng)","alternateName":"a thousand grindings, ten thousand blows, still firm and strong; let the winds blow east, west, south, north","text":"Rooted resolve outlasts every battering; once your footing is real, no direction of pressure can topple you.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/#p-qian-mo-wan-ji-hai-jian-jing"}},{"@type":"ListItem","position":4,"item":{"@type":"CreativeWork","name":"亡羊補牢 (wáng yáng bǔ láo)","alternateName":"the sheep is lost, then mend the fold","text":"It is never too late to repair the damage after a loss.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/#p-lost-sheep-mend-fold"}},{"@type":"ListItem","position":5,"item":{"@type":"CreativeWork","name":"留得青山在，不怕沒柴燒 (liú dé qīng shān zài, bù pà méi chái shāo)","alternateName":"keep the green hills, and you'll never fear having no firewood","text":"Everything lost can be regrown as long as you protect the foundation: life, health, the source itself.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/#p-liu-de-qing-shan-zai"}}]},{"@type":"FAQPage","@id":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/#faq","mainEntity":[{"@type":"Question","name":"What do Chinese proverbs say about adversity and resilience?","acceptedAnswer":{"@type":"Answer","text":"They say keep the green hills and you never fear having no firewood. The sheep is lost, so mend the fold; it is never too late. When heaven is about to lay a great charge on you, it first embitters your heart. The ordeal is the training, not the punishment. Guard the foundation, and everything lost can be regrown."}},{"@type":"Question","name":"What does 留得青山在，不怕沒柴燒 mean?","acceptedAnswer":{"@type":"Answer","text":"Liú dé qīng shān zài, bù pà méi chái shāo, keep the green hills and you will never fear having no firewood. Protect the foundation, your life and health and source, and everything lost from it can be regrown in time."}},{"@type":"Question","name":"What is 亡羊補牢?","acceptedAnswer":{"@type":"Answer","text":"Wáng yáng bǔ láo, the sheep is lost, then mend the fold, from the Strategies of the Warring States. It teaches that it is never too late to repair the damage after a loss. Mending the fence is how the rest of the flock stays."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","@id":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://spirit-omega.vercel.app/"},{"@type":"ListItem","position":2,"name":"The Proverb Pond","item":"https://spirit-omega.vercel.app/proverbs/"},{"@type":"ListItem","position":3,"name":"Adversity & Resilience","item":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/"}]},{"@type":"CollectionPage","@id":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/#page","url":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/","name":"Chinese Proverbs About Adversity & Resilience","description":"Chinese proverbs about adversity, hardship and resilience, in hanzi with pinyin and meaning. 卧薪尝胆, 天将降大任, the pine in winter and more, sourced and explained.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"The Primal Oracle","url":"https://spirit-omega.vercel.app/"},"about":{"@type":"Thing","name":"Chinese proverbs on Adversity & Resilience"}},{"@type":"ItemList","@id":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/#list","name":"Chinese Proverbs About Adversity & Resilience","numberOfItems":5,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"CreativeWork","name":"天將降大任於斯人也，必先苦其心志 (tiān jiāng jiàng dà rèn yú sī rén yě, bì xiān kǔ qí xīn zhì)","alternateName":"when Heaven is about to lay a great charge on a person, it first embitters their heart and will","text":"Great responsibility is preceded by suffering that hardens the mind; the ordeal is the training, not the punishment.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/say/tian-jiang-jiang-da-ren/"}},{"@type":"ListItem","position":2,"item":{"@type":"CreativeWork","name":"臥薪嘗膽 (wò xīn cháng dǎn)","alternateName":"sleep on brushwood, taste gall","text":"Endure self-imposed hardship and never let comfort dull your resolve, so you can rise from defeat.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/say/wo-xin-chang-dan/"}},{"@type":"ListItem","position":3,"item":{"@type":"CreativeWork","name":"千磨萬擊還堅勁，任爾東西南北風 (qiān mó wàn jī hái jiān jìng, rèn ěr dōng xī nán běi fēng)","alternateName":"a thousand grindings, ten thousand blows, still firm and strong; let the winds blow east, west, south, north","text":"Rooted resolve outlasts every battering; once your footing is real, no direction of pressure can topple you.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/say/qian-mo-wan-ji-hai-jian-jing/"}},{"@type":"ListItem","position":4,"item":{"@type":"CreativeWork","name":"亡羊補牢 (wáng yáng bǔ láo)","alternateName":"the sheep is lost, then mend the fold","text":"It is never too late to repair the damage after a loss.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/say/lost-sheep-mend-fold/"}},{"@type":"ListItem","position":5,"item":{"@type":"CreativeWork","name":"留得青山在，不怕沒柴燒 (liú dé qīng shān zài, bù pà méi chái shāo)","alternateName":"keep the green hills, and you'll never fear having no firewood","text":"Everything lost can be regrown as long as you protect the foundation: life, health, the source itself.","inLanguage":"zh-Hant","url":"https://spirit-omega.vercel.app/proverbs/say/liu-de-qing-shan-zai/"}}]},{"@type":"FAQPage","@id":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/#faq","mainEntity":[{"@type":"Question","name":"What is the Chinese proverb about hardship making you stronger?","acceptedAnswer":{"@type":"Answer","text":"天將降大任於斯人也，必先苦其心志 (tiān jiāng jiàng dà rèn yú sī rén yě, bì xiān kǔ qí xīn zhì), from Mencius. It teaches that before Heaven entrusts a great task to someone, it first hardens their mind through suffering. The ordeal is the training, not a punishment."}},{"@type":"Question","name":"What does 卧薪尝胆 mean?","acceptedAnswer":{"@type":"Answer","text":"臥薪嘗膽 (wò xīn cháng dǎn), sleep on brushwood and taste gall, comes from the story of King Goujian, who slept on firewood and licked a bitter gallbladder to keep his humiliation fresh. It means enduring self-imposed hardship so comfort never softens your resolve to recover."}},{"@type":"Question","name":"Is there a Chinese proverb about staying strong under pressure?","acceptedAnswer":{"@type":"Answer","text":"Yes. 千磨萬擊還堅勁，任爾東西南北風 (Zheng Banqiao) says the bamboo, ground and struck ten thousand times, only grows tougher, no matter which way the wind blows. Once your footing is real, no direction of pressure can topple you. Hardship builds the strength."}},{"@type":"Question","name":"What is the meaning of 留得青山在，不怕没柴烧?","acceptedAnswer":{"@type":"Answer","text":"留得青山在，不怕沒柴燒 (liú dé qīng shān zài, bù pà méi chái shāo) means: keep the green mountain and you will never lack firewood. It teaches that protecting the source, your life, health and foundation, matters more than any single loss, because from the root everything can be regrown."}}]}]}</script>
 <script>window.PN_HERE="proverbs";</script>
 <!--pn-assets:start-->
 <script data-pn-assets="theme-boot">(function(){try{var m=new Date().getMonth();var s=m>=2&&m<=4?"spring":m>=5&&m<=7?"summer":m>=8&&m<=10?"autumn":"winter";var d=document.documentElement;d.dataset.theme="dark";d.dataset.season=s;}catch(e){}})();</script>
@@ -111,7 +203,7 @@
 <link rel="stylesheet" href="/css/a11y.css" data-pn="/css/a11y.css">
 <!--pn-css:end-->
 <!--pn-crumb-ld:start-->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://spirit-omega.vercel.app/"},{"@type":"ListItem","position":2,"name":"Proverbs","item":"https://spirit-omega.vercel.app/proverbs/"},{"@type":"ListItem","position":3,"name":"Chinese Proverbs on Adversity and Resilience with Pinyin &amp; Meaning","item":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://spirit-omega.vercel.app/"},{"@type":"ListItem","position":2,"name":"Proverbs","item":"https://spirit-omega.vercel.app/proverbs/"},{"@type":"ListItem","position":3,"name":"Chinese Proverbs About Adversity &amp; Resilience","item":"https://spirit-omega.vercel.app/proverbs/adversity-and-resilience/"}]}</script>
 <!--pn-crumb-ld:end-->
 </head>
 <body class="pn-has-bar">
@@ -126,7 +218,7 @@
         <div class="pn-item" data-accent="teal"><button class="pn-trigger" type="button" data-group="1" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Explore<span class="chev" aria-hidden="true"></span></button></div>
         <div class="pn-item" data-accent="brass"><button class="pn-trigger" type="button" data-group="2" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Zodiac<span class="chev" aria-hidden="true"></span></button></div>
         <div class="pn-item" data-accent="amethyst"><button class="pn-trigger" type="button" data-group="3" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Horoscope<span class="chev" aria-hidden="true"></span></button></div>
-        <div class="pn-item" data-accent="jade"><button class="pn-trigger" type="button" data-group="4" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Sage Wisdom<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="jade"><button class="pn-trigger active" type="button" data-group="4" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Sage Wisdom<span class="chev" aria-hidden="true"></span></button></div>
         <div class="pn-item" data-accent="rose"><button class="pn-trigger" type="button" data-group="5" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Bonds<span class="chev" aria-hidden="true"></span></button></div>
         <div class="pn-item" data-accent="silver"><button class="pn-trigger" type="button" data-group="6" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Moon<span class="chev" aria-hidden="true"></span></button></div>
     </nav>
@@ -173,7 +265,7 @@
   </div>
   <div class="pn-panel pn-panel-sage" data-group="4" data-accent="jade" role="region" aria-label="Sage Wisdom" hidden>
     <p class="pn-panel-eyebrow">The craft, what you do with your animal</p>
-    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Stones</p><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/traditions/birthstones-and-moonstone/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Birthstones and moonstone</span></a><a class="pn-row" href="/traditions/stones-for-your-animal/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Stones for your animal</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">卦</span> Feng shui</p><a class="pn-row" href="/feng-shui/bagua/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The bagua</span></a><a class="pn-row" href="/feng-shui/five-elements/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Five phases</span></a><a class="pn-row" href="/feng-shui/kua-number/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your Kua number</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">❦</span> Proverbs and lore</p><a class="pn-row" href="/proverbs/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Proverbs</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a></div></div>
+    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Stones</p><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/traditions/birthstones-and-moonstone/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Birthstones and moonstone</span></a><a class="pn-row" href="/traditions/stones-for-your-animal/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Stones for your animal</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">卦</span> Feng shui</p><a class="pn-row" href="/feng-shui/bagua/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The bagua</span></a><a class="pn-row" href="/feng-shui/five-elements/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Five phases</span></a><a class="pn-row" href="/feng-shui/kua-number/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your Kua number</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">❦</span> Proverbs and lore</p><a class="pn-row" href="/proverbs/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Proverb Pond</span><span class="pn-row-sub">Chinese proverbs, pronounced</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">❦</span> The Proverb Pond, by theme</p><a class="pn-row" href="/proverbs/wealth-and-work/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Money and work</span></a><a class="pn-row" href="/proverbs/home-and-family/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Family and roots</span></a><a class="pn-row" href="/proverbs/nature-and-seasons/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Health and nature</span></a><a class="pn-row" href="/proverbs/friendship-and-trust/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Friendship and trust</span></a><a class="pn-row" href="/proverbs/the-way-of-water/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The way of water</span></a><a class="pn-row" href="/proverbs/timing-and-fortune/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Fate and fortune</span></a><a class="pn-row" href="/proverbs/perseverance/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Perseverance</span></a><a class="pn-row" href="/proverbs/courage/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Courage</span></a><a class="pn-row" href="/proverbs/wisdom-and-learning/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Wisdom and learning</span></a><a class="pn-row" href="/proverbs/harmony-and-virtue/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Harmony and virtue</span></a><a class="pn-row" href="/proverbs/humility-and-self-mastery/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Humility</span></a><a class="pn-row active" href="/proverbs/adversity-and-resilience/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Adversity</span></a></div></div>
     <div class="pn-panel-cta"><div class="pn-ebook"><span class="pn-ebook-tag">Free · Feng Shui e-book</span><h3 class="pn-ebook-title">Your animal's placement guide</h3><p class="pn-ebook-body">Where to sleep, work, and rest, mapped to your animal. Free when you create a Zodi account.</p><a class="pn-ebook-link" href="/account.html">Create free account <span class="pn-ebook-note">opening soon</span></a></div></div>
     <div class="pn-panel-foot"><a href="/feng-shui/">All of feng shui</a></div>
   </div>
@@ -187,34 +279,151 @@
     <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> Tonight</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-full" viewBox="0 0 24 24" role="img" aria-labelledby="moon-full-t moon-full-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-full-t">Full moon</title><desc id="moon-full-d">The whole disc lit.</desc><circle cx="12" cy="12" r="9" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Waning Gibbous</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days ahead</span><span class="pn-row-sub">the favorable days for you</span></a><a class="pn-row" href="/awakening.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Awakening</span><span class="pn-row-sub">the path from fear to strength</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◐</span> The eight phases</p><a class="pn-row" href="/moon/phases/new-moon/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-new" viewBox="0 0 24 24" role="img" aria-labelledby="moon-new-t moon-new-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-new-t">New moon</title><desc id="moon-new-d">The dark disc of the new moon.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">New Moon</span></a><a class="pn-row" href="/moon/phases/waxing-crescent/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waxing-crescent" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waxing-crescent-t moon-waxing-crescent-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waxing-crescent-t">Waxing crescent moon</title><desc id="moon-waxing-crescent-d">A thin lit crescent on the right.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A6.36 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waxing Crescent</span></a><a class="pn-row" href="/moon/phases/first-quarter/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-first-quarter" viewBox="0 0 24 24" role="img" aria-labelledby="moon-first-quarter-t moon-first-quarter-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-first-quarter-t">First quarter moon</title><desc id="moon-first-quarter-d">The right half lit.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A0 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">First Quarter</span></a><a class="pn-row" href="/moon/phases/waxing-gibbous/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waxing-gibbous" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waxing-gibbous-t moon-waxing-gibbous-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waxing-gibbous-t">Waxing gibbous moon</title><desc id="moon-waxing-gibbous-d">Most of the disc lit, growing.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A6.36 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waxing Gibbous</span></a><a class="pn-row" href="/moon/phases/full-moon/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-full" viewBox="0 0 24 24" role="img" aria-labelledby="moon-full-t moon-full-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-full-t">Full moon</title><desc id="moon-full-d">The whole disc lit.</desc><circle cx="12" cy="12" r="9" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Full Moon</span></a><a class="pn-row" href="/moon/phases/waning-gibbous/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waning-gibbous" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waning-gibbous-t moon-waning-gibbous-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waning-gibbous-t">Waning gibbous moon</title><desc id="moon-waning-gibbous-d">Most of the disc lit, shrinking.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A6.36 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waning Gibbous</span></a><a class="pn-row" href="/moon/phases/last-quarter/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-last-quarter" viewBox="0 0 24 24" role="img" aria-labelledby="moon-last-quarter-t moon-last-quarter-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-last-quarter-t">Last quarter moon</title><desc id="moon-last-quarter-d">The left half lit.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A0 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Last Quarter</span></a><a class="pn-row" href="/moon/phases/waning-crescent/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waning-crescent" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waning-crescent-t moon-waning-crescent-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waning-crescent-t">Waning crescent moon</title><desc id="moon-waning-crescent-d">A thin lit crescent on the left.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A6.36 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waning Crescent</span></a></div></div>
     <div class="pn-panel-foot"><a href="/moon.html">Read the Moon tonight in full</a></div>
   </div>
-  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/index.html#read">Find yours</a><a href="/index.html">Find your animal</a><a href="/daily.html">Today's reading</a><a href="/year.html">Year finder</a><a href="/account.html">Your account</a><a href="/menagerie.html">All 144 animals</a><a href="/western-zodiac/">Western wing</a><a href="/chinese-zodiac/">Eastern wing</a><a href="/zodiac/">Zodiac crossings</a><a href="/moon.html">The Moon tonight</a><a href="/moon/phases/">The eight phases</a><a href="/moon/in-your-sign/">Moon in your sign</a><a href="/best-days.html">Best days</a><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a><a href="/feng-shui/">Feng shui</a><a href="/habitat/">The Habitat</a><a href="/stones.html">Keeper stones</a><a href="/directions/">Directions</a><a href="/traditions/">Traditions</a><a href="/chinese-zodiac/horse/">Horse</a><a href="/chinese-zodiac/rat/">Rat</a><a href="/chinese-zodiac/ox/">Ox</a><a href="/chinese-zodiac/tiger/">Tiger</a><a href="/chinese-zodiac/rabbit/">Rabbit</a><a href="/chinese-zodiac/dragon/">Dragon</a><a href="/chinese-zodiac/snake/">Snake</a><a href="/chinese-zodiac/goat/">Goat</a><a href="/chinese-zodiac/monkey/">Monkey</a><a href="/chinese-zodiac/rooster/">Rooster</a><a href="/chinese-zodiac/dog/">Dog</a><a href="/chinese-zodiac/pig/">Pig</a><a href="/western-zodiac/aries/">Aries</a><a href="/western-zodiac/taurus/">Taurus</a><a href="/western-zodiac/gemini/">Gemini</a><a href="/western-zodiac/cancer/">Cancer</a><a href="/western-zodiac/leo/">Leo</a><a href="/western-zodiac/virgo/">Virgo</a><a href="/western-zodiac/libra/">Libra</a><a href="/western-zodiac/scorpio/">Scorpio</a><a href="/western-zodiac/sagittarius/">Sagittarius</a><a href="/western-zodiac/capricorn/">Capricorn</a><a href="/western-zodiac/aquarius/">Aquarius</a><a href="/western-zodiac/pisces/">Pisces</a><a href="/traditions/birthstones-and-moonstone/">Birthstones and moonstone</a><a href="/traditions/stones-for-your-animal/">Stones for your animal</a><a href="/feng-shui/bagua/">The bagua</a><a href="/feng-shui/five-elements/">Five phases</a><a href="/feng-shui/kua-number/">Your Kua number</a><a href="/proverbs/">Proverbs</a><a href="/match.html">Test a match</a><a href="/vs.html">Challenge a friend</a><a href="/circle.html">Circle of three</a><a href="/awakening.html">The Awakening</a><a href="/moon/phases/new-moon/">New Moon</a><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a><a href="/moon/phases/first-quarter/">First Quarter</a><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a><a href="/moon/phases/full-moon/">Full Moon</a><a href="/moon/phases/waning-gibbous/">Waning Gibbous</a><a href="/moon/phases/last-quarter/">Last Quarter</a><a href="/moon/phases/waning-crescent/">Waning Crescent</a><a href="/horoscopes/">All horoscopes, sign by sign</a><a href="/feng-shui/your-animal/">Feng shui for your animal</a><a href="/directions/celestial-animals/">The four celestial animals</a><a href="/cosmology/">Cosmology</a><a href="/cosmology/four-pillars/">The Four Pillars</a><a href="/elements/fire/">The five elements</a><a href="/learn.html">How it works</a></nav>
+  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/index.html#read">Find yours</a><a href="/index.html">Find your animal</a><a href="/daily.html">Today's reading</a><a href="/year.html">Year finder</a><a href="/account.html">Your account</a><a href="/menagerie.html">All 144 animals</a><a href="/western-zodiac/">Western wing</a><a href="/chinese-zodiac/">Eastern wing</a><a href="/zodiac/">Zodiac crossings</a><a href="/moon.html">The Moon tonight</a><a href="/moon/phases/">The eight phases</a><a href="/moon/in-your-sign/">Moon in your sign</a><a href="/best-days.html">Best days</a><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a><a href="/feng-shui/">Feng shui</a><a href="/habitat/">The Habitat</a><a href="/stones.html">Keeper stones</a><a href="/directions/">Directions</a><a href="/traditions/">Traditions</a><a href="/chinese-zodiac/horse/">Horse</a><a href="/chinese-zodiac/rat/">Rat</a><a href="/chinese-zodiac/ox/">Ox</a><a href="/chinese-zodiac/tiger/">Tiger</a><a href="/chinese-zodiac/rabbit/">Rabbit</a><a href="/chinese-zodiac/dragon/">Dragon</a><a href="/chinese-zodiac/snake/">Snake</a><a href="/chinese-zodiac/goat/">Goat</a><a href="/chinese-zodiac/monkey/">Monkey</a><a href="/chinese-zodiac/rooster/">Rooster</a><a href="/chinese-zodiac/dog/">Dog</a><a href="/chinese-zodiac/pig/">Pig</a><a href="/western-zodiac/aries/">Aries</a><a href="/western-zodiac/taurus/">Taurus</a><a href="/western-zodiac/gemini/">Gemini</a><a href="/western-zodiac/cancer/">Cancer</a><a href="/western-zodiac/leo/">Leo</a><a href="/western-zodiac/virgo/">Virgo</a><a href="/western-zodiac/libra/">Libra</a><a href="/western-zodiac/scorpio/">Scorpio</a><a href="/western-zodiac/sagittarius/">Sagittarius</a><a href="/western-zodiac/capricorn/">Capricorn</a><a href="/western-zodiac/aquarius/">Aquarius</a><a href="/western-zodiac/pisces/">Pisces</a><a href="/traditions/birthstones-and-moonstone/">Birthstones and moonstone</a><a href="/traditions/stones-for-your-animal/">Stones for your animal</a><a href="/feng-shui/bagua/">The bagua</a><a href="/feng-shui/five-elements/">Five phases</a><a href="/feng-shui/kua-number/">Your Kua number</a><a href="/proverbs/">The Proverb Pond</a><a href="/proverbs/wealth-and-work/">Money and work</a><a href="/proverbs/home-and-family/">Family and roots</a><a href="/proverbs/nature-and-seasons/">Health and nature</a><a href="/proverbs/friendship-and-trust/">Friendship and trust</a><a href="/proverbs/the-way-of-water/">The way of water</a><a href="/proverbs/timing-and-fortune/">Fate and fortune</a><a href="/proverbs/perseverance/">Perseverance</a><a href="/proverbs/courage/">Courage</a><a href="/proverbs/wisdom-and-learning/">Wisdom and learning</a><a href="/proverbs/harmony-and-virtue/">Harmony and virtue</a><a href="/proverbs/humility-and-self-mastery/">Humility</a><a href="/proverbs/adversity-and-resilience/">Adversity</a><a href="/match.html">Test a match</a><a href="/vs.html">Challenge a friend</a><a href="/circle.html">Circle of three</a><a href="/awakening.html">The Awakening</a><a href="/moon/phases/new-moon/">New Moon</a><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a><a href="/moon/phases/first-quarter/">First Quarter</a><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a><a href="/moon/phases/full-moon/">Full Moon</a><a href="/moon/phases/waning-gibbous/">Waning Gibbous</a><a href="/moon/phases/last-quarter/">Last Quarter</a><a href="/moon/phases/waning-crescent/">Waning Crescent</a><a href="/horoscopes/">All horoscopes, sign by sign</a><a href="/feng-shui/your-animal/">Feng shui for your animal</a><a href="/directions/celestial-animals/">The four celestial animals</a><a href="/cosmology/">Cosmology</a><a href="/cosmology/four-pillars/">The Four Pillars</a><a href="/elements/fire/">The five elements</a><a href="/learn.html">How it works</a></nav>
 </header>
 <!--pn-static:end-->
 <!--pn-sub:start-->
 <nav class="pn-sub" aria-label="Section">
   <div class="pn-sub-primary"><ul class="pn-subnav"><li><a href="/proverbs/">Overview</a></li></ul></div>
-  <div class="pn-sub-crumb"><ol class="pn-crumb"><li><a href="/">Home</a></li><li><a href="/proverbs/">Proverbs</a></li><li aria-current="page">Chinese Proverbs on Adversity and Resilience with Pinyin &amp;amp; Meaning</li></ol></div>
+  <div class="pn-sub-crumb"><ol class="pn-crumb"><li><a href="/">Home</a></li><li><a href="/proverbs/">Proverbs</a></li><li aria-current="page">Chinese Proverbs About Adversity &amp;amp; Resilience</li></ol></div>
 </nav>
 <!--pn-sub:end-->
 <canvas id="sky" aria-hidden="true"></canvas>
-<main class="pt-wrap" id="pn-main" tabindex="-1">
+<main class="pt-wrap" style="--pond-accent:#4F9E77" id="pn-main" tabindex="-1">
   <nav class="pt-crumb" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">/</span> <a href="/proverbs/">The Proverb Pond</a> <span aria-hidden="true">/</span> <b>Adversity &amp; Resilience</b></nav>
-  <header class="pt-hero">
-    <p class="pt-eyebrow">韌 · adversity and resilience</p>
-    <h1>Chinese Proverbs on Adversity and Resilience</h1>
-    <div class="pt-answer">
-      <h2>What do Chinese proverbs say about adversity and resilience?</h2>
-      <p>They say keep the green hills and you never fear having no firewood. The sheep is lost, so mend the fold; it is never too late. When heaven is about to lay a great charge on you, it first embitters your heart. The ordeal is the training, not the punishment. Guard the foundation, and everything lost can be regrown.</p>
+  <div class="pv-layout">
+    <nav class="pv-rail" aria-label="Browse the ponds">
+    <p class="pv-rail-head">The ponds</p>
+    <div class="pv-rail-list">
+    <a class="pv-rail-row pv-rail-all" href="/proverbs/">
+      <span class="pv-rail-dot pv-rail-dot-all" aria-hidden="true"></span>
+      <span class="pv-rail-name">The whole pond</span>
+      <span class="pv-rail-n">87</span>
+    </a>
+    <a class="pv-rail-row" href="/proverbs/the-way-of-water/" style="--row-accent:#2FB8C6">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">The Way of Water<span class="pv-rail-kw">Water &amp; the Tao</span></span>
+      <span class="pv-rail-n">2</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/timing-and-fortune/" style="--row-accent:#9B7BD8">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Timing &amp; Fortune's Turning<span class="pv-rail-kw">Fate &amp; luck</span></span>
+      <span class="pv-rail-n">12</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/perseverance/" style="--row-accent:#D19A4E">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Perseverance &amp; the Long Road<span class="pv-rail-kw">Perseverance</span></span>
+      <span class="pv-rail-n">4</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/courage/" style="--row-accent:#D9534F">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Courage &amp; Decisive Action<span class="pv-rail-kw">Courage</span></span>
+      <span class="pv-rail-n">3</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/home-and-family/" style="--row-accent:#5FBF8F">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Home, Family &amp; Roots<span class="pv-rail-kw">Family &amp; roots</span></span>
+      <span class="pv-rail-n">8</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/wisdom-and-learning/" style="--row-accent:#6C7BD6">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Wisdom &amp; Learning<span class="pv-rail-kw">Wisdom &amp; learning</span></span>
+      <span class="pv-rail-n">3</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/harmony-and-virtue/" style="--row-accent:#E0C471">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Harmony, Virtue &amp; Balance<span class="pv-rail-kw">Harmony &amp; virtue</span></span>
+      <span class="pv-rail-n">4</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/wealth-and-work/" style="--row-accent:#E8B53A">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Wealth, Work &amp; Diligence<span class="pv-rail-kw">Money &amp; work</span></span>
+      <span class="pv-rail-n">14</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/friendship-and-trust/" style="--row-accent:#E08AA0">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Friendship, Trust &amp; Speech<span class="pv-rail-kw">Friendship &amp; trust</span></span>
+      <span class="pv-rail-n">12</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/humility-and-self-mastery/" style="--row-accent:#8FA3BF">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Humility &amp; Self-Mastery<span class="pv-rail-kw">Humility</span></span>
+      <span class="pv-rail-n">13</span>
+    </a>
+<a class="pv-rail-row is-active" href="/proverbs/adversity-and-resilience/" aria-current="page" style="--row-accent:#4F9E77">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Adversity &amp; Resilience<span class="pv-rail-kw">Adversity</span></span>
+      <span class="pv-rail-n">5</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/nature-and-seasons/" style="--row-accent:#93B06A">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Nature, Seasons &amp; Health<span class="pv-rail-kw">Health &amp; seasons</span></span>
+      <span class="pv-rail-n">7</span>
+    </a>
     </div>
-  </header>
-  <section class="pt-chapter" aria-label="A reading">
-    <p>When the harvest fails, you do not burn the mountain for one last warm night. Guard the slope that keeps growing back, because a body and a life are the green hill, and firewood is only ever the thing they will make again.</p><p>The weight pressing on you is not a verdict, it is a fitting. Heaven does not hand the large task to the untested heart, so read the bitterness as measurement. Something is deciding you can carry more than you think.</p><p class="pt-quote">The sheep that walked out is gone, but the fence is still yours to mend tonight.</p>
+  </nav>
+    <div class="pv-main">
+      <header class="pt-hero">
+        <p class="pt-eyebrow"><span class="pt-koi" lang="zh-Hant">韌</span> The Adversity and Resilience pond</p>
+        <h1>Chinese Proverbs About Adversity &amp; Resilience<span class="pt-flourish" aria-hidden="true"></span></h1>
+        <div class="pt-answer">
+          <p>Chinese proverbs about adversity read hardship as training, not punishment. Heaven hardens those it means to entrust with great tasks (天将降大任), the pine shows its strength only in winter's cold (岁寒然后知松柏之后凋), and the battered bamboo grows tougher under a thousand blows (千磨万击还坚劲). Keep the green mountain and you never lack firewood. <span class="pt-lede-zh" lang="zh-Hant">In Chinese, people search this as 岁寒松柏.</span></p>
+        </div>
+      </header>
+      <section class="pt-chapter" aria-label="Why this matters in Chinese culture">
+        <p>No culture has thought harder about how a person is made by what nearly breaks them. The central text is Mencius, from the chapter later titled 生於憂患，死於安樂, born of hardship, undone by ease. Its most quoted lines run: 天將降大任於斯人也，必先苦其心志，勞其筋骨，餓其體膚, when Heaven is about to place a great charge on someone, it first makes bitter their heart and will, works their sinews and bones, starves their body. The suffering is not a sign you were passed over. It is the forge. The ordeal that empties you is the training that fits you for the weight you cannot yet carry. This single passage has steadied countless Chinese lives in their lowest seasons, reframing the worst stretch as the apprenticeship for something larger.</p>
+    <p>The most famous story of resilience gives the language its sharpest idiom: 臥薪嘗膽 (wò xīn cháng dǎn), sleep on brushwood and taste gall. King Goujian of Yue, defeated and humiliated, slept on rough firewood and licked a bitter gallbladder each day so comfort would never dull his resolve, until at last he rose and reversed his defeat. It is the emblem of self-imposed hardship kept alive on purpose, the refusal to let ease soften a person before the work is done. Chinese also honors the resilience that shows only under pressure. From the Analects comes 歲寒，然後知松柏之後凋也, only when the year turns cold do you see that the pine and cypress are the last to fade. In the easy warmth everyone looks the same. Winter reveals who holds. The pine, the bamboo, and the plum became the 歲寒三友, the three friends of winter, the enduring Chinese image of character that stands unbowed when everything else has dropped its leaves.</p>
+    <p>The Qing painter-poet Zheng Banqiao gave the bamboo its immortal couplet: 千磨萬擊還堅勁，任爾東西南北風, ground and struck ten thousand times it only grows tougher, let the wind come from east, west, south or north. The bamboo grows in poor rock with no rich soil, and that is the point. What is battered long enough, if its footing is real, becomes unbreakable. This is resilience not as gritted endurance but as something the hardship actually builds. Alongside it runs the folk wisdom of the long view. 留得青山在，不怕沒柴燒, keep the green mountain and you will never lack firewood, counsels that survival of the source outranks any single loss: protect life, health, the root, and everything else can be regrown. And 亡羊補牢, mend the pen after the sheep are lost, insists it is never too late to repair the damage and prevent the next.</p>
+    <p>For the zodiac reader, this pond is home to the strongest signs and their hidden depths. The Dragon carries the Mencius teaching that the greatest charges are preceded by the hardest trials. The Snake carries Goujian's patient, bitter discipline, the long memory that waits and prepares. The Horse carries the battered bamboo that only stiffens under the blows. And the Goat, gentler than the rest, carries the quiet wisdom that a mended fence and a protected mountain outlast any single bad season. A life of meaning in this tradition does not ask to be spared hardship. It asks to be shaped by it, to come out of the cold like the pine, still green.</p>
+        <p class="pt-quote">Only when the year turns cold do you see that the pine and cypress are the last to fade.</p>
+      </section>
+      <section class="pv-gloss" aria-label="Key ideas in this pond">
+    <div class="pt-section-head"><h2>Key ideas</h2><p>The words the tradition leans on here, in hanzi with their sound.</p></div>
+    <div class="pv-gloss-grid"><div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">逆境</span>
+      <span class="pv-gloss-py">nì jìng</span>
+      <span class="pv-gloss-def">adversity, hard circumstances; the testing ground where character is proven and built</span>
+    </div>
+<div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">堅 / 坚</span>
+      <span class="pv-gloss-py">jiān</span>
+      <span class="pv-gloss-def">firm, hard, unyielding; the toughness that hardship forges rather than breaks</span>
+    </div>
+<div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">忍</span>
+      <span class="pv-gloss-py">rěn</span>
+      <span class="pv-gloss-def">to endure, to bear patiently; the discipline of holding on through what is bitter</span>
+    </div>
+<div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">松柏</span>
+      <span class="pv-gloss-py">sōng bǎi</span>
+      <span class="pv-gloss-def">pine and cypress; the evergreens that reveal their strength only in winter's cold</span>
+    </div>
+<div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">歲寒三友 / 岁寒三友</span>
+      <span class="pv-gloss-py">suì hán sān yǒu</span>
+      <span class="pv-gloss-def">the three friends of winter (pine, bamboo, plum); the emblem of enduring character</span>
+    </div>
+<div class="pv-gloss-chip">
+      <span class="pv-gloss-han" lang="zh-Hant">生於憂患 / 生于忧患</span>
+      <span class="pv-gloss-py">shēng yú yōu huàn</span>
+      <span class="pv-gloss-def">born of hardship; Mencius's teaching that difficulty is what makes us</span>
+    </div></div>
   </section>
-  <div class="pt-section-head">
-    <h2>The 5 proverbs of Adversity &amp; Resilience</h2>
-    <p>Each with its sound, its literal sense, its meaning, a reading, and its classical source. Press the speaker to hear any line in Mandarin.</p>
-  </div>
-  <div class="pt-grid" role="list"><article class="pv-card" id="p-tian-jiang-jiang-da-ren">
+      <div class="pt-section-head">
+        <h2>The 5 proverbs of the Adversity and Resilience pond</h2>
+        <p>Each with its sound, its literal sense, its meaning, a reading, and its classical source. Press the speaker to hear any line in Mandarin, or share the one that lands.</p>
+      </div>
+      <div class="pt-searchwrap">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-3.2-3.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <input id="ptSearch" type="search" class="pt-search" placeholder="Search this pond by word, meaning, or sound" aria-label="Search the proverbs in this pond" autocomplete="off">
+      </div>
+      <p class="pt-searchcount" id="ptCount" aria-live="polite">5 proverbs</p>
+      <div class="pt-grid" id="ptGrid" role="list"><article class="pv-card" id="p-tian-jiang-jiang-da-ren"
+    data-cat="poetic" data-orient="future"
+    data-animal="Dragon" data-el="Earth" data-q="天將降大任於斯人也，必先苦其心志 天将降大任于斯人也，必先苦其心志 tian jiang jiang da ren yu si ren ye, bi xian ku qi xin zhi when heaven is about to lay a great charge on a person, it first embitters their heart and will great responsibility is preceded by suffering that hardens the mind; the ordeal is the training, not the punishment. 詩詞 verse dragon earth"
+    data-share data-trad="天將降大任於斯人也，必先苦其心志" data-pinyin="tiān jiāng jiàng dà rèn yú sī rén yě, bì xiān kǔ qí xīn zhì"
+    data-literal="when Heaven is about to lay a great charge on a person, it first embitters their heart and will" data-meaning="Great responsibility is preceded by suffering that hardens the mind; the ordeal is the training, not the punishment." data-url="https://spirit-omega.vercel.app/proverbs/say/tian-jiang-jiang-da-ren/">
     <p class="pv-zh" lang="zh-Hant"><ruby>天<rt>tiān</rt></ruby><ruby>將<rt>jiāng</rt></ruby><ruby>降<rt>jiàng</rt></ruby><ruby>大<rt>dà</rt></ruby><ruby>任<rt>rèn</rt></ruby><ruby>於<rt>yú</rt></ruby><ruby>斯<rt>sī</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>也<rt>yě</rt></ruby><span class="cx-punct">，</span><ruby>必<rt>bì</rt></ruby><ruby>先<rt>xiān</rt></ruby><ruby>苦<rt>kǔ</rt></ruby><ruby>其<rt>qí</rt></ruby><ruby>心<rt>xīn</rt></ruby><ruby>志<rt>zhì</rt></ruby><button type="button" class="pf-say" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="天將降大任於斯人也，必先苦其心志" onclick="try{if(window.speechSynthesis){var u=new SpeechSynthesisUtterance(this.dataset.say);u.lang='zh-CN';u.rate=.78;speechSynthesis.cancel();speechSynthesis.speak(u);this.classList.add('is-saying');var b=this;u.onend=function(){b.classList.remove('is-saying')};}}catch(e){}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></p>
     <p class="pv-pinyin">tiān jiāng jiàng dà rèn yú sī rén yě, bì xiān kǔ qí xīn zhì</p>
     <p class="pv-lit">when Heaven is about to lay a great charge on a person, it first embitters their heart and will</p>
@@ -227,9 +436,16 @@
       <a class="pv-tag pv-tag-animal" href="/chinese-zodiac/dragon/">龍 Year of the Dragon</a>
     </div>
     <p class="pv-src"><span class="k">Source</span> 《孟子·告子下》 (Mencius, Gaozi II)</p>
-    <a class="pv-more" href="/proverbs/say/tian-jiang-jiang-da-ren/">Read the whole line</a>
+    <div class="pv-card-foot">
+      <a class="pv-more" href="/proverbs/say/tian-jiang-jiang-da-ren/">Read the whole line</a>
+      <button type="button" class="pv-share-btn" aria-label="Share this proverb" title="Share this proverb"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M14 9V5.5L20.5 12 14 18.5V15c-4.2 0-7 1.2-9 4 .8-4.5 3.3-8 9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Share</span></button>
+    </div>
   </article>
-<article class="pv-card" id="p-wo-xin-chang-dan">
+<article class="pv-card" id="p-wo-xin-chang-dan"
+    data-cat="chengyu" data-orient="future"
+    data-animal="Snake" data-el="Water" data-q="臥薪嘗膽 卧薪尝胆 wo xin chang dan sleep on brushwood, taste gall endure self-imposed hardship and never let comfort dull your resolve, so you can rise from defeat. 成語 adage snake water"
+    data-share data-trad="臥薪嘗膽" data-pinyin="wò xīn cháng dǎn"
+    data-literal="sleep on brushwood, taste gall" data-meaning="Endure self-imposed hardship and never let comfort dull your resolve, so you can rise from defeat." data-url="https://spirit-omega.vercel.app/proverbs/say/wo-xin-chang-dan/">
     <p class="pv-zh" lang="zh-Hant"><ruby>臥<rt>wò</rt></ruby><ruby>薪<rt>xīn</rt></ruby><ruby>嘗<rt>cháng</rt></ruby><ruby>膽<rt>dǎn</rt></ruby><button type="button" class="pf-say" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="臥薪嘗膽" onclick="try{if(window.speechSynthesis){var u=new SpeechSynthesisUtterance(this.dataset.say);u.lang='zh-CN';u.rate=.78;speechSynthesis.cancel();speechSynthesis.speak(u);this.classList.add('is-saying');var b=this;u.onend=function(){b.classList.remove('is-saying')};}}catch(e){}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></p>
     <p class="pv-pinyin">wò xīn cháng dǎn</p>
     <p class="pv-lit">sleep on brushwood, taste gall</p>
@@ -242,9 +458,16 @@
       <a class="pv-tag pv-tag-animal" href="/chinese-zodiac/snake/">蛇 Year of the Snake</a>
     </div>
     <p class="pv-src"><span class="k">Source</span> 《史記·越王句踐世家》 (Records of the Grand Historian); phrase crystallized in Song-era writing</p>
-    <a class="pv-more" href="/proverbs/say/wo-xin-chang-dan/">Read the whole line</a>
+    <div class="pv-card-foot">
+      <a class="pv-more" href="/proverbs/say/wo-xin-chang-dan/">Read the whole line</a>
+      <button type="button" class="pv-share-btn" aria-label="Share this proverb" title="Share this proverb"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M14 9V5.5L20.5 12 14 18.5V15c-4.2 0-7 1.2-9 4 .8-4.5 3.3-8 9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Share</span></button>
+    </div>
   </article>
-<article class="pv-card" id="p-qian-mo-wan-ji-hai-jian-jing">
+<article class="pv-card" id="p-qian-mo-wan-ji-hai-jian-jing"
+    data-cat="poetic" data-orient="present"
+    data-animal="Horse" data-el="Wood" data-q="千磨萬擊還堅勁，任爾東西南北風 千磨万击还坚劲，任尔东西南北风 qian mo wan ji hai jian jing, ren er dong xi nan bei feng a thousand grindings, ten thousand blows, still firm and strong; let the winds blow east, west, south, north rooted resolve outlasts every battering; once your footing is real, no direction of pressure can topple you. 詩詞 verse horse wood"
+    data-share data-trad="千磨萬擊還堅勁，任爾東西南北風" data-pinyin="qiān mó wàn jī hái jiān jìng, rèn ěr dōng xī nán běi fēng"
+    data-literal="a thousand grindings, ten thousand blows, still firm and strong; let the winds blow east, west, south, north" data-meaning="Rooted resolve outlasts every battering; once your footing is real, no direction of pressure can topple you." data-url="https://spirit-omega.vercel.app/proverbs/say/qian-mo-wan-ji-hai-jian-jing/">
     <p class="pv-zh" lang="zh-Hant"><ruby>千<rt>qiān</rt></ruby><ruby>磨<rt>mó</rt></ruby><ruby>萬<rt>wàn</rt></ruby><ruby>擊<rt>jī</rt></ruby><ruby>還<rt>hái</rt></ruby><ruby>堅<rt>jiān</rt></ruby><ruby>勁<rt>jìng</rt></ruby><span class="cx-punct">，</span><ruby>任<rt>rèn</rt></ruby><ruby>爾<rt>ěr</rt></ruby><ruby>東<rt>dōng</rt></ruby><ruby>西<rt>xī</rt></ruby><ruby>南<rt>nán</rt></ruby><ruby>北<rt>běi</rt></ruby><ruby>風<rt>fēng</rt></ruby><button type="button" class="pf-say" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="千磨萬擊還堅勁，任爾東西南北風" onclick="try{if(window.speechSynthesis){var u=new SpeechSynthesisUtterance(this.dataset.say);u.lang='zh-CN';u.rate=.78;speechSynthesis.cancel();speechSynthesis.speak(u);this.classList.add('is-saying');var b=this;u.onend=function(){b.classList.remove('is-saying')};}}catch(e){}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></p>
     <p class="pv-pinyin">qiān mó wàn jī hái jiān jìng, rèn ěr dōng xī nán běi fēng</p>
     <p class="pv-lit">a thousand grindings, ten thousand blows, still firm and strong; let the winds blow east, west, south, north</p>
@@ -257,9 +480,16 @@
       <a class="pv-tag pv-tag-animal" href="/chinese-zodiac/horse/">馬 Year of the Horse</a>
     </div>
     <p class="pv-src"><span class="k">Source</span> 《竹石》 by 鄭燮 (Zheng Xie / Zheng Banqiao), Qing dynasty</p>
-    <a class="pv-more" href="/proverbs/say/qian-mo-wan-ji-hai-jian-jing/">Read the whole line</a>
+    <div class="pv-card-foot">
+      <a class="pv-more" href="/proverbs/say/qian-mo-wan-ji-hai-jian-jing/">Read the whole line</a>
+      <button type="button" class="pv-share-btn" aria-label="Share this proverb" title="Share this proverb"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M14 9V5.5L20.5 12 14 18.5V15c-4.2 0-7 1.2-9 4 .8-4.5 3.3-8 9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Share</span></button>
+    </div>
   </article>
-<article class="pv-card" id="p-lost-sheep-mend-fold">
+<article class="pv-card" id="p-lost-sheep-mend-fold"
+    data-cat="chengyu" data-orient="present"
+    data-animal="Goat" data-el="Earth" data-q="亡羊補牢 亡羊补牢 wang yang bu lao the sheep is lost, then mend the fold it is never too late to repair the damage after a loss. 成語 adage goat earth"
+    data-share data-trad="亡羊補牢" data-pinyin="wáng yáng bǔ láo"
+    data-literal="the sheep is lost, then mend the fold" data-meaning="It is never too late to repair the damage after a loss." data-url="https://spirit-omega.vercel.app/proverbs/say/lost-sheep-mend-fold/">
     <p class="pv-zh" lang="zh-Hant"><ruby>亡<rt>wáng</rt></ruby><ruby>羊<rt>yáng</rt></ruby><ruby>補<rt>bǔ</rt></ruby><ruby>牢<rt>láo</rt></ruby><button type="button" class="pf-say" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="亡羊補牢" onclick="try{if(window.speechSynthesis){var u=new SpeechSynthesisUtterance(this.dataset.say);u.lang='zh-CN';u.rate=.78;speechSynthesis.cancel();speechSynthesis.speak(u);this.classList.add('is-saying');var b=this;u.onend=function(){b.classList.remove('is-saying')};}}catch(e){}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></p>
     <p class="pv-pinyin">wáng yáng bǔ láo</p>
     <p class="pv-lit">the sheep is lost, then mend the fold</p>
@@ -272,9 +502,16 @@
       <a class="pv-tag pv-tag-animal" href="/chinese-zodiac/goat/">羊 Year of the Goat</a>
     </div>
     <p class="pv-src"><span class="k">Source</span> Strategies of the Warring States 戰國策</p>
-    <a class="pv-more" href="/proverbs/say/lost-sheep-mend-fold/">Read the whole line</a>
+    <div class="pv-card-foot">
+      <a class="pv-more" href="/proverbs/say/lost-sheep-mend-fold/">Read the whole line</a>
+      <button type="button" class="pv-share-btn" aria-label="Share this proverb" title="Share this proverb"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M14 9V5.5L20.5 12 14 18.5V15c-4.2 0-7 1.2-9 4 .8-4.5 3.3-8 9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Share</span></button>
+    </div>
   </article>
-<article class="pv-card" id="p-liu-de-qing-shan-zai">
+<article class="pv-card" id="p-liu-de-qing-shan-zai"
+    data-cat="yanyu" data-orient="future"
+    data-animal="Goat" data-el="Wood" data-q="留得青山在，不怕沒柴燒 留得青山在，不怕没柴烧 liu de qing shan zai, bu pa mei chai shao keep the green hills, and you'll never fear having no firewood everything lost can be regrown as long as you protect the foundation: life, health, the source itself. 諺語 proverb goat wood"
+    data-share data-trad="留得青山在，不怕沒柴燒" data-pinyin="liú dé qīng shān zài, bù pà méi chái shāo"
+    data-literal="keep the green hills, and you'll never fear having no firewood" data-meaning="Everything lost can be regrown as long as you protect the foundation: life, health, the source itself." data-url="https://spirit-omega.vercel.app/proverbs/say/liu-de-qing-shan-zai/">
     <p class="pv-zh" lang="zh-Hant"><ruby>留<rt>liú</rt></ruby><ruby>得<rt>dé</rt></ruby><ruby>青<rt>qīng</rt></ruby><ruby>山<rt>shān</rt></ruby><ruby>在<rt>zài</rt></ruby><span class="cx-punct">，</span><ruby>不<rt>bù</rt></ruby><ruby>怕<rt>pà</rt></ruby><ruby>沒<rt>méi</rt></ruby><ruby>柴<rt>chái</rt></ruby><ruby>燒<rt>shāo</rt></ruby><button type="button" class="pf-say" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="留得青山在，不怕沒柴燒" onclick="try{if(window.speechSynthesis){var u=new SpeechSynthesisUtterance(this.dataset.say);u.lang='zh-CN';u.rate=.78;speechSynthesis.cancel();speechSynthesis.speak(u);this.classList.add('is-saying');var b=this;u.onend=function(){b.classList.remove('is-saying')};}}catch(e){}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button></p>
     <p class="pv-pinyin">liú dé qīng shān zài, bù pà méi chái shāo</p>
     <p class="pv-lit">keep the green hills, and you'll never fear having no firewood</p>
@@ -287,19 +524,30 @@
       <a class="pv-tag pv-tag-animal" href="/chinese-zodiac/goat/">羊 Year of the Goat</a>
     </div>
     <p class="pv-src"><span class="k">Source</span> folk proverb; recorded in Ming novel 《初刻拍案驚奇》</p>
-    <a class="pv-more" href="/proverbs/say/liu-de-qing-shan-zai/">Read the whole line</a>
+    <div class="pv-card-foot">
+      <a class="pv-more" href="/proverbs/say/liu-de-qing-shan-zai/">Read the whole line</a>
+      <button type="button" class="pv-share-btn" aria-label="Share this proverb" title="Share this proverb"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M14 9V5.5L20.5 12 14 18.5V15c-4.2 0-7 1.2-9 4 .8-4.5 3.3-8 9-9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Share</span></button>
+    </div>
   </article></div>
-  <section class="pt-faq" aria-label="About these proverbs">
-    <h2>Questions readers ask</h2>
-    <div class="pt-qa"><h3>What do Chinese proverbs say about adversity and resilience?</h3><p>They say keep the green hills and you never fear having no firewood. The sheep is lost, so mend the fold; it is never too late. When heaven is about to lay a great charge on you, it first embitters your heart. The ordeal is the training, not the punishment. Guard the foundation, and everything lost can be regrown.</p></div><div class="pt-qa"><h3>What does 留得青山在，不怕沒柴燒 mean?</h3><p>Liú dé qīng shān zài, bù pà méi chái shāo, keep the green hills and you will never fear having no firewood. Protect the foundation, your life and health and source, and everything lost from it can be regrown in time.</p></div><div class="pt-qa"><h3>What is 亡羊補牢?</h3><p>Wáng yáng bǔ láo, the sheep is lost, then mend the fold, from the Strategies of the Warring States. It teaches that it is never too late to repair the damage after a loss. Mending the fence is how the rest of the flock stays.</p></div>
-  </section>
-  <section class="pt-explore" aria-label="Keep reading">
-    <h2>Read on</h2>
-    <p>Every line here lives in the wider <a href="/proverbs/">Proverb Pond</a>, where all eighty-seven proverbs wait with their sound, their meaning, and a reading of their own. From the pond you can draw one at random or filter the whole library by theme, type, and zodiac year.</p>
-    <p>Follow the thread into a neighboring chapter, or see how place shapes fortune in <a href="/feng-shui/">Feng Shui</a>. You can also <a href="/">find your Primal Animal</a> and let it lead you to a proverb worth keeping.</p>
-    <ul class="pt-siblings"><li><a href="/proverbs/nature-and-seasons/">Nature, Seasons &amp; Health</a></li><li><a href="/proverbs/the-way-of-water/">The Way of Water</a></li><li><a href="/proverbs/timing-and-fortune/">Timing &amp; Fortune's Turning</a></li></ul>
+      <p class="pt-empty" id="ptEmpty" hidden>No proverb in this pond matches that. Clear the search to see them all.</p>
+      <section class="pt-faq" aria-label="Questions readers ask">
+        <h2>Questions readers ask</h2>
+        <div class="pt-qa"><h3>What is the Chinese proverb about hardship making you stronger?</h3><p>天將降大任於斯人也，必先苦其心志 (tiān jiāng jiàng dà rèn yú sī rén yě, bì xiān kǔ qí xīn zhì), from Mencius. It teaches that before Heaven entrusts a great task to someone, it first hardens their mind through suffering. The ordeal is the training, not a punishment.</p></div>
+        <div class="pt-qa"><h3>What does 卧薪尝胆 mean?</h3><p>臥薪嘗膽 (wò xīn cháng dǎn), sleep on brushwood and taste gall, comes from the story of King Goujian, who slept on firewood and licked a bitter gallbladder to keep his humiliation fresh. It means enduring self-imposed hardship so comfort never softens your resolve to recover.</p></div>
+        <div class="pt-qa"><h3>Is there a Chinese proverb about staying strong under pressure?</h3><p>Yes. 千磨萬擊還堅勁，任爾東西南北風 (Zheng Banqiao) says the bamboo, ground and struck ten thousand times, only grows tougher, no matter which way the wind blows. Once your footing is real, no direction of pressure can topple you. Hardship builds the strength.</p></div>
+        <div class="pt-qa"><h3>What is the meaning of 留得青山在，不怕没柴烧?</h3><p>留得青山在，不怕沒柴燒 (liú dé qīng shān zài, bù pà méi chái shāo) means: keep the green mountain and you will never lack firewood. It teaches that protecting the source, your life, health and foundation, matters more than any single loss, because from the root everything can be regrown.</p></div>
+      </section>
+      <section class="pt-explore" aria-label="Wander to another pond">
+    <h2>Wander to another pond</h2>
+    <p>Every line here lives in the wider <a href="/proverbs/">Proverb Pond</a>, where all eighty-seven proverbs wait with their sound, their meaning, and a reading of their own. Draw one from the water at random, or walk the whole set in order along the <a href="/proverbs/study/">Path of Mastery</a>.</p>
+    <p>Follow the thread into a neighboring pond, or see how place shapes fortune in <a href="/feng-shui/">Feng Shui</a>. You can also <a href="/">find your Primal Animal</a> and let it lead you to a proverb worth keeping.</p>
+    <ul class="pt-siblings"><li><a href="/proverbs/nature-and-seasons/">Chinese proverbs about health and the seasons</a></li>
+<li><a href="/proverbs/the-way-of-water/">Taoist proverbs on the way of water</a></li>
+<li><a href="/proverbs/timing-and-fortune/">Chinese proverbs about fate and luck</a></li></ul>
     <p>Years these proverbs speak to: <span class="pt-years"><a href="/chinese-zodiac/dragon/">龍 Dragon</a><a href="/chinese-zodiac/snake/">蛇 Snake</a><a href="/chinese-zodiac/horse/">馬 Horse</a><a href="/chinese-zodiac/goat/">羊 Goat</a></span></p>
   </section>
+    </div>
+  </div>
   <footer class="pt-foot pf-foot">
     <div>The Primal <b style="color:var(--brass,#d6c18c)">Oracle</b></div>
     <p class="pf-disc">These proverbs are living Chinese cultural heritage, presented with per-character pinyin and their classical sources out of respect for the tradition. Meanings are given faithfully; the pairing of a proverb to a Chinese zodiac year is our own reading for reflection, not tradition, and nothing here is medical, psychological, financial, or legal advice.</p>
@@ -319,9 +567,34 @@ for(var i=0;i<st.length;i++){var s=st[i];if(!reduce)s.a+=s.s;var al=0.25+Math.ab
 if(!document.hidden&&!reduce)requestAnimationFrame(f);})();
 })();
 </script>
+<script>
+(function(){
+  var box=document.getElementById("ptSearch");
+  var grid=document.getElementById("ptGrid");
+  if(!box||!grid)return;
+  var cards=Array.prototype.slice.call(grid.querySelectorAll(".pv-card"));
+  var count=document.getElementById("ptCount");
+  var empty=document.getElementById("ptEmpty");
+  var total=cards.length;
+  function norm(s){return String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
+  function run(){
+    var q=norm(box.value.trim());
+    var shown=0;
+    for(var i=0;i<cards.length;i++){
+      var ok=!q||cards[i].getAttribute("data-q").indexOf(q)!==-1;
+      cards[i].hidden=!ok;
+      if(ok)shown++;
+    }
+    if(count)count.textContent=(shown===total?total+" proverbs":shown+" of "+total);
+    if(empty)empty.hidden=shown!==0;
+  }
+  box.addEventListener("input",run);
+})();
+</script>
 <script src="/js/data.js"></script>
 <script src="/js/engine.js"></script>
 <script src="/js/nav.js" defer></script>
+<script src="/js/proverbs-share.js" defer></script>
 <!--om-footer:start-->
 <footer class="om-footer">
   <div class="omf-moonrise" aria-hidden="true"><span class="omf-moonball"></span><span class="omf-hairline"></span></div>

@@ -11,6 +11,11 @@
 <meta property="og:description" content="A living library of 87 authentic Chinese proverbs, each with per-character pinyin, a literal translation, its meaning, a soulful reading, its classical source, and the Chinese zodiac animal we tie it to. Filter by theme, type, focus, and zodiac, or draw one from the koi pond and hear it read aloud in Mandarin.">
 <meta property="og:url" content="https://spirit-omega.vercel.app/proverbs/">
 <meta property="og:site_name" content="The Primal Oracle">
+<meta property="og:image" content="https://spirit-omega.vercel.app/social/og/proverb-pond.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://spirit-omega.vercel.app/social/og/proverb-pond.png">
 <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/oracle.css">
 <link rel="stylesheet" href="/css/profile.css">
@@ -30,6 +35,52 @@
 .pf-proverb-soul{margin:14px 0 10px;color:var(--moon,#f5ecd2);font-family:var(--serif,serif);font-size:1.18rem;font-style:italic;max-width:60ch;line-height:1.55}
 .pf-proverb-note{color:var(--muted,#9a9bb0);font-size:.85rem;margin:0}
 @media (prefers-reduced-motion:reduce){.pf-say.is-saying{animation:none}}
+.pv-share{display:inline-block;margin-top:8px;font-size:.78rem;color:var(--brass-bright,#efe2b4);background:none;border:0;cursor:pointer;border-bottom:1px solid rgba(214,193,140,.4);padding:0 0 1px;font-family:inherit}
+.pv-share:hover{color:var(--moon,#f5ecd2)}
+
+.pv-rail{align-self:start}
+.pv-rail-head{font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.18em;font-size:.62rem;color:var(--muted,#9a9bb0);margin:0 0 12px;padding:0 4px}
+.pv-rail-list{display:flex;flex-direction:column;gap:3px}
+.pv-rail-row{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:12px;text-decoration:none;
+  border:1px solid transparent;border-left:3px solid transparent;transition:background .18s,border-color .18s,transform .18s}
+.pv-rail-row:hover{background:rgba(214,193,140,.06);transform:translateX(2px)}
+.pv-rail-row:focus-visible{outline:none;border-color:var(--brass,#d6c18c);background:rgba(214,193,140,.06)}
+.pv-rail-dot{flex:0 0 auto;width:11px;height:11px;border-radius:50%;background:var(--row-accent,#d6c18c);
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--row-accent,#d6c18c) 22%,transparent)}
+.pv-rail-dot-all{background:linear-gradient(135deg,#efe2b4,#d6c18c);box-shadow:0 0 0 3px rgba(214,193,140,.2)}
+.pv-rail-name{flex:1 1 auto;display:flex;flex-direction:column;gap:1px;font-family:var(--font-display,"Fraunces",serif);
+  color:var(--body,#c8c9de);font-size:.96rem;line-height:1.2}
+.pv-rail-kw{font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;font-size:.56rem;color:var(--muted,#9a9bb0)}
+.pv-rail-n{flex:0 0 auto;font-family:"Space Mono",ui-monospace,monospace;font-size:.72rem;color:var(--muted,#9a9bb0);letter-spacing:.03em}
+.pv-rail-row:hover .pv-rail-name{color:var(--moon,#f5ecd2)}
+.pv-rail-row.is-active{background:color-mix(in srgb,var(--row-accent,#d6c18c) 12%,transparent);border-left-color:var(--row-accent,#d6c18c)}
+.pv-rail-row.is-active .pv-rail-name{color:var(--moon,#f5ecd2)}
+.pv-rail-row.is-active .pv-rail-n{color:var(--row-accent,#d6c18c)}
+.pv-rail-all{--row-accent:var(--brass,#d6c18c)}
+.pv-rail-all.is-active{background:rgba(214,193,140,.12);border-left-color:var(--brass,#d6c18c)}
+
+/* mobile / tablet: the rail becomes a horizontal swipe strip of pills,
+   pinned under the breadcrumb, never covering the content */
+@media (max-width:959px){
+  .pv-rail{position:sticky;top:56px;z-index:6;margin:0 -20px 8px;padding:10px 16px;
+    background:linear-gradient(180deg,rgba(10,12,22,.94),rgba(10,12,22,.8));border-bottom:1px solid rgba(214,193,140,.14);
+    backdrop-filter:blur(8px)}
+  .pv-rail-head{display:none}
+  .pv-rail-list{flex-direction:row;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}
+  .pv-rail-list::-webkit-scrollbar{display:none}
+  .pv-rail-row{flex:0 0 auto;border:1px solid rgba(214,193,140,.22);border-left:1px solid rgba(214,193,140,.22);
+    border-radius:999px;padding:8px 14px;gap:8px;white-space:nowrap}
+  .pv-rail-row:hover{transform:none}
+  .pv-rail-kw{display:none}
+  .pv-rail-n{opacity:.7}
+  .pv-rail-row.is-active{border-color:var(--row-accent,#d6c18c);border-left-color:var(--row-accent,#d6c18c);
+    background:color-mix(in srgb,var(--row-accent,#d6c18c) 16%,transparent)}
+}
+@media (prefers-reduced-motion:reduce){.pv-rail-row{transition:none}}
+
+.pv-layout{display:grid;grid-template-columns:1fr;gap:26px}
+@media(min-width:960px){.pv-layout{grid-template-columns:248px minmax(0,1fr);align-items:start}}
+.pv-layout-main{min-width:0}
 .pv-wrap{max-width:1180px;margin:0 auto;padding:0 20px 80px}
 .pv-crumb{margin:14px 0 6px;font-size:.85rem;color:var(--muted,#9a9bb0)}
 .pv-crumb a{color:var(--brass-bright,#efe2b4);text-decoration:none}
@@ -241,7 +292,7 @@
   </div>
   <div class="pn-panel pn-panel-sage" data-group="4" data-accent="jade" role="region" aria-label="Sage Wisdom" hidden>
     <p class="pn-panel-eyebrow">The craft, what you do with your animal</p>
-    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Stones</p><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/traditions/birthstones-and-moonstone/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Birthstones and moonstone</span></a><a class="pn-row" href="/traditions/stones-for-your-animal/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Stones for your animal</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">卦</span> Feng shui</p><a class="pn-row" href="/feng-shui/bagua/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The bagua</span></a><a class="pn-row" href="/feng-shui/five-elements/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Five phases</span></a><a class="pn-row" href="/feng-shui/kua-number/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your Kua number</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">❦</span> Proverbs and lore</p><a class="pn-row active" href="/proverbs/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Proverbs</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a></div></div>
+    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Stones</p><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/traditions/birthstones-and-moonstone/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Birthstones and moonstone</span></a><a class="pn-row" href="/traditions/stones-for-your-animal/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Stones for your animal</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">卦</span> Feng shui</p><a class="pn-row" href="/feng-shui/bagua/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The bagua</span></a><a class="pn-row" href="/feng-shui/five-elements/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Five phases</span></a><a class="pn-row" href="/feng-shui/kua-number/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your Kua number</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">❦</span> Proverbs and lore</p><a class="pn-row active" href="/proverbs/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Proverb Pond</span><span class="pn-row-sub">Chinese proverbs, pronounced</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">❦</span> The Proverb Pond, by theme</p><a class="pn-row" href="/proverbs/wealth-and-work/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Money and work</span></a><a class="pn-row" href="/proverbs/home-and-family/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Family and roots</span></a><a class="pn-row" href="/proverbs/nature-and-seasons/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Health and nature</span></a><a class="pn-row" href="/proverbs/friendship-and-trust/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Friendship and trust</span></a><a class="pn-row" href="/proverbs/the-way-of-water/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The way of water</span></a><a class="pn-row" href="/proverbs/timing-and-fortune/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Fate and fortune</span></a><a class="pn-row" href="/proverbs/perseverance/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Perseverance</span></a><a class="pn-row" href="/proverbs/courage/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Courage</span></a><a class="pn-row" href="/proverbs/wisdom-and-learning/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Wisdom and learning</span></a><a class="pn-row" href="/proverbs/harmony-and-virtue/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Harmony and virtue</span></a><a class="pn-row" href="/proverbs/humility-and-self-mastery/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Humility</span></a><a class="pn-row" href="/proverbs/adversity-and-resilience/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Adversity</span></a></div></div>
     <div class="pn-panel-cta"><div class="pn-ebook"><span class="pn-ebook-tag">Free · Feng Shui e-book</span><h3 class="pn-ebook-title">Your animal's placement guide</h3><p class="pn-ebook-body">Where to sleep, work, and rest, mapped to your animal. Free when you create a Zodi account.</p><a class="pn-ebook-link" href="/account.html">Create free account <span class="pn-ebook-note">opening soon</span></a></div></div>
     <div class="pn-panel-foot"><a href="/feng-shui/">All of feng shui</a></div>
   </div>
@@ -255,7 +306,7 @@
     <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> Tonight</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-full" viewBox="0 0 24 24" role="img" aria-labelledby="moon-full-t moon-full-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-full-t">Full moon</title><desc id="moon-full-d">The whole disc lit.</desc><circle cx="12" cy="12" r="9" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Waning Gibbous</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days ahead</span><span class="pn-row-sub">the favorable days for you</span></a><a class="pn-row" href="/awakening.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Awakening</span><span class="pn-row-sub">the path from fear to strength</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◐</span> The eight phases</p><a class="pn-row" href="/moon/phases/new-moon/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-new" viewBox="0 0 24 24" role="img" aria-labelledby="moon-new-t moon-new-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-new-t">New moon</title><desc id="moon-new-d">The dark disc of the new moon.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">New Moon</span></a><a class="pn-row" href="/moon/phases/waxing-crescent/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waxing-crescent" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waxing-crescent-t moon-waxing-crescent-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waxing-crescent-t">Waxing crescent moon</title><desc id="moon-waxing-crescent-d">A thin lit crescent on the right.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A6.36 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waxing Crescent</span></a><a class="pn-row" href="/moon/phases/first-quarter/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-first-quarter" viewBox="0 0 24 24" role="img" aria-labelledby="moon-first-quarter-t moon-first-quarter-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-first-quarter-t">First quarter moon</title><desc id="moon-first-quarter-d">The right half lit.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A0 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">First Quarter</span></a><a class="pn-row" href="/moon/phases/waxing-gibbous/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waxing-gibbous" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waxing-gibbous-t moon-waxing-gibbous-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waxing-gibbous-t">Waxing gibbous moon</title><desc id="moon-waxing-gibbous-d">Most of the disc lit, growing.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A6.36 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waxing Gibbous</span></a><a class="pn-row" href="/moon/phases/full-moon/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-full" viewBox="0 0 24 24" role="img" aria-labelledby="moon-full-t moon-full-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-full-t">Full moon</title><desc id="moon-full-d">The whole disc lit.</desc><circle cx="12" cy="12" r="9" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Full Moon</span></a><a class="pn-row" href="/moon/phases/waning-gibbous/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waning-gibbous" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waning-gibbous-t moon-waning-gibbous-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waning-gibbous-t">Waning gibbous moon</title><desc id="moon-waning-gibbous-d">Most of the disc lit, shrinking.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A6.36 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waning Gibbous</span></a><a class="pn-row" href="/moon/phases/last-quarter/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-last-quarter" viewBox="0 0 24 24" role="img" aria-labelledby="moon-last-quarter-t moon-last-quarter-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-last-quarter-t">Last quarter moon</title><desc id="moon-last-quarter-d">The left half lit.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A0 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Last Quarter</span></a><a class="pn-row" href="/moon/phases/waning-crescent/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waning-crescent" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waning-crescent-t moon-waning-crescent-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waning-crescent-t">Waning crescent moon</title><desc id="moon-waning-crescent-d">A thin lit crescent on the left.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A6.36 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waning Crescent</span></a></div></div>
     <div class="pn-panel-foot"><a href="/moon.html">Read the Moon tonight in full</a></div>
   </div>
-  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/index.html#read">Find yours</a><a href="/index.html">Find your animal</a><a href="/daily.html">Today's reading</a><a href="/year.html">Year finder</a><a href="/account.html">Your account</a><a href="/menagerie.html">All 144 animals</a><a href="/western-zodiac/">Western wing</a><a href="/chinese-zodiac/">Eastern wing</a><a href="/zodiac/">Zodiac crossings</a><a href="/moon.html">The Moon tonight</a><a href="/moon/phases/">The eight phases</a><a href="/moon/in-your-sign/">Moon in your sign</a><a href="/best-days.html">Best days</a><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a><a href="/feng-shui/">Feng shui</a><a href="/habitat/">The Habitat</a><a href="/stones.html">Keeper stones</a><a href="/directions/">Directions</a><a href="/traditions/">Traditions</a><a href="/chinese-zodiac/horse/">Horse</a><a href="/chinese-zodiac/rat/">Rat</a><a href="/chinese-zodiac/ox/">Ox</a><a href="/chinese-zodiac/tiger/">Tiger</a><a href="/chinese-zodiac/rabbit/">Rabbit</a><a href="/chinese-zodiac/dragon/">Dragon</a><a href="/chinese-zodiac/snake/">Snake</a><a href="/chinese-zodiac/goat/">Goat</a><a href="/chinese-zodiac/monkey/">Monkey</a><a href="/chinese-zodiac/rooster/">Rooster</a><a href="/chinese-zodiac/dog/">Dog</a><a href="/chinese-zodiac/pig/">Pig</a><a href="/western-zodiac/aries/">Aries</a><a href="/western-zodiac/taurus/">Taurus</a><a href="/western-zodiac/gemini/">Gemini</a><a href="/western-zodiac/cancer/">Cancer</a><a href="/western-zodiac/leo/">Leo</a><a href="/western-zodiac/virgo/">Virgo</a><a href="/western-zodiac/libra/">Libra</a><a href="/western-zodiac/scorpio/">Scorpio</a><a href="/western-zodiac/sagittarius/">Sagittarius</a><a href="/western-zodiac/capricorn/">Capricorn</a><a href="/western-zodiac/aquarius/">Aquarius</a><a href="/western-zodiac/pisces/">Pisces</a><a href="/traditions/birthstones-and-moonstone/">Birthstones and moonstone</a><a href="/traditions/stones-for-your-animal/">Stones for your animal</a><a href="/feng-shui/bagua/">The bagua</a><a href="/feng-shui/five-elements/">Five phases</a><a href="/feng-shui/kua-number/">Your Kua number</a><a href="/proverbs/">Proverbs</a><a href="/match.html">Test a match</a><a href="/vs.html">Challenge a friend</a><a href="/circle.html">Circle of three</a><a href="/awakening.html">The Awakening</a><a href="/moon/phases/new-moon/">New Moon</a><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a><a href="/moon/phases/first-quarter/">First Quarter</a><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a><a href="/moon/phases/full-moon/">Full Moon</a><a href="/moon/phases/waning-gibbous/">Waning Gibbous</a><a href="/moon/phases/last-quarter/">Last Quarter</a><a href="/moon/phases/waning-crescent/">Waning Crescent</a><a href="/horoscopes/">All horoscopes, sign by sign</a><a href="/feng-shui/your-animal/">Feng shui for your animal</a><a href="/directions/celestial-animals/">The four celestial animals</a><a href="/cosmology/">Cosmology</a><a href="/cosmology/four-pillars/">The Four Pillars</a><a href="/elements/fire/">The five elements</a><a href="/learn.html">How it works</a></nav>
+  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/index.html#read">Find yours</a><a href="/index.html">Find your animal</a><a href="/daily.html">Today's reading</a><a href="/year.html">Year finder</a><a href="/account.html">Your account</a><a href="/menagerie.html">All 144 animals</a><a href="/western-zodiac/">Western wing</a><a href="/chinese-zodiac/">Eastern wing</a><a href="/zodiac/">Zodiac crossings</a><a href="/moon.html">The Moon tonight</a><a href="/moon/phases/">The eight phases</a><a href="/moon/in-your-sign/">Moon in your sign</a><a href="/best-days.html">Best days</a><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a><a href="/feng-shui/">Feng shui</a><a href="/habitat/">The Habitat</a><a href="/stones.html">Keeper stones</a><a href="/directions/">Directions</a><a href="/traditions/">Traditions</a><a href="/chinese-zodiac/horse/">Horse</a><a href="/chinese-zodiac/rat/">Rat</a><a href="/chinese-zodiac/ox/">Ox</a><a href="/chinese-zodiac/tiger/">Tiger</a><a href="/chinese-zodiac/rabbit/">Rabbit</a><a href="/chinese-zodiac/dragon/">Dragon</a><a href="/chinese-zodiac/snake/">Snake</a><a href="/chinese-zodiac/goat/">Goat</a><a href="/chinese-zodiac/monkey/">Monkey</a><a href="/chinese-zodiac/rooster/">Rooster</a><a href="/chinese-zodiac/dog/">Dog</a><a href="/chinese-zodiac/pig/">Pig</a><a href="/western-zodiac/aries/">Aries</a><a href="/western-zodiac/taurus/">Taurus</a><a href="/western-zodiac/gemini/">Gemini</a><a href="/western-zodiac/cancer/">Cancer</a><a href="/western-zodiac/leo/">Leo</a><a href="/western-zodiac/virgo/">Virgo</a><a href="/western-zodiac/libra/">Libra</a><a href="/western-zodiac/scorpio/">Scorpio</a><a href="/western-zodiac/sagittarius/">Sagittarius</a><a href="/western-zodiac/capricorn/">Capricorn</a><a href="/western-zodiac/aquarius/">Aquarius</a><a href="/western-zodiac/pisces/">Pisces</a><a href="/traditions/birthstones-and-moonstone/">Birthstones and moonstone</a><a href="/traditions/stones-for-your-animal/">Stones for your animal</a><a href="/feng-shui/bagua/">The bagua</a><a href="/feng-shui/five-elements/">Five phases</a><a href="/feng-shui/kua-number/">Your Kua number</a><a href="/proverbs/">The Proverb Pond</a><a href="/proverbs/wealth-and-work/">Money and work</a><a href="/proverbs/home-and-family/">Family and roots</a><a href="/proverbs/nature-and-seasons/">Health and nature</a><a href="/proverbs/friendship-and-trust/">Friendship and trust</a><a href="/proverbs/the-way-of-water/">The way of water</a><a href="/proverbs/timing-and-fortune/">Fate and fortune</a><a href="/proverbs/perseverance/">Perseverance</a><a href="/proverbs/courage/">Courage</a><a href="/proverbs/wisdom-and-learning/">Wisdom and learning</a><a href="/proverbs/harmony-and-virtue/">Harmony and virtue</a><a href="/proverbs/humility-and-self-mastery/">Humility</a><a href="/proverbs/adversity-and-resilience/">Adversity</a><a href="/match.html">Test a match</a><a href="/vs.html">Challenge a friend</a><a href="/circle.html">Circle of three</a><a href="/awakening.html">The Awakening</a><a href="/moon/phases/new-moon/">New Moon</a><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a><a href="/moon/phases/first-quarter/">First Quarter</a><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a><a href="/moon/phases/full-moon/">Full Moon</a><a href="/moon/phases/waning-gibbous/">Waning Gibbous</a><a href="/moon/phases/last-quarter/">Last Quarter</a><a href="/moon/phases/waning-crescent/">Waning Crescent</a><a href="/horoscopes/">All horoscopes, sign by sign</a><a href="/feng-shui/your-animal/">Feng shui for your animal</a><a href="/directions/celestial-animals/">The four celestial animals</a><a href="/cosmology/">Cosmology</a><a href="/cosmology/four-pillars/">The Four Pillars</a><a href="/elements/fire/">The five elements</a><a href="/learn.html">How it works</a></nav>
 </header>
 <!--pn-static:end-->
 <!--pn-sub:start-->
@@ -295,11 +346,76 @@
       </div>
     </figure>
   </section>
-  <section class="pv-themes" aria-label="Browse proverbs by theme">
-    <div class="pv-section-head"><h2>Walk a path</h2><p>Each theme is a short chapter of its own. Or study them all in the <a href="/proverbs/study/">Path of Mastery</a>.</p></div>
-    <div class="pv-theme-grid"><a class="pv-theme-card" href="/proverbs/the-way-of-water/"><span class="pv-theme-name">The Way of Water</span><span class="pv-theme-n">2</span></a><a class="pv-theme-card" href="/proverbs/timing-and-fortune/"><span class="pv-theme-name">Timing &amp; Fortune's Turning</span><span class="pv-theme-n">12</span></a><a class="pv-theme-card" href="/proverbs/perseverance/"><span class="pv-theme-name">Perseverance &amp; the Long Road</span><span class="pv-theme-n">4</span></a><a class="pv-theme-card" href="/proverbs/courage/"><span class="pv-theme-name">Courage &amp; Decisive Action</span><span class="pv-theme-n">3</span></a><a class="pv-theme-card" href="/proverbs/home-and-family/"><span class="pv-theme-name">Home, Family &amp; Roots</span><span class="pv-theme-n">8</span></a><a class="pv-theme-card" href="/proverbs/wisdom-and-learning/"><span class="pv-theme-name">Wisdom &amp; Learning</span><span class="pv-theme-n">3</span></a><a class="pv-theme-card" href="/proverbs/harmony-and-virtue/"><span class="pv-theme-name">Harmony, Virtue &amp; Balance</span><span class="pv-theme-n">4</span></a><a class="pv-theme-card" href="/proverbs/wealth-and-work/"><span class="pv-theme-name">Wealth, Work &amp; Diligence</span><span class="pv-theme-n">14</span></a><a class="pv-theme-card" href="/proverbs/friendship-and-trust/"><span class="pv-theme-name">Friendship, Trust &amp; Speech</span><span class="pv-theme-n">12</span></a><a class="pv-theme-card" href="/proverbs/humility-and-self-mastery/"><span class="pv-theme-name">Humility &amp; Self-Mastery</span><span class="pv-theme-n">13</span></a><a class="pv-theme-card" href="/proverbs/adversity-and-resilience/"><span class="pv-theme-name">Adversity &amp; Resilience</span><span class="pv-theme-n">5</span></a><a class="pv-theme-card" href="/proverbs/nature-and-seasons/"><span class="pv-theme-name">Nature, Seasons &amp; Health</span><span class="pv-theme-n">7</span></a></div>
-  </section>
-  <div class="pv-section-head"><h2>The whole library</h2><p>Every one of the 87 proverbs, each with its sound, its meaning, a reading, and its source. Filter above, or search.</p></div>
+  <div class="pv-layout"><nav class="pv-rail" aria-label="Browse the ponds">
+    <p class="pv-rail-head">The ponds</p>
+    <div class="pv-rail-list">
+    <a class="pv-rail-row pv-rail-all is-active" href="/proverbs/" aria-current="page">
+      <span class="pv-rail-dot pv-rail-dot-all" aria-hidden="true"></span>
+      <span class="pv-rail-name">The whole pond</span>
+      <span class="pv-rail-n">87</span>
+    </a>
+    <a class="pv-rail-row" href="/proverbs/the-way-of-water/" style="--row-accent:#2FB8C6">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">The Way of Water<span class="pv-rail-kw">Water &amp; the Tao</span></span>
+      <span class="pv-rail-n">2</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/timing-and-fortune/" style="--row-accent:#9B7BD8">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Timing &amp; Fortune's Turning<span class="pv-rail-kw">Fate &amp; luck</span></span>
+      <span class="pv-rail-n">12</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/perseverance/" style="--row-accent:#D19A4E">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Perseverance &amp; the Long Road<span class="pv-rail-kw">Perseverance</span></span>
+      <span class="pv-rail-n">4</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/courage/" style="--row-accent:#D9534F">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Courage &amp; Decisive Action<span class="pv-rail-kw">Courage</span></span>
+      <span class="pv-rail-n">3</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/home-and-family/" style="--row-accent:#5FBF8F">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Home, Family &amp; Roots<span class="pv-rail-kw">Family &amp; roots</span></span>
+      <span class="pv-rail-n">8</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/wisdom-and-learning/" style="--row-accent:#6C7BD6">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Wisdom &amp; Learning<span class="pv-rail-kw">Wisdom &amp; learning</span></span>
+      <span class="pv-rail-n">3</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/harmony-and-virtue/" style="--row-accent:#E0C471">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Harmony, Virtue &amp; Balance<span class="pv-rail-kw">Harmony &amp; virtue</span></span>
+      <span class="pv-rail-n">4</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/wealth-and-work/" style="--row-accent:#E8B53A">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Wealth, Work &amp; Diligence<span class="pv-rail-kw">Money &amp; work</span></span>
+      <span class="pv-rail-n">14</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/friendship-and-trust/" style="--row-accent:#E08AA0">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Friendship, Trust &amp; Speech<span class="pv-rail-kw">Friendship &amp; trust</span></span>
+      <span class="pv-rail-n">12</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/humility-and-self-mastery/" style="--row-accent:#8FA3BF">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Humility &amp; Self-Mastery<span class="pv-rail-kw">Humility</span></span>
+      <span class="pv-rail-n">13</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/adversity-and-resilience/" style="--row-accent:#4F9E77">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Adversity &amp; Resilience<span class="pv-rail-kw">Adversity</span></span>
+      <span class="pv-rail-n">5</span>
+    </a>
+<a class="pv-rail-row" href="/proverbs/nature-and-seasons/" style="--row-accent:#93B06A">
+      <span class="pv-rail-dot" aria-hidden="true"></span>
+      <span class="pv-rail-name">Nature, Seasons &amp; Health<span class="pv-rail-kw">Health &amp; seasons</span></span>
+      <span class="pv-rail-n">7</span>
+    </a>
+    </div>
+  </nav><div class="pv-layout-main"><div class="pv-section-head"><h2>The whole library</h2><p>Every one of the 87 proverbs, each with its sound, its meaning, a reading, and its source. Filter above, or search.</p></div>
   <section class="pv-controls" aria-label="Filter the proverbs">
     <div class="pv-searchwrap">
       <input id="pvSearch" type="search" class="pv-search" placeholder="Search a word, a meaning, or a sound…" aria-label="Search proverbs" autocomplete="off">
@@ -331,6 +447,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Tao Te Ching 道德經, ch. 8 (Laozi)</p>
     <a class="pv-more" href="/proverbs/say/water/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="上善若水" data-pinyin="shàng shàn ruò shuǐ" data-literal="the highest good is like water" data-meaning="The finest virtue is like water, which benefits all things and flows to the low places without contending." data-url="https://spirit-omega.vercel.app/proverbs/say/water/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-ziran"
     data-theme="The Way of Water" data-cat="suyu" data-orient="present"
@@ -349,6 +466,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Daoist idiom (zìrán)</p>
     <a class="pv-more" href="/proverbs/say/ziran/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="順其自然" data-pinyin="shùn qí zì rán" data-literal="follow its self-so" data-meaning="Let nature take its course; work with a thing rather than force it." data-url="https://spirit-omega.vercel.app/proverbs/say/ziran/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-shuidao"
     data-theme="Timing &amp; Fortune's Turning" data-cat="chengyu" data-orient="future"
@@ -367,6 +485,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> recorded in Su Shi 蘇軾 (Song); folk saying</p>
     <a class="pv-more" href="/proverbs/say/shuidao/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="水到渠成" data-pinyin="shuǐ dào qú chéng" data-literal="the water arrives, the channel forms" data-meaning="When conditions are ripe, results follow without forcing." data-url="https://spirit-omega.vercel.app/proverbs/say/shuidao/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-blue-sea-becomes-mulberry-fields"
     data-theme="Timing &amp; Fortune's Turning" data-cat="chengyu" data-orient="past"
@@ -385,6 +504,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 神仙傳</p>
     <a class="pv-more" href="/proverbs/say/blue-sea-becomes-mulberry-fields/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="滄海桑田" data-pinyin="cāng hǎi sāng tián" data-literal="the blue sea becomes mulberry fields" data-meaning="Vast, sweeping change over the long span of time." data-url="https://spirit-omega.vercel.app/proverbs/say/blue-sea-becomes-mulberry-fields/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-dangji-liduan"
     data-theme="Timing &amp; Fortune's Turning" data-cat="chengyu" data-orient="present"
@@ -403,6 +523,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Chen Lin 陳琳 (Three Kingdoms, Wei), 答東阿王牋 (originally 應機立斷); per Taiwan MOE 成語典</p>
     <a class="pv-more" href="/proverbs/say/dangji-liduan/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="當機立斷" data-pinyin="dāng jī lì duàn" data-literal="meeting the moment, decide at once" data-meaning="When the decisive moment arrives, act without hesitation." data-url="https://spirit-omega.vercel.app/proverbs/say/dangji-liduan/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-fuzhi-xinling"
     data-theme="Timing &amp; Fortune's Turning" data-cat="chengyu" data-orient="present"
@@ -421,6 +542,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Bi Zhongxun 畢仲詢, 幕府燕閒錄 (Song dynasty); full form in Bai Pu 白樸, 東牆記 (Yuan)</p>
     <a class="pv-more" href="/proverbs/say/fuzhi-xinling/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="福至心靈" data-pinyin="fú zhì xīn líng" data-literal="when good fortune arrives, the mind turns nimble" data-meaning="When luck comes, the mind sharpens and the right answers arrive with ease." data-url="https://spirit-omega.vercel.app/proverbs/say/fuzhi-xinling/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-tianshi"
     data-theme="Timing &amp; Fortune's Turning" data-cat="chengyu" data-orient="present"
@@ -439,6 +561,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Mencius 孟子, Gongsun Chou II</p>
     <a class="pv-more" href="/proverbs/say/tianshi/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="天時地利人和" data-pinyin="tiān shí dì lì rén hé" data-literal="heaven's timing, earth's advantage, human harmony" data-meaning="The three conditions of success align: the right timing, a favorable place, and united people." data-url="https://spirit-omega.vercel.app/proverbs/say/tianshi/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-shishi-zao-yingxiong"
     data-theme="Timing &amp; Fortune's Turning" data-cat="suyu" data-orient="future"
@@ -457,6 +580,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Attested in Liang Qichao 梁啟超, 李鴻章傳; also Bing Xin 冰心, 去國; late Qing / early Republican formulation</p>
     <a class="pv-more" href="/proverbs/say/shishi-zao-yingxiong/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="時勢造英雄" data-pinyin="shí shì zào yīng xióng" data-literal="the tide of the times creates heroes" data-meaning="The moment and its circumstances are what raise ordinary people into extraordinary ones." data-url="https://spirit-omega.vercel.app/proverbs/say/shishi-zao-yingxiong/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-saiweng"
     data-theme="Timing &amp; Fortune's Turning" data-cat="chengyu" data-orient="present"
@@ -475,6 +599,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Huainanzi 淮南子, 2nd c. BCE</p>
     <a class="pv-more" href="/proverbs/say/saiweng/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="塞翁失馬" data-pinyin="sài wēng shī mǎ" data-literal="the frontier old man loses his horse" data-meaning="A blessing can wear the face of loss; fortune and misfortune cannot be judged in the moment." data-url="https://spirit-omega.vercel.app/proverbs/say/saiweng/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-ji-bukeshi"
     data-theme="Timing &amp; Fortune's Turning" data-cat="yanyu" data-orient="present"
@@ -493,6 +618,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Old History of the Five Dynasties 舊五代史, 晉書·安重榮傳</p>
     <a class="pv-more" href="/proverbs/say/ji-bukeshi/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="機不可失，時不再來" data-pinyin="jī bù kě shī, shí bù zài lái" data-literal="the chance must not be lost; the moment will not come again" data-meaning="Seize the opportunity now, for the same hour will never return." data-url="https://spirit-omega.vercel.app/proverbs/say/ji-bukeshi/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-haoshi-duomo"
     data-theme="Timing &amp; Fortune's Turning" data-cat="chengyu" data-orient="future"
@@ -511,6 +637,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Dong Jieyuan 董解元, 西廂記諸宮調 (Master Dong's Western Chamber Romance), Jin dynasty</p>
     <a class="pv-more" href="/proverbs/say/haoshi-duomo/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="好事多磨" data-pinyin="hǎo shì duō mó" data-literal="good things suffer much grinding" data-meaning="Worthwhile outcomes rarely arrive without delay and obstacle." data-url="https://spirit-omega.vercel.app/proverbs/say/haoshi-duomo/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-melon-ripens-stalk-falls"
     data-theme="Timing &amp; Fortune's Turning" data-cat="chengyu" data-orient="present"
@@ -529,6 +656,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 雲笈七籤</p>
     <a class="pv-more" href="/proverbs/say/melon-ripens-stalk-falls/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="瓜熟蒂落" data-pinyin="guā shú dì luò" data-literal="when the melon ripens, the stalk falls" data-meaning="When conditions have matured, the result comes of its own accord." data-url="https://spirit-omega.vercel.app/proverbs/say/melon-ripens-stalk-falls/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-wuji"
     data-theme="Timing &amp; Fortune's Turning" data-cat="chengyu" data-orient="present"
@@ -547,6 +675,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 呂氏春秋; Daoist cyclical thought</p>
     <a class="pv-more" href="/proverbs/say/wuji/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="物極必反" data-pinyin="wù jí bì fǎn" data-literal="when a thing reaches its extreme, it reverses" data-meaning="Anything pushed to its limit turns into its opposite." data-url="https://spirit-omega.vercel.app/proverbs/say/wuji/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-shoude-yunkai"
     data-theme="Timing &amp; Fortune's Turning" data-cat="poetic" data-orient="future"
@@ -565,6 +694,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Verse associated with 水滸傳 (Water Margin) and the folk 勸世賢文; late Yuan / Ming</p>
     <a class="pv-more" href="/proverbs/say/shoude-yunkai/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="守得雲開見月明" data-pinyin="shǒu dé yún kāi jiàn yuè míng" data-literal="hold on until the clouds part and the bright moon appears" data-meaning="Endure through the dark long enough and the clear, luminous moment will come." data-url="https://spirit-omega.vercel.app/proverbs/say/shoude-yunkai/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-with-resolve-task-accomplished"
     data-theme="Perseverance &amp; the Long Road" data-cat="yanyu" data-orient="future"
@@ -583,6 +713,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Book of the Later Han 後漢書</p>
     <a class="pv-more" href="/proverbs/say/with-resolve-task-accomplished/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="有志者事竟成" data-pinyin="yǒu zhì zhě shì jìng chéng" data-literal="one with resolve, the task is in the end accomplished" data-meaning="Where there is a will, there is a way." data-url="https://spirit-omega.vercel.app/proverbs/say/with-resolve-task-accomplished/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-dripping-water-pierces-stone"
     data-theme="Perseverance &amp; the Long Road" data-cat="chengyu" data-orient="future"
@@ -601,6 +732,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 尸子; 鶴林玉露</p>
     <a class="pv-more" href="/proverbs/say/dripping-water-pierces-stone/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="水滴石穿" data-pinyin="shuǐ dī shí chuān" data-literal="dripping water pierces stone" data-meaning="Persistent small effort will overcome any obstacle in time." data-url="https://spirit-omega.vercel.app/proverbs/say/dripping-water-pierces-stone/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-qianli"
     data-theme="Perseverance &amp; the Long Road" data-cat="chengyu" data-orient="future"
@@ -619,6 +751,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Tao Te Ching 道德經, ch. 64 (Laozi)</p>
     <a class="pv-more" href="/proverbs/say/qianli/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="千里之行，始於足下" data-pinyin="qiān lǐ zhī xíng shǐ yú zú xià" data-literal="a thousand-li road begins beneath the feet" data-meaning="Every great undertaking starts with a single step." data-url="https://spirit-omega.vercel.app/proverbs/say/qianli/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-wenji"
     data-theme="Perseverance &amp; the Long Road" data-cat="chengyu" data-orient="future"
@@ -637,6 +770,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Book of Jin 晉書, Zu Ti 祖逖傳</p>
     <a class="pv-more" href="/proverbs/say/wenji/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="聞雞起舞" data-pinyin="wén jī qǐ wǔ" data-literal="hear the rooster and rise to train" data-meaning="To wake at the first crow and begin, a diligence that starts before the day asks for it." data-url="https://spirit-omega.vercel.app/proverbs/say/wenji/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-yishan"
     data-theme="Courage &amp; Decisive Action" data-cat="suyu" data-orient="present"
@@ -655,6 +789,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> folk proverb 諺語</p>
     <a class="pv-more" href="/proverbs/say/yishan/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="一山不容二虎" data-pinyin="yī shān bù róng èr hǔ" data-literal="one mountain does not hold two tigers" data-meaning="Two rivals of great strength rarely share a single territory." data-url="https://spirit-omega.vercel.app/proverbs/say/yishan/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-break-cauldrons-sink-boats"
     data-theme="Courage &amp; Decisive Action" data-cat="chengyu" data-orient="future"
@@ -673,6 +808,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Records of the Grand Historian 史記</p>
     <a class="pv-more" href="/proverbs/say/break-cauldrons-sink-boats/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="破釜沉舟" data-pinyin="pò fǔ chén zhōu" data-literal="break the cauldrons, sink the boats" data-meaning="Commit fully with no line of retreat." data-url="https://spirit-omega.vercel.app/proverbs/say/break-cauldrons-sink-boats/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-one-drumbeat-rouses-spirit"
     data-theme="Courage &amp; Decisive Action" data-cat="chengyu" data-orient="future"
@@ -691,6 +827,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Zuo Zhuan 左傳</p>
     <a class="pv-more" href="/proverbs/say/one-drumbeat-rouses-spirit/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="一鼓作氣" data-pinyin="yī gǔ zuò qì" data-literal="one drumbeat rouses the spirit" data-meaning="Finish in one sustained burst while morale is at its peak." data-url="https://spirit-omega.vercel.app/proverbs/say/one-drumbeat-rouses-spirit/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-parents-alive-do-not-travel-far"
     data-theme="Home, Family &amp; Roots" data-cat="yanyu" data-orient="present"
@@ -709,6 +846,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Analects 論語, Book 4</p>
     <a class="pv-more" href="/proverbs/say/parents-alive-do-not-travel-far/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="父母在，不遠遊" data-pinyin="fù mǔ zài, bù yuǎn yóu" data-literal="while the parents live, do not travel far" data-meaning="Stay near enough to care for aging parents while you still can." data-url="https://spirit-omega.vercel.app/proverbs/say/parents-alive-do-not-travel-far/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-jiahe"
     data-theme="Home, Family &amp; Roots" data-cat="suyu" data-orient="present"
@@ -727,6 +865,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> folk proverb; Qing-novel phrasing</p>
     <a class="pv-more" href="/proverbs/say/jiahe/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="家和萬事興" data-pinyin="jiā hé wàn shì xīng" data-literal="family harmonious, ten thousand affairs flourish" data-meaning="When the household is at peace, everything else succeeds." data-url="https://spirit-omega.vercel.app/proverbs/say/jiahe/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-family-shame-not-spread-outside"
     data-theme="Home, Family &amp; Roots" data-cat="suyu" data-orient="present"
@@ -745,6 +884,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 五燈會元</p>
     <a class="pv-more" href="/proverbs/say/family-shame-not-spread-outside/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="家醜不可外揚" data-pinyin="jiā chǒu bù kě wài yáng" data-literal="family shames must not be spread outside" data-meaning="Keep the household's internal troubles within the household." data-url="https://spirit-omega.vercel.app/proverbs/say/family-shame-not-spread-outside/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-child-travels-far-mother-worries"
     data-theme="Home, Family &amp; Roots" data-cat="yanyu" data-orient="past"
@@ -763,6 +903,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 增廣賢文</p>
     <a class="pv-more" href="/proverbs/say/child-travels-far-mother-worries/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="兒行千里母擔憂" data-pinyin="ér xíng qiān lǐ mǔ dān yōu" data-literal="when a child travels a thousand li, the mother worries" data-meaning="A parent's love reaches across any distance the child roams." data-url="https://spirit-omega.vercel.app/proverbs/say/child-travels-far-mother-worries/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-luoye"
     data-theme="Home, Family &amp; Roots" data-cat="chengyu" data-orient="past"
@@ -781,6 +922,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 景德傳燈錄 (Song Buddhist text)</p>
     <a class="pv-more" href="/proverbs/say/luoye/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="落葉歸根" data-pinyin="luò yè guī gēn" data-literal="fallen leaves return to the roots" data-meaning="All things are drawn back toward their origin and their home." data-url="https://spirit-omega.vercel.app/proverbs/say/luoye/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-goubu"
     data-theme="Home, Family &amp; Roots" data-cat="suyu" data-orient="present"
@@ -799,6 +941,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> folk proverb; paired with 子不嫌母醜</p>
     <a class="pv-more" href="/proverbs/say/goubu/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="狗不嫌家貧" data-pinyin="gǒu bù xián jiā pín" data-literal="a dog does not scorn a poor home" data-meaning="Loyalty does not weigh a home by its wealth; it stays for love rather than for gain." data-url="https://spirit-omega.vercel.app/proverbs/say/goubu/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-of-hundred-virtues-filial-first"
     data-theme="Home, Family &amp; Roots" data-cat="yanyu" data-orient="past"
@@ -817,6 +960,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 圍爐夜話</p>
     <a class="pv-more" href="/proverbs/say/of-hundred-virtues-filial-first/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="百善孝為先" data-pinyin="bǎi shàn xiào wéi xiān" data-literal="of the hundred virtues, filial care comes first" data-meaning="Respect and care for one's parents is the root virtue from which the others grow." data-url="https://spirit-omega.vercel.app/proverbs/say/of-hundred-virtues-filial-first/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-yinshui"
     data-theme="Home, Family &amp; Roots" data-cat="chengyu" data-orient="past"
@@ -835,6 +979,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Yu Xin 庾信 (Northern Zhou)</p>
     <a class="pv-more" href="/proverbs/say/yinshui/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="飲水思源" data-pinyin="yǐn shuǐ sī yuán" data-literal="drink water, think of its source" data-meaning="Remember your roots and honor those who made your good fortune possible." data-url="https://spirit-omega.vercel.app/proverbs/say/yinshui/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-wenzhi"
     data-theme="Wisdom &amp; Learning" data-cat="chengyu" data-orient="past"
@@ -853,6 +998,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Analects 論語, Book 2</p>
     <a class="pv-more" href="/proverbs/say/wenzhi/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="溫故知新" data-pinyin="wēn gù zhī xīn" data-literal="warm the old, know the new" data-meaning="Reviewing what you have learned yields fresh understanding." data-url="https://spirit-omega.vercel.app/proverbs/say/wenzhi/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-three-walking-one-is-my-teacher"
     data-theme="Wisdom &amp; Learning" data-cat="poetic" data-orient="present"
@@ -871,6 +1017,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Analects 論語, Book 7</p>
     <a class="pv-more" href="/proverbs/say/three-walking-one-is-my-teacher/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="三人行，必有我師" data-pinyin="sān rén xíng, bì yǒu wǒ shī" data-literal="of three walking together, one is my teacher" data-meaning="There is always someone, in any company, from whom you can learn." data-url="https://spirit-omega.vercel.app/proverbs/say/three-walking-one-is-my-teacher/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-learning-without-thinking-is-lost"
     data-theme="Wisdom &amp; Learning" data-cat="poetic" data-orient="present"
@@ -889,6 +1036,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Analects 論語, Book 2</p>
     <a class="pv-more" href="/proverbs/say/learning-without-thinking-is-lost/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="學而不思則罔" data-pinyin="xué ér bù sī zé wǎng" data-literal="learning without thinking, one is lost" data-meaning="Study without reflection leaves you confused; the two must feed each other." data-url="https://spirit-omega.vercel.app/proverbs/say/learning-without-thinking-is-lost/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-houde"
     data-theme="Harmony, Virtue &amp; Balance" data-cat="chengyu" data-orient="present"
@@ -907,6 +1055,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> I Ching 易經, Kun hexagram commentary</p>
     <a class="pv-more" href="/proverbs/say/houde/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="厚德載物" data-pinyin="hòu dé zài wù" data-literal="thick virtue carries things" data-meaning="As the earth bears everything, deep virtue supports all around it." data-url="https://spirit-omega.vercel.app/proverbs/say/houde/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-going-too-far-like-not-reaching"
     data-theme="Harmony, Virtue &amp; Balance" data-cat="chengyu" data-orient="present"
@@ -925,6 +1074,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Analects 論語, Book 11</p>
     <a class="pv-more" href="/proverbs/say/going-too-far-like-not-reaching/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="過猶不及" data-pinyin="guò yóu bù jí" data-literal="going too far is like not reaching" data-meaning="Excess is as much a fault as deficiency; virtue lies in the mean." data-url="https://spirit-omega.vercel.app/proverbs/say/going-too-far-like-not-reaching/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-harmony-as-what-is-precious"
     data-theme="Harmony, Virtue &amp; Balance" data-cat="chengyu" data-orient="present"
@@ -943,6 +1093,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Analects 論語 (禮之用，和為貴)</p>
     <a class="pv-more" href="/proverbs/say/harmony-as-what-is-precious/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="以和為貴" data-pinyin="yǐ hé wéi guì" data-literal="take harmony as what is precious" data-meaning="Harmony is the most valued principle in all human dealings." data-url="https://spirit-omega.vercel.app/proverbs/say/harmony-as-what-is-precious/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-do-not-impose-what-you-dislike"
     data-theme="Harmony, Virtue &amp; Balance" data-cat="yanyu" data-orient="present"
@@ -961,6 +1112,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Analects 論語</p>
     <a class="pv-more" href="/proverbs/say/do-not-impose-what-you-dislike/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="己所不欲，勿施於人" data-pinyin="jǐ suǒ bù yù, wù shī yú rén" data-literal="what you do not want for yourself, do not impose on others" data-meaning="The Confucian rule of reciprocity; treat others as you would wish to be treated." data-url="https://spirit-omega.vercel.app/proverbs/say/do-not-impose-what-you-dislike/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-yiben-wanli"
     data-theme="Wealth, Work &amp; Diligence" data-cat="chengyu" data-orient="future"
@@ -979,6 +1131,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Qing dynasty novel 市聲 (Shì Shēng) by 姬文, ch. 26; common merchant idiom</p>
     <a class="pv-more" href="/proverbs/say/yiben-wanli/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="一本萬利" data-pinyin="yī běn wàn lì" data-literal="one capital, ten-thousand profit" data-meaning="A tiny investment yields an enormous return." data-url="https://spirit-omega.vercel.app/proverbs/say/yiben-wanli/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-grind-iron-pestle-into-needle"
     data-theme="Wealth, Work &amp; Diligence" data-cat="chengyu" data-orient="future"
@@ -997,6 +1150,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 方輿勝覽 (Li Bai legend)</p>
     <a class="pv-more" href="/proverbs/say/grind-iron-pestle-into-needle/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="鐵杵磨針" data-pinyin="tiě chǔ mó zhēn" data-literal="grind an iron pestle into a needle" data-meaning="Sustained diligence achieves what looks impossible." data-url="https://spirit-omega.vercel.app/proverbs/say/grind-iron-pestle-into-needle/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-yifen-gengyun"
     data-theme="Wealth, Work &amp; Diligence" data-cat="yanyu" data-orient="future"
@@ -1015,6 +1169,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Common Chinese proverb; recorded in the Taiwan MOE 教育部 idiom dictionary</p>
     <a class="pv-more" href="/proverbs/say/yifen-gengyun/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="一分耕耘，一分收穫" data-pinyin="yī fēn gēng yún, yī fēn shōu huò" data-literal="one measure of tilling, one measure of harvest" data-meaning="The reward you reap is exactly proportional to the effort you sow." data-url="https://spirit-omega.vercel.app/proverbs/say/yifen-gengyun/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-qin-neng-buzhuo"
     data-theme="Wealth, Work &amp; Diligence" data-cat="chengyu" data-orient="future"
@@ -1033,6 +1188,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Associated with Bai Juyi 白居易 (Tang); popularized via 邵雍 and later usage; classical idiom, exact locus debated</p>
     <a class="pv-more" href="/proverbs/say/qin-neng-buzhuo/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="勤能補拙" data-pinyin="qín néng bǔ zhuō" data-literal="diligence can mend clumsiness" data-meaning="Hard work compensates for a lack of natural talent." data-url="https://spirit-omega.vercel.app/proverbs/say/qin-neng-buzhuo/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-jishao"
     data-theme="Wealth, Work &amp; Diligence" data-cat="chengyu" data-orient="future"
@@ -1051,6 +1207,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Book of Han 漢書</p>
     <a class="pv-more" href="/proverbs/say/jishao/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="積少成多" data-pinyin="jī shǎo chéng duō" data-literal="accumulate few, become many" data-meaning="Many small things gathered steadily become much; abundance is built grain by grain." data-url="https://spirit-omega.vercel.app/proverbs/say/jishao/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-qie-er-bushe"
     data-theme="Wealth, Work &amp; Diligence" data-cat="chengyu" data-orient="future"
@@ -1069,6 +1226,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Xunzi 荀子, 勸學 (Exhortation to Learning): 鍥而不舍，金石可鏤; Warring States period</p>
     <a class="pv-more" href="/proverbs/say/qie-er-bushe/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="鍥而不捨" data-pinyin="qiè ér bù shě" data-literal="to carve and not let go" data-meaning="To keep chiseling without ever giving up, until even stone yields." data-url="https://spirit-omega.vercel.app/proverbs/say/qie-er-bushe/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-kaiyuan-jieliu"
     data-theme="Wealth, Work &amp; Diligence" data-cat="chengyu" data-orient="present"
@@ -1087,6 +1245,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Xunzi 荀子, 富國 (Enriching the State), Warring States period</p>
     <a class="pv-more" href="/proverbs/say/kaiyuan-jieliu/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="開源節流" data-pinyin="kāi yuán jié liú" data-literal="open the source, restrain the flow" data-meaning="Widen your streams of income while curbing what drains away." data-url="https://spirit-omega.vercel.app/proverbs/say/kaiyuan-jieliu/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-shi-zai-renwei"
     data-theme="Wealth, Work &amp; Diligence" data-cat="chengyu" data-orient="future"
@@ -1105,6 +1264,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Feng Menglong 馮夢龍, 東周列國志 (Chronicles of the Eastern Zhou States), ch. 69, Ming dynasty</p>
     <a class="pv-more" href="/proverbs/say/shi-zai-renwei/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="事在人為" data-pinyin="shì zài rén wéi" data-literal="the matter lies in what a person does" data-meaning="Whether a thing succeeds depends on human effort, not on fate." data-url="https://spirit-omega.vercel.app/proverbs/say/shi-zai-renwei/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-shouzhu"
     data-theme="Wealth, Work &amp; Diligence" data-cat="chengyu" data-orient="present"
@@ -1123,6 +1283,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Han Feizi 韓非子, Five Vermin</p>
     <a class="pv-more" href="/proverbs/say/shouzhu/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="守株待兔" data-pinyin="shǒu zhū dài tù" data-literal="guard the stump, wait for the rabbit" data-meaning="A caution against idle hope where effort is needed; arrange your space to act, not to wait." data-url="https://spirit-omega.vercel.app/proverbs/say/shouzhu/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-huo-bei-er-chu"
     data-theme="Wealth, Work &amp; Diligence" data-cat="yanyu" data-orient="present"
@@ -1141,6 +1302,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> The Great Learning 大學 (in the Book of Rites 禮記), ch. 10</p>
     <a class="pv-more" href="/proverbs/say/huo-bei-er-chu/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="貨悖而入者亦悖而出" data-pinyin="huò bèi ér rù zhě yì bèi ér chū" data-literal="goods that come in crookedly also go out crookedly" data-meaning="Wealth gained by wrong means departs by wrong means." data-url="https://spirit-omega.vercel.app/proverbs/say/huo-bei-er-chu/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-tiandao-chouqin"
     data-theme="Wealth, Work &amp; Diligence" data-cat="chengyu" data-orient="future"
@@ -1159,6 +1321,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Song–Ming Neo-Confucian maxim built on the Book of Changes 周易 (乾卦, 天行健); phrase itself is later formulation</p>
     <a class="pv-more" href="/proverbs/say/tiandao-chouqin/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="天道酬勤" data-pinyin="tiān dào chóu qín" data-literal="the way of heaven rewards diligence" data-meaning="Heaven repays those who labor without slackening." data-url="https://spirit-omega.vercel.app/proverbs/say/tiandao-chouqin/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-yejing-yuqin"
     data-theme="Wealth, Work &amp; Diligence" data-cat="poetic" data-orient="present"
@@ -1177,6 +1340,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Han Yu 韓愈, 進學解 (Exhortation on Study), Tang dynasty</p>
     <a class="pv-more" href="/proverbs/say/yejing-yuqin/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="業精於勤荒於嬉" data-pinyin="yè jīng yú qín huāng yú xī" data-literal="mastery is perfected by diligence, laid waste by play" data-meaning="Skill is sharpened through hard work and ruined through idle amusement." data-url="https://spirit-omega.vercel.app/proverbs/say/yejing-yuqin/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-shuzhong-huangjinwu"
     data-theme="Wealth, Work &amp; Diligence" data-cat="poetic" data-orient="future"
@@ -1195,6 +1359,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Emperor Zhenzong of Song 宋真宗, 勵學篇 / 勸學詩 (Encouragement to Study), Song dynasty</p>
     <a class="pv-more" href="/proverbs/say/shuzhong-huangjinwu/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="書中自有黃金屋" data-pinyin="shū zhōng zì yǒu huáng jīn wū" data-literal="within books there is, of itself, a house of gold" data-meaning="Learning is its own treasury; study opens the door to fortune." data-url="https://spirit-omega.vercel.app/proverbs/say/shuzhong-huangjinwu/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-caiyuan-guangjin"
     data-theme="Wealth, Work &amp; Diligence" data-cat="suyu" data-orient="future"
@@ -1213,6 +1378,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Traditional auspicious phrase 吉祥話 (spring-festival couplet register); no single classical text; attested folk formula</p>
     <a class="pv-more" href="/proverbs/say/caiyuan-guangjin/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="財源廣進" data-pinyin="cái yuán guǎng jìn" data-literal="may sources of wealth broadly enter" data-meaning="A blessing that wealth may pour in from every direction." data-url="https://spirit-omega.vercel.app/proverbs/say/caiyuan-guangjin/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-san-si-er-hou-xing"
     data-theme="Friendship, Trust &amp; Speech" data-cat="yanyu" data-orient="present"
@@ -1231,6 +1397,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Analects 論語, Gongye Chang 公冶長</p>
     <a class="pv-more" href="/proverbs/say/san-si-er-hou-xing/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="三思而後行" data-pinyin="sān sī ér hòu xíng" data-literal="think three times, and only then act" data-meaning="Deliberate before you act: turn a decision over more than once before letting it out of your hands. (Confucius wryly noted twice may be enough.)" data-url="https://spirit-omega.vercel.app/proverbs/say/san-si-er-hou-xing/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-ren-er-wuxin-buzhi-qike"
     data-theme="Friendship, Trust &amp; Speech" data-cat="yanyu" data-orient="present"
@@ -1249,6 +1416,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Analects 論語, Wei Zheng 為政</p>
     <a class="pv-more" href="/proverbs/say/ren-er-wuxin-buzhi-qike/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="人而無信，不知其可也" data-pinyin="rén ér wú xìn, bù zhī qí kě yě" data-literal="a person without trustworthiness, I do not know what he is good for" data-meaning="Without keeping one's word, a person cannot function among others at all; trust is the crossbar that lets the cart move." data-url="https://spirit-omega.vercel.app/proverbs/say/ren-er-wuxin-buzhi-qike/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-yan-zhe-wu-zui-wen-zhe-zu-jie"
     data-theme="Friendship, Trust &amp; Speech" data-cat="yanyu" data-orient="present"
@@ -1267,6 +1435,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Classic of Poetry 詩經, Great Preface 大序</p>
     <a class="pv-more" href="/proverbs/say/yan-zhe-wu-zui-wen-zhe-zu-jie/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="言者無罪，聞者足戒" data-pinyin="yán zhě wú zuì, wén zhě zú jiè" data-literal="the one who speaks is without fault; the one who hears takes it as warning" data-meaning="Honest criticism should not be punished, and the listener should take the caution to heart even if it doesn't wholly apply. It is a rule for keeping counsel open." data-url="https://spirit-omega.vercel.app/proverbs/say/yan-zhe-wu-zui-wen-zhe-zu-jie/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-jifeng-zhi-jincao"
     data-theme="Friendship, Trust &amp; Speech" data-cat="suyu" data-orient="present"
@@ -1285,6 +1454,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Book of the Later Han 後漢書, Biography of Wang Ba 王霸傳</p>
     <a class="pv-more" href="/proverbs/say/jifeng-zhi-jincao/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="疾風知勁草" data-pinyin="jí fēng zhī jìng cǎo" data-literal="a fierce wind knows the sturdy grass" data-meaning="Only a hard wind reveals which grass is strong; only crisis shows whose loyalty and integrity truly hold." data-url="https://spirit-omega.vercel.app/proverbs/say/jifeng-zhi-jincao/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-yu-pengyou-jiao-yan-er-youxin"
     data-theme="Friendship, Trust &amp; Speech" data-cat="suyu" data-orient="present"
@@ -1303,6 +1473,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Analects 論語, Xue Er 學而 (Zixia)</p>
     <a class="pv-more" href="/proverbs/say/yu-pengyou-jiao-yan-er-youxin/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="與朋友交，言而有信" data-pinyin="yǔ péng yǒu jiāo, yán ér yǒu xìn" data-literal="in dealings with friends, let your word be trustworthy" data-meaning="The core of friendship is that what you say can be relied on; a friend is someone whose promises you never have to double-check." data-url="https://spirit-omega.vercel.app/proverbs/say/yu-pengyou-jiao-yan-er-youxin/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-bing-cong-kou-ru-huo-cong-kou-chu"
     data-theme="Friendship, Trust &amp; Speech" data-cat="yanyu" data-orient="present"
@@ -1321,6 +1492,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Fu Xuan 傅玄, Kou Ming 口銘 (Jin dynasty)</p>
     <a class="pv-more" href="/proverbs/say/bing-cong-kou-ru-huo-cong-kou-chu/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="病從口入，禍從口出" data-pinyin="bìng cóng kǒu rù, huò cóng kǒu chū" data-literal="illness enters through the mouth; disaster comes out of the mouth" data-meaning="Just as sickness comes from what you take in, ruin comes from what you let out; guard your speech the way you guard your food." data-url="https://spirit-omega.vercel.app/proverbs/say/bing-cong-kou-ru-huo-cong-kou-chu/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-shi-wei-zhiji-zhe-si"
     data-theme="Friendship, Trust &amp; Speech" data-cat="suyu" data-orient="past"
@@ -1339,6 +1511,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Zhanguo Ce 戰國策; Records of the Grand Historian 史記, Yu Rang 豫讓</p>
     <a class="pv-more" href="/proverbs/say/shi-wei-zhiji-zhe-si/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="士為知己者死" data-pinyin="shì wèi zhī jǐ zhě sǐ" data-literal="a gentleman will die for the one who truly knows him" data-meaning="To be genuinely understood by another person is so rare that it can command a loyalty deeper than life: the debt owed to being truly seen." data-url="https://spirit-omega.vercel.app/proverbs/say/shi-wei-zhiji-zhe-si/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-luyao-zhi-mali-rijiu-jian-renxin"
     data-theme="Friendship, Trust &amp; Speech" data-cat="yanyu" data-orient="future"
@@ -1357,6 +1530,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Yuan-era drama / folk proverb (諺語); attested Wiktionary</p>
     <a class="pv-more" href="/proverbs/say/luyao-zhi-mali-rijiu-jian-renxin/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="路遙知馬力，日久見人心" data-pinyin="lù yáo zhī mǎ lì, rì jiǔ jiàn rén xīn" data-literal="a long road tests a horse's strength; long days reveal a person's heart" data-meaning="Character and loyalty are proven only over time; you cannot know someone's true heart until the road has been long enough to wear the pretense off." data-url="https://spirit-omega.vercel.app/proverbs/say/luyao-zhi-mali-rijiu-jian-renxin/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-junzi-zhi-jiao-dan-ru-shui"
     data-theme="Friendship, Trust &amp; Speech" data-cat="suyu" data-orient="present"
@@ -1375,6 +1549,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Zhuangzi 莊子, chapter Shan Mu 山木</p>
     <a class="pv-more" href="/proverbs/say/junzi-zhi-jiao-dan-ru-shui/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="君子之交淡如水" data-pinyin="jūn zǐ zhī jiāo dàn rú shuǐ" data-literal="the friendship of the noble person is bland as water" data-meaning="True friendship between people of character is plain and unforced, not sweetened by flattery or gain, and lasting precisely because it asks for nothing." data-url="https://spirit-omega.vercel.app/proverbs/say/junzi-zhi-jiao-dan-ru-shui/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-yan-duo-bi-shi"
     data-theme="Friendship, Trust &amp; Speech" data-cat="yanyu" data-orient="present"
@@ -1393,6 +1568,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> attested in Zhu Zi Jia Xun 朱子家訓 and earlier; Wiktionary / MOE</p>
     <a class="pv-more" href="/proverbs/say/yan-duo-bi-shi/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="言多必失" data-pinyin="yán duō bì shī" data-literal="many words must lose something" data-meaning="Talk enough and you will inevitably slip; the more you say, the more surface you leave for a mistake to land on." data-url="https://spirit-omega.vercel.app/proverbs/say/yan-duo-bi-shi/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-hainei-cun-zhiji-tianya-ruo-bilin"
     data-theme="Friendship, Trust &amp; Speech" data-cat="poetic" data-orient="present"
@@ -1411,6 +1587,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Wang Bo 王勃, 送杜少府之任蜀州 (Tang poem)</p>
     <a class="pv-more" href="/proverbs/say/hainei-cun-zhiji-tianya-ruo-bilin/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="海內存知己，天涯若比鄰" data-pinyin="hǎi nèi cún zhī jǐ, tiān yá ruò bǐ lín" data-literal="if within the seas you have one who knows you, the ends of the earth are like next door" data-meaning="A true friend collapses distance; when someone knows your heart, being far apart feels like living in the same neighborhood." data-url="https://spirit-omega.vercel.app/proverbs/say/hainei-cun-zhiji-tianya-ruo-bilin/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-huannan-jian-zhenqing"
     data-theme="Friendship, Trust &amp; Speech" data-cat="suyu" data-orient="present"
@@ -1429,6 +1606,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Chinese folk proverb (俗語); attested Wiktionary</p>
     <a class="pv-more" href="/proverbs/say/huannan-jian-zhenqing/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="患難見真情" data-pinyin="huàn nàn jiàn zhēn qíng" data-literal="in hardship one sees true feeling" data-meaning="Adversity reveals who your real friends are; genuine bonds show themselves only when there is a cost to staying." data-url="https://spirit-omega.vercel.app/proverbs/say/huannan-jian-zhenqing/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-bing-dong-san-chi"
     data-theme="Humility &amp; Self-Mastery" data-cat="yanyu" data-orient="past"
@@ -1447,6 +1625,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 《論衡·狀留》 by 王充 (Wang Chong, Han dynasty)</p>
     <a class="pv-more" href="/proverbs/say/bing-dong-san-chi/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="冰凍三尺，非一日之寒" data-pinyin="bīng dòng sān chǐ, fēi yī rì zhī hán" data-literal="three feet of ice is not the cold of a single day" data-meaning="Nothing deep forms overnight, whether a skill, a habit, or a ruin; it is the slow sum of many unremarkable days." data-url="https://spirit-omega.vercel.app/proverbs/say/bing-dong-san-chi/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-ke-ji-fu-li"
     data-theme="Humility &amp; Self-Mastery" data-cat="chengyu" data-orient="present"
@@ -1465,6 +1644,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 《論語·顏淵》 (Analects 12.1), Confucius to Yan Yuan</p>
     <a class="pv-more" href="/proverbs/say/ke-ji-fu-li/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="克己復禮" data-pinyin="kè jǐ fù lǐ" data-literal="subdue the self, return to propriety" data-meaning="Master your own impulses and align your conduct with what is right; virtue begins as self-restraint." data-url="https://spirit-omega.vercel.app/proverbs/say/ke-ji-fu-li/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-da-zhi-ruo-yu"
     data-theme="Humility &amp; Self-Mastery" data-cat="chengyu" data-orient="present"
@@ -1483,6 +1663,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Su Shi 蘇軾, letter to Ouyang Xiu 賀歐陽少師致仕啟 (Song dynasty)</p>
     <a class="pv-more" href="/proverbs/say/da-zhi-ruo-yu/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="大智若愚" data-pinyin="dà zhì ruò yú" data-literal="great wisdom seems like foolishness" data-meaning="The deepest intelligence looks unremarkable from outside; the truly wise feel no need to appear clever, so their brilliance reads as plainness." data-url="https://spirit-omega.vercel.app/proverbs/say/da-zhi-ruo-yu/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-know-self-know-other-never-in-peril"
     data-theme="Humility &amp; Self-Mastery" data-cat="yanyu" data-orient="future"
@@ -1501,6 +1682,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> The Art of War 孫子兵法</p>
     <a class="pv-more" href="/proverbs/say/know-self-know-other-never-in-peril/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="知己知彼，百戰不殆" data-pinyin="zhī jǐ zhī bǐ, bǎi zhàn bù dài" data-literal="know yourself, know the other, and in a hundred battles you are never in peril" data-meaning="Understanding both your own nature and the situation lets you face any contest safely." data-url="https://spirit-omega.vercel.app/proverbs/say/know-self-know-other-never-in-peril/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-qian-qian-junzi"
     data-theme="Humility &amp; Self-Mastery" data-cat="chengyu" data-orient="present"
@@ -1519,6 +1701,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> I Ching 易經, Hexagram 15 Qian 謙</p>
     <a class="pv-more" href="/proverbs/say/qian-qian-junzi/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="謙謙君子" data-pinyin="qiān qiān jūn zǐ" data-literal="the humble, humble noble person" data-meaning="One who adds humility to humility, a person of standing who stays modest, moves through the world with grace and meets good fortune." data-url="https://spirit-omega.vercel.app/proverbs/say/qian-qian-junzi/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-tian-xing-jian-zi-qiang-bu-xi"
     data-theme="Humility &amp; Self-Mastery" data-cat="poetic" data-orient="future"
@@ -1537,6 +1720,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 《周易·象傳》 (I Ching, Xiang commentary on the Qian hexagram)</p>
     <a class="pv-more" href="/proverbs/say/tian-xing-jian-zi-qiang-bu-xi/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="天行健，君子以自強不息" data-pinyin="tiān xíng jiàn, jūn zǐ yǐ zì qiáng bù xī" data-literal="Heaven moves with vigor; the noble person accordingly strengthens the self without cease" data-meaning="The cosmos never rests in its turning, so a worthy person keeps improving without pause." data-url="https://spirit-omega.vercel.app/proverbs/say/tian-xing-jian-zi-qiang-bu-xi/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-ningjing"
     data-theme="Humility &amp; Self-Mastery" data-cat="chengyu" data-orient="future"
@@ -1555,6 +1739,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Zhuge Liang 諸葛亮, 誡子書</p>
     <a class="pv-more" href="/proverbs/say/ningjing/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="寧靜致遠" data-pinyin="níng jìng zhì yuǎn" data-literal="through tranquility, reach the far" data-meaning="Only a calm, undistracted mind accomplishes far-reaching aims." data-url="https://spirit-omega.vercel.app/proverbs/say/ningjing/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-desire-speed-not-arrive"
     data-theme="Humility &amp; Self-Mastery" data-cat="yanyu" data-orient="present"
@@ -1573,6 +1758,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Analects 論語, Book 13</p>
     <a class="pv-more" href="/proverbs/say/desire-speed-not-arrive/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="欲速則不達" data-pinyin="yù sù zé bù dá" data-literal="desire speed, then you do not arrive" data-meaning="Rushing defeats its own purpose." data-url="https://spirit-omega.vercel.app/proverbs/say/desire-speed-not-arrive/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-sheng-ren-zhe-you-li"
     data-theme="Humility &amp; Self-Mastery" data-cat="poetic" data-orient="present"
@@ -1591,6 +1777,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 《老子·道德經》 chapter 33 (Tao Te Ching)</p>
     <a class="pv-more" href="/proverbs/say/sheng-ren-zhe-you-li/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="勝人者有力，自勝者強" data-pinyin="shèng rén zhě yǒu lì, zì shèng zhě qiáng" data-literal="who overcomes others has force; who overcomes himself is strong" data-meaning="Beating other people only takes power; mastering yourself is the rarer, truer strength." data-url="https://spirit-omega.vercel.app/proverbs/say/sheng-ren-zhe-you-li/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-chi-you-suo-duan-cun-you-suo-chang"
     data-theme="Humility &amp; Self-Mastery" data-cat="yanyu" data-orient="present"
@@ -1609,6 +1796,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Chu Ci 楚辭, Bu Ju 卜居 (attrib. Qu Yuan)</p>
     <a class="pv-more" href="/proverbs/say/chi-you-suo-duan-cun-you-suo-chang/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="尺有所短，寸有所長" data-pinyin="chǐ yǒu suǒ duǎn, cùn yǒu suǒ cháng" data-literal="a foot can fall short; an inch can be long enough" data-meaning="Even the larger measure has its shortcomings and the smaller its strengths: everyone has gifts and gaps, so judge no one, and least of all yourself, by a single scale." data-url="https://spirit-omega.vercel.app/proverbs/say/chi-you-suo-duan-cun-you-suo-chang/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-man-zhao-sun-qian-shou-yi"
     data-theme="Humility &amp; Self-Mastery" data-cat="yanyu" data-orient="present"
@@ -1627,6 +1815,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Book of Documents 尚書, Counsels of the Great Yu 大禹謨</p>
     <a class="pv-more" href="/proverbs/say/man-zhao-sun-qian-shou-yi/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="滿招損，謙受益" data-pinyin="mǎn zhāo sǔn, qiān shòu yì" data-literal="fullness invites loss; humility receives gain" data-meaning="Complacency and self-satisfaction erode what you have; staying humble and open is what keeps you growing. This, the ancients said, is the way of Heaven." data-url="https://spirit-omega.vercel.app/proverbs/say/man-zhao-sun-qian-shou-yi/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-knowing-sufficiency-always-at-ease"
     data-theme="Humility &amp; Self-Mastery" data-cat="chengyu" data-orient="present"
@@ -1645,6 +1834,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Tao Te Ching 道德經, ch. 46</p>
     <a class="pv-more" href="/proverbs/say/knowing-sufficiency-always-at-ease/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="知足常樂" data-pinyin="zhī zú cháng lè" data-literal="knowing sufficiency, one is always at ease" data-meaning="Contentment with what you have brings lasting happiness." data-url="https://spirit-omega.vercel.app/proverbs/say/knowing-sufficiency-always-at-ease/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-xu-huai-ruo-gu"
     data-theme="Humility &amp; Self-Mastery" data-cat="chengyu" data-orient="present"
@@ -1663,6 +1853,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Dao De Jing 道德經, chapter 15 (Laozi)</p>
     <a class="pv-more" href="/proverbs/say/xu-huai-ruo-gu/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="虛懷若谷" data-pinyin="xū huái ruò gǔ" data-literal="a mind as open and empty as a valley" data-meaning="True humility keeps the mind hollow like a valley, open enough to receive every stream, every view, without needing to be right." data-url="https://spirit-omega.vercel.app/proverbs/say/xu-huai-ruo-gu/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-tian-jiang-jiang-da-ren"
     data-theme="Adversity &amp; Resilience" data-cat="poetic" data-orient="future"
@@ -1681,6 +1872,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 《孟子·告子下》 (Mencius, Gaozi II)</p>
     <a class="pv-more" href="/proverbs/say/tian-jiang-jiang-da-ren/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="天將降大任於斯人也，必先苦其心志" data-pinyin="tiān jiāng jiàng dà rèn yú sī rén yě, bì xiān kǔ qí xīn zhì" data-literal="when Heaven is about to lay a great charge on a person, it first embitters their heart and will" data-meaning="Great responsibility is preceded by suffering that hardens the mind; the ordeal is the training, not the punishment." data-url="https://spirit-omega.vercel.app/proverbs/say/tian-jiang-jiang-da-ren/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-wo-xin-chang-dan"
     data-theme="Adversity &amp; Resilience" data-cat="chengyu" data-orient="future"
@@ -1699,6 +1891,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 《史記·越王句踐世家》 (Records of the Grand Historian); phrase crystallized in Song-era writing</p>
     <a class="pv-more" href="/proverbs/say/wo-xin-chang-dan/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="臥薪嘗膽" data-pinyin="wò xīn cháng dǎn" data-literal="sleep on brushwood, taste gall" data-meaning="Endure self-imposed hardship and never let comfort dull your resolve, so you can rise from defeat." data-url="https://spirit-omega.vercel.app/proverbs/say/wo-xin-chang-dan/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-qian-mo-wan-ji-hai-jian-jing"
     data-theme="Adversity &amp; Resilience" data-cat="poetic" data-orient="present"
@@ -1717,6 +1910,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 《竹石》 by 鄭燮 (Zheng Xie / Zheng Banqiao), Qing dynasty</p>
     <a class="pv-more" href="/proverbs/say/qian-mo-wan-ji-hai-jian-jing/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="千磨萬擊還堅勁，任爾東西南北風" data-pinyin="qiān mó wàn jī hái jiān jìng, rèn ěr dōng xī nán běi fēng" data-literal="a thousand grindings, ten thousand blows, still firm and strong; let the winds blow east, west, south, north" data-meaning="Rooted resolve outlasts every battering; once your footing is real, no direction of pressure can topple you." data-url="https://spirit-omega.vercel.app/proverbs/say/qian-mo-wan-ji-hai-jian-jing/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-lost-sheep-mend-fold"
     data-theme="Adversity &amp; Resilience" data-cat="chengyu" data-orient="present"
@@ -1735,6 +1929,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Strategies of the Warring States 戰國策</p>
     <a class="pv-more" href="/proverbs/say/lost-sheep-mend-fold/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="亡羊補牢" data-pinyin="wáng yáng bǔ láo" data-literal="the sheep is lost, then mend the fold" data-meaning="It is never too late to repair the damage after a loss." data-url="https://spirit-omega.vercel.app/proverbs/say/lost-sheep-mend-fold/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-liu-de-qing-shan-zai"
     data-theme="Adversity &amp; Resilience" data-cat="yanyu" data-orient="future"
@@ -1753,6 +1948,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> folk proverb; recorded in Ming novel 《初刻拍案驚奇》</p>
     <a class="pv-more" href="/proverbs/say/liu-de-qing-shan-zai/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="留得青山在，不怕沒柴燒" data-pinyin="liú dé qīng shān zài, bù pà méi chái shāo" data-literal="keep the green hills, and you'll never fear having no firewood" data-meaning="Everything lost can be regrown as long as you protect the foundation: life, health, the source itself." data-url="https://spirit-omega.vercel.app/proverbs/say/liu-de-qing-shan-zai/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-yi-nian-zhi-ji-zai-yu-chun"
     data-theme="Nature, Seasons &amp; Health" data-cat="yanyu" data-orient="future"
@@ -1771,6 +1967,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> folk proverb; recorded in 《增廣賢文》, echoing the Liang-dynasty 《纂要》</p>
     <a class="pv-more" href="/proverbs/say/yi-nian-zhi-ji-zai-yu-chun/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="一年之計在於春，一日之計在於晨" data-pinyin="yī nián zhī jì zài yú chūn, yī rì zhī jì zài yú chén" data-literal="a year's plan rests in spring; a day's plan rests in the morning" data-meaning="Begin at the beginning: the whole shape of a year or a day is set by what you do at its first hour." data-url="https://spirit-omega.vercel.app/proverbs/say/yi-nian-zhi-ji-zai-yu-chun/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-moon-has-shadow-and-light"
     data-theme="Nature, Seasons &amp; Health" data-cat="poetic" data-orient="present"
@@ -1789,6 +1986,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> Su Shi 蘇軾, 水調歌頭</p>
     <a class="pv-more" href="/proverbs/say/moon-has-shadow-and-light/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="月有陰晴圓缺" data-pinyin="yuè yǒu yīn qíng yuán quē" data-literal="the moon has its shadow and light, its fullness and its waning" data-meaning="Like human grief and joy, the moon waxes and wanes; imperfection is the natural order." data-url="https://spirit-omega.vercel.app/proverbs/say/moon-has-shadow-and-light/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-xiao-yi-xiao-shi-nian-shao"
     data-theme="Nature, Seasons &amp; Health" data-cat="yanyu" data-orient="present"
@@ -1807,6 +2005,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> folk health proverb (養生諺語); full form 笑一笑，十年少；愁一愁，白了頭</p>
     <a class="pv-more" href="/proverbs/say/xiao-yi-xiao-shi-nian-shao/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="笑一笑，十年少" data-pinyin="xiào yī xiào, shí nián shào" data-literal="one laugh, ten years younger" data-meaning="A light heart keeps the body young; laughter is medicine, and worry is what ages you." data-url="https://spirit-omega.vercel.app/proverbs/say/xiao-yi-xiao-shi-nian-shao/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-fan-hou-bai-bu-zou"
     data-theme="Nature, Seasons &amp; Health" data-cat="yanyu" data-orient="future"
@@ -1825,6 +2024,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> folk health proverb (養生諺語)</p>
     <a class="pv-more" href="/proverbs/say/fan-hou-bai-bu-zou/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="飯後百步走，活到九十九" data-pinyin="fàn hòu bǎi bù zǒu, huó dào jiǔ shí jiǔ" data-literal="walk a hundred steps after a meal, live to ninety-nine" data-meaning="Small, gentle, regular movement is the quiet secret of a long life; don't sit still after you eat." data-url="https://spirit-omega.vercel.app/proverbs/say/fan-hou-bai-bu-zou/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-no-banquet-that-does-not-end"
     data-theme="Nature, Seasons &amp; Health" data-cat="suyu" data-orient="present"
@@ -1843,6 +2043,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 醒世恆言</p>
     <a class="pv-more" href="/proverbs/say/no-banquet-that-does-not-end/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="天下無不散之筵席" data-pinyin="tiān xià wú bù sàn zhī yán xí" data-literal="under heaven there is no banquet that does not break up" data-meaning="Every gathering, however warm, must eventually end." data-url="https://spirit-omega.vercel.app/proverbs/say/no-banquet-that-does-not-end/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-sui-han-song-bai"
     data-theme="Nature, Seasons &amp; Health" data-cat="poetic" data-orient="present"
@@ -1861,6 +2062,7 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 《論語·子罕》 (Analects 9.28)</p>
     <a class="pv-more" href="/proverbs/say/sui-han-song-bai/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="歲寒，然後知松柏之後凋也" data-pinyin="suì hán, rán hòu zhī sōng bǎi zhī hòu diāo yě" data-literal="only when the year turns cold do we know the pine and cypress are the last to wither" data-meaning="Character shows in hard seasons; the ones who hold their color when everything else fades are revealed only by the cold." data-url="https://spirit-omega.vercel.app/proverbs/say/sui-han-song-bai/">Share</button>
   </article>
 <article class="pv-card" role="listitem" id="p-yin-shi-you-jie-qi-ju-you-chang"
     data-theme="Nature, Seasons &amp; Health" data-cat="poetic" data-orient="present"
@@ -1879,8 +2081,9 @@
     </div>
     <p class="pv-src"><span class="k">Source</span> 《黃帝內經·素問·上古天真論》 (Huangdi Neijing / Yellow Emperor's Inner Canon)</p>
     <a class="pv-more" href="/proverbs/say/yin-shi-you-jie-qi-ju-you-chang/">Read the whole line</a>
+    <button type="button" class="pv-share" data-share data-trad="飲食有節，起居有常" data-pinyin="yǐn shí yǒu jié, qǐ jū yǒu cháng" data-literal="eat and drink with measure, rise and rest with regularity" data-meaning="Health is built on moderation and rhythm: temperate at the table, steady in the hours you keep." data-url="https://spirit-omega.vercel.app/proverbs/say/yin-shi-you-jie-qi-ju-you-chang/">Share</button>
   </article></div>
-  <p class="pv-empty" id="pvEmpty" hidden>No proverb matches that. Loosen a filter, or clear them all.</p>
+  <p class="pv-empty" id="pvEmpty" hidden>No proverb matches that. Loosen a filter, or clear them all.</p></div></div>
   <section class="pv-faq" aria-label="About the proverbs">
     <h2>About the library</h2>
     <div class="pv-qa"><h3>Are these real Chinese proverbs?</h3><p>Yes. Every proverb here is drawn from a named classical source, such as the Analects, the Tao Te Ching, Mencius, the Art of War, or the dynastic histories, or from attested folk tradition. Sayings that are only English calques translated into Chinese, like the false “still waters run deep,” are deliberately left out.</p></div><div class="pv-qa"><h3>What is the difference between an adage, a proverb, and a saying?</h3><p>Chinese sorts its wisdom by form. 成語 (chéngyǔ) are four-character classical idioms, often carrying a whole story. 諺語 (yànyǔ) are folk proverbs. 俗語 (súyǔ) are colloquial sayings. A few entries are 詩詞, lines of classical verse. You can filter the library by each type.</p></div><div class="pv-qa"><h3>How are the proverbs tied to the zodiac animals?</h3><p>The pairing of a proverb with a Chinese zodiac year is our own editorial reading, meant for reflection, not traditional canon. It is a way to let your animal lead you to a line worth keeping, never a claim that the tradition assigns it.</p></div><div class="pv-qa"><h3>Can I hear how each proverb is pronounced?</h3><p>Yes. Press the speaker on any proverb, or on the one you draw from the pond, to hear it read aloud in Mandarin by your browser's voice. The per-character pinyin sits above every character so you can follow the sound and the tones.</p></div>
@@ -2361,6 +2564,7 @@
 <script src="/js/engine.js"></script>
 <script src="/js/nav.js" defer></script>
 <script src="/js/proverbs-hub.js" defer></script>
+<script src="/js/proverbs-share.js" defer></script>
 <!--om-footer:start-->
 <footer class="om-footer">
   <div class="omf-moonrise" aria-hidden="true"><span class="omf-moonball"></span><span class="omf-hairline"></span></div>

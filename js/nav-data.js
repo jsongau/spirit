@@ -273,9 +273,23 @@ PNAV.MAP = [
         ["/directions/",            "Directions"]
       ]},
       { title: "Proverbs and lore", mark: "❦", items: [
-        ["/proverbs/",    "Proverbs"],
+        ["/proverbs/",    "The Proverb Pond", "Chinese proverbs, pronounced"],
         ["/traditions/",  "Traditions"],
         ["/habitat/",     "The Habitat"]
+      ]},
+      { title: "The Proverb Pond, by theme", mark: "❦", items: [
+        ["/proverbs/wealth-and-work/",            "Money and work"],
+        ["/proverbs/home-and-family/",            "Family and roots"],
+        ["/proverbs/nature-and-seasons/",         "Health and nature"],
+        ["/proverbs/friendship-and-trust/",       "Friendship and trust"],
+        ["/proverbs/the-way-of-water/",           "The way of water"],
+        ["/proverbs/timing-and-fortune/",         "Fate and fortune"],
+        ["/proverbs/perseverance/",               "Perseverance"],
+        ["/proverbs/courage/",                    "Courage"],
+        ["/proverbs/wisdom-and-learning/",        "Wisdom and learning"],
+        ["/proverbs/harmony-and-virtue/",         "Harmony and virtue"],
+        ["/proverbs/humility-and-self-mastery/",  "Humility"],
+        ["/proverbs/adversity-and-resilience/",   "Adversity"]
       ]}
     ]
   },
