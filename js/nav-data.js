@@ -123,13 +123,15 @@ PNAV.MAP = [
       { title: "The Moon", mark: "☾", items: [
         ["/moon.html",        "The Moon tonight", PNAV.DYN.moonPhaseName(), null, "moon-phase"],
         ["/moon/phases/",     "The eight phases"],
-        ["/best-days.html",   "Best days"]
+        ["/best-days.html",   "Best days"],
+        ["/chinese-zodiac/fire-horse-2026/", "Fire Horse 2026", "begins Feb 17"]
       ]},
       { title: "Live with it", mark: "⌂", items: [
         ["/feng-shui/",   "Feng shui"],
         ["/habitat/",     "The Habitat"],
         ["/stones.html",  "Keeper stones"],
-        ["/directions/",  "Directions"]
+        ["/directions/",  "Directions"],
+        ["/traditions/",  "Traditions", "moon, stones, heritage"]
         /* "The Soft Habitat" book: no page exists yet and apply-nav has
            no `soon` slot, so it is omitted until the page ships. */
       ]}
@@ -401,6 +403,20 @@ PNAV.HUBS = {
       ["/moon/phases/last-quarter/", "Last quarter"],
       ["/moon/phases/waning-crescent/", "Waning crescent"],
       ["/best-days.html", "Best days"]
+    ]
+  },
+  "traditions": {
+    label: "Traditions", root: "/traditions/",
+    items: [
+      ["/traditions/", "Overview"],
+      ["/traditions/levantine-moon/", "Levantine moon"],
+      ["/traditions/moon-cycles/", "Moon cycles"],
+      ["/traditions/moonlight-charging/", "Moonlight charging"],
+      ["/traditions/birthstones-and-moonstone/", "Birthstones and moonstone"],
+      ["/traditions/fossils-sacred-earth/", "Fossils and sacred earth"],
+      ["/traditions/psychic-practices/", "Psychic practices"],
+      ["/traditions/moon-body/", "The moon body"],
+      ["/traditions/stones-for-your-animal/", "Stones for your animal"]
     ]
   }
 };
