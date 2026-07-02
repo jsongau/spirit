@@ -26,8 +26,9 @@
   var lightAllowed = LIGHT_OK.indexOf(location.pathname) > -1;
 
   function autoTheme() {
-    var h = new Date().getHours();
-    return h >= 7 && h < 19 ? "light" : "dark";
+    /* Dark celestial is the brand default; day/night auto-light is
+       retired (owner decision 2026-07-01). Light is manual opt-in. */
+    return "dark";
   }
   function season() {
     var m = new Date().getMonth();
@@ -64,10 +65,9 @@
     b.title = label;
   }
   function cycle() {
-    var order = ["auto", "light", "dark"];
-    var next = order[(order.indexOf(mode()) + 1) % order.length];
+    var next = mode() === "light" ? "dark" : "light";
     try {
-      if (next === "auto") localStorage.removeItem(KEY);
+      if (next === "dark") localStorage.removeItem(KEY); /* dark = default */
       else localStorage.setItem(KEY, next);
     } catch (e) {}
     apply();
