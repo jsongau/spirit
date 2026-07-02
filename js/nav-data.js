@@ -1,128 +1,260 @@
 /* THE PRIMAL ORACLE — navigation site map (v2). Data only, on window.PNAV. */
 window.PNAV = window.PNAV || { features: {} };
 
-/* Seven-group card-free glyph mega-nav (doc 03 section 2).
+/* Canvas mega-nav v3 (canvas-template-v2 port): the bar reads
+   Find yours | Explore | Menagerie | Bonds | Moon, plus the moon
+   chip, theme toggle, and the "Reveal my animal" CTA in .pn-tools.
    Each group:
      key      stable id (also the panel data-group anchor family)
      h        bar label (also the panel aria-label)
+     cls      optional extra class on a single-link group's anchor
      accent   per-domain accent ramp: jade | silver | amethyst | rose | teal | brass
      eyebrow  optional lede sentence at the top of the panel
      foot     optional [href, label] closing link line
-     layout   "list" | "two-col" | "three-col" — a CSS class only, no logic
-     cols     optional array of {title?, items:[...]} for multi-column panels;
-              when absent, `items` is treated as one implicit column.
-     items    item = [href, name, sub?, glyph?]
+     layout   "explore" | "wings" | "cards" | "moon" | "list" — a CSS class only
+     cols     optional array of {title?, mark?, items:[...]} for multi-column
+              panels; `mark` is a small aria-hidden glyph before the title.
+              When absent, `items` is treated as one implicit column.
+     chips    optional strip OR ARRAY of strips { label, items: [[href, glyph,
+              title], ...] } — round chip rows under the columns (the canvas
+              "wing" strips: ♈…♓, 鼠…猪)
+     items    item = [href, name, sub?, glyph?, dyn?]
                 href   real destination (always a literal <a href> in served HTML)
                 name   serif row name
-                sub    optional muted sub-label (date band, trait word, note)
+                sub    optional muted sub-label (date band, year band, note)
                 glyph  optional key into PNAV.GLYPHS (data/glyphs-inline.json)
+                dyn    optional live-label key rendered as data-dyn on the sub;
+                       apply-nav.mjs bakes a fresh value at build time and
+                       nav.js re-computes it client-side so static pages never
+                       go stale. Keys: "date-today" | "moon-phase" | "cn-years-<i>"
    Copy rule: no arrows, no dashes; date bands read "Mar 21 to Apr 19". */
+
+/* Live sub-label computers. Runs identically at build time (apply-nav.mjs
+   evaluates this file in Node before pre-rendering) and in the browser
+   (nav.js refreshes every [data-dyn] sub after hydration). Data-adjacent,
+   dependency-free, no DOM access. */
+PNAV.DYN = (function () {
+  var DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  var MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  function todayLabel() {
+    var d = new Date();
+    return DOW[d.getDay()] + ", " + MON[d.getMonth()] + " " + d.getDate();
+  }
+  var PHASES = ["New Moon", "Waxing Crescent", "First Quarter", "Waxing Gibbous",
+                "Full Moon", "Waning Gibbous", "Last Quarter", "Waning Crescent"];
+  function moonPhaseName() {
+    /* same synodic math as js/home-v4.js moonNow() */
+    var synodic = 29.530588853;
+    var ref = Date.UTC(2000, 0, 6, 18, 14);
+    var days = (Date.now() - ref) / 864e5;
+    var phase = ((days % synodic) + synodic) % synodic / synodic;
+    return PHASES[Math.round(phase * 8) % 8];
+  }
+  function yearBand(i) {
+    /* the 3 most recent years for Chinese animal index i (Rat = 0).
+       2020 was a Rat year; the cycle repeats every 12. */
+    var y = new Date().getFullYear();
+    var latest = y - ((((y - (2020 + i)) % 12) + 12) % 12);
+    return (latest - 24) + " · " + (latest - 12) + " · " + latest;
+  }
+  /* the full moon readout for the bar chip + popover (canvas moon()).
+     Same math as moonPhaseName; the copy is the canvas PHASE_MEANING
+     set (also carried by js/home-v4.js for the rail card). */
+  var GLYPHS = ["🌑", "🌒", "🌓", "🌔",
+                "🌕", "🌖", "🌗", "🌘"];
+  var MEANINGS = [
+    "The sky is dark and open. The month begins here, so name the one thing you want from it.",
+    "The first sliver of light. Whatever you started at the new moon wants its first small step now.",
+    "Half lit, half dark. This is the phase of the first real obstacle. Push through it or drop the plan on purpose.",
+    "Almost full. Refine what you are making before it peaks. Small corrections now save the whole thing.",
+    "Fully lit. See things as they are, celebrate what landed, and set your stones out to charge.",
+    "The light is receding after the peak. Share what you learned, thank who helped, and finish what is still open.",
+    "Half dark and dimming. Cut one thing that no longer serves the month you set.",
+    "The last sliver. Rest and empty out. The next turn of the wheel is days away."
+  ];
+  var FAVORS = [
+    "intentions, quiet starts", "first steps, small commitments", "decisions, effort",
+    "editing, adjustment", "clarity, charging stones", "gratitude, teaching, finishing",
+    "release, letting go", "rest, reflection"
+  ];
+  function moonInfo() {
+    var synodic = 29.530588853;
+    var ref = Date.UTC(2000, 0, 6, 18, 14);
+    var days = (Date.now() - ref) / 864e5;
+    var phase = ((days % synodic) + synodic) % synodic / synodic;
+    var idx = Math.round(phase * 8) % 8;
+    var illum = Math.round((1 - Math.cos(phase * 2 * Math.PI)) / 2 * 100);
+    return { glyph: GLYPHS[idx], name: PHASES[idx], pct: illum + "%",
+             meaning: MEANINGS[idx], favor: FAVORS[idx] };
+  }
+  return { todayLabel: todayLabel, moonPhaseName: moonPhaseName,
+           yearBand: yearBand, moonInfo: moonInfo };
+})();
 PNAV.MAP = [
-  { key: "oracle", h: "The Oracle", accent: "brass",
-    eyebrow: "Read your birthday into one of 144 animals.",
-    layout: "two-col",
+  { key: "find", h: "Find yours", cls: "pn-find", accent: "brass",
+    layout: "list",
+    items: [
+      ["/index.html#read", "Find yours"]
+    ]
+  },
+  { key: "explore", h: "Explore", accent: "brass",
+    eyebrow: "Everything the wheel opens, one animal at the center",
+    foot: ["/menagerie.html", "See all 144 animals"],
+    layout: "explore",
     cols: [
-      { title: "Begin", items: [
-        ["/index.html", "Find your animal"],
-        ["/menagerie.html", "All 144 animals"],
-        ["/year.html", "Year finder"],
-        ["/learn.html", "What is a Primal Animal"]
+      { title: "Begin", mark: "✦", items: [
+        ["/index.html",   "Find your animal"],
+        ["/daily.html",   "Today's reading", PNAV.DYN.todayLabel(), null, "date-today"],
+        ["/year.html",    "Year finder"],
+        ["/account.html", "Your account", "opening soon"]
       ]},
-      { title: "Together", items: [
-        ["/circle.html", "Circle of three"],
-        ["/match.html", "Test a match"],
-        ["/vs.html", "Challenge a friend"]
+      { title: "Menagerie", mark: "◆", items: [
+        ["/menagerie.html",  "All 144 animals"],
+        ["/western-zodiac/", "Western wing"],
+        ["/chinese-zodiac/", "Eastern wing"],
+        ["/menagerie.html",  "Rare crossings"]
+      ]},
+      { title: "Bonds", mark: "❦", items: [
+        ["/match.html",  "Test a match"],
+        ["/vs.html",     "Challenge a friend"],
+        ["/circle.html", "Circle of three"]
+      ]},
+      { title: "The Moon", mark: "☾", items: [
+        ["/moon.html",        "The Moon tonight", PNAV.DYN.moonPhaseName(), null, "moon-phase"],
+        ["/moon/phases/",     "The eight phases"],
+        ["/best-days.html",   "Best days"]
+      ]},
+      { title: "Live with it", mark: "⌂", items: [
+        ["/feng-shui/",   "Feng shui"],
+        ["/habitat/",     "The Habitat"],
+        ["/stones.html",  "Keeper stones"],
+        ["/directions/",  "Directions"]
+        /* "The Soft Habitat" book: no page exists yet and apply-nav has
+           no `soon` slot, so it is omitted until the page ships. */
+      ]}
+    ],
+    chips: [
+      { label: "Western wing", items: [
+        ["/western-zodiac/aries/",       "♈", "Aries"],
+        ["/western-zodiac/taurus/",      "♉", "Taurus"],
+        ["/western-zodiac/gemini/",      "♊", "Gemini"],
+        ["/western-zodiac/cancer/",      "♋", "Cancer"],
+        ["/western-zodiac/leo/",         "♌", "Leo"],
+        ["/western-zodiac/virgo/",       "♍", "Virgo"],
+        ["/western-zodiac/libra/",       "♎", "Libra"],
+        ["/western-zodiac/scorpio/",     "♏", "Scorpio"],
+        ["/western-zodiac/sagittarius/", "♐", "Sagittarius"],
+        ["/western-zodiac/capricorn/",   "♑", "Capricorn"],
+        ["/western-zodiac/aquarius/",    "♒", "Aquarius"],
+        ["/western-zodiac/pisces/",      "♓", "Pisces"]
+      ]},
+      { label: "Eastern wing", items: [
+        ["/chinese-zodiac/rat/",     "鼠", "Rat"],
+        ["/chinese-zodiac/ox/",      "牛", "Ox"],
+        ["/chinese-zodiac/tiger/",   "虎", "Tiger"],
+        ["/chinese-zodiac/rabbit/",  "兔", "Rabbit"],
+        ["/chinese-zodiac/dragon/",  "龙", "Dragon"],
+        ["/chinese-zodiac/snake/",   "蛇", "Snake"],
+        ["/chinese-zodiac/horse/",   "马", "Horse"],
+        ["/chinese-zodiac/goat/",    "羊", "Goat"],
+        ["/chinese-zodiac/monkey/",  "猴", "Monkey"],
+        ["/chinese-zodiac/rooster/", "鸡", "Rooster"],
+        ["/chinese-zodiac/dog/",     "狗", "Dog"],
+        ["/chinese-zodiac/pig/",     "猪", "Pig"]
       ]}
     ]
   },
-  { key: "western", h: "Western Signs", accent: "amethyst",
-    eyebrow: "Your Sun sign, the outer half of your animal.",
-    foot: ["/western-zodiac/", "The whole Western wheel"],
-    layout: "two-col",
-    items: [
-      ["/western-zodiac/aries/",       "Aries",       "Mar 21 to Apr 19", "aries"],
-      ["/western-zodiac/taurus/",      "Taurus",      "Apr 20 to May 20", "taurus"],
-      ["/western-zodiac/gemini/",      "Gemini",      "May 21 to Jun 20", "gemini"],
-      ["/western-zodiac/cancer/",      "Cancer",      "Jun 21 to Jul 22", "cancer"],
-      ["/western-zodiac/leo/",         "Leo",         "Jul 23 to Aug 22", "leo"],
-      ["/western-zodiac/virgo/",       "Virgo",       "Aug 23 to Sep 22", "virgo"],
-      ["/western-zodiac/libra/",       "Libra",       "Sep 23 to Oct 22", "libra"],
-      ["/western-zodiac/scorpio/",     "Scorpio",     "Oct 23 to Nov 21", "scorpio"],
-      ["/western-zodiac/sagittarius/", "Sagittarius", "Nov 22 to Dec 21", "sagittarius"],
-      ["/western-zodiac/capricorn/",   "Capricorn",   "Dec 22 to Jan 19", "capricorn"],
-      ["/western-zodiac/aquarius/",    "Aquarius",    "Jan 20 to Feb 18", "aquarius"],
-      ["/western-zodiac/pisces/",      "Pisces",      "Feb 19 to Mar 20", "pisces"]
-    ]
-  },
-  { key: "chinese", h: "Chinese Years", accent: "jade",
-    eyebrow: "Your birth year, the inner half of your animal.",
-    foot: ["/chinese-zodiac/", "The whole Chinese cycle"],
-    layout: "two-col",
-    items: [
-      ["/chinese-zodiac/rat/",     "Rat",     "quick",  "rat"],
-      ["/chinese-zodiac/ox/",      "Ox",      "steady", "ox"],
-      ["/chinese-zodiac/tiger/",   "Tiger",   "bold",   "tiger"],
-      ["/chinese-zodiac/rabbit/",  "Rabbit",  "gentle", "rabbit"],
-      ["/chinese-zodiac/dragon/",  "Dragon",  "vast",   "dragon"],
-      ["/chinese-zodiac/snake/",   "Snake",   "subtle", "snake"],
-      ["/chinese-zodiac/horse/",   "Horse",   "free",   "horse"],
-      ["/chinese-zodiac/goat/",    "Goat",    "tender", "goat"],
-      ["/chinese-zodiac/monkey/",  "Monkey",  "clever", "monkey"],
-      ["/chinese-zodiac/rooster/", "Rooster", "exact",  "rooster"],
-      ["/chinese-zodiac/dog/",     "Dog",     "loyal",  "dog"],
-      ["/chinese-zodiac/pig/",     "Pig",     "open",   "pig"]
-    ]
-  },
-  { key: "horoscopes", h: "Horoscopes", accent: "silver",
-    eyebrow: "Readings that move with the sky, not fixed forecasts.",
-    layout: "list",
-    items: [
-      ["/daily.html",     "Today's reading",      "keyed to tonight's Moon",        "moon-full"],
-      ["/best-days.html", "Best days ahead",      "the favorable days for you"],
-      ["/moon.html",      "The Moon tonight",     "the current phase",              "moon-waxing-crescent"],
-      ["/horoscopes/",    "Your sign this season", "pick your sign"],
-      ["/horoscopes/",    "We read the sky as reflection, not prediction."]
-    ]
-  },
-  { key: "living-arts", h: "The Living Arts", accent: "rose",
-    eyebrow: "Arrange the world around your animal.",
-    layout: "three-col",
+  { key: "menagerie", h: "Menagerie", accent: "brass",
+    eyebrow: "The Menagerie. Every animal, both wings.",
+    foot: ["/menagerie.html", "See all 144 animals"],
+    layout: "wings",
     cols: [
-      { title: "Feng Shui", items: [
-        ["/feng-shui/",               "The Feng Shui hub"],
-        ["/feng-shui/five-elements/", "The five phases"],
-        ["/feng-shui/bagua/",         "The bagua"],
-        ["/feng-shui/kua-number/",    "Your Kua number"]
+      { title: "Western wing", mark: "☉", items: [
+        ["/western-zodiac/aries/",       "Aries",       "Mar 21 to Apr 19", "aries"],
+        ["/western-zodiac/taurus/",      "Taurus",      "Apr 20 to May 20", "taurus"],
+        ["/western-zodiac/gemini/",      "Gemini",      "May 21 to Jun 20", "gemini"],
+        ["/western-zodiac/cancer/",      "Cancer",      "Jun 21 to Jul 22", "cancer"],
+        ["/western-zodiac/leo/",         "Leo",         "Jul 23 to Aug 22", "leo"],
+        ["/western-zodiac/virgo/",       "Virgo",       "Aug 23 to Sep 22", "virgo"],
+        ["/western-zodiac/libra/",       "Libra",       "Sep 23 to Oct 22", "libra"],
+        ["/western-zodiac/scorpio/",     "Scorpio",     "Oct 23 to Nov 21", "scorpio"],
+        ["/western-zodiac/sagittarius/", "Sagittarius", "Nov 22 to Dec 21", "sagittarius"],
+        ["/western-zodiac/capricorn/",   "Capricorn",   "Dec 22 to Jan 19", "capricorn"],
+        ["/western-zodiac/aquarius/",    "Aquarius",    "Jan 20 to Feb 18", "aquarius"],
+        ["/western-zodiac/pisces/",      "Pisces",      "Feb 19 to Mar 20", "pisces"]
       ]},
-      { title: "Directions and Cosmos", items: [
-        ["/directions/",                    "The Directions"],
-        ["/directions/celestial-animals/", "The four celestial animals"],
-        ["/cosmology/",                     "Cosmology"],
-        ["/cosmology/four-pillars/",        "The Four Pillars"]
+      { title: "Eastern wing", mark: "☾", items: [
+        ["/chinese-zodiac/rat/",     "Rat",     PNAV.DYN.yearBand(0),  "rat",     "cn-years-0"],
+        ["/chinese-zodiac/ox/",      "Ox",      PNAV.DYN.yearBand(1),  "ox",      "cn-years-1"],
+        ["/chinese-zodiac/tiger/",   "Tiger",   PNAV.DYN.yearBand(2),  "tiger",   "cn-years-2"],
+        ["/chinese-zodiac/rabbit/",  "Rabbit",  PNAV.DYN.yearBand(3),  "rabbit",  "cn-years-3"],
+        ["/chinese-zodiac/dragon/",  "Dragon",  PNAV.DYN.yearBand(4),  "dragon",  "cn-years-4"],
+        ["/chinese-zodiac/snake/",   "Snake",   PNAV.DYN.yearBand(5),  "snake",   "cn-years-5"],
+        ["/chinese-zodiac/horse/",   "Horse",   PNAV.DYN.yearBand(6),  "horse",   "cn-years-6"],
+        ["/chinese-zodiac/goat/",    "Goat",    PNAV.DYN.yearBand(7),  "goat",    "cn-years-7"],
+        ["/chinese-zodiac/monkey/",  "Monkey",  PNAV.DYN.yearBand(8),  "monkey",  "cn-years-8"],
+        ["/chinese-zodiac/rooster/", "Rooster", PNAV.DYN.yearBand(9),  "rooster", "cn-years-9"],
+        ["/chinese-zodiac/dog/",     "Dog",     PNAV.DYN.yearBand(10), "dog",     "cn-years-10"],
+        ["/chinese-zodiac/pig/",     "Pig",     PNAV.DYN.yearBand(11), "pig",     "cn-years-11"]
       ]},
-      { title: "Home and Stones", items: [
-        ["/habitat/",        "The Habitat"],
-        ["/stones.html",     "Keeper stones"],
-        ["/elements/fire/",  "The five elements"]
+      { title: "Begin here", mark: "✦", items: [
+        ["/menagerie.html", "All 144 animals", "the whole grid, both wings"],
+        ["/year.html",      "Year finder",     "any birthday, named"],
+        ["/learn.html",     "How it works",    "the two zodiacs, the Moon, and the reading"]
       ]}
     ]
   },
-  { key: "sky", h: "The Sky", accent: "teal",
-    eyebrow: "The Moon and the calendar of favorable days.",
-    layout: "list",
+  { key: "bonds", h: "Bonds", accent: "rose",
+    eyebrow: "Two skies, read together",
+    foot: ["/year.html", "Find a friend's animal by birth year"],
+    layout: "cards",
     items: [
-      ["/moon.html",      "The Moon tonight", "the current phase",   "moon-full"],
-      ["/moon/phases/",   "The eight phases", "what each one favors", "moon-first-quarter"],
-      ["/best-days.html", "Best days",        "the days ahead for you"],
-      ["/daily.html",     "Today's reading",  "keyed to tonight's Moon"]
+      ["/match.html",  "Test a match",
+        "Two birth dates go in. The bond comes back scored across the trines, the clashes, and the elements."],
+      ["/vs.html",     "Challenge a friend",
+        "Send your animal to someone and wonder out loud whether you match."],
+      ["/circle.html", "Circle of three",
+        "Compare two friends one to one, then read the whole group as a circle."]
     ]
   },
-  { key: "learn", h: "How it works", accent: "brass",
-    layout: "list",
-    items: [
-      ["/learn.html", "How it works", "The two zodiacs, the Moon, and the reading"]
+  { key: "moon", h: "Moon", accent: "silver",
+    eyebrow: "The Moon overhead, its phases, and the path they light.",
+    foot: ["/moon.html", "Read the Moon tonight in full"],
+    layout: "moon",
+    cols: [
+      { title: "Tonight", mark: "☾", items: [
+        ["/moon.html",      "The Moon tonight", PNAV.DYN.moonPhaseName(), "moon-full", "moon-phase"],
+        ["/best-days.html", "Best days ahead",  "the favorable days for you"],
+        ["/awakening.html", "The Awakening",    "the path from fear to strength"]
+      ]},
+      { title: "The eight phases", mark: "◐", items: [
+        ["/moon/phases/new-moon/",        "New Moon",        null, "moon-new"],
+        ["/moon/phases/waxing-crescent/", "Waxing Crescent", null, "moon-waxing-crescent"],
+        ["/moon/phases/first-quarter/",   "First Quarter",   null, "moon-first-quarter"],
+        ["/moon/phases/waxing-gibbous/",  "Waxing Gibbous",  null, "moon-waxing-gibbous"],
+        ["/moon/phases/full-moon/",       "Full Moon",       null, "moon-full"],
+        ["/moon/phases/waning-gibbous/",  "Waning Gibbous",  null, "moon-waning-gibbous"],
+        ["/moon/phases/last-quarter/",    "Last Quarter",    null, "moon-last-quarter"],
+        ["/moon/phases/waning-crescent/", "Waning Crescent", null, "moon-waning-crescent"]
+      ]}
     ]
   }
+];
+
+/* GEO guard: destinations the seven-group nav used to carry that the
+   canvas panels no longer surface. They stay in the hidden pn-crawl
+   static mirror (apply-nav.mjs appends them after the panel rows) so
+   every page still links every hub for crawlers and AI fetchers. */
+PNAV.CRAWL_EXTRA = [
+  ["/horoscopes/",                   "All horoscopes, sign by sign"],
+  ["/feng-shui/five-elements/",      "The five phases"],
+  ["/feng-shui/bagua/",              "The bagua"],
+  ["/feng-shui/kua-number/",         "Your Kua number"],
+  ["/feng-shui/your-animal/",        "Feng shui for your animal"],
+  ["/directions/celestial-animals/", "The four celestial animals"],
+  ["/cosmology/",                    "Cosmology"],
+  ["/cosmology/four-pillars/",       "The Four Pillars"],
+  ["/elements/fire/",                "The five elements"]
 ];
 
 PNAV.FEATURED = { href: "/circle.html", title: "Read your circle of three", blurb: "Compare two friends one to one, then read the whole group." };

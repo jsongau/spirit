@@ -36,6 +36,12 @@ body.home-v4 {
   color: var(--ivory);
   line-height: 1.65;
   transition: background .45s ease, color .45s ease;
+  /* alignment guard: nothing on this page may create a horizontal scrollbar
+     (the old right rail clipped off-viewport at ~2000px wide) */
+  overflow-x: clip;
+}
+@supports not (overflow-x: clip) {
+  body.home-v4 { overflow-x: hidden; }
 }
 
 /* ------------------------------------------------------------
@@ -125,51 +131,9 @@ body.home-v4 {
   box-shadow: inset 0 -2px 0 var(--accent);
 }
 
-/* moon chip + popover (canvas nav moon button, relocated here since
-   the injected pn-bar is preserved verbatim) */
-.omv4-moonwrap { position: relative; flex: 0 0 auto; }
-#moonChip {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  height: 34px;
-  padding: 0 12px;
-  background: transparent;
-  border: 1px solid var(--line);
-  border-radius: var(--r-pill);
-  color: var(--muted);
-  font: 400 .68rem/1 var(--mono);
-  cursor: pointer;
-  white-space: nowrap;
-  transition: border-color .2s ease, color .2s ease, background .2s ease;
-}
-#moonChip:hover, #moonChip[aria-expanded="true"] {
-  border-color: var(--accent);
-  color: var(--moon);
-}
-#moonChip[aria-expanded="true"] { background: var(--accent-soft); }
-#moonChip .g { font-size: 1rem; line-height: 1; }
-#moonPop {
-  position: absolute;
-  right: 0;
-  top: calc(100% + 8px);
-  width: min(300px, calc(100vw - 32px));
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  box-shadow: var(--e-2);
-  padding: 20px;
-  z-index: 50;
-  animation: omv4-pop .2s ease both;
-}
-#moonPop .pop-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
-#moonPop .pop-glyph { font-size: 2.2rem; line-height: 1; }
-#moonPop .pop-name { margin: 0; font: 600 1.1rem/1.2 var(--serif); color: var(--moon); }
-#moonPop .pop-pct { margin: 0; font: 400 .68rem/1.4 var(--mono); color: var(--muted); }
-#moonPop .pop-meaning { margin: 0 0 6px; font-size: .85rem; line-height: 1.55; color: var(--body-text); }
-#moonPop .pop-favors { margin: 0 0 12px; font: 600 .8rem/1.4 var(--sans); color: var(--season); }
-#moonPop .pop-link { font: 600 .8rem/1 var(--sans); color: var(--accent); text-decoration: none; }
-#moonPop .pop-link:hover { color: var(--accent-bright); }
+/* moon chip + popover: moved into the pn-bar tools for every page
+   (canvas bar; see nav-core.css .pn-moon / .pn-moonpop). The old
+   sub-bar chip markup is gone; home-v4.js's chip wiring no-ops. */
 
 @keyframes omv4-pop {
   from { opacity: 0; transform: translateY(-6px) scale(.99); }
@@ -208,24 +172,36 @@ body.home-v4 {
 }
 
 @media (min-width: 900px) {
+  /* the identity rail sits flush against the LEFT viewport edge (24px
+     gutter), not centered inside a 1280px shell; the content column
+     takes the freed room but stays capped for measure. */
   .home-v4 .home-shell {
     grid-template-columns: [rail] 300px [main] minmax(0, 1fr);
+    max-width: none;
+    padding-inline: 24px clamp(16px, 3vw, 32px);
   }
-  .home-v4 .home-main { grid-column: main; grid-row: 1; }
+  .home-v4 .home-main { grid-column: main; grid-row: 1; max-width: 1080px; }
+  /* keep the sticky sub-bar on the same left gutter so the rhythm holds */
+  .omv4-sub-inner {
+    max-width: none;
+    padding-inline: 24px clamp(16px, 3vw, 32px);
+  }
+  /* the rail is a PLAIN sticky flex column: no max-height, no inner
+     scroller (the old hidden-scrollbar clip read as cards stacking on
+     one another in screenshots). Sticky top = bar + sub-bar + breath,
+     all from shared knobs: --pn-bar-h (nav) and --v4-sub-h (measured
+     from .omv4-sub by home-v4.js; 48px is its min-height fallback). */
   .home-v4 #identity-rail {
     grid-column: rail;
     grid-row: 1;
     position: sticky;
-    top: calc(var(--pn-bar-h, 62px) + 64px);
+    top: calc(var(--pn-bar-h, 64px) + var(--v4-sub-h, 48px) + 16px);
     align-self: start;
-    max-height: calc(100vh - var(--pn-bar-h, 62px) - 72px);
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    scrollbar-width: none;
+    max-height: none;
+    overflow: visible;
     padding-block: 32px;
     order: 0;
   }
-  .home-v4 #identity-rail::-webkit-scrollbar { display: none; }
   .home-v4 .rail-jump { display: block; }
   .home-v4 .home-dock { display: none; }
   .home-v4.pn-has-bar { padding-bottom: 0; }
@@ -234,6 +210,19 @@ body.home-v4 {
 /* ------------------------------------------------------------
    3. Rail cards (canvas left rail)
    ------------------------------------------------------------ */
+/* Rail flow contract: the rail is a plain flex column and every
+   module in it is a normal-flow block that occupies real height.
+   No module may absolutely position itself out of the column,
+   shrink below its content, or pull siblings over itself — this
+   is the invariant that keeps the meter / moon / on-this-page
+   cards from ever stacking on one another. */
+.home-v4 #identity-rail > * {
+  position: relative;
+  flex: 0 0 auto;
+  min-height: auto;   /* never shrink below content */
+  margin: 0;
+  transform: none;    /* no effect layer may slide a rail module */
+}
 .home-v4 .rail-card,
 .home-v4 #identity-card {
   background: var(--panel);
@@ -418,8 +407,36 @@ body.home-v4 {
 .home-v4 #moon-rail .moon-rail-label { margin: 0; font: 500 .85rem/1.5 var(--sans); color: var(--moon); }
 .home-v4 #moon-rail .moon-rail-meaning { margin: 0; font-size: .75rem; line-height: 1.45; color: var(--muted); }
 
-/* awakening slot: soften to the canvas card treatment */
-.home-v4 #awakening-slot { border-radius: 20px; padding: 20px; }
+/* awakening slot: meter.js injects a FULL .spirit-meter card in here,
+   so the slot itself must be a transparent flow container — the old
+   card-in-a-card chrome plus the display-scale .spirit-tier is what
+   read as the giant "Waking" colliding with the cards below it. The
+   meter is retuned to rail scale; every part stays in normal flow. */
+.home-v4 #awakening-slot {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  min-height: 96px;
+  border-radius: 20px;
+}
+.home-v4 #awakening-slot:empty {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 20px;
+}
+.home-v4 #awakening-slot .spirit-meter {
+  border-radius: 20px;
+  padding: 18px 16px;
+  gap: var(--s-2);
+}
+.home-v4 #awakening-slot .spirit-orb { width: min(120px, 52%); }
+.home-v4 #awakening-slot .spirit-tier {
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+.home-v4 #awakening-slot .spirit-count,
+.home-v4 #awakening-slot .spirit-next { font-size: .75rem; }
 
 /* "On this page" (canvas rail nav) */
 .home-v4 .rail-jump {
@@ -504,8 +521,7 @@ body.home-v4 {
   animation: omv4-spin 90s linear infinite;
 }
 .home-v4 .om-orbit .o-core { position: absolute; inset: 0; display: grid; place-items: center; }
-.home-v4 .om-orbit .o-moon,
-.home-v4 .om-moonrise .om-moonball {
+.home-v4 .om-orbit .o-moon {
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -801,19 +817,45 @@ body.home-v4 {
 
 .home-v4 .btnRow .btn,
 .home-v4 #matchSection .btn { border-radius: var(--r-pill); }
+/* the match date fields stay functional NATIVE date inputs, skinned
+   to the token system. color-scheme keeps the UA's picker icon and
+   popup on the page's palette (no white icon box on the dark theme). */
 .home-v4 #matchSection input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
   height: 52px;
   padding: 0 14px;
   background: var(--field);
   border: 1px solid var(--line);
-  border-radius: 12px;
-  color: var(--ivory);
-  font: 400 1rem/1 var(--mono);
+  border-radius: var(--r-2);
+  color: var(--moon);
+  font: 400 1rem/1.2 var(--mono);
+  color-scheme: dark;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+:root[data-theme="light"] .home-v4 #matchSection input[type="date"],
+:root[data-theme="light"] .home-v4 #birthDate { color-scheme: light; }
+.home-v4 #birthDate { color-scheme: dark; }
+/* the segments inside the native control read as moon text too */
+.home-v4 #matchSection input[type="date"]::-webkit-datetime-edit,
+.home-v4 #birthDate::-webkit-datetime-edit { color: var(--moon); }
+.home-v4 #matchSection input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: .75;
+}
+.home-v4 #matchSection label {
+  display: block;
+  margin-bottom: 6px;
+  font: 400 .66rem/1 var(--mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 .home-v4 #matchSection input[type="date"]:focus-visible {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft);
+  box-shadow: 0 0 0 3px var(--accent-soft);   /* accent focus ring */
 }
 .home-v4 #mailForm input[type="email"] {
   height: 48px;
@@ -828,44 +870,28 @@ body.home-v4 {
 }
 
 /* ------------------------------------------------------------
-   11. Footer moonrise (canvas footer ornament) + footer tint
+   11. Footer — the canvas footer (moonrise ornament + brand +
+   GEO columns) is now injected SITEWIDE by build/apply-footer.mjs
+   and styled by css/footer.css; the old homepage-local
+   .om-moonrise / .site-footer duplicates were retired.
    ------------------------------------------------------------ */
-.om-moonrise {
-  position: relative;
-  height: 96px;
-  margin-top: clamp(32px, 6vh, 64px);
-  background: linear-gradient(180deg, transparent, var(--v4-sky));
-  overflow: hidden;
-}
-.om-moonrise .om-moonball {
-  position: absolute;
-  left: 50%;
-  bottom: -26px;
-  transform: translateX(-50%);
-  width: 52px;
-  height: 52px;
-  box-shadow: 0 0 60px var(--accent-soft);
-}
-.om-moonrise .om-hairline {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent), var(--season), transparent);
-}
-.home-v4 .site-footer { padding-block: 32px 8px; }
-.home-v4 .site-footer,
-.home-v4 .sitemap-footer { background: var(--ink-2); }
-.home-v4 .site-footer { max-width: none; }
-.home-v4 .site-footer > * { max-width: 1280px; margin-inline: auto; padding-inline: clamp(16px, 3vw, 32px); }
-.home-v4 .sitemap-footer { margin-top: 0; border-top: 1px solid var(--line-soft); }
 
 /* ------------------------------------------------------------
-   12. Third Eye HUD — canvas treatment over the site structure
+   12. Third Eye HUD — canvas treatment over the site structure.
+   Starts life as a small collapsed chip (never overlapping the
+   rail or content); expands to the full card anchored bottom
+   right, above everything except modals, with a close button
+   that collapses it back to the chip.
    ------------------------------------------------------------ */
 .home-v4 .eyeHud {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 60; /* above the sticky sub-bar (40) and moon popover (50) */
   width: 252px;
+  max-width: calc(100vw - 36px);
+  max-height: calc(100vh - 96px);
+  overflow-y: auto;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -888,7 +914,41 @@ body.home-v4 {
   cursor: pointer;
 }
 .home-v4 .eyeHud-close:hover { background: var(--accent-soft); color: var(--moon); }
-.home-v4 .eyeHud { position: fixed; }
+
+/* collapsed chip state (default; home-v4.js toggles it) */
+.home-v4 .eyeHud .eyeHud-chip-lbl { display: none; }
+.home-v4 .eyeHud.is-collapsed {
+  width: auto;
+  max-height: none;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  animation: none;
+}
+.home-v4 .eyeHud.is-collapsed:hover { border-color: var(--accent); box-shadow: 0 0 14px var(--accent-soft); }
+.home-v4 .eyeHud.is-collapsed:focus-visible { outline: 2px solid var(--brass-bright); outline-offset: 2px; }
+.home-v4 .eyeHud.is-collapsed .meta,
+.home-v4 .eyeHud.is-collapsed .rites,
+.home-v4 .eyeHud.is-collapsed .streakRow,
+.home-v4 .eyeHud.is-collapsed .eyeHud-close { display: none; }
+.home-v4 .eyeHud.is-collapsed .eye {
+  width: 34px;
+  height: 20px;
+  margin: 0;
+  flex: 0 0 auto;
+}
+.home-v4 .eyeHud.is-collapsed .eyeHud-chip-lbl {
+  display: inline;
+  font: 600 .66rem/1 var(--sans);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
 
 /* ------------------------------------------------------------
    13. Motion guard
@@ -900,8 +960,7 @@ body.home-v4 {
   .home-v4 .reveal .essence,
   .home-v4 .gate,
   .home-v4 #rail-share,
-  .home-v4 .eyeHud,
-  #moonPop { animation: none !important; }
+  .home-v4 .eyeHud { animation: none !important; }
   .home-v4 #identity-share:hover { animation: none; transform: none; }
 }
 

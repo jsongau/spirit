@@ -1,0 +1,136 @@
+/* ============================================================
+   footer.css — sitewide canvas footer (canvas-template-v2 FOOTER)
+   Injected on every page by build/apply-footer.mjs:
+     footer.om-footer
+       .omf-moonrise (aria-hidden ornament: sky gradient, rising
+                      moon disc, brass-to-season hairline)
+       .omf-field (ink-2 room)
+         .omf-brandrow (wordmark + blurb)
+         nav.sitemap-footer > .sf-inner > .sf-col*  (GEO columns,
+                      content unchanged, restyled here)
+         .omf-bottom (.sf-note + "made under two skies")
+   Tokens only; dark celestial and light both resolve. The only
+   declared value is the moonface highlight token, shared with
+   home-v4.css (--v4-moonface).
+   ============================================================ */
+
+:root { --v4-moonface: #fffaf0; }
+:root[data-theme="light"] { --v4-moonface: #ffffff; }
+
+.om-footer { margin-top: clamp(32px, 6vh, 64px); }
+
+/* ---- the moonrise ornament band ---- */
+.omf-moonrise {
+  position: relative;
+  height: 96px;
+  background: linear-gradient(180deg, transparent, var(--glow));
+  overflow: hidden;
+}
+.omf-moonball {
+  position: absolute;
+  left: 50%;
+  bottom: -26px;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--v4-moonface), var(--accent) 60%, var(--season) 100%);
+  box-shadow: 0 0 60px var(--accent-soft);
+}
+.omf-hairline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), var(--season), transparent);
+}
+
+/* ---- the footer field ---- */
+.omf-field { background: var(--ink-2); }
+
+.omf-brandrow {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px clamp(16px, 3vw, 32px) 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.omf-wordmark {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--moon);
+}
+.omf-wordmark b { color: var(--accent); font-weight: 600; }
+.omf-blurb {
+  margin: 0;
+  font: 400 .85rem/1.6 var(--sans);
+  color: var(--muted);
+  max-width: 44ch;
+}
+
+/* ---- the GEO link columns (content untouched, canvas skin) ---- */
+.om-footer .sitemap-footer {
+  border-top: 0;
+  margin-top: 0;
+  padding: 22px clamp(16px, 3vw, 32px) 24px;
+  background: transparent;
+}
+.om-footer .sf-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+  gap: 26px clamp(20px, 3vw, 44px);
+}
+.om-footer .sf-col h3 {
+  font: 600 .66rem/1.3 var(--sans);
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 10px;
+}
+.om-footer .sf-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.om-footer .sf-col a {
+  color: var(--muted);
+  font: 400 .85rem/1.7 var(--sans);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-io);
+}
+.om-footer .sf-col a:hover { color: var(--moon); }
+.om-footer .sf-col a:focus-visible {
+  outline: 2px solid var(--brass-bright);
+  outline-offset: 2px;
+  border-radius: var(--r-1);
+}
+
+/* ---- bottom row ---- */
+.omf-bottom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px clamp(16px, 3vw, 32px) 28px;
+  border-top: 1px solid var(--line-soft);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.om-footer .sf-note {
+  margin: 0;
+  font: 400 .75rem/1.6 var(--sans);
+  color: var(--faint);
+  max-width: 74ch;
+}
+.omf-madeunder {
+  margin: 0;
+  font: 400 .66rem/1.4 var(--mono);
+  letter-spacing: .04em;
+  color: var(--faint);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .om-footer .sf-col a { transition: none; }
+}

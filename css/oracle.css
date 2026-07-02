@@ -203,7 +203,7 @@ footer .brand{font-size:1.1rem}
 .sf-col ul{list-style:none; margin:0; padding:0; display:grid; gap:8px}
 .sf-col a{color:var(--muted); font-size:.9rem; text-decoration:none}
 .sf-col a:hover{color:var(--moon)}
-.sf-note{max-width:var(--maxw); margin:30px auto 0; color:#9092a6; font-size:.78rem}
+.sf-note{max-width:var(--maxw); margin:30px auto 0; color:var(--faint); font-size:.78rem}
 
 /* ---- accessibility baseline (doc 19) ---- */
 :focus-visible{outline:2px solid var(--brass-bright); outline-offset:2px; border-radius:4px}

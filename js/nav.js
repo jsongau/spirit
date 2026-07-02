@@ -352,6 +352,9 @@ window.PNAV = window.PNAV || { features: {} };
       panel.querySelectorAll(".pn-row").forEach((row) => {
         body.appendChild(row.cloneNode(true));
       });
+      panel.querySelectorAll(".pn-chips").forEach((chips) => {
+        body.appendChild(chips.cloneNode(true));
+      });
       const foot = panel.querySelector(".pn-panel-foot");
       if (foot) body.appendChild(foot.cloneNode(true));
 
@@ -409,12 +412,120 @@ window.PNAV = window.PNAV || { features: {} };
   }
 
   /* =========================================================
+     LIVE SUB-LABELS: the build bakes fresh values into every
+     [data-dyn] sub (today's date, tonight's phase, year bands);
+     recompute them here so a statically served page never goes
+     stale. PNAV.DYN comes from nav-data.js (loaded before wire).
+     ========================================================= */
+  function refreshDyn() {
+    const dyn = PNAV.DYN;
+    if (!dyn) return;
+    Array.from(doc.querySelectorAll(".pn-row-sub[data-dyn]")).forEach((el) => {
+      try {
+        const key = el.getAttribute("data-dyn") || "";
+        if (key === "date-today" && dyn.todayLabel) el.textContent = dyn.todayLabel();
+        else if (key === "moon-phase" && dyn.moonPhaseName) el.textContent = dyn.moonPhaseName();
+        else if (key.indexOf("cn-years-") === 0 && dyn.yearBand) {
+          const i = parseInt(key.slice(9), 10);
+          if (i >= 0 && i < 12) el.textContent = dyn.yearBand(i);
+        }
+      } catch (e) {}
+    });
+  }
+
+  /* =========================================================
+     MOON CHIP + POPOVER (canvas bar). The build pre-renders a
+     hidden chip + popover skeleton in .pn-tools; we fill both
+     from PNAV.DYN.moonInfo() (nav-data.js, dependency-free) and
+     un-hide the chip, so JS-off never shows a stale phase.
+     ========================================================= */
+  function initMoonChip(bar, panels) {
+    const chip = bar.querySelector("[data-moon-chip]");
+    const pop  = bar.querySelector("[data-moon-pop]");
+    if (!chip || !pop || !PNAV.DYN || typeof PNAV.DYN.moonInfo !== "function") return;
+    let m;
+    try { m = PNAV.DYN.moonInfo(); } catch (e) { return; }
+    if (!m) return;
+
+    chip.textContent = "";
+    const g = doc.createElement("span");
+    g.className = "g"; g.setAttribute("aria-hidden", "true"); g.textContent = m.glyph;
+    const v = doc.createElement("span");
+    v.className = "v"; v.textContent = m.pct;
+    chip.append(g, v);
+    chip.title = m.name;
+    chip.setAttribute("aria-label",
+      "Moon phase tonight: " + m.name + ", " + m.pct + " illuminated");
+
+    const set = (sel, text) => {
+      const el = pop.querySelector(sel);
+      if (el) el.textContent = text;
+    };
+    set(".pnm-glyph", m.glyph);
+    set(".pnm-name", m.name);
+    set(".pnm-pct", m.pct + " illuminated tonight");
+    set(".pnm-meaning", m.meaning);
+    set(".pnm-favors", "Favors " + m.favor);
+
+    chip.hidden = false;
+
+    function closePop(refocus) {
+      if (pop.hidden) return;
+      pop.hidden = true;
+      chip.setAttribute("aria-expanded", "false");
+      if (refocus) { try { chip.focus(); } catch (e) {} }
+    }
+    chip.addEventListener("click", () => {
+      const open = !pop.hidden;
+      if (open) { closePop(false); return; }
+      if (panels && panels.closeAll) panels.closeAll(false);
+      pop.hidden = false;
+      chip.setAttribute("aria-expanded", "true");
+    });
+    doc.addEventListener("click", (e) => {
+      if (pop.hidden) return;
+      if (chip.contains(e.target) || pop.contains(e.target)) return;
+      closePop(false);
+    });
+    doc.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closePop(true);
+    });
+  }
+
+  /* =========================================================
+     BAR HEIGHT KNOB — measure the real rendered .pn-bar and keep
+     :root --pn-bar-h (declared in nav-sub.css with a CSS-derived
+     fallback) in sync. Every sticky offset under the bar (pn-sub,
+     the homepage .omv4-sub + rail, scroll-padding) reads this one
+     custom property, so the two-line wordmark, font swaps, and
+     responsive folds can never strand a stale hardcoded height.
+     ========================================================= */
+  function syncBarHeight(bar) {
+    let raf = 0;
+    const apply = () => {
+      raf = 0;
+      try {
+        const h = bar.getBoundingClientRect().height;
+        if (h > 0) doc.documentElement.style.setProperty("--pn-bar-h", h + "px");
+      } catch (e) {}
+    };
+    const queue = () => { if (!raf) raf = requestAnimationFrame(apply); };
+    apply();
+    window.addEventListener("resize", queue);
+    // web fonts change the wordmark's line box; re-measure when they land
+    try { if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(queue); } catch (e) {}
+  }
+
+  /* =========================================================
      WIRE + FEATURE MODULES
      ========================================================= */
   function wire(bar) {
     doc.body.classList.add("pn-has-bar");
+    syncBarHeight(bar);
     const panels = wirePanels(bar);
     const drawer = buildDrawer(bar);
+    initMoonChip(bar, panels);
+    refreshDyn(); // after the drawer clone so both copies update
 
     // Escape also closes the drawer if it happens to be open (belt + braces)
     doc.addEventListener("keydown", (e) => {

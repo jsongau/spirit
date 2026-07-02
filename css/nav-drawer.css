@@ -173,6 +173,15 @@
   min-height: 48px;
 }
 
+/* cloned chip strip: drop the desktop panel measure inside the sheet,
+   and grow the chips to comfortable touch targets */
+.pn-acc-body .pn-chips {
+  max-width: none;
+  margin: var(--s-3) 0 var(--s-2);
+  padding-inline: 0;
+}
+.pn-acc-body .pn-chip { width: 40px; height: 40px; }
+
 /* single-link groups (How it works) render as a plain row header link */
 .pn-acc-link {
   display: flex;

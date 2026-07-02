@@ -18,11 +18,16 @@
    The breadcrumb separator is a literal forward slash, injected via CSS.
    ============================================================ */
 
-/* Height the fixed top bar occupies. The sub bar tucks directly beneath
-   it. .pn-bar is padding 16px + ~1 line of content ≈ 62px; body sets
-   scroll-padding-top:82px. Keep one knob so both stay in sync. */
+/* Height the sticky top bar occupies. THE one knob every sticky
+   offset on the site reads (this sub bar, the homepage .omv4-sub,
+   the homepage rail, scroll-padding). The canvas bar is a FIXED
+   64px at every width (.pn-inner { height: var(--pn-bar-h) } in
+   nav-core.css; the nav pills scroll under a fade mask instead of
+   wrapping), so the knob is exact even before hydration / JS-off.
+   nav.js still measures the real rendered bar and re-asserts the
+   value on :root, belt and braces. */
 :root {
-  --pn-bar-h: 62px;
+  --pn-bar-h: 64px;
   --pn-sub-focus: var(--brass-bright, #efe2b4);
 }
 
@@ -172,8 +177,8 @@
 /* ---- Responsive collapse ----------------------------------------- */
 @media (max-width: 640px) {
   .pn-sub {
-    /* on mobile the top bar wraps taller; nudge the sticky offset */
-    --pn-bar-h: 58px;
+    /* the sticky offset comes from the shared :root --pn-bar-h knob
+       (measured by nav.js); no local override, it would desync */
     gap: var(--s-1, .25rem);
     padding-top: var(--s-2, .5rem);
   }

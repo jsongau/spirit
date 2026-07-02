@@ -133,6 +133,30 @@
   }
 
   /* ============================================================
+     1b. SUB-BAR HEIGHT KNOB — measure the sticky .omv4-sub into
+     :root --v4-sub-h so the rail's sticky top (bar + sub-bar) can
+     never drift from the real rendered band (no magic numbers).
+     ============================================================ */
+  function initSubHeight() {
+    var sub = $(".omv4-sub");
+    if (!sub) return;
+    var raf = 0;
+    function apply() {
+      raf = 0;
+      try {
+        var h = sub.getBoundingClientRect().height;
+        if (h > 0) document.documentElement.style.setProperty("--v4-sub-h", h + "px");
+      } catch (e) {}
+    }
+    function queue() { if (!raf) raf = window.requestAnimationFrame(apply); }
+    apply();
+    on(window, "resize", queue);
+    try {
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(queue);
+    } catch (e) {}
+  }
+
+  /* ============================================================
      2. SEASON TAG — "Two zodiacs · one animal · autumn sky"
      ============================================================ */
   function initSeason() {
@@ -311,16 +335,45 @@
     }
 
     paintShare(a, revealed);
+    paintRevealCta(revealed);
   }
 
   /* ============================================================
      5. RAIL SHARE ROW (canvas sharing widget)
+     Always available: before the reveal it shares the generic
+     invitation; after the reveal it switches to the personalized
+     line. Instagram has no web share intent, so it copies the
+     caption and confirms with a toast.
      ============================================================ */
-  function shareLine(a) {
-    var origin = "zodianimal.com";
+  function siteHost() {
+    var origin = "spirit-omega.vercel.app";
     try { if (location.origin && location.origin.indexOf("http") === 0) origin = location.host; } catch (e) {}
+    return origin;
+  }
+
+  function shareLine(a) {
     var pair = (a.sign && a.animal) ? (a.sign + " × " + a.animal + ". ") : "";
-    return "I am the " + a.primal + ". " + pair + "Which of the 144 are you? " + origin;
+    return "I am the " + a.primal + ". " + pair + "Which of the 144 are you? " + siteHost();
+  }
+
+  function genericShareLine() {
+    return "Which of the 144 animals are you? " + siteHost();
+  }
+
+  function currentShareLine() {
+    var a = resolveAnimal();
+    return (a && a.primal) ? shareLine(a) : genericShareLine();
+  }
+
+  function toast(title, sub) {
+    var t = $("#toast");
+    if (!t) return;
+    t.innerHTML = "<strong></strong><span></span>";
+    t.firstChild.textContent = title;
+    t.lastChild.textContent = sub || "";
+    t.classList.add("show");
+    clearTimeout(t._h);
+    t._h = setTimeout(function () { t.classList.remove("show"); }, 2600);
   }
 
   function markShared() {
@@ -363,10 +416,9 @@
   function paintShare(a, revealed) {
     var card = $("#rail-share");
     if (!card) return;
-    if (!revealed) { card.hidden = true; return; }
-    card.hidden = false;
+    card.hidden = false; // always available; the line personalizes on reveal
 
-    var line = shareLine(a);
+    var line = (revealed && a) ? shareLine(a) : genericShareLine();
     var sms = $('[data-share="sms"]', card);
     var email = $('[data-share="email"]', card);
     var x = $('[data-share="x"]', card);
@@ -383,29 +435,150 @@
       var copyBtn = $('[data-share="copy"]', card);
       var ig = $('[data-share="instagram"]', card);
       on(copyBtn, "click", function () {
-        var cur = resolveAnimal();
-        copyLine(cur && cur.primal ? shareLine(cur) : "", copyBtn);
+        copyLine(currentShareLine(), copyBtn);
       });
       on(ig, "click", function () {
-        var cur = resolveAnimal();
-        copyLine(cur && cur.primal ? shareLine(cur) : "", ig);
+        copyLine(currentShareLine(), ig);
+        toast("Caption copied", "Paste it in Instagram.");
       });
     }
   }
 
   /* ============================================================
-     6. THIRD EYE HUD dismiss
+     5b. RAIL CTA — "Reveal my animal" before the naming, then
+     "Challenge a friend" (to /vs.html) once the reveal is stored.
+     A capturing listener owns the click so the legacy home.js
+     share wiring on the same button never double-fires.
+     ============================================================ */
+  function slugOf(a) {
+    if (a && a.slug) return a.slug;
+    if (!a || !a.primal) return "";
+    return String(a.primal).toLowerCase().replace(/['’]/g, "")
+      .replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  }
+
+  function paintRevealCta(revealed) {
+    var cta = $("#identity-share");
+    if (!cta) return;
+    var mode = revealed ? "challenge" : "reveal";
+    if (cta.getAttribute("data-mode") === mode) return;
+    cta.setAttribute("data-mode", mode);
+    cta.innerHTML = "";
+    cta.appendChild(document.createTextNode(revealed ? "Challenge a friend " : "Reveal my animal "));
+    var star = document.createElement("span");
+    star.setAttribute("aria-hidden", "true");
+    star.textContent = "✦";
+    cta.appendChild(star);
+  }
+
+  function initRevealCta() {
+    if (!$("#identity-share")) return;
+    document.addEventListener("click", function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest("#identity-share") : null;
+      if (!btn) return;
+      e.preventDefault();
+      e.stopPropagation(); // capture phase: home.js's own handler never runs
+      var a = resolveAnimal();
+      if (a && a.primal) {
+        var slug = slugOf(a);
+        location.href = "/vs.html" + (slug ? "?with=" + encodeURIComponent(slug) : "");
+        return;
+      }
+      // pre-reveal: walk them to the reader and focus the first segment
+      var read = $("#read");
+      if (read && read.scrollIntoView) {
+        read.scrollIntoView({ behavior: REDUCE ? "auto" : "smooth", block: "start" });
+      }
+      var seg = $("#omSeg");
+      var target = (seg && !seg.hidden) ? $(".om-seg-m", seg) : $("#birthDate");
+      if (target) {
+        window.setTimeout(function () {
+          try { target.focus({ preventScroll: true }); }
+          catch (er) { try { target.focus(); } catch (er2) {} }
+        }, REDUCE ? 0 : 350);
+      }
+    }, true);
+  }
+
+  /* ============================================================
+     6. THIRD EYE HUD — starts as a small collapsed chip so it can
+     never overlap content; expands bottom-right on demand. The
+     close button collapses it back to the chip. State is per
+     session; app.js keeps owning all the HUD text and rites.
      ============================================================ */
   function initHud() {
     var hud = $(".eyeHud");
     var close = $("#eyeHudClose");
     if (!hud) return;
-    var hidden = false;
-    try { hidden = sessionStorage.getItem("v4_hud_hidden") === "1"; } catch (e) {}
-    if (hidden) hud.hidden = true;
-    on(close, "click", function () {
-      hud.hidden = true;
-      try { sessionStorage.setItem("v4_hud_hidden", "1"); } catch (e) {}
+
+    // the chip label, shown only while collapsed (CSS gates it). The
+    // served markup already ships it (collapsed-by-default contract);
+    // only create one if a legacy page lacks it.
+    var lbl = $(".eyeHud-chip-lbl", hud);
+    if (!lbl) {
+      lbl = document.createElement("span");
+      lbl.className = "eyeHud-chip-lbl";
+      lbl.textContent = "Awakening";
+      hud.appendChild(lbl);
+    }
+
+    var open = false; // collapsed is the default, always
+    try { open = sessionStorage.getItem("v4_hud_open") === "1"; } catch (e) {}
+
+    function setState(isOpen) {
+      hud.classList.toggle("is-collapsed", !isOpen);
+      if (isOpen) {
+        hud.removeAttribute("role");
+        hud.removeAttribute("tabindex");
+        hud.removeAttribute("aria-expanded");
+      } else {
+        hud.setAttribute("role", "button");
+        hud.setAttribute("tabindex", "0");
+        hud.setAttribute("aria-expanded", "false");
+      }
+      try { sessionStorage.setItem("v4_hud_open", isOpen ? "1" : "0"); } catch (e) {}
+    }
+    setState(open);
+
+    on(hud, "click", function () {
+      if (hud.classList.contains("is-collapsed")) setState(true);
+    });
+    on(hud, "keydown", function (e) {
+      if (!hud.classList.contains("is-collapsed")) return;
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setState(true); }
+    });
+    on(close, "click", function (e) {
+      if (e && e.stopPropagation) e.stopPropagation();
+      setState(false);
+      try { hud.focus(); } catch (er) {}
+    });
+  }
+
+  /* ============================================================
+     6b. BAR CTA — the pn-bar's "Reveal my animal" links to
+     /index.html#read everywhere; on the homepage we intercept it,
+     glide to the reader, and focus the first segment (the same
+     walk the rail CTA does pre-reveal).
+     ============================================================ */
+  function initBarCta() {
+    if (!$("#read")) return; // not the homepage: let the anchor navigate
+    document.addEventListener("click", function (e) {
+      var a = e.target && e.target.closest ? e.target.closest(".pn-cta") : null;
+      if (!a) return;
+      var read = $("#read");
+      if (!read) return;
+      e.preventDefault();
+      if (read.scrollIntoView) {
+        read.scrollIntoView({ behavior: REDUCE ? "auto" : "smooth", block: "start" });
+      }
+      var seg = $("#omSeg");
+      var target = (seg && !seg.hidden) ? $(".om-seg-m", seg) : $("#birthDate");
+      if (target) {
+        window.setTimeout(function () {
+          try { target.focus({ preventScroll: true }); }
+          catch (er) { try { target.focus(); } catch (er2) {} }
+        }, REDUCE ? 0 : 350);
+      }
     });
   }
 
@@ -414,9 +587,12 @@
      ============================================================ */
   function boot() {
     try { initMoon(); } catch (e) {}
+    try { initSubHeight(); } catch (e) {}
     try { initSeason(); } catch (e) {}
     try { initSegments(); } catch (e) {}
     try { initHud(); } catch (e) {}
+    try { initRevealCta(); } catch (e) {}
+    try { initBarCta(); } catch (e) {}
     try { paintUnlocks(); } catch (e) {}
 
     ["po:reveal", "po:awaken", "po:awakened", "po:revealed", "po:discovered", "po:shared", "storage"]

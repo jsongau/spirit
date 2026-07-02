@@ -1,54 +1,129 @@
 /* ============================================================
-   THE PRIMAL ORACLE — nav core (the sticky bar)
-   Dropdown mega-nav shell. Uses oracle.css tokens.
+   THE PRIMAL ORACLE — nav core (the sticky bar), canvas v3 skin
+   Canvas-template-v2 bar: 64px, wordmark | Find yours | Explore
+   | Menagerie | Bonds | Moon | moon chip | theme | CTA.
+   Tokens only (tokens.css); both themes resolve.
    ============================================================ */
 
-.pn-bar{position:sticky; top:0; z-index:120; backdrop-filter:blur(10px);
-  background:var(--nav-bg);
-  border-bottom:1px solid var(--line,#2a2c44)}
-.pn-inner{max-width:1140px; margin:0 auto; padding:16px 26px; display:flex; align-items:center; gap:26px}
+.pn-bar{position:sticky; top:0; z-index:120;
+  -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px);
+  background:color-mix(in oklab, var(--ink) 92%, transparent);
+  border-bottom:1px solid var(--line)}
+@supports not (background: color-mix(in oklab, red, blue)) {
+  .pn-bar{background:var(--ink)}
+}
+/* one deterministic bar height: the shared knob every sticky offset
+   reads (nav-sub.css declares --pn-bar-h:64px; nav.js re-measures).
+   The inner row is knob minus the 1px bottom border, so the bar's
+   full rendered height equals the knob exactly. */
+.pn-inner{max-width:1280px; margin:0 auto; height:calc(var(--pn-bar-h, 64px) - 1px);
+  padding:0 clamp(16px, 3vw, 32px); display:flex; align-items:center; gap:16px}
 
-.pn-brand{font-family:var(--serif,serif); font-size:1.35rem; letter-spacing:.5px; color:var(--moon,#f5ecd2); white-space:nowrap; text-decoration:none}
-.pn-brand b{color:var(--brass,#d6c18c)}
+.pn-brand{font-family:var(--serif,serif); font-size:1.2rem; letter-spacing:.4px;
+  color:var(--moon,#f5ecd2); white-space:nowrap; text-decoration:none; flex:0 0 auto}
+.pn-brand b{color:var(--accent,#d6c18c); font-weight:600}
 
-/* top-level nav */
-.pn-nav{display:flex; align-items:center; gap:8px; margin-left:8px}
-.pn-link,.pn-trigger{font:500 .92rem/1 var(--sans,sans-serif); color:var(--muted,#9a9bb0);
-  padding:11px 15px; border-radius:10px; letter-spacing:.01em; white-space:nowrap;
-  background:transparent; border:none; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+/* top-level nav: pill links; overflow scrolls under a fade mask
+   (canvas) so the bar can never wrap and change height */
+.pn-nav{display:flex; align-items:center; gap:2px; flex:1 1 auto; min-width:0;
+  overflow-x:auto; overflow-y:hidden; scrollbar-width:none;
+  -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 32px),transparent);
+  mask-image:linear-gradient(90deg,#000 calc(100% - 32px),transparent)}
+.pn-nav::-webkit-scrollbar{display:none}
+.pn-link,.pn-trigger{font:500 .875rem/1 var(--sans,sans-serif); color:var(--ivory,#ece7d8);
+  padding:9px 13px; border-radius:var(--r-pill,999px); letter-spacing:.01em; white-space:nowrap;
+  background:transparent; border:none; cursor:pointer; text-decoration:none;
+  display:inline-flex; align-items:center; gap:6px;
   transition:color .18s, background .18s}
-.pn-link:hover,.pn-trigger:hover{color:var(--moon,#f5ecd2); background:rgba(214,193,140,.08)}
-.pn-link.active,.pn-trigger.active{color:var(--brass-bright,#efe2b4)}
+.pn-link:hover,.pn-trigger:hover{color:var(--moon,#f5ecd2); background:var(--accent-soft)}
+.pn-link.active,.pn-trigger.active{color:var(--accent-bright,#efe2b4)}
+/* "Find yours": the canvas pill with the standing accent underline */
+.pn-link.pn-find{color:var(--moon,#f5ecd2); box-shadow:inset 0 -2px 0 var(--accent,#d6c18c)}
 .pn-trigger .chev{width:7px; height:7px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor;
   transform:rotate(45deg) translateY(-1px); transition:transform .22s ease; opacity:.75}
-.pn-trigger.expanded{color:var(--moon,#f5ecd2); background:rgba(214,193,140,.1)}
+.pn-trigger.expanded{color:var(--moon,#f5ecd2); background:var(--accent-soft)}
 .pn-trigger.expanded .chev{transform:rotate(-135deg) translateY(1px)}
 .pn-item{position:relative}
 
-/* right-side tools */
-.pn-tools{display:flex; align-items:center; gap:12px; margin-left:auto}
-.pn-chip{display:inline-flex; align-items:center; gap:8px; padding:8px 13px; border-radius:999px;
-  border:1px solid var(--line,#2a2c44); background:var(--chip-bg); color:var(--ivory,#ece7d8);
-  font:500 .82rem/1 var(--sans,sans-serif); text-decoration:none; white-space:nowrap; transition:border-color .18s, color .18s}
-.pn-chip:hover{border-color:var(--brass,#d6c18c); color:var(--moon,#f5ecd2)}
-.pn-chip .v{color:var(--brass-bright,#efe2b4)}
+/* right-side tools: moon chip + theme toggle + primary CTA */
+.pn-tools{display:flex; align-items:center; gap:10px; margin-left:auto; flex:0 0 auto}
+
+.pn-moonwrap{position:relative; flex:0 0 auto}
+.pn-moon{display:inline-flex; align-items:center; gap:7px; height:38px; padding:0 12px;
+  background:transparent; border:1px solid var(--line); border-radius:var(--r-pill,999px);
+  color:var(--muted); font:400 .68rem/1 var(--mono,monospace); cursor:pointer; white-space:nowrap;
+  transition:border-color .2s ease, color .2s ease, background .2s ease}
+.pn-moon:hover,.pn-moon[aria-expanded="true"]{border-color:var(--accent); color:var(--moon)}
+.pn-moon[aria-expanded="true"]{background:var(--accent-soft)}
+.pn-moon .g{font-size:1rem; line-height:1}
+.pn-moon[hidden]{display:none}
+.pn-moonpop{position:absolute; right:0; top:calc(100% + 14px);
+  width:min(300px, calc(100vw - 32px)); background:var(--panel);
+  border:1px solid var(--line); border-radius:0 0 18px 18px; box-shadow:var(--e-2);
+  padding:20px; z-index:121}
+.pn-moonpop[hidden]{display:none}
+.pn-moonpop .pnm-head{display:flex; align-items:center; gap:12px; margin-bottom:10px}
+.pn-moonpop .pnm-glyph{font-size:2.2rem; line-height:1}
+.pn-moonpop .pnm-name{margin:0; font:600 1.1rem/1.2 var(--serif); color:var(--moon)}
+.pn-moonpop .pnm-pct{margin:0; font:400 .68rem/1.4 var(--mono); color:var(--muted)}
+.pn-moonpop .pnm-meaning{margin:0 0 6px; font:400 .85rem/1.55 var(--sans); color:var(--body-text)}
+.pn-moonpop .pnm-favors{margin:0 0 12px; font:600 .8rem/1.4 var(--sans); color:var(--season)}
+.pn-moonpop .pnm-link{font:600 .8rem/1 var(--sans); color:var(--accent); text-decoration:none}
+.pn-moonpop .pnm-link:hover{color:var(--accent-bright)}
+@media (prefers-reduced-motion: no-preference){
+  .pn-moonpop{animation:pnPopIn .2s ease both}
+  @keyframes pnPopIn{from{opacity:0; transform:translateY(-6px) scale(.99)} to{opacity:1; transform:none}}
+}
+
+.pn-theme{appearance:none; width:38px; height:38px; padding:0;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:transparent; border:1px solid var(--line); border-radius:50%;
+  color:var(--accent); font-size:1rem; line-height:1; cursor:pointer;
+  transition:transform .3s ease, border-color .2s ease, box-shadow .2s ease}
+.pn-theme:hover,.pn-theme:focus-visible{border-color:var(--accent);
+  transform:rotate(24deg) scale(1.08); box-shadow:0 0 14px var(--accent-soft)}
+
+/* the bar CTA: the sitewide sheen contract (om-sheen lives in skin.css) */
+.pn-cta{display:inline-flex; align-items:center; gap:7px; height:40px; padding:0 20px;
+  background:
+    linear-gradient(105deg, rgba(255,255,255,0) 42%, rgba(255,255,255,.5) 50%, rgba(255,255,255,0) 58%) no-repeat,
+    linear-gradient(135deg, var(--cta-g1), var(--cta-g2));
+  background-size:220% 100%, 180% 180%;
+  background-position:-160% 50%, 0% 50%;
+  color:var(--cta-text); font:700 .85rem/1 var(--sans); letter-spacing:.01em;
+  border-radius:var(--r-pill,999px); text-decoration:none; white-space:nowrap;
+  box-shadow:0 4px 18px var(--accent-soft);
+  transition:transform .25s var(--ease-io), box-shadow .25s var(--ease-io)}
+.pn-cta:hover,.pn-cta:focus-visible{animation:om-sheen .7s ease forwards;
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px var(--accent-soft), 0 0 0 3px var(--sec-soft)}
+.pn-cta:active{transform:translateY(0) scale(.97)}
 
 .pn-burger{display:none; margin-left:6px; background:transparent; border:1px solid var(--line,#2a2c44);
-  color:var(--moon,#f5ecd2); border-radius:11px; width:44px; height:40px; cursor:pointer; font-size:1.15rem}
+  color:var(--moon,#f5ecd2); border-radius:11px; width:44px; height:40px; cursor:pointer; font-size:1.15rem; flex:0 0 auto}
 
-body.pn-has-bar{scroll-padding-top:82px}
+/* anchor jumps clear the sticky bar; --pn-bar-h is the shared knob
+   declared in nav-sub.css and measured live by nav.js */
+body.pn-has-bar{scroll-padding-top:calc(var(--pn-bar-h, 64px) + 20px)}
 /* the pre-rendered bar supersedes any legacy simple header */
 body.pn-has-bar header.top{display:none}
 /* crawlable section links: real anchors, not shown to sighted users */
 .pn-crawl[hidden]{display:none}
 
-/* responsive: fold nav + tools into the drawer as space tightens */
-@media(max-width:1040px){ .pn-chip .lbl{display:none} .pn-chip{padding:8px 10px} }
+@media (prefers-reduced-motion: reduce){
+  .pn-theme:hover,.pn-theme:focus-visible{transform:none}
+  .pn-cta:hover,.pn-cta:focus-visible{animation:none; transform:none}
+  .pn-moonpop{animation:none}
+}
+
+/* responsive: fold nav into the drawer as space tightens */
+@media(max-width:1180px){ .pn-cta{padding:0 14px} }
 @media(max-width:900px){
   .pn-nav{display:none}
   .pn-burger{display:block}
 }
+@media(max-width:760px){ .pn-cta{display:none} }
 @media(max-width:560px){
-  .pn-tools{display:none}
-  .pn-inner{padding:14px 18px; gap:14px}
+  .pn-moonwrap{display:none}
+  .pn-inner{padding:0 18px; gap:12px}
 }

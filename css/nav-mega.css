@@ -75,8 +75,10 @@
   z-index: 119;
   background: var(--panel);
   border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-radius: 0 0 22px 22px;     /* canvas drop-sheet corners */
   box-shadow: var(--e-2);           /* soft drop under the sheet, not on rows */
-  padding: var(--s-6) 0 var(--s-7);
+  padding: var(--s-5) 0 var(--s-6);
 }
 /* hidden until hydrated; nav.js removes [hidden] and adds .open */
 .pn-panel[hidden] { display: none; }
@@ -119,15 +121,16 @@
 /* hairline rule between columns from the second column onward */
 .pn-col + .pn-col { border-left: 1px solid var(--line-soft); padding-left: var(--s-6); }
 
+/* canvas column titles: mono uppercase in the seasonal second hue,
+   led by a small glyph marker (✦ ◆ ❦ ☾ ⌂) */
 .pn-col-title {
-  font: 600 var(--fs-eyebrow, .72rem)/1.2 var(--sans);
+  font: 400 .7rem/1.3 var(--mono);
   text-transform: uppercase;
-  letter-spacing: .22em;
-  color: var(--muted);
+  letter-spacing: .14em;
+  color: var(--season, var(--muted));
   margin: 0 0 var(--s-3);
-  padding-bottom: var(--s-2);
-  border-bottom: 1px solid var(--line-soft);
 }
+.pn-col-mark { margin-right: 2px; }
 
 /* ------------------------------------------------------------
    4. Rows. The heart of the card-free design: a fixed glyph box +
@@ -143,11 +146,13 @@
   min-height: 44px;                 /* touch target */
   padding: var(--s-2) var(--s-3);
   margin-inline: calc(var(--s-3) * -1);
+  border-radius: var(--r-1);
   text-decoration: none;
   color: var(--ivory);
   border-bottom: 1px solid var(--line-soft);
   transition: background var(--dur-fast) var(--ease-io),
-              color var(--dur-fast) var(--ease-io);
+              color var(--dur-fast) var(--ease-io),
+              transform var(--dur-fast) var(--ease-io);
 }
 .pn-row:last-child { border-bottom: 0; }
 
@@ -155,6 +160,7 @@
 .pn-row:focus-visible {
   background: var(--accent-soft);
   color: var(--moon);
+  transform: translateX(3px);       /* canvas row nudge */
 }
 /* current page marker: accent name + italic, so meaning is not color-only */
 .pn-row.active,
@@ -183,32 +189,188 @@
 
 .pn-row-name {
   grid-column: 2;
-  font: 500 var(--fs-h3, 1.35rem)/1.15 var(--serif);
+  font: 500 1.02rem/1.3 var(--serif);   /* canvas scale: quiet serif rows */
   color: inherit;
 }
 .pn-row-sub {
   grid-column: 2;
-  font: 400 .72rem/1.3 var(--sans);
+  font: 400 .7rem/1.3 var(--sans);
   letter-spacing: .06em;
   color: var(--muted);
   margin-top: 2px;
 }
 
 /* ------------------------------------------------------------
-   5. Panel foot. A quiet full-width link, hairline over it, that
-   points at the domain hub. Serif, accent on hover.
+   4b. Chip strip. Round glyph chips under the columns (the canvas
+   "wing" strips: ♈…♓ on Western Signs, 鼠…猪 on Chinese Years).
+   Same centered measure as the other panel children.
+   ------------------------------------------------------------ */
+.pn-chips {
+  max-width: var(--maxw);
+  margin: var(--s-5) auto 0;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pn-chips-label {
+  font: 400 .64rem/1.2 var(--mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-right: 2px;
+}
+.pn-chip {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--line-soft);
+  color: var(--accent);
+  font-size: .95rem;
+  line-height: 1;
+  text-decoration: none;
+  transition: border-color var(--dur-fast) var(--ease-io),
+              background var(--dur-fast) var(--ease-io),
+              color var(--dur-fast) var(--ease-io),
+              transform var(--dur-fast) var(--ease-io);
+}
+.pn-chip:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-bright);
+  transform: translateY(-2px);
+}
+.pn-chip:focus-visible {
+  outline: 2px solid var(--brass-bright);
+  outline-offset: 2px;
+  border-radius: 50%;
+}
+/* two stacked wing strips (Explore): tighten the gap between them */
+.pn-chips + .pn-chips { margin-top: var(--s-3); }
+/* the Eastern strip chips glow brass; the Western strip stays seasonal */
+.pn-chips .pn-chip { color: var(--season, var(--accent)); }
+.pn-chips + .pn-chips .pn-chip { color: var(--accent); }
+
+/* ------------------------------------------------------------
+   4c. Canvas layouts. `layout` in PNAV.MAP is only ever a class:
+   pn-panel-explore  the five-column catalog + wing strips
+   pn-panel-wings    Menagerie: two 2-up wing columns + begin col
+   pn-panel-cards    Bonds: rows rendered as description cards
+   pn-panel-moon     Tonight column + the eight phases grid
+   ------------------------------------------------------------ */
+
+/* Explore: five tight columns, no glyph boxes, no column hairlines */
+.pn-panel-explore .pn-cols {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--s-4) clamp(16px, 2.5vw, 32px);
+}
+.pn-panel-explore .pn-col + .pn-col { border-left: 0; padding-left: 0; }
+.pn-panel-explore .pn-glyph { display: none; }
+.pn-panel-explore .pn-row {
+  grid-template-columns: 1fr;
+  min-height: 40px;
+  padding-block: 6px;
+}
+.pn-panel-explore .pn-row-name,
+.pn-panel-explore .pn-row-sub { grid-column: 1; }
+.pn-panel-explore .pn-row-name { font-size: .95rem; }
+
+/* Menagerie wings: both wings run 2-up inside their column; the
+   date/year sub-labels stay in the DOM (crawl + drawer) but hide
+   here so the sheet stays shallow, per the canvas */
+.pn-panel-wings .pn-cols { grid-template-columns: 1.2fr 1.2fr 1fr; gap: clamp(20px, 3vw, 44px); }
+.pn-panel-wings .pn-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--s-4);
+  align-content: start;
+}
+.pn-panel-wings .pn-col-title { grid-column: 1 / -1; }
+.pn-panel-wings .pn-col:last-child { grid-template-columns: 1fr; }
+.pn-panel-wings .pn-col:last-child .pn-row-sub { display: block; }
+.pn-panel-wings .pn-row { border-bottom: 0; min-height: 40px; padding-block: 5px; }
+.pn-panel-wings .pn-row-sub { display: none; }
+.pn-panel-wings .pn-row-name { font-size: .92rem; }
+@media (max-width: 1120px) {
+  .pn-panel-wings .pn-cols { grid-template-columns: 1fr 1fr; }
+  .pn-panel-wings .pn-col:last-child { grid-column: 1 / -1; }
+}
+
+/* Bonds: each row is a canvas description card */
+.pn-panel-cards .pn-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+.pn-panel-cards .pn-glyph { display: none; }
+.pn-panel-cards .pn-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-inline: 0;
+  padding: 16px 18px;
+  background: var(--panel-2);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-2);
+  transition: border-color var(--dur-fast) var(--ease-io),
+              transform var(--dur-fast) var(--ease-io),
+              box-shadow var(--dur-fast) var(--ease-io);
+}
+.pn-panel-cards .pn-row:hover,
+.pn-panel-cards .pn-row:focus-visible {
+  background: var(--panel-2);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px var(--accent-soft);
+}
+.pn-panel-cards .pn-row-name { font: 600 1.05rem/1.3 var(--serif); color: var(--moon); }
+.pn-panel-cards .pn-row-sub {
+  font: 400 .82rem/1.5 var(--sans);
+  letter-spacing: 0;
+  color: var(--body-text);
+  text-transform: none;
+}
+
+/* Moon: the Tonight column beside the eight-phase grid */
+.pn-panel-moon .pn-cols {
+  grid-template-columns: minmax(240px, 340px) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 44px);
+}
+.pn-panel-moon .pn-col:last-child {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  column-gap: var(--s-3);
+  align-content: start;
+}
+.pn-panel-moon .pn-col:last-child .pn-col-title { grid-column: 1 / -1; }
+.pn-panel-moon .pn-col:last-child .pn-row { border-bottom: 0; min-height: 40px; padding-block: 5px; }
+.pn-panel-moon .pn-row-name { font-size: .95rem; }
+@media (max-width: 1000px) {
+  .pn-panel-moon .pn-cols { grid-template-columns: 1fr; }
+  .pn-panel-moon .pn-col + .pn-col { border-left: 0; padding-left: 0; }
+}
+
+/* ------------------------------------------------------------
+   5. Panel foot. The canvas closing link: small, bold, accent,
+   pushed to the right end of its hairline row.
    ------------------------------------------------------------ */
 .pn-panel-foot {
-  margin-top: var(--s-5);
-  padding-top: var(--s-4);
-  border-top: 1px solid var(--line);
+  margin-top: var(--s-4);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--line-soft);
+  display: flex;
+  justify-content: flex-end;
 }
 .pn-panel-foot a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  font: 500 var(--fs-lead, 1.2rem)/1.2 var(--serif);
-  font-style: italic;
+  font: 600 .85rem/1.2 var(--sans);
   color: var(--accent);
   text-decoration: none;
   transition: color var(--dur-fast) var(--ease-io);
@@ -272,7 +434,13 @@
   .pn-trigger,
   .pn-row,
   .pn-glyph,
+  .pn-chip,
   .pn-panel-foot { transition: none; animation: none; }
+  .pn-chip:hover { transform: none; }
+  .pn-row:hover,
+  .pn-row:focus-visible,
+  .pn-panel-cards .pn-row:hover,
+  .pn-panel-cards .pn-row:focus-visible { transform: none; }
 }
 
 /* ------------------------------------------------------------
