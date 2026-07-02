@@ -358,34 +358,45 @@
       setOpen(!isOpen());
     });
 
-    // auto: collapse to the header once the reader scrolls below the bar's top
-    var ticking = false;
-    function evaluate() {
-      ticking = false;
-      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
-      var top = 0;
-      try { top = controls.getBoundingClientRect().top + y; } catch (e) {}
-      var stickTop = 56; // matches .pv-controls top offset
-      if (y <= Math.max(0, top - stickTop - 8)) {
-        // back at/above the bar's resting place: auto takes over again
-        userSet = false;
+    // Auto-collapse to the header once the bar sticks. A sticky element reports
+    // a circular getBoundingClientRect once stuck, so measuring it is unreliable
+    // (that was the old bug: it never collapsed). Instead, drop a zero-height
+    // sentinel just above the bar and watch it with an IntersectionObserver whose
+    // top margin equals the bar's sticky offset. When the sentinel crosses that
+    // line the bar is stuck, so we collapse; back at the top we expand.
+    var sentinel = document.createElement("div");
+    sentinel.setAttribute("aria-hidden", "true");
+    sentinel.style.cssText = "height:0;margin:0;padding:0;border:0";
+    if (controls.parentNode) controls.parentNode.insertBefore(sentinel, controls);
+    var stickTop = parseInt(getComputedStyle(controls).top, 10);
+    if (!stickTop || stickTop < 0) stickTop = 150;
+
+    function setCompact(stuck) {
+      if (stuck) {
+        if (userSet) return; // respect a manual choice while scrolled down
+        controls.classList.add("is-compact");
+        if (toggle) toggle.setAttribute("aria-expanded", "false");
+      } else {
+        userSet = false;     // back at the resting place: auto takes over again
         controls.classList.remove("is-compact", "is-collapsed");
         if (toggle) toggle.setAttribute("aria-expanded", "true");
-        return;
       }
-      if (userSet) return; // respect the reader's explicit choice while scrolled
-      // scrolled down and no manual override: compact it so the grid shows
-      controls.classList.add("is-compact");
-      if (toggle) toggle.setAttribute("aria-expanded", "false");
     }
-    function onScroll() {
-      if (ticking) return;
-      ticking = true;
-      if (window.requestAnimationFrame) requestAnimationFrame(evaluate);
-      else setTimeout(evaluate, 100);
+
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) {
+        setCompact(!es[0].isIntersecting); // sentinel above the sticky line => stuck
+      }, { rootMargin: (-(stickTop + 1)) + "px 0px 0px 0px", threshold: 0 }).observe(sentinel);
+    } else {
+      var ticking = false;
+      window.addEventListener("scroll", function () {
+        if (ticking) return; ticking = true;
+        requestAnimationFrame(function () {
+          ticking = false;
+          setCompact((window.pageYOffset || document.documentElement.scrollTop || 0) > stickTop + 40);
+        });
+      }, { passive: true });
     }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    evaluate();
   })();
 
   /* ---------- background starfield behind the whole page ---------- */
