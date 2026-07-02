@@ -112,6 +112,7 @@ PNAV.MAP = [
         ["/menagerie.html",  "All 144 animals"],
         ["/western-zodiac/", "Western wing"],
         ["/chinese-zodiac/", "Eastern wing"],
+        ["/zodiac/",         "Zodiac crossings"],
         ["/menagerie.html",  "Rare crossings"]
       ]},
       { title: "Bonds", mark: "❦", items: [
@@ -313,6 +314,14 @@ PNAV.HUBS = {
       ["/chinese-zodiac/rooster/", "Rooster"],
       ["/chinese-zodiac/dog/", "Dog"],
       ["/chinese-zodiac/pig/", "Pig"]
+    ]
+  },
+  "zodiac": {
+    label: "Zodiac crossings", root: "/zodiac/",
+    items: [
+      ["/zodiac/", "The 144 grid"],
+      ["/zodiac/what-is-my-primal-zodiac-animal/", "How the crossing works"],
+      ["/year.html", "Year finder"]
     ]
   },
   "horoscopes": {
