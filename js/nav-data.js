@@ -272,33 +272,16 @@ PNAV.MAP = [
         ["/feng-shui/kua-number/",  "Your Kua number"],
         ["/directions/",            "Directions"]
       ]},
-      /* The Proverb Pond, opened out. The overview + Study + Collection
-         sit in their own column; the twelve ponds follow, grouped by life
-         area (Self, People, World). Each pond keeps a plain-keyword label;
-         nav-mega.css paints a colored dot in the row's empty glyph box. */
-      { title: "The Proverb Pond", mark: "❦", items: [
-        ["/proverbs/",       "The Proverb Pond", "Chinese proverbs, pronounced"],
+      /* Proverbs & lore: ONE column only. The 87-proverb Pond and its twelve
+         themes live in the /proverbs/ hub sub-menu (grouped into Self / People
+         / World dropdowns), NOT as mega-panel columns — keeping the panel at
+         three columns per docs/meganav-stack.md (the budget the Proverb Pond
+         blew past twice). */
+      { title: "Proverbs and lore", mark: "❦", items: [
+        ["/proverbs/",       "The Proverb Pond", "all 87, pronounced"],
         ["/proverbs/study/", "Study the proverbs"],
-        ["/proverbs/",       "The whole collection", "all 87 proverbs"],
-        ["/traditions/",     "Traditions"]
-      ]},
-      { title: "Ponds · Self", mark: "水", items: [
-        ["/proverbs/the-way-of-water/", "The Tao"],
-        ["/proverbs/timing-and-fortune/", "Fate"],
-        ["/proverbs/perseverance/",     "Perseverance"],
-        ["/proverbs/courage/",          "Courage"]
-      ]},
-      { title: "Ponds · People", mark: "仁", items: [
-        ["/proverbs/home-and-family/",          "Family"],
-        ["/proverbs/friendship-and-trust/",     "Friendship"],
-        ["/proverbs/wisdom-and-learning/",      "Wisdom"],
-        ["/proverbs/humility-and-self-mastery/", "Humility"]
-      ]},
-      { title: "Ponds · World", mark: "地", items: [
-        ["/proverbs/wealth-and-work/",          "Money"],
-        ["/proverbs/nature-and-seasons/",       "Health"],
-        ["/proverbs/harmony-and-virtue/",       "Harmony"],
-        ["/proverbs/adversity-and-resilience/", "Adversity"]
+        ["/traditions/",     "Traditions"],
+        ["/habitat/",        "The Habitat"]
       ]}
     ]
   },
@@ -451,20 +434,30 @@ PNAV.HUBS = {
        the anchor text wins the plain search. */
     label: "Chinese Proverbs", root: "/proverbs/",
     items: [
+      /* Overview (/proverbs/ root) is dropped from the visible row by apply-nav;
+         the breadcrumb still links it. The twelve ponds are grouped into Self /
+         People / World dropdowns so the whole collection is reachable without a
+         long flat scroller (parent href = the group's first pond). */
       ["/proverbs/", "All 87"],
-      ["/proverbs/the-way-of-water/", "The Tao"],
-      ["/proverbs/timing-and-fortune/", "Fate"],
-      ["/proverbs/perseverance/", "Perseverance"],
-      ["/proverbs/courage/", "Courage"],
-      ["/proverbs/home-and-family/", "Family"],
-      ["/proverbs/friendship-and-trust/", "Friendship"],
-      ["/proverbs/wisdom-and-learning/", "Wisdom"],
-      ["/proverbs/humility-and-self-mastery/", "Humility"],
-      ["/proverbs/wealth-and-work/", "Money"],
-      ["/proverbs/nature-and-seasons/", "Health"],
-      ["/proverbs/harmony-and-virtue/", "Harmony"],
-      ["/proverbs/adversity-and-resilience/", "Adversity"],
-      ["/proverbs/study/", "Study"]
+      ["/proverbs/study/", "Study"],
+      ["/proverbs/the-way-of-water/", "Self", [
+        ["/proverbs/the-way-of-water/", "The Tao"],
+        ["/proverbs/timing-and-fortune/", "Fate"],
+        ["/proverbs/perseverance/", "Perseverance"],
+        ["/proverbs/courage/", "Courage"]
+      ]],
+      ["/proverbs/home-and-family/", "People", [
+        ["/proverbs/home-and-family/", "Family"],
+        ["/proverbs/friendship-and-trust/", "Friendship"],
+        ["/proverbs/wisdom-and-learning/", "Wisdom"],
+        ["/proverbs/humility-and-self-mastery/", "Humility"]
+      ]],
+      ["/proverbs/wealth-and-work/", "World", [
+        ["/proverbs/wealth-and-work/", "Money"],
+        ["/proverbs/nature-and-seasons/", "Health"],
+        ["/proverbs/harmony-and-virtue/", "Harmony"],
+        ["/proverbs/adversity-and-resilience/", "Adversity"]
+      ]]
     ]
   },
   "feng-shui": {
@@ -532,16 +525,17 @@ PNAV.HUBS = {
     label: "The Moon", root: "/moon.html",
     items: [
       ["/moon.html", "Tonight"],
-      ["/moon/phases/", "The eight phases"],
+      ["/moon/phases/", "The eight phases", [
+        ["/moon/phases/new-moon/", "New"],
+        ["/moon/phases/waxing-crescent/", "Waxing crescent"],
+        ["/moon/phases/first-quarter/", "First quarter"],
+        ["/moon/phases/waxing-gibbous/", "Waxing gibbous"],
+        ["/moon/phases/full-moon/", "Full"],
+        ["/moon/phases/waning-gibbous/", "Waning gibbous"],
+        ["/moon/phases/last-quarter/", "Last quarter"],
+        ["/moon/phases/waning-crescent/", "Waning crescent"]
+      ]],
       ["/moon/in-your-sign/", "Moon in your sign"],
-      ["/moon/phases/new-moon/", "New"],
-      ["/moon/phases/waxing-crescent/", "Waxing crescent"],
-      ["/moon/phases/first-quarter/", "First quarter"],
-      ["/moon/phases/waxing-gibbous/", "Waxing gibbous"],
-      ["/moon/phases/full-moon/", "Full"],
-      ["/moon/phases/waning-gibbous/", "Waning gibbous"],
-      ["/moon/phases/last-quarter/", "Last quarter"],
-      ["/moon/phases/waning-crescent/", "Waning crescent"],
       ["/best-days.html", "Best days"]
     ]
   },
@@ -549,14 +543,18 @@ PNAV.HUBS = {
     label: "Traditions", root: "/traditions/",
     items: [
       ["/traditions/", "Overview"],
-      ["/traditions/levantine-moon/", "Levantine moon"],
-      ["/traditions/moon-cycles/", "Moon cycles"],
-      ["/traditions/moonlight-charging/", "Moonlight charging"],
-      ["/traditions/birthstones-and-moonstone/", "Birthstones and moonstone"],
-      ["/traditions/fossils-sacred-earth/", "Fossils and sacred earth"],
-      ["/traditions/psychic-practices/", "Psychic practices"],
-      ["/traditions/moon-body/", "The moon body"],
-      ["/traditions/stones-for-your-animal/", "Stones for your animal"]
+      ["/traditions/levantine-moon/", "Moon lore", [
+        ["/traditions/levantine-moon/", "Levantine moon"],
+        ["/traditions/moon-cycles/", "Moon cycles"],
+        ["/traditions/moonlight-charging/", "Moonlight charging"],
+        ["/traditions/moon-body/", "The moon body"]
+      ]],
+      ["/traditions/birthstones-and-moonstone/", "Stones and earth", [
+        ["/traditions/birthstones-and-moonstone/", "Birthstones and moonstone"],
+        ["/traditions/fossils-sacred-earth/", "Fossils and sacred earth"],
+        ["/traditions/stones-for-your-animal/", "Stones for your animal"]
+      ]],
+      ["/traditions/psychic-practices/", "Psychic practices"]
     ]
   }
 };

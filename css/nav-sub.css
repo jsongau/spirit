@@ -90,6 +90,10 @@
 }
 .pn-subnav { padding-block: var(--s-2, .5rem); }
 .pn-crumb { padding-block: var(--s-2, .5rem); }
+/* Start the breadcrumb a touch farther right than the sub-nav's first tab
+   (which sits at gutter + 12px), so "Home" never begins before the first
+   sub-menu word — a small, stylish indent. */
+.pn-sub-crumb .pn-crumb { padding-inline-start: calc(clamp(18px, 2.2vw, 34px) + 1.4rem); }
 
 /* ---- Row 1: breadcrumb ------------------------------------------- */
 .pn-crumb {

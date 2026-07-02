@@ -1,48 +1,8 @@
-/* proverbs-hub.js - pond, filters, Mandarin TTS, daily draw, deeper reading, share. */
+/* proverbs-hub.js - pond, twelve pond cards, filters, Mandarin TTS, streak.
+   Per-card sharing is owned by proverbs-share.js (the [data-share] modal). */
 (function () {
   "use strict";
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  /* ---------- runtime style (ink-brush reveal, deeper reading, share) ---------- */
-  (function injectStyle() {
-    if (document.getElementById("pv-hub-style")) return;
-    var css =
-      ".pv-reveal-zh ruby,.pv-reveal-zh .cx-punct{display:inline-block}" +
-      ".pv-ink ruby,.pv-ink .cx-punct{opacity:0;transform:translateY(.14em) scale(.82);filter:blur(6px);" +
-        "animation:pv-bloom .62s cubic-bezier(.2,.8,.24,1) both;animation-delay:var(--pv-d,0ms)}" +
-      "@keyframes pv-bloom{0%{opacity:0;transform:translateY(.14em) scale(.82);filter:blur(6px)}" +
-        "55%{opacity:1;filter:blur(.6px)}100%{opacity:1;transform:none;filter:blur(0)}}" +
-      ".pv-deeper{margin:14px auto 0;max-width:52ch;text-align:left;border-top:1px solid rgba(214,193,140,.14);padding-top:14px}" +
-      ".pv-deeper-h{font-family:\"Space Mono\",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.16em;" +
-        "font-size:.6rem;color:var(--brass-bright,#efe2b4);margin:0 0 5px;opacity:.9}" +
-      ".pv-deeper-story{color:var(--body,#c8c9de);line-height:1.6;margin:0 0 12px;font-size:.98rem}" +
-      ".pv-deeper-apply{color:var(--moon,#f5ecd2);font-family:var(--font-display,\"Fraunces\",serif);font-style:italic;" +
-        "line-height:1.5;margin:0 0 12px;font-size:1.06rem}" +
-      ".pv-deeper-related{display:flex;flex-wrap:wrap;gap:8px;align-items:center}" +
-      ".pv-rel-chip{font-family:\"Ma Shan Zheng\",\"Noto Serif SC\",serif;font-size:1.02rem;letter-spacing:.03em;" +
-        "color:var(--brass-bright,#efe2b4);background:rgba(214,193,140,.08);border:1px solid rgba(214,193,140,.3);" +
-        "border-radius:999px;padding:6px 14px;cursor:pointer;transition:background .2s,border-color .2s,transform .2s;" +
-        "-webkit-tap-highlight-color:transparent}" +
-      ".pv-rel-chip:hover{background:rgba(214,193,140,.2);border-color:var(--brass,#d6c18c);transform:translateY(-1px)}" +
-      ".pv-share{font-family:\"Space Mono\",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.12em;" +
-        "font-size:.66rem;color:var(--brass-bright,#efe2b4);background:rgba(214,193,140,.08);" +
-        "border:1px solid rgba(214,193,140,.4);border-radius:999px;padding:8px 14px;cursor:pointer;" +
-        "transition:background .2s;display:inline-flex;align-items:center;gap:.4em}" +
-      ".pv-share:hover{background:rgba(214,193,140,.18)}" +
-      ".pv-share[aria-busy=true]{opacity:.6;cursor:progress}" +
-      "@media (prefers-reduced-motion:reduce){.pv-ink ruby,.pv-ink .cx-punct{opacity:1;transform:none;filter:none;animation:none}" +
-        ".pv-rel-chip{transition:none}}";
-    var el = document.createElement("style");
-    el.id = "pv-hub-style";
-    el.textContent = css;
-    (document.head || document.documentElement).appendChild(el);
-  })();
-
-  /* ---------- data ---------- */
-  var DATA = [];
-  try { DATA = JSON.parse(document.getElementById("pv-data").textContent); } catch (e) { DATA = []; }
-  var byId = {};
-  DATA.forEach(function (p) { byId[p.id] = p; });
 
   /* ---------- daily streak (shared key with the collection page) ---------- */
   try {
@@ -57,13 +17,6 @@
     }
   } catch (e) {}
   var ANIMAL_HANZI = {Rat:"鼠",Ox:"牛",Tiger:"虎",Rabbit:"兔",Dragon:"龍",Snake:"蛇",Horse:"馬",Goat:"羊",Monkey:"猴",Rooster:"雞",Dog:"狗",Pig:"豬"};
-
-  /* optional deeper-reading blob, keyed by proverb id */
-  var DEEPER = {};
-  try {
-    var deepEl = document.getElementById("pv-deeper");
-    if (deepEl) DEEPER = JSON.parse(deepEl.textContent) || {};
-  } catch (e) { DEEPER = {}; }
 
   /* ---------- Mandarin speech ---------- */
   var zhVoice = null;
@@ -104,280 +57,30 @@
     if (t) speak(t, b);
   });
 
-  /* ---------- reveal panel ---------- */
-  var reveal = document.getElementById("pvReveal");
-  var elZh = document.getElementById("pvRevealZh"), elPy = document.getElementById("pvRevealPinyin"),
-      elLit = document.getElementById("pvRevealLit"), elMean = document.getElementById("pvRevealMean"),
-      elSoul = document.getElementById("pvRevealSoul"), elTag = document.getElementById("pvRevealTag"),
-      elAnimal = document.getElementById("pvRevealAnimal"), elSrc = document.getElementById("pvRevealSrc"),
-      elSay = document.getElementById("pvRevealSay"), elKeep = document.getElementById("pvKeep");
-  var current = null;
+  /* ---------- the pond draws a current: highlight one pond card ---------- */
+  var pondCards = Array.prototype.slice.call(document.querySelectorAll(".pv-pond-card"));
+  var brief = document.getElementById("pvBrief");
+  var lastDrawn = null;
 
-  /* one deeper-reading block, inserted after the soul line and refreshed per proverb */
-  var deeperBox = null;
-  if (elSoul && elSoul.parentNode) {
-    deeperBox = document.createElement("div");
-    deeperBox.className = "pv-deeper";
-    deeperBox.hidden = true;
-    elSoul.parentNode.insertBefore(deeperBox, elSoul.nextSibling);
-  }
-
-  function rubyHTML(p) {
-    return p.chars.map(function (c) {
-      return c[1] ? "<ruby>" + c[0] + "<rt>" + c[1] + "</rt></ruby>" : '<span class="cx-punct">' + c[0] + "</span>";
-    }).join("");
-  }
-
-  /* stagger each calligraphy glyph in with a soft ink bloom */
-  function inkReveal() {
-    if (!elZh) return;
-    if (reduce) { elZh.classList.remove("pv-ink"); return; }
-    var kids = elZh.children, i;
-    for (i = 0; i < kids.length; i++) kids[i].style.setProperty("--pv-d", (i * 72) + "ms");
-    elZh.classList.remove("pv-ink");
-    void elZh.offsetWidth; // restart the animation cleanly
-    elZh.classList.add("pv-ink");
-  }
-
-  /* build the deeper-reading block for a proverb, if data exists */
-  function renderDeeper(p) {
-    if (!deeperBox) return;
-    var d = p && DEEPER[p.id];
-    if (!d || (!d.story && !d.apply && !(d.related && d.related.length))) {
-      deeperBox.hidden = true;
-      deeperBox.textContent = "";
-      return;
-    }
-    deeperBox.textContent = "";
-    if (d.story) {
-      var h1 = document.createElement("p"); h1.className = "pv-deeper-h"; h1.textContent = "The story";
-      var s = document.createElement("p"); s.className = "pv-deeper-story"; s.textContent = d.story;
-      deeperBox.appendChild(h1); deeperBox.appendChild(s);
-    }
-    if (d.apply) {
-      var h2 = document.createElement("p"); h2.className = "pv-deeper-h"; h2.textContent = "Try this";
-      var a = document.createElement("p"); a.className = "pv-deeper-apply"; a.textContent = d.apply;
-      deeperBox.appendChild(h2); deeperBox.appendChild(a);
-    }
-    var rel = (d.related || []).map(function (id) { return byId[id]; }).filter(Boolean).slice(0, 3);
-    if (rel.length) {
-      var h3 = document.createElement("p"); h3.className = "pv-deeper-h"; h3.textContent = "Sits beside";
-      deeperBox.appendChild(h3);
-      var wrap = document.createElement("div"); wrap.className = "pv-deeper-related";
-      rel.forEach(function (rp) {
-        var chip = document.createElement("button");
-        chip.type = "button";
-        chip.className = "pv-rel-chip";
-        chip.textContent = rp.trad;
-        chip.setAttribute("title", rp.pinyin);
-        chip.addEventListener("click", function () {
-          render(rp, "A related line");
-          if (reveal && reveal.scrollIntoView) reveal.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
-        });
-        wrap.appendChild(chip);
-      });
-      deeperBox.appendChild(wrap);
-    }
-    deeperBox.hidden = false;
-  }
-
-  function render(p, tag) {
-    if (!p) return;
-    current = p;
-    elTag.textContent = tag || "From the pond";
-    elZh.innerHTML = rubyHTML(p);
-    elPy.textContent = p.pinyin;
-    elLit.textContent = "“" + p.literal + "”";
-    elMean.textContent = p.meaning;
-    elSoul.textContent = p.soul;
-    var a = String(p.animal);
-    elAnimal.textContent = (ANIMAL_HANZI[a] || "") + " Year of the " + a;
-    elAnimal.setAttribute("href", "/chinese-zodiac/" + a.toLowerCase() + "/");
-    elSrc.textContent = p.source ? "Source: " + p.source : "";
-    elSay.setAttribute("data-say", p.trad);
-    renderDeeper(p);
-    syncKeep();
-    reveal.classList.remove("is-in");
-    // reflow then fade in
-    void reveal.offsetWidth;
-    reveal.classList.add("is-in");
-    inkReveal();
-  }
-
-  /* ---------- keep (light collectible in localStorage) ---------- */
-  var KEY = "za_proverbs_kept";
-  function kept() { try { return JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) { return []; } }
-  function syncKeep() {
-    if (!current) return;
-    var on = kept().indexOf(current.id) !== -1;
-    elKeep.setAttribute("aria-pressed", on ? "true" : "false");
-    elKeep.firstChild.nodeValue = on ? "Kept " : "Keep ";
-  }
-  if (elKeep) elKeep.addEventListener("click", function () {
-    if (!current) return;
-    var list = kept(), i = list.indexOf(current.id);
-    if (i === -1) list.push(current.id); else list.splice(i, 1);
-    try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) {}
-    syncKeep();
-  });
-
-  /* ---------- share card (offscreen canvas rendered to a PNG download) ---------- */
-  var CALLIG_FONT = '"Ma Shan Zheng", "Noto Serif SC", serif';
-  function callig(size) {
-    var loaded = true;
-    try { loaded = document.fonts ? document.fonts.check(size + "px " + CALLIG_FONT) : true; } catch (e) { loaded = true; }
-    return (loaded ? CALLIG_FONT : 'Georgia, "Times New Roman", serif');
-  }
-  function wrapText(cx, text, maxW) {
-    var words = String(text).split(/\s+/), lines = [], line = "";
-    for (var i = 0; i < words.length; i++) {
-      var test = line ? line + " " + words[i] : words[i];
-      if (cx.measureText(test).width > maxW && line) { lines.push(line); line = words[i]; }
-      else line = test;
-    }
-    if (line) lines.push(line);
-    return lines;
-  }
-  function shareCard(p) {
-    if (!p) return;
-    var scale = 2, WPT = 1080, HPT = 1080;
-    var cv = document.createElement("canvas");
-    cv.width = WPT * scale; cv.height = HPT * scale;
-    var cx = cv.getContext("2d");
-    if (!cx) return;
-    cx.scale(scale, scale);
-
-    // dark celestial ground
-    var bg = cx.createLinearGradient(0, 0, 0, HPT);
-    bg.addColorStop(0, "#10203a"); bg.addColorStop(0.5, "#0a1526"); bg.addColorStop(1, "#070d18");
-    cx.fillStyle = bg; cx.fillRect(0, 0, WPT, HPT);
-    // soft moon glow at the top
-    var mg = cx.createRadialGradient(WPT * 0.5, -60, 20, WPT * 0.5, -60, HPT * 0.95);
-    mg.addColorStop(0, "rgba(245,236,210,0.12)"); mg.addColorStop(1, "rgba(245,236,210,0)");
-    cx.fillStyle = mg; cx.fillRect(0, 0, WPT, HPT);
-    // a scatter of quiet stars
-    for (var s = 0; s < 70; s++) {
-      var sx = ((s * 131 + 37) % WPT), sy = ((s * 197 + 61) % (HPT * 0.55));
-      cx.beginPath(); cx.arc(sx, sy, ((s % 3) * 0.5 + 0.5), 0, 7);
-      cx.fillStyle = "rgba(245,236,210," + (0.08 + (s % 5) * 0.03) + ")"; cx.fill();
-    }
-    // brass hairline frame
-    cx.strokeStyle = "rgba(214,193,140,0.35)"; cx.lineWidth = 2;
-    cx.strokeRect(40, 40, WPT - 80, HPT - 80);
-
-    cx.textAlign = "center";
-    cx.textBaseline = "middle";
-
-    // eyebrow
-    cx.fillStyle = "rgba(239,226,180,0.85)";
-    cx.font = '600 22px "Space Mono", ui-monospace, monospace';
-    cx.fillText("諺語 · THE PROVERB POND", WPT / 2, 150);
-
-    // calligraphy characters (auto-fit to width)
-    var chars = p.trad || "";
-    var fsize = chars.length > 8 ? 128 : (chars.length > 6 ? 150 : 180);
-    cx.fillStyle = "#f5ecd2";
-    cx.font = fsize + "px " + callig(fsize);
-    while (cx.measureText(chars).width > WPT - 180 && fsize > 60) {
-      fsize -= 8; cx.font = fsize + "px " + callig(fsize);
-    }
-    cx.shadowColor = "rgba(214,193,140,0.25)"; cx.shadowBlur = 26;
-    cx.fillText(chars, WPT / 2, 380);
-    cx.shadowBlur = 0;
-
-    // pinyin
-    cx.fillStyle = "rgba(239,226,180,0.92)";
-    cx.font = '26px "Space Mono", ui-monospace, monospace';
-    var pyLines = wrapText(cx, p.pinyin || "", WPT - 200);
-    var py = 520;
-    for (var i = 0; i < pyLines.length; i++) { cx.fillText(pyLines[i], WPT / 2, py); py += 38; }
-
-    // divider
-    cx.strokeStyle = "rgba(214,193,140,0.28)"; cx.lineWidth = 1;
-    cx.beginPath(); cx.moveTo(WPT * 0.32, py + 18); cx.lineTo(WPT * 0.68, py + 18); cx.stroke();
-
-    // english meaning
-    cx.fillStyle = "#c8c9de";
-    cx.font = '30px Georgia, "Times New Roman", serif';
-    var mLines = wrapText(cx, p.meaning || "", WPT - 220);
-    var my = py + 78;
-    for (var j = 0; j < mLines.length && j < 5; j++) { cx.fillText(mLines[j], WPT / 2, my); my += 44; }
-
-    // wordmark
-    cx.fillStyle = "rgba(214,193,140,0.8)";
-    cx.font = '600 24px "Space Mono", ui-monospace, monospace';
-    cx.fillText("zodianimal", WPT / 2, HPT - 96);
-
-    // download
-    var name = "proverb-" + (p.id || "card") + ".png";
-    function fallbackOpen() {
-      try { var u = cv.toDataURL("image/png"); var w = window.open(); if (w) w.document.write('<img src="' + u + '" alt="proverb card">'); } catch (e) {}
-    }
-    try {
-      if (cv.toBlob) {
-        cv.toBlob(function (blob) {
-          if (!blob) { fallbackOpen(); return; }
-          var url = URL.createObjectURL(blob);
-          var a = document.createElement("a");
-          a.href = url; a.download = name;
-          document.body.appendChild(a); a.click(); document.body.removeChild(a);
-          setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
-        }, "image/png");
-      } else {
-        var a2 = document.createElement("a");
-        a2.href = cv.toDataURL("image/png"); a2.download = name;
-        document.body.appendChild(a2); a2.click(); document.body.removeChild(a2);
-      }
-    } catch (e) { fallbackOpen(); }
-  }
-
-  /* Share button, added into the reveal actions next to Keep */
-  var shareBtn = null;
-  if (elKeep && elKeep.parentNode) {
-    shareBtn = document.createElement("button");
-    shareBtn.type = "button";
-    shareBtn.className = "pv-share";
-    shareBtn.setAttribute("aria-label", "Save this proverb as an image");
-    shareBtn.setAttribute("title", "Save as an image");
-    shareBtn.appendChild(document.createTextNode("Share "));
-    var ic = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    ic.setAttribute("viewBox", "0 0 24 24"); ic.setAttribute("width", "15"); ic.setAttribute("height", "15");
-    ic.setAttribute("aria-hidden", "true");
-    var pth = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    pth.setAttribute("d", "M12 3v10m0 0 3.5-3.5M12 13 8.5 9.5M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3");
-    pth.setAttribute("fill", "none"); pth.setAttribute("stroke", "currentColor");
-    pth.setAttribute("stroke-width", "1.7"); pth.setAttribute("stroke-linecap", "round"); pth.setAttribute("stroke-linejoin", "round");
-    ic.appendChild(pth); shareBtn.appendChild(ic);
-    elKeep.parentNode.insertBefore(shareBtn, elKeep.nextSibling);
-    shareBtn.addEventListener("click", function () {
-      if (!current) return;
-      shareBtn.setAttribute("aria-busy", "true");
-      var run = function () {
-        try { shareCard(current); } catch (e) {}
-        setTimeout(function () { shareBtn.removeAttribute("aria-busy"); }, 400);
-      };
-      if (document.fonts && document.fonts.ready && document.fonts.ready.then) {
-        var done = false;
-        var go = function () { if (done) return; done = true; run(); };
-        document.fonts.ready.then(go);
-        setTimeout(go, 800); // never block on the font
-      } else run();
-    });
-  }
-
-  /* ---------- daily proverb (deterministic by date) ---------- */
-  function daySeed() {
-    var d = new Date();
-    return (d.getFullYear() * 1000 + (d.getMonth() + 1) * 50 + d.getDate());
-  }
-  function draw(random) {
-    if (!DATA.length) return;
-    var idx = random ? Math.floor(Math.random() * DATA.length) : (daySeed() % DATA.length);
-    if (random && current) { // avoid repeating the same one twice in a row
+  function drawPond() {
+    if (!pondCards.length) return;
+    var pick = pondCards[Math.floor(Math.random() * pondCards.length)];
+    if (pondCards.length > 1 && pick === lastDrawn) {
       var guard = 0;
-      while (DATA[idx].id === current.id && guard++ < 6) idx = Math.floor(Math.random() * DATA.length);
+      while (pick === lastDrawn && guard++ < 6) pick = pondCards[Math.floor(Math.random() * pondCards.length)];
     }
-    render(DATA[idx], random ? "From the pond" : "Proverb of the day");
+    if (lastDrawn && lastDrawn !== pick) lastDrawn.classList.remove("is-drawn");
+    pick.classList.add("is-drawn");
+    lastDrawn = pick;
+    if (brief) {
+      var name = pick.getAttribute("data-name") || "";
+      var b = pick.getAttribute("data-brief") || "";
+      var count = pick.getAttribute("data-count") || "";
+      brief.textContent = "The water leans toward " + name + ". " + b + ". " + count + " proverbs wait there.";
+    }
+    if (pick.scrollIntoView) {
+      try { pick.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest", inline: "nearest" }); } catch (e) {}
+    }
   }
 
   /* ---------- the pond (canvas koi) ---------- */
@@ -532,16 +235,6 @@
     if (!document.hidden && !reduce) raf = requestAnimationFrame(step);
   }
   function ripple(x, y) { ripples.push({ x: x, y: y, rad: 2, life: 1 }); }
-  /* after a draw, bring the full-width reveal into view (it sits below the
-     pond in the new layout, so on a stacked/mobile view it can be off screen) */
-  function revealIntoView() {
-    if (!reveal || !reveal.scrollIntoView) return;
-    var r = reveal.getBoundingClientRect();
-    var vh = window.innerHeight || document.documentElement.clientHeight;
-    if (r.top < 0 || r.bottom > vh) {
-      try { reveal.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" }); } catch (e) {}
-    }
-  }
   function nudgeKoiToward(x, y) {
     // send the nearest koi darting toward the touch, then draw
     var best = null, bd = 1e9;
@@ -576,19 +269,14 @@
       var x = e.clientX - r.left, y = e.clientY - r.top;
       ripple(x, y); nudgeKoiToward(x, y);
       pond.classList.add("is-drawn");
-      draw(true);
-      revealIntoView();
+      drawPond();
     });
   }
   if (drawBtn) drawBtn.addEventListener("click", function () {
     pond.classList.add("is-drawn");
     if (ctx) ripple(W * (0.3 + Math.random() * 0.4), H * (0.3 + Math.random() * 0.4));
-    draw(true);
-    revealIntoView();
+    drawPond();
   });
-
-  /* seed the reveal with today's proverb so it is never empty */
-  draw(false);
 
   /* ---------- filtering ---------- */
   var grid = document.getElementById("pvGrid");
