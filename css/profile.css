@@ -32,7 +32,19 @@
 
 .pf-grid2{display:grid; grid-template-columns:1fr 1fr; gap:16px}
 @media(max-width:640px){.pf-grid2{grid-template-columns:1fr}}
-.pf-card{background:var(--panel2,#1b1e33); border:1px solid var(--line); border-radius:14px; padding:20px 22px}
+/* hub tile = a lit surface, not a flat slab: panel gradient +
+   accent corner bloom, hairline brightens + soft inner glow on hover */
+.pf-card{position:relative;
+  background:
+    radial-gradient(120% 90% at 100% 0%, var(--accent-soft,rgba(214,193,140,.14)), transparent 46%),
+    linear-gradient(165deg, var(--panel-2,var(--panel2,#1b1e33)), var(--panel,#151728) 55%);
+  border:1px solid var(--line); border-radius:14px; padding:20px 22px;
+  transition:border-color .3s ease, box-shadow .3s ease}
+.pf-card::before{content:""; position:absolute; inset:0 0 auto 0; height:1px; border-radius:inherit;
+  background:linear-gradient(90deg, transparent, var(--accent-soft,rgba(214,193,140,.14)) 30%, var(--accent-soft,rgba(214,193,140,.14)) 70%, transparent);
+  pointer-events:none}
+.pf-card:hover,.pf-card:focus-within{border-color:var(--accent,var(--brass,#d6c18c));
+  box-shadow:inset 0 0 20px var(--accent-soft,rgba(214,193,140,.14))}
 .pf-card h3{font-family:var(--serif); color:var(--moon); font-size:1.25rem; margin:0 0 10px}
 .pf-chips{display:flex; flex-wrap:wrap; gap:10px; list-style:none; padding:0; margin:0}
 .pf-chips li{background:var(--field-bg); border:1px solid var(--line); color:var(--brass-bright); border-radius:999px; padding:8px 14px; font-size:.9rem}

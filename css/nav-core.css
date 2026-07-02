@@ -1,11 +1,12 @@
 /* ============================================================
    THE PRIMAL ORACLE — nav core (the sticky bar), canvas v3 skin
-   Canvas-template-v2 bar: 64px. Wordmark "Zodi Animals" hard left
+   Canvas-template-v2 bar: 64px. Wordmark "Zodi Animal" hard left
    (20px gutter), then Find yours | Explore | Menagerie | Bonds |
    Moon, then the right cluster — a plain spaced flex row with a
    fixed order and NO absolute positioning (popovers excepted):
      [identity chip .pn-id] [moon chip .pn-moon] [awakening ring
-     .pn-ring] [theme toggle .pn-theme] [CTA .pn-cta]
+     .pn-ring] [CTA .pn-cta]
+   (The theme toggle is gone: dark celestial is the only theme.)
    Every chip is its own inflexible box (flex:0 0 auto); the only
    shrinking element in the bar is .pn-nav (min-width:0, scrolls
    under a fade mask), so the cluster can never overlap.
@@ -13,7 +14,7 @@
    identity chip leaves, <900px the burger drawer takes over; the
    drawer's .pn-drawer-chips strip (cloned by nav.js on open)
    carries the dropped chips so nothing is lost.
-   Tokens only (tokens.css); both themes resolve.
+   Tokens only (tokens.css); dark celestial is the only theme.
    ============================================================ */
 
 .pn-bar{position:sticky; top:0; z-index:120;
@@ -132,13 +133,9 @@
 .pn-ring:hover,.pn-ring:focus-visible{background:var(--accent-soft); color:var(--moon)}
 .pn-ring:hover .pnp-fill,.pn-ring:focus-visible .pnp-fill{stroke:var(--accent-bright,var(--accent))}
 
-.pn-theme{appearance:none; width:38px; height:38px; padding:0;
-  display:inline-flex; align-items:center; justify-content:center;
-  background:transparent; border:1px solid var(--line); border-radius:50%;
-  color:var(--accent); font-size:1rem; line-height:1; cursor:pointer;
-  transition:transform .3s ease, border-color .2s ease, box-shadow .2s ease}
-.pn-theme:hover,.pn-theme:focus-visible{border-color:var(--accent);
-  transform:rotate(24deg) scale(1.08); box-shadow:0 0 14px var(--accent-soft)}
+/* the theme toggle chip is retired (dark-only); if a stale page
+   still ships one, theme.js hides it and this keeps it gone */
+.pn-theme{display:none !important}
 
 /* the bar CTA: the sitewide sheen contract (om-sheen lives in skin.css) */
 .pn-cta{display:inline-flex; align-items:center; gap:7px; height:40px; padding:0 20px;
@@ -168,7 +165,6 @@ body.pn-has-bar header.top{display:none}
 .pn-crawl[hidden]{display:none}
 
 @media (prefers-reduced-motion: reduce){
-  .pn-theme:hover,.pn-theme:focus-visible{transform:none}
   .pn-cta:hover,.pn-cta:focus-visible{animation:none; transform:none}
   .pn-moonpop{animation:none}
   .pn-ring .pnp-fill{transition:none}

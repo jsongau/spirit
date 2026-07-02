@@ -29,6 +29,8 @@
   --moon:       oklch(0.96 0.02 90);     /* headline white-gold */
   --ivory:      oklch(0.92 0.02 88);     /* default text */
   --body-text:  oklch(0.84 0.02 280);    /* long-form body */
+  --body:       var(--body-text);        /* legacy alias (oracle-era pages
+                                            and hub inline styles read it) */
   --muted:      oklch(0.70 0.02 280);    /* meta */
   --faint:      oklch(0.55 0.02 280);    /* captions, disabled */
 
@@ -131,15 +133,15 @@
 .section--cosmology { --accent: var(--teal);     --accent-bright: var(--teal-bright);     --accent-dim: var(--teal-dim); }
 
 /* ============================================================
-   v4 SKIN LAYER (doc 14) — dual personalities, one skeleton.
+   v4 SKIN LAYER (doc 14) — dark celestial only.
    Additive only: no token above is renamed. New tokens:
      --sec / --sec-dim / --sec-soft   electric-blue secondary (CTA ring)
      --cta-g1 / --cta-g2 / --cta-text CTA gradient contract (doc 14 §3)
-     --season / --season-soft         dark theme's shifting SECOND hue
-     --sky-tint                       seasonal sky wash (light theme)
-   Theme switching: js/theme.js sets html[data-theme] (pre-paint boot
-   snippet injected by build/apply-assets.mjs) and html[data-season].
-   Dark stays :root default so JS-off users get the celestial original.
+     --season / --season-soft         the shifting SECOND hue
+     --sky-tint                       faint seasonal sky wash
+   js/theme.js (and the pre-paint boot snippet injected by
+   build/apply-assets.mjs) pin html[data-theme="dark"] and set
+   html[data-season]; JS-off users get the same celestial default.
    ============================================================ */
 :root {
   --sec:      #2f7bff;
@@ -159,48 +161,6 @@
 :root[data-season="autumn"] { --season:#e3a196; --season-soft:rgba(227,161,150,.14); --sky-tint:rgba(227,161,150,.08); }
 :root[data-season="winter"] { --season:#aebfe0; --season-soft:rgba(174,191,224,.14); --sky-tint:rgba(174,191,224,.08); }
 
-/* ---- LIGHT = Barbie (doc 14 §2). Hot pink takes the brass ROLE so
-        every component flips without renames. Text-safe pinks only
-        (#d6006f and darker) carry text; #ff2ea6 is fills/glows. ---- */
-:root[data-theme="light"] {
-  --ink:        #fff7fb;               /* page base, pink-milk white */
-  --ink-2:      #fff3f9;
-  --panel:      #fff0f7;
-  --panel-2:    #ffe4f0;
-  --field:      #ffffff;
-  --line:       rgba(162,0,84,.20);
-  --line-soft:  rgba(162,0,84,.09);
-
-  --moon:       #33052b;               /* headline: deep magenta ink */
-  --ivory:      #3d0a33;
-  --body-text:  #55164a;
-  --muted:      #8a4b7d;
-  --faint:      #b183a6;
-
-  --brass-dim:    #a20054;             /* pink ramp in the brass role */
-  --brass:        #d6006f;
-  --brass-bright: #ff2ea6;
-
-  --jade-dim:#0c5c38;     --jade:#0f7a4a;     --jade-bright:#159a5e;
-  --silver-dim:#3d5385;   --silver:#4a66a8;   --silver-bright:#5f7fc9;
-  --amethyst-dim:#6b2391; --amethyst:#8a35b8; --amethyst-bright:#a855d6;
-  --rose-dim:#a83a24;     --rose:#c74a30;     --rose-bright:#e0664a;
-  --teal-dim:#0a5f75;     --teal:#0f7a96;     --teal-bright:#1899bb;
-
-  --accent-soft: rgba(214,0,111,.13);
-  --glow:        #ffe4f2;
-  --grain-opacity: 0.025;
-
-  --e-1: 0 1px 2px rgba(51,5,43,.10);
-  --e-2: 0 8px 30px rgba(214,0,111,.12);
-  --e-3: 0 20px 60px rgba(214,0,111,.16), 0 0 40px var(--glow);
-
-  /* CTA flips to vivid pink-to-blue with white text (doc 14 §3) */
-  --sec-soft: rgba(47,123,255,.28);    /* the electric-blue ring */
-  --cta-g1:   #ff2ea6;
-  --cta-g2:   #2f7bff;
-  --cta-text: #ffffff;
-
-  /* light theme: seasons tint the sky wash ONLY; CTA second hue stays blue */
-  --season: #2f7bff;
-}
+/* Dark celestial is the ONLY theme (owner decision 2026-07-01).
+   The pink light-theme token block was removed; --sec/--cta/--season
+   above keep their dark values and the seasons keep shifting. */

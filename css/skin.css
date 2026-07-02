@@ -2,9 +2,30 @@
    skin.css — v4 component skin (doc 14 §3, §1).
    Consumes ONLY tokens (tokens.css v4 layer). Injected sitewide
    by build/apply-assets.mjs after micro.css.
-   Contents: CTA sheen contract, wordmark + tagline, theme toggle
-   chip, light-theme component corrections.
+   Contents: base celestial ground, CTA sheen contract, wordmark +
+   tagline. Dark celestial is the ONLY theme (owner decision
+   2026-07-01); the pink light-theme corrections are gone.
    ============================================================ */
+
+/* ---- Base celestial ground (sitewide safety net) ----
+        Every page must paint its content on dark ground even with
+        JS disabled and even when no page-local stylesheet loads
+        (the white-page bug: hub templates shipped only the injected
+        head assets, none of which painted <body>, so ivory text sat
+        invisible on the UA-white canvas). :where() keeps specificity
+        at ZERO, so any page CSS that styles body (oracle.css,
+        daily.css, body.home-v4) still wins untouched. ---- */
+:where(html) { background: var(--ink); }
+:where(body) {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(1100px 640px at 50% -8%, var(--glow) 0%, var(--ink) 62%) no-repeat,
+    var(--ink);
+  color: var(--ivory);
+  font-family: var(--sans);
+  line-height: 1.65;
+}
 
 /* ---- CTA contract (doc 14 §3): gradient + sheen sweep + lift +
         electric ring. Applies to every primary .btn sitewide; ghost
@@ -42,10 +63,10 @@
   .btn:not(.ghost):focus-visible { animation: none; transform: none; }
 }
 
-/* ---- Wordmark + tagline (doc 14 §1): "Zodi Animals" over
-        "Unlock your Zodiac Animal" in mono caps. The wordmark text
-        itself is baked by build/apply-nav.mjs; this is the two-line
-        treatment only. ---- */
+/* ---- Wordmark + tagline (doc 14 §1): "Zodi Animal" over
+        "Unlock your Primal Zodiac Animal Spirit" in mono caps. The
+        wordmark text itself is baked by build/apply-nav.mjs; this is
+        the two-line treatment only. ---- */
 .pn-brand {
   display: inline-flex;
   flex-direction: column;
@@ -65,16 +86,9 @@
   .pn-tagline { display: none; } /* bar space is for the burger + tools */
 }
 
-/* ---- Theme toggle chip (auto ◐ / light ☀ / dark ☾) ----
-        Geometry and colors live in nav-core.css (.pn-theme, the
-        38px round chip in the bar's right cluster). This layer
-        used to redeclare a 34px variant, which fought nav-core
-        depending on stylesheet order; skin now only carries the
-        light-theme correction below. ---- */
-
 /* ---- Seasonal sky wash: a fixed, non-interactive tint layer.
-        transparent by default; tokens give it a hue per season
-        (light theme: the ONLY seasonal shift, per doc 14 §2). ---- */
+        transparent by default; the season tokens give it a faint
+        hue per season over the dark celestial ground. ---- */
 body::after {
   content: "";
   position: fixed;
@@ -84,11 +98,55 @@ body::after {
   background: linear-gradient(180deg, var(--sky-tint), transparent 55%);
 }
 
-/* ---- Light-theme corrections for components authored dark-first ---- */
-:root[data-theme="light"] .btn.ghost {
-  color: var(--brass-dim);            /* text-safe pink, doc 14 acceptance */
-  border-color: var(--line);
+/* ============================================================
+   Card glow system (doc 06 "glow over blocks"). Opt-in classes so
+   the flat panel rectangles read as lit surfaces on the dark sky:
+     .glow-card       layered panel→panel-2 gradient + accent corner
+                      bloom + hairline border that brightens on hover
+                      + soft inner accent glow on hover
+     .glow-card--marquee  adds the slow ambient shimmer sweep (ONLY
+                      for marquee cards; guarded for reduced motion)
+   Tokens only; --accent re-tints per section as usual. ---- */
+.glow-card {
+  position: relative;
+  border: 1px solid var(--line-soft);
+  background:
+    radial-gradient(120% 90% at 100% 0%, var(--accent-soft), transparent 46%),
+    linear-gradient(165deg, var(--panel-2), var(--panel) 55%);
+  transition: border-color .3s var(--ease-io), box-shadow .3s var(--ease-io),
+              transform .25s var(--ease-io);
 }
-:root[data-theme="light"] .btn.ghost:hover { border-color: var(--brass); }
-:root[data-theme="light"] .pn-theme { color: var(--ivory); }
-:root[data-theme="light"] img.invert-on-light { filter: invert(1) hue-rotate(180deg); }
+.glow-card::before {
+  /* accent-tinted top edge: a 1px hairline of light along the crown */
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, transparent, var(--accent-soft) 30%, var(--accent-soft) 70%, transparent);
+  pointer-events: none;
+}
+.glow-card:hover,
+.glow-card:focus-within {
+  border-color: var(--accent);
+  box-shadow:
+    inset 0 0 24px var(--accent-soft),   /* soft inner glow */
+    0 10px 26px var(--accent-soft);
+}
+@keyframes om-card-shimmer {
+  0%, 78%   { background-position: 200% 0, 100% 0%, 0 0; }
+  96%, 100% { background-position: -120% 0, 100% 0%, 0 0; }
+}
+.glow-card--marquee {
+  background:
+    linear-gradient(115deg, transparent 44%, rgba(255,255,255,.07) 50%, transparent 56%) no-repeat,
+    radial-gradient(120% 90% at 100% 0%, var(--accent-soft), transparent 46%),
+    linear-gradient(165deg, var(--panel-2), var(--panel) 55%);
+  background-size: 260% 100%, auto, auto;
+  background-position: 200% 0, 100% 0%, 0 0;
+  animation: om-card-shimmer 9s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .glow-card--marquee { animation: none; }
+  .glow-card:hover, .glow-card:focus-within { transform: none; }
+}

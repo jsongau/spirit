@@ -806,6 +806,57 @@
   }
 
   /* ============================================================
+     UNLOCK-CARD VEILS (click-to-reveal reading variety).
+     The card copy ships fully visible in the served HTML (SEO /
+     no-JS). With JS live and the animal not yet revealed, each
+     card's .u-body is veiled (CSS blur + one-line clip, never
+     display:none) behind a small "Reveal" affordance; clicking the
+     card or the button lifts the veil with a smooth transition.
+     Once the visitor's animal is revealed (data-revealed="1" on
+     #unlockGrid, painted by paintUnlocks) every veil lifts itself.
+     ============================================================ */
+  function initVeils() {
+    var grid = $("#unlockGrid");
+    if (!grid) return;
+    if (grid.getAttribute("data-revealed") === "1") return; // already open
+
+    var cards = [].slice.call(grid.querySelectorAll(".unlockCard"));
+    cards.forEach(function (card) {
+      var body = card.querySelector(".u-body");
+      if (!body) return;
+      card.classList.add("is-veiled");
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "u-reveal";
+      btn.textContent = "Reveal ✦";
+      var h = card.querySelector("h3");
+      btn.setAttribute("aria-expanded", "false");
+      if (h && h.textContent) btn.setAttribute("aria-label", "Reveal: " + h.textContent);
+      body.insertAdjacentElement("afterend", btn);
+
+      function unveil() {
+        card.classList.remove("is-veiled");
+        btn.setAttribute("aria-expanded", "true");
+      }
+      btn.addEventListener("click", function (e) { e.stopPropagation(); unveil(); });
+      card.addEventListener("click", function () {
+        if (card.classList.contains("is-veiled")) unveil();
+      });
+    });
+
+    /* the naming lifts every veil: watch the flag paintUnlocks sets */
+    try {
+      var mo = new MutationObserver(function () {
+        if (grid.getAttribute("data-revealed") === "1") {
+          cards.forEach(function (card) { card.classList.remove("is-veiled"); });
+          mo.disconnect();
+        }
+      });
+      mo.observe(grid, { attributes: true, attributeFilter: ["data-revealed"] });
+    } catch (e) {}
+  }
+
+  /* ============================================================
      BOOT
      ============================================================ */
   function boot() {
@@ -819,6 +870,7 @@
     try { initReset(); } catch (e) {}
     try { initBarCta(); } catch (e) {}
     try { paintUnlocks(); } catch (e) {}
+    try { initVeils(); } catch (e) {}
 
     ["po:reveal", "po:awaken", "po:awakened", "po:revealed", "po:discovered", "po:shared", "storage"]
       .forEach(function (name) {

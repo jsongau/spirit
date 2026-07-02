@@ -12,19 +12,17 @@
 
    Mobile-first: base = single column; min-width: 900px adds the
    desktop rail + shell. Every color reads tokens.css (v4 skin
-   layer), so dark celestial AND light "Barbie" both work.
+   layer); dark celestial is the ONLY theme.
    Canvas-only values that no token covers are declared as
    --v4-* variables below.
    ============================================================ */
 
 :root {
-  /* canvas radial hero sky: --sky in the canvas. --glow is the same
-     hue family in both themes (dark #1a1c33-ish / light pink-milk). */
+  /* canvas radial hero sky: --sky in the canvas (--glow hue family) */
   --v4-sky: var(--glow);
   /* canvas moon ball highlight (radial 35% 30%) */
   --v4-moonface: #fffaf0;
 }
-:root[data-theme="light"] { --v4-moonface: #ffffff; }
 
 /* ------------------------------------------------------------
    0. Page base — canvas #om-root background + rhythm
@@ -647,10 +645,20 @@ body.home-v4 {
   box-shadow: 0 0 40px var(--accent-soft);
 }
 
-/* the reader card (canvas "Read the wheel") */
-.home-v4 .hero .reader {
+/* the reader card (canvas "Read the wheel").
+   ALIGNMENT CONTRACT: its LEFT edge sits on the content column's
+   shared left edge — same edge as the H2s/paragraphs, one gutter
+   from the rail. margin-inline is pinned to 0 (and justify-self to
+   start, for any grid ancestor) so no legacy centering rule from
+   home.css/oracle.css can ever float it again. */
+.home-v4 .hero .reader,
+.home-v4 .home-main .reader {
   margin-top: 28px;
-  background: var(--panel);
+  margin-inline: 0;
+  justify-self: start;
+  background:
+    radial-gradient(120% 90% at 100% 0%, var(--accent-soft), transparent 46%),
+    linear-gradient(165deg, var(--panel-2), var(--panel) 55%);
   border: 1px solid var(--line);
   border-radius: 20px;
   padding: clamp(20px, 3vw, 30px);
@@ -795,11 +803,19 @@ body.home-v4 {
   margin: 32px 0;
 }
 .home-v4 .gate {
-  background: var(--panel);
+  background:
+    radial-gradient(120% 90% at 100% 0%, var(--accent-soft), transparent 46%),
+    linear-gradient(165deg, var(--panel-2), var(--panel) 55%);
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 20px;
   animation: omv4-rise .8s ease both;
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+.home-v4 .gate:hover,
+.home-v4 .gate:focus-within {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 20px var(--accent-soft);
 }
 .home-v4 .gate h4 {
   margin: 0 0 8px;
@@ -873,13 +889,28 @@ body.home-v4 {
   gap: 14px;
 }
 .home-v4 .unlockCard {
-  background: var(--panel);
+  /* glow over blocks: layered panel→panel-2 surface with an
+     accent-tinted corner bloom + a 1px lit crown hairline, so the
+     card reads as a lit surface on the dark sky, not a flat slab */
+  position: relative;
+  background:
+    radial-gradient(120% 90% at 100% 0%, var(--accent-soft), transparent 46%),
+    linear-gradient(165deg, var(--panel-2), var(--panel) 55%);
   border: 1px solid var(--line-soft);
   border-radius: 16px;
   padding: 20px;
   opacity: .75;
   transition: opacity .3s ease, border-color .3s ease,
               transform .25s var(--ease-io, ease), box-shadow .25s var(--ease-io, ease);
+}
+.home-v4 .unlockCard::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, transparent, var(--accent-soft) 30%, var(--accent-soft) 70%, transparent);
+  pointer-events: none;
 }
 /* hover = SHINE, never dim: even a still-locked card lights up under
    the cursor — full presence, accent border, soft glow, slight lift,
@@ -912,6 +943,71 @@ body.home-v4 {
 .home-v4 .unlockGrid[data-revealed="1"] .unlockCard { opacity: 1; border-color: var(--line); }
 .home-v4 .unlockGrid[data-revealed="1"] .u-tag { color: var(--season); }
 
+/* ---- ambient shimmer: MARQUEE cards only (the lead "Your five
+   gates" card carries .is-marquee in the served markup). A slow,
+   mostly-resting sheen sweep layered over the glow surface. ---- */
+@keyframes v4-card-shimmer {
+  0%, 78%   { background-position: 200% 0, 100% 0%, 0 0; }
+  96%, 100% { background-position: -120% 0, 100% 0%, 0 0; }
+}
+.home-v4 .unlockCard.is-marquee {
+  background:
+    linear-gradient(115deg, transparent 44%, rgba(255,255,255,.07) 50%, transparent 56%) no-repeat,
+    radial-gradient(120% 90% at 100% 0%, var(--accent-soft), transparent 46%),
+    linear-gradient(165deg, var(--panel-2), var(--panel) 55%);
+  background-size: 260% 100%, auto, auto;
+  background-position: 200% 0, 100% 0%, 0 0;
+  animation: v4-card-shimmer 9s ease-in-out infinite;
+}
+
+/* ---- click-to-reveal veil (reading variety, subtle + premium).
+   The card copy is FULLY SERVED in the markup (SEO: no display:none
+   at rest); home-v4.js adds .is-veiled + a Reveal affordance only
+   when JS is live, so no-JS users and crawlers always see the text.
+   Veiled = the body line is clipped to one line, blurred and dimmed
+   behind a soft fade; click (anywhere on the card or the button)
+   lifts the veil with a smooth transition. ---- */
+.home-v4 .unlockCard.is-veiled { cursor: pointer; }
+.home-v4 .unlockCard .u-body {
+  transition: filter .5s var(--ease-out, ease), opacity .5s var(--ease-out, ease),
+              max-height .5s var(--ease-out, ease);
+  max-height: 12em;
+  overflow: hidden;
+}
+.home-v4 .unlockCard.is-veiled .u-body {
+  filter: blur(4px);
+  opacity: .45;
+  max-height: 1.6em;               /* one-line teaser under the veil */
+  -webkit-mask-image: linear-gradient(180deg, #000 30%, transparent 95%);
+  mask-image: linear-gradient(180deg, #000 30%, transparent 95%);
+  user-select: none;
+}
+.home-v4 .u-reveal {
+  display: none;
+  margin-top: 10px;
+  padding: 5px 12px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  color: var(--accent-bright);
+  font: 600 .64rem/1 var(--sans);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color .2s ease, box-shadow .2s ease, color .2s ease;
+}
+.home-v4 .unlockCard.is-veiled .u-reveal { display: inline-block; }
+.home-v4 .u-reveal:hover,
+.home-v4 .u-reveal:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 12px var(--accent-soft);
+  color: var(--moon);
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-v4 .unlockCard.is-marquee { animation: none; }
+  .home-v4 .unlockCard .u-body { transition: none; }
+}
+
 /* ------------------------------------------------------------
    9. Menagerie peek cards (canvas peek)
    ------------------------------------------------------------ */
@@ -920,31 +1016,68 @@ body.home-v4 {
   gap: 12px;
 }
 .home-v4 .peekCard {
-  background: var(--panel);
+  position: relative;
+  background:
+    radial-gradient(120% 90% at 0% 0%, var(--accent-soft), transparent 42%),
+    linear-gradient(165deg, var(--panel-2), var(--panel) 55%);
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 18px;
   transition: background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.home-v4 .peekCard::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, transparent, var(--accent-soft) 30%, var(--accent-soft) 70%, transparent);
+  pointer-events: none;
 }
 .home-v4 .peekCard:hover,
 .home-v4 .peekCard.is-lifted {
   background: var(--panel-2);
   border-color: var(--accent);
   transform: translateY(-3px);
-  box-shadow: 0 10px 24px var(--accent-soft);
+  box-shadow: inset 0 0 20px var(--accent-soft), 0 10px 24px var(--accent-soft);
 }
-.home-v4 .peekCard .pn { font: 600 1.05rem/1.3 var(--serif); color: var(--moon); }
-.home-v4 .peekCard .ps { font: 400 .68rem/1.4 var(--mono); color: var(--muted); letter-spacing: 0; }
+/* card anatomy: animal name (Fraunces) on its OWN line, then the
+   pairing on ITS own line in muted mono, with clear spacing — the
+   two spans may never run together inline again */
+.home-v4 .peekCard .pn,
+.peekCard .pn {
+  display: block;
+  font: 600 1.05rem/1.3 var(--serif);
+  color: var(--moon);
+}
+.home-v4 .peekCard .ps,
+.peekCard .ps {
+  display: block;
+  margin-top: 7px;
+  font: 400 .68rem/1.4 var(--mono);
+  color: var(--muted);
+  letter-spacing: .02em;
+}
 
 /* ------------------------------------------------------------
    10. Paths / compare / match / mail — canvas card + band skin
    ------------------------------------------------------------ */
 .home-v4 .pathsGrid { gap: 14px; }
 .home-v4 .pathCard {
-  background: var(--panel);
+  position: relative;
+  background:
+    radial-gradient(120% 90% at 100% 0%, var(--accent-soft), transparent 46%),
+    linear-gradient(165deg, var(--panel-2), var(--panel) 55%);
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 20px;
+  transition: border-color .3s ease, box-shadow .3s ease, transform .25s var(--ease-io, ease);
+}
+.home-v4 .pathCard:hover,
+.home-v4 .pathCard:focus-within {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: inset 0 0 20px var(--accent-soft), 0 10px 24px var(--accent-soft);
 }
 .home-v4 .pathCard h3 { font: 600 1.1rem/1.3 var(--serif); color: var(--accent-bright); margin: 0 0 6px; }
 .home-v4 .pathCard p { font-size: .88rem; line-height: 1.5; color: var(--body-text); }
@@ -968,8 +1101,6 @@ body.home-v4 {
   color-scheme: dark;
   transition: border-color .2s ease, box-shadow .2s ease;
 }
-:root[data-theme="light"] .home-v4 #matchSection input[type="date"],
-:root[data-theme="light"] .home-v4 #birthDate { color-scheme: light; }
 .home-v4 #birthDate { color-scheme: dark; }
 /* the segments inside the native control read as moon text too */
 .home-v4 #matchSection input[type="date"]::-webkit-datetime-edit,

@@ -45,8 +45,8 @@
   .peekGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:18px}
   .peekCard{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;transition:border-color .15s,transform .15s}
   .peekCard:hover{border-color:var(--brass);transform:translateY(-2px)}
-  .peekCard .pn{font-family:var(--serif);font-size:1.25rem;color:var(--moon);line-height:1.1}
-  .peekCard .ps{font-size:.72rem;color:var(--muted);margin-top:4px;letter-spacing:.03em}
+  .peekCard .pn{display:block;font-family:var(--serif);font-size:1.25rem;color:var(--moon);line-height:1.1}
+  .peekCard .ps{display:block;font-family:var(--mono,monospace);font-size:.72rem;color:var(--muted);margin-top:7px;letter-spacing:.03em}
   .pathsGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
   .pathCard{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
   .pathCard h3{font-family:var(--serif);color:var(--brass-bright);font-size:1.2rem;margin:0 0 4px}
@@ -79,7 +79,7 @@
 ]}
 </script>
 <!--pn-assets:start-->
-<script data-pn-assets="theme-boot">(function(){try{var ok=["/","/index.html"].indexOf(location.pathname)>-1;var t=localStorage.getItem("zn_theme")==="light"&&ok?"light":"dark";var m=new Date().getMonth();var s=m>=2&&m<=4?"spring":m>=5&&m<=7?"summer":m>=8&&m<=10?"autumn":"winter";var d=document.documentElement;d.dataset.theme=t;d.dataset.season=s;}catch(e){}})();</script>
+<script data-pn-assets="theme-boot">(function(){try{var m=new Date().getMonth();var s=m>=2&&m<=4?"spring":m>=5&&m<=7?"summer":m>=8&&m<=10?"autumn":"winter";var d=document.documentElement;d.dataset.theme="dark";d.dataset.season=s;}catch(e){}})();</script>
 <link rel="stylesheet" href="/css/tokens.css" data-pn-assets="/css/tokens.css">
 <link rel="stylesheet" href="/css/type.css" data-pn-assets="/css/type.css">
 <link rel="preconnect" href="https://fonts.googleapis.com" data-pn-assets="gf-pre1">
@@ -109,7 +109,7 @@
 <a class="skip-link" href="#pn-main">Skip to content</a>
 <header class="pn-bar" role="banner" data-static>
   <div class="pn-inner">
-    <a class="pn-brand" href="/index.html">Zodi <b>Animals</b><span class="pn-tagline">Unlock your Zodiac Animal</span></a>
+    <a class="pn-brand" href="/index.html">Zodi <b>Animal</b><span class="pn-tagline">Unlock your Primal Zodiac Animal Spirit</span></a>
     <nav class="pn-nav" aria-label="Primary">
         <a class="pn-link pn-find active" href="/index.html#read">Find yours</a>
         <div class="pn-item" data-accent="brass"><button class="pn-trigger active" type="button" data-group="1" aria-haspopup="true" aria-expanded="false">Explore<span class="chev" aria-hidden="true"></span></button></div>
@@ -130,7 +130,6 @@
         </div>
       </div>
       <a class="pn-ring" data-ring-slot href="/awakening.html" hidden></a>
-      <button class="pn-theme" type="button" data-theme-toggle aria-label="Switch theme">&#9680;</button>
       <a class="pn-cta" href="/index.html#read">Reveal my animal <span aria-hidden="true">&#10022;</span></a>
     </div>
     <button class="pn-burger" type="button" aria-label="Open menu" aria-expanded="false">&#9776;</button>
@@ -193,7 +192,7 @@
       <div class="o-dash"></div>
       <div class="o-core"><div class="o-moon"></div></div>
     </div>
-    <p class="eyebrow">Two zodiacs, one animal<span id="seasonTag" hidden> &#183; <span id="seasonName"></span> sky</span></p>
+    <p class="eyebrow">Unlock your Primal Zodiac Animal Spirit<span id="seasonTag" hidden> &#183; <span id="seasonName"></span> sky</span></p>
     <h1>Find your <em>Primal Zodiac Animal</em>.</h1>
     <p class="lede">Your Western Sun sign crosses your Chinese birth year to name one of 144 original animal archetypes. You have carried this shape for years; today you can finally see it.</p>
 
@@ -291,12 +290,15 @@
     <h2>Your animal is a key. This is what it opens.</h2>
     <p class="lede">Each part of the Oracle reads differently once it knows which of the 144 you are. Name your animal and these open in your own voice.</p>
     <div class="unlockGrid" id="unlockGrid" data-revealed="0">
-      <article class="unlockCard"><p class="u-tag">locked</p><h3>Your five gates</h3><p>Where you stand, what you need, the season plan, the warning, and your highest form.</p></article>
-      <article class="unlockCard"><p class="u-tag">locked</p><h3>Tonight's reading</h3><p>One short reading a day, timed to the real moon overhead.</p></article>
-      <article class="unlockCard"><p class="u-tag">locked</p><h3>Keeper stones</h3><p>The stones matched to your sun and your element, and when to charge them.</p></article>
-      <article class="unlockCard"><p class="u-tag">locked</p><h3>The awakening path</h3><p>Every animal has a fearful form and an awake one. The path between them opens here.</p></article>
-      <article class="unlockCard"><p class="u-tag">locked</p><h3>Your habitat</h3><p>Directions, colors, and rooms that suit your animal, drawn from feng shui.</p></article>
-      <article class="unlockCard"><p class="u-tag">locked</p><h3>Bonds</h3><p>Match a friend, answer a challenge, or read three of you as a circle.</p></article>
+      <!-- .u-body copy is fully served (SEO); home-v4.js only VEILS it
+           (blur/clip, never display:none) and adds the Reveal affordance.
+           .is-marquee = the one card that carries the ambient shimmer. -->
+      <article class="unlockCard is-marquee"><p class="u-tag">locked</p><h3>Your five gates</h3><p class="u-body">Where you stand, what you need, the season plan, the warning, and your highest form.</p></article>
+      <article class="unlockCard"><p class="u-tag">locked</p><h3>Tonight's reading</h3><p class="u-body">One short reading a day, timed to the real moon overhead.</p></article>
+      <article class="unlockCard"><p class="u-tag">locked</p><h3>Keeper stones</h3><p class="u-body">The stones matched to your sun and your element, and when to charge them.</p></article>
+      <article class="unlockCard"><p class="u-tag">locked</p><h3>The awakening path</h3><p class="u-body">Every animal has a fearful form and an awake one. The path between them opens here.</p></article>
+      <article class="unlockCard"><p class="u-tag">locked</p><h3>Your habitat</h3><p class="u-body">Directions, colors, and rooms that suit your animal, drawn from feng shui.</p></article>
+      <article class="unlockCard"><p class="u-tag">locked</p><h3>Bonds</h3><p class="u-body">Match a friend, answer a challenge, or read three of you as a circle.</p></article>
     </div>
   </section>
 
@@ -558,8 +560,8 @@
   <div class="omf-moonrise" aria-hidden="true"><span class="omf-moonball"></span><span class="omf-hairline"></span></div>
   <div class="omf-field">
     <div class="omf-brandrow">
-      <span class="omf-wordmark">Zodi <b>Animals</b></span>
-      <p class="omf-blurb">Find your Primal Animal, read where you stand, and see who you match. Built on the fusion of the Chinese and Western zodiacs.</p>
+      <span class="omf-wordmark">Zodi <b>Animal</b></span>
+      <p class="omf-blurb">Unlock your Primal Zodiac Animal Spirit. Find your animal, read where you stand, and see who you match, built on the fusion of the Chinese and Western zodiacs.</p>
     </div>
     <nav class="sitemap-footer" aria-label="Explore Spirit Omega">
   <div class="sf-inner">

@@ -9,13 +9,12 @@
          nav.sitemap-footer > .sf-inner > .sf-col*  (GEO columns,
                       content unchanged, restyled here)
          .omf-bottom (.sf-note + "made under two skies")
-   Tokens only; dark celestial and light both resolve. The only
+   Tokens only; dark celestial is the only theme. The only
    declared value is the moonface highlight token, shared with
    home-v4.css (--v4-moonface).
    ============================================================ */
 
 :root { --v4-moonface: #fffaf0; }
-:root[data-theme="light"] { --v4-moonface: #ffffff; }
 
 .om-footer { margin-top: clamp(32px, 6vh, 64px); }
 
