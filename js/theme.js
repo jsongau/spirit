@@ -18,6 +18,12 @@
   "use strict";
   var KEY = "zn_theme";
   var root = document.documentElement;
+  /* Pages audited for the light theme. Everything else stays dark
+     celestial until its template is redesigned to the v4 canvas
+     language (legacy page CSS assumes a dark ground). Keep in sync
+     with the LIGHT_OK list in build/apply-assets.mjs THEME_BOOT. */
+  var LIGHT_OK = ["/", "/index.html"];
+  var lightAllowed = LIGHT_OK.indexOf(location.pathname) > -1;
 
   function autoTheme() {
     var h = new Date().getHours();
@@ -38,7 +44,9 @@
   }
   function apply() {
     var m = mode();
-    root.dataset.theme = m === "auto" ? autoTheme() : m;
+    var t = m === "auto" ? autoTheme() : m;
+    if (!lightAllowed) t = "dark";
+    root.dataset.theme = t;
     root.dataset.season = season();
     sync();
   }
@@ -69,7 +77,10 @@
 
   function init() {
     var b = document.querySelector("[data-theme-toggle]");
-    if (b) b.addEventListener("click", cycle);
+    if (b) {
+      if (!lightAllowed) b.hidden = true; /* no dead toggle on dark-only pages */
+      else b.addEventListener("click", cycle);
+    }
     apply();
     /* catch the 07:00/19:00 boundary while a tab stays open */
     setInterval(function () { if (mode() === "auto") apply(); }, 9e5);

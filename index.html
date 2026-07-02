@@ -28,6 +28,7 @@
 <link rel="stylesheet" href="css/descent.css">
 <link rel="stylesheet" href="/css/home.css">
 <link rel="stylesheet" href="/css/home-interactive.css">
+<link rel="stylesheet" href="/css/home-v4.css">
 <!-- Proverb feature: Ma Shan Zheng calligraphy font + PROVERB_CSS (from build/proverbs.mjs) -->
 <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
 <style>
@@ -78,7 +79,7 @@
 ]}
 </script>
 <!--pn-assets:start-->
-<script data-pn-assets="theme-boot">(function(){try{var t=localStorage.getItem("zn_theme");if(t!=="light"&&t!=="dark"){var h=new Date().getHours();t=(h>=7&&h<19)?"light":"dark";}var m=new Date().getMonth();var s=m>=2&&m<=4?"spring":m>=5&&m<=7?"summer":m>=8&&m<=10?"autumn":"winter";var d=document.documentElement;d.dataset.theme=t;d.dataset.season=s;}catch(e){}})();</script>
+<script data-pn-assets="theme-boot">(function(){try{var ok=["/","/index.html"].indexOf(location.pathname)>-1;var t=localStorage.getItem("zn_theme");if(t!=="light"&&t!=="dark"){var h=new Date().getHours();t=(h>=7&&h<19)?"light":"dark";}if(!ok)t="dark";var m=new Date().getMonth();var s=m>=2&&m<=4?"spring":m>=5&&m<=7?"summer":m>=8&&m<=10?"autumn":"winter";var d=document.documentElement;d.dataset.theme=t;d.dataset.season=s;}catch(e){}})();</script>
 <link rel="stylesheet" href="/css/tokens.css" data-pn-assets="/css/tokens.css">
 <link rel="stylesheet" href="/css/type.css" data-pn-assets="/css/type.css">
 <link rel="preconnect" href="https://fonts.googleapis.com" data-pn-assets="gf-pre1">
@@ -102,7 +103,7 @@
 <link rel="stylesheet" href="/css/a11y.css" data-pn="/css/a11y.css">
 <!--pn-css:end-->
 </head>
-<body class="pn-has-bar">
+<body class="pn-has-bar home-v4">
 <!--pn-static:start-->
 <a class="skip-link" href="#pn-main">Skip to content</a>
 <header class="pn-bar" role="banner" data-static>
@@ -155,56 +156,79 @@
 <!--pn-static:end-->
 <canvas id="sky" aria-hidden="true"></canvas>
 
-<div class="wrap home-shell">
-
-  <!-- ZONE A — left gutter spine (decorative negative space, scroll spine) -->
-  <div class="home-gutter" aria-hidden="true">
-    <span class="home-spine-line"></span>
-    <span class="home-spine">two zodiacs · one animal</span>
-    <span class="home-spine-line"></span>
+<!-- V4 STICKY SUB-BAR (canvas breadcrumb sub-bar). The moon chip +
+     popover live here because the injected pn-bar above is preserved
+     verbatim and cannot host them. -->
+<div class="omv4-sub">
+  <div class="omv4-sub-inner">
+    <nav class="omv4-crumbs" aria-label="Breadcrumb">
+      <a class="omv4-crumb" href="/index.html" aria-current="page"><span class="g" aria-hidden="true">&#8962;</span>Home</a>
+    </nav>
+    <nav class="omv4-hub" aria-label="In this hub">
+      <a href="/index.html" aria-current="page">Overview</a>
+      <a href="/western-zodiac/">Western wing</a>
+      <a href="/chinese-zodiac/">Eastern wing</a>
+      <a href="/menagerie.html">Rare crossings</a>
+      <a href="/learn.html">How it works</a>
+    </nav>
+    <div class="omv4-moonwrap">
+      <button id="moonChip" type="button" aria-expanded="false" aria-controls="moonPop" hidden></button>
+      <div id="moonPop" role="region" aria-label="Moon phase tonight" hidden>
+        <div class="pop-head">
+          <span class="pop-glyph" aria-hidden="true"></span>
+          <div>
+            <p class="pop-name"></p>
+            <p class="pop-pct"></p>
+          </div>
+        </div>
+        <p class="pop-meaning"></p>
+        <p class="pop-favors"></p>
+        <a class="pop-link" href="/moon.html">Read the Moon tonight</a>
+      </div>
+    </div>
   </div>
+</div>
+
+<div class="wrap home-shell">
 
   <!-- ZONE B — main scrolling column -->
   <main class="home-main" id="pn-main" tabindex="-1">
 
-  <!-- HERO + Oracle reveal -->
-  <section class="hero section--animal">
-    <p class="eyebrow">Two zodiacs, one animal</p>
+  <!-- HERO + READER (canvas "Hero + reader") -->
+  <section class="hero section--animal" id="read">
+    <div class="om-orbit" aria-hidden="true">
+      <div class="o-ring"></div>
+      <div class="o-dash"></div>
+      <div class="o-core"><div class="o-moon"></div></div>
+    </div>
+    <p class="eyebrow">Two zodiacs, one animal<span id="seasonTag" hidden> &#183; <span id="seasonName"></span> sky</span></p>
     <h1>Find your <em>Primal Zodiac Animal</em>.</h1>
     <p class="lede">Your Western Sun sign crosses your Chinese birth year to name one of 144 original animal archetypes. You have carried this shape for years; today you can finally see it.</p>
 
-    <div class="wheel" aria-hidden="true">
-      <div class="ring r1"></div>
-      <div class="ring r2"></div>
-      <div class="ring r3"></div>
-      <div class="glyphs">
-        <span style="transform:rotate(0deg) translateY(-168px)">♈</span>
-        <span style="transform:rotate(30deg) translateY(-168px)">♉</span>
-        <span style="transform:rotate(60deg) translateY(-168px)">♊</span>
-        <span style="transform:rotate(90deg) translateY(-168px)">♋</span>
-        <span style="transform:rotate(120deg) translateY(-168px)">♌</span>
-        <span style="transform:rotate(150deg) translateY(-168px)">♍</span>
-        <span style="transform:rotate(180deg) translateY(-168px)">♎</span>
-        <span style="transform:rotate(210deg) translateY(-168px)">♏</span>
-        <span style="transform:rotate(240deg) translateY(-168px)">♐</span>
-        <span style="transform:rotate(270deg) translateY(-168px)">♑</span>
-        <span style="transform:rotate(300deg) translateY(-168px)">♒</span>
-        <span style="transform:rotate(330deg) translateY(-168px)">♓</span>
-      </div>
-      <div class="core"><div class="moonball"></div></div>
-    </div>
-
     <!-- READER FORM -->
-    <div class="reader" id="read">
+    <div class="reader">
       <h3>Read the wheel</h3>
       <p class="dim">Enter your date of birth. Nothing is sent anywhere; the reading is drawn in your browser.</p>
       <form id="birthForm">
         <div class="field">
+          <div class="om-seg" id="omSeg" hidden>
+            <label>Month
+              <input class="om-seg-m" inputmode="numeric" maxlength="2" placeholder="MM" autocomplete="bday-month" aria-label="Birth month">
+            </label>
+            <span class="sep" aria-hidden="true">/</span>
+            <label>Day
+              <input class="om-seg-d" inputmode="numeric" maxlength="2" placeholder="DD" autocomplete="bday-day" aria-label="Birth day">
+            </label>
+            <span class="sep" aria-hidden="true">/</span>
+            <label>Year
+              <input class="om-seg-y" inputmode="numeric" maxlength="4" placeholder="YYYY" autocomplete="bday-year" aria-label="Birth year">
+            </label>
+          </div>
           <input type="date" id="birthDate" required min="1940-01-01" max="2032-12-31" aria-label="Date of birth">
-          <button class="btn" type="submit">Reveal my animal</button>
+          <button class="btn om-seg-go" type="submit">Reveal my animal</button>
           <button class="btn ghost" id="clearDate" type="button" aria-label="Clear the date">Clear</button>
         </div>
-        <p class="msg" id="formMsg"></p>
+        <p class="msg" id="formMsg" role="status"></p>
       </form>
     </div>
   </section>
@@ -227,7 +251,7 @@
       <div class="cross" id="cross"></div>
       <h2 class="big" id="animalName">✦</h2>
       <p class="essence" id="animalEssence"></p>
-      <p class="mt"><a class="btn ghost" id="animalLink" href="#">Open my full animal page</a></p>
+      <p class="mt"><a class="btn" id="animalLink" href="#">Open my full animal page</a><a class="btn ghost" href="#matchSection">Test a match</a></p>
     </div>
 
     <nav class="descent-doors" id="descentDoors" aria-label="Choose your descent" hidden>
@@ -267,6 +291,22 @@
     </div>
   </div>
   </div>
+
+  <!-- WHAT UNLOCKS (canvas "After the naming" band; locked/open state
+       wired by home-v4.js from the same reveal state the site stores) -->
+  <section class="band band--bleed" id="unlocking">
+    <p class="eyebrow">After the naming</p>
+    <h2>Your animal is a key. This is what it opens.</h2>
+    <p class="lede">Each part of the Oracle reads differently once it knows which of the 144 you are. Name your animal and these open in your own voice.</p>
+    <div class="unlockGrid" id="unlockGrid" data-revealed="0">
+      <article class="unlockCard"><p class="u-tag">locked</p><h3>Your five gates</h3><p>Where you stand, what you need, the season plan, the warning, and your highest form.</p></article>
+      <article class="unlockCard"><p class="u-tag">locked</p><h3>Tonight's reading</h3><p>One short reading a day, timed to the real moon overhead.</p></article>
+      <article class="unlockCard"><p class="u-tag">locked</p><h3>Keeper stones</h3><p>The stones matched to your sun and your element, and when to charge them.</p></article>
+      <article class="unlockCard"><p class="u-tag">locked</p><h3>The awakening path</h3><p>Every animal has a fearful form and an awake one. The path between them opens here.</p></article>
+      <article class="unlockCard"><p class="u-tag">locked</p><h3>Your habitat</h3><p>Directions, colors, and rooms that suit your animal, drawn from feng shui.</p></article>
+      <article class="unlockCard"><p class="u-tag">locked</p><h3>Bonds</h3><p>Match a friend, answer a challenge, or read three of you as a circle.</p></article>
+    </div>
+  </section>
 
   <!-- AI-ANSWERABLE CORE -->
   <section class="band" id="what-it-is">
@@ -319,7 +359,7 @@
   </section>
 
   <!-- MENAGERIE PREVIEW -->
-  <section class="band" id="peek">
+  <section class="band band--bleed" id="peek">
     <p class="eyebrow">Inside the Menagerie</p>
     <h2>144 animals, one is yours</h2>
     <p class="lede">A glimpse of the creatures waiting at the crossings. Enter your birthday above to find which one is you, or wander the whole menagerie.</p>
@@ -363,7 +403,7 @@
   </section>
 
   <!-- COMPATIBILITY -->
-  <section class="band" id="matchSection">
+  <section class="band band--bleed" id="matchSection">
     <p class="eyebrow">Two animals, one wheel</p>
     <h2>Test a match</h2>
     <p class="lede">Enter two dates of birth. The Oracle scores the pair across the Chinese trines, secret friends, clashes, and harms, then across the Western elements, and names the bond.</p>
@@ -418,38 +458,89 @@
 
   </main><!-- /.home-main (Zone B) -->
 
-  <!-- ZONE C — sticky right identity rail. Present in BOTH lifecycle
-       states: identity card + always-visible share + reserved meter slot.
-       Agent B (home.js / Phase 5) wires the ids below and fills the slot. -->
+  <!-- LEFT IDENTITY RAIL (canvas identity rail; sticky at >=900px).
+       home.js wires the identity ids; meter.js paints #awakening-slot;
+       home-v4.js drives the share row, unlocks card, and moon card. -->
   <aside id="identity-rail" aria-label="Your identity and awakening">
     <div id="identity-card" class="section--animal" data-state="invitation">
-      <p class="rail-kicker">You are</p>
+      <p class="rail-kicker">Your animal</p>
       <div id="identity-sigil" aria-hidden="true"><span class="identity-sigil-wait">✦</span></div>
       <p id="identity-name">Not yet named</p>
       <p class="identity-pairing" hidden></p>
       <p class="identity-invite">Enter your birth date to name your Primal Zodiac Animal.</p>
-      <button id="identity-share" type="button">Reveal my animal</button>
+      <button id="identity-share" type="button">Reveal my animal <span aria-hidden="true">✦</span></button>
     </div>
 
-    <!-- Reserved awakening meter slot. Left empty on purpose; Phase 5 builds
-         the meter here. Do not render the meter in Phase 4. -->
+    <!-- share icon row: appears after the reveal (canvas sharing widget) -->
+    <div id="rail-share" class="rail-card" hidden>
+      <p class="rail-kicker rail-kicker--sec">Share</p>
+      <div class="shareRow">
+        <a data-share="sms" href="#" title="Send by text message" aria-label="Send by text message">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="4"></rect><path d="M8 17v4l4-4"></path></svg></span>
+          <span class="lbl">SMS</span>
+        </a>
+        <button data-share="copy" type="button" title="Copy the share line" aria-label="Copy the share line">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><rect x="4" y="4" width="11" height="11" rx="2"></rect></svg></span>
+          <span class="lbl">Copy</span>
+        </button>
+        <a data-share="email" href="#" title="Send by email" aria-label="Send by email">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="M4 7l8 6 8-6"></path></svg></span>
+          <span class="lbl">Email</span>
+        </a>
+        <button data-share="instagram" type="button" title="Copy the line for your Instagram story" aria-label="Copy the line for your Instagram story">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"></circle></svg></span>
+          <span class="lbl">Instagram</span>
+        </button>
+        <a data-share="x" href="#" target="_blank" rel="noopener" title="Share on X" aria-label="Share on X">
+          <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14"></path><path d="M19 5L5 19"></path></svg></span>
+          <span class="lbl">X</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- unlocks card (canvas rail unlocks) -->
+    <div id="rail-unlocks" class="rail-card" data-revealed="0">
+      <p class="rail-kicker rail-kicker--sec" id="unlocksKicker">Waiting to unlock</p>
+      <ul class="unlockList">
+        <li><span class="dot" aria-hidden="true"></span><span class="u-label">Your five gates</span></li>
+        <li><span class="dot" aria-hidden="true"></span><span class="u-label">Tonight's reading</span></li>
+        <li><span class="dot" aria-hidden="true"></span><span class="u-label">Keeper stones</span></li>
+        <li><span class="dot" aria-hidden="true"></span><span class="u-label">The awakening path</span></li>
+        <li><span class="dot" aria-hidden="true"></span><span class="u-label">Your habitat</span></li>
+      </ul>
+      <div class="unlockMeter" aria-hidden="true"><i id="railMeterFill"></i></div>
+      <p class="unlockLine" id="railMeterLine"></p>
+    </div>
+
+    <!-- Reserved awakening meter slot. meter.js paints the full meter here. -->
     <div id="awakening-slot" class="section--awakening" aria-label="The awakening"></div>
 
-    <nav class="rail-jump" aria-label="Jump to">
-      <p>Jump to</p>
+    <!-- the Moon tonight (canvas #moon-rail; filled by home-v4.js) -->
+    <div id="moon-rail" class="rail-card" hidden>
+      <span class="moon-rail-glyph" aria-hidden="true"></span>
+      <div class="moon-rail-body">
+        <p class="moon-rail-label"></p>
+        <p class="moon-rail-meaning"></p>
+      </div>
+    </div>
+
+    <nav class="rail-jump" aria-label="On this page">
+      <p>On this page</p>
       <ul>
-        <li><a href="#read">Find your animal</a></li>
-        <li><a href="#gates">Your five gates</a></li>
-        <li><a href="#stonesSection">Keeper stones</a></li>
+        <li><a href="#read">Read the wheel</a></li>
+        <li><a href="#unlocking">What unlocks</a></li>
+        <li><a href="#what-it-is">What a Primal Animal is</a></li>
+        <li><a href="#peek">The Menagerie</a></li>
         <li><a href="#matchSection">Test a match</a></li>
-        <li><a href="#peek">The menagerie</a></li>
+        <li><a href="#stonesSection">Keeper stones</a></li>
       </ul>
     </nav>
   </aside>
 
 </div><!-- /.home-shell -->
 
-<!-- FULL-BLEED FOOTER -->
+<!-- FULL-BLEED FOOTER (canvas moonrise ornament above the footer rooms) -->
+<div class="om-moonrise" aria-hidden="true"><span class="om-moonball"></span><span class="om-hairline"></span></div>
 <footer class="site-footer">
   <div class="brand">The Primal <b>Oracle</b></div>
   <p>Find your Primal Animal, read where you stand, and see who you match. Built on the fusion of the Chinese and Western zodiacs.</p>
@@ -466,6 +557,7 @@
 
 <!-- THIRD EYE HUD -->
 <aside class="eyeHud" aria-label="Your awakening">
+  <button class="eyeHud-close" id="eyeHudClose" type="button" aria-label="Dismiss the third eye">&#10005;</button>
   <div class="eye"><span class="iris"></span><span class="lid" id="eyeLid"></span></div>
   <div class="meta">
     <div class="lab" id="eyeLabel">Sleeper · 0%</div>
@@ -497,6 +589,8 @@
 <script src="js/game.js" defer></script>
 <!-- Phase 4 interactive layer (rail wiring, proverb rotation, dock sync) — owned by Agent B -->
 <script src="/js/home.js" defer></script>
+<!-- v4 canvas-port layer (sub-bar moon chip, segmented reader, unlock states, rail share) -->
+<script src="/js/home-v4.js" defer></script>
 <nav class="sitemap-footer" aria-label="Explore Spirit Omega">
   <div class="sf-inner">
     <div class="sf-col"><h3>Discover</h3><ul><li><a href="/">Find your animal</a></li><li><a href="/menagerie.html">All 144 animals</a></li><li><a href="/year.html">Year finder</a></li><li><a href="/daily.html">Today's reading</a></li><li><a href="/horoscopes/">Horoscopes</a></li><li><a href="/vs.html">Challenge a friend</a></li></ul></div>
