@@ -425,9 +425,22 @@ PNAV.HUBS = {
     ]
   },
   "proverbs": {
-    label: "Proverbs", root: "/proverbs/",
+    label: "Chinese Proverbs", root: "/proverbs/",
     items: [
-      ["/proverbs/", "Overview"]
+      ["/proverbs/", "All 87"],
+      ["/proverbs/wealth-and-work/", "Money"],
+      ["/proverbs/home-and-family/", "Family"],
+      ["/proverbs/nature-and-seasons/", "Health"],
+      ["/proverbs/friendship-and-trust/", "Friendship"],
+      ["/proverbs/the-way-of-water/", "The Tao"],
+      ["/proverbs/timing-and-fortune/", "Fate"],
+      ["/proverbs/perseverance/", "Perseverance"],
+      ["/proverbs/courage/", "Courage"],
+      ["/proverbs/wisdom-and-learning/", "Wisdom"],
+      ["/proverbs/harmony-and-virtue/", "Harmony"],
+      ["/proverbs/humility-and-self-mastery/", "Humility"],
+      ["/proverbs/adversity-and-resilience/", "Adversity"],
+      ["/proverbs/study/", "Study"]
     ]
   },
   "feng-shui": {

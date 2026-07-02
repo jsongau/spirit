@@ -538,6 +538,16 @@
       if (document.hidden) cancelAnimationFrame(raf);
       else if (!reduce) raf = requestAnimationFrame(step);
     });
+    // pause the koi loop while the pond is scrolled out of view (big win on the long hub)
+    if (!reduce && "IntersectionObserver" in window) {
+      var pondVis = true;
+      new IntersectionObserver(function (es) {
+        var vis = es[0].isIntersecting;
+        if (vis && !pondVis) { cancelAnimationFrame(raf); raf = requestAnimationFrame(step); }
+        else if (!vis && pondVis) { cancelAnimationFrame(raf); }
+        pondVis = vis;
+      }, { threshold: 0 }).observe(pond);
+    }
     pond.addEventListener("click", function (e) {
       if (e.target.closest(".pv-draw")) return; // button handles its own
       var r = pond.getBoundingClientRect();
@@ -611,9 +621,9 @@
   (function () {
     var cv = document.getElementById("sky"); if (!cv || !cv.getContext) return;
     var x = cv.getContext("2d");
-    function sz() { cv.width = innerWidth; cv.height = Math.max(innerHeight, document.body.scrollHeight); }
+    function sz() { cv.width = innerWidth; cv.height = innerHeight; }
     sz(); addEventListener("resize", sz);
-    var n = reduce ? 40 : 90;
+    var n = reduce ? 28 : 56;
     var st = Array.from({ length: n }, function () { return { x: Math.random() * cv.width, y: Math.random() * cv.height, r: Math.random() * 1.2 + 0.2, a: Math.random(), s: Math.random() * 0.02 + 0.004 }; });
     (function f() {
       x.clearRect(0, 0, cv.width, cv.height);
