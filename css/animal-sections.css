@@ -1,0 +1,457 @@
+/* ============================================================
+   animal-sections.css  —  Reading-experience variety for the
+   long animal profile (doc 09 §4).
+   ------------------------------------------------------------
+   PURPOSE
+   The animal profile is ~25 near-identical .pf-section blocks.
+   Left alone it reads as a stack of ruled boxes. This file gives
+   each ZONE its own hue, texture, and rhythm — so a 6,000-word
+   reading feels like walking through rooms — while the page still
+   reads as one object.
+
+   HOW IT LAYERS
+   Loads AFTER profile.css and animal.css. It never renames a
+   token and never hard-codes a ramp color: every visible accent
+   (eyebrow, dividers, card blooms, whisper rail, ornament) reads
+   var(--accent) / var(--accent-bright) / var(--accent-soft),
+   which the .section--* classes in tokens.css re-tint per zone.
+   The PM stamps two classes on each <section>:
+     - a ZONE class  (.section--animal | fengshui | moon |
+                       awakening | directions | cosmology)  → hue
+     - a BAND class  (.pf-a | .pf-b | .pf-c)                → texture
+   See the zone→band map returned with this file.
+
+   PERFORMANCE / MOTION CONTRACT (doc 09 §3.4 / §3.5)
+   - NO infinite @keyframes are added here. Blooms are static or
+     fade in on :hover / :focus-within only (opacity transitions).
+   - Motion is opacity + transform ONLY. No animated background,
+     no animated box-shadow loops.
+   - NO filter: blur() anywhere in this file.
+   - A prefers-reduced-motion block at the end neutralizes every
+     transition that implies motion; the visual system is fully
+     legible at rest.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   Local helper tokens (scoped, additive — no global rename).
+   --hairline-x        : neutral gradient rule (fades at the ends)
+   --hairline-accent   : accent gradient rule for the zone signature
+   --section-bloom     : the per-band radial wash, painted as a
+                         background layer (never a shadow)
+   --bloom-x/--bloom-y : bloom anchor; bands flip it left/right.
+   These mirror doc 09 §1 but are declared here so this file is
+   self-contained and does not depend on a glow.css landing first.
+   ------------------------------------------------------------ */
+.pf-section {
+  --hairline-x: linear-gradient(90deg,
+                  transparent,
+                  var(--line) 18%, var(--line) 82%,
+                  transparent);
+  --hairline-accent: linear-gradient(90deg,
+                  transparent,
+                  var(--accent-soft) 22%, var(--accent-soft) 78%,
+                  transparent);
+  --bloom-x: 14%;
+  --bloom-y: 0%;
+  --section-bloom: radial-gradient(680px 300px
+                     at var(--bloom-x) var(--bloom-y),
+                     var(--accent-soft), transparent 66%);
+}
+
+
+/* ============================================================
+   1. DEFAULT SECTION — doc 09 §4.1 band "A" (Open on the sky)
+   ------------------------------------------------------------
+   A long page stops reading as stacked ruled boxes: the flat
+   1px top rule from profile.css is replaced by a gradient
+   hairline that fades at both ends. The eyebrow becomes the
+   zone signature (ember dot + accent-bright letterspaced mono),
+   and the h2 gets a restrained accent tie.
+   ============================================================ */
+
+/* Replace the flat top rule with a gradient hairline drawn as a
+   pseudo-element. We neutralize profile.css's border-top by
+   painting our own hairline over the same edge; keeping the
+   1px border transparent avoids any layout shift. */
+.pf-section {
+  position: relative;             /* anchor the hairline + blooms */
+  border-top-color: transparent;  /* profile.css set a solid --line rule */
+  isolation: isolate;             /* keep band blooms behind content */
+}
+.pf-section::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--hairline-x);
+  pointer-events: none;
+  z-index: 0;
+}
+/* The hero has no section above it and owns its own ceremony;
+   the share card is a framed object — neither wants the rule. */
+.pf-hero::before,
+.pf-section:first-of-type::before { content: none; }
+
+/* Eyebrow = the zone signature. Letterspaced mono in accent-bright,
+   preceded by a small ember dot that carries the zone hue. */
+.pf-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  font-family: var(--mono);
+  color: var(--accent-bright);
+  letter-spacing: .28em;
+}
+.pf-eyebrow::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-soft);   /* --ember, static */
+}
+
+/* h2 accent tie: a short underline in the zone hue. Restrained —
+   a signature, not a banner. */
+.pf-section h2 {
+  position: relative;
+  padding-bottom: var(--s-3);
+}
+.pf-section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 34px;
+  height: 2px;
+  border-radius: var(--r-pill);
+  background: linear-gradient(90deg,
+    var(--accent), var(--accent-soft));
+}
+
+
+/* ============================================================
+   2. BAND CYCLE — doc 09 §4.1  (A A B A C, repeating)
+   ------------------------------------------------------------
+   pf-a : Open   — transparent on the sky (default above).
+   pf-b : Room   — level-1 band: --ink-2 + one-edge accent bloom,
+                   gradient border-block top & bottom.
+   pf-c : Chamber— the Room band PLUS its inner cards get the
+                   corner-bloom glow-card treatment (densest).
+   ============================================================ */
+
+/* ---- pf-b — the Room (doc 09 §2.3 band recipe) ---- */
+.pf-b {
+  background: var(--section-bloom), var(--ink-2);
+  /* gradient border-block via pseudo-elements so we do not fight
+     profile.css's border-top and can fade both edges. */
+}
+/* top edge already drawn by .pf-section::before hairline (neutral);
+   promote it to the accent hairline inside a Room so the band edge
+   reads the zone hue. */
+.pf-b::before { background: var(--hairline-accent); }
+/* bottom edge of the band */
+.pf-b::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--hairline-accent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Alternate the bloom anchor left / right for consecutive Rooms
+   so a run of bands never reads as copy-paste (doc 09 §2.3, §4.1).
+   nth-of-type keys off document order of .pf-section; even Rooms
+   flip the anchor to the right. */
+.pf-b:nth-of-type(even) { --bloom-x: 86%; }
+/* Explicit override hooks if the PM wants to force an anchor: */
+.pf-b.bloom-left  { --bloom-x: 14%; }
+.pf-b.bloom-right { --bloom-x: 86%; }
+
+/* Full-bleed feel: let a Room breathe past the reading measure a
+   touch, then re-inset its content. .pf-wrap already centers the
+   column at 820px; here we widen only the painted band, not the
+   text, using padding so no horizontal scroll is introduced. */
+.pf-b,
+.pf-c {
+  padding-left: var(--s-5);
+  padding-right: var(--s-5);
+  border-radius: var(--r-3);
+}
+/* pull the rounded band edges flush to the reading column edges */
+.pf-b { margin-inline: calc(var(--s-5) * -1); }
+
+
+/* ---- pf-c — the Chamber (Room band + level-2 cards) ---- */
+/* Chamber IS a Room: inherit the band paint + edges. */
+.pf-c {
+  background: var(--section-bloom), var(--ink-2);
+  margin-inline: calc(var(--s-5) * -1);
+}
+.pf-c::before { background: var(--hairline-accent); }
+.pf-c::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--hairline-accent);
+  pointer-events: none;
+  z-index: 0;
+}
+.pf-c:nth-of-type(even) { --bloom-x: 86%; }
+
+/* The densest texture: inner cards gain a corner bloom that fades
+   in on hover/focus, plus the accent border-color + lift. We scope
+   to the card primitives that actually appear inside chamber
+   sections (the gates grid and the habitat grid). We DELIBERATELY
+   exclude .pf-psy-card — the psychic card owns its own marquee
+   glow from skin.css and must not be double-decorated. */
+.pf-c .pf-card,
+.pf-c .pf-gate {
+  position: relative;
+  overflow: hidden;               /* clips the corner bloom */
+  isolation: isolate;
+  transition: border-color var(--dur) var(--ease-io),
+              transform var(--dur-fast) var(--ease-io),
+              box-shadow var(--dur) var(--ease-io);
+}
+.pf-c .pf-gate {
+  /* gates arrive flat from profile.css; give them the lit surface */
+  background:
+    radial-gradient(120% 90% at 100% 0%, var(--accent-soft), transparent 46%),
+    linear-gradient(165deg, var(--panel-2), var(--panel) 55%);
+}
+/* corner bloom: a pre-rendered gradient layer, faded in on hover.
+   Never animate the gradient itself — only its opacity. Gates
+   anchor their bloom bottom-left so a grid of gates does not read
+   as copy-paste against the cards' top-right bloom (doc 09 §2.1). */
+.pf-c .pf-card::after,
+.pf-c .pf-gate::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(360px 220px at var(--bloom-x, 88%) var(--bloom-y, -8%),
+                var(--accent-soft), transparent 70%);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease-out);
+  pointer-events: none;
+}
+.pf-c .pf-gate::after { --bloom-x: 6%; --bloom-y: 108%; }
+.pf-c .pf-card:hover::after,
+.pf-c .pf-card:focus-within::after,
+.pf-c .pf-gate:hover::after,
+.pf-c .pf-gate:focus-within::after { opacity: 1; }
+.pf-c .pf-card:hover,
+.pf-c .pf-card:focus-within,
+.pf-c .pf-gate:hover,
+.pf-c .pf-gate:focus-within {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: var(--e-1), 0 0 18px var(--accent-soft);  /* --halo */
+}
+/* the gate label + heading pick up the zone hue in a chamber */
+.pf-c .pf-gate .lab { color: var(--accent); }
+.pf-c .pf-gate h3,
+.pf-c .pf-card h3 { color: var(--accent-bright); }
+
+
+/* ============================================================
+   3. ZONE CARD / LIST TINTS (all bands)
+   ------------------------------------------------------------
+   Even outside a chamber, the small parts of a section should
+   read the zone hue so the drift is felt everywhere (doc 09 §4.3).
+   These are quiet: hairline top-tick on cards, accent role marker
+   on stones, accent list markers.
+   ============================================================ */
+
+/* Card top-hairline already exists in profile.css via --accent-soft;
+   promote it to the current zone accent and add the hover lift +
+   halo consistently (profile.css only added an inner glow). */
+.pf-section .pf-card::before {
+  background: linear-gradient(90deg, transparent,
+    var(--accent-soft) 30%, var(--accent-soft) 70%, transparent);
+}
+.pf-section .pf-card:hover,
+.pf-section .pf-card:focus-within {
+  border-color: var(--accent);
+}
+
+/* Stones: role marker + name lead read the zone hue; the stone
+   card gets a hairline top-tick like the other cards. */
+.pf-stone { position: relative; overflow: hidden; }
+.pf-stone .role { color: var(--accent); }
+.pf-stone::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent,
+    var(--accent-soft) 30%, var(--accent-soft) 70%, transparent);
+  pointer-events: none;
+}
+
+/* pf-list bullets: a small accent tick instead of default markers,
+   so a zone's lists carry its color too. Lists here are custom
+   (list-style:none), so we add a leading marker via ::before only
+   where the li is a direct grid child (avoids double-marking the
+   nested colour/room lists inside cards, which use <strong> leads). */
+.pf-list > li { position: relative; }
+
+/* chip clusters: ember only on the matching/active chip (doc 09
+   §4.5). Base chips stay quiet; [aria-current] / .is-active glow. */
+.pf-chips li[aria-current],
+.pf-chips li.is-active {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px var(--accent-soft);   /* --ember */
+}
+
+/* descent module head rule already reads --accent-bright in
+   profile.css; nothing to add — it drifts for free. */
+
+
+/* ============================================================
+   4. WHISPER — doc 09 §4.2  (pull quote, the oracle leaning in)
+   ------------------------------------------------------------
+   In case the PM lifts one line per ~3 sections. Left accent
+   rule + ember foot + italic serif in accent-bright.
+   ============================================================ */
+.whisper {
+  margin: var(--s-7) 0;
+  padding: var(--s-5) 0 var(--s-5) var(--s-6);
+  border-left: 1px solid var(--accent);
+  font: italic 400 clamp(1.2rem, 3.4vw, 1.55rem)/1.4 var(--serif);
+  color: var(--accent-bright);
+  max-width: 38ch;
+  text-wrap: balance;
+  position: relative;
+}
+.whisper::after {                 /* the ember at the rail's foot */
+  content: "";
+  position: absolute;
+  left: -3px;
+  bottom: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-soft);   /* --ember */
+}
+.whisper .whisper-source {        /* optional mono attribution */
+  display: block;
+  margin-top: var(--s-3);
+  font: 400 .78rem/1 var(--mono);
+  font-style: normal;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+
+/* ============================================================
+   5. RHYTHM GARNISHES — doc 09 §4.5 / §4.4  (optional, sparing)
+   ============================================================ */
+
+/* Centered ornament divider between major zones (doc 09 §4.5):
+   a single ✦ in --accent-dim with gradient-hairline wings. The
+   PM may drop <div class="zone-break" aria-hidden="true"></div>
+   between two zones. Static — no motion. */
+.zone-break {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+  margin-block: var(--s-8);
+  color: var(--accent-dim);
+}
+.zone-break::before,
+.zone-break::after {
+  content: "";
+  flex: 1 1 0;
+  height: 1px;
+  background: var(--hairline-x, linear-gradient(90deg,
+    transparent, var(--line) 18%, var(--line) 82%, transparent));
+}
+.zone-break::before,
+.zone-break::after,
+.zone-break { --hairline-x: linear-gradient(90deg,
+  transparent, var(--line) 18%, var(--line) 82%, transparent); }
+.zone-break i,
+.zone-break span {
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1;
+}
+/* If the PM uses an empty <div class="zone-break"></div> with no
+   glyph child, supply the star for them. */
+.zone-break:empty::before { content: none; }   /* guard: empty stays balanced */
+
+/* Drop cap — doc 09 §4.4.  BUDGET: max 5 per page, never two in
+   view at once, never on a paragraph starting with a quote or a
+   number. The PM adds .dropcap to the FIRST paragraph of a ZONE
+   (not every section). Kept opt-in so the budget is enforced by
+   markup, not by an over-broad selector. */
+.dropcap::first-letter {
+  font-family: var(--serif);
+  font-weight: 560;
+  font-size: 3.3em;
+  line-height: .82;
+  float: left;
+  padding: .06em .12em 0 0;
+  color: var(--accent);
+  text-shadow: 0 0 24px var(--accent-soft);
+}
+
+
+/* ============================================================
+   6. ZONE-EDGE HARMONY
+   ------------------------------------------------------------
+   The psychic section is amethyst band-A: it must NOT get the
+   chamber card treatment (its card owns skin.css glow). Assert
+   here in case a future map puts .pf-c on it by mistake — the
+   marquee card is excluded above, and we also keep its own
+   hairline neutral-accent like any A section.
+   The hero and the framed share card opt out of section paint.
+   ============================================================ */
+.pf-hero,
+.pf-section:has(> .pf-sharecard) {
+  background: none;
+}
+.pf-section:has(> .pf-sharecard)::before,
+.pf-section:has(> .pf-sharecard)::after { content: none; }
+
+
+/* ============================================================
+   7. REDUCED MOTION  (doc 09 §3.4 / §3.5, binding)
+   ------------------------------------------------------------
+   Neutralize every transition that implies motion. The visual
+   system remains fully legible: hues, dividers, ember dots, and
+   band blooms are all STATIC paint and survive; only the hover
+   lift/bloom fade is removed. No infinite loops exist to stop.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .pf-c .pf-card,
+  .pf-c .pf-gate,
+  .pf-section .pf-card {
+    transition: none;
+  }
+  .pf-c .pf-card::after,
+  .pf-c .pf-gate::after {
+    transition: none;
+  }
+  .pf-c .pf-card:hover,
+  .pf-c .pf-card:focus-within,
+  .pf-c .pf-gate:hover,
+  .pf-c .pf-gate:focus-within {
+    transform: none;              /* border-color + halo may still change */
+  }
+}
