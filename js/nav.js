@@ -778,12 +778,15 @@ window.PNAV = window.PNAV || { features: {} };
     function linkOf(li) { return li.querySelector(":scope > .pn-sub-link"); }
 
     function setOpen(li, on) {
+      var d = li.__drop || dropOf(li);
       if (on) {
-        if (li.hasAttribute("data-open")) return;
-        li.setAttribute("data-open", "");
+        // portal the drop to <body> so the sticky sub-bar cannot clip it
+        if (d && d.parentNode !== doc.body) doc.body.appendChild(d);
+        li.setAttribute("data-open", "");        // item flag drives the caret
+        if (d) d.setAttribute("data-open", "");  // drop flag drives the reveal
       } else {
-        if (!li.hasAttribute("data-open")) return;
         li.removeAttribute("data-open");
+        if (d) d.removeAttribute("data-open");
       }
       var a = linkOf(li);
       if (a) a.setAttribute("aria-expanded", on ? "true" : "false");
@@ -799,7 +802,7 @@ window.PNAV = window.PNAV || { features: {} };
     /* the drop is position:fixed (so the tab-row overflow can't clip it);
        park it under its tab, clamped into the viewport. */
     function positionDrop(li) {
-      var a = linkOf(li), d = dropOf(li);
+      var a = linkOf(li), d = li.__drop || dropOf(li);
       if (!a || !d) return;
       var r = a.getBoundingClientRect();
       var vw = window.innerWidth || doc.documentElement.clientWidth || 360;
@@ -835,6 +838,7 @@ window.PNAV = window.PNAV || { features: {} };
     items.forEach(function (li) {
       var link = linkOf(li);
       if (!link) return;
+      li.__drop = dropOf(li);   // cache the panel before it gets portaled to <body>
 
       /* ---- desktop hover-intent ---- */
       if (canHover) {
@@ -843,6 +847,14 @@ window.PNAV = window.PNAV || { features: {} };
           clearTimeout(closeTimer);
           closeTimer = setTimeout(function () { close(li, false); }, 140);
         });
+        // the portaled drop lives in <body>, so keep it open while hovered
+        if (li.__drop) {
+          li.__drop.addEventListener("mouseenter", function () { clearTimeout(closeTimer); });
+          li.__drop.addEventListener("mouseleave", function () {
+            clearTimeout(closeTimer);
+            closeTimer = setTimeout(function () { close(li, false); }, 140);
+          });
+        }
       }
 
       /* ---- touch / no-hover: tapping the parent link toggles, no nav ----
@@ -889,6 +901,8 @@ window.PNAV = window.PNAV || { features: {} };
     doc.addEventListener("click", function (e) {
       if (!openItem) return;
       if (openItem.contains(e.target)) return;
+      var d = openItem.__drop;                       // the portaled drop lives outside the item
+      if (d && d.contains(e.target)) return;
       closeAll();
     });
 

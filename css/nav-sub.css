@@ -453,7 +453,8 @@ html.pn-sealing .pn-sub .pn-seam-spark {
 }
 /* Shown ONLY via [data-open] (nav.js sets it on hover/focus/tap AND positions
    the fixed panel first, so there is no unpositioned flash). */
-.pn-sub-item[data-open] > .pn-subdrop {
+.pn-sub-item[data-open] > .pn-subdrop,
+.pn-subdrop[data-open] {           /* [data-open] on the drop = nav.js portaled it to <body> */
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
