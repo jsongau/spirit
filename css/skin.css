@@ -1,0 +1,104 @@
+/* ============================================================
+   skin.css — v4 component skin (doc 14 §3, §1).
+   Consumes ONLY tokens (tokens.css v4 layer). Injected sitewide
+   by build/apply-assets.mjs after micro.css.
+   Contents: CTA sheen contract, wordmark + tagline, theme toggle
+   chip, light-theme component corrections.
+   ============================================================ */
+
+/* ---- CTA contract (doc 14 §3): gradient + sheen sweep + lift +
+        electric ring. Applies to every primary .btn sitewide; ghost
+        buttons keep their quiet outline. Sheen layer parks off-canvas
+        at rest so idle buttons are calm. ---- */
+@keyframes om-sheen {
+  from { background-position: -160% 50%, 0% 50%; }
+  to   { background-position:  250% 50%, 95% 50%; }
+}
+
+.btn:not(.ghost) {
+  background:
+    linear-gradient(105deg,
+      rgba(255,255,255,0) 42%,
+      rgba(255,255,255,.5) 50%,
+      rgba(255,255,255,0) 58%) no-repeat,
+    linear-gradient(135deg, var(--cta-g1), var(--cta-g2));
+  background-size: 220% 100%, 180% 180%;
+  background-position: -160% 50%, 0% 50%;
+  color: var(--cta-text);
+  box-shadow: 0 4px 18px var(--accent-soft);
+  transition: transform .25s var(--ease-io), box-shadow .25s var(--ease-io);
+}
+.btn:not(.ghost):hover,
+.btn:not(.ghost):focus-visible {
+  animation: om-sheen .7s ease forwards;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--accent-soft), 0 0 0 3px var(--sec-soft);
+}
+.btn:not(.ghost):active {
+  transform: translateY(0) scale(.97);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn:not(.ghost):hover,
+  .btn:not(.ghost):focus-visible { animation: none; transform: none; }
+}
+
+/* ---- Wordmark + tagline (doc 14 §1): "Zodi Animal" over
+        "Unlock your Zodiac Animal" in mono caps. ---- */
+.pn-brand {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.02;
+}
+.pn-tagline {
+  font-family: var(--mono);
+  font-size: .55rem;
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .pn-tagline { display: none; } /* bar space is for the burger + tools */
+}
+
+/* ---- Theme toggle chip (auto ◐ / light ☀ / dark ☾) ---- */
+.pn-theme {
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ivory);
+  border-radius: var(--r-pill);
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  cursor: pointer;
+  font-size: .95rem;
+  line-height: 1;
+  transition: border-color var(--dur-fast) var(--ease-io),
+              color var(--dur-fast) var(--ease-io);
+}
+.pn-theme:hover,
+.pn-theme:focus-visible { border-color: var(--accent); color: var(--accent-bright); }
+
+/* ---- Seasonal sky wash: a fixed, non-interactive tint layer.
+        transparent by default; tokens give it a hue per season
+        (light theme: the ONLY seasonal shift, per doc 14 §2). ---- */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(180deg, var(--sky-tint), transparent 55%);
+}
+
+/* ---- Light-theme corrections for components authored dark-first ---- */
+:root[data-theme="light"] .btn.ghost {
+  color: var(--brass-dim);            /* text-safe pink, doc 14 acceptance */
+  border-color: var(--line);
+}
+:root[data-theme="light"] .btn.ghost:hover { border-color: var(--brass); }
+:root[data-theme="light"] .pn-theme { color: var(--ivory); }
+:root[data-theme="light"] img.invert-on-light { filter: invert(1) hue-rotate(180deg); }

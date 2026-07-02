@@ -9,12 +9,12 @@
 <meta property="og:title" content="Waning Crescent · Moon phases · Primal Animal">
 <meta property="og:description" content="The last thin light before dark. Rest, not effort. Withdraw without guilt and prepare the next seed.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/oracle.css">
 <link rel="stylesheet" href="/css/profile.css">
 
 <script>window.PN_HERE="hub";</script>
 <!--pn-assets:start-->
+<script data-pn-assets="theme-boot">(function(){try{var t=localStorage.getItem("zn_theme");if(t!=="light"&&t!=="dark"){var h=new Date().getHours();t=(h>=7&&h<19)?"light":"dark";}var m=new Date().getMonth();var s=m>=2&&m<=4?"spring":m>=5&&m<=7?"summer":m>=8&&m<=10?"autumn":"winter";var d=document.documentElement;d.dataset.theme=t;d.dataset.season=s;}catch(e){}})();</script>
 <link rel="stylesheet" href="/css/tokens.css" data-pn-assets="/css/tokens.css">
 <link rel="stylesheet" href="/css/type.css" data-pn-assets="/css/type.css">
 <link rel="preconnect" href="https://fonts.googleapis.com" data-pn-assets="gf-pre1">
@@ -23,8 +23,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap" data-pn-assets="gf-css2">
 <link rel="stylesheet" href="/css/awakening.css" data-pn-assets="/css/awakening.css">
 <link rel="stylesheet" href="/css/micro.css" data-pn-assets="/css/micro.css">
+<link rel="stylesheet" href="/css/skin.css" data-pn-assets="/css/skin.css">
 <link rel="stylesheet" href="/css/view-transitions.css" data-pn-assets="/css/view-transitions.css">
 <script src="/js/meter.js" defer data-pn-assets="meter-js"></script>
+<script src="/js/theme.js" defer data-pn-assets="theme-js"></script>
 <script src="/js/micro.js" defer data-pn-assets="micro-js"></script>
 <script src="/js/metrics.js" defer data-pn-assets="metrics-js"></script>
 <!--pn-assets:end-->
@@ -44,7 +46,7 @@
 <a class="skip-link" href="#pn-main">Skip to content</a>
 <header class="pn-bar" role="banner" data-static>
   <div class="pn-inner">
-    <a class="pn-brand" href="/index.html">The Primal <b>Oracle</b></a>
+    <a class="pn-brand" href="/index.html">Zodi <b>Animal</b><span class="pn-tagline">Unlock your Zodiac Animal</span></a>
     <nav class="pn-nav" aria-label="Primary">
         <div class="pn-item"><button class="pn-trigger" type="button" data-group="0" aria-haspopup="true" aria-expanded="false">The Oracle<span class="chev" aria-hidden="true"></span></button></div>
         <div class="pn-item"><button class="pn-trigger" type="button" data-group="1" aria-haspopup="true" aria-expanded="false">Western Signs<span class="chev" aria-hidden="true"></span></button></div>
@@ -56,6 +58,7 @@
     </nav>
     <div class="pn-tools">
       <div class="pn-orb" data-orb hidden aria-hidden="true"></div>
+      <button class="pn-theme" type="button" data-theme-toggle aria-label="Switch theme">&#9680;</button>
     </div>
     <button class="pn-burger" type="button" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   </div>
