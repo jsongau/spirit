@@ -182,7 +182,7 @@ PNAV.MAP = [
       href: "/chinese-zodiac/fire-horse-2026/", link: "Read the Fire Horse", watermark: "馬" },
     cols: [
       { items: [
-        ["/chinese-zodiac/horse/",   "Horse",   "2026 · Fire Horse",   "horse",   "cn-years-6",  "马", { featured: true }],
+        ["/chinese-zodiac/horse/",   "Horse",   "2026 · Fire Horse",   "horse",   null,          "马", { featured: true }],
         ["/chinese-zodiac/rat/",     "Rat",     PNAV.DYN.yearBand(0),  "rat",     "cn-years-0",  "鼠"],
         ["/chinese-zodiac/ox/",      "Ox",      PNAV.DYN.yearBand(1),  "ox",      "cn-years-1",  "牛"],
         ["/chinese-zodiac/tiger/",   "Tiger",   PNAV.DYN.yearBand(2),  "tiger",   "cn-years-2",  "虎"],

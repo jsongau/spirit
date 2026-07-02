@@ -448,7 +448,226 @@
 }
 
 /* ------------------------------------------------------------
-   10. Below the bar breakpoint the panels never show inline; the
+   11. Astral Weld extensions — the Zodiac / Horoscope split (sign
+   list beside a feature aside), Chinese calligraphy glyphs, the
+   featured row + tag, the feature aside itself, and the Sage Wisdom
+   free e-book card. Ported from concept-1-astral-weld.html, adapted
+   to the real grid-based .pn-row. Tokens only.
+   ------------------------------------------------------------ */
+
+/* the two-up split: a sign/animal list beside the feature aside */
+.pn-panel-east > .pn-split,
+.pn-panel-west > .pn-split {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: var(--s-5);
+  align-items: start;
+}
+@media (max-width: 980px) {
+  .pn-panel-east > .pn-split,
+  .pn-panel-west > .pn-split { grid-template-columns: 1fr; }
+}
+/* the list runs two columns of rows */
+.pn-split .pn-list { display: flex; flex-direction: column; min-width: 0; }
+.pn-split .pn-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 var(--s-5);
+}
+@media (max-width: 620px) { .pn-split .pn-two { grid-template-columns: 1fr; } }
+.pn-split .pn-row { border-bottom: 1px solid var(--line-soft); }
+
+/* the Chinese calligraphy character, rendered large in the glyph box */
+.pn-glyph.pn-cal {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--accent);
+}
+.pn-row:hover .pn-glyph.pn-cal,
+.pn-row:focus-visible .pn-glyph.pn-cal { color: var(--accent-bright); }
+
+/* the featured row (the Fire Horse, today's Western sign). Rows that
+   carry a .pn-tag switch from the base grid to a flex line so the
+   glyph, name, and end-pinned tag sit cleanly on one baseline. */
+.pn-row.is-featured {
+  border: 1px solid var(--accent-dim);
+  background: var(--accent-soft);
+  border-radius: var(--r-1);
+}
+.pn-row.is-featured .pn-row-name { color: var(--moon); }
+.pn-split .pn-row:has(.pn-tag) {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+}
+.pn-split .pn-row:has(.pn-tag) .pn-glyph { align-self: center; }
+/* the featured tag pill (2026 · Fire Horse) sits at the row's end */
+.pn-tag {
+  margin-left: auto;
+  align-self: center;
+  font: 400 .5rem/1 var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  border: 1px solid var(--accent-dim);
+  padding: 2px 6px;
+  border-radius: var(--r-pill, 999px);
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+/* the FEATURE aside (right side of the split). A watermark calligraphy
+   glyph sits behind the copy. Accentuates via the panel's --accent. */
+.pn-feature {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--accent-dim);
+  border-radius: var(--r-2);
+  padding: var(--s-4) var(--s-5) var(--s-5);
+  background: linear-gradient(150deg, var(--accent-soft), var(--panel));
+}
+.pn-feature-cal {
+  position: absolute;
+  right: -6px;
+  bottom: -30px;
+  z-index: 0;
+  pointer-events: none;
+  font-family: var(--serif);
+  font-size: 120px;
+  line-height: 1;
+  color: var(--accent-soft);
+  user-select: none;
+}
+.pn-feature > * { position: relative; z-index: 1; }
+.pn-feature-eyebrow {
+  margin: 0 0 var(--s-2);
+  font: 400 .6rem/1.3 var(--mono);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent-dim);
+}
+.pn-feature-title {
+  margin: 0 0 var(--s-3);
+  font: 560 1.4rem/1.1 var(--serif);
+  color: var(--moon);
+}
+.pn-feature-body {
+  margin: 0 0 var(--s-4);
+  font: 400 .86rem/1.6 var(--sans);
+  color: var(--body-text);
+}
+.pn-feature-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font: 600 .82rem/1.2 var(--sans);
+  color: var(--accent-bright);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-io);
+}
+.pn-feature-link:hover,
+.pn-feature-link:focus-visible { color: var(--moon); }
+.pn-feature-link:focus-visible {
+  outline: 2px solid var(--brass-bright);
+  outline-offset: 2px;
+  border-radius: var(--r-1);
+}
+
+/* the calligraphic panel chip (Chinese character): serif, accent-tinted */
+.pn-chip.pn-cal { font-family: var(--serif); font-size: 1.05rem; }
+
+/* Sage Wisdom: three text columns; the e-book card sits below in its
+   own hairline strip. Base .pn-cols handles the columns. */
+.pn-panel-sage .pn-glyph { display: none; }
+.pn-panel-sage .pn-col + .pn-col { border-left: 0; padding-left: 0; }
+.pn-panel-sage .pn-cols { gap: var(--s-4) clamp(16px, 2.5vw, 40px); }
+
+/* the free e-book CTA card, in its own strip under the Sage columns */
+.pn-panel-cta {
+  max-width: var(--maxw);
+  margin: var(--s-5) auto 0;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--line-soft);
+  box-sizing: border-box;
+}
+.pn-ebook {
+  position: relative;
+  max-width: 460px;
+  background: var(--panel-2);
+  border: 1px solid var(--accent-dim);
+  border-radius: var(--r-2);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color var(--dur-fast) var(--ease-io),
+              transform var(--dur-fast) var(--ease-io),
+              box-shadow var(--dur-fast) var(--ease-io);
+}
+.pn-ebook:hover,
+.pn-ebook:focus-within {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px oklch(0 0 0 / .35), 0 0 16px var(--accent-soft);
+}
+.pn-ebook-tag {
+  align-self: flex-start;
+  font: 400 .5rem/1 var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  border: 1px solid var(--accent-dim);
+  padding: 3px 7px;
+  border-radius: var(--r-pill, 999px);
+}
+.pn-ebook-title { margin: 0; font: 500 1rem/1.15 var(--serif); color: var(--moon); }
+.pn-ebook-body { margin: 0; font: 400 .78rem/1.55 var(--sans); color: var(--muted); }
+.pn-ebook-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  margin-top: 2px;
+  font: 600 .78rem/1.2 var(--sans);
+  color: var(--accent-bright);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-io);
+}
+.pn-ebook-link:hover,
+.pn-ebook-link:focus-visible { color: var(--moon); }
+.pn-ebook-link:focus-visible {
+  outline: 2px solid var(--brass-bright);
+  outline-offset: 2px;
+  border-radius: var(--r-1);
+}
+.pn-ebook-note {
+  font: 400 .62rem/1 var(--mono);
+  letter-spacing: .04em;
+  text-transform: none;
+  color: var(--faint);
+}
+
+/* fallback for engines without relative-color oklch(): the feature and
+   e-book washes fall back to the flat token accent-soft (set above), and
+   the drop shadow loses only its color-mix; nothing breaks. */
+
+@media (prefers-reduced-motion: reduce) {
+  .pn-feature-link,
+  .pn-ebook,
+  .pn-ebook-link { transition: none; }
+  .pn-ebook:hover,
+  .pn-ebook:focus-within { transform: none; }
+}
+
+/* ------------------------------------------------------------
+   12. Below the bar breakpoint the panels never show inline; the
    mobile drawer (nav-drawer.css) takes over. Hide panels + bar nav
    so a stray .open cannot leak onto a small screen.
    ------------------------------------------------------------ */

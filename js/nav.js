@@ -386,6 +386,14 @@ window.PNAV = window.PNAV || { features: {} };
       panel.querySelectorAll(".pn-row").forEach((row) => {
         body.appendChild(row.cloneNode(true));
       });
+      // the feature aside (Fire Horse / Today's horoscope) and the e-book
+      // CTA carry real destinations too; clone them so the drawer routes
+      // everywhere the desktop panel does (the today spans are filled by
+      // initHoroscope, which runs across the whole document after this).
+      const feature = panel.querySelector(".pn-feature");
+      if (feature) body.appendChild(feature.cloneNode(true));
+      const cta = panel.querySelector(".pn-panel-cta");
+      if (cta) body.appendChild(cta.cloneNode(true));
       panel.querySelectorAll(".pn-chips").forEach((chips) => {
         body.appendChild(chips.cloneNode(true));
       });
@@ -466,6 +474,128 @@ window.PNAV = window.PNAV || { features: {} };
         }
       } catch (e) {}
     });
+  }
+
+  /* =========================================================
+     HOROSCOPE — date-aware. Compute today's Western sun sign from
+     new Date(), light up its row in the horoscope panel, and fill
+     the Today feature aside (eyebrow/sign/blurb). Ported from
+     concept-1-astral-weld.html. Guarded: no-op if the panel or its
+     fill targets are absent (belt and braces; the panel is in the
+     bar on every page).
+     ========================================================= */
+  function initHoroscope() {
+    // [sign, startMonth(1-12), startDay] — a date belongs to a sign from
+    // its start until the day before the NEXT sign's start.
+    var SIGNS = [
+      ["capricorn",12,22],["aquarius",1,20],["pisces",2,19],["aries",3,21],
+      ["taurus",4,20],["gemini",5,21],["cancer",6,21],["leo",7,23],
+      ["virgo",8,23],["libra",9,23],["scorpio",10,23],["sagittarius",11,22]
+    ];
+    var NAMES = { aries:"Aries", taurus:"Taurus", gemini:"Gemini", cancer:"Cancer",
+      leo:"Leo", virgo:"Virgo", libra:"Libra", scorpio:"Scorpio",
+      sagittarius:"Sagittarius", capricorn:"Capricorn", aquarius:"Aquarius", pisces:"Pisces" };
+    var BLURB = {
+      aries:"Move first. The day yields to whoever commits.",
+      taurus:"Hold your ground; comfort is a strategy today.",
+      gemini:"Say the thing. Two ideas want to meet.",
+      cancer:"Tend what's yours. The tide is with you.",
+      leo:"Be seen. The room is already turning your way.",
+      virgo:"Fix one small thing and the rest follows.",
+      libra:"Choose. The scale tips the moment you lean.",
+      scorpio:"Go deep. Surfaces bore you for a reason today.",
+      sagittarius:"Aim far. The horizon is closer than it looks.",
+      capricorn:"Climb. One steady step outpaces the clever ones.",
+      aquarius:"Break the pattern. The odd idea is the right one.",
+      pisces:"Follow the pull. Your instinct is reading the room."
+    };
+    function signForDate(d) {
+      var m = d.getMonth() + 1, day = d.getDate();
+      var current = "capricorn"; // default; covers Jan 1-19 and Dec 22-31
+      for (var i = 0; i < SIGNS.length; i++) {
+        var s = SIGNS[i][0], sm = SIGNS[i][1], sd = SIGNS[i][2];
+        if (sm === 12) continue; // Capricorn's Dec-22 edge is the default
+        if (m > sm || (m === sm && day >= sd)) current = s;
+      }
+      if (m === 12 && day >= 22) current = "capricorn";
+      return current;
+    }
+    var WD = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    var MO = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    var now = new Date();
+    var sign = signForDate(now);
+
+    // light today's row wherever the horoscope list appears (desktop panel
+    // + the mobile drawer clone), so the featured state survives the clone.
+    Array.from(doc.querySelectorAll('.pn-row[data-sign="' + sign + '"]'))
+      .forEach(function (row) { row.classList.add("is-featured"); });
+
+    // fill every Today feature (again, panel + any clone)
+    var fill = function (sel, text) {
+      Array.from(doc.querySelectorAll(sel)).forEach(function (el) { el.textContent = text; });
+    };
+    fill("[data-hz-date]", "Today · " + WD[now.getDay()] + ", " + MO[now.getMonth()] + " " + now.getDate());
+    fill("[data-hz-sign]", NAMES[sign] || "");
+    fill("[data-hz-blurb]", BLURB[sign] || "");
+  }
+
+  /* =========================================================
+     THE WELD BIND — toggle html.pn-bound past a small scroll, so
+     the sub-bar lights its igniting brass seam and the join tightens
+     (styles in nav-sub.css / nav-core.css). A throttled rAF scroll
+     listener keeps it 60fps. A one-shot spark sweeps the seam once on
+     each fresh bind (html.pn-sealing), suppressed under reduced motion.
+     The spark element is injected here so the served HTML stays clean.
+     ========================================================= */
+  function initWeld() {
+    var sub = doc.querySelector(".pn-sub");
+    var root = doc.documentElement;
+    var THRESHOLD = 24;
+    var bound = false;
+    var sealTimer = null;
+
+    // inject the travelling spark once (decoration only; JS-driven)
+    if (sub && !sub.querySelector(".pn-seam-spark")) {
+      var spark = doc.createElement("span");
+      spark.className = "pn-seam-spark";
+      spark.setAttribute("aria-hidden", "true");
+      sub.appendChild(spark);
+    }
+    // clear the one-shot seal class when its sweep ends (retrigger-safe)
+    if (sub) {
+      sub.addEventListener("animationend", function (e) {
+        if (e.animationName === "pnSeamSpark") root.classList.remove("pn-sealing");
+      });
+    }
+
+    function setBound(next) {
+      if (next === bound) return;
+      bound = next;
+      root.classList.toggle("pn-bound", bound);
+      if (bound && !reduceMotion()) {
+        // fresh bind: sweep the seam once
+        root.classList.remove("pn-sealing");
+        // reflow so the animation restarts even on a rapid re-bind
+        if (sub) { void sub.offsetWidth; }
+        root.classList.add("pn-sealing");
+        clearTimeout(sealTimer);
+        sealTimer = setTimeout(function () { root.classList.remove("pn-sealing"); }, 900);
+      } else if (!bound) {
+        root.classList.remove("pn-sealing");
+      }
+    }
+
+    var ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        setBound((window.pageYOffset || doc.documentElement.scrollTop || 0) > THRESHOLD);
+        ticking = false;
+      });
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll(); // set initial state (e.g. reloads mid-page)
   }
 
   /* =========================================================
@@ -560,7 +690,9 @@ window.PNAV = window.PNAV || { features: {} };
     const panels = wirePanels(bar);
     const drawer = buildDrawer(bar);
     initMoonChip(bar, panels);
-    refreshDyn(); // after the drawer clone so both copies update
+    refreshDyn();     // after the drawer clone so both copies update
+    initHoroscope();  // after the clone too: light today's sign in both
+    initWeld();       // scroll-bound seam ignite
 
     // Escape also closes the drawer if it happens to be open (belt + braces)
     doc.addEventListener("keydown", (e) => {

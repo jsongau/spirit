@@ -34,9 +34,19 @@
 .pn-inner{max-width:none; margin:0; height:calc(var(--pn-bar-h, 64px) - 1px);
   padding:0 clamp(16px, 3vw, 32px) 0 20px; display:flex; align-items:center; gap:16px}
 
-.pn-brand{font-family:var(--serif,serif); font-size:1.2rem; letter-spacing:.4px;
-  color:var(--moon,#f5ecd2); white-space:nowrap; text-decoration:none; flex:0 0 auto}
-.pn-brand b{color:var(--accent,#d6c18c); font-weight:600}
+/* compact stacked lockup (Astral Weld): wordmark hard left, a mono
+   tagline welded on its right by a hairline, revealed at wide widths */
+.pn-brand{display:flex; flex-direction:row; align-items:center; gap:.7ch;
+  font-family:var(--serif,serif); letter-spacing:.2px; color:var(--ivory,#ece7d8);
+  white-space:nowrap; text-decoration:none; flex:0 0 auto}
+.pn-word{display:flex; flex-direction:column; line-height:1.02; font-size:18px}
+.pn-word .z{color:var(--muted,#adaec2)}
+.pn-word b{font-weight:560; color:var(--moon,#f5ecd2)}
+.pn-tagline{font-family:var(--mono,monospace); font-size:7.5px; letter-spacing:.09em;
+  line-height:1.42; text-transform:uppercase; color:var(--faint,#7f8096);
+  white-space:nowrap; padding-left:.8ch; border-left:1px solid var(--line-soft);
+  display:none}
+@media (min-width:1040px){ .pn-tagline{display:block} }
 
 /* top-level nav: pill links; overflow scrolls under a fade mask
    (canvas) so the bar can never wrap and change height */
@@ -45,20 +55,76 @@
   -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 32px),transparent);
   mask-image:linear-gradient(90deg,#000 calc(100% - 32px),transparent)}
 .pn-nav::-webkit-scrollbar{display:none}
-.pn-link,.pn-trigger{font:500 .875rem/1 var(--sans,sans-serif); color:var(--ivory,#ece7d8);
-  padding:9px 13px; border-radius:var(--r-pill,999px); letter-spacing:.01em; white-space:nowrap;
+/* the shared "Porsche" trigger hover (Astral Weld): a blurred headlight
+   bloom BEHIND the label, a thin accent underline drawing from center,
+   and a 1px lift. Text muted -> moon. No boxy pill fill. */
+.pn-link,.pn-trigger{position:relative; font:500 .875rem/1 var(--sans,sans-serif);
+  color:var(--muted,#adaec2); letter-spacing:.01em; white-space:nowrap;
+  padding:9px 13px; border-radius:var(--r-1,8px);
   background:transparent; border:none; cursor:pointer; text-decoration:none;
   display:inline-flex; align-items:center; gap:6px;
-  transition:color .18s, background .18s}
-.pn-link:hover,.pn-trigger:hover{color:var(--moon,#f5ecd2); background:var(--accent-soft)}
+  transition:color var(--dur-fast,180ms) var(--ease-out,ease),
+             transform var(--dur-fast,180ms) var(--ease-out,ease)}
+.pn-link::before,.pn-trigger::before{content:""; position:absolute; inset:-6px -2px; z-index:-1;
+  border-radius:40px;
+  background:radial-gradient(60% 120% at 50% 60%, oklch(from var(--accent) l c h / .28), transparent 70%);
+  filter:blur(7px); opacity:0; transform:scale(.7);
+  transition:opacity var(--dur,320ms) var(--ease-out,ease), transform var(--dur,320ms) var(--ease-out,ease)}
+.pn-link::after,.pn-trigger::after{content:""; position:absolute; left:50%; right:50%; bottom:4px; height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent-bright),transparent);
+  transition:left var(--dur,320ms) var(--ease-out,ease), right var(--dur,320ms) var(--ease-out,ease),
+             box-shadow var(--dur,320ms) var(--ease-out,ease)}
+.pn-link:hover,.pn-trigger:hover,
+.pn-link:focus-visible,.pn-trigger:focus-visible,
+.pn-trigger[aria-expanded="true"]{color:var(--moon,#f5ecd2); transform:translateY(-1px); background:transparent}
+.pn-link:hover::before,.pn-trigger:hover::before,
+.pn-link:focus-visible::before,.pn-trigger:focus-visible::before,
+.pn-trigger[aria-expanded="true"]::before{opacity:1; transform:scale(1)}
+.pn-link:hover::after,.pn-trigger:hover::after,
+.pn-link:focus-visible::after,.pn-trigger:focus-visible::after,
+.pn-trigger[aria-expanded="true"]::after{left:13px; right:13px;
+  box-shadow:0 0 8px oklch(from var(--accent) l c h / .5)}
 .pn-link.active,.pn-trigger.active{color:var(--accent-bright,#efe2b4)}
-/* "Find yours": the canvas pill with the standing accent underline */
-.pn-link.pn-find{color:var(--moon,#f5ecd2); box-shadow:inset 0 -2px 0 var(--accent,#d6c18c)}
+
+/* per-item accent: re-points --accent ramp so each tab's moonstone,
+   headlight bloom, and underline tint to its domain hue */
+.pn-item[data-accent="teal"]{--accent:var(--teal); --accent-bright:var(--teal-bright); --accent-dim:var(--teal-dim)}
+.pn-item[data-accent="brass"]{--accent:var(--brass); --accent-bright:var(--brass-bright); --accent-dim:var(--brass-dim)}
+.pn-item[data-accent="amethyst"]{--accent:var(--amethyst); --accent-bright:var(--amethyst-bright); --accent-dim:var(--amethyst-dim)}
+.pn-item[data-accent="jade"]{--accent:var(--jade); --accent-bright:var(--jade-bright); --accent-dim:var(--jade-dim)}
+.pn-item[data-accent="rose"]{--accent:var(--rose); --accent-bright:var(--rose-bright); --accent-dim:var(--rose-dim)}
+.pn-item[data-accent="silver"]{--accent:var(--silver); --accent-bright:var(--silver-bright); --accent-dim:var(--silver-dim)}
+.pn-item[data-accent]{--accent-soft:oklch(from var(--accent) l c h / 0.16)}
+
+/* "Find yours": its own quiet keystone, a hair brighter with a warm bloom */
+.pn-link.pn-find{color:var(--ivory,#ece7d8); font-weight:600}
+.pn-link.pn-find::before{background:radial-gradient(60% 120% at 50% 60%,
+   oklch(0.90 0.09 88 / .30), transparent 70%)}
+
+/* the moonstone in each trigger — ACCENTUATES on hover/open, never dims */
+.pn-stone{width:15px; height:15px; color:var(--accent); opacity:.85; flex:0 0 auto;
+  filter:drop-shadow(0 0 4px var(--accent-soft));
+  transition:opacity var(--dur-fast,180ms) var(--ease-out,ease),
+             transform var(--dur-fast,180ms) var(--ease-out,ease),
+             filter var(--dur-fast,180ms) var(--ease-out,ease)}
+.pn-trigger:hover .pn-stone,.pn-trigger[aria-expanded="true"] .pn-stone{
+  opacity:1; transform:translateY(-1px) scale(1.08); filter:drop-shadow(0 0 7px var(--accent-soft))}
+
 .pn-trigger .chev{width:7px; height:7px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor;
   transform:rotate(45deg) translateY(-1px); transition:transform .22s ease; opacity:.75}
-.pn-trigger.expanded{color:var(--moon,#f5ecd2); background:var(--accent-soft)}
-.pn-trigger.expanded .chev{transform:rotate(-135deg) translateY(1px)}
+.pn-trigger:hover .chev,.pn-trigger[aria-expanded="true"] .chev{opacity:1}
+.pn-trigger.expanded,.pn-trigger[aria-expanded="true"]{color:var(--moon,#f5ecd2)}
+.pn-trigger.expanded .chev,.pn-trigger[aria-expanded="true"] .chev{transform:rotate(-135deg) translateY(1px)}
 .pn-item{position:relative}
+
+/* @supports fallback: browsers without relative-color oklch() get a
+   flat accent-tinted bloom + underline instead of the per-hue mix */
+@supports not (color: oklch(from white l c h)){
+  .pn-link::before,.pn-trigger::before{background:radial-gradient(60% 120% at 50% 60%, var(--accent-soft), transparent 70%)}
+  .pn-link:hover::after,.pn-trigger:hover::after,
+  .pn-link:focus-visible::after,.pn-trigger:focus-visible::after,
+  .pn-trigger[aria-expanded="true"]::after{box-shadow:0 0 8px var(--accent-soft)}
+}
 
 /* right-side tools: [identity chip] [moon chip] [awakening ring]
    [theme toggle] [CTA]. A plain spaced flex row: every chip is an
@@ -164,10 +230,41 @@ body.pn-has-bar header.top{display:none}
 /* crawlable section links: real anchors, not shown to sighted users */
 .pn-crawl[hidden]{display:none}
 
+/* ============================================================
+   THE WELD (Astral Weld, adapted to the fixed bar + sticky sub).
+   nav.js toggles html.pn-bound past 24px of scroll. On bind the bar
+   slab cools and settles a hair, and a moonlit cool rim lights on its
+   bottom edge — the sub-bar carries the brass igniting seam (nav-sub
+   .css). Opacity/transform only; the seam animation respects reduced
+   motion (see the guard block below).
+   ============================================================ */
+:root{
+  --weld-warm:oklch(0.80 0.13 62);   /* red-light warmth at the seam */
+  --weld-cool:oklch(0.95 0.03 220);  /* cryo cool top/bottom rim */
+}
+@supports not (color: oklch(0% 0 0)){
+  :root{ --weld-warm:#f0b46a; --weld-cool:#eaf3ff }
+}
+html.pn-bound .pn-bar{
+  background:color-mix(in oklab, var(--ink) 95%, transparent);
+  border-bottom-color:transparent;
+  transition:background var(--dur,320ms) var(--ease-out,ease),
+             border-color var(--dur,320ms) var(--ease-out,ease)}
+@supports not (background: color-mix(in oklab, red, blue)){
+  html.pn-bound .pn-bar{background:var(--ink)}
+}
+/* moonlit cool rim welded onto the bar's bottom edge on bind */
+/* .pn-bar is position:sticky (declared above) so it is a containing
+   block for this absolutely-positioned rim */
+html.pn-bound .pn-bar::after{content:""; position:absolute; left:0; right:0; bottom:0; height:1px;
+  z-index:2; pointer-events:none;
+  background:linear-gradient(90deg,transparent,var(--weld-cool),transparent); opacity:.5}
+
 @media (prefers-reduced-motion: reduce){
   .pn-cta:hover,.pn-cta:focus-visible{animation:none; transform:none}
   .pn-moonpop{animation:none}
   .pn-ring .pnp-fill{transition:none}
+  html.pn-bound .pn-bar{transition:none}
 }
 
 /* the drawer's tool-chip strip: nav.js clones the bar's identity

@@ -32,6 +32,8 @@
 }
 
 /* ---- The band ---------------------------------------------------- */
+/* Astral Weld order: the sibling sub-nav (tabs) is the PRIMARY strip on
+   top; the breadcrumb is a quieter, recessed strip beneath it. */
 .pn-sub {
   /* full-width band under the top bar */
   position: sticky;
@@ -39,15 +41,28 @@
   z-index: 110; /* below .pn-bar (120), above page content */
   display: flex;
   flex-direction: column;
-  gap: var(--s-2, .5rem);
-  padding: var(--s-3, .75rem) 0 var(--s-2, .5rem);
   background: color-mix(in oklch, var(--ink, #0d0e18) 88%, transparent);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line, rgba(214,193,140,.16));
   font-family: var(--sans, sans-serif);
+  transition: background var(--dur, 320ms) var(--ease-out, ease),
+              box-shadow var(--dur, 320ms) var(--ease-out, ease);
 }
 
-/* keep the two rows on the same measure/padding as the top bar inner */
+/* PRIMARY strip: the sub-menu tabs */
+.pn-sub-primary { width: 100%; }
+
+/* CRUMB strip: recessed, quieter, its own hairline-topped band below */
+.pn-sub-crumb {
+  width: 100%;
+  border-top: 1px solid var(--line-soft, rgba(214,193,140,.08));
+  background: color-mix(in oklch, var(--ink, #0d0e18) 55%, transparent);
+}
+@supports not (background: color-mix(in oklch, red, blue)) {
+  .pn-sub-crumb { background: rgba(0,0,0,.22); }
+}
+
+/* keep both rows on the same measure/padding as the top bar inner */
 .pn-crumb,
 .pn-subnav {
   max-width: 1140px;
@@ -56,6 +71,8 @@
   padding-inline: clamp(1.25rem, 4vw, 1.625rem);
   box-sizing: border-box;
 }
+.pn-subnav { padding-block: var(--s-2, .5rem); }
+.pn-crumb { padding-block: var(--s-2, .5rem); }
 
 /* ---- Row 1: breadcrumb ------------------------------------------- */
 .pn-crumb {
@@ -134,13 +151,16 @@
   scroll-snap-align: start;
 }
 
+/* Astral Weld sub-tab: serif label with a thin luminous underline that
+   draws from center on hover. NEVER a fat pill fill. */
 .pn-subnav a {
+  position: relative;
   display: inline-flex;
   align-items: center;
   min-height: 44px; /* touch target */
-  padding: var(--s-2, .5rem) var(--s-4, 1rem);
-  border-radius: var(--r-pill, 999px);
-  font-size: .84rem;
+  padding: 0 12px;
+  font-family: var(--serif, serif);
+  font-size: .9rem;
   line-height: 1;
   letter-spacing: .01em;
   white-space: nowrap;
@@ -148,22 +168,56 @@
   text-decoration: none;
   background: transparent;
   transition: color var(--dur-fast, 180ms) var(--ease-out, ease),
-              background var(--dur-fast, 180ms) var(--ease-out, ease);
+              transform var(--dur-fast, 180ms) var(--ease-out, ease);
 }
-.pn-subnav a:hover {
+.pn-subnav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 8px;
+  height: 1.5px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--brass, #d6c18c), transparent);
+  transition: left var(--dur, 320ms) var(--ease-out, ease),
+              right var(--dur, 320ms) var(--ease-out, ease),
+              box-shadow var(--dur, 320ms) var(--ease-out, ease);
+}
+.pn-subnav a:hover,
+.pn-subnav a:focus-visible {
   color: var(--moon, #f6efd8);
-  background: var(--accent-soft, rgba(214,193,140,.16));
+  transform: translateY(-1px);
+  background: transparent;
+}
+.pn-subnav a:hover::after,
+.pn-subnav a:focus-visible::after {
+  left: 12px;
+  right: 12px;
+  box-shadow: 0 0 8px oklch(0.78 0.11 85 / .5);
 }
 
-/* the current sibling, clearly marked */
-.pn-subnav [aria-current="page"] {
-  color: var(--ink, #0d0e18);
-  background: var(--accent, #d6c18c);
-  font-weight: 600;
+/* the current sibling: brightened italic serif + a lit underline + an
+   ember star dot (meaning is never color-only) */
+.pn-subnav a[aria-current="page"] {
+  color: var(--moon, #f6efd8);
+  font-style: italic;
+  font-weight: 560;
+  background: transparent;
 }
-.pn-subnav [aria-current="page"]:hover {
-  color: var(--ink, #0d0e18);
-  background: var(--accent-bright, #efe2b4);
+.pn-subnav a[aria-current="page"]::after {
+  left: 12px;
+  right: 12px;
+  background: linear-gradient(90deg, transparent, var(--brass-bright, #efe2b4), transparent);
+  box-shadow: 0 0 10px oklch(0.90 0.09 88 / .6);
+}
+.pn-subnav a[aria-current="page"]::before {
+  content: "\2726"; /* ✦ */
+  position: absolute;
+  top: 6px;
+  right: 3px;
+  font-size: 8px;
+  color: var(--brass-bright, #efe2b4);
+  text-shadow: 0 0 7px oklch(0.90 0.09 88 / .8);
 }
 
 /* visible focus for keyboard users on both rows (no outline removal) */
@@ -174,12 +228,80 @@
   border-radius: var(--r-1, 8px);
 }
 
+/* ---- THE WELD SEAM (Astral Weld) --------------------------------- */
+/* nav.js toggles html.pn-bound past 24px of scroll. When bound, an
+   igniting brass seam lights along the sub-bar's TOP edge and the join
+   tightens (the bar's cool rim is in nav-core.css). The seam is a
+   ::before top-border glow; a one-shot spark sweeps it L->R once on
+   bind and is suppressed under reduced motion. 60fps: opacity/transform
+   only. --pn-sealing is set by nav.js for the single sweep. */
+.pn-sub::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 1px;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--brass-dim, #a8925c) 22%,
+    var(--weld-warm, #f0b46a) 50%,
+    var(--brass-dim, #a8925c) 78%,
+    transparent);
+  opacity: 0;
+  transform: scaleX(.2);
+  transform-origin: left center;
+  transition: opacity var(--dur, 320ms) var(--ease-out, ease),
+              transform var(--dur-slow, 640ms) var(--ease-out, ease),
+              box-shadow var(--dur, 320ms) var(--ease-out, ease);
+}
+html.pn-bound .pn-sub {
+  background: color-mix(in oklch, var(--ink, #0d0e18) 94%, transparent);
+  box-shadow: none;
+}
+@supports not (background: color-mix(in oklch, red, blue)) {
+  html.pn-bound .pn-sub { background: var(--ink, #0d0e18); }
+}
+html.pn-bound .pn-sub::before {
+  opacity: 1;
+  transform: scaleX(1);
+  box-shadow: 0 0 7px oklch(from var(--weld-warm) l c h / .55);
+}
+@supports not (color: oklch(from white l c h)) {
+  html.pn-bound .pn-sub::before { box-shadow: 0 0 7px var(--weld-warm, #f0b46a); }
+}
+/* the travelling ignition spark, swept once on bind by nav.js */
+.pn-sub .pn-seam-spark {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 64px;
+  height: 5px;
+  border-radius: 5px;
+  z-index: 6;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(closest-side,
+    var(--weld-cool, #eaf3ff), var(--weld-warm, #f0b46a) 45%, transparent 75%);
+  transform: translateX(-40px);
+}
+html.pn-sealing .pn-sub .pn-seam-spark {
+  animation: pnSeamSpark var(--dur-slow, 640ms) var(--ease-out, ease) forwards;
+}
+@keyframes pnSeamSpark {
+  0%   { opacity: 0; transform: translateX(-40px) scaleX(.6); }
+  12%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(calc(100vw - 20px)) scaleX(1); }
+}
+
 /* ---- Responsive collapse ----------------------------------------- */
 @media (max-width: 640px) {
   .pn-sub {
     /* the sticky offset comes from the shared :root --pn-bar-h knob
        (measured by nav.js); no local override, it would desync */
-    gap: var(--s-1, .25rem);
     padding-top: var(--s-2, .5rem);
   }
   .pn-crumb {
@@ -198,7 +320,7 @@
   }
 }
 
-/* ---- Reduced motion: no scroll animation, no transitions --------- */
+/* ---- Reduced motion: no scroll animation, no seam sweep ---------- */
 @media (prefers-reduced-motion: reduce) {
   .pn-subnav {
     scroll-behavior: auto;
@@ -208,4 +330,10 @@
   .pn-subnav a {
     transition: none;
   }
+  /* the seam becomes an instant hairline; no sweeping spark */
+  .pn-sub::before {
+    transition: opacity 1ms !important;
+    transform: scaleX(1);
+  }
+  .pn-sub .pn-seam-spark { display: none !important; }
 }
