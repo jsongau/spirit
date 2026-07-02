@@ -129,6 +129,7 @@ PNAV.MAP = [
       { title: "The Moon", mark: "☾", items: [
         ["/moon.html",        "The Moon tonight", PNAV.DYN.moonPhaseName(), null, "moon-phase"],
         ["/moon/phases/",     "The eight phases"],
+        ["/moon/in-your-sign/", "Moon in your sign"],
         ["/best-days.html",   "Best days"],
         ["/chinese-zodiac/fire-horse-2026/", "Fire Horse 2026", "begins Feb 17"]
       ]},
@@ -468,6 +469,7 @@ PNAV.HUBS = {
     items: [
       ["/moon.html", "Tonight"],
       ["/moon/phases/", "The eight phases"],
+      ["/moon/in-your-sign/", "Moon in your sign"],
       ["/moon/phases/new-moon/", "New"],
       ["/moon/phases/waxing-crescent/", "Waxing crescent"],
       ["/moon/phases/first-quarter/", "First quarter"],

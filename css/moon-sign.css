@@ -1,0 +1,421 @@
+/* ============================================================
+   moon-sign.css — "The Moon in Your Sign Today" widget
+   ------------------------------------------------------------
+   Styling for the interactive Moon-sign tool. Lives in the MOON
+   zone (.section--moon sets --accent to --silver), so everything
+   here reads SILVER through the section accent hook. Tokens only
+   for surfaces, hairlines, and glow; the Moon body itself may use
+   literal silver / blue tones (doc 09 allows literal moon values).
+
+   Design-language compliance (docs/redesign-v3/09):
+     - Motion is opacity + transform ONLY. No animated box-shadow,
+       no animated background-position, no filter: blur anywhere on
+       an animating selector.
+     - The one ambient loop is the Moon's bloom breath: it animates
+       the OPACITY of a pre-rendered SVG gradient layer (compositor
+       friendly), 7s ease-in-out, resting at mid on reduced motion.
+     - Glow arrives as painted gradients (--accent-soft) and the
+       --halo / --ember box-shadows on interactive elements only.
+     - Every animation is removed / stilled under
+       prefers-reduced-motion (block at the foot of this file).
+
+   All selectors are prefixed .msign- so nothing collides with the
+   .moon* page shell, the .fso-/.fsr- tools, or the .pf- page frame.
+   ============================================================ */
+
+/* ============================================================
+   0. SCOPED TOKENS  (self-contained; hex fallbacks first)
+   ============================================================ */
+.moon-tool {
+  --msign-moon:        var(--moon, #f6efd8);
+  --msign-ivory:       var(--ivory, #ece7d8);
+  --msign-body:        var(--body-text, var(--body, #cfcfe0));
+  --msign-muted:       var(--muted, #adaec2);
+  --msign-faint:       var(--faint, #7f8096);
+  --msign-line:        var(--line, rgba(214, 193, 140, 0.16));
+  --msign-line-soft:   var(--line-soft, rgba(214, 193, 140, 0.08));
+  --msign-field:       var(--field, #0c0e1a);
+  --msign-panel:       var(--panel, #1a1c30);
+  --msign-panel-2:     var(--panel-2, #22253d);
+  --msign-ink:         var(--ink, #0d0e18);
+  --msign-ink-2:       var(--ink-2, #131523);
+
+  /* the tool reads SILVER (the moon zone accent) */
+  --msign-accent:       var(--accent, var(--silver, #aebfe0));
+  --msign-accent-dim:   var(--accent-dim, var(--silver-dim, #7f93bd));
+  --msign-accent-bright:var(--accent-bright, var(--silver-bright, #d6e2f5));
+  --msign-accent-soft:  var(--accent-soft, rgba(174, 191, 224, 0.16));
+
+  /* halo / ember (interactive glow only) */
+  --msign-halo:  var(--halo, 0 0 18px var(--msign-accent-soft));
+  --msign-ember: var(--ember, 0 0 8px var(--msign-accent-soft));
+
+  /* literal Moon body palette (doc 09: the moon disc may use silver/blue) */
+  --msign-moon-hi:   #ffffff;   /* the brightest highlight */
+  --msign-moon-lit:  #dfe6f4;   /* lit face body, cool silver */
+  --msign-moon-lo:   #aab6cd;   /* lit face toward the limb */
+  --msign-moon-dark: #1b2036;   /* the unlit face */
+  --msign-moon-rim:  rgba(214, 224, 245, 0.35);
+
+  /* the bloom color behind the disc (painted, never a shadow) */
+  --msign-halo-color: rgba(214, 224, 245, 0.5);
+
+  font-family: var(--sans, system-ui, sans-serif);
+  color: var(--msign-body);
+}
+
+/* re-alias the SVG-consumed variables at the stage so the disc reads
+   them regardless of where the tool token block resolves */
+.moon-tool [data-msign-stage] {
+  --msign-halo: var(--msign-halo-color);
+}
+
+/* ============================================================
+   1. THE ROOT LAYOUT
+   ============================================================ */
+.moon-tool #msign-root,
+.moon-tool [data-msign] {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(180px, 260px) 1fr;
+  gap: var(--s-6, 2rem);
+  align-items: center;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  background: var(--surf-2, linear-gradient(165deg, var(--msign-panel-2), var(--msign-panel) 70%));
+  border: 1px solid var(--msign-line);
+  border-radius: var(--r-3, 22px);
+  box-shadow: var(--e-2, 0 8px 30px rgba(0, 0, 0, 0.45));
+  isolation: isolate;
+  overflow: hidden;
+}
+/* a quiet, persistent corner bloom (painted; never animated as a shadow) */
+.moon-tool #msign-root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(520px 320px at 82% -12%, var(--msign-accent-soft), transparent 68%);
+  opacity: 0.6;
+}
+/* the moonlit rim along the top edge (doc 09 §2.2) */
+.moon-tool #msign-root::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 8%; right: 8%;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent,
+    var(--msign-accent-soft), transparent);
+}
+@media (max-width: 640px) {
+  .moon-tool #msign-root,
+  .moon-tool [data-msign] {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: var(--s-5, 1.5rem);
+  }
+}
+
+/* ============================================================
+   2. THE MOON STAGE + DISC
+   ============================================================ */
+.moon-tool .msign-stage {
+  position: relative;
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  display: block;
+}
+.moon-tool .msign-moon-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+/* the bloom layer breathes via OPACITY only (compositor-friendly).
+   This is the page's one ambient loop, per doc 09 §5.6 budget. */
+.moon-tool .msign-moon-halo {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: msign-breath 7s ease-in-out infinite;
+  will-change: opacity;
+}
+@keyframes msign-breath {
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 1; }
+}
+/* the lit face and rim never animate; they are recomputed in JS on
+   the rare sign/phase change. A gentle settle when first drawn: */
+.moon-tool .msign-moon-lit {
+  transition: opacity var(--dur, 320ms) var(--ease-out, ease);
+}
+
+/* ============================================================
+   3. THE READOUT (headline, meta chips)
+   ============================================================ */
+.moon-tool .msign-body {
+  min-width: 0;
+}
+.moon-tool .msign-eyebrow {
+  font: 600 var(--fs-small, 0.72rem) / 1 var(--mono, monospace);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--msign-accent);
+  margin: 0 0 var(--s-3, 0.75rem);
+}
+.moon-tool [data-msign-headline],
+.moon-tool .msign-headline {
+  font-family: var(--serif, Georgia, serif);
+  font-size: clamp(1.7rem, 4.4vw, 2.6rem);
+  line-height: 1.08;
+  color: var(--msign-moon);
+  margin: 0 0 var(--s-4, 1rem);
+  text-wrap: balance;
+}
+.moon-tool .msign-signname {
+  color: var(--msign-accent-bright);
+  white-space: nowrap;
+}
+.moon-tool .msign-signglyph {
+  font-size: 0.82em;
+  color: var(--msign-accent);
+  /* a still ember on the glyph; no loop */
+  text-shadow: 0 0 18px var(--msign-accent-soft);
+}
+.moon-tool [data-msign-meta],
+.moon-tool .msign-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2, 0.5rem);
+  margin: 0 0 var(--s-5, 1.5rem);
+}
+@media (max-width: 640px) {
+  .moon-tool [data-msign-meta] { justify-content: center; }
+}
+.moon-tool .msign-chip {
+  font: 500 0.8rem / 1 var(--sans, sans-serif);
+  color: var(--msign-accent-bright);
+  background: var(--msign-field);
+  border: 1px solid var(--msign-line);
+  border-radius: var(--r-pill, 999px);
+  padding: 0.5rem 0.85rem;
+  white-space: nowrap;
+}
+.moon-tool .msign-chip--phase {
+  color: var(--msign-moon);
+  border-color: var(--msign-accent-dim);
+}
+
+/* ============================================================
+   4. THE READ (base + relationship line)
+   ============================================================ */
+.moon-tool [data-msign-read] {
+  margin: 0 0 var(--s-5, 1.5rem);
+}
+.moon-tool [data-msign-read][data-empty="1"] { display: none; }
+.moon-tool [data-msign-base] {
+  font-family: var(--serif, Georgia, serif);
+  font-size: 1.06rem;
+  line-height: 1.55;
+  color: var(--msign-body);
+  margin: 0;
+}
+.moon-tool [data-msign-rel] {
+  display: block;
+  margin: var(--s-4, 1rem) 0 0;
+  padding: var(--s-3, 0.75rem) 0 var(--s-3, 0.75rem) var(--s-5, 1.5rem);
+  border-left: 1px solid var(--msign-accent);
+  font: italic 400 1.05rem / 1.45 var(--serif, Georgia, serif);
+  color: var(--msign-accent-bright);
+  max-width: 46ch;
+  text-wrap: balance;
+  position: relative;
+}
+@media (max-width: 640px) {
+  .moon-tool [data-msign-rel] { margin-inline: auto; text-align: left; }
+}
+.moon-tool [data-msign-rel]::after {
+  content: "";
+  position: absolute;
+  left: -3px; bottom: 0.35rem;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--msign-accent);
+  box-shadow: var(--msign-ember);
+}
+.moon-tool [data-msign-rel][hidden] { display: none; }
+
+/* ============================================================
+   5. THE SUN-SIGN PICKER (real radios; keyboard + ARIA native)
+   ============================================================ */
+.moon-tool .msign-picker {
+  margin: 0 0 var(--s-5, 1.5rem);
+}
+.moon-tool .msign-picker-legend,
+.moon-tool .msign-picker > legend {
+  font: 600 var(--fs-small, 0.72rem) / 1.3 var(--mono, monospace);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--msign-muted);
+  margin: 0 0 var(--s-3, 0.75rem);
+  padding: 0;
+}
+.moon-tool .msign-signs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2, 0.5rem);
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 640px) {
+  .moon-tool .msign-signs { justify-content: center; }
+}
+/* each option is a label wrapping a visually-hidden radio */
+.moon-tool .msign-opt {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  cursor: pointer;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--msign-line);
+  border-radius: var(--r-pill, 999px);
+  background: var(--msign-field);
+  color: var(--msign-body);
+  font: 500 0.82rem / 1 var(--sans, sans-serif);
+  transition: border-color var(--dur-fast, 180ms) var(--ease-io, ease),
+              color var(--dur-fast, 180ms) var(--ease-io, ease),
+              transform var(--dur-fast, 180ms) var(--ease-io, ease),
+              box-shadow var(--dur-fast, 180ms) var(--ease-io, ease);
+}
+.moon-tool .msign-opt .msign-opt-glyph {
+  font-size: 1.05em;
+  color: var(--msign-accent);
+  line-height: 1;
+}
+.moon-tool .msign-opt input {
+  position: absolute;
+  opacity: 0;
+  width: 1px; height: 1px;
+  margin: 0;
+  pointer-events: none;
+}
+.moon-tool .msign-opt:hover {
+  border-color: var(--msign-accent);
+  transform: translateY(-1px);
+  box-shadow: var(--msign-halo);
+}
+/* focus ring coexists with the halo (doc 09 §3.2) */
+.moon-tool .msign-opt:focus-within {
+  border-color: var(--msign-accent);
+  box-shadow: var(--msign-halo), 0 0 0 3px var(--sec-soft, rgba(174, 191, 224, 0.3));
+  outline: none;
+}
+/* checked state: the ember-lit selection */
+.moon-tool .msign-opt:has(input:checked) {
+  border-color: var(--msign-accent);
+  color: var(--msign-moon);
+  background: color-mix(in oklab, var(--msign-field) 82%, var(--msign-accent) 18%);
+  box-shadow: var(--msign-ember);
+}
+/* fallback for engines without :has() — JS mirrors an is-on class */
+.moon-tool .msign-opt.is-on {
+  border-color: var(--msign-accent);
+  color: var(--msign-moon);
+  box-shadow: var(--msign-ember);
+}
+@supports not (background: color-mix(in oklab, red, blue)) {
+  .moon-tool .msign-opt:has(input:checked),
+  .moon-tool .msign-opt.is-on { background: var(--msign-panel-2); }
+}
+
+/* ============================================================
+   6. THE SHARE / COPY BUTTON
+   ============================================================ */
+.moon-tool .msign-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3, 0.75rem);
+  align-items: center;
+}
+@media (max-width: 640px) {
+  .moon-tool .msign-actions { justify-content: center; }
+}
+.moon-tool .msign-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+  font: 600 0.85rem / 1 var(--sans, sans-serif);
+  color: var(--msign-moon);
+  background: var(--msign-field);
+  border: 1px solid var(--msign-accent-dim);
+  border-radius: var(--r-pill, 999px);
+  padding: 0.7rem 1.15rem;
+  transition: border-color var(--dur-fast, 180ms) var(--ease-io, ease),
+              transform var(--dur-fast, 180ms) var(--ease-io, ease),
+              box-shadow var(--dur-fast, 180ms) var(--ease-io, ease);
+}
+.moon-tool .msign-copy:hover {
+  border-color: var(--msign-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--msign-halo);
+}
+.moon-tool .msign-copy:focus-visible {
+  border-color: var(--msign-accent);
+  box-shadow: var(--msign-halo), 0 0 0 3px var(--sec-soft, rgba(174, 191, 224, 0.3));
+  outline: none;
+}
+.moon-tool .msign-copy .msign-copy-ic {
+  width: 15px; height: 15px;
+  color: var(--msign-accent);
+  flex: 0 0 auto;
+}
+
+/* the small honest footnote */
+.moon-tool .msign-note {
+  margin: var(--s-4, 1rem) 0 0;
+  font: 400 0.8rem / 1.5 var(--sans, sans-serif);
+  color: var(--msign-faint);
+  max-width: 56ch;
+}
+@media (max-width: 640px) {
+  .moon-tool .msign-note { margin-inline: auto; }
+}
+
+/* the aria-live region is visually hidden but announced */
+.moon-tool .msign-sr {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============================================================
+   7. REDUCED MOTION — still the loop, drop every transition.
+   The Moon rests fully lit-bloom at the mid value (never dark).
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .moon-tool .msign-moon-halo {
+    animation: none;
+    opacity: 0.78; /* rest at the mid-to-bright value, not off */
+  }
+  .moon-tool .msign-moon-lit,
+  .moon-tool .msign-opt,
+  .moon-tool .msign-copy {
+    transition: none;
+  }
+  .moon-tool .msign-opt:hover,
+  .moon-tool .msign-copy:hover {
+    transform: none; /* keep the border-color + glow change, drop the lift */
+  }
+}

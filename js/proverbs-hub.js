@@ -43,6 +43,19 @@
   try { DATA = JSON.parse(document.getElementById("pv-data").textContent); } catch (e) { DATA = []; }
   var byId = {};
   DATA.forEach(function (p) { byId[p.id] = p; });
+
+  /* ---------- daily streak (shared key with the collection page) ---------- */
+  try {
+    var _sk = "za_proverbs_streak";
+    var _today = new Date().toISOString().slice(0, 10);
+    var _s = JSON.parse(localStorage.getItem(_sk) || "null") || { last: "", count: 0 };
+    if (_s.last !== _today) {
+      var _y = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+      _s.count = (_s.last === _y) ? (_s.count + 1) : 1;
+      _s.last = _today;
+      localStorage.setItem(_sk, JSON.stringify(_s));
+    }
+  } catch (e) {}
   var ANIMAL_HANZI = {Rat:"鼠",Ox:"牛",Tiger:"虎",Rabbit:"兔",Dragon:"龍",Snake:"蛇",Horse:"馬",Goat:"羊",Monkey:"猴",Rooster:"雞",Dog:"狗",Pig:"豬"};
 
   /* optional deeper-reading blob, keyed by proverb id */

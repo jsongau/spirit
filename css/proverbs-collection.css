@@ -1,0 +1,147 @@
+/* ============================================================
+   proverbs-collection.css — "Your Collection", the retention page
+   at /proverbs/collection/. A per-reader room, kin to the Proverb
+   Pond: moonlit ink, brass and gold, calligraphy set large. It shows
+   what a reader keeps, their days by the pond, their study mastery,
+   and the wisdom they unlock over time.
+
+   Client-rendered, noindex, mobile-first (works at 390px), every
+   motion guarded by prefers-reduced-motion at the foot.
+   Emitted page: /proverbs/collection/. Owned by
+   generate-proverb-collection.mjs.
+   ============================================================ */
+
+.pc-wrap{max-width:940px;margin:0 auto;padding:0 20px 80px}
+
+/* ---- breadcrumb + hero ---- */
+.pc-crumb{margin:14px 0 6px;font-size:.85rem;color:var(--muted,#9a9bb0)}
+.pc-crumb a{color:var(--brass-bright,#efe2b4);text-decoration:none}
+.pc-crumb a:hover{text-decoration:underline}
+.pc-hero{padding:26px 0 6px;max-width:70ch}
+.pc-eyebrow{font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.22em;font-size:.7rem;color:var(--brass-bright,#efe2b4);margin:0 0 10px}
+.pc-hero h1{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.05;margin:0 0 14px;color:var(--moon,#f5ecd2)}
+.pc-hero p{color:var(--body,#c8c9de);font-size:1.05rem;line-height:1.6;margin:0}
+.pc-hero .pc-zhbrand{font-family:"Ma Shan Zheng","Noto Serif SC",serif;color:var(--brass,#d6c18c)}
+
+/* ---- streak banner ---- */
+.pc-streak{position:relative;overflow:hidden;margin:24px 0 8px;padding:22px 24px;border-radius:20px;
+  background:radial-gradient(120% 140% at 12% 0%,rgba(28,42,66,.85) 0%,rgba(12,16,30,.85) 60%,rgba(9,12,22,.9) 100%);
+  border:1px solid rgba(214,193,140,.24);box-shadow:0 26px 64px -40px rgba(0,0,0,.9),inset 0 0 80px rgba(8,16,30,.5);
+  display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.pc-streak-moon{flex:0 0 auto;width:66px;height:66px;border-radius:50%;
+  background:radial-gradient(circle at 34% 30%,#f7efd4 0%,#e6d5a4 42%,#c7ad76 100%);
+  box-shadow:0 0 34px -6px rgba(239,226,180,.6),inset -8px -8px 18px rgba(120,96,52,.5);
+  display:grid;place-items:center}
+.pc-streak-n{font-family:var(--font-display,"Fraunces",serif);font-weight:600;font-size:1.7rem;color:#1a1410;line-height:1}
+.pc-streak-body{flex:1 1 220px;min-width:0}
+.pc-streak-head{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(1.2rem,3.4vw,1.6rem);color:var(--moon,#f5ecd2);margin:0 0 4px}
+.pc-streak-sub{color:var(--brass-bright,#efe2b4);font-family:"Space Mono",ui-monospace,monospace;letter-spacing:.04em;font-size:.78rem;margin:0}
+
+/* ---- section frame, shared ---- */
+.pc-section{margin:44px 0 0}
+.pc-section-head{margin:0 0 16px;max-width:66ch}
+.pc-section-head h2{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(1.5rem,4vw,2.1rem);color:var(--moon,#f5ecd2);margin:0 0 6px}
+.pc-section-head p{color:var(--muted,#9a9bb0);line-height:1.6;margin:0}
+
+/* ---- kept cards ---- */
+.pc-kept-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.pc-card{position:relative;padding:22px 22px 18px;border-radius:16px;
+  background:linear-gradient(180deg,rgba(20,22,40,.55),rgba(12,14,26,.55));border:1px solid rgba(214,193,140,.16);
+  transition:transform .25s,border-color .25s,box-shadow .25s}
+.pc-card:hover{transform:translateY(-3px);border-color:rgba(214,193,140,.4);box-shadow:0 24px 50px -30px rgba(0,0,0,.9)}
+.pc-card-zh{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-size:clamp(2rem,6vw,2.6rem);line-height:1.5;color:var(--moon,#f5ecd2);margin:0 0 8px;letter-spacing:.04em;display:flex;align-items:center;gap:.22em;flex-wrap:wrap}
+.pc-card-zh .pc-zh-text{flex:0 1 auto}
+.pc-pinyin{font-family:"Space Mono",ui-monospace,monospace;color:var(--brass-bright,#efe2b4);letter-spacing:.05em;font-size:.8rem;margin:0 0 8px}
+.pc-mean{color:var(--body,#c8c9de);margin:0 0 12px;font-size:.96rem;line-height:1.5}
+.pc-card-foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:2px;padding-top:12px;border-top:1px solid rgba(214,193,140,.14)}
+.pc-card-animal{color:var(--brass-bright,#efe2b4);text-decoration:none;font-size:.8rem;letter-spacing:.02em}
+.pc-card-animal:hover{text-decoration:underline}
+.pc-card-say{margin-left:auto}
+
+/* ---- speaker button (kin to .pv-say) ---- */
+.pc-say{flex:0 0 auto;display:inline-grid;place-items:center;width:2rem;height:2rem;padding:0;border-radius:50%;
+  border:1px solid rgba(214,193,140,.4);background:rgba(214,193,140,.08);color:var(--brass-bright,#efe2b4);cursor:pointer;
+  transition:transform .2s,background .2s,box-shadow .2s;-webkit-tap-highlight-color:transparent}
+.pc-say:hover{background:rgba(214,193,140,.2);transform:scale(1.08)}
+.pc-say.is-saying{animation:pc-pulse 1s ease-in-out infinite}
+@keyframes pc-pulse{0%{box-shadow:0 0 0 0 rgba(214,193,140,.45)}70%{box-shadow:0 0 0 10px rgba(214,193,140,0)}100%{box-shadow:0 0 0 0 rgba(214,193,140,0)}}
+
+/* ---- empty state, in voice ---- */
+.pc-empty{text-align:center;padding:44px 24px;border-radius:18px;
+  background:linear-gradient(180deg,rgba(20,22,40,.5),rgba(12,14,26,.5));border:1px dashed rgba(214,193,140,.28)}
+.pc-empty p{font-family:var(--font-display,"Fraunces",serif);font-style:italic;font-size:1.18rem;line-height:1.55;color:var(--moon,#f5ecd2);margin:0 auto 16px;max-width:46ch}
+.pc-empty-cta{display:inline-block;font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;
+  color:#0a1526;background:linear-gradient(180deg,#efe2b4,#d6c18c);border-radius:999px;padding:11px 22px;text-decoration:none;
+  box-shadow:0 12px 30px -12px rgba(214,193,140,.7);transition:transform .2s,box-shadow .2s}
+.pc-empty-cta:hover{transform:translateY(-2px);box-shadow:0 16px 34px -12px rgba(214,193,140,.85)}
+
+/* ---- study mastery ---- */
+.pc-study{padding:22px 24px;border-radius:18px;
+  background:linear-gradient(180deg,rgba(20,22,40,.5),rgba(12,14,26,.5));border:1px solid rgba(214,193,140,.18);
+  display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.pc-study-num{flex:0 0 auto;font-family:var(--font-display,"Fraunces",serif);font-weight:600;font-size:clamp(2.4rem,7vw,3.2rem);line-height:1;color:var(--brass-bright,#efe2b4)}
+.pc-study-body{flex:1 1 220px;min-width:0}
+.pc-study-body p{color:var(--body,#c8c9de);line-height:1.55;margin:0 0 8px}
+.pc-study-link{font-size:.88rem}
+.pc-study-link a{color:var(--brass-bright,#efe2b4);text-decoration:none}
+.pc-study-link a:hover{text-decoration:underline}
+
+/* ---- milestones ---- */
+.pc-tier-now{padding:24px;border-radius:18px;
+  background:radial-gradient(120% 160% at 88% 0%,rgba(46,60,40,.5) 0%,rgba(12,16,26,.6) 62%);
+  border:1px solid rgba(214,193,140,.22);margin:0 0 18px}
+.pc-tier-rank{font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.16em;font-size:.66rem;color:var(--brass-bright,#efe2b4);margin:0 0 8px}
+.pc-tier-name{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(1.6rem,4.6vw,2.3rem);color:var(--moon,#f5ecd2);margin:0 0 8px;line-height:1.1}
+.pc-tier-line{color:var(--body,#c8c9de);line-height:1.55;margin:0}
+.pc-tier-line b{color:var(--brass-bright,#efe2b4);font-weight:600}
+
+/* progress toward the next tier */
+.pc-prog{margin:16px 0 0}
+.pc-prog-track{height:9px;border-radius:999px;background:rgba(214,193,140,.14);overflow:hidden;border:1px solid rgba(214,193,140,.2)}
+.pc-prog-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#c7ad76,#efe2b4);transition:width .6s ease}
+.pc-prog-cap{margin:8px 0 0;font-family:"Space Mono",ui-monospace,monospace;font-size:.72rem;letter-spacing:.04em;color:var(--muted,#9a9bb0)}
+
+/* the ladder of tiers */
+.pc-ladder{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:0}
+.pc-rung{padding:16px 16px 14px;border-radius:14px;background:linear-gradient(180deg,rgba(20,22,40,.45),rgba(12,14,26,.45));
+  border:1px solid rgba(214,193,140,.14);transition:border-color .2s}
+.pc-rung.is-earned{border-color:rgba(214,193,140,.5);box-shadow:inset 0 0 40px rgba(214,193,140,.06)}
+.pc-rung.is-here{border-color:var(--brass,#d6c18c);box-shadow:0 0 0 1px rgba(214,193,140,.3),inset 0 0 44px rgba(214,193,140,.1)}
+.pc-rung-name{font-family:var(--font-display,"Fraunces",serif);color:var(--moon,#f5ecd2);font-size:1.06rem;margin:0 0 4px}
+.pc-rung.is-locked .pc-rung-name{color:var(--muted,#9a9bb0)}
+.pc-rung-need{font-family:"Space Mono",ui-monospace,monospace;font-size:.68rem;letter-spacing:.05em;color:var(--brass-bright,#efe2b4);margin:0}
+.pc-rung.is-locked .pc-rung-need{color:var(--muted,#9a9bb0)}
+.pc-rung-badge{display:inline-block;margin-top:8px;font-family:"Space Mono",ui-monospace,monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+  color:#0a1526;background:var(--brass,#d6c18c);border-radius:999px;padding:3px 9px}
+.pc-rung.is-locked .pc-rung-badge{display:none}
+
+/* ---- wander (never a dead end) ---- */
+.pc-wander{margin:52px 0 0;padding:24px;border-radius:16px;border:1px solid rgba(214,193,140,.18);background:rgba(12,14,26,.5)}
+.pc-wander h2{font-family:var(--font-display,"Fraunces",serif);font-weight:560;color:var(--moon,#f5ecd2);margin:0 0 8px;font-size:1.3rem}
+.pc-wander p{color:var(--body,#c8c9de);line-height:1.6;margin:0 0 14px;max-width:72ch}
+.pc-wander a{color:var(--brass-bright,#efe2b4)}
+.pc-zodiac-row{display:flex;flex-wrap:wrap;gap:10px;margin:0}
+.pc-zodiac-chip{font-size:.86rem;letter-spacing:.02em;color:var(--brass-bright,#efe2b4);background:rgba(214,193,140,.08);
+  border:1px solid rgba(214,193,140,.28);border-radius:999px;padding:8px 15px;text-decoration:none;transition:background .2s,border-color .2s,transform .2s}
+.pc-zodiac-chip:hover{background:rgba(214,193,140,.2);border-color:var(--brass,#d6c18c);transform:translateY(-1px)}
+.pc-zodiac-chip .pc-zh-small{font-family:"Ma Shan Zheng","Noto Serif SC",serif;margin-right:.35em}
+
+/* ---- footer ---- */
+.pc-foot{margin-top:44px}
+.pc-foot .pf-disc{color:var(--muted,#9a9bb0);font-size:.85rem;max-width:80ch}
+
+/* ---- responsive ---- */
+@media (max-width:520px){
+  .pc-streak{padding:18px}
+  .pc-study{padding:18px}
+  .pc-tier-now{padding:18px}
+}
+
+/* ---- reduced motion ---- */
+@media (prefers-reduced-motion:reduce){
+  .pc-card{transition:none}
+  .pc-say:hover{transform:none}
+  .pc-say.is-saying{animation:none}
+  .pc-prog-fill{transition:none}
+  .pc-empty-cta:hover,.pc-zodiac-chip:hover{transform:none}
+}
