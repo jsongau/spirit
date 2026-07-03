@@ -1,135 +1,108 @@
 /* ============================================================
-   footer.css — sitewide canvas footer (canvas-template-v2 FOOTER)
-   Injected on every page by build/apply-footer.mjs:
-     footer.om-footer
-       .omf-moonrise (aria-hidden ornament: sky gradient, rising
-                      moon disc, brass-to-season hairline)
-       .omf-field (ink-2 room)
-         .omf-brandrow (wordmark + blurb)
-         nav.sitemap-footer > .sf-inner > .sf-col*  (GEO columns,
-                      content unchanged, restyled here)
-         .omf-bottom (.sf-note + "made under two skies")
-   Tokens only; dark celestial is the only theme. The only
-   declared value is the moonface highlight token, shared with
-   home-v4.css (--v4-moonface).
+   footer.css — sitewide universal footer (v2 .v2-foot)
+   Source markup lives in components/footer.html and is baked into
+   every page at build time by build/apply-footer.mjs.
+   Tokens read from the site's design system; every var() carries a
+   dark fallback so the footer renders even before tokens load.
    ============================================================ */
 
+/* declared here historically and shared with home-v4.css; keep it */
 :root { --v4-moonface: #fffaf0; }
 
-.om-footer { margin-top: clamp(32px, 6vh, 64px); }
+.v2-foot {
+  margin-top: clamp(32px, 6vh, 64px);
+  border-top: 1px solid var(--line-soft, rgba(214, 193, 140, .08));
+  background: var(--ink-2, #131523);
+  padding: 56px clamp(20px, 5vw, 48px) 48px;
+}
+.v2-foot .fwrap { max-width: var(--maxw, 1280px); margin: 0 auto; }
 
-/* ---- the moonrise ornament band ---- */
-.omf-moonrise {
-  position: relative;
-  height: 96px;
-  background: linear-gradient(180deg, transparent, var(--glow));
-  overflow: hidden;
-}
-.omf-moonball {
-  position: absolute;
-  left: 50%;
-  bottom: -26px;
-  transform: translateX(-50%);
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, var(--v4-moonface), var(--accent) 60%, var(--season) 100%);
-  box-shadow: 0 0 60px var(--accent-soft);
-}
-.omf-hairline {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent), var(--season), transparent);
-}
-
-/* ---- the footer field ---- */
-.omf-field { background: var(--ink-2); }
-
-.omf-brandrow {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 48px clamp(16px, 3vw, 32px) 6px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.omf-wordmark {
-  font-family: var(--serif);
+/* brand + blurb */
+.v2-foot .fbrand {
+  font-family: var(--serif, Georgia, "Times New Roman", serif);
   font-size: 1.15rem;
-  color: var(--moon);
+  color: var(--moon, #f6efd8);
+  margin-bottom: 6px;
 }
-.omf-wordmark b { color: var(--accent); font-weight: 600; }
-.omf-blurb {
-  margin: 0;
-  font: 400 .85rem/1.6 var(--sans);
-  color: var(--muted);
+.v2-foot .fbrand b { color: var(--accent, #d6c18c); font-weight: 500; }
+.v2-foot .fblurb {
+  color: var(--muted, #adaec2);
+  font-size: .86rem;
+  line-height: 1.6;
   max-width: 44ch;
+  margin: 0 0 28px;
 }
 
-/* ---- the GEO link columns (content untouched, canvas skin) ---- */
-.om-footer .sitemap-footer {
-  border-top: 0;
-  margin-top: 0;
-  padding: 22px clamp(16px, 3vw, 32px) 24px;
-  background: transparent;
-}
-.om-footer .sf-inner {
-  max-width: 1280px;
-  margin: 0 auto;
+/* pillar columns */
+.v2-foot .fcols {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
-  gap: 26px clamp(20px, 3vw, 44px);
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 24px 32px;
+  margin-bottom: 26px;
 }
-.om-footer .sf-col h3 {
-  font: 600 .66rem/1.3 var(--sans);
-  letter-spacing: .26em;
+.v2-foot h4 {
+  font-family: var(--mono, ui-monospace, "SFMono-Regular", monospace);
+  font-size: .64rem;
+  letter-spacing: .24em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent, #d6c18c);
   margin: 0 0 10px;
 }
-.om-footer .sf-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
-.om-footer .sf-col a {
-  color: var(--muted);
-  font: 400 .85rem/1.7 var(--sans);
+.v2-foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.v2-foot a {
+  color: var(--muted, #adaec2);
+  font-size: .86rem;
+  line-height: 1.7;
   text-decoration: none;
-  transition: color var(--dur-fast) var(--ease-io);
+  transition: color var(--dur-fast, .18s) ease;
 }
-.om-footer .sf-col a:hover { color: var(--moon); }
-.om-footer .sf-col a:focus-visible {
-  outline: 2px solid var(--brass-bright);
+.v2-foot a:hover { color: var(--moon, #f6efd8); }
+.v2-foot a:focus-visible {
+  outline: 2px solid var(--brass-bright, #efe2b4);
   outline-offset: 2px;
-  border-radius: var(--r-1);
+  border-radius: var(--r-1, 8px);
 }
 
-/* ---- bottom row ---- */
-.omf-bottom {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 18px clamp(16px, 3vw, 32px) 28px;
-  border-top: 1px solid var(--line-soft);
+/* entity band: every sign, every year */
+.v2-foot .fent {
+  border-top: 1px solid var(--line-soft, rgba(214, 193, 140, .08));
+  padding-top: 22px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+@media (min-width: 760px) {
+  .v2-foot .fent { grid-template-columns: 1fr 1fr; }
+}
+.v2-foot .fent-grid {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 6px 16px;
+}
+.v2-foot .fent-grid a {
   display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
   align-items: baseline;
-  justify-content: space-between;
+  gap: 7px;
+  font-size: .82rem;
 }
-.om-footer .sf-note {
-  margin: 0;
-  font: 400 .75rem/1.6 var(--sans);
-  color: var(--faint);
+.v2-foot .fent-grid .g {
+  color: var(--accent, #d6c18c);
+  min-width: 1.1em;
+  text-align: center;
+}
+
+/* legal / disclaimer note */
+.v2-foot .fnote {
+  color: var(--faint, #7f8096);
+  font-size: .72rem;
+  line-height: 1.6;
+  margin: 26px 0 0;
   max-width: 74ch;
-}
-.omf-madeunder {
-  margin: 0;
-  font: 400 .66rem/1.4 var(--mono);
-  letter-spacing: .04em;
-  color: var(--faint);
-  white-space: nowrap;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .om-footer .sf-col a { transition: none; }
+  .v2-foot a { transition: none; }
 }

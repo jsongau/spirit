@@ -267,6 +267,7 @@ PNAV.MAP = [
         ["/traditions/stones-for-your-animal/",      "Stones for your animal"]
       ]},
       { title: "Feng shui", mark: "卦", items: [
+        ["/feng-shui/commanding-position/", "Commanding position", "interactive"],
         ["/feng-shui/bagua/",       "The bagua"],
         ["/feng-shui/five-elements/", "Five phases"],
         ["/feng-shui/kua-number/",  "Your Kua number"],
@@ -483,6 +484,7 @@ PNAV.HUBS = {
       ]],
       ["/feng-shui/bedroom/", "In the home", [
         ["/feng-shui/bedroom/", "Bedroom"],
+        ["/feng-shui/commanding-position/", "Commanding position"],
         ["/feng-shui/front-door/", "Front door"],
         ["/feng-shui/office-desk/", "Office and desk"],
         ["/feng-shui/wealth-corner/", "Wealth corner"],
