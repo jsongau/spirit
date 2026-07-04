@@ -1,0 +1,13 @@
+# OS / editor cruft
+.DS_Store
+**/.DS_Store
+
+# sandbox mount artifacts (harmless on your Mac, ignored anyway)
+.fuse_hidden*
+
+# local backups created during edits
+_promote-backup-*/
+_footer-backup-*/
+
+# scratch / test
+__deltest__/

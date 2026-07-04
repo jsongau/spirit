@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Primal Oracle: find your Primal Animal from Chinese and Western zodiac</title>
+<meta name="description" content="Enter your date of birth to find your Primal Animal, the single creature where your Chinese zodiac year and Western Sun sign meet. Read your five gates, get your stones, and test a match.">
+<meta property="og:title" content="The Primal Oracle: find your Primal Animal">
+<meta property="og:description" content="Your Chinese year animal and your Western Sun sign combine into one Primal Animal out of 144. Find yours, read it, and see who you match.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://spirit-omega.vercel.app/">
+<meta name="robots" content="noindex, follow"><!-- v2 preview: lift noindex when this replaces index.html -->
+<meta property="og:url" content="https://spirit-omega.vercel.app/">
+<meta property="og:site_name" content="The Primal Oracle">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://spirit-omega.vercel.app/social/home-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Primal Oracle: find the one animal where your Chinese zodiac year and Western Sun sign cross, out of 144.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Primal Oracle: find your Primal Animal">
+<meta name="twitter:description" content="Your Chinese year animal and your Western Sun sign combine into one Primal Animal out of 144. Find yours free, read it, and see who you match.">
+<meta name="twitter:image" content="https://spirit-omega.vercel.app/social/home-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/oracle.css">
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/atmosphere.css">
+<link rel="stylesheet" href="css/descent.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/home-interactive.css">
+<link rel="stylesheet" href="css/home-v4.css">
+<!-- Proverb feature: Ma Shan Zheng calligraphy font + PROVERB_CSS (from build/proverbs.mjs) -->
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* PROVERB_CSS — inlined verbatim from build/proverbs.mjs so the server-rendered proverb is styled without JS */
+.pf-proverb{margin:28px 0;padding:24px 26px;border-left:3px solid var(--brass,#d6c18c);background:linear-gradient(90deg,rgba(214,193,140,.08),transparent);border-radius:0 14px 14px 0}
+.pf-proverb-zh{font-family:"Ma Shan Zheng","Noto Serif SC",var(--serif,serif);font-size:clamp(2.4rem,8vw,3.4rem);line-height:1.8;color:var(--moon,#f5ecd2);margin:0 0 14px;letter-spacing:.04em}
+.pf-proverb-zh ruby{margin:0 3px}
+.pf-proverb-zh rt{font-family:"Inter",system-ui,sans-serif;font-size:.62rem;color:var(--brass-bright,#efe2b4);font-weight:500;letter-spacing:.02em}
+.pf-proverb-zh .cx-punct{font-size:.7em;opacity:.55}
+.pf-proverb-lit,.pf-proverb-mean{margin:3px 0;color:var(--body);max-width:64ch;font-size:.95rem}
+.pf-proverb-lit .k,.pf-proverb-mean .k{display:inline-block;min-width:82px;color:var(--brass-bright,#efe2b4);font-size:.72rem;text-transform:uppercase;letter-spacing:.09em}
+.pf-proverb-soul{margin:14px 0 10px;color:var(--moon,#f5ecd2);font-family:var(--serif,serif);font-size:1.18rem;font-style:italic;max-width:60ch;line-height:1.55}
+.pf-proverb-note{color:var(--muted,#9a9bb0);font-size:.85rem;margin:0}
+  .peekGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:18px}
+  .peekCard{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;transition:border-color .15s,transform .15s}
+  .peekCard:hover{border-color:var(--brass);transform:translateY(-2px)}
+  .peekCard .pn{display:block;font-family:var(--serif);font-size:1.25rem;color:var(--moon);line-height:1.1}
+  .peekCard .ps{display:block;font-family:var(--mono,monospace);font-size:.72rem;color:var(--muted);margin-top:7px;letter-spacing:.03em}
+  .pathsGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+  .pathCard{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .pathCard h3{font-family:var(--serif);color:var(--brass-bright);font-size:1.2rem;margin:0 0 4px}
+  .pathCard p{margin:0;font-size:.9rem;color:var(--body)}
+  .btnRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .today{display:flex;align-items:center;gap:18px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin:22px auto 0;max-width:720px;flex-wrap:wrap}
+  .today-moon{width:46px;height:46px;border-radius:50%;flex:0 0 auto;background:radial-gradient(circle at 35% 30%,#fffaf0,#d9cfa6 55%,#b6ac82 100%);box-shadow:0 0 24px rgba(245,236,210,.25)}
+  .today-body{flex:1 1 240px}
+  .today-lead{margin:0;font-family:var(--serif);font-size:1.3rem;color:var(--moon);line-height:1.2}
+  .today-sub{margin:5px 0 0;color:var(--body);font-size:.9rem}
+  .today .btn{white-space:nowrap}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","@id":"https://spirit-omega.vercel.app/#website","url":"https://spirit-omega.vercel.app/","name":"The Primal Oracle","alternateName":"Primal Animal","description":"Find your Primal Animal, the single creature where your Chinese zodiac year and your Western Sun sign meet, out of 144 combinations.","inLanguage":"en","publisher":{"@id":"https://spirit-omega.vercel.app/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://spirit-omega.vercel.app/#read?dob={birth_date}"},"query-input":"required name=birth_date"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://spirit-omega.vercel.app/#organization","name":"The Primal Oracle","alternateName":"Primal Animal","url":"https://spirit-omega.vercel.app/","description":"The Primal Oracle fuses the Chinese zodiac year and the Western Sun sign into one of 144 Primal Animals, with readings, compatibility matching, and lunar-timing guidance. Meaning and reflection, not prediction.","knowsAbout":["Chinese zodiac","Western zodiac","Sun sign astrology","Chinese year animals","Lunar New Year","Zodiac compatibility","Primal Animal"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","@id":"https://spirit-omega.vercel.app/#app","name":"The Primal Oracle","applicationCategory":"LifestyleApplication","operatingSystem":"Web browser","url":"https://spirit-omega.vercel.app/","browserRequirements":"Requires JavaScript. Runs entirely in the browser; no birth date is sent to a server.","description":"A free tool that combines your Chinese zodiac year and your Western Sun sign into one of 144 Primal Animals. Enter your date of birth to find your animal, read its five gates, and test compatibility with someone else.","featureList":["Find your Primal Animal from your date of birth","144 combinations of Chinese zodiac year and Western Sun sign","Correct lunar New Year boundary for 1940 to 2032","Compatibility test between two birth dates","Moon phase and lunar timing"],"isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://spirit-omega.vercel.app/#organization"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","@id":"https://spirit-omega.vercel.app/#faq","mainEntity":[
+{"@type":"Question","name":"What is a Primal Animal?","acceptedAnswer":{"@type":"Answer","text":"A Primal Animal is the single creature you get when you combine your Western Sun sign with your Chinese zodiac year. Twelve Sun signs cross twelve year animals to make 144 combinations, and each combination is named for its own animal. A Cancer born in the Year of the Snake, for example, is the Chambered Nautilus."}},
+{"@type":"Question","name":"How do I find my Primal Animal?","acceptedAnswer":{"@type":"Answer","text":"Enter your date of birth into the Primal Oracle. It reads your Western Sun sign from the month and day, reads your Chinese year animal from the year and the real lunar New Year date, and crosses the two on the 144 grid to name your animal. The lookup is free and runs entirely in your browser."}},
+{"@type":"Question","name":"What animal is Cancer and Snake?","acceptedAnswer":{"@type":"Answer","text":"In the Primal Animal system, a Cancer born in the Year of the Snake is the Chambered Nautilus. It is one of the 144 Primal Animals, each of which is a distinct crossing of one Western Sun sign with one Chinese zodiac year."}},
+{"@type":"Question","name":"How does the lunar New Year boundary affect my Chinese year animal?","acceptedAnswer":{"@type":"Answer","text":"The Chinese year begins at the lunar New Year, not on January 1, and that date shifts between late January and mid February each year. A birthday in that early window can belong to the previous year's animal. The Primal Oracle uses the real lunar New Year date for every year from 1940 to 2032, so it names the correct animal for people born near the boundary."}},
+{"@type":"Question","name":"Is the Primal Animal accurate, or is it prediction?","acceptedAnswer":{"@type":"Answer","text":"The astronomy is real and checkable: the Sun signs, the lunar New Year dates for 1940 to 2032, the twelve-year cycle, and the Moon phase. The animal grid and the readings built on top of them are a tradition of meaning for reflection, not a forecast. Read your animal as a mirror you can act on, not a prediction of what will happen."}},
+{"@type":"Question","name":"Is the Primal Oracle free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Finding your Primal Animal, reading it, and testing a match are all free, with no account required. The tool runs in your browser and your date of birth is not sent to any server."}}
+]}
+</script>
+<!--pn-assets:start-->
+<script data-pn-assets="theme-boot">(function(){try{var m=new Date().getMonth();var s=m>=2&&m<=4?"spring":m>=5&&m<=7?"summer":m>=8&&m<=10?"autumn":"winter";var d=document.documentElement;d.dataset.theme="dark";d.dataset.season=s;}catch(e){}})();</script>
+<link rel="stylesheet" href="css/tokens.css" data-pn-assets="/css/tokens.css">
+<link rel="stylesheet" href="css/type.css" data-pn-assets="/css/type.css">
+<link rel="preconnect" href="https://fonts.googleapis.com" data-pn-assets="gf-pre1">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin data-pn-assets="gf-pre2">
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/fraunces/v37/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U.woff2" crossorigin data-pn-assets="fraunces-preload">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap" data-pn-assets="gf-css2">
+<link rel="stylesheet" href="css/awakening.css" data-pn-assets="/css/awakening.css">
+<link rel="stylesheet" href="css/micro.css" data-pn-assets="/css/micro.css">
+<link rel="stylesheet" href="css/skin.css" data-pn-assets="/css/skin.css">
+<link rel="stylesheet" href="css/view-transitions.css" data-pn-assets="/css/view-transitions.css">
+<script src="js/meter.js" defer data-pn-assets="meter-js"></script>
+<script src="js/theme.js" defer data-pn-assets="theme-js"></script>
+<script src="js/micro.js" defer data-pn-assets="micro-js"></script>
+<script src="js/metrics.js" defer data-pn-assets="metrics-js"></script>
+<!--pn-assets:end-->
+<link rel="stylesheet" href="css/zodi.css">
+<!--pn-css:start-->
+<link rel="stylesheet" href="css/nav-core.css" data-pn="/css/nav-core.css">
+<link rel="stylesheet" href="css/nav-mega.css" data-pn="/css/nav-mega.css">
+<link rel="stylesheet" href="css/nav-drawer.css" data-pn="/css/nav-drawer.css">
+<link rel="stylesheet" href="css/nav-sub.css" data-pn="/css/nav-sub.css">
+<link rel="stylesheet" href="css/footer.css" data-pn="/css/footer.css">
+<link rel="stylesheet" href="css/a11y.css" data-pn="/css/a11y.css">
+<!--pn-css:end-->
+</head>
+<body class="pn-has-bar home-v4" data-zodi-account="account-v2.html">
+<!--pn-static:start-->
+<a class="skip-link" href="#pn-main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ico-moonstone" viewBox="0 0 24 24"><path d="M12 2.6c4 2 6.4 5.1 6.4 9.4S16 19.6 12 21.4C8 19.6 5.6 16.3 5.6 12S8 4.6 12 2.6Z" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M12 2.6C10 6 9 9 9 12s1 6 3 9.4" fill="none" stroke="currentColor" stroke-width=".8" opacity=".5"/><ellipse cx="10.4" cy="9" rx="2.2" ry="3.2" fill="currentColor" opacity=".2"/></symbol></svg>
+<header class="pn-bar" role="banner" data-static>
+  <div class="pn-inner">
+    <a class="pn-brand" href="/index.html"><span class="pn-word"><span class="z">Zodi</span> <b>Animal</b></span><span class="pn-tagline">Unlock your<br>Primal Zodiac<br>Animal Spirit</span></a>
+    <nav class="pn-nav" aria-label="Primary">
+        <a class="pn-link pn-find" href="/index.html#read">Find yours</a>
+        <div class="pn-item" data-accent="teal"><button class="pn-trigger" type="button" data-group="1" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Explore<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="brass"><button class="pn-trigger" type="button" data-group="2" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Zodiac<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="amethyst"><button class="pn-trigger" type="button" data-group="3" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Horoscope<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="jade"><button class="pn-trigger" type="button" data-group="4" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Sage Wisdom<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="rose"><button class="pn-trigger" type="button" data-group="5" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Bonds<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="silver"><button class="pn-trigger" type="button" data-group="6" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Moon<span class="chev" aria-hidden="true"></span></button></div>
+    </nav>
+    <div class="pn-tools">
+      <div class="pn-orb" data-orb hidden aria-hidden="true"></div>
+      <a class="pn-id" data-id-chip href="/index.html" hidden></a>
+      <div class="pn-moonwrap">
+        <button class="pn-moon" type="button" data-moon-chip aria-haspopup="true" aria-expanded="false" aria-controls="pn-moonpop" hidden></button>
+        <div class="pn-moonpop" id="pn-moonpop" data-moon-pop role="region" aria-label="Moon phase tonight" hidden>
+          <div class="pnm-head"><span class="pnm-glyph" aria-hidden="true"></span><div><p class="pnm-name"></p><p class="pnm-pct"></p></div></div>
+          <p class="pnm-meaning"></p>
+          <p class="pnm-favors"></p>
+          <a class="pnm-link" href="/moon.html">Read the Moon tonight</a>
+        </div>
+      </div>
+      <a class="pn-ring" data-ring-slot href="/awakening.html" hidden></a>
+      <a class="pn-cta" href="/index.html#read">Reveal my animal <span aria-hidden="true">&#10022;</span></a>
+    </div>
+    <button class="pn-burger" type="button" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </div>
+  <div class="pn-dd" data-dd><div class="pn-dd-mount"></div></div>
+  <div class="pn-panel pn-panel-explore" data-group="1" data-accent="teal" role="region" aria-label="Explore" hidden>
+    <p class="pn-panel-eyebrow">Everything the wheel opens, one animal at the center</p>
+    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">✦</span> Begin</p><a class="pn-row" href="/index.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Find your animal</span></a><a class="pn-row" href="/daily.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Today's reading</span><span class="pn-row-sub" data-dyn="date-today">Fri, Jul 3</span></a><a class="pn-row" href="/year.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Year finder</span></a><a class="pn-row" href="/account.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your account</span><span class="pn-row-sub">Zodi Karma ledger</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Menagerie</p><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">All 144 animals</span></a><a class="pn-row" href="/western-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Western wing</span></a><a class="pn-row" href="/chinese-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Eastern wing</span></a><a class="pn-row" href="/zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Zodiac crossings</span></a><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Rare crossings</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> The Moon</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Waning Gibbous</span></a><a class="pn-row" href="/moon/phases/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The eight phases</span></a><a class="pn-row" href="/moon/in-your-sign/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Moon in your sign</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days</span></a><a class="pn-row" href="/chinese-zodiac/fire-horse-2026/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Fire Horse 2026</span><span class="pn-row-sub">begins Feb 17</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">⌂</span> Live with it</p><a class="pn-row" href="/feng-shui/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Feng shui</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span><span class="pn-row-sub">moon, stones, heritage</span></a></div></div>
+    <div class="pn-chips" role="group" aria-label="Western wing"><span class="pn-chips-label">Western wing</span><a class="pn-chip" href="/western-zodiac/aries/" title="Aries" aria-label="Aries">♈</a><a class="pn-chip" href="/western-zodiac/taurus/" title="Taurus" aria-label="Taurus">♉</a><a class="pn-chip" href="/western-zodiac/gemini/" title="Gemini" aria-label="Gemini">♊</a><a class="pn-chip" href="/western-zodiac/cancer/" title="Cancer" aria-label="Cancer">♋</a><a class="pn-chip" href="/western-zodiac/leo/" title="Leo" aria-label="Leo">♌</a><a class="pn-chip" href="/western-zodiac/virgo/" title="Virgo" aria-label="Virgo">♍</a><a class="pn-chip" href="/western-zodiac/libra/" title="Libra" aria-label="Libra">♎</a><a class="pn-chip" href="/western-zodiac/scorpio/" title="Scorpio" aria-label="Scorpio">♏</a><a class="pn-chip" href="/western-zodiac/sagittarius/" title="Sagittarius" aria-label="Sagittarius">♐</a><a class="pn-chip" href="/western-zodiac/capricorn/" title="Capricorn" aria-label="Capricorn">♑</a><a class="pn-chip" href="/western-zodiac/aquarius/" title="Aquarius" aria-label="Aquarius">♒</a><a class="pn-chip" href="/western-zodiac/pisces/" title="Pisces" aria-label="Pisces">♓</a></div>
+    <div class="pn-chips" role="group" aria-label="Eastern wing"><span class="pn-chips-label">Eastern wing</span><a class="pn-chip" href="/chinese-zodiac/rat/" title="Rat" aria-label="Rat">鼠</a><a class="pn-chip" href="/chinese-zodiac/ox/" title="Ox" aria-label="Ox">牛</a><a class="pn-chip" href="/chinese-zodiac/tiger/" title="Tiger" aria-label="Tiger">虎</a><a class="pn-chip" href="/chinese-zodiac/rabbit/" title="Rabbit" aria-label="Rabbit">兔</a><a class="pn-chip" href="/chinese-zodiac/dragon/" title="Dragon" aria-label="Dragon">龙</a><a class="pn-chip" href="/chinese-zodiac/snake/" title="Snake" aria-label="Snake">蛇</a><a class="pn-chip" href="/chinese-zodiac/horse/" title="Horse" aria-label="Horse">马</a><a class="pn-chip" href="/chinese-zodiac/goat/" title="Goat" aria-label="Goat">羊</a><a class="pn-chip" href="/chinese-zodiac/monkey/" title="Monkey" aria-label="Monkey">猴</a><a class="pn-chip" href="/chinese-zodiac/rooster/" title="Rooster" aria-label="Rooster">鸡</a><a class="pn-chip" href="/chinese-zodiac/dog/" title="Dog" aria-label="Dog">狗</a><a class="pn-chip" href="/chinese-zodiac/pig/" title="Pig" aria-label="Pig">猪</a></div>
+    <div class="pn-panel-foot"><a href="/menagerie.html">See all 144 animals</a></div>
+  </div>
+  <div class="pn-panel pn-panel-east" data-group="2" data-accent="brass" role="region" aria-label="Zodiac" hidden>
+    <p class="pn-panel-eyebrow">The Eastern wheel, your birth year's animal</p>
+    <div class="pn-split"><div class="pn-list pn-two" role="group" aria-label="The twelve Eastern animals"><a class="pn-row is-featured" href="/chinese-zodiac/horse/"><span class="pn-glyph pn-cal" aria-hidden="true">马</span><span class="pn-row-name">Horse</span><span class="pn-row-sub">2026 · Fire Horse</span></a><a class="pn-row" href="/chinese-zodiac/rat/"><span class="pn-glyph pn-cal" aria-hidden="true">鼠</span><span class="pn-row-name">Rat</span><span class="pn-row-sub" data-dyn="cn-years-0">1996 · 2008 · 2020</span></a><a class="pn-row" href="/chinese-zodiac/ox/"><span class="pn-glyph pn-cal" aria-hidden="true">牛</span><span class="pn-row-name">Ox</span><span class="pn-row-sub" data-dyn="cn-years-1">1997 · 2009 · 2021</span></a><a class="pn-row" href="/chinese-zodiac/tiger/"><span class="pn-glyph pn-cal" aria-hidden="true">虎</span><span class="pn-row-name">Tiger</span><span class="pn-row-sub" data-dyn="cn-years-2">1998 · 2010 · 2022</span></a><a class="pn-row" href="/chinese-zodiac/rabbit/"><span class="pn-glyph pn-cal" aria-hidden="true">兔</span><span class="pn-row-name">Rabbit</span><span class="pn-row-sub" data-dyn="cn-years-3">1999 · 2011 · 2023</span></a><a class="pn-row" href="/chinese-zodiac/dragon/"><span class="pn-glyph pn-cal" aria-hidden="true">龙</span><span class="pn-row-name">Dragon</span><span class="pn-row-sub" data-dyn="cn-years-4">2000 · 2012 · 2024</span></a><a class="pn-row" href="/chinese-zodiac/snake/"><span class="pn-glyph pn-cal" aria-hidden="true">蛇</span><span class="pn-row-name">Snake</span><span class="pn-row-sub" data-dyn="cn-years-5">2001 · 2013 · 2025</span></a><a class="pn-row" href="/chinese-zodiac/goat/"><span class="pn-glyph pn-cal" aria-hidden="true">羊</span><span class="pn-row-name">Goat</span><span class="pn-row-sub" data-dyn="cn-years-7">1991 · 2003 · 2015</span></a><a class="pn-row" href="/chinese-zodiac/monkey/"><span class="pn-glyph pn-cal" aria-hidden="true">猴</span><span class="pn-row-name">Monkey</span><span class="pn-row-sub" data-dyn="cn-years-8">1992 · 2004 · 2016</span></a><a class="pn-row" href="/chinese-zodiac/rooster/"><span class="pn-glyph pn-cal" aria-hidden="true">鸡</span><span class="pn-row-name">Rooster</span><span class="pn-row-sub" data-dyn="cn-years-9">1993 · 2005 · 2017</span></a><a class="pn-row" href="/chinese-zodiac/dog/"><span class="pn-glyph pn-cal" aria-hidden="true">狗</span><span class="pn-row-name">Dog</span><span class="pn-row-sub" data-dyn="cn-years-10">1994 · 2006 · 2018</span></a><a class="pn-row" href="/chinese-zodiac/pig/"><span class="pn-glyph pn-cal" aria-hidden="true">猪</span><span class="pn-row-name">Pig</span><span class="pn-row-sub" data-dyn="cn-years-11">1995 · 2007 · 2019</span></a></div>
+    <aside class="pn-feature"><span class="pn-feature-cal" aria-hidden="true">馬</span><p class="pn-feature-eyebrow">The year turns</p><h3 class="pn-feature-title">Year of the Fire Horse</h3><p class="pn-feature-body">2026. Once in sixty years the Horse catches fire, a year that rewards the bold and scorches the hesitant. If the Horse is yours, this is your decade's hinge.</p><a class="pn-feature-link" href="/chinese-zodiac/fire-horse-2026/">Read the Fire Horse</a></aside>
+    </div>
+    <div class="pn-chips" role="group" aria-label="Eastern wing"><span class="pn-chips-label">Eastern wing</span><a class="pn-chip pn-cal" href="/chinese-zodiac/rat/" title="Rat" aria-label="Rat">鼠</a><a class="pn-chip pn-cal" href="/chinese-zodiac/ox/" title="Ox" aria-label="Ox">牛</a><a class="pn-chip pn-cal" href="/chinese-zodiac/tiger/" title="Tiger" aria-label="Tiger">虎</a><a class="pn-chip pn-cal" href="/chinese-zodiac/rabbit/" title="Rabbit" aria-label="Rabbit">兔</a><a class="pn-chip pn-cal" href="/chinese-zodiac/dragon/" title="Dragon" aria-label="Dragon">龙</a><a class="pn-chip pn-cal" href="/chinese-zodiac/snake/" title="Snake" aria-label="Snake">蛇</a><a class="pn-chip pn-cal" href="/chinese-zodiac/horse/" title="Horse" aria-label="Horse">马</a><a class="pn-chip pn-cal" href="/chinese-zodiac/goat/" title="Goat" aria-label="Goat">羊</a><a class="pn-chip pn-cal" href="/chinese-zodiac/monkey/" title="Monkey" aria-label="Monkey">猴</a><a class="pn-chip pn-cal" href="/chinese-zodiac/rooster/" title="Rooster" aria-label="Rooster">鸡</a><a class="pn-chip pn-cal" href="/chinese-zodiac/dog/" title="Dog" aria-label="Dog">狗</a><a class="pn-chip pn-cal" href="/chinese-zodiac/pig/" title="Pig" aria-label="Pig">猪</a></div>
+    <div class="pn-panel-foot"><a href="/chinese-zodiac/">See the Eastern wheel</a></div>
+  </div>
+  <div class="pn-panel pn-panel-west" data-group="3" data-accent="amethyst" role="region" aria-label="Horoscope" hidden>
+    <p class="pn-panel-eyebrow">The Western wheel, the sky on your birthday</p>
+    <div class="pn-split"><div class="pn-list pn-two" role="group" aria-label="The twelve Western signs"><a class="pn-row" href="/western-zodiac/aries/" data-sign="aries"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-aries" viewBox="0 0 24 24" role="img" aria-labelledby="aries-t aries-d" xmlns="http://www.w3.org/2000/svg"><title id="aries-t">Aries, the Ram</title><desc id="aries-d">A curved ram-horn arc of stars.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16 L9 10 L13 8 L16 11"/><path d="M13 8 L16 11 L19 9"/></g><g fill="var(--accent-soft)"><circle cx="6" cy="16" r="0.85"/><circle cx="9" cy="10" r="0.85"/><circle cx="13" cy="8" r="1.05"/><circle cx="16" cy="11" r="0.85"/><circle cx="19" cy="9" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="11" cy="14" r="0.4"/><circle cx="17" cy="14" r="0.4"/></g></svg></span><span class="pn-row-name">Aries</span><span class="pn-row-sub">Mar 21 to Apr 19</span></a><a class="pn-row" href="/western-zodiac/taurus/" data-sign="taurus"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-taurus" viewBox="0 0 24 24" role="img" aria-labelledby="taurus-t taurus-d" xmlns="http://www.w3.org/2000/svg"><title id="taurus-t">Taurus, the Bull</title><desc id="taurus-d">A V of the Hyades rising to two horn tips.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8 L9 12 L12 15 L15 12 L18 8"/></g><g fill="var(--accent-soft)"><circle cx="12" cy="15" r="1.05"/><circle cx="9" cy="12" r="0.85"/><circle cx="6" cy="8" r="0.85"/><circle cx="15" cy="12" r="0.85"/><circle cx="18" cy="8" r="0.85"/><circle cx="12" cy="15" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="8" cy="17" r="0.4"/><circle cx="16" cy="17" r="0.4"/></g></svg></span><span class="pn-row-name">Taurus</span><span class="pn-row-sub">Apr 20 to May 20</span></a><a class="pn-row" href="/western-zodiac/gemini/" data-sign="gemini"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-gemini" viewBox="0 0 24 24" role="img" aria-labelledby="gemini-t gemini-d" xmlns="http://www.w3.org/2000/svg"><title id="gemini-t">Gemini, the Twins</title><desc id="gemini-d">Twin parallel columns joined at head and foot.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5 L9 12 L9 19"/><path d="M15 5 L15 12 L15 19"/><path d="M9 5 L15 5"/><path d="M9 19 L15 19"/></g><g fill="var(--accent-soft)"><circle cx="9" cy="5" r="0.85"/><circle cx="9" cy="12" r="0.85"/><circle cx="9" cy="19" r="0.85"/><circle cx="15" cy="5" r="1.05"/><circle cx="15" cy="12" r="0.85"/><circle cx="15" cy="19" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="12" cy="8" r="0.4"/></g></svg></span><span class="pn-row-name">Gemini</span><span class="pn-row-sub">May 21 to Jun 20</span></a><a class="pn-row" href="/western-zodiac/cancer/" data-sign="cancer"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-cancer" viewBox="0 0 24 24" role="img" aria-labelledby="cancer-t cancer-d" xmlns="http://www.w3.org/2000/svg"><title id="cancer-t">Cancer, the Crab</title><desc id="cancer-d">An inverted Y crab body.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M7 5 L12 8 L17 5"/><path d="M12 8 L12 14"/><path d="M8 18 L12 14 L16 18"/></g><g fill="var(--accent-soft)"><circle cx="12" cy="14" r="1.05"/><circle cx="12" cy="8" r="0.85"/><circle cx="7" cy="5" r="0.85"/><circle cx="17" cy="5" r="0.85"/><circle cx="8" cy="18" r="0.85"/><circle cx="16" cy="18" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="12" cy="11" r="0.4"/></g></svg></span><span class="pn-row-name">Cancer</span><span class="pn-row-sub">Jun 21 to Jul 22</span></a><a class="pn-row" href="/western-zodiac/leo/" data-sign="leo"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-leo" viewBox="0 0 24 24" role="img" aria-labelledby="leo-t leo-d" xmlns="http://www.w3.org/2000/svg"><title id="leo-t">Leo, the Lion</title><desc id="leo-d">The sickle curving into a haunch triangle.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7 L6 11 L8 14 L12 15 L15 13"/><path d="M15 13 L15 18 L19 17"/><path d="M10 9 L12 15"/></g><g fill="var(--accent-soft)"><circle cx="7" cy="7" r="0.85"/><circle cx="6" cy="11" r="0.85"/><circle cx="8" cy="14" r="0.85"/><circle cx="12" cy="15" r="0.85"/><circle cx="15" cy="13" r="1.05"/><circle cx="15" cy="18" r="0.85"/><circle cx="19" cy="17" r="0.85"/><circle cx="10" cy="9" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="11" cy="12" r="0.4"/></g></svg></span><span class="pn-row-name">Leo</span><span class="pn-row-sub">Jul 23 to Aug 22</span></a><a class="pn-row" href="/western-zodiac/virgo/" data-sign="virgo"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-virgo" viewBox="0 0 24 24" role="img" aria-labelledby="virgo-t virgo-d" xmlns="http://www.w3.org/2000/svg"><title id="virgo-t">Virgo, the Maiden</title><desc id="virgo-d">A reclining bent line anchored by a bright star.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9 L9 11 L13 10 L16 13"/><path d="M16 13 L18 17"/><path d="M13 10 L12 15"/></g><g fill="var(--accent-soft)"><circle cx="5" cy="9" r="0.85"/><circle cx="9" cy="11" r="0.85"/><circle cx="13" cy="10" r="0.85"/><circle cx="16" cy="13" r="1.05"/><circle cx="18" cy="17" r="0.85"/><circle cx="12" cy="15" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="8" cy="15" r="0.4"/></g></svg></span><span class="pn-row-name">Virgo</span><span class="pn-row-sub">Aug 23 to Sep 22</span></a><a class="pn-row" href="/western-zodiac/libra/" data-sign="libra"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-libra" viewBox="0 0 24 24" role="img" aria-labelledby="libra-t libra-d" xmlns="http://www.w3.org/2000/svg"><title id="libra-t">Libra, the Scales</title><desc id="libra-d">A beam with two hanging pans.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11 L12 7 L18 11"/><path d="M6 11 L6 16"/><path d="M18 11 L18 16"/></g><g fill="var(--accent-soft)"><circle cx="12" cy="7" r="1.05"/><circle cx="6" cy="11" r="0.85"/><circle cx="18" cy="11" r="0.85"/><circle cx="6" cy="16" r="0.85"/><circle cx="18" cy="16" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="12" cy="10" r="0.4"/></g></svg></span><span class="pn-row-name">Libra</span><span class="pn-row-sub">Sep 23 to Oct 22</span></a><a class="pn-row" href="/western-zodiac/scorpio/" data-sign="scorpio"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-scorpio" viewBox="0 0 24 24" role="img" aria-labelledby="scorpio-t scorpio-d" xmlns="http://www.w3.org/2000/svg"><title id="scorpio-t">Scorpio, the Scorpion</title><desc id="scorpio-d">A long curved tail ending in a hooked stinger.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7 L6 11 L9 13 L13 13 L16 15 L18 18 L16 20"/><path d="M8 8 L9 13"/></g><g fill="var(--accent-soft)"><circle cx="5" cy="7" r="0.85"/><circle cx="6" cy="11" r="0.85"/><circle cx="9" cy="13" r="0.85"/><circle cx="13" cy="13" r="1.05"/><circle cx="16" cy="15" r="0.85"/><circle cx="18" cy="18" r="0.85"/><circle cx="16" cy="20" r="0.85"/><circle cx="8" cy="8" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="11" cy="10" r="0.4"/></g></svg></span><span class="pn-row-name">Scorpio</span><span class="pn-row-sub">Oct 23 to Nov 21</span></a><a class="pn-row" href="/western-zodiac/sagittarius/" data-sign="sagittarius"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-sagittarius" viewBox="0 0 24 24" role="img" aria-labelledby="sagittarius-t sagittarius-d" xmlns="http://www.w3.org/2000/svg"><title id="sagittarius-t">Sagittarius, the Archer</title><desc id="sagittarius-d">A drawn bow and the shaft of an arrow.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6 L9 12 L6 18"/><path d="M9 12 L18 7"/><path d="M15 10 L12 13 L9 16"/></g><g fill="var(--accent-soft)"><circle cx="6" cy="6" r="0.85"/><circle cx="6" cy="18" r="0.85"/><circle cx="9" cy="12" r="1.05"/><circle cx="18" cy="7" r="0.85"/><circle cx="15" cy="10" r="0.85"/><circle cx="12" cy="13" r="0.85"/><circle cx="9" cy="16" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="13" cy="9" r="0.4"/></g></svg></span><span class="pn-row-name">Sagittarius</span><span class="pn-row-sub">Nov 22 to Dec 21</span></a><a class="pn-row" href="/western-zodiac/capricorn/" data-sign="capricorn"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-capricorn" viewBox="0 0 24 24" role="img" aria-labelledby="capricorn-t capricorn-d" xmlns="http://www.w3.org/2000/svg"><title id="capricorn-t">Capricorn, the Sea-Goat</title><desc id="capricorn-d">A triangular sea-goat wedge.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8 L10 6 L14 10 L18 17 L9 15 L6 8"/></g><g fill="var(--accent-soft)"><circle cx="6" cy="8" r="0.85"/><circle cx="10" cy="6" r="1.05"/><circle cx="14" cy="10" r="0.85"/><circle cx="18" cy="17" r="0.85"/><circle cx="9" cy="15" r="0.85"/><circle cx="6" cy="8" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="12" cy="13" r="0.4"/></g></svg></span><span class="pn-row-name">Capricorn</span><span class="pn-row-sub">Dec 22 to Jan 19</span></a><a class="pn-row" href="/western-zodiac/aquarius/" data-sign="aquarius"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-aquarius" viewBox="0 0 24 24" role="img" aria-labelledby="aquarius-t aquarius-d" xmlns="http://www.w3.org/2000/svg"><title id="aquarius-t">Aquarius, the Water-Bearer</title><desc id="aquarius-d">Double zigzag water lines.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9 L8 11 L11 9 L14 11 L17 9"/><path d="M5 14 L8 16 L11 14 L14 16 L17 14"/></g><g fill="var(--accent-soft)"><circle cx="5" cy="9" r="0.85"/><circle cx="8" cy="11" r="0.85"/><circle cx="11" cy="9" r="0.85"/><circle cx="14" cy="11" r="0.85"/><circle cx="17" cy="9" r="1.05"/><circle cx="5" cy="14" r="0.85"/><circle cx="8" cy="16" r="0.85"/><circle cx="11" cy="14" r="0.85"/><circle cx="14" cy="16" r="0.85"/><circle cx="17" cy="14" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="11" cy="12" r="0.4"/></g></svg></span><span class="pn-row-name">Aquarius</span><span class="pn-row-sub">Jan 20 to Feb 18</span></a><a class="pn-row" href="/western-zodiac/pisces/" data-sign="pisces"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-pisces" viewBox="0 0 24 24" role="img" aria-labelledby="pisces-t pisces-d" xmlns="http://www.w3.org/2000/svg"><title id="pisces-t">Pisces, the Fishes</title><desc id="pisces-d">Two arcs tied at a central knot star.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 5 L5 9 L6 13"/><path d="M6 5 L12 9 L18 5"/><path d="M6 13 L12 9 L18 13"/><path d="M18 5 L19 9 L18 13"/></g><g fill="var(--accent-soft)"><circle cx="6" cy="5" r="0.85"/><circle cx="5" cy="9" r="0.85"/><circle cx="6" cy="13" r="0.85"/><circle cx="12" cy="9" r="1.05"/><circle cx="18" cy="5" r="0.85"/><circle cx="19" cy="9" r="0.85"/><circle cx="18" cy="13" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="12" cy="14" r="0.4"/></g></svg></span><span class="pn-row-name">Pisces</span><span class="pn-row-sub">Feb 19 to Mar 20</span></a></div>
+    <aside class="pn-feature" data-hz-today><p class="pn-feature-eyebrow" data-hz-date></p><h3 class="pn-feature-title" data-hz-sign></h3><p class="pn-feature-body" data-hz-blurb></p><a class="pn-feature-link" href="/daily.html">Read today's horoscope</a></aside>
+    </div>
+    <div class="pn-chips" role="group" aria-label="The twelve signs"><span class="pn-chips-label">The twelve signs</span><a class="pn-chip" href="/western-zodiac/aries/" title="Aries" aria-label="Aries">♈</a><a class="pn-chip" href="/western-zodiac/taurus/" title="Taurus" aria-label="Taurus">♉</a><a class="pn-chip" href="/western-zodiac/gemini/" title="Gemini" aria-label="Gemini">♊</a><a class="pn-chip" href="/western-zodiac/cancer/" title="Cancer" aria-label="Cancer">♋</a><a class="pn-chip" href="/western-zodiac/leo/" title="Leo" aria-label="Leo">♌</a><a class="pn-chip" href="/western-zodiac/virgo/" title="Virgo" aria-label="Virgo">♍</a><a class="pn-chip" href="/western-zodiac/libra/" title="Libra" aria-label="Libra">♎</a><a class="pn-chip" href="/western-zodiac/scorpio/" title="Scorpio" aria-label="Scorpio">♏</a><a class="pn-chip" href="/western-zodiac/sagittarius/" title="Sagittarius" aria-label="Sagittarius">♐</a><a class="pn-chip" href="/western-zodiac/capricorn/" title="Capricorn" aria-label="Capricorn">♑</a><a class="pn-chip" href="/western-zodiac/aquarius/" title="Aquarius" aria-label="Aquarius">♒</a><a class="pn-chip" href="/western-zodiac/pisces/" title="Pisces" aria-label="Pisces">♓</a></div>
+    <div class="pn-panel-foot"><a href="/horoscopes/">All horoscopes, sign by sign</a></div>
+  </div>
+  <div class="pn-panel pn-panel-sage" data-group="4" data-accent="jade" role="region" aria-label="Sage Wisdom" hidden>
+    <p class="pn-panel-eyebrow">The craft your Zodi Animal practices</p>
+    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Stones</p><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/traditions/birthstones-and-moonstone/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Birthstones and moonstone</span></a><a class="pn-row" href="/traditions/stones-for-your-animal/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Stones for your animal</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">卦</span> Feng shui</p><a class="pn-row" href="/feng-shui/commanding-position/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Commanding position</span><span class="pn-row-sub">interactive</span></a><a class="pn-row" href="/feng-shui/bagua/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The bagua</span></a><a class="pn-row" href="/feng-shui/five-elements/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Five phases</span></a><a class="pn-row" href="/feng-shui/kua-number/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your Kua number</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">❦</span> Proverbs and lore</p><a class="pn-row" href="/proverbs/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Proverb Pond</span><span class="pn-row-sub">all 87, pronounced</span></a><a class="pn-row" href="/proverbs/study/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Study the proverbs</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a></div><div class="pn-col pn-col-cta"><div class="pn-ebook"><span class="pn-ebook-tag">Free · Feng Shui e-book</span><h3 class="pn-ebook-title">Your animal's placement guide</h3><p class="pn-ebook-body">Where to sleep, work, and rest, mapped to your animal. Free with a Zodi account.</p><a class="pn-ebook-link" href="/account.html">Create free account <span class="pn-ebook-note">+1,000 ZK on arrival</span></a></div></div></div>
+    <div class="pn-panel-foot"><a href="/feng-shui/">All of feng shui</a></div>
+  </div>
+  <div class="pn-panel pn-panel-cards" data-group="5" data-accent="rose" role="region" aria-label="Bonds" hidden>
+    <p class="pn-panel-eyebrow">Two skies, read together</p>
+    <div class="pn-cols"><div class="pn-col"><a class="pn-row" href="/match.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Test a match</span><span class="pn-row-sub">Two birth dates go in. The bond comes back scored across the trines, the clashes, and the elements.</span></a><a class="pn-row" href="/vs.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Challenge a friend</span><span class="pn-row-sub">Send your animal to someone and wonder out loud whether you match.</span></a><a class="pn-row" href="/circle.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Circle of three</span><span class="pn-row-sub">Compare two friends one to one, then read the whole group as a circle.</span></a></div></div>
+    <div class="pn-panel-foot"><a href="/year.html">Find a friend's animal by birth year</a></div>
+  </div>
+  <div class="pn-panel pn-panel-moon" data-group="6" data-accent="silver" role="region" aria-label="Moon" hidden>
+    <p class="pn-panel-eyebrow">The Moon overhead, its phases, and the path they light.</p>
+    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> Tonight</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-full" viewBox="0 0 24 24" role="img" aria-labelledby="moon-full-t moon-full-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-full-t">Full moon</title><desc id="moon-full-d">The whole disc lit.</desc><circle cx="12" cy="12" r="9" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Waning Gibbous</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days ahead</span><span class="pn-row-sub">the favorable days for you</span></a><a class="pn-row" href="/awakening.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Awakening</span><span class="pn-row-sub">the path from fear to strength</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◐</span> The eight phases</p><a class="pn-row" href="/moon/phases/new-moon/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-new" viewBox="0 0 24 24" role="img" aria-labelledby="moon-new-t moon-new-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-new-t">New moon</title><desc id="moon-new-d">The dark disc of the new moon.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">New Moon</span></a><a class="pn-row" href="/moon/phases/waxing-crescent/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waxing-crescent" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waxing-crescent-t moon-waxing-crescent-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waxing-crescent-t">Waxing crescent moon</title><desc id="moon-waxing-crescent-d">A thin lit crescent on the right.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A6.36 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waxing Crescent</span></a><a class="pn-row" href="/moon/phases/first-quarter/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-first-quarter" viewBox="0 0 24 24" role="img" aria-labelledby="moon-first-quarter-t moon-first-quarter-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-first-quarter-t">First quarter moon</title><desc id="moon-first-quarter-d">The right half lit.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A0 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">First Quarter</span></a><a class="pn-row" href="/moon/phases/waxing-gibbous/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waxing-gibbous" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waxing-gibbous-t moon-waxing-gibbous-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waxing-gibbous-t">Waxing gibbous moon</title><desc id="moon-waxing-gibbous-d">Most of the disc lit, growing.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A6.36 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waxing Gibbous</span></a><a class="pn-row" href="/moon/phases/full-moon/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-full" viewBox="0 0 24 24" role="img" aria-labelledby="moon-full-t moon-full-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-full-t">Full moon</title><desc id="moon-full-d">The whole disc lit.</desc><circle cx="12" cy="12" r="9" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Full Moon</span></a><a class="pn-row" href="/moon/phases/waning-gibbous/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waning-gibbous" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waning-gibbous-t moon-waning-gibbous-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waning-gibbous-t">Waning gibbous moon</title><desc id="moon-waning-gibbous-d">Most of the disc lit, shrinking.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A6.36 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waning Gibbous</span></a><a class="pn-row" href="/moon/phases/last-quarter/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-last-quarter" viewBox="0 0 24 24" role="img" aria-labelledby="moon-last-quarter-t moon-last-quarter-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-last-quarter-t">Last quarter moon</title><desc id="moon-last-quarter-d">The left half lit.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A0 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Last Quarter</span></a><a class="pn-row" href="/moon/phases/waning-crescent/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waning-crescent" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waning-crescent-t moon-waning-crescent-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waning-crescent-t">Waning crescent moon</title><desc id="moon-waning-crescent-d">A thin lit crescent on the left.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A6.36 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waning Crescent</span></a></div></div>
+    <div class="pn-panel-foot"><a href="/moon.html">Read the Moon tonight in full</a></div>
+  </div>
+  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/index.html#read">Find yours</a><a href="/index.html">Find your animal</a><a href="/daily.html">Today's reading</a><a href="/year.html">Year finder</a><a href="/account.html">Your account</a><a href="/menagerie.html">All 144 animals</a><a href="/western-zodiac/">Western wing</a><a href="/chinese-zodiac/">Eastern wing</a><a href="/zodiac/">Zodiac crossings</a><a href="/moon.html">The Moon tonight</a><a href="/moon/phases/">The eight phases</a><a href="/moon/in-your-sign/">Moon in your sign</a><a href="/best-days.html">Best days</a><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a><a href="/feng-shui/">Feng shui</a><a href="/habitat/">The Habitat</a><a href="/stones.html">Keeper stones</a><a href="/directions/">Directions</a><a href="/traditions/">Traditions</a><a href="/chinese-zodiac/horse/">Horse</a><a href="/chinese-zodiac/rat/">Rat</a><a href="/chinese-zodiac/ox/">Ox</a><a href="/chinese-zodiac/tiger/">Tiger</a><a href="/chinese-zodiac/rabbit/">Rabbit</a><a href="/chinese-zodiac/dragon/">Dragon</a><a href="/chinese-zodiac/snake/">Snake</a><a href="/chinese-zodiac/goat/">Goat</a><a href="/chinese-zodiac/monkey/">Monkey</a><a href="/chinese-zodiac/rooster/">Rooster</a><a href="/chinese-zodiac/dog/">Dog</a><a href="/chinese-zodiac/pig/">Pig</a><a href="/western-zodiac/aries/">Aries</a><a href="/western-zodiac/taurus/">Taurus</a><a href="/western-zodiac/gemini/">Gemini</a><a href="/western-zodiac/cancer/">Cancer</a><a href="/western-zodiac/leo/">Leo</a><a href="/western-zodiac/virgo/">Virgo</a><a href="/western-zodiac/libra/">Libra</a><a href="/western-zodiac/scorpio/">Scorpio</a><a href="/western-zodiac/sagittarius/">Sagittarius</a><a href="/western-zodiac/capricorn/">Capricorn</a><a href="/western-zodiac/aquarius/">Aquarius</a><a href="/western-zodiac/pisces/">Pisces</a><a href="/traditions/birthstones-and-moonstone/">Birthstones and moonstone</a><a href="/traditions/stones-for-your-animal/">Stones for your animal</a><a href="/feng-shui/commanding-position/">Commanding position</a><a href="/feng-shui/bagua/">The bagua</a><a href="/feng-shui/five-elements/">Five phases</a><a href="/feng-shui/kua-number/">Your Kua number</a><a href="/proverbs/">The Proverb Pond</a><a href="/proverbs/study/">Study the proverbs</a><a href="/match.html">Test a match</a><a href="/vs.html">Challenge a friend</a><a href="/circle.html">Circle of three</a><a href="/awakening.html">The Awakening</a><a href="/moon/phases/new-moon/">New Moon</a><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a><a href="/moon/phases/first-quarter/">First Quarter</a><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a><a href="/moon/phases/full-moon/">Full Moon</a><a href="/moon/phases/waning-gibbous/">Waning Gibbous</a><a href="/moon/phases/last-quarter/">Last Quarter</a><a href="/moon/phases/waning-crescent/">Waning Crescent</a><a href="/horoscopes/">All horoscopes, sign by sign</a><a href="/feng-shui/your-animal/">Feng shui for your animal</a><a href="/directions/celestial-animals/">The four celestial animals</a><a href="/cosmology/">Cosmology</a><a href="/cosmology/four-pillars/">The Four Pillars</a><a href="/elements/fire/">The five elements</a><a href="/learn.html">How it works</a></nav>
+</header>
+<!--pn-static:end-->
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<!-- V4 STICKY SUB-BAR (canvas breadcrumb sub-bar). The moon chip +
+     popover moved INTO the pn-bar tools (canvas bar); home-v4.js
+     measures this band into --v4-sub-h so the rail offset is exact. -->
+<div class="omv4-sub">
+  <div class="omv4-sub-inner">
+    <nav class="omv4-crumbs" aria-label="Breadcrumb">
+      <a class="omv4-crumb" href="/index.html" aria-current="page"><span class="g" aria-hidden="true">&#8962;</span>Home</a>
+    </nav>
+    <nav class="omv4-hub" aria-label="In this hub">
+      <a href="/index.html" aria-current="page">Overview</a>
+      <a href="/western-zodiac/">Western wing</a>
+      <a href="/chinese-zodiac/">Eastern wing</a>
+      <a href="/menagerie.html">Rare crossings</a>
+      <a href="/learn.html">How it works</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap home-shell">
+
+  <!-- ZONE B — main scrolling column -->
+  <main class="home-main" id="pn-main" tabindex="-1">
+
+  <!-- HERO + READER (canvas "Hero + reader") -->
+  <section class="hero section--animal" id="read">
+    <div class="om-orbit" aria-hidden="true">
+      <div class="o-ring"></div>
+      <div class="o-dash"></div>
+      <div class="o-core"><div class="o-moon"></div></div>
+    </div>
+    <p class="eyebrow">Unlock your Primal Zodiac Animal Spirit<span id="seasonTag" hidden> &#183; <span id="seasonName"></span> sky</span></p>
+    <h1>Find your <em>Primal Zodiac Animal</em>.</h1>
+    <p class="lede">Your Western Sun sign crosses your Chinese birth year to name one of 144 original animal archetypes. You have carried this shape for years; today you can finally see it.</p>
+    <p class="hint">Some know it as a primal animal. Its full name is your Primal Zodiac Animal. Once it knows you back, we call it your <strong style="color:var(--brass-bright)">Zodi Animal</strong>.</p>
+
+    <!-- READER FORM -->
+    <div class="reader">
+      <h3>Unlock Your Zodi Animal</h3>
+      <p class="dim">Be welcome, wanderer. Give the wheel the date you arrived in the world &mdash; it turns right here in your browser, and your birthday never leaves this page.</p>
+      <form id="birthForm">
+        <div class="field">
+          <div class="om-seg" id="omSeg" hidden>
+            <label>Month
+              <input class="om-seg-m" inputmode="numeric" maxlength="2" placeholder="MM" autocomplete="bday-month" aria-label="Birth month">
+            </label>
+            <span class="sep" aria-hidden="true">/</span>
+            <label>Day
+              <input class="om-seg-d" inputmode="numeric" maxlength="2" placeholder="DD" autocomplete="bday-day" aria-label="Birth day">
+            </label>
+            <span class="sep" aria-hidden="true">/</span>
+            <label>Year
+              <input class="om-seg-y" inputmode="numeric" maxlength="4" placeholder="YYYY" autocomplete="bday-year" aria-label="Birth year">
+            </label>
+          </div>
+          <input type="date" id="birthDate" required min="1940-01-01" max="2032-12-31" aria-label="Date of birth">
+          <button class="btn om-seg-go" type="submit">Reveal my animal</button>
+          <button class="btn ghost" id="clearDate" type="button" aria-label="Clear the date">Clear</button>
+        </div>
+        <p class="msg" id="formMsg" role="status"></p>
+        <p class="hint">Your first reveal is worth 500 Zodi Karma. The Oracle counts it even before you have an account.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- TODAY STRIP -->
+  <section class="today" id="todayStrip" hidden>
+    <div class="today-moon" id="todayMoon"></div>
+    <div class="today-body">
+      <p class="today-lead" id="todayLead"></p>
+      <p class="today-sub" id="todaySub"></p>
+    </div>
+    <a class="btn ghost" id="todayCta" href="best-days.html">See your best days</a>
+  </section>
+
+  <!-- RESULT -->
+  <div class="descent" id="descent">
+  <p class="sr-only" data-seq-live aria-live="polite"></p>
+  <div id="resultWrap">
+    <div class="reveal">
+      <div class="cross" id="cross"></div>
+      <h2 class="big" id="animalName">✦</h2>
+      <p class="essence" id="animalEssence"></p>
+      <p class="mt"><a class="btn" id="animalLink" href="#">Open my full animal page</a><a class="btn ghost" href="#matchSection">Test a match</a></p>
+    </div>
+
+    <nav class="descent-doors" id="descentDoors" aria-label="Choose your descent" hidden>
+      <p class="eyebrow">Choose your descent</p>
+      <div class="doorRow">
+        <a class="door" id="doorNature" href="#"><span class="dn">Nature</span><span class="dh">What comes naturally, before the world interferes.</span></a>
+        <a class="door" id="doorShadow" href="#"><span class="dn">Shadow</span><span class="dh">What your protection becomes when fear leads.</span></a>
+        <a class="door" id="doorAwaken" href="#"><span class="dn">Awakening</span><span class="dh">The same strength, awake and yours to move.</span></a>
+      </div>
+    </nav>
+
+    <div class="gates" id="gates"></div>
+
+    <div class="duo" id="stonesSection">
+      <div class="card">
+        <h3>Your keeper stones</h3>
+        <ul class="stoneList" id="stones"></ul>
+        <p class="hint">Charge them on the full moon. Carry the one that calls loudest.</p>
+      </div>
+      <div class="card">
+        <h3>The Moon tonight</h3>
+        <p id="moonNow"></p>
+      </div>
+    </div>
+
+    <!-- SHARE -->
+    <div class="card" id="shareSection">
+      <h3>Pass the Oracle onward</h3>
+      <p class="dim">Send your animal to someone and wonder out loud whether you match.</p>
+      <div class="shareBox">
+        <input id="shareLine" readonly aria-label="Share text">
+        <a class="btn" id="challengeBtn" href="vs.html">Challenge a friend</a>
+        <button class="btn ghost" id="shareBtn" type="button">Share my animal</button>
+        <button class="btn ghost" id="cardBtn" type="button">Download my card</button>
+        <button class="btn ghost" id="copyBtn" type="button">Copy</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- WHAT UNLOCKS (canvas "After the naming" band; locked/open state
+       wired by home-v4.js from the same reveal state the site stores) -->
+  <section class="band band--bleed" id="unlocking">
+    <p class="eyebrow">After the naming</p>
+    <h2>Your animal is a key. These doors already know your name.</h2>
+    <p class="lede">Every door below opens today &mdash; and each one reads differently once the Oracle knows which of the 144 you are. Name your animal and they begin speaking in your voice.</p>
+    <div class="unlockGrid" id="unlockGrid" data-revealed="0">
+      <!-- .u-body copy is fully served (SEO); home-v4.js only VEILS it
+           (blur/clip, never display:none) and adds the Reveal affordance.
+           .is-marquee = the one card that carries the ambient shimmer. -->
+      <a class="unlockCard is-marquee" href="menagerie.html" data-zodi-gates><p class="u-tag">locked</p><h3>Your five gates</h3><p class="u-body">Where you stand, what you need, the season plan, the warning, and your highest form.</p></a>
+      <a class="unlockCard" href="daily.html"><p class="u-tag">locked</p><h3>Tonight's reading</h3><p class="u-body">One short reading a day, timed to the real moon overhead.</p></a>
+      <a class="unlockCard" href="stones.html"><p class="u-tag">locked</p><h3>Keeper stones</h3><p class="u-body">The stones matched to your sun and your element, and when to charge them.</p></a>
+      <a class="unlockCard" href="awakening.html"><p class="u-tag">locked</p><h3>The awakening path</h3><p class="u-body">Every animal has a fearful form and an awake one. The path between them opens here.</p></a>
+      <a class="unlockCard" href="habitat/"><p class="u-tag">locked</p><h3>Your habitat</h3><p class="u-body">Directions, colors, and rooms that suit your animal, drawn from feng shui.</p></a>
+      <a class="unlockCard" href="match.html"><p class="u-tag">locked</p><h3>Bonds</h3><p class="u-body">Match a friend, answer a challenge, or read three of you as a circle.</p></a>
+    </div>
+  </section>
+
+  <!--karma-teaser:start-->
+  <!-- Compact Karmic Board teaser. The full board, earn ledger, and Gods of
+       Zodi live on karmic-board.html. Keep this to three elements. -->
+  <section class="band band--bleed section--awakening" id="karma-teaser">
+    <p class="eyebrow">The economy of return</p>
+    <h2>Devotion has a ledger</h2>
+    <p class="lede">Naming your animal is the door. Behind it, everything you do here earns Zodi Karma &mdash; and the Karmic Board ranks every soul on the wheel, year by Chinese year.</p>
+    <div class="zodi-earnGrid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+      <div class="zodi-earn"><span class="amt">+500</span><h3>Name an animal</h3><p>Your first reveal counts, account or not.</p></div>
+      <div class="zodi-earn"><span class="amt">+100 a day, compounding</span><h3>Return</h3><p>Each unbroken day adds to the bonus.</p></div>
+      <div class="zodi-earn"><span class="amt">+60</span><h3>Sit with a proverb</h3><p>The pond pays attention back.</p></div>
+    </div>
+    <p class="zodi-streakNote">The throne is held by <strong>CapyJ, the Chambered Nautilus</strong>, at 118,000 karma &mdash; Blessed by the Gods of Zodi.</p>
+    <div class="btnRow">
+      <a class="btn" href="karmic-board.html">Enter the Karmic Board</a>
+    </div>
+  </section>
+  <!--karma-teaser:end-->
+
+  <!-- AI-ANSWERABLE CORE -->
+  <section class="band" id="what-it-is">
+    <div class="prose">
+      <p class="eyebrow">In one paragraph</p>
+      <h2>What a Primal Animal is</h2>
+      <p>A <strong>Primal Animal</strong> is the single creature you get when you combine your <strong>Western Sun sign</strong> with your <strong>Chinese zodiac year</strong>. There are twelve Sun signs and twelve year animals, so the grid holds <strong>144 combinations</strong>, and each one is named for its own animal. Your date of birth points to exactly one cell: the month and day fix your Sun sign, the year and the <strong>lunar New Year</strong> date fix your year animal, and where those two lines cross is your Primal Animal. A Cancer born in the Year of the Snake is the <strong>Chambered Nautilus</strong>. A Cancer born in the Year of the Monkey is the <strong>Kinkajou</strong>.</p>
+
+      <h3>How to find yours</h3>
+      <p>Enter your date of birth in the reader above. The Oracle reads your Sun sign, reads your Chinese year animal against the real lunar New Year date for your birth year, and names your animal on the 144 grid. It is free, needs no account, and runs entirely in your browser, so your birth date is never sent anywhere.</p>
+
+      <h3>Why the lunar New Year boundary matters</h3>
+      <p>The Chinese year does not begin on January 1. It begins at the lunar New Year, which falls between late January and the middle of February and moves a little each year. A birthday in that window can belong to the previous year's animal, so someone born on February 2 may be a Tiger or an Ox depending on the year. The Oracle carries the real New Year date for every year from 1940 to 2032 and checks your birthday against it before it names your animal.</p>
+
+      <h3>Meaning, not prediction</h3>
+      <p>The astronomy here is real and checkable: the Sun signs, the lunar New Year dates, the twelve-year cycle, and the Moon phase overhead. The animal grid and the readings built on top of them are a tradition of meaning, a structured way to look at yourself, not a forecast. Read your animal as a mirror you can act on rather than a fortune you wait for.</p>
+
+      <dl class="faq">
+        <dt>What animal is Cancer and Snake?</dt>
+        <dd>The Chambered Nautilus. It is one of the 144 Primal Animals, the crossing of the Sun sign Cancer with the Chinese Year of the Snake. <a href="animals/chambered-nautilus/">Read the Chambered Nautilus</a>.</dd>
+        <dt>Is there a free Primal Animal calculator?</dt>
+        <dd>Yes. The reader on this page is free, needs no sign-up, and computes your animal in your browser. Enter a date of birth to find yours, or <a href="menagerie.html">browse all 144 animals</a>.</dd>
+        <dt>How is this different from a normal horoscope?</dt>
+        <dd>A normal horoscope usually reads one system, most often the Western Sun sign. The Primal Animal crosses two whole traditions, the Western solar zodiac and the Chinese lunar and Jovian zodiac, into one figure that speaks to both your daylight self and your instinct. <a href="learn.html">How it works</a>.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- CHINESE-ZODIAC EMPHASIS: PROVERB OF THE DAY (server-rendered, crawlable, deep-linkable) -->
+  <section class="band" id="proverb-day">
+    <p class="eyebrow">Proverb of the day</p>
+    <h2>The Chinese half, in one quiet line</h2>
+    <!-- Default proverb rendered server-side from build/proverbs.mjs (id: qianli). Agent B (home.js) rotates #proverb-slot daily and on Another proverb, and honors #proverb-<id> deep links. -->
+    <div id="proverb-slot">
+      <div data-proverb-id="qianli" id="proverb-qianli">
+        <aside class="pf-proverb" aria-label="Chinese proverb">
+          <p class="pf-proverb-zh" lang="zh-Hant"><ruby>千<rt>qiān</rt></ruby><ruby>里<rt>lǐ</rt></ruby><ruby>之<rt>zhī</rt></ruby><ruby>行<rt>xíng</rt></ruby><span class="cx-punct">，</span><ruby>始<rt>shǐ</rt></ruby><ruby>於<rt>yú</rt></ruby><ruby>足<rt>zú</rt></ruby><ruby>下<rt>xià</rt></ruby></p>
+          <p class="pf-proverb-lit"><span class="k">Literally</span> a thousand-li road begins beneath the feet</p>
+          <p class="pf-proverb-mean"><span class="k">Meaning</span> Every great undertaking starts with a single step.</p>
+          <p class="pf-proverb-soul">The far place frightens only from a distance. Stand at your own threshold, take the single step in front of you, and the thousand miles begin to belong to you.</p>
+          <p class="pf-proverb-note">A proverb we tie to the <a href="/chinese-zodiac/snake/">Year of the Snake</a>. The pairing is our own reading, not tradition.</p>
+        </aside>
+      </div>
+    </div>
+    <div class="proverb-controls">
+      <button id="proverb-another" type="button">Another proverb</button>
+      <a href="/chinese-zodiac/">Meet the twelve years</a>
+      <a href="/proverbs/">The whole proverb library</a>
+    </div>
+  </section>
+
+  <!--proverb-pond:start-->
+  <!-- THE PROVERB POND: signature feature block. Server-rendered real anchors to
+       /proverbs/ (SEO + crawl). Idempotent: apply-nav does not own this; a rebuild
+       of this block replaces everything between proverb-pond:start and :end. -->
+  <section class="band band--bleed section--fengshui pond-feature" id="proverb-pond" aria-labelledby="pond-h">
+    <style>
+      /* scoped to the pond feature; reuses site tokens (--moon, --jade, --body, --serif) */
+      #proverb-pond{position:relative;overflow:hidden}
+      #proverb-pond .pond-inner{position:relative;z-index:1;max-width:64ch}
+      #proverb-pond .pond-motif{display:block;width:88px;height:auto;margin:0 0 var(--s-3,18px);color:var(--jade-bright,#a9e6c6)}
+      #proverb-pond .pond-motif .koi{fill:currentColor}
+      #proverb-pond .pond-motif .ripple{fill:none;stroke:currentColor;stroke-width:1.2}
+      #proverb-pond h2{font-family:var(--serif,serif);color:var(--moon,#f6efd8);font-size:clamp(2rem,5vw,3.1rem);line-height:1.08;margin:0 0 .35em;text-wrap:balance}
+      #proverb-pond .pond-promise{font-family:var(--serif,serif);font-size:clamp(1.1rem,2.2vw,1.35rem);line-height:1.5;color:var(--body,#cfcfe0);max-width:56ch;margin:0 0 1.4em}
+      #proverb-pond .pond-count{color:var(--jade-bright,#a9e6c6);font-weight:600}
+      #proverb-pond .pond-actions{display:flex;gap:12px;flex-wrap:wrap}
+      /* a low tint of water behind the copy, jade-washed to read as a pond */
+      #proverb-pond .pond-wash{position:absolute;inset:0;z-index:0;pointer-events:none;
+        background:radial-gradient(120% 90% at 82% 30%,rgba(120,195,156,.16),transparent 60%),
+                   linear-gradient(180deg,rgba(120,195,156,.05),transparent);
+        opacity:.9}
+      @media (prefers-reduced-motion:no-preference){
+        #proverb-pond .pond-motif .ripple{animation:pond-ripple 5.5s ease-out infinite}
+        #proverb-pond .pond-motif .ripple.r2{animation-delay:1.8s}
+        #proverb-pond .pond-motif .ripple.r3{animation-delay:3.6s}
+        @keyframes pond-ripple{0%{opacity:.55;transform-origin:center;transform:scale(.7)}70%{opacity:.08}100%{opacity:0;transform:scale(1.35)}}
+      }
+    </style>
+    <span class="pond-wash" aria-hidden="true"></span>
+    <div class="pond-inner">
+      <svg class="pond-motif" viewBox="0 0 120 96" role="img" aria-labelledby="pond-motif-t">
+        <title id="pond-motif-t">A koi rising through pond ripples</title>
+        <g aria-hidden="true">
+          <circle class="ripple r1" cx="60" cy="52" r="18"/>
+          <circle class="ripple r2" cx="60" cy="52" r="30"/>
+          <circle class="ripple r3" cx="60" cy="52" r="42"/>
+          <path class="koi" d="M60 34c10 0 17 8 17 17 0 6-3 11-8 14 4 1 8 0 12-3-2 6-8 10-15 10-3 0-6-1-8-2-2 5-6 9-11 10 2-4 3-8 2-12-4-4-6-9-6-14 0-9 7-17 17-20-1 0-1 0-2 0 3-0 6-0 10 0z"/>
+          <circle class="koi" cx="66" cy="46" r="2.1"/>
+        </g>
+      </svg>
+      <p class="eyebrow">A signature of the Oracle</p>
+      <h2 id="pond-h">The Proverb Pond</h2>
+      <p class="pond-promise">A living library of <span class="pond-count">87</span> Chinese proverbs, with sound, meaning, and the wisdom behind each one.</p>
+      <div class="pond-actions">
+        <a class="btn" href="/proverbs/">Enter the pond</a>
+        <a class="btn ghost" href="/proverbs/">Draw a proverb</a>
+      </div>
+    </div>
+  </section>
+  <!--proverb-pond:end-->
+
+  <!-- MENAGERIE PREVIEW -->
+  <section class="band band--bleed section--cosmology" id="peek">
+    <p class="eyebrow">Inside the Menagerie</p>
+    <h2>144 animals, one is yours</h2>
+    <p class="lede">A glimpse of the creatures waiting at the crossings. Enter your birthday above to find which one is you, or wander the whole menagerie.</p>
+    <div class="peekGrid">
+      <a class="peekCard" href="animals/chambered-nautilus/"><span class="pn">Chambered Nautilus</span><span class="ps">Cancer and the Snake</span></a>
+      <a class="peekCard" href="animals/spotted-cuscus/"><span class="pn">Spotted Cuscus</span><span class="ps">Cancer and the Monkey</span></a>
+      <a class="peekCard" href="animals/snow-leopard/"><span class="pn">Snow Leopard</span><span class="ps">Scorpio and the Goat</span></a>
+      <a class="peekCard" href="animals/axolotl/"><span class="pn">Axolotl</span><span class="ps">Aquarius and the Rabbit</span></a>
+      <a class="peekCard" href="animals/orca/"><span class="pn">Orca</span><span class="ps">Scorpio and the Horse</span></a>
+      <a class="peekCard" href="animals/capybara/"><span class="pn">Capybara</span><span class="ps">Cancer and the Pig</span></a>
+    </div>
+    <p class="hint" id="recentOpened"></p>
+    <p class="hint" data-game-collection></p>
+    <p class="mt"><a class="btn ghost" href="menagerie.html">Browse all 144 animals</a></p>
+  </section>
+
+  <!-- WHAT YOUR ANIMAL OPENS -->
+  <section class="band">
+    <p class="eyebrow">What your animal opens</p>
+    <h2>Not a label. A map.</h2>
+    <div class="pathsGrid">
+      <div class="pathCard"><h3>Nature</h3><p>How you move, decide, and protect what matters.</p></div>
+      <div class="pathCard"><h3>Shadow</h3><p>The fault your own strength turns into under pressure.</p></div>
+      <div class="pathCard"><h3>Awakening</h3><p>The same strength, integrated and awake.</p></div>
+      <div class="pathCard"><h3>Habitat</h3><p>Direction, colors, and rooms that suit your animal.</p></div>
+      <div class="pathCard"><h3>Bonds</h3><p>Who meets you easily, and who meets you through friction.</p></div>
+      <div class="pathCard"><h3>Rhythm</h3><p>The moon phase and the days that serve you.</p></div>
+    </div>
+  </section>
+
+  <!-- FIRE HORSE 2026 (year-event band; links the Fire Horse hub, outside all pn-* blocks) -->
+  <section class="band" id="firehorse2026">
+    <p class="eyebrow">The year ahead</p>
+    <h2>Expecting in 2026? Meet the Fire Horse</h2>
+    <p class="lede">The Year of the Fire Horse opens on February 17, 2026, the first return of this rare fire-doubled year since 1966. Read what it means, the names people are choosing, and the boundary that makes a January baby a Snake instead.</p>
+    <p class="mt"><a class="btn" href="/chinese-zodiac/fire-horse-2026/">Read the Fire Horse of 2026</a></p>
+  </section>
+
+  <!--relationships-lab:start-->
+  <!-- RELATIONSHIPS LABORATORY: three chambers, one mirror. Rose-washed for
+       warmth. Panel 1 keeps the legacy ids (matchForm/mDateA/mDateB/
+       matchResult) that app.js already drives. Tabs + invitation + karma
+       rites are wired by js/zodi-lab.js. -->
+  <section class="band band--bleed section--directions lab-feature" id="matchSection">
+    <span class="lab-wash" aria-hidden="true"></span>
+    <div class="lab-inner">
+      <p class="eyebrow">Relationships Laboratory</p>
+      <h2>A mirror, not a prediction.</h2>
+      <p class="lede">Two Zodi Animals held up to the same light. The mirror surfaces recognition, rhythm, and friction &mdash; never fate.</p>
+
+      <div class="lab-tabs" role="tablist" aria-label="Choose a chamber">
+        <button class="lab-tab" role="tab" aria-selected="true" aria-controls="lab-one">One to One</button>
+        <button class="lab-tab" role="tab" aria-selected="false" aria-controls="lab-challenge">Challenge a Friend <span class="lab-zk">+150 ZK</span></button>
+        <button class="lab-tab" role="tab" aria-selected="false" aria-controls="lab-circle">Circle of Three</button>
+      </div>
+
+      <div class="lab-stage">
+      <div class="lab-panel is-active" id="lab-one" role="tabpanel">
+        <form id="matchForm">
+          <div class="matchGrid">
+            <div>
+              <label for="mDateA">Your birthday</label>
+              <div class="om-seg lab-seg" data-native="#mDateA" hidden>
+                <label>Month<input class="om-seg-m" inputmode="numeric" maxlength="2" placeholder="MM" autocomplete="off" aria-label="Your birth month"></label>
+                <span class="sep" aria-hidden="true">/</span>
+                <label>Day<input class="om-seg-d" inputmode="numeric" maxlength="2" placeholder="DD" autocomplete="off" aria-label="Your birth day"></label>
+                <span class="sep" aria-hidden="true">/</span>
+                <label>Year<input class="om-seg-y" inputmode="numeric" maxlength="4" placeholder="YYYY" autocomplete="off" aria-label="Your birth year"></label>
+              </div>
+              <input type="date" id="mDateA" class="lab-date-native" required min="1940-01-01" max="2032-12-31">
+            </div>
+            <div>
+              <label for="mDateB">Their birthday</label>
+              <div class="om-seg lab-seg" data-native="#mDateB" hidden>
+                <label>Month<input class="om-seg-m" inputmode="numeric" maxlength="2" placeholder="MM" autocomplete="off" aria-label="Their birth month"></label>
+                <span class="sep" aria-hidden="true">/</span>
+                <label>Day<input class="om-seg-d" inputmode="numeric" maxlength="2" placeholder="DD" autocomplete="off" aria-label="Their birth day"></label>
+                <span class="sep" aria-hidden="true">/</span>
+                <label>Year<input class="om-seg-y" inputmode="numeric" maxlength="4" placeholder="YYYY" autocomplete="off" aria-label="Their birth year"></label>
+              </div>
+              <input type="date" id="mDateB" class="lab-date-native" required min="1940-01-01" max="2032-12-31">
+            </div>
+            <button class="btn" type="submit">Read the Mirror</button>
+          </div>
+        </form>
+        <p class="hint">The mirror weighs the Chinese trines, secret friends, clashes, and harms, then the Western elements, and names the bond. Reading it is a rite: +120 Zodi Karma, twice a day.</p>
+        <div id="matchResult"></div>
+      </div>
+
+      <div class="lab-panel" id="lab-challenge" role="tabpanel">
+        <h3 class="lab-h3">Send them your Zodi Animal.</h3>
+        <p class="dim">A private invitation. They reveal their animal on their side; the crossing arrives back to you.</p>
+        <div class="lab-shareRow">
+          <input id="labShare" readonly aria-label="Your invitation link">
+          <button class="btn" id="labCopy" type="button">Copy</button>
+        </div>
+        <p class="hint" id="labShareState"></p>
+        <p class="hint">Passing the Oracle onward is a rite: <strong style="color:var(--accent-bright)">+150 Zodi Karma</strong>, once a day.</p>
+      </div>
+
+      <div class="lab-panel" id="lab-circle" role="tabpanel">
+        <h3 class="lab-h3">Three of you, read as one shape.</h3>
+        <p class="dim">A trio has its own geometry: who steadies whom, where the spark lives, which two need a bridge. The circle reading takes three birthdays and draws the triangle.</p>
+        <div class="btnRow">
+          <a class="btn" href="circle.html">Read a circle of three</a>
+          <a class="btn ghost" href="year.html">Look up a friend first</a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  <!--relationships-lab:end-->
+
+  <!-- EMAIL -->
+  <section class="band">
+    <p class="eyebrow">Moon notes</p>
+    <h2>Moon Notes, opening soon</h2>
+    <p class="lede">One short reflection at each new moon: the phase, what it favors, and a practice for your animal. The mailing is not sending yet. Leave your email to be first when it opens. Your address is stored only on this device for now.</p>
+    <form id="mailForm">
+      <div class="field" style="max-width:520px">
+        <input type="email" id="email" placeholder="you@email.com" aria-label="Email address">
+        <button class="btn" type="submit">Join the waitlist</button>
+      </div>
+      <p class="msg" id="mailMsg" style="color:var(--brass-bright)"></p>
+    </form>
+  </section>
+
+  <!-- SEO / EXPLAINER -->
+  <section class="band" id="learn">
+    <div class="prose">
+      <p class="eyebrow">How it works</p>
+      <h2>From two zodiacs to one animal</h2>
+      <p>The Western zodiac follows the Sun across the year and gives you a Sun sign. The Chinese zodiac follows a twelve year cycle counted by the lunar calendar and gives you a year animal. Most people only ever learn one half. The Primal Animal is what you get when you put the two halves together.</p>
+      <p>There are twelve Sun signs and twelve year animals, so there are 144 possible combinations. Each one is named for a single creature. A Cancer born in the Year of the Snake is the Chambered Nautilus. A Cancer born in the Year of the Monkey is the Kinkajou. The animal is not a blend you have to interpret. It is the shape the two forces settle into once they stop pulling against each other.</p>
+
+      <h3>What the reading gives you</h3>
+      <p>Each reading answers five questions in order: where you stand now, what you need soon, how to plan the near season, what to be aware of, and what your highest form looks like. The last one matters most. Every animal has a version ruled by its fear and a version that has turned that fear into strength. The reading points you toward the second one.</p>
+
+      <h3>Why the Moon runs through all of it</h3>
+      <p>Cancer is ruled by the Moon. The Chinese year begins on a new moon. The reading times your next moves to the Moon overhead, because a tide you can read is a tide you can move with. Your stones are charged by moonlight. The Moon is the thread that ties the two skies together.</p>
+
+      <dl class="faq">
+        <dt>What is a Primal Animal?</dt>
+        <dd>The single creature you get when you combine your Western Sun sign with your Chinese zodiac year. There are 144, and each has its own reading.</dd>
+        <dt>How accurate is the year animal?</dt>
+        <dd>The Chinese year starts at the lunar New Year, not January 1, so a birthday in January or early February may belong to the previous animal. The Oracle accounts for the New Year date for every year from 1940 to 2032.</dd>
+        <dt>Is this prediction or meaning?</dt>
+        <dd>The animal grid and the readings are a tradition of meaning, not a forecast. The Moon phase and astronomy are real and checkable. Read the result as a mirror you can act on.</dd>
+      </dl>
+    </div>
+  </section>
+
+  </main><!-- /.home-main (Zone B) -->
+
+  <!-- LEFT IDENTITY RAIL (canvas identity rail; sticky at >=900px).
+       home.js wires the identity ids; meter.js paints #awakening-slot;
+       home-v4.js drives the share row, unlocks card, and moon card. -->
+  <aside id="identity-rail" aria-label="Your identity and awakening">
+    <!-- MERGED IDENTITY MODULE: sigil + name + pairing + share row +
+         primary CTA + quiet Start over live in ONE hero card. home.js
+         still owns #identity-name / #identity-sigil / .identity-*;
+         home-v4.js owns #rail-share, the CTA mode, and the reset. -->
+    <div id="identity-card" class="section--animal" data-state="invitation">
+      <p class="rail-kicker">Your animal</p>
+      <div id="identity-sigil" aria-hidden="true"><span class="identity-sigil-wait">✦</span></div>
+      <p id="identity-name">Not yet named</p>
+      <p class="identity-pairing" hidden></p>
+      <p class="identity-invite">Enter your birth date to name your Primal Zodiac Animal.</p>
+
+    <!-- share icon row (canvas sharing widget): always available. Shares the
+         generic invitation before the reveal; home-v4.js personalizes it after. -->
+    <div id="rail-share" class="identity-shareblock">
+      <p class="rail-kicker rail-kicker--sec">Share</p>
+      <div class="shareRow">
+        <a data-share="sms" href="#" title="Send by text message" aria-label="Send by text message">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="4"></rect><path d="M8 17v4l4-4"></path></svg></span>
+          <span class="lbl">SMS</span>
+        </a>
+        <button data-share="copy" type="button" title="Copy the share line" aria-label="Copy the share line">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><rect x="4" y="4" width="11" height="11" rx="2"></rect></svg></span>
+          <span class="lbl">Copy</span>
+        </button>
+        <a data-share="email" href="#" title="Send by email" aria-label="Send by email">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="M4 7l8 6 8-6"></path></svg></span>
+          <span class="lbl">Email</span>
+        </a>
+        <button data-share="instagram" type="button" title="Copy the line for your Instagram story" aria-label="Copy the line for your Instagram story">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"></circle></svg></span>
+          <span class="lbl">Instagram</span>
+        </button>
+        <a data-share="x" href="#" target="_blank" rel="noopener" title="Share on X" aria-label="Share on X">
+          <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14"></path><path d="M19 5L5 19"></path></svg></span>
+          <span class="lbl">X</span>
+        </a>
+      </div>
+    </div>
+
+      <button id="identity-share" type="button">Reveal my animal <span aria-hidden="true">✦</span></button>
+
+      <!-- quiet reset: shown only while data-state="revealed" (CSS gate);
+           two-step confirm wired by home-v4.js. It clears the reveal keys
+           and reloads so every existing painter (home.js rail, home-v4
+           unlocks/share/CTA, app.js eye, meter.js) reboots from clean
+           storage — no second source of truth. -->
+      <div class="identity-reset">
+        <button id="identity-reset" type="button">Start over</button>
+        <span class="identity-reset-confirm" hidden>
+          <span class="q">Clear your animal from this device?</span>
+          <button id="identity-reset-yes" type="button">Yes, clear it</button>
+          <button id="identity-reset-no" type="button">Keep it</button>
+        </span>
+      </div>
+    </div>
+
+
+
+    <!-- the Moon tonight (canvas #moon-rail; filled by home-v4.js) -->
+    <div id="moon-rail" class="rail-card" hidden>
+      <span class="moon-rail-glyph" aria-hidden="true"></span>
+      <div class="moon-rail-body">
+        <p class="moon-rail-label"></p>
+        <p class="moon-rail-meaning"></p>
+      </div>
+    </div>
+
+    <!-- Zodi Karma rail card (hydrated by js/zodi-home.js) -->
+    <div id="zodi-rail" class="rail-card">
+      <p class="rail-kicker rail-kicker--sec">Zodi Karma</p>
+      <p class="zr-wander">Every return, reveal, and proverb earns karma. The board remembers who shows up.</p>
+      <a class="zr-cta" href="account-v2.html">Create your account</a>
+    </div>
+
+    <nav class="rail-jump" aria-label="On this page">
+      <p>On this page</p>
+      <ul>
+        <li><a href="#read">Unlock your Zodi Animal</a></li>
+        <li><a href="#unlocking">What unlocks</a></li>
+        <li><a href="#what-it-is">What a Primal Animal is</a></li>
+        <li><a href="#peek">The Menagerie</a></li>
+        <li><a href="#matchSection">Relationships Laboratory</a></li>
+        <li><a href="karmic-board.html">The Karmic Board</a></li>
+        <li><a href="#stonesSection">Keeper stones</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+</div><!-- /.home-shell -->
+
+<!-- BOTTOM-DOCKED IDENTITY + SHARE COMPANION (tablet/mobile only; never leaves screen).
+     Agent B keeps #home-dock-name and #home-dock-share in sync with the rail. -->
+<div class="home-dock" aria-label="Your animal and share">
+  <span id="home-dock-name">Find your animal</span>
+  <a id="home-dock-share" href="#read">Reveal</a>
+  <span id="home-dock-meter" aria-hidden="true"><i></i></span>
+</div>
+
+<!-- THIRD EYE HUD: ships COLLAPSED as a chip in the served markup
+     (role=button + tabindex baked in) so there is no flash of the
+     expanded card before JS; home-v4.js expands/collapses it. -->
+<!-- eyeHud retired: the Path of Awakening (zodi-awaken.js) now floats bottom-right -->
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/nav.js" defer></script>
+<script src="js/reveal-seq.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/card.js"></script>
+<script src="js/app.js"></script>
+<script src="js/home-fx.js" defer></script>
+<script src="js/stage-bar.js" defer></script>
+<script src="js/game.js" defer></script>
+<!-- Phase 4 interactive layer (rail wiring, proverb rotation, dock sync) — owned by Agent B -->
+<script src="js/home.js" defer></script>
+<!-- v4 canvas-port layer (sub-bar moon chip, segmented reader, unlock states, rail share) -->
+<script src="js/home-v4.js" defer></script>
+<!-- Zodi accounts + karma (Supabase). Config first, then layers in order. -->
+<script src="js/zodi-config.js"></script>
+<script src="js/zodi-auth.js" defer></script>
+<script src="js/zodi-karma.js" defer></script>
+<script src="js/zodi-home.js" defer></script>
+<script src="js/zodi-awaken.js" defer></script>
+<script src="js/zodi-lab.js" defer></script>
+<script src="js/zodi-lab-seg.js" defer></script>
+<script src="js/zodi-fx.js" defer></script>
+<!--om-footer:start-->
+<!-- Zodi Animal universal footer. Single source: components/footer.html,
+     baked into every page by build/apply-footer.mjs, styled by
+     site/css/footer.css (.zf-foot). All classes are zf- namespaced to avoid
+     collisions with page CSS. Edit this file, rebuild, all pages update. -->
+<footer class="zf-foot" role="contentinfo" aria-label="Site footer">
+  <div class="zf-wrap">
+
+    <div class="zf-rule zf-rule--top"><i>&#9790;</i></div>
+
+    <!-- brand (40%) + daily reading (60%) -->
+    <section class="zf-feature">
+      <div class="zf-brand">
+        <p class="zf-eyebrow">The Primal Zodiac, 144 animals</p>
+        <p class="zf-lockup">Zodi <em>Animal</em></p>
+        <p class="zf-manifesto">One hundred and forty-four animals, born where the Western Sun signs cross the Chinese zodiac years. A slow tradition of meaning, kept under the moon.</p>
+        <a class="zf-cta" href="/index.html#read">Find your Zodi Animal <span class="zf-star">&#10022;</span></a>
+      </div>
+
+      <div class="zf-news">
+        <div class="zf-sky" aria-hidden="true">
+          <span class="zf-tw zf-tw1"></span><span class="zf-tw zf-tw2"></span><span class="zf-tw zf-tw3"></span><span class="zf-tw zf-tw4"></span>
+          <span class="zf-shoot zf-shoot-a"></span><span class="zf-shoot zf-shoot-b"></span><span class="zf-shoot zf-shoot-c"></span>
+        </div>
+        <div class="zf-copy">
+          <p class="zf-eyebrow">The Daily Reading</p>
+          <h2 class="zf-news-h">Your reading, at dawn.</h2>
+          <p class="zf-sub">One short passage for your Zodi Animal each morning. The moon's phase, what it favors, and a line meant for you. Free, and it takes ten seconds to join.</p>
+        </div>
+        <form class="zf-form" id="zf-news-form" novalidate>
+          <label class="zf-sr" for="zf-email">Email address</label>
+          <div class="zf-row">
+            <input id="zf-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-describedby="zf-rz">
+            <button type="submit" class="zf-subbtn">Read with me daily</button>
+          </div>
+          <p class="zf-reassure" id="zf-rz">No noise. Unsubscribe anytime.</p>
+        </form>
+      </div>
+    </section>
+
+    <div class="zf-rule"><i>&#10022;</i></div>
+
+    <!-- link matrix -->
+    <nav class="zf-matrix" aria-label="Footer navigation">
+      <div class="zf-col"><h3>Discover</h3><ul>
+        <li><a href="/index.html">Find your animal</a></li>
+        <li><a href="/menagerie.html">All 144 animals</a></li>
+        <li><a href="/zodiac/">The 144 crossings</a></li>
+        <li><a href="/zodiac/grid/">The 144 grid</a></li>
+        <li><a href="/year.html">Year finder</a></li>
+        <li><a href="/daily.html">Today's reading</a></li>
+      </ul></div>
+      <div class="zf-col"><h3>The two wheels</h3><ul>
+        <li><a href="/western-zodiac/">The Western wheel</a></li>
+        <li><a href="/horoscopes/">All horoscopes</a></li>
+        <li><a href="/chinese-zodiac/">The Eastern wheel</a></li>
+        <li><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a></li>
+        <li><a href="/zodiac/what-is-my-primal-zodiac-animal/">How the crossing works</a></li>
+        <li><a href="/best-days.html">Best days</a></li>
+      </ul></div>
+      <div class="zf-col"><h3>Practice &amp; lore</h3><ul>
+        <li><a href="/feng-shui/">Feng shui</a></li>
+        <li><a href="/feng-shui/bagua/">The bagua</a></li>
+        <li><a href="/feng-shui/kua-number/">Your Kua number</a></li>
+        <li><a href="/stones.html">Keeper stones</a></li>
+        <li><a href="/proverbs/">The Proverb Pond</a></li>
+        <li><a href="/traditions/">Traditions</a></li>
+        <li><a href="/habitat/">The Habitat</a></li>
+      </ul></div>
+      <div class="zf-col"><h3>Bonds &amp; Moon</h3><ul>
+        <li><a href="/match.html">Test a match</a></li>
+        <li><a href="/vs.html">Challenge a friend</a></li>
+        <li><a href="/circle.html">Circle of three</a></li>
+        <li><a href="/moon.html">The Moon tonight</a></li>
+        <li><a href="/moon/phases/">The eight phases</a></li>
+        <li><a href="/awakening.html">The Awakening</a></li>
+      </ul></div>
+      <div class="zf-col"><h3>The system</h3><ul>
+        <li><a href="/learn.html">How it works</a></li>
+        <li><a href="/cosmology/">Cosmology</a></li>
+        <li><a href="/cosmology/four-pillars/">The Four Pillars</a></li>
+        <li><a href="/elements/fire/">The five elements</a></li>
+        <li><a href="/directions/">Directions</a></li>
+        <li><a href="/account.html">Your account</a></li>
+      </ul></div>
+    </nav>
+
+    <div class="zf-rule"><i>&#10022;</i></div>
+
+    <!-- almanac: 12 signs, 12 years -->
+    <section class="zf-almanac" aria-labelledby="zf-almh">
+      <p class="zf-cap"><span class="zf-ttl" id="zf-almh">The Almanac of Signs and Years</span><span class="zf-note">12 Sun signs and 12 zodiac years make 144 Zodi Animals</span></p>
+      <div class="zf-alm-row">
+        <nav class="zf-alm-grid" aria-label="Western zodiac signs">
+          <a href="/western-zodiac/aries/"><span class="zf-gly">&#9800;</span><span class="zf-nm">Aries</span></a>
+          <a href="/western-zodiac/taurus/"><span class="zf-gly">&#9801;</span><span class="zf-nm">Taurus</span></a>
+          <a href="/western-zodiac/gemini/"><span class="zf-gly">&#9802;</span><span class="zf-nm">Gemini</span></a>
+          <a href="/western-zodiac/cancer/"><span class="zf-gly">&#9803;</span><span class="zf-nm">Cancer</span></a>
+          <a href="/western-zodiac/leo/"><span class="zf-gly">&#9804;</span><span class="zf-nm">Leo</span></a>
+          <a href="/western-zodiac/virgo/"><span class="zf-gly">&#9805;</span><span class="zf-nm">Virgo</span></a>
+          <a href="/western-zodiac/libra/"><span class="zf-gly">&#9806;</span><span class="zf-nm">Libra</span></a>
+          <a href="/western-zodiac/scorpio/"><span class="zf-gly">&#9807;</span><span class="zf-nm">Scorpio</span></a>
+          <a href="/western-zodiac/sagittarius/"><span class="zf-gly">&#9808;</span><span class="zf-nm">Sagittarius</span></a>
+          <a href="/western-zodiac/capricorn/"><span class="zf-gly">&#9809;</span><span class="zf-nm">Capricorn</span></a>
+          <a href="/western-zodiac/aquarius/"><span class="zf-gly">&#9810;</span><span class="zf-nm">Aquarius</span></a>
+          <a href="/western-zodiac/pisces/"><span class="zf-gly">&#9811;</span><span class="zf-nm">Pisces</span></a>
+        </nav>
+      </div>
+      <div class="zf-alm-row">
+        <nav class="zf-alm-grid" aria-label="Chinese zodiac years">
+          <a href="/chinese-zodiac/rat/"><span class="zf-gly">&#40736;</span><span class="zf-nm">Rat</span></a>
+          <a href="/chinese-zodiac/ox/"><span class="zf-gly">&#29275;</span><span class="zf-nm">Ox</span></a>
+          <a href="/chinese-zodiac/tiger/"><span class="zf-gly">&#34382;</span><span class="zf-nm">Tiger</span></a>
+          <a href="/chinese-zodiac/rabbit/"><span class="zf-gly">&#20820;</span><span class="zf-nm">Rabbit</span></a>
+          <a href="/chinese-zodiac/dragon/"><span class="zf-gly">&#40857;</span><span class="zf-nm">Dragon</span></a>
+          <a href="/chinese-zodiac/snake/"><span class="zf-gly">&#34503;</span><span class="zf-nm">Snake</span></a>
+          <a href="/chinese-zodiac/horse/"><span class="zf-gly">&#39532;</span><span class="zf-nm">Horse</span></a>
+          <a href="/chinese-zodiac/goat/"><span class="zf-gly">&#32650;</span><span class="zf-nm">Goat</span></a>
+          <a href="/chinese-zodiac/monkey/"><span class="zf-gly">&#29492;</span><span class="zf-nm">Monkey</span></a>
+          <a href="/chinese-zodiac/rooster/"><span class="zf-gly">&#40481;</span><span class="zf-nm">Rooster</span></a>
+          <a href="/chinese-zodiac/dog/"><span class="zf-gly">&#29399;</span><span class="zf-nm">Dog</span></a>
+          <a href="/chinese-zodiac/pig/"><span class="zf-gly">&#29482;</span><span class="zf-nm">Pig</span></a>
+        </nav>
+      </div>
+    </section>
+
+    <div class="zf-rule"><i>&#9790;</i></div>
+
+    <!-- proverb, tap to hear -->
+    <section class="zf-proverb" aria-label="A proverb from the Pond">
+      <p class="zf-hz" id="zf-pv-hz">&#23432;&#24471;&#38642;&#38283;&#35211;&#26376;&#26126;</p>
+      <button class="zf-say" id="zf-pv-say" type="button" aria-label="Hear the pronunciation">
+        <span class="zf-spk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.06A7 7 0 0 1 14 18.7v2.06A9 9 0 0 0 14 3.2z"/></svg></span>
+        <span id="zf-pv-py">shǒu dé yún kāi jiàn yuè míng</span>
+      </button>
+      <p class="zf-en" id="zf-pv-en">Hold on until the clouds part, and the bright moon appears.</p>
+      <a class="zf-src" href="/proverbs/">From the Proverb Pond</a>
+    </section>
+
+    <div class="zf-colo">
+      <span class="zf-lead">&copy; <span id="zf-year">2026</span> Zodi Animal. Made under the moon.</span>
+      <span class="zf-disc">A tradition of meaning for reflection. Not medical, psychological, financial, or legal advice.</span>
+    </div>
+
+  </div>
+</footer>
+<script>
+/* Zodi footer: rotating proverb, tap-to-hear pronunciation, on-device newsletter save. */
+(function(){
+  try{ var y=document.getElementById('zf-year'); if(y) y.textContent=new Date().getFullYear(); }catch(e){}
+
+  var P=[
+    {hz:"守得雲開見月明",py:"shǒu dé yún kāi jiàn yuè míng",en:"Hold on until the clouds part, and the bright moon appears."},
+    {hz:"上善若水",py:"shàng shàn ruò shuǐ",en:"The highest good is like water."},
+    {hz:"瓜熟蒂落",py:"guā shú dì luò",en:"When the melon ripens, the stalk falls of itself."},
+    {hz:"順其自然",py:"shùn qí zì rán",en:"Let it follow its own nature."},
+    {hz:"塞翁失馬",py:"sài wēng shī mǎ",en:"The old man lost his horse. Who is to say it was not good fortune."},
+    {hz:"物極必反",py:"wù jí bì fǎn",en:"When a thing reaches its extreme, it turns back the other way."},
+    {hz:"水到渠成",py:"shuǐ dào qú chéng",en:"When the water arrives, the channel forms itself."}
+  ];
+  var cur=P[Math.floor(Math.random()*P.length)];
+  try{
+    document.getElementById('zf-pv-hz').textContent=cur.hz;
+    document.getElementById('zf-pv-py').textContent=cur.py;
+    document.getElementById('zf-pv-en').textContent=cur.en;
+  }catch(e){}
+
+  var say=document.getElementById('zf-pv-say');
+  if(say) say.addEventListener('click',function(){
+    try{
+      if(!('speechSynthesis' in window)) return;
+      speechSynthesis.cancel();
+      var u=new SpeechSynthesisUtterance(cur.hz);
+      u.lang='zh-CN'; u.rate=0.8;
+      var v=(speechSynthesis.getVoices()||[]).filter(function(x){return /zh|Chinese/i.test(x.lang+' '+x.name);})[0];
+      if(v) u.voice=v;
+      say.classList.add('zf-say--on'); u.onend=function(){ say.classList.remove('zf-say--on'); };
+      speechSynthesis.speak(u);
+    }catch(e){}
+  });
+
+  var form=document.getElementById('zf-news-form');
+  if(form) form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=(document.getElementById('zf-email')||{}).value||'';
+    var note=document.getElementById('zf-rz');
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ if(note) note.textContent="Enter an email so we can find you."; return; }
+    try{ localStorage.setItem('zodi_daily_email', email); }catch(_e){}
+    if(note) note.textContent="Saved on this device. Daily readings open soon.";
+    try{ document.getElementById('zf-email').value=''; }catch(_e){}
+  });
+})();
+</script>
+<!--om-footer:end-->
+</body>
+</html>

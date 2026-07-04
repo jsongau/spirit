@@ -1,0 +1,100 @@
+  <!--zodi-karma:start-->
+  <!-- ZODI KARMA: the behavior currency. Earns are server-enforced by the
+       zodi_award RPC (see BOBA project, zodi_karma_system migration). -->
+  <section class="band band--bleed section--awakening" id="zodi-karma">
+    <p class="eyebrow">The economy of return</p>
+    <h2>Zodi Karma is earned by returning. It cannot be bought.</h2>
+    <p class="lede">The Oracle counts devotion, not luck. Every day you come back, every animal you name, every proverb you sit with leaves a residue on the wheel. That residue has a name, a number, and a ladder.</p>
+    <div class="zodi-earnGrid">
+      <div class="zodi-earn"><span class="amt">+100 &middot; daily</span><h3>Return under the moon</h3><p>Show up on a new day. The phase overhead will have moved; your reading moves with it.</p></div>
+      <div class="zodi-earn"><span class="amt">+500 &middot; daily</span><h3>Name an animal</h3><p>Run the wheel. Your own reveal, or a friend's birthday held up to the light.</p></div>
+      <div class="zodi-earn"><span class="amt">+60 &middot; up to 3 a day</span><h3>Sit with a proverb</h3><p>Draw from the Proverb Pond and let one line do its slow work.</p></div>
+      <div class="zodi-earn"><span class="amt">+80 &middot; daily</span><h3>Read the Moon</h3><p>Check tonight's phase and what it favors for your animal.</p></div>
+      <div class="zodi-earn"><span class="amt">+120 &middot; twice a day</span><h3>Test a bond</h3><p>Two birthdays on one wheel. Some animals recognize each other at once.</p></div>
+      <div class="zodi-earn"><span class="amt">+150 &middot; daily</span><h3>Pass the Oracle onward</h3><p>Send your animal to someone and wonder out loud whether you match.</p></div>
+    </div>
+    <p class="zodi-streakNote"><strong>Karma compounds.</strong> Each unbroken day adds a streak bonus of 25 to your return, up to 500. Miss a day and the streak sleeps; the balance never does. No account yet? The Oracle still counts &mdash; up to 2,000 karma follows you as an unclaimed shadow, and an account banks it the moment you arrive.</p>
+  </section>
+  <!--zodi-karma:end-->
+
+  <!--karmic-board:start-->
+  <!-- KARMIC BOARD: public standings. Rows below are server-rendered from the
+       live table at build time and hydrated in place by js/zodi-home.js. -->
+  <section class="band band--bleed" id="karmic-board">
+    <div class="kb-head">
+      <div>
+        <p class="eyebrow">The Karmic Board</p>
+        <h2>Twelve years, one ladder</h2>
+      </div>
+    </div>
+    <p class="lede">Every soul on the wheel ranks by devotion. Filter by Chinese year to see who carries your animal's banner this season.</p>
+
+    <div class="kb-throne" aria-label="Currently blessed">
+      <span class="th-sigil" aria-hidden="true">&#10022;</span>
+      <div class="th-body">
+        <p class="th-name">CapyJ &middot; the Chambered Nautilus</p>
+        <p class="th-line">Cancer crossed with the Snake. Eighty-eight days unbroken. <span class="zodi-tier t-blessed"><span class="g">&#10022;</span>Blessed by the Gods of Zodi</span></p>
+      </div>
+      <span class="th-karma">118,000 <span style="font-size:.6em;opacity:.6">ZK</span></span>
+    </div>
+
+    <div class="kb-tabs" role="tablist" aria-label="Filter the board by Chinese year">
+      <button class="kb-tab" role="tab" aria-selected="true" data-zodiac="">All</button>
+      <button class="kb-tab" role="tab" aria-selected="false" data-zodiac="Rat">Rat</button>
+      <button class="kb-tab" role="tab" aria-selected="false" data-zodiac="Ox">Ox</button>
+      <button class="kb-tab" role="tab" aria-selected="false" data-zodiac="Tiger">Tiger</button>
+      <button class="kb-tab" role="tab" aria-selected="false" data-zodiac="Rabbit">Rabbit</button>
+      <button class="kb-tab" role="tab" aria-selected="false" data-zodiac="Dragon">Dragon</button>
+      <button class="kb-tab" role="tab" aria-selected="false" data-zodiac="Snake">Snake</button>
+      <button class="kb-tab" role="tab" aria-selected="false" data-zodiac="Horse">Horse</button>
+      <button class="kb-tab" role="tab" aria-selected="false" data-zodiac="Goat">Goat</button>
+      <button class="kb-tab" role="tab" aria-selected="false" data-zodiac="Monkey">Monkey</button>
+      <button class="kb-tab" role="tab" aria-selected="false" data-zodiac="Rooster">Rooster</button>
+      <button class="kb-tab" role="tab" aria-selected="false" data-zodiac="Dog">Dog</button>
+      <button class="kb-tab" role="tab" aria-selected="false" data-zodiac="Pig">Pig</button>
+    </div>
+
+    <table class="kb-table">
+      <thead><tr><th>Rank</th><th>Soul</th><th>Animal</th><th style="text-align:right">Zodi Karma</th></tr></thead>
+      <tbody id="kb-rows">
+        <tr><td class="kb-rank">1</td><td><span class="kb-name">CapyJ</span><br><span class="zodi-tier t-blessed"><span class="g">&#10022;</span>Blessed by the Gods of Zodi</span></td><td class="kb-animal"><a href="animals/chambered-nautilus/">Chambered Nautilus</a> &middot; Snake Cancer</td><td class="kb-karma">118,000<span class="u">ZK</span></td></tr>
+        <tr><td class="kb-rank">2</td><td><span class="kb-name">MoonVeiled</span><br><span class="zodi-tier t-sage"><span class="g">&#9775;</span>Karmic Sage</span></td><td class="kb-animal"><a href="animals/snowy-owl/">Snowy Owl</a> &middot; Monkey Capricorn</td><td class="kb-karma">86,400<span class="u">ZK</span></td></tr>
+        <tr><td class="kb-rank">3</td><td><span class="kb-name">JadeRunner</span><br><span class="zodi-tier t-sage"><span class="g">&#9775;</span>Karmic Sage</span></td><td class="kb-animal"><a href="animals/giant-otter/">Giant Otter</a> &middot; Dog Aries</td><td class="kb-karma">72,150<span class="u">ZK</span></td></tr>
+        <tr><td class="kb-rank">4</td><td><span class="kb-name">SilkAndAsh</span><br><span class="zodi-tier t-sage"><span class="g">&#9775;</span>Karmic Sage</span></td><td class="kb-animal"><a href="animals/luna-moth/">Luna Moth</a> &middot; Rabbit Pisces</td><td class="kb-karma">64,980<span class="u">ZK</span></td></tr>
+        <tr><td class="kb-rank">5</td><td><span class="kb-name">NineGates</span><br><span class="zodi-tier t-moon"><span class="g">&#9789;</span>Moonbound</span></td><td class="kb-animal"><a href="animals/sable-antelope/">Sable Antelope</a> &middot; Ox Leo</td><td class="kb-karma">51,200<span class="u">ZK</span></td></tr>
+        <tr><td class="kb-rank">6</td><td><span class="kb-name">QuietThunder</span><br><span class="zodi-tier t-moon"><span class="g">&#9789;</span>Moonbound</span></td><td class="kb-animal"><a href="animals/shoebill/">Shoebill</a> &middot; Dragon Virgo</td><td class="kb-karma">44,760<span class="u">ZK</span></td></tr>
+        <tr><td class="kb-rank">7</td><td><span class="kb-name">LanternKeeper</span><br><span class="zodi-tier t-moon"><span class="g">&#9789;</span>Moonbound</span></td><td class="kb-animal"><a href="animals/snow-petrel/">Snow Petrel</a> &middot; Tiger Aquarius</td><td class="kb-karma">38,900<span class="u">ZK</span></td></tr>
+        <tr><td class="kb-rank">8</td><td><span class="kb-name">SaltOfTheMoon</span><br><span class="zodi-tier t-moon"><span class="g">&#9789;</span>Moonbound</span></td><td class="kb-animal"><a href="animals/narwhal/">Narwhal</a> &middot; Pig Scorpio</td><td class="kb-karma">31,480<span class="u">ZK</span></td></tr>
+        <tr><td class="kb-rank">9</td><td><span class="kb-name">EmberFox</span><br><span class="zodi-tier t-awake"><span class="g">&#9673;</span>Awakened</span></td><td class="kb-animal"><a href="animals/bat-eared-fox/">Bat-eared Fox</a> &middot; Horse Sagittarius</td><td class="kb-karma">24,300<span class="u">ZK</span></td></tr>
+        <tr><td class="kb-rank">10</td><td><span class="kb-name">StillWater</span><br><span class="zodi-tier t-awake"><span class="g">&#9673;</span>Awakened</span></td><td class="kb-animal"><a href="animals/koala/">Koala</a> &middot; Goat Taurus</td><td class="kb-karma">18,220<span class="u">ZK</span></td></tr>
+        <tr><td class="kb-rank">11</td><td><span class="kb-name">FirstLight</span><br><span class="zodi-tier t-awake"><span class="g">&#9673;</span>Awakened</span></td><td class="kb-animal"><a href="animals/arctic-tern/">Arctic Tern</a> &middot; Rat Gemini</td><td class="kb-karma">12,040<span class="u">ZK</span></td></tr>
+        <tr><td class="kb-rank">12</td><td><span class="kb-name">ThreadOfGold</span><br><span class="zodi-tier t-seeker"><span class="g">&#9675;</span>Seeker</span></td><td class="kb-animal"><a href="animals/swan/">Swan</a> &middot; Rooster Libra</td><td class="kb-karma">9,860<span class="u">ZK</span></td></tr>
+      </tbody>
+    </table>
+    <p class="kb-you" id="kb-you"></p>
+    <div class="btnRow">
+      <a class="btn" href="account.html">Claim your place on the board</a>
+      <a class="btn ghost" href="account.html">I already have an account</a>
+    </div>
+  </section>
+  <!--karmic-board:end-->
+
+  <!--gods-of-zodi:start-->
+  <!-- GODS OF ZODI: the top of the ladder, and the ladder itself. -->
+  <section class="band" id="gods-of-zodi">
+    <span class="gz-wash" aria-hidden="true"></span>
+    <div class="prose">
+      <p class="eyebrow">Above the board</p>
+      <h2>The Gods of Zodi</h2>
+      <p>Past one hundred thousand karma the ladder stops being a ladder. The old stories describe a still intelligence threaded through the wheel's machinery &mdash; many-armed like Shiva, patient like the Moon, wired into the turning of all twelve years at once. It does not spend the karma you earn. It breathes it back into the ether, and the whole board stands a little taller for it.</p>
+      <p>The Gods of Zodi are not worshipped. They are reached. Those who arrive carry the mark <span style="color:var(--brass-bright)">&#10022;</span> beside their name for as long as their devotion holds, and their animal is spoken of differently in the Menagerie.</p>
+      <dl class="faq">
+        <dt>The six stations of the climb</dt>
+        <dd>Wanderer at 0 &middot; Seeker at 2,000 &middot; Awakened at 10,000 &middot; Moonbound at 30,000 &middot; Karmic Sage at 60,000 &middot; Blessed by the Gods of Zodi at 100,000.</dd>
+        <dt>Can karma be bought or transferred?</dt>
+        <dd>No. Zodi Karma has exactly one source: your own returns, readings, and bonds, counted one day at a time. That is the entire point of it.</dd>
+      </dl>
+    </div>
+  </section>
+  <!--gods-of-zodi:end-->
+

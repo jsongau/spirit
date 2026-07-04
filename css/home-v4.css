@@ -1415,3 +1415,29 @@ body.v4-modal-open { overflow: hidden; }
   .home-v4.js-seg .reader .om-seg-go { margin-left: 0; width: 100%; }
   .home-v4 .reveal h2.big { font-size: clamp(2.4rem, 11vw, 3.4rem); }
 }
+
+/* ------------------------------------------------------------
+   Relationships Laboratory — segmented MM/DD/YYYY date entry.
+   Mirrors the reader (#omSeg). Reuses .om-seg visuals; when JS
+   is active the native pickers hide and the two birthday fields
+   stack for room. See js/zodi-lab-seg.js.
+   ------------------------------------------------------------ */
+.home-v4.js-seg .lab-date-native { display: none; }
+/* two birthdays side by side keeps the panel short (button spans below) */
+.home-v4.js-seg #lab-one .matchGrid {
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 22px;
+  align-items: start;
+}
+.home-v4.js-seg #lab-one .matchGrid > div > label {
+  display: block;
+  margin: 0 0 8px;
+  font: 400 .72rem/1 var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.home-v4.js-seg #lab-one .matchGrid .btn { grid-column: 1 / -1; width: 100%; }
+@media (max-width: 640px) {
+  .home-v4.js-seg #lab-one .matchGrid { grid-template-columns: 1fr; gap: 18px; }
+}

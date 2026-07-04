@@ -1,0 +1,373 @@
+/* ============================================================
+   zodi.css — Zodi Karma, Karmic Board, blessing tiers, auth UI.
+   Reads tokens.css only; no hard-coded geometry colors.
+   ============================================================ */
+
+/* ---- karma toast ---- */
+.zodi-toast{position:fixed;left:50%;bottom:84px;transform:translate(-50%,16px);z-index:220;
+  background:var(--panel-2);border:1px solid var(--brass);color:var(--brass-bright);
+  font-family:var(--mono);font-size:.82rem;letter-spacing:.04em;padding:10px 18px;border-radius:var(--r-pill);
+  box-shadow:var(--e-2),0 0 24px oklch(from var(--brass) l c h / .18);opacity:0;pointer-events:none;
+  transition:opacity var(--dur) var(--ease-out),transform var(--dur) var(--ease-out);max-width:min(92vw,480px);text-align:center}
+.zodi-toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ---- blessing tier chips ---- */
+.zodi-tier{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:.68rem;
+  letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:var(--r-pill);
+  border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.zodi-tier .g{font-size:.85em}
+.zodi-tier.t-seeker{color:var(--ivory)}
+.zodi-tier.t-awake{color:var(--teal-bright);border-color:oklch(from var(--teal) l c h / .4)}
+.zodi-tier.t-moon{color:var(--silver-bright);border-color:oklch(from var(--silver) l c h / .4)}
+.zodi-tier.t-sage{color:var(--jade-bright);border-color:oklch(from var(--jade) l c h / .45)}
+.zodi-tier.t-blessed{color:var(--brass-bright);border-color:var(--brass);
+  background:linear-gradient(90deg,oklch(from var(--brass) l c h / .14),transparent);
+  box-shadow:0 0 18px oklch(from var(--brass) l c h / .22)}
+
+/* ---- the earn ledger band ---- */
+.zodi-earnGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:20px}
+.zodi-earn{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:18px 20px;position:relative}
+.zodi-earn .amt{font-family:var(--mono);color:var(--brass-bright);font-size:.85rem;letter-spacing:.05em}
+.zodi-earn h3{font-family:var(--serif);color:var(--moon);font-size:1.15rem;margin:6px 0 4px}
+.zodi-earn p{margin:0;font-size:.88rem;color:var(--body)}
+.zodi-streakNote{margin-top:16px;font-size:.9rem;color:var(--muted);max-width:62ch}
+.zodi-streakNote strong{color:var(--silver-bright);font-weight:500}
+
+/* ---- Karmic Board ---- */
+#karmic-board .kb-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.kb-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 6px}
+.kb-tab{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+  background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:var(--r-pill);
+  padding:6px 14px;cursor:pointer;transition:color var(--dur-fast),border-color var(--dur-fast)}
+.kb-tab:hover{color:var(--ivory);border-color:var(--brass-dim)}
+.kb-tab[aria-selected="true"]{color:var(--brass-bright);border-color:var(--brass);background:oklch(from var(--brass) l c h / .1)}
+.kb-table{width:100%;border-collapse:collapse;margin-top:14px}
+.kb-table th{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);text-align:left;font-weight:400;padding:0 12px 10px}
+.kb-table td{padding:13px 12px;border-top:1px solid var(--line-soft);font-size:.92rem;color:var(--body);vertical-align:middle}
+.kb-table .kb-rank{font-family:var(--mono);color:var(--faint);width:3ch}
+.kb-table tr:nth-child(1) .kb-rank,.kb-table tr:nth-child(1) .kb-name{color:var(--brass-bright)}
+.kb-table .kb-name{font-family:var(--serif);font-size:1.05rem;color:var(--moon)}
+.kb-table .kb-animal{color:var(--muted);font-size:.85rem}
+.kb-table .kb-animal a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
+.kb-table .kb-karma{font-family:var(--mono);color:var(--brass-bright);text-align:right;white-space:nowrap}
+.kb-table .kb-karma .u{color:var(--faint);font-size:.7em;margin-left:4px}
+.kb-you{margin-top:16px;padding:14px 18px;border:1px dashed var(--brass-dim);border-radius:var(--r-2);
+  color:var(--body);font-size:.92rem;display:none}
+.kb-you.on{display:block}
+.kb-you strong{color:var(--brass-bright);font-weight:500}
+@media(max-width:640px){
+  .kb-table .kb-animal{display:none}
+  .kb-table td{padding:12px 8px}
+}
+
+/* ---- throne row: the current Blessed ---- */
+.kb-throne{display:flex;gap:18px;align-items:center;background:
+  radial-gradient(120% 140% at 10% 0%,oklch(from var(--brass) l c h / .12),transparent 55%),var(--panel);
+  border:1px solid var(--brass);border-radius:var(--r-3);padding:22px 26px;margin-top:22px;flex-wrap:wrap}
+.kb-throne .th-sigil{font-size:2rem;color:var(--brass-bright);text-shadow:0 0 24px oklch(from var(--brass) l c h / .5)}
+.kb-throne .th-body{flex:1 1 260px}
+.kb-throne .th-name{font-family:var(--serif);font-size:1.5rem;color:var(--moon);margin:0}
+.kb-throne .th-line{margin:4px 0 0;color:var(--body);font-size:.92rem}
+.kb-throne .th-karma{font-family:var(--mono);color:var(--brass-bright);font-size:1.3rem;white-space:nowrap}
+
+/* ---- gods of zodi band ---- */
+#gods-of-zodi{position:relative;overflow:hidden}
+#gods-of-zodi .gz-wash{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(90% 80% at 80% 20%,oklch(from var(--amethyst) l c h / .12),transparent 60%)}
+#gods-of-zodi .prose{position:relative}
+
+/* ---- identity-rail karma card ---- */
+#zodi-rail.rail-card p{margin:0}
+#zodi-rail .zr-balance{font-family:var(--mono);font-size:1.5rem;color:var(--brass-bright);margin:6px 0 2px}
+#zodi-rail .zr-balance .u{font-size:.55em;color:var(--faint);letter-spacing:.06em}
+#zodi-rail .zr-meta{font-size:.8rem;color:var(--muted);margin-top:4px}
+#zodi-rail .zr-cta{display:inline-block;margin-top:12px;font-size:.85rem;color:var(--brass-bright);
+  border:1px solid var(--brass-dim);border-radius:var(--r-pill);padding:7px 16px;text-decoration:none;
+  transition:background var(--dur-fast)}
+#zodi-rail .zr-cta:hover{background:oklch(from var(--brass) l c h / .12)}
+#zodi-rail .zr-wander{margin-top:10px;font-size:.78rem;color:var(--muted)}
+#zodi-rail .zr-wander b{color:var(--brass-bright);font-weight:500}
+
+/* ---- auth UI (account.html + any modal reuse) ---- */
+.zodi-authCard{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-3);padding:28px;max-width:440px}
+.zodi-authCard h3{font-family:var(--serif);color:var(--moon);font-size:1.4rem;margin:0 0 6px}
+.zodi-authCard .sub{color:var(--muted);font-size:.9rem;margin:0 0 18px}
+.zodi-field{display:grid;gap:6px;margin-bottom:14px}
+.zodi-field label{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.zodi-field input{background:var(--field);border:1px solid var(--line);border-radius:var(--r-1);
+  color:var(--ivory);padding:12px 14px;font-size:1rem;width:100%}
+.zodi-field input:focus{outline:none;border-color:var(--brass)}
+.zodi-authBtn{width:100%;background:var(--brass);color:oklch(0.2 0.03 275);border:0;border-radius:var(--r-pill);
+  padding:13px 18px;font-size:.95rem;font-weight:600;cursor:pointer;transition:filter var(--dur-fast)}
+.zodi-authBtn:hover{filter:brightness(1.08)}
+.zodi-authBtn[disabled]{opacity:.55;cursor:wait}
+.zodi-googleBtn{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--panel-2);
+  color:var(--ivory);border:1px solid var(--line);border-radius:var(--r-pill);padding:12px 18px;font-size:.95rem;
+  cursor:pointer;margin-top:10px;transition:border-color var(--dur-fast)}
+.zodi-googleBtn:hover{border-color:var(--brass-dim)}
+.zodi-authMsg{min-height:1.2em;font-size:.85rem;color:var(--rose-bright);margin:10px 0 0}
+.zodi-authMsg.ok{color:var(--jade-bright)}
+.zodi-switch{margin-top:16px;font-size:.85rem;color:var(--muted);text-align:center}
+.zodi-switch button{background:none;border:0;color:var(--brass-bright);cursor:pointer;font-size:inherit;padding:0}
+.zodi-or{display:flex;align-items:center;gap:12px;color:var(--faint);font-family:var(--mono);
+  font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;margin:16px 0 6px}
+.zodi-or::before,.zodi-or::after{content:"";height:1px;background:var(--line);flex:1}
+
+/* ---- account dashboard ---- */
+.zodi-dash{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:22px}
+.zodi-stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:20px 22px}
+.zodi-stat .k{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.zodi-stat .v{font-family:var(--serif);font-size:1.9rem;color:var(--moon);margin-top:6px;line-height:1.1}
+.zodi-stat .v.mono{font-family:var(--mono);color:var(--brass-bright);font-size:1.6rem}
+.zodi-stat .s{font-size:.82rem;color:var(--muted);margin-top:6px}
+.zodi-signout{background:none;border:1px solid var(--line);color:var(--muted);border-radius:var(--r-pill);
+  padding:8px 18px;font-size:.85rem;cursor:pointer;margin-top:26px}
+.zodi-signout:hover{color:var(--ivory);border-color:var(--brass-dim)}
+
+/* ---- karmic-board.html: your standing + next-tier progress ---- */
+.kb-standing{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:20px 24px;max-width:720px}
+.kb-prog{margin-top:14px}
+.kb-prog-track{height:6px;border-radius:var(--r-pill);background:var(--field);border:1px solid var(--line-soft);overflow:hidden}
+.kb-prog-track i{display:block;height:100%;width:0;border-radius:var(--r-pill);
+  background:linear-gradient(90deg,var(--brass-dim),var(--brass-bright));
+  box-shadow:0 0 12px oklch(from var(--brass) l c h / .4);transition:width var(--dur-slow) var(--ease-out)}
+.kb-prog-label{margin:8px 0 0;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--muted)}
+
+/* ---- unlock grid cards become living doors ---- */
+a.unlockCard{display:block;text-decoration:none;color:inherit;position:relative;
+  transition:transform var(--dur) var(--ease-out),border-color var(--dur-fast),box-shadow var(--dur)}
+a.unlockCard:hover{transform:translateY(-4px);border-color:var(--brass);
+  box-shadow:0 10px 34px oklch(0 0 0 / .35)}
+a.unlockCard::after{content:"\2192";position:absolute;right:18px;bottom:14px;color:var(--brass-bright);
+  opacity:0;transform:translateX(-6px);transition:opacity var(--dur-fast),transform var(--dur) var(--ease-out)}
+a.unlockCard:hover::after{opacity:1;transform:translateX(0)}
+a.unlockCard:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+
+/* ============================================================
+   Relationships Laboratory (index-v2 #matchSection) + section washes
+   ============================================================ */
+.lab-feature,.home-v4 .home-main .band--bleed.lab-feature{position:relative;overflow:hidden;border-radius:var(--r-3);
+  background:linear-gradient(160deg,oklch(0.21 0.06 20),oklch(0.16 0.05 15) 55%,oklch(0.14 0.04 25));
+  border:1px solid oklch(from var(--rose) l c h / .3);
+  box-shadow:inset 0 0 90px oklch(from var(--rose-dim) l c h / .16),var(--e-2);
+  padding-top:var(--s-7);padding-bottom:var(--s-7)}
+.lab-feature .lab-wash{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(110% 90% at 85% 12%,oklch(from var(--rose) l c h / .22),transparent 58%),
+             radial-gradient(80% 70% at 5% 95%,oklch(from var(--rose-dim) l c h / .18),transparent 60%)}
+.lab-feature .eyebrow{color:var(--rose-bright)}
+.lab-feature h2{color:oklch(0.95 0.03 40)}
+.lab-feature .lab-inner{position:relative}
+.lab-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 20px;border:1px solid var(--line);
+  border-radius:var(--r-pill);padding:5px;width:max-content;max-width:100%;background:oklch(0 0 0 / .18)}
+.lab-tab{font-family:var(--sans);font-size:.88rem;color:var(--muted);background:transparent;border:0;
+  border-radius:var(--r-pill);padding:9px 20px;cursor:pointer;transition:color var(--dur-fast),background var(--dur-fast)}
+.lab-tab:hover{color:var(--ivory)}
+.lab-tab[aria-selected="true"]{background:var(--accent);color:oklch(0.18 0.03 275);font-weight:600}
+.lab-tab .lab-zk{font-family:var(--mono);font-size:.66rem;opacity:.8;margin-left:4px}
+/* stage: the three chambers share ONE grid cell, so the module height is fixed
+   by the tallest panel and never changes between tabs — no page shift, no box
+   resize. Switching a tab is a pure crossfade of panels stacked in place. */
+.lab-stage{display:grid}
+.lab-stage>.lab-panel{grid-area:1 / 1;visibility:hidden;opacity:0;transition:opacity .16s ease}
+.lab-stage>.lab-panel.is-active{visibility:visible;opacity:1}
+.lab-panel{background:oklch(0 0 0 / .16);border:1px solid var(--line);border-radius:var(--r-2);padding:18px 20px}
+@media (prefers-reduced-motion: reduce){.lab-stage>.lab-panel{transition:none}}
+.lab-h3{font-family:var(--serif);color:var(--moon);font-size:1.35rem;margin:0 0 6px}
+.lab-shareRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.lab-shareRow input{flex:1 1 280px;background:var(--field);border:1px solid var(--line);border-radius:var(--r-1);
+  color:var(--ivory);padding:12px 14px;font-family:var(--mono);font-size:.85rem}
+.lab-shareRow input:focus{outline:none;border-color:var(--accent)}
+
+/* gentle color variety across the scroll */
+#karma-teaser{position:relative;overflow:hidden}
+#karma-teaser::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(100% 80% at 90% 10%,oklch(from var(--amethyst) l c h / .10),transparent 60%)}
+#peek{position:relative;overflow:hidden}
+#peek::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(100% 80% at 10% 20%,oklch(from var(--teal) l c h / .09),transparent 60%)}
+
+/* ============================================================
+   Eight Phase Explorer (js/zodi-moon-explorer.js)
+   ============================================================ */
+.zme{display:grid;grid-template-columns:minmax(220px,1fr) minmax(280px,1.2fr);gap:34px;align-items:center;
+  background:linear-gradient(150deg,oklch(0.17 0.035 275),oklch(0.14 0.03 268));
+  border:1px solid var(--line);border-radius:var(--r-3);padding:34px;overflow:hidden;position:relative}
+@media(max-width:760px){.zme{grid-template-columns:1fr;padding:24px}}
+.zme-stage{display:flex;justify-content:center}
+.zme-sphere{position:relative;width:min(300px,60vw);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 38% 32%,oklch(0.93 0.015 260),oklch(0.78 0.02 262) 45%,oklch(0.62 0.02 265) 75%,oklch(0.5 0.02 268));
+  box-shadow:0 0 70px oklch(from var(--silver) l c h / .22),inset -18px -14px 60px oklch(0 0 0 / .35);
+  transition:box-shadow var(--dur-slow) var(--ease-out)}
+.zme-shadow{position:absolute;inset:0;border-radius:50%;transition:background var(--dur-slow) var(--ease-io)}
+/* 8 phase shadows: dark overlay leaves the lit portion visible */
+.zme-sphere[data-phase="0"] .zme-shadow{background:oklch(0.11 0.02 275 / .96)}
+.zme-sphere[data-phase="1"] .zme-shadow{background:radial-gradient(circle at 128% 50%,transparent 52%,oklch(0.11 0.02 275 / .95) 53%)}
+.zme-sphere[data-phase="2"] .zme-shadow{background:linear-gradient(to right,oklch(0.11 0.02 275 / .95) 50%,transparent 50%)}
+.zme-sphere[data-phase="3"] .zme-shadow{background:radial-gradient(circle at -28% 50%,oklch(0.11 0.02 275 / .95) 52%,transparent 53%)}
+.zme-sphere[data-phase="4"] .zme-shadow{background:transparent}
+.zme-sphere[data-phase="5"] .zme-shadow{background:radial-gradient(circle at 128% 50%,oklch(0.11 0.02 275 / .95) 52%,transparent 53%)}
+.zme-sphere[data-phase="6"] .zme-shadow{background:linear-gradient(to left,oklch(0.11 0.02 275 / .95) 50%,transparent 50%)}
+.zme-sphere[data-phase="7"] .zme-shadow{background:radial-gradient(circle at -28% 50%,transparent 52%,oklch(0.11 0.02 275 / .95) 53%)}
+.zme-sphere[data-phase="4"]{box-shadow:0 0 110px oklch(from var(--silver) l c h / .4),inset -18px -14px 60px oklch(0 0 0 / .2)}
+.zme-head{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+.zme-kicker{margin:0;font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.zme-illum{font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+.zme-illum b{color:var(--silver-bright);font-weight:500}
+.zme-row{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 18px}
+.zme-dot{width:44px;height:44px;padding:7px;border-radius:50%;background:transparent;border:2px solid transparent;
+  cursor:pointer;transition:border-color var(--dur-fast),transform var(--dur-fast) var(--ease-out)}
+.zme-dot svg{width:100%;height:100%;display:block}
+.zme-dot:hover{transform:translateY(-2px);border-color:oklch(from var(--silver) l c h / .4)}
+.zme-dot[aria-selected="true"]{border-color:var(--brass);box-shadow:0 0 14px oklch(from var(--brass) l c h / .35)}
+.zme-name{margin:0;font-family:var(--serif);font-size:clamp(1.5rem,3.4vw,2.1rem);color:var(--moon)}
+.zme-favors{margin:6px 0 0;color:var(--body);max-width:52ch}
+.zme-links{margin:16px 0 0;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.zme-open{color:var(--brass-bright);text-decoration:none;border-bottom:1px solid oklch(from var(--brass) l c h / .4)}
+.zme-tonight{background:none;border:1px solid var(--line);color:var(--muted);border-radius:var(--r-pill);
+  padding:7px 14px;font-size:.8rem;cursor:pointer}
+.zme-tonight:hover{color:var(--ivory);border-color:var(--brass-dim)}
+
+/* ============================================================
+   ZODI FX — tilt + glare + CTA light-sweep (js/zodi-fx.js)
+   ============================================================ */
+.zfx{transform:perspective(900px) rotateX(var(--zfx-rx,0deg)) rotateY(var(--zfx-ry,0deg));
+  transition:transform .18s var(--ease-out);position:relative;overflow:hidden;will-change:transform}
+.zfx::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;z-index:1;
+  background:radial-gradient(220px circle at var(--zfx-gx,50%) var(--zfx-gy,50%),
+    oklch(0.95 0.03 90 / .10),transparent 65%);
+  transition:opacity var(--dur-fast)}
+.zfx:hover::before{opacity:1}
+.zfx:hover{transition:transform .05s linear}
+
+/* primary CTA light-sweep: a slow moonbeam crosses on hover */
+.btn:not(.ghost){position:relative;overflow:hidden}
+.btn:not(.ghost)::after{content:"";position:absolute;top:-30%;bottom:-30%;left:-45%;width:36%;
+  background:linear-gradient(105deg,transparent,oklch(1 0 0 / .32),transparent);
+  transform:skewX(-18deg) translateX(-140%);pointer-events:none}
+.btn:not(.ghost):hover::after{animation:zfx-sweep .9s var(--ease-out) forwards}
+@keyframes zfx-sweep{to{transform:skewX(-18deg) translateX(560%)}}
+@media (prefers-reduced-motion: reduce){
+  .zfx{transform:none}
+  .btn:not(.ghost):hover::after{animation:none}
+}
+
+/* sage panel CTA column: card fills the column, quietly */
+.pn-col-cta .pn-ebook{height:100%;box-sizing:border-box}
+
+/* ============================================================
+   ZODI AWAKEN — consolidated, final. One block, no layers.
+   Card trim: woven gem border + ✦ clasp. Open/close: slow grid
+   unfold, lids part to the earned aperture. Pill: fixed width so
+   the fold animates smoothly (audit fix: width:auto never tweens).
+   ============================================================ */
+@keyframes zaw-rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.zaw-card{position:relative;border:1px solid transparent;border-radius:var(--r-2);padding:0;color:var(--body);
+  background:
+    linear-gradient(oklch(0.17 0.03 274),oklch(0.155 0.03 272)) padding-box,
+    conic-gradient(from 210deg,
+      oklch(from var(--brass-dim) l c h / .9), oklch(from var(--amethyst) l c h / .75),
+      oklch(from var(--teal-dim) l c h / .7), oklch(from var(--brass) l c h / .9),
+      oklch(from var(--brass-dim) l c h / .9)) border-box;
+  box-shadow:0 0 0 1px oklch(0 0 0 / .3),0 10px 40px oklch(0 0 0 / .35)}
+.zaw-card::after{content:"\2726";position:absolute;top:-9px;left:50%;transform:translateX(-50%);
+  font-size:.7rem;color:var(--brass-bright);background:oklch(0.17 0.03 274);padding:0 7px;line-height:1;
+  text-shadow:0 0 8px oklch(from var(--brass) l c h / .6)}
+.zaw-card[data-tier="awakened"]{box-shadow:0 0 0 1px oklch(0 0 0 / .3),0 0 34px oklch(from var(--brass) l c h / .28)}
+
+/* header: eye + one compact line. No duplicated tier below. */
+.zaw-head{display:flex;align-items:center;gap:12px;width:100%;background:none;border:0;cursor:pointer;
+  padding:13px 16px;text-align:left;color:var(--muted);
+  transition:padding 1.3s cubic-bezier(.62,.02,.16,1),gap 1.3s cubic-bezier(.62,.02,.16,1)}
+.zaw-eye3{width:50px;height:auto;flex:0 0 auto;overflow:visible;
+  filter:drop-shadow(0 0 10px oklch(0.6 0.12 300 / .45));transition:width 1.3s cubic-bezier(.62,.02,.16,1)}
+.zaw-card[data-tier="awakened"] .zaw-eye3{filter:drop-shadow(0 0 16px oklch(from var(--brass) l c h / .7))}
+.zaw-lid{transition:transform 1.7s cubic-bezier(.62,.02,.16,1)}
+.zaw-head-txt{display:flex;flex-direction:column;gap:3px;flex:1;min-width:0}
+.zaw-head-kicker{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.zaw-head-tier{font-family:var(--serif);font-size:1.1rem;color:var(--moon);line-height:1;white-space:nowrap}
+.zaw-head-tier b{color:var(--brass-bright);font-weight:400;font-family:var(--mono);font-size:.72em;letter-spacing:.06em}
+.zaw-chev{width:8px;height:8px;flex:0 0 auto;border-right:1.5px solid var(--brass-dim);border-bottom:1.5px solid var(--brass-dim);
+  transform:rotate(45deg);transition:transform 1.2s cubic-bezier(.62,.02,.16,1);margin-right:4px}
+.zaw-card.open .zaw-chev{transform:rotate(225deg)}
+
+/* body: constant padding (audit fix: no padding snap on close) */
+.zaw-bodywrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows 1.3s cubic-bezier(.62,.02,.16,1)}
+.zaw-card.open .zaw-bodywrap{grid-template-rows:1fr}
+.zaw-body{overflow:hidden;min-height:0;padding:0 18px 18px;opacity:0;transform:translateY(-6px);
+  transition:opacity .5s ease,transform .6s var(--ease-out)} /* closing: fade quickly, no ghost */
+.zaw-card.open .zaw-body{opacity:1;transform:none;
+  transition:opacity 1.1s ease .25s,transform 1.3s cubic-bezier(.62,.02,.16,1) .15s} /* opening: slow bloom */
+
+.zaw-whisper{margin:2px 0 12px;font-family:var(--serif);font-style:italic;font-size:.98rem;color:var(--ivory);line-height:1.5}
+.zaw-whisper em{color:var(--brass-bright);font-style:italic}
+.zaw-rites{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.zaw-rites a{display:flex;align-items:center;gap:10px;padding:7px 9px;border-radius:var(--r-1);
+  text-decoration:none;color:var(--body);font-size:.88rem;transition:background var(--dur-fast),color var(--dur-fast)}
+.zaw-rites a:hover{background:oklch(from var(--brass) l c h / .09);color:var(--moon)}
+.zaw-mark{color:var(--faint);font-size:.8rem;width:1em}
+.zaw-rites .done .zaw-mark{color:var(--brass-bright);text-shadow:0 0 8px oklch(from var(--brass) l c h / .5)}
+.zaw-rites .done .zaw-lbl{color:var(--muted);text-decoration:line-through;text-decoration-color:oklch(from var(--brass) l c h / .35)}
+.zaw-rites .next a{border:1px solid oklch(from var(--brass) l c h / .35);background:oklch(from var(--brass) l c h / .06)}
+.zaw-rites .next .zaw-lbl{color:var(--moon)}
+.zaw-zk{margin-left:auto;font-family:var(--mono);font-size:.68rem;color:var(--brass-bright);letter-spacing:.04em}
+.zaw-go{color:var(--brass-bright);margin-left:6px;animation:zaw-nudge 2.2s var(--ease-io) infinite}
+@keyframes zaw-nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
+.zaw-streak{margin:12px 0 0;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--faint)}
+.zaw-streak b{color:var(--silver-bright);font-weight:500}
+.zaw-karma{margin:10px 0 0;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.zaw-karma a{color:var(--brass-bright);text-decoration:none}
+
+/* float: bottom-right anchor, grows upward; pill has a FIXED width so it tweens */
+.zaw-card.zaw-float{position:fixed;right:18px;bottom:18px;left:auto;z-index:60;width:276px;
+  max-width:calc(100vw - 36px);animation:zaw-rise .6s ease both;
+  /* opening: flatten the radius quickly so the growing card is never a tall oval */
+  transition:bottom .35s var(--ease-out),width 1.3s cubic-bezier(.62,.02,.16,1),border-radius .45s ease}
+.zaw-card.zaw-float.open{max-height:calc(100vh - 96px);overflow-y:auto} /* audit fix: cap only when open */
+.zaw-card.zaw-float:not(.open){width:224px;border-radius:var(--r-pill);
+  /* closing: hold the rounded-rect while the body collapses, then round into the
+     pill only in the final moment once the card is already short — the eye stays
+     inside the shape the whole way down instead of riding above a tall oval */
+  transition:bottom .35s var(--ease-out),width 1.3s cubic-bezier(.62,.02,.16,1),border-radius .5s cubic-bezier(.62,.02,.16,1) .9s}
+.zaw-card.zaw-float:not(.open)::after{display:none}
+/* collapsed pill: eye · label · chevron sit as one centered cluster,
+   not stretched edge-to-edge with a hollow middle */
+.zaw-card.zaw-float:not(.open) .zaw-head{min-height:44px;padding:0 16px;gap:10px;align-items:center;justify-content:center}
+.zaw-card.zaw-float:not(.open) .zaw-head-txt{flex:0 1 auto}
+.zaw-card.zaw-float:not(.open) .zaw-chev{margin-right:0}
+/* the eyeball is drawn at 57% down the 0 0 120 84 viewBox, so centring the svg
+   BOX leaves the ball ~1.7px low against the label; lift it onto the centreline */
+.zaw-card.zaw-float:not(.open) .zaw-eye3{width:34px;transform:translateY(-1.7px)}
+.zaw-card.zaw-float:not(.open) .zaw-head-kicker{display:none}
+.zaw-card.zaw-float:not(.open) .zaw-head-tier{font:600 .66rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.zaw-card.zaw-float:not(.open):hover{border-color:var(--brass)}
+@media(max-width:720px){.zaw-card.zaw-float{right:10px;bottom:76px}}
+@media (prefers-reduced-motion: reduce){
+  .zaw-lid,.zaw-bodywrap,.zaw-body,.zaw-chev,.zaw-eye3,.zaw-head,.zaw-card.zaw-float{transition-duration:.3s}
+  /* transition-duration doesn't clear delay: zero the closing radius delay too,
+     or reduced-motion would sit in a dead zone before rounding */
+  .zaw-card.zaw-float,.zaw-card.zaw-float:not(.open){transition-delay:0s}
+  .zaw-go{animation:none}
+  .zaw-card.zaw-float{animation:none}
+}
+
+/* ============================================================
+   LEFT RAIL — the identity card and rail cards wear the same
+   woven gem trim as the Awakening card (owner call, Jul 2026).
+   ============================================================ */
+.home-v4 #identity-card,
+.home-v4 #identity-rail .rail-card{
+  border:1px solid transparent;border-radius:var(--r-2);
+  background:
+    linear-gradient(oklch(0.17 0.03 274),oklch(0.155 0.03 272)) padding-box,
+    conic-gradient(from 210deg,
+      oklch(from var(--brass-dim) l c h / .9), oklch(from var(--amethyst) l c h / .75),
+      oklch(from var(--teal-dim) l c h / .7), oklch(from var(--brass) l c h / .9),
+      oklch(from var(--brass-dim) l c h / .9)) border-box;
+  box-shadow:0 0 0 1px oklch(0 0 0 / .3),0 10px 40px oklch(0 0 0 / .3)}
+.home-v4 #identity-card{position:relative}
+.home-v4 #identity-card::after{content:"\2726";position:absolute;top:-9px;left:50%;transform:translateX(-50%);
+  font-size:.7rem;color:var(--brass-bright);background:oklch(0.17 0.03 274);padding:0 7px;line-height:1;
+  text-shadow:0 0 8px oklch(from var(--brass) l c h / .6)}

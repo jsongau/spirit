@@ -82,8 +82,7 @@
 .pn-trigger[aria-expanded="true"]::before{opacity:1; transform:scale(1)}
 .pn-link:hover::after,.pn-trigger:hover::after,
 .pn-link:focus-visible::after,.pn-trigger:focus-visible::after,
-.pn-trigger[aria-expanded="true"]::after{left:13px; right:13px;
-  box-shadow:0 0 8px oklch(from var(--accent) l c h / .5)}
+.pn-trigger[aria-expanded="true"]::after{left:13px; right:13px}
 .pn-link.active,.pn-trigger.active{color:var(--accent-bright,#efe2b4)}
 
 /* per-item accent: re-points --accent ramp so each tab's moonstone,
@@ -108,7 +107,7 @@
              transform var(--dur-fast,180ms) var(--ease-out,ease),
              filter var(--dur-fast,180ms) var(--ease-out,ease)}
 .pn-trigger:hover .pn-stone,.pn-trigger[aria-expanded="true"] .pn-stone{
-  opacity:1; transform:translateY(-1px) scale(1.08); filter:drop-shadow(0 0 7px var(--accent-soft))}
+  opacity:1; transform:translateY(-1px) scale(1.08)}
 
 .pn-trigger .chev{width:7px; height:7px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor;
   transform:rotate(45deg) translateY(-1px); transition:transform .22s ease; opacity:.75}
@@ -121,9 +120,6 @@
    flat accent-tinted bloom + underline instead of the per-hue mix */
 @supports not (color: oklch(from white l c h)){
   .pn-link::before,.pn-trigger::before{background:radial-gradient(60% 120% at 50% 60%, var(--accent-soft), transparent 70%)}
-  .pn-link:hover::after,.pn-trigger:hover::after,
-  .pn-link:focus-visible::after,.pn-trigger:focus-visible::after,
-  .pn-trigger[aria-expanded="true"]::after{box-shadow:0 0 8px var(--accent-soft)}
 }
 
 /* right-side tools: [identity chip] [moon chip] [awakening ring]
@@ -150,7 +146,7 @@
              box-shadow .2s ease, transform var(--dur-fast,180ms) var(--ease-out,ease)}
 /* ignite (never dim): brass rim, moon text, warm wash + a lift and a soft bloom */
 .pn-id:hover,.pn-id:focus-visible{border-color:var(--accent); color:var(--moon); background:var(--accent-soft);
-  transform:translateY(-1px); box-shadow:0 0 16px -3px var(--accent-soft)}
+  transform:translateY(-1px)}
 .pn-id .pn-id-glyph{display:inline-flex; align-items:center; justify-content:center;
   width:24px; height:24px; flex:0 0 auto; border-radius:50%;
   border:1px solid var(--line-soft); background:var(--accent-soft);
@@ -167,7 +163,7 @@
              box-shadow .2s ease, transform var(--dur-fast,180ms) var(--ease-out,ease)}
 /* ignite: brass rim, moon text, a lift and a soft bloom (never dim) */
 .pn-moon:hover,.pn-moon:focus-visible,.pn-moon[aria-expanded="true"]{border-color:var(--accent); color:var(--moon);
-  transform:translateY(-1px); box-shadow:0 0 16px -3px var(--accent-soft)}
+  transform:translateY(-1px)}
 .pn-moon[aria-expanded="true"]{background:var(--accent-soft)}
 .pn-moon .g{font-size:1rem; line-height:1}
 .pn-moon[hidden]{display:none}
@@ -184,7 +180,7 @@
 .pn-moonpop .pnm-favors{margin:0 0 12px; font:600 .8rem/1.4 var(--sans); color:var(--season)}
 .pn-moonpop .pnm-link{font:600 .8rem/1 var(--sans); color:var(--accent); text-decoration:none;
   transition:color var(--dur-fast,180ms) var(--ease-out,ease), text-shadow var(--dur-fast,180ms) var(--ease-out,ease)}
-.pn-moonpop .pnm-link:hover,.pn-moonpop .pnm-link:focus-visible{color:var(--accent-bright); text-shadow:0 0 12px var(--accent-soft)}
+.pn-moonpop .pnm-link:hover,.pn-moonpop .pnm-link:focus-visible{color:var(--accent-bright)}
 @media (prefers-reduced-motion: no-preference){
   .pn-moonpop{animation:pnPopIn .2s ease both}
   @keyframes pnPopIn{from{opacity:0; transform:translateY(-6px) scale(.99)} to{opacity:1; transform:none}}
@@ -205,8 +201,7 @@
 .pn-ring .pn-ring-pct{font:700 .5rem/1 var(--mono,monospace); color:var(--ivory);
   letter-spacing:0; pointer-events:none}
 /* ignite: warm wash, moon text, brighter ring fill + a soft bloom (never dim) */
-.pn-ring:hover,.pn-ring:focus-visible{background:var(--accent-soft); color:var(--moon);
-  box-shadow:0 0 16px -3px var(--accent-soft)}
+.pn-ring:hover,.pn-ring:focus-visible{background:var(--accent-soft); color:var(--moon)}
 .pn-ring:hover .pnp-fill,.pn-ring:focus-visible .pnp-fill{stroke:var(--accent-bright,var(--accent))}
 
 /* the theme toggle chip is retired (dark-only); if a stale page
@@ -226,7 +221,7 @@
   transition:transform .25s var(--ease-io), box-shadow .25s var(--ease-io)}
 .pn-cta:hover,.pn-cta:focus-visible{animation:om-sheen .7s ease forwards;
   transform:translateY(-2px);
-  box-shadow:0 10px 30px var(--accent-soft), 0 0 0 3px var(--sec-soft)}
+  box-shadow:0 10px 30px oklch(0 0 0 / .35), 0 0 0 3px var(--sec-soft)}
 .pn-cta:active{transform:translateY(0) scale(.97)}
 
 .pn-burger{display:none; margin-left:6px; background:transparent; border:1px solid var(--line,#2a2c44);
@@ -312,3 +307,28 @@ html.pn-bound .pn-bar::after{content:""; position:absolute; left:0; right:0; bot
   .pn-moonwrap{display:none}
   .pn-inner{padding:0 18px; gap:12px}
 }
+
+/* ============================================================
+   ZODI ADDITION — gemstone hover glow. The hovered pillar LIGHTS
+   like its own stone (never dims): text brightens to the accent,
+   the moonstone waxes to full glow, and a soft aura blooms under
+   the trigger in the pillar's gem color.
+   ============================================================ */
+.pn-trigger{position:relative;transition:color var(--dur-fast,180ms) var(--ease-out,ease)}
+.pn-trigger::after{content:"";position:absolute;inset:-6px -10px;border-radius:999px;pointer-events:none;
+  background:radial-gradient(60% 130% at 50% 65%, var(--accent-soft, oklch(0.8 0.06 85 / .16)), transparent 72%);
+  opacity:0;transform:scale(.85);transition:opacity var(--dur-fast,180ms) ease,transform var(--dur,320ms) var(--ease-out,ease)}
+.pn-trigger:hover::after,.pn-trigger[aria-expanded="true"]::after{opacity:1;transform:scale(1)}
+.pn-trigger:hover,.pn-trigger[aria-expanded="true"]{color:var(--accent-bright,#efe2b4)}
+.pn-trigger:hover .pn-stone,.pn-trigger[aria-expanded="true"] .pn-stone{
+  opacity:1;transform:translateY(-1px) scale(1.22)}
+@media (prefers-reduced-motion: reduce){
+  .pn-trigger::after{transition:opacity var(--dur-fast,180ms) ease;transform:none}
+}
+/* per-gem tint on the item so the aura matches the stone of that pillar */
+.pn-item[data-accent="teal"]     .pn-trigger{--accent:var(--teal);--accent-bright:var(--teal-bright);--accent-soft:oklch(from var(--teal) l c h / .18)}
+.pn-item[data-accent="brass"]    .pn-trigger{--accent:var(--brass);--accent-bright:var(--brass-bright);--accent-soft:oklch(from var(--brass) l c h / .18)}
+.pn-item[data-accent="amethyst"] .pn-trigger{--accent:var(--amethyst);--accent-bright:var(--amethyst-bright);--accent-soft:oklch(from var(--amethyst) l c h / .18)}
+.pn-item[data-accent="jade"]     .pn-trigger{--accent:var(--jade);--accent-bright:var(--jade-bright);--accent-soft:oklch(from var(--jade) l c h / .18)}
+.pn-item[data-accent="rose"]     .pn-trigger{--accent:var(--rose);--accent-bright:var(--rose-bright);--accent-soft:oklch(from var(--rose) l c h / .18)}
+.pn-item[data-accent="silver"]   .pn-trigger{--accent:var(--silver);--accent-bright:var(--silver-bright);--accent-soft:oklch(from var(--silver) l c h / .18)}

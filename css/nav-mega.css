@@ -50,7 +50,6 @@
 .pn-trigger:focus-visible {
   color: var(--moon);
   background: transparent;
-  text-shadow: 0 0 10px var(--accent-soft);
 }
 
 /* the open group takes the domain accent so the bar echoes the panel */
@@ -182,9 +181,6 @@
   background: var(--accent-soft);
   color: var(--moon);
   transform: translateX(3px);       /* canvas row nudge */
-  box-shadow:
-    inset 0 0 0 1px var(--accent-soft),
-    0 0 18px -6px var(--accent-soft);
 }
 .pn-row:hover .pn-row-name,
 .pn-row:focus-visible .pn-row-name { color: var(--moon); }
@@ -275,7 +271,6 @@
   background: var(--accent-soft);
   color: var(--accent-bright);
   transform: translateY(-2px);
-  box-shadow: 0 0 16px -2px var(--accent-soft);
 }
 .pn-chip:focus-visible {
   outline: 2px solid var(--brass-bright);
@@ -360,14 +355,11 @@
   background: var(--panel-2);
   border-color: var(--accent);
   transform: translateY(-2px);
-  box-shadow:
-    0 8px 22px -4px var(--accent-soft),
-    inset 0 0 0 1px var(--accent-soft);
+  box-shadow: 0 8px 22px -4px oklch(0 0 0 / .35);
 }
 .pn-panel-cards .pn-row:hover .pn-row-name,
 .pn-panel-cards .pn-row:focus-visible .pn-row-name {
   color: var(--moon);
-  text-shadow: 0 0 12px var(--accent-soft);
 }
 .pn-panel-cards .pn-row:hover .pn-row-sub,
 .pn-panel-cards .pn-row:focus-visible .pn-row-sub { color: var(--ivory); }
@@ -411,17 +403,6 @@
 .pn-panel-moon .pn-row:focus-visible .pn-glyph {
   color: var(--silver-bright, #d6e2f5);
   transform: scale(1.12);
-  filter:
-    drop-shadow(0 0 6px oklch(0.92 0.05 250 / .85))
-    drop-shadow(0 0 12px oklch(0.80 0.06 250 / .5));
-}
-@supports not (color: oklch(from white l c h)) {
-  .pn-panel-moon .pn-row:hover .pn-glyph,
-  .pn-panel-moon .pn-row:focus-visible .pn-glyph {
-    filter:
-      drop-shadow(0 0 6px var(--silver-bright, #d6e2f5))
-      drop-shadow(0 0 12px var(--silver, #aebfe0));
-  }
 }
 
 /* ------------------------------------------------------------
@@ -451,7 +432,6 @@
 .pn-panel-foot a:focus-visible {
   color: var(--accent-bright);
   transform: translateX(2px);
-  text-shadow: 0 0 12px var(--accent-soft);
 }
 .pn-panel-foot a:focus-visible {
   outline: 2px solid var(--brass-bright);
@@ -659,7 +639,6 @@
 .pn-feature-link:focus-visible {
   color: var(--moon);
   transform: translateX(2px);
-  text-shadow: 0 0 12px var(--accent-soft);
 }
 .pn-feature-link:focus-visible {
   outline: 2px solid var(--brass-bright);
@@ -853,3 +832,11 @@
 @media (max-width: 900px) {
   .pn-panel { display: none !important; }
 }
+
+/* ============================================================
+   ZODI ADDITION — compact 4-column Sage Wisdom panel. Tighter
+   rows and column gap so four columns sit in one calm line.
+   ============================================================ */
+.pn-panel[data-accent="jade"] .pn-cols{gap:18px 26px}
+.pn-panel[data-accent="jade"] .pn-row{padding-top:9px;padding-bottom:9px}
+.pn-panel[data-accent="jade"] .pn-col-title{margin-bottom:8px}

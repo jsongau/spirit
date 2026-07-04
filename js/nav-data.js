@@ -117,7 +117,7 @@ PNAV.MAP = [
         ["/index.html",   "Find your animal"],
         ["/daily.html",   "Today's reading", PNAV.DYN.todayLabel(), null, "date-today"],
         ["/year.html",    "Year finder"],
-        ["/account.html", "Your account", "opening soon"]
+        ["/account.html", "Your account", "Zodi Karma ledger"]
       ]},
       { title: "Menagerie", mark: "◆", items: [
         ["/menagerie.html",  "All 144 animals"],
@@ -254,12 +254,15 @@ PNAV.MAP = [
     ]
   },
   { key: "sage", h: "Sage Wisdom", accent: "jade",
-    eyebrow: "The craft, what you do with your animal",
+    eyebrow: "The craft your Zodi Animal practices",
     foot: ["/feng-shui/", "All of feng shui"],
     layout: "sage",
     cta: { tag: "Free · Feng Shui e-book", title: "Your animal's placement guide",
-      body: "Where to sleep, work, and rest, mapped to your animal. Free when you create a Zodi account.",
-      href: "/account.html", link: "Create free account", note: "opening soon" },
+      body: "Where to sleep, work, and rest, mapped to your animal. Free with a Zodi account.",
+      href: "/account.html", link: "Create free account", note: "+1,000 ZK on arrival" },
+    /* Four compact columns (owner call, Jul 2026): Stones / Feng shui /
+       Proverbs / Live with it. The 87-proverb themes still live in the
+       /proverbs/ hub sub-menu, not here. */
     cols: [
       { title: "Stones", mark: "◆", items: [
         ["/stones.html",                             "Keeper stones"],
@@ -273,11 +276,6 @@ PNAV.MAP = [
         ["/feng-shui/kua-number/",  "Your Kua number"],
         ["/directions/",            "Directions"]
       ]},
-      /* Proverbs & lore: ONE column only. The 87-proverb Pond and its twelve
-         themes live in the /proverbs/ hub sub-menu (grouped into Self / People
-         / World dropdowns), NOT as mega-panel columns — keeping the panel at
-         three columns per docs/meganav-stack.md (the budget the Proverb Pond
-         blew past twice). */
       { title: "Proverbs and lore", mark: "❦", items: [
         ["/proverbs/",       "The Proverb Pond", "all 87, pronounced"],
         ["/proverbs/study/", "Study the proverbs"],
