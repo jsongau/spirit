@@ -155,3 +155,16 @@ input[type="search"]:focus-visible {
     outline-offset: 2px;
   }
 }
+
+/* ============================================================
+   Mobile safeguard — no sideways scroll on phones.
+   Uses overflow-x:clip (NOT hidden) so it never disables the
+   sticky nav / sub-nav. Scoped to <=720px so desktop is untouched.
+   Loaded on every page (a11y.css is universal), so this holds
+   site-wide. Added 2026-07-04.
+   ============================================================ */
+@media (max-width: 720px) {
+  html, body { overflow-x: clip; }
+}
+/* media never forces the page wider than the screen */
+img, video, iframe { max-width: 100%; }
