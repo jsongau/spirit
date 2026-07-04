@@ -278,7 +278,7 @@
     drawPond();
   });
 
-  /* ---------- filtering ---------- */
+  /* ---------- filtering + pagination ---------- */
   var grid = document.getElementById("pvGrid");
   var cards = grid ? Array.prototype.slice.call(grid.querySelectorAll(".pv-card")) : [];
   var countEl = document.getElementById("pvCount");
@@ -287,39 +287,137 @@
   var searchEl = document.getElementById("pvSearch");
   var state = { theme: "", cat: "", orient: "", animal: "", el: "", q: "" };
   var ATTR = { theme: "theme", cat: "cat", orient: "orient", animal: "animal", el: "el" };
+  var PER_PAGE = 15; /* 5 rows × 3 cols */
+  var currentPage = 0;
+
+  /* inject pagination <nav> immediately after the grid */
+  var paginationEl = null;
+  if (grid) {
+    paginationEl = document.createElement("nav");
+    paginationEl.id = "pvPagination";
+    paginationEl.className = "pv-pagination";
+    paginationEl.setAttribute("aria-label", "Proverb pages");
+    grid.parentNode.insertBefore(paginationEl, grid.nextSibling);
+  }
+
+  function goTo(page) {
+    currentPage = page;
+    apply();
+    /* scroll to just above the grid so the top card is visible */
+    if (grid) {
+      var top = grid.getBoundingClientRect().top + window.scrollY - 160;
+      window.scrollTo({ top: Math.max(0, top), behavior: reduce ? "auto" : "smooth" });
+    }
+  }
+
+  function renderPagination(total, totalPages) {
+    if (!paginationEl) return;
+    if (totalPages <= 1) { paginationEl.hidden = true; return; }
+    paginationEl.hidden = false;
+    var cp = currentPage;
+    var html = '<div class="pv-pag-row">';
+
+    /* Prev */
+    if (cp > 0) {
+      html += '<button type="button" class="pv-pag-btn" data-pag="' + (cp - 1) + '" aria-label="Previous page">← Prev</button>';
+    } else {
+      html += '<span class="pv-pag-disabled" aria-hidden="true">← Prev</span>';
+    }
+
+    /* numbered buttons: always show first, last, and ±2 around current */
+    html += '<div class="pv-pag-nums">';
+    var show = [], shown_set = {};
+    function addPg(pp) { if (pp >= 0 && pp < totalPages && !shown_set[pp]) { show.push(pp); shown_set[pp] = true; } }
+    addPg(0);
+    for (var pp = Math.max(0, cp - 2); pp <= Math.min(totalPages - 1, cp + 2); pp++) addPg(pp);
+    addPg(totalPages - 1);
+    show.sort(function (a, b) { return a - b; });
+    for (var ii = 0; ii < show.length; ii++) {
+      if (ii > 0 && show[ii] - show[ii - 1] > 1) {
+        html += '<span class="pv-pag-ellipsis" aria-hidden="true">…</span>';
+      }
+      var pg = show[ii];
+      html += '<button type="button" class="pv-pag-num' + (pg === cp ? ' is-current' : '') + '"'
+        + (pg === cp ? ' aria-current="page"' : '') + ' data-pag="' + pg + '">' + (pg + 1) + '</button>';
+    }
+    html += '</div>';
+
+    /* Next */
+    if (cp < totalPages - 1) {
+      html += '<button type="button" class="pv-pag-btn" data-pag="' + (cp + 1) + '" aria-label="Next page">Next →</button>';
+    } else {
+      html += '<span class="pv-pag-disabled" aria-hidden="true">Next →</span>';
+    }
+
+    html += '</div>';
+    html += '<p class="pv-pag-info">Page ' + (cp + 1) + ' of ' + totalPages
+      + ' · ' + total + ' proverb' + (total !== 1 ? 's' : '') + '</p>';
+    paginationEl.innerHTML = html;
+  }
 
   function apply() {
-    var shown = 0;
     var q = state.q.trim();
+    var visible = [];
     for (var i = 0; i < cards.length; i++) {
       var c = cards[i], ok = true, g;
       for (g in ATTR) {
         if (state[g] && c.getAttribute("data-" + ATTR[g]) !== state[g]) { ok = false; break; }
       }
       if (ok && q && c.getAttribute("data-q").indexOf(q) === -1) ok = false;
-      c.hidden = !ok;
-      if (ok) shown++;
+      if (ok) visible.push(c);
     }
-    if (countEl) countEl.textContent = shown === cards.length ? (cards.length + " proverbs") : (shown + " of " + cards.length);
-    if (emptyEl) emptyEl.hidden = shown !== 0;
+
+    /* clamp current page to the new total */
+    var totalPages = Math.max(1, Math.ceil(visible.length / PER_PAGE));
+    if (currentPage >= totalPages) currentPage = 0;
+
+    /* hide all, then reveal only this page's slice */
+    for (var j = 0; j < cards.length; j++) cards[j].hidden = true;
+    var start = currentPage * PER_PAGE;
+    var end = Math.min(start + PER_PAGE, visible.length);
+    for (var k = start; k < end; k++) visible[k].hidden = false;
+
+    if (countEl) countEl.textContent = visible.length === cards.length
+      ? (cards.length + " proverbs")
+      : (visible.length + " of " + cards.length);
+    if (emptyEl) emptyEl.hidden = visible.length !== 0;
+    renderPagination(visible.length, totalPages);
+
     var any = state.theme || state.cat || state.orient || state.animal || state.el || state.q;
     if (clearEl) clearEl.hidden = !any;
   }
+
+  /* pagination click — delegated so it works after innerHTML swap */
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest("[data-pag]");
+    if (!btn || !paginationEl || !paginationEl.contains(btn)) return;
+    var pg = parseInt(btn.getAttribute("data-pag"), 10);
+    if (!isNaN(pg)) goTo(pg);
+  });
+
+  /* chip filter — always resets to page 1 */
   document.addEventListener("click", function (e) {
     var chip = e.target.closest(".pv-chip");
     if (!chip) return;
     var g = chip.getAttribute("data-group"), v = chip.getAttribute("data-val");
     state[g] = v;
+    currentPage = 0;
     var sibs = chip.parentNode.querySelectorAll(".pv-chip");
     for (var i = 0; i < sibs.length; i++) sibs[i].classList.toggle("is-on", sibs[i] === chip);
     apply();
   });
+
+  /* search — resets to page 1 on every keystroke */
   if (searchEl) searchEl.addEventListener("input", function () {
     state.q = searchEl.value.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    currentPage = 0;
     apply();
   });
+
+  /* clear all filters */
   if (clearEl) clearEl.addEventListener("click", function () {
     state = { theme: "", cat: "", orient: "", animal: "", el: "", q: "" };
+    currentPage = 0;
     if (searchEl) searchEl.value = "";
     var groups = document.querySelectorAll(".pv-chips");
     for (var i = 0; i < groups.length; i++) {
@@ -328,6 +426,9 @@
     }
     apply();
   });
+
+  /* initial render — paginate on load so only the first 15 cards show */
+  apply();
 
   /* ---------- filter bar: manual toggle + auto-collapse on scroll ----------
      The sticky bar is tall enough to hide cards once scrolled, so it collapses
