@@ -8,18 +8,18 @@
 <meta property="og:title" content="The Primal Oracle: find your Primal Animal">
 <meta property="og:description" content="Your Chinese year animal and your Western Sun sign combine into one Primal Animal out of 144. Find yours, read it, and see who you match.">
 <meta property="og:type" content="website">
-<link rel="canonical" href="https://spirit-omega.vercel.app/">
-<meta property="og:url" content="https://spirit-omega.vercel.app/">
+<link rel="canonical" href="https://www.zodianimal.com/">
+<meta property="og:url" content="https://www.zodianimal.com/">
 <meta property="og:site_name" content="The Primal Oracle">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://spirit-omega.vercel.app/social/home-card.png">
+<meta property="og:image" content="https://www.zodianimal.com/social/home-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The Primal Oracle: find the one animal where your Chinese zodiac year and Western Sun sign cross, out of 144.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Primal Oracle: find your Primal Animal">
 <meta name="twitter:description" content="Your Chinese year animal and your Western Sun sign combine into one Primal Animal out of 144. Find yours free, read it, and see who you match.">
-<meta name="twitter:image" content="https://spirit-omega.vercel.app/social/home-card.png">
+<meta name="twitter:image" content="https://www.zodianimal.com/social/home-card.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -46,16 +46,16 @@
   .today .btn{white-space:nowrap}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","@id":"https://spirit-omega.vercel.app/#website","url":"https://spirit-omega.vercel.app/","name":"The Primal Oracle","alternateName":"Primal Animal","description":"Find your Primal Animal, the single creature where your Chinese zodiac year and your Western Sun sign meet, out of 144 combinations.","inLanguage":"en","publisher":{"@id":"https://spirit-omega.vercel.app/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://spirit-omega.vercel.app/#read?dob={birth_date}"},"query-input":"required name=birth_date"}}
+{"@context":"https://schema.org","@type":"WebSite","@id":"https://www.zodianimal.com/#website","url":"https://www.zodianimal.com/","name":"The Primal Oracle","alternateName":"Primal Animal","description":"Find your Primal Animal, the single creature where your Chinese zodiac year and your Western Sun sign meet, out of 144 combinations.","inLanguage":"en","publisher":{"@id":"https://www.zodianimal.com/#organization"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.zodianimal.com/#read?dob={birth_date}"},"query-input":"required name=birth_date"}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","@id":"https://spirit-omega.vercel.app/#organization","name":"The Primal Oracle","alternateName":"Primal Animal","url":"https://spirit-omega.vercel.app/","description":"The Primal Oracle fuses the Chinese zodiac year and the Western Sun sign into one of 144 Primal Animals, with readings, compatibility matching, and lunar-timing guidance. Meaning and reflection, not prediction.","knowsAbout":["Chinese zodiac","Western zodiac","Sun sign astrology","Chinese year animals","Lunar New Year","Zodiac compatibility","Primal Animal"]}
+{"@context":"https://schema.org","@type":"Organization","@id":"https://www.zodianimal.com/#organization","name":"The Primal Oracle","alternateName":"Primal Animal","url":"https://www.zodianimal.com/","description":"The Primal Oracle fuses the Chinese zodiac year and the Western Sun sign into one of 144 Primal Animals, with readings, compatibility matching, and lunar-timing guidance. Meaning and reflection, not prediction.","knowsAbout":["Chinese zodiac","Western zodiac","Sun sign astrology","Chinese year animals","Lunar New Year","Zodiac compatibility","Primal Animal"]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","@id":"https://spirit-omega.vercel.app/#app","name":"The Primal Oracle","applicationCategory":"LifestyleApplication","operatingSystem":"Web browser","url":"https://spirit-omega.vercel.app/","browserRequirements":"Requires JavaScript. Runs entirely in the browser; no birth date is sent to a server.","description":"A free tool that combines your Chinese zodiac year and your Western Sun sign into one of 144 Primal Animals. Enter your date of birth to find your animal, read its five gates, and test compatibility with someone else.","featureList":["Find your Primal Animal from your date of birth","144 combinations of Chinese zodiac year and Western Sun sign","Correct lunar New Year boundary for 1940 to 2032","Compatibility test between two birth dates","Moon phase and lunar timing"],"isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://spirit-omega.vercel.app/#organization"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","@id":"https://www.zodianimal.com/#app","name":"The Primal Oracle","applicationCategory":"LifestyleApplication","operatingSystem":"Web browser","url":"https://www.zodianimal.com/","browserRequirements":"Requires JavaScript. Runs entirely in the browser; no birth date is sent to a server.","description":"A free tool that combines your Chinese zodiac year and your Western Sun sign into one of 144 Primal Animals. Enter your date of birth to find your animal, read its five gates, and test compatibility with someone else.","featureList":["Find your Primal Animal from your date of birth","144 combinations of Chinese zodiac year and Western Sun sign","Correct lunar New Year boundary for 1940 to 2032","Compatibility test between two birth dates","Moon phase and lunar timing"],"isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://www.zodianimal.com/#organization"}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","@id":"https://spirit-omega.vercel.app/#faq","mainEntity":[
+{"@context":"https://schema.org","@type":"FAQPage","@id":"https://www.zodianimal.com/#faq","mainEntity":[
 {"@type":"Question","name":"What is a Primal Animal?","acceptedAnswer":{"@type":"Answer","text":"A Primal Animal is the single creature you get when you combine your Western Sun sign with your Chinese zodiac year. Twelve Sun signs cross twelve year animals to make 144 combinations, and each combination is named for its own animal. A Cancer born in the Year of the Snake, for example, is the Chambered Nautilus."}},
 {"@type":"Question","name":"How do I find my Primal Animal?","acceptedAnswer":{"@type":"Answer","text":"Enter your date of birth into the Primal Oracle. It reads your Western Sun sign from the month and day, reads your Chinese year animal from the year and the real lunar New Year date, and crosses the two on the 144 grid to name your animal. The lookup is free and runs entirely in your browser."}},
 {"@type":"Question","name":"What animal is Cancer and Snake?","acceptedAnswer":{"@type":"Answer","text":"In the Primal Animal system, a Cancer born in the Year of the Snake is the Chambered Nautilus. It is one of the 144 Primal Animals, each of which is a distinct crossing of one Western Sun sign with one Chinese zodiac year."}},

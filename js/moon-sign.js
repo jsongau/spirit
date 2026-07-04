@@ -403,7 +403,7 @@
 
     var readout = now();
     var data = moonData();
-    var host = location && location.host ? location.host : "spirit-omega.vercel.app";
+    var host = location && location.host ? location.host : "www.zodianimal.com";
 
     // Build the enhanced surface once, inside the root, after the fallback.
     // The fallback answer sentence + picker are already in the DOM; we add

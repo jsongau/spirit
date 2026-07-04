@@ -357,7 +357,7 @@
      caption and confirms with a toast.
      ============================================================ */
   function siteHost() {
-    var origin = "spirit-omega.vercel.app";
+    var origin = "www.zodianimal.com";
     try { if (location.origin && location.origin.indexOf("http") === 0) origin = location.host; } catch (e) {}
     return origin;
   }
@@ -529,7 +529,7 @@
 
   function challengeUrl(a) {
     var slug = slugOf(a);
-    var origin = "https://spirit-omega.vercel.app";
+    var origin = "https://www.zodianimal.com";
     try { if (location.origin && location.origin.indexOf("http") === 0) origin = location.origin; } catch (e) {}
     return origin + "/vs.html" + (slug ? "?with=" + encodeURIComponent(slug) : "");
   }

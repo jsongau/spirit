@@ -8,5 +8,5 @@
 window.ZODI_CONFIG = {
   url: "https://uqefyfqwwkkvydkgepgf.supabase.co",
   anonKey: "sb_publishable_0Y-o-QD73luyTYUcjWRWzQ_7b9ogFLs",
-  siteUrl: "https://spirit-omega.vercel.app"
+  siteUrl: "https://www.zodianimal.com"
 };

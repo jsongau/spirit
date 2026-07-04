@@ -348,7 +348,7 @@ PNAV.FEATURED = { href: "/circle.html", title: "Read your circle of three", blur
    flip this literal to https://zodianimal.com in lockstep with DOMAIN and the
    llms.txt URLs. The stale-origin gate in build/audit-links.mjs fails the
    build if this and DOMAIN ever disagree at ship time. */
-PNAV.ORIGIN = "https://spirit-omega.vercel.app";
+PNAV.ORIGIN = "https://www.zodianimal.com";
 
 /* Per-hub sub-navigation + breadcrumb source of truth.
    Keyed by the section's first path segment. Each hub:

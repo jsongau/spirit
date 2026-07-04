@@ -34,7 +34,7 @@
       var c; try { c = window.ENGINE.compute(o.birth); } catch (e) { return null; }
       if (!c || !c.primal) return null;
       var slug = String(c.primal).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
-      var origin = (location.origin && location.origin !== "null") ? location.origin : "https://spirit-omega.vercel.app";
+      var origin = (location.origin && location.origin !== "null") ? location.origin : "https://www.zodianimal.com";
       return { url: origin + "/vs.html?with=" + slug, name: c.primal };
     }
     function paint() {

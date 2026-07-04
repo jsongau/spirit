@@ -1,4 +1,4 @@
-<!-- ORIGIN NOTE: every absolute URL below is on https://spirit-omega.vercel.app,
+<!-- ORIGIN NOTE: every absolute URL below is on https://www.zodianimal.com,
      the same value as DOMAIN in build/config.mjs and PNAV.ORIGIN in
      site/js/nav-data.js. PHASE 8 CUTOVER: flip all of these to
      https://zodianimal.com in lockstep with DOMAIN. The stale-origin gate in
@@ -11,22 +11,22 @@ The Primal Oracle combines the Chinese zodiac year and the Western Sun sign into
 A Primal Animal is the single creature at the crossing of one Western Sun sign and one Chinese zodiac year. Twelve Sun signs times twelve year animals make 144 combinations, each named for its own animal. A Cancer born in the Year of the Snake is the Chambered Nautilus. An Aries born in the Year of the Dragon is the Secretary Bird. The Chinese year begins at the lunar New Year, not January 1, so the site uses the real New Year date for every year from 1940 to 2032. Finding your animal is free, needs no account, and runs entirely in the browser, so a birth date is never sent to a server.
 
 ## Primary pages
-- https://spirit-omega.vercel.app/ : Find your Primal Animal from your date of birth.
-- https://spirit-omega.vercel.app/learn.html : How it works, the two zodiacs, and the lunar New Year boundary.
-- https://spirit-omega.vercel.app/menagerie.html : All 144 Primal Animals, browsable by sign and year animal.
-- https://spirit-omega.vercel.app/western-zodiac/ : The twelve Western Sun signs and how each crosses into the Primal Animals.
-- https://spirit-omega.vercel.app/chinese-zodiac/ : The twelve Chinese year animals, the sexagenary cycle, and the year-plus-sign crossing.
-- https://spirit-omega.vercel.app/horoscopes/ : Reflective daily, moon, and best-days readings, meaning not prediction.
-- https://spirit-omega.vercel.app/proverbs/ : A library of Chinese proverbs with pinyin, literal, and meaning, tied to the zodiac.
-- https://spirit-omega.vercel.app/match.html : Compatibility between two people across both zodiacs.
-- https://spirit-omega.vercel.app/circle.html : Read a group of three people together.
-- https://spirit-omega.vercel.app/best-days.html : Favorable and cautious days ahead, from the day's Chinese animal.
+- https://www.zodianimal.com/ : Find your Primal Animal from your date of birth.
+- https://www.zodianimal.com/learn.html : How it works, the two zodiacs, and the lunar New Year boundary.
+- https://www.zodianimal.com/menagerie.html : All 144 Primal Animals, browsable by sign and year animal.
+- https://www.zodianimal.com/western-zodiac/ : The twelve Western Sun signs and how each crosses into the Primal Animals.
+- https://www.zodianimal.com/chinese-zodiac/ : The twelve Chinese year animals, the sexagenary cycle, and the year-plus-sign crossing.
+- https://www.zodianimal.com/horoscopes/ : Reflective daily, moon, and best-days readings, meaning not prediction.
+- https://www.zodianimal.com/proverbs/ : A library of Chinese proverbs with pinyin, literal, and meaning, tied to the zodiac.
+- https://www.zodianimal.com/match.html : Compatibility between two people across both zodiacs.
+- https://www.zodianimal.com/circle.html : Read a group of three people together.
+- https://www.zodianimal.com/best-days.html : Favorable and cautious days ahead, from the day's Chinese animal.
 
 ## Flagship animals
-- https://spirit-omega.vercel.app/animals/chambered-nautilus/ : The Chambered Nautilus, Cancer and the Year of the Snake.
-- https://spirit-omega.vercel.app/animals/capybara/ : The Capybara, Cancer and the Year of the Pig.
-- https://spirit-omega.vercel.app/animals/snow-leopard/ : The Snow Leopard, Scorpio and the Year of the Goat.
-- https://spirit-omega.vercel.app/animals/axolotl/ : The Axolotl, Aquarius and the Year of the Rabbit.
+- https://www.zodianimal.com/animals/chambered-nautilus/ : The Chambered Nautilus, Cancer and the Year of the Snake.
+- https://www.zodianimal.com/animals/capybara/ : The Capybara, Cancer and the Year of the Pig.
+- https://www.zodianimal.com/animals/snow-leopard/ : The Snow Leopard, Scorpio and the Year of the Goat.
+- https://www.zodianimal.com/animals/axolotl/ : The Axolotl, Aquarius and the Year of the Rabbit.
 
 ## Note
 This is a tradition of meaning for reflection and entertainment, not medical, psychological, financial, or legal advice, and not a forecast of events.
