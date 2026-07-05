@@ -762,7 +762,11 @@ window.PNAV = window.PNAV || { features: {} };
      top-level mega-panel logic and the .pn-subnav horizontal scroller.
      ========================================================= */
   function initSubDrops(bar) {
-    var scope = bar || doc;
+    // The sub-nav band (.pn-sub) is a SIBLING of the top bar — the build
+    // appends it directly to <body>, NOT inside .pn-bar. Scoping the query to
+    // `bar` therefore matched nothing and the whole sub-nav silently bailed at
+    // the `!items.length` guard below. Always query the document.
+    var scope = doc;
     var items = Array.prototype.slice.call(
       scope.querySelectorAll(".pn-sub-item.pn-has-drop")
     );

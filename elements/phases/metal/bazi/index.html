@@ -57,10 +57,42 @@ footer.f{text-align:center;padding:clamp(30px,5vw,56px) 0;border-top:1px solid v
 footer.f a{color:var(--muted);text-decoration:none}
 @media(max-width:640px){.cyc{grid-template-columns:1fr 1fr}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}}
+
+/* ---- BaZi companion: full-bleed reading + calm sticky card ---- */
+.bzr-shell{max-width:none;margin:0;padding:clamp(6px,2vw,16px) clamp(22px,5vw,64px) 0;display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:clamp(30px,5vw,72px);align-items:start}
+.bzr-main{min-width:0}
+.bzr-main .band{padding:clamp(26px,4vw,46px) 0}
+.bzr-main .band:first-child{border-top:none}
+.bzr-main .wrap{max-width:none;margin:0;padding:0}
+.bzr-main .band p{max-width:var(--measure)}
+.bzr-main .disc{margin-top:1.4rem}
+.bzr-rail{position:sticky;top:calc(var(--pn-stack-h, 150px) + 16px)}
+.bzr-card{position:relative;background:linear-gradient(180deg,color-mix(in oklab,var(--metal) 11%,var(--panel)),var(--field));border:1px solid var(--line);border-radius:var(--r-3);padding:1.3rem 1.3rem 1.15rem;box-shadow:0 22px 60px rgba(0,0,0,.48),inset 0 1px 0 rgba(255,255,255,.04)}
+.bzr-card::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,transparent,var(--metal),transparent);opacity:.55}
+.bzr-top{display:flex;align-items:center;gap:.8rem;margin-bottom:.9rem}
+.bzr-seal{flex:none;width:50px;height:50px;display:grid;place-items:center;border:1px solid var(--metal);border-radius:12px;font-family:var(--serif);font-size:1.45rem;color:var(--metal-bright);background:color-mix(in oklab,var(--metal) 14%,transparent);box-shadow:0 0 20px color-mix(in oklab,var(--metal) 24%,transparent)}
+.bzr-kicker{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
+.bzr-el{font-family:var(--serif);font-size:1.25rem;color:var(--moon);margin:.1rem 0 0;line-height:1}
+.bzr-el .bzr-zh{color:var(--metal-bright)}
+.bzr-intro{color:var(--body);font-size:.92rem;line-height:1.55;margin:0}
+.bzr-facts{list-style:none;margin:1rem 0 0;padding:0;display:flex;flex-direction:column;gap:.7rem}
+.bzr-facts li{font-size:.9rem;line-height:1.4;color:var(--ivory)}
+.bzr-facts li span{display:block;font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--metal-bright);margin-bottom:.15rem}
+.bzr-cta{display:flex;flex-direction:column;gap:.5rem;margin-top:1.2rem}
+.bzr-btn{display:block;text-align:center;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:.8rem 1rem;border-radius:var(--r-pill);border:1px solid var(--line);background:var(--field);color:var(--ivory);text-decoration:none;transition:border-color .2s,color .2s,box-shadow .2s}
+.bzr-btn:hover{border-color:var(--metal);color:var(--moon)}
+.bzr-btn.primary{background:var(--metal);color:#0e1114;border-color:var(--metal);font-weight:600}
+.bzr-btn.primary:hover{box-shadow:0 0 22px color-mix(in oklab,var(--metal) 32%,transparent);color:#0e1114}
+.bzr-fine{font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;color:var(--faint);text-align:center;margin:.75rem 0 0}
+@media(max-width:1080px){
+  .bzr-shell{grid-template-columns:1fr;gap:0;padding-left:clamp(18px,4vw,36px);padding-right:clamp(18px,4vw,36px)}
+  .bzr-rail{position:static;margin-top:1.8rem}
+  .bzr-card{max-width:var(--measure)}
+}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"Article","headline":"Metal as a day master","about":"Metal phase of Wu Xing","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"Zodi Animal","url":"https://zodianimal.com"}},
+{"@type":"Article","headline":"Metal as a day master","about":"Metal phase of Wu Xing","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"Zodi Animal","alternateName":["Primal Zodiac Animal","Primal Animal","primal animal"],"url":"https://zodianimal.com"}},
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"Zodi Animal","item":"https://zodianimal.com/"},
 {"@type":"ListItem","position":2,"name":"The Elements","item":"https://zodianimal.com/elements/"},
@@ -81,7 +113,7 @@ footer.f a{color:var(--muted);text-decoration:none}
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.zodianimal.com/"},{"@type":"ListItem","position":2,"name":"The Elements","item":"https://www.zodianimal.com/elements/"},{"@type":"ListItem","position":3,"name":"Metal 金","item":"https://www.zodianimal.com/elements/phases/metal/"},{"@type":"ListItem","position":4,"name":"Metal as a day master","item":"https://www.zodianimal.com/elements/phases/metal/bazi/"}]}</script>
 <!--pn-crumb-ld:end-->
 </head>
-<body class="pn-has-bar">
+<body class="bzr pn-has-bar">
 <!--pn-static:start-->
 <a class="skip-link" href="#pn-main">Skip to content</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ico-moonstone" viewBox="0 0 24 24"><path d="M12 2.6c4 2 6.4 5.1 6.4 9.4S16 19.6 12 21.4C8 19.6 5.6 16.3 5.6 12S8 4.6 12 2.6Z" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M12 2.6C10 6 9 9 9 12s1 6 3 9.4" fill="none" stroke="currentColor" stroke-width=".8" opacity=".5"/><ellipse cx="10.4" cy="9" rx="2.2" ry="3.2" fill="currentColor" opacity=".2"/></symbol></svg>
@@ -173,6 +205,7 @@ footer.f a{color:var(--muted);text-decoration:none}
 
 <header class="hero"><div class="wrap">
   <p class="eyebrow">A room of Metal · 金</p>
+  <p class="pin brandline">One of the five phases behind your Primal Zodiac Animal</p>
   <div class="bc" aria-hidden="true">日主</div>
   <h1>Metal as a day master</h1>
   <p class="pin">BaZi</p>
@@ -180,14 +213,35 @@ footer.f a{color:var(--muted);text-decoration:none}
   <div class="rooms"><a href="/elements/phases/metal/big-small/">Big metal and small metal</a><a href="/elements/phases/metal/bazi/" aria-current="page">Metal as a day master</a><a href="/elements/phases/metal/body/">Metal in the body</a><a href="/elements/phases/metal/space/">Metal in your space</a><a href="/elements/phases/metal/cycles/">Metal's two cycles</a><a href="/elements/phases/metal/animals/">The Metal animals</a><a href="/elements/phases/metal/culture/">Metal in myth and culture</a><a href="/elements/phases/metal/traditions/">Metal across traditions</a></div>
 </div></header>
 
+<div class="bzr-shell"><div class="bzr-main">
 <section class="band"><div class="wrap"><h2>Season decides strength</h2><p>Metal is strong in autumn, the months of 申酉戌 (shēn yǒu xū), when the season is already Metal, and weak in summer, when Fire melts it. A strong Metal wants draining or forging; a weak Metal wants feeding and sheltering.</p></div></section>
-<section class="band"><div class="wrap"><h2>The balancing logic</h2><p>The classical model reads Metal against the other four phases: Earth sources it, Water drains it (metal births water), Fire refines and controls it, and Wood is what Metal cuts and, in the wealth reading, what it acts upon. Tradition splits the two metals sharply: 庚金 wants Fire to forge it and Water to sharpen it, while 辛金 wants Water to wash it to a gleam and fears heavy Fire, 调候 (tiáo hòu), the temperature adjustment.</p></div></section>
-<section class="band"><div class="wrap"><h2>Cast your own Four Pillars (BaZi)</h2><p>This room reads a single day master in the abstract. A full BaZi chart, 八字 (bā zì, the Eight Characters), is all four pillars of your birth, the year, month, day, and hour, each a Heavenly Stem over an Earthly Branch. It weighs the balance of all five phases across them, which is what turns a birth moment into a map. <a href="/bazi/">Read the full BaZi guide and cast your Four Pillars</a>.</p></div></section>
+<section class="band"><div class="wrap"><h2>What feeds it, what drains it</h2><p>Two phases move Metal by the generating cycle. Earth is the mother that forms and sources it, 土生金 (tǔ shēng jīn), so a weak Metal is fed by Earth. Water is the child it pours into, 金生水 (jīn shēng shuǐ), which draws an overfull Metal down.</p></div></section>
+<section class="band"><div class="wrap"><h2>What forges it, what it works</h2><p>Two more phases meet Metal by the controlling cycle. Fire is the flame that refines and tempers it, 火克金 (huǒ kè jīn), checking a raw Metal. Wood is what Metal cuts, 金克木 (jīn kè mù), and in the wealth reading it is the wealth a Metal chart works.</p></div></section>
+<section class="band"><div class="wrap"><h2>The climate question</h2><p>Beyond strength, a chart is read for warmth and cold, 调候 (tiáo hòu). Tradition splits the two metals: 庚金 wants Fire to forge it and Water to sharpen it, while 辛金 wants Water to wash it to a gleam and fears heavy Fire. Climate can decide a chart more than raw balance does.</p></div></section>
 <div class="wrap"><div class="disc"><b>A lens, not a verdict.</b> BaZi is a traditional interpretive system for reflection, not a deterministic forecast. Nothing here predicts events or fixes a fate.</div></div>
+</div><aside class="bzr-rail" aria-label="BaZi companion">
+  <div class="bzr-card">
+    <div class="bzr-top">
+      <span class="bzr-seal" aria-hidden="true">八字</span>
+      <div>
+        <p class="bzr-kicker">Your day master</p>
+        <p class="bzr-el">Metal <span class="bzr-zh">金</span></p>
+      </div>
+    </div>
+    <p class="bzr-intro">In BaZi your day master is the one character that stands for you. Here is how Metal reads as a day master, and where to take it next.</p>
+    <ul class="bzr-facts"><li><span>In season</span>Strong in autumn, soft in summer</li><li><span>Feeds and forges</span>Earth forms it, Fire forges it, Wood is its wealth</li><li><span>Climate</span>Raw Metal wants Fire, 火炼金</li></ul>
+    <div class="bzr-cta">
+      <a class="bzr-btn primary" href="/bazi/chart/">Cast your Four Pillars</a>
+      <a class="bzr-btn" href="/bazi/">Learn BaZi</a>
+    </div>
+    <p class="bzr-fine">A lens for reflection, not a forecast</p>
+  </div>
+</aside></div>
 
 <section class="band"><div class="wrap">
   <p class="eyebrow">Where Metal sits</p>
   <h2>Leave Metal in any direction</h2>
+  <p class="pn-bridge">The five phases are one lens on your <a href="/">Zodi Animal</a>, the creature you get when your Western Sun sign crosses your Chinese zodiac year.</p>
   <div class="cyc">
   <a href="/elements/phases/earth/"><div class="z">土生金</div><div class="r">Fed by</div><div class="t">Earth</div></a>
   <a href="/elements/phases/water/"><div class="z">金生水</div><div class="r">Feeds</div><div class="t">Water</div></a>
@@ -198,16 +252,12 @@ footer.f a{color:var(--muted);text-decoration:none}
     <a class="primary" href="/elements/phases/metal/">Back to Metal</a>
     <a href="/elements/">The five phases</a>
     <a href="/bazi/">The full BaZi guide</a><a href="/elements/zodiac/">Find your element</a>
-    <a href="/index.html">Find your Primal Animal</a>
+    <a href="/index.html">Find your Zodi Animal</a>
   </div>
 </div></section>
 
 <footer class="f"><div class="wrap">METAL 金 · <a href="/elements/phases/metal/">the metal sub-hub</a> · <a href="/">ZODI ANIMAL</a></div></footer>
-<!--om-footer:start-->
-<!-- Zodi Animal universal footer. Single source: components/footer.html,
-     baked into every page by build/apply-footer.mjs, styled by
-     site/css/footer.css (.zf-foot). All classes are zf- namespaced to avoid
-     collisions with page CSS. Edit this file, rebuild, all pages update. -->
+
 <footer class="zf-foot" role="contentinfo" aria-label="Site footer">
   <div class="zf-wrap">
 
@@ -348,68 +398,5 @@ footer.f a{color:var(--muted);text-decoration:none}
 
   </div>
 </footer>
-<script>
-/* Zodi footer: rotating proverb, tap-to-hear pronunciation, on-device newsletter save. */
-(function(){
-  try{ var y=document.getElementById('zf-year'); if(y) y.textContent=new Date().getFullYear(); }catch(e){}
-
-  var P=[
-    {c:[["守","shǒu"],["得","dé"],["雲","yún"],["開","kāi"],["見","jiàn"],["月","yuè"],["明","míng"]],en:"Hold on until the clouds part, and the bright moon appears."},
-    {c:[["上","shàng"],["善","shàn"],["若","ruò"],["水","shuǐ"]],en:"The highest good is like water."},
-    {c:[["瓜","guā"],["熟","shú"],["蒂","dì"],["落","luò"]],en:"When the melon ripens, the stalk falls of itself."},
-    {c:[["順","shùn"],["其","qí"],["自","zì"],["然","rán"]],en:"Let it follow its own nature."},
-    {c:[["塞","sài"],["翁","wēng"],["失","shī"],["馬","mǎ"]],en:"The old man lost his horse. Who is to say it was not good fortune."},
-    {c:[["物","wù"],["極","jí"],["必","bì"],["反","fǎn"]],en:"When a thing reaches its extreme, it turns back the other way."},
-    {c:[["水","shuǐ"],["到","dào"],["渠","qú"],["成","chéng"]],en:"When the water arrives, the channel forms itself."}
-  ];
-  var cur=P[Math.floor(Math.random()*P.length)];
-  var plain=cur.c.map(function(x){return x[0];}).join("");
-  try{
-    document.getElementById('zf-pv-cal').innerHTML=cur.c.map(function(x){return '<ruby>'+x[0]+'<rt>'+x[1]+'</rt></ruby>';}).join("");
-    document.getElementById('zf-pv-en').textContent=cur.en;
-    var sb0=document.getElementById('zf-pv-say'); if(sb0) sb0.setAttribute('data-say',plain);
-  }catch(e){}
-
-  /* the ranked Mandarin voice (Tingting / Meijia / Google), mirrored from
-     proverbs-share.js so the footer sounds the same on pages that don't load it */
-  function zfSpeak(text,btn){
-    if(window.zaSpeak){ window.zaSpeak(text,btn); return; }
-    if(!window.speechSynthesis || !text) return;
-    try{
-      var vs=speechSynthesis.getVoices()||[],best=null,bs=-1;
-      for(var i=0;i<vs.length;i++){
-        var v=vs[i],nm=(v.name||"").toLowerCase(),lg=(v.lang||"").toLowerCase();
-        if(!(/^zh\b|zh[-_]/.test(lg)||/chinese|中文|普通话|國語|mandarin/i.test(v.name||""))) continue;
-        var sc=0;
-        if(/tingting|ting-ting|meijia|mei-jia|sinji|li-mu|yu-shu|han-?yu/.test(nm)) sc+=100;
-        if(/google/.test(nm)) sc+=60;
-        if(/普通话|mandarin|zh-cn|zh_cn|cmn/.test(nm+lg)) sc+=25;
-        if(v.localService===false) sc+=12;
-        if(/female|woman/.test(nm)) sc+=4;
-        if(sc>bs){ bs=sc; best=v; }
-      }
-      var u=new SpeechSynthesisUtterance(text); u.lang="zh-CN"; u.rate=0.78; if(best) u.voice=best;
-      speechSynthesis.cancel(); speechSynthesis.speak(u);
-      if(btn){ btn.classList.add('is-saying'); u.onend=u.onerror=function(){ btn.classList.remove('is-saying'); }; }
-    }catch(e){}
-  }
-  if(window.speechSynthesis){ try{ speechSynthesis.getVoices(); }catch(e){} }
-
-  var say=document.getElementById('zf-pv-say');
-  if(say) say.addEventListener('click',function(){ zfSpeak(say.getAttribute('data-say')||plain, say); });
-
-  var form=document.getElementById('zf-news-form');
-  if(form) form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var email=(document.getElementById('zf-email')||{}).value||'';
-    var note=document.getElementById('zf-rz');
-    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ if(note) note.textContent="Enter an email so we can find you."; return; }
-    try{ localStorage.setItem('zodi_daily_email', email); }catch(_e){}
-    if(note) note.textContent="Saved on this device. Daily readings open soon.";
-    try{ document.getElementById('zf-email').value=''; }catch(_e){}
-  });
-})();
-</script>
-<!--om-footer:end-->
 </body>
 </html>

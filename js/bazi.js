@@ -513,10 +513,8 @@
 
     var dateRow = el("div", "bz-cast-form");
     dateRow.innerHTML =
-      '<div class="bz-selblock"><span class="bz-sellabel">Month</span><select class="bz-select" data-c="month">' + MON.map(function (mn, i) { return '<option value="' + (i + 1) + '"' + (i === 6 ? " selected" : "") + ">" + mn + "</option>"; }).join("") + "</select></div>" +
-      '<div class="bz-selblock"><span class="bz-sellabel">Day</span><select class="bz-select" data-c="day">' + opts(1, 31, 15) + "</select></div>" +
-      '<div class="bz-selblock"><span class="bz-sellabel">Year</span><input class="bz-select" data-c="year" type="number" min="1900" max="2100" value="1990"></div>' +
-      '<div class="bz-selblock"><span class="bz-sellabel">Sex <span class="gloss" tabindex="0" data-tip="Used only to set the direction of the luck pillars (大运), which run forward or backward depending on birth sex and the birth-year polarity.">for luck 大运</span></span><select class="bz-select" data-c="sex"><option value="">Choose…</option><option value="female">Female</option><option value="male">Male</option></select></div>';
+      '<div class="bz-selblock bz-span2"><span class="bz-sellabel">Birth date</span><input class="bz-select bz-date" type="date" data-c="date" min="1900-01-01" max="2100-12-31" value="1990-07-15"></div>' +
+      '<div class="bz-selblock bz-span2"><span class="bz-sellabel">Sex <span class="gloss" tabindex="0" data-tip="Used only to set the direction of the luck pillars (大运), which run forward or backward depending on birth sex and the birth-year polarity.">for luck 大运</span></span><select class="bz-select" data-c="sex"><option value="">Choose…</option><option value="female">Female</option><option value="male">Male</option></select></div>';
     root.appendChild(dateRow);
 
     var mode = "general";
@@ -549,8 +547,7 @@
         var cityOpts = '<option value="">Use clock time as-is (skip)</option>' + CITIES.map(function (c, i) { return '<option value="' + i + '">' + c[0] + "</option>"; }).join("") + '<option value="other">Other, enter longitude…</option>';
         controls.innerHTML =
           '<div class="bz-cast-form">' +
-          '<div class="bz-selblock"><span class="bz-sellabel">Hour</span><select class="bz-select" data-c="hour">' + hourLabels.map(function (l, i) { return '<option value="' + i + '"' + (i === 12 ? " selected" : "") + ">" + l + "</option>"; }).join("") + "</select></div>" +
-          '<div class="bz-selblock"><span class="bz-sellabel">Minute</span><select class="bz-select" data-c="minute">' + opts(0, 59, 0) + "</select></div>" +
+          '<div class="bz-selblock bz-span2"><span class="bz-sellabel">Time of birth</span><input class="bz-select bz-date" type="time" data-c="time" value="12:00"></div>' +
           '<div class="bz-selblock bz-span2"><span class="bz-sellabel">Birthplace <span class="gloss" tabindex="0" data-tip="真太阳时 zhēn tài yáng shí, true solar time. BaZi runs on the sun at your birthplace, so your longitude and the date shift the real hour. Optional.">true solar time</span></span><select class="bz-select" data-c="place">' + cityOpts + "</select></div>" +
           "</div>" +
           '<div data-adv style="display:none"><div class="bz-cast-form"><div class="bz-selblock"><span class="bz-sellabel">Longitude (east +, west −)</span><input class="bz-select" data-c="lon" type="number" step="0.1" min="-180" max="180" value="0"></div><div class="bz-selblock"><span class="bz-sellabel">UTC offset (hours)</span><input class="bz-select" data-c="utc" type="number" step="0.5" min="-12" max="14" value="0"></div></div></div>';
@@ -569,7 +566,9 @@
     function updateExpLabel() { var n = controls.querySelector("[data-explabel]"); if (n) n.textContent = hourLabels[exploreHour]; }
     function dv(c) { var n = dateRow.querySelector('[data-c="' + c + '"]'); return n ? n.value : ""; }
     function cv(c) { var n = controls.querySelector('[data-c="' + c + '"]'); return n ? n.value : ""; }
-    function dateOK() { var y = parseInt(dv("year"), 10); return y && y >= 1900 && y <= 2100; }
+    function birthParts() { var v = dv("date"); if (!v) return null; var p = v.split("-"); return { y: parseInt(p[0], 10), m: parseInt(p[1], 10), d: parseInt(p[2], 10) }; }
+    function timeParts() { var v = cv("time"); if (!v) return { h: 12, min: 0 }; var p = v.split(":"); return { h: parseInt(p[0], 10) || 0, min: parseInt(p[1], 10) || 0 }; }
+    function dateOK() { var b = birthParts(); return !!(b && b.y >= 1900 && b.y <= 2100); }
     function place() {
       var pv = cv("place");
       if (mode !== "known" || pv === "" || pv == null) return null;
@@ -577,19 +576,19 @@
       var c = CITIES[parseInt(pv, 10)]; return c ? { lon: c[1], utc: c[2], name: c[0] } : null;
     }
     cast.addEventListener("click", function () {
-      if (!dateOK()) { out.innerHTML = '<p class="bz-hint">Please enter a year between 1900 and 2100.</p>'; return; }
-      var y = parseInt(dv("year"), 10), m = parseInt(dv("month"), 10), d = parseInt(dv("day"), 10), sex = dv("sex");
+      if (!dateOK()) { out.innerHTML = '<p class="bz-hint">Please pick a birth date (year 1900 to 2100).</p>'; return; }
+      var b = birthParts(), y = b.y, m = b.m, d = b.d, sex = dv("sex");
       if (mode === "general") { render(castChart({ year: y, month: m, day: d, known: false }), { birth:{y:y,m:m,d:d}, sex:sex }); return; }
-      var pl = place();
-      var o = { year: y, month: m, day: d, hour: parseInt(cv("hour"), 10) || 0, minute: parseInt(cv("minute"), 10) || 0, known: true };
+      var pl = place(), tp = timeParts();
+      var o = { year: y, month: m, day: d, hour: tp.h, minute: tp.min, known: true };
       if (pl) { o.lon = pl.lon; o.utc = pl.utc; }
       render(castChart(o), { placeName: pl ? pl.name : null, birth:{y:y,m:m,d:d}, sex:sex });
     });
     function doExplore() {
-      if (!dateOK()) { out.innerHTML = '<p class="bz-hint">Enter a birth year first, then explore the hour.</p>'; return; }
+      if (!dateOK()) { out.innerHTML = '<p class="bz-hint">Pick a birth date first, then explore the hour.</p>'; return; }
       updateExpLabel();
-      var y = parseInt(dv("year"), 10), m = parseInt(dv("month"), 10), d = parseInt(dv("day"), 10);
-      render(castChart({ year: y, month: m, day: d, hour: exploreHour, minute: 0, known: true }), { explore: true, birth:{y:y,m:m,d:d}, sex:dv("sex") });
+      var b = birthParts();
+      render(castChart({ year: b.y, month: b.m, day: b.d, hour: exploreHour, minute: 0, known: true }), { explore: true, birth:{y:b.y,m:b.m,d:b.d}, sex:dv("sex") });
     }
 
     function godOf(node) { var g = godFor(dmPhase(), dmPol(), node.phase, node.polarity); return g ? g : null; }
