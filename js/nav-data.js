@@ -535,14 +535,18 @@ PNAV.HUBS = {
     label: "BaZi", root: "/bazi/",
     items: [
       ["/bazi/", "What is BaZi"],
-      ["/bazi/four-pillars/", "The four pillars"],
-      ["/bazi/heavenly-stems/", "The ten stems"],
-      ["/bazi/earthly-branches/", "The twelve branches"],
-      ["/bazi/hidden-stems/", "Hidden stems"],
-      ["/bazi/day-master/", "Your Day Master"],
-      ["/bazi/ten-gods/", "The Ten Gods"],
-      ["/bazi/interactions/", "Combinations & clashes"],
-      ["/bazi/luck-pillars/", "Luck & timing"],
+      ["/bazi/four-pillars/", "The system", [
+        ["/bazi/four-pillars/", "The four pillars"],
+        ["/bazi/heavenly-stems/", "The ten stems"],
+        ["/bazi/earthly-branches/", "The twelve branches"],
+        ["/bazi/hidden-stems/", "Hidden stems"]
+      ]],
+      ["/bazi/day-master/", "The reading", [
+        ["/bazi/day-master/", "Your Day Master"],
+        ["/bazi/ten-gods/", "The Ten Gods"],
+        ["/bazi/interactions/", "Combinations & clashes"],
+        ["/bazi/luck-pillars/", "Luck & timing"]
+      ]],
       ["/bazi/compatibility/", "You & them"],
       ["/bazi/chart/", "Cast your chart"]
     ]
