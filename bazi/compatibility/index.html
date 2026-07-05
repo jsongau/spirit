@@ -227,6 +227,11 @@ a.bz-el:hover{border-color:var(--el);color:var(--moon)}
 .bz-luckcell.is-good{border-color:var(--wood);background:color-mix(in oklab,var(--wood) 16%,var(--panel))}
 .bz-luckcell.is-hard{border-color:var(--earth);background:color-mix(in oklab,var(--earth) 12%,var(--panel))}
 .bz-luckcell em{font-family:var(--mono);font-size:.5rem;letter-spacing:.02em;color:var(--muted);font-style:normal;margin-top:.15rem;text-align:center}
+.bz-luckcell{position:relative}
+.bz-luckcell.is-past{opacity:.42}
+.bz-luckcell.is-now{outline:2px solid var(--el);outline-offset:2px;box-shadow:0 0 22px var(--el-soft)}
+.bz-now{position:absolute;top:-9px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:.46rem;letter-spacing:.08em;text-transform:uppercase;padding:.12rem .4rem;border-radius:var(--r-pill);background:var(--el);color:var(--ink);font-weight:600;white-space:nowrap;z-index:2}
+.bz-hoursel .bz-select{max-width:360px}
 .bz-synth{background:linear-gradient(180deg,color-mix(in oklab,var(--el) 11%,var(--panel)),var(--field));border-left:3px solid var(--el);margin-top:1.5rem}
 .bz-casting{text-align:center;padding:2.6rem 0}
 .bz-casting-glyphs{display:flex;gap:.6rem;justify-content:center;font-family:var(--serif);font-size:2.4rem;color:var(--el)}
@@ -306,7 +311,6 @@ a.bz-el:hover{border-color:var(--el);color:var(--moon)}
 {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Zodi Animal","item":"https://www.zodianimal.com/"},{"@type":"ListItem","position":2,"name":"BaZi","item":"https://www.zodianimal.com/bazi/"},{"@type":"ListItem","position":3,"name":"You and Them","item":"https://www.zodianimal.com/bazi/compatibility/"}]}
 ]}
 </script>
-<script src="/js/nav.js" defer></script>
 <!--pn-css:start-->
 <link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
 <link rel="stylesheet" href="/css/nav-mega.css" data-pn="/css/nav-mega.css">
@@ -318,6 +322,7 @@ a.bz-el:hover{border-color:var(--el);color:var(--moon)}
 <!--pn-crumb-ld:start-->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.zodianimal.com/"},{"@type":"ListItem","position":2,"name":"BaZi","item":"https://www.zodianimal.com/bazi/"},{"@type":"ListItem","position":3,"name":"You and Them","item":"https://www.zodianimal.com/bazi/compatibility/"}]}</script>
 <!--pn-crumb-ld:end-->
+<script src="/js/nav.js" defer></script>
 </head>
 <body class="pn-has-bar">
 <!--pn-static:start-->
@@ -401,8 +406,7 @@ a.bz-el:hover{border-color:var(--el);color:var(--moon)}
 <!--pn-sub:end-->
 <!--pn-crumbbar:start-->
 <nav class="pn-crumbbar" aria-label="Breadcrumb"><ol class="pn-crumb"><li><a href="/">Home</a></li><li><a href="/bazi/">BaZi</a></li><li aria-current="page">You and Them</li></ol></nav>
-<!--pn-crumbbar:end-->
-<header class="hero"><div class="wrap">
+<!--pn-crumbbar:end--><header class="hero"><div class="wrap">
   <p class="eyebrow">Chamber 09 of the Four Pillars</p>
   <div class="bigchar" aria-hidden="true">八字</div>
   <h1>You and Them</h1>

@@ -227,6 +227,11 @@ a.bz-el:hover{border-color:var(--el);color:var(--moon)}
 .bz-luckcell.is-good{border-color:var(--wood);background:color-mix(in oklab,var(--wood) 16%,var(--panel))}
 .bz-luckcell.is-hard{border-color:var(--earth);background:color-mix(in oklab,var(--earth) 12%,var(--panel))}
 .bz-luckcell em{font-family:var(--mono);font-size:.5rem;letter-spacing:.02em;color:var(--muted);font-style:normal;margin-top:.15rem;text-align:center}
+.bz-luckcell{position:relative}
+.bz-luckcell.is-past{opacity:.42}
+.bz-luckcell.is-now{outline:2px solid var(--el);outline-offset:2px;box-shadow:0 0 22px var(--el-soft)}
+.bz-now{position:absolute;top:-9px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:.46rem;letter-spacing:.08em;text-transform:uppercase;padding:.12rem .4rem;border-radius:var(--r-pill);background:var(--el);color:var(--ink);font-weight:600;white-space:nowrap;z-index:2}
+.bz-hoursel .bz-select{max-width:360px}
 .bz-synth{background:linear-gradient(180deg,color-mix(in oklab,var(--el) 11%,var(--panel)),var(--field));border-left:3px solid var(--el);margin-top:1.5rem}
 .bz-casting{text-align:center;padding:2.6rem 0}
 .bz-casting-glyphs{display:flex;gap:.6rem;justify-content:center;font-family:var(--serif);font-size:2.4rem;color:var(--el)}
@@ -308,7 +313,6 @@ a.bz-el:hover{border-color:var(--el);color:var(--moon)}
 {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is BaZi?","acceptedAnswer":{"@type":"Answer","text":"BaZi, the Four Pillars of Destiny, reads a birth moment as eight characters: a Heavenly Stem and Earthly Branch for the year, month, day, and hour. It is a symbolic tradition for reflection, not prediction."}},{"@type":"Question","name":"Is BaZi the same as the Chinese zodiac?","acceptedAnswer":{"@type":"Answer","text":"They are one tradition. The birth-year animal of the Chinese zodiac is the year's Earthly Branch in a full BaZi chart, which also reads the month, day, and hour."}},{"@type":"Question","name":"Does BaZi predict the future?","acceptedAnswer":{"@type":"Answer","text":"No. Casting a chart is exact, but reading it deals in tendencies and timing, a lens for reflection, never a fixed forecast of events."}}]}
 ]}
 </script>
-<script src="/js/nav.js" defer></script>
 <!--pn-css:start-->
 <link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
 <link rel="stylesheet" href="/css/nav-mega.css" data-pn="/css/nav-mega.css">
@@ -320,6 +324,7 @@ a.bz-el:hover{border-color:var(--el);color:var(--moon)}
 <!--pn-crumb-ld:start-->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.zodianimal.com/"},{"@type":"ListItem","position":2,"name":"BaZi","item":"https://www.zodianimal.com/bazi/"}]}</script>
 <!--pn-crumb-ld:end-->
+<script src="/js/nav.js" defer></script>
 </head>
 <body class="pn-has-bar">
 <!--pn-static:start-->
@@ -403,8 +408,7 @@ a.bz-el:hover{border-color:var(--el);color:var(--moon)}
 <!--pn-sub:end-->
 <!--pn-crumbbar:start-->
 <nav class="pn-crumbbar" aria-label="Breadcrumb"><ol class="pn-crumb"><li><a href="/">Home</a></li><li aria-current="page">BaZi</li></ol></nav>
-<!--pn-crumbbar:end-->
-<header class="hero"><div class="wrap">
+<!--pn-crumbbar:end--><header class="hero"><div class="wrap">
   <div class="bzhero">
     <div class="bzwatermark" aria-hidden="true">八字</div>
     <div class="bzseal" aria-hidden="true"><b>命</b></div>

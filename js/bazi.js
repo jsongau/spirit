@@ -679,19 +679,24 @@
         var yPol = stemByChar[c.pillars[0].stem].polarity;
         var fwd = (opt.sex === "male" && yPol === "yang") || (opt.sex === "female" && yPol === "yin");
         var sa = opt.birth ? startAgeApprox(opt.birth.y, opt.birth.m, opt.birth.d, fwd) : 4;
+        var birthY = opt.birth ? opt.birth.y : null, curY = new Date().getFullYear();
+        var curAge = birthY ? (curY - birthY) : null;
         var si = STEMS.indexOf(c.pillars[1].stem), bi = BRANCHES.indexOf(c.pillars[1].branch), cells = "", good = [];
         for (var k = 0; k < 8; k++) {
           si = mod(si + (fwd ? 1 : -1), 10); bi = mod(bi + (fwd ? 1 : -1), 12);
           var ds = B.stems[si], db = B.branches[bi], g2 = godFor(dm.phase, dm.polarity, ds.phase, ds.polarity);
           var feeds = uf.useful.indexOf(ds.phase) > -1 || uf.useful.indexOf(db.phase) > -1 || uf.useful.indexOf(B.generating[ds.phase]) > -1;
           var drains = uf.useful.indexOf(B.controlling[ds.phase]) > -1;
-          var cl = feeds && !drains ? "supportive" : (drains && !feeds ? "demanding" : "mixed"), age = sa + k * 10;
-          if (cl === "supportive") good.push(age);
-          cells += '<div class="bz-luckcell' + (cl === "supportive" ? " is-good" : (cl === "demanding" ? " is-hard" : "")) + '" data-god="' + g2.char + '" tabindex="0" role="button"><b>' + ds.char + db.char + "</b><i>age " + age + "</i><em>" + g2.en + "</em></div>";
+          var cl = feeds && !drains ? "supportive" : (drains && !feeds ? "demanding" : "mixed"), ageF = sa + k * 10, ageT = ageF + 9;
+          var yF = birthY ? birthY + ageF : null;
+          var when = (curAge == null) ? "" : (curAge > ageT ? " is-past" : (curAge >= ageF ? " is-now" : ""));
+          if (cl === "supportive" && (curAge == null || ageF >= curAge)) good.push(ageF);
+          var nowTag = when.indexOf("is-now") > -1 ? '<span class="bz-now">now</span>' : "";
+          cells += '<div class="bz-luckcell' + (cl === "supportive" ? " is-good" : (cl === "demanding" ? " is-hard" : "")) + when + '" data-god="' + g2.char + '" tabindex="0" role="button">' + nowTag + "<b>" + ds.char + db.char + "</b><i>age " + ageF + (yF ? " · " + yF : "") + "</i><em>" + g2.en + "</em></div>";
         }
         var avg = good.length ? good.reduce(function (a, b) { return a + b; }, 0) / good.length : 0;
         luckArc = !good.length ? "moves through an even mix of supportive and demanding seasons" : (avg < sa + 25 ? "opens with supportive seasons early, favouring a strong start" : (avg < sa + 50 ? "gathers its most supportive seasons in the middle years, coming into its own with time" : "saves its most supportive seasons for later, a long game that rewards patience"));
-        luckBlock = '<div class="bz-read-sec"><span class="bz-k">Your luck decades (' + glossI("大运", "大运 dà yùn, the ten-year luck pillars: moving seasons of life laid over the fixed chart. Tendencies, never a schedule.") + '), from about age ' + sa + '</span><p>Each block is a ten-year season. Green leans supportive for your chart, amber asks more of you. Tap one for the god it brings.</p><div class="bz-luckrow">' + cells + '</div></div>';
+        luckBlock = '<div class="bz-read-sec"><span class="bz-k">Your luck decades (' + glossI("大运", "大运 dà yùn, the ten-year luck pillars: moving seasons of life laid over the fixed chart. Tendencies, never a schedule.") + '), from about age ' + sa + '</span><p><b>Green</b> is a supportive decade for your chart; <b>amber</b> is more demanding, its elements working against what you lean on. Dimmed blocks are behind you, the ringed one is where you are now, and the rest lie ahead. Tap any for the god it brings.</p><div class="bz-luckrow">' + cells + '</div></div>';
       }
 
       // --- synthesis ---
@@ -724,8 +729,15 @@
       var shareTxt = "My BaZi: a " + dm.polarity + " " + dm.phase + " self (" + dm.imagery + "), a " + st.verdict + " chart that leans on " + joinNames(uf.useful) + ". " + (domName ? "Strongest current: " + domName + ". " : "") + "Cast yours at zodianimal.com/bazi/chart/";
       var shareCard = '<div class="bz-sharecard"><div class="bz-share-glyph" ' + phaseStyle(dm.phase) + ">" + dm.char + '</div><div class="bz-share-body"><div class="bz-share-line">' + oneLine + '</div><button type="button" class="bz-pill bz-sharebtn">Copy my reading to share</button></div></div>';
 
+      var hourSel = "";
+      if (opt.birth) {
+        var HR = ["11pm to 1am", "1 to 3am", "3 to 5am", "5 to 7am", "7 to 9am", "9 to 11am", "11am to 1pm", "1 to 3pm", "3 to 5pm", "5 to 7pm", "7 to 9pm", "9 to 11pm"];
+        var ho = '<option value="">Unknown (general reading)</option>';
+        for (var hi = 0; hi < 12; hi++) { var ba = B.branches[hi]; ho += '<option value="' + hi + '"' + (hasHour && c.pillars[3].branch === ba.char ? " selected" : "") + ">" + HR[hi] + " · " + ba.animal + " " + ba.char + "</option>"; }
+        hourSel = '<div class="bz-read-sec bz-hoursel"><span class="bz-k">Your birth hour ' + glossI("(时辰)", "时辰 shí chen, the two-hour block of your birth. It sets the fourth pillar: later life, children, and what you make. Swap it to see the reading change.") + ' — swap to see how it changes</span><select class="bz-select" data-hoursel>' + ho + '</select></div>';
+      }
       var castlead = '<p class="bz-castlead">Your Day Master is <b>' + dm.char + " " + dm.pinyin + "</b>, " + dm.polarity + " " + dm.phase + ". " + cap(dm.imagery) + ". This is you, the character every other part of the chart is read against.</p>";
-      var pieces = [castlead, grid, solar, shareCard, strengthBlock, pillarBlock, godsBlock, luckBlock, yearBlock, synth, generalNote, (notes ? '<div class="bz-note-inline">' + notes + "</div>" : ""), links, '<p class="bz-note-inline">A reading of tendencies from a classical system, a mirror and a grain to work with, not a verdict and not a prediction. What you do with it is yours.</p>'].filter(Boolean);
+      var pieces = [castlead, grid, hourSel, solar, shareCard, strengthBlock, pillarBlock, godsBlock, luckBlock, yearBlock, synth, generalNote, (notes ? '<div class="bz-note-inline">' + notes + "</div>" : ""), links, '<p class="bz-note-inline">A reading of tendencies from a classical system, a mirror and a grain to work with, not a verdict and not a prediction. What you do with it is yours.</p>'].filter(Boolean);
       var body = opt.animate ? '<div class="bz-anim">' + pieces.map(function (p, i) { return '<div class="bz-reveal-step" style="animation-delay:' + (i * 75) + 'ms">' + p + "</div>"; }).join("") + "</div>" : pieces.join("");
       out.innerHTML = banner + body;
 
@@ -737,6 +749,12 @@
       if (sbtn) sbtn.addEventListener("click", function () {
         if (navigator.share) { navigator.share({ text: shareTxt }).catch(function () {}); return; }
         if (navigator.clipboard) navigator.clipboard.writeText(shareTxt).then(function () { sbtn.textContent = "Copied to clipboard"; setTimeout(function () { sbtn.textContent = "Copy my reading to share"; }, 1900); }).catch(function () {});
+      });
+      var hsel = out.querySelector("[data-hoursel]");
+      if (hsel) hsel.addEventListener("change", function () {
+        var v = hsel.value, bo = opt.birth; if (!bo) return;
+        if (v === "") render(castChart({ year: bo.y, month: bo.m, day: bo.d, known: false }), { birth: bo, sex: opt.sex, animate: false });
+        else render(castChart({ year: bo.y, month: bo.m, day: bo.d, hour: parseInt(v, 10) * 2, minute: 0, known: true }), { birth: bo, sex: opt.sex, animate: false });
       });
     }
   }
