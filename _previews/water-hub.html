@@ -346,6 +346,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap">
+<script src="https://www.zodianimal.com/js/nav.js" defer></script>
 <style>
 :root{--ink:#0b0f16;--ink-2:#101725;--panel:#152234;--panel-2:#1c2c42;--field:#0a0f18;
 --line:rgba(120,179,214,.18);--line-soft:rgba(120,179,214,.09);--moon:#eaf2f8;--ivory:#dbe6ef;
@@ -443,13 +444,2417 @@ footer.f a{color:var(--muted);text-decoration:none}
 ]}
 </script>
 <!--pn-css:start-->
-<link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
-<link rel="stylesheet" href="/css/nav-mega.css" data-pn="/css/nav-mega.css">
-<link rel="stylesheet" href="/css/nav-drawer.css" data-pn="/css/nav-drawer.css">
-<link rel="stylesheet" href="/css/nav-sub.css" data-pn="/css/nav-sub.css">
-<link rel="stylesheet" href="/css/footer.css" data-pn="/css/footer.css">
-<link rel="stylesheet" href="/css/a11y.css" data-pn="/css/a11y.css">
+<style data-inlined="css/nav-core.css">
+/* ============================================================
+   THE PRIMAL ORACLE — nav core (the sticky bar), canvas v3 skin
+   Canvas-template-v2 bar: 64px. Wordmark "Zodi Animal" hard left
+   (20px gutter), then Find yours | Explore | Menagerie | Bonds |
+   Moon, then the right cluster — a plain spaced flex row with a
+   fixed order and NO absolute positioning (popovers excepted):
+     [identity chip .pn-id] [moon chip .pn-moon] [awakening ring
+     .pn-ring] [CTA .pn-cta]
+   (The theme toggle is gone: dark celestial is the only theme.)
+   Every chip is its own inflexible box (flex:0 0 auto); the only
+   shrinking element in the bar is .pn-nav (min-width:0, scrolls
+   under a fade mask), so the cluster can never overlap.
+   Collapse ladder: <1280px the ring leaves the bar, <1100px the
+   identity chip leaves, <900px the burger drawer takes over; the
+   drawer's .pn-drawer-chips strip (cloned by nav.js on open)
+   carries the dropped chips so nothing is lost.
+   Tokens only (tokens.css); dark celestial is the only theme.
+   ============================================================ */
+
+.pn-bar{position:sticky; top:0; z-index:120;
+  -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px);
+  background:color-mix(in oklab, var(--ink) 92%, transparent);
+  border-bottom:1px solid var(--line)}
+@supports not (background: color-mix(in oklab, red, blue)) {
+  .pn-bar{background:var(--ink)}
+}
+/* one deterministic bar height: the shared knob every sticky offset
+   reads (nav-sub.css declares --pn-bar-h:64px; nav.js re-measures).
+   The inner row is knob minus the 1px bottom border, so the bar's
+   full rendered height equals the knob exactly.
+   Full-bleed row: the wordmark sits HARD LEFT on a fixed 20px
+   gutter (no centered max-width cap), so at wide viewports the
+   middle nav and the right cluster get all the freed room. */
+.pn-inner{max-width:none; margin:0; height:calc(var(--pn-bar-h, 64px) - 1px);
+  padding:0 clamp(16px, 3vw, 32px) 0 20px; display:flex; align-items:center; gap:16px}
+
+/* compact stacked lockup (Astral Weld): wordmark hard left, a mono
+   tagline welded on its right by a hairline, revealed at wide widths */
+.pn-brand{display:flex; flex-direction:row; align-items:center; gap:.7ch;
+  font-family:var(--serif,serif); letter-spacing:.2px; color:var(--ivory,#ece7d8);
+  white-space:nowrap; text-decoration:none; flex:0 0 auto}
+.pn-word{display:flex; flex-direction:column; line-height:1.02; font-size:18px}
+.pn-word .z{color:var(--muted,#adaec2)}
+.pn-word b{font-weight:560; color:var(--moon,#f5ecd2)}
+.pn-tagline{font-family:var(--mono,monospace); font-size:7.5px; letter-spacing:.09em;
+  line-height:1.42; text-transform:uppercase; color:var(--faint,#7f8096);
+  white-space:nowrap; padding-left:.8ch; border-left:1px solid var(--line-soft);
+  display:none}
+@media (min-width:1040px){ .pn-tagline{display:block} }
+
+/* top-level nav: pill links; overflow scrolls under a fade mask
+   (canvas) so the bar can never wrap and change height */
+.pn-nav{display:flex; align-items:center; gap:2px; flex:1 1 auto; min-width:0;
+  overflow-x:auto; overflow-y:hidden; scrollbar-width:none;
+  -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 32px),transparent);
+  mask-image:linear-gradient(90deg,#000 calc(100% - 32px),transparent)}
+.pn-nav::-webkit-scrollbar{display:none}
+/* the shared "Porsche" trigger hover (Astral Weld): a blurred headlight
+   bloom BEHIND the label, a thin accent underline drawing from center,
+   and a 1px lift. Text muted -> moon. No boxy pill fill. */
+.pn-link,.pn-trigger{position:relative; font:500 .875rem/1 var(--sans,sans-serif);
+  color:var(--muted,#adaec2); letter-spacing:.01em; white-space:nowrap;
+  padding:9px 13px; border-radius:var(--r-1,8px);
+  background:transparent; border:none; cursor:pointer; text-decoration:none;
+  display:inline-flex; align-items:center; gap:6px;
+  transition:color var(--dur-fast,180ms) var(--ease-out,ease),
+             transform var(--dur-fast,180ms) var(--ease-out,ease)}
+.pn-link::before,.pn-trigger::before{content:""; position:absolute; inset:-6px -2px; z-index:-1;
+  border-radius:40px;
+  background:radial-gradient(60% 120% at 50% 60%, oklch(from var(--accent) l c h / .28), transparent 70%);
+  filter:blur(7px); opacity:0; transform:scale(.7);
+  transition:opacity var(--dur,320ms) var(--ease-out,ease), transform var(--dur,320ms) var(--ease-out,ease)}
+.pn-link::after,.pn-trigger::after{content:""; position:absolute; left:50%; right:50%; bottom:4px; height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent-bright),transparent);
+  transition:left var(--dur,320ms) var(--ease-out,ease), right var(--dur,320ms) var(--ease-out,ease),
+             box-shadow var(--dur,320ms) var(--ease-out,ease)}
+.pn-link:hover,.pn-trigger:hover,
+.pn-link:focus-visible,.pn-trigger:focus-visible,
+.pn-trigger[aria-expanded="true"]{color:var(--moon,#f5ecd2); transform:translateY(-1px); background:transparent}
+.pn-link:hover::before,.pn-trigger:hover::before,
+.pn-link:focus-visible::before,.pn-trigger:focus-visible::before,
+.pn-trigger[aria-expanded="true"]::before{opacity:1; transform:scale(1)}
+.pn-link:hover::after,.pn-trigger:hover::after,
+.pn-link:focus-visible::after,.pn-trigger:focus-visible::after,
+.pn-trigger[aria-expanded="true"]::after{left:13px; right:13px}
+.pn-link.active,.pn-trigger.active{color:var(--accent-bright,#efe2b4)}
+
+/* per-item accent: re-points --accent ramp so each tab's moonstone,
+   headlight bloom, and underline tint to its domain hue */
+.pn-item[data-accent="teal"]{--accent:var(--teal); --accent-bright:var(--teal-bright); --accent-dim:var(--teal-dim)}
+.pn-item[data-accent="brass"]{--accent:var(--brass); --accent-bright:var(--brass-bright); --accent-dim:var(--brass-dim)}
+.pn-item[data-accent="amethyst"]{--accent:var(--amethyst); --accent-bright:var(--amethyst-bright); --accent-dim:var(--amethyst-dim)}
+.pn-item[data-accent="jade"]{--accent:var(--jade); --accent-bright:var(--jade-bright); --accent-dim:var(--jade-dim)}
+.pn-item[data-accent="rose"]{--accent:var(--rose); --accent-bright:var(--rose-bright); --accent-dim:var(--rose-dim)}
+.pn-item[data-accent="silver"]{--accent:var(--silver); --accent-bright:var(--silver-bright); --accent-dim:var(--silver-dim)}
+.pn-item[data-accent]{--accent-soft:oklch(from var(--accent) l c h / 0.16)}
+
+/* "Find yours": its own quiet keystone, a hair brighter with a warm bloom */
+.pn-link.pn-find{color:var(--ivory,#ece7d8); font-weight:600}
+.pn-link.pn-find::before{background:radial-gradient(60% 120% at 50% 60%,
+   oklch(0.90 0.09 88 / .30), transparent 70%)}
+
+/* the moonstone in each trigger — ACCENTUATES on hover/open, never dims */
+.pn-stone{width:15px; height:15px; color:var(--accent); opacity:.85; flex:0 0 auto;
+  filter:drop-shadow(0 0 4px var(--accent-soft));
+  transition:opacity var(--dur-fast,180ms) var(--ease-out,ease),
+             transform var(--dur-fast,180ms) var(--ease-out,ease),
+             filter var(--dur-fast,180ms) var(--ease-out,ease)}
+.pn-trigger:hover .pn-stone,.pn-trigger[aria-expanded="true"] .pn-stone{
+  opacity:1; transform:translateY(-1px) scale(1.08)}
+
+.pn-trigger .chev{width:7px; height:7px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor;
+  transform:rotate(45deg) translateY(-1px); transition:transform .22s ease; opacity:.75}
+.pn-trigger:hover .chev,.pn-trigger[aria-expanded="true"] .chev{opacity:1}
+.pn-trigger.expanded,.pn-trigger[aria-expanded="true"]{color:var(--moon,#f5ecd2)}
+.pn-trigger.expanded .chev,.pn-trigger[aria-expanded="true"] .chev{transform:rotate(-135deg) translateY(1px)}
+.pn-item{position:relative}
+
+/* @supports fallback: browsers without relative-color oklch() get a
+   flat accent-tinted bloom + underline instead of the per-hue mix */
+@supports not (color: oklch(from white l c h)){
+  .pn-link::before,.pn-trigger::before{background:radial-gradient(60% 120% at 50% 60%, var(--accent-soft), transparent 70%)}
+}
+
+/* right-side tools: [identity chip] [moon chip] [awakening ring]
+   [theme toggle] [CTA]. A plain spaced flex row: every chip is an
+   inflexible box (flex:0 0 auto), separation comes ONLY from the
+   flex gap, and nothing in here is absolutely positioned except
+   the moon popover. Hidden slots are hard-off so an empty slot can
+   never cost a gap or catch a click. */
+.pn-tools{display:flex; align-items:center; gap:10px; margin-left:auto; flex:0 0 auto; min-width:0}
+.pn-tools > [hidden]{display:none !important}
+/* the chips set their own display, which would beat the UA [hidden]
+   rule outside .pn-tools (drawer clones et al.); keep hidden hard-off */
+.pn-id[hidden],.pn-ring[hidden]{display:none}
+
+/* identity chip: compact glyph avatar + short animal name. The
+   label truncates with ellipsis at 140px; the full line lives in
+   title/aria-label (nav-me.js). Hidden entirely until a reveal. */
+.pn-id{display:inline-flex; align-items:center; gap:7px; height:38px; padding:0 12px 0 7px;
+  max-width:200px; flex:0 0 auto; min-width:0;
+  background:transparent; border:1px solid var(--line); border-radius:var(--r-pill,999px);
+  color:var(--ivory); font:500 .78rem/1 var(--sans,sans-serif); letter-spacing:.01em;
+  text-decoration:none; white-space:nowrap;
+  transition:border-color .2s ease, color .2s ease, background .2s ease,
+             box-shadow .2s ease, transform var(--dur-fast,180ms) var(--ease-out,ease)}
+/* ignite (never dim): brass rim, moon text, warm wash + a lift and a soft bloom */
+.pn-id:hover,.pn-id:focus-visible{border-color:var(--accent); color:var(--moon); background:var(--accent-soft);
+  transform:translateY(-1px)}
+.pn-id .pn-id-glyph{display:inline-flex; align-items:center; justify-content:center;
+  width:24px; height:24px; flex:0 0 auto; border-radius:50%;
+  border:1px solid var(--line-soft); background:var(--accent-soft);
+  font-size:.85rem; line-height:1}
+.pn-id .lbl{display:block; max-width:140px; min-width:0;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+
+.pn-moonwrap{position:relative; flex:0 0 auto}
+.pn-moon{display:inline-flex; align-items:center; gap:7px; height:38px; padding:0 12px;
+  flex:0 0 auto; text-decoration:none;
+  background:transparent; border:1px solid var(--line); border-radius:var(--r-pill,999px);
+  color:var(--muted); font:400 .68rem/1 var(--mono,monospace); cursor:pointer; white-space:nowrap;
+  transition:border-color .2s ease, color .2s ease, background .2s ease,
+             box-shadow .2s ease, transform var(--dur-fast,180ms) var(--ease-out,ease)}
+/* ignite: brass rim, moon text, a lift and a soft bloom (never dim) */
+.pn-moon:hover,.pn-moon:focus-visible,.pn-moon[aria-expanded="true"]{border-color:var(--accent); color:var(--moon);
+  transform:translateY(-1px)}
+.pn-moon[aria-expanded="true"]{background:var(--accent-soft)}
+.pn-moon .g{font-size:1rem; line-height:1}
+.pn-moon[hidden]{display:none}
+.pn-moonpop{position:absolute; right:0; top:calc(100% + 14px);
+  width:min(300px, calc(100vw - 32px)); background:var(--panel);
+  border:1px solid var(--line); border-radius:0 0 18px 18px; box-shadow:var(--e-2);
+  padding:20px; z-index:121}
+.pn-moonpop[hidden]{display:none}
+.pn-moonpop .pnm-head{display:flex; align-items:center; gap:12px; margin-bottom:10px}
+.pn-moonpop .pnm-glyph{font-size:2.2rem; line-height:1}
+.pn-moonpop .pnm-name{margin:0; font:600 1.1rem/1.2 var(--serif); color:var(--moon)}
+.pn-moonpop .pnm-pct{margin:0; font:400 .68rem/1.4 var(--mono); color:var(--muted)}
+.pn-moonpop .pnm-meaning{margin:0 0 6px; font:400 .85rem/1.55 var(--sans); color:var(--body-text)}
+.pn-moonpop .pnm-favors{margin:0 0 12px; font:600 .8rem/1.4 var(--sans); color:var(--season)}
+.pn-moonpop .pnm-link{font:600 .8rem/1 var(--sans); color:var(--accent); text-decoration:none;
+  transition:color var(--dur-fast,180ms) var(--ease-out,ease), text-shadow var(--dur-fast,180ms) var(--ease-out,ease)}
+.pn-moonpop .pnm-link:hover,.pn-moonpop .pnm-link:focus-visible{color:var(--accent-bright)}
+@media (prefers-reduced-motion: no-preference){
+  .pn-moonpop{animation:pnPopIn .2s ease both}
+  @keyframes pnPopIn{from{opacity:0; transform:translateY(-6px) scale(.99)} to{opacity:1; transform:none}}
+}
+
+/* awakening ring: a 38px slot holding a 34px SVG ring with the
+   openness % stacked in its center via grid (grid-area 1/1 on both
+   children), NOT absolute positioning. Filled by nav-progress.js;
+   ring colors are tokens here, never in JS. */
+.pn-ring{display:inline-grid; place-items:center; width:38px; height:38px; flex:0 0 auto;
+  border-radius:50%; text-decoration:none; color:var(--ivory); cursor:pointer;
+  transition:background .2s ease, color .2s ease, box-shadow .2s ease,
+             transform var(--dur-fast,180ms) var(--ease-out,ease)}
+.pn-ring > *{grid-area:1 / 1}
+.pn-ring svg{display:block; transform:rotate(-90deg)}
+.pn-ring .pnp-track{stroke:var(--line)}
+.pn-ring .pnp-fill{stroke:var(--accent); transition:stroke-dasharray .4s ease, stroke .2s ease}
+.pn-ring .pn-ring-pct{font:700 .5rem/1 var(--mono,monospace); color:var(--ivory);
+  letter-spacing:0; pointer-events:none}
+/* ignite: warm wash, moon text, brighter ring fill + a soft bloom (never dim) */
+.pn-ring:hover,.pn-ring:focus-visible{background:var(--accent-soft); color:var(--moon)}
+.pn-ring:hover .pnp-fill,.pn-ring:focus-visible .pnp-fill{stroke:var(--accent-bright,var(--accent))}
+
+/* the theme toggle chip is retired (dark-only); if a stale page
+   still ships one, theme.js hides it and this keeps it gone */
+.pn-theme{display:none !important}
+
+/* the bar CTA: the sitewide sheen contract (om-sheen lives in skin.css) */
+.pn-cta{display:inline-flex; align-items:center; gap:7px; height:40px; padding:0 20px;
+  background:
+    linear-gradient(105deg, rgba(255,255,255,0) 42%, rgba(255,255,255,.5) 50%, rgba(255,255,255,0) 58%) no-repeat,
+    linear-gradient(135deg, var(--cta-g1), var(--cta-g2));
+  background-size:220% 100%, 180% 180%;
+  background-position:-160% 50%, 0% 50%;
+  color:var(--cta-text); font:700 .85rem/1 var(--sans); letter-spacing:.01em;
+  border-radius:var(--r-pill,999px); text-decoration:none; white-space:nowrap;
+  box-shadow:0 4px 18px var(--accent-soft);
+  transition:transform .25s var(--ease-io), box-shadow .25s var(--ease-io)}
+.pn-cta:hover,.pn-cta:focus-visible{animation:om-sheen .7s ease forwards;
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px oklch(0 0 0 / .35), 0 0 0 3px var(--sec-soft)}
+.pn-cta:active{transform:translateY(0) scale(.97)}
+
+.pn-burger{display:none; margin-left:6px; background:transparent; border:1px solid var(--line,#2a2c44);
+  color:var(--moon,#f5ecd2); border-radius:11px; width:44px; height:40px; cursor:pointer; font-size:1.15rem; flex:0 0 auto}
+
+/* anchor jumps clear the sticky bar; --pn-bar-h is the shared knob
+   declared in nav-sub.css and measured live by nav.js */
+body.pn-has-bar{scroll-padding-top:calc(var(--pn-stack-h, 150px) + 12px)}
+/* the pre-rendered bar supersedes any legacy simple header */
+body.pn-has-bar header.top{display:none}
+/* crawlable section links: real anchors, not shown to sighted users */
+.pn-crawl[hidden]{display:none}
+
+/* ============================================================
+   THE WELD (Astral Weld, adapted to the fixed bar + sticky sub).
+   nav.js toggles html.pn-bound past 24px of scroll. On bind the bar
+   slab cools and settles a hair, and a moonlit cool rim lights on its
+   bottom edge — the sub-bar carries the brass igniting seam (nav-sub
+   .css). Opacity/transform only; the seam animation respects reduced
+   motion (see the guard block below).
+   ============================================================ */
+:root{
+  --weld-warm:oklch(0.80 0.13 62);   /* red-light warmth at the seam */
+  --weld-cool:oklch(0.95 0.03 220);  /* cryo cool top/bottom rim */
+}
+@supports not (color: oklch(0% 0 0)){
+  :root{ --weld-warm:#f0b46a; --weld-cool:#eaf3ff }
+}
+html.pn-bound .pn-bar{
+  background:color-mix(in oklab, var(--ink) 95%, transparent);
+  border-bottom-color:transparent;
+  transition:background var(--dur,320ms) var(--ease-out,ease),
+             border-color var(--dur,320ms) var(--ease-out,ease)}
+@supports not (background: color-mix(in oklab, red, blue)){
+  html.pn-bound .pn-bar{background:var(--ink)}
+}
+/* moonlit cool rim welded onto the bar's bottom edge on bind */
+/* .pn-bar is position:sticky (declared above) so it is a containing
+   block for this absolutely-positioned rim */
+html.pn-bound .pn-bar::after{content:""; position:absolute; left:0; right:0; bottom:0; height:1px;
+  z-index:2; pointer-events:none;
+  background:linear-gradient(90deg,transparent,var(--weld-cool),transparent); opacity:.5}
+
+@media (prefers-reduced-motion: reduce){
+  .pn-cta:hover,.pn-cta:focus-visible{animation:none; transform:none}
+  .pn-moonpop{animation:none}
+  .pn-ring .pnp-fill{transition:none}
+  html.pn-bound .pn-bar{transition:none}
+  /* triggers/links still brighten (color set on :hover); drop only the lift */
+  .pn-link:hover,.pn-trigger:hover,
+  .pn-link:focus-visible,.pn-trigger:focus-visible,
+  .pn-trigger[aria-expanded="true"]{transform:none}
+  .pn-id:hover,.pn-id:focus-visible,
+  .pn-moon:hover,.pn-moon:focus-visible{transform:none}
+  .pn-stone{transition:none}
+}
+
+/* the drawer's tool-chip strip: nav.js clones the bar's identity
+   chip, moon chip, and awakening ring here on every open, so the
+   chips dropped by the collapse ladder below are never lost. The
+   chips reuse their bar classes (.pn-id/.pn-moon/.pn-ring above);
+   this block only lays the strip out. Lives here, not in
+   nav-drawer.css, because the chips and their ladder are owned by
+   this file. */
+.pn-drawer-chips{display:flex; flex-wrap:wrap; align-items:center; gap:10px;
+  padding:var(--s-2,.5rem) 0 var(--s-3,.75rem); margin-bottom:var(--s-2,.5rem);
+  border-bottom:1px solid var(--line-soft)}
+.pn-drawer-chips:empty{display:none; border:0; margin:0; padding:0}
+.pn-drawer-chips .pn-id{max-width:100%}
+.pn-drawer-chips .pn-id .lbl{max-width:240px}
+
+/* responsive collapse ladder: chips leave the BAR (never the
+   drawer strip) as space tightens, widest first */
+@media(max-width:1279px){ .pn-bar .pn-tools .pn-ring{display:none} }
+@media(max-width:1180px){ .pn-cta{padding:0 14px} }
+@media(max-width:1099px){ .pn-bar .pn-tools .pn-id{display:none} }
+@media(max-width:900px){
+  .pn-nav{display:none}
+  .pn-burger{display:block}
+}
+@media(max-width:760px){ .pn-cta{display:none} }
+@media(max-width:560px){
+  .pn-moonwrap{display:none}
+  .pn-inner{padding:0 18px; gap:12px}
+}
+
+/* ============================================================
+   ZODI ADDITION — gemstone hover glow. The hovered pillar LIGHTS
+   like its own stone (never dims): text brightens to the accent,
+   the moonstone waxes to full glow, and a soft aura blooms under
+   the trigger in the pillar's gem color.
+   ============================================================ */
+.pn-trigger{position:relative;transition:color var(--dur-fast,180ms) var(--ease-out,ease)}
+.pn-trigger::after{content:"";position:absolute;inset:-6px -10px;border-radius:999px;pointer-events:none;
+  background:radial-gradient(60% 130% at 50% 65%, var(--accent-soft, oklch(0.8 0.06 85 / .16)), transparent 72%);
+  opacity:0;transform:scale(.85);transition:opacity var(--dur-fast,180ms) ease,transform var(--dur,320ms) var(--ease-out,ease)}
+.pn-trigger:hover::after,.pn-trigger[aria-expanded="true"]::after{opacity:1;transform:scale(1)}
+.pn-trigger:hover,.pn-trigger[aria-expanded="true"]{color:var(--accent-bright,#efe2b4)}
+.pn-trigger:hover .pn-stone,.pn-trigger[aria-expanded="true"] .pn-stone{
+  opacity:1;transform:translateY(-1px) scale(1.22)}
+@media (prefers-reduced-motion: reduce){
+  .pn-trigger::after{transition:opacity var(--dur-fast,180ms) ease;transform:none}
+}
+/* per-gem tint on the item so the aura matches the stone of that pillar */
+.pn-item[data-accent="teal"]     .pn-trigger{--accent:var(--teal);--accent-bright:var(--teal-bright);--accent-soft:oklch(from var(--teal) l c h / .18)}
+.pn-item[data-accent="brass"]    .pn-trigger{--accent:var(--brass);--accent-bright:var(--brass-bright);--accent-soft:oklch(from var(--brass) l c h / .18)}
+.pn-item[data-accent="amethyst"] .pn-trigger{--accent:var(--amethyst);--accent-bright:var(--amethyst-bright);--accent-soft:oklch(from var(--amethyst) l c h / .18)}
+.pn-item[data-accent="jade"]     .pn-trigger{--accent:var(--jade);--accent-bright:var(--jade-bright);--accent-soft:oklch(from var(--jade) l c h / .18)}
+.pn-item[data-accent="rose"]     .pn-trigger{--accent:var(--rose);--accent-bright:var(--rose-bright);--accent-soft:oklch(from var(--rose) l c h / .18)}
+.pn-item[data-accent="silver"]   .pn-trigger{--accent:var(--silver);--accent-bright:var(--silver-bright);--accent-soft:oklch(from var(--silver) l c h / .18)}
+
+</style>
+<style data-inlined="css/nav-mega.css">
+/* ============================================================
+   nav-mega.css  —  Zodianimal.com card-free glyph mega-nav
+   ------------------------------------------------------------
+   Phase 3. The bar hosts seven typographic groups. Each group's
+   panel is a single wide almanac sheet that drops under the bar:
+   no cards, no boxes, no shadows on rows. Hierarchy comes only
+   from the type scale (serif name over muted sub-label) and the
+   brass hairlines (--line). Each row is anchored by an inline SVG
+   glyph that inherits currentColor and the row's hover state.
+
+   Markup contract (pre-rendered by build/apply-nav.mjs, Agent A):
+     header.pn-bar > .pn-inner > nav.pn-nav
+       .pn-item > button.pn-trigger[data-group][aria-haspopup][aria-expanded]
+       .pn-tools > .pn-orb[data-orb]           (hidden; Phase 5 fills it)
+       .pn-tools > a.pn-id[data-id-chip] + .pn-moonwrap + a.pn-ring[data-ring-slot]
+                 + button.pn-theme + a.pn-cta  (right cluster; nav-core.css.
+                 NOTE: the bar chips do NOT use .pn-chip — that class is
+                 the 32px round PANEL wing-strip chip below, glyph only)
+     .pn-panel[data-group][data-accent] hidden
+       .pn-panel-eyebrow
+       .pn-cols > .pn-col > (.pn-col-title)
+         a.pn-row > span.pn-glyph>svg + span.pn-row-name + span.pn-row-sub
+       .pn-panel-foot
+     nav.pn-crawl  (hidden flat mirror, no-JS routing fallback)
+
+   Panels are shown by nav.js via a `.open` class (hidden removed).
+   All tokens come from tokens.css; no hard-coded hex here. Copy in
+   ::before/::after content never uses arrows or dashes.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. Trigger bar (7 groups). Serif-adjacent, quiet chrome that
+   recedes. Reuses .pn-trigger geometry from nav-core.css; here
+   we only refine the open state, focus ring, and touch target.
+   ------------------------------------------------------------ */
+.pn-item { position: relative; }
+
+.pn-trigger {
+  min-height: 44px;                 /* touch target */
+  color: var(--muted);
+  /* geometry (headlight ::before bloom, drawing underline, 1px lift) is
+     inherited from nav-core.css; keep this transition list in sync so the
+     hover ACCENTUATES (brighten + glow + lift), never sits in a flat box. */
+  transition: color var(--dur-fast) var(--ease-io),
+              transform var(--dur-fast) var(--ease-io);
+}
+/* brighten toward moon + a soft accent halo; the lift + bloom come from
+   nav-core. No flat wash box (that would read as "dim box on hover"). */
+.pn-trigger:hover,
+.pn-trigger:focus-visible {
+  color: var(--moon);
+  background: transparent;
+}
+
+/* the open group takes the domain accent so the bar echoes the panel */
+.pn-trigger[aria-expanded="true"] {
+  color: var(--accent-bright);
+  background: transparent;
+  text-shadow: 0 0 12px var(--accent-soft);
+}
+.pn-trigger[aria-expanded="true"] .chev { transform: rotate(-135deg) translateY(1px); }
+
+/* visible keyboard focus, brass-bright, never removed */
+.pn-trigger:focus-visible,
+.pn-row:focus-visible {
+  outline: 2px solid var(--brass-bright);
+  outline-offset: 2px;
+  border-radius: var(--r-1);
+}
+
+/* legacy dropdown mount left in the shell by the build; keep it inert */
+.pn-dd { display: none; }
+/* the accent of the trigger follows its own group so the bar hint matches */
+.pn-item[data-accent="jade"]     .pn-trigger { --accent: var(--jade);     --accent-bright: var(--jade-bright); }
+.pn-item[data-accent="silver"]   .pn-trigger { --accent: var(--silver);   --accent-bright: var(--silver-bright); }
+.pn-item[data-accent="amethyst"] .pn-trigger { --accent: var(--amethyst); --accent-bright: var(--amethyst-bright); }
+.pn-item[data-accent="rose"]     .pn-trigger { --accent: var(--rose);     --accent-bright: var(--rose-bright); }
+.pn-item[data-accent="teal"]     .pn-trigger { --accent: var(--teal);     --accent-bright: var(--teal-bright); }
+.pn-item[data-accent="brass"]    .pn-trigger { --accent: var(--brass);    --accent-bright: var(--brass-bright); }
+
+/* ------------------------------------------------------------
+   2. The panel drop surface. One wide typographic sheet anchored
+   to the bar, spanning the viewport. --panel background, a single
+   hairline at the top for separation from the bar. No border, no
+   radius, no card. It fades and rises on open (motion gated below).
+   ------------------------------------------------------------ */
+.pn-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 119;
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-radius: 0 0 22px 22px;     /* canvas drop-sheet corners */
+  box-shadow: var(--e-2);           /* soft drop under the sheet, not on rows */
+  padding: var(--s-5) 0 var(--s-6);
+}
+/* hidden until hydrated; nav.js removes [hidden] and adds .open */
+.pn-panel[hidden] { display: none; }
+
+/* the panel's direct children are the content rail; center them to the
+   bar's measure and pad the gutters. The panel itself stays full-bleed. */
+.pn-panel > .pn-panel-eyebrow,
+.pn-panel > .pn-cols,
+.pn-panel > .pn-panel-foot {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+  box-sizing: border-box;
+}
+
+/* the eyebrow: uppercase kicker in the domain accent, doc 01 voice */
+.pn-panel-eyebrow {
+  font: 600 var(--fs-eyebrow, .72rem)/1.3 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  color: var(--accent);
+  margin: 0 0 var(--s-5);
+  max-width: 52ch;
+}
+
+/* ------------------------------------------------------------
+   3. Columns. Responsive multi-column layout. Hairlines between
+   columns carry the structure (never boxes). .pn-cols-2 / -3 are
+   optional density hints; the base is auto-fit so it always fits.
+   ------------------------------------------------------------ */
+.pn-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0 var(--s-6);
+}
+.pn-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pn-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.pn-col { min-width: 0; }
+/* hairline rule between columns from the second column onward */
+.pn-col + .pn-col { border-left: 1px solid var(--line-soft); padding-left: var(--s-6); }
+
+/* canvas column titles: mono uppercase in the seasonal second hue,
+   led by a small glyph marker (✦ ◆ ❦ ☾ ⌂) */
+.pn-col-title {
+  font: 400 .7rem/1.3 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--season, var(--muted));
+  margin: 0 0 var(--s-3);
+}
+.pn-col-mark { margin-right: 2px; }
+
+/* ------------------------------------------------------------
+   4. Rows. The heart of the card-free design: a fixed glyph box +
+   serif name + muted sub-label. Separation is a hairline between
+   rows and a soft accent wash on hover, nothing more.
+   ------------------------------------------------------------ */
+.pn-row {
+  display: grid;
+  grid-template-columns: 1.6em 1fr;
+  grid-template-rows: auto auto;
+  align-items: baseline;
+  column-gap: var(--s-3);
+  min-height: 44px;                 /* touch target */
+  padding: var(--s-2) var(--s-3);
+  margin-inline: calc(var(--s-3) * -1);
+  border-radius: var(--r-1);
+  text-decoration: none;
+  color: var(--ivory);
+  border-bottom: 1px solid var(--line-soft);
+  transition: background var(--dur-fast) var(--ease-io),
+              color var(--dur-fast) var(--ease-io),
+              box-shadow var(--dur-fast) var(--ease-io),
+              transform var(--dur-fast) var(--ease-io);
+}
+.pn-row:last-child { border-bottom: 0; }
+
+/* hovered rows IGNITE (pick me): brighten to moon, warm wash, an accent
+   inset glow + a soft outer bloom, and the canvas nudge. Never a dim box. */
+.pn-row:hover,
+.pn-row:focus-visible {
+  background: var(--accent-soft);
+  color: var(--moon);
+  transform: translateX(3px);       /* canvas row nudge */
+}
+.pn-row:hover .pn-row-name,
+.pn-row:focus-visible .pn-row-name { color: var(--moon); }
+.pn-row:hover .pn-row-sub,
+.pn-row:focus-visible .pn-row-sub { color: var(--ivory); }
+/* current page marker: accent name + italic, so meaning is not color-only */
+.pn-row.active,
+.pn-row[aria-current="page"] { color: var(--moon); }
+.pn-row.active .pn-row-name,
+.pn-row[aria-current="page"] .pn-row-name { color: var(--accent-bright); font-style: italic; }
+.pn-row.active .pn-glyph,
+.pn-row[aria-current="page"] .pn-glyph { color: var(--accent-bright); }
+
+/* the glyph box: fixed size, spans both rows, inherits currentColor */
+.pn-glyph {
+  grid-row: 1 / 3;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4em;
+  height: 1.4em;
+  color: var(--accent);
+  flex: 0 0 auto;
+  transition: color var(--dur-fast) var(--ease-io);
+}
+.pn-glyph svg { width: 100%; height: 100%; display: block; fill: none; stroke: currentColor; }
+.pn-glyph svg [fill]:not([fill="none"]) { fill: currentColor; }
+.pn-row:hover .pn-glyph { color: var(--accent-bright); }
+
+.pn-row-name {
+  grid-column: 2;
+  font: 500 1.02rem/1.3 var(--serif);   /* canvas scale: quiet serif rows */
+  color: inherit;
+}
+.pn-row-sub {
+  grid-column: 2;
+  font: 400 .7rem/1.3 var(--sans);
+  letter-spacing: .06em;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* ------------------------------------------------------------
+   4b. Chip strip. Round glyph chips under the columns (the canvas
+   "wing" strips: ♈…♓ on Western Signs, 鼠…猪 on Chinese Years).
+   Same centered measure as the other panel children.
+   ------------------------------------------------------------ */
+.pn-chips {
+  max-width: var(--maxw);
+  margin: var(--s-5) auto 0;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pn-chips-label {
+  font: 400 .64rem/1.2 var(--mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-right: 2px;
+}
+.pn-chip {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--line-soft);
+  color: var(--accent);
+  font-size: .95rem;
+  line-height: 1;
+  text-decoration: none;
+  transition: border-color var(--dur-fast) var(--ease-io),
+              background var(--dur-fast) var(--ease-io),
+              color var(--dur-fast) var(--ease-io),
+              box-shadow var(--dur-fast) var(--ease-io),
+              transform var(--dur-fast) var(--ease-io);
+}
+/* chip ignites: brass rim, accent core, a lift, and a soft bloom */
+.pn-chip:hover,
+.pn-chip:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-bright);
+  transform: translateY(-2px);
+}
+.pn-chip:focus-visible {
+  outline: 2px solid var(--brass-bright);
+  outline-offset: 2px;
+  border-radius: 50%;
+}
+/* two stacked wing strips (Explore): tighten the gap between them */
+.pn-chips + .pn-chips { margin-top: var(--s-3); }
+/* the Eastern strip chips glow brass; the Western strip stays seasonal */
+.pn-chips .pn-chip { color: var(--season, var(--accent)); }
+.pn-chips + .pn-chips .pn-chip { color: var(--accent); }
+
+/* ------------------------------------------------------------
+   4c. Canvas layouts. `layout` in PNAV.MAP is only ever a class:
+   pn-panel-explore  the five-column catalog + wing strips
+   pn-panel-wings    Menagerie: two 2-up wing columns + begin col
+   pn-panel-cards    Bonds: rows rendered as description cards
+   pn-panel-moon     Tonight column + the eight phases grid
+   ------------------------------------------------------------ */
+
+/* Explore: five tight columns, no glyph boxes, no column hairlines */
+.pn-panel-explore .pn-cols {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--s-4) clamp(16px, 2.5vw, 32px);
+}
+.pn-panel-explore .pn-col + .pn-col { border-left: 0; padding-left: 0; }
+.pn-panel-explore .pn-glyph { display: none; }
+.pn-panel-explore .pn-row {
+  grid-template-columns: 1fr;
+  min-height: 40px;
+  padding-block: 6px;
+}
+.pn-panel-explore .pn-row-name,
+.pn-panel-explore .pn-row-sub { grid-column: 1; }
+.pn-panel-explore .pn-row-name { font-size: .95rem; }
+
+/* Menagerie wings: both wings run 2-up inside their column; the
+   date/year sub-labels stay in the DOM (crawl + drawer) but hide
+   here so the sheet stays shallow, per the canvas */
+.pn-panel-wings .pn-cols { grid-template-columns: 1.2fr 1.2fr 1fr; gap: clamp(20px, 3vw, 44px); }
+.pn-panel-wings .pn-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--s-4);
+  align-content: start;
+}
+.pn-panel-wings .pn-col-title { grid-column: 1 / -1; }
+.pn-panel-wings .pn-col:last-child { grid-template-columns: 1fr; }
+.pn-panel-wings .pn-col:last-child .pn-row-sub { display: block; }
+.pn-panel-wings .pn-row { border-bottom: 0; min-height: 40px; padding-block: 5px; }
+.pn-panel-wings .pn-row-sub { display: none; }
+.pn-panel-wings .pn-row-name { font-size: .92rem; }
+@media (max-width: 1120px) {
+  .pn-panel-wings .pn-cols { grid-template-columns: 1fr 1fr; }
+  .pn-panel-wings .pn-col:last-child { grid-column: 1 / -1; }
+}
+
+/* Bonds: each row is a canvas description card */
+.pn-panel-cards .pn-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+.pn-panel-cards .pn-glyph { display: none; }
+.pn-panel-cards .pn-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-inline: 0;
+  padding: 16px 18px;
+  background: var(--panel-2);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-2);
+  transition: border-color var(--dur-fast) var(--ease-io),
+              transform var(--dur-fast) var(--ease-io),
+              box-shadow var(--dur-fast) var(--ease-io);
+}
+/* card hover ignites: brass border, a lift, and an accent bloom (not a
+   flat darker box). Title glows toward moon, body brightens. */
+.pn-panel-cards .pn-row:hover,
+.pn-panel-cards .pn-row:focus-visible {
+  background: var(--panel-2);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px -4px oklch(0 0 0 / .35);
+}
+.pn-panel-cards .pn-row:hover .pn-row-name,
+.pn-panel-cards .pn-row:focus-visible .pn-row-name {
+  color: var(--moon);
+}
+.pn-panel-cards .pn-row:hover .pn-row-sub,
+.pn-panel-cards .pn-row:focus-visible .pn-row-sub { color: var(--ivory); }
+.pn-panel-cards .pn-row-name { font: 600 1.05rem/1.3 var(--serif); color: var(--moon); }
+.pn-panel-cards .pn-row-sub {
+  font: 400 .82rem/1.5 var(--sans);
+  letter-spacing: 0;
+  color: var(--body-text);
+  text-transform: none;
+}
+
+/* Moon: the Tonight column beside the eight-phase grid */
+.pn-panel-moon .pn-cols {
+  grid-template-columns: minmax(240px, 340px) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 44px);
+}
+.pn-panel-moon .pn-col:last-child {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  column-gap: var(--s-3);
+  align-content: start;
+}
+.pn-panel-moon .pn-col:last-child .pn-col-title { grid-column: 1 / -1; }
+.pn-panel-moon .pn-col:last-child .pn-row { border-bottom: 0; min-height: 40px; padding-block: 5px; }
+.pn-panel-moon .pn-row-name { font-size: .95rem; }
+@media (max-width: 1000px) {
+  .pn-panel-moon .pn-cols { grid-template-columns: 1fr; }
+  .pn-panel-moon .pn-col + .pn-col { border-left: 0; padding-left: 0; }
+}
+
+/* the moon LIGHTS UP on the hovered phase: only the hovered/focused row's
+   disc brightens, blooms silver, and scales a hair — so running down the
+   eight phases feels like each moon igniting under the cursor. The rest
+   rest quietly. drop-shadow (filter) + transform only; 60fps. */
+.pn-panel-moon .pn-glyph {
+  transition: color var(--dur-fast) var(--ease-io),
+              filter var(--dur-fast) var(--ease-io),
+              transform var(--dur-fast) var(--ease-io);
+}
+.pn-panel-moon .pn-row:hover .pn-glyph,
+.pn-panel-moon .pn-row:focus-visible .pn-glyph {
+  color: var(--silver-bright, #d6e2f5);
+  transform: scale(1.12);
+}
+
+/* ------------------------------------------------------------
+   5. Panel foot. The canvas closing link: small, bold, accent,
+   pushed to the right end of its hairline row.
+   ------------------------------------------------------------ */
+.pn-panel-foot {
+  margin-top: var(--s-4);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--line-soft);
+  display: flex;
+  justify-content: flex-end;
+}
+.pn-panel-foot a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font: 600 .85rem/1.2 var(--sans);
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-io),
+              transform var(--dur-fast) var(--ease-io),
+              text-shadow var(--dur-fast) var(--ease-io);
+}
+/* ignite: brighten + a warm glow + a small forward nudge */
+.pn-panel-foot a:hover,
+.pn-panel-foot a:focus-visible {
+  color: var(--accent-bright);
+  transform: translateX(2px);
+}
+.pn-panel-foot a:focus-visible {
+  outline: 2px solid var(--brass-bright);
+  outline-offset: 2px;
+  border-radius: var(--r-1);
+}
+
+/* ------------------------------------------------------------
+   6. Per-element accent scoping. Each panel glows its own domain
+   hue by re-pointing --accent (and its ramp) from the matched
+   tokens. --accent-soft re-derives from the new --accent in OKLCH
+   browsers automatically. Six ramps.
+   ------------------------------------------------------------ */
+.pn-panel[data-accent="jade"]     { --accent: var(--jade);     --accent-bright: var(--jade-bright);     --accent-dim: var(--jade-dim); }
+.pn-panel[data-accent="silver"]   { --accent: var(--silver);   --accent-bright: var(--silver-bright);   --accent-dim: var(--silver-dim); }
+.pn-panel[data-accent="amethyst"] { --accent: var(--amethyst); --accent-bright: var(--amethyst-bright); --accent-dim: var(--amethyst-dim); }
+.pn-panel[data-accent="rose"]     { --accent: var(--rose);     --accent-bright: var(--rose-bright);     --accent-dim: var(--rose-dim); }
+.pn-panel[data-accent="teal"]     { --accent: var(--teal);     --accent-bright: var(--teal-bright);     --accent-dim: var(--teal-dim); }
+.pn-panel[data-accent="brass"]    { --accent: var(--brass);    --accent-bright: var(--brass-bright);    --accent-dim: var(--brass-dim); }
+
+/* ------------------------------------------------------------
+   7. The nav orb slot (Phase 5 fills it). Kept out of the flow
+   until then so the bar reads clean.
+   ------------------------------------------------------------ */
+.pn-orb[data-orb] { display: none; }
+
+/* ------------------------------------------------------------
+   8. The crawlable flat mirror stays visually hidden. It is the
+   no-JS routing fallback: real anchors, off-screen but in the DOM.
+   ------------------------------------------------------------ */
+.pn-crawl {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.pn-crawl[hidden] { display: none; }
+
+/* ------------------------------------------------------------
+   9. Motion. Fade up 6px on open, 160ms ease-out (doc 03 sec 6).
+   Only inside no-preference; reduced motion gets an instant,
+   opacity-only appearance with no transform.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  .pn-panel.open {
+    animation: pnPanelIn 160ms var(--ease-out) both;
+  }
+  @keyframes pnPanelIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pn-panel,
+  .pn-trigger,
+  .pn-row,
+  .pn-glyph,
+  .pn-chip,
+  .pn-panel-foot,
+  .pn-panel-foot a { transition: none; animation: none; }
+  /* transforms off; color/glow on :hover still land (brightening kept) */
+  .pn-chip:hover,
+  .pn-chip:focus-visible { transform: none; }
+  .pn-row:hover,
+  .pn-row:focus-visible,
+  .pn-panel-cards .pn-row:hover,
+  .pn-panel-cards .pn-row:focus-visible { transform: none; }
+  .pn-panel-foot a:hover,
+  .pn-panel-foot a:focus-visible { transform: none; }
+  /* the moon disc still brightens/blooms; drop only the scale */
+  .pn-panel-moon .pn-row:hover .pn-glyph,
+  .pn-panel-moon .pn-row:focus-visible .pn-glyph { transform: none; }
+}
+
+/* ------------------------------------------------------------
+   11. Astral Weld extensions — the Zodiac / Horoscope split (sign
+   list beside a feature aside), Chinese calligraphy glyphs, the
+   featured row + tag, the feature aside itself, and the Sage Wisdom
+   free e-book card. Ported from concept-1-astral-weld.html, adapted
+   to the real grid-based .pn-row. Tokens only.
+   ------------------------------------------------------------ */
+
+/* the two-up split: a sign/animal list beside the feature aside */
+.pn-panel-east > .pn-split,
+.pn-panel-west > .pn-split {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: var(--s-5);
+  align-items: start;
+}
+@media (max-width: 980px) {
+  .pn-panel-east > .pn-split,
+  .pn-panel-west > .pn-split { grid-template-columns: 1fr; }
+}
+/* the list runs two columns of rows */
+.pn-split .pn-list { display: flex; flex-direction: column; min-width: 0; }
+.pn-split .pn-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 var(--s-5);
+}
+@media (max-width: 620px) { .pn-split .pn-two { grid-template-columns: 1fr; } }
+.pn-split .pn-row { border-bottom: 1px solid var(--line-soft); }
+
+/* the Chinese calligraphy character, rendered large in the glyph box */
+.pn-glyph.pn-cal {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--accent);
+}
+.pn-row:hover .pn-glyph.pn-cal,
+.pn-row:focus-visible .pn-glyph.pn-cal { color: var(--accent-bright); }
+
+/* the featured row (the Fire Horse, today's Western sign). Rows that
+   carry a .pn-tag switch from the base grid to a flex line so the
+   glyph, name, and end-pinned tag sit cleanly on one baseline. */
+.pn-row.is-featured {
+  border: 1px solid var(--accent-dim);
+  background: var(--accent-soft);
+  border-radius: var(--r-1);
+}
+.pn-row.is-featured .pn-row-name { color: var(--moon); }
+.pn-split .pn-row:has(.pn-tag) {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-3);
+}
+.pn-split .pn-row:has(.pn-tag) .pn-glyph { align-self: center; }
+/* the featured tag pill (2026 · Fire Horse) sits at the row's end */
+.pn-tag {
+  margin-left: auto;
+  align-self: center;
+  font: 400 .5rem/1 var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  border: 1px solid var(--accent-dim);
+  padding: 2px 6px;
+  border-radius: var(--r-pill, 999px);
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+/* the FEATURE aside (right side of the split). A watermark calligraphy
+   glyph sits behind the copy. Accentuates via the panel's --accent. */
+.pn-feature {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--accent-dim);
+  border-radius: var(--r-2);
+  padding: var(--s-4) var(--s-5) var(--s-5);
+  background: linear-gradient(150deg, var(--accent-soft), var(--panel));
+}
+.pn-feature-cal {
+  position: absolute;
+  right: -6px;
+  bottom: -30px;
+  z-index: 0;
+  pointer-events: none;
+  font-family: var(--serif);
+  font-size: 120px;
+  line-height: 1;
+  color: var(--accent-soft);
+  user-select: none;
+}
+.pn-feature > * { position: relative; z-index: 1; }
+.pn-feature-eyebrow {
+  margin: 0 0 var(--s-2);
+  font: 400 .6rem/1.3 var(--mono);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent-dim);
+}
+.pn-feature-title {
+  margin: 0 0 var(--s-3);
+  font: 560 1.4rem/1.1 var(--serif);
+  color: var(--moon);
+}
+.pn-feature-body {
+  margin: 0 0 var(--s-4);
+  font: 400 .86rem/1.6 var(--sans);
+  color: var(--body-text);
+}
+.pn-feature-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font: 600 .82rem/1.2 var(--sans);
+  color: var(--accent-bright);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-io),
+              transform var(--dur-fast) var(--ease-io),
+              text-shadow var(--dur-fast) var(--ease-io);
+}
+/* ignite: brighten to moon + a warm glow + a small forward nudge */
+.pn-feature-link:hover,
+.pn-feature-link:focus-visible {
+  color: var(--moon);
+  transform: translateX(2px);
+}
+.pn-feature-link:focus-visible {
+  outline: 2px solid var(--brass-bright);
+  outline-offset: 2px;
+  border-radius: var(--r-1);
+}
+
+/* the calligraphic panel chip (Chinese character): serif, accent-tinted */
+.pn-chip.pn-cal { font-family: var(--serif); font-size: 1.05rem; }
+
+/* Sage Wisdom: text columns; the e-book card sits below in its own
+   hairline strip. Base .pn-cols handles the columns. The Stones, Feng
+   shui and Proverb Pond columns run glyph-free; the twelve pond rows
+   (Section 11b) opt their glyph box back in to carry a colored dot. */
+.pn-panel-sage .pn-glyph { display: none; }
+.pn-panel-sage .pn-col + .pn-col { border-left: 0; padding-left: 0; }
+.pn-panel-sage .pn-cols { gap: var(--s-4) clamp(16px, 2.5vw, 40px); }
+
+/* ------------------------------------------------------------
+   11b. The twelve proverb ponds in the Sage panel. Each pond row
+   shows a small dot in ITS OWN pond accent (POND_ACCENT, mirrored
+   from build/proverb-nav.mjs), so the dropdown reads as a colored,
+   organized menu rather than a flat list. The dot lives in the row's
+   otherwise-empty .pn-glyph box; we re-show that box (Sage hides it by
+   default) and paint the disc via ::before so no markup change is
+   needed. Hover keeps the pond's own hue, not the panel accent.
+   ------------------------------------------------------------ */
+.pn-panel-sage .pn-row.pond .pn-glyph,
+.pn-panel-sage .pn-row[href="/proverbs/the-way-of-water/"] .pn-glyph,
+.pn-panel-sage .pn-row[href="/proverbs/timing-and-fortune/"] .pn-glyph,
+.pn-panel-sage .pn-row[href="/proverbs/perseverance/"] .pn-glyph,
+.pn-panel-sage .pn-row[href="/proverbs/courage/"] .pn-glyph,
+.pn-panel-sage .pn-row[href="/proverbs/home-and-family/"] .pn-glyph,
+.pn-panel-sage .pn-row[href="/proverbs/wisdom-and-learning/"] .pn-glyph,
+.pn-panel-sage .pn-row[href="/proverbs/harmony-and-virtue/"] .pn-glyph,
+.pn-panel-sage .pn-row[href="/proverbs/wealth-and-work/"] .pn-glyph,
+.pn-panel-sage .pn-row[href="/proverbs/friendship-and-trust/"] .pn-glyph,
+.pn-panel-sage .pn-row[href="/proverbs/humility-and-self-mastery/"] .pn-glyph,
+.pn-panel-sage .pn-row[href="/proverbs/adversity-and-resilience/"] .pn-glyph,
+.pn-panel-sage .pn-row[href="/proverbs/nature-and-seasons/"] .pn-glyph {
+  display: inline-flex;
+  position: relative;
+  color: inherit;                 /* the dot owns its color, not --accent */
+}
+.pn-panel-sage .pn-row[href="/proverbs/the-way-of-water/"] .pn-glyph::before,
+.pn-panel-sage .pn-row[href="/proverbs/timing-and-fortune/"] .pn-glyph::before,
+.pn-panel-sage .pn-row[href="/proverbs/perseverance/"] .pn-glyph::before,
+.pn-panel-sage .pn-row[href="/proverbs/courage/"] .pn-glyph::before,
+.pn-panel-sage .pn-row[href="/proverbs/home-and-family/"] .pn-glyph::before,
+.pn-panel-sage .pn-row[href="/proverbs/wisdom-and-learning/"] .pn-glyph::before,
+.pn-panel-sage .pn-row[href="/proverbs/harmony-and-virtue/"] .pn-glyph::before,
+.pn-panel-sage .pn-row[href="/proverbs/wealth-and-work/"] .pn-glyph::before,
+.pn-panel-sage .pn-row[href="/proverbs/friendship-and-trust/"] .pn-glyph::before,
+.pn-panel-sage .pn-row[href="/proverbs/humility-and-self-mastery/"] .pn-glyph::before,
+.pn-panel-sage .pn-row[href="/proverbs/adversity-and-resilience/"] .pn-glyph::before,
+.pn-panel-sage .pn-row[href="/proverbs/nature-and-seasons/"] .pn-glyph::before {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--pond, #d6c18c);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--pond, #d6c18c) 55%, transparent);
+}
+/* engines without color-mix() still get a readable glow */
+@supports not (color: color-mix(in srgb, red, blue)) {
+  .pn-panel-sage .pn-row[href="/proverbs/the-way-of-water/"] .pn-glyph::before,
+  .pn-panel-sage .pn-row[href="/proverbs/timing-and-fortune/"] .pn-glyph::before,
+  .pn-panel-sage .pn-row[href="/proverbs/perseverance/"] .pn-glyph::before,
+  .pn-panel-sage .pn-row[href="/proverbs/courage/"] .pn-glyph::before,
+  .pn-panel-sage .pn-row[href="/proverbs/home-and-family/"] .pn-glyph::before,
+  .pn-panel-sage .pn-row[href="/proverbs/wisdom-and-learning/"] .pn-glyph::before,
+  .pn-panel-sage .pn-row[href="/proverbs/harmony-and-virtue/"] .pn-glyph::before,
+  .pn-panel-sage .pn-row[href="/proverbs/wealth-and-work/"] .pn-glyph::before,
+  .pn-panel-sage .pn-row[href="/proverbs/friendship-and-trust/"] .pn-glyph::before,
+  .pn-panel-sage .pn-row[href="/proverbs/humility-and-self-mastery/"] .pn-glyph::before,
+  .pn-panel-sage .pn-row[href="/proverbs/adversity-and-resilience/"] .pn-glyph::before,
+  .pn-panel-sage .pn-row[href="/proverbs/nature-and-seasons/"] .pn-glyph::before {
+    box-shadow: 0 0 8px var(--pond, #d6c18c);
+  }
+}
+/* the twelve pond accents (slug -> hex), one --pond per href */
+.pn-panel-sage .pn-row[href="/proverbs/the-way-of-water/"]          .pn-glyph { --pond: #2FB8C6; }
+.pn-panel-sage .pn-row[href="/proverbs/timing-and-fortune/"]        .pn-glyph { --pond: #9B7BD8; }
+.pn-panel-sage .pn-row[href="/proverbs/perseverance/"]              .pn-glyph { --pond: #D19A4E; }
+.pn-panel-sage .pn-row[href="/proverbs/courage/"]                   .pn-glyph { --pond: #D9534F; }
+.pn-panel-sage .pn-row[href="/proverbs/home-and-family/"]           .pn-glyph { --pond: #5FBF8F; }
+.pn-panel-sage .pn-row[href="/proverbs/wisdom-and-learning/"]       .pn-glyph { --pond: #6C7BD6; }
+.pn-panel-sage .pn-row[href="/proverbs/harmony-and-virtue/"]        .pn-glyph { --pond: #E0C471; }
+.pn-panel-sage .pn-row[href="/proverbs/wealth-and-work/"]           .pn-glyph { --pond: #E8B53A; }
+.pn-panel-sage .pn-row[href="/proverbs/friendship-and-trust/"]      .pn-glyph { --pond: #E08AA0; }
+.pn-panel-sage .pn-row[href="/proverbs/humility-and-self-mastery/"] .pn-glyph { --pond: #8FA3BF; }
+.pn-panel-sage .pn-row[href="/proverbs/adversity-and-resilience/"]  .pn-glyph { --pond: #4F9E77; }
+.pn-panel-sage .pn-row[href="/proverbs/nature-and-seasons/"]        .pn-glyph { --pond: #93B06A; }
+
+/* the free e-book CTA card, in its own strip under the Sage columns */
+.pn-panel-cta {
+  max-width: var(--maxw);
+  margin: var(--s-5) auto 0;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--line-soft);
+  box-sizing: border-box;
+}
+.pn-ebook {
+  position: relative;
+  max-width: 460px;
+  background: var(--panel-2);
+  border: 1px solid var(--accent-dim);
+  border-radius: var(--r-2);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color var(--dur-fast) var(--ease-io),
+              transform var(--dur-fast) var(--ease-io),
+              box-shadow var(--dur-fast) var(--ease-io);
+}
+.pn-ebook:hover,
+.pn-ebook:focus-within {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px oklch(0 0 0 / .35), 0 0 16px var(--accent-soft);
+}
+.pn-ebook-tag {
+  align-self: flex-start;
+  font: 400 .5rem/1 var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  border: 1px solid var(--accent-dim);
+  padding: 3px 7px;
+  border-radius: var(--r-pill, 999px);
+}
+.pn-ebook-title { margin: 0; font: 500 1rem/1.15 var(--serif); color: var(--moon); }
+.pn-ebook-body { margin: 0; font: 400 .78rem/1.55 var(--sans); color: var(--muted); }
+.pn-ebook-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  margin-top: 2px;
+  font: 600 .78rem/1.2 var(--sans);
+  color: var(--accent-bright);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-io),
+              transform var(--dur-fast) var(--ease-io),
+              text-shadow var(--dur-fast) var(--ease-io);
+}
+/* ignite: brighten to moon + a warm glow + a small forward nudge */
+.pn-ebook-link:hover,
+.pn-ebook-link:focus-visible {
+  color: var(--moon);
+  transform: translateX(2px);
+  text-shadow: 0 0 12px var(--accent-soft);
+}
+.pn-ebook-link:focus-visible {
+  outline: 2px solid var(--brass-bright);
+  outline-offset: 2px;
+  border-radius: var(--r-1);
+}
+.pn-ebook-note {
+  font: 400 .62rem/1 var(--mono);
+  letter-spacing: .04em;
+  text-transform: none;
+  color: var(--faint);
+}
+
+/* fallback for engines without relative-color oklch(): the feature and
+   e-book washes fall back to the flat token accent-soft (set above), and
+   the drop shadow loses only its color-mix; nothing breaks. */
+
+@media (prefers-reduced-motion: reduce) {
+  .pn-feature-link,
+  .pn-ebook,
+  .pn-ebook-link { transition: none; }
+  .pn-ebook:hover,
+  .pn-ebook:focus-within { transform: none; }
+  /* still brighten (color set on :hover), just drop the nudge */
+  .pn-feature-link:hover,
+  .pn-feature-link:focus-visible,
+  .pn-ebook-link:hover,
+  .pn-ebook-link:focus-visible { transform: none; }
+}
+
+/* ------------------------------------------------------------
+   12. Below the bar breakpoint the panels never show inline; the
+   mobile drawer (nav-drawer.css) takes over. Hide panels + bar nav
+   so a stray .open cannot leak onto a small screen.
+   ------------------------------------------------------------ */
+@media (max-width: 900px) {
+  .pn-panel { display: none !important; }
+}
+
+/* ============================================================
+   ZODI ADDITION — compact 4-column Sage Wisdom panel. Tighter
+   rows and column gap so four columns sit in one calm line.
+   ============================================================ */
+.pn-panel[data-accent="jade"] .pn-cols{gap:18px 26px}
+.pn-panel[data-accent="jade"] .pn-row{padding-top:9px;padding-bottom:9px}
+.pn-panel[data-accent="jade"] .pn-col-title{margin-bottom:8px}
+
+</style>
+<style data-inlined="css/nav-drawer.css">
+/* ============================================================
+   nav-drawer.css  —  Zodianimal.com mobile accordion drawer
+   ------------------------------------------------------------
+   Phase 3. Below the bar breakpoint the .pn-burger opens a
+   full-height drawer. The seven groups stack as an accordion; each
+   group header is a <button aria-expanded> disclosure that reveals
+   that group's rows (glyph + serif name + muted sub) as an
+   edge-to-edge stacked list. Same card-free language as the desktop
+   panels: hairlines and type, never boxes.
+
+   Markup nav.js hydrates into (built from the pre-rendered panels):
+     .pn-drawer[role=dialog][aria-modal]        (backdrop + top layer)
+       .pn-drawer-sheet
+         .pn-drawer-top ( .pn-drawer-brand + button.pn-drawer-close )
+         .pn-acc
+           .pn-acc-group[data-accent]
+             button.pn-acc-head[aria-expanded]  ( label + .pn-acc-chev )
+             .pn-acc-body   ( cloned a.pn-row rows )
+
+   All tokens from tokens.css. No hard-coded hex. No arrows or dashes
+   in content strings. 44px minimum touch targets throughout.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. Backdrop. Fixed, dim, blurred. Only shown when .open.
+   ------------------------------------------------------------ */
+.pn-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 140;
+  display: none;
+  background: oklch(0.10 0.02 275 / 0.62);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.pn-drawer.open { display: block; }
+
+/* ------------------------------------------------------------
+   2. The sheet. Slides from the right, full height, scrollable.
+   ------------------------------------------------------------ */
+.pn-drawer-sheet {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(400px, 90vw);
+  background: linear-gradient(180deg, var(--panel), var(--ink));
+  border-left: 1px solid var(--line);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--s-4) var(--s-4) var(--s-8);
+  box-shadow: var(--e-3);
+}
+
+/* ------------------------------------------------------------
+   3. Top row: brand + close. Close is a real 44px button.
+   ------------------------------------------------------------ */
+.pn-drawer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding-block: var(--s-2) var(--s-4);
+  margin-bottom: var(--s-2);
+  border-bottom: 1px solid var(--line);
+}
+.pn-drawer-brand {
+  font: 500 var(--fs-h3, 1.3rem)/1 var(--serif);
+  letter-spacing: .5px;
+  color: var(--moon);
+  text-decoration: none;
+}
+.pn-drawer-brand b { color: var(--brass); font-weight: 500; }
+
+.pn-drawer-close {
+  appearance: none;
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 var(--s-4);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  color: var(--moon);
+  font: 500 .82rem/1 var(--sans);
+  transition: border-color var(--dur-fast) var(--ease-io),
+              color var(--dur-fast) var(--ease-io);
+}
+.pn-drawer-close:hover { border-color: var(--brass); color: var(--brass-bright); }
+.pn-drawer-close:focus-visible { outline: 2px solid var(--brass-bright); outline-offset: 2px; }
+
+/* ------------------------------------------------------------
+   4. Accordion group. Per-group accent scoping mirrors the desktop
+   panels, so each domain glows its own hue in the drawer too.
+   ------------------------------------------------------------ */
+.pn-acc-group { border-bottom: 1px solid var(--line); }
+
+.pn-acc-group[data-accent="jade"]     { --accent: var(--jade);     --accent-bright: var(--jade-bright); }
+.pn-acc-group[data-accent="silver"]   { --accent: var(--silver);   --accent-bright: var(--silver-bright); }
+.pn-acc-group[data-accent="amethyst"] { --accent: var(--amethyst); --accent-bright: var(--amethyst-bright); }
+.pn-acc-group[data-accent="rose"]     { --accent: var(--rose);     --accent-bright: var(--rose-bright); }
+.pn-acc-group[data-accent="teal"]     { --accent: var(--teal);     --accent-bright: var(--teal-bright); }
+.pn-acc-group[data-accent="brass"]    { --accent: var(--brass);    --accent-bright: var(--brass-bright); }
+
+/* ------------------------------------------------------------
+   5. Group header (disclosure button). Full-width, 44px+, serif.
+   ------------------------------------------------------------ */
+.pn-acc-head {
+  appearance: none;
+  cursor: pointer;
+  width: 100%;
+  min-height: 52px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-1);
+  font: 500 var(--fs-h3, 1.2rem)/1.15 var(--serif);
+  color: var(--moon);
+  transition: color var(--dur-fast) var(--ease-io);
+}
+.pn-acc-head:hover { color: var(--accent-bright); }
+.pn-acc-head:focus-visible { outline: 2px solid var(--brass-bright); outline-offset: 2px; border-radius: var(--r-1); }
+.pn-acc-head[aria-expanded="true"] { color: var(--accent-bright); }
+
+/* the chevron: a css caret, no arrow glyph in content */
+.pn-acc-chev {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  opacity: .7;
+  transition: transform var(--dur-fast) var(--ease-io);
+}
+.pn-acc-head[aria-expanded="true"] .pn-acc-chev { transform: rotate(-135deg) translateY(2px); }
+
+/* ------------------------------------------------------------
+   6. Accordion body. Collapsed by default; nav.js toggles .open on
+   the group. Rows are the same .pn-row as desktop, edge to edge.
+   ------------------------------------------------------------ */
+.pn-acc-body {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height var(--dur) var(--ease-io);
+}
+.pn-acc-group.open .pn-acc-body { max-height: 200vh; }
+
+.pn-acc-body .pn-eyebrow-sub {
+  font: 400 .8rem/1.45 var(--sans);
+  color: var(--muted);
+  padding: 0 var(--s-1) var(--s-3);
+  margin: 0;
+}
+
+/* rows inside the drawer: edge to edge, hairline separated, 44px+ */
+.pn-acc-body .pn-row {
+  margin-inline: 0;
+  padding: var(--s-3) var(--s-2);
+  min-height: 48px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.pn-acc-body .pn-row:last-child { border-bottom: 0; }
+
+/* the drawer foot link reuses .pn-panel-foot styling but block width */
+.pn-acc-body .pn-panel-foot {
+  margin-top: var(--s-3);
+  min-height: 48px;
+}
+
+/* cloned chip strip: drop the desktop panel measure inside the sheet,
+   and grow the chips to comfortable touch targets */
+.pn-acc-body .pn-chips {
+  max-width: none;
+  margin: var(--s-3) 0 var(--s-2);
+  padding-inline: 0;
+}
+.pn-acc-body .pn-chip { width: 40px; height: 40px; }
+
+/* cloned feature aside (Fire Horse / Today) + e-book card: reset the
+   desktop measure and tame the big watermark for the narrow sheet, and
+   give the links 44px targets. Same card-free language, block width. */
+.pn-acc-body .pn-feature {
+  margin: var(--s-3) 0 var(--s-2);
+  padding: var(--s-3) var(--s-4) var(--s-4);
+}
+.pn-acc-body .pn-feature-cal { font-size: 80px; bottom: -18px; right: -4px; }
+.pn-acc-body .pn-feature-title { font-size: 1.15rem; }
+.pn-acc-body .pn-panel-cta {
+  max-width: none;
+  margin: var(--s-3) 0 var(--s-2);
+  padding-inline: 0;
+}
+.pn-acc-body .pn-ebook { max-width: none; }
+
+/* single-link groups (How it works) render as a plain row header link */
+.pn-acc-link {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  padding: var(--s-3) var(--s-1);
+  font: 500 var(--fs-h3, 1.2rem)/1.15 var(--serif);
+  color: var(--moon);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  transition: color var(--dur-fast) var(--ease-io);
+}
+.pn-acc-link:hover { color: var(--brass-bright); }
+.pn-acc-link:focus-visible { outline: 2px solid var(--brass-bright); outline-offset: 2px; border-radius: var(--r-1); }
+
+/* ------------------------------------------------------------
+   6b. "This section" group. nav.js clones the current page's sibling
+   sub-nav (the sticky horizontal scroller) into a drawer accordion so
+   small screens can jump between siblings vertically. Parents that have
+   a .pn-subdrop get their children rendered INLINE, full-width, indented
+   one step — no popover on touch. Open by default (nav.js sets .open +
+   aria-expanded=true). Same hairline-and-type language, 44px+ targets,
+   and it never introduces a horizontal scroll box.
+   ------------------------------------------------------------ */
+.pn-acc-section { --accent: var(--brass); --accent-bright: var(--brass-bright); }
+
+.pn-acc-sublink {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+  padding: var(--s-3) var(--s-2);
+  font: 400 1rem/1.3 var(--serif);
+  color: var(--moon);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-soft);
+  transition: color var(--dur-fast) var(--ease-io);
+  /* no fixed width / white-space:nowrap => wraps instead of scrolling */
+  word-break: break-word;
+}
+.pn-acc-sublink:last-child { border-bottom: 0; }
+.pn-acc-sublink:hover { color: var(--accent-bright); }
+.pn-acc-sublink:focus-visible {
+  outline: 2px solid var(--brass-bright);
+  outline-offset: -2px;
+  border-radius: var(--r-1);
+}
+/* the current sibling reads brighter + italic (meaning is never color-only) */
+.pn-acc-sublink[aria-current="page"] {
+  color: var(--ivory);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* child of a .pn-subdrop parent: indented one step, quieter, smaller */
+.pn-acc-subchild {
+  padding-left: var(--s-5, 1.5rem);
+  font-size: .92rem;
+  color: var(--muted);
+}
+.pn-acc-subchild::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 5px;
+  height: 5px;
+  margin-right: var(--s-2);
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .5;
+}
+.pn-acc-subchild:hover { color: var(--accent-bright); }
+.pn-acc-subchild[aria-current="page"] { color: var(--ivory); font-style: italic; }
+
+/* ------------------------------------------------------------
+   7. Motion. Sheet slides in; gated behind no-preference. Reduced
+   motion: the sheet and accordion appear instantly.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  .pn-drawer.open .pn-drawer-sheet {
+    animation: pnDrawerIn var(--dur) var(--ease-out) both;
+  }
+  @keyframes pnDrawerIn {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(0); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pn-drawer.open .pn-drawer-sheet { animation: none; }
+  .pn-acc-body { transition: none; }
+  .pn-acc-chev,
+  .pn-acc-head,
+  .pn-acc-link,
+  .pn-acc-sublink,
+  .pn-acc-subchild,
+  .pn-drawer-close { transition: none; }
+}
+
+/* the drawer only ever exists below the bar breakpoint */
+@media (min-width: 901px) {
+  .pn-drawer { display: none !important; }
+}
+
+</style>
+<style data-inlined="css/nav-sub.css">
+/* ============================================================
+   nav-sub.css  —  Zodianimal.com sub-head bar (Phase 2)
+   ------------------------------------------------------------
+   Styles the build-injected `<nav class="pn-sub">` band that Agent B
+   emits directly beneath the fixed top bar `.pn-bar`. It carries two
+   rows generated from PNAV.HUBS:
+
+     row 1  <ol class="pn-crumb">   breadcrumb trail, slash-separated
+     row 2  <ul class="pn-subnav">  sibling links, horizontal scroller
+
+   Markup contract (do not restyle away from it):
+     <nav class="pn-sub" aria-label="Section">
+       <ol class="pn-crumb"> <li><a href>..</a></li> ... <li aria-current="page">Leaf</li> </ol>
+       <ul class="pn-subnav"> <li><a href>..</a></li> ... <li><a href aria-current="page">..</a></li> </ul>
+     </nav>
+
+   All color/space/motion reads design tokens from tokens.css. No hex.
+   The breadcrumb separator is a literal forward slash, injected via CSS.
+   ============================================================ */
+
+/* Height the sticky top bar occupies. THE one knob every sticky
+   offset on the site reads (this sub bar, the homepage .omv4-sub,
+   the homepage rail, scroll-padding). The canvas bar is a FIXED
+   64px at every width (.pn-inner { height: var(--pn-bar-h) } in
+   nav-core.css; the nav pills scroll under a fade mask instead of
+   wrapping), so the knob is exact even before hydration / JS-off.
+   nav.js still measures the real rendered bar and re-asserts the
+   value on :root, belt and braces. */
+:root {
+  --pn-bar-h: 64px;
+  /* FULL sticky stack = the fixed bar + the sticky sub-band (sub-nav +
+     breadcrumb). nav.js measures the real .pn-sub and overrides this exactly
+     (bar-only on pages with no sub-band, like the homepage). Everything that
+     sticks below the nav or scroll-pads to an anchor must clear THIS, not just
+     --pn-bar-h, or the stack covers the page's own content. */
+  --pn-stack-h: calc(var(--pn-bar-h) + 86px);
+  --pn-sub-focus: var(--brass-bright, #efe2b4);
+}
+
+/* ---- The band ---------------------------------------------------- */
+/* Astral Weld order: the sibling sub-nav (tabs) is the PRIMARY strip on
+   top; the breadcrumb is a quieter, recessed strip beneath it. */
+.pn-sub {
+  /* full-width band under the top bar */
+  position: sticky;
+  top: var(--pn-bar-h);
+  z-index: 110; /* below .pn-bar (120), above page content */
+  display: flex;
+  flex-direction: column;
+  /* NOTE: no backdrop-filter here — it establishes a containing block that
+     would clip the position:fixed sub-nav dropdown. A more opaque bg keeps
+     the bar legible over scrolling content without the blur. */
+  background: color-mix(in oklch, var(--ink, #0d0e18) 94%, transparent);
+  border-bottom: 1px solid var(--line, rgba(214,193,140,.16));
+  font-family: var(--sans, sans-serif);
+  transition: background var(--dur, 320ms) var(--ease-out, ease),
+              box-shadow var(--dur, 320ms) var(--ease-out, ease);
+}
+
+/* PRIMARY strip: the sub-menu tabs */
+.pn-sub-primary { width: 100%; }
+
+/* CRUMB strip: recessed, quieter, its own hairline-topped band below.
+   A subtly LIGHTER, fading gradient (hair brighter than the sub-bar at the
+   top, dissolving to transparent toward the page) reads it as its own quiet
+   recessed shelf — distinct from the tabs above and the content below —
+   while the top hairline keeps the hard join. color-mix over --ink/--panel,
+   with a flat hex fallback for engines without color-mix. */
+.pn-sub-crumb {
+  width: 100%;
+  border-top: 1px solid var(--line-soft, rgba(214,193,140,.08));
+  background:
+    linear-gradient(
+      to bottom,
+      color-mix(in oklch, var(--panel, #1a1c30) 32%, transparent),
+      color-mix(in oklch, var(--ink,   #0d0e18) 18%, transparent) 55%,
+      transparent);
+}
+@supports not (background: color-mix(in oklch, red, blue)) {
+  .pn-sub-crumb {
+    background: linear-gradient(to bottom, rgba(34,37,61,.34), rgba(0,0,0,.14) 55%, transparent);
+  }
+}
+
+/* keep both rows hard-left on the SAME left edge as the top bar's .pn-inner
+   (wordmark gutter). No centered measure cap: "Overview…Pisces" and
+   "Home / …" begin directly under the wordmark. .pn-subnav keeps its
+   horizontal scroller (declared below). */
+.pn-crumb,
+.pn-subnav {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding-inline: clamp(18px, 2.2vw, 34px);
+  box-sizing: border-box;
+}
+.pn-subnav { padding-block: var(--s-2, .5rem); }
+.pn-crumb { padding-block: var(--s-2, .5rem); }
+/* Start the breadcrumb a touch farther right than the sub-nav's first tab
+   (which sits at gutter + 12px), so "Home" never begins before the first
+   sub-menu word — a small, stylish indent. */
+.pn-sub-crumb .pn-crumb { padding-inline-start: calc(clamp(18px, 2.2vw, 34px) + 1.4rem); }
+
+/* ---- Row 1: breadcrumb ------------------------------------------- */
+.pn-crumb {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2, .5rem);
+  font-size: .8125rem;
+  letter-spacing: .01em;
+  color: var(--muted, #adaec2);
+}
+
+.pn-crumb li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2, .5rem);
+  min-width: 0;
+}
+
+/* literal forward-slash separator between crumbs (never a dash or arrow) */
+.pn-crumb li + li::before {
+  content: "/";
+  color: var(--faint, #7f8096);
+  font-size: .8em;
+  line-height: 1;
+  opacity: .7;
+}
+
+.pn-crumb a {
+  color: var(--muted, #adaec2);
+  text-decoration: none;
+  border-radius: var(--r-1, 8px);
+  transition: color var(--dur-fast, 180ms) var(--ease-out, ease);
+}
+.pn-crumb a:hover,
+.pn-crumb a:focus-visible {
+  color: var(--moon, #f6efd8);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--accent, #d6c18c);
+  text-shadow: 0 0 10px oklch(0.90 0.09 88 / .45);
+}
+
+/* the current page: not a link, a stronger token color */
+.pn-crumb [aria-current="page"] {
+  color: var(--ivory, #ece7d8);
+  font-weight: 500;
+  /* let a long final crumb truncate rather than push the row */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* PRIMARY strip keeps overflow visible so a sub-nav dropdown can spill
+   downward past the tab row; the horizontal scroll clip lives on the inner
+   .pn-subnav only (see below). The progress seam is positioned against it. */
+.pn-sub-primary { position: relative; overflow: visible; }
+
+/* ---- Row 2: sibling sub-nav scroller ----------------------------- */
+.pn-subnav {
+  list-style: none;
+  display: flex;
+  align-items: stretch;
+  gap: var(--s-1, .25rem);
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  /* soft edge fades so cut-off items read as "more to scroll" */
+  --pn-fade: 24px;
+  -webkit-mask-image: linear-gradient(
+    to right, transparent 0, #000 var(--pn-fade),
+    #000 calc(100% - var(--pn-fade)), transparent 100%);
+  mask-image: linear-gradient(
+    to right, transparent 0, #000 var(--pn-fade),
+    #000 calc(100% - var(--pn-fade)), transparent 100%);
+}
+.pn-subnav::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+.pn-subnav li {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* Astral Weld sub-tab: serif label with a thin luminous underline that
+   draws from center on hover. NEVER a fat pill fill. */
+.pn-subnav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* touch target */
+  padding: 0 12px;
+  font-family: var(--serif, serif);
+  font-size: .9rem;
+  line-height: 1;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  color: var(--muted, #adaec2);
+  text-decoration: none;
+  background: transparent;
+  transition: color var(--dur-fast, 180ms) var(--ease-out, ease),
+              transform var(--dur-fast, 180ms) var(--ease-out, ease);
+}
+.pn-subnav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 8px;
+  height: 1.5px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--brass, #d6c18c), transparent);
+  transition: left var(--dur, 320ms) var(--ease-out, ease),
+              right var(--dur, 320ms) var(--ease-out, ease),
+              box-shadow var(--dur, 320ms) var(--ease-out, ease);
+}
+.pn-subnav a:hover,
+.pn-subnav a:focus-visible {
+  color: var(--moon, #f6efd8);
+  transform: translateY(-1px);
+  background: transparent;
+  text-shadow: 0 0 10px oklch(0.90 0.09 88 / .4);
+}
+.pn-subnav a:hover::after,
+.pn-subnav a:focus-visible::after {
+  left: 12px;
+  right: 12px;
+  box-shadow: 0 0 8px oklch(0.78 0.11 85 / .5);
+}
+
+/* the current sibling: brightened italic serif + a lit underline + an
+   ember star dot (meaning is never color-only) */
+.pn-subnav a[aria-current="page"] {
+  color: var(--moon, #f6efd8);
+  font-style: italic;
+  font-weight: 560;
+  background: transparent;
+}
+.pn-subnav a[aria-current="page"]::after {
+  left: 12px;
+  right: 12px;
+  background: linear-gradient(90deg, transparent, var(--brass-bright, #efe2b4), transparent);
+  box-shadow: 0 0 10px oklch(0.90 0.09 88 / .6);
+}
+.pn-subnav a[aria-current="page"]::before {
+  content: "\2726"; /* ✦ */
+  position: absolute;
+  top: 6px;
+  right: 3px;
+  font-size: 8px;
+  color: var(--brass-bright, #efe2b4);
+  text-shadow: 0 0 7px oklch(0.90 0.09 88 / .8);
+}
+
+/* visible focus for keyboard users on both rows (no outline removal) */
+.pn-crumb a:focus-visible,
+.pn-subnav a:focus-visible {
+  outline: 2px solid var(--pn-sub-focus);
+  outline-offset: 2px;
+  border-radius: var(--r-1, 8px);
+}
+
+/* ---- THE WELD SEAM (Astral Weld) --------------------------------- */
+/* nav.js toggles html.pn-bound past 24px of scroll. When bound, an
+   igniting brass seam lights along the sub-bar's TOP edge and the join
+   tightens (the bar's cool rim is in nav-core.css). The seam is a
+   ::before top-border glow; a one-shot spark sweeps it L->R once on
+   bind and is suppressed under reduced motion. 60fps: opacity/transform
+   only. --pn-sealing is set by nav.js for the single sweep. */
+.pn-sub::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 1px;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--brass-dim, #a8925c) 22%,
+    var(--weld-warm, #f0b46a) 50%,
+    var(--brass-dim, #a8925c) 78%,
+    transparent);
+  opacity: 0;
+  transform: scaleX(.2);
+  transform-origin: left center;
+  transition: opacity var(--dur, 320ms) var(--ease-out, ease),
+              transform var(--dur-slow, 640ms) var(--ease-out, ease),
+              box-shadow var(--dur, 320ms) var(--ease-out, ease);
+}
+html.pn-bound .pn-sub {
+  background: color-mix(in oklch, var(--ink, #0d0e18) 94%, transparent);
+  box-shadow: none;
+}
+@supports not (background: color-mix(in oklch, red, blue)) {
+  html.pn-bound .pn-sub { background: var(--ink, #0d0e18); }
+}
+html.pn-bound .pn-sub::before {
+  opacity: 1;
+  transform: scaleX(1);
+  box-shadow: 0 0 7px oklch(from var(--weld-warm) l c h / .55);
+}
+@supports not (color: oklch(from white l c h)) {
+  html.pn-bound .pn-sub::before { box-shadow: 0 0 7px var(--weld-warm, #f0b46a); }
+}
+/* the travelling ignition spark, swept once on bind by nav.js */
+.pn-sub .pn-seam-spark {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 64px;
+  height: 5px;
+  border-radius: 5px;
+  z-index: 6;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(closest-side,
+    var(--weld-cool, #eaf3ff), var(--weld-warm, #f0b46a) 45%, transparent 75%);
+  transform: translateX(-40px);
+}
+html.pn-sealing .pn-sub .pn-seam-spark {
+  animation: pnSeamSpark var(--dur-slow, 640ms) var(--ease-out, ease) forwards;
+}
+@keyframes pnSeamSpark {
+  0%   { opacity: 0; transform: translateX(-40px) scaleX(.6); }
+  12%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(calc(100vw - 20px)) scaleX(1); }
+}
+
+/* ---- THE SCROLL SHOOTING-STAR (progress on the seam) ------------- */
+/* nav.js injects `<div class="pn-progress"><i class="pn-progress-star"></i></div>`
+   as the FIRST child of .pn-sub, sets --pn-scroll (0->1 page fraction) and
+   --pn-beam (0->1 brightness) on <html>, and toggles html.pn-bound. The
+   track spans the seam between the top bar and the sub-nav; it coexists with
+   the base .pn-sub::before hairline (that stays the resting line). 60fps:
+   width / left / opacity / transform / box-shadow only. */
+.pn-progress {
+  position: absolute;
+  top: -1px;              /* sit on the seam, over .pn-sub::before */
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 7;             /* above the sub background + the ::before seam (5/6) */
+  pointer-events: none;
+}
+/* the FILLED track: left edge -> the star head, brass gradient */
+.pn-progress::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: calc(var(--pn-scroll, 0) * 100%);
+  background: linear-gradient(90deg,
+    transparent,
+    var(--brass-dim, #a8925c) 40%,
+    var(--brass, #d6c18c) 82%,
+    var(--brass-bright, #efe2b4));
+  border-radius: 2px;
+  opacity: calc(.35 + var(--pn-beam, 0) * .55);
+}
+/* the beaming comet head: a warm brass -> cool-white core with a horizontal
+   trailing tail, parked at the scroll fraction. Its opacity, glow spread and
+   scale all ride --pn-beam so it blazes mid-scroll and fades toward the end. */
+.pn-progress-star {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--pn-scroll, 0) * 100%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  /* cool-white core over a warm brass halo */
+  background:
+    radial-gradient(closest-side, #fff, var(--brass-bright, #efe2b4) 45%, transparent 78%);
+  transform: translate(-50%, -50%) scale(calc(.7 + var(--pn-beam, 0) * .6));
+  opacity: calc(.25 + var(--pn-beam, 0) * .75);
+  box-shadow:
+    0 0 calc(4px + var(--pn-beam, 0) * 12px) oklch(0.90 0.09 88 / .85),
+    0 0 calc(2px + var(--pn-beam, 0) * 5px)  #fff;
+  transition: opacity var(--dur-fast, 180ms) linear;
+}
+@supports not (color: oklch(from white l c h)) {
+  .pn-progress-star {
+    box-shadow:
+      0 0 calc(4px + var(--pn-beam, 0) * 12px) var(--brass-bright, #efe2b4),
+      0 0 calc(2px + var(--pn-beam, 0) * 5px)  #fff;
+  }
+}
+/* the trailing tail: a short horizontal comet streak dragging left of the head */
+.pn-progress-star::before {
+  content: "";
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  height: 2px;
+  width: calc(18px + var(--pn-beam, 0) * 34px);
+  transform: translateY(-50%);
+  background: linear-gradient(270deg,
+    var(--brass-bright, #efe2b4),
+    var(--brass, #d6c18c) 35%,
+    transparent);
+  border-radius: 2px;
+  opacity: calc(.2 + var(--pn-beam, 0) * .7);
+}
+
+/* ---- SUB-NAV DROPDOWN (items with children) ---------------------- */
+/* apply-nav emits: li.pn-sub-item.pn-has-drop > a.pn-sub-link[aria-haspopup]
+   (Label + span.pn-sub-caret) + ul.pn-subdrop > li > a.pn-subdrop-link.
+   The parent li gets .pn-has-current when a child is the current page, and
+   [data-open] when JS opens it. Shown on [data-open] OR hover/focus-within
+   (desktop). The tab-row base look (.pn-subnav a) still applies to
+   .pn-sub-link since it is an <a> inside .pn-subnav. */
+.pn-sub-item { position: relative; }
+
+/* the caret: a small chevron that flips when the drop is open */
+.pn-sub-caret {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 5px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+  opacity: .7;
+  transition: transform var(--dur-fast, 180ms) var(--ease-out, ease),
+              opacity var(--dur-fast, 180ms) var(--ease-out, ease);
+}
+.pn-sub-link:hover .pn-sub-caret,
+.pn-sub-link:focus-visible .pn-sub-caret,
+.pn-sub-item[data-open] .pn-sub-caret,
+.pn-sub-item:hover .pn-sub-caret,
+.pn-sub-item:focus-within .pn-sub-caret { opacity: 1; }
+.pn-sub-item[data-open] .pn-sub-caret,
+.pn-sub-link[aria-expanded="true"] .pn-sub-caret {
+  transform: rotate(-135deg) translateY(1px);
+}
+
+/* the hidden dropdown panel: dark surface, hairline, radius, soft shadow.
+   Renders downward, absolutely, below the item. High z-index so it clears
+   the sub background even if the JS portals it under .pn-sub. */
+.pn-subdrop {
+  position: fixed;            /* fixed so the tab-row's overflow can't clip it; nav.js sets top/left */
+  z-index: 130;               /* above bar (120) */
+  min-width: 200px;
+  margin: 0;
+  padding: var(--s-1, .25rem);
+  list-style: none;
+  background: var(--panel, #1a1c30);
+  border: 1px solid var(--line, rgba(214,193,140,.16));
+  border-radius: var(--r-2, 14px);
+  box-shadow: var(--e-2, 0 8px 30px rgba(0,0,0,.45));
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity var(--dur-fast, 180ms) var(--ease-out, ease),
+              transform var(--dur-fast, 180ms) var(--ease-out, ease),
+              visibility 0s linear var(--dur-fast, 180ms);
+}
+/* Shown ONLY via [data-open] (nav.js sets it on hover/focus/tap AND positions
+   the fixed panel first, so there is no unpositioned flash). */
+.pn-sub-item[data-open] > .pn-subdrop,
+.pn-subdrop[data-open] {           /* [data-open] on the drop = nav.js portaled it to <body> */
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+.pn-subdrop li { margin: 0; }
+
+/* dropdown rows: quiet by default, IGNITE on hover (per #3) — brighten to
+   moon, warm wash, lit-underline glow, a small nudge. Never dim. */
+.pn-subdrop-link {
+  position: relative;
+  display: block;
+  padding: 9px 12px;
+  border-radius: var(--r-1, 8px);
+  font-family: var(--serif, serif);
+  font-size: .88rem;
+  line-height: 1.25;
+  color: var(--muted, #adaec2);
+  text-decoration: none;
+  transition: color var(--dur-fast, 180ms) var(--ease-out, ease),
+              background var(--dur-fast, 180ms) var(--ease-out, ease),
+              transform var(--dur-fast, 180ms) var(--ease-out, ease),
+              text-shadow var(--dur-fast, 180ms) var(--ease-out, ease);
+}
+.pn-subdrop-link:hover,
+.pn-subdrop-link:focus-visible {
+  color: var(--moon, #f6efd8);
+  background: var(--accent-soft, rgba(214,193,140,.16));
+  transform: translateX(3px);
+  text-shadow: 0 0 10px oklch(0.90 0.09 88 / .4);
+}
+.pn-subdrop-link:focus-visible {
+  outline: 2px solid var(--pn-sub-focus);
+  outline-offset: 2px;
+}
+/* current child inside the drop: brightened italic + a lit dot */
+.pn-subdrop-link[aria-current="page"] {
+  color: var(--moon, #f6efd8);
+  font-style: italic;
+  font-weight: 560;
+}
+
+/* the parent tab when a child is the current page: the lit active treatment
+   (brightened + a lit underline + the ember star), matching aria-current tabs */
+.pn-has-current > .pn-sub-link {
+  color: var(--moon, #f6efd8);
+  font-style: italic;
+  font-weight: 560;
+}
+.pn-has-current > .pn-sub-link::after {
+  left: 12px;
+  right: 12px;
+  background: linear-gradient(90deg, transparent, var(--brass-bright, #efe2b4), transparent);
+  box-shadow: 0 0 10px oklch(0.90 0.09 88 / .6);
+}
+.pn-has-current > .pn-sub-link::before {
+  content: "\2726"; /* ✦ */
+  position: absolute;
+  top: 6px;
+  right: 3px;
+  font-size: 8px;
+  color: var(--brass-bright, #efe2b4);
+  text-shadow: 0 0 7px oklch(0.90 0.09 88 / .8);
+}
+
+/* ---- Responsive collapse ----------------------------------------- */
+@media (max-width: 640px) {
+  .pn-sub {
+    /* the sticky offset comes from the shared :root --pn-bar-h knob
+       (measured by nav.js); no local override, it would desync */
+    padding-top: var(--s-2, .5rem);
+  }
+  /* dropdown expands inline / full-width; tap to open (JS sets [data-open]).
+     No hover-open on touch — only the explicit open state shows it. */
+  /* stays a fixed panel (nav.js positions + width-clamps it); tap-to-open
+     only — the [data-open] rule above is the sole reveal on touch */
+  .pn-subdrop {
+    min-width: 180px;
+    max-width: calc(100vw - 16px);
+  }
+  .pn-crumb {
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  /* keep Home and the current page visible; truncate a long middle crumb */
+  .pn-crumb li:not(:first-child):not(:last-child) a {
+    max-width: 8ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .pn-subnav a {
+    padding-inline: var(--s-3, .75rem);
+  }
+}
+
+/* ---- Reduced motion: no scroll animation, no seam sweep ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .pn-subnav {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+  }
+  .pn-crumb a,
+  .pn-subnav a {
+    transition: none;
+  }
+  /* the seam becomes an instant hairline; no sweeping spark */
+  .pn-sub::before {
+    transition: opacity 1ms !important;
+    transform: scaleX(1);
+  }
+  .pn-sub .pn-seam-spark { display: none !important; }
+
+  /* progress: a static thin fill tracking --pn-scroll; no comet travel,
+     no glow pulse. The star head + tail are suppressed entirely. */
+  .pn-progress::before { opacity: .5; }
+  .pn-progress-star {
+    opacity: 0 !important;
+    box-shadow: none !important;
+    transition: none;
+  }
+  .pn-progress-star::before { display: none; }
+
+  /* dropdown: still opens (visibility/opacity), just no rise/nudge transforms */
+  .pn-subdrop { transition: none; transform: none; }
+  .pn-sub-item[data-open] > .pn-subdrop,
+  .pn-sub-item:hover > .pn-subdrop,
+  .pn-sub-item:focus-within > .pn-subdrop { transform: none; }
+  .pn-subdrop-link { transition: color var(--dur-fast, 180ms) linear; }
+  .pn-subdrop-link:hover,
+  .pn-subdrop-link:focus-visible { transform: none; }
+  .pn-sub-caret { transition: none; }
+}
+
+</style>
+<style data-inlined="css/footer.css">
+/* ============================================================
+   footer.css — sitewide universal footer (.zf-foot)
+   Source markup: components/footer.html, baked into every page by
+   build/apply-footer.mjs. Every class is zf- namespaced and every
+   rule is scoped under .zf-foot so it cannot touch page styles.
+   Tokens read from the design system with dark fallbacks.
+   ============================================================ */
+
+.zf-foot{
+  position:relative; width:100%; isolation:isolate;
+  color:var(--ivory,#efeadc);
+  font-family:var(--sans,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif);
+  border-top:1px solid rgba(214,193,140,.20);
+  background:
+    radial-gradient(80% 120% at 50% 118%, rgba(214,193,140,.10), rgba(120,120,150,.04) 30%, transparent 55%),
+    linear-gradient(180deg,#141525 0%, #0d0e1a 44%, #08080f 100%);
+}
+.zf-foot::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, #fff, transparent),
+    radial-gradient(1px 1px at 27% 42%, #cfd6ff, transparent),
+    radial-gradient(1px 1px at 44% 12%, #fff, transparent),
+    radial-gradient(1px 1px at 63% 30%, #e9e0c0, transparent),
+    radial-gradient(1px 1px at 78% 16%, #fff, transparent),
+    radial-gradient(1px 1px at 89% 38%, #cfd6ff, transparent),
+    radial-gradient(1px 1px at 34% 62%, #fff, transparent),
+    radial-gradient(1px 1px at 71% 60%, #e9e0c0, transparent);}
+.zf-foot .zf-wrap{position:relative;max-width:1860px;margin:0 auto;padding:0 clamp(20px,4vw,80px)}
+
+.zf-foot a{color:inherit;text-decoration:none}
+.zf-foot a:focus-visible,.zf-foot button:focus-visible,.zf-foot input:focus-visible{
+  outline:2px solid var(--brass-bright,#efe2b4);outline-offset:3px;border-radius:2px}
+.zf-foot .zf-eyebrow{font-family:var(--mono,ui-monospace,Menlo,monospace);font-size:10.5px;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--accent,#d6c18c);margin:0}
+.zf-foot .zf-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ornament dividers between levels */
+.zf-foot .zf-rule{display:flex;align-items:center;gap:16px;color:rgba(214,193,140,.20)}
+.zf-foot .zf-rule::before,.zf-foot .zf-rule::after{content:"";height:1px;flex:1;background:rgba(214,193,140,.20)}
+.zf-foot .zf-rule i{font-style:normal;color:var(--accent,#d6c18c);opacity:.7;font-size:12px}
+.zf-foot .zf-rule--top{padding-top:22px}
+
+/* LEVEL 1 — brand (40%) + daily reading (60%) */
+.zf-foot .zf-feature{display:grid;grid-template-columns:2fr 3fr;gap:clamp(24px,3.2vw,56px);align-items:center;padding:40px 0 32px}
+.zf-foot .zf-lockup{font-family:var(--serif,"Iowan Old Style",Georgia,serif);font-size:clamp(30px,3vw,42px);line-height:1;color:var(--ivory,#efeadc);margin:9px 0 0}
+.zf-foot .zf-lockup em{font-style:normal;color:var(--accent,#d6c18c)}
+.zf-foot .zf-manifesto{color:var(--muted,#aaabbd);font-size:14.5px;line-height:1.6;max-width:52ch;margin:14px 0 20px}
+.zf-foot .zf-cta{display:inline-flex;align-items:center;gap:9px;font-family:var(--serif,Georgia,serif);font-size:16px;
+  color:var(--moon,#f6efd8);border-bottom:1px solid rgba(214,193,140,.20);padding-bottom:5px;transition:color .18s ease,border-color .18s ease}
+.zf-foot .zf-cta .zf-star{color:var(--accent,#d6c18c)}
+.zf-foot .zf-cta:hover{color:var(--brass-bright,#efe2b4);border-color:var(--accent,#d6c18c)}
+
+/* LEVEL 2 — daily reading card + shooting stars */
+.zf-foot .zf-news{position:relative;overflow:hidden;border:1px solid rgba(214,193,140,.20);border-radius:22px;
+  background:
+    radial-gradient(130% 180% at 92% -50%, rgba(214,193,140,.12), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0)),
+    #101226;
+  padding:clamp(22px,2.4vw,34px) clamp(24px,2.6vw,40px)}
+.zf-foot .zf-copy{position:relative;z-index:2;max-width:60ch}
+.zf-foot .zf-news-h{font-family:var(--serif,Georgia,serif);font-weight:400;font-size:clamp(24px,2.6vw,32px);line-height:1.1;color:var(--moon,#f6efd8);margin:8px 0 8px}
+.zf-foot .zf-sub{color:var(--muted,#aaabbd);font-size:14.5px;line-height:1.55;margin:0}
+.zf-foot .zf-form{position:relative;z-index:2;display:flex;flex-direction:column;gap:11px;margin-top:16px}
+.zf-foot .zf-row{display:flex;gap:10px}
+.zf-foot .zf-form input[type=email]{flex:1;min-width:0;background:rgba(6,6,12,.6);border:1px solid rgba(214,193,140,.20);
+  color:var(--ivory,#efeadc);font-family:inherit;font-size:15px;padding:15px 16px;border-radius:12px}
+.zf-foot .zf-form input::placeholder{color:var(--faint,#7b7c92)}
+.zf-foot .zf-form input:hover{border-color:var(--accent,#d6c18c)}
+.zf-foot .zf-subbtn{background:linear-gradient(180deg,#efe2b4,#d6c18c);border:0;color:#1a1b26;
+  font-family:var(--mono,ui-monospace,Menlo,monospace);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;
+  padding:0 22px;white-space:nowrap;cursor:pointer;border-radius:12px;font-weight:600;transition:filter .18s ease,transform .18s ease}
+.zf-foot .zf-subbtn:hover{filter:brightness(1.05);transform:translateY(-1px)}
+.zf-foot .zf-reassure{font-family:var(--mono,ui-monospace,Menlo,monospace);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint,#7b7c92);margin:1px 0 0}
+
+/* shimmering shooting stars — decorative, motion-safe */
+.zf-foot .zf-sky{position:absolute;inset:0;z-index:1;pointer-events:none}
+.zf-foot .zf-tw{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.5;animation:zf-tw 3.6s ease-in-out infinite}
+.zf-foot .zf-tw1{left:24%;top:30%} .zf-foot .zf-tw2{left:70%;top:26%;animation-delay:1.2s}
+.zf-foot .zf-tw3{left:40%;top:64%;animation-delay:2.1s} .zf-foot .zf-tw4{left:83%;top:70%;animation-delay:.6s}
+@keyframes zf-tw{0%,100%{opacity:.15;transform:scale(.8)}50%{opacity:.7;transform:scale(1.15)}}
+.zf-foot .zf-shoot{position:absolute;width:130px;height:1px;transform:rotate(16deg);opacity:0;
+  background:linear-gradient(90deg, transparent, rgba(246,239,216,.85));animation:zf-shoot 7s linear infinite}
+.zf-foot .zf-shoot::after{content:"";position:absolute;right:0;top:-1px;width:3px;height:3px;border-radius:50%;background:#fff}
+.zf-foot .zf-shoot-a{top:8%;left:-12%} .zf-foot .zf-shoot-b{top:-14%;left:20%;animation-delay:2.6s} .zf-foot .zf-shoot-c{top:30%;left:0;animation-delay:4.7s}
+@keyframes zf-shoot{0%{transform:translate(0,0) rotate(16deg);opacity:0}6%{opacity:.85}24%{opacity:.85}44%{transform:translate(340px,110px) rotate(16deg);opacity:0}100%{opacity:0}}
+
+/* LEVEL 3 — link matrix */
+.zf-foot .zf-matrix{display:grid;grid-template-columns:repeat(5,1fr);gap:24px clamp(20px,2.4vw,44px);padding:32px 0 30px}
+.zf-foot .zf-col h3{font-family:var(--mono,ui-monospace,Menlo,monospace);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#d6c18c);margin:0 0 12px}
+.zf-foot .zf-col ul{list-style:none;margin:0;padding:0}
+.zf-foot .zf-col li a{display:block;color:var(--muted,#aaabbd);font-size:13.5px;line-height:1.35;padding:5px 0;transition:color .16s ease}
+.zf-foot .zf-col li a:hover{color:var(--brass-bright,#efe2b4)}
+
+/* LEVEL 4 — almanac */
+.zf-foot .zf-almanac{padding:24px 0 28px}
+.zf-foot .zf-cap{text-align:center;margin:0 0 16px}
+.zf-foot .zf-cap .zf-ttl{font-family:var(--serif,Georgia,serif);font-size:18px;color:var(--moon,#f6efd8)}
+.zf-foot .zf-cap .zf-note{display:block;font-family:var(--mono,ui-monospace,Menlo,monospace);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint,#7b7c92);margin-top:5px}
+.zf-foot .zf-alm-row + .zf-alm-row{margin-top:12px}
+.zf-foot .zf-alm-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1px;background:rgba(214,193,140,.20);border:1px solid rgba(214,193,140,.20);border-radius:8px;overflow:hidden}
+.zf-foot .zf-alm-grid a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:13px 4px;background:#0f1020;color:var(--muted,#aaabbd);transition:background-color .16s ease,color .16s ease;min-height:46px}
+.zf-foot .zf-alm-grid a .zf-gly{font-size:20px;color:var(--accent,#d6c18c);line-height:1;transition:color .16s ease}
+.zf-foot .zf-alm-grid a .zf-nm{font-family:var(--mono,ui-monospace,Menlo,monospace);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint,#7b7c92)}
+.zf-foot .zf-alm-grid a:hover{background:rgba(214,193,140,.07);color:var(--ivory,#efeadc)}
+.zf-foot .zf-alm-grid a:hover .zf-gly{color:var(--brass-bright,#efe2b4)}
+
+/* LEVEL 5 — proverb: pinyin above each character (ruby) + inline Mandarin speaker */
+.zf-foot .zf-proverb{text-align:center;padding:28px 0 24px;max-width:820px;margin:0 auto}
+.zf-foot .zf-hz{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 8px;margin:0;color:var(--moon,#f6efd8)}
+.zf-foot .zf-cal{font-family:var(--serif,"Iowan Old Style",Georgia,serif);font-size:clamp(24px,4.4vw,32px);letter-spacing:.06em;line-height:2}
+.zf-foot .zf-cal ruby{margin:0 2px}
+.zf-foot .zf-cal ruby rt{font-family:var(--sans,system-ui,sans-serif);font-size:.34em;font-weight:500;color:var(--brass-bright,#efe2b4);letter-spacing:.01em;padding-bottom:3px}
+.zf-foot .zf-say{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;flex:0 0 auto;
+  background:none;border:1px solid rgba(214,193,140,.30);border-radius:50%;color:var(--accent,#d6c18c);cursor:pointer;
+  transition:color .16s ease,border-color .16s ease,background-color .16s ease;-webkit-tap-highlight-color:transparent}
+.zf-foot .zf-say:hover{color:var(--moon,#f6efd8);border-color:var(--accent,#d6c18c);background:rgba(214,193,140,.10)}
+.zf-foot .zf-say svg{width:19px;height:19px}
+.zf-foot .zf-say.is-saying{border-color:var(--accent,#d6c18c);color:var(--moon,#f6efd8);animation:zf-pulse 1s ease-in-out infinite}
+@keyframes zf-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.09)}}
+.zf-foot .zf-en{font-family:var(--serif,Georgia,serif);font-style:italic;font-size:17px;line-height:1.5;color:var(--ivory,#efeadc);margin:14px 0 0}
+.zf-foot .zf-src{display:inline-block;margin-top:14px;font-family:var(--mono,ui-monospace,Menlo,monospace);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint,#7b7c92);transition:color .16s ease}
+.zf-foot .zf-src:hover{color:var(--accent,#d6c18c)}
+
+/* LEVEL 6 — colophon */
+.zf-foot .zf-colo{padding:16px 0 32px;text-align:center;color:var(--faint,#7b7c92);font-size:12px;line-height:1.6}
+.zf-foot .zf-colo .zf-lead{color:var(--muted,#aaabbd)}
+.zf-foot .zf-colo .zf-disc{display:block;margin-top:4px;max-width:70ch;margin-left:auto;margin-right:auto}
+
+/* mobile-first responsive */
+@media (max-width:1180px){ .zf-foot .zf-alm-grid{grid-template-columns:repeat(6,minmax(0,1fr))} }
+@media (max-width:860px){
+  .zf-foot .zf-feature{grid-template-columns:1fr;gap:24px}
+  .zf-foot .zf-matrix{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:620px){
+  .zf-foot .zf-matrix{grid-template-columns:repeat(2,1fr)}
+  .zf-foot .zf-alm-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .zf-foot .zf-row{flex-direction:column}
+  .zf-foot .zf-subbtn{padding:15px 22px}
+}
+@media (max-width:400px){ .zf-foot .zf-matrix{grid-template-columns:1fr;text-align:center} .zf-foot .zf-alm-grid{grid-template-columns:repeat(3,minmax(0,1fr))} }
+@media (prefers-reduced-motion: reduce){ .zf-foot .zf-shoot,.zf-foot .zf-tw,.zf-foot .zf-say{animation:none} .zf-foot .zf-shoot{opacity:0} }
+
+</style>
+<style data-inlined="css/a11y.css">
+/* ============================================================
+   a11y.css  —  Zodianimal.com corrective accessibility layer (Phase 9)
+   ------------------------------------------------------------
+   A small, sitewide, non-visual-regressing layer that closes the
+   gaps found in the Phase 9 static a11y gate (see
+   docs/redesign/09-a11y-perf-report.md). It is injected sitewide by
+   build/apply-assets.mjs and MUST load AFTER tokens.css (so tokens
+   resolve) and after the component CSS (so these correctives win by
+   later-source order at equal specificity where intended).
+
+   Rules of this file:
+     - Token colors only. No hard-coded hex. If a token pairing is
+       itself below AA, that is reported to the caller, never patched
+       by editing tokens.css from here.
+     - Additive and corrective only. It adds focus rings, a reduced-
+       motion safety net, a skip-link fallback, and forced-colors
+       safety. It does not restyle any component.
+     - No arrows or dashes in any content string.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. A single strong :focus-visible standard for every
+   interactive element.
+   Component files (nav-mega, nav-drawer, nav-sub, awakening) already
+   ring their own controls; this is the SAFETY NET for everything they
+   do not cover: .btn, the reader and match form inputs, the descent
+   doors, peek and path cards, hub and menagerie links, footer links,
+   and any bare <a>/<button>. Keyboard-only (:focus-visible) so mouse
+   users see no change and the visual design is untouched.
+   The ring is token-colored and pairs a solid outline with an offset,
+   so focus is never signalled by color alone.
+   ------------------------------------------------------------ */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent-bright, var(--brass-bright));
+  outline-offset: 2px;
+  border-radius: var(--r-1, 8px);
+}
+
+/* The reader and match inputs are the one place a component file
+   actively removed the ring (oracle.css sets input:focus{outline:none}).
+   Restore a real, visible, keyboard focus indicator there. Both a ring
+   AND the existing brass border change now carry the state, so it is
+   not color-only. Higher specificity than the bare oracle.css rule so
+   this wins regardless of load order. */
+input[type="date"]:focus-visible,
+input[type="email"]:focus-visible,
+input[type="text"]:focus-visible,
+input[type="search"]:focus-visible {
+  outline: 2px solid var(--accent-bright, var(--brass-bright));
+  outline-offset: 2px;
+}
+
+/* A non-visible-only :focus fallback for the rare UA or interaction
+   path that does not resolve :focus-visible. Kept subtle so pointer
+   focus stays quiet, but never zero. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus {
+  outline-color: var(--accent-bright, var(--brass-bright));
+}
+
+/* ------------------------------------------------------------
+   2. Skip-link default.
+   oracle.css already styles .skip-link and every page ships the
+   "Skip to content" anchor first in the static nav block. This is a
+   token-safe FALLBACK so the skip link is always present and visible
+   on focus even on a page that somehow lacks the oracle.css rule.
+   ------------------------------------------------------------ */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 300;
+  background: var(--panel, #151728);
+  color: var(--moon, #f5ecd2);
+  padding: 10px 16px;
+  border: 1px solid var(--accent, var(--brass, #d6c18c));
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  left: 0;
+  outline: 2px solid var(--accent-bright, var(--brass-bright));
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------
+   3. Reduced-motion safety net (the master gate, doc 10 section 3a).
+   Component layers gate their own effects, but the base oracle.css
+   carries un-gated motion: the two infinitely spinning hero wheel
+   rings, the "rise" entrance on the result and gates, and a body
+   background transition. Under reduce we zero any lingering transition
+   and animation and hold the END STATE, so nothing disappears and no
+   content is motion-only. Scoped to not touch the intentionally static
+   final layouts the component files already define.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Hold the end state of the specific base-CSS effects so the reveal
+     result and gates are fully visible immediately, not stuck mid
+     entrance. */
+  #resultWrap.show,
+  .reveal h2.big,
+  .gate {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* The infinite decorative wheel rings must come to rest, not freeze
+     at a random angle mid spin. */
+  .wheel .ring.r2,
+  .wheel .ring.r3 {
+    animation: none !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   4. Forced-colors / high-contrast safety (doc 10 section 3d).
+   In Windows high-contrast and other forced-colors modes, let system
+   colors through and make sure focus and the current breadcrumb item
+   never lose their indication. We only add a system outline; we do not
+   override any author color, so meaning is preserved.
+   ------------------------------------------------------------ */
+@media (forced-colors: active) {
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid CanvasText;
+    outline-offset: 2px;
+  }
+
+  /* The mega-nav glyphs, sigils, and constellation art fill from
+     var(--accent); forced-colors flattens custom properties, so pin
+     their stroke and fill to a system color to keep the line-work
+     visible rather than vanishing. Decorative aria-hidden art is
+     unaffected semantically; this only keeps it from disappearing. */
+  .glyph [stroke],
+  .pf-sigil [stroke] {
+    stroke: CanvasText;
+  }
+  .glyph [fill]:not([fill="none"]),
+  .pf-sigil [fill]:not([fill="none"]) {
+    forced-color-adjust: auto;
+  }
+
+  /* Keep the current breadcrumb crumb distinguishable when author
+     color is dropped: it is already marked with aria-current in the
+     DOM, so add a non-color cue. */
+  .pn-crumb [aria-current="page"] {
+    outline: 1px dotted CanvasText;
+    outline-offset: 2px;
+  }
+}
+
+/* ============================================================
+   Mobile safeguard — no sideways scroll on phones.
+   Uses overflow-x:clip (NOT hidden) so it never disables the
+   sticky nav / sub-nav. Scoped to <=720px so desktop is untouched.
+   Loaded on every page (a11y.css is universal), so this holds
+   site-wide. Added 2026-07-04.
+   ============================================================ */
+@media (max-width: 720px) {
+  html, body { overflow-x: clip; }
+}
+/* media never forces the page wider than the screen */
+img, video, iframe { max-width: 100%; }
+
+</style>
 <!--pn-css:end-->
+<!--pn-crumb-ld:start-->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.zodianimal.com/"},{"@type":"ListItem","position":2,"name":"The Elements","item":"https://www.zodianimal.com/elements/"},{"@type":"ListItem","position":3,"name":"Water 水","item":"https://www.zodianimal.com/elements/phases/water/"}]}</script>
+<!--pn-crumb-ld:end-->
 </head>
 <body class="pn-has-bar">
 <!--pn-static:start-->
@@ -527,6 +2932,12 @@ footer.f a{color:var(--muted);text-decoration:none}
 </header>
 <!--pn-static:end-->
 <a id="pn-main" tabindex="-1"></a>
+<!--pn-sub:start-->
+<nav class="pn-sub" aria-label="Section">
+  <div class="pn-sub-primary"><ul class="pn-subnav"><li><a href="/elements/phases/wood/">Wood 木</a></li><li><a href="/elements/phases/fire/">Fire 火</a></li><li><a href="/elements/phases/earth/">Earth 土</a></li><li><a href="/elements/phases/metal/">Metal 金</a></li><li class="pn-sub-item pn-has-drop pn-has-current"><a class="pn-sub-link" href="/elements/phases/water/" aria-haspopup="true" aria-expanded="false" aria-current="page">Water 水<span class="pn-sub-caret" aria-hidden="true"></span></a><ul class="pn-subdrop"><li><a class="pn-subdrop-link" href="/elements/phases/water/" aria-current="page">Water overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/big-small/">Big &amp; small water 壬癸</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/bazi/">Water in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/body/">Water in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/space/">Water in your space</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/cycles/">Water's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/animals/">The Water animals</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/culture/">Water in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/traditions/">Water across traditions</a></li></ul></li><li><a href="/elements/zodiac/">Elements &amp; your animal</a></li></ul></div>
+  <div class="pn-sub-crumb"><ol class="pn-crumb"><li><a href="/">Home</a></li><li><a href="/elements/">The Elements</a></li><li aria-current="page">Water 水</li></ol></div>
+</nav>
+<!--pn-sub:end-->
 
 <header class="hero"><div class="wrap">
   <p class="eyebrow">The phase of depth and wisdom</p>
