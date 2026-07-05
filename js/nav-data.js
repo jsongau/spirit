@@ -526,7 +526,8 @@ PNAV.HUBS = {
       ["/bazi/ten-gods/", "The Ten Gods"],
       ["/bazi/interactions/", "Combinations & clashes"],
       ["/bazi/luck-pillars/", "Luck & timing"],
-      ["/bazi/compatibility/", "You & them"]
+      ["/bazi/compatibility/", "You & them"],
+      ["/bazi/chart/", "Cast your chart"]
     ]
   },
   "elements": {
@@ -534,7 +535,17 @@ PNAV.HUBS = {
     items: [
       ["/elements/", "The five phases"],
       ["/elements/phases/wood/", "Wood 木"],
-      ["/elements/phases/fire/", "Fire 火"],
+      ["/elements/phases/fire/", "Fire 火", [
+        ["/elements/phases/fire/", "Fire overview"],
+        ["/elements/phases/fire/big-small/", "Big & small fire 丙丁"],
+        ["/elements/phases/fire/bazi/", "Fire in BaZi"],
+        ["/elements/phases/fire/body/", "Fire in the body"],
+        ["/elements/phases/fire/space/", "Fire in your space"],
+        ["/elements/phases/fire/cycles/", "Fire's two cycles"],
+        ["/elements/phases/fire/animals/", "The Fire animals"],
+        ["/elements/phases/fire/culture/", "Fire in myth"],
+        ["/elements/phases/fire/traditions/", "Fire across traditions"]
+      ]],
       ["/elements/phases/earth/", "Earth 土"],
       ["/elements/phases/metal/", "Metal 金"],
       ["/elements/phases/water/", "Water 水", [

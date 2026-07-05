@@ -22,6 +22,53 @@
   (B.stems || []).forEach(function (s) { stemByChar[s.char] = s; });
   (B.branches || []).forEach(function (b) { branchByChar[b.char] = b; branchByAnimal[b.animal] = b; });
 
+  /* ---- calendar engine (verified: 2000-01-01 = 己卯 year, 丙子 month, 戊午 day) ---- */
+  var STEMS = ["甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"];
+  var BRANCHES = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"];
+  function mod(n, m) { return ((n % m) + m) % m; }
+  function jdn(y, m, d) {
+    var a = Math.floor((14 - m) / 12), yy = y + 4800 - a, mm = m + 12 * a - 3;
+    return d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4) - Math.floor(yy / 100) + Math.floor(yy / 400) - 32045;
+  }
+  // approximate solar-month boundaries (the 12 jie), ±1 day near a term
+  function solarMonth(y, m, d) {
+    var md = m * 100 + d;
+    if (md < 204) return { branch: (md >= 106 ? 1 : 0), yr: y - 1 }; // Jan6+ = Ox, else Rat; belongs to prior BaZi year
+    var B = [[2, 4, 2], [3, 6, 3], [4, 5, 4], [5, 6, 5], [6, 6, 6], [7, 7, 7], [8, 8, 8], [9, 8, 9], [10, 8, 10], [11, 7, 11], [12, 7, 0]];
+    var branch = 2;
+    for (var i = 0; i < B.length; i++) { if (md >= B[i][0] * 100 + B[i][1]) branch = B[i][2]; }
+    return { branch: branch, yr: y };
+  }
+  // near a solar-term boundary? (within 1 day) -> flag provisional
+  function nearBoundary(m, d) {
+    var b = [[2, 4], [3, 6], [4, 5], [5, 6], [6, 6], [7, 7], [8, 8], [9, 8], [10, 8], [11, 7], [12, 7], [1, 6]];
+    for (var i = 0; i < b.length; i++) { if (b[i][0] === m && Math.abs(b[i][1] - d) <= 1) return true; }
+    return false;
+  }
+  function castChart(o) {
+    var y = o.year, m = o.month, d = o.day;
+    var sm = solarMonth(y, m, d);
+    var yStem = mod(sm.yr - 4, 10), yBr = mod(sm.yr - 4, 12);
+    var mBr = sm.branch;
+    var mStem = mod((yStem % 5) * 2 + 2 + mod(mBr - 2, 12), 10);
+    var dIdx = mod(jdn(y, m, d) - 2451545 + 54, 60);
+    var dStem = dIdx % 10, dBr = dIdx % 12;
+    var out = { dayStem: STEMS[dStem], notes: [] };
+    out.pillars = [
+      { label: "Year", sub: "ancestry, early life", stem: STEMS[yStem], branch: BRANCHES[yBr] },
+      { label: "Month", sub: "upbringing, the season", stem: STEMS[mStem], branch: BRANCHES[mBr] },
+      { label: "Day", sub: "the self and the partner", isSelf: true, stem: STEMS[dStem], branch: BRANCHES[dBr] }
+    ];
+    if (o.known) {
+      var hBr = Math.floor(mod(o.hour + 1, 24) / 2);
+      var hStem = mod(dStem * 2 + hBr, 10);
+      out.pillars.push({ label: "Hour", sub: "later years, output", stem: STEMS[hStem], branch: BRANCHES[hBr] });
+    }
+    if (nearBoundary(m, d)) out.notes.push("Your birth date is within a day of a season boundary, so the month and year pillars may shift. Confirm with a professional almanac.");
+    if (o.known && o.hour === 23) out.notes.push("Births in the late 23:00 hour can belong to the next day in some schools, which would change the day pillar.");
+    return out;
+  }
+
   function el(tag, cls, html) {
     var n = document.createElement(tag);
     if (cls) n.className = cls;
@@ -371,9 +418,79 @@
     }
   }
 
+  /* ---------- 7. Cast your own chart ---------- */
+  function mountCast(root) {
+    var gen = B.generating || {}, ctl = B.controlling || {};
+    var form = el("div", "bz-cast-form");
+    var now = new Date();
+    function opts(a, b, sel) { var s = ""; for (var i = a; i <= b; i++) s += '<option' + (i === sel ? " selected" : "") + ">" + i + "</option>"; return s; }
+    var hourLabels = ["12 am", "1 am", "2 am", "3 am", "4 am", "5 am", "6 am", "7 am", "8 am", "9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm", "4 pm", "5 pm", "6 pm", "7 pm", "8 pm", "9 pm", "10 pm", "11 pm"];
+    var hourOpts = hourLabels.map(function (l, i) { return '<option value="' + i + '"' + (i === 12 ? " selected" : "") + ">" + l + "</option>"; }).join("");
+    form.innerHTML =
+      '<div class="bz-selblock"><span class="bz-sellabel">Month</span><select class="bz-select" data-c="month">' + Array.apply(null, { length: 12 }).map(function (_, i) { return '<option value="' + (i + 1) + '"' + (i === 6 ? " selected" : "") + ">" + ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][i] + "</option>"; }).join("") + "</select></div>" +
+      '<div class="bz-selblock"><span class="bz-sellabel">Day</span><select class="bz-select" data-c="day">' + opts(1, 31, 15) + "</select></div>" +
+      '<div class="bz-selblock"><span class="bz-sellabel">Year</span><input class="bz-select" data-c="year" type="number" min="1900" max="2100" value="1994"></div>' +
+      '<div class="bz-selblock"><span class="bz-sellabel">Time of birth</span><select class="bz-select" data-c="hour">' + hourOpts + '</select><label class="bz-check"><input type="checkbox" data-c="unknown"> I do not know my time</label></div>';
+    root.appendChild(form);
+    var btnRow = el("div", "bz-actions");
+    var cast = el("button", "pill primary", "Cast my chart");
+    cast.type = "button"; btnRow.appendChild(cast); root.appendChild(btnRow);
+    var out = el("div", "bz-panel"); out.setAttribute("aria-live", "polite");
+    out.innerHTML = '<p class="bz-hint">Enter your birth date and time, then cast.</p>';
+    root.appendChild(out);
+
+    function v(c) { var n = form.querySelector('[data-c="' + c + '"]'); return n ? n.value : ""; }
+    function chk(c) { var n = form.querySelector('[data-c="' + c + '"]'); return n ? n.checked : false; }
+    cast.addEventListener("click", function () {
+      var y = parseInt(v("year"), 10), m = parseInt(v("month"), 10), d = parseInt(v("day"), 10);
+      if (!y || y < 1900 || y > 2100) { out.innerHTML = '<p class="bz-hint">Please enter a year between 1900 and 2100.</p>'; return; }
+      var known = !chk("unknown");
+      var c = castChart({ year: y, month: m, day: d, hour: parseInt(v("hour"), 10) || 0, known: known });
+      render(c);
+    });
+
+    function godOf(node) { var g = godFor(dmPhase(), dmPol(), node.phase, node.polarity); return g ? g : null; }
+    var _dm;
+    function dmPhase() { return _dm.phase; }
+    function dmPol() { return _dm.polarity; }
+
+    function render(c) {
+      _dm = stemByChar[c.dayStem];
+      var grid = '<div class="bz-chart">';
+      c.pillars.forEach(function (p) {
+        var s = stemByChar[p.stem], b = branchByChar[p.branch];
+        var sGod = p.isSelf ? "the self" : (godOf(s) ? godOf(s).char : "");
+        var hid = (b.hidden || []).map(function (h) { return '<i style="background:' + (COLOR[h.phase] || "#d6a44c") + '" title="' + h.stem + '"></i>'; }).join("");
+        grid += '<div class="bz-pcol' + (p.isSelf ? " is-self" : "") + '"><div class="bz-pcap">' + p.label + (p.isSelf ? ' <span class="bz-selfmark">you</span>' : "") + "</div>" +
+          '<div class="bz-pcell' + (p.isSelf ? " is-self" : "") + '"><span class="bz-god">' + sGod + '</span><span class="bz-pglyph" ' + phaseStyle(s.phase) + ">" + s.char + '</span><span class="bz-pt">' + s.polarity + " " + s.phase + "</span></div>" +
+          '<div class="bz-pcell"><span class="bz-pglyph" ' + phaseStyle(b.phase) + ">" + b.char + '</span><span class="bz-pt">' + b.animal + '</span><span class="bz-hidmini">' + hid + "</span></div></div>";
+      });
+      grid += "</div>";
+      // strength hint from month branch
+      var mB = branchByChar[c.pillars[1].branch], dmP = _dm.phase, lean, why;
+      if (mB.phase === dmP) { lean = "in its own season, so it leans strong"; }
+      else if (gen[mB.phase] === dmP) { lean = "fed by its season, so it leans supported and strong"; }
+      else if (gen[dmP] === mB.phase) { lean = "pouring into its season, which drains it a little"; }
+      else if (ctl[mB.phase] === dmP) { lean = "held in check by its season, so it leans weak and thrives on support"; }
+      else { lean = "spending itself on its season, so it leans weak and thrives on support"; }
+      var notes = c.notes.map(function (n) { return "<p>" + n + "</p>"; }).join("");
+      out.innerHTML =
+        '<p class="bz-castlead">Your Day Master is <b>' + _dm.char + " " + _dm.pinyin + "</b>, " + _dm.polarity + " " + _dm.phase + ". " + cap(_dm.imagery) + ". This is you, the character every other part of the chart is read against.</p>" +
+        grid +
+        '<div class="bz-portrait"><span class="bz-k">A first read</span><p>Born in the ' + mB.animal + " month, your " + _dm.phase + " self is " + lean + ". " +
+        "Strong charts want outlets to pour their energy into; supported charts want mentors, rest, and knowledge to lean on. Balance is the aim, not strength.</p></div>" +
+        (notes ? '<div class="bz-note-inline">' + notes + "</div>" : "") +
+        '<div class="bz-actions"><a class="bz-pill" href="/bazi/day-master/">What your Day Master means</a>' +
+        '<a class="bz-pill" href="/bazi/hidden-stems/">The elements hidden in your branches</a>' +
+        '<a class="bz-pill" href="/bazi/ten-gods/">Read the Ten Gods</a>' +
+        '<a class="bz-pill" href="/chinese-zodiac/' + slug(branchByChar[c.pillars[0].branch].animal) + '/">Your year animal</a></div>' +
+        '<p class="bz-note-inline">This casts the four pillars from the sun and the sixty-day cycle. It is a mirror for reflection, not a prediction. For a birth near a season boundary or near midnight, confirm the details with a professional almanac.</p>';
+    }
+  }
+
   function cap(s) { return String(s).charAt(0).toUpperCase() + String(s).slice(1); }
 
-  var MOUNTS = { hidden: mountHidden, stems: mountStems, branches: mountBranches, tengods: mountTenGods, pairing: mountPairing, chart: mountChart };
+  var MOUNTS = { hidden: mountHidden, stems: mountStems, branches: mountBranches, tengods: mountTenGods, pairing: mountPairing, chart: mountChart, cast: mountCast };
   function init() {
     Array.prototype.forEach.call(document.querySelectorAll("[data-bz]"), function (root) {
       var kind = root.getAttribute("data-bz");
@@ -383,6 +500,21 @@
       }
     });
   }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
-  else init();
+  function reveals() {
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!("IntersectionObserver" in window)) return;
+    var bands = document.querySelectorAll("section.band");
+    if (!bands.length) return;
+    var io = new IntersectionObserver(function (ents) {
+      ents.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.08 });
+    Array.prototype.forEach.call(bands, function (b, i) {
+      if (i === 0) return; // never hide the first band
+      b.classList.add("reveal");
+      io.observe(b);
+    });
+  }
+  function boot() { init(); reveals(); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
 })();
