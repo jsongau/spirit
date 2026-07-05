@@ -256,32 +256,42 @@ PNAV.MAP = [
   },
   { key: "sage", h: "Sage Wisdom", accent: "jade",
     eyebrow: "The craft your Zodi Animal practices",
-    foot: ["/feng-shui/", "All of feng shui"],
+    foot: ["/elements/", "Explore every system"],
     layout: "sage",
-    cta: { tag: "Free · Feng Shui e-book", title: "Your animal's placement guide",
-      body: "Where to sleep, work, and rest, mapped to your animal. Free with a Zodi account.",
-      href: "/account.html", link: "Create free account", note: "+1,000 ZK on arrival" },
-    /* Four compact columns (owner call, Jul 2026): Stones / Feng shui /
-       Proverbs / Live with it. The 87-proverb themes still live in the
-       /proverbs/ hub sub-menu, not here. */
+    /* Direction B (owner call, Jul 2026): a "featured system" hero leads with
+       the Elements + the new 7 Chakras, then compact system columns. The hero
+       pills and every column row are real crawlable anchors. */
+    hero: {
+      eyebrow: "五行 · featured system",
+      title: "The Elements & the Chakras",
+      phases: ["木", "火", "土", "金", "水"],
+      rainbow: true,
+      body: "The five phases that move through everything — now mapped to the seven chakras, each with its own yoga practice.",
+      pills: [
+        ["/elements/",              "All five phases", true],
+        ["/elements/chakras/",      "The 7 chakras",   true],
+        ["/elements/chakras/yoga/", "Chakra yoga"]
+      ]
+    },
     cols: [
-      { title: "Stones", mark: "◆", items: [
-        ["/stones.html",                             "Keeper stones"],
-        ["/traditions/birthstones-and-moonstone/",   "Birthstones and moonstone"],
-        ["/traditions/stones-for-your-animal/",      "Stones for your animal"]
+      { title: "BaZi", mark: "八字", items: [
+        ["/bazi/chart/",         "Cast your chart", "tool"],
+        ["/bazi/",               "What is BaZi"],
+        ["/bazi/day-master/",    "Your Day Master"],
+        ["/bazi/ten-gods/",      "The Ten Gods"],
+        ["/bazi/compatibility/", "You & them"]
       ]},
-      { title: "Feng shui", mark: "卦", items: [
-        ["/feng-shui/commanding-position/", "Commanding position", "interactive"],
+      { title: "Feng shui", mark: "風水", items: [
+        ["/feng-shui/commanding-position/", "Commanding position", "live"],
         ["/feng-shui/bagua/",       "The bagua"],
-        ["/feng-shui/five-elements/", "Five phases"],
         ["/feng-shui/kua-number/",  "Your Kua number"],
-        ["/directions/",            "Directions"]
+        ["/feng-shui/bedroom/",     "In the home"]
       ]},
-      { title: "Proverbs and lore", mark: "❦", items: [
-        ["/proverbs/",       "The Proverb Pond", "all 87, pronounced"],
-        ["/proverbs/study/", "Study the proverbs"],
-        ["/traditions/",     "Traditions"],
-        ["/habitat/",        "The Habitat"]
+      { title: "Stones & lore", mark: "◆", items: [
+        ["/stones.html",                           "Keeper stones"],
+        ["/traditions/birthstones-and-moonstone/", "Birthstones"],
+        ["/proverbs/",                             "The Proverb Pond", "all 87"],
+        ["/traditions/",                           "Traditions"]
       ]}
     ]
   },

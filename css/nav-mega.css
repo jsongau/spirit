@@ -657,6 +657,71 @@
 .pn-panel-sage .pn-col + .pn-col { border-left: 0; padding-left: 0; }
 .pn-panel-sage .pn-cols { gap: var(--s-4) clamp(16px, 2.5vw, 40px); }
 
+/* ---- Sage "Direction B": featured-system hero + compact columns ---- */
+/* The Elements + Chakras lead in a hero card; BaZi / Feng shui / Stones follow
+   as compact columns. Hero is the wide first grid cell. */
+.pn-panel-sage .pn-cols {
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .pn-panel-sage .pn-cols { grid-template-columns: 1fr 1fr; }
+  .pn-hero { grid-column: 1 / -1; }
+}
+.pn-hero {
+  --wood:#6fae74; --fire:#d98a86; --earth:#c9a86a; --metal:#c3c8d0; --water:#78b3c6;
+  padding: 16px 18px;
+  border: 1px solid var(--line, rgba(214,193,140,.16));
+  border-radius: var(--r-2, 14px);
+  background:
+    radial-gradient(120% 120% at 15% 10%,
+      color-mix(in oklch, var(--accent, #78c39c) 16%, transparent), transparent 60%),
+    var(--panel-2, #22253d);
+}
+@supports not (background: color-mix(in oklch, red, blue)) {
+  .pn-hero { background: linear-gradient(160deg, rgba(120,195,156,.12), transparent 60%), var(--panel-2, #22253d); }
+}
+.pn-hero-eyebrow {
+  font-family: var(--mono, monospace);
+  font-size: .6rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--accent-dim, #4f8f6f); margin: 0 0 8px;
+}
+.pn-hero-title {
+  font-family: var(--serif, serif); font-weight: 600;
+  font-size: 1.3rem; line-height: 1.05; color: var(--moon, #f6efd8); margin: 0 0 10px;
+}
+.pn-hero-phases { display: flex; gap: 12px; margin: 0 0 8px; }
+.pn-hero-phase { font-family: var(--serif, serif); font-size: 1.35rem; line-height: 1; }
+.pn-hero-phase-0 { color: var(--wood); }
+.pn-hero-phase-1 { color: var(--fire); }
+.pn-hero-phase-2 { color: var(--earth); }
+.pn-hero-phase-3 { color: var(--metal); }
+.pn-hero-phase-4 { color: var(--water); }
+.pn-hero-rainbow { display: flex; gap: 5px; margin: 0 0 10px; }
+.pn-hero-rainbow i { width: 20px; height: 6px; border-radius: 3px; display: block; }
+.pn-hero-c1 { background:#e0655f; } .pn-hero-c2 { background:#e39a52; }
+.pn-hero-c3 { background:#e9cf52; } .pn-hero-c4 { background:#7fc98a; }
+.pn-hero-c5 { background:#5aa9d6; } .pn-hero-c6 { background:#7f78d6; }
+.pn-hero-c7 { background:#b184d6; }
+.pn-hero-body {
+  font-family: var(--sans, sans-serif); font-size: .82rem; line-height: 1.5;
+  color: var(--muted, #adaec2); margin: 0 0 14px;
+}
+.pn-hero-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pn-hero-pill {
+  font-family: var(--sans, sans-serif); font-weight: 500; font-size: .8rem;
+  color: var(--ivory, #ece7d8); text-decoration: none;
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--line, rgba(214,193,140,.16));
+  border-radius: 999px; padding: 5px 12px;
+  transition: background .16s ease, border-color .16s ease, color .16s ease;
+}
+.pn-hero-pill:hover {
+  background: color-mix(in oklch, var(--accent, #78c39c) 18%, transparent);
+  border-color: var(--accent-dim, #4f8f6f); color: var(--moon, #f6efd8);
+}
+.pn-hero-pill.is-key { color: var(--accent-bright, #a9e6c6); border-color: var(--accent-dim, #4f8f6f); }
+
 /* ------------------------------------------------------------
    11b. The twelve proverb ponds in the Sage panel. Each pond row
    shows a small dot in ITS OWN pond accent (POND_ACCENT, mirrored
