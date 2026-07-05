@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BaZi 八字 · The Four Pillars of Destiny · Zodi Animal</title>
+<meta name="description" content="Your birth moment as eight characters. Five phases in four pillars, the bridge between the elements and your animal.">
+<link rel="canonical" href="https://www.zodianimal.com/bazi/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BaZi 八字 · The Four Pillars of Destiny · Zodi Animal">
+<meta property="og:description" content="Your birth moment as eight characters. Five phases in four pillars, the bridge between the elements and your animal.">
+<link rel="stylesheet" href="/css/tokens.css" data-pn-assets="/css/tokens.css">
+<link rel="stylesheet" href="/css/type.css" data-pn-assets="/css/type.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap">
+<style>
+:root{--el:#d6a44c;--el-soft:rgba(214,164,76,.20);
+--ink:#0d0e18;--ink-2:#131523;--panel:#1a1c30;--panel-2:#22253d;--field:#0c0e1a;
+--line:rgba(214,164,76,.16);--line-soft:rgba(214,164,76,.08);--moon:#f6efd8;--ivory:#ece7d8;
+--body:#cfcfe0;--muted:#adaec2;--faint:#7f8096;
+--serif:"Fraunces",Georgia,serif;--sans:"Geist","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:"Space Mono",ui-monospace,monospace;
+--r-1:8px;--r-2:14px;--r-3:22px;--r-pill:999px;--e-2:0 8px 30px rgba(0,0,0,.45);--e-3:0 20px 60px rgba(0,0,0,.55);
+--maxw:960px;--measure:66ch;--ease-out:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--body);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(680px 420px at 82% -8%,var(--el-soft),transparent 70%),radial-gradient(520px 380px at 6% 10%,rgba(120,140,220,.08),transparent 72%)}
+h1,h2,h3{font-family:var(--serif);color:var(--moon);font-weight:560;line-height:1.15;margin:0}
+a{color:var(--el)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,4vw,36px)}
+.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--el);margin:0 0 .7rem}
+.hero{text-align:center;padding:clamp(46px,8vw,92px) 0 clamp(26px,5vw,48px)}
+.hero .bigchar{font-family:var(--serif);font-size:clamp(5rem,17vw,10rem);line-height:.85;color:var(--el);text-shadow:0 0 70px var(--el-soft)}
+.hero h1{font-size:clamp(2.1rem,6vw,3.4rem);margin-top:.5rem}
+.hero .pin{font-family:var(--mono);color:var(--muted);letter-spacing:.14em;margin-top:.5rem}
+.hero .nature{max-width:58ch;margin:1.3rem auto 0;color:var(--ivory);font-size:1.12rem}
+.pills{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-top:1.8rem}
+.pill{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.6rem 1.1rem;border:1px solid var(--line);border-radius:var(--r-pill);background:var(--panel);color:var(--ivory);text-decoration:none;transition:.2s;cursor:pointer}
+.pill:hover{border-color:var(--el);color:var(--moon);box-shadow:0 0 20px var(--el-soft)}
+.pill.primary{background:var(--el);color:var(--ink);border-color:var(--el);font-weight:600}
+.band{padding:clamp(30px,5vw,56px) 0;border-top:1px solid var(--line-soft)}
+.band h2{font-size:clamp(1.5rem,3.4vw,2.1rem)}
+.band .lead{max-width:var(--measure);color:var(--ivory);margin:.7rem 0 0;font-size:1.06rem}
+.band p.body{max-width:var(--measure);color:var(--muted);margin:1rem 0 0}
+.band p.body b{color:var(--ivory);font-weight:500}
+.answer{max-width:var(--measure);margin:.4rem 0 0;padding:1.1rem 1.3rem;background:color-mix(in oklab,var(--el) 8%,var(--panel));border:1px solid var(--line);border-left:3px solid var(--el);border-radius:var(--r-2);color:var(--ivory);font-size:1.06rem}
+.doors{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1.5rem}
+.door{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:1.1rem;text-decoration:none;transition:.2s;display:block}
+.door:hover{border-color:var(--el);transform:translateY(-3px);box-shadow:0 0 24px var(--el-soft)}
+.door .k{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.door .v{color:var(--moon);font-family:var(--serif);font-size:1.16rem;margin:.3rem 0 .3rem}
+.door .c{color:var(--muted);font-size:.9rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.4rem}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:1.3rem}
+.box h3{font-size:1.1rem;margin-bottom:.5rem}
+.box p{margin:.4rem 0 0;color:var(--muted);font-size:.94rem}
+.box b{color:var(--ivory);font-weight:500}
+.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem}
+.chip{padding:.35rem .9rem;border:1px solid var(--line);border-radius:var(--r-pill);color:var(--ivory);text-decoration:none;background:color-mix(in oklab,var(--el) 12%,transparent);transition:.2s}
+.chip:hover{border-color:var(--el);color:var(--moon)}
+.note{max-width:var(--measure);margin-top:1.3rem;padding:1rem 1.2rem;background:var(--field);border:1px solid var(--line-soft);border-radius:var(--r-1);color:var(--muted);font-size:.88rem}
+.note b{color:var(--ivory);font-weight:500}
+.walkfoot{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:clamp(28px,5vw,52px) 0;flex-wrap:wrap}
+.walkfoot a{text-decoration:none}
+footer.f{text-align:center;padding:clamp(28px,5vw,52px) 0;border-top:1px solid var(--line-soft);color:var(--faint);font-family:var(--mono);font-size:.72rem;letter-spacing:.12em}
+footer.f a{color:var(--muted);text-decoration:none}
+/* ---- interactive (bazi.js) ---- */
+.bz{margin-top:1.5rem}
+.bz-lead{max-width:var(--measure);color:var(--ivory);font-size:1.02rem;margin:0 0 1.2rem}
+.bz-grid{display:grid;gap:.55rem}
+.bz-grid-anim{grid-template-columns:repeat(6,1fr)}
+.bz-grid-stem{grid-template-columns:repeat(5,1fr)}
+.bz-chip{display:flex;flex-direction:column;align-items:center;gap:.4rem;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:.7rem .4rem;cursor:pointer;transition:.18s;color:var(--ivory);font:inherit}
+.bz-chip:hover{border-color:var(--el);transform:translateY(-2px)}
+.bz-chip.is-on{border-color:var(--el);box-shadow:0 0 0 1px var(--el),0 0 22px var(--el-soft);background:var(--panel-2)}
+.bz-glyph{font-family:var(--serif);font-size:1.7rem;line-height:1;color:var(--bz-c,var(--el))}
+.bz-glyph-lg{font-size:2.8rem}
+.bz-chip-t{font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:center}
+.bz-panel{margin-top:1rem;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-3);padding:1.4rem;min-height:120px}
+.bz-hint{color:var(--faint);font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;margin:0;text-align:center;padding:1.4rem 0}
+.bz-panel-head{display:flex;align-items:center;gap:1rem;margin-bottom:.6rem}
+.bz-panel-head h3{font-size:1.25rem}
+.bz-pin{font-family:var(--mono);font-size:.8rem;color:var(--muted);font-weight:400}
+.bz-sub{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin:.2rem 0 0}
+.bz-wow{color:var(--ivory);font-size:1.05rem;margin:.4rem 0 1rem}
+.bz-wow b{color:var(--moon)}
+.bz-hidwrap{display:flex;flex-direction:column;gap:.5rem}
+.bz-hidrow{display:flex;align-items:center;gap:.8rem}
+.bz-role{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);min-width:120px}
+.bz-el{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .9rem;border:1px solid var(--line);border-radius:var(--r-pill);background:var(--field);color:var(--ivory);text-decoration:none;font-size:.92rem;transition:.18s}
+a.bz-el:hover{border-color:var(--el);color:var(--moon)}
+.bz-dot{width:9px;height:9px;border-radius:50%;flex:none}
+.bz-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.1rem}
+.bz-pill{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;padding:.5rem .95rem;border:1px solid var(--line);border-radius:var(--r-pill);background:var(--panel-2);color:var(--ivory);text-decoration:none;transition:.18s;cursor:pointer;font-family:var(--mono)}
+.bz-pill:hover{border-color:var(--el);color:var(--moon)}
+.bz-chipline{display:flex;gap:.4rem;flex-wrap:wrap;margin:.6rem 0}
+.bz-tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.05em;padding:.3rem .7rem;border:1px solid var(--line-soft);border-radius:var(--r-pill);color:var(--muted)}
+.bz-cellrow{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin:.4rem 0}
+.bz-cell{background:var(--field);border:1px solid var(--line-soft);border-radius:var(--r-1);padding:.7rem .8rem;font-size:.92rem;color:var(--ivory)}
+.bz-cell .bz-k{display:block;font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:.25rem}
+.bz-finder{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:.4rem}
+.bz-selblock{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:1rem;display:flex;flex-direction:column;gap:.5rem}
+.bz-sellabel{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--el)}
+.bz-select{width:100%;background:var(--field);color:var(--ivory);border:1px solid var(--line);border-radius:var(--r-1);padding:.55rem .6rem;font:inherit;font-size:.9rem}
+.bz-select:focus{outline:2px solid var(--el);outline-offset:1px}
+.bz-note-inline{margin-top:1rem;padding:.8rem 1rem;background:var(--field);border:1px solid var(--line-soft);border-radius:var(--r-1);color:var(--muted);font-size:.85rem}
+.bz-pairhead{display:flex;align-items:center;gap:1rem;justify-content:center;font-family:var(--serif);font-size:1.5rem;color:var(--moon);margin-bottom:1rem}
+.bz-amp{color:var(--el)}
+.bz-layer{padding:.8rem 0;border-top:1px solid var(--line-soft)}
+.bz-layer:first-of-type{border-top:none}
+.bz-layer .bz-k{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--el);margin-bottom:.3rem}
+.bz-layer p{margin:0;color:var(--ivory);font-size:.96rem}
+.bz-layer-soft p{color:var(--muted)}
+@media(max-width:680px){.doors{grid-template-columns:1fr}.two{grid-template-columns:1fr}.bz-grid-anim{grid-template-columns:repeat(4,1fr)}.bz-grid-stem{grid-template-columns:repeat(2,1fr)}.bz-finder{grid-template-columns:1fr}.bz-cellrow{grid-template-columns:1fr}.bz-role{min-width:96px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","headline":"BaZi 八字 · The Four Pillars of Destiny · Zodi Animal","inLanguage":"en","about":"BaZi (Four Pillars of Destiny)","isPartOf":{"@type":"WebSite","name":"Zodi Animal","url":"https://www.zodianimal.com/"},"description":"Your birth moment as eight characters. Five phases in four pillars, the bridge between the elements and your animal."},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Zodi Animal","item":"https://www.zodianimal.com/"},{"@type":"ListItem","position":2,"name":"BaZi","item":"https://www.zodianimal.com/bazi/"}]},
+{"@type":"DefinedTermSet","name":"BaZi glossary","hasDefinedTerm":[{"@type":"DefinedTerm","name":"八字 BaZi","description":"The Eight Characters, a Four Pillars birth chart"},{"@type":"DefinedTerm","name":"日主 Day Master","description":"The day stem, the character that stands for the self"},{"@type":"DefinedTerm","name":"藏干 Hidden stems","description":"The elements concealed inside an Earthly Branch"},{"@type":"DefinedTerm","name":"十神 Ten Gods","description":"The ten relationship roles between the Day Master and other elements"},{"@type":"DefinedTerm","name":"用神 Useful god","description":"The element a chart most needs for balance"},{"@type":"DefinedTerm","name":"合婚 He hun","description":"Comparing two charts for compatibility"}]},
+{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is BaZi?","acceptedAnswer":{"@type":"Answer","text":"BaZi, the Four Pillars of Destiny, reads a birth moment as eight characters: a Heavenly Stem and Earthly Branch for the year, month, day, and hour. It is a symbolic tradition for reflection, not prediction."}},{"@type":"Question","name":"Is BaZi the same as the Chinese zodiac?","acceptedAnswer":{"@type":"Answer","text":"They are one tradition. The birth-year animal of the Chinese zodiac is the year's Earthly Branch in a full BaZi chart, which also reads the month, day, and hour."}},{"@type":"Question","name":"Does BaZi predict the future?","acceptedAnswer":{"@type":"Answer","text":"No. Casting a chart is exact, but reading it deals in tendencies and timing, a lens for reflection, never a fixed forecast of events."}}]}
+]}
+</script>
+</head>
+<body><header class="hero"><div class="wrap">
+  <p class="eyebrow">bā zì · Four Pillars of Destiny</p>
+  <div class="bigchar" aria-hidden="true">八字</div>
+  <h1>BaZi</h1>
+  <p class="pin">The Four Pillars of Destiny</p>
+  <p class="nature">Your birth moment as eight characters. Five phases in four pillars, the bridge between the elements and your animal.</p>
+  <div class="pills"><a class="pill primary" href="/bazi/four-pillars/">Start with the pillars</a><a class="pill" href="/bazi/hidden-stems/">Hidden stems</a><a class="pill" href="/bazi/compatibility/">You &amp; them</a></div>
+</div></header><main id="pn-main">
+<section class="band"><div class="wrap">
+  <p class="eyebrow">What is BaZi</p>
+  <h2>Your birth moment, written in eight characters</h2>
+  <p class="answer">BaZi (八字, "Eight Characters"), also called the Four Pillars of Destiny, reads your birth moment as four pairs of characters, one pair each for the year, month, day, and hour. Each pair stacks a Heavenly Stem over an Earthly Branch. Those eight characters are simply the five elements, in particular strengths, arranged in four rooms. It is a mirror for reflection, never a prediction of what will happen.</p>
+  <p class="body">This is the layer between the two things the site already teaches. Above it sits the <a href="/elements/">five phases</a>. Below it sit the <a href="/chinese-zodiac/">twelve animals</a>, because the twelve Earthly Branches <b>are</b> the animals. Learn your chart and your own <a href="/">Primal Animal</a> stops being a birth-year label and becomes a small map of elements.</p>
+  <div class="doors">
+    <a class="door" href="/bazi/four-pillars/"><div class="k">Start here</div><div class="v">The four pillars</div><div class="c">How a chart is cast, and why the year begins at the Start of Spring.</div></a>
+    <a class="door" href="/bazi/hidden-stems/"><div class="k">The signature idea</div><div class="v">Hidden stems</div><div class="c">Every animal secretly carries more than one element. Open yours.</div></a>
+    <a class="door" href="/bazi/compatibility/"><div class="k">Two people</div><div class="v">You &amp; them</div><div class="c">How two charts meet. A sharable read of complement and friction.</div></a>
+  </div>
+</div></section>
+<section class="band"><div class="wrap"><div class="bz" data-bz="hidden"></div></div></section>
+<section class="band"><div class="wrap">
+  <p class="eyebrow">The ten rooms</p>
+  <h2>Walk the whole system</h2>
+  <div class="doors">
+    <a class="door" href="/bazi/four-pillars/"><div class="k">Chamber 01</div><div class="v">The Four Pillars</div><div class="c">Year, month, day, and hour, each a stem over a branch. Where the eight characters come from, and why the year starts at the Start of Spring.</div></a>
+    <a class="door" href="/bazi/heavenly-stems/"><div class="k">Chamber 02</div><div class="v">The Ten Heavenly Stems</div><div class="c">Wood, Fire, Earth, Metal, Water, each in a yang and a yin temper. The alphabet your Day Master is written in.</div></a>
+    <a class="door" href="/bazi/earthly-branches/"><div class="k">Chamber 03</div><div class="v">The Twelve Earthly Branches</div><div class="c">The twelve branches carry the zodiac animals, the seasons, and the double-hours. The branch is where BaZi and your animal meet.</div></a>
+    <a class="door" href="/bazi/hidden-stems/"><div class="k">Chamber 04</div><div class="v">Hidden Stems</div><div class="c">Every branch secretly holds one to three more elements. Open your animal and see the phases hidden inside it.</div></a>
+    <a class="door" href="/bazi/day-master/"><div class="k">Chamber 05</div><div class="v">Your Day Master</div><div class="c">The stem of your day pillar is you. Everything else is read by how it helps or spends that one self.</div></a>
+    <a class="door" href="/bazi/ten-gods/"><div class="k">Chamber 06</div><div class="v">The Ten Gods</div><div class="c">Ten roles, from Direct Officer to Rob Wealth, that turn elements into a story about work, money, family, and character.</div></a>
+    <a class="door" href="/bazi/interactions/"><div class="k">Chamber 07</div><div class="v">Combinations and Clashes</div><div class="c">How the characters bond, gather, clash, and grind, within one chart and between two people.</div></a>
+    <a class="door" href="/bazi/luck-pillars/"><div class="k">Chamber 08</div><div class="v">Luck Pillars and Timing</div><div class="c">Ten-year seasons and yearly weather laid over the fixed chart. Tendencies to prepare for, never a schedule of events.</div></a>
+    <a class="door" href="/bazi/compatibility/"><div class="k">Chamber 09</div><div class="v">You and Them</div><div class="c">How two charts meet. A sharable pairing that reads complement and friction, day pillar first, never a verdict.</div></a>
+  </div>
+  <div class="note"><b>A map, never a fate.</b> BaZi is a symbolic interpretive tradition for reflecting on temperament, balance, and timing. Casting a chart is exact and reproducible; reading it is an art with several schools. It is not prediction, and it is not fate.</div>
+</div></section></main><div class="wrap"><div class="walkfoot">
+  <a class="pill" href="/bazi/compatibility/">You &amp; them (合婚)</a>
+  <a class="pill" href="/bazi/">All ten rooms</a>
+  <a class="pill" href="/bazi/four-pillars/">The four pillars</a>
+</div></div><footer class="f"><div class="wrap">THE FOUR PILLARS · <a href="/">ZODI ANIMAL</a> · 八字</div></footer><script>window.BAZI={"phaseColors":{"Wood":"#4a9d6a","Fire":"#d1553b","Earth":"#c8a24c","Metal":"#c9cdd6","Water":"#2f8cba"},"stems":[{"char":"甲","pinyin":"jiǎ","polarity":"yang","phase":"Wood","imagery":"the tall tree, the beam and pillar timber","keywords":["upright","pioneering","a leader","benevolent","stubborn"]},{"char":"乙","pinyin":"yǐ","polarity":"yin","phase":"Wood","imagery":"the vine, the grass, the flower","keywords":["flexible","tactful","elegant","resilient","adaptive"]},{"char":"丙","pinyin":"bǐng","polarity":"yang","phase":"Fire","imagery":"the sun","keywords":["warm","bright","generous","magnetic","impatient"]},{"char":"丁","pinyin":"dīng","polarity":"yin","phase":"Fire","imagery":"the candle, the lamp, starlight","keywords":["gentle","thoughtful","enduring","artistic","guarded"]},{"char":"戊","pinyin":"wù","polarity":"yang","phase":"Earth","imagery":"the mountain, the wall, the dam","keywords":["steady","honest","dependable","grounded","over-serious"]},{"char":"己","pinyin":"jǐ","polarity":"yin","phase":"Earth","imagery":"the garden soil, the cultivated field","keywords":["nurturing","forgiving","adaptable","prudent","indecisive"]},{"char":"庚","pinyin":"gēng","polarity":"yang","phase":"Metal","imagery":"the axe, the sword, raw ore","keywords":["decisive","loyal","direct","brave","blunt"]},{"char":"辛","pinyin":"xīn","polarity":"yin","phase":"Metal","imagery":"the jewel, refined precious metal","keywords":["refined","aesthetic","meticulous","proud","sensitive"]},{"char":"壬","pinyin":"rén","polarity":"yang","phase":"Water","imagery":"the ocean, the great river","keywords":["wise","free","broad-minded","tolerant","willful"]},{"char":"癸","pinyin":"guǐ","polarity":"yin","phase":"Water","imagery":"rain, dew, mist","keywords":["gentle","intuitive","imaginative","clear","melancholic"]}],"branches":[{"char":"子","pinyin":"zǐ","animal":"Rat","phase":"Water","polarity":"yang","season":"mid winter","hour":"23:00-00:59","type":"cardinal","hidden":[{"stem":"癸","phase":"Water","role":"primary"}]},{"char":"丑","pinyin":"chǒu","animal":"Ox","phase":"Earth","polarity":"yin","season":"late winter","hour":"01:00-02:59","type":"storage","hidden":[{"stem":"己","phase":"Earth","role":"primary"},{"stem":"辛","phase":"Metal","role":"middle"},{"stem":"癸","phase":"Water","role":"residual"}]},{"char":"寅","pinyin":"yín","animal":"Tiger","phase":"Wood","polarity":"yang","season":"early spring","hour":"03:00-04:59","type":"growth","hidden":[{"stem":"甲","phase":"Wood","role":"primary"},{"stem":"丙","phase":"Fire","role":"middle"},{"stem":"戊","phase":"Earth","role":"residual"}]},{"char":"卯","pinyin":"mǎo","animal":"Rabbit","phase":"Wood","polarity":"yin","season":"mid spring","hour":"05:00-06:59","type":"cardinal","hidden":[{"stem":"乙","phase":"Wood","role":"primary"}]},{"char":"辰","pinyin":"chén","animal":"Dragon","phase":"Earth","polarity":"yang","season":"late spring","hour":"07:00-08:59","type":"storage","hidden":[{"stem":"戊","phase":"Earth","role":"primary"},{"stem":"乙","phase":"Wood","role":"middle"},{"stem":"癸","phase":"Water","role":"residual"}]},{"char":"巳","pinyin":"sì","animal":"Snake","phase":"Fire","polarity":"yin","season":"early summer","hour":"09:00-10:59","type":"growth","hidden":[{"stem":"丙","phase":"Fire","role":"primary"},{"stem":"庚","phase":"Metal","role":"middle"},{"stem":"戊","phase":"Earth","role":"residual"}]},{"char":"午","pinyin":"wǔ","animal":"Horse","phase":"Fire","polarity":"yang","season":"mid summer","hour":"11:00-12:59","type":"cardinal","hidden":[{"stem":"丁","phase":"Fire","role":"primary"},{"stem":"己","phase":"Earth","role":"middle"}]},{"char":"未","pinyin":"wèi","animal":"Goat","phase":"Earth","polarity":"yin","season":"late summer","hour":"13:00-14:59","type":"storage","hidden":[{"stem":"己","phase":"Earth","role":"primary"},{"stem":"丁","phase":"Fire","role":"middle"},{"stem":"乙","phase":"Wood","role":"residual"}]},{"char":"申","pinyin":"shēn","animal":"Monkey","phase":"Metal","polarity":"yang","season":"early autumn","hour":"15:00-16:59","type":"growth","hidden":[{"stem":"庚","phase":"Metal","role":"primary"},{"stem":"壬","phase":"Water","role":"middle"},{"stem":"戊","phase":"Earth","role":"residual"}]},{"char":"酉","pinyin":"yǒu","animal":"Rooster","phase":"Metal","polarity":"yin","season":"mid autumn","hour":"17:00-18:59","type":"cardinal","hidden":[{"stem":"辛","phase":"Metal","role":"primary"}]},{"char":"戌","pinyin":"xū","animal":"Dog","phase":"Earth","polarity":"yang","season":"late autumn","hour":"19:00-20:59","type":"storage","hidden":[{"stem":"戊","phase":"Earth","role":"primary"},{"stem":"辛","phase":"Metal","role":"middle"},{"stem":"丁","phase":"Fire","role":"residual"}]},{"char":"亥","pinyin":"hài","animal":"Pig","phase":"Water","polarity":"yin","season":"early winter","hour":"21:00-22:59","type":"growth","hidden":[{"stem":"壬","phase":"Water","role":"primary"},{"stem":"甲","phase":"Wood","role":"middle"}]}],"tenGods":[{"key":"zheng-yin","char":"正印","pinyin":"zhèng yìn","en":"Direct Resource","archetype":"the Mentor","relation":"generates the Day Master","polarity":"opposite","governs":"formal learning, protection, property, the nurturing parent","shadow":"dependent, indecisive, slow to act"},{"key":"pian-yin","char":"偏印","pinyin":"piān yìn","en":"Indirect Resource","archetype":"the Mystic","relation":"generates the Day Master","polarity":"same","governs":"intuition, niche or unconventional knowledge, inspiration","shadow":"aloof, suspicious, solitary"},{"key":"shi-shen","char":"食神","pinyin":"shí shén","en":"Eating God","archetype":"the Talent","relation":"the Day Master generates it","polarity":"same","governs":"gentle creativity, enjoyment, steady output","shadow":"over-analytic, idealistic"},{"key":"shang-guan","char":"伤官","pinyin":"shāng guān","en":"Hurting Officer","archetype":"the Maverick","relation":"the Day Master generates it","polarity":"opposite","governs":"disruptive talent, showmanship, breaking rules","shadow":"willful, tactless, proud"},{"key":"zheng-cai","char":"正财","pinyin":"zhèng cái","en":"Direct Wealth","archetype":"the Earner","relation":"the Day Master controls it","polarity":"opposite","governs":"salary, earned money, savings, honest work","shadow":"calculating, conservative"},{"key":"pian-cai","char":"偏财","pinyin":"piān cái","en":"Indirect Wealth","archetype":"the Venturer","relation":"the Day Master controls it","polarity":"same","governs":"windfall, business, speculation, networks","shadow":"impulsive, a risk-taker"},{"key":"zheng-guan","char":"正官","pinyin":"zhèng guān","en":"Direct Officer","archetype":"the Executive","relation":"controls the Day Master","polarity":"opposite","governs":"legitimate authority, career, status, reputation","shadow":"rigid, timid, conforming"},{"key":"qi-sha","char":"七杀","pinyin":"qī shā","en":"Seven Killings","archetype":"the Warlord","relation":"controls the Day Master","polarity":"same","governs":"pressure, command, raw drive, crisis","shadow":"reckless, domineering"},{"key":"bi-jian","char":"比肩","pinyin":"bǐ jiān","en":"Friend","archetype":"the Peer","relation":"same phase as the Day Master","polarity":"same","governs":"independence, self-identity, equal partnership","shadow":"stubborn, self-centered"},{"key":"jie-cai","char":"劫财","pinyin":"jié cái","en":"Rob Wealth","archetype":"the Rival","relation":"same phase as the Day Master","polarity":"opposite","governs":"ambition, rivalry, social drive","shadow":"envious, impulsive, wealth-splitting"}],"generating":{"Wood":"Fire","Fire":"Earth","Earth":"Metal","Metal":"Water","Water":"Wood"},"controlling":{"Wood":"Earth","Earth":"Water","Water":"Fire","Fire":"Metal","Metal":"Wood"},"interactions":{"stemCombos":[{"a":"甲","b":"己","to":"Earth","name":"中正之合","gloss":"centered rectitude"},{"a":"乙","b":"庚","to":"Metal","name":"仁义之合","gloss":"benevolence and righteousness"},{"a":"丙","b":"辛","to":"Water","name":"威制之合","gloss":"authority"},{"a":"丁","b":"壬","to":"Wood","name":"淫慝之合","gloss":"allure"},{"a":"戊","b":"癸","to":"Fire","name":"无情之合","gloss":"dispassion"}],"branchSixCombos":[{"a":"子","b":"丑","to":"Earth"},{"a":"寅","b":"亥","to":"Wood"},{"a":"卯","b":"戌","to":"Fire"},{"a":"辰","b":"酉","to":"Metal"},{"a":"巳","b":"申","to":"Water"},{"a":"午","b":"未","to":"Fire","note":"some read this as Earth"}],"threeHarmonies":[{"branches":["申","子","辰"],"to":"Water","animals":["Monkey","Rat","Dragon"]},{"branches":["亥","卯","未"],"to":"Wood","animals":["Pig","Rabbit","Goat"]},{"branches":["寅","午","戌"],"to":"Fire","animals":["Tiger","Horse","Dog"]},{"branches":["巳","酉","丑"],"to":"Metal","animals":["Snake","Rooster","Ox"]}],"threeMeetings":[{"branches":["寅","卯","辰"],"to":"Wood","direction":"East","season":"spring"},{"branches":["巳","午","未"],"to":"Fire","direction":"South","season":"summer"},{"branches":["申","酉","戌"],"to":"Metal","direction":"West","season":"autumn"},{"branches":["亥","子","丑"],"to":"Water","direction":"North","season":"winter"}],"sixClashes":[{"a":"子","b":"午","axis":"Water and Fire"},{"a":"丑","b":"未","axis":"Earth and Earth"},{"a":"寅","b":"申","axis":"Wood and Metal"},{"a":"卯","b":"酉","axis":"Wood and Metal"},{"a":"辰","b":"戌","axis":"Earth and Earth"},{"a":"巳","b":"亥","axis":"Fire and Water"}],"sixHarms":[["子","未"],["丑","午"],["寅","巳"],["卯","辰"],["申","亥"],["酉","戌"]],"punishments":[{"members":["寅","巳","申"],"name":"无恩之刑","gloss":"the punishment of ingratitude"},{"members":["丑","戌","未"],"name":"恃势之刑","gloss":"the punishment of relying on power"},{"members":["子","卯"],"name":"无礼之刑","gloss":"the punishment of impropriety"},{"members":["辰","午","酉","亥"],"name":"自刑","gloss":"self-punishment (a branch doubled)"}]},"sixHarmonyAnimals":[["Rat","Ox"],["Tiger","Pig"],["Rabbit","Dog"],["Dragon","Rooster"],["Snake","Monkey"],["Horse","Goat"]],"compatibility":{"integrity":"Compatibility here is a lens for understanding a relationship's dynamics, never a verdict on whether two people should be together. Clashing charts build deep, lasting bonds all the time; easy charts still need effort. It reads tendencies, not fate."}};</script>
+<script src="/js/bazi.js" defer></script>
+</body>
+</html>
