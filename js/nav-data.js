@@ -520,7 +520,17 @@ PNAV.HUBS = {
       ["/elements/phases/fire/", "Fire 火"],
       ["/elements/phases/earth/", "Earth 土"],
       ["/elements/phases/metal/", "Metal 金"],
-      ["/elements/phases/water/", "Water 水"],
+      ["/elements/phases/water/", "Water 水", [
+        ["/elements/phases/water/", "Water overview"],
+        ["/elements/phases/water/big-small/", "Big & small water 壬癸"],
+        ["/elements/phases/water/bazi/", "Water in BaZi"],
+        ["/elements/phases/water/body/", "Water in the body"],
+        ["/elements/phases/water/space/", "Water in your space"],
+        ["/elements/phases/water/cycles/", "Water's two cycles"],
+        ["/elements/phases/water/animals/", "The Water animals"],
+        ["/elements/phases/water/culture/", "Water in myth"],
+        ["/elements/phases/water/traditions/", "Water across traditions"]
+      ]],
       ["/elements/#cycles", "The two cycles"],
       ["/elements/#quiz", "What's your element?"],
       ["/elements/zodiac/", "Elements & your animal"]
