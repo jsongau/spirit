@@ -575,14 +575,22 @@
       if (pv === "other") { var lon = parseFloat(cv("lon")), utc = parseFloat(cv("utc")); if (isNaN(lon) || isNaN(utc)) return null; return { lon: lon, utc: utc, name: "your longitude" }; }
       var c = CITIES[parseInt(pv, 10)]; return c ? { lon: c[1], utc: c[2], name: c[0] } : null;
     }
+    function reduceMotion() { return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; }
+    function scrollToResult() { try { setTimeout(function () { out.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60); } catch (e) {} }
+    function showCasting() { out.innerHTML = '<div class="bz-casting"><div class="bz-casting-glyphs"><span>八</span><span>字</span></div><p>Casting your four pillars…</p></div>'; }
+    function doReveal(chart, ropt) {
+      if (reduceMotion()) { render(chart, ropt); scrollToResult(); return; }
+      showCasting(); scrollToResult();
+      setTimeout(function () { render(chart, ropt); }, 560);
+    }
     cast.addEventListener("click", function () {
       if (!dateOK()) { out.innerHTML = '<p class="bz-hint">Please pick a birth date (year 1900 to 2100).</p>'; return; }
       var b = birthParts(), y = b.y, m = b.m, d = b.d, sex = dv("sex");
-      if (mode === "general") { render(castChart({ year: y, month: m, day: d, known: false }), { birth:{y:y,m:m,d:d}, sex:sex }); return; }
+      if (mode === "general") { doReveal(castChart({ year: y, month: m, day: d, known: false }), { birth:{y:y,m:m,d:d}, sex:sex, animate:true }); return; }
       var pl = place(), tp = timeParts();
       var o = { year: y, month: m, day: d, hour: tp.h, minute: tp.min, known: true };
       if (pl) { o.lon = pl.lon; o.utc = pl.utc; }
-      render(castChart(o), { placeName: pl ? pl.name : null, birth:{y:y,m:m,d:d}, sex:sex });
+      doReveal(castChart(o), { placeName: pl ? pl.name : null, birth:{y:y,m:m,d:d}, sex:sex, animate:true });
     });
     function doExplore() {
       if (!dateOK()) { out.innerHTML = '<p class="bz-hint">Pick a birth date first, then explore the hour.</p>'; return; }
@@ -702,15 +710,33 @@
       var generalNote = (!hasHour && !opt.explore) ? '<div class="bz-note-inline"><b>A general reading.</b> Your Day Master, strength, useful element, and full luck timeline all hold without the hour. Only the hour pillar (later years, children, output) stays open. Add your time later for that chapter.</div>' : "";
       var links = '<div class="bz-actions"><a class="bz-pill" href="/bazi/day-master/">More on the Day Master</a><a class="bz-pill" href="/bazi/ten-gods/">More on the Ten Gods</a><a class="bz-pill" href="/bazi/luck-pillars/">How luck works</a><a class="bz-pill" href="/chinese-zodiac/' + slug(branchByChar[c.pillars[0].branch].animal) + '/">Your year animal</a></div>';
 
-      out.innerHTML = banner +
-        '<p class="bz-castlead">Your Day Master is <b>' + dm.char + " " + dm.pinyin + "</b>, " + dm.polarity + " " + dm.phase + ". " + cap(dm.imagery) + ". This is you, the character every other part of the chart is read against.</p>" +
-        grid + solar + strengthBlock + pillarBlock + godsBlock + luckBlock + synth + generalNote +
-        (notes ? '<div class="bz-note-inline">' + notes + "</div>" : "") + links +
-        '<p class="bz-note-inline">A reading of tendencies from a classical system, a mirror and a grain to work with, not a verdict and not a prediction. What you do with it is yours.</p>';
+      // year ahead (流年 annual pillar)
+      var nowY = new Date().getFullYear();
+      var ys = B.stems[mod(nowY - 4, 10)], yb = B.branches[mod(nowY - 4, 12)];
+      var yGod = godFor(dm.phase, dm.polarity, ys.phase, ys.polarity);
+      var yFeeds = uf.useful.indexOf(ys.phase) > -1 || uf.useful.indexOf(yb.phase) > -1 || uf.useful.indexOf(B.generating[ys.phase]) > -1;
+      var yDrains = uf.useful.indexOf(B.controlling[ys.phase]) > -1;
+      var yClim = yFeeds && !yDrains ? "a supportive year for " + uf.useful[0] + ", when your own leanings tend to be met and work flows more easily" : (yDrains && !yFeeds ? "a demanding year that asks more of you, so lean on " + uf.useful[0] + " on purpose" : "a mixed year, some of it meeting you and some testing you");
+      var yearBlock = '<div class="bz-read-sec"><span class="bz-k">The year ahead (' + glossI("流年", "流年 liú nián, the annual pillar: the current year read against your chart. A season, not a schedule.") + " " + nowY + ", " + ys.char + yb.char + " " + yb.animal + ')</span><p>This reads as a <b>' + yGod.en + '</b> year for you: ' + yClim + '. The BaZi year turns at the Start of Spring (立春). Read it as the weather of a year, never a schedule of events.</p></div>';
+
+      // shareable card
+      var oneLine = dm.polarity + " " + dm.phase + " Day Master · " + cap(st.verdict) + " · leans on " + joinNames(uf.useful);
+      var shareTxt = "My BaZi: a " + dm.polarity + " " + dm.phase + " self (" + dm.imagery + "), a " + st.verdict + " chart that leans on " + joinNames(uf.useful) + ". " + (domName ? "Strongest current: " + domName + ". " : "") + "Cast yours at zodianimal.com/bazi/chart/";
+      var shareCard = '<div class="bz-sharecard"><div class="bz-share-glyph" ' + phaseStyle(dm.phase) + ">" + dm.char + '</div><div class="bz-share-body"><div class="bz-share-line">' + oneLine + '</div><button type="button" class="bz-pill bz-sharebtn">Copy my reading to share</button></div></div>';
+
+      var castlead = '<p class="bz-castlead">Your Day Master is <b>' + dm.char + " " + dm.pinyin + "</b>, " + dm.polarity + " " + dm.phase + ". " + cap(dm.imagery) + ". This is you, the character every other part of the chart is read against.</p>";
+      var pieces = [castlead, grid, solar, shareCard, strengthBlock, pillarBlock, godsBlock, luckBlock, yearBlock, synth, generalNote, (notes ? '<div class="bz-note-inline">' + notes + "</div>" : ""), links, '<p class="bz-note-inline">A reading of tendencies from a classical system, a mirror and a grain to work with, not a verdict and not a prediction. What you do with it is yours.</p>'].filter(Boolean);
+      var body = opt.animate ? '<div class="bz-anim">' + pieces.map(function (p, i) { return '<div class="bz-reveal-step" style="animation-delay:' + (i * 75) + 'ms">' + p + "</div>"; }).join("") + "</div>" : pieces.join("");
+      out.innerHTML = banner + body;
 
       if (window.__bzFloat) {
         Array.prototype.forEach.call(out.querySelectorAll("[data-god]"), function (cell) { cell.addEventListener("click", function () { window.__bzFloat.openGod(cell.getAttribute("data-god")); }); });
         Array.prototype.forEach.call(out.querySelectorAll("[data-concept]"), function (cell) { cell.addEventListener("click", function () { window.__bzFloat.openConcept(cell.getAttribute("data-concept")); }); });
+      }
+      var sbtn = out.querySelector(".bz-sharebtn");
+      if (sbtn) sbtn.addEventListener("click", function () {
+        if (navigator.share) { navigator.share({ text: shareTxt }).catch(function () {}); return; }
+        if (navigator.clipboard) navigator.clipboard.writeText(shareTxt).then(function () { sbtn.textContent = "Copied to clipboard"; setTimeout(function () { sbtn.textContent = "Copy my reading to share"; }, 1900); }).catch(function () {});
       }
     }
   }

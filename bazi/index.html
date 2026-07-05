@@ -228,6 +228,18 @@ a.bz-el:hover{border-color:var(--el);color:var(--moon)}
 .bz-luckcell.is-hard{border-color:var(--earth);background:color-mix(in oklab,var(--earth) 12%,var(--panel))}
 .bz-luckcell em{font-family:var(--mono);font-size:.5rem;letter-spacing:.02em;color:var(--muted);font-style:normal;margin-top:.15rem;text-align:center}
 .bz-synth{background:linear-gradient(180deg,color-mix(in oklab,var(--el) 11%,var(--panel)),var(--field));border-left:3px solid var(--el);margin-top:1.5rem}
+.bz-casting{text-align:center;padding:2.6rem 0}
+.bz-casting-glyphs{display:flex;gap:.6rem;justify-content:center;font-family:var(--serif);font-size:2.4rem;color:var(--el)}
+.bz-casting-glyphs span{animation:bzpulse 1.1s var(--ease-out) infinite}
+.bz-casting-glyphs span:nth-child(2){animation-delay:.3s}
+.bz-casting p{color:var(--muted);font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-top:.9rem}
+@keyframes bzpulse{0%,100%{opacity:.35;transform:translateY(0)}50%{opacity:1;transform:translateY(-4px)}}
+.bz-anim .bz-reveal-step{opacity:0;animation:bzrise .6s var(--ease-out) forwards}
+.bz-sharecard{display:flex;gap:1rem;align-items:center;margin-top:1.2rem;padding:1.1rem 1.2rem;background:linear-gradient(120deg,color-mix(in oklab,var(--el) 16%,var(--panel)),var(--field));border:1px solid var(--el);border-radius:var(--r-3);box-shadow:0 16px 44px rgba(0,0,0,.5)}
+.bz-share-glyph{font-family:var(--serif);font-size:2.7rem;line-height:1;color:var(--bz-c,var(--el))}
+.bz-share-body{flex:1;min-width:0}
+.bz-share-line{font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ivory);margin-bottom:.6rem}
+@media(prefers-reduced-motion:reduce){.bz-anim .bz-reveal-step{opacity:1;animation:none}.bz-casting-glyphs span{animation:none}}
 .bz-sig{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
 .bz-sigitem{background:var(--field);border:1px solid var(--line-soft);border-left:2px solid var(--el);border-radius:var(--r-2);padding:1rem 1.1rem}
 .bz-sigitem .bz-k{display:block;font-family:var(--serif);font-size:1.05rem;color:var(--moon);letter-spacing:0;text-transform:none;margin-bottom:.35rem}
@@ -296,7 +308,6 @@ a.bz-el:hover{border-color:var(--el);color:var(--moon)}
 {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is BaZi?","acceptedAnswer":{"@type":"Answer","text":"BaZi, the Four Pillars of Destiny, reads a birth moment as eight characters: a Heavenly Stem and Earthly Branch for the year, month, day, and hour. It is a symbolic tradition for reflection, not prediction."}},{"@type":"Question","name":"Is BaZi the same as the Chinese zodiac?","acceptedAnswer":{"@type":"Answer","text":"They are one tradition. The birth-year animal of the Chinese zodiac is the year's Earthly Branch in a full BaZi chart, which also reads the month, day, and hour."}},{"@type":"Question","name":"Does BaZi predict the future?","acceptedAnswer":{"@type":"Answer","text":"No. Casting a chart is exact, but reading it deals in tendencies and timing, a lens for reflection, never a fixed forecast of events."}}]}
 ]}
 </script>
-<script src="/js/nav.js" defer></script>
 <!--pn-css:start-->
 <link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
 <link rel="stylesheet" href="/css/nav-mega.css" data-pn="/css/nav-mega.css">
@@ -308,6 +319,7 @@ a.bz-el:hover{border-color:var(--el);color:var(--moon)}
 <!--pn-crumb-ld:start-->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.zodianimal.com/"},{"@type":"ListItem","position":2,"name":"BaZi","item":"https://www.zodianimal.com/bazi/"}]}</script>
 <!--pn-crumb-ld:end-->
+<script src="/js/nav.js" defer></script>
 </head>
 <body class="pn-has-bar">
 <!--pn-static:start-->
@@ -391,8 +403,7 @@ a.bz-el:hover{border-color:var(--el);color:var(--moon)}
 <!--pn-sub:end-->
 <!--pn-crumbbar:start-->
 <nav class="pn-crumbbar" aria-label="Breadcrumb"><ol class="pn-crumb"><li><a href="/">Home</a></li><li aria-current="page">BaZi</li></ol></nav>
-<!--pn-crumbbar:end-->
-<header class="hero"><div class="wrap">
+<!--pn-crumbbar:end--><header class="hero"><div class="wrap">
   <div class="bzhero">
     <div class="bzwatermark" aria-hidden="true">八字</div>
     <div class="bzseal" aria-hidden="true"><b>命</b></div>
@@ -548,5 +559,213 @@ Array.prototype.forEach.call(document.querySelectorAll('[data-god]'),function(ce
 Array.prototype.forEach.call(document.querySelectorAll('[data-concept]'),function(cell){cell.addEventListener('click',function(){open();showConcept(cell.getAttribute('data-concept'));});});
 })();</script><script>window.BAZI={"phaseColors":{"Wood":"#4a9d6a","Fire":"#d1553b","Earth":"#c8a24c","Metal":"#c9cdd6","Water":"#2f8cba"},"stems":[{"char":"甲","pinyin":"jiǎ","polarity":"yang","phase":"Wood","imagery":"the tall tree, the beam and pillar timber","keywords":["upright","pioneering","a leader","benevolent","stubborn"]},{"char":"乙","pinyin":"yǐ","polarity":"yin","phase":"Wood","imagery":"the vine, the grass, the flower","keywords":["flexible","tactful","elegant","resilient","adaptive"]},{"char":"丙","pinyin":"bǐng","polarity":"yang","phase":"Fire","imagery":"the sun","keywords":["warm","bright","generous","magnetic","impatient"]},{"char":"丁","pinyin":"dīng","polarity":"yin","phase":"Fire","imagery":"the candle, the lamp, starlight","keywords":["gentle","thoughtful","enduring","artistic","guarded"]},{"char":"戊","pinyin":"wù","polarity":"yang","phase":"Earth","imagery":"the mountain, the wall, the dam","keywords":["steady","honest","dependable","grounded","over-serious"]},{"char":"己","pinyin":"jǐ","polarity":"yin","phase":"Earth","imagery":"the garden soil, the cultivated field","keywords":["nurturing","forgiving","adaptable","prudent","indecisive"]},{"char":"庚","pinyin":"gēng","polarity":"yang","phase":"Metal","imagery":"the axe, the sword, raw ore","keywords":["decisive","loyal","direct","brave","blunt"]},{"char":"辛","pinyin":"xīn","polarity":"yin","phase":"Metal","imagery":"the jewel, refined precious metal","keywords":["refined","aesthetic","meticulous","proud","sensitive"]},{"char":"壬","pinyin":"rén","polarity":"yang","phase":"Water","imagery":"the ocean, the great river","keywords":["wise","free","broad-minded","tolerant","willful"]},{"char":"癸","pinyin":"guǐ","polarity":"yin","phase":"Water","imagery":"rain, dew, mist","keywords":["gentle","intuitive","imaginative","clear","melancholic"]}],"branches":[{"char":"子","pinyin":"zǐ","animal":"Rat","phase":"Water","polarity":"yang","season":"mid winter","hour":"23:00-00:59","type":"cardinal","hidden":[{"stem":"癸","phase":"Water","role":"primary"}]},{"char":"丑","pinyin":"chǒu","animal":"Ox","phase":"Earth","polarity":"yin","season":"late winter","hour":"01:00-02:59","type":"storage","hidden":[{"stem":"己","phase":"Earth","role":"primary"},{"stem":"辛","phase":"Metal","role":"middle"},{"stem":"癸","phase":"Water","role":"residual"}]},{"char":"寅","pinyin":"yín","animal":"Tiger","phase":"Wood","polarity":"yang","season":"early spring","hour":"03:00-04:59","type":"growth","hidden":[{"stem":"甲","phase":"Wood","role":"primary"},{"stem":"丙","phase":"Fire","role":"middle"},{"stem":"戊","phase":"Earth","role":"residual"}]},{"char":"卯","pinyin":"mǎo","animal":"Rabbit","phase":"Wood","polarity":"yin","season":"mid spring","hour":"05:00-06:59","type":"cardinal","hidden":[{"stem":"乙","phase":"Wood","role":"primary"}]},{"char":"辰","pinyin":"chén","animal":"Dragon","phase":"Earth","polarity":"yang","season":"late spring","hour":"07:00-08:59","type":"storage","hidden":[{"stem":"戊","phase":"Earth","role":"primary"},{"stem":"乙","phase":"Wood","role":"middle"},{"stem":"癸","phase":"Water","role":"residual"}]},{"char":"巳","pinyin":"sì","animal":"Snake","phase":"Fire","polarity":"yin","season":"early summer","hour":"09:00-10:59","type":"growth","hidden":[{"stem":"丙","phase":"Fire","role":"primary"},{"stem":"庚","phase":"Metal","role":"middle"},{"stem":"戊","phase":"Earth","role":"residual"}]},{"char":"午","pinyin":"wǔ","animal":"Horse","phase":"Fire","polarity":"yang","season":"mid summer","hour":"11:00-12:59","type":"cardinal","hidden":[{"stem":"丁","phase":"Fire","role":"primary"},{"stem":"己","phase":"Earth","role":"middle"}]},{"char":"未","pinyin":"wèi","animal":"Goat","phase":"Earth","polarity":"yin","season":"late summer","hour":"13:00-14:59","type":"storage","hidden":[{"stem":"己","phase":"Earth","role":"primary"},{"stem":"丁","phase":"Fire","role":"middle"},{"stem":"乙","phase":"Wood","role":"residual"}]},{"char":"申","pinyin":"shēn","animal":"Monkey","phase":"Metal","polarity":"yang","season":"early autumn","hour":"15:00-16:59","type":"growth","hidden":[{"stem":"庚","phase":"Metal","role":"primary"},{"stem":"壬","phase":"Water","role":"middle"},{"stem":"戊","phase":"Earth","role":"residual"}]},{"char":"酉","pinyin":"yǒu","animal":"Rooster","phase":"Metal","polarity":"yin","season":"mid autumn","hour":"17:00-18:59","type":"cardinal","hidden":[{"stem":"辛","phase":"Metal","role":"primary"}]},{"char":"戌","pinyin":"xū","animal":"Dog","phase":"Earth","polarity":"yang","season":"late autumn","hour":"19:00-20:59","type":"storage","hidden":[{"stem":"戊","phase":"Earth","role":"primary"},{"stem":"辛","phase":"Metal","role":"middle"},{"stem":"丁","phase":"Fire","role":"residual"}]},{"char":"亥","pinyin":"hài","animal":"Pig","phase":"Water","polarity":"yin","season":"early winter","hour":"21:00-22:59","type":"growth","hidden":[{"stem":"壬","phase":"Water","role":"primary"},{"stem":"甲","phase":"Wood","role":"middle"}]}],"tenGods":[{"key":"zheng-yin","char":"正印","pinyin":"zhèng yìn","en":"Direct Resource","archetype":"the Mentor","relation":"generates the Day Master","polarity":"opposite","governs":"formal learning, protection, property, the nurturing parent","shadow":"dependent, indecisive, slow to act"},{"key":"pian-yin","char":"偏印","pinyin":"piān yìn","en":"Indirect Resource","archetype":"the Mystic","relation":"generates the Day Master","polarity":"same","governs":"intuition, niche or unconventional knowledge, inspiration","shadow":"aloof, suspicious, solitary"},{"key":"shi-shen","char":"食神","pinyin":"shí shén","en":"Eating God","archetype":"the Talent","relation":"the Day Master generates it","polarity":"same","governs":"gentle creativity, enjoyment, steady output","shadow":"over-analytic, idealistic"},{"key":"shang-guan","char":"伤官","pinyin":"shāng guān","en":"Hurting Officer","archetype":"the Maverick","relation":"the Day Master generates it","polarity":"opposite","governs":"disruptive talent, showmanship, breaking rules","shadow":"willful, tactless, proud"},{"key":"zheng-cai","char":"正财","pinyin":"zhèng cái","en":"Direct Wealth","archetype":"the Earner","relation":"the Day Master controls it","polarity":"opposite","governs":"salary, earned money, savings, honest work","shadow":"calculating, conservative"},{"key":"pian-cai","char":"偏财","pinyin":"piān cái","en":"Indirect Wealth","archetype":"the Venturer","relation":"the Day Master controls it","polarity":"same","governs":"windfall, business, speculation, networks","shadow":"impulsive, a risk-taker"},{"key":"zheng-guan","char":"正官","pinyin":"zhèng guān","en":"Direct Officer","archetype":"the Executive","relation":"controls the Day Master","polarity":"opposite","governs":"legitimate authority, career, status, reputation","shadow":"rigid, timid, conforming"},{"key":"qi-sha","char":"七杀","pinyin":"qī shā","en":"Seven Killings","archetype":"the Warlord","relation":"controls the Day Master","polarity":"same","governs":"pressure, command, raw drive, crisis","shadow":"reckless, domineering"},{"key":"bi-jian","char":"比肩","pinyin":"bǐ jiān","en":"Friend","archetype":"the Peer","relation":"same phase as the Day Master","polarity":"same","governs":"independence, self-identity, equal partnership","shadow":"stubborn, self-centered"},{"key":"jie-cai","char":"劫财","pinyin":"jié cái","en":"Rob Wealth","archetype":"the Rival","relation":"same phase as the Day Master","polarity":"opposite","governs":"ambition, rivalry, social drive","shadow":"envious, impulsive, wealth-splitting"}],"generating":{"Wood":"Fire","Fire":"Earth","Earth":"Metal","Metal":"Water","Water":"Wood"},"controlling":{"Wood":"Earth","Earth":"Water","Water":"Fire","Fire":"Metal","Metal":"Wood"},"interactions":{"stemCombos":[{"a":"甲","b":"己","to":"Earth","name":"中正之合","gloss":"centered rectitude"},{"a":"乙","b":"庚","to":"Metal","name":"仁义之合","gloss":"benevolence and righteousness"},{"a":"丙","b":"辛","to":"Water","name":"威制之合","gloss":"authority"},{"a":"丁","b":"壬","to":"Wood","name":"淫慝之合","gloss":"allure"},{"a":"戊","b":"癸","to":"Fire","name":"无情之合","gloss":"dispassion"}],"branchSixCombos":[{"a":"子","b":"丑","to":"Earth"},{"a":"寅","b":"亥","to":"Wood"},{"a":"卯","b":"戌","to":"Fire"},{"a":"辰","b":"酉","to":"Metal"},{"a":"巳","b":"申","to":"Water"},{"a":"午","b":"未","to":"Fire","note":"some read this as Earth"}],"threeHarmonies":[{"branches":["申","子","辰"],"to":"Water","animals":["Monkey","Rat","Dragon"]},{"branches":["亥","卯","未"],"to":"Wood","animals":["Pig","Rabbit","Goat"]},{"branches":["寅","午","戌"],"to":"Fire","animals":["Tiger","Horse","Dog"]},{"branches":["巳","酉","丑"],"to":"Metal","animals":["Snake","Rooster","Ox"]}],"threeMeetings":[{"branches":["寅","卯","辰"],"to":"Wood","direction":"East","season":"spring"},{"branches":["巳","午","未"],"to":"Fire","direction":"South","season":"summer"},{"branches":["申","酉","戌"],"to":"Metal","direction":"West","season":"autumn"},{"branches":["亥","子","丑"],"to":"Water","direction":"North","season":"winter"}],"sixClashes":[{"a":"子","b":"午","axis":"Water and Fire"},{"a":"丑","b":"未","axis":"Earth and Earth"},{"a":"寅","b":"申","axis":"Wood and Metal"},{"a":"卯","b":"酉","axis":"Wood and Metal"},{"a":"辰","b":"戌","axis":"Earth and Earth"},{"a":"巳","b":"亥","axis":"Fire and Water"}],"sixHarms":[["子","未"],["丑","午"],["寅","巳"],["卯","辰"],["申","亥"],["酉","戌"]],"punishments":[{"members":["寅","巳","申"],"name":"无恩之刑","gloss":"the punishment of ingratitude"},{"members":["丑","戌","未"],"name":"恃势之刑","gloss":"the punishment of relying on power"},{"members":["子","卯"],"name":"无礼之刑","gloss":"the punishment of impropriety"},{"members":["辰","午","酉","亥"],"name":"自刑","gloss":"self-punishment (a branch doubled)"}]},"sixHarmonyAnimals":[["Rat","Ox"],["Tiger","Pig"],["Rabbit","Dog"],["Dragon","Rooster"],["Snake","Monkey"],["Horse","Goat"]],"compatibility":{"integrity":"Compatibility here is a lens for understanding a relationship's dynamics, never a verdict on whether two people should be together. Clashing charts build deep, lasting bonds all the time; easy charts still need effort. It reads tendencies, not fate."},"example":{"label":"A real, verified chart.","title":"The Nautilus: a Cancer Snake, born at 3 in the afternoon","animal":"Nautilus","animalNote":"Cancer Snake on this site is the Nautilus.","birth":"Born 27 June 1989, 3:00 pm.","note":"This is a real chart, cast by the same solar-calendar math a professional almanac uses. Our calculator reproduces it character for character.","dayMasterChar":"戊","pillars":[{"label":"Year","sub":"ancestry, early life","stem":{"char":"己","pinyin":"jǐ","phase":"Earth","polarity":"yin","god":"劫财","godEn":"Rob Wealth","arch":"the Rival","link":"/bazi/ten-gods/","meaning":"Soft garden Earth beside the mountain, a peer and sibling energy in early life, sharing the ground and sometimes competing for it."},"branch":{"char":"巳","pinyin":"sì","animal":"Snake","phase":"Fire","link":"/bazi/earthly-branches/","meaning":"Bright Fire in the roots of early life, part of the summer that bakes and strengthens the self. To an Earth self, Fire is Resource: support, learning, and recognition.","hidden":[{"char":"丙","phase":"Fire","god":"偏印","role":"primary"},{"char":"庚","phase":"Metal","god":"食神","role":"middle"},{"char":"戊","phase":"Earth","god":"比肩","role":"residual"}],"hiddenNote":"Inside the Snake sit 丙 Fire (Indirect Resource, intuition and unconventional learning), 庚 Metal (the Eating God, more of the talent), and 戊 Earth (a Peer)."}},{"label":"Month","sub":"upbringing, the season that sets strength","stem":{"char":"庚","pinyin":"gēng","phase":"Metal","polarity":"yang","god":"食神","godEn":"Eating God","arch":"the Talent","link":"/bazi/ten-gods/","meaning":"Strong, clean Metal, the mountain's ore turned into tools. This is the Eating God: craft, skill, expression, and the pleasure of making things. The heart of the chart's gift."},"branch":{"char":"午","pinyin":"wǔ","animal":"Horse","phase":"Fire","link":"/bazi/earthly-branches/","meaning":"The blazing summer month that sets the self's strength. To an Earth self this Fire is Resource: abundant support and recognition, almost more than one self can hold.","hidden":[{"char":"丁","phase":"Fire","god":"正印","role":"primary"},{"char":"己","phase":"Earth","god":"劫财","role":"middle"}],"hiddenNote":"Inside the Horse sit 丁 Fire (Direct Resource, the mentor and recognition) and 己 Earth (a Rival peer)."}},{"label":"Day","sub":"the self and the partner","isSelf":true,"stem":{"char":"戊","pinyin":"wù","phase":"Earth","polarity":"yang","god":"日主","godEn":"Day Master","arch":"the self","link":"/bazi/day-master/","meaning":"This is the person: 戊 yang Earth, the mountain and the wall. Steady, dependable, grounded, hard to move, with deep reserves and a strong sense of responsibility."},"branch":{"char":"午","pinyin":"wǔ","animal":"Horse","phase":"Fire","link":"/bazi/earthly-branches/","meaning":"Summer Fire in the seat of partnership. Warmth and support at the center of home life, and more of the Resource that keeps the self strong.","hidden":[{"char":"丁","phase":"Fire","god":"正印","role":"primary"},{"char":"己","phase":"Earth","god":"劫财","role":"middle"}],"hiddenNote":"Inside the Horse sit 丁 Fire (Direct Resource, the mentor) and 己 Earth (a Rival peer) at the heart of the marriage palace."}},{"label":"Hour","sub":"later years, output, legacy","stem":{"char":"庚","pinyin":"gēng","phase":"Metal","polarity":"yang","god":"食神","godEn":"Eating God","arch":"the Talent","link":"/bazi/ten-gods/","meaning":"More clean Metal Output in the later pillar: the talent carries into the second half of life and into what this person makes and leaves behind."},"branch":{"char":"申","pinyin":"shēn","animal":"Monkey","phase":"Metal","link":"/bazi/earthly-branches/","meaning":"A whole season of Metal, the strongest outlet in the chart. It channels the mountain's strength into craft, and it quietly holds the chart's only wealth.","hidden":[{"char":"庚","phase":"Metal","god":"食神","role":"primary"},{"char":"壬","phase":"Water","god":"偏财","role":"middle"},{"char":"戊","phase":"Earth","god":"比肩","role":"residual"}],"hiddenNote":"Inside the Monkey sit 庚 Metal (more Eating God talent), 壬 Water (Indirect Wealth, the hidden money the talent earns), and 戊 Earth (a Peer). This is where the chart's fortune lives."}}],"portrait":"This chart is a mountain of a self, steady yang Earth (戊 wù), born at the peak of summer. So much Fire bakes the mountain hard and strong, and Resource, meaning learning and support, pours in from behind and feeds a real gift: two Eating Gods (食神), a maker's talent rooted in Metal. It is a well-resourced maker, learning turned into craft. The one source of wealth is a hidden Water the craft can feed, and there is no Officer star, so authority here is built, not inherited. Above all this is a hot, dry chart: it runs warm, and it does best with cool, moving water in the life, meaning output, travel, learning, and money in motion.","strength":"A strong yang Earth self (身强 shēn qiáng), a summer mountain baked hard and backed by its own kind. Strong is not better than weak: it means power to spare that wants an outlet. One tension to know: many peers share the chart but there is only one hidden purse (比劫争财 bǐ jié zhēng cái), so the craft (食神) matters as the thing that turns rivals into production rather than competition.","favourable":"This chart leans on Metal and Water (its 用神 yòng shén, favourable elements), and unusually, two methods agree: it is both too strong and too hot, and both point to the same medicine. Metal channels the mountain's strength into craft, and Water cools the heat and can become wealth. The life tends to work with cool, moving water in it and to stall when everything is heat and effort.","share":"You are a mountain with a maker's hands, built to turn a real craft into a living and to answer to no one but the work.","luckPillars":[{"age":8,"pillar":"己巳","highlight":false},{"age":18,"pillar":"戊辰","highlight":false},{"age":28,"pillar":"丁卯","highlight":false},{"age":38,"pillar":"丙寅","highlight":true},{"age":48,"pillar":"乙丑","highlight":false},{"age":58,"pillar":"甲子","highlight":false},{"age":68,"pillar":"癸亥","highlight":false},{"age":78,"pillar":"壬戌","highlight":false}],"powerReading":{"work":"This chart carries a maker's mark. Two Eating Gods (食神 shí shén, the talent that produces) sit rooted in Metal and are fed from behind by strong Resource, so learning pours into craft: a well-resourced maker. The one source of money is a quiet, hidden Water this talent can feed, a pattern called 食神生财 (shí shén shēng cái), the craft that can feed the fortune. You tend to be built to make your own thing and let the making pay you. The wealth is latent, though: built in, and drawn out by the right timing rather than always flowing.","authority":"At birth your chart has no Officer star (官 guān), no boss placed above you and no ready-made ladder. That tends to mean the structure you answer to is one you build yourself, held steady by a mountain self (戊 wù, yang Earth: dependable, deep reserves, hard to move). The freedom is real, and so is the flip side: position and recognition here are earned and made, not inherited.","powerYears":"Your luck runs backward through the decades, and around 2026, near age 38, you enter the 丙寅 (bǐng yín) decade, which tends to bring two things your early chart was thin on. 寅 is Wood, the authority element (官殺) you were born without, arriving as 七杀 (qī shā), self-forged command rather than handed-down office, and genuinely useful to a strong self. 丙 is Fire, Resource (印), which can bring recognition but also adds heat to an already hot chart, so the season rewards building authority while keeping cool, watery outlets open. The 寅 also meets your 申 (寅申冲), the old sign of the Travelling Horse set galloping: movement and change around that decade. Treat the mid-2020s as a season to prepare for, not a prize that lands on its own.","future":"Your chart is not finished at the start, and that is the honest good news. The two things it lacks early, outside authority and easy wealth, are the very things the years tend to bring toward it. The 丙寅 decade opens the door in your late 30s, and the pillars that follow keep water moving through the chart, the wealth your talent can feed. The shape leans toward a slow, earned climb: quiet and self-made at the start, more recognized and more resourced through your 40s and into your 50s. The mountain does not rush. It accumulates.","love":"Your day branch holds Fire (午 wǔ), which sits in the spouse palace and reads as warmth close to home. A steady-mountain self tends to pair that warmth with loyalty and staying power: slow to open, deeply constant once you do. You lean toward a partner who brings brightness and movement to your calm, and toward a bond built to last. Kept light: a tendency, not a promise."},"signature":[{"term":"调候 the climate","text":"This chart runs hot and dry. It does best with cool, moving water in the life: output, travel, learning, and money in motion."},{"term":"驿马 the Travelling Horse","text":"The money and the talent sit on the Horse of movement (申). Income here tends to come through motion and reaching outward."},{"term":"比劫争财 rivals and wealth","text":"Many peers share the ground and there is one hidden purse. The craft (食神) is what turns rivals into production rather than competition."}],"teasers":["Your chart names your power years. Wouldn't you want to know when yours arrive?","Some people are built to make their own thing. Is that written into your chart?","Your talent might have a way of turning into money. Wouldn't you want to see how yours does it?"]},"godDeep":{"比肩":{"en":"Friend","pinyin":"bǐ jiān","howGenerated":"Same element as the Day Master, same polarity. It is you, mirrored, a peer at your shoulder.","essence":"The pure sense of self: identity, willpower, and standing on your own feet.","favorable":"In a weak chart, a rock: steadiness, self-reliance, stamina, loyalty, the confidence to hold a position without permission.","unfavorable":"In a strong chart, stubbornness and rigidity, rivals who quietly divide your resources, trouble sharing credit.","sixRelatives":"Siblings, peers, and friends of equal standing (symbolic, not literal).","career":"Independent work, partnerships of equals, self-employment, trades where your own hands and name matter.","mainVsSub":"Revealed (主星): self-identity is overt. Hidden (副星): latent backbone that surfaces under pressure."},"劫财":{"en":"Rob Wealth","pinyin":"jié cái","howGenerated":"Same element as the Day Master, opposite polarity. Another you, of opposite charge, so more magnetic and more competitive.","essence":"Drive, daring, and the competitive edge of the self. Its name warns the same force can pull wealth away as readily as it earns.","favorable":"In a weak chart, often better than Friend: boldness, charisma, decisiveness under pressure, the nerve to fight for opportunity and defend turf.","unfavorable":"In a strong chart, the classic wealth-drainer: impulsive spending, over-competition, jealousy, partners who cost money.","sixRelatives":"Siblings and close rivals; for a man especially, a rival for his wife or wealth (classical association only).","career":"Entrepreneurship, sales, competitive markets, sport, high-risk ventures. Money comes through contention, and can leave the same way.","mainVsSub":"Revealed: competitive drive is out in the open. Hidden: buried rivalry or restlessness, triggered by luck pillars."},"食神":{"en":"Eating God","pinyin":"shí shén","howGenerated":"The element the Day Master generates (output), same polarity. It flows out of you naturally.","essence":"Gentle, sustained self-expression: talent, creativity, appetite for life, nourishment, and enjoyment.","favorable":"Warmth, easy charm, artistic and culinary gifts, patience, steady creative output; vents an over-strong self gracefully.","unfavorable":"Too much drifts into indulgence, laziness, or scattered talent that never ships; in a weak chart it drains the self.","sixRelatives":"For a woman, her children; for a man, protégés and his sense of ease (symbolic).","career":"Food and hospitality, arts, entertainment, teaching, wellness, design, craft. Money by making things people enjoy.","mainVsSub":"Revealed: talent and expressiveness are visible and steady. Hidden: a quiet inner creativity that surfaces in the right conditions."},"伤官":{"en":"Hurting Officer","pinyin":"shāng guān","howGenerated":"The element the Day Master generates (output), opposite polarity. Named because it attacks the Direct Officer, the star of rules.","essence":"Brilliant, unconventional, boundary-pushing expression: genius, performance, sharp wit, rebellion against constraint.","favorable":"Exceptional talent, star quality, eloquence, innovation, the courage to defy convention and outshine peers.","unfavorable":"Arrogance, contempt for rules, a sharp tongue that wounds, restlessness, self-sabotage by refusing to play the game.","sixRelatives":"For a woman, her children (and classically tension with the husband star); for a man, protégés (symbolic).","career":"Performing arts, media, design, law and debate, invention, academia; fields rewarding originality.","mainVsSub":"Revealed: brilliance and defiance both on display. Hidden: latent talent or a rebellious streak under the right trigger."},"偏财":{"en":"Indirect Wealth","pinyin":"piān cái","howGenerated":"The element the Day Master controls (wealth), same polarity. You master it and put it to use.","essence":"Fluid, opportunistic, big-flow money: windfalls, ventures, deals, resources that move through many hands.","favorable":"Generosity, sociability, a nose for opportunity, deal-making flair, ease with large or fluctuating sums.","unfavorable":"If the self is too weak to hold it, money that comes and goes, over-extension, spreading too thin.","sixRelatives":"The father for both sexes; for a man additionally a casual partner (classical convention only).","career":"Business, sales, trading, finance, real estate, hospitality; money through opportunity, volume, and networks.","mainVsSub":"Revealed: overtly enterprising, money flows visibly. Hidden: latent opportunity that activates in the right luck pillar."},"正财":{"en":"Direct Wealth","pinyin":"zhèng cái","howGenerated":"The element the Day Master controls (wealth), opposite polarity. Steady, personal, committed wealth you hold onto.","essence":"Earned, stable, hands-on money and material security: salary, savings, property kept, the fruit of diligence.","favorable":"Reliability, thrift, prudence, a steady approach to earning and saving; consistent income built brick by brick.","unfavorable":"In excess or a weak chart: stinginess, materialism, being burdened or owned by one's obligations.","sixRelatives":"For a man, his wife (the committed partner); for both, the father and earned assets (symbolic).","career":"Salaried and stable professions, accounting, management, ownership of tangible assets. Regular, controllable income.","mainVsSub":"Revealed: a grounded, visible relationship with money and duty. Hidden: quiet financial security held internally."},"七杀":{"en":"Seven Killings","pinyin":"qī shā","howGenerated":"The element that controls the Day Master (authority), same polarity. Raw, unbuffered pressure, hence the fierce name.","essence":"Power, pressure, and the force that pushes and disciplines you: challenge, authority you must contend with, drive under stress.","favorable":"When tamed (well supported, mediated), decisiveness, courage, executive command, resilience under fire. Forges leaders.","unfavorable":"Untamed: overwhelm, aggression, ruthlessness, chronic pressure, enemies; in a weak chart it attacks the self.","sixRelatives":"For a woman, a lover or informal partner; for a man, sons or rivals in power (symbolic).","career":"Military, law enforcement, surgery, competitive business, crisis management, high-stakes leadership.","mainVsSub":"Revealed: authority and intensity are overt. Hidden: inner pressure or latent ambition that activates under stress."},"正官":{"en":"Direct Officer","pinyin":"zhèng guān","howGenerated":"The element that controls the Day Master (authority), opposite polarity. Lawful, negotiated pressure, the civilized officer.","essence":"Legitimate authority, order, responsibility, and reputation: rules honored, duties met, status earned properly.","favorable":"Integrity, self-discipline, dependability, respect for rules, the dignity of earned status and a trusted name.","unfavorable":"In excess or a weak chart: rigidity, over-caution, people-pleasing, being boxed in by rules and expectation.","sixRelatives":"For a woman, her husband (the committed partner); for a man, daughters or legitimate superiors (symbolic).","career":"Government, civil service, management, law, administration, corporate hierarchy; status through proper channels.","mainVsSub":"Revealed: visibly principled and dutiful. Hidden: an internal sense of duty that shows as conscientiousness."},"偏印":{"en":"Indirect Resource","pinyin":"piān yìn","howGenerated":"The element that generates the Day Master (resource), same polarity. Support on unusual, idiosyncratic terms.","essence":"Unconventional knowledge, intuition, and non-mainstream support: insight, research, the mind that learns its own strange way.","favorable":"Sharp intuition, originality, aptitude for specialized or esoteric knowledge, self-sufficiency, thinking outside the frame.","unfavorable":"Aloofness, overthinking, isolation, suspicion; classically the Owl that snatches food, undercutting steady output.","sixRelatives":"A step-mother or unconventional mother-figure, or a mentor who supports on their own terms (symbolic).","career":"Research, specialized medicine, metaphysics, philosophy, niche technical fields; success through unusual expertise.","mainVsSub":"Revealed: a visibly unconventional, deep-thinking presence. Hidden: latent intuition that surfaces in the right context."},"正印":{"en":"Direct Resource","pinyin":"zhèng yìn","howGenerated":"The element that generates the Day Master (resource), opposite polarity. Full, warm, unconditional nurture; 印 means 'seal'.","essence":"Nurture, learning, protection, and legitimacy: the education, care, and support that grow and validate the self.","favorable":"Kindness, wisdom, strong learning ability, moral grounding, steady support from family, mentors, and institutions.","unfavorable":"In excess: dependency, passivity, being coddled, knowledge that never converts to action; smothered initiative.","sixRelatives":"The mother for both sexes, and mentors, teachers, and protective benefactors (symbolic).","career":"Education, academia, healthcare and caregiving, public service, mentoring; success through learning and institutional backing.","mainVsSub":"Revealed: a visibly nurturing, learned presence. Hidden: quiet inner reserves of support and knowledge."}}};</script>
 <script src="/js/bazi.js" defer></script>
+<!--om-footer:start-->
+<!-- Zodi Animal universal footer. Single source: components/footer.html,
+     baked into every page by build/apply-footer.mjs, styled by
+     site/css/footer.css (.zf-foot). All classes are zf- namespaced to avoid
+     collisions with page CSS. Edit this file, rebuild, all pages update. -->
+<footer class="zf-foot" role="contentinfo" aria-label="Site footer">
+  <div class="zf-wrap">
+
+    <div class="zf-rule zf-rule--top"><i>&#9790;</i></div>
+
+    <!-- brand (40%) + daily reading (60%) -->
+    <section class="zf-feature">
+      <div class="zf-brand">
+        <p class="zf-eyebrow">The Primal Zodiac, 144 animals</p>
+        <p class="zf-lockup">Zodi <em>Animal</em></p>
+        <p class="zf-manifesto">One hundred and forty-four animals, born where the Western Sun signs cross the Chinese zodiac years. A slow tradition of meaning, kept under the moon.</p>
+        <a class="zf-cta" href="/index.html#read">Find your Zodi Animal <span class="zf-star">&#10022;</span></a>
+      </div>
+
+      <div class="zf-news">
+        <div class="zf-sky" aria-hidden="true">
+          <span class="zf-tw zf-tw1"></span><span class="zf-tw zf-tw2"></span><span class="zf-tw zf-tw3"></span><span class="zf-tw zf-tw4"></span>
+          <span class="zf-shoot zf-shoot-a"></span><span class="zf-shoot zf-shoot-b"></span><span class="zf-shoot zf-shoot-c"></span>
+        </div>
+        <div class="zf-copy">
+          <p class="zf-eyebrow">The Daily Reading</p>
+          <h2 class="zf-news-h">Your reading, at dawn.</h2>
+          <p class="zf-sub">One short passage for your Zodi Animal each morning. The moon's phase, what it favors, and a line meant for you. Free, and it takes ten seconds to join.</p>
+        </div>
+        <form class="zf-form" id="zf-news-form" novalidate>
+          <label class="zf-sr" for="zf-email">Email address</label>
+          <div class="zf-row">
+            <input id="zf-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-describedby="zf-rz">
+            <button type="submit" class="zf-subbtn">Read with me daily</button>
+          </div>
+          <p class="zf-reassure" id="zf-rz">No noise. Unsubscribe anytime.</p>
+        </form>
+      </div>
+    </section>
+
+    <div class="zf-rule"><i>&#10022;</i></div>
+
+    <!-- link matrix -->
+    <nav class="zf-matrix" aria-label="Footer navigation">
+      <div class="zf-col"><h3>Discover</h3><ul>
+        <li><a href="/index.html">Find your animal</a></li>
+        <li><a href="/menagerie.html">All 144 animals</a></li>
+        <li><a href="/zodiac/">The 144 crossings</a></li>
+        <li><a href="/zodiac/grid/">The 144 grid</a></li>
+        <li><a href="/year.html">Year finder</a></li>
+        <li><a href="/daily.html">Today's reading</a></li>
+      </ul></div>
+      <div class="zf-col"><h3>The two wheels</h3><ul>
+        <li><a href="/western-zodiac/">The Western wheel</a></li>
+        <li><a href="/horoscopes/">All horoscopes</a></li>
+        <li><a href="/chinese-zodiac/">The Eastern wheel</a></li>
+        <li><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a></li>
+        <li><a href="/zodiac/what-is-my-primal-zodiac-animal/">How the crossing works</a></li>
+        <li><a href="/best-days.html">Best days</a></li>
+      </ul></div>
+      <div class="zf-col"><h3>Practice &amp; lore</h3><ul>
+        <li><a href="/feng-shui/">Feng shui</a></li>
+        <li><a href="/feng-shui/bagua/">The bagua</a></li>
+        <li><a href="/feng-shui/kua-number/">Your Kua number</a></li>
+        <li><a href="/stones.html">Keeper stones</a></li>
+        <li><a href="/proverbs/">The Proverb Pond</a></li>
+        <li><a href="/traditions/">Traditions</a></li>
+        <li><a href="/habitat/">The Habitat</a></li>
+      </ul></div>
+      <div class="zf-col"><h3>Bonds &amp; Moon</h3><ul>
+        <li><a href="/match.html">Test a match</a></li>
+        <li><a href="/vs.html">Challenge a friend</a></li>
+        <li><a href="/circle.html">Circle of three</a></li>
+        <li><a href="/moon.html">The Moon tonight</a></li>
+        <li><a href="/moon/phases/">The eight phases</a></li>
+        <li><a href="/awakening.html">The Awakening</a></li>
+      </ul></div>
+      <div class="zf-col"><h3>The system</h3><ul>
+        <li><a href="/learn.html">How it works</a></li>
+        <li><a href="/cosmology/">Cosmology</a></li>
+        <li><a href="/cosmology/four-pillars/">The Four Pillars</a></li>
+        <li><a href="/elements/fire/">The five elements</a></li>
+        <li><a href="/directions/">Directions</a></li>
+        <li><a href="/account.html">Your account</a></li>
+      </ul></div>
+    </nav>
+
+    <div class="zf-rule"><i>&#10022;</i></div>
+
+    <!-- almanac: 12 signs, 12 years -->
+    <section class="zf-almanac" aria-labelledby="zf-almh">
+      <p class="zf-cap"><span class="zf-ttl" id="zf-almh">The Almanac of Signs and Years</span><span class="zf-note">12 Sun signs and 12 zodiac years make 144 Zodi Animals</span></p>
+      <div class="zf-alm-row">
+        <nav class="zf-alm-grid" aria-label="Western zodiac signs">
+          <a href="/western-zodiac/aries/"><span class="zf-gly">&#9800;</span><span class="zf-nm">Aries</span></a>
+          <a href="/western-zodiac/taurus/"><span class="zf-gly">&#9801;</span><span class="zf-nm">Taurus</span></a>
+          <a href="/western-zodiac/gemini/"><span class="zf-gly">&#9802;</span><span class="zf-nm">Gemini</span></a>
+          <a href="/western-zodiac/cancer/"><span class="zf-gly">&#9803;</span><span class="zf-nm">Cancer</span></a>
+          <a href="/western-zodiac/leo/"><span class="zf-gly">&#9804;</span><span class="zf-nm">Leo</span></a>
+          <a href="/western-zodiac/virgo/"><span class="zf-gly">&#9805;</span><span class="zf-nm">Virgo</span></a>
+          <a href="/western-zodiac/libra/"><span class="zf-gly">&#9806;</span><span class="zf-nm">Libra</span></a>
+          <a href="/western-zodiac/scorpio/"><span class="zf-gly">&#9807;</span><span class="zf-nm">Scorpio</span></a>
+          <a href="/western-zodiac/sagittarius/"><span class="zf-gly">&#9808;</span><span class="zf-nm">Sagittarius</span></a>
+          <a href="/western-zodiac/capricorn/"><span class="zf-gly">&#9809;</span><span class="zf-nm">Capricorn</span></a>
+          <a href="/western-zodiac/aquarius/"><span class="zf-gly">&#9810;</span><span class="zf-nm">Aquarius</span></a>
+          <a href="/western-zodiac/pisces/"><span class="zf-gly">&#9811;</span><span class="zf-nm">Pisces</span></a>
+        </nav>
+      </div>
+      <div class="zf-alm-row">
+        <nav class="zf-alm-grid" aria-label="Chinese zodiac years">
+          <a href="/chinese-zodiac/rat/"><span class="zf-gly">&#40736;</span><span class="zf-nm">Rat</span></a>
+          <a href="/chinese-zodiac/ox/"><span class="zf-gly">&#29275;</span><span class="zf-nm">Ox</span></a>
+          <a href="/chinese-zodiac/tiger/"><span class="zf-gly">&#34382;</span><span class="zf-nm">Tiger</span></a>
+          <a href="/chinese-zodiac/rabbit/"><span class="zf-gly">&#20820;</span><span class="zf-nm">Rabbit</span></a>
+          <a href="/chinese-zodiac/dragon/"><span class="zf-gly">&#40857;</span><span class="zf-nm">Dragon</span></a>
+          <a href="/chinese-zodiac/snake/"><span class="zf-gly">&#34503;</span><span class="zf-nm">Snake</span></a>
+          <a href="/chinese-zodiac/horse/"><span class="zf-gly">&#39532;</span><span class="zf-nm">Horse</span></a>
+          <a href="/chinese-zodiac/goat/"><span class="zf-gly">&#32650;</span><span class="zf-nm">Goat</span></a>
+          <a href="/chinese-zodiac/monkey/"><span class="zf-gly">&#29492;</span><span class="zf-nm">Monkey</span></a>
+          <a href="/chinese-zodiac/rooster/"><span class="zf-gly">&#40481;</span><span class="zf-nm">Rooster</span></a>
+          <a href="/chinese-zodiac/dog/"><span class="zf-gly">&#29399;</span><span class="zf-nm">Dog</span></a>
+          <a href="/chinese-zodiac/pig/"><span class="zf-gly">&#29482;</span><span class="zf-nm">Pig</span></a>
+        </nav>
+      </div>
+    </section>
+
+    <div class="zf-rule"><i>&#9790;</i></div>
+
+    <!-- proverb: pinyin on top of each character, tap the speaker to hear it in Mandarin -->
+    <section class="zf-proverb" aria-label="A proverb from the Pond">
+      <p class="zf-hz" lang="zh-Hant">
+        <span class="zf-cal" id="zf-pv-cal"><ruby>守<rt>shǒu</rt></ruby><ruby>得<rt>dé</rt></ruby><ruby>雲<rt>yún</rt></ruby><ruby>開<rt>kāi</rt></ruby><ruby>見<rt>jiàn</rt></ruby><ruby>月<rt>yuè</rt></ruby><ruby>明<rt>míng</rt></ruby></span>
+        <button class="zf-say" id="zf-pv-say" type="button" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="守得雲開見月明"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+      </p>
+      <p class="zf-en" id="zf-pv-en">Hold on until the clouds part, and the bright moon appears.</p>
+      <a class="zf-src" href="/proverbs/">From the Proverb Pond</a>
+    </section>
+
+    <div class="zf-colo">
+      <span class="zf-lead">&copy; <span id="zf-year">2026</span> Zodi Animal. Made under the moon.</span>
+      <span class="zf-disc">A tradition of meaning for reflection. Not medical, psychological, financial, or legal advice.</span>
+    </div>
+
+  </div>
+</footer>
+<script>
+/* Zodi footer: rotating proverb, tap-to-hear pronunciation, on-device newsletter save. */
+(function(){
+  try{ var y=document.getElementById('zf-year'); if(y) y.textContent=new Date().getFullYear(); }catch(e){}
+
+  var P=[
+    {c:[["守","shǒu"],["得","dé"],["雲","yún"],["開","kāi"],["見","jiàn"],["月","yuè"],["明","míng"]],en:"Hold on until the clouds part, and the bright moon appears."},
+    {c:[["上","shàng"],["善","shàn"],["若","ruò"],["水","shuǐ"]],en:"The highest good is like water."},
+    {c:[["瓜","guā"],["熟","shú"],["蒂","dì"],["落","luò"]],en:"When the melon ripens, the stalk falls of itself."},
+    {c:[["順","shùn"],["其","qí"],["自","zì"],["然","rán"]],en:"Let it follow its own nature."},
+    {c:[["塞","sài"],["翁","wēng"],["失","shī"],["馬","mǎ"]],en:"The old man lost his horse. Who is to say it was not good fortune."},
+    {c:[["物","wù"],["極","jí"],["必","bì"],["反","fǎn"]],en:"When a thing reaches its extreme, it turns back the other way."},
+    {c:[["水","shuǐ"],["到","dào"],["渠","qú"],["成","chéng"]],en:"When the water arrives, the channel forms itself."}
+  ];
+  var cur=P[Math.floor(Math.random()*P.length)];
+  var plain=cur.c.map(function(x){return x[0];}).join("");
+  try{
+    document.getElementById('zf-pv-cal').innerHTML=cur.c.map(function(x){return '<ruby>'+x[0]+'<rt>'+x[1]+'</rt></ruby>';}).join("");
+    document.getElementById('zf-pv-en').textContent=cur.en;
+    var sb0=document.getElementById('zf-pv-say'); if(sb0) sb0.setAttribute('data-say',plain);
+  }catch(e){}
+
+  /* the ranked Mandarin voice (Tingting / Meijia / Google), mirrored from
+     proverbs-share.js so the footer sounds the same on pages that don't load it */
+  function zfSpeak(text,btn){
+    if(window.zaSpeak){ window.zaSpeak(text,btn); return; }
+    if(!window.speechSynthesis || !text) return;
+    try{
+      var vs=speechSynthesis.getVoices()||[],best=null,bs=-1;
+      for(var i=0;i<vs.length;i++){
+        var v=vs[i],nm=(v.name||"").toLowerCase(),lg=(v.lang||"").toLowerCase();
+        if(!(/^zh\b|zh[-_]/.test(lg)||/chinese|中文|普通话|國語|mandarin/i.test(v.name||""))) continue;
+        var sc=0;
+        if(/tingting|ting-ting|meijia|mei-jia|sinji|li-mu|yu-shu|han-?yu/.test(nm)) sc+=100;
+        if(/google/.test(nm)) sc+=60;
+        if(/普通话|mandarin|zh-cn|zh_cn|cmn/.test(nm+lg)) sc+=25;
+        if(v.localService===false) sc+=12;
+        if(/female|woman/.test(nm)) sc+=4;
+        if(sc>bs){ bs=sc; best=v; }
+      }
+      var u=new SpeechSynthesisUtterance(text); u.lang="zh-CN"; u.rate=0.78; if(best) u.voice=best;
+      speechSynthesis.cancel(); speechSynthesis.speak(u);
+      if(btn){ btn.classList.add('is-saying'); u.onend=u.onerror=function(){ btn.classList.remove('is-saying'); }; }
+    }catch(e){}
+  }
+  if(window.speechSynthesis){ try{ speechSynthesis.getVoices(); }catch(e){} }
+
+  var say=document.getElementById('zf-pv-say');
+  if(say) say.addEventListener('click',function(){ zfSpeak(say.getAttribute('data-say')||plain, say); });
+
+  var form=document.getElementById('zf-news-form');
+  if(form) form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=(document.getElementById('zf-email')||{}).value||'';
+    var note=document.getElementById('zf-rz');
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ if(note) note.textContent="Enter an email so we can find you."; return; }
+    try{ localStorage.setItem('zodi_daily_email', email); }catch(_e){}
+    if(note) note.textContent="Saved on this device. Daily readings open soon.";
+    try{ document.getElementById('zf-email').value=''; }catch(_e){}
+  });
+})();
+</script>
+<!--om-footer:end-->
 </body>
 </html>
