@@ -1,0 +1,1177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>天机 Tian Ji — The Strategist | Zi Wei Dou Shu | ZodiAnimal</title>
+  <meta name="description" content="天机 Tian Ji — The Strategist. The celestial mechanism: brilliant adaptive intelligence, restless analysis, the mind that sees the game before the players know they're playing.">
+  <link rel="canonical" href="https://www.zodianimal.com/elements/zi-wei/stars/tian-ji/">
+  <meta property="og:title" content="天机 Tian Ji — The Strategist | Zi Wei Dou Shu">
+  <meta property="og:description" content="The celestial mechanism: brilliant adaptive intelligence, restless analysis, the mind that sees the game before the players know they're playing.">
+  <meta property="og:url" content="https://www.zodianimal.com/elements/zi-wei/stars/tian-ji/">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/nav-core.css">
+  <link rel="stylesheet" href="/css/nav-mega.css">
+  <link rel="stylesheet" href="/css/nav-drawer.css">
+  <link rel="stylesheet" href="/css/nav-sub.css">
+  <link rel="stylesheet" href="/css/bridges.css">
+  <link rel="stylesheet" href="/css/foot.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap">
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --ink: oklch(0.16 0.03 275);
+      --ink-2: oklch(0.20 0.035 275);
+      --panel: oklch(0.25 0.04 273);
+      --panel-2: oklch(0.30 0.045 272);
+      --line: oklch(0.80 0.06 85 / 0.16);
+      --moon: oklch(0.96 0.02 90);
+      --ivory: oklch(0.92 0.02 88);
+      --body-text: oklch(0.84 0.02 280);
+      --muted: oklch(0.70 0.02 280);
+      --faint: oklch(0.55 0.02 280);
+      --brass: oklch(0.78 0.11 85);
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "Geist", "Inter", sans-serif;
+      --mono: "Space Mono", monospace;
+      --cc: oklch(0.65 0.18 185); /* teal-green — Tian Ji's color */
+      --maxw: 1120px;
+    }
+
+    /* ── RESET & BASE ───────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ink);
+      color: var(--body-text);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--brass); font-weight: 600; text-decoration: none; }
+    a:hover { color: var(--moon); }
+    a:focus-visible {
+      outline: 2px solid var(--brass);
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+    img { display: block; max-width: 100%; }
+
+    /* ── LAYOUT ─────────────────────────────────────────── */
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 5rem 0; }
+    .section + .section { border-top: 1px solid var(--line); }
+
+    /* ── BREADCRUMB ─────────────────────────────────────── */
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--faint);
+      letter-spacing: 0.04em;
+      padding: 1.25rem 0 0;
+    }
+    .breadcrumb a { color: var(--muted); font-weight: 500; }
+    .breadcrumb a:hover { color: var(--cc); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .breadcrumb-current { color: var(--cc); }
+
+    /* ── EYEBROW ────────────────────────────────────────── */
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cc);
+      margin-bottom: 1rem;
+    }
+
+    /* ── HERO ───────────────────────────────────────────── */
+    .hero {
+      padding: 4rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 0%, oklch(0.65 0.18 185 / 0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 720px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-hanzi-block { display: none; }
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+      font-weight: 560;
+      line-height: 1.05;
+      color: var(--moon);
+      margin-bottom: 0.5rem;
+    }
+    .hero-chinese-line {
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      color: var(--cc);
+      margin-bottom: 1.75rem;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.28rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .badge--family {
+      background: oklch(0.65 0.18 185 / 0.15);
+      color: oklch(0.65 0.18 185);
+      border: 1px solid oklch(0.65 0.18 185 / 0.3);
+    }
+    .badge--element {
+      background: oklch(0.55 0.20 145 / 0.15);
+      color: oklch(0.72 0.18 145);
+      border: 1px solid oklch(0.55 0.20 145 / 0.25);
+    }
+    .badge--polarity {
+      background: oklch(0.55 0.18 280 / 0.15);
+      color: oklch(0.72 0.12 280);
+      border: 1px solid oklch(0.55 0.18 280 / 0.25);
+    }
+    .badge--order {
+      background: var(--panel);
+      color: var(--muted);
+      border: 1px solid var(--line);
+    }
+    .hero-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 2rem;
+    }
+    .kw-pill {
+      padding: 0.22rem 0.65rem;
+      background: var(--ink-2);
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      font-size: 0.73rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .hero-pull {
+      border-left: 3px solid var(--cc);
+      padding: 1rem 1.5rem;
+      background: oklch(0.65 0.18 185 / 0.07);
+      border-radius: 0 8px 8px 0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--ivory);
+      max-width: 620px;
+    }
+
+    /* Large hanzi display */
+    .hero-hanzi-block {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-hanzi-block::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle, oklch(0.65 0.18 185 / 0.18) 0%, transparent 70%);
+    }
+    .hero-hanzi-char {
+      font-family: var(--serif);
+      font-size: 7rem;
+      font-weight: 560;
+      color: var(--cc);
+      text-shadow:
+        0 0 40px oklch(0.65 0.18 185 / 0.6),
+        0 0 80px oklch(0.65 0.18 185 / 0.3);
+      line-height: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── SECTION TITLES ─────────────────────────────────── */
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.4rem;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      max-width: 640px;
+    }
+
+    /* ── TWO-COL ESSENCE ────────────────────────────────── */
+    .essence-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 700px) {
+      .essence-grid { grid-template-columns: 1fr; }
+    }
+    .essence-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+    .essence-panel-title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.75rem;
+    }
+    .essence-panel p {
+      font-size: 0.95rem;
+      color: var(--body-text);
+      line-height: 1.7;
+      margin-bottom: 0.85rem;
+    }
+    .essence-panel p:last-child { margin-bottom: 0; }
+    .essence-fact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .essence-fact-list li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: baseline;
+      font-size: 0.9rem;
+    }
+    .fact-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--cc);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      min-width: 90px;
+      flex-shrink: 0;
+    }
+    .fact-value {
+      color: var(--body-text);
+    }
+
+    /* ── COMMAND PALACE ─────────────────────────────────── */
+    .command-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .command-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cc), oklch(0.65 0.18 185 / 0.3));
+    }
+    .command-card::after {
+      content: "天机";
+      position: absolute;
+      bottom: -1rem;
+      right: 1.5rem;
+      font-family: var(--serif);
+      font-size: 8rem;
+      font-weight: 560;
+      color: var(--cc);
+      opacity: 0.04;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .command-body {
+      max-width: 760px;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--body-text);
+    }
+    .command-body p { margin-bottom: 1.1rem; }
+    .command-body p:last-child { margin-bottom: 0; }
+    .command-highlight {
+      display: inline-block;
+      background: oklch(0.65 0.18 185 / 0.12);
+      color: var(--cc);
+      padding: 0.1rem 0.45rem;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+
+    /* ── PALACES TABLE ──────────────────────────────────── */
+    .palaces-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    @media (max-width: 640px) {
+      .palaces-grid { grid-template-columns: 1fr; }
+    }
+    .palace-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: border-color 0.18s;
+    }
+    .palace-card:hover {
+      border-color: oklch(0.65 0.18 185 / 0.5);
+    }
+    .palace-number {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--cc);
+      letter-spacing: 0.06em;
+      min-width: 1.8rem;
+      padding-top: 0.1rem;
+      flex-shrink: 0;
+    }
+    .palace-info {}
+    .palace-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.3rem;
+    }
+    .palace-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── STRENGTH LEVELS ────────────────────────────────── */
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 820px) {
+      .strength-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .strength-grid { grid-template-columns: 1fr; }
+    }
+    .strength-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+    .strength-pips {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 1rem;
+    }
+    .pip {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .pip--on { background: var(--cc); }
+    .pip--off { background: var(--ink-2); border: 1px solid var(--line); }
+    .strength-level {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.15rem;
+    }
+    .strength-chinese {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--cc);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.65rem;
+    }
+    .strength-positions {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--brass);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.65rem;
+    }
+    .strength-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── RELATIONSHIPS ──────────────────────────────────── */
+    .rel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    @media (max-width: 680px) {
+      .rel-grid { grid-template-columns: 1fr; }
+    }
+    .rel-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.75rem;
+    }
+    .rel-tag {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cc);
+      margin-bottom: 0.5rem;
+    }
+    .rel-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.6rem;
+    }
+    .rel-body {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .rel-si-hua {
+      grid-column: 1 / -1;
+    }
+    .sihua-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 0.75rem;
+    }
+    .sihua-item {
+      display: flex;
+      gap: 0.75rem;
+      align-items: baseline;
+      font-size: 0.88rem;
+    }
+    .sihua-year {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--cc);
+      min-width: 70px;
+      flex-shrink: 0;
+    }
+    .sihua-name {
+      font-weight: 600;
+      color: var(--ivory);
+      margin-right: 0.4rem;
+    }
+    .sihua-meaning {
+      color: var(--muted);
+    }
+
+    /* ── WESTERN MIRRORS ────────────────────────────────── */
+    .mirrors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .mirror-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .mirror-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cc), transparent);
+    }
+    .mirror-system {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.4rem;
+    }
+    .mirror-name {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.6rem;
+    }
+    .mirror-body {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── PERSONALITY + SHAREABLE ────────────────────────── */
+    .personality-layout {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 820px) {
+      .personality-layout { grid-template-columns: 1fr; }
+    }
+    .personality-body {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--body-text);
+    }
+    .personality-body p { margin-bottom: 1rem; }
+    .personality-body p:last-child { margin-bottom: 0; }
+    .shareable-card {
+      background: var(--panel);
+      border: 1px solid oklch(0.65 0.18 185 / 0.4);
+      border-radius: 20px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .shareable-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 120% 120% at 50% -20%, oklch(0.65 0.18 185 / 0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .shareable-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cc);
+      margin-bottom: 1rem;
+    }
+    .shareable-hanzi {
+      font-family: var(--serif);
+      font-size: 4rem;
+      font-weight: 560;
+      color: var(--cc);
+      text-shadow: 0 0 30px oklch(0.65 0.18 185 / 0.5);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .shareable-name {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.2rem;
+    }
+    .shareable-pinyin {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+    .shareable-quote {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--ivory);
+      line-height: 1.6;
+      border-left: 3px solid var(--cc);
+      padding-left: 1rem;
+    }
+
+    /* ── BRIDGE CARDS ───────────────────────────────────── */
+    .bridges-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 680px) {
+      .bridges-grid { grid-template-columns: 1fr; }
+    }
+    .bridge-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.5rem;
+      transition: border-color 0.18s, transform 0.18s;
+    }
+    .bridge-card:hover {
+      border-color: var(--cc);
+      transform: translateY(-2px);
+    }
+    .bridge-dir {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.5rem;
+    }
+    .bridge-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.35rem;
+    }
+    .bridge-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+    .bridge-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--cc);
+      transition: gap 0.18s, color 0.18s;
+    }
+    .bridge-link:hover {
+      color: var(--moon);
+      gap: 0.55rem;
+    }
+    .bridge-link::after { content: "→"; }
+  </style>
+</head>
+<body class="pn-has-bar">
+
+<!--pn-static:start--><!--pn-static:end-->
+
+<a id="pn-main" tabindex="-1"></a>
+
+<main>
+
+  <!-- ── BREADCRUMB ─────────────────────────────────────── -->
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/elements/">Elements</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/elements/zi-wei/">Zi Wei Dou Shu</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/elements/zi-wei/stars/">The 14 Stars</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">The Strategist</span>
+    </nav>
+  </div>
+
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-layout">
+        <div>
+          <p class="eyebrow">Northern Dipper · Star 02 of 14</p>
+          <h1>The Strategist</h1>
+          <p class="hero-chinese-line">天机 · Tiān Jī · Celestial Mechanism</p>
+
+          <div class="hero-badges">
+            <span class="badge badge--family">Northern Dipper 紫微星系</span>
+            <span class="badge badge--element">Wood Element</span>
+            <span class="badge badge--polarity">Yin</span>
+            <span class="badge badge--order">Star 02</span>
+          </div>
+
+          <div class="hero-keywords">
+            <span class="kw-pill">Intelligence</span>
+            <span class="kw-pill">Adaptability</span>
+            <span class="kw-pill">Planning</span>
+            <span class="kw-pill">Restlessness</span>
+            <span class="kw-pill">Analytical Precision</span>
+          </div>
+
+          <blockquote class="hero-pull">
+            The gear that turns the wheel of heaven — the intelligence that holds the system together.
+          </blockquote>
+        </div>
+
+        <div class="hero-hanzi-block" aria-hidden="true">
+          <span class="hero-hanzi-char">機</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ESSENCE ───────────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Core Identity</p>
+      <h2 class="section-title">Essence of Tiān Jī</h2>
+      <p class="section-sub">The celestial mechanism — heaven's hidden intelligence in motion.</p>
+
+      <div class="essence-grid">
+        <div class="essence-panel">
+          <h3 class="essence-panel-title">The Star at a Glance</h3>
+          <ul class="essence-fact-list">
+            <li>
+              <span class="fact-label">Chinese</span>
+              <span class="fact-value">天机 (Tiān Jī)</span>
+            </li>
+            <li>
+              <span class="fact-label">Literal</span>
+              <span class="fact-value">Celestial Mechanism / Heaven's Trigger</span>
+            </li>
+            <li>
+              <span class="fact-label">Coined Name</span>
+              <span class="fact-value">The Strategist</span>
+            </li>
+            <li>
+              <span class="fact-label">Family</span>
+              <span class="fact-value">Northern Dipper (紫微星系)</span>
+            </li>
+            <li>
+              <span class="fact-label">Role</span>
+              <span class="fact-value">Emperor's intelligence officer</span>
+            </li>
+            <li>
+              <span class="fact-label">Element</span>
+              <span class="fact-value">Wood / Yin</span>
+            </li>
+            <li>
+              <span class="fact-label">Temple</span>
+              <span class="fact-value">Mao (卯), You (酉)</span>
+            </li>
+            <li>
+              <span class="fact-label">Color</span>
+              <span class="fact-value">Teal-green — the color of a mind in motion</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="essence-panel">
+          <h3 class="essence-panel-title">Mythological Origin</h3>
+          <p>Tian Ji is associated with the second star of the Big Dipper — the star that appears to shift slightly relative to the others. This subtle movement gave rise to the star's defining quality: perpetual adaptation, the intelligence that never settles into a fixed position.</p>
+          <p>In Taoist cosmology, <em>tiān jī</em> (天机) refers to the hidden workings of heaven — the principles behind phenomena, the structure beneath appearances. This is the star of the cosmic mechanism: not the emperor who commands, but the intelligence that reveals why commands work.</p>
+          <p>In the imperial court metaphor, Tian Ji is the Emperor's chief strategist and intelligence officer: brilliant, constantly processing, perpetually adapting. The system functions because this mind never stops.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── IN THE COMMAND PALACE ─────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Life Palace Reading</p>
+      <h2 class="section-title">In the Command Palace</h2>
+      <p class="section-sub">When 天机 governs your Life Palace, this is the intelligence you were born into.</p>
+
+      <div class="command-card">
+        <div class="command-body">
+          <p>Tian Ji in the Life Palace creates people of <span class="command-highlight">extraordinary intelligence and adaptability</span>. They are natural analysts, strategic thinkers, perpetual learners. Their strength is seeing patterns, connections, and possibilities others miss — the chess board before the game begins, the system beneath the surface, the angle everyone else walks past.</p>
+
+          <p>These are minds that categorize automatically, that find the structure in apparent chaos, that need complexity the way other people need warmth. Give them a simple problem and they will find the deeper one inside it. Give them an impossible situation and they will locate the single point of leverage everyone else missed.</p>
+
+          <p>Their challenge is the restlessness that comes with a mind that never stops. The Strategist can become an overthinker — always planning the next move before finishing the current one, always questioning decisions they have already made, always rewriting the analysis because new information arrived. The plan becomes its own obstacle. The strategy, so thorough it never launches.</p>
+
+          <p>The paradox of The Strategist: they can plan every contingency except the one that requires stopping. Their deepest growth is not in acquiring more intelligence — it is in learning to <span class="command-highlight">trust the move they have already calculated</span>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ACROSS THE 12 PALACES ──────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Palace Influence</p>
+      <h2 class="section-title">Across the 12 Palaces</h2>
+      <p class="section-sub">How Tian Ji's intelligence and restlessness manifest in each area of life.</p>
+
+      <div class="palaces-grid">
+
+        <div class="palace-card">
+          <span class="palace-number">01</span>
+          <div class="palace-info">
+            <div class="palace-name">Life Palace 命宫</div>
+            <div class="palace-desc">Brilliant adaptive intelligence; restless nature; overthinking as shadow; strength in complexity — thrives where others see only noise.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">02</span>
+          <div class="palace-info">
+            <div class="palace-name">Siblings Palace 兄弟宫</div>
+            <div class="palace-desc">Sibling(s) of intelligence; competitive dynamics; peer relationships built on intellectual respect rather than warmth.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">03</span>
+          <div class="palace-info">
+            <div class="palace-name">Spouse Palace 夫妻宫</div>
+            <div class="palace-desc">Partner who is clever, adaptable, potentially restless; may have multiple relationships or marriages; late marriage favored; intellectual chemistry is non-negotiable.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">04</span>
+          <div class="palace-info">
+            <div class="palace-name">Children Palace 子女宫</div>
+            <div class="palace-desc">Clever children; creative legacy built on intelligence; disciples and students who are analytical; teaching others becomes part of the legacy.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">05</span>
+          <div class="palace-info">
+            <div class="palace-name">Wealth Palace 财帛宫</div>
+            <div class="palace-desc">Wealth through intellectual services, consulting, strategy, planning; income fluctuates with the mind's movements; rarely just one income stream.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">06</span>
+          <div class="palace-info">
+            <div class="palace-name">Health Palace 疾厄宫</div>
+            <div class="palace-desc">Nervous system sensitivity; mental overload is the key vulnerability; sleep and anxiety to watch; joints and mobility worth tending.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">07</span>
+          <div class="palace-info">
+            <div class="palace-name">Travel Palace 迁移宫</div>
+            <div class="palace-desc">Thrives with movement and change; abroad is stimulating; restlessness makes them natural travelers; success through adaptation to new environments.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">08</span>
+          <div class="palace-info">
+            <div class="palace-name">Network Palace 交友宫</div>
+            <div class="palace-desc">Associates who are intellectually stimulating; social circle evolves as they evolve; values cleverness in allies above almost any other quality.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">09</span>
+          <div class="palace-info">
+            <div class="palace-name">Career Palace 官禄宫</div>
+            <div class="palace-desc">Strategy, planning, intelligence, advisory roles; consulting, analysis, research, technology; career involves constant change and perpetual learning.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">10</span>
+          <div class="palace-info">
+            <div class="palace-name">Property Palace 田宅宫</div>
+            <div class="palace-desc">Multiple homes or frequent moves; home is a thinking space more than a sanctuary; property accumulation may not be a priority.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">11</span>
+          <div class="palace-info">
+            <div class="palace-name">Soul Palace 福德宫</div>
+            <div class="palace-desc">Inner life of constant analysis; true contentment through learning; spiritual seeking through philosophy and study rather than devotion or stillness.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">12</span>
+          <div class="palace-info">
+            <div class="palace-name">Parents Palace 父母宫</div>
+            <div class="palace-desc">Clever parents; relationship with authority involves intellectual challenge; may feel misunderstood by conventional authority — the young mind that outpaces the room.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STRENGTH LEVELS ────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Brightness Levels</p>
+      <h2 class="section-title">Strength &amp; Position</h2>
+      <p class="section-sub">Where Tian Ji sits in the chart determines how freely this intelligence can operate.</p>
+
+      <div class="strength-grid">
+
+        <div class="strength-card">
+          <div class="strength-pips">
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+          </div>
+          <div class="strength-level">Temple 庙</div>
+          <div class="strength-chinese">Miào</div>
+          <div class="strength-positions">Mao 卯 · You 酉</div>
+          <div class="strength-desc">The Strategist fully engaged: razor-sharp, adaptive, brilliantly strategic. Intelligence flows without friction. The mind that sees every angle and acts on the right one.</div>
+        </div>
+
+        <div class="strength-card">
+          <div class="strength-pips">
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--off"></span>
+          </div>
+          <div class="strength-level">Thriving 旺</div>
+          <div class="strength-chinese">Wàng</div>
+          <div class="strength-positions">Chen 辰 · Xu 戌</div>
+          <div class="strength-desc">Deep analytical wisdom — the strategist becomes the scholar-philosopher. Intelligence broadens into understanding. Less tactical, more profound.</div>
+        </div>
+
+        <div class="strength-card">
+          <div class="strength-pips">
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--off"></span>
+            <span class="pip pip--off"></span>
+          </div>
+          <div class="strength-level">Favorable 利</div>
+          <div class="strength-chinese">Lì</div>
+          <div class="strength-positions">Various positions</div>
+          <div class="strength-desc">Competent intelligence, reliable analytical instinct. The strategic mind functions well — not at its most brilliant, but consistently useful and clear-eyed.</div>
+        </div>
+
+        <div class="strength-card">
+          <div class="strength-pips">
+            <span class="pip pip--on"></span>
+            <span class="pip pip--off"></span>
+            <span class="pip pip--off"></span>
+            <span class="pip pip--off"></span>
+          </div>
+          <div class="strength-level">Fallen 陷</div>
+          <div class="strength-chinese">Xiàn</div>
+          <div class="strength-positions">Positions of simplicity</div>
+          <div class="strength-desc">When isolated or in positions that require simplicity — overthinking becomes paralysis, restlessness becomes self-sabotage. The mechanism turns against itself.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── KEY RELATIONSHIPS ──────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Star Dynamics</p>
+      <h2 class="section-title">Key Relationships</h2>
+      <p class="section-sub">How Tian Ji combines and interacts with other stars in the chart.</p>
+
+      <div class="rel-grid">
+
+        <div class="rel-card">
+          <div class="rel-tag">The Primary Pairing</div>
+          <div class="rel-title">With Zi Wei — The Emperor</div>
+          <div class="rel-body">The Emperor needs The Strategist — the intelligence that makes command coherent. But the Strategist must not become the Emperor. When this boundary holds, the pairing is formidable. When it collapses, the advisor becomes the shadow ruler and neither functions clearly.</div>
+        </div>
+
+        <div class="rel-card">
+          <div class="rel-tag">机月 Pairing</div>
+          <div class="rel-title">With Tai Yin — The Moon Star</div>
+          <div class="rel-body">The ji-yue (机月) pairing — intuition and intellect combined. The Moon's feeling-intelligence and Tian Ji's analytical intelligence complement rather than cancel. Very favorable for wealth and relationships; the combination softens Tian Ji's restlessness.</div>
+        </div>
+
+        <div class="rel-card">
+          <div class="rel-tag">机梁 Pairing</div>
+          <div class="rel-title">With Tian Liang — The Elder Star</div>
+          <div class="rel-body">The ji-liang pairing — strategy combined with wisdom. Tian Ji provides the analytical edge; Tian Liang provides the moral and experiential depth. Excellent for teaching, advising, medicine, law — roles that require both precision and human understanding.</div>
+        </div>
+
+        <div class="rel-card rel-si-hua">
+          <div class="rel-tag">四化 Si Hua — The Transforming Stars</div>
+          <div class="rel-title">How the Four Transformations Affect Tian Ji</div>
+          <div class="sihua-row">
+            <div class="sihua-item">
+              <span class="sihua-year">Yi Year 乙年</span>
+              <span><span class="sihua-name">Hua Lu (化禄)</span><span class="sihua-meaning">The Flow — intelligence flows into abundance; thinking becomes productive and magnetic; a year when the mind generates opportunity</span></span>
+            </div>
+            <div class="sihua-item">
+              <span class="sihua-year">Bing Year 丙年</span>
+              <span><span class="sihua-name">Hua Quan (化权)</span><span class="sihua-meaning">The Power — analytical authority; strategic thinking gains force and recognition; the Strategist is heard</span></span>
+            </div>
+            <div class="sihua-item">
+              <span class="sihua-year">Ding Year 丁年</span>
+              <span><span class="sihua-name">Hua Ke (化科)</span><span class="sihua-meaning">The Shine — intelligence becomes reputation; the mind is recognized publicly; academic and advisory credibility rises</span></span>
+            </div>
+            <div class="sihua-item">
+              <span class="sihua-year">Wu Year 戊年</span>
+              <span><span class="sihua-name">Hua Ji (化忌)</span><span class="sihua-meaning">The Hook — when hooked, overthinking becomes the trap; analysis loops without resolution; the Strategist's greatest shadow is activated — plan carefully before acting</span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WESTERN MIRRORS ────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Cross-Cultural Resonance</p>
+      <h2 class="section-title">Western Mirrors</h2>
+      <p class="section-sub">The intelligence archetype across mythology, psychology, and symbol systems.</p>
+
+      <div class="mirrors-grid">
+
+        <div class="mirror-card">
+          <div class="mirror-system">Greek / Roman Mythology</div>
+          <div class="mirror-name">Hermes · Mercury</div>
+          <div class="mirror-body">The messenger of the gods — the divine intelligence that connects all things. Hermes moves between worlds, carries information, finds the angle others miss. He is the trickster who sees the pattern in the chaos. Like Tian Ji, he is never quite still: always in transit, always translating one world into terms another can understand.</div>
+        </div>
+
+        <div class="mirror-card">
+          <div class="mirror-system">Jungian Archetype</div>
+          <div class="mirror-name">The Sage · The Trickster</div>
+          <div class="mirror-body">Tian Ji holds two Jungian faces: The Sage's perpetual questioning and pattern recognition — and the Trickster's capacity to subvert the very systems it serves. The intelligence that understands every rule can always find the exception. Whether that becomes wisdom or mischief depends on the chart.</div>
+        </div>
+
+        <div class="mirror-card">
+          <div class="mirror-system">Tarot</div>
+          <div class="mirror-name">The Magician — I</div>
+          <div class="mirror-body">Intelligence, adaptability, the ability to work with all four elements simultaneously. All tools are available; the question is which one to deploy. The Magician also carries Tian Ji's dual quality: pure brilliance and potential misdirection. The same mind that masters a system can manipulate it.</div>
+        </div>
+
+        <div class="mirror-card">
+          <div class="mirror-system">Western Astrology</div>
+          <div class="mirror-name">Mercury Dominant — Virgo Mercury</div>
+          <div class="mirror-body">The analytical, communicating, endlessly curious energy of a strongly placed Mercury — particularly Virgo Mercury, which analyzes not just to understand but to improve. The precision, the categorization, the drive to find the flaw in the system so the system can be made better. Restlessness built into the architecture.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PERSONALITY + SHAREABLE ────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">The Full Portrait</p>
+      <h2 class="section-title">Personality Snapshot</h2>
+      <p class="section-sub">What it is to live with this intelligence — and the work it asks of you.</p>
+
+      <div class="personality-layout">
+        <div class="personality-body">
+          <p>The Strategist sees the chess board before the game begins. They are perpetually several moves ahead — sometimes so far ahead that they lose patience with the present move. Their greatest gift is adaptation: they can redesign their approach mid-execution, read environments quickly, find the angle others miss.</p>
+
+          <p>In a room full of people reacting, The Strategist is already three responses ahead, cataloguing outcomes, adjusting the model. They do not experience information the way others do — they experience it as a system that needs mapping. What looks like calm is often processing. What looks like distraction is often parallel threads running.</p>
+
+          <p>Their shadow is the mind that will not rest. The analysis that becomes paralysis. The plan so detailed, so thoroughly stress-tested, so aware of every possible failure mode — that it never launches. The restlessness that moves between projects before any of them reach resolution. The questions that circle back, and back again, and back one more time.</p>
+
+          <p>The Strategist's deepest work is learning to trust the move they have already calculated. Not to think again — they have already thought enough. But to act, with full knowledge that the plan was sound and the uncertainty that remains is simply what uncertainty always is: the part you cannot think your way past.</p>
+
+          <p>That is the celestial mechanism's final instruction: the gear that turns the wheel of heaven eventually has to turn.</p>
+        </div>
+
+        <div class="shareable-card">
+          <div class="shareable-label">Your star · share this</div>
+          <div class="shareable-hanzi" aria-hidden="true">天機</div>
+          <div class="shareable-name">The Strategist</div>
+          <div class="shareable-pinyin">Tiān Jī · Wood · Yin</div>
+          <blockquote class="shareable-quote">
+            "You have The Strategist — you see the game before the players know they're playing."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BRIDGE CARDS ───────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Continue Exploring</p>
+      <h2 class="section-title">Where to Next</h2>
+
+      <div class="bridges-grid">
+
+        <div class="bridge-card">
+          <div class="bridge-dir">← Back</div>
+          <div class="bridge-title">The 14 Stars</div>
+          <div class="bridge-desc">Return to the full star roster — all 14 major stars of Zi Wei Dou Shu mapped and introduced.</div>
+          <a class="bridge-link" href="/elements/zi-wei/stars/">All 14 Stars</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">← Up</div>
+          <div class="bridge-title">Zi Wei Dou Shu</div>
+          <div class="bridge-desc">The system itself — how the chart works, what the palaces mean, and how to begin reading your own.</div>
+          <a class="bridge-link" href="/elements/zi-wei/">ZWDS Overview</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">Related Star</div>
+          <div class="bridge-title">The Emperor — Zi Wei</div>
+          <div class="bridge-desc">The star that commands the Strategist. The Emperor needs this intelligence — and must not become it.</div>
+          <a class="bridge-link" href="/elements/zi-wei/stars/zi-wei/">Meet The Emperor</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">机月 Pairing</div>
+          <div class="bridge-title">The Moon Star — Tai Yin</div>
+          <div class="bridge-desc">Intuition and intellect combined. The ji-yue pairing that softens the Strategist's restless edge.</div>
+          <a class="bridge-link" href="/elements/zi-wei/stars/tai-yin/">Meet The Moon Star</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">机梁 Pairing</div>
+          <div class="bridge-title">The Elder Star — Tian Liang</div>
+          <div class="bridge-desc">Strategy plus wisdom. The ji-liang pairing excellent for teaching, medicine, and advisory roles.</div>
+          <a class="bridge-link" href="/elements/zi-wei/stars/tian-liang/">Meet The Elder Star</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">Get a Reading</div>
+          <div class="bridge-title">Your ZWDS Chart</div>
+          <div class="bridge-desc">See where Tian Ji sits in your own chart — and what the Strategist is doing in your life right now.</div>
+          <a class="bridge-link" href="/elements/zi-wei/">Get Your Chart</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!--om-footer:start--><!--om-footer:end-->
+
+<script src="/js/nav.js"></script>
+</body>
+</html>

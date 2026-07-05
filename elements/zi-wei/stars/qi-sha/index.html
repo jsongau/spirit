@@ -1,0 +1,1291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>七杀 Qi Sha — The Warrior | Zi Wei Dou Shu | ZodiAnimal</title>
+  <meta name="description" content="Qi Sha, The Warrior — the most powerful and potentially most transformative of all 14 major stars. Decisive force, fierce independence, and the energy of the revolutionary who becomes the statesman. Explore Qi Sha across all 12 palaces.">
+  <link rel="canonical" href="https://www.zodianimal.com/elements/zi-wei/stars/qi-sha/">
+  <meta property="og:title" content="七杀 Qi Sha — The Warrior | ZodiAnimal">
+  <meta property="og:description" content="Qi Sha is the lone general — the force that breaks through what others decided was impossible. The warrior who must choose worthy battles. The pioneer who builds a different system because they never fit the existing one.">
+  <meta property="og:url" content="https://www.zodianimal.com/elements/zi-wei/stars/qi-sha/">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/nav-core.css">
+  <link rel="stylesheet" href="/css/nav-mega.css">
+  <link rel="stylesheet" href="/css/nav-drawer.css">
+  <link rel="stylesheet" href="/css/nav-sub.css">
+  <link rel="stylesheet" href="/css/bridges.css">
+  <link rel="stylesheet" href="/css/foot.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap">
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --ink: oklch(0.16 0.03 275);
+      --ink-2: oklch(0.20 0.035 275);
+      --panel: oklch(0.25 0.04 273);
+      --panel-2: oklch(0.30 0.045 272);
+      --line: oklch(0.80 0.06 85 / 0.16);
+      --moon: oklch(0.96 0.02 90);
+      --ivory: oklch(0.92 0.02 88);
+      --body-text: oklch(0.84 0.02 280);
+      --muted: oklch(0.70 0.02 280);
+      --faint: oklch(0.55 0.02 280);
+      --brass: oklch(0.78 0.11 85);
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "Geist", "Inter", sans-serif;
+      --mono: "Space Mono", monospace;
+      --cc: oklch(0.55 0.24 18);
+      --maxw: 1120px;
+    }
+
+    /* ── RESET & BASE ───────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ink);
+      color: var(--body-text);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--brass); font-weight: 600; text-decoration: none; }
+    a:hover { color: var(--moon); }
+    a:focus-visible {
+      outline: 2px solid var(--brass);
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+    img { display: block; max-width: 100%; }
+
+    /* ── LAYOUT ─────────────────────────────────────────── */
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 5rem 0; }
+    .section + .section { border-top: 1px solid var(--line); }
+
+    /* ── EYEBROW ────────────────────────────────────────── */
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cc);
+      margin-bottom: 1rem;
+    }
+
+    /* ── SECTION TITLES ─────────────────────────────────── */
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.5rem;
+    }
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      max-width: 680px;
+    }
+    .section-chinese {
+      font-family: var(--mono);
+      font-size: 0.88rem;
+      color: var(--cc);
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── DIVIDER ─────────────────────────────────────────── */
+    .divider { height: 1px; background: var(--line); margin: 0; }
+
+    /* ════════════════════════════════════════════════════
+       HERO
+    ════════════════════════════════════════════════════ */
+    .hero {
+      padding: 6rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 55% at 50% 0%, oklch(0.55 0.24 18 / 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 680px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-hanzi-block { display: none; }
+    }
+    .hero-inner { max-width: 760px; }
+    .hero-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+    }
+    .hero-badge {
+      display: inline-block;
+      padding: 0.2rem 0.65rem;
+      border-radius: 5px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: oklch(0.55 0.24 18 / 0.15);
+      color: var(--cc);
+    }
+    .hero-badge--family {
+      background: oklch(0.55 0.24 18 / 0.10);
+      color: oklch(0.72 0.12 18);
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 560;
+      line-height: 1.05;
+      color: var(--moon);
+      margin-bottom: 0.5rem;
+    }
+    .hero-pinyin {
+      font-family: var(--mono);
+      font-size: 1rem;
+      color: var(--cc);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+    }
+    .hero-literal {
+      font-size: 0.85rem;
+      color: var(--faint);
+      font-style: italic;
+      margin-bottom: 1.75rem;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      line-height: 1.75;
+      color: var(--body-text);
+      max-width: 640px;
+      margin-bottom: 2.25rem;
+    }
+    .hero-pull {
+      border-left: 3px solid var(--cc);
+      padding: 1rem 1.5rem;
+      background: oklch(0.55 0.24 18 / 0.06);
+      border-radius: 0 8px 8px 0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--ivory);
+      max-width: 640px;
+    }
+    /* Large hanzi decoration */
+    .hero-hanzi-block {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 1.5rem;
+    }
+    .hero-hanzi-large {
+      font-family: var(--serif);
+      font-size: clamp(7rem, 12vw, 10rem);
+      font-weight: 560;
+      line-height: 1;
+      color: var(--cc);
+      text-shadow: 0 0 60px oklch(0.55 0.24 18 / 0.40), 0 0 120px oklch(0.55 0.24 18 / 0.18);
+      user-select: none;
+      letter-spacing: -0.02em;
+    }
+
+    /* ════════════════════════════════════════════════════
+       ESSENCE PANEL (metadata grid)
+    ════════════════════════════════════════════════════ */
+    .essence-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .essence-cell {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+    }
+    .essence-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.4rem;
+    }
+    .essence-value {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 560;
+      color: var(--moon);
+      line-height: 1.3;
+    }
+    .essence-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+    /* Keyword pills */
+    .keyword-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .kw-pill {
+      padding: 0.3rem 0.75rem;
+      background: var(--ink-2);
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    /* ════════════════════════════════════════════════════
+       COMMAND PALACE (core archetype text block)
+    ════════════════════════════════════════════════════ */
+    .archetype-body {
+      max-width: 780px;
+    }
+    .archetype-body p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--body-text);
+      margin-bottom: 1.5rem;
+    }
+    .archetype-body p:last-child { margin-bottom: 0; }
+    .archetype-quote {
+      border-left: 3px solid var(--cc);
+      padding: 1rem 1.5rem;
+      background: oklch(0.55 0.24 18 / 0.05);
+      border-radius: 0 8px 8px 0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--ivory);
+      margin: 2rem 0;
+    }
+    .origin-box {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 2rem 2.5rem;
+      margin-top: 2.5rem;
+    }
+    .origin-box h3 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.75rem;
+    }
+    .origin-box p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    /* ════════════════════════════════════════════════════
+       SHA-PO-LANG TRIO CALLOUT
+    ════════════════════════════════════════════════════ */
+    .trio-callout {
+      background: var(--panel);
+      border: 1px solid oklch(0.55 0.24 18 / 0.35);
+      border-radius: 14px;
+      padding: 2rem 2.5rem;
+      margin-top: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .trio-callout::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cc), oklch(0.58 0.22 270), oklch(0.62 0.20 160));
+    }
+    .trio-callout h3 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.5rem;
+    }
+    .trio-callout .trio-sub {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--cc);
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+    .trio-callout p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+    .trio-members {
+      display: flex;
+      gap: 1rem;
+      margin: 1.25rem 0;
+      flex-wrap: wrap;
+    }
+    .trio-member {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--ink-2);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.5rem 0.9rem;
+    }
+    .trio-member-hanzi {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 560;
+      line-height: 1;
+    }
+    .trio-member-info {
+      font-size: 0.82rem;
+      line-height: 1.3;
+    }
+    .trio-member-name { color: var(--moon); font-weight: 600; }
+    .trio-member-role { color: var(--faint); }
+
+    /* ════════════════════════════════════════════════════
+       12 PALACES TABLE
+    ════════════════════════════════════════════════════ */
+    .palaces-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 680px) {
+      .palaces-list { grid-template-columns: 1fr; }
+    }
+    .palace-item {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .palace-item::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--cc);
+      opacity: 0.5;
+    }
+    .palace-number {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.3rem;
+    }
+    .palace-name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 560;
+      color: var(--cc);
+      margin-bottom: 0.5rem;
+    }
+    .palace-body {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ════════════════════════════════════════════════════
+       STRENGTH LEVELS
+    ════════════════════════════════════════════════════ */
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 780px) {
+      .strength-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .strength-grid { grid-template-columns: 1fr; }
+    }
+    .strength-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .strength-indicator {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 1rem;
+    }
+    .strength-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .strength-dot--on { background: var(--cc); }
+    .strength-dot--off { background: var(--ink-2); border: 1px solid var(--line); }
+    .strength-level {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.15rem;
+    }
+    .strength-chinese {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--cc);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.6rem;
+    }
+    .strength-positions {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--faint);
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.04em;
+    }
+    .strength-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ════════════════════════════════════════════════════
+       STAR RELATIONSHIPS
+    ════════════════════════════════════════════════════ */
+    .relationships-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 680px) {
+      .relationships-grid { grid-template-columns: 1fr; }
+    }
+    .rel-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .rel-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cc), oklch(0.72 0.12 18));
+    }
+    .rel-star-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .rel-hanzi {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 560;
+      color: var(--cc);
+      line-height: 1;
+    }
+    .rel-star-info {}
+    .rel-star-name {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 560;
+      color: var(--moon);
+      line-height: 1.2;
+    }
+    .rel-star-pinyin {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--faint);
+      letter-spacing: 0.04em;
+    }
+    .rel-type {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.5rem;
+    }
+    .rel-body {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* Si Hua note card */
+    .sihua-note {
+      background: var(--ink-2);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+    }
+    .sihua-note p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 0;
+    }
+
+    /* ════════════════════════════════════════════════════
+       WESTERN MIRRORS
+    ════════════════════════════════════════════════════ */
+    .mirrors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .mirror-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .mirror-system {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.4rem;
+    }
+    .mirror-name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 560;
+      color: var(--cc);
+      margin-bottom: 0.5rem;
+    }
+    .mirror-body {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ════════════════════════════════════════════════════
+       PORTRAIT + SHAREABLE
+    ════════════════════════════════════════════════════ */
+    .portrait-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 680px) {
+      .portrait-layout { grid-template-columns: 1fr; }
+    }
+    .portrait-body {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--body-text);
+    }
+    .portrait-body p { margin-bottom: 1.25rem; }
+    .portrait-body p:last-child { margin-bottom: 0; }
+    .shareable-panel {
+      background: var(--panel);
+      border: 1px solid var(--cc);
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .shareable-panel::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--cc);
+    }
+    .shareable-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cc);
+      margin-bottom: 1rem;
+    }
+    .shareable-hanzi {
+      font-family: var(--serif);
+      font-size: 4rem;
+      font-weight: 560;
+      color: var(--cc);
+      text-shadow: 0 0 40px oklch(0.55 0.24 18 / 0.35);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .shareable-quote {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--ivory);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .shareable-meta {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--faint);
+      letter-spacing: 0.04em;
+    }
+
+    /* ════════════════════════════════════════════════════
+       BRIDGES
+    ════════════════════════════════════════════════════ */
+    .bridges-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 780px) {
+      .bridges-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .bridges-grid { grid-template-columns: 1fr; }
+    }
+    .bridge-card {
+      display: block;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.75rem;
+      color: var(--body-text);
+      font-weight: 400;
+      transition: background 0.18s, border-color 0.18s, transform 0.18s;
+    }
+    .bridge-card:hover {
+      background: var(--panel-2);
+      border-color: oklch(0.80 0.06 85 / 0.35);
+      color: var(--body-text);
+      transform: translateY(-2px);
+    }
+    .bridge-card-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.5rem;
+    }
+    .bridge-card-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 560;
+      color: var(--moon);
+      line-height: 1.3;
+    }
+    .bridge-card-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+    .bridge-card-arrow {
+      display: block;
+      margin-top: 1rem;
+      color: var(--brass);
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+  </style>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "七杀 Qi Sha — The Warrior",
+    "description": "Qi Sha is the lone general — the force of decisive, transformative action. The warrior who breaks through what others decided was impossible, and builds a different system entirely.",
+    "url": "https://www.zodianimal.com/elements/zi-wei/stars/qi-sha/",
+    "inLanguage": "en",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "ZodiAnimal",
+      "url": "https://www.zodianimal.com/"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.zodianimal.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Elements", "item": "https://www.zodianimal.com/elements/" },
+        { "@type": "ListItem", "position": 3, "name": "Zi Wei Dou Shu", "item": "https://www.zodianimal.com/elements/zi-wei/" },
+        { "@type": "ListItem", "position": 4, "name": "The 14 Stars", "item": "https://www.zodianimal.com/elements/zi-wei/stars/" },
+        { "@type": "ListItem", "position": 5, "name": "Qi Sha — The Warrior", "item": "https://www.zodianimal.com/elements/zi-wei/stars/qi-sha/" }
+      ]
+    }
+  }
+  </script>
+</head>
+<body class="pn-has-bar">
+
+<!--pn-static:start--><!--pn-static:end-->
+
+<!--pn-sub:start-->
+<nav class="pn-sub" aria-label="Section navigation">
+  <div class="pn-sub-inner">
+    <ol class="pn-breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1">
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/elements/" itemprop="item"><span itemprop="name">Elements</span></a>
+        <meta itemprop="position" content="2">
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/elements/zi-wei/" itemprop="item"><span itemprop="name">Zi Wei Dou Shu</span></a>
+        <meta itemprop="position" content="3">
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/elements/zi-wei/stars/" itemprop="item"><span itemprop="name">The 14 Stars</span></a>
+        <meta itemprop="position" content="4">
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/elements/zi-wei/stars/qi-sha/" itemprop="item"><span itemprop="name">Qi Sha</span></a>
+        <meta itemprop="position" content="5">
+      </li>
+    </ol>
+  </div>
+</nav>
+<!--pn-sub:end-->
+
+<a id="pn-main" tabindex="-1"></a>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION 1 — HERO
+══════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-layout">
+
+      <div class="hero-inner">
+        <div class="hero-tag-row">
+          <span class="eyebrow" style="margin-bottom: 0;">Southern Dipper · 天府星系</span>
+          <span class="hero-badge">Metal · Yang</span>
+          <span class="hero-badge hero-badge--family">Vanguard Trio · 杀破狼</span>
+        </div>
+        <h1>The Warrior</h1>
+        <p class="hero-pinyin">七杀 — Qī Shā</p>
+        <p class="hero-literal">Literal: Seven Killings · Seven Kills</p>
+        <p class="hero-sub">Qi Sha is the most powerful and potentially most transformative of all 14 major stars. "Seven Killings" sounds alarming — and in a traditional courtly context, this star represented the force that could end dynasties. In a modern reading, the Warrior is the force of decisive, transformative action: the person who makes the impossible move, who breaks through the barrier, who accomplishes what others said couldn't be done. This is the revolutionary who becomes the statesman — raw power that must be channeled toward worthy ends.</p>
+        <blockquote class="hero-pull">
+          "You don't fit the system. You were born to build a different one."
+        </blockquote>
+      </div>
+
+      <div class="hero-hanzi-block" aria-hidden="true">
+        <div class="hero-hanzi-large">七杀</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION 2 — ESSENCE
+══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Star Data</p>
+    <h2 class="section-title">The Essence of Qi Sha</h2>
+    <p class="section-subtitle">Every attribute that defines this star — its element, polarity, family, and core character — before palace placement is considered.</p>
+
+    <div class="essence-grid">
+      <div class="essence-cell">
+        <div class="essence-label">Chinese Name</div>
+        <div class="essence-value" style="font-size: 1.6rem; color: var(--cc);">七杀</div>
+        <div class="essence-sub">Qī Shā</div>
+      </div>
+      <div class="essence-cell">
+        <div class="essence-label">Coined Name</div>
+        <div class="essence-value">The Warrior</div>
+        <div class="essence-sub">The lone general; the decisive force</div>
+      </div>
+      <div class="essence-cell">
+        <div class="essence-label">Star Family</div>
+        <div class="essence-value">Southern Dipper</div>
+        <div class="essence-sub">天府星系 — Vanguard Trio 杀破狼</div>
+      </div>
+      <div class="essence-cell">
+        <div class="essence-label">Element &amp; Polarity</div>
+        <div class="essence-value">Metal · Yang</div>
+        <div class="essence-sub">Most yang of all metal stars</div>
+      </div>
+      <div class="essence-cell">
+        <div class="essence-label">Temple Positions</div>
+        <div class="essence-value" style="font-family: var(--mono); font-size: 0.95rem;">丑 Chou · 未 Wei</div>
+        <div class="essence-sub">Metal in earth; power grounded &amp; purposeful</div>
+      </div>
+      <div class="essence-cell">
+        <div class="essence-label">Star Color</div>
+        <div class="essence-value" style="display: flex; align-items: center; gap: 0.5rem;">
+          <span style="display: inline-block; width: 16px; height: 16px; border-radius: 50%; background: oklch(0.55 0.24 18); flex-shrink: 0;"></span>
+          Blood Red
+        </div>
+        <div class="essence-sub">oklch(0.55 0.24 18)</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 1rem;">
+      <div class="essence-label" style="margin-bottom: 0.6rem;">Core Keywords</div>
+      <div class="keyword-row">
+        <span class="kw-pill">Power</span>
+        <span class="kw-pill">Independence</span>
+        <span class="kw-pill">Transformation</span>
+        <span class="kw-pill">Urgency</span>
+        <span class="kw-pill">Decisive Action</span>
+        <span class="kw-pill">The Outsider</span>
+        <span class="kw-pill">Pioneer Energy</span>
+        <span class="kw-pill">Lone General</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION 3 — COMMAND PALACE
+══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Core Archetype</p>
+    <h2 class="section-title">Qi Sha in the Command Palace</h2>
+    <p class="section-subtitle">The Life Palace (命宫) reveals the soul of the chart. Qi Sha here shapes a person of unusual power and fierce, uncompromising independence.</p>
+
+    <div class="archetype-body">
+      <p>Qi Sha in the Life Palace creates individuals of unusual power and independence. They are intensely self-directed — not because they are arrogant, but because they genuinely operate at a frequency that most systems cannot accommodate. They are natural pioneers: the first to try, the first to break through, the first to move when others are still assessing the situation. Where others wait for consensus, the Warrior has already committed.</p>
+
+      <p>Their relationship with institutions is complicated. They need the resources of an institution but chafe under its constraints. Classical texts describe this pattern precisely: the "lone general" — a commander whose authority comes not from hierarchy but from demonstrated excellence under fire. Qi Sha individuals rarely find institutional paths satisfying; they need situations where they can exercise decisive, independent judgment with real stakes attached.</p>
+
+      <blockquote class="archetype-quote">
+        "The greatest warriors choose their battles. Raw power applied to everything becomes destruction. Power applied to worthy ends becomes legacy."
+      </blockquote>
+
+      <p>Their deepest challenge is learning to channel the warrior force toward constructive rather than destructive ends. The power to shatter can also be the power to build — but only when the warrior learns to distinguish what deserves destruction from what deserves protection. The Qi Sha shadow is the fighter who cannot stop: the force applied to every situation regardless of whether a fight is actually called for.</p>
+
+      <div class="trio-callout">
+        <h3>The Sha-Po-Lang Vanguard Trio</h3>
+        <div class="trio-sub">杀破狼 — The Three Stars of Dramatic Transformation</div>
+        <div class="trio-members">
+          <div class="trio-member">
+            <div class="trio-member-hanzi" style="color: var(--cc);">七杀</div>
+            <div class="trio-member-info">
+              <div class="trio-member-name">Qi Sha — The Warrior</div>
+              <div class="trio-member-role">Decisive, explosive force</div>
+            </div>
+          </div>
+          <div class="trio-member">
+            <div class="trio-member-hanzi" style="color: oklch(0.58 0.22 270);">破军</div>
+            <div class="trio-member-info">
+              <div class="trio-member-name">Po Jun — The Vanguard</div>
+              <div class="trio-member-role">Willingness to dismantle</div>
+            </div>
+          </div>
+          <div class="trio-member">
+            <div class="trio-member-hanzi" style="color: oklch(0.62 0.20 160);">贪狼</div>
+            <div class="trio-member-info">
+              <div class="trio-member-name">Tan Lang — The Desire Star</div>
+              <div class="trio-member-role">Creative vision &amp; desire</div>
+            </div>
+          </div>
+        </div>
+        <p>Charts dominated by these three stars do not follow the standard path. The Warrior provides the explosive force; the Vanguard provides the willingness to dismantle; the Desire Star provides the creative vision for what comes next. Together, they represent lives of dramatic transformation and unconventional achievement. If your chart is saturated with Sha-Po-Lang energy, conventional success metrics simply do not apply to your life.</p>
+      </div>
+
+      <div class="origin-box" style="margin-top: 1.5rem;">
+        <h3>The Name Explained</h3>
+        <p>"Qi Sha" — Seven Killings — sounds like pure destruction in translation. But the classical meaning is more precise: this star represents the force that overcomes seven layers of opposition. In the imperial court, Qi Sha was the military star that governed decisive battle, command authority, and the kind of force that could break through seemingly impossible situations. It is not the star of cruelty; it is the star of decisive, transformative force. The Warrior who stands between the court and catastrophe and acts when everyone else is still debating.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION 4 — 12 PALACES
+══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Palace by Palace</p>
+    <h2 class="section-title">Qi Sha Across the 12 Palaces</h2>
+    <p class="section-subtitle">The same star reads differently depending on which of the 12 life domains it governs. This is where the real reading lives.</p>
+
+    <div class="palaces-list">
+
+      <div class="palace-item">
+        <div class="palace-number">Palace 01 · 命宫</div>
+        <div class="palace-name">Life Palace</div>
+        <p class="palace-body">Fierce independence; decisive action; pioneer energy; the outsider quality that is also the source of power. The lone general pattern: authority that comes not from hierarchy but from demonstrated excellence under fire. Shadow of recklessness or self-destructive force when the warrior hasn't found a worthy battle.</p>
+      </div>
+
+      <div class="palace-item">
+        <div class="palace-number">Palace 02 · 兄弟宫</div>
+        <div class="palace-name">Siblings Palace</div>
+        <p class="palace-body">Independent, powerful siblings who go their own way dramatically. Competitive and possibly estranged relationships — not through hostility, but because Qi Sha siblings simply operate at too high a voltage for conventional closeness. Each forges their own extraordinary path.</p>
+      </div>
+
+      <div class="palace-item">
+        <div class="palace-number">Palace 03 · 夫妻宫</div>
+        <div class="palace-name">Spouse Palace</div>
+        <p class="palace-body">Late marriage strongly indicated. The partner must be independent and strong enough to match the warrior's intensity — a weak or dependent partner will be unconsciously overwhelmed by this energy. Relationships require the ongoing negotiation of two powerful, self-directed wills. The union that works is one of mutual respect for sovereignty.</p>
+      </div>
+
+      <div class="palace-item">
+        <div class="palace-number">Palace 04 · 子女宫</div>
+        <div class="palace-name">Children Palace</div>
+        <p class="palace-body">Powerful, independent children who forge extraordinary paths of their own. The parent-child dynamic requires mutual respect for independence — Qi Sha parents who try to contain or direct their children too rigidly will find the same warrior energy turned against them. These are children who must be allowed to become who they are.</p>
+      </div>
+
+      <div class="palace-item">
+        <div class="palace-number">Palace 05 · 财帛宫</div>
+        <div class="palace-name">Wealth Palace</div>
+        <p class="palace-body">Wealth through pioneering action, high-risk and high-reward ventures, independent business, or transformative work. Income patterns are dramatic rather than steady — the Warrior earns in large, sudden movements rather than quiet accumulation. The risk is that the same bold action that creates wealth can also destroy it without wisdom.</p>
+      </div>
+
+      <div class="palace-item">
+        <div class="palace-number">Palace 06 · 疾厄宫</div>
+        <div class="palace-name">Health Palace</div>
+        <p class="palace-body">Iron constitution when at full strength. Accident and surgery risks as the warrior's energy is inherently explosive — the body moves fast and takes risks. Crucially: the body needs physical expression. Contained warrior energy with no physical outlet creates health issues. The Qi Sha person who stops moving gets sick.</p>
+      </div>
+
+      <div class="palace-item">
+        <div class="palace-number">Palace 07 · 迁移宫</div>
+        <div class="palace-name">Travel Palace</div>
+        <p class="palace-body">Thrives in new territory; the pioneer in foreign environments. Success through forging paths where no path existed. Military, investigative, or transformative work abroad. The warrior is at their best when the terrain is genuinely unknown — established environments don't challenge this energy enough to bring out its best.</p>
+      </div>
+
+      <div class="palace-item">
+        <div class="palace-number">Palace 08 · 交友宫</div>
+        <div class="palace-name">Network Palace</div>
+        <p class="palace-body">Small, elite network of peers who match the warrior's intensity. Cannot tolerate mediocrity in allies — will unconsciously push away those who don't operate at the same level. The social circle is small but powerful: a tight group of exceptional people who understand what this star is actually doing.</p>
+      </div>
+
+      <div class="palace-item">
+        <div class="palace-number">Palace 09 · 官禄宫</div>
+        <div class="palace-name">Career Palace</div>
+        <p class="palace-body">Military strategy, pioneering entrepreneurship, emergency medicine or surgery, competitive sports at the highest level, investigative or intelligence work, criminal justice, breakthrough research. Any field requiring decisive, independent, transformative action under genuine pressure. Conventional management roles are rarely satisfying for long.</p>
+      </div>
+
+      <div class="palace-item">
+        <div class="palace-number">Palace 10 · 田宅宫</div>
+        <div class="palace-name">Property Palace</div>
+        <p class="palace-body">Property acquired through dramatic action rather than patient accumulation — a sudden purchase, an inheritance with complications, a bold investment that either pays off enormously or doesn't. May have sudden changes in living situation. The home reflects the warrior's independence: functional, personal, and entirely on their own terms.</p>
+      </div>
+
+      <div class="palace-item">
+        <div class="palace-number">Palace 11 · 福德宫</div>
+        <div class="palace-name">Soul Palace</div>
+        <p class="palace-body">Inner life of intensity and urgency — rarely peaceful in the conventional sense. Contentment comes through mastery and the feeling of having truly lived: of having been tested and not been found wanting. Spiritual life through practice that demands the whole self; martial arts, intense physical discipline, or traditions that require genuine commitment.</p>
+      </div>
+
+      <div class="palace-item">
+        <div class="palace-number">Palace 12 · 父母宫</div>
+        <div class="palace-name">Parents Palace</div>
+        <p class="palace-body">Complex, possibly absent or dramatic parental relationship. The native must forge their own authority because the family of origin could not fully contain the warrior's energy — either through being overwhelmed by it, or by trying to suppress it in ways that shaped the native's independence. The authority that matters was built, not inherited.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION 5 — STRENGTH LEVELS
+══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">庙旺利陷 — Miào Wàng Lì Xiàn</p>
+    <h2 class="section-title">Qi Sha's Strength by Position</h2>
+    <p class="section-subtitle">The Warrior does not express the same way in every palace. Its power — and its danger — shifts with elemental resonance.</p>
+
+    <div class="strength-grid">
+
+      <div class="strength-card">
+        <div class="strength-indicator">
+          <div class="strength-dot strength-dot--on"></div>
+          <div class="strength-dot strength-dot--on"></div>
+          <div class="strength-dot strength-dot--on"></div>
+          <div class="strength-dot strength-dot--on"></div>
+        </div>
+        <div class="strength-level">Temple</div>
+        <div class="strength-chinese">庙 — Miào</div>
+        <div class="strength-positions">Chou 丑 · Wei 未</div>
+        <p class="strength-desc">Metal in earth — the warrior's power is grounded and purposeful. Explosive force channeled toward meaningful ends. Pioneer achievements that redefine what's possible. This is Qi Sha at its most fully itself: the decisive general with both the power and the wisdom to deploy it.</p>
+      </div>
+
+      <div class="strength-card">
+        <div class="strength-indicator">
+          <div class="strength-dot strength-dot--on"></div>
+          <div class="strength-dot strength-dot--on"></div>
+          <div class="strength-dot strength-dot--on"></div>
+          <div class="strength-dot strength-dot--off"></div>
+        </div>
+        <div class="strength-level">Thriving</div>
+        <div class="strength-chinese">旺 — Wàng</div>
+        <div class="strength-positions">Chen 辰 · Xu 戌</div>
+        <p class="strength-desc">Power and wisdom together. The warrior in complex terrain — the general who wins because they understand the full picture, not just the immediate battle. Decisive force remains fully available; the environment adds strategic depth and nuance to how it is deployed.</p>
+      </div>
+
+      <div class="strength-card">
+        <div class="strength-indicator">
+          <div class="strength-dot strength-dot--on"></div>
+          <div class="strength-dot strength-dot--on"></div>
+          <div class="strength-dot strength-dot--off"></div>
+          <div class="strength-dot strength-dot--off"></div>
+        </div>
+        <div class="strength-level">Favorable</div>
+        <div class="strength-chinese">利 — Lì</div>
+        <div class="strength-positions">Various positions</div>
+        <p class="strength-desc">Warrior capabilities functional; independence productive rather than destructive. The force is present and usable, neither amplified to maximum intensity nor fundamentally challenged. Reliable, steady expression — the warrior who fights well without necessarily fighting brilliantly.</p>
+      </div>
+
+      <div class="strength-card">
+        <div class="strength-indicator">
+          <div class="strength-dot strength-dot--on"></div>
+          <div class="strength-dot strength-dot--off"></div>
+          <div class="strength-dot strength-dot--off"></div>
+          <div class="strength-dot strength-dot--off"></div>
+        </div>
+        <div class="strength-level">Fallen</div>
+        <div class="strength-chinese">陷 — Xiàn</div>
+        <div class="strength-positions">Mao 卯</div>
+        <p class="strength-desc">Metal in wood — power without clear direction. The revolutionary who destroys without building; the warrior who fights without knowing what they're fighting for. This is the characteristic challenge: immense force without the guidance system to deploy it wisely. Awareness is the first remedy.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION 6 — STAR RELATIONSHIPS
+══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Constellation Dynamics</p>
+    <h2 class="section-title">Key Star Relationships</h2>
+    <p class="section-subtitle">Stars do not operate in isolation. When Qi Sha meets certain stars in the same or opposite palaces, the meaning transforms entirely.</p>
+
+    <div class="relationships-grid">
+
+      <div class="rel-card">
+        <div class="rel-type">The Vanguard Trio — Sha-Po-Lang</div>
+        <div class="rel-star-row">
+          <div class="rel-hanzi" style="color: oklch(0.58 0.22 270);">破军</div>
+          <div class="rel-star-info">
+            <div class="rel-star-name">Po Jun — The Vanguard</div>
+            <div class="rel-star-pinyin">Pò Jūn · Southern Dipper · 杀破狼</div>
+          </div>
+        </div>
+        <p class="rel-body">Qi Sha provides the explosive decisive force; Po Jun provides the willingness to dismantle what no longer serves. Together they are the forward edge of transformation: one cuts through resistance, the other tears down the structures that resistance was defending. The combination is powerful and volatile — it requires the creative vision of Tan Lang to give the destruction somewhere to go.</p>
+      </div>
+
+      <div class="rel-card">
+        <div class="rel-type">The Vanguard Trio — Sha-Po-Lang</div>
+        <div class="rel-star-row">
+          <div class="rel-hanzi" style="color: oklch(0.62 0.20 160);">贪狼</div>
+          <div class="rel-star-info">
+            <div class="rel-star-name">Tan Lang — The Desire Star</div>
+            <div class="rel-star-pinyin">Tān Láng · Northern Dipper · 杀破狼</div>
+          </div>
+        </div>
+        <p class="rel-body">Where Qi Sha provides force and Po Jun provides destruction, Tan Lang provides the creative vision for what gets built in the aftermath. The Desire Star is the architect of the new world the Warrior is fighting to create. Without this creative dimension, Sha-Po-Lang energy can cycle through transformation without ever arriving somewhere meaningful.</p>
+      </div>
+
+      <div class="rel-card">
+        <div class="rel-type">Authority Combination</div>
+        <div class="rel-star-row">
+          <div class="rel-hanzi" style="color: oklch(0.72 0.14 280);">紫微</div>
+          <div class="rel-star-info">
+            <div class="rel-star-name">Zi Wei — The Emperor</div>
+            <div class="rel-star-pinyin">Zǐ Wēi · Northern Dipper · Imperial Court</div>
+          </div>
+        </div>
+        <p class="rel-body">Emperor and Warrior — the authority that deploys decisive power. When these two share a palace, the combination is commanding and requires genuine wisdom: the warrior energy must serve the emperor's vision rather than its own impulse. At its highest this is leadership of rare quality; the risk is that Qi Sha's independence undermines the emperor's authority rather than fulfilling it.</p>
+      </div>
+
+      <div class="rel-card">
+        <div class="rel-type">Si Hua — The Four Transformations</div>
+        <div class="sihua-note">
+          <p>Qi Sha does not receive the Four Transformations (Si Hua) directly — like Tian Fu and Tian Xiang, it functions as a force-amplifier rather than a transformation recipient. Its presence in any palace amplifies every Si Hua that lands there. When Hua Lu, Hua Quan, Hua Ke, or Hua Ji activates that palace through another star, Qi Sha's warrior energy intensifies the effect — accelerating flows of wealth or opportunity, magnifying authority, elevating reputation, or deepening complications, depending on which transformation is active. The Warrior amplifies; it does not transform.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION 7 — WESTERN MIRRORS
+══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Cross-System Translation</p>
+    <h2 class="section-title">Western Mirrors</h2>
+    <p class="section-subtitle">Qi Sha appears under different names in Western systems — same archetype, different vocabulary. These parallels are not equivalences; they are resonances.</p>
+
+    <div class="mirrors-grid">
+
+      <div class="mirror-card">
+        <div class="mirror-system">Mythology</div>
+        <div class="mirror-name">Ares · Achilles</div>
+        <p class="mirror-body">Ares as the unconquerable force of decisive action — not cruelty, but the god who moves when other gods debate. And Achilles: the warrior who must choose between a long ordinary life and a short extraordinary one. Qi Sha people make this choice constantly, usually unconsciously, usually choosing the extraordinary path even when they can see the cost.</p>
+      </div>
+
+      <div class="mirror-card">
+        <div class="mirror-system">Jungian Archetype</div>
+        <div class="mirror-name">The Warrior · The Conqueror</div>
+        <p class="mirror-body">The archetype of decisive, transformative force — the hero energy that cuts through impossibility. At its shadow: the warrior who fights because they don't know how to stop. At its highest: the disciplined warrior who serves a worthy cause, who has mastered the power and can choose when to deploy it and when to rest.</p>
+      </div>
+
+      <div class="mirror-card">
+        <div class="mirror-system">Tarot</div>
+        <div class="mirror-name">The Tower (XVI) · Strength (VIII)</div>
+        <p class="mirror-body">The Tower for the sudden, transformative breakthrough that dismantles what was built on false foundations — the lightning strike that looks like destruction but clears the ground for what's real. And Strength for the disciplined power the warrior must ultimately learn: the force held in calm hands, deployed with precision rather than explosion.</p>
+      </div>
+
+      <div class="mirror-card">
+        <div class="mirror-system">Western Astrology</div>
+        <div class="mirror-name">Mars in Aries · Pluto Prominent</div>
+        <p class="mirror-body">Mars in Aries or Scorpio at full power — the decisive, pioneering force that moves first and asks questions later. Pluto prominent for the transformative dimension: the energy that doesn't just change situations but fundamentally transforms them, often leaving them unrecognizable from before the warrior arrived. Raw power that either destroys or renews depending on wisdom.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION 8 — PORTRAIT + SHAREABLE
+══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Character Study</p>
+    <h2 class="section-title">The Warrior — A Portrait</h2>
+    <p class="section-subtitle">The star as a person. The texture of a life shaped by Qi Sha's energy, in its gifts and its shadows.</p>
+
+    <div class="portrait-layout">
+
+      <div class="portrait-body">
+        <p>The Warrior does not fit. That is not their flaw — it is their function. They are built to go where others cannot, to do what others won't, to break through what others have decided is impossible. Their life often reads as excessive from the outside: the stakes are too high, the moves too bold, the consequences too extreme. But this is the life of someone operating at a different intensity level than the standard options allow.</p>
+        <p>They are often the outsider who turns out to have been right. The person who everyone thought was reckless, until the outcome proved otherwise. The entrepreneur who burned their career to start the company that now employs everyone who doubted them. The soldier who took the action no one else would authorize and turned the whole situation around. The Warrior lives at the edge of what the surrounding culture considers reasonable — and that is precisely why they can do what the surrounding culture cannot.</p>
+        <p>Their shadow is the warrior who fights because they do not know how to stop. The force applied to everything, even where patience or diplomacy would serve better. The exhausting intensity that cannot shift registers. The pioneer who becomes a destroyer because they never learned to distinguish between what deserves to be broken and what deserves to be protected. Their wisdom comes when they finally understand that the greatest warriors choose their battles. And that choosing not to fight is itself an act of power.</p>
+      </div>
+
+      <div class="shareable-panel">
+        <div class="shareable-label">Your Palace Signature</div>
+        <div class="shareable-hanzi" aria-hidden="true">七杀</div>
+        <p class="shareable-quote">"You have The Warrior — you don't fit the system. You were born to build a different one."</p>
+        <div class="shareable-meta">
+          七杀 Qī Shā · Metal · Yang<br>
+          Southern Dipper · 天府星系 · Vanguard Trio<br>
+          zodianimal.com
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION 9 — BRIDGES
+══════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Continue Your Study</p>
+    <h2 class="section-title">Where to Next</h2>
+    <p class="section-subtitle">Stars are one layer. Explore related stars, the full system, or bring it back to the hub.</p>
+
+    <div class="bridges-grid">
+
+      <a class="bridge-card" href="/elements/zi-wei/stars/">
+        <div class="bridge-card-label">Return</div>
+        <div class="bridge-card-title">Stars Hub — All 14 Major Stars</div>
+        <p class="bridge-card-desc">See every star side by side: emperors, warriors, diplomats, revolutionaries. Your chart is a cast list.</p>
+        <span class="bridge-card-arrow">←</span>
+      </a>
+
+      <a class="bridge-card" href="/elements/zi-wei/">
+        <div class="bridge-card-label">Return</div>
+        <div class="bridge-card-title">Zi Wei Dou Shu Hub</div>
+        <p class="bridge-card-desc">The complete system overview — history, palaces, the Four Forces, and how to read your chart from the ground up.</p>
+        <span class="bridge-card-arrow">←</span>
+      </a>
+
+      <a class="bridge-card" href="/elements/zi-wei/stars/po-jun/">
+        <div class="bridge-card-label">Related Star — Vanguard Trio</div>
+        <div class="bridge-card-title">破军 — The Vanguard</div>
+        <p class="bridge-card-desc">Qi Sha provides the explosive force; Po Jun provides the willingness to dismantle. Together they are the forward edge of transformation.</p>
+        <span class="bridge-card-arrow">→</span>
+      </a>
+
+      <a class="bridge-card" href="/elements/zi-wei/stars/tan-lang/">
+        <div class="bridge-card-label">Related Star — Vanguard Trio</div>
+        <div class="bridge-card-title">贪狼 — The Desire Star</div>
+        <p class="bridge-card-desc">Where Qi Sha destroys and Po Jun dismantles, Tan Lang provides the creative vision for what gets built next. The third member of the Sha-Po-Lang trio.</p>
+        <span class="bridge-card-arrow">→</span>
+      </a>
+
+      <a class="bridge-card" href="/elements/zi-wei/palaces/">
+        <div class="bridge-card-label">Next Step</div>
+        <div class="bridge-card-title">The 12 Palaces</div>
+        <p class="bridge-card-desc">The palaces are the 12 domains of your life. Where Qi Sha lands in your chart changes everything about how this warrior energy expresses.</p>
+        <span class="bridge-card-arrow">→</span>
+      </a>
+
+      <a class="bridge-card" href="/elements/zi-wei/four-forces/">
+        <div class="bridge-card-label">Deeper System</div>
+        <div class="bridge-card-title">The Four Forces</div>
+        <p class="bridge-card-desc">Qi Sha amplifies every Si Hua that lands in its palace. Understanding the Four Transformations shows how the warrior's energy is focused or challenged in your chart.</p>
+        <span class="bridge-card-arrow">→</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!--om-footer:start--><!--om-footer:end-->
+
+<script src="/js/nav.js"></script>
+</body>
+</html>

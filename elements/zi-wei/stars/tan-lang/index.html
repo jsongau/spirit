@@ -1,0 +1,1220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>贪狼 Tan Lang — The Desire Star | Zi Wei Dou Shu | ZodiAnimal</title>
+  <meta name="description" content="贪狼 Tan Lang — The Desire Star. The Greedy Wolf: extraordinary charisma, multi-talent, and insatiable desire for experience. The star that blossoms late and burns brightest.">
+  <link rel="canonical" href="https://www.zodianimal.com/elements/zi-wei/stars/tan-lang/">
+  <meta property="og:title" content="贪狼 Tan Lang — The Desire Star | Zi Wei Dou Shu">
+  <meta property="og:description" content="The Greedy Wolf: extraordinary charisma, multi-talent, and insatiable desire for experience. The star that blossoms late and burns brightest.">
+  <meta property="og:url" content="https://www.zodianimal.com/elements/zi-wei/stars/tan-lang/">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/nav-core.css">
+  <link rel="stylesheet" href="/css/nav-mega.css">
+  <link rel="stylesheet" href="/css/nav-drawer.css">
+  <link rel="stylesheet" href="/css/nav-sub.css">
+  <link rel="stylesheet" href="/css/bridges.css">
+  <link rel="stylesheet" href="/css/foot.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap">
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --ink: oklch(0.16 0.03 275);
+      --ink-2: oklch(0.20 0.035 275);
+      --panel: oklch(0.25 0.04 273);
+      --panel-2: oklch(0.30 0.045 272);
+      --line: oklch(0.80 0.06 85 / 0.16);
+      --moon: oklch(0.96 0.02 90);
+      --ivory: oklch(0.92 0.02 88);
+      --body-text: oklch(0.84 0.02 280);
+      --muted: oklch(0.70 0.02 280);
+      --faint: oklch(0.55 0.02 280);
+      --brass: oklch(0.78 0.11 85);
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "Geist", "Inter", sans-serif;
+      --mono: "Space Mono", monospace;
+      --cc: oklch(0.62 0.24 340); /* magenta-rose — Tan Lang's color */
+      --maxw: 1120px;
+    }
+
+    /* ── RESET & BASE ───────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ink);
+      color: var(--body-text);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--brass); font-weight: 600; text-decoration: none; }
+    a:hover { color: var(--moon); }
+    a:focus-visible {
+      outline: 2px solid var(--brass);
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+    img { display: block; max-width: 100%; }
+
+    /* ── LAYOUT ─────────────────────────────────────────── */
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 5rem 0; }
+    .section + .section { border-top: 1px solid var(--line); }
+
+    /* ── BREADCRUMB ─────────────────────────────────────── */
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--faint);
+      letter-spacing: 0.04em;
+      padding: 1.25rem 0 0;
+    }
+    .breadcrumb a { color: var(--muted); font-weight: 500; }
+    .breadcrumb a:hover { color: var(--cc); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .breadcrumb-current { color: var(--cc); }
+
+    /* ── EYEBROW ────────────────────────────────────────── */
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cc);
+      margin-bottom: 1rem;
+    }
+
+    /* ── HERO ───────────────────────────────────────────── */
+    .hero {
+      padding: 4rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 0%, oklch(0.62 0.24 340 / 0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 720px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-hanzi-block { display: none; }
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+      font-weight: 560;
+      line-height: 1.05;
+      color: var(--moon);
+      margin-bottom: 0.5rem;
+    }
+    .hero-chinese-line {
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      color: var(--cc);
+      margin-bottom: 1.75rem;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.28rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .badge--family {
+      background: oklch(0.62 0.24 340 / 0.15);
+      color: oklch(0.62 0.24 340);
+      border: 1px solid oklch(0.62 0.24 340 / 0.3);
+    }
+    .badge--element {
+      background: oklch(0.55 0.20 145 / 0.15);
+      color: oklch(0.72 0.18 145);
+      border: 1px solid oklch(0.55 0.20 145 / 0.25);
+    }
+    .badge--polarity {
+      background: oklch(0.55 0.18 280 / 0.15);
+      color: oklch(0.72 0.12 280);
+      border: 1px solid oklch(0.55 0.18 280 / 0.25);
+    }
+    .badge--order {
+      background: var(--panel);
+      color: var(--muted);
+      border: 1px solid var(--line);
+    }
+    .hero-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 2rem;
+    }
+    .kw-pill {
+      padding: 0.22rem 0.65rem;
+      background: var(--ink-2);
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      font-size: 0.73rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .hero-pull {
+      border-left: 3px solid var(--cc);
+      padding: 1rem 1.5rem;
+      background: oklch(0.62 0.24 340 / 0.07);
+      border-radius: 0 8px 8px 0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--ivory);
+      max-width: 620px;
+    }
+
+    /* Large hanzi display */
+    .hero-hanzi-block {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-hanzi-block::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle, oklch(0.62 0.24 340 / 0.18) 0%, transparent 70%);
+    }
+    .hero-hanzi-char {
+      font-family: var(--serif);
+      font-size: 7rem;
+      font-weight: 560;
+      color: var(--cc);
+      text-shadow:
+        0 0 40px oklch(0.62 0.24 340 / 0.6),
+        0 0 80px oklch(0.62 0.24 340 / 0.3);
+      line-height: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── SECTION TITLES ─────────────────────────────────── */
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.4rem;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      max-width: 640px;
+    }
+
+    /* ── TWO-COL ESSENCE ────────────────────────────────── */
+    .essence-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 700px) {
+      .essence-grid { grid-template-columns: 1fr; }
+    }
+    .essence-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+    .essence-panel-title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.75rem;
+    }
+    .essence-panel p {
+      font-size: 0.95rem;
+      color: var(--body-text);
+      line-height: 1.7;
+      margin-bottom: 0.85rem;
+    }
+    .essence-panel p:last-child { margin-bottom: 0; }
+    .essence-fact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .essence-fact-list li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: baseline;
+      font-size: 0.9rem;
+    }
+    .fact-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--cc);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      min-width: 90px;
+      flex-shrink: 0;
+    }
+    .fact-value {
+      color: var(--body-text);
+    }
+
+    /* ── COMMAND PALACE ─────────────────────────────────── */
+    .command-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .command-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cc), oklch(0.62 0.24 340 / 0.3));
+    }
+    .command-card::after {
+      content: "贪狼";
+      position: absolute;
+      bottom: -1rem;
+      right: 1.5rem;
+      font-family: var(--serif);
+      font-size: 8rem;
+      font-weight: 560;
+      color: var(--cc);
+      opacity: 0.04;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .command-body {
+      max-width: 760px;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--body-text);
+    }
+    .command-body p { margin-bottom: 1.1rem; }
+    .command-body p:last-child { margin-bottom: 0; }
+    .command-highlight {
+      display: inline-block;
+      background: oklch(0.62 0.24 340 / 0.12);
+      color: var(--cc);
+      padding: 0.1rem 0.45rem;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+
+    /* ── PALACES TABLE ──────────────────────────────────── */
+    .palaces-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    @media (max-width: 640px) {
+      .palaces-grid { grid-template-columns: 1fr; }
+    }
+    .palace-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: border-color 0.18s;
+    }
+    .palace-card:hover {
+      border-color: oklch(0.62 0.24 340 / 0.5);
+    }
+    .palace-number {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--cc);
+      letter-spacing: 0.06em;
+      min-width: 1.8rem;
+      padding-top: 0.1rem;
+      flex-shrink: 0;
+    }
+    .palace-info {}
+    .palace-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.3rem;
+    }
+    .palace-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── STRENGTH LEVELS ────────────────────────────────── */
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 820px) {
+      .strength-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .strength-grid { grid-template-columns: 1fr; }
+    }
+    .strength-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+    .strength-pips {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 1rem;
+    }
+    .pip {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .pip--on { background: var(--cc); }
+    .pip--off { background: var(--ink-2); border: 1px solid var(--line); }
+    .strength-level {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.15rem;
+    }
+    .strength-chinese {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--cc);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.65rem;
+    }
+    .strength-positions {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--brass);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.65rem;
+    }
+    .strength-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── RELATIONSHIPS ──────────────────────────────────── */
+    .rel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    @media (max-width: 680px) {
+      .rel-grid { grid-template-columns: 1fr; }
+    }
+    .rel-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.75rem;
+    }
+    .rel-tag {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cc);
+      margin-bottom: 0.5rem;
+    }
+    .rel-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.6rem;
+    }
+    .rel-body {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .rel-si-hua {
+      grid-column: 1 / -1;
+    }
+    .sihua-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 0.75rem;
+    }
+    .sihua-item {
+      display: flex;
+      gap: 0.75rem;
+      align-items: baseline;
+      font-size: 0.88rem;
+    }
+    .sihua-year {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--cc);
+      min-width: 70px;
+      flex-shrink: 0;
+    }
+    .sihua-name {
+      font-weight: 600;
+      color: var(--ivory);
+      margin-right: 0.4rem;
+    }
+    .sihua-meaning {
+      color: var(--muted);
+    }
+
+    /* ── WESTERN MIRRORS ────────────────────────────────── */
+    .mirrors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .mirror-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .mirror-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cc), transparent);
+    }
+    .mirror-system {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.4rem;
+    }
+    .mirror-name {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.6rem;
+    }
+    .mirror-body {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── PERSONALITY + SHAREABLE ────────────────────────── */
+    .personality-layout {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 820px) {
+      .personality-layout { grid-template-columns: 1fr; }
+    }
+    .personality-body {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--body-text);
+    }
+    .personality-body p { margin-bottom: 1rem; }
+    .personality-body p:last-child { margin-bottom: 0; }
+    .shareable-card {
+      background: var(--panel);
+      border: 1px solid oklch(0.62 0.24 340 / 0.4);
+      border-radius: 20px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .shareable-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 120% 120% at 50% -20%, oklch(0.62 0.24 340 / 0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .shareable-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cc);
+      margin-bottom: 1rem;
+    }
+    .shareable-hanzi {
+      font-family: var(--serif);
+      font-size: 4rem;
+      font-weight: 560;
+      color: var(--cc);
+      text-shadow: 0 0 30px oklch(0.62 0.24 340 / 0.5);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .shareable-name {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.2rem;
+    }
+    .shareable-pinyin {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+    .shareable-quote {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--ivory);
+      line-height: 1.6;
+      border-left: 3px solid var(--cc);
+      padding-left: 1rem;
+    }
+
+    /* ── BRIDGE CARDS ───────────────────────────────────── */
+    .bridges-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 680px) {
+      .bridges-grid { grid-template-columns: 1fr; }
+    }
+    .bridge-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.5rem;
+      transition: border-color 0.18s, transform 0.18s;
+    }
+    .bridge-card:hover {
+      border-color: var(--cc);
+      transform: translateY(-2px);
+    }
+    .bridge-dir {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.5rem;
+    }
+    .bridge-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.35rem;
+    }
+    .bridge-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+    .bridge-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--cc);
+      transition: gap 0.18s, color 0.18s;
+    }
+    .bridge-link:hover {
+      color: var(--moon);
+      gap: 0.55rem;
+    }
+    .bridge-link::after { content: "→"; }
+
+    /* ── LATE BLOOM CALLOUT ─────────────────────────────── */
+    .bloom-banner {
+      background: oklch(0.62 0.24 340 / 0.07);
+      border: 1px solid oklch(0.62 0.24 340 / 0.25);
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
+      margin-top: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    @media (max-width: 600px) {
+      .bloom-banner { flex-direction: column; gap: 0.75rem; }
+    }
+    .bloom-glyph {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      color: var(--cc);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .bloom-body {}
+    .bloom-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.4rem;
+    }
+    .bloom-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .bloom-chinese {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--cc);
+      letter-spacing: 0.06em;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body class="pn-has-bar">
+
+<!--pn-static:start--><!--pn-static:end-->
+
+<a id="pn-main" tabindex="-1"></a>
+
+<main>
+
+  <!-- ── BREADCRUMB ─────────────────────────────────────── -->
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/elements/">Elements</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/elements/zi-wei/">Zi Wei Dou Shu</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/elements/zi-wei/stars/">The 14 Stars</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">The Desire Star</span>
+    </nav>
+  </div>
+
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-layout">
+        <div>
+          <p class="eyebrow">Southern Dipper · 天府星系 · The Vanguard Trio</p>
+          <h1>The Desire Star</h1>
+          <p class="hero-chinese-line">贪狼 · Tān Láng · Greedy Wolf</p>
+
+          <div class="hero-badges">
+            <span class="badge badge--family">Southern Dipper 天府星系</span>
+            <span class="badge badge--element">Wood + Water Element</span>
+            <span class="badge badge--polarity">Yang</span>
+            <span class="badge badge--order">杀破狼 — The Wolf</span>
+          </div>
+
+          <div class="hero-keywords">
+            <span class="kw-pill">Ambition</span>
+            <span class="kw-pill">Multi-talent</span>
+            <span class="kw-pill">Seduction</span>
+            <span class="kw-pill">Desire</span>
+            <span class="kw-pill">Transformation</span>
+            <span class="kw-pill">Charisma</span>
+          </div>
+
+          <blockquote class="hero-pull">
+            The most magnetic star in the heavens — the Wolf who contains the artist, the philosopher, the seducer, and the saint.
+          </blockquote>
+        </div>
+
+        <div class="hero-hanzi-block" aria-hidden="true">
+          <span class="hero-hanzi-char">狼</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ESSENCE ───────────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Core Identity</p>
+      <h2 class="section-title">Essence of Tān Láng</h2>
+      <p class="section-sub">Desire as compass — the star that turns hunger into creation.</p>
+
+      <div class="essence-grid">
+        <div class="essence-panel">
+          <h3 class="essence-panel-title">The Star at a Glance</h3>
+          <ul class="essence-fact-list">
+            <li>
+              <span class="fact-label">Chinese</span>
+              <span class="fact-value">贪狼 (Tān Láng)</span>
+            </li>
+            <li>
+              <span class="fact-label">Literal</span>
+              <span class="fact-value">Greedy Wolf</span>
+            </li>
+            <li>
+              <span class="fact-label">Coined Name</span>
+              <span class="fact-value">The Desire Star</span>
+            </li>
+            <li>
+              <span class="fact-label">Family</span>
+              <span class="fact-value">Southern Dipper (天府星系)</span>
+            </li>
+            <li>
+              <span class="fact-label">Trio</span>
+              <span class="fact-value">杀破狼 — Sha-Po-Lang Vanguard</span>
+            </li>
+            <li>
+              <span class="fact-label">Element</span>
+              <span class="fact-value">Wood / Yang (dual: also Water)</span>
+            </li>
+            <li>
+              <span class="fact-label">Temple</span>
+              <span class="fact-value">Hai (亥), Zi (子)</span>
+            </li>
+            <li>
+              <span class="fact-label">Color</span>
+              <span class="fact-value">Magenta-rose — desire made visible</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="essence-panel">
+          <h3 class="essence-panel-title">The Name Holds Everything</h3>
+          <p>贪狼 (Tān Láng) — Greedy Wolf. A name that contains both the power and the shadow of this star. The wolf is not a villain; it is the creature of pure appetite. The hunger is not a flaw; it is the engine.</p>
+          <p>Tan Lang is the most multifaceted star in Zi Wei Dou Shu — the star of desire in all its forms: the desire for achievement, for pleasure, for knowledge, for connection, for transformation. Where other stars are specialists, Tan Lang is everything at once. The artist who is also a businessperson. The musician who is also a philosopher. The seducer who is also a serious practitioner.</p>
+          <p>Classical texts call Tan Lang the 桃花星 — the Peach Blossom Star. The most beautiful fruit, but only after patient cultivation. The late bloom is not a delay. It is the nature of the fruit.</p>
+        </div>
+      </div>
+
+      <!-- Late Bloom Callout -->
+      <div class="bloom-banner">
+        <div class="bloom-glyph" aria-hidden="true">桃</div>
+        <div class="bloom-body">
+          <div class="bloom-title">The Late-Blooming Pattern</div>
+          <div class="bloom-text">Tan Lang is famously a star that blossoms late. The first half of a Tan Lang life often looks scattered — multiple interests, multiple false starts, a charisma that attracts opportunity alongside distraction. The second half, when the desires are disciplined and the talents begin to focus, can produce achievement of extraordinary reach. This is not a flaw in the star. It is the star's design. The Wolf takes time to know which direction to run.</div>
+          <div class="bloom-chinese">桃花星 — Peach Blossom Star · patience before the fruit</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── IN THE COMMAND PALACE ─────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Life Palace Reading</p>
+      <h2 class="section-title">In the Command Palace</h2>
+      <p class="section-sub">When 贪狼 governs your Life Palace, this is the desire you were born carrying.</p>
+
+      <div class="command-card">
+        <div class="command-body">
+          <p>Tan Lang in the Life Palace creates individuals who are <span class="command-highlight">remarkable for their range</span>. They can do almost anything — and often try. Their charisma is magnetic in the precise sense: people are drawn to them for reasons they cannot always articulate. Something in the presence, the aliveness, the genuine engagement with life that reads as warmth even when the Wolf is simply hunting.</p>
+
+          <p>These are people of multiple talents who arrive in the world before they know which talent to develop. The first decades can look scattered — a career change here, an abandoned project there, a relationship that burned bright and ended before anyone understood why. This is not failure. This is the Wolf learning the terrain before choosing direction.</p>
+
+          <p>The challenge is focus: desire pulls in multiple directions simultaneously, and without discipline, the many talents can prevent mastery of any one. The peach blossom energy also brings strong romantic intensity — Tan Lang in the Life Palace experiences love with a force that can be difficult to moderate. Many admirers. Many possibilities. The work is not to eliminate the desire but to <span class="command-highlight">let it become directional</span>.</p>
+
+          <p>The gift arrives in the second half of life, when the desires have been seasoned by consequence and the many talents begin to align in service of one meaningful direction. The wolf that has run enough terrain finally knows where it is going — and nothing can stop it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ACROSS THE 12 PALACES ──────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Palace Influence</p>
+      <h2 class="section-title">Across the 12 Palaces</h2>
+      <p class="section-sub">How Tan Lang's desire, charisma, and late-bloom pattern manifest in each area of life.</p>
+
+      <div class="palaces-grid">
+
+        <div class="palace-card">
+          <span class="palace-number">01</span>
+          <div class="palace-info">
+            <div class="palace-name">Life Palace 命宫</div>
+            <div class="palace-desc">Multi-talented, charismatic, desire-driven; late-blooming pattern; romantic intensity; requires focus to channel gifts; shadow is scattered energy or sensual excess.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">02</span>
+          <div class="palace-info">
+            <div class="palace-name">Siblings Palace 兄弟宫</div>
+            <div class="palace-desc">Charismatic, talented siblings; competitive yet magnetic relationships; many people in the social field who feel like siblings — the wolf runs with a pack.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">03</span>
+          <div class="palace-info">
+            <div class="palace-name">Spouse Palace 夫妻宫</div>
+            <div class="palace-desc">Intense romantic life; multiple relationships or late marriage; partner who is magnetic and complex; the peach blossom energy brings many admirers — selecting well takes time.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">04</span>
+          <div class="palace-info">
+            <div class="palace-name">Children Palace 子女宫</div>
+            <div class="palace-desc">Creative, multi-talented children with strong romantic lives; the parent-child bond requires respecting each other's independence — the wolf does not cage its cubs.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">05</span>
+          <div class="palace-info">
+            <div class="palace-name">Wealth Palace 财帛宫</div>
+            <div class="palace-desc">Wealth through creative fields, entertainment, multiple income streams; money comes and goes with the desires; the late-bloom pattern applies — wealth stabilizes in the second half of life.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">06</span>
+          <div class="palace-info">
+            <div class="palace-name">Health Palace 疾厄宫</div>
+            <div class="palace-desc">Indulgence as vulnerability; liver and kidney from excess; the body reflects the life of desire; sexuality and sensuality require conscious management — the wolf must know when to rest.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">07</span>
+          <div class="palace-info">
+            <div class="palace-name">Travel Palace 迁移宫</div>
+            <div class="palace-desc">Adventurous, pleasure-seeking travel; success in entertainment and creative fields abroad; the magnetic personality opens doors internationally — the wolf is welcome everywhere it roams.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">08</span>
+          <div class="palace-info">
+            <div class="palace-name">Network Palace 交友宫</div>
+            <div class="palace-desc">Large, diverse social network; many admirers and followers; the social life is rich but requires discernment — not everyone drawn to the flame belongs in the inner circle.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">09</span>
+          <div class="palace-info">
+            <div class="palace-name">Career Palace 官禄宫</div>
+            <div class="palace-desc">Arts, entertainment, music, creative entrepreneurship, design, philosophy, spiritual practice, marketing, luxury goods, hospitality — any field where charisma, creativity, and desire are assets.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">10</span>
+          <div class="palace-info">
+            <div class="palace-name">Property Palace 田宅宫</div>
+            <div class="palace-desc">Multiple homes or frequent changes; property acquired through creative wealth rather than conservative saving; the home reflects the life of desire — beautiful and impermanent.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">11</span>
+          <div class="palace-info">
+            <div class="palace-name">Soul Palace 福德宫</div>
+            <div class="palace-desc">Rich inner life of desire and aspiration; spiritual seeking through diverse traditions; true contentment through the integration of desire and wisdom — the wolf that has found its direction.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">12</span>
+          <div class="palace-info">
+            <div class="palace-name">Parents Palace 父母宫</div>
+            <div class="palace-desc">Charismatic parental figure; complex family of origin with strong desires and possibly dramatic dynamics; the young wolf learns desire — and its consequences — at home.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STRENGTH LEVELS ────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Brightness Levels</p>
+      <h2 class="section-title">Strength &amp; Position</h2>
+      <p class="section-sub">Where Tan Lang sits in the chart determines how freely the desire flows — and how productively.</p>
+
+      <div class="strength-grid">
+
+        <div class="strength-card">
+          <div class="strength-pips">
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+          </div>
+          <div class="strength-level">Temple 庙</div>
+          <div class="strength-chinese">Miào</div>
+          <div class="strength-positions">Hai 亥 · Zi 子</div>
+          <div class="strength-desc">The Wolf at full hunger: charisma and talent fully expressed. Water nourishes the Wood element — the desires flow with natural force and find productive channels. The peach blossom blooms.</div>
+        </div>
+
+        <div class="strength-card">
+          <div class="strength-pips">
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--off"></span>
+          </div>
+          <div class="strength-level">Thriving 旺</div>
+          <div class="strength-chinese">Wàng</div>
+          <div class="strength-positions">Water positions</div>
+          <div class="strength-desc">Magnetic and talented — the desires are channeled. Charisma is strong and opens genuine opportunity. The late-bloom pattern is active but the trajectory is upward.</div>
+        </div>
+
+        <div class="strength-card">
+          <div class="strength-pips">
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--off"></span>
+            <span class="pip pip--off"></span>
+          </div>
+          <div class="strength-level">Favorable 利</div>
+          <div class="strength-chinese">Lì</div>
+          <div class="strength-positions">Mixed positions</div>
+          <div class="strength-desc">Charisma functional; the gifts are present. The late-bloom pattern is more prominent here — patience and discipline are the practice. The wolf is learning the terrain.</div>
+        </div>
+
+        <div class="strength-card">
+          <div class="strength-pips">
+            <span class="pip pip--on"></span>
+            <span class="pip pip--off"></span>
+            <span class="pip pip--off"></span>
+            <span class="pip pip--off"></span>
+          </div>
+          <div class="strength-level">Fallen 陷</div>
+          <div class="strength-chinese">Xiàn</div>
+          <div class="strength-positions">Mao 卯</div>
+          <div class="strength-desc">Wood in Wood — the desires scatter without grounding. The many talents compete rather than cooperate. The shadow quality of excess or distraction dominates; the wolf runs in circles.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── KEY RELATIONSHIPS ──────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Star Dynamics</p>
+      <h2 class="section-title">Key Relationships</h2>
+      <p class="section-sub">How Tan Lang combines and interacts with other stars — and what the four transformations do to desire.</p>
+
+      <div class="rel-grid">
+
+        <div class="rel-card">
+          <div class="rel-tag">杀破狼 — The Vanguard Trio</div>
+          <div class="rel-title">With Qi Sha + Po Jun</div>
+          <div class="rel-body">When the Warrior (Qi Sha) and the Vanguard (Po Jun) appear alongside Tan Lang, the chart becomes one of dramatic transformation and unconventional achievement. The Desire Star provides the creative fuel and charisma — the hunger that keeps the engine running. The Warrior provides decisive force. The Vanguard provides the willingness to destroy what no longer serves. The Trio, together, is the chart of the person who changes the world — and themselves — completely.</div>
+        </div>
+
+        <div class="rel-card">
+          <div class="rel-tag">Mobile Pairing</div>
+          <div class="rel-title">With Tian Ma — The Heavenly Horse</div>
+          <div class="rel-body">Tan Lang combined with the mobile star Tian Ma produces constant movement, travel, and restless change. The desire becomes nomadic — always the next city, the next project, the next lover, the next horizon. Extraordinary when channeled into international creative work. Exhausting when it becomes escape from the one place the wolf needs to be still.</div>
+        </div>
+
+        <div class="rel-card rel-si-hua">
+          <div class="rel-tag">四化 Si Hua — The Transforming Stars</div>
+          <div class="rel-title">How the Four Transformations Affect Tan Lang</div>
+          <div class="sihua-row">
+            <div class="sihua-item">
+              <span class="sihua-year">Wu Year 戊年</span>
+              <span><span class="sihua-name">Hua Lu (化禄)</span><span class="sihua-meaning">The Flow — the desires multiply and flow into abundance; charisma opens every door; the peach blossom is in full bloom; this is the Desire Star at its most generative</span></span>
+            </div>
+            <div class="sihua-item">
+              <span class="sihua-year">Ji Year 己年</span>
+              <span><span class="sihua-name">Hua Quan (化权)</span><span class="sihua-meaning">The Power — desire becomes focused ambition; authority through talent; the wolf chooses its direction and commands the field; recognition arrives</span></span>
+            </div>
+            <div class="sihua-item">
+              <span class="sihua-year">Gui Year 癸年</span>
+              <span><span class="sihua-name">Hua Ji (化忌)</span><span class="sihua-meaning">The Hook — desires create complications; ambition overextends; temptation brings consequences; the wolf needs to pause before running — the hook catches the fastest</span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WESTERN MIRRORS ────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Cross-Cultural Resonance</p>
+      <h2 class="section-title">Western Mirrors</h2>
+      <p class="section-sub">The desire archetype across mythology, psychology, and symbol systems.</p>
+
+      <div class="mirrors-grid">
+
+        <div class="mirror-card">
+          <div class="mirror-system">Greek / Roman Mythology</div>
+          <div class="mirror-name">Dionysus · Bacchus · Eros</div>
+          <div class="mirror-body">Dionysus is the god of desire, creativity, ecstasy, and transformation through transgression — the one who makes creative chaos productive. Eros carries the erotic-creative dimension: desire as the force that drives all creation. Together they map perfectly onto Tan Lang: the appetite for life that, when made conscious, becomes extraordinary generative power. Both gods demand respect or exact a price.</div>
+        </div>
+
+        <div class="mirror-card">
+          <div class="mirror-system">Jungian Archetype</div>
+          <div class="mirror-name">Eros · The Trickster</div>
+          <div class="mirror-body">The libidinal energy that drives creativity and desire — Eros in its Jungian sense as the connecting force, the relational intelligence, the hunger for meaning and beauty. The Trickster holds Tan Lang's capacity to break convention in service of accessing deeper life. At its highest: the integrated creative who has made desire a source of genuine creation rather than endless pursuit.</div>
+        </div>
+
+        <div class="mirror-card">
+          <div class="mirror-system">Tarot</div>
+          <div class="mirror-name">The Devil XV · The Lovers VI</div>
+          <div class="mirror-body">The Devil — not as evil but as the binding power of desire that, when made conscious, becomes extraordinary creative force. The chains in the card are not locked: the figures could remove them. The question is whether they will. The Lovers brings the full romantic dimension: the choice that defines a life, made at the crossroads of desire and wisdom. Tan Lang lives in that intersection.</div>
+        </div>
+
+        <div class="mirror-card">
+          <div class="mirror-system">Western Astrology</div>
+          <div class="mirror-name">Venus in Scorpio · Jupiter in Gemini</div>
+          <div class="mirror-body">Venus in Scorpio: the multi-talented, desire-rich, intensely magnetic creative who requires both breadth and depth to feel fully alive. Jupiter in Gemini: the expansive appetite for knowledge, experience, and connection across multiple domains simultaneously. Both carry the Tan Lang paradox: so much gift, so many directions — and the work of making them serve one coherent life.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PERSONALITY + SHAREABLE ────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">The Full Portrait</p>
+      <h2 class="section-title">Personality Snapshot</h2>
+      <p class="section-sub">What it is to be The Desire Star — and the work it asks of you.</p>
+
+      <div class="personality-layout">
+        <div class="personality-body">
+          <p>The Desire Star individual is alive in a way others find both exhilarating and overwhelming. They want more — more knowledge, more experience, more beauty, more depth, more connection. Their charisma is real and earned: it comes from their genuine engagement with life, the sense they convey that everything matters and nothing is boring and they are fully present in whatever they are currently in love with.</p>
+
+          <p>They are often extraordinarily talented in multiple domains, which creates the paradox of abundance: so many gifts, so many possibilities, that choosing feels like loss. The musician who could also be a philosopher. The entrepreneur who is also a devoted spiritual practitioner. The lover who could love anyone — and therefore spends the first decades loving many.</p>
+
+          <p>Their shadow is the desire that scatters rather than focuses. The project abandoned three-quarters through because a brighter possibility appeared. The relationship that burned at maximum intensity and then suddenly — as if the fire needed air — went out. The career that touched five different fields and mastered none, because mastery requires the kind of sustained attention that desire, by its nature, finds difficult.</p>
+
+          <p>The wisdom arrives when the desires are no longer resisted or indulged — but disciplined. When the Wolf stops running in all directions and chooses the one territory worth defending. The peach blossom does not appear in the first spring. It appears after patient cultivation, when the tree has grown strong enough to hold the weight of the fruit.</p>
+
+          <p>The Desire Star's deepest instruction is not to eliminate the hunger. It is to let it become directional. "You have The Desire Star — your hunger is your compass. Don't try to eliminate it."</p>
+        </div>
+
+        <div class="shareable-card">
+          <div class="shareable-label">Your star · share this</div>
+          <div class="shareable-hanzi" aria-hidden="true">貪狼</div>
+          <div class="shareable-name">The Desire Star</div>
+          <div class="shareable-pinyin">Tān Láng · Wood + Water · Yang</div>
+          <blockquote class="shareable-quote">
+            "You have The Desire Star — your hunger is your compass. Don't try to eliminate it."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BRIDGE CARDS ───────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Continue Exploring</p>
+      <h2 class="section-title">Where to Next</h2>
+
+      <div class="bridges-grid">
+
+        <div class="bridge-card">
+          <div class="bridge-dir">← Back</div>
+          <div class="bridge-title">The 14 Stars</div>
+          <div class="bridge-desc">Return to the full star roster — all 14 major stars of Zi Wei Dou Shu mapped and introduced.</div>
+          <a class="bridge-link" href="/elements/zi-wei/stars/">All 14 Stars</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">← Up</div>
+          <div class="bridge-title">Zi Wei Dou Shu</div>
+          <div class="bridge-desc">The system itself — how the chart works, what the palaces mean, and how to begin reading your own.</div>
+          <a class="bridge-link" href="/elements/zi-wei/">ZWDS Overview</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">杀破狼 — The Warrior</div>
+          <div class="bridge-title">Qi Sha — The Warrior Star</div>
+          <div class="bridge-desc">The decisive force in the Vanguard Trio. The Warrior's drive combined with The Desire Star's charisma is transformational.</div>
+          <a class="bridge-link" href="/elements/zi-wei/stars/qi-sha/">Meet The Warrior</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">杀破狼 — The Vanguard</div>
+          <div class="bridge-title">Po Jun — The Vanguard Star</div>
+          <div class="bridge-desc">The destroyer and rebuilder. Together with Tan Lang's desire, the Trio creates the chart of radical transformation.</div>
+          <a class="bridge-link" href="/elements/zi-wei/stars/po-jun/">Meet The Vanguard</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">Get a Reading</div>
+          <div class="bridge-title">Your ZWDS Chart</div>
+          <div class="bridge-desc">See where Tan Lang sits in your own chart — and what The Desire Star is doing in your life right now.</div>
+          <a class="bridge-link" href="/elements/zi-wei/">Get Your Chart</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">The Southern System</div>
+          <div class="bridge-title">Tian Fu — The Treasury Star</div>
+          <div class="bridge-desc">The anchor of the Southern Dipper constellation. Where Tan Lang runs, Tian Fu holds. Stability to complement desire.</div>
+          <a class="bridge-link" href="/elements/zi-wei/stars/tian-fu/">Meet The Treasury</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!--om-footer:start--><!--om-footer:end-->
+
+<script src="/js/nav.js"></script>
+</body>
+</html>

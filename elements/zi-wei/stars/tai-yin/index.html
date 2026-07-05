@@ -1,0 +1,1223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>太阴 Tai Yin — The Moon Star | Zi Wei Dou Shu | ZodiAnimal</title>
+  <meta name="description" content="太阴 Tai Yin — The Moon Star. The great reflector, the hidden illuminator: deep sensitivity, intuitive wealth, and the yin wisdom that sees what is not said.">
+  <link rel="canonical" href="https://www.zodianimal.com/elements/zi-wei/stars/tai-yin/">
+  <meta property="og:title" content="太阴 Tai Yin — The Moon Star | Zi Wei Dou Shu">
+  <meta property="og:description" content="The great reflector, the hidden illuminator: deep sensitivity, intuitive wealth, and the yin wisdom that sees what is not said.">
+  <meta property="og:url" content="https://www.zodianimal.com/elements/zi-wei/stars/tai-yin/">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/nav-core.css">
+  <link rel="stylesheet" href="/css/nav-mega.css">
+  <link rel="stylesheet" href="/css/nav-drawer.css">
+  <link rel="stylesheet" href="/css/nav-sub.css">
+  <link rel="stylesheet" href="/css/bridges.css">
+  <link rel="stylesheet" href="/css/foot.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap">
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --ink: oklch(0.16 0.03 275);
+      --ink-2: oklch(0.20 0.035 275);
+      --panel: oklch(0.25 0.04 273);
+      --panel-2: oklch(0.30 0.045 272);
+      --line: oklch(0.80 0.06 85 / 0.16);
+      --moon: oklch(0.96 0.02 90);
+      --ivory: oklch(0.92 0.02 88);
+      --body-text: oklch(0.84 0.02 280);
+      --muted: oklch(0.70 0.02 280);
+      --faint: oklch(0.55 0.02 280);
+      --brass: oklch(0.78 0.11 85);
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "Geist", "Inter", sans-serif;
+      --mono: "Space Mono", monospace;
+      --cc: oklch(0.72 0.14 240); /* silver-blue — Tai Yin's color */
+      --maxw: 1120px;
+    }
+
+    /* ── RESET & BASE ───────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ink);
+      color: var(--body-text);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--brass); font-weight: 600; text-decoration: none; }
+    a:hover { color: var(--moon); }
+    a:focus-visible {
+      outline: 2px solid var(--brass);
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+    img { display: block; max-width: 100%; }
+
+    /* ── LAYOUT ─────────────────────────────────────────── */
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 5rem 0; }
+    .section + .section { border-top: 1px solid var(--line); }
+
+    /* ── BREADCRUMB ─────────────────────────────────────── */
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--faint);
+      letter-spacing: 0.04em;
+      padding: 1.25rem 0 0;
+    }
+    .breadcrumb a { color: var(--muted); font-weight: 500; }
+    .breadcrumb a:hover { color: var(--cc); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .breadcrumb-current { color: var(--cc); }
+
+    /* ── EYEBROW ────────────────────────────────────────── */
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cc);
+      margin-bottom: 1rem;
+    }
+
+    /* ── HERO ───────────────────────────────────────────── */
+    .hero {
+      padding: 4rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 0%, oklch(0.72 0.14 240 / 0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 720px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-hanzi-block { display: none; }
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+      font-weight: 560;
+      line-height: 1.05;
+      color: var(--moon);
+      margin-bottom: 0.5rem;
+    }
+    .hero-chinese-line {
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      color: var(--cc);
+      margin-bottom: 1.75rem;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.28rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .badge--family {
+      background: oklch(0.72 0.14 240 / 0.15);
+      color: oklch(0.72 0.14 240);
+      border: 1px solid oklch(0.72 0.14 240 / 0.3);
+    }
+    .badge--element {
+      background: oklch(0.45 0.18 240 / 0.15);
+      color: oklch(0.72 0.14 240);
+      border: 1px solid oklch(0.45 0.18 240 / 0.25);
+    }
+    .badge--polarity {
+      background: oklch(0.55 0.18 280 / 0.15);
+      color: oklch(0.72 0.12 280);
+      border: 1px solid oklch(0.55 0.18 280 / 0.25);
+    }
+    .badge--order {
+      background: var(--panel);
+      color: var(--muted);
+      border: 1px solid var(--line);
+    }
+    .hero-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 2rem;
+    }
+    .kw-pill {
+      padding: 0.22rem 0.65rem;
+      background: var(--ink-2);
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      font-size: 0.73rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .hero-pull {
+      border-left: 3px solid var(--cc);
+      padding: 1rem 1.5rem;
+      background: oklch(0.72 0.14 240 / 0.07);
+      border-radius: 0 8px 8px 0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--ivory);
+      max-width: 620px;
+    }
+
+    /* Large hanzi display */
+    .hero-hanzi-block {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-hanzi-block::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle, oklch(0.72 0.14 240 / 0.18) 0%, transparent 70%);
+    }
+    .hero-hanzi-char {
+      font-family: var(--serif);
+      font-size: 7rem;
+      font-weight: 560;
+      color: var(--cc);
+      text-shadow:
+        0 0 40px oklch(0.72 0.14 240 / 0.6),
+        0 0 80px oklch(0.72 0.14 240 / 0.3);
+      line-height: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── SECTION TITLES ─────────────────────────────────── */
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.4rem;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      max-width: 640px;
+    }
+
+    /* ── TWO-COL ESSENCE ────────────────────────────────── */
+    .essence-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 700px) {
+      .essence-grid { grid-template-columns: 1fr; }
+    }
+    .essence-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+    .essence-panel-title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.75rem;
+    }
+    .essence-panel p {
+      font-size: 0.95rem;
+      color: var(--body-text);
+      line-height: 1.7;
+      margin-bottom: 0.85rem;
+    }
+    .essence-panel p:last-child { margin-bottom: 0; }
+    .essence-fact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .essence-fact-list li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: baseline;
+      font-size: 0.9rem;
+    }
+    .fact-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--cc);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      min-width: 90px;
+      flex-shrink: 0;
+    }
+    .fact-value {
+      color: var(--body-text);
+    }
+
+    /* ── DAY/NIGHT CALLOUT ──────────────────────────────── */
+    .daynight-callout {
+      margin-top: 2rem;
+      background: oklch(0.72 0.14 240 / 0.07);
+      border: 1px solid oklch(0.72 0.14 240 / 0.25);
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 640px) {
+      .daynight-callout { grid-template-columns: 1fr; }
+    }
+    .daynight-half {}
+    .daynight-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .daynight-label--night { color: var(--cc); }
+    .daynight-label--day { color: var(--brass); }
+    .daynight-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.4rem;
+    }
+    .daynight-body {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── COMMAND PALACE ─────────────────────────────────── */
+    .command-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .command-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cc), oklch(0.72 0.14 240 / 0.3));
+    }
+    .command-card::after {
+      content: "太阴";
+      position: absolute;
+      bottom: -1rem;
+      right: 1.5rem;
+      font-family: var(--serif);
+      font-size: 8rem;
+      font-weight: 560;
+      color: var(--cc);
+      opacity: 0.04;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .command-body {
+      max-width: 760px;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--body-text);
+    }
+    .command-body p { margin-bottom: 1.1rem; }
+    .command-body p:last-child { margin-bottom: 0; }
+    .command-highlight {
+      display: inline-block;
+      background: oklch(0.72 0.14 240 / 0.12);
+      color: var(--cc);
+      padding: 0.1rem 0.45rem;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+
+    /* ── PALACES TABLE ──────────────────────────────────── */
+    .palaces-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    @media (max-width: 640px) {
+      .palaces-grid { grid-template-columns: 1fr; }
+    }
+    .palace-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: border-color 0.18s;
+    }
+    .palace-card:hover {
+      border-color: oklch(0.72 0.14 240 / 0.5);
+    }
+    .palace-number {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--cc);
+      letter-spacing: 0.06em;
+      min-width: 1.8rem;
+      padding-top: 0.1rem;
+      flex-shrink: 0;
+    }
+    .palace-info {}
+    .palace-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.3rem;
+    }
+    .palace-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── STRENGTH LEVELS ────────────────────────────────── */
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 820px) {
+      .strength-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .strength-grid { grid-template-columns: 1fr; }
+    }
+    .strength-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+    .strength-pips {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 1rem;
+    }
+    .pip {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .pip--on { background: var(--cc); }
+    .pip--off { background: var(--ink-2); border: 1px solid var(--line); }
+    .strength-level {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.15rem;
+    }
+    .strength-chinese {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--cc);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.65rem;
+    }
+    .strength-positions {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--brass);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.65rem;
+    }
+    .strength-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── RELATIONSHIPS ──────────────────────────────────── */
+    .rel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    @media (max-width: 680px) {
+      .rel-grid { grid-template-columns: 1fr; }
+    }
+    .rel-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.75rem;
+    }
+    .rel-tag {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cc);
+      margin-bottom: 0.5rem;
+    }
+    .rel-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.6rem;
+    }
+    .rel-body {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .rel-si-hua {
+      grid-column: 1 / -1;
+    }
+    .sihua-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 0.75rem;
+    }
+    .sihua-item {
+      display: flex;
+      gap: 0.75rem;
+      align-items: baseline;
+      font-size: 0.88rem;
+    }
+    .sihua-year {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--cc);
+      min-width: 70px;
+      flex-shrink: 0;
+    }
+    .sihua-name {
+      font-weight: 600;
+      color: var(--ivory);
+      margin-right: 0.4rem;
+    }
+    .sihua-meaning {
+      color: var(--muted);
+    }
+
+    /* ── WESTERN MIRRORS ────────────────────────────────── */
+    .mirrors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .mirror-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .mirror-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cc), transparent);
+    }
+    .mirror-system {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.4rem;
+    }
+    .mirror-name {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.6rem;
+    }
+    .mirror-body {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── PERSONALITY + SHAREABLE ────────────────────────── */
+    .personality-layout {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 820px) {
+      .personality-layout { grid-template-columns: 1fr; }
+    }
+    .personality-body {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--body-text);
+    }
+    .personality-body p { margin-bottom: 1rem; }
+    .personality-body p:last-child { margin-bottom: 0; }
+    .shareable-card {
+      background: var(--panel);
+      border: 1px solid oklch(0.72 0.14 240 / 0.4);
+      border-radius: 20px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .shareable-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 120% 120% at 50% -20%, oklch(0.72 0.14 240 / 0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .shareable-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cc);
+      margin-bottom: 1rem;
+    }
+    .shareable-hanzi {
+      font-family: var(--serif);
+      font-size: 4rem;
+      font-weight: 560;
+      color: var(--cc);
+      text-shadow: 0 0 30px oklch(0.72 0.14 240 / 0.5);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .shareable-name {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.2rem;
+    }
+    .shareable-pinyin {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+    .shareable-quote {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--ivory);
+      line-height: 1.6;
+      border-left: 3px solid var(--cc);
+      padding-left: 1rem;
+    }
+
+    /* ── BRIDGE CARDS ───────────────────────────────────── */
+    .bridges-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 680px) {
+      .bridges-grid { grid-template-columns: 1fr; }
+    }
+    .bridge-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.5rem;
+      transition: border-color 0.18s, transform 0.18s;
+    }
+    .bridge-card:hover {
+      border-color: var(--cc);
+      transform: translateY(-2px);
+    }
+    .bridge-dir {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.5rem;
+    }
+    .bridge-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.35rem;
+    }
+    .bridge-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+    .bridge-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--cc);
+      transition: gap 0.18s, color 0.18s;
+    }
+    .bridge-link:hover {
+      color: var(--moon);
+      gap: 0.55rem;
+    }
+    .bridge-link::after { content: "→"; }
+  </style>
+</head>
+<body class="pn-has-bar">
+
+<!--pn-static:start--><!--pn-static:end-->
+
+<a id="pn-main" tabindex="-1"></a>
+
+<main>
+
+  <!-- ── BREADCRUMB ─────────────────────────────────────── -->
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/elements/">Elements</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/elements/zi-wei/">Zi Wei Dou Shu</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/elements/zi-wei/stars/">The 14 Stars</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">The Moon Star</span>
+    </nav>
+  </div>
+
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-layout">
+        <div>
+          <p class="eyebrow">Southern Dipper · Water · The Most Yin of Stars</p>
+          <h1>The Moon Star</h1>
+          <p class="hero-chinese-line">太阴 · Tài Yīn · The Great Yin / The Great Moon</p>
+
+          <div class="hero-badges">
+            <span class="badge badge--family">Southern Dipper 天府星系</span>
+            <span class="badge badge--element">Water Element</span>
+            <span class="badge badge--polarity">Yin — Most Yin</span>
+            <span class="badge badge--order">Strongest at Night</span>
+          </div>
+
+          <div class="hero-keywords">
+            <span class="kw-pill">Sensitivity</span>
+            <span class="kw-pill">Intuition</span>
+            <span class="kw-pill">Wealth (Feminine)</span>
+            <span class="kw-pill">Beauty</span>
+            <span class="kw-pill">Nurturing</span>
+            <span class="kw-pill">The Hidden Depths</span>
+          </div>
+
+          <blockquote class="hero-pull">
+            The great reflector, the hidden illuminator — the star that rules the night and knows what is not said.
+          </blockquote>
+        </div>
+
+        <div class="hero-hanzi-block" aria-hidden="true">
+          <span class="hero-hanzi-char">陰</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ESSENCE ───────────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Core Identity</p>
+      <h2 class="section-title">Essence of Tài Yīn</h2>
+      <p class="section-sub">The moon itself — receptive, reflective, and more powerful in the dark.</p>
+
+      <div class="essence-grid">
+        <div class="essence-panel">
+          <h3 class="essence-panel-title">The Star at a Glance</h3>
+          <ul class="essence-fact-list">
+            <li>
+              <span class="fact-label">Chinese</span>
+              <span class="fact-value">太阴 (Tài Yīn)</span>
+            </li>
+            <li>
+              <span class="fact-label">Literal</span>
+              <span class="fact-value">The Great Yin / The Great Moon</span>
+            </li>
+            <li>
+              <span class="fact-label">Coined Name</span>
+              <span class="fact-value">The Moon Star</span>
+            </li>
+            <li>
+              <span class="fact-label">Family</span>
+              <span class="fact-value">Southern Dipper (天府星系)</span>
+            </li>
+            <li>
+              <span class="fact-label">Polarity</span>
+              <span class="fact-value">The most yin of all 14 major stars</span>
+            </li>
+            <li>
+              <span class="fact-label">Element</span>
+              <span class="fact-value">Water / Yin</span>
+            </li>
+            <li>
+              <span class="fact-label">Temple</span>
+              <span class="fact-value">Hai (亥), Zi (子)</span>
+            </li>
+            <li>
+              <span class="fact-label">Color</span>
+              <span class="fact-value">Silver-blue — the color of moonlight on still water</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="essence-panel">
+          <h3 class="essence-panel-title">The Archetype</h3>
+          <p>Tai Yin is the moon itself — the great reflector, the hidden illuminator, the star that rules the night. Paired with Tai Yang (the Sun), Tai Yin governs the private, the interior, the receptive. Where the Sun radiates outward, the Moon reflects inward. Where Tai Yang is the public official in the daylight court, Tai Yin is the poet in the garden, the wealthy widow, the mystic who understands what is not said.</p>
+          <p>This is the star of wealth through beauty, through relationships, through the yin domains of life. Its power is not declared — it is felt. Its intelligence is not analytic — it is intuitive. It does not announce its depth. It simply holds it.</p>
+          <p>In the imperial cosmology, Tai Yin is the Moon Empress to Tai Yang's Sun Emperor — the counterpart that makes the system whole, that rules the half of existence the Sun cannot illuminate.</p>
+        </div>
+      </div>
+
+      <!-- Day / Night Factor -->
+      <div class="daynight-callout">
+        <div class="daynight-half">
+          <div class="daynight-label daynight-label--night">Night Birth · Full Power</div>
+          <div class="daynight-title">The Moon at Its Strongest</div>
+          <div class="daynight-body">Born at night with Tai Yin prominent: the moon at full power. Intuition sharpened to near-psychic clarity. Wealth potential maximized through yin channels — property, beauty, relationships, timing. The receptive gifts operate without friction. This is the chart where sensitivity is not a liability but a precision instrument.</div>
+        </div>
+        <div class="daynight-half">
+          <div class="daynight-label daynight-label--day">Day Birth · Needs Cultivation</div>
+          <div class="daynight-title">The Moon in Daylight</div>
+          <div class="daynight-body">Born during daylight hours: the moon is present but dimmed — the way you can see it in the afternoon sky, pale and quiet. The yin gifts are all there but require more conscious cultivation. The sensitivity may feel like vulnerability before it becomes wisdom. The wealth comes, but more through deliberate effort than through the moon's effortless reflective power.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── IN THE COMMAND PALACE ─────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Life Palace Reading</p>
+      <h2 class="section-title">In the Command Palace</h2>
+      <p class="section-sub">When 太阴 governs your Life Palace, this is the depth you were born into.</p>
+
+      <div class="command-card">
+        <div class="command-body">
+          <p>Tai Yin in the Life Palace creates individuals of <span class="command-highlight">extraordinary sensitivity and intuitive depth</span>. They read rooms, people, and situations with a precision that borders on psychic. They feel the emotional temperature before they enter. They know what someone means before the words finish forming. Their emotional intelligence is their greatest asset — and when unmanaged, their greatest vulnerability.</p>
+
+          <p>Classical texts note Tai Yin as one of the finest Life Palace placements for women — the yin gifts are fully expressed, fully at home. For men, the placement is equally powerful but requires <span class="command-highlight">conscious integration of the receptive qualities</span>: learning to honor the sensitivity rather than suppress it, to read it as data rather than noise, to let it inform action without being overwhelmed by it.</p>
+
+          <p>The wealth potential is high, but it operates on the moon's logic: indirect, tidal, often arriving through beauty, relationship, inheritance, real estate, or the hidden economy of the yin domains. You rarely see a Tai Yin native grinding toward wealth in straight lines. The wealth comes sideways — through the right partner, the right property, the aesthetic sense that makes one thing sell and another not.</p>
+
+          <p>The shadow is the moon at high tide: when the sensitivity becomes overwhelm, when the receptivity becomes passivity, when the beauty sense becomes escapism. The deepest work for this Life Palace is learning that the sensitivity is not the problem to solve. It is <span class="command-highlight">the instrument itself</span> — the precise tool they were born with for navigating a world most people only half-perceive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ACROSS THE 12 PALACES ──────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Palace Influence</p>
+      <h2 class="section-title">Across the 12 Palaces</h2>
+      <p class="section-sub">How Tai Yin's sensitivity, beauty, and intuitive wealth manifest in each area of life.</p>
+
+      <div class="palaces-grid">
+
+        <div class="palace-card">
+          <span class="palace-number">01</span>
+          <div class="palace-info">
+            <div class="palace-name">Life Palace 命宫</div>
+            <div class="palace-desc">Deep sensitivity and intuition; wealth through yin channels; beauty and aesthetic intelligence; nighttime births are stronger; shadow is emotional overwhelm or over-dependency.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">02</span>
+          <div class="palace-info">
+            <div class="palace-name">Siblings Palace 兄弟宫</div>
+            <div class="palace-desc">Emotionally close sibling bonds; female siblings particularly significant; intuitive understanding flows between siblings with little need for explanation.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">03</span>
+          <div class="palace-info">
+            <div class="palace-name">Spouse Palace 夫妻宫</div>
+            <div class="palace-desc">Romantic, sensitive partnership; strong attraction through emotional resonance; partner may be artistic or intuitive; potential for idealization — the moon can make the beloved into a dream.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">04</span>
+          <div class="palace-info">
+            <div class="palace-name">Children Palace 子女宫</div>
+            <div class="palace-desc">Sensitive, beautiful children; deep emotional bonds; the parent-child relationship is emotionally rich and intuitively tuned; children who are artistic or perceptive.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">05</span>
+          <div class="palace-info">
+            <div class="palace-name">Wealth Palace 财帛宫</div>
+            <div class="palace-desc">Moon wealth — through property, real estate, relationships, inheritance, or the beauty economy. Wealth comes through receptive channels rather than direct effort; nighttime birth significantly amplifies this.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">06</span>
+          <div class="palace-info">
+            <div class="palace-name">Health Palace 疾厄宫</div>
+            <div class="palace-desc">Kidney and reproductive system; emotional health directly affects physical wellbeing; hormonal balance worth tending; the body reflects emotional states with unusual fidelity.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">07</span>
+          <div class="palace-info">
+            <div class="palace-name">Travel Palace 迁移宫</div>
+            <div class="palace-desc">Travel for beauty and artistic inspiration; success in environments that value sensitivity and aesthetic intelligence; creative international connections; abroad feels like breathing room.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">08</span>
+          <div class="palace-info">
+            <div class="palace-name">Network Palace 交友宫</div>
+            <div class="palace-desc">Emotionally attuned social connections; close, intimate friendship circles preferred over wide networks; relationships built on deep emotional understanding and unspoken rapport.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">09</span>
+          <div class="palace-info">
+            <div class="palace-name">Career Palace 官禄宫</div>
+            <div class="palace-desc">Arts, music, poetry, fashion, beauty industry, psychology, counseling, healing arts, real estate — any field where sensitivity and aesthetic intelligence are the core competency, not an asset.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">10</span>
+          <div class="palace-info">
+            <div class="palace-name">Property Palace 田宅宫</div>
+            <div class="palace-desc">Strong real estate accumulation — particularly for nighttime births; the home is a sanctuary of beauty and emotional resonance; property is both wealth vehicle and emotional anchor.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">11</span>
+          <div class="palace-info">
+            <div class="palace-name">Soul Palace 福德宫</div>
+            <div class="palace-desc">Rich inner life of sensitivity and beauty; spiritual life through aesthetic experience, nature, and emotional depth; genuine contentment found through beauty rather than achievement.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">12</span>
+          <div class="palace-info">
+            <div class="palace-name">Parents Palace 父母宫</div>
+            <div class="palace-desc">Emotionally significant maternal relationship; the mother-figure is prominent in the life story; the family of origin carries strong yin energy that shapes how the world is perceived.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STRENGTH LEVELS ────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Brightness Levels</p>
+      <h2 class="section-title">Strength &amp; Position</h2>
+      <p class="section-sub">Where Tai Yin sits in the chart determines how freely the moon's gifts can shine.</p>
+
+      <div class="strength-grid">
+
+        <div class="strength-card">
+          <div class="strength-pips">
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+          </div>
+          <div class="strength-level">Temple 庙</div>
+          <div class="strength-chinese">Miào</div>
+          <div class="strength-positions">Hai 亥 · Zi 子</div>
+          <div class="strength-desc">Moon at night in water: the yin gifts at full power. Deep intuition, beauty, and wealth through receptive channels. This is the moon in its natural home — no friction, no dimming, everything fully expressed.</div>
+        </div>
+
+        <div class="strength-card">
+          <div class="strength-pips">
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--off"></span>
+          </div>
+          <div class="strength-level">Thriving 旺</div>
+          <div class="strength-chinese">Wàng</div>
+          <div class="strength-positions">Chou 丑 · Wei 未 · Chen 辰 · Xu 戌</div>
+          <div class="strength-desc">Earth supports water; stable, grounded expression of the moon's gifts. The sensitivity is channeled into practical wisdom. Wealth accumulates steadily through the yin domains.</div>
+        </div>
+
+        <div class="strength-card">
+          <div class="strength-pips">
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--off"></span>
+            <span class="pip pip--off"></span>
+          </div>
+          <div class="strength-level">Favorable 利</div>
+          <div class="strength-chinese">Lì</div>
+          <div class="strength-positions">Si 巳 · You 酉</div>
+          <div class="strength-desc">Moderate expression — the sensitivity is present but not overwhelming. The aesthetic intelligence and relational gifts function well; the depth is real, if less immediately apparent.</div>
+        </div>
+
+        <div class="strength-card">
+          <div class="strength-pips">
+            <span class="pip pip--on"></span>
+            <span class="pip pip--off"></span>
+            <span class="pip pip--off"></span>
+            <span class="pip pip--off"></span>
+          </div>
+          <div class="strength-level">Fallen 陷</div>
+          <div class="strength-chinese">Xiàn</div>
+          <div class="strength-positions">Wu 午 · Yin 寅</div>
+          <div class="strength-desc">Moon in daylight or fire: the gifts are inverted. Sensitivity becomes vulnerability; the receptivity can feel like a wound. Wealth requires more active cultivation. This calls for conscious integration of the yin nature rather than effortless expression.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── KEY RELATIONSHIPS ──────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Star Dynamics</p>
+      <h2 class="section-title">Key Relationships</h2>
+      <p class="section-sub">How Tai Yin combines and interacts with other stars in the chart.</p>
+
+      <div class="rel-grid">
+
+        <div class="rel-card">
+          <div class="rel-tag">The Cosmic Axis</div>
+          <div class="rel-title">With Tai Yang — The Sun Star</div>
+          <div class="rel-body">The Sun-Moon axis — the most fundamental pairing in all of ZWDS. Together they govern the balance of public and private, day and night, masculine and feminine expression. Where Tai Yang radiates outward into reputation and public life, Tai Yin holds the interior: the private world, the emotional depth, the wealth that flows through relationship and beauty. When both are strong, the chart holds the full spectrum of life.</div>
+        </div>
+
+        <div class="rel-card">
+          <div class="rel-tag">机月同梁 Grouping</div>
+          <div class="rel-title">The Ji-Yue Pairing — With Tian Ji</div>
+          <div class="rel-body">The ji-yue (机月) pairing — analytical intelligence and intuitive intelligence combined. Tian Ji's restless strategic mind is softened and deepened by Tai Yin's feeling-wisdom. The combination is very favorable for wealth and relationships: the intellect that plans, and the intuition that knows. Together they form part of the Four of Stability: 机月同梁 — Tian Ji, Tai Yin, Tian Tong, Tian Liang — the grouping of institutional careers and long-tenure accumulation.</div>
+        </div>
+
+        <div class="rel-card rel-si-hua">
+          <div class="rel-tag">四化 Si Hua — The Transforming Stars</div>
+          <div class="rel-title">How the Four Transformations Affect Tai Yin</div>
+          <div class="sihua-row">
+            <div class="sihua-item">
+              <span class="sihua-year">Yi Year 乙年</span>
+              <span><span class="sihua-name">Hua Ji (化忌)</span><span class="sihua-meaning">The Hook — emotional sensitivity becomes a vulnerability; relationships require extra care and attention; feelings can become entangled; tread carefully with emotional commitments this year</span></span>
+            </div>
+            <div class="sihua-item">
+              <span class="sihua-year">Ding Year 丁年</span>
+              <span><span class="sihua-name">Hua Lu (化禄)</span><span class="sihua-meaning">The Flow — emotional and financial fortune flows; the yin channels open; wealth through beauty and relationship amplified; a year when the moon's gifts feel effortless</span></span>
+            </div>
+            <div class="sihua-item">
+              <span class="sihua-year">Geng Year 庚年</span>
+              <span><span class="sihua-name">Hua Ke (化科)</span><span class="sihua-meaning">The Shine — beauty and sensitivity publicly recognized; the aesthetic intelligence earns reputation; the yin gifts become a name that travels</span></span>
+            </div>
+            <div class="sihua-item">
+              <span class="sihua-year">Wu Year 戊年</span>
+              <span><span class="sihua-name">Hua Quan (化权)</span><span class="sihua-meaning">The Power — the receptive gifts acquire force and authority; intuition becomes leadership; the moon's quiet knowing gains the room's attention</span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WESTERN MIRRORS ────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Cross-Cultural Resonance</p>
+      <h2 class="section-title">Western Mirrors</h2>
+      <p class="section-sub">The moon archetype across mythology, psychology, and symbol systems.</p>
+
+      <div class="mirrors-grid">
+
+        <div class="mirror-card">
+          <div class="mirror-system">Greek / Roman Mythology</div>
+          <div class="mirror-name">Artemis · Diana meets Aphrodite · Venus</div>
+          <div class="mirror-body">Tai Yin holds two mythological faces in tension. Artemis/Diana: the moon goddess as independent, intuitive, nature-connected, sovereign in the dark — the huntress who needs no court to confirm her power. And Aphrodite/Venus: beauty, relational wealth, the magnetism that draws abundance without effort. Both are aspects of the moon's yin nature. The Moon Star is never only one of them.</div>
+        </div>
+
+        <div class="mirror-card">
+          <div class="mirror-system">Jungian Archetype</div>
+          <div class="mirror-name">The Anima</div>
+          <div class="mirror-body">The inner feminine principle that carries intuition, receptivity, feeling, and the wisdom of the unconscious. In women with this star prominent: the fully expressed yin self — the deep intelligence that Western culture often calls "just a feeling." In men: the interior feminine that must be consciously integrated for the chart to function. When it is: extraordinary emotional intelligence and relational depth. When it is not: the sensitivity becomes a source of confusion rather than power.</div>
+        </div>
+
+        <div class="mirror-card">
+          <div class="mirror-system">Tarot</div>
+          <div class="mirror-name">The Moon (XVIII) · Queen of Cups</div>
+          <div class="mirror-body">The Moon (XVIII): the deep unconscious, intuition, dreams, the hidden power of what is not seen — the card that governs the night world and everything that lives beneath the surface of appearances. Also the Queen of Cups: the fully expressed emotional intelligence — compassionate, receptive, deeply knowing, at home in the feeling realm in a way that others find both beautiful and slightly mysterious.</div>
+        </div>
+
+        <div class="mirror-card">
+          <div class="mirror-system">Western Astrology</div>
+          <div class="mirror-name">Moon in Cancer or Pisces · Venus in Pisces</div>
+          <div class="mirror-body">The fully receptive, intuitive, emotionally intelligent placements — the Moon in its sign of dignity or in its most empathic sign, feeling everything and knowing what to do with it. Venus in Pisces adds the dimension of beauty and relational wealth that flows through the yin channels: drawn toward transcendence, beauty, and connection in ways that generate abundance almost as a side effect of simply being.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PERSONALITY + SHAREABLE ────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">The Full Portrait</p>
+      <h2 class="section-title">Personality Snapshot</h2>
+      <p class="section-sub">What it is to live with this depth — and the work it asks of you.</p>
+
+      <div class="personality-layout">
+        <div class="personality-body">
+          <p>The Moon Star individual knows things they cannot explain. Their intuition is their compass — and it is almost never wrong about what matters. They feel the emotional temperature of a room before they enter it. They read between lines that others do not know are there. They pick up the signal beneath the signal: the unspoken, the withheld, the thing that is true but has not been said yet.</p>
+
+          <p>Their wealth tends to come through beauty, relationship, and the things that cannot quite be quantified: the right timing, the right connection, the aesthetic sense that makes one design sell and another not. They do not typically chase wealth in straight lines. The moon does not shine in straight lines. The wealth comes sideways, through the back door of the unexpected inheritance, the partner who opens the right room, the property that quietly doubles, the art that finds its moment.</p>
+
+          <p>In relationships, they love deeply and perceive clearly — which means they can be profoundly hurt by the gap between what they sense is true and what the other person is willing to acknowledge. They have a tendency to idealize the beloved, to see the person they could be rather than the one currently present. The moon makes things beautiful. That is both the gift and the danger.</p>
+
+          <p>Their shadow is the moon at high tide: when the sensitivity becomes overwhelm, when the receptivity becomes passivity, when the beauty becomes escapism. The Moon Star at its most challenged is the person who absorbs every emotional current in the room and cannot find the thread back to their own signal. Sensitivity without boundaries becomes a kind of drowning.</p>
+
+          <p>Their deepest work is learning to hold their sensitivity as the superpower it is — not apologize for it, not suppress it, and not be so open to the world's emotional field that they lose the thread of their own. The Moon Star's precision is real. The instrument works. They simply have to learn to trust what it tells them.</p>
+        </div>
+
+        <div class="shareable-card">
+          <div class="shareable-label">Your star · share this</div>
+          <div class="shareable-hanzi" aria-hidden="true">太陰</div>
+          <div class="shareable-name">The Moon Star</div>
+          <div class="shareable-pinyin">Tài Yīn · Water · Yin</div>
+          <blockquote class="shareable-quote">
+            "You have The Moon Star — your real wealth has always been your intuition, not your portfolio."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BRIDGE CARDS ───────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Continue Exploring</p>
+      <h2 class="section-title">Where to Next</h2>
+
+      <div class="bridges-grid">
+
+        <div class="bridge-card">
+          <div class="bridge-dir">← Back</div>
+          <div class="bridge-title">The 14 Stars</div>
+          <div class="bridge-desc">Return to the full star roster — all 14 major stars of Zi Wei Dou Shu mapped and introduced.</div>
+          <a class="bridge-link" href="/elements/zi-wei/stars/">All 14 Stars</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">← Up</div>
+          <div class="bridge-title">Zi Wei Dou Shu</div>
+          <div class="bridge-desc">The system itself — how the chart works, what the palaces mean, and how to begin reading your own.</div>
+          <a class="bridge-link" href="/elements/zi-wei/">ZWDS Overview</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">Related Star</div>
+          <div class="bridge-title">The Sun Star — Tai Yang</div>
+          <div class="bridge-desc">The cosmic counterpart. The Sun radiates where the Moon reflects — together they form the most fundamental pairing in ZWDS.</div>
+          <a class="bridge-link" href="/elements/zi-wei/stars/tai-yang/">Meet The Sun Star</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">机月 Pairing</div>
+          <div class="bridge-title">The Strategist — Tian Ji</div>
+          <div class="bridge-desc">Intuition and intellect combined. The ji-yue pairing that deepens the Strategist's restless mind with the Moon's feeling-wisdom.</div>
+          <a class="bridge-link" href="/elements/zi-wei/stars/tian-ji/">Meet The Strategist</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">机月同梁</div>
+          <div class="bridge-title">The Four of Stability</div>
+          <div class="bridge-desc">Tian Ji, Tai Yin, Tian Tong, and Tian Liang — the grouping that governs steady accumulation and the long-tenure path.</div>
+          <a class="bridge-link" href="/elements/zi-wei/stars/">Explore the Stars</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">Get a Reading</div>
+          <div class="bridge-title">Your ZWDS Chart</div>
+          <div class="bridge-desc">See where Tai Yin sits in your own chart — and what the Moon Star is illuminating in your life right now.</div>
+          <a class="bridge-link" href="/elements/zi-wei/">Get Your Chart</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!--om-footer:start--><!--om-footer:end-->
+
+<script src="/js/nav.js"></script>
+</body>
+</html>

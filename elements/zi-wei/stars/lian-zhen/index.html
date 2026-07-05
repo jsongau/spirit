@@ -1,0 +1,1193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>廉贞 Lian Zhen — The Diplomat | Zi Wei Dou Shu | ZodiAnimal</title>
+  <meta name="description" content="廉贞 Lian Zhen — The Diplomat. Incorruptible and Chaste: passion beneath composure, political intelligence, the power that lives in what is left unsaid.">
+  <link rel="canonical" href="https://www.zodianimal.com/elements/zi-wei/stars/lian-zhen/">
+  <meta property="og:title" content="廉贞 Lian Zhen — The Diplomat | Zi Wei Dou Shu">
+  <meta property="og:description" content="Incorruptible and Chaste: passion beneath composure, political intelligence, the power that lives in what is left unsaid.">
+  <meta property="og:url" content="https://www.zodianimal.com/elements/zi-wei/stars/lian-zhen/">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/nav-core.css">
+  <link rel="stylesheet" href="/css/nav-mega.css">
+  <link rel="stylesheet" href="/css/nav-drawer.css">
+  <link rel="stylesheet" href="/css/nav-sub.css">
+  <link rel="stylesheet" href="/css/bridges.css">
+  <link rel="stylesheet" href="/css/foot.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap">
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --ink: oklch(0.16 0.03 275);
+      --ink-2: oklch(0.20 0.035 275);
+      --panel: oklch(0.25 0.04 273);
+      --panel-2: oklch(0.30 0.045 272);
+      --line: oklch(0.80 0.06 85 / 0.16);
+      --moon: oklch(0.96 0.02 90);
+      --ivory: oklch(0.92 0.02 88);
+      --body-text: oklch(0.84 0.02 280);
+      --muted: oklch(0.70 0.02 280);
+      --faint: oklch(0.55 0.02 280);
+      --brass: oklch(0.78 0.11 85);
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "Geist", "Inter", sans-serif;
+      --mono: "Space Mono", monospace;
+      --cc: oklch(0.62 0.22 15); /* crimson — Lian Zhen's color */
+      --maxw: 1120px;
+    }
+
+    /* ── RESET & BASE ───────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ink);
+      color: var(--body-text);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--brass); font-weight: 600; text-decoration: none; }
+    a:hover { color: var(--moon); }
+    a:focus-visible {
+      outline: 2px solid var(--brass);
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+    img { display: block; max-width: 100%; }
+
+    /* ── LAYOUT ─────────────────────────────────────────── */
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 5rem 0; }
+    .section + .section { border-top: 1px solid var(--line); }
+
+    /* ── BREADCRUMB ─────────────────────────────────────── */
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--faint);
+      letter-spacing: 0.04em;
+      padding: 1.25rem 0 0;
+    }
+    .breadcrumb a { color: var(--muted); font-weight: 500; }
+    .breadcrumb a:hover { color: var(--cc); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .breadcrumb-current { color: var(--cc); }
+
+    /* ── EYEBROW ────────────────────────────────────────── */
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cc);
+      margin-bottom: 1rem;
+    }
+
+    /* ── HERO ───────────────────────────────────────────── */
+    .hero {
+      padding: 4rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 0%, oklch(0.62 0.22 15 / 0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 720px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-hanzi-block { display: none; }
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+      font-weight: 560;
+      line-height: 1.05;
+      color: var(--moon);
+      margin-bottom: 0.5rem;
+    }
+    .hero-chinese-line {
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      color: var(--cc);
+      margin-bottom: 1.75rem;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.28rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .badge--family {
+      background: oklch(0.62 0.22 15 / 0.15);
+      color: oklch(0.75 0.18 15);
+      border: 1px solid oklch(0.62 0.22 15 / 0.3);
+    }
+    .badge--element {
+      background: oklch(0.55 0.20 30 / 0.15);
+      color: oklch(0.72 0.16 30);
+      border: 1px solid oklch(0.55 0.20 30 / 0.25);
+    }
+    .badge--polarity {
+      background: oklch(0.55 0.18 280 / 0.15);
+      color: oklch(0.72 0.12 280);
+      border: 1px solid oklch(0.55 0.18 280 / 0.25);
+    }
+    .badge--order {
+      background: var(--panel);
+      color: var(--muted);
+      border: 1px solid var(--line);
+    }
+    .hero-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 2rem;
+    }
+    .kw-pill {
+      padding: 0.22rem 0.65rem;
+      background: var(--ink-2);
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      font-size: 0.73rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .hero-pull {
+      border-left: 3px solid var(--cc);
+      padding: 1rem 1.5rem;
+      background: oklch(0.62 0.22 15 / 0.07);
+      border-radius: 0 8px 8px 0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--ivory);
+      max-width: 620px;
+    }
+
+    /* Large hanzi display */
+    .hero-hanzi-block {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-hanzi-block::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle, oklch(0.62 0.22 15 / 0.18) 0%, transparent 70%);
+    }
+    .hero-hanzi-char {
+      font-family: var(--serif);
+      font-size: 7rem;
+      font-weight: 560;
+      color: var(--cc);
+      text-shadow:
+        0 0 40px oklch(0.62 0.22 15 / 0.6),
+        0 0 80px oklch(0.62 0.22 15 / 0.3);
+      line-height: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── SECTION TITLES ─────────────────────────────────── */
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.4rem;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      max-width: 640px;
+    }
+
+    /* ── TWO-COL ESSENCE ────────────────────────────────── */
+    .essence-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 700px) {
+      .essence-grid { grid-template-columns: 1fr; }
+    }
+    .essence-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+    .essence-panel-title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.75rem;
+    }
+    .essence-panel p {
+      font-size: 0.95rem;
+      color: var(--body-text);
+      line-height: 1.7;
+      margin-bottom: 0.85rem;
+    }
+    .essence-panel p:last-child { margin-bottom: 0; }
+    .essence-fact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .essence-fact-list li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: baseline;
+      font-size: 0.9rem;
+    }
+    .fact-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--cc);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      min-width: 90px;
+      flex-shrink: 0;
+    }
+    .fact-value {
+      color: var(--body-text);
+    }
+
+    /* ── DUAL NATURE BANNER ─────────────────────────────── */
+    .dual-nature {
+      margin-top: 2rem;
+      background: var(--panel);
+      border: 1px solid oklch(0.62 0.22 15 / 0.3);
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .dual-nature::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cc), transparent);
+    }
+    .dual-nature-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.75rem;
+    }
+    .dual-nature p {
+      font-size: 0.95rem;
+      color: var(--body-text);
+      line-height: 1.75;
+      max-width: 820px;
+    }
+
+    /* ── COMMAND PALACE ─────────────────────────────────── */
+    .command-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .command-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cc), oklch(0.62 0.22 15 / 0.3));
+    }
+    .command-card::after {
+      content: "廉貞";
+      position: absolute;
+      bottom: -1rem;
+      right: 1.5rem;
+      font-family: var(--serif);
+      font-size: 8rem;
+      font-weight: 560;
+      color: var(--cc);
+      opacity: 0.04;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .command-body {
+      max-width: 760px;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--body-text);
+    }
+    .command-body p { margin-bottom: 1.1rem; }
+    .command-body p:last-child { margin-bottom: 0; }
+    .command-highlight {
+      display: inline-block;
+      background: oklch(0.62 0.22 15 / 0.12);
+      color: var(--cc);
+      padding: 0.1rem 0.45rem;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+
+    /* ── PALACES TABLE ──────────────────────────────────── */
+    .palaces-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    @media (max-width: 640px) {
+      .palaces-grid { grid-template-columns: 1fr; }
+    }
+    .palace-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: border-color 0.18s;
+    }
+    .palace-card:hover {
+      border-color: oklch(0.62 0.22 15 / 0.5);
+    }
+    .palace-number {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--cc);
+      letter-spacing: 0.06em;
+      min-width: 1.8rem;
+      padding-top: 0.1rem;
+      flex-shrink: 0;
+    }
+    .palace-info {}
+    .palace-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.3rem;
+    }
+    .palace-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── STRENGTH LEVELS ────────────────────────────────── */
+    .strength-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 820px) {
+      .strength-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .strength-grid { grid-template-columns: 1fr; }
+    }
+    .strength-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+    .strength-pips {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 1rem;
+    }
+    .pip {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .pip--on { background: var(--cc); }
+    .pip--off { background: var(--ink-2); border: 1px solid var(--line); }
+    .strength-level {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.15rem;
+    }
+    .strength-chinese {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--cc);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.65rem;
+    }
+    .strength-positions {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--brass);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.65rem;
+    }
+    .strength-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── RELATIONSHIPS ──────────────────────────────────── */
+    .rel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    @media (max-width: 680px) {
+      .rel-grid { grid-template-columns: 1fr; }
+    }
+    .rel-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.75rem;
+    }
+    .rel-tag {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cc);
+      margin-bottom: 0.5rem;
+    }
+    .rel-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.6rem;
+    }
+    .rel-body {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .rel-si-hua {
+      grid-column: 1 / -1;
+    }
+    .sihua-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 0.75rem;
+    }
+    .sihua-item {
+      display: flex;
+      gap: 0.75rem;
+      align-items: baseline;
+      font-size: 0.88rem;
+    }
+    .sihua-year {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--cc);
+      min-width: 70px;
+      flex-shrink: 0;
+    }
+    .sihua-name {
+      font-weight: 600;
+      color: var(--ivory);
+      margin-right: 0.4rem;
+    }
+    .sihua-meaning {
+      color: var(--muted);
+    }
+
+    /* ── WESTERN MIRRORS ────────────────────────────────── */
+    .mirrors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .mirror-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .mirror-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cc), transparent);
+    }
+    .mirror-system {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.4rem;
+    }
+    .mirror-name {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.6rem;
+    }
+    .mirror-body {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── PERSONALITY + SHAREABLE ────────────────────────── */
+    .personality-layout {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 820px) {
+      .personality-layout { grid-template-columns: 1fr; }
+    }
+    .personality-body {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--body-text);
+    }
+    .personality-body p { margin-bottom: 1rem; }
+    .personality-body p:last-child { margin-bottom: 0; }
+    .shareable-card {
+      background: var(--panel);
+      border: 1px solid oklch(0.62 0.22 15 / 0.4);
+      border-radius: 20px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .shareable-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 120% 120% at 50% -20%, oklch(0.62 0.22 15 / 0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .shareable-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cc);
+      margin-bottom: 1rem;
+    }
+    .shareable-hanzi {
+      font-family: var(--serif);
+      font-size: 4rem;
+      font-weight: 560;
+      color: var(--cc);
+      text-shadow: 0 0 30px oklch(0.62 0.22 15 / 0.5);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .shareable-name {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.2rem;
+    }
+    .shareable-pinyin {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+    .shareable-quote {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--ivory);
+      line-height: 1.6;
+      border-left: 3px solid var(--cc);
+      padding-left: 1rem;
+    }
+
+    /* ── BRIDGE CARDS ───────────────────────────────────── */
+    .bridges-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 680px) {
+      .bridges-grid { grid-template-columns: 1fr; }
+    }
+    .bridge-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.5rem;
+      transition: border-color 0.18s, transform 0.18s;
+    }
+    .bridge-card:hover {
+      border-color: var(--cc);
+      transform: translateY(-2px);
+    }
+    .bridge-dir {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.5rem;
+    }
+    .bridge-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 560;
+      color: var(--moon);
+      margin-bottom: 0.35rem;
+    }
+    .bridge-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+    .bridge-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--cc);
+      transition: gap 0.18s, color 0.18s;
+    }
+    .bridge-link:hover {
+      color: var(--moon);
+      gap: 0.55rem;
+    }
+    .bridge-link::after { content: "→"; }
+  </style>
+</head>
+<body class="pn-has-bar">
+
+<!--pn-static:start--><!--pn-static:end-->
+
+<a id="pn-main" tabindex="-1"></a>
+
+<main>
+
+  <!-- ── BREADCRUMB ─────────────────────────────────────── -->
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/elements/">Elements</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/elements/zi-wei/">Zi Wei Dou Shu</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/elements/zi-wei/stars/">The 14 Stars</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">The Diplomat</span>
+    </nav>
+  </div>
+
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-layout">
+        <div>
+          <p class="eyebrow">Northern Dipper · Star 06 of 14</p>
+          <h1>The Diplomat</h1>
+          <p class="hero-chinese-line">廉贞 · Lián Zhēn · Incorruptible and Chaste</p>
+
+          <div class="hero-badges">
+            <span class="badge badge--family">Northern Dipper 紫微星系</span>
+            <span class="badge badge--element">Fire Element</span>
+            <span class="badge badge--polarity">Yin</span>
+            <span class="badge badge--order">Star 06</span>
+          </div>
+
+          <div class="hero-keywords">
+            <span class="kw-pill">Passion</span>
+            <span class="kw-pill">Politics</span>
+            <span class="kw-pill">Hidden Affairs</span>
+            <span class="kw-pill">Legal Matters</span>
+            <span class="kw-pill">Intensity</span>
+            <span class="kw-pill">Dual Nature</span>
+          </div>
+
+          <blockquote class="hero-pull">
+            The name says Incorruptible and Chaste. The star says: passion, politics, and the power that lives in what you choose not to reveal.
+          </blockquote>
+        </div>
+
+        <div class="hero-hanzi-block" aria-hidden="true">
+          <span class="hero-hanzi-char">廉</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ESSENCE ───────────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Core Identity</p>
+      <h2 class="section-title">Essence of Lián Zhēn</h2>
+      <p class="section-sub">The most complex and double-natured star in Zi Wei Dou Shu.</p>
+
+      <div class="essence-grid">
+        <div class="essence-panel">
+          <h3 class="essence-panel-title">The Star at a Glance</h3>
+          <ul class="essence-fact-list">
+            <li>
+              <span class="fact-label">Chinese</span>
+              <span class="fact-value">廉贞 (Lián Zhēn)</span>
+            </li>
+            <li>
+              <span class="fact-label">Literal</span>
+              <span class="fact-value">Incorruptible and Chaste / Pure Integrity</span>
+            </li>
+            <li>
+              <span class="fact-label">Coined Name</span>
+              <span class="fact-value">The Diplomat</span>
+            </li>
+            <li>
+              <span class="fact-label">Family</span>
+              <span class="fact-value">Northern Dipper (紫微星系)</span>
+            </li>
+            <li>
+              <span class="fact-label">Role</span>
+              <span class="fact-value">Court diplomat, political negotiator</span>
+            </li>
+            <li>
+              <span class="fact-label">Element</span>
+              <span class="fact-value">Fire / Yin</span>
+            </li>
+            <li>
+              <span class="fact-label">Temple</span>
+              <span class="fact-value">Yin (寅), Wu (午)</span>
+            </li>
+            <li>
+              <span class="fact-label">Color</span>
+              <span class="fact-value">Crimson — the color of passion kept under silk</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="essence-panel">
+          <h3 class="essence-panel-title">The Sixth Northern Star</h3>
+          <p>Lian Zhen is the sixth and final star of the Northern Dipper family — the most human of the seven, the most complicated, and the most misunderstood. Its literal name — Incorruptible and Chaste — is almost ironic. This is not a simple star of purity. It is a star of the gap between the public face and the private interior.</p>
+          <p>In the imperial court, Lian Zhen is the diplomat, the negotiator, the court official who must maintain absolute propriety in public while navigating the shadow politics that actually move power. They know where the bodies are buried. They keep the peace that others think is impossible. Their name means integrity — and they need every ounce of it to survive what they know.</p>
+          <p>This is the paradox that defines the star: the name speaks of virtue; the nature speaks of intensity. Both are true. That tension is not a flaw — it is the star's entire intelligence.</p>
+        </div>
+      </div>
+
+      <div class="dual-nature">
+        <div class="dual-nature-title">The Dual Nature — 两面性</div>
+        <p>Classical texts describe Lian Zhen as having two clear faces. In strong positions — temple, thriving, favorable — it produces individuals of genuine political intelligence, legal acuity, and the rare ability to navigate human complexity without being consumed by it. The passion is present, but it is directed. The intensity is managed. The diplomat holds the room. In challenged positions, or combined with certain malefic stars, that same intensity turns: legal entanglements surface, hidden affairs become difficult to contain, blood-related matters require careful management. This duality is not a warning to avoid the star — it is the map of the work the star requires. The Diplomat's deepest task is always integration: learning that what they hide is not separate from their power, but the source of it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── IN THE COMMAND PALACE ─────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Life Palace Reading</p>
+      <h2 class="section-title">In the Command Palace</h2>
+      <p class="section-sub">When 廉贞 governs your Life Palace, this is the nature you were born into.</p>
+
+      <div class="command-card">
+        <div class="command-body">
+          <p>Lian Zhen in the Life Palace creates individuals who carry a <span class="command-highlight">quiet intensity beneath a polished exterior</span>. The composed surface is real — and so is everything it conceals. These are people who understand, almost instinctively, how power actually moves through human relationships. They read the room not to perform in it but to navigate it. They notice what is unsaid before anyone has spoken.</p>
+
+          <p>They are naturally political — not in the sense of being dishonest, but in the sense of understanding that honesty is never the whole picture. They know that what is true and what is sayable are rarely identical, and they have learned to operate in the space between them with extraordinary grace. This makes them formidable in law, diplomacy, negotiation, psychology, intelligence — any field where the map of what is actually happening diverges from the official version.</p>
+
+          <p>Their shadow is the distance between the public self and the private interior. The inner life of a Lian Zhen Life Palace is rarely calm, rarely simple, rarely what it appears. There is passion here — sometimes erotic, always intense — that does not match the composed exterior. When that gap becomes too wide, something eventually collapses it: a relationship that could not stay hidden, a legal situation that emerges from the shadows, a moment when the interior finally demands to be seen.</p>
+
+          <p>The Diplomat's deepest wisdom is not in maintaining the gap but in integrating across it. The passion they manage so carefully is not a liability — it is their <span class="command-highlight">greatest source of genuine authority</span>. When they learn to lead with it rather than conceal it, the full power of the star becomes available.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ACROSS THE 12 PALACES ──────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Palace Influence</p>
+      <h2 class="section-title">Across the 12 Palaces</h2>
+      <p class="section-sub">How Lian Zhen's intensity, political intelligence, and dual nature manifest in each area of life.</p>
+
+      <div class="palaces-grid">
+
+        <div class="palace-card">
+          <span class="palace-number">01</span>
+          <div class="palace-info">
+            <div class="palace-name">Life Palace 命宫</div>
+            <div class="palace-desc">Political intelligence and polished exterior over inner intensity; legal mind; dual nature; passionate inner life managed carefully. Public composure is real — so is everything it holds.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">02</span>
+          <div class="palace-info">
+            <div class="palace-name">Siblings Palace 兄弟宫</div>
+            <div class="palace-desc">Intense sibling dynamics; possible estrangements and reconciliations; siblings with complex lives of their own. The sibling relationship carries weight and history.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">03</span>
+          <div class="palace-info">
+            <div class="palace-name">Spouse Palace 夫妻宫</div>
+            <div class="palace-desc">Passionate but complex partnership; in challenged positions, hidden relationship dynamics may surface; spouse may come from different circumstances; intense attraction that outlasts initial complexity.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">04</span>
+          <div class="palace-info">
+            <div class="palace-name">Children Palace 子女宫</div>
+            <div class="palace-desc">Intense, passionate children with strong characters; possible complications in early stages; children who grow into people with depth and complexity. A relationship that requires patience before it rewards.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">05</span>
+          <div class="palace-info">
+            <div class="palace-name">Wealth Palace 财帛宫</div>
+            <div class="palace-desc">Income through political and legal channels; wealth tied to social positioning; financial life has hidden complexity — may involve legal fees, political costs, or resources that cannot be openly discussed.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">06</span>
+          <div class="palace-info">
+            <div class="palace-name">Health Palace 疾厄宫</div>
+            <div class="palace-desc">Blood, liver, and reproductive system as vulnerability; legal or accident risks that may require surgery; the body mirrors the star's intensity — what is held inside eventually needs release.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">07</span>
+          <div class="palace-info">
+            <div class="palace-name">Travel Palace 迁移宫</div>
+            <div class="palace-desc">International law, diplomatic missions, complex foreign dealings — not simple tourism. Success abroad through political intelligence and the ability to read unfamiliar rooms quickly.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">08</span>
+          <div class="palace-info">
+            <div class="palace-name">Network Palace 交友宫</div>
+            <div class="palace-desc">Associates in legal, political, or complex fields; relationships with hidden dimensions; allies who are politically sophisticated and understand discretion. The social circle is selective and significant.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">09</span>
+          <div class="palace-info">
+            <div class="palace-name">Career Palace 官禄宫</div>
+            <div class="palace-desc">Law, politics, diplomacy, psychology, investigation, intelligence; any field requiring the ability to read between the lines and navigate complex human systems. Reading the unspoken is the job.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">10</span>
+          <div class="palace-info">
+            <div class="palace-name">Property Palace 田宅宫</div>
+            <div class="palace-desc">Property tied to legal matters; complex real estate situations; may inherit through legal arrangements. The home may itself have a history that requires navigation.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">11</span>
+          <div class="palace-info">
+            <div class="palace-name">Soul Palace 福德宫</div>
+            <div class="palace-desc">Inner life of unusual depth and complexity; genuine passion hidden behind public composure; spiritual seeking through intensity rather than peace. The interior is richer — and more turbulent — than anyone outside sees.</div>
+          </div>
+        </div>
+
+        <div class="palace-card">
+          <span class="palace-number">12</span>
+          <div class="palace-info">
+            <div class="palace-name">Parents Palace 父母宫</div>
+            <div class="palace-desc">Complex parental relationships with hidden dimensions; authority figures who are politically sophisticated; family secrets that shaped the adult. The origin story is rarely simple.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STRENGTH LEVELS ────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Brightness Levels</p>
+      <h2 class="section-title">Strength &amp; Position</h2>
+      <p class="section-sub">Where Lian Zhen sits in the chart determines whether the star's fire illuminates or burns.</p>
+
+      <div class="strength-grid">
+
+        <div class="strength-card">
+          <div class="strength-pips">
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+          </div>
+          <div class="strength-level">Temple 庙</div>
+          <div class="strength-chinese">Miào</div>
+          <div class="strength-positions">Yin 寅 · Wu 午</div>
+          <div class="strength-desc">The Diplomat at court: political intelligence fully expressed; the dual nature is an asset. The fire of this star thrives in dynamic positions — passion becomes power, complexity becomes wisdom.</div>
+        </div>
+
+        <div class="strength-card">
+          <div class="strength-pips">
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--off"></span>
+          </div>
+          <div class="strength-level">Thriving 旺</div>
+          <div class="strength-chinese">Wàng</div>
+          <div class="strength-positions">Si 巳 · Mao 卯</div>
+          <div class="strength-desc">Integrity in active positions — legal and political intelligence well-expressed. The fire has room to breathe. The diplomat is effective without requiring heroic self-management.</div>
+        </div>
+
+        <div class="strength-card">
+          <div class="strength-pips">
+            <span class="pip pip--on"></span>
+            <span class="pip pip--on"></span>
+            <span class="pip pip--off"></span>
+            <span class="pip pip--off"></span>
+          </div>
+          <div class="strength-level">Favorable 利</div>
+          <div class="strength-chinese">Lì</div>
+          <div class="strength-positions">Various positions</div>
+          <div class="strength-desc">Diplomatic intelligence functional; the dual nature manageable with awareness. The star operates competently — the complexity is present but not overwhelming. Discretion serves well here.</div>
+        </div>
+
+        <div class="strength-card">
+          <div class="strength-pips">
+            <span class="pip pip--on"></span>
+            <span class="pip pip--off"></span>
+            <span class="pip pip--off"></span>
+            <span class="pip pip--off"></span>
+          </div>
+          <div class="strength-level">Fallen 陷</div>
+          <div class="strength-chinese">Xiàn</div>
+          <div class="strength-positions">Chou 丑 · Wei 未</div>
+          <div class="strength-desc">The fire is dampened; earth blocks fire's expression. Political intelligence becomes entanglement. The hidden affairs become scandalous. Legal matters turn against. The diplomat must navigate with exceptional care.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── KEY RELATIONSHIPS ──────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Star Dynamics</p>
+      <h2 class="section-title">Key Relationships</h2>
+      <p class="section-sub">How Lian Zhen combines and interacts with other stars in the chart.</p>
+
+      <div class="rel-grid">
+
+        <div class="rel-card">
+          <div class="rel-tag">廉相 The Power Pairing</div>
+          <div class="rel-title">With Tian Xiang — The Prime Minister</div>
+          <div class="rel-body">The combination of The Diplomat and The Prime Minister — legal-political power at its most sophisticated. This pairing produces court officials, lawyers of high standing, and people who can maintain genuine integrity while navigating maximum complexity. The Diplomat provides the political intelligence; the Prime Minister provides the moral framework. Together they create the rare figure who is both effective and trustworthy.</div>
+        </div>
+
+        <div class="rel-card">
+          <div class="rel-tag">Challenging Combinations</div>
+          <div class="rel-title">With Po Jun or Qi Sha</div>
+          <div class="rel-body">When Lian Zhen meets either of the fierce stars — Po Jun (The Destroyer) or Qi Sha (The General) — the intensity is amplified significantly. Blood-related matters, legal risk, and the shadow nature of the star become more prominent. These are not impossible combinations, but they require conscious management: the diplomatic intelligence must be actively directed, or the dual nature tilts toward its darker expression.</div>
+        </div>
+
+        <div class="rel-card rel-si-hua">
+          <div class="rel-tag">四化 Si Hua — The Transforming Stars</div>
+          <div class="rel-title">How the Four Transformations Affect Lian Zhen</div>
+          <div class="sihua-row">
+            <div class="sihua-item">
+              <span class="sihua-year">Jia Year 甲年</span>
+              <span><span class="sihua-name">Hua Lu (化禄)</span><span class="sihua-meaning">The Flow — political networks open doors; resources arrive through social navigation and who you know; the star's intensity becomes magnetic. A year when the Diplomat's gift for connection pays.</span></span>
+            </div>
+            <div class="sihua-item">
+              <span class="sihua-year">Bing Year 丙年</span>
+              <span><span class="sihua-name">Hua Ji (化忌)</span><span class="sihua-meaning">The Hook — legal entanglement risk heightens; the hidden matters become complicated; the gap between public face and private reality may become harder to manage. Extreme discretion is not optional this year — it is essential.</span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WESTERN MIRRORS ────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Cross-Cultural Resonance</p>
+      <h2 class="section-title">Western Mirrors</h2>
+      <p class="section-sub">The diplomat archetype — passion concealed by grace — across mythology, psychology, and symbol systems.</p>
+
+      <div class="mirrors-grid">
+
+        <div class="mirror-card">
+          <div class="mirror-system">Greek / Roman Mythology</div>
+          <div class="mirror-name">Aphrodite · Athena Combined</div>
+          <div class="mirror-body">Aphrodite as the goddess of both love and political alliance — the one whose power moves through desire, beauty, and the hidden dynamics of relationship. But Lian Zhen is not only Aphrodite. The political intelligence, the strategic mind that knows how power actually moves — that is Athena. Lian Zhen carries both: the erotic intensity and the strategic wisdom. What makes the Diplomat dangerous — and formidable — is that both are genuine.</div>
+        </div>
+
+        <div class="mirror-card">
+          <div class="mirror-system">Jungian Archetype</div>
+          <div class="mirror-name">The Shadow · The Statesperson</div>
+          <div class="mirror-body">The archetype of the person who has looked into the darkness of human nature and emerged not corrupted but wise. The Shadow made conscious. Jung's insight was that the shadow is not destroyed — it is integrated. Lian Zhen is the star of that integration: the diplomat who knows what human beings are capable of and uses that knowledge with wisdom rather than fear. The shadow as a source of authority rather than a source of shame.</div>
+        </div>
+
+        <div class="mirror-card">
+          <div class="mirror-system">Tarot</div>
+          <div class="mirror-name">The High Priestess — II</div>
+          <div class="mirror-body">The keeper of hidden knowledge, the one who sees beneath the surface, the mystery behind the veil. The High Priestess does not reveal what she knows — her power comes precisely from the gap between what is known and what is shown. Also aspects of The Devil (XV) for the star's shadow nature: the capacity for obsession, the intensity that becomes entrapment when the dual nature is not consciously held.</div>
+        </div>
+
+        <div class="mirror-card">
+          <div class="mirror-system">Western Astrology</div>
+          <div class="mirror-name">Scorpio Rising · Pluto Prominent</div>
+          <div class="mirror-body">The intensity, political intelligence, and deep surface-depth duality of Lian Zhen resonates most with Scorpio energy — particularly Scorpio Rising or a strongly placed Pluto. The composed exterior that conceals extraordinary depth. The ability to read what others hide. The association with legal, erotic, and taboo territory. The transformation that comes from facing rather than fleeing the shadow. Power that operates in the unseen.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PERSONALITY + SHAREABLE ────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">The Full Portrait</p>
+      <h2 class="section-title">Personality Snapshot</h2>
+      <p class="section-sub">What it is to carry this star — and the integration it asks of you.</p>
+
+      <div class="personality-layout">
+        <div class="personality-body">
+          <p>The Diplomat is rarely what they first appear. The composed, elegant exterior is not a performance — it is genuinely who they are in public. But it is not all of who they are. Beneath the polished surface runs a current of extraordinary intensity that very few people ever see, and fewer still are invited to.</p>
+
+          <p>They are extraordinarily good at reading what is actually happening beneath what is being said. In a room full of people taking things at face value, The Diplomat is tracking the subtext, the tone shifts, the thing that was almost said but wasn't, the relationship between two people that everyone is pretending doesn't exist. This is not paranoia — it is precision. It is the gift that makes them formidable in any situation requiring political intelligence.</p>
+
+          <p>Their danger is the distance between their public and private selves. When that gap becomes too large — when the inner intensity has no legitimate outlet, when the private life must remain too far from the public one — something eventually collapses it. This is the star's great recurring lesson: not that intensity must be hidden, but that it must be integrated. The passion The Diplomat manages so carefully is not their shadow. It is their source.</p>
+
+          <p>The Diplomat's deepest wisdom emerges when they stop treating their inner life as a liability to be managed and begin treating it as the intelligence it actually is. The composed exterior becomes most powerful not when it conceals the intensity, but when it is the conscious choice of someone who could show you everything — and has decided, for now, to show you just this much.</p>
+
+          <p>Your deepest power lives in what you choose not to reveal. The choice is the power.</p>
+        </div>
+
+        <div class="shareable-card">
+          <div class="shareable-label">Your star · share this</div>
+          <div class="shareable-hanzi" aria-hidden="true">廉貞</div>
+          <div class="shareable-name">The Diplomat</div>
+          <div class="shareable-pinyin">Lián Zhēn · Fire · Yin</div>
+          <blockquote class="shareable-quote">
+            "You have The Diplomat — your deepest power lies in what you choose not to reveal."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BRIDGE CARDS ───────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Continue Exploring</p>
+      <h2 class="section-title">Where to Next</h2>
+
+      <div class="bridges-grid">
+
+        <div class="bridge-card">
+          <div class="bridge-dir">← Back</div>
+          <div class="bridge-title">The 14 Stars</div>
+          <div class="bridge-desc">Return to the full star roster — all 14 major stars of Zi Wei Dou Shu mapped and introduced.</div>
+          <a class="bridge-link" href="/elements/zi-wei/stars/">All 14 Stars</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">← Up</div>
+          <div class="bridge-title">Zi Wei Dou Shu</div>
+          <div class="bridge-desc">The system itself — how the chart works, what the palaces mean, and how to begin reading your own.</div>
+          <a class="bridge-link" href="/elements/zi-wei/">ZWDS Overview</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">廉相 Pairing</div>
+          <div class="bridge-title">The Prime Minister — Tian Xiang</div>
+          <div class="bridge-desc">The Diplomat's most powerful pairing. Together they create legal-political authority at its most sophisticated.</div>
+          <a class="bridge-link" href="/elements/zi-wei/stars/tian-xiang/">Meet The Prime Minister</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">Related Star</div>
+          <div class="bridge-title">The Emperor — Zi Wei</div>
+          <div class="bridge-desc">The emperor the diplomat serves. The court's axis of power — command above, complexity below.</div>
+          <a class="bridge-link" href="/elements/zi-wei/stars/zi-wei/">Meet The Emperor</a>
+        </div>
+
+        <div class="bridge-card">
+          <div class="bridge-dir">Get a Reading</div>
+          <div class="bridge-title">Your ZWDS Chart</div>
+          <div class="bridge-desc">See where Lian Zhen sits in your own chart — and what The Diplomat is doing in your life right now.</div>
+          <a class="bridge-link" href="/elements/zi-wei/">Get Your Chart</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!--om-footer:start--><!--om-footer:end-->
+
+<script src="/js/nav.js"></script>
+</body>
+</html>
