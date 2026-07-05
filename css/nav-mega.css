@@ -371,11 +371,13 @@
   text-transform: none;
 }
 
-/* Moon: the Tonight column beside the eight-phase grid */
+/* Moon: Tonight + Stones text columns beside the eight-phase grid */
 .pn-panel-moon .pn-cols {
-  grid-template-columns: minmax(240px, 340px) minmax(0, 1fr);
+  grid-template-columns: minmax(210px, 290px) minmax(160px, 200px) minmax(0, 1fr);
   gap: clamp(20px, 3vw, 44px);
 }
+/* the Stones column (2nd) is plain text — no moon-glyph boxes */
+.pn-panel-moon .pn-col:nth-child(2) .pn-glyph { display: none; }
 .pn-panel-moon .pn-col:last-child {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));

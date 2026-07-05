@@ -287,11 +287,11 @@ PNAV.MAP = [
         ["/feng-shui/kua-number/",  "Your Kua number"],
         ["/feng-shui/bedroom/",     "In the home"]
       ]},
-      { title: "Stones & lore", mark: "◆", items: [
-        ["/stones.html",                           "Keeper stones"],
-        ["/traditions/birthstones-and-moonstone/", "Birthstones"],
-        ["/proverbs/",                             "The Proverb Pond", "all 87"],
-        ["/traditions/",                           "Traditions"]
+      { title: "Proverbs & lore", mark: "❦", items: [
+        ["/proverbs/",       "The Proverb Pond", "all 87"],
+        ["/proverbs/study/", "Study the proverbs"],
+        ["/traditions/",     "Traditions"],
+        ["/habitat/",        "The Habitat"]
       ]}
     ]
   },
@@ -317,6 +317,13 @@ PNAV.MAP = [
         ["/moon.html",      "The Moon tonight", PNAV.DYN.moonPhaseName(), "moon-full", "moon-phase"],
         ["/best-days.html", "Best days ahead",  "the favorable days for you"],
         ["/awakening.html", "The Awakening",    "the path from fear to strength"]
+      ]},
+      /* Keeper stones live with the Moon (owner call, Jul 2026): moonstone,
+         birthstones, and charging stones under the full moon all belong here. */
+      { title: "Stones", mark: "◈", items: [
+        ["/stones.html",                           "Keeper stones"],
+        ["/traditions/birthstones-and-moonstone/", "Birthstones & moonstone"],
+        ["/traditions/stones-for-your-animal/",    "Stones for your animal"]
       ]},
       { title: "The eight phases", mark: "◐", items: [
         ["/moon/phases/new-moon/",        "New Moon",        null, "moon-new"],
