@@ -334,7 +334,7 @@ PNAV.CRAWL_EXTRA = [
   ["/directions/celestial-animals/", "The four celestial animals"],
   ["/cosmology/",                    "Cosmology"],
   ["/cosmology/four-pillars/",       "The Four Pillars"],
-  ["/elements/fire/",                "The five elements"],
+  ["/elements/",                     "The five phases (Elements hub)"],
   /* dropped when the standalone Menagerie group folded into Explore +
      Zodiac; keep it linked so no crawlable destination is lost. */
   ["/learn.html",                    "How it works"]
@@ -513,12 +513,17 @@ PNAV.HUBS = {
     ]
   },
   "elements": {
-    label: "The Elements", root: "/elements/fire/",
+    label: "The Elements", root: "/elements/",
     items: [
-      ["/elements/fire/", "Fire"],
-      ["/elements/earth/", "Earth"],
-      ["/elements/air/", "Air"],
-      ["/elements/water/", "Water"]
+      ["/elements/", "The five phases"],
+      ["/elements/phases/wood/", "Wood 木"],
+      ["/elements/phases/fire/", "Fire 火"],
+      ["/elements/phases/earth/", "Earth 土"],
+      ["/elements/phases/metal/", "Metal 金"],
+      ["/elements/phases/water/", "Water 水"],
+      ["/elements/#cycles", "The two cycles"],
+      ["/elements/#quiz", "What's your element?"],
+      ["/elements/zodiac/", "Elements & your animal"]
     ]
   },
   "moon": {
