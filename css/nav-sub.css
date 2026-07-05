@@ -475,6 +475,43 @@ html.pn-sealing .pn-sub .pn-seam-spark {
   transition-delay: 0s;
 }
 .pn-subdrop li { margin: 0; }
+.pn-subgroup-list { list-style: none; margin: 0; padding: 0; }
+
+/* ---- Group sections (the "supporting cast" clustering) ----------- */
+/* A quiet mono, brass-dim, letter-spaced caps label marks each family of
+   related pages. aria-hidden — the <div role="group"> already carries the
+   accessible name, so screen readers don't hear it twice. */
+.pn-subgroup-label {
+  margin: 0;
+  padding: 8px 12px 4px;
+  font-family: var(--mono, monospace);
+  font-size: .62rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--brass-dim, #a8925c);
+}
+/* single-column: a hairline separates one family from the next */
+.pn-subdrop:not(.pn-subdrop--wide) .pn-subgroup + .pn-subgroup {
+  border-top: 1px solid var(--line-soft, rgba(214,193,140,.08));
+  margin-top: 3px;
+  padding-top: 1px;
+}
+
+/* ---- Wide (two-column) variant ----------------------------------- */
+/* Blend A/B: the generator adds .pn-subdrop--wide when a menu has several
+   families and enough leaves. Groups flow into two columns and never break
+   across the gap. nav.js still fixes the panel and clamps it into the
+   viewport; the mobile block below collapses it back to one column. */
+.pn-subdrop--wide {
+  min-width: 420px;
+  max-width: min(94vw, 460px);
+  column-count: 2;
+  column-gap: 16px;
+}
+.pn-subdrop--wide .pn-subgroup {
+  break-inside: avoid;
+  padding-bottom: 4px;
+}
 
 /* Progressive-enhancement fallback: reveal the sub-nav dropdown on hover/focus
    with pure CSS, so it works even if nav.js has not hydrated the bar. On pages
@@ -504,12 +541,15 @@ html.pn-sealing .pn-sub .pn-seam-spark {
 .pn-subdrop-link {
   position: relative;
   display: block;
-  padding: 9px 12px;
+  padding: 7px 12px;
   border-radius: var(--r-1, 8px);
-  font-family: var(--serif, serif);
-  font-size: .88rem;
+  /* SANS, not the serif of the tabs: the sub-menu is the supporting cast, a
+     quieter index beneath the serif authority of the mega nav. */
+  font-family: var(--sans, sans-serif);
+  font-weight: 500;
+  font-size: .85rem;
   line-height: 1.25;
-  color: var(--muted, #adaec2);
+  color: var(--ivory, #ece7d8);
   text-decoration: none;
   transition: color var(--dur-fast, 180ms) var(--ease-out, ease),
               background var(--dur-fast, 180ms) var(--ease-out, ease),
@@ -571,6 +611,17 @@ html.pn-sealing .pn-sub .pn-seam-spark {
   .pn-subdrop {
     min-width: 180px;
     max-width: calc(100vw - 16px);
+  }
+  /* the two-column wide variant collapses to a single column on phones */
+  .pn-subdrop--wide {
+    min-width: 200px;
+    max-width: calc(100vw - 16px);
+    column-count: 1;
+  }
+  /* restore the single-column hairline separators when wide has collapsed */
+  .pn-subdrop--wide .pn-subgroup + .pn-subgroup {
+    border-top: 1px solid var(--line-soft, rgba(214,193,140,.08));
+    margin-top: 3px;
   }
   .pn-crumb {
     flex-wrap: nowrap;

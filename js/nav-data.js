@@ -535,63 +535,142 @@ PNAV.HUBS = {
     items: [
       ["/elements/", "The five phases"],
       ["/elements/phases/wood/", "Wood 木", [
-        ["/elements/phases/wood/", "Wood overview"],
-        ["/elements/phases/wood/big-small/", "Big & small wood 甲乙"],
-        ["/elements/phases/wood/bazi/", "Wood in BaZi"],
-        ["/elements/phases/wood/body/", "Wood in the body"],
-        ["/elements/phases/wood/space/", "Wood in your space"],
-        ["/elements/phases/wood/cycles/", "Wood's two cycles"],
-        ["/elements/phases/wood/animals/", "The Wood animals"],
-        ["/elements/phases/wood/culture/", "Wood in myth"],
-        ["/elements/phases/wood/traditions/", "Wood across traditions"]
+        { group: "The phase", items: [
+          ["/elements/phases/wood/", "Wood overview"],
+          ["/elements/phases/wood/big-small/", "Big & small wood 甲乙"]
+        ]},
+        { group: "In chart & body", items: [
+          ["/elements/phases/wood/bazi/", "Wood in BaZi"],
+          ["/elements/phases/wood/body/", "Wood in the body"],
+          ["/elements/phases/wood/space/", "Wood in your space"]
+        ]},
+        { group: "How it moves", items: [
+          ["/elements/phases/wood/cycles/", "Wood's two cycles"],
+          ["/elements/phases/wood/animals/", "The Wood animals"]
+        ]},
+        { group: "Myth & lore", items: [
+          ["/elements/phases/wood/culture/", "Wood in myth"],
+          ["/elements/phases/wood/traditions/", "Wood across traditions"]
+        ]}
       ]],
       ["/elements/phases/fire/", "Fire 火", [
-        ["/elements/phases/fire/", "Fire overview"],
-        ["/elements/phases/fire/big-small/", "Big & small fire 丙丁"],
-        ["/elements/phases/fire/bazi/", "Fire in BaZi"],
-        ["/elements/phases/fire/body/", "Fire in the body"],
-        ["/elements/phases/fire/space/", "Fire in your space"],
-        ["/elements/phases/fire/cycles/", "Fire's two cycles"],
-        ["/elements/phases/fire/animals/", "The Fire animals"],
-        ["/elements/phases/fire/culture/", "Fire in myth"],
-        ["/elements/phases/fire/traditions/", "Fire across traditions"]
+        { group: "The phase", items: [
+          ["/elements/phases/fire/", "Fire overview"],
+          ["/elements/phases/fire/big-small/", "Big & small fire 丙丁"]
+        ]},
+        { group: "In chart & body", items: [
+          ["/elements/phases/fire/bazi/", "Fire in BaZi"],
+          ["/elements/phases/fire/body/", "Fire in the body"],
+          ["/elements/phases/fire/space/", "Fire in your space"]
+        ]},
+        { group: "How it moves", items: [
+          ["/elements/phases/fire/cycles/", "Fire's two cycles"],
+          ["/elements/phases/fire/animals/", "The Fire animals"]
+        ]},
+        { group: "Myth & lore", items: [
+          ["/elements/phases/fire/culture/", "Fire in myth"],
+          ["/elements/phases/fire/traditions/", "Fire across traditions"]
+        ]}
       ]],
       ["/elements/phases/earth/", "Earth 土", [
-        ["/elements/phases/earth/", "Earth overview"],
-        ["/elements/phases/earth/big-small/", "Big & small earth 戊己"],
-        ["/elements/phases/earth/bazi/", "Earth in BaZi"],
-        ["/elements/phases/earth/body/", "Earth in the body"],
-        ["/elements/phases/earth/space/", "Earth in your space"],
-        ["/elements/phases/earth/cycles/", "Earth's two cycles"],
-        ["/elements/phases/earth/animals/", "The Earth animals"],
-        ["/elements/phases/earth/culture/", "Earth in myth"],
-        ["/elements/phases/earth/traditions/", "Earth across traditions"]
+        { group: "The phase", items: [
+          ["/elements/phases/earth/", "Earth overview"],
+          ["/elements/phases/earth/big-small/", "Big & small earth 戊己"]
+        ]},
+        { group: "In chart & body", items: [
+          ["/elements/phases/earth/bazi/", "Earth in BaZi"],
+          ["/elements/phases/earth/body/", "Earth in the body"],
+          ["/elements/phases/earth/space/", "Earth in your space"]
+        ]},
+        { group: "How it moves", items: [
+          ["/elements/phases/earth/cycles/", "Earth's two cycles"],
+          ["/elements/phases/earth/animals/", "The Earth animals"]
+        ]},
+        { group: "Myth & lore", items: [
+          ["/elements/phases/earth/culture/", "Earth in myth"],
+          ["/elements/phases/earth/traditions/", "Earth across traditions"]
+        ]}
       ]],
       ["/elements/phases/metal/", "Metal 金", [
-        ["/elements/phases/metal/", "Metal overview"],
-        ["/elements/phases/metal/big-small/", "Big & small metal 庚辛"],
-        ["/elements/phases/metal/bazi/", "Metal in BaZi"],
-        ["/elements/phases/metal/body/", "Metal in the body"],
-        ["/elements/phases/metal/space/", "Metal in your space"],
-        ["/elements/phases/metal/cycles/", "Metal's two cycles"],
-        ["/elements/phases/metal/animals/", "The Metal animals"],
-        ["/elements/phases/metal/culture/", "Metal in myth"],
-        ["/elements/phases/metal/traditions/", "Metal across traditions"]
+        { group: "The phase", items: [
+          ["/elements/phases/metal/", "Metal overview"],
+          ["/elements/phases/metal/big-small/", "Big & small metal 庚辛"]
+        ]},
+        { group: "In chart & body", items: [
+          ["/elements/phases/metal/bazi/", "Metal in BaZi"],
+          ["/elements/phases/metal/body/", "Metal in the body"],
+          ["/elements/phases/metal/space/", "Metal in your space"]
+        ]},
+        { group: "How it moves", items: [
+          ["/elements/phases/metal/cycles/", "Metal's two cycles"],
+          ["/elements/phases/metal/animals/", "The Metal animals"]
+        ]},
+        { group: "Myth & lore", items: [
+          ["/elements/phases/metal/culture/", "Metal in myth"],
+          ["/elements/phases/metal/traditions/", "Metal across traditions"]
+        ]}
       ]],
       ["/elements/phases/water/", "Water 水", [
-        ["/elements/phases/water/", "Water overview"],
-        ["/elements/phases/water/big-small/", "Big & small water 壬癸"],
-        ["/elements/phases/water/bazi/", "Water in BaZi"],
-        ["/elements/phases/water/body/", "Water in the body"],
-        ["/elements/phases/water/space/", "Water in your space"],
-        ["/elements/phases/water/cycles/", "Water's two cycles"],
-        ["/elements/phases/water/animals/", "The Water animals"],
-        ["/elements/phases/water/culture/", "Water in myth"],
-        ["/elements/phases/water/traditions/", "Water across traditions"]
+        { group: "The phase", items: [
+          ["/elements/phases/water/", "Water overview"],
+          ["/elements/phases/water/big-small/", "Big & small water 壬癸"]
+        ]},
+        { group: "In chart & body", items: [
+          ["/elements/phases/water/bazi/", "Water in BaZi"],
+          ["/elements/phases/water/body/", "Water in the body"],
+          ["/elements/phases/water/space/", "Water in your space"]
+        ]},
+        { group: "How it moves", items: [
+          ["/elements/phases/water/cycles/", "Water's two cycles"],
+          ["/elements/phases/water/animals/", "The Water animals"]
+        ]},
+        { group: "Myth & lore", items: [
+          ["/elements/phases/water/culture/", "Water in myth"],
+          ["/elements/phases/water/traditions/", "Water across traditions"]
+        ]}
       ]],
       ["/elements/#cycles", "The two cycles"],
       ["/elements/#quiz", "What's your element?"],
       ["/elements/zodiac/", "Elements & your animal"]
+    ]
+  },
+  // Nested hub: chakra + yoga pages resolve here (not to "elements") via the
+  // longest-prefix match in resolveHub. Seven chakra tabs, each a small
+  // Overview · Yoga dropdown, led by the Chakra-yoga entry. The hub root
+  // ("All 7 chakras") is auto-dropped as a tab but still carries the crumb.
+  "elements/chakras": {
+    label: "Chakras", root: "/elements/chakras/",
+    items: [
+      ["/elements/chakras/", "All 7 chakras"],
+      ["/elements/chakras/yoga/", "Chakra yoga"],
+      ["/elements/chakras/muladhara/", "Muladhara", [
+        ["/elements/chakras/muladhara/", "Overview"],
+        ["/elements/chakras/muladhara/yoga/", "Yoga"]
+      ]],
+      ["/elements/chakras/svadhisthana/", "Svadhisthana", [
+        ["/elements/chakras/svadhisthana/", "Overview"],
+        ["/elements/chakras/svadhisthana/yoga/", "Yoga"]
+      ]],
+      ["/elements/chakras/manipura/", "Manipura", [
+        ["/elements/chakras/manipura/", "Overview"],
+        ["/elements/chakras/manipura/yoga/", "Yoga"]
+      ]],
+      ["/elements/chakras/anahata/", "Anahata", [
+        ["/elements/chakras/anahata/", "Overview"],
+        ["/elements/chakras/anahata/yoga/", "Yoga"]
+      ]],
+      ["/elements/chakras/vishuddha/", "Vishuddha", [
+        ["/elements/chakras/vishuddha/", "Overview"],
+        ["/elements/chakras/vishuddha/yoga/", "Yoga"]
+      ]],
+      ["/elements/chakras/ajna/", "Ajna", [
+        ["/elements/chakras/ajna/", "Overview"],
+        ["/elements/chakras/ajna/yoga/", "Yoga"]
+      ]],
+      ["/elements/chakras/sahasrara/", "Sahasrara", [
+        ["/elements/chakras/sahasrara/", "Overview"],
+        ["/elements/chakras/sahasrara/yoga/", "Yoga"]
+      ]]
     ]
   },
   "moon": {
