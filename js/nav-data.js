@@ -535,20 +535,23 @@ PNAV.HUBS = {
     label: "BaZi", root: "/bazi/",
     items: [
       ["/bazi/", "What is BaZi"],
-      ["/bazi/four-pillars/", "The system", [
-        ["/bazi/four-pillars/", "The four pillars"],
-        ["/bazi/heavenly-stems/", "The ten stems"],
-        ["/bazi/earthly-branches/", "The twelve branches"],
-        ["/bazi/hidden-stems/", "Hidden stems"]
+      ["/bazi/four-pillars/", "Learn the pieces", [
+        ["/bazi/four-pillars/", "1 · The four pillars"],
+        ["/bazi/heavenly-stems/", "2 · The ten stems"],
+        ["/bazi/earthly-branches/", "3 · The twelve branches"],
+        ["/bazi/hidden-stems/", "4 · Hidden stems"]
       ]],
-      ["/bazi/day-master/", "The reading", [
-        ["/bazi/day-master/", "Your Day Master"],
-        ["/bazi/ten-gods/", "The Ten Gods"],
-        ["/bazi/interactions/", "Combinations & clashes"],
-        ["/bazi/luck-pillars/", "Luck & timing"]
+      ["/bazi/day-master/", "Learn to read", [
+        ["/bazi/day-master/", "5 · Your Day Master"],
+        ["/bazi/ten-gods/", "6 · The Ten Gods"],
+        ["/bazi/interactions/", "7 · Combinations & clashes"],
+        ["/bazi/luck-pillars/", "8 · Luck & timing"]
       ]],
-      ["/bazi/compatibility/", "You & them"],
-      ["/bazi/chart/", "Cast your chart"]
+      ["/bazi/chart/", "Read your own", [
+        ["/bazi/chart/", "Cast your chart"],
+        ["/bazi/compatibility/", "You & them (合婚)"],
+        ["/bazi/#example", "A worked example"]
+      ]]
     ]
   },
   "elements": {
