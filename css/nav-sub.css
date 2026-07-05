@@ -33,13 +33,16 @@
      (bar-only on pages with no sub-band, like the homepage). Everything that
      sticks below the nav or scroll-pads to an anchor must clear THIS, not just
      --pn-bar-h, or the stack covers the page's own content. */
-  --pn-stack-h: calc(var(--pn-bar-h) + 86px);
+  /* single sticky row now: bar + the tabs strip only. The breadcrumb is a
+     separate NON-sticky bar and is deliberately NOT counted here. nav.js
+     still measures the real .pn-sub and overrides this exactly. */
+  --pn-stack-h: calc(var(--pn-bar-h) + 52px);
   --pn-sub-focus: var(--brass-bright, #efe2b4);
 }
 
 /* ---- The band ---------------------------------------------------- */
-/* Astral Weld order: the sibling sub-nav (tabs) is the PRIMARY strip on
-   top; the breadcrumb is a quieter, recessed strip beneath it. */
+/* The sticky sub band carries ONLY the sibling sub-nav (tabs). The breadcrumb
+   is no longer here — it rides in a separate, NON-sticky .pn-crumbbar below. */
 .pn-sub {
   /* full-width band under the top bar */
   position: sticky;
@@ -66,19 +69,23 @@
    recessed shelf — distinct from the tabs above and the content below —
    while the top hairline keeps the hard join. color-mix over --ink/--panel,
    with a flat hex fallback for engines without color-mix. */
-.pn-sub-crumb {
+/* ---- Standalone breadcrumb bar (NON-sticky, top of page) ---------
+   Sits directly under the sticky nav band as the first in-flow element on
+   every non-home page, then scrolls away with the content. A quiet recessed
+   shelf with a hairline underneath; same left gutter as the tabs. It is NOT
+   position:sticky and NOT part of --pn-stack-h. */
+.pn-crumbbar {
   width: 100%;
-  border-top: 1px solid var(--line-soft, rgba(214,193,140,.08));
+  border-bottom: 1px solid var(--line-soft, rgba(214,193,140,.08));
   background:
     linear-gradient(
       to bottom,
-      color-mix(in oklch, var(--panel, #1a1c30) 32%, transparent),
-      color-mix(in oklch, var(--ink,   #0d0e18) 18%, transparent) 55%,
+      color-mix(in oklch, var(--panel, #1a1c30) 24%, transparent),
       transparent);
 }
 @supports not (background: color-mix(in oklch, red, blue)) {
-  .pn-sub-crumb {
-    background: linear-gradient(to bottom, rgba(34,37,61,.34), rgba(0,0,0,.14) 55%, transparent);
+  .pn-crumbbar {
+    background: linear-gradient(to bottom, rgba(34,37,61,.26), transparent);
   }
 }
 
@@ -96,10 +103,7 @@
 }
 .pn-subnav { padding-block: var(--s-2, .5rem); }
 .pn-crumb { padding-block: var(--s-2, .5rem); }
-/* Start the breadcrumb a touch farther right than the sub-nav's first tab
-   (which sits at gutter + 12px), so "Home" never begins before the first
-   sub-menu word — a small, stylish indent. */
-.pn-sub-crumb .pn-crumb { padding-inline-start: calc(clamp(18px, 2.2vw, 34px) + 1.4rem); }
+/* The standalone breadcrumb aligns to the same left gutter as the tabs. */
 
 /* ---- Row 1: breadcrumb ------------------------------------------- */
 .pn-crumb {
