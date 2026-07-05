@@ -298,9 +298,82 @@
     });
   }
 
+  /* ---------- 6. Worked example chart diagram ---------- */
+  function mountChart(root) {
+    var E = B.example; if (!E) return;
+    root.appendChild(el("p", "bz-chart-title", E.title));
+    root.appendChild(el("p", "bz-chart-note", "<b>" + E.label + "</b> " + E.note));
+    var grid = el("div", "bz-chart");
+    var panel = el("div", "bz-panel");
+    panel.setAttribute("aria-live", "polite");
+    panel.innerHTML = '<p class="bz-hint">Tap any character in the chart to read what it means and where it leads.</p>';
+
+    E.pillars.forEach(function (p) {
+      var col = el("div", "bz-pcol" + (p.isSelf ? " is-self" : ""));
+      col.appendChild(el("div", "bz-pcap", p.label + (p.isSelf ? ' <span class="bz-selfmark">the self</span>' : "")));
+      col.appendChild(cellBtn(p.stem, p, "stem"));
+      col.appendChild(cellBtn(p.branch, p, "branch"));
+      grid.appendChild(col);
+    });
+    root.appendChild(grid);
+    root.appendChild(panel);
+
+    var read = el("div", "bz-readout");
+    read.innerHTML =
+      '<div class="bz-portrait"><span class="bz-k">The whole picture</span><p>' + E.portrait + "</p></div>" +
+      '<div class="bz-two-soft"><div class="bz-rcard"><span class="bz-k">Strength</span><p>' + E.strength + '</p><a class="bz-pill" href="/bazi/day-master/">Day Master &amp; strength</a></div>' +
+      '<div class="bz-rcard"><span class="bz-k">What it leans on</span><p>' + E.favourable + '</p><a class="bz-pill" href="/bazi/day-master/">The useful god</a></div></div>' +
+      '<p class="bz-note-inline">' + E.share + "</p>";
+    root.appendChild(read);
+
+    function cellBtn(node, p, kind) {
+      var isSelf = kind === "stem" && p.isSelf;
+      var btn = el("button", "bz-pcell" + (isSelf ? " is-self" : ""));
+      btn.type = "button";
+      var god = node.god ? '<span class="bz-god">' + node.god + "</span>" : "";
+      var hidden = "";
+      if (kind === "branch" && node.hidden) {
+        hidden = '<span class="bz-hidmini">' + node.hidden.map(function (h) { return '<i style="background:' + (COLOR[h.phase] || "#d6a44c") + '"></i>'; }).join("") + "</span>";
+      }
+      var sub = kind === "stem" ? (node.arch || node.phase) : node.animal;
+      btn.innerHTML = god + '<span class="bz-pglyph" ' + phaseStyle(node.phase) + ">" + node.char + '</span><span class="bz-pt">' + sub + "</span>" + hidden;
+      btn.setAttribute("aria-label", node.char + " " + (kind === "stem" ? "" : node.animal));
+      btn.addEventListener("click", function () {
+        Array.prototype.forEach.call(grid.querySelectorAll(".bz-pcell"), function (c) { c.classList.remove("is-on"); });
+        btn.classList.add("is-on");
+        renderCell(node, p, kind);
+      });
+      return btn;
+    }
+    function renderCell(node, p, kind) {
+      var roleName = { primary: "Primary", middle: "Middle", residual: "Residual" };
+      var head = kind === "stem"
+        ? node.char + " " + node.pinyin + " · " + (node.god === "日主" ? "the self, your Day Master" : node.godEn + " (" + node.god + "), " + node.arch)
+        : node.char + " " + node.pinyin + " · " + node.animal + " (" + node.phase + ")";
+      var hid = "";
+      if (kind === "branch" && node.hidden) {
+        hid = '<div class="bz-hidwrap">' + node.hidden.map(function (h) {
+          return '<div class="bz-hidrow"><span class="bz-role">' + (roleName[h.role] || h.role) + "</span>" +
+            elPill(h.phase, h.char + " " + h.phase, "/elements/phases/" + slug(h.phase) + "/") +
+            '<span class="bz-godtag">' + h.god + "</span></div>";
+        }).join("") + "</div><p class=\"bz-sub\">" + node.hiddenNote + "</p>";
+      }
+      var learn = kind === "stem"
+        ? (node.god === "日主"
+            ? '<a class="bz-pill" href="/bazi/day-master/">About the Day Master</a>'
+            : '<a class="bz-pill" href="/bazi/ten-gods/">About the Ten Gods</a><a class="bz-pill" href="/bazi/heavenly-stems/">About the stems</a>')
+        : '<a class="bz-pill" href="/bazi/earthly-branches/">About the branches</a><a class="bz-pill" href="/bazi/hidden-stems/">About hidden stems</a><a class="bz-pill" href="/chinese-zodiac/' + slug(node.animal) + '/">Meet the ' + node.animal + "</a>";
+      panel.innerHTML =
+        '<div class="bz-panel-head"><span class="bz-glyph bz-glyph-lg" ' + phaseStyle(node.phase) + ">" + node.char + "</span>" +
+        "<div><h3>" + head + '</h3><p class="bz-sub">' + p.label + " pillar · " + p.sub + "</p></div></div>" +
+        '<p class="bz-wow">' + node.meaning + "</p>" + hid +
+        '<div class="bz-actions">' + learn + "</div>";
+    }
+  }
+
   function cap(s) { return String(s).charAt(0).toUpperCase() + String(s).slice(1); }
 
-  var MOUNTS = { hidden: mountHidden, stems: mountStems, branches: mountBranches, tengods: mountTenGods, pairing: mountPairing };
+  var MOUNTS = { hidden: mountHidden, stems: mountStems, branches: mountBranches, tengods: mountTenGods, pairing: mountPairing, chart: mountChart };
   function init() {
     Array.prototype.forEach.call(document.querySelectorAll("[data-bz]"), function (root) {
       var kind = root.getAttribute("data-bz");

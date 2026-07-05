@@ -472,6 +472,29 @@ html.pn-sealing .pn-sub .pn-seam-spark {
 }
 .pn-subdrop li { margin: 0; }
 
+/* Progressive-enhancement fallback: reveal the sub-nav dropdown on hover/focus
+   with pure CSS, so it works even if nav.js has not hydrated the bar. On pages
+   where nav.js runs, it portals the drop to <body> and the [data-open] rule
+   above drives the reveal; there the drop leaves the item, so this selector
+   stops matching and there is no conflict. */
+.pn-sub-item.pn-has-drop { position: relative; }
+@media (hover: hover) and (pointer: fine) {
+  /* While a drop is open: (1) lift the whole sticky sub-bar above the page so
+     the panel is never behind content, and (2) un-clip the horizontal scroller
+     so an absolutely-placed panel can spill below the row. */
+  .pn-sub:has(.pn-sub-item.pn-has-drop:hover),
+  .pn-sub:has(.pn-sub-item.pn-has-drop:focus-within) { z-index: 200; overflow: visible; }
+  .pn-sub-primary:has(.pn-sub-item.pn-has-drop:hover),
+  .pn-sub-primary:has(.pn-sub-item.pn-has-drop:focus-within) { overflow: visible; }
+  .pn-subnav:has(.pn-sub-item.pn-has-drop:hover),
+  .pn-subnav:has(.pn-sub-item.pn-has-drop:focus-within) { overflow: visible; }
+  .pn-sub-item.pn-has-drop:hover > .pn-subdrop,
+  .pn-sub-item.pn-has-drop:focus-within > .pn-subdrop {
+    position: absolute; top: calc(100% + 6px); left: 0; z-index: 250;
+    opacity: 1; visibility: visible; transform: none; transition-delay: 0s;
+  }
+}
+
 /* dropdown rows: quiet by default, IGNITE on hover (per #3) — brighten to
    moon, warm wash, lit-underline glow, a small nudge. Never dim. */
 .pn-subdrop-link {
