@@ -737,7 +737,7 @@
       if (sbtn) sbtn.addEventListener("click", function () {
         if (navigator.share) { navigator.share({ text: shareTxt }).catch(function () {}); return; }
         if (navigator.clipboard) navigator.clipboard.writeText(shareTxt).then(function () { sbtn.textContent = "Copied to clipboard"; setTimeout(function () { sbtn.textContent = "Copy my reading to share"; }, 1900); }).catch(function () {});
-      }
+      });
     }
   }
 
