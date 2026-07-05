@@ -135,6 +135,7 @@ PNAV.MAP = [
       ]},
       { title: "Live with it", mark: "⌂", items: [
         ["/feng-shui/",   "Feng shui"],
+        ["/bazi/",        "BaZi (Four Pillars)", "eight characters"],
         ["/habitat/",     "The Habitat"],
         ["/stones.html",  "Keeper stones"],
         ["/directions/",  "Directions"],
@@ -335,6 +336,7 @@ PNAV.CRAWL_EXTRA = [
   ["/cosmology/",                    "Cosmology"],
   ["/cosmology/four-pillars/",       "The Four Pillars"],
   ["/elements/",                     "The five phases (Elements hub)"],
+  ["/bazi/",                         "BaZi, the Four Pillars of Destiny"],
   /* dropped when the standalone Menagerie group folded into Explore +
      Zodiac; keep it linked so no crawlable destination is lost. */
   ["/learn.html",                    "How it works"]
@@ -510,6 +512,21 @@ PNAV.HUBS = {
       ["/cosmology/stems-and-branches/", "Stems and branches"],
       ["/cosmology/four-pillars/", "Four Pillars"],
       ["/cosmology/luoshu/", "Luo Shu"]
+    ]
+  },
+  "bazi": {
+    label: "BaZi", root: "/bazi/",
+    items: [
+      ["/bazi/", "What is BaZi"],
+      ["/bazi/four-pillars/", "The four pillars"],
+      ["/bazi/heavenly-stems/", "The ten stems"],
+      ["/bazi/earthly-branches/", "The twelve branches"],
+      ["/bazi/hidden-stems/", "Hidden stems"],
+      ["/bazi/day-master/", "Your Day Master"],
+      ["/bazi/ten-gods/", "The Ten Gods"],
+      ["/bazi/interactions/", "Combinations & clashes"],
+      ["/bazi/luck-pillars/", "Luck & timing"],
+      ["/bazi/compatibility/", "You & them"]
     ]
   },
   "elements": {
