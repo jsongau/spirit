@@ -455,6 +455,56 @@
   }
 
   /* ---------- 7. Cast your own chart ---------- */
+  /* ---- auto-reading engine (deterministic; spec: docs/bazi/example/09) ---- */
+  var GROUP_OF_KEY = { "zheng-yin":"resource","pian-yin":"resource","shi-shen":"output","shang-guan":"output","zheng-cai":"wealth","pian-cai":"wealth","zheng-guan":"power","qi-sha":"power","bi-jian":"companion","jie-cai":"companion" };
+  var GROUP_NAME = { resource:"Resource", companion:"Companion", output:"Output", wealth:"Wealth", power:"Authority" };
+  function invGen(ph){ for (var k in B.generating) if (B.generating[k]===ph) return k; }
+  function invCtl(ph){ for (var k in B.controlling) if (B.controlling[k]===ph) return k; }
+  function groupOfPhase(dm, o){ if (o===dm) return "companion"; if (B.generating[o]===dm) return "resource"; if (B.generating[dm]===o) return "output"; if (B.controlling[dm]===o) return "wealth"; if (B.controlling[o]===dm) return "power"; return "companion"; }
+  function joinNames(a){ a=a.filter(Boolean); if(a.length<=1) return a[0]||""; if(a.length===2) return a[0]+" and "+a[1]; return a.slice(0,-1).join(", ")+", and "+a[a.length-1]; }
+  function lowerFirst(s){ return s ? s.charAt(0).toLowerCase()+s.slice(1) : s; }
+  function elChip(ph){ return '<span class="bz-el" style="border-color:'+(COLOR[ph]||"#d6a44c")+'"><span class="bz-dot" style="background:'+(COLOR[ph]||"#d6a44c")+'"></span>'+ph+"</span>"; }
+
+  function deriveStrength(chart){
+    var dm = stemByChar[chart.dayStem]; var ROLE={primary:1,middle:.5,residual:.25}; var SIGN={resource:1,companion:1,output:-1,wealth:-1,power:-1};
+    var sum=0;
+    chart.pillars.forEach(function(p){
+      if(!p.isSelf){ var s=stemByChar[p.stem]; sum += SIGN[groupOfPhase(dm.phase,s.phase)]; }
+      var b=branchByChar[p.branch]; (b.hidden||[]).forEach(function(h){ sum += SIGN[groupOfPhase(dm.phase,h.phase)]*(ROLE[h.role]||.25); });
+    });
+    var mp=branchByChar[chart.pillars[1].branch].phase, sb=0;
+    if(mp===dm.phase) sb=3; else if(B.generating[mp]===dm.phase) sb=2; else if(B.generating[dm.phase]===mp) sb=-2; else if(B.controlling[mp]===dm.phase) sb=-3; else if(B.controlling[dm.phase]===mp) sb=-1;
+    var score=sum+sb; var verdict=score>=2?"strong":(score<=-2?"weak":"balanced");
+    return { score:score, verdict:verdict, near:Math.abs(score)<=1, dm:dm };
+  }
+  function deriveUseful(chart, st){
+    var dm=st.dm.phase, useful=[], soft=false;
+    if(st.verdict==="weak") useful=[invGen(dm), dm];
+    else if(st.verdict==="strong") useful=[B.generating[dm], B.controlling[dm]];
+    var mc=chart.pillars[1].branch, climate="temperate";
+    if(["巳","午","未"].indexOf(mc)>-1){ climate="hot"; if(useful.indexOf("Water")<0) useful.push("Water"); }
+    else if(["亥","子","丑"].indexOf(mc)>-1){ climate="cold"; if(useful.indexOf("Fire")<0) useful.push("Fire"); }
+    if(st.verdict==="balanced" && climate==="temperate"){ useful=[B.generating[dm]]; soft=true; }
+    var seen={}; useful=useful.filter(function(e){ if(!e||seen[e])return false; seen[e]=1; return true; }).slice(0,3);
+    return { useful:useful, climate:climate, soft:soft };
+  }
+  function tallyGods(chart){
+    var dm=stemByChar[chart.dayStem], ROLE={primary:1,middle:.5,residual:.25};
+    var groups={resource:0,companion:0,output:0,wealth:0,power:0}, present={};
+    function add(ph,pol,w,rev){ var g=godFor(dm.phase,dm.polarity,ph,pol); if(!g)return; groups[GROUP_OF_KEY[g.key]]+=w; if(!present[g.char])present[g.char]={char:g.char,en:g.en,key:g.key,group:GROUP_OF_KEY[g.key],revealed:false,weight:0}; present[g.char].weight+=w; if(rev)present[g.char].revealed=true; }
+    chart.pillars.forEach(function(p){ if(!p.isSelf){ var s=stemByChar[p.stem]; add(s.phase,s.polarity,1,true); } var b=branchByChar[p.branch]; (b.hidden||[]).forEach(function(h){ var hs=stemByChar[h.stem]; add(hs.phase,hs.polarity,ROLE[h.role]||.25,false); }); });
+    return { groups:groups, present:present };
+  }
+  function termList(){ return [[2,4],[3,6],[4,5],[5,6],[6,6],[7,7],[8,8],[9,8],[10,8],[11,7],[12,7],[1,6]]; }
+  function startAgeApprox(y,m,d,fwd){
+    var all=[]; [y-1,y,y+1].forEach(function(yy){ termList().forEach(function(t){ all.push(new Date(yy,t[0]-1,t[1])); }); });
+    all.sort(function(a,b){return a-b;}); var bd=new Date(y,m-1,d), next=null,prev=null;
+    for(var i=0;i<all.length;i++){ if(all[i]>bd){ next=all[i]; prev=all[i-1]; break; } }
+    if(!next||!prev) return 4;
+    var days=(fwd?(next-bd):(bd-prev))/86400000;
+    return Math.max(1, Math.min(10, Math.round(days/3)));
+  }
+
   function mountCast(root) {
     var gen = B.generating || {}, ctl = B.controlling || {};
     var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -465,7 +515,8 @@
     dateRow.innerHTML =
       '<div class="bz-selblock"><span class="bz-sellabel">Month</span><select class="bz-select" data-c="month">' + MON.map(function (mn, i) { return '<option value="' + (i + 1) + '"' + (i === 6 ? " selected" : "") + ">" + mn + "</option>"; }).join("") + "</select></div>" +
       '<div class="bz-selblock"><span class="bz-sellabel">Day</span><select class="bz-select" data-c="day">' + opts(1, 31, 15) + "</select></div>" +
-      '<div class="bz-selblock"><span class="bz-sellabel">Year</span><input class="bz-select" data-c="year" type="number" min="1900" max="2100" value="1990"></div>';
+      '<div class="bz-selblock"><span class="bz-sellabel">Year</span><input class="bz-select" data-c="year" type="number" min="1900" max="2100" value="1990"></div>' +
+      '<div class="bz-selblock"><span class="bz-sellabel">Sex <span class="gloss" tabindex="0" data-tip="Used only to set the direction of the luck pillars (大运), which run forward or backward depending on birth sex and the birth-year polarity.">for luck 大运</span></span><select class="bz-select" data-c="sex"><option value="">Choose…</option><option value="female">Female</option><option value="male">Male</option></select></div>';
     root.appendChild(dateRow);
 
     var mode = "general";
@@ -527,18 +578,18 @@
     }
     cast.addEventListener("click", function () {
       if (!dateOK()) { out.innerHTML = '<p class="bz-hint">Please enter a year between 1900 and 2100.</p>'; return; }
-      var y = parseInt(dv("year"), 10), m = parseInt(dv("month"), 10), d = parseInt(dv("day"), 10);
-      if (mode === "general") { render(castChart({ year: y, month: m, day: d, known: false }), {}); return; }
+      var y = parseInt(dv("year"), 10), m = parseInt(dv("month"), 10), d = parseInt(dv("day"), 10), sex = dv("sex");
+      if (mode === "general") { render(castChart({ year: y, month: m, day: d, known: false }), { birth:{y:y,m:m,d:d}, sex:sex }); return; }
       var pl = place();
       var o = { year: y, month: m, day: d, hour: parseInt(cv("hour"), 10) || 0, minute: parseInt(cv("minute"), 10) || 0, known: true };
       if (pl) { o.lon = pl.lon; o.utc = pl.utc; }
-      render(castChart(o), { placeName: pl ? pl.name : null });
+      render(castChart(o), { placeName: pl ? pl.name : null, birth:{y:y,m:m,d:d}, sex:sex });
     });
     function doExplore() {
       if (!dateOK()) { out.innerHTML = '<p class="bz-hint">Enter a birth year first, then explore the hour.</p>'; return; }
       updateExpLabel();
       var y = parseInt(dv("year"), 10), m = parseInt(dv("month"), 10), d = parseInt(dv("day"), 10);
-      render(castChart({ year: y, month: m, day: d, hour: exploreHour, minute: 0, known: true }), { explore: true });
+      render(castChart({ year: y, month: m, day: d, hour: exploreHour, minute: 0, known: true }), { explore: true, birth:{y:y,m:m,d:d}, sex:dv("sex") });
     }
 
     function godOf(node) { var g = godFor(dmPhase(), dmPol(), node.phase, node.polarity); return g ? g : null; }
@@ -546,49 +597,122 @@
     function dmPhase() { return _dm.phase; }
     function dmPol() { return _dm.polarity; }
 
+    function glossI(label, tip) { return '<span class="gloss" tabindex="0" data-tip="' + String(tip).replace(/"/g, "&quot;") + '">' + label + "</span>"; }
     function render(c, opt) {
       opt = opt || {};
       _dm = stemByChar[c.dayStem];
+      var dm = _dm, GD = B.godDeep || {};
       var hasHour = c.pillars.length >= 4;
+      var st = deriveStrength(c), uf = deriveUseful(c, st), tal = tallyGods(c);
+
+      // --- chart grid (cells open the floater) ---
       var grid = '<div class="bz-chart">';
       c.pillars.forEach(function (p) {
         var s = stemByChar[p.stem], b = branchByChar[p.branch];
-        var sGod = p.isSelf ? "the self" : (godOf(s) ? godOf(s).char : "");
+        var gg = p.isSelf ? null : godOf(s);
+        var sGod = p.isSelf ? "the self" : (gg ? gg.char : "");
         var hid = (b.hidden || []).map(function (h) { return '<i style="background:' + (COLOR[h.phase] || "#d6a44c") + '" title="' + h.stem + '"></i>'; }).join("");
+        var gAttr = p.isSelf ? 'data-god="日主"' : (gg ? 'data-god="' + gg.char + '"' : "");
         grid += '<div class="bz-pcol' + (p.isSelf ? " is-self" : "") + (opt.explore && p.label === "Hour" ? " is-explore" : "") + '"><div class="bz-pcap">' + p.label + (p.isSelf ? ' <span class="bz-selfmark">you</span>' : "") + "</div>" +
-          '<div class="bz-pcell' + (p.isSelf ? " is-self" : "") + '"><span class="bz-god">' + sGod + '</span><span class="bz-pglyph" ' + phaseStyle(s.phase) + ">" + s.char + '</span><span class="bz-pt">' + s.polarity + " " + s.phase + "</span></div>" +
-          '<div class="bz-pcell"><span class="bz-pglyph" ' + phaseStyle(b.phase) + ">" + b.char + '</span><span class="bz-pt">' + b.animal + '</span><span class="bz-hidmini">' + hid + "</span></div></div>";
+          '<div class="bz-pcell' + (p.isSelf ? " is-self" : "") + '" ' + gAttr + ' tabindex="0" role="button"><span class="bz-god">' + sGod + '</span><span class="bz-pglyph" ' + phaseStyle(s.phase) + ">" + s.char + '</span><span class="bz-pt">' + s.polarity + " " + s.phase + "</span></div>" +
+          '<div class="bz-pcell" data-concept="sub" tabindex="0" role="button"><span class="bz-pglyph" ' + phaseStyle(b.phase) + ">" + b.char + '</span><span class="bz-pt">' + b.animal + '</span><span class="bz-hidmini">' + hid + "</span></div></div>";
       });
-      if (!hasHour) {
-        grid += '<div class="bz-pcol bz-hour-unknown"><div class="bz-pcap">Hour</div><div class="bz-pcell bz-cell-unknown"><span class="bz-pglyph">?</span><span class="bz-pt">unknown</span></div><div class="bz-pcell bz-cell-unknown"><span class="bz-pglyph">?</span><span class="bz-pt">unknown</span></div></div>';
-      }
-      grid += "</div>";
+      if (!hasHour) grid += '<div class="bz-pcol bz-hour-unknown"><div class="bz-pcap">Hour</div><div class="bz-pcell bz-cell-unknown"><span class="bz-pglyph">?</span><span class="bz-pt">unknown</span></div><div class="bz-pcell bz-cell-unknown"><span class="bz-pglyph">?</span><span class="bz-pt">unknown</span></div></div>';
+      grid += '</div><p class="bz-tap-hint">Tap any character for its full meaning.</p>';
+
+      // --- solar ---
       var solar = "";
       if (c.solar && c.solar.applied) {
         var hAnimal = branchByChar[c.pillars[3].branch].animal;
-        solar = '<div class="bz-solar"><span class="bz-k"><span class="gloss" tabindex="0" data-tip="真太阳时 zhēn tài yáng shí. BaZi runs on the sun at your birthplace, so your longitude and the date shift the real hour.">True solar time</span></span><p>' + c.solar.clock + ' clock time' + (opt.placeName ? ' near ' + opt.placeName : '') + ' becomes <b>' + c.solar.solar + '</b> true solar time, which puts your birth in the <b>' + hAnimal + '</b> hour (' + c.pillars[3].branch + ').' + (c.solar.crossed ? ' Your longitude shifts this to a different hour than the clock alone would give.' : '') + '</p></div>';
+        solar = '<div class="bz-solar"><span class="bz-k">' + glossI("True solar time", "真太阳时 zhēn tài yáng shí. BaZi runs on the sun at your birthplace, so your longitude and the date shift the real hour.") + '</span><p>' + c.solar.clock + ' clock time' + (opt.placeName ? ' near ' + opt.placeName : '') + ' becomes <b>' + c.solar.solar + '</b> true solar time, putting your birth in the <b>' + hAnimal + '</b> hour (' + c.pillars[3].branch + ').' + (c.solar.crossed ? ' Your longitude shifts this to a different hour than the clock alone.' : '') + '</p></div>';
       }
-      var mB = branchByChar[c.pillars[1].branch], dmP = _dm.phase, lean;
-      if (mB.phase === dmP) lean = "in its own season, so it leans strong";
-      else if (gen[mB.phase] === dmP) lean = "fed by its season, so it leans supported and strong";
-      else if (gen[dmP] === mB.phase) lean = "pouring into its season, which drains it a little";
-      else if (ctl[mB.phase] === dmP) lean = "held in check by its season, so it leans weak and thrives on support";
-      else lean = "spending itself on its season, so it leans weak and thrives on support";
-      var notes = c.notes.map(function (n) { return "<p>" + n + "</p>"; }).join("");
+
+      // --- strength + useful element ---
+      var img = "A " + dm.polarity + " " + dm.phase + " self (" + dm.imagery + ")";
+      var STR = { strong: img + " with power to spare, built to lead and carry weight, and at its best with real outlets for that force.", balanced: img + " near the balance the tradition prizes, tending to adapt and hold its own without being ruled by any one pull.", weak: img + " that thrives on support, doing its best work backed by good mentors, steady allies, and enough rest." };
+      var ufLine;
+      if (uf.soft) ufLine = "Near balance, it leans lightly toward " + joinNames(uf.useful) + ", room to express and make more than any single need.";
+      else {
+        var why = st.verdict === "weak" ? "A weak self is fed by its own kind and by what supports it." : (st.verdict === "strong" ? "A strong self does best with outlets to pour its force into." : "");
+        var clim = uf.climate === "hot" ? " Born in high summer it also runs warm, so a note of Water tends to cool it." : (uf.climate === "cold" ? " Born in deep winter it also runs cold, so a note of Fire tends to warm it." : "");
+        ufLine = "This chart leans on " + joinNames(uf.useful) + ". " + why + clim;
+      }
+      var strengthBlock = '<div class="bz-read-sec"><span class="bz-k">' + glossI("Strength", "身强 shēn qiáng or 身弱 shēn ruò, whether the Day Master is strong or weak. Neither is better; the aim is balance.") + ' &amp; what it leans on</span><p><b>' + cap(st.verdict) + ' chart.</b> ' + STR[st.verdict] + '</p><p>' + ufLine + '</p><div class="bz-chipline">' + uf.useful.map(elChip).join(" ") + '</div></div>';
+
+      // --- per-pillar reading ---
+      var AREA = { Year: "roots, early life, and the family you come from", Month: "your upbringing and the ground your working life grows from, and the season that sets your strength", Hour: "your later years, what you produce, and what you leave" };
+      var BRC = { resource: "brings support and learning here.", companion: "brings allies and self-reliance here.", output: "brings expression and output here.", wealth: "brings work, resources, and things to handle here.", power: "brings structure, duty, and pressure here." };
+      var pillarBlock = '<div class="bz-read-sec"><span class="bz-k">The four pillars, one by one</span><div class="bz-reads">';
+      c.pillars.forEach(function (p) {
+        var s = stemByChar[p.stem], b = branchByChar[p.branch], stemLine;
+        if (p.isSelf) stemLine = "At the center stands you: " + img + ", " + dm.keywords.slice(0, 3).join(", ") + ". Everything else is read as how it meets this self.";
+        else { var g = godOf(s), gd = GD[g.char], ess = gd ? lowerFirst(gd.essence) : g.governs + "."; stemLine = "In the " + p.label + " pillar (" + (AREA[p.label] || p.sub) + ") stands " + s.imagery + " (" + s.phase + "), your <b>" + g.en + "</b> (" + g.char + "): " + ess; }
+        var brc = BRC[groupOfPhase(dm.phase, b.phase)] || "";
+        var hiddenList = (b.hidden || []).map(function (h) { var hs = stemByChar[h.stem], hg = godFor(dm.phase, dm.polarity, hs.phase, hs.polarity); return h.stem + " " + h.phase + " (" + hg.en + ")"; }).join(", ");
+        var branchLine = "Beneath it, the " + b.animal + " (" + b.phase + " branch) " + brc + " Hidden inside: " + hiddenList + "." + (p.isSelf ? " This is your spouse palace, coloring your closest partnership." : "");
+        pillarBlock += '<div class="bz-read"><span class="bz-k">' + p.label + " · " + s.char + b.char + '</span><p>' + stemLine + '</p><p>' + branchLine + '</p></div>';
+      });
+      if (!hasHour) pillarBlock += '<p class="bz-hidline" style="grid-column:1/-1">The Hour pillar is unread without a birth time, so later years, children, and output stay open.</p>';
+      pillarBlock += '</div></div>';
+
+      // --- ten gods summary ---
+      var tg = tal.groups, pres = tal.present, lines = [];
+      if (tg.power < 0.25) lines.push("No Officer or Authority star appears, a self-made signature: this chart leans on its own initiative rather than a set ladder to climb.");
+      var domG = Object.keys(tg).reduce(function (a, b) { return tg[b] > tg[a] ? b : a; });
+      if (tg[domG] >= 3) { var DL = { output: "Output runs strong, a maker's chart: it tends to think by producing and does best with something to build or express.", resource: "Resource runs strong, a learner's and nurturer's chart: it gathers knowledge, backing, and care, and gives the same.", wealth: "Wealth runs strong, a practical, results-facing chart drawn to tangible work and real resources.", power: "Authority runs strong, a chart shaped early by structure, duty, and responsibility.", companion: "Companions run strong, a chart of drive, independence, and peers, for camaraderie and rivalry alike." }[domG]; if (DL) lines.push(DL); }
+      if (tg.companion >= 3 && tg.wealth < 1) lines.push("Peers crowd the chart while Wealth is thin, the classical 比劫争财, rivals dividing a small pot: this self does best setting clear boundaries around what is its own.");
+      if (st.verdict === "weak" && tg.wealth >= 2) lines.push("Wealth is present but the self is light (财多身弱): plenty to handle, and a chart that fares best building support before it reaches.");
+      var presList = Object.keys(pres).map(function (ch) { var g = pres[ch]; return '<span class="bz-godtag2" data-god="' + ch + '" tabindex="0" role="button">' + ch + " <i>" + g.en + "</i> <em>" + (g.revealed ? "主星" : "副星") + "</em></span>"; }).join("");
+      var godsBlock = '<div class="bz-read-sec"><span class="bz-k">Your Ten Gods (' + glossI("主星 / 副星", "主星 zhǔ xīng are the gods on your visible stems; 副星 fù xīng are the gods of the hidden stems. Tap any to learn it.") + ')</span><div class="bz-godtags">' + presList + '</div>' + (lines.length ? "<p>" + lines.join(" ") + "</p>" : "") + "</div>";
+
+      // --- luck pillars ---
+      var luckArc = "", luckBlock;
+      if (!opt.sex) luckBlock = '<div class="bz-read-sec"><span class="bz-k">Your luck decades (大运)</span><p class="bz-note-inline">Choose your sex in the form above (it sets the direction of the luck pillars) to see your ten-year decades.</p></div>';
+      else {
+        var yPol = stemByChar[c.pillars[0].stem].polarity;
+        var fwd = (opt.sex === "male" && yPol === "yang") || (opt.sex === "female" && yPol === "yin");
+        var sa = opt.birth ? startAgeApprox(opt.birth.y, opt.birth.m, opt.birth.d, fwd) : 4;
+        var si = STEMS.indexOf(c.pillars[1].stem), bi = BRANCHES.indexOf(c.pillars[1].branch), cells = "", good = [];
+        for (var k = 0; k < 8; k++) {
+          si = mod(si + (fwd ? 1 : -1), 10); bi = mod(bi + (fwd ? 1 : -1), 12);
+          var ds = B.stems[si], db = B.branches[bi], g2 = godFor(dm.phase, dm.polarity, ds.phase, ds.polarity);
+          var feeds = uf.useful.indexOf(ds.phase) > -1 || uf.useful.indexOf(db.phase) > -1 || uf.useful.indexOf(B.generating[ds.phase]) > -1;
+          var drains = uf.useful.indexOf(B.controlling[ds.phase]) > -1;
+          var cl = feeds && !drains ? "supportive" : (drains && !feeds ? "demanding" : "mixed"), age = sa + k * 10;
+          if (cl === "supportive") good.push(age);
+          cells += '<div class="bz-luckcell' + (cl === "supportive" ? " is-good" : (cl === "demanding" ? " is-hard" : "")) + '" data-god="' + g2.char + '" tabindex="0" role="button"><b>' + ds.char + db.char + "</b><i>age " + age + "</i><em>" + g2.en + "</em></div>";
+        }
+        var avg = good.length ? good.reduce(function (a, b) { return a + b; }, 0) / good.length : 0;
+        luckArc = !good.length ? "moves through an even mix of supportive and demanding seasons" : (avg < sa + 25 ? "opens with supportive seasons early, favouring a strong start" : (avg < sa + 50 ? "gathers its most supportive seasons in the middle years, coming into its own with time" : "saves its most supportive seasons for later, a long game that rewards patience"));
+        luckBlock = '<div class="bz-read-sec"><span class="bz-k">Your luck decades (' + glossI("大运", "大运 dà yùn, the ten-year luck pillars: moving seasons of life laid over the fixed chart. Tendencies, never a schedule.") + '), from about age ' + sa + '</span><p>Each block is a ten-year season. Green leans supportive for your chart, amber asks more of you. Tap one for the god it brings.</p><div class="bz-luckrow">' + cells + '</div></div>';
+      }
+
+      // --- synthesis ---
+      var domEntry = Object.keys(pres).map(function (k) { return pres[k]; }).filter(function (g) { return g.group === domG; }).sort(function (a, b) { return (b.weight + (b.revealed ? .5 : 0)) - (a.weight + (a.revealed ? .5 : 0)); })[0];
+      var domName = domEntry ? domEntry.en : "", domGloss = domEntry && GD[domEntry.char] ? lowerFirst(GD[domEntry.char].essence) : "", domLean = domEntry && GD[domEntry.char] ? lowerFirst(GD[domEntry.char].career) : "";
+      var VERB = { output: "make and express", wealth: "build and provide", power: "lead and take responsibility", resource: "learn, protect, and pass on", companion: "stand on its own and gather equals" };
+      var SM = { strong: "a self with force to spare", balanced: "a self near the prized point of balance", weak: "a self that runs on support" };
+      var SD = { strong: "do its best work with outlets and something real to carry", balanced: "adapt and hold its own without being ruled by any one pull", weak: "flourish with good backing, steady allies, and room to rest" };
+      var arcTxt = opt.sex ? luckArc : "moves through a mix of seasons (add your sex above for the luck direction)";
+      var synth = '<div class="bz-portrait bz-synth"><span class="bz-k">What this life means</span><p>At heart, this is a ' + dm.polarity + " " + dm.phase + " self, " + dm.keywords.slice(0, 3).join(", ") + ". It reads as a <b>" + st.verdict + "</b> chart, " + SM[st.verdict] + ", so it tends to " + SD[st.verdict] + ". " + (domName ? "Its strongest current is <b>" + domName + "</b>, " + domGloss + " so this life leans toward " + domLean + " " : "") + "The elements it most leans on are " + joinNames(uf.useful) + ". Across the decades it " + arcTxt + ", so the season of life matters as much as the chart. Read whole, this is a life built to <b>" + (VERB[domG] || "find its own balance") + "</b>: not a fate written down, but a grain to work with, most itself when it leans into " + uf.useful[0] + " and gives its " + (domName || "gifts") + " real room.</p></div>";
+
+      // --- notes / hedges ---
+      var extra = []; if (st.near) extra.push("This chart sits near the balance line, so read the strength lightly; small details could tip it.");
+      var notes = c.notes.concat(extra).map(function (n) { return "<p>" + n + "</p>"; }).join("");
       var banner = opt.explore ? '<p class="bz-note-inline"><b>Exploring the ' + hourLabels[exploreHour] + ' hour.</b> A teaching view, not your real chart.</p>' : "";
-      var generalNote = (!hasHour && !opt.explore) ? '<div class="bz-note-inline"><b>A general reading.</b> Your Day Master, its strength, your useful element, and your full ten-year luck timeline all hold without the hour. What stays open: the hour pillar itself (children, later years, and what you create), and any part of a reading that rests on it. Learn your time later and add it for the last quarter of the chart.</div>' : "";
-      out.innerHTML =
-        banner +
-        '<p class="bz-castlead">Your Day Master is <b>' + _dm.char + " " + _dm.pinyin + "</b>, " + _dm.polarity + " " + _dm.phase + ". " + cap(_dm.imagery) + ". This is you, the character every other part of the chart is read against.</p>" +
-        grid + solar +
-        '<div class="bz-portrait"><span class="bz-k">A first read</span><p>Born in the ' + mB.animal + " month, your " + _dm.phase + " self is " + lean + ". Strong charts want outlets to pour their energy into; supported charts want mentors, rest, and knowledge to lean on. Balance is the aim, not strength.</p></div>" +
-        generalNote +
-        (notes ? '<div class="bz-note-inline">' + notes + "</div>" : "") +
-        '<div class="bz-actions"><a class="bz-pill" href="/bazi/day-master/">What your Day Master means</a>' +
-        '<a class="bz-pill" href="/bazi/hidden-stems/">The elements hidden in your branches</a>' +
-        '<a class="bz-pill" href="/bazi/ten-gods/">Read the Ten Gods</a>' +
-        '<a class="bz-pill" href="/chinese-zodiac/' + slug(branchByChar[c.pillars[0].branch].animal) + '/">Your year animal</a></div>' +
-        '<p class="bz-note-inline">This casts the pillars from the sun and the sixty-day cycle. It is a mirror for reflection, not a prediction. Near a season or hour boundary, confirm the details with a professional almanac.</p>';
+      var generalNote = (!hasHour && !opt.explore) ? '<div class="bz-note-inline"><b>A general reading.</b> Your Day Master, strength, useful element, and full luck timeline all hold without the hour. Only the hour pillar (later years, children, output) stays open. Add your time later for that chapter.</div>' : "";
+      var links = '<div class="bz-actions"><a class="bz-pill" href="/bazi/day-master/">More on the Day Master</a><a class="bz-pill" href="/bazi/ten-gods/">More on the Ten Gods</a><a class="bz-pill" href="/bazi/luck-pillars/">How luck works</a><a class="bz-pill" href="/chinese-zodiac/' + slug(branchByChar[c.pillars[0].branch].animal) + '/">Your year animal</a></div>';
+
+      out.innerHTML = banner +
+        '<p class="bz-castlead">Your Day Master is <b>' + dm.char + " " + dm.pinyin + "</b>, " + dm.polarity + " " + dm.phase + ". " + cap(dm.imagery) + ". This is you, the character every other part of the chart is read against.</p>" +
+        grid + solar + strengthBlock + pillarBlock + godsBlock + luckBlock + synth + generalNote +
+        (notes ? '<div class="bz-note-inline">' + notes + "</div>" : "") + links +
+        '<p class="bz-note-inline">A reading of tendencies from a classical system, a mirror and a grain to work with, not a verdict and not a prediction. What you do with it is yours.</p>';
+
+      if (window.__bzFloat) {
+        Array.prototype.forEach.call(out.querySelectorAll("[data-god]"), function (cell) { cell.addEventListener("click", function () { window.__bzFloat.openGod(cell.getAttribute("data-god")); }); });
+        Array.prototype.forEach.call(out.querySelectorAll("[data-concept]"), function (cell) { cell.addEventListener("click", function () { window.__bzFloat.openConcept(cell.getAttribute("data-concept")); }); });
+      }
     }
   }
 

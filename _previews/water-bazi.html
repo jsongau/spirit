@@ -3,32 +3,365 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Metal as a day master · Metal 金 · Zodi Animal</title>
-<meta name="description" content="In BaZi (八字, the Four Pillars), your day master is the element that stands for you. A Metal day master is read through the season it was born into and">
-<meta property="og:title" content="Metal as a day master · Metal 金">
+<title>Water as a day master · Water 水 · Zodi Animal</title>
+<meta name="description" content="In BaZi (八字, the Four Pillars), your day master is the element that stands for you. A Water day master is read through the season it was born into and">
+<meta property="og:title" content="Water as a day master · Water 水">
 <meta property="og:type" content="article">
-<link rel="stylesheet" href="/css/tokens.css" data-pn-assets="/css/tokens.css">
-<link rel="stylesheet" href="/css/type.css" data-pn-assets="/css/type.css">
+<style>
+/* ============================================================
+   tokens.css  —  Zodianimal.com design tokens (Phase 0)
+   ------------------------------------------------------------
+   The OKLCH token system from docs/redesign/01-design-language-2026.md
+   (section 2). This file is the SHARED CONTRACT: later phases and the
+   SVG glyph/sigil system reference these variable names verbatim. Do
+   not rename any token below; sections may only OVERRIDE --accent and
+   its ramp to re-tint a domain (see the .section--* helpers at the end).
+
+   Load order: injected render-blocking into <head> by build/apply-assets.mjs
+   so it is FOUC-free and establishes the base layer every page inherits.
+
+   OKLCH is Baseline (~93 to 95% of 2026 browsers). A hex fallback block
+   ships via `@supports not (color: oklch())` for the remainder.
+   No hard-coded hex lives in page geometry; geometry reads these tokens.
+   ============================================================ */
+
+:root {
+  /* ---- Celestial base (dark-first) ---- */
+  --ink:        oklch(0.16 0.03 275);    /* page base, warm indigo-black */
+  --ink-2:      oklch(0.20 0.035 275);   /* raised base */
+  --panel:      oklch(0.25 0.04 273);    /* card */
+  --panel-2:    oklch(0.30 0.045 272);   /* card raised / hover */
+  --field:      oklch(0.14 0.03 276);    /* inputs, wells */
+  --line:       oklch(0.80 0.06 85 / 0.16);  /* hairline, brass-tinted */
+  --line-soft:  oklch(0.80 0.06 85 / 0.08);
+
+  /* ---- Ink on dark ---- */
+  --moon:       oklch(0.96 0.02 90);     /* headline white-gold */
+  --ivory:      oklch(0.92 0.02 88);     /* default text */
+  --body-text:  oklch(0.84 0.02 280);    /* long-form body */
+  --body:       var(--body-text);        /* legacy alias (oracle-era pages
+                                            and hub inline styles read it) */
+  --muted:      oklch(0.70 0.02 280);    /* meta */
+  --faint:      oklch(0.55 0.02 280);    /* captions, disabled */
+
+  /* ---- Brand accent: BRASS / MOONLIGHT (Animal, the hero color) ---- */
+  --brass-dim:    oklch(0.62 0.09 85);
+  --brass:        oklch(0.78 0.11 85);
+  --brass-bright: oklch(0.90 0.09 88);
+
+  /* ---- Per-element accent ramps (matched L/C so hues behave alike) ---- */
+  --jade-dim:     oklch(0.58 0.10 160);  --jade:     oklch(0.74 0.12 160);  --jade-bright:     oklch(0.88 0.10 162);  /* feng shui */
+  --silver-dim:   oklch(0.62 0.05 250);  --silver:   oklch(0.80 0.06 250);  --silver-bright:   oklch(0.92 0.05 250);  /* moon */
+  --amethyst-dim: oklch(0.55 0.13 300);  --amethyst: oklch(0.70 0.15 300);  --amethyst-bright: oklch(0.85 0.12 302);  /* third eye / awakening */
+  --rose-dim:     oklch(0.60 0.11 30);   --rose:     oklch(0.75 0.13 30);   --rose-bright:     oklch(0.88 0.10 32);   /* directions */
+  --teal-dim:     oklch(0.55 0.08 210);  --teal:     oklch(0.72 0.10 210);  --teal-bright:     oklch(0.86 0.08 212);  /* cosmology */
+
+  /* ---- Section accent hook (sections override this one var) ---- */
+  --accent:        var(--brass);
+  --accent-dim:    var(--brass-dim);
+  --accent-bright: var(--brass-bright);
+  /* soft wash of the current accent for hovers, glyph fills, hairline glows */
+  --accent-soft:   oklch(from var(--accent) l c h / 0.16);
+
+  /* ---- Signals ---- */
+  --glow: oklch(0.30 0.06 275);          /* radial hero glow, behind grain */
+
+  /* ---- Texture (doc 01 section 4 reserves these; doc 06 owns the layer) ---- */
+  --grain-opacity: 0.04;
+
+  /* ---- Type stacks (families load in type.css) ---- */
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans:  "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono:  "Space Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* ---- Spacing (non-linear; --s-8..10 are the "editorial silence" tokens) ---- */
+  --s-1:.25rem; --s-2:.5rem; --s-3:.75rem; --s-4:1rem; --s-5:1.5rem;
+  --s-6:2rem; --s-7:3rem; --s-8:5rem; --s-9:8rem; --s-10:13rem;
+
+  /* ---- Radius / elevation ---- */
+  --r-1:8px; --r-2:14px; --r-3:22px; --r-pill:999px;
+  --e-1: 0 1px 2px oklch(0 0 0 / .4);
+  --e-2: 0 8px 30px oklch(0 0 0 / .45);
+  --e-3: 0 20px 60px oklch(0 0 0 / .55), 0 0 40px var(--glow);
+
+  /* ---- Motion (personality lives in doc 01 section 5) ---- */
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);      /* entrances: settle into place */
+  --ease-io:   cubic-bezier(0.65, 0, 0.35, 1);     /* state / toggles */
+  --dur-fast: 180ms; --dur: 320ms; --dur-slow: 640ms; --dur-cine: 1100ms;
+
+  /* ---- Layout ---- */
+  --maxw: 1200px;
+  --measure: 66ch;
+}
+
+/* ------------------------------------------------------------
+   Hex fallback for the ~5% of browsers without OKLCH.
+   Only the surfaces and accents that geometry reads are mapped;
+   the ramps collapse to their base stop. --accent-soft loses its
+   relative-color form and falls back to a fixed brass tint.
+   ------------------------------------------------------------ */
+@supports not (color: oklch(0% 0 0)) {
+  :root {
+    --ink:#0d0e18; --ink-2:#131523; --panel:#1a1c30; --panel-2:#22253d;
+    --field:#0c0e1a;
+    --line:rgba(214,193,140,.16); --line-soft:rgba(214,193,140,.08);
+
+    --moon:#f6efd8; --ivory:#ece7d8; --body-text:#cfcfe0;
+    --muted:#adaec2; --faint:#7f8096;
+
+    --brass-dim:#a8925c; --brass:#d6c18c; --brass-bright:#efe2b4;
+
+    --jade-dim:#4f8f6f;     --jade:#78c39c;     --jade-bright:#a9e6c6;
+    --silver-dim:#7f93bd;   --silver:#aebfe0;   --silver-bright:#d6e2f5;
+    --amethyst-dim:#8a5fb0; --amethyst:#b184d6;  --amethyst-bright:#d6b9f0;
+    --rose-dim:#c07f78;     --rose:#e3a196;     --rose-bright:#f5c8bd;
+    --teal-dim:#4f8296;     --teal:#78b3c6;     --teal-bright:#a9d6e6;
+
+    --accent:#d6c18c; --accent-dim:#a8925c; --accent-bright:#efe2b4;
+    --accent-soft:rgba(214,193,140,.16);
+
+    --glow:#1a1c33;
+
+    --e-1: 0 1px 2px rgba(0,0,0,.4);
+    --e-2: 0 8px 30px rgba(0,0,0,.45);
+    --e-3: 0 20px 60px rgba(0,0,0,.55), 0 0 40px var(--glow);
+  }
+}
+
+/* ------------------------------------------------------------
+   Section accent scoping. Any orbital domain sets --accent (and
+   its ramp) and everything inside inherits the hue. --accent-soft
+   re-derives from the new --accent automatically in OKLCH browsers;
+   the hex fallback keeps the brass tint (acceptable for the 5%).
+   ------------------------------------------------------------ */
+.section--animal    { --accent: var(--brass);    --accent-bright: var(--brass-bright);    --accent-dim: var(--brass-dim); }
+.section--fengshui  { --accent: var(--jade);     --accent-bright: var(--jade-bright);     --accent-dim: var(--jade-dim); }
+.section--moon      { --accent: var(--silver);   --accent-bright: var(--silver-bright);   --accent-dim: var(--silver-dim); }
+.section--awakening { --accent: var(--amethyst); --accent-bright: var(--amethyst-bright); --accent-dim: var(--amethyst-dim); }
+.section--thirdeye  { --accent: var(--amethyst); --accent-bright: var(--amethyst-bright); --accent-dim: var(--amethyst-dim); }
+.section--directions{ --accent: var(--rose);     --accent-bright: var(--rose-bright);     --accent-dim: var(--rose-dim); }
+.section--cosmology { --accent: var(--teal);     --accent-bright: var(--teal-bright);     --accent-dim: var(--teal-dim); }
+
+/* ============================================================
+   v4 SKIN LAYER (doc 14) — dark celestial only.
+   Additive only: no token above is renamed. New tokens:
+     --sec / --sec-dim / --sec-soft   electric-blue secondary (CTA ring)
+     --cta-g1 / --cta-g2 / --cta-text CTA gradient contract (doc 14 §3)
+     --season / --season-soft         the shifting SECOND hue
+     --sky-tint                       faint seasonal sky wash
+   js/theme.js (and the pre-paint boot snippet injected by
+   build/apply-assets.mjs) pin html[data-theme="dark"] and set
+   html[data-season]; JS-off users get the same celestial default.
+   ============================================================ */
+:root {
+  --sec:      #2f7bff;
+  --sec-dim:  #0353d6;
+  --sec-soft: rgba(174,191,224,.30);   /* dark ring is silver-blue (canvas) */
+  --season:      var(--silver);
+  --season-soft: rgba(174,191,224,.14);
+  --sky-tint:    transparent;
+  --cta-g1:   var(--brass-bright);
+  --cta-g2:   var(--season);
+  --cta-text: #1a160a;
+}
+
+/* ---- Seasons: dark shifts the second hue (doc 14 §2) ---- */
+:root[data-season="spring"] { --season:#78c39c; --season-soft:rgba(120,195,156,.14); --sky-tint:rgba(120,195,156,.08); }
+:root[data-season="summer"] { --season:#78b3c6; --season-soft:rgba(120,179,198,.14); --sky-tint:rgba(120,179,198,.08); }
+:root[data-season="autumn"] { --season:#e3a196; --season-soft:rgba(227,161,150,.14); --sky-tint:rgba(227,161,150,.08); }
+:root[data-season="winter"] { --season:#aebfe0; --season-soft:rgba(174,191,224,.14); --sky-tint:rgba(174,191,224,.08); }
+
+/* Dark celestial is the ONLY theme (owner decision 2026-07-01).
+   The pink light-theme token block was removed; --sec/--cta/--season
+   above keep their dark values and the seasons keep shifting. */
+
+</style>
+<style>
+/* ============================================================
+   type.css  —  Zodianimal.com type system (Phase 0)
+   ------------------------------------------------------------
+   Fraunces (variable optical display serif, the "oracle voice")
+   over Geist / Inter (humanist grotesque body), with Space Mono
+   as the whisper for cosmological data. See
+   docs/redesign/01-design-language-2026.md section 1 and
+   docs/redesign/10-tech-stack-performance-a11y-2026.md (2e, font CLS).
+
+   Family stacks (--serif/--sans/--mono) live in tokens.css.
+   The Fraunces + Geist + Space Mono web fonts are requested via the
+   Google Fonts CSS2 <link> that build/apply-assets.mjs injects into
+   <head> with font-display:swap, plus the hero preload for Fraunces.
+
+   FONT LOADING STATUS
+   -------------------
+   Binary WOFF2 download from fonts.gstatic.com is blocked in this
+   build environment, so we ship the Google Fonts CSS2 <link> now.
+   Every family below ALSO has a metrics-matched local fallback
+   @font-face (size-adjust + ascent/descent/line-gap overrides) so the
+   swap from the system fallback to the web font causes no layout shift
+   (CLS well under 0.05). The @font-face src points at local() system
+   fonts only, so it costs zero network and never FOITs.
+
+   TODO (follow-up, tracked): self-host subset Latin WOFF2 under
+   site/fonts/ for Fraunces (opsz+wght), Geist (wght), and Space Mono,
+   swap the Google <link> in apply-assets.mjs for local @font-face src,
+   and preload the hero Fraunces file. Keep these fallback faces; they
+   remain the CLS guard after self-hosting.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Metrics-matched fallback @font-face.
+   Each "<Family> Fallback" renders from a local system font but is
+   scaled with size-adjust and the vertical-metric overrides so its
+   box matches the real web font. It is named as the LAST family in
+   each element's font stack (via the utility classes / element rules
+   below) so the browser paints it during swap with no reflow.
+   Override values derived from published font metrics (unitsPerEm,
+   ascent, descent, lineGap, and average glyph advance).
+   ------------------------------------------------------------ */
+
+/* Fraunces (display serif) matched against Georgia/Times */
+@font-face {
+  font-family: "Fraunces Fallback";
+  src: local("Georgia"), local("Times New Roman");
+  size-adjust: 106%;
+  ascent-override: 92%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+
+/* Geist / body grotesque matched against system Arial-metrics fallback.
+   Geist and Inter share near-identical metrics to Arial; one face covers
+   both since Inter is the ship-now body and Geist the upgrade. */
+@font-face {
+  font-family: "Geist Fallback";
+  src: local("Arial"), local("Helvetica Neue"), local("Helvetica");
+  size-adjust: 97%;
+  ascent-override: 96%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+
+/* Space Mono matched against a system monospace */
+@font-face {
+  font-family: "Space Mono Fallback";
+  src: local("Menlo"), local("Consolas"), local("Courier New");
+  size-adjust: 96%;
+  ascent-override: 105%;
+  descent-override: 31%;
+  line-gap-override: 0%;
+}
+
+/* ------------------------------------------------------------
+   Re-declare the family stacks with the metrics-matched fallback
+   appended just before the generic system fonts, so the swap is
+   invisible. tokens.css defines the base --serif/--sans/--mono; here
+   we extend them with the fallback face. Kept as separate vars so we
+   never mutate the contract names in tokens.css.
+   ------------------------------------------------------------ */
+:root {
+  --serif: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
+  --sans:  "Geist", "Inter", "Geist Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono:  "Space Mono", "Space Mono Fallback", ui-monospace, "SFMono-Regular", monospace;
+
+  /* ------------------------------------------------------------
+     Fluid, editorial type scale (doc 01 section 1).
+     Big display-to-body contrast on purpose; clamp() so the hero
+     breathes on large screens without breaking mobile.
+     ------------------------------------------------------------ */
+  --fs-hero:    clamp(3.2rem, 9vw, 8rem);      /* animal name, homepage fold */
+  --fs-display: clamp(2.4rem, 5.5vw, 4.5rem);  /* section openers */
+  --fs-h2:      clamp(1.7rem, 3.4vw, 2.6rem);  /* sub-sections */
+  --fs-h3:      clamp(1.25rem, 2vw, 1.55rem);  /* card titles */
+  --fs-lead:    clamp(1.2rem, 2.4vw, 1.75rem); /* essence / italic lede */
+  --fs-body:    clamp(1rem, 1.1vw, 1.125rem);  /* readings */
+  --fs-small:   .8125rem;                       /* meta, captions */
+  --fs-eyebrow: .72rem;                          /* uppercase kickers */
+
+  /* line-heights and tracking used across the type helpers */
+  --lh-display: 1.08;   /* display serif: 1.05 to 1.12 */
+  --lh-body:    1.65;
+  --track-eyebrow: .34em;
+}
+
+/* ------------------------------------------------------------
+   Opt-in type utilities (additive; do not restyle existing pages).
+   Later phases apply these classes; existing oracle.css rules keep
+   working because we do not touch their selectors here.
+   ------------------------------------------------------------ */
+.font-serif { font-family: var(--serif); }
+.font-sans  { font-family: var(--sans); }
+.font-mono  { font-family: var(--mono); }
+
+.t-hero {
+  font-family: var(--serif);
+  font-optical-sizing: auto;   /* Fraunces opsz axis engages at size */
+  font-weight: 560;
+  font-size: var(--fs-hero);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+.t-display {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 560;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  text-wrap: balance;
+}
+.t-h2 { font-family: var(--serif); font-weight: 600; font-size: var(--fs-h2); line-height: var(--lh-display); text-wrap: balance; }
+.t-h3 { font-family: var(--serif); font-weight: 600; font-size: var(--fs-h3); line-height: 1.15; }
+
+.t-lead {
+  font-family: var(--serif);
+  font-style: italic;               /* the reserved "oracle voice" */
+  font-size: var(--fs-lead);
+  line-height: 1.3;
+  color: var(--brass-bright);
+}
+.t-body {
+  font-family: var(--sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+.t-small { font-size: var(--fs-small); color: var(--muted); }
+.t-eyebrow {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: var(--fs-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: var(--track-eyebrow);
+  color: var(--accent);
+}
+.t-data {   /* cosmological figures: dates, counts, 144, moon %, Kua numbers */
+  font-family: var(--mono);
+  font-size: var(--fs-small);
+  letter-spacing: .02em;
+  color: var(--muted);
+}
+
+</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap">
-<script src="/js/nav.js" defer></script>
+<script src="https://www.zodianimal.com/js/nav.js" defer></script>
 <style>
-:root{--ink:#0d0f12;--ink-2:#13161b;--panel:#1c2128;--panel-2:#262c35;--field:#0b0d10;
---line:rgba(184,196,210,.20);--line-soft:rgba(184,196,210,.10);--moon:#f2f5f8;--ivory:#e2e8ee;--body:#c7d0da;--muted:#9aa6b3;--faint:#71808f;
---metal:#aeb7c2;--metal-bright:#dfe6ee;--serif:"Fraunces",Georgia,serif;--sans:"Geist","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:"Space Mono",ui-monospace,monospace;
+:root{--ink:#0b0f16;--ink-2:#101725;--panel:#152234;--panel-2:#1c2c42;--field:#0a0f18;
+--line:rgba(120,179,214,.18);--line-soft:rgba(120,179,214,.09);--moon:#eaf2f8;--ivory:#dbe6ef;--body:#c3d2df;--muted:#93a7ba;--faint:#6d8296;
+--water:#2f8cba;--water-bright:#63b6dd;--serif:"Fraunces",Georgia,serif;--sans:"Geist","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:"Space Mono",ui-monospace,monospace;
 --r-1:8px;--r-2:14px;--r-3:22px;--r-pill:999px;--measure:64ch;--maxw:900px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--ink);color:var(--body);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(720px 460px at 80% -10%,rgba(174,183,194,.18),transparent 70%),radial-gradient(560px 400px at 4% 6%,rgba(121,131,143,.20),transparent 72%)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(720px 460px at 80% -10%,rgba(47,140,186,.18),transparent 70%),radial-gradient(560px 400px at 4% 8%,rgba(28,95,130,.20),transparent 72%)}
 h1,h2,h3{font-family:var(--serif);color:var(--moon);font-weight:560;line-height:1.15;margin:0}
-a{color:var(--metal-bright);text-decoration:none;font-weight:500}
+a{color:var(--water-bright);text-decoration:none;font-weight:500}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,4vw,36px)}
-.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--metal-bright);margin:0 0 .6rem}
+.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--water-bright);margin:0 0 .6rem}
 .ribbon{display:flex;gap:.4rem;align-items:center;justify-content:center;flex-wrap:wrap;font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);padding:14px 18px;border-bottom:1px solid var(--line-soft)}
-.ribbon a{color:var(--muted);text-decoration:none}.ribbon a:hover{color:var(--metal-bright)}.ribbon .dot{opacity:.4}
+.ribbon a{color:var(--muted);text-decoration:none}.ribbon a:hover{color:var(--water-bright)}.ribbon .dot{opacity:.4}
 .hero{text-align:center;padding:clamp(46px,8vw,96px) 0 clamp(20px,4vw,40px)}
-.hero .bc{font-family:var(--serif);font-size:clamp(4.5rem,15vw,9rem);line-height:.85;color:var(--metal);text-shadow:0 0 70px rgba(174,183,194,.24)}
+.hero .bc{font-family:var(--serif);font-size:clamp(4.5rem,15vw,9rem);line-height:.85;color:var(--water);text-shadow:0 0 70px rgba(47,140,186,.22)}
 .hero h1{font-size:clamp(2rem,5.5vw,3.2rem);margin-top:.3rem}
 .hero .pin{font-family:var(--mono);color:var(--muted);letter-spacing:.14em;margin-top:.5rem;font-size:.82rem}
 .lead{max-width:60ch;margin:1.2rem auto 0;color:var(--ivory);font-size:1.08rem;text-align:center}
@@ -36,23 +369,23 @@ a{color:var(--metal-bright);text-decoration:none;font-weight:500}
 .band h2{font-size:clamp(1.4rem,3.4vw,2rem)}
 .band p{color:var(--body);max-width:var(--measure)}
 .band p+p{margin-top:.7rem}
-.zh{color:var(--metal-bright)}
+.zh{color:var(--water-bright)}
 .disc{max-width:var(--measure);margin:1.2rem 0 0;padding:1rem 1.2rem;background:var(--field);border:1px solid var(--line-soft);border-radius:var(--r-1);color:var(--muted);font-size:.88rem}
 .disc b{color:var(--ivory);font-weight:500}
 .cyc{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-top:1.4rem}
 .cyc a{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:.9rem;text-decoration:none;transition:.2s;display:block}
-.cyc a:hover{border-color:var(--metal);transform:translateY(-3px)}
-.cyc .z{font-family:var(--serif);font-size:1.15rem;color:var(--metal-bright)}
+.cyc a:hover{border-color:var(--water);transform:translateY(-3px)}
+.cyc .z{font-family:var(--serif);font-size:1.15rem;color:var(--water-bright)}
 .cyc .r{font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:.35rem 0 .15rem}
 .cyc .t{color:var(--moon);font-family:var(--serif);font-size:1rem}
 .nav{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.6rem}
 .nav a{text-decoration:none;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.7rem 1.2rem;border-radius:var(--r-pill);border:1px solid var(--line);background:var(--field);color:var(--ivory);transition:.2s}
-.nav a:hover{border-color:var(--metal);color:var(--moon)}
-.nav a.primary{background:var(--metal);color:#0e1114;border-color:var(--metal);font-weight:600}
-.rooms{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem;justify-content:center}
+.nav a:hover{border-color:var(--water);color:var(--moon)}
+.nav a.primary{background:var(--water);color:#08131c;border-color:var(--water);font-weight:600}
+.rooms{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem}
 .rooms a{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;border:1px solid var(--line-soft);border-radius:var(--r-pill);padding:.4rem .8rem;transition:.2s}
-.rooms a:hover{border-color:var(--metal);color:var(--metal-bright)}
-.rooms a[aria-current]{border-color:var(--metal);color:var(--moon)}
+.rooms a:hover{border-color:var(--water);color:var(--water-bright)}
+.rooms a[aria-current]{border-color:var(--water);color:var(--moon)}
 footer.f{text-align:center;padding:clamp(30px,5vw,56px) 0;border-top:1px solid var(--line-soft);color:var(--faint);font-family:var(--mono);font-size:.7rem;letter-spacing:.12em}
 footer.f a{color:var(--muted);text-decoration:none}
 @media(max-width:640px){.cyc{grid-template-columns:1fr 1fr}}
@@ -60,12 +393,12 @@ footer.f a{color:var(--muted);text-decoration:none}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"Article","headline":"Metal as a day master","about":"Metal phase of Wu Xing","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"Zodi Animal","url":"https://zodianimal.com"}},
+{"@type":"Article","headline":"Water as a day master","about":"Water phase of Wu Xing","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"Zodi Animal","url":"https://zodianimal.com"}},
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"Zodi Animal","item":"https://zodianimal.com/"},
 {"@type":"ListItem","position":2,"name":"The Elements","item":"https://zodianimal.com/elements/"},
-{"@type":"ListItem","position":3,"name":"Metal","item":"https://zodianimal.com/elements/phases/metal/"},
-{"@type":"ListItem","position":4,"name":"Metal as a day master","item":"https://zodianimal.com/elements/phases/metal/bazi/"}
+{"@type":"ListItem","position":3,"name":"Water","item":"https://zodianimal.com/elements/phases/water/"},
+{"@type":"ListItem","position":4,"name":"Water as a day master","item":"https://zodianimal.com/elements/phases/water/bazi/"}
 ]}
 ]}
 </script>
@@ -77,9 +410,6 @@ footer.f a{color:var(--muted);text-decoration:none}
 <link rel="stylesheet" href="/css/footer.css" data-pn="/css/footer.css">
 <link rel="stylesheet" href="/css/a11y.css" data-pn="/css/a11y.css">
 <!--pn-css:end-->
-<!--pn-crumb-ld:start-->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.zodianimal.com/"},{"@type":"ListItem","position":2,"name":"The Elements","item":"https://www.zodianimal.com/elements/"},{"@type":"ListItem","position":3,"name":"Metal 金","item":"https://www.zodianimal.com/elements/phases/metal/"},{"@type":"ListItem","position":4,"name":"Metal as a day master","item":"https://www.zodianimal.com/elements/phases/metal/bazi/"}]}</script>
-<!--pn-crumb-ld:end-->
 </head>
 <body class="pn-has-bar">
 <!--pn-static:start-->
@@ -157,52 +487,39 @@ footer.f a{color:var(--muted);text-decoration:none}
 </header>
 <!--pn-static:end-->
 <a id="pn-main" tabindex="-1"></a>
-<!--pn-sub:start-->
-<nav class="pn-sub" aria-label="Section">
-  <div class="pn-sub-primary"><ul class="pn-subnav"><li class="pn-sub-item pn-has-drop"><a class="pn-sub-link" href="/elements/phases/wood/" aria-haspopup="true" aria-expanded="false">Wood 木<span class="pn-sub-caret" aria-hidden="true"></span></a><ul class="pn-subdrop"><li><a class="pn-subdrop-link" href="/elements/phases/wood/">Wood overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/big-small/">Big &amp; small wood 甲乙</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/bazi/">Wood in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/body/">Wood in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/space/">Wood in your space</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/cycles/">Wood's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/animals/">The Wood animals</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/culture/">Wood in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/traditions/">Wood across traditions</a></li></ul></li><li class="pn-sub-item pn-has-drop"><a class="pn-sub-link" href="/elements/phases/fire/" aria-haspopup="true" aria-expanded="false">Fire 火<span class="pn-sub-caret" aria-hidden="true"></span></a><ul class="pn-subdrop"><li><a class="pn-subdrop-link" href="/elements/phases/fire/">Fire overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/big-small/">Big &amp; small fire 丙丁</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/bazi/">Fire in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/body/">Fire in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/space/">Fire in your space</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/cycles/">Fire's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/animals/">The Fire animals</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/culture/">Fire in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/traditions/">Fire across traditions</a></li></ul></li><li class="pn-sub-item pn-has-drop"><a class="pn-sub-link" href="/elements/phases/earth/" aria-haspopup="true" aria-expanded="false">Earth 土<span class="pn-sub-caret" aria-hidden="true"></span></a><ul class="pn-subdrop"><li><a class="pn-subdrop-link" href="/elements/phases/earth/">Earth overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/big-small/">Big &amp; small earth 戊己</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/bazi/">Earth in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/body/">Earth in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/space/">Earth in your space</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/cycles/">Earth's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/animals/">The Earth animals</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/culture/">Earth in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/traditions/">Earth across traditions</a></li></ul></li><li class="pn-sub-item pn-has-drop pn-has-current"><a class="pn-sub-link" href="/elements/phases/metal/" aria-haspopup="true" aria-expanded="false">Metal 金<span class="pn-sub-caret" aria-hidden="true"></span></a><ul class="pn-subdrop"><li><a class="pn-subdrop-link" href="/elements/phases/metal/">Metal overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/big-small/">Big &amp; small metal 庚辛</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/bazi/" aria-current="page">Metal in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/body/">Metal in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/space/">Metal in your space</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/cycles/">Metal's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/animals/">The Metal animals</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/culture/">Metal in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/traditions/">Metal across traditions</a></li></ul></li><li class="pn-sub-item pn-has-drop"><a class="pn-sub-link" href="/elements/phases/water/" aria-haspopup="true" aria-expanded="false">Water 水<span class="pn-sub-caret" aria-hidden="true"></span></a><ul class="pn-subdrop"><li><a class="pn-subdrop-link" href="/elements/phases/water/">Water overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/big-small/">Big &amp; small water 壬癸</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/bazi/">Water in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/body/">Water in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/space/">Water in your space</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/cycles/">Water's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/animals/">The Water animals</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/culture/">Water in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/traditions/">Water across traditions</a></li></ul></li><li><a href="/elements/zodiac/">Elements &amp; your animal</a></li></ul></div>
-  <div class="pn-sub-crumb"><ol class="pn-crumb"><li><a href="/">Home</a></li><li><a href="/elements/">The Elements</a></li><li><a href="/elements/phases/metal/">Metal 金</a></li><li aria-current="page">Metal as a day master</li></ol></div>
-</nav>
-<!--pn-sub:end-->
-
-<div class="ribbon">
-  <a href="/">Zodi Animal</a><span class="dot">·</span>
-  <a href="/elements/">The Elements</a><span class="dot">·</span>
-  <a href="/elements/phases/metal/">Metal 金</a><span class="dot">·</span>
-  <span style="color:var(--metal-bright)">Metal as a day master</span>
-</div>
 
 <header class="hero"><div class="wrap">
-  <p class="eyebrow">A room of Metal · 金</p>
+  <p class="eyebrow">A room of Water · 水</p>
   <div class="bc" aria-hidden="true">日主</div>
-  <h1>Metal as a day master</h1>
+  <h1>Water as a day master</h1>
   <p class="pin">BaZi</p>
-  <p class="lead">In BaZi (八字, the Four Pillars), your day master is the element that stands for you. A Metal day master is read through the season it was born into and the phases around it that source, drain, forge, or feed it.</p>
-  <div class="rooms"><a href="/elements/phases/metal/big-small/">Big metal and small metal</a><a href="/elements/phases/metal/bazi/" aria-current="page">Metal as a day master</a><a href="/elements/phases/metal/body/">Metal in the body</a><a href="/elements/phases/metal/space/">Metal in your space</a><a href="/elements/phases/metal/cycles/">Metal's two cycles</a><a href="/elements/phases/metal/animals/">The Metal animals</a><a href="/elements/phases/metal/culture/">Metal in myth and culture</a><a href="/elements/phases/metal/traditions/">Metal across traditions</a></div>
+  <p class="lead">In BaZi (八字, the Four Pillars), your day master is the element that stands for you. A Water day master is read through the season it was born into and the phases around it that source, drain, bank, or warm it.</p>
+  <div class="rooms"><a href="/elements/phases/water/big-small/">Big water and small water</a><a href="/elements/phases/water/bazi/" aria-current="page">Water as a day master</a><a href="/elements/phases/water/body/">Water in the body</a><a href="/elements/phases/water/space/">Water in your space</a><a href="/elements/phases/water/cycles/">Water's two cycles</a><a href="/elements/phases/water/animals/">The Water animals</a><a href="/elements/phases/water/culture/">Water in myth and culture</a><a href="/elements/phases/water/traditions/">Water across traditions</a></div>
 </div></header>
 
-<section class="band"><div class="wrap"><h2>Season decides strength</h2><p>Metal is strong in autumn, the months of 申酉戌 (shēn yǒu xū), when the season is already Metal, and weak in summer, when Fire melts it. A strong Metal wants draining or forging; a weak Metal wants feeding and sheltering.</p></div></section>
-<section class="band"><div class="wrap"><h2>The balancing logic</h2><p>The classical model reads Metal against the other four phases: Earth sources it, Water drains it (metal births water), Fire refines and controls it, and Wood is what Metal cuts and, in the wealth reading, what it acts upon. Tradition splits the two metals sharply: 庚金 wants Fire to forge it and Water to sharpen it, while 辛金 wants Water to wash it to a gleam and fears heavy Fire, 调候 (tiáo hòu), the temperature adjustment.</p></div></section>
+<section class="band"><div class="wrap"><h2>Season decides strength</h2><p>Water is strong in winter, the months of 亥子丑 (hài zǐ chǒu), when the season is already Water, and weak in summer, when heat scatters it. A strong Water wants draining or channelling; a weak Water wants feeding and sheltering.</p></div></section>
+<section class="band"><div class="wrap"><h2>The balancing logic</h2><p>The classical model reads Water against the other four phases: Metal sources it, Wood drains it, Earth banks it, and Fire warms it and, in the wealth reading, is what Water acts upon. Which of these a chart needs is the whole art. Cold winter Water in particular is often said to want a little Fire for warmth, 调候 (tiáo hòu), the temperature adjustment.</p></div></section>
 <section class="band"><div class="wrap"><h2>Cast your own Four Pillars (BaZi)</h2><p>This room reads a single day master in the abstract. A full BaZi chart, 八字 (bā zì, the Eight Characters), is all four pillars of your birth, the year, month, day, and hour, each a Heavenly Stem over an Earthly Branch. It weighs the balance of all five phases across them, which is what turns a birth moment into a map. <a href="/bazi/">Read the full BaZi guide and cast your Four Pillars</a>.</p></div></section>
 <div class="wrap"><div class="disc"><b>A lens, not a verdict.</b> BaZi is a traditional interpretive system for reflection, not a deterministic forecast. Nothing here predicts events or fixes a fate.</div></div>
 
 <section class="band"><div class="wrap">
-  <p class="eyebrow">Where Metal sits</p>
-  <h2>Leave Metal in any direction</h2>
+  <p class="eyebrow">Where Water sits</p>
+  <h2>Leave Water in any direction</h2>
   <div class="cyc">
-  <a href="/elements/phases/earth/"><div class="z">土生金</div><div class="r">Fed by</div><div class="t">Earth</div></a>
-  <a href="/elements/phases/water/"><div class="z">金生水</div><div class="r">Feeds</div><div class="t">Water</div></a>
-  <a href="/elements/phases/wood/"><div class="z">金克木</div><div class="r">Controls</div><div class="t">Wood</div></a>
-  <a href="/elements/phases/fire/"><div class="z">火克金</div><div class="r">Held by</div><div class="t">Fire</div></a>
+  <a href="/elements/phases/metal/"><div class="z">金生水</div><div class="r">Fed by</div><div class="t">Metal</div></a>
+  <a href="/elements/phases/wood/"><div class="z">水生木</div><div class="r">Feeds</div><div class="t">Wood</div></a>
+  <a href="/elements/phases/fire/"><div class="z">水克火</div><div class="r">Controls</div><div class="t">Fire</div></a>
+  <a href="/elements/phases/earth/"><div class="z">土克水</div><div class="r">Held by</div><div class="t">Earth</div></a>
 </div>
   <div class="nav">
-    <a class="primary" href="/elements/phases/metal/">Back to Metal</a>
+    <a class="primary" href="/elements/phases/water/">Back to Water</a>
     <a href="/elements/">The five phases</a>
     <a href="/bazi/">The full BaZi guide</a><a href="/elements/zodiac/">Find your element</a>
     <a href="/index.html">Find your Primal Animal</a>
   </div>
 </div></section>
 
-<footer class="f"><div class="wrap">METAL 金 · <a href="/elements/phases/metal/">the metal sub-hub</a> · <a href="/">ZODI ANIMAL</a></div></footer>
+<footer class="f"><div class="wrap">WATER 水 · <a href="/elements/phases/water/">the water sub-hub</a> · <a href="/">ZODI ANIMAL</a></div></footer>
 <!--om-footer:start-->
 <!-- Zodi Animal universal footer. Single source: components/footer.html,
      baked into every page by build/apply-footer.mjs, styled by
