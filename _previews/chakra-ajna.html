@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Anahata — Heart Chakra · The Wu Xing Wood &amp; Fire Connection · ZodiAnimal.com</title>
-<meta name="description" content="Anahata (Heart Chakra) — the unstruck sound at the center of the subtle body. Discover YAM mantra practice, the Black Antelope mythology, and which Zodi Animals are called to heart work.">
-<link rel="canonical" href="https://zodianimal.com/chakras/anahata/">
+<title>Ajna — Third Eye Chakra · Intuition Beyond Explanation · ZodiAnimal.com</title>
+<meta name="description" content="Ajna (Third Eye Chakra) — the seat of intuition, the OM mantra, and the point where the body stops and awareness begins. Discover which Zodi Animals carry Third Eye energy, and your personalized OM practice.">
+<link rel="canonical" href="https://zodianimal.com/chakras/ajna/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-  {"@type":"WebPage","name":"Anahata — Heart Chakra","url":"https://zodianimal.com/chakras/anahata/","description":"Heart chakra deep-dive: Black Antelope mythology, HeartMath science, YAM mantra practice, and personalized chakra profiles for the 144 Zodi Animals.","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Zodi Animal","item":"https://zodianimal.com/"},{"@type":"ListItem","position":2,"name":"Chakras","item":"https://zodianimal.com/chakras/"},{"@type":"ListItem","position":3,"name":"Heart Chakra","item":"https://zodianimal.com/chakras/anahata/"}]}},
+  {"@type":"WebPage","name":"Ajna — Third Eye Chakra","url":"https://zodianimal.com/chakras/ajna/","description":"Third Eye chakra deep-dive: no classical animal, the OM mantra, Nadi Shodhana practice, and personalized chakra profiles for the 144 Zodi Animals.","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Zodi Animal","item":"https://zodianimal.com/"},{"@type":"ListItem","position":2,"name":"Chakras","item":"https://zodianimal.com/chakras/"},{"@type":"ListItem","position":3,"name":"Third Eye Chakra","item":"https://zodianimal.com/chakras/ajna/"}]}},
   {"@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"What chakra is the Wood element in Chinese astrology?","acceptedAnswer":{"@type":"Answer","text":"Anahata (Heart) and Manipura (Solar Plexus) are the primary chakras of the Wood element. Wood energy in Wu Xing corresponds to growth, upward movement, and the liver — all of which parallel Anahata's qualities of expansion, compassion, and the thymus gland."}},
-    {"@type":"Question","name":"Which Zodi Animals have Anahata as their primary chakra?","acceptedAnswer":{"@type":"Answer","text":"Wood-element and Fire-element Zodi Animals — including Wood Rabbit, Wood Tiger, Fire Snake, Fire Horse — have Anahata as their primary element-chakra. The Rabbit and Pig also carry inherent Heart resonance from their zodiac animal nature."}},
-    {"@type":"Question","name":"What is the classical animal of the Heart chakra?","acceptedAnswer":{"@type":"Answer","text":"The Black Antelope (Krishna Mrga in Sanskrit), the vehicle of Vayu the wind god. The antelope is chosen for its extraordinary sensitivity — it moves like breath itself, detecting what's coming before it arrives, just as the heart senses what's present before the mind names it."}}
+    {"@type":"Question","name":"Why does the Third Eye chakra have no animal?","acceptedAnswer":{"@type":"Answer","text":"Ajna transcends the animal-symbolic plane. The classical Tantric texts describe Ajna as the point where individual identity (symbolized by animals throughout the lower chakras) dissolves into pure awareness. Below the brow, all is symbol. At the brow, symbol falls away."}},
+    {"@type":"Question","name":"Which Chinese zodiac animals connect to the Third Eye chakra?","acceptedAnswer":{"@type":"Answer","text":"Snakes carry the strongest Third Eye resonance — their stillness, patient observation, and sensitivity to vibration make them natural Ajna animals. Metal-element animals (Monkey, Rooster) also carry Third Eye energy through Metal's quality of precision and discernment."}},
+    {"@type":"Question","name":"What is the bija mantra for Ajna?","acceptedAnswer":{"@type":"Answer","text":"OM (also spelled AUM) — the primordial sound that is not a syllable so much as a frequency. The 'A' vibrates in the lower body, the 'U' in the chest, and the 'M' hums behind the closed lips. It is the sound of awareness itself: no object, just the knowing."}}
   ]}
 ]}
 </script>
@@ -36,9 +36,11 @@
   --e-2:0 8px 30px oklch(0 0 0/.45);--e-3:0 20px 60px oklch(0 0 0/.55),0 0 40px var(--glow);
   --ease-out:cubic-bezier(0.16,1,0.3,1);--dur:320ms;--dur-slow:640ms;
   --maxw:1200px;
-  --chakra-col:oklch(0.65 0.18 145);
+  --chakra-col:oklch(0.45 0.15 290);
+  --chakra-hex:#2D1470;
+  --chakra-soft:oklch(0.45 0.15 290 / 0.12);
 }
-@supports not(color:oklch(0% 0 0)){:root{--ink:#0d0e18;--panel:#1a1c30;--moon:#f6efd8;--ivory:#ece7d8;--body-text:#cfcfe0;--glow:#1a1c33;--chakra-col:#27ae60;}}
+@supports not(color:oklch(0% 0 0)){:root{--ink:#0d0e18;--panel:#1a1c30;--moon:#f6efd8;--ivory:#ece7d8;--body-text:#cfcfe0;--glow:#1a1c33;--chakra-col:#5b3fb5;--chakra-hex:#5b3fb5;--chakra-soft:rgba(91,63,181,0.12);}}
 *{box-sizing:border-box;margin:0;}
 html{background:var(--ink);color:var(--ivory);font-family:var(--sans);scroll-behavior:smooth;}
 .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1rem,4vw,3rem);}
@@ -61,24 +63,23 @@ button{cursor:pointer;font-family:inherit;}
 .barnav{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
 .barnav a{font-size:.88rem;color:var(--muted);transition:color var(--dur);}
 .barnav a:hover{color:var(--moon);}
-.prev-link,.next-link{color:var(--chakra-col) !important;}
-@media(max-width:600px){.barnav{gap:.75rem;}.barnav a{font-size:.78rem;}}
+.next-link{color:var(--chakra-col) !important;}
 
 /* HERO */
-.hero{min-height:92vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:var(--s-7);padding-block:var(--s-7);background:radial-gradient(ellipse 70% 50% at 50% 30%,oklch(0.30 0.12 145) 0%,oklch(0.16 0.03 275) 70%);}
+.hero{min-height:90vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:var(--s-7);padding-block:var(--s-7);background:radial-gradient(ellipse 70% 50% at 50% 30%,oklch(0.30 0.15 290) 0%,oklch(0.16 0.03 275) 70%);}
 .hero-lead{font-family:var(--serif);font-style:italic;font-size:var(--fs-lead);color:var(--ivory);margin-top:var(--s-5);margin-bottom:var(--s-6);line-height:1.5;max-width:52ch;}
 .hero-ctas{display:flex;gap:var(--s-4);flex-wrap:wrap;}
 .cta-primary{background:var(--chakra-col);color:var(--moon);padding:.85rem 1.75rem;border-radius:var(--r-pill);font-weight:600;font-size:.95rem;border:none;transition:opacity var(--dur),transform var(--dur);text-decoration:none;display:inline-block;}
-.cta-primary:hover{opacity:.88;transform:translateY(-1px);}
+.cta-primary:hover{opacity:.85;transform:translateY(-1px);}
 .cta-ghost{border:1px solid var(--line);color:var(--muted);padding:.85rem 1.75rem;border-radius:var(--r-pill);font-size:.95rem;transition:border-color var(--dur),color var(--dur);text-decoration:none;display:inline-block;}
 .cta-ghost:hover{border-color:var(--chakra-col);color:var(--moon);}
 .hero-visual{display:flex;justify-content:center;align-items:center;}
-.chakra-lotus{width:min(340px,90vw);height:auto;filter:drop-shadow(0 0 40px oklch(0.65 0.18 145 / 0.4));}
-.chakra-lotus:hover{animation:lotus-spin 20s linear infinite;}
+.chakra-lotus{width:min(320px,90vw);height:auto;filter:drop-shadow(0 0 40px oklch(0.45 0.15 290 / 0.4));}
+.chakra-lotus:hover{animation:lotus-spin 30s linear infinite;}
 @keyframes lotus-spin{to{transform:rotate(360deg);}}
-.lotus-center-ring{animation:pulse-center 3.5s ease-in-out infinite;}
-@keyframes pulse-center{0%,100%{opacity:1;}50%{opacity:.75;}}
-@media(max-width:760px){.hero{grid-template-columns:1fr;min-height:auto;}.hero-visual{order:-1;}.chakra-lotus{width:200px;}}
+.om-pulse{animation:om-breathe 4s ease-in-out infinite;}
+@keyframes om-breathe{0%,100%{opacity:1;font-size:42px;}50%{opacity:0.75;font-size:38px;}}
+@media(max-width:760px){.hero{grid-template-columns:1fr;min-height:auto;}.hero-visual{order:-1;}.chakra-lotus{width:180px;}}
 
 /* TABS */
 .tab-rail{display:flex;gap:0;border-bottom:1px solid var(--line);margin-bottom:var(--s-6);}
@@ -86,11 +87,7 @@ button{cursor:pointer;font-family:inherit;}
 .tab-btn[aria-selected="true"]{color:var(--moon);border-bottom-color:var(--chakra-col);}
 .tab-panel[hidden]{display:none;}
 
-/* ANTELOPE SECTION */
-.guardian-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-7);align-items:start;}
-@media(max-width:760px){.guardian-grid{grid-template-columns:1fr;}}
-
-/* BODY SECTION */
+/* ANATOMY GRID */
 .anatomy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--s-4);margin-bottom:var(--s-6);}
 .anat-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-5);}
 .anat-label{font-size:var(--fs-eyebrow);letter-spacing:.25em;text-transform:uppercase;color:var(--chakra-col);margin-bottom:.4rem;}
@@ -104,15 +101,11 @@ details summary::after{content:"＋";color:var(--chakra-col);font-size:1.2rem;}
 details[open] summary::after{content:"－";}
 details p{padding:.75rem 0;font-size:.95rem;}
 
-/* HEARTMATH HIGHLIGHT */
-.heartmath-highlight{background:linear-gradient(135deg,oklch(0.22 0.06 145),oklch(0.18 0.04 275));border:1px solid var(--chakra-col);border-radius:var(--r-2);padding:var(--s-6);margin:var(--s-6) 0;}
-.heartmath-stat{font-family:var(--serif);font-size:2rem;color:var(--chakra-col);margin-bottom:.25rem;}
-
-/* MIND SECTION */
+/* MIND */
 .mind-selector{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:var(--s-6);}
 .mind-pill{background:none;border:1px solid var(--line);border-radius:var(--r-pill);padding:.5rem 1.25rem;color:var(--muted);font-size:.88rem;transition:all var(--dur);}
 .mind-pill.active{background:var(--chakra-col);border-color:var(--chakra-col);color:var(--moon);}
-.mind-panels{position:relative;min-height:180px;}
+.mind-panels{position:relative;min-height:160px;}
 .mind-panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-6);transition:opacity var(--dur) var(--ease-out),transform var(--dur) var(--ease-out);}
 .mind-panel.hidden{opacity:0;transform:translateY(8px);pointer-events:none;position:absolute;top:0;left:0;right:0;}
 .mind-panel h3{margin-bottom:.75rem;}
@@ -120,10 +113,10 @@ details p{padding:.75rem 0;font-size:.95rem;}
 .mind-panel li{padding-left:1.5rem;position:relative;font-size:.95rem;color:var(--body-text);line-height:1.6;}
 .mind-panel li::before{content:"—";position:absolute;left:0;color:var(--chakra-col);}
 
-/* PRACTICE SECTION */
+/* PRACTICE */
 .mantra-circle{display:flex;justify-content:center;margin-bottom:var(--s-6);}
-.mantra-ring{width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,oklch(0.22 0.07 145) 0%,oklch(0.16 0.04 145) 60%);border:2px solid var(--chakra-col);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 60px oklch(0.65 0.18 145 / 0.3);animation:mantra-pulse 4s ease-in-out infinite;}
-@keyframes mantra-pulse{0%,100%{box-shadow:0 0 60px oklch(0.65 0.18 145 / 0.3);}50%{box-shadow:0 0 80px oklch(0.65 0.18 145 / 0.5);}}
+.mantra-ring{width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,oklch(0.22 0.08 290) 0%,oklch(0.16 0.04 290) 60%);border:2px solid var(--chakra-col);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 60px oklch(0.45 0.15 290 / 0.3);animation:mantra-pulse 5s ease-in-out infinite;}
+@keyframes mantra-pulse{0%,100%{box-shadow:0 0 60px oklch(0.45 0.15 290 / 0.3);}50%{box-shadow:0 0 90px oklch(0.45 0.15 290 / 0.55);}}
 .mantra-word{font-family:var(--serif);font-size:2.8rem;color:var(--chakra-col);line-height:1;}
 .mantra-sub{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:.4rem;}
 .poses-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--s-5);margin-bottom:var(--s-7);}
@@ -137,13 +130,13 @@ details p{padding:.75rem 0;font-size:.95rem;}
 .pose-card li::before{content:"·";position:absolute;left:0;color:var(--chakra-col);}
 .mudra-box{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-6);margin-bottom:var(--s-6);}
 .mudra-box h3{margin-bottom:.5rem;}
-.coherent-steps{list-style:none;padding:0;display:flex;flex-direction:column;gap:.75rem;}
-.coherent-steps li{display:flex;gap:1rem;align-items:flex-start;font-size:.92rem;color:var(--body-text);line-height:1.6;}
-.coherent-steps .step-n{min-width:2.5rem;height:2.5rem;border-radius:50%;background:var(--chakra-col);color:var(--moon);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600;flex-shrink:0;}
+.nadi-steps{counter-reset:nadi;list-style:none;padding:0;display:flex;flex-direction:column;gap:.75rem;}
+.nadi-steps li{counter-increment:nadi;display:flex;gap:1rem;align-items:flex-start;font-size:.92rem;color:var(--body-text);line-height:1.6;}
+.nadi-steps li::before{content:counter(nadi);min-width:2rem;height:2rem;border-radius:50%;background:var(--chakra-col);color:var(--moon);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600;flex-shrink:0;}
 
-/* PROFILE SECTION */
+/* PROFILE */
 .profile-finder{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-6);}
-.profile-finder input{width:100%;background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r-1);padding:.75rem 1rem;color:var(--moon);font-size:1rem;margin-bottom:var(--s-4);outline:none;transition:border-color var(--dur);}
+.profile-finder input{width:100%;background:var(--ink-2, oklch(0.20 0.035 275));border:1px solid var(--line);border-radius:var(--r-1);padding:.75rem 1rem;color:var(--moon);font-size:1rem;margin-bottom:var(--s-4);outline:none;transition:border-color var(--dur);}
 .profile-finder input:focus{border-color:var(--chakra-col);}
 .profile-finder input::placeholder{color:var(--faint);}
 .find-btn{background:var(--chakra-col);color:var(--moon);border:none;border-radius:var(--r-pill);padding:.85rem 2rem;font-size:.95rem;font-weight:600;transition:opacity var(--dur);}
@@ -177,6 +170,18 @@ details p{padding:.75rem 0;font-size:.95rem;}
 .qf{display:flex;flex-direction:column;gap:.2rem;}
 .qf-l{font-size:var(--fs-eyebrow);letter-spacing:.25em;text-transform:uppercase;color:var(--chakra-col);}
 .qf-v{font-family:var(--serif);font-size:1.1rem;color:var(--moon);}
+
+/* TOAST */
+.toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(80px);background:var(--panel-2,oklch(0.30 0.045 272));border:1px solid var(--chakra-col);border-radius:var(--r-pill);padding:.75rem 1.5rem;font-size:.85rem;font-weight:500;color:var(--ivory);box-shadow:var(--e-2);transition:transform var(--dur) var(--ease-out);z-index:9000;white-space:nowrap;}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+/* SHARE */
+.share-row{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-top:var(--s-5);}
+.share-btn{display:flex;align-items:center;gap:.4rem;padding:.65rem 1.25rem;background:transparent;border:1px solid var(--line);border-radius:var(--r-pill);color:var(--muted);font-size:.85rem;font-weight:500;cursor:pointer;transition:all 180ms;}
+.share-btn:hover{border-color:var(--chakra-col);color:var(--chakra-col);}
+
+/* GUARDIAN — no-animal treatment */
+.no-animal-ring{display:flex;align-items:center;justify-content:center;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,var(--chakra-soft),transparent 80%);border:2px solid var(--chakra-col);font-size:3.5rem;margin:0 auto var(--s-5);animation:mantra-pulse 5s ease-in-out infinite;}
 </style>
 <!--pn-css:start-->
 <link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
@@ -264,534 +269,539 @@ details p{padding:.75rem 0;font-size:.95rem;}
 <!--pn-static:end-->
 <a id="pn-main" tabindex="-1"></a>
 
-<!-- STICKY NAV -->
+<!-- NAV -->
 
 <!-- HERO -->
 <section class="hero">
   <div class="wrap" style="display:contents;">
     <div class="hero-text" style="padding-inline:clamp(1rem,4vw,3rem);">
-      <p class="eyebrow">04 · Anahata · अनाहत</p>
-      <h1>The unstruck sound.<br>Love that asks for nothing back.</h1>
-      <p class="hero-lead">Anahata means "unstruck" — the sound that arises without two things striking together. This is the love that needs no reason.</p>
+      <p class="eyebrow">06 · Ajna · आज्ञा</p>
+      <h1>Where intuition overrides explanation.</h1>
+      <p class="hero-lead">The Third Eye is not a metaphor. It is the point where sensory input stops and direct knowing begins — the gap between seeing and understanding.</p>
       <div class="hero-ctas">
-        <a href="#practice" class="cta-primary">Find my heart practice</a>
+        <a href="#practice" class="cta-primary">Find my Ajna practice</a>
         <a href="/chakras/" class="cta-ghost">← All chakras</a>
       </div>
     </div>
     <div class="hero-visual">
-      <!-- 12-petal lotus in green -->
-      <svg class="chakra-lotus" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" aria-label="Anahata — twelve-petal lotus">
+      <!-- Ajna lotus: 2 petals, with central OM -->
+      <svg class="chakra-lotus" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Ajna — two-petal lotus with central OM">
         <defs>
-          <radialGradient id="petal-g-a" cx="50%" cy="30%" r="60%">
-            <stop offset="0%" stop-color="oklch(0.75 0.18 145)"/>
-            <stop offset="100%" stop-color="oklch(0.45 0.15 145)" stop-opacity="0.5"/>
+          <radialGradient id="aj-pg" cx="50%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="oklch(0.60 0.15 290)"/>
+            <stop offset="100%" stop-color="oklch(0.35 0.13 290)" stop-opacity="0.5"/>
           </radialGradient>
-          <radialGradient id="petal-g-b" cx="50%" cy="30%" r="60%">
-            <stop offset="0%" stop-color="#48c774"/>
-            <stop offset="100%" stop-color="#1a6b35" stop-opacity="0.5"/>
-          </radialGradient>
-          <filter id="lg-a" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="9"/>
+          <filter id="aj-lg" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="10"/>
           </filter>
         </defs>
         <!-- Glow -->
-        <ellipse cx="110" cy="110" rx="65" ry="65" fill="oklch(0.65 0.18 145)" opacity="0.18" filter="url(#lg-a)"/>
-        <ellipse cx="110" cy="110" rx="65" ry="65" fill="#27ae60" opacity="0.10" filter="url(#lg-a)"/>
-        <!-- 12 petals at 30-degree intervals -->
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-a)" transform="rotate(0 110 110)" opacity="0.80"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-b)" transform="rotate(30 110 110)" opacity="0.75"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-a)" transform="rotate(60 110 110)" opacity="0.80"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-b)" transform="rotate(90 110 110)" opacity="0.75"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-a)" transform="rotate(120 110 110)" opacity="0.80"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-b)" transform="rotate(150 110 110)" opacity="0.75"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-a)" transform="rotate(180 110 110)" opacity="0.80"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-b)" transform="rotate(210 110 110)" opacity="0.75"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-a)" transform="rotate(240 110 110)" opacity="0.80"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-b)" transform="rotate(270 110 110)" opacity="0.75"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-a)" transform="rotate(300 110 110)" opacity="0.80"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-b)" transform="rotate(330 110 110)" opacity="0.75"/>
-        <!-- Star of David (two interlocking triangles) -->
-        <polygon points="110,80 132,118 88,118" fill="none" stroke="oklch(0.65 0.18 145)" stroke-width="1.5" opacity="0.5"/>
-        <polygon points="110,80 132,118 88,118" fill="none" stroke="#27ae60" stroke-width="1.5" opacity="0.35"/>
-        <polygon points="110,140 88,102 132,102" fill="none" stroke="oklch(0.65 0.18 145)" stroke-width="1.5" opacity="0.5"/>
-        <polygon points="110,140 88,102 132,102" fill="none" stroke="#27ae60" stroke-width="1.5" opacity="0.35"/>
+        <ellipse cx="100" cy="100" rx="60" ry="60" fill="oklch(0.45 0.15 290)" opacity="0.2" filter="url(#aj-lg)"/>
+        <!-- 2 petals — left and right -->
+        <ellipse cx="65" cy="100" rx="38" ry="22" fill="url(#aj-pg)" opacity="0.85"/>
+        <ellipse cx="135" cy="100" rx="38" ry="22" fill="url(#aj-pg)" opacity="0.85"/>
+        <!-- Subtle inner ring -->
+        <circle cx="100" cy="100" r="30" fill="none" stroke="oklch(0.45 0.15 290)" stroke-width="0.8" opacity="0.4"/>
+        <circle cx="100" cy="100" r="20" fill="none" stroke="oklch(0.45 0.15 290)" stroke-width="0.5" opacity="0.3"/>
         <!-- Center -->
-        <circle class="lotus-center-ring" cx="110" cy="110" r="26" fill="oklch(0.20 0.05 275)" stroke="oklch(0.65 0.18 145)" stroke-width="2"/>
-        <circle cx="110" cy="110" r="26" fill="#161a28" stroke="#27ae60" stroke-width="2" opacity="0.5"/>
-        <text x="110" y="117" font-family="Georgia,serif" font-size="18" fill="oklch(0.65 0.18 145)" text-anchor="middle" font-weight="bold">YAM</text>
-        <text x="110" y="117" font-family="Georgia,serif" font-size="18" fill="#27ae60" text-anchor="middle" font-weight="bold" opacity="0.6">YAM</text>
+        <circle cx="100" cy="100" r="28" fill="oklch(0.18 0.04 275)"/>
+        <!-- OM symbol -->
+        <text x="100" y="110" font-family="Georgia,serif" font-size="32" fill="oklch(0.60 0.15 290)" text-anchor="middle" class="om-pulse">ॐ</text>
         <!-- Sanskrit -->
-        <text x="110" y="182" font-family="Georgia,serif" font-size="13" fill="oklch(0.65 0.18 145)" text-anchor="middle" opacity="0.7">अनाहत</text>
+        <text x="100" y="172" font-family="Georgia,serif" font-size="13" fill="oklch(0.45 0.15 290)" text-anchor="middle" opacity="0.7">आज्ञा</text>
       </svg>
     </div>
   </div>
 </section>
 
-<!-- QUICK FACTS BAR -->
+<!-- QUICK FACTS -->
 <div class="section-alt section-border-top">
   <div class="wrap" style="padding-block:var(--s-5);">
     <div class="qf-row">
-      <div class="qf"><span class="qf-l">Sanskrit</span><span class="qf-v">Anahata</span></div>
-      <div class="qf"><span class="qf-l">Meaning</span><span class="qf-v">Unstruck</span></div>
-      <div class="qf"><span class="qf-l">Element</span><span class="qf-v">Air (Vayu)</span></div>
-      <div class="qf"><span class="qf-l">Bija mantra</span><span class="qf-v">YAM</span></div>
-      <div class="qf"><span class="qf-l">Petals</span><span class="qf-v">12</span></div>
-      <div class="qf"><span class="qf-l">Color</span><span class="qf-v">Green / Pink</span></div>
-      <div class="qf"><span class="qf-l">Note</span><span class="qf-v">F</span></div>
-      <div class="qf"><span class="qf-l">Gland</span><span class="qf-v">Thymus</span></div>
-      <div class="qf"><span class="qf-l">Sense</span><span class="qf-v">Touch</span></div>
+      <div class="qf"><span class="qf-l">Sanskrit</span><span class="qf-v">Ajna</span></div>
+      <div class="qf"><span class="qf-l">Meaning</span><span class="qf-v">Command / Perceive</span></div>
+      <div class="qf"><span class="qf-l">Element</span><span class="qf-v">Light / Mind</span></div>
+      <div class="qf"><span class="qf-l">Bija mantra</span><span class="qf-v">OM</span></div>
+      <div class="qf"><span class="qf-l">Petals</span><span class="qf-v">2</span></div>
+      <div class="qf"><span class="qf-l">Color</span><span class="qf-v">Deep indigo</span></div>
+      <div class="qf"><span class="qf-l">Note</span><span class="qf-v">A</span></div>
+      <div class="qf"><span class="qf-l">Gland</span><span class="qf-v">Pituitary</span></div>
+      <div class="qf"><span class="qf-l">Sense</span><span class="qf-v">Sixth sense / Intuition</span></div>
     </div>
   </div>
 </div>
 
-<!-- SECTION 1: THE CLASSICAL ANIMAL -->
+<!-- SECTION 1: THE ABSENCE OF ANIMAL -->
 <section class="band section-border-top">
   <div class="wrap">
     <p class="eyebrow">The guardian</p>
-    <h2>The Black Antelope — Krishna Mrga</h2>
-    <div class="guardian-grid">
-      <div>
-        <p style="margin-bottom:var(--s-4);">The Heart chakra's classical guardian is neither powerful nor fierce. It is the Black Antelope — Krishna Mrga in Sanskrit — the most graceful and acutely sensitive animal of the Indian subcontinent. It is the vehicle of Vayu, the wind god, because the heart is moved by the wind: by what cannot be seen but can be felt.</p>
-        <p style="margin-bottom:var(--s-4);">The antelope moves like breath itself. Every movement is a response to something in the air — a shift in temperature, a vibration in the grass, the approach of another creature long before it becomes visible. This is empathic attunement, which is Anahata's primary gift: the capacity to sense what's present in another person's field before the mind has named it, before words have arrived.</p>
-        <p style="margin-bottom:var(--s-4);">Its blackness is paradoxical. The tradition is not describing absence. It is describing depth — the dark space through which love's light becomes visible. The night sky through which stars are seen. The silence through which music is heard. Without that depth, without that darkness, the love cannot stand out from the background of ordinary sensation.</p>
-        <p>The antelope's ears are its most remarkable feature: tuned to frequencies below human detection, responsive to the faintest vibration carried on the air. The Heart chakra's sense organ is touch — not the gross touch of skin-to-skin contact, but the subtle touch of field-to-field: the ability to feel what another person carries in their energetic field. The antelope lives this capacity entirely.</p>
+    <h2>No animal. The eye that sees all.</h2>
+
+    <div class="no-animal-ring" aria-hidden="true">👁</div>
+
+    <div style="max-width:72ch;margin:0 auto;text-align:center;margin-bottom:var(--s-7);">
+      <p style="margin-bottom:var(--s-4);font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--ivory);">
+        The classical Tantric texts depict six of the seven chakras with animal guardians. At Ajna, the animal disappears.
+      </p>
+      <p style="margin-bottom:var(--s-4);">
+        This is not an oversight. The absence is the teaching. Below the Third Eye, consciousness needs a symbol — an elephant, a dragon, a ram — to hold the lesson. At the brow center, the symbol collapses. What remains is awareness itself, looking at awareness: no object, no metaphor, no animal to carry the teaching. Just the knowing.
+      </p>
+      <p>
+        The two petals of Ajna's lotus are Ida and Pingala — the left and right energy channels of the subtle body — merging into Sushumna, the central channel. At this meeting point, duality ends. The two become one. This is why there is no animal: to name the watcher is to create a watcher separate from the watched. Ajna asks you to drop the naming.
+      </p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--s-5);">
+      <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-6);">
+        <h3 style="margin-bottom:.5rem;">The two petals</h3>
+        <p style="font-size:.9rem;">Ida (left channel, lunar, feminine) and Pingala (right channel, solar, masculine) meet and dissolve at the brow. The left eye sees the physical world; the right eye looks inward. At Ajna, both visions merge.</p>
       </div>
-      <div>
-        <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-6);">
-          <p class="eyebrow" style="margin-bottom:var(--s-4);">What the antelope teaches</p>
-          <div style="display:flex;flex-direction:column;gap:var(--s-4);">
-            <div>
-              <h3 style="font-size:1rem;margin-bottom:.3rem;">Move like breath</h3>
-              <p style="font-size:.88rem;">The antelope does not force its way through the world. It responds. It reads the air and moves accordingly. The Heart chakra at its finest is responsive, not reactive — there is intelligence in the sensitivity.</p>
-            </div>
-            <div>
-              <h3 style="font-size:1rem;margin-bottom:.3rem;">Sense before seeing</h3>
-              <p style="font-size:.88rem;">The antelope detects approaching presence long before it arrives. The heart's attunement works similarly — something is felt before it can be understood. This is not mystical; it is what the HeartMath Institute has measured.</p>
-            </div>
-            <div>
-              <h3 style="font-size:1rem;margin-bottom:.3rem;">Leap over what holds you</h3>
-              <p style="font-size:.88rem;">The antelope leaps over obstacles with effortless grace — this is the heart that moves past resentment, past smallness, past accumulated grievances that close it. Not by force. By the natural motion of a being in its element.</p>
-            </div>
-            <div>
-              <h3 style="font-size:1rem;margin-bottom:.3rem;">Carried by wind</h3>
-              <p style="font-size:.88rem;">Vayu's vehicle. The heart moved by what cannot be named. The love that precedes reason. Anahata means unstruck — the sound before the cause. This animal lives in that before.</p>
-            </div>
-          </div>
-        </div>
+      <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-6);">
+        <h3 style="margin-bottom:.5rem;">The Hamsa within</h3>
+        <p style="font-size:.9rem;">Inside Ajna's two petals lives the sacred Hamsa — the swan between worlds. Not the outer swan of Sahasrara (the Crown), but an inner seed-form: the breath itself, the natural mantra of inhalation (Ham) and exhalation (Sa) that chants without ceasing.</p>
+      </div>
+      <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-6);">
+        <h3 style="margin-bottom:.5rem;">Itara-linga — the second mark</h3>
+        <p style="font-size:.9rem;">Within Ajna's lotus sits Itara-linga — the second mark of Shiva — described as a luminous blue flame. This is pure intelligence, the witness function: the part of consciousness that sees without being seen. Neither animal nor concept. Pure recognition.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SECTION 2: ELEMENT CONNECTION -->
-<section class="band section-alt section-border-top">
+<!-- WU XING SECTION -->
+<section class="band section-border-top section-alt">
   <div class="wrap">
-    <p class="eyebrow">Wu Xing bridge</p>
-    <h2>Wood, Fire, and Metal — three paths to the Heart</h2>
-    <div class="tab-rail" role="tablist" aria-label="Element tabs">
-      <button class="tab-btn" role="tab" aria-selected="true" aria-controls="el-wood" id="btn-el-wood">Wood Element</button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="el-fire" id="btn-el-fire">Fire Element</button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="el-metal" id="btn-el-metal">Metal Element</button>
+    <p class="eyebrow">Wu Xing Connection</p>
+    <h2>All elements meet here</h2>
+    <p style="max-width:66ch;margin-bottom:var(--s-6);">Ajna is the one chakra that does not belong to a single element. It receives them all — because intuition transcends the five-element system that governs the physical body. When all five elements operate in balance, Ajna opens naturally.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--s-4);margin-bottom:var(--s-6);">
+      <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-5);border-top:3px solid #2060a0">
+        <div style="color:#4080c0;font-size:var(--fs-eyebrow);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.4rem;">Water</div>
+        <div style="font-family:var(--serif);color:var(--moon);margin-bottom:.3rem;">Depth</div>
+        <p style="font-size:.85rem;">Water's stillness creates the reflective surface intuition needs. Rat and Pig years — deep listening.</p>
+      </div>
+      <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-5);border-top:3px solid #206040">
+        <div style="color:#40a070;font-size:var(--fs-eyebrow);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.4rem;">Wood</div>
+        <div style="font-family:var(--serif);color:var(--moon);margin-bottom:.3rem;">Vision</div>
+        <p style="font-size:.85rem;">Wood's reaching toward light is Ajna's physical direction. Tiger and Rabbit years — seeing potential clearly.</p>
+      </div>
+      <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-5);border-top:3px solid #a04020">
+        <div style="color:#c06040;font-size:var(--fs-eyebrow);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.4rem;">Fire</div>
+        <div style="font-family:var(--serif);color:var(--moon);margin-bottom:.3rem;">Illumination</div>
+        <p style="font-size:.85rem;">Fire is light — the literal element of Ajna. Horse years bring flashes of sudden insight.</p>
+      </div>
+      <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-5);border-top:3px solid #806020">
+        <div style="color:#a08030;font-size:var(--fs-eyebrow);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.4rem;">Earth</div>
+        <div style="font-family:var(--serif);color:var(--moon);margin-bottom:.3rem;">Grounding</div>
+        <p style="font-size:.85rem;">Earth stabilizes the visions. Without Earth, intuitive flashes cannot be integrated into practical life.</p>
+      </div>
+      <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-5);border-top:3px solid #607080">
+        <div style="color:#8090a0;font-size:var(--fs-eyebrow);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.4rem;">Metal</div>
+        <div style="font-family:var(--serif);color:var(--moon);margin-bottom:.3rem;">Discernment</div>
+        <p style="font-size:.85rem;">Metal's quality of precision cuts through illusion. Monkey and Rooster years — the strongest discernment.</p>
+      </div>
     </div>
-    <div id="el-wood" class="tab-panel" role="tabpanel" aria-labelledby="btn-el-wood">
-      <p style="margin-bottom:var(--s-4);">Wood energy — the first green force of spring, bending but unbreakable, pushing upward toward light — is the elemental quality of Anahata at its most vital. Wood moves upward; the heart opens upward. Wood is the element of growth, vision, and the courage to begin again after winter. The Heart chakra in its most natural state has exactly this quality: not sentimental, not fragile, but relentlessly oriented toward life.</p>
-      <p style="margin-bottom:var(--s-4);">Wood-element Zodi Animals — Tiger, Rabbit, plus all Wood-year animals (born in years ending in 4 or 5) — have the Heart as their primary chakra home. The liver is Wood element's organ in Traditional Chinese Medicine, and this is where the Wood-Heart connection is most practically visible: the liver stores unexpressed anger. When anger is suppressed rather than metabolized, it becomes resentment — the specific emotion that closes the Heart.</p>
-      <p>When anger is fully felt and expressed appropriately, it transforms into the Wood element at its finest: clear vision, decisive compassionate action, the willingness to protect what matters. The Wood-element Zodi Animal's heart work often begins precisely here — not with love, but with anger allowed to move.</p>
-    </div>
-    <div id="el-fire" class="tab-panel" role="tabpanel" aria-labelledby="btn-el-fire" hidden>
-      <p style="margin-bottom:var(--s-4);">Fire element — heat, light, expansion, the irresistible desire to connect and to be seen — opens Anahata from a different direction than Wood. Where Wood's heart grows structurally (like a tree, incrementally, toward light), Fire's heart blazes: sudden, warming, infectious, the kind of love that changes the temperature of a room simply by entering.</p>
-      <p style="margin-bottom:var(--s-4);">Fire-element animals (Horse, Snake, plus Fire-year animals born in years ending in 6 or 7) have heart-opening as their primary gift and their primary vulnerability simultaneously. The gift is the warmth they carry — Fire animals are often the ones people turn toward in cold times, the ones whose presence is itself nourishing. The vulnerability is the same quality: the fire that warms can also consume, and Fire animals may find their heart so open that it burns itself in others' needs.</p>
-      <p>Fire element's Heart chakra work is often about learning to receive, not only to give. The small intestine is Fire's secondary organ in TCM — its function is discernment: what nourishes and what should be released. This is the Heart's discernment work: the love that can be received versus what should pass through.</p>
-    </div>
-    <div id="el-metal" class="tab-panel" role="tabpanel" aria-labelledby="btn-el-metal" hidden>
-      <p style="margin-bottom:var(--s-4);">Metal element's relationship to the Heart is the most counterintuitive and perhaps the most profound. Metal's primary emotion is grief — and grief is love with nowhere to go. When Metal animals (Monkey, Rooster, plus Metal-year animals born in years ending in 0 or 1) do heart work, it almost always begins with loss: the sorrow of what was loved and is now gone, the beauty of what mattered and no longer can be held.</p>
-      <p style="margin-bottom:var(--s-4);">Metal's organ is the Lung — breath itself. The lung governs letting go. Every exhalation is a small release, a small death of this breath, making room for the next. Metal's heart work is the practice of this quality at a larger scale: releasing what was, so that the heart is not full of things that no longer live there. The chest that holds old grief cannot open to new love — the structures are competing for the same space.</p>
-      <p>Metal energy refines. At its highest, Metal does not destroy love — it clarifies it. The grief work of Metal animals often produces a quality of love that is sharper, cleaner, more precise than the love of those who have not lost as deeply. The metal that has been through the fire is the strongest and the purest. This is not consolation; it is an accurate description of what happens when loss is metabolized rather than avoided.</p>
+
+    <div style="background:var(--panel);border-left:3px solid var(--chakra-col);border-radius:0 var(--r-1) var(--r-1) 0;padding:var(--s-5);">
+      <p style="font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--ivory);">Special note on the Snake: The Snake holds the strongest natural Third Eye resonance of all twelve zodiac animals. Stillness, patience, sensitivity to subtle vibration, the capacity to sit for hours without moving — these are the conditions Ajna requires. Born in a Metal year, a Metal Snake may carry the most naturally developed Third Eye energy of all 144 Zodi Animals.</p>
     </div>
   </div>
 </section>
 
-<!-- SECTION 3: THE BODY -->
-<section class="band section-border-top">
+<!-- TABS: BODY / MIND / PRACTICE -->
+<section id="tabs" class="band section-border-top">
   <div class="wrap">
-    <p class="eyebrow">In the body</p>
-    <h2>Anatomy, science, and signs</h2>
-    <div class="tab-rail" role="tablist" aria-label="Body tabs">
-      <button class="tab-btn" role="tab" aria-selected="true" aria-controls="body-anatomy" id="btn-anatomy">Anatomy</button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="body-science" id="btn-science">Science</button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="body-signs" id="btn-signs">Signs</button>
+    <div class="tab-rail" role="tablist" aria-label="Ajna detail tabs">
+      <button class="tab-btn" role="tab" aria-selected="true" aria-controls="tab-body" id="btn-body" onclick="switchTab('body')">Body</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-mind" id="btn-mind" onclick="switchTab('mind')">Mind</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-practice" id="btn-practice" onclick="switchTab('practice')">Practice</button>
     </div>
 
-    <div id="body-anatomy" class="tab-panel" role="tabpanel" aria-labelledby="btn-anatomy">
+    <!-- BODY TAB -->
+    <div id="tab-body" class="tab-panel" role="tabpanel" aria-labelledby="btn-body">
+      <p class="eyebrow">Anatomy</p>
+      <h2>The body at the brow</h2>
       <div class="anatomy-grid">
         <div class="anat-card">
-          <p class="anat-label">Location</p>
-          <p class="anat-value">Cardiac plexus</p>
-          <p class="anat-desc">Center of the chest: sternum, cardiac plexus (T1–T5), thymus gland behind the breastbone</p>
+          <div class="anat-label">Gland</div>
+          <div class="anat-value">Pituitary</div>
+          <div class="anat-desc">The "master gland" — orchestrates the entire endocrine system. Its two lobes mirror Ajna's two petals.</div>
         </div>
         <div class="anat-card">
-          <p class="anat-label">Element</p>
-          <p class="anat-value">Air (Vayu)</p>
-          <p class="anat-desc">The lightest, most omnidirectional element — it moves in all directions simultaneously, as love does</p>
+          <div class="anat-label">Nerve plexus</div>
+          <div class="anat-value">Hypothalamus / Nasal</div>
+          <div class="anat-desc">The hypothalamus bridges the nervous system and endocrine system — pure body-mind communication.</div>
         </div>
         <div class="anat-card">
-          <p class="anat-label">Sense organ</p>
-          <p class="anat-value">Touch</p>
-          <p class="anat-desc">Not only skin contact but field-to-field sensitivity — the felt sense of another person's emotional state</p>
+          <div class="anat-label">Physical location</div>
+          <div class="anat-value">Between the eyebrows</div>
+          <div class="anat-desc">Anatomically: the center of the forehead, behind the prefrontal cortex — the seat of executive function.</div>
         </div>
         <div class="anat-card">
-          <p class="anat-label">Gland</p>
-          <p class="anat-value">Thymus</p>
-          <p class="anat-desc">The immune system's school — matures T-cells; most active in childhood, atrophies after puberty but continues to govern immune intelligence</p>
-        </div>
-        <div class="anat-card">
-          <p class="anat-label">Nerve plexus</p>
-          <p class="anat-value">Cardiac (T1–T5)</p>
-          <p class="anat-desc">Directly innervates the heart and lungs — the bridge between voluntary and involuntary body systems</p>
-        </div>
-        <div class="anat-card">
-          <p class="anat-label">Color / Note</p>
-          <p class="anat-value">Green · F</p>
-          <p class="anat-desc">Green: the color of living tissue, of growth, of the Wood element's upward force. F: the midpoint of the body's scale</p>
+          <div class="anat-label">Organs</div>
+          <div class="anat-value">Eyes, brain, sinuses</div>
+          <div class="anat-desc">Both physical and metaphorical vision. The sinuses as a resonance chamber for the OM vibration.</div>
         </div>
       </div>
-      <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-5);">
-        <p style="font-size:.92rem;line-height:1.7;">Body systems governed by Anahata: the cardiovascular system (heart, blood, circulation), the respiratory system (lungs, bronchi, diaphragm), the immune system (via thymus), and the upper back, shoulders, arms, and hands — the body's instruments of giving and receiving. When Anahata is under strain, these are the systems that first show it: tight shoulders, constricted breathing, recurring infections, the physical posture of a closed chest.</p>
-      </div>
-    </div>
 
-    <div id="body-science" class="tab-panel" role="tabpanel" aria-labelledby="btn-science" hidden>
-      <div class="heartmath-highlight">
-        <p class="eyebrow">HeartMath Research</p>
-        <p class="heartmath-stat">5,000×</p>
-        <p style="font-size:.95rem;margin-bottom:var(--s-4);">The heart generates an electromagnetic field 5,000 times stronger than the brain's field — detectable 3 to 5 feet from the body via magnetometer. This is not metaphor. This is measured physics.</p>
-        <p style="font-size:.88rem;color:var(--muted);">When the heart is in "coherence" — the smooth, rhythmic HRV pattern produced by breathing at approximately 5–6 cycles per minute — this field becomes highly ordered. HeartMath Institute research shows that this coherent field measurably synchronizes with nearby individuals' cardiac fields. What the practitioners have always called the radiant heart is physically real. The instrument that produces it is the one beating in your chest right now.</p>
-      </div>
       <div class="sci-block">
-        <h3>The thymus and immunity</h3>
-        <p>The thymus sits directly behind the breastbone — precisely at the Anahata location. It is the immune system's educational institution: all T-cells (the adaptive immune response) are matured and educated here. The thymus is most active during childhood; it atrophies after puberty. But it continues to produce thymosin hormones that regulate immune function throughout life. The ancient observation that the heart governs protection is anatomically exact: the thymus sits at the heart center and governs the body's capacity to distinguish self from not-self — which is also love's central discernment.</p>
+        <h3>The Bhramari study (PMC3099099)</h3>
+        <p>A peer-reviewed trial documented that the humming vibration of Bhramari pranayama (the practice used to open Ajna) significantly reduces amygdala activation on fMRI — the brain's fear and threat-processing center. The vibration isn't metaphorical; it's measurable. OM chanting and humming create standing waves in the skull that physically calm the brain's alarm system.</p>
       </div>
-      <div class="sci-block">
-        <h3>Mantra and the amygdala</h3>
-        <p>A 2011 fMRI study (PMC3099099) found that Sanskrit mantra chanting directly deactivates the right amygdala — the brain's threat-detection center — via subvocal vibration stimulating vagal afferents. YAM for the Heart creates measurable vagal stimulation, which reduces amygdala activity, which directly increases the capacity for love. The physiological mechanism of the Heart chakra's mantra is the same mechanism that produces the felt sense of softening, opening, and safety. The mechanism is not metaphorical — it is a vagal loop.</p>
-      </div>
-      <div class="sci-block">
-        <h3>Coherent breathing and HRV</h3>
-        <p>Heart Rate Variability (HRV) — the variation in time between heartbeats — is among the most reliable biomarkers of overall health, stress resilience, and emotional regulation. High HRV indicates a flexible, responsive autonomic nervous system. The specific protocol that produces the highest HRV coherence is 5-second inhale / 5-second exhale — exactly 6 breaths per minute. This is the HeartMath coherence protocol. It is also, functionally, what the Hatha Yoga tradition calls Ujjayi pranayama when practiced slowly. Two traditions, one physiology, identical results: the heart in coherence, its field ordered and radiating.</p>
-      </div>
-      <p style="font-size:.82rem;color:var(--faint);font-style:italic;">Intellectual honesty: no study has directly imaged a chakra as a discrete structure. The correlations between chakra locations and endocrine glands and nerve plexuses are compelling and anatomically precise but not definitively proven through controlled trials. We present both the traditional teaching and the science, honest about the difference.</p>
-    </div>
 
-    <div id="body-signs" class="tab-panel" role="tabpanel" aria-labelledby="btn-signs" hidden>
-      <details open>
-        <summary>Balanced Anahata</summary>
-        <p>You give love freely and can receive it without flinching, without the discomfort of feeling you don't deserve it or the suspicion that it will be taken away. Grief moves through you rather than settling — you can be sad without the sadness becoming a permanent resident. You have appropriate compassion for yourself that is not self-pity, and appropriate compassion for others that does not require you to fix their experience. You can be with another person's pain without needing it to stop. The chest feels spacious. Breathing comes easily. The shoulders are not armored forward. You love without losing yourself in it.</p>
-      </details>
+      <div class="sci-block">
+        <h3>Pineal gland — the "third eye" of anatomy</h3>
+        <p>The pineal gland sits at the brain's geometric center, produces melatonin (governing sleep-wake cycles), and is photosensitive — it registers light even when the eyes are closed. René Descartes called it "the seat of the soul." Modern neuroscience links it to circadian rhythms, consciousness states, and psychedelic compounds produced by the body. The ancients who named Ajna the Third Eye were not inventing a metaphor; they were describing an organ.</p>
+      </div>
+
       <details>
-        <summary>Underactive Anahata</summary>
-        <p>Isolation feels safer than connection — the logic of a heart that has been hurt enough times to believe that closing is a form of wisdom. Receiving love feels uncomfortable, suspicious, conditional — as if the other shoe is always about to drop. Codependency as an attempt to fill the heart through merger: the attempt to feel by proxy what can't be directly experienced. The chest feels physically closed, tight, slightly held — often accompanied by rounded shoulders, shallow breathing, and a characteristic forward curve in the upper spine. Grief is present but not moving — it has pooled. The heart is not cold; it is afraid to be warm.</p>
-      </details>
-      <details>
-        <summary>Overactive Anahata</summary>
-        <p>People-pleasing as a survival strategy — the heart so attuned to others' needs that one's own become invisible. The loss of self in relationships: merger rather than love, enmeshment rather than intimacy. The heart is "too open" in the sense that it has no membrane — everything comes in without filtering, and the result is not abundance but overwhelm and depletion. Jealousy as love turned possessive: the fear of losing the connection that the heart has organized its entire world around. The martyrdom of giving without receiving, and the quiet resentment that eventually accompanies it — which is the heart's signal that this is not actually love, but performance of love, in service of safety.</p>
+        <summary>Signs of Ajna imbalance — physical</summary>
+        <p>Frequent headaches (especially behind the eyes or forehead), sinus problems, eye strain, poor sleep, vivid or disturbing dreams, hormonal irregularities (pituitary governs thyroid, adrenals, reproductive hormones), and difficulty with visualization or spatial thinking are all associated with Ajna dysregulation. Conversely: an overdeveloped Ajna without the lower chakras can produce hallucinations, difficulty distinguishing intuition from fantasy, or persistent dissociation.</p>
       </details>
     </div>
-  </div>
-</section>
 
-<!-- SECTION 4: THE MIND -->
-<section class="band section-alt section-border-top">
-  <div class="wrap">
-    <p class="eyebrow">Psychological map</p>
-    <h2>What the Heart chakra is working through</h2>
-    <p style="margin-bottom:var(--s-6);max-width:62ch;">Anahata is the bridge chakra — the fourth of seven, the center of the system. Below are the three lower chakras (survival, creativity, power). Above are the three higher ones (voice, vision, transcendence). The heart is where those two worlds meet in the human being. Everything below must be metabolized here before it can rise. Everything above is available only to the degree that the heart has opened.</p>
-    <div class="mind-selector" role="group" aria-label="Mind state selector">
-      <button class="mind-pill active" data-target="mind-balanced">Balanced</button>
-      <button class="mind-pill" data-target="mind-under">Underactive</button>
-      <button class="mind-pill" data-target="mind-over">Overactive</button>
-    </div>
-    <div class="mind-panels">
-      <div id="mind-balanced" class="mind-panel">
-        <h3>The open heart</h3>
-        <ul>
-          <li>Love is given without the need for its return as a condition of continuing — this is not indifference but strength</li>
-          <li>Grief is recognized as love's evidence — what is grieved was real; the grief itself is a form of honoring</li>
-          <li>Forgiveness is available not as a gift to others but as the heart's self-liberation — releasing what it no longer needs to carry</li>
-          <li>The boundary between self and other is clear: I can feel what you feel without becoming it; I can be moved without being swept away</li>
-          <li>Gratitude arises naturally and often — not as a practice but as the natural perceptual consequence of a heart that is actually present</li>
-          <li>The body breathes freely; the chest has physical spaciousness; the shoulders sit naturally open</li>
-        </ul>
+    <!-- MIND TAB -->
+    <div id="tab-mind" class="tab-panel" role="tabpanel" aria-labelledby="btn-mind" hidden>
+      <p class="eyebrow">Psychology</p>
+      <h2>Illusion → Clarity</h2>
+      <div class="mind-selector" role="group" aria-label="Select a psychological state">
+        <button class="mind-pill active" onclick="switchMind('open')">Open Ajna</button>
+        <button class="mind-pill" onclick="switchMind('under')">Underactive</button>
+        <button class="mind-pill" onclick="switchMind('over')">Overactive</button>
       </div>
-      <div id="mind-under" class="mind-panel hidden">
-        <h3>The defended heart</h3>
-        <ul>
-          <li>The decision — often below conscious awareness — that love is too costly: that what you gain is less than what you risk losing</li>
-          <li>Difficulty receiving care, praise, touch — the body pulls back; the mind immediately finds the caveat or condition</li>
-          <li>Emotional flatness as a form of protection: if nothing moves you deeply, nothing can devastate you deeply</li>
-          <li>The loneliness of being present with others while unreachable — surrounded and alone simultaneously</li>
-          <li>Physical manifestations: chronic shoulder tension, shallow upper-chest breathing, the characteristic rounding of a chest that has learned to protect what's inside</li>
-          <li>Old hurts stored as current policy — the past dictating the terms of present connection</li>
-        </ul>
-      </div>
-      <div id="mind-over" class="mind-panel hidden">
-        <h3>The boundaryless heart</h3>
-        <ul>
-          <li>The relational shape of giving without end — generosity that is not freely chosen but compelled by the fear of what happens if one stops</li>
-          <li>Others' emotions arrive without filter: their sadness becomes your sadness, their anxiety becomes your anxiety, until it is no longer clear whose feeling is whose</li>
-          <li>The gradual disappearance of self in sustained relationship — preferences, opinions, and needs becoming invisible beneath the weight of others' experience</li>
-          <li>Attachment that is not love but possession — the terror of loss so intense that it constricts what it is trying to hold</li>
-          <li>The rescuer pattern: not helping from abundance but from the inability to tolerate another's suffering, which is really the inability to tolerate one's own helplessness</li>
-          <li>Physical: the chest that is always slightly exposed, the posture of perpetual readiness to receive, without the capacity to close and rest</li>
-        </ul>
+      <div class="mind-panels">
+        <div class="mind-panel" id="mp-open">
+          <h3 style="color:var(--chakra-col)">When Ajna is open</h3>
+          <ul>
+            <li>Strong gut feelings that prove correct — you trust them without needing to analyze them to death</li>
+            <li>Symbolic thinking: you see patterns, meanings, and connections across disparate fields</li>
+            <li>Dreams are vivid, sometimes precognitive, and remembered in detail</li>
+            <li>Concentration deepens naturally — the ordinary experience of flow states</li>
+            <li>You distinguish clearly between intuition (quiet, certain) and anxiety (loud, urgent)</li>
+            <li>Creative insight comes during stillness, not during effort</li>
+          </ul>
+        </div>
+        <div class="mind-panel hidden" id="mp-under">
+          <h3>When Ajna is underactive</h3>
+          <ul>
+            <li>Difficulty thinking symbolically or seeing the bigger picture — stuck in literal, detail-level thinking</li>
+            <li>Skeptical to the point of closure: dismissing intuition, pattern recognition, or anything that cannot be quantified</li>
+            <li>Poor visualization ability — cannot clearly imagine scenarios, outcomes, or possibilities</li>
+            <li>Reliance on external authority over inner knowing: always deferring to experts, rules, or others' opinions</li>
+            <li>Dreams are absent, forgotten, or uninteresting</li>
+            <li>Difficulty concentrating; mind scatters easily</li>
+          </ul>
+        </div>
+        <div class="mind-panel hidden" id="mp-over">
+          <h3>When Ajna is overactive</h3>
+          <ul>
+            <li>Seeing meaning in everything to the point of anxiety — hyperpareidolia, apophenia</li>
+            <li>Difficulty distinguishing intuition from paranoia or fantasy</li>
+            <li>Intense or disturbing dreams; difficulty knowing what is dream and what is waking</li>
+            <li>Intellectual arrogance: believing one's perception is superior to others'</li>
+            <li>Dissociation — living primarily in the inner world while the physical world suffers</li>
+            <li>The lower chakras are typically weak when Ajna is overactive: needs grounding, not more opening</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- SECTION 5: THE PRACTICE -->
-<section id="practice" class="band section-border-top">
-  <div class="wrap">
-    <p class="eyebrow">Your practice</p>
-    <h2>Working with Anahata</h2>
+    <!-- PRACTICE TAB -->
+    <div id="tab-practice" class="tab-panel" role="tabpanel" aria-labelledby="btn-practice" hidden>
+      <p class="eyebrow" id="practice">Practice</p>
+      <h2>Opening the Third Eye</h2>
 
-    <!-- YAM Mantra -->
-    <h3 style="margin-bottom:var(--s-4);">YAM — the seed sound</h3>
-    <div class="mantra-circle">
-      <div class="mantra-ring">
-        <span class="mantra-word">YAM</span>
-        <span class="mantra-sub">यं · Air</span>
+      <div class="mantra-circle">
+        <div class="mantra-ring" role="img" aria-label="OM mantra for Ajna chakra">
+          <div class="mantra-word">ॐ</div>
+          <div class="mantra-word" style="font-size:1.6rem;margin-top:.3rem;">OM</div>
+          <div class="mantra-sub">Ajna · 2 petals</div>
+        </div>
       </div>
-    </div>
-    <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-6);margin-bottom:var(--s-7);">
-      <p style="margin-bottom:var(--s-4);"><strong style="color:var(--moon);">Pronunciation:</strong> YɅHM — the Y is a glide, the most fluid consonant in Sanskrit. It requires no stopping, no friction, no effort. The tongue does not touch anything; the sound flows freely. That a mantra for the chakra of love begins with the most effortless sound is not accidental. The practice begins in effortlessness.</p>
-      <p style="margin-bottom:var(--s-4);">The vibration opens the cardiac plexus and the arms — the arms extend from the heart center, and YAM can be felt moving outward through the chest and into the hands. If you chant with your hands extended, palms facing upward, you may feel warmth or tingling in the palms as the vibration reaches them. Feel the chest soften. Notice if there is any holding, any slight bracing, in the sternum. Let that soften on each repetition.</p>
-      <p style="font-size:.88rem;color:var(--muted);">108 repetitions is traditional. Even 27 repetitions (a quarter mala) creates measurable physiological change: vagal tone increases, cortisol decreases, HRV moves toward coherence. Start where you are.</p>
-    </div>
 
-    <!-- Coherent Breathing -->
-    <div style="background:var(--panel);border:1px solid var(--chakra-col);border-radius:var(--r-2);padding:var(--s-6);margin-bottom:var(--s-7);">
-      <p class="eyebrow">The Heart Practice Above All Others</p>
-      <h3 style="margin-bottom:var(--s-4);">Coherent Breathing — 5 seconds in, 5 seconds out</h3>
-      <p style="margin-bottom:var(--s-5);">This is the single most evidence-based heart chakra practice in existence. Five-second inhale. Five-second exhale. No holding. No force. Exactly 6 breath cycles per minute. This protocol produces measurable heart coherence — the ordered, high-amplitude HRV pattern associated with immune function, emotional regulation, intuition, and the sensation practitioners across all traditions have described as an open heart — in 2 to 4 minutes of sustained practice.</p>
-      <p style="margin-bottom:var(--s-5);">The Hatha Yoga tradition calls slow, even-ratio breathing Ujjayi. The HeartMath Institute calls it coherent breathing. The Sufis built an entire practice lineage around the heart's rhythmic breath (dhikr). Same physiology, different maps.</p>
-      <ol class="coherent-steps">
-        <li><span class="step-n">1</span> Sit comfortably with the spine straight. Place one hand on the center of the chest — not to feel the heartbeat, but to direct attention there.</li>
-        <li><span class="step-n">2</span> Breathe in slowly through the nose for 5 full seconds. Let the chest expand first, then the belly — top-down, like a cup filling.</li>
-        <li><span class="step-n">3</span> Breathe out slowly through the nose for 5 full seconds. Let the belly fall first, then the chest — the cup emptying gently.</li>
-        <li><span class="step-n">4</span> No holding between inhale and exhale — the transition is smooth, continuous, without interruption.</li>
-        <li><span class="step-n">5</span> As you breathe, imagine warmth or a soft green light at the center of the chest. Not visualizing for it to be there — noticing if it might already be.</li>
-        <li><span class="step-n">6</span> Continue for 5 minutes minimum. The HeartMath research shows coherence typically establishes within 2–4 minutes and deepens with continued practice.</li>
+      <div class="sci-block" style="margin-bottom:var(--s-6);">
+        <h3>How to chant OM for Ajna</h3>
+        <p>OM is three sounds + silence: A (as in "father") vibrates in the lower body and chest; U (as in "cool") vibrates in the throat; M (humming, lips closed) vibrates in the skull and forehead. The silence after — the fourth state — is the point. Sit for a moment in that silence after the M fades. That gap is Ajna's actual practice.</p>
+      </div>
+
+      <div class="poses-grid">
+        <div class="pose-card">
+          <div class="pose-num">01 · Asana</div>
+          <h3>Child's Pose — Third Eye Press</h3>
+          <div class="pose-sanskrit">Balasana with Ajna point</div>
+          <p>From Child's Pose, place the forehead directly on the mat or a block. Apply gentle pressure to the brow center — the physical location of Ajna. This activates mechanoreceptors in the forehead and begins to bring blood flow and awareness to the Third Eye.</p>
+          <ul>
+            <li>Hold for 3–10 minutes — longer is more effective</li>
+            <li>Add a very gentle circular motion of the forehead on the mat</li>
+            <li>Breathe slowly: 4 counts in, 6 counts out</li>
+          </ul>
+        </div>
+        <div class="pose-card">
+          <div class="pose-num">02 · Asana</div>
+          <h3>Trataka — Candle Gazing</h3>
+          <div class="pose-sanskrit">Steady gaze practice</div>
+          <p>Sit 60–90cm from a lit candle. Gaze at the tip of the flame without blinking for as long as possible. When the eyes water, close them and hold the afterimage of the flame at the Third Eye. This classic Hatha Yoga practice directly trains the Ajna muscle: sustained, single-pointed attention.</p>
+          <ul>
+            <li>Start with 2 minutes; build to 10 over weeks</li>
+            <li>After closing the eyes, the afterimage is your visualization object</li>
+            <li>The candle should be the only light in the room</li>
+          </ul>
+        </div>
+        <div class="pose-card">
+          <div class="pose-num">03 · Asana</div>
+          <h3>Supported Shoulderstand</h3>
+          <div class="pose-sanskrit">Sarvangasana (supported)</div>
+          <p>Inversions increase blood flow to the brain and pituitary gland — the physical home of Ajna. Use a chair or wall for support if needed. The chin lock (Jalandhara Bandha) in shoulderstand directly stimulates the throat chakra below while opening the energy channel upward to Ajna.</p>
+          <ul>
+            <li>5–10 breaths; rest in Savasana afterward</li>
+            <li>Not recommended with neck injury, high blood pressure, or during menstruation</li>
+            <li>Legs-up-the-wall (Viparita Karani) is a gentler alternative</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mudra-box">
+        <h3>Mudra for Ajna — Hakini Mudra</h3>
+        <p style="margin-top:.5rem;font-size:.92rem;">Bring all five fingertips to touch their counterparts (thumb to thumb, index to index, etc.), forming a hollow between both hands. Raise the mudra to eye level. This is the "mudra of the mind" — it activates both brain hemispheres simultaneously through the crossing of midline motor control. Research: Hakini mudra has been associated with improved memory recall and concentration in cognitive function studies.</p>
+      </div>
+
+      <h3 style="margin-bottom:var(--s-4);">Nadi Shodhana — The Ajna Pranayama</h3>
+      <p style="margin-bottom:var(--s-5);font-size:.95rem;">Alternate nostril breathing is the definitive Ajna practice: it literally balances the two nadis (Ida and Pingala) whose meeting point IS the Third Eye. Five minutes daily produces measurable changes in heart rate variability and cortisol levels.</p>
+      <ol class="nadi-steps">
+        <li>Right hand Vishnu mudra: fold index and middle fingers. Right thumb controls right nostril; ring and little finger control left.</li>
+        <li>Exhale completely through both nostrils. Then close the right nostril with your thumb.</li>
+        <li>Inhale through the left nostril for 4 counts. Feel the cool air travel up to the Third Eye.</li>
+        <li>Close both nostrils. Hold for 4 counts. Sense the stillness between the breaths.</li>
+        <li>Release the right nostril. Exhale for 8 counts — twice as long as the inhale. Feel the heat leave.</li>
+        <li>Inhale through the right nostril for 4. Hold for 4. Exhale left for 8. That is one round.</li>
+        <li>Continue 5–10 rounds. In the silence after the last exhale: this is Ajna. This is enough.</li>
       </ol>
     </div>
-
-    <!-- Three Poses -->
-    <h3 style="margin-bottom:var(--s-5);">Three heart poses</h3>
-    <div class="poses-grid">
-      <div class="pose-card">
-        <p class="pose-num">Pose 01</p>
-        <h3>Cobra</h3>
-        <p class="pose-sanskrit">Bhujangasana</p>
-        <p>The chest rises from the ground. The heart leads. The back body supports the heart's courage to open. This is the entry pose for Anahata — accessible, grounding, and immediately effective at opening the cardiac plexus.</p>
-        <ul>
-          <li>Lie face down, hands beside the lower ribs</li>
-          <li>Elbows remain slightly bent — the backbend is supported, not forced</li>
-          <li>Shoulders roll back and down, away from the ears</li>
-          <li>The chest moves forward before it moves upward — lead with the heart, not the head</li>
-          <li>Hold 5 breaths. Release slowly. Repeat 3 times with rests between.</li>
-        </ul>
-      </div>
-      <div class="pose-card">
-        <p class="pose-num">Pose 02</p>
-        <h3>Camel</h3>
-        <p class="pose-sanskrit">Ustrasana</p>
-        <p>The deepest voluntary chest opener, and the most emotionally confronting. The exposure of the throat and chest can bring emotion up without warning — this is the practice working, not going wrong. Do not force the hands to the heels before the chest is ready to open that far.</p>
-        <ul>
-          <li>Kneel with hips above knees, shins parallel</li>
-          <li>Hands on low back first (fingers pointing down) — establish this arch before going deeper</li>
-          <li>If available: curl the toes under to raise the heel height, then reach for the heels</li>
-          <li>Let the head follow the spine's arc — do not drop it back unless the neck is comfortable</li>
-          <li>Come out slowly. Rest in Child's Pose for several breaths after.</li>
-        </ul>
-      </div>
-      <div class="pose-card">
-        <p class="pose-num">Pose 03</p>
-        <h3>Bridge</h3>
-        <p class="pose-sanskrit">Setu Bandha Sarvangasana</p>
-        <p>Grounded, supported heart opening. The earth below supports the chest's rise. When Camel is too much — when the emotional exposure is more than the practice can hold today — Bridge is the practice. It opens the heart while remaining completely earthed.</p>
-        <ul>
-          <li>Lie on your back, knees bent, feet flat and hip-width apart</li>
-          <li>Press the feet into the earth and lift the hips</li>
-          <li>Interlace the hands beneath the back and press the arms and shoulders down as the chest rises</li>
-          <li>The chest presses toward the chin — Anahata and Vishuddha both activated</li>
-          <li>Hold 5–8 breaths. For a yin practice: place a block under the sacrum and remain 3–5 minutes.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Mudra -->
-    <div class="mudra-box">
-      <p class="eyebrow">Mudra</p>
-      <h3 style="margin-bottom:var(--s-4);">Padma Mudra — the Lotus gesture</h3>
-      <p style="margin-bottom:var(--s-4);">Bring both palms together at the center of the chest (Anjali Mudra). Then open the hands like a flower blooming — keeping the pinky fingers, ring fingers, and thumbs touching, while the index and middle fingers spread open and back like lotus petals. The result is a cupped hand shape, like a lotus emerging from water.</p>
-      <p>Padma Mudra is the gesture of the heart opening while remaining rooted in its own center. The touching fingertips at the base of the "flower" are the root — the self that does not dissolve in love. The opening petals are the love itself, moving outward from that stable center. The lotus grows in muddy water and blooms above it. The heart, the same.</p>
-    </div>
   </div>
 </section>
 
-<!-- SECTION 6: YOUR PROFILE -->
-<section id="your-profile" class="band section-alt section-border-top">
+<!-- PROFILE FINDER -->
+<section id="profile" class="band section-border-top section-alt">
   <div class="wrap">
-    <p class="eyebrow">Your connection</p>
-    <h2>How strong is Anahata in your animal?</h2>
-    <p style="margin-bottom:var(--s-6);max-width:60ch;">Every Zodi Animal has a unique chakra signature built from two layers: the Wu Xing element of your birth year and the inherent resonance of your zodiac animal. Enter your birth year to find where Anahata sits in your specific profile — and how to work with it.</p>
+    <p class="eyebrow">Your profile</p>
+    <h2>Is Ajna your chakra?</h2>
+    <p style="margin-bottom:var(--s-5);max-width:60ch;">Enter your birth year to see how your Zodi Animal connects to the Third Eye — whether it is your primary chakra, a secondary resonance, or a chakra to consciously develop.</p>
     <div class="profile-finder">
-      <input type="number" id="yr2" placeholder="Your birth year (e.g. 1990)" min="1900" max="2025">
-      <br>
-      <button class="find-btn" id="profile-btn">Find my Heart connection</button>
-      <div id="profile-result" hidden></div>
+      <input type="number" id="yearIn" min="1900" max="2050" placeholder="Your birth year, e.g. 1989" aria-label="Enter birth year">
+      <button class="find-btn" onclick="findProfile()">Reveal my Ajna connection ✦</button>
+      <div id="profileCard" class="profile-card" style="display:none;" aria-live="polite">
+        <div class="pc-label" id="pc-label"></div>
+        <div class="pc-strength" id="pc-strength"></div>
+        <p class="pc-msg" id="pc-msg"></p>
+        <div class="share-row">
+          <button class="share-btn" onclick="makeShareCard()">↗ Generate share card</button>
+          <a id="pc-hub-link" href="/chakras/" class="share-btn">View all chakras</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SECTION 7: THE TRADITION -->
+<!-- CROSS-TRADITION -->
 <section class="band section-border-top">
   <div class="wrap">
-    <p class="eyebrow">The cross-tradition view</p>
-    <h2>One mountain, many maps</h2>
-    <p style="margin-bottom:var(--s-7);max-width:62ch;">The center. The bridge. The point where heaven and earth meet in the human form. Every tradition knows this place — they simply name it differently. The territory is identical.</p>
+    <p class="eyebrow">Other traditions</p>
+    <h2>The same eye, different names</h2>
     <div class="tradition-grid">
       <div class="trad-card">
-        <p class="trad-eyebrow">Kabbalah</p>
-        <h3>Tiferet — The Beauty</h3>
-        <p>The sixth Sephirah of the Tree of Life, positioned at the precise center of the entire structure. Tiferet means Beauty or Harmony — the point where all branches of the tree integrate into coherent form. It is called the "Christ point" or the "Messiah point" in Kabbalistic commentary: the place where the divine light descending from above (the upper Sephirot — Kether, Chokmah, Binah) meets the human experience rising from below (Yesod, Hod, Netzach, Malkuth).</p>
-        <p style="margin-top:.75rem;">This is Anahata precisely: the bridge between the three lower chakras (body, survival, creativity) and the three higher ones (voice, vision, transcendence). The human heart is the meeting point. Nothing above is accessible without moving through here first.</p>
+        <div class="trad-eyebrow">Kabbalah</div>
+        <h3>Chokhmah and Binah — Wisdom and Understanding</h3>
+        <p>The two highest Sephirot before Keter map to Ajna's two petals. Chokhmah (right hemisphere, flash of insight) and Binah (left hemisphere, deep understanding) are the left and right eyes of God — and of the practitioner. At Ajna's level of the Tree, we work with two-directional knowing: the lightning bolt of intuition and its patient integration.</p>
       </div>
       <div class="trad-card">
-        <p class="trad-eyebrow">Taoism</p>
-        <h3>Middle Dantian — The Chest Center</h3>
-        <p>The chest center — Tan Zhong acupoint, Conception Vessel 17, directly in the center of the sternum — is the Middle Dantian in the Taoist three-center system. It stores Qi: the dynamic life force that animates body, mind, and emotional field simultaneously. What depletes it: emotional suppression, grief held without expression, shallow breathing, chronic stress that constricts the chest.</p>
-        <p style="margin-top:.75rem;">What cultivates it: genuine service to others freely given, loving relationships built on truth, open-hearted breathing, the Qi Gong practice of moving Qi through the chest. The Taoist teaching is identical to Anahata's: the heart is not merely a physical organ — it is the center of the body's energy management, and everything depends on whether it is open or closed.</p>
+        <div class="trad-eyebrow">Taoism</div>
+        <h3>Upper Dantian — Shen (Spirit)</h3>
+        <p>The Upper Dantian, located at the Third Eye center, is the home of Shen — the spirit or awareness aspect of the Three Treasures (Jing/Qi/Shen). Taoist alchemy works to refine the lower energies upward until Shen is cultivated at the Upper Dantian. This is the direct Taoist parallel to Ajna: awareness watching awareness, refined through years of inner practice.</p>
       </div>
       <div class="trad-card">
-        <p class="trad-eyebrow">Sufism</p>
-        <h3>Qalb and Ruh — The Spiritual Heart</h3>
-        <p>The Naqshbandi Sufi path describes the heart center as containing two Lataif (subtle centers): Qalb (the spiritual heart, located at the left chest — seat of faith, yearning, and the soul's longing for the divine) and Ruh (the animating spirit, located at the right chest — the breath of divine love moving through the human form).</p>
-        <p style="margin-top:.75rem;">The Sufi spiritual path is, at its core, a sustained heart-opening practice. The dhikr — the rhythmic, devotional repetition of divine names — is the Sufi's YAM: a mantra of love, repeated until the heart becomes what it is repeating. The goal of Sufi practice is the state called Fana: annihilation in the Beloved — which is not destruction of the self but its dissolution in love. Anahata's teaching is identical: the open heart does not cease to exist; it becomes, for a moment, indistinguishable from love itself.</p>
+        <div class="trad-eyebrow">Sufism</div>
+        <h3>Khafi — The Subtlest</h3>
+        <p>In the Sufi Lataif system, Khafi (the concealed or subtle) resides at the Third Eye center. It is the subtlest of the six centers — the one closest to pure spirit before the final center (Akhfa, the most hidden). Khafi is where the mystic perceives directly, beyond the veils of ordinary consciousness. "The knowledge of the saints is through Kashf — unveiling." Ajna is the Islamic doctrine of inner perception.</p>
+      </div>
+      <div class="trad-card">
+        <div class="trad-eyebrow">Ancient Egypt</div>
+        <h3>Akh — The Luminous Spirit</h3>
+        <p>Akh is the transfigured luminous body — the aspect of the soul that achieves direct union with divine light and cannot be destroyed. The ideogram for Akh is the crested ibis, associated with Thoth, the god of wisdom and cosmic order. Only those who had lived in Ma'at (truth) could develop a fully realized Akh. This is the Third Eye teaching: only a life aligned with truth produces a consciousness that can perceive truth directly.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- BRIDGE CARDS -->
-<section class="band section-alt section-border-top">
+<section class="band section-border-top section-alt">
   <div class="wrap">
-    <p class="eyebrow">Continue your journey</p>
-    <h2>Where next?</h2>
+    <p class="eyebrow">Continue</p>
+    <h2>Where to go next</h2>
     <div class="bridges">
-      <a class="bcard" href="/chakras/">
-        <span class="bch">七</span>
-        <h3>All Seven Chakras</h3>
-        <p>Anahata is the center — the bridge point. See the full map from root to crown and find where your practice wants to go next.</p>
-        <span class="soon">Explore the full map →</span>
+      <a href="/chakras/" class="bcard">
+        <span class="bch">◈</span>
+        <h3>Chakras Hub</h3>
+        <p>Return to the full seven-chakra map. Find your personalized profile, the element-chakra matrix, and the daily practice generator.</p>
+        <span class="soon">← Back to the hub</span>
       </a>
-      <a class="bcard" href="/chakras/manipura/">
-        <span class="bch">🔥</span>
-        <h3>Solar Plexus Chakra</h3>
-        <p>Solar Plexus and Heart are Anahata's immediate neighbors in the Wood and Fire element systems. Personal power in service of love.</p>
-        <span class="soon">Manipura →</span>
+      <a href="/chakras/sahasrara/" class="bcard">
+        <span class="bch">🦢</span>
+        <h3>Crown Chakra — Sahasrara</h3>
+        <p>Beyond the Third Eye lives the Crown — the thousand-petaled lotus of pure awareness. The Hamsa swan. The silence that holds everything.</p>
+        <span class="soon">Next: Sahasrara →</span>
       </a>
-      <a class="bcard" href="/chakras/ajna/">
-        <span class="bch">👁</span>
-        <h3>Third Eye Chakra</h3>
-        <p>After the heart opens, the third eye clears. These two chakras work in tandem: love clarifies perception; clear perception deepens love.</p>
-        <span class="soon">Ajna →</span>
+      <a href="/chakras/vishuddha/" class="bcard">
+        <span class="bch">🐘</span>
+        <h3>Throat Chakra — Vishuddha</h3>
+        <p>The White Elephant of Indra. HAM mantra. The chakra directly below Ajna — where truth expressed in words becomes the preparation for truth seen directly.</p>
+        <span class="soon">← Below: Vishuddha</span>
+      </a>
+      <a href="/chakras/manipura/" class="bcard">
+        <span class="bch">🐏</span>
+        <h3>Solar Plexus — Manipura</h3>
+        <p>The Ram of Agni. RAM mantra. The city of jewels where your will and fire live — the furthest chakra from the Third Eye, and the one that makes every upward journey possible.</p>
+        <span class="soon">Deep dive →</span>
+      </a>
+      <a href="/elements/" class="bcard">
+        <span class="bch">🌊</span>
+        <h3>The Five Elements</h3>
+        <p>All five Wu Xing elements feed Ajna. Understand yours more deeply — it shapes how your Third Eye opens.</p>
+        <span class="soon">Explore elements →</span>
+      </a>
+      <a href="/reading/" class="bcard">
+        <span class="bch">✦</span>
+        <h3>Your Psychic Reading</h3>
+        <p>A full reading for your specific Zodi Animal — personality, forecast, chakra medicine, and the invitation your year carries.</p>
+        <span class="soon">Get your reading →</span>
       </a>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
+
+<div class="toast" id="toast" role="alert" aria-live="assertive"></div>
 
 <script>
-// TAB LOGIC
-document.querySelectorAll('.tab-rail').forEach(function(rail){
-  var btns=rail.querySelectorAll('.tab-btn');
-  btns.forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var panelId=btn.getAttribute('aria-controls');
-      btns.forEach(function(b){b.setAttribute('aria-selected','false');});
-      btn.setAttribute('aria-selected','true');
-      var panels=rail.parentNode.querySelectorAll('.tab-panel');
-      panels.forEach(function(p){p.hidden=true;});
-      var target=document.getElementById(panelId);
-      if(target)target.hidden=false;
+(function(){
+  /* TAB SWITCHING */
+  function switchTab(id){
+    ['body','mind','practice'].forEach(function(t){
+      var panel=document.getElementById('tab-'+t);
+      var btn=document.getElementById('btn-'+t);
+      var active=(t===id);
+      panel.hidden=!active;
+      btn.setAttribute('aria-selected',active);
     });
-  });
-});
-
-// MIND TOGGLE
-document.querySelectorAll('.mind-pill').forEach(function(pill){
-  pill.addEventListener('click',function(){
-    var target=pill.getAttribute('data-target');
-    document.querySelectorAll('.mind-pill').forEach(function(p){p.classList.remove('active');});
-    pill.classList.add('active');
-    document.querySelectorAll('.mind-panel').forEach(function(panel){
-      if(panel.id===target){panel.classList.remove('hidden');}
-      else{panel.classList.add('hidden');}
-    });
-  });
-});
-
-// PROFILE FINDER
-document.getElementById('profile-btn').addEventListener('click',function(){
-  var yr=parseInt(document.getElementById('yr2').value);
-  if(!yr||yr<1900||yr>2025){
-    alert('Please enter a valid birth year between 1900 and 2025.');
-    return;
   }
-  var stems=['Wood','Wood','Fire','Fire','Earth','Earth','Metal','Metal','Water','Water'];
-  var animals=['Rat','Ox','Tiger','Rabbit','Dragon','Snake','Horse','Goat','Monkey','Rooster','Dog','Pig'];
-  var el=stems[((yr-4)%10+10)%10];
-  var an=animals[((yr+8)%12+12)%12];
+  window.switchTab=switchTab;
 
-  var strength,message,practice;
+  /* MIND STATE */
+  function switchMind(id){
+    document.querySelectorAll('.mind-pill').forEach(function(p){ p.classList.remove('active'); });
+    event.target.classList.add('active');
+    document.querySelectorAll('.mind-panel').forEach(function(p){ p.classList.add('hidden'); });
+    var panel=document.getElementById('mp-'+id);
+    if(panel){ panel.classList.remove('hidden'); }
+  }
+  window.switchMind=switchMind;
 
-  // Heart-specific animal checks
-  var heartAnimals=['Rabbit','Pig'];
-  var isHeartAnimal=heartAnimals.includes(an);
-
-  if(el==='Wood'){
-    strength='Primary';
-    message='Wood element calls you first to the Heart — and to the Solar Plexus as its closest sibling. Wood\'s upward force, its unbending orientation toward growth, its deep relationship to the liver and the emotion of anger that the liver stores — all of this meets Anahata. Your heart work may begin not with love but with anger: letting it move, letting it be expressed cleanly, discovering what clears beneath it. Wood that has processed its anger becomes extraordinarily clear compassion.';
-    practice='YAM chanting, Cobra and Camel poses, working with anger as a heart practice before working with love directly.';
-  } else if(el==='Fire'){
-    strength='Primary';
-    message='Fire element lives most naturally at the Heart — your warmth, your radiance, your desire to connect and to be fully seen are expressions of Anahata at its most alive. Your challenge may be the other side of the same gift: the heart that burns so brightly for others may need to learn to receive as fluently as it gives. Coherent breathing is especially valuable for Fire animals — it gives the blazing heart a rhythm that sustains it without consuming it.';
-    practice='Coherent breathing (5-5 protocol) daily, YAM with Padma Mudra, conscious practice of receiving love without deflecting it.';
-  } else if(el==='Metal'){
-    strength='Deep (via grief)';
-    message='Metal element\'s path to the Heart runs through grief — the sorrow of what was loved and lost. This is not a lesser path; it is often the deepest. Metal animals who have allowed their grief to move fully — rather than suppressing it as something to get past — often develop a quality of love that is sharper, cleaner, and more honest than those who have not lost as much. Your heart work begins with the lung: full exhalations, the practice of letting go, making room.';
-    practice='Extended exhalation breathing (inhale 4, exhale 8), supported Fish Pose (heart exposed, held gently by the earth), grief that is allowed to be felt rather than managed.';
-  } else if(isHeartAnimal){
-    strength=an==='Rabbit'?'Double Heart (element + animal)':'Strong (primary animal resonance)';
-    message='The '+an+' animal is inherently Anahata — this is your home, your primary frequency, and the quality that others most recognize in you. '+
-      (an==='Rabbit'?'The Rabbit\'s empathy, sensitivity, and attunement to emotional atmosphere are Heart chakra qualities at their most natural expression. Your gift is feeling; your growing edge is ensuring you do not feel at the cost of your own center. The heart that is entirely porous eventually has nothing to give from.':'The Pig\'s generosity, warmth, and magnanimity are expressions of Anahata at its most beautiful. Your growing edge is the same as your gift taken one step too far: the boundary between generous love and self-erasure requires attention.');
-    practice='YAM chanting, Padma Mudra, coherent breathing. Also: the practice of noticing what you need and asking for it — receiving is the heart\'s growing edge for '+an+' animals.';
-  } else if(el==='Earth'){
-    strength='Accessible (primary: Solar Plexus + Sacral)';
-    message='Earth element calls you primarily to Solar Plexus and Sacral work — nourishment, stability, the body\'s relationship to matter. Heart work for Earth animals is often grounded through the body: the warmth of being physically held, the love that is expressed through feeding and tending. Your entry into Anahata may be through these sensory, embodied expressions of love rather than through the more abstract or emotional dimensions. This is not a lesser path — it is the Earth path.';
-    practice='Bridge Pose (earth-supported heart opening), YAM with hands on the chest, the practice of letting yourself be physically cared for.';
-  } else {
-    // Water element
-    strength='Accessible (primary: Root + Sacral)';
-    message='Water element calls you first to Root and Sacral work — depth, survival, the conservation of vital essence. Heart work for Water animals often opens most readily when the root is stable: when there is enough security to risk being seen. The Water element\'s deepest fear — that the ground will give way — is what the heart must move past in order to love without armor. LAM is your foundation; YAM builds from it.';
-    practice='Establish Root practice first (LAM, Mountain Pose), then introduce YAM. Cobra is a particularly good Water-to-Heart bridge pose.';
+  /* YEAR HELPERS */
+  function getElement(y){
+    var s=['Wood','Wood','Fire','Fire','Earth','Earth','Metal','Metal','Water','Water'];
+    return s[((y-4)%10+10)%10];
+  }
+  function getAnimal(y){
+    var a=['Rat','Ox','Tiger','Rabbit','Dragon','Snake','Horse','Goat','Monkey','Rooster','Dog','Pig'];
+    return a[((y+8)%12+12)%12];
   }
 
-  var r=document.getElementById('profile-result');
-  r.innerHTML='<div class="profile-card"><p class="pc-label">THE '+el.toUpperCase()+' '+an.toUpperCase()+'</p><p class="pc-strength">Heart connection: <strong>'+strength+'</strong></p><p class="pc-msg">'+message+'</p><p class="pc-msg" style="margin-top:.75rem;font-size:.88rem;"><strong style="color:var(--moon);">Recommended entry point:</strong> '+practice+'</p><a class="pc-link" href="/chakras/">← Explore all your chakras</a></div>';
-  r.hidden=false;
-  r.scrollIntoView({behavior:'smooth',block:'nearest'});
-});
+  /* PROFILE FINDER */
+  var AJNA_AFFINITY={
+    Snake:['strong','Primary Ajna animal. The Snake\'s patient observation, stillness, and sensitivity to subtle vibration make it the most naturally Third Eye-activated of all twelve zodiac animals.'],
+    Monkey:['strong','The Metal Monkey\'s precision and discernment give Ajna its sharpest expression — cutting through illusion is a Monkey specialty.'],
+    Rooster:['strong','Metal Rooster. The Rooster sees through pretense with uncomfortable clarity. Ajna in its most exacting form.'],
+    Dragon:['moderate','Dragons hold All-element energy — which is Ajna\'s nature. The Dragon\'s intuitive leaps are legendary. Trust them.'],
+    Horse:['moderate','Fire energy illuminates. The Horse\'s sudden insights and pattern recognition are pure Ajna flashes. The challenge: staying still long enough to listen.'],
+    Rabbit:['moderate','Wood Rabbit perceives others\' emotional states with unusual precision — a Heart and Third Eye combination that makes them extraordinarily empathic.'],
+    Tiger:['moderate','Wood Tiger has visionary capacity but needs to quiet the Tiger\'s natural urgency to fully access Third Eye stillness.'],
+    Rat:['developing','Water Rat is gifted with depth and reflection — Ajna\'s prerequisites. The Rat needs to trust the slow knowing, not just the quick clever mind.'],
+    Pig:['developing','Water Pig has deep feeling intelligence, but must learn to distinguish intuition from wishful thinking. The Third Eye requires honesty.'],
+    Ox:['developing','The Ox\'s methodical nature can develop powerful Ajna through patient, sustained practice. Trataka (candle gazing) is particularly effective.'],
+    Dog:['developing','Metal Dog applies Ajna\'s discernment ethically — this animal sees who is trustworthy. Practice is needed to access subtler levels.'],
+    Goat:['developing','Earth Goat has creative intuition but must ground it. When the Goat trusts its hunches instead of second-guessing them, Ajna opens.']
+  };
+
+  window.findProfile=function(){
+    var year=parseInt(document.getElementById('yearIn').value);
+    if(!year||year<1900||year>2050){showToast('Enter a year between 1900–2050');return;}
+    var el=getElement(year);
+    var an=getAnimal(year);
+    var af=AJNA_AFFINITY[an]||['developing','Your animal has a unique relationship with the Third Eye that deepens with practice.'];
+    var card=document.getElementById('profileCard');
+    var labels={strong:'Strong resonance',moderate:'Moderate resonance',developing:'Developing through practice'};
+    document.getElementById('pc-label').textContent=el+' '+an+' — '+labels[af[0]];
+    document.getElementById('pc-label').style.color=['strong','moderate'].includes(af[0])?'var(--chakra-col)':'var(--brass)';
+    document.getElementById('pc-strength').textContent=year+' · '+el+' element · '+an+' animal';
+    document.getElementById('pc-msg').textContent=af[1];
+    card.style.display='block';
+  };
+
+  /* SHARE CARD */
+  window.makeShareCard=function(){
+    var year=parseInt(document.getElementById('yearIn').value);
+    if(!year){showToast('Find your profile first');return;}
+    var el=getElement(year);
+    var an=getAnimal(year);
+    var canvas=document.createElement('canvas');
+    canvas.width=1080;canvas.height=1080;
+    var ctx=canvas.getContext('2d');
+    ctx.fillStyle='#0d0e18';ctx.fillRect(0,0,1080,1080);
+    var g=ctx.createRadialGradient(540,480,40,540,480,520);
+    g.addColorStop(0,'#2D147055');g.addColorStop(1,'transparent');
+    ctx.fillStyle=g;ctx.fillRect(0,0,1080,1080);
+    ctx.strokeStyle='#5b3fb540';ctx.lineWidth=3;ctx.strokeRect(40,40,1000,1000);
+    ctx.fillStyle='#ece7d8';ctx.font='600 30px Georgia,serif';ctx.textAlign='center';
+    ctx.fillText('THE '+el.toUpperCase()+' '+an.toUpperCase(),540,130);
+    ctx.fillStyle='#5b3fb5cc';ctx.font='26px Georgia,serif';
+    ctx.fillText('आज्ञा · Third Eye Chakra',540,180);
+    ctx.fillStyle='#5b3fb5';ctx.font='700 180px Georgia,serif';
+    ctx.shadowColor='#5b3fb5';ctx.shadowBlur=50;
+    ctx.fillText('ॐ',540,560);ctx.shadowBlur=0;
+    ctx.fillStyle='#f6efd8';ctx.font='700 44px Georgia,serif';
+    ctx.fillText('Ajna — The Third Eye',540,660);
+    ctx.fillStyle='#adaec2';ctx.font='italic 28px Georgia,serif';
+    ctx.fillText('Illusion → Clarity',540,715);
+    ctx.fillStyle='#55566e';ctx.font='22px Arial,sans-serif';
+    ctx.fillText('zodianimal.com · find your chakra',540,1040);
+    var a=document.createElement('a');
+    a.download='zodi-'+el.toLowerCase()+'-'+an.toLowerCase()+'-ajna.png';
+    a.href=canvas.toDataURL('image/png');a.click();
+    showToast('Card saved ✦');
+  };
+
+  /* TOAST */
+  function showToast(msg,dur){
+    dur=dur||3000;
+    var t=document.getElementById('toast');
+    t.textContent=msg;t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show');},dur);
+  }
+  window.showToast=showToast;
+
+  /* EMAIL */
+  var form=document.getElementById('zf-news-form');
+  if(form) form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=(document.getElementById('zf-email')||{}).value||'';
+    var note=document.getElementById('zf-rz');
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){if(note)note.textContent="Enter a valid email.";return;}
+    try{localStorage.setItem('zodi_daily_email',email);}catch(_e){}
+    if(note)note.textContent="Saved. Daily readings open soon.";
+    try{document.getElementById('zf-email').value='';}catch(_e){}
+  });
+})();
 </script>
 <!--om-footer:start-->
 <!-- Zodi Animal universal footer. Single source: components/footer.html,

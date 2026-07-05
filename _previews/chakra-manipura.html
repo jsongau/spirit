@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Anahata — Heart Chakra · The Wu Xing Wood &amp; Fire Connection · ZodiAnimal.com</title>
-<meta name="description" content="Anahata (Heart Chakra) — the unstruck sound at the center of the subtle body. Discover YAM mantra practice, the Black Antelope mythology, and which Zodi Animals are called to heart work.">
-<link rel="canonical" href="https://zodianimal.com/chakras/anahata/">
+<title>Manipura — Solar Plexus Chakra · Fire of Will · ZodiAnimal.com</title>
+<meta name="description" content="Manipura (Solar Plexus Chakra) — the city of jewels, the fire of will, and the RAM mantra. Discover how the Ram of Agni, your Chinese zodiac animal, and your personal power connect through the third chakra.">
+<link rel="canonical" href="https://zodianimal.com/chakras/manipura/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-  {"@type":"WebPage","name":"Anahata — Heart Chakra","url":"https://zodianimal.com/chakras/anahata/","description":"Heart chakra deep-dive: Black Antelope mythology, HeartMath science, YAM mantra practice, and personalized chakra profiles for the 144 Zodi Animals.","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Zodi Animal","item":"https://zodianimal.com/"},{"@type":"ListItem","position":2,"name":"Chakras","item":"https://zodianimal.com/chakras/"},{"@type":"ListItem","position":3,"name":"Heart Chakra","item":"https://zodianimal.com/chakras/anahata/"}]}},
+  {"@type":"WebPage","name":"Manipura — Solar Plexus Chakra","url":"https://zodianimal.com/chakras/manipura/","description":"Solar Plexus chakra deep-dive: the Ram of Agni, RAM mantra, Kapalabhati pranayama, and personalized chakra profiles for the 144 Zodi Animals.","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Zodi Animal","item":"https://zodianimal.com/"},{"@type":"ListItem","position":2,"name":"Chakras","item":"https://zodianimal.com/chakras/"},{"@type":"ListItem","position":3,"name":"Solar Plexus Chakra","item":"https://zodianimal.com/chakras/manipura/"}]}},
   {"@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"What chakra is the Wood element in Chinese astrology?","acceptedAnswer":{"@type":"Answer","text":"Anahata (Heart) and Manipura (Solar Plexus) are the primary chakras of the Wood element. Wood energy in Wu Xing corresponds to growth, upward movement, and the liver — all of which parallel Anahata's qualities of expansion, compassion, and the thymus gland."}},
-    {"@type":"Question","name":"Which Zodi Animals have Anahata as their primary chakra?","acceptedAnswer":{"@type":"Answer","text":"Wood-element and Fire-element Zodi Animals — including Wood Rabbit, Wood Tiger, Fire Snake, Fire Horse — have Anahata as their primary element-chakra. The Rabbit and Pig also carry inherent Heart resonance from their zodiac animal nature."}},
-    {"@type":"Question","name":"What is the classical animal of the Heart chakra?","acceptedAnswer":{"@type":"Answer","text":"The Black Antelope (Krishna Mrga in Sanskrit), the vehicle of Vayu the wind god. The antelope is chosen for its extraordinary sensitivity — it moves like breath itself, detecting what's coming before it arrives, just as the heart senses what's present before the mind names it."}}
+    {"@type":"Question","name":"What is Manipura chakra?","acceptedAnswer":{"@type":"Answer","text":"Manipura, the Solar Plexus Chakra, is the third energy center — located between the navel and the sternum. Its name means 'city of jewels' in Sanskrit. It governs personal power, will, self-esteem, and the digestive fire (agni). The bija mantra is RAM, the element is Fire, and the classical animal is Mesha, the Ram of Agni."}},
+    {"@type":"Question","name":"Which Chinese zodiac animals connect to Manipura?","acceptedAnswer":{"@type":"Answer","text":"Tiger and Horse are the primary Manipura animals — both carry Fire element energy and strong personal will. Rooster and Ox carry Manipura through Wood and Earth, expressing the Solar Plexus's qualities of discipline, structure, and focused achievement."}},
+    {"@type":"Question","name":"What is the bija mantra for Manipura?","acceptedAnswer":{"@type":"Answer","text":"RAM (pronounced 'rum' with a rolled R) — the seed sound of fire, will, and transformation. Chanted 108 times while holding Agni Mudra (curled ring finger under the thumb), RAM strengthens the digestive system, builds confidence, and clears the shame-based patterns that block Manipura."}}
   ]}
 ]}
 </script>
@@ -36,9 +36,11 @@
   --e-2:0 8px 30px oklch(0 0 0/.45);--e-3:0 20px 60px oklch(0 0 0/.55),0 0 40px var(--glow);
   --ease-out:cubic-bezier(0.16,1,0.3,1);--dur:320ms;--dur-slow:640ms;
   --maxw:1200px;
-  --chakra-col:oklch(0.65 0.18 145);
+  --chakra-col:oklch(0.72 0.18 88);
+  --chakra-hex:#A08000;
+  --chakra-soft:oklch(0.72 0.18 88 / 0.12);
 }
-@supports not(color:oklch(0% 0 0)){:root{--ink:#0d0e18;--panel:#1a1c30;--moon:#f6efd8;--ivory:#ece7d8;--body-text:#cfcfe0;--glow:#1a1c33;--chakra-col:#27ae60;}}
+@supports not(color:oklch(0% 0 0)){:root{--ink:#0d0e18;--panel:#1a1c30;--moon:#f6efd8;--ivory:#ece7d8;--body-text:#cfcfe0;--glow:#1a1c33;--chakra-col:#A08000;--chakra-hex:#A08000;--chakra-soft:rgba(160,128,0,0.12);}}
 *{box-sizing:border-box;margin:0;}
 html{background:var(--ink);color:var(--ivory);font-family:var(--sans);scroll-behavior:smooth;}
 .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1rem,4vw,3rem);}
@@ -61,24 +63,23 @@ button{cursor:pointer;font-family:inherit;}
 .barnav{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;}
 .barnav a{font-size:.88rem;color:var(--muted);transition:color var(--dur);}
 .barnav a:hover{color:var(--moon);}
-.prev-link,.next-link{color:var(--chakra-col) !important;}
-@media(max-width:600px){.barnav{gap:.75rem;}.barnav a{font-size:.78rem;}}
+.next-link{color:var(--chakra-col) !important;}
 
 /* HERO */
-.hero{min-height:92vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:var(--s-7);padding-block:var(--s-7);background:radial-gradient(ellipse 70% 50% at 50% 30%,oklch(0.30 0.12 145) 0%,oklch(0.16 0.03 275) 70%);}
+.hero{min-height:90vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:var(--s-7);padding-block:var(--s-7);background:radial-gradient(ellipse 70% 55% at 50% 35%,oklch(0.35 0.14 88) 0%,oklch(0.16 0.03 275) 70%);}
 .hero-lead{font-family:var(--serif);font-style:italic;font-size:var(--fs-lead);color:var(--ivory);margin-top:var(--s-5);margin-bottom:var(--s-6);line-height:1.5;max-width:52ch;}
 .hero-ctas{display:flex;gap:var(--s-4);flex-wrap:wrap;}
-.cta-primary{background:var(--chakra-col);color:var(--moon);padding:.85rem 1.75rem;border-radius:var(--r-pill);font-weight:600;font-size:.95rem;border:none;transition:opacity var(--dur),transform var(--dur);text-decoration:none;display:inline-block;}
-.cta-primary:hover{opacity:.88;transform:translateY(-1px);}
+.cta-primary{background:var(--chakra-col);color:#0a0800;padding:.85rem 1.75rem;border-radius:var(--r-pill);font-weight:600;font-size:.95rem;border:none;transition:opacity var(--dur),transform var(--dur);text-decoration:none;display:inline-block;}
+.cta-primary:hover{opacity:.85;transform:translateY(-1px);}
 .cta-ghost{border:1px solid var(--line);color:var(--muted);padding:.85rem 1.75rem;border-radius:var(--r-pill);font-size:.95rem;transition:border-color var(--dur),color var(--dur);text-decoration:none;display:inline-block;}
 .cta-ghost:hover{border-color:var(--chakra-col);color:var(--moon);}
 .hero-visual{display:flex;justify-content:center;align-items:center;}
-.chakra-lotus{width:min(340px,90vw);height:auto;filter:drop-shadow(0 0 40px oklch(0.65 0.18 145 / 0.4));}
-.chakra-lotus:hover{animation:lotus-spin 20s linear infinite;}
+.chakra-lotus{width:min(320px,90vw);height:auto;filter:drop-shadow(0 0 40px oklch(0.72 0.18 88 / 0.5));}
+.chakra-lotus:hover{animation:lotus-spin 25s linear infinite;}
 @keyframes lotus-spin{to{transform:rotate(360deg);}}
-.lotus-center-ring{animation:pulse-center 3.5s ease-in-out infinite;}
-@keyframes pulse-center{0%,100%{opacity:1;}50%{opacity:.75;}}
-@media(max-width:760px){.hero{grid-template-columns:1fr;min-height:auto;}.hero-visual{order:-1;}.chakra-lotus{width:200px;}}
+.fire-pulse{animation:fire-breathe 3.2s ease-in-out infinite;}
+@keyframes fire-breathe{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.8;transform:scale(0.96);}}
+@media(max-width:760px){.hero{grid-template-columns:1fr;min-height:auto;}.hero-visual{order:-1;}.chakra-lotus{width:180px;}}
 
 /* TABS */
 .tab-rail{display:flex;gap:0;border-bottom:1px solid var(--line);margin-bottom:var(--s-6);}
@@ -86,11 +87,7 @@ button{cursor:pointer;font-family:inherit;}
 .tab-btn[aria-selected="true"]{color:var(--moon);border-bottom-color:var(--chakra-col);}
 .tab-panel[hidden]{display:none;}
 
-/* ANTELOPE SECTION */
-.guardian-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-7);align-items:start;}
-@media(max-width:760px){.guardian-grid{grid-template-columns:1fr;}}
-
-/* BODY SECTION */
+/* ANATOMY */
 .anatomy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--s-4);margin-bottom:var(--s-6);}
 .anat-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-5);}
 .anat-label{font-size:var(--fs-eyebrow);letter-spacing:.25em;text-transform:uppercase;color:var(--chakra-col);margin-bottom:.4rem;}
@@ -104,15 +101,11 @@ details summary::after{content:"＋";color:var(--chakra-col);font-size:1.2rem;}
 details[open] summary::after{content:"－";}
 details p{padding:.75rem 0;font-size:.95rem;}
 
-/* HEARTMATH HIGHLIGHT */
-.heartmath-highlight{background:linear-gradient(135deg,oklch(0.22 0.06 145),oklch(0.18 0.04 275));border:1px solid var(--chakra-col);border-radius:var(--r-2);padding:var(--s-6);margin:var(--s-6) 0;}
-.heartmath-stat{font-family:var(--serif);font-size:2rem;color:var(--chakra-col);margin-bottom:.25rem;}
-
-/* MIND SECTION */
+/* MIND */
 .mind-selector{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:var(--s-6);}
 .mind-pill{background:none;border:1px solid var(--line);border-radius:var(--r-pill);padding:.5rem 1.25rem;color:var(--muted);font-size:.88rem;transition:all var(--dur);}
-.mind-pill.active{background:var(--chakra-col);border-color:var(--chakra-col);color:var(--moon);}
-.mind-panels{position:relative;min-height:180px;}
+.mind-pill.active{background:var(--chakra-col);border-color:var(--chakra-col);color:#0a0800;}
+.mind-panels{position:relative;min-height:160px;}
 .mind-panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-6);transition:opacity var(--dur) var(--ease-out),transform var(--dur) var(--ease-out);}
 .mind-panel.hidden{opacity:0;transform:translateY(8px);pointer-events:none;position:absolute;top:0;left:0;right:0;}
 .mind-panel h3{margin-bottom:.75rem;}
@@ -120,10 +113,10 @@ details p{padding:.75rem 0;font-size:.95rem;}
 .mind-panel li{padding-left:1.5rem;position:relative;font-size:.95rem;color:var(--body-text);line-height:1.6;}
 .mind-panel li::before{content:"—";position:absolute;left:0;color:var(--chakra-col);}
 
-/* PRACTICE SECTION */
+/* PRACTICE */
 .mantra-circle{display:flex;justify-content:center;margin-bottom:var(--s-6);}
-.mantra-ring{width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,oklch(0.22 0.07 145) 0%,oklch(0.16 0.04 145) 60%);border:2px solid var(--chakra-col);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 60px oklch(0.65 0.18 145 / 0.3);animation:mantra-pulse 4s ease-in-out infinite;}
-@keyframes mantra-pulse{0%,100%{box-shadow:0 0 60px oklch(0.65 0.18 145 / 0.3);}50%{box-shadow:0 0 80px oklch(0.65 0.18 145 / 0.5);}}
+.mantra-ring{width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,oklch(0.28 0.10 88) 0%,oklch(0.16 0.04 88) 60%);border:2px solid var(--chakra-col);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 60px oklch(0.72 0.18 88 / 0.35);animation:mantra-pulse 3.5s ease-in-out infinite;}
+@keyframes mantra-pulse{0%,100%{box-shadow:0 0 60px oklch(0.72 0.18 88 / 0.35);}50%{box-shadow:0 0 100px oklch(0.72 0.18 88 / 0.6),0 0 40px oklch(0.72 0.18 88 / 0.2);}}
 .mantra-word{font-family:var(--serif);font-size:2.8rem;color:var(--chakra-col);line-height:1;}
 .mantra-sub{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:.4rem;}
 .poses-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--s-5);margin-bottom:var(--s-7);}
@@ -137,22 +130,34 @@ details p{padding:.75rem 0;font-size:.95rem;}
 .pose-card li::before{content:"·";position:absolute;left:0;color:var(--chakra-col);}
 .mudra-box{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-6);margin-bottom:var(--s-6);}
 .mudra-box h3{margin-bottom:.5rem;}
-.coherent-steps{list-style:none;padding:0;display:flex;flex-direction:column;gap:.75rem;}
-.coherent-steps li{display:flex;gap:1rem;align-items:flex-start;font-size:.92rem;color:var(--body-text);line-height:1.6;}
-.coherent-steps .step-n{min-width:2.5rem;height:2.5rem;border-radius:50%;background:var(--chakra-col);color:var(--moon);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600;flex-shrink:0;}
+.kapala-steps{counter-reset:kapala;list-style:none;padding:0;display:flex;flex-direction:column;gap:.75rem;}
+.kapala-steps li{counter-increment:kapala;display:flex;gap:1rem;align-items:flex-start;font-size:.92rem;color:var(--body-text);line-height:1.6;}
+.kapala-steps li::before{content:counter(kapala);min-width:2rem;height:2rem;border-radius:50%;background:var(--chakra-col);color:#0a0800;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600;flex-shrink:0;}
 
-/* PROFILE SECTION */
+/* COUNTER */
+.counter-ring{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-6);margin-top:var(--s-6);}
+.counter-ring h3{margin-bottom:var(--s-4);}
+.count-display{font-family:var(--serif);font-size:5rem;color:var(--chakra-col);line-height:1;text-align:center;letter-spacing:-.02em;}
+.count-label{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:center;margin-top:.25rem;margin-bottom:var(--s-4);}
+.count-row{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;}
+.count-btn{background:none;border:1px solid var(--line);border-radius:var(--r-pill);padding:.7rem 1.5rem;color:var(--muted);font-size:.88rem;transition:all var(--dur);}
+.count-btn.primary{background:var(--chakra-col);border-color:var(--chakra-col);color:#0a0800;font-weight:600;}
+.count-btn:hover{border-color:var(--chakra-col);color:var(--chakra-col);}
+.count-btn.primary:hover{opacity:.85;}
+.count-progress{width:100%;height:4px;background:var(--line);border-radius:2px;overflow:hidden;margin-bottom:var(--s-4);}
+.count-bar{height:100%;background:var(--chakra-col);transition:width .5s var(--ease-out);}
+
+/* PROFILE */
 .profile-finder{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-6);}
-.profile-finder input{width:100%;background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r-1);padding:.75rem 1rem;color:var(--moon);font-size:1rem;margin-bottom:var(--s-4);outline:none;transition:border-color var(--dur);}
+.profile-finder input{width:100%;background:oklch(0.20 0.035 275);border:1px solid var(--line);border-radius:var(--r-1);padding:.75rem 1rem;color:var(--moon);font-size:1rem;margin-bottom:var(--s-4);outline:none;transition:border-color var(--dur);}
 .profile-finder input:focus{border-color:var(--chakra-col);}
 .profile-finder input::placeholder{color:var(--faint);}
-.find-btn{background:var(--chakra-col);color:var(--moon);border:none;border-radius:var(--r-pill);padding:.85rem 2rem;font-size:.95rem;font-weight:600;transition:opacity var(--dur);}
+.find-btn{background:var(--chakra-col);color:#0a0800;border:none;border-radius:var(--r-pill);padding:.85rem 2rem;font-size:.95rem;font-weight:600;transition:opacity var(--dur);}
 .find-btn:hover{opacity:.85;}
 .profile-card{background:var(--panel-2);border:1px solid var(--chakra-col);border-radius:var(--r-2);padding:var(--s-6);margin-top:var(--s-5);}
 .pc-label{font-family:var(--serif);font-size:1.3rem;color:var(--chakra-col);margin-bottom:.5rem;}
 .pc-strength{color:var(--moon);margin-bottom:.75rem;}
 .pc-msg{color:var(--body-text);font-size:.95rem;line-height:1.65;}
-.pc-link{display:inline-block;margin-top:var(--s-4);color:var(--chakra-col);font-size:.9rem;}
 
 /* TRADITION */
 .tradition-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--s-5);}
@@ -161,7 +166,7 @@ details p{padding:.75rem 0;font-size:.95rem;}
 .trad-card h3{margin-bottom:.75rem;}
 .trad-card p{font-size:.92rem;line-height:1.7;}
 
-/* BRIDGE CARDS */
+/* BRIDGE */
 .bridges{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--s-5);margin-top:var(--s-7);}
 .bcard{display:block;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-6);text-decoration:none;color:inherit;transition:border-color var(--dur) var(--ease-out),transform var(--dur);}
 .bcard:hover{border-color:var(--chakra-col);transform:translateY(-2px);}
@@ -177,6 +182,29 @@ details p{padding:.75rem 0;font-size:.95rem;}
 .qf{display:flex;flex-direction:column;gap:.2rem;}
 .qf-l{font-size:var(--fs-eyebrow);letter-spacing:.25em;text-transform:uppercase;color:var(--chakra-col);}
 .qf-v{font-family:var(--serif);font-size:1.1rem;color:var(--moon);}
+
+/* ANIMAL */
+.animal-portrait{width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,oklch(0.30 0.12 88),oklch(0.18 0.05 88));border:2px solid var(--chakra-col);display:flex;align-items:center;justify-content:center;font-size:3rem;margin:0 auto var(--s-5);box-shadow:0 0 50px oklch(0.72 0.18 88 / 0.25);}
+
+/* TOAST */
+.toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(80px);background:var(--panel-2,oklch(0.30 0.045 272));border:1px solid var(--chakra-col);border-radius:var(--r-pill);padding:.75rem 1.5rem;font-size:.85rem;font-weight:500;color:var(--ivory);box-shadow:var(--e-2);transition:transform var(--dur) var(--ease-out);z-index:9000;white-space:nowrap;}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+/* SHARE */
+.share-row{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-top:var(--s-5);}
+.share-btn{display:flex;align-items:center;gap:.4rem;padding:.65rem 1.25rem;background:transparent;border:1px solid var(--line);border-radius:var(--r-pill);color:var(--muted);font-size:.85rem;font-weight:500;cursor:pointer;transition:all 180ms;}
+.share-btn:hover{border-color:var(--chakra-col);color:var(--chakra-col);}
+
+/* FIRE VIZ */
+.fire-bars{display:flex;align-items:flex-end;justify-content:center;gap:6px;height:80px;margin:var(--s-5) 0;}
+.fire-bar{width:12px;border-radius:6px 6px 0 0;background:linear-gradient(to top,var(--chakra-col),oklch(0.80 0.15 65));animation:fire-bar 1.8s ease-in-out infinite;}
+.fire-bar:nth-child(2){animation-delay:.2s;}
+.fire-bar:nth-child(3){animation-delay:.1s;height:120%;}
+.fire-bar:nth-child(4){animation-delay:.3s;}
+.fire-bar:nth-child(5){animation-delay:.15s;height:130%;}
+.fire-bar:nth-child(6){animation-delay:.25s;}
+.fire-bar:nth-child(7){animation-delay:.05s;height:110%;}
+@keyframes fire-bar{0%,100%{transform:scaleY(0.7);opacity:0.8;}50%{transform:scaleY(1.1);opacity:1;}}
 </style>
 <!--pn-css:start-->
 <link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
@@ -264,534 +292,588 @@ details p{padding:.75rem 0;font-size:.95rem;}
 <!--pn-static:end-->
 <a id="pn-main" tabindex="-1"></a>
 
-<!-- STICKY NAV -->
+<!-- NAV -->
 
 <!-- HERO -->
 <section class="hero">
   <div class="wrap" style="display:contents;">
     <div class="hero-text" style="padding-inline:clamp(1rem,4vw,3rem);">
-      <p class="eyebrow">04 · Anahata · अनाहत</p>
-      <h1>The unstruck sound.<br>Love that asks for nothing back.</h1>
-      <p class="hero-lead">Anahata means "unstruck" — the sound that arises without two things striking together. This is the love that needs no reason.</p>
+      <p class="eyebrow">03 · Manipura · मणिपूर</p>
+      <h1>The fire that knows what it wants.</h1>
+      <p class="hero-lead">Manipura is the city of jewels — the place where your will burns clean, where shame is transmuted into power, and where you stop asking permission to exist.</p>
       <div class="hero-ctas">
-        <a href="#practice" class="cta-primary">Find my heart practice</a>
+        <a href="#practice" class="cta-primary">Start my RAM practice</a>
         <a href="/chakras/" class="cta-ghost">← All chakras</a>
       </div>
     </div>
     <div class="hero-visual">
-      <!-- 12-petal lotus in green -->
-      <svg class="chakra-lotus" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" aria-label="Anahata — twelve-petal lotus">
+      <!-- Manipura lotus: 10 petals, golden yellow -->
+      <svg class="chakra-lotus" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Manipura — ten-petal lotus with central RAM mantra">
         <defs>
-          <radialGradient id="petal-g-a" cx="50%" cy="30%" r="60%">
-            <stop offset="0%" stop-color="oklch(0.75 0.18 145)"/>
-            <stop offset="100%" stop-color="oklch(0.45 0.15 145)" stop-opacity="0.5"/>
+          <radialGradient id="mp-pg" cx="50%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="oklch(0.85 0.18 85)"/>
+            <stop offset="100%" stop-color="oklch(0.55 0.16 85)" stop-opacity="0.5"/>
           </radialGradient>
-          <radialGradient id="petal-g-b" cx="50%" cy="30%" r="60%">
-            <stop offset="0%" stop-color="#48c774"/>
-            <stop offset="100%" stop-color="#1a6b35" stop-opacity="0.5"/>
-          </radialGradient>
-          <filter id="lg-a" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="9"/>
+          <filter id="mp-lg" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="12"/>
           </filter>
         </defs>
-        <!-- Glow -->
-        <ellipse cx="110" cy="110" rx="65" ry="65" fill="oklch(0.65 0.18 145)" opacity="0.18" filter="url(#lg-a)"/>
-        <ellipse cx="110" cy="110" rx="65" ry="65" fill="#27ae60" opacity="0.10" filter="url(#lg-a)"/>
-        <!-- 12 petals at 30-degree intervals -->
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-a)" transform="rotate(0 110 110)" opacity="0.80"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-b)" transform="rotate(30 110 110)" opacity="0.75"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-a)" transform="rotate(60 110 110)" opacity="0.80"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-b)" transform="rotate(90 110 110)" opacity="0.75"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-a)" transform="rotate(120 110 110)" opacity="0.80"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-b)" transform="rotate(150 110 110)" opacity="0.75"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-a)" transform="rotate(180 110 110)" opacity="0.80"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-b)" transform="rotate(210 110 110)" opacity="0.75"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-a)" transform="rotate(240 110 110)" opacity="0.80"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-b)" transform="rotate(270 110 110)" opacity="0.75"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-a)" transform="rotate(300 110 110)" opacity="0.80"/>
-        <ellipse cx="110" cy="76" rx="14" ry="36" fill="url(#petal-g-b)" transform="rotate(330 110 110)" opacity="0.75"/>
-        <!-- Star of David (two interlocking triangles) -->
-        <polygon points="110,80 132,118 88,118" fill="none" stroke="oklch(0.65 0.18 145)" stroke-width="1.5" opacity="0.5"/>
-        <polygon points="110,80 132,118 88,118" fill="none" stroke="#27ae60" stroke-width="1.5" opacity="0.35"/>
-        <polygon points="110,140 88,102 132,102" fill="none" stroke="oklch(0.65 0.18 145)" stroke-width="1.5" opacity="0.5"/>
-        <polygon points="110,140 88,102 132,102" fill="none" stroke="#27ae60" stroke-width="1.5" opacity="0.35"/>
-        <!-- Center -->
-        <circle class="lotus-center-ring" cx="110" cy="110" r="26" fill="oklch(0.20 0.05 275)" stroke="oklch(0.65 0.18 145)" stroke-width="2"/>
-        <circle cx="110" cy="110" r="26" fill="#161a28" stroke="#27ae60" stroke-width="2" opacity="0.5"/>
-        <text x="110" y="117" font-family="Georgia,serif" font-size="18" fill="oklch(0.65 0.18 145)" text-anchor="middle" font-weight="bold">YAM</text>
-        <text x="110" y="117" font-family="Georgia,serif" font-size="18" fill="#27ae60" text-anchor="middle" font-weight="bold" opacity="0.6">YAM</text>
-        <!-- Sanskrit -->
-        <text x="110" y="182" font-family="Georgia,serif" font-size="13" fill="oklch(0.65 0.18 145)" text-anchor="middle" opacity="0.7">अनाहत</text>
+        <!-- Outer glow -->
+        <ellipse cx="100" cy="100" rx="65" ry="65" fill="oklch(0.72 0.18 88)" opacity="0.22" filter="url(#mp-lg)"/>
+        <!-- 10 petals: 360/10 = 36 degrees each -->
+        <g class="fire-pulse">
+          <ellipse cx="100" cy="52" rx="14" ry="36" fill="url(#mp-pg)" opacity="0.88" transform="rotate(0 100 100)"/>
+          <ellipse cx="100" cy="52" rx="14" ry="36" fill="url(#mp-pg)" opacity="0.85" transform="rotate(36 100 100)"/>
+          <ellipse cx="100" cy="52" rx="14" ry="36" fill="url(#mp-pg)" opacity="0.82" transform="rotate(72 100 100)"/>
+          <ellipse cx="100" cy="52" rx="14" ry="36" fill="url(#mp-pg)" opacity="0.80" transform="rotate(108 100 100)"/>
+          <ellipse cx="100" cy="52" rx="14" ry="36" fill="url(#mp-pg)" opacity="0.85" transform="rotate(144 100 100)"/>
+          <ellipse cx="100" cy="52" rx="14" ry="36" fill="url(#mp-pg)" opacity="0.88" transform="rotate(180 100 100)"/>
+          <ellipse cx="100" cy="52" rx="14" ry="36" fill="url(#mp-pg)" opacity="0.85" transform="rotate(216 100 100)"/>
+          <ellipse cx="100" cy="52" rx="14" ry="36" fill="url(#mp-pg)" opacity="0.82" transform="rotate(252 100 100)"/>
+          <ellipse cx="100" cy="52" rx="14" ry="36" fill="url(#mp-pg)" opacity="0.80" transform="rotate(288 100 100)"/>
+          <ellipse cx="100" cy="52" rx="14" ry="36" fill="url(#mp-pg)" opacity="0.85" transform="rotate(324 100 100)"/>
+        </g>
+        <!-- Downward triangle — fire symbol -->
+        <polygon points="100,72 122,115 78,115" fill="none" stroke="oklch(0.72 0.18 88)" stroke-width="1.5" opacity="0.5"/>
+        <!-- Inner circle -->
+        <circle cx="100" cy="100" r="26" fill="oklch(0.18 0.05 88)"/>
+        <!-- RAM in Devanagari -->
+        <text x="100" y="112" font-family="Georgia,serif" font-size="24" fill="oklch(0.85 0.18 85)" text-anchor="middle" class="fire-pulse">रं</text>
+        <!-- Sanskrit below -->
+        <text x="100" y="174" font-family="Georgia,serif" font-size="12" fill="oklch(0.72 0.18 88)" text-anchor="middle" opacity="0.7">मणिपूर</text>
       </svg>
     </div>
   </div>
 </section>
 
-<!-- QUICK FACTS BAR -->
+<!-- QUICK FACTS -->
 <div class="section-alt section-border-top">
   <div class="wrap" style="padding-block:var(--s-5);">
     <div class="qf-row">
-      <div class="qf"><span class="qf-l">Sanskrit</span><span class="qf-v">Anahata</span></div>
-      <div class="qf"><span class="qf-l">Meaning</span><span class="qf-v">Unstruck</span></div>
-      <div class="qf"><span class="qf-l">Element</span><span class="qf-v">Air (Vayu)</span></div>
-      <div class="qf"><span class="qf-l">Bija mantra</span><span class="qf-v">YAM</span></div>
-      <div class="qf"><span class="qf-l">Petals</span><span class="qf-v">12</span></div>
-      <div class="qf"><span class="qf-l">Color</span><span class="qf-v">Green / Pink</span></div>
-      <div class="qf"><span class="qf-l">Note</span><span class="qf-v">F</span></div>
-      <div class="qf"><span class="qf-l">Gland</span><span class="qf-v">Thymus</span></div>
-      <div class="qf"><span class="qf-l">Sense</span><span class="qf-v">Touch</span></div>
+      <div class="qf"><span class="qf-l">Sanskrit</span><span class="qf-v">Manipura</span></div>
+      <div class="qf"><span class="qf-l">Meaning</span><span class="qf-v">City of Jewels</span></div>
+      <div class="qf"><span class="qf-l">Element</span><span class="qf-v">Fire (Agni)</span></div>
+      <div class="qf"><span class="qf-l">Bija mantra</span><span class="qf-v">RAM</span></div>
+      <div class="qf"><span class="qf-l">Petals</span><span class="qf-v">10</span></div>
+      <div class="qf"><span class="qf-l">Color</span><span class="qf-v">Golden yellow</span></div>
+      <div class="qf"><span class="qf-l">Note</span><span class="qf-v">E</span></div>
+      <div class="qf"><span class="qf-l">Gland</span><span class="qf-v">Pancreas</span></div>
+      <div class="qf"><span class="qf-l">Sense</span><span class="qf-v">Sight</span></div>
     </div>
   </div>
 </div>
 
-<!-- SECTION 1: THE CLASSICAL ANIMAL -->
+<!-- SECTION 1: THE ANIMAL -->
 <section class="band section-border-top">
   <div class="wrap">
     <p class="eyebrow">The guardian</p>
-    <h2>The Black Antelope — Krishna Mrga</h2>
-    <div class="guardian-grid">
+    <h2>Mesha — the Ram of Agni</h2>
+
+    <div class="animal-portrait" aria-hidden="true">🐏</div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s-7);align-items:start;">
       <div>
-        <p style="margin-bottom:var(--s-4);">The Heart chakra's classical guardian is neither powerful nor fierce. It is the Black Antelope — Krishna Mrga in Sanskrit — the most graceful and acutely sensitive animal of the Indian subcontinent. It is the vehicle of Vayu, the wind god, because the heart is moved by the wind: by what cannot be seen but can be felt.</p>
-        <p style="margin-bottom:var(--s-4);">The antelope moves like breath itself. Every movement is a response to something in the air — a shift in temperature, a vibration in the grass, the approach of another creature long before it becomes visible. This is empathic attunement, which is Anahata's primary gift: the capacity to sense what's present in another person's field before the mind has named it, before words have arrived.</p>
-        <p style="margin-bottom:var(--s-4);">Its blackness is paradoxical. The tradition is not describing absence. It is describing depth — the dark space through which love's light becomes visible. The night sky through which stars are seen. The silence through which music is heard. Without that depth, without that darkness, the love cannot stand out from the background of ordinary sensation.</p>
-        <p>The antelope's ears are its most remarkable feature: tuned to frequencies below human detection, responsive to the faintest vibration carried on the air. The Heart chakra's sense organ is touch — not the gross touch of skin-to-skin contact, but the subtle touch of field-to-field: the ability to feel what another person carries in their energetic field. The antelope lives this capacity entirely.</p>
+        <p style="font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--ivory);margin-bottom:var(--s-4);">The Ram of Agni (fire) stands at the gate of Manipura. He does not ask for permission. He lowers his head and moves forward.</p>
+        <p style="margin-bottom:var(--s-4);">In the Tantric iconography, Manipura is depicted as a blazing downward-pointing triangle — the symbol of fire and of the feminine creative principle — surrounded by ten golden petals. At its center stands Mesha: the ram, vehicle of Agni the fire god, and of the zodiacal Aries, the first sign.</p>
+        <p style="margin-bottom:var(--s-4);">The Ram's qualities are exactly Manipura's qualities: directness, forward motion, fearlessness, the capacity to meet resistance head-on without drama. The Ram does not negotiate with the obstacle. It moves through.</p>
+        <p>In Vedic cosmology, the Ram also appears as the vehicle of Agni in his role as Vivahana (the conveyer) — the one who carries the sacred fire across the three worlds, from the physical realm to the divine. Manipura is this conveyance: the personal will that, when purified, becomes the vehicle for divine intention.</p>
       </div>
-      <div>
-        <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-6);">
-          <p class="eyebrow" style="margin-bottom:var(--s-4);">What the antelope teaches</p>
-          <div style="display:flex;flex-direction:column;gap:var(--s-4);">
-            <div>
-              <h3 style="font-size:1rem;margin-bottom:.3rem;">Move like breath</h3>
-              <p style="font-size:.88rem;">The antelope does not force its way through the world. It responds. It reads the air and moves accordingly. The Heart chakra at its finest is responsive, not reactive — there is intelligence in the sensitivity.</p>
-            </div>
-            <div>
-              <h3 style="font-size:1rem;margin-bottom:.3rem;">Sense before seeing</h3>
-              <p style="font-size:.88rem;">The antelope detects approaching presence long before it arrives. The heart's attunement works similarly — something is felt before it can be understood. This is not mystical; it is what the HeartMath Institute has measured.</p>
-            </div>
-            <div>
-              <h3 style="font-size:1rem;margin-bottom:.3rem;">Leap over what holds you</h3>
-              <p style="font-size:.88rem;">The antelope leaps over obstacles with effortless grace — this is the heart that moves past resentment, past smallness, past accumulated grievances that close it. Not by force. By the natural motion of a being in its element.</p>
-            </div>
-            <div>
-              <h3 style="font-size:1rem;margin-bottom:.3rem;">Carried by wind</h3>
-              <p style="font-size:.88rem;">Vayu's vehicle. The heart moved by what cannot be named. The love that precedes reason. Anahata means unstruck — the sound before the cause. This animal lives in that before.</p>
-            </div>
-          </div>
+      <div style="display:flex;flex-direction:column;gap:var(--s-4);">
+        <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-5);">
+          <div style="font-size:var(--fs-eyebrow);letter-spacing:.2em;text-transform:uppercase;color:var(--chakra-col);margin-bottom:.4rem;">The teaching</div>
+          <p style="font-size:.9rem;">The Ram's horns curve back before curving forward — they are shaped like the crescent that contains the seed of the fire triangle. The teaching: power is built slowly (the long curve back) before it is expressed suddenly (the forward thrust). Patience is not weakness; it is Manipura maturing.</p>
+        </div>
+        <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-5);">
+          <div style="font-size:var(--fs-eyebrow);letter-spacing:.2em;text-transform:uppercase;color:var(--chakra-col);margin-bottom:.4rem;">The fire triad</div>
+          <p style="font-size:.9rem;">Agni (the divine fire) has three aspects: the terrestrial fire of the hearth (Manipura), the lightning fire of the atmosphere (Heart/Anahata), and the celestial fire of the sun (Crown/Sahasrara). The Ram rules the first — the home fire, the will, the practical power that makes everything else possible.</p>
+        </div>
+        <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-5);">
+          <div style="font-size:var(--fs-eyebrow);letter-spacing:.2em;text-transform:uppercase;color:var(--chakra-col);margin-bottom:.4rem;">Mesha in Jyotish</div>
+          <p style="font-size:.9rem;">In Vedic astrology, Mesha (Aries) is ruled by Mars — planet of action, courage, and directed energy. The Ram's energy is neither gentle nor accommodating. It is clear, hot, and committed. Manipura asks: where are you not being clear? Where are you accommodating when you should be committing?</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- SECTION 2: ELEMENT CONNECTION -->
-<section class="band section-alt section-border-top">
-  <div class="wrap">
-    <p class="eyebrow">Wu Xing bridge</p>
-    <h2>Wood, Fire, and Metal — three paths to the Heart</h2>
-    <div class="tab-rail" role="tablist" aria-label="Element tabs">
-      <button class="tab-btn" role="tab" aria-selected="true" aria-controls="el-wood" id="btn-el-wood">Wood Element</button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="el-fire" id="btn-el-fire">Fire Element</button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="el-metal" id="btn-el-metal">Metal Element</button>
-    </div>
-    <div id="el-wood" class="tab-panel" role="tabpanel" aria-labelledby="btn-el-wood">
-      <p style="margin-bottom:var(--s-4);">Wood energy — the first green force of spring, bending but unbreakable, pushing upward toward light — is the elemental quality of Anahata at its most vital. Wood moves upward; the heart opens upward. Wood is the element of growth, vision, and the courage to begin again after winter. The Heart chakra in its most natural state has exactly this quality: not sentimental, not fragile, but relentlessly oriented toward life.</p>
-      <p style="margin-bottom:var(--s-4);">Wood-element Zodi Animals — Tiger, Rabbit, plus all Wood-year animals (born in years ending in 4 or 5) — have the Heart as their primary chakra home. The liver is Wood element's organ in Traditional Chinese Medicine, and this is where the Wood-Heart connection is most practically visible: the liver stores unexpressed anger. When anger is suppressed rather than metabolized, it becomes resentment — the specific emotion that closes the Heart.</p>
-      <p>When anger is fully felt and expressed appropriately, it transforms into the Wood element at its finest: clear vision, decisive compassionate action, the willingness to protect what matters. The Wood-element Zodi Animal's heart work often begins precisely here — not with love, but with anger allowed to move.</p>
-    </div>
-    <div id="el-fire" class="tab-panel" role="tabpanel" aria-labelledby="btn-el-fire" hidden>
-      <p style="margin-bottom:var(--s-4);">Fire element — heat, light, expansion, the irresistible desire to connect and to be seen — opens Anahata from a different direction than Wood. Where Wood's heart grows structurally (like a tree, incrementally, toward light), Fire's heart blazes: sudden, warming, infectious, the kind of love that changes the temperature of a room simply by entering.</p>
-      <p style="margin-bottom:var(--s-4);">Fire-element animals (Horse, Snake, plus Fire-year animals born in years ending in 6 or 7) have heart-opening as their primary gift and their primary vulnerability simultaneously. The gift is the warmth they carry — Fire animals are often the ones people turn toward in cold times, the ones whose presence is itself nourishing. The vulnerability is the same quality: the fire that warms can also consume, and Fire animals may find their heart so open that it burns itself in others' needs.</p>
-      <p>Fire element's Heart chakra work is often about learning to receive, not only to give. The small intestine is Fire's secondary organ in TCM — its function is discernment: what nourishes and what should be released. This is the Heart's discernment work: the love that can be received versus what should pass through.</p>
-    </div>
-    <div id="el-metal" class="tab-panel" role="tabpanel" aria-labelledby="btn-el-metal" hidden>
-      <p style="margin-bottom:var(--s-4);">Metal element's relationship to the Heart is the most counterintuitive and perhaps the most profound. Metal's primary emotion is grief — and grief is love with nowhere to go. When Metal animals (Monkey, Rooster, plus Metal-year animals born in years ending in 0 or 1) do heart work, it almost always begins with loss: the sorrow of what was loved and is now gone, the beauty of what mattered and no longer can be held.</p>
-      <p style="margin-bottom:var(--s-4);">Metal's organ is the Lung — breath itself. The lung governs letting go. Every exhalation is a small release, a small death of this breath, making room for the next. Metal's heart work is the practice of this quality at a larger scale: releasing what was, so that the heart is not full of things that no longer live there. The chest that holds old grief cannot open to new love — the structures are competing for the same space.</p>
-      <p>Metal energy refines. At its highest, Metal does not destroy love — it clarifies it. The grief work of Metal animals often produces a quality of love that is sharper, cleaner, more precise than the love of those who have not lost as deeply. The metal that has been through the fire is the strongest and the purest. This is not consolation; it is an accurate description of what happens when loss is metabolized rather than avoided.</p>
+    <div class="fire-bars" aria-hidden="true">
+      <div class="fire-bar" style="height:50px;"></div>
+      <div class="fire-bar" style="height:65px;"></div>
+      <div class="fire-bar" style="height:80px;"></div>
+      <div class="fire-bar" style="height:70px;"></div>
+      <div class="fire-bar" style="height:85px;"></div>
+      <div class="fire-bar" style="height:60px;"></div>
+      <div class="fire-bar" style="height:75px;"></div>
     </div>
   </div>
 </section>
 
-<!-- SECTION 3: THE BODY -->
-<section class="band section-border-top">
+<!-- WU XING -->
+<section class="band section-border-top section-alt">
   <div class="wrap">
-    <p class="eyebrow">In the body</p>
-    <h2>Anatomy, science, and signs</h2>
-    <div class="tab-rail" role="tablist" aria-label="Body tabs">
-      <button class="tab-btn" role="tab" aria-selected="true" aria-controls="body-anatomy" id="btn-anatomy">Anatomy</button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="body-science" id="btn-science">Science</button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="body-signs" id="btn-signs">Signs</button>
+    <p class="eyebrow">Wu Xing Connection</p>
+    <h2>Wood feeds the fire · Fire needs Wood</h2>
+    <p style="max-width:66ch;margin-bottom:var(--s-6);">Manipura is the meeting point of Wood and Fire in the Wu Xing system — the two most directional, most driven, most action-oriented elements. Together they define the Solar Plexus' core teaching: creative vision (Wood) plus combustive will (Fire) = transformation.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s-6);margin-bottom:var(--s-6);">
+      <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-6);border-top:3px solid #206040">
+        <div style="font-size:var(--fs-eyebrow);letter-spacing:.2em;text-transform:uppercase;color:#40a070;margin-bottom:.5rem;">Wood · 木 · Mù</div>
+        <h3 style="margin-bottom:.75rem;">The fuel of Manipura</h3>
+        <p style="font-size:.9rem;margin-bottom:.75rem;">Wood element (Tiger, Rabbit) feeds Fire — literally and metaphorically. In the Five-Phase cycle, Wood generates Fire. The Wood person's visionary reach and forward-growing nature is the fuel that ignites Manipura's potential. Wood years build the will slowly; Fire years burn it bright.</p>
+        <div style="background:oklch(0.20 0.035 275);border-radius:var(--r-1);padding:.75rem;font-size:.85rem;color:var(--muted);">
+          <strong style="color:var(--moon);">Wood animals:</strong> Tiger, Rabbit — natural achievers who must learn that ambition without self-respect burns out. Their Manipura challenge: owning their accomplishments without immediately deflecting.
+        </div>
+      </div>
+      <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-6);border-top:3px solid #a04020">
+        <div style="font-size:var(--fs-eyebrow);letter-spacing:.2em;text-transform:uppercase;color:#c06040;margin-bottom:.5rem;">Fire · 火 · Huǒ</div>
+        <h3 style="margin-bottom:.75rem;">Manipura's native element</h3>
+        <p style="font-size:.9rem;margin-bottom:.75rem;">Fire element (Horse, Snake) is at home in Manipura — this is their natural chakra terrain. The Horse's explosive confidence and the Snake's burning intensity both express the Solar Plexus at full power. The challenge for Fire animals is control: Manipura's fire must be directed, not scattered.</p>
+        <div style="background:oklch(0.20 0.035 275);border-radius:var(--r-1);padding:.75rem;font-size:.85rem;color:var(--muted);">
+          <strong style="color:var(--moon);">Fire animals:</strong> Horse, Snake — natural Manipura natives. Their growth edge: learning that genuine power doesn't need to perform itself. Quieter confidence, not louder expression.
+        </div>
+      </div>
     </div>
 
-    <div id="body-anatomy" class="tab-panel" role="tabpanel" aria-labelledby="btn-anatomy">
+    <div style="background:var(--panel);border-left:3px solid var(--chakra-col);border-radius:0 var(--r-1) var(--r-1) 0;padding:var(--s-5);">
+      <p style="font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--ivory);">The 144 Zodi Animals: every animal has a Manipura story — whether it's their home chakra or their development edge. The Tiger who never claims credit. The Rabbit who apologizes before making requests. The Dragon who mistakes dominance for power. All of these are Manipura patterns seeking resolution.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TABS -->
+<section id="tabs" class="band section-border-top">
+  <div class="wrap">
+    <div class="tab-rail" role="tablist" aria-label="Manipura detail tabs">
+      <button class="tab-btn" role="tab" aria-selected="true" aria-controls="tab-body" id="btn-body" onclick="switchTab('body')">Body</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-mind" id="btn-mind" onclick="switchTab('mind')">Mind</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-practice" id="btn-practice" onclick="switchTab('practice')">Practice</button>
+    </div>
+
+    <!-- BODY TAB -->
+    <div id="tab-body" class="tab-panel" role="tabpanel" aria-labelledby="btn-body">
+      <p class="eyebrow">Anatomy</p>
+      <h2>The body's fire center</h2>
       <div class="anatomy-grid">
         <div class="anat-card">
-          <p class="anat-label">Location</p>
-          <p class="anat-value">Cardiac plexus</p>
-          <p class="anat-desc">Center of the chest: sternum, cardiac plexus (T1–T5), thymus gland behind the breastbone</p>
+          <div class="anat-label">Gland</div>
+          <div class="anat-value">Pancreas</div>
+          <div class="anat-desc">Governs blood sugar regulation — the body's metabolic fire. The pancreas transforms food into fuel, just as Manipura transforms experience into power.</div>
         </div>
         <div class="anat-card">
-          <p class="anat-label">Element</p>
-          <p class="anat-value">Air (Vayu)</p>
-          <p class="anat-desc">The lightest, most omnidirectional element — it moves in all directions simultaneously, as love does</p>
+          <div class="anat-label">Nerve plexus</div>
+          <div class="anat-value">Solar plexus</div>
+          <div class="anat-desc">The largest nerve plexus in the body, outside the brain and spinal cord. The "gut brain" — which is why gut feelings are real physiological events.</div>
         </div>
         <div class="anat-card">
-          <p class="anat-label">Sense organ</p>
-          <p class="anat-value">Touch</p>
-          <p class="anat-desc">Not only skin contact but field-to-field sensitivity — the felt sense of another person's emotional state</p>
+          <div class="anat-label">Physical location</div>
+          <div class="anat-value">Navel to sternum</div>
+          <div class="anat-desc">Between the navel and the base of the sternum — the soft center of the torso. This is the first place that constricts under threat, and the first that opens under confidence.</div>
         </div>
         <div class="anat-card">
-          <p class="anat-label">Gland</p>
-          <p class="anat-value">Thymus</p>
-          <p class="anat-desc">The immune system's school — matures T-cells; most active in childhood, atrophies after puberty but continues to govern immune intelligence</p>
-        </div>
-        <div class="anat-card">
-          <p class="anat-label">Nerve plexus</p>
-          <p class="anat-value">Cardiac (T1–T5)</p>
-          <p class="anat-desc">Directly innervates the heart and lungs — the bridge between voluntary and involuntary body systems</p>
-        </div>
-        <div class="anat-card">
-          <p class="anat-label">Color / Note</p>
-          <p class="anat-value">Green · F</p>
-          <p class="anat-desc">Green: the color of living tissue, of growth, of the Wood element's upward force. F: the midpoint of the body's scale</p>
+          <div class="anat-label">Organs</div>
+          <div class="anat-value">Digestive system, adrenals</div>
+          <div class="anat-desc">Stomach, liver, gallbladder, small intestine, adrenal glands. Chronic stress held at Manipura level shows up as digestive disorders, IBS, and adrenal fatigue.</div>
         </div>
       </div>
-      <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-5);">
-        <p style="font-size:.92rem;line-height:1.7;">Body systems governed by Anahata: the cardiovascular system (heart, blood, circulation), the respiratory system (lungs, bronchi, diaphragm), the immune system (via thymus), and the upper back, shoulders, arms, and hands — the body's instruments of giving and receiving. When Anahata is under strain, these are the systems that first show it: tight shoulders, constricted breathing, recurring infections, the physical posture of a closed chest.</p>
-      </div>
-    </div>
 
-    <div id="body-science" class="tab-panel" role="tabpanel" aria-labelledby="btn-science" hidden>
-      <div class="heartmath-highlight">
-        <p class="eyebrow">HeartMath Research</p>
-        <p class="heartmath-stat">5,000×</p>
-        <p style="font-size:.95rem;margin-bottom:var(--s-4);">The heart generates an electromagnetic field 5,000 times stronger than the brain's field — detectable 3 to 5 feet from the body via magnetometer. This is not metaphor. This is measured physics.</p>
-        <p style="font-size:.88rem;color:var(--muted);">When the heart is in "coherence" — the smooth, rhythmic HRV pattern produced by breathing at approximately 5–6 cycles per minute — this field becomes highly ordered. HeartMath Institute research shows that this coherent field measurably synchronizes with nearby individuals' cardiac fields. What the practitioners have always called the radiant heart is physically real. The instrument that produces it is the one beating in your chest right now.</p>
-      </div>
       <div class="sci-block">
-        <h3>The thymus and immunity</h3>
-        <p>The thymus sits directly behind the breastbone — precisely at the Anahata location. It is the immune system's educational institution: all T-cells (the adaptive immune response) are matured and educated here. The thymus is most active during childhood; it atrophies after puberty. But it continues to produce thymosin hormones that regulate immune function throughout life. The ancient observation that the heart governs protection is anatomically exact: the thymus sits at the heart center and governs the body's capacity to distinguish self from not-self — which is also love's central discernment.</p>
+        <h3>The enteric nervous system — the gut brain</h3>
+        <p>The gut contains roughly 500 million neurons — more than the spinal cord. It produces 95% of the body's serotonin. The vagus nerve connects it bidirectionally to the brain. This is not metaphor: the Solar Plexus is literally a brain. When Tantric texts call Manipura the seat of will and power, they were describing an anatomical reality that neuroscience only confirmed in the 20th century. "Gut feelings" are real. The enteric nervous system is processing and sending signals before the cortical brain is aware.</p>
       </div>
-      <div class="sci-block">
-        <h3>Mantra and the amygdala</h3>
-        <p>A 2011 fMRI study (PMC3099099) found that Sanskrit mantra chanting directly deactivates the right amygdala — the brain's threat-detection center — via subvocal vibration stimulating vagal afferents. YAM for the Heart creates measurable vagal stimulation, which reduces amygdala activity, which directly increases the capacity for love. The physiological mechanism of the Heart chakra's mantra is the same mechanism that produces the felt sense of softening, opening, and safety. The mechanism is not metaphorical — it is a vagal loop.</p>
-      </div>
-      <div class="sci-block">
-        <h3>Coherent breathing and HRV</h3>
-        <p>Heart Rate Variability (HRV) — the variation in time between heartbeats — is among the most reliable biomarkers of overall health, stress resilience, and emotional regulation. High HRV indicates a flexible, responsive autonomic nervous system. The specific protocol that produces the highest HRV coherence is 5-second inhale / 5-second exhale — exactly 6 breaths per minute. This is the HeartMath coherence protocol. It is also, functionally, what the Hatha Yoga tradition calls Ujjayi pranayama when practiced slowly. Two traditions, one physiology, identical results: the heart in coherence, its field ordered and radiating.</p>
-      </div>
-      <p style="font-size:.82rem;color:var(--faint);font-style:italic;">Intellectual honesty: no study has directly imaged a chakra as a discrete structure. The correlations between chakra locations and endocrine glands and nerve plexuses are compelling and anatomically precise but not definitively proven through controlled trials. We present both the traditional teaching and the science, honest about the difference.</p>
-    </div>
 
-    <div id="body-signs" class="tab-panel" role="tabpanel" aria-labelledby="btn-signs" hidden>
-      <details open>
-        <summary>Balanced Anahata</summary>
-        <p>You give love freely and can receive it without flinching, without the discomfort of feeling you don't deserve it or the suspicion that it will be taken away. Grief moves through you rather than settling — you can be sad without the sadness becoming a permanent resident. You have appropriate compassion for yourself that is not self-pity, and appropriate compassion for others that does not require you to fix their experience. You can be with another person's pain without needing it to stop. The chest feels spacious. Breathing comes easily. The shoulders are not armored forward. You love without losing yourself in it.</p>
-      </details>
+      <div class="sci-block">
+        <h3>Kapalabhati and autonomic control</h3>
+        <p>Kapalabhati — the "skull-shining breath" — is Manipura's primary pranayama. A 2014 clinical study (IJHS) documented that 12 weeks of Kapalabhati practice significantly improved glucose metabolism, reduced cortisol, and increased feelings of self-efficacy in participants with Type 2 diabetes. The forceful belly pumping of Kapalabhati directly massages the pancreas, liver, and solar plexus, activating the sympathetic nervous system briefly to then produce a pronounced parasympathetic rebound — relaxed alertness, confidence, and drive.</p>
+      </div>
+
       <details>
-        <summary>Underactive Anahata</summary>
-        <p>Isolation feels safer than connection — the logic of a heart that has been hurt enough times to believe that closing is a form of wisdom. Receiving love feels uncomfortable, suspicious, conditional — as if the other shoe is always about to drop. Codependency as an attempt to fill the heart through merger: the attempt to feel by proxy what can't be directly experienced. The chest feels physically closed, tight, slightly held — often accompanied by rounded shoulders, shallow breathing, and a characteristic forward curve in the upper spine. Grief is present but not moving — it has pooled. The heart is not cold; it is afraid to be warm.</p>
-      </details>
-      <details>
-        <summary>Overactive Anahata</summary>
-        <p>People-pleasing as a survival strategy — the heart so attuned to others' needs that one's own become invisible. The loss of self in relationships: merger rather than love, enmeshment rather than intimacy. The heart is "too open" in the sense that it has no membrane — everything comes in without filtering, and the result is not abundance but overwhelm and depletion. Jealousy as love turned possessive: the fear of losing the connection that the heart has organized its entire world around. The martyrdom of giving without receiving, and the quiet resentment that eventually accompanies it — which is the heart's signal that this is not actually love, but performance of love, in service of safety.</p>
+        <summary>Signs of Manipura imbalance — physical</summary>
+        <p>Digestive issues (bloating, IBS, ulcers), adrenal fatigue, blood sugar dysregulation, chronic fatigue, back pain at the mid-back, and disorders related to the liver and gallbladder (which hold anger) are the physical manifestations of Manipura imbalance. The body stores shame in the belly — chronic guarding of the solar plexus, shallow breathing through the diaphragm, and a habitual slump forward are the posture of an underactive Manipura. The hyperextended chest-puffed posture of social performance can signal overactivity.</p>
       </details>
     </div>
-  </div>
-</section>
 
-<!-- SECTION 4: THE MIND -->
-<section class="band section-alt section-border-top">
-  <div class="wrap">
-    <p class="eyebrow">Psychological map</p>
-    <h2>What the Heart chakra is working through</h2>
-    <p style="margin-bottom:var(--s-6);max-width:62ch;">Anahata is the bridge chakra — the fourth of seven, the center of the system. Below are the three lower chakras (survival, creativity, power). Above are the three higher ones (voice, vision, transcendence). The heart is where those two worlds meet in the human being. Everything below must be metabolized here before it can rise. Everything above is available only to the degree that the heart has opened.</p>
-    <div class="mind-selector" role="group" aria-label="Mind state selector">
-      <button class="mind-pill active" data-target="mind-balanced">Balanced</button>
-      <button class="mind-pill" data-target="mind-under">Underactive</button>
-      <button class="mind-pill" data-target="mind-over">Overactive</button>
-    </div>
-    <div class="mind-panels">
-      <div id="mind-balanced" class="mind-panel">
-        <h3>The open heart</h3>
-        <ul>
-          <li>Love is given without the need for its return as a condition of continuing — this is not indifference but strength</li>
-          <li>Grief is recognized as love's evidence — what is grieved was real; the grief itself is a form of honoring</li>
-          <li>Forgiveness is available not as a gift to others but as the heart's self-liberation — releasing what it no longer needs to carry</li>
-          <li>The boundary between self and other is clear: I can feel what you feel without becoming it; I can be moved without being swept away</li>
-          <li>Gratitude arises naturally and often — not as a practice but as the natural perceptual consequence of a heart that is actually present</li>
-          <li>The body breathes freely; the chest has physical spaciousness; the shoulders sit naturally open</li>
-        </ul>
+    <!-- MIND TAB -->
+    <div id="tab-mind" class="tab-panel" role="tabpanel" aria-labelledby="btn-mind" hidden>
+      <p class="eyebrow">Psychology</p>
+      <h2>Shame → Power</h2>
+      <div class="mind-selector" role="group" aria-label="Select a psychological state">
+        <button class="mind-pill active" onclick="switchMind('open')">Open Manipura</button>
+        <button class="mind-pill" onclick="switchMind('under')">Underactive</button>
+        <button class="mind-pill" onclick="switchMind('over')">Overactive</button>
       </div>
-      <div id="mind-under" class="mind-panel hidden">
-        <h3>The defended heart</h3>
-        <ul>
-          <li>The decision — often below conscious awareness — that love is too costly: that what you gain is less than what you risk losing</li>
-          <li>Difficulty receiving care, praise, touch — the body pulls back; the mind immediately finds the caveat or condition</li>
-          <li>Emotional flatness as a form of protection: if nothing moves you deeply, nothing can devastate you deeply</li>
-          <li>The loneliness of being present with others while unreachable — surrounded and alone simultaneously</li>
-          <li>Physical manifestations: chronic shoulder tension, shallow upper-chest breathing, the characteristic rounding of a chest that has learned to protect what's inside</li>
-          <li>Old hurts stored as current policy — the past dictating the terms of present connection</li>
-        </ul>
-      </div>
-      <div id="mind-over" class="mind-panel hidden">
-        <h3>The boundaryless heart</h3>
-        <ul>
-          <li>The relational shape of giving without end — generosity that is not freely chosen but compelled by the fear of what happens if one stops</li>
-          <li>Others' emotions arrive without filter: their sadness becomes your sadness, their anxiety becomes your anxiety, until it is no longer clear whose feeling is whose</li>
-          <li>The gradual disappearance of self in sustained relationship — preferences, opinions, and needs becoming invisible beneath the weight of others' experience</li>
-          <li>Attachment that is not love but possession — the terror of loss so intense that it constricts what it is trying to hold</li>
-          <li>The rescuer pattern: not helping from abundance but from the inability to tolerate another's suffering, which is really the inability to tolerate one's own helplessness</li>
-          <li>Physical: the chest that is always slightly exposed, the posture of perpetual readiness to receive, without the capacity to close and rest</li>
-        </ul>
+      <div class="mind-panels">
+        <div class="mind-panel" id="mp-open">
+          <h3 style="color:var(--chakra-col)">When Manipura is open</h3>
+          <ul>
+            <li>Clear personal boundaries that are stated directly, without apology</li>
+            <li>The ability to begin things — to start a project, send the message, make the ask</li>
+            <li>Healthy ego: knowing your worth without requiring others to confirm it constantly</li>
+            <li>Constructive response to failure: disappointment without collapse</li>
+            <li>Disciplined energy: you can sustain effort without burning out or giving up</li>
+            <li>You feel the fear and do it anyway — not because you're fearless, but because your will is bigger than your hesitation</li>
+          </ul>
+        </div>
+        <div class="mind-panel hidden" id="mp-under">
+          <h3>When Manipura is underactive</h3>
+          <ul>
+            <li>Chronic people-pleasing — inability to say no, to disappoint, to assert preference</li>
+            <li>Shame as a baseline state: the feeling that you are fundamentally not enough</li>
+            <li>Decision paralysis: endlessly weighing options without committing</li>
+            <li>Difficulty starting things; excessive reliance on external motivation</li>
+            <li>Apologizing reflexively; minimizing your own needs and opinions</li>
+            <li>Giving your power away to authority figures, partners, or employers — then resenting it</li>
+          </ul>
+        </div>
+        <div class="mind-panel hidden" id="mp-over">
+          <h3>When Manipura is overactive</h3>
+          <ul>
+            <li>Control — micromanaging others, inability to delegate or trust</li>
+            <li>Ego-driven aggression: needing to win, to dominate, to be right</li>
+            <li>Workaholism as identity: the inability to rest without feeling worthless</li>
+            <li>Contempt for weakness in self or others; perfectionism as a weapon</li>
+            <li>Using anger or intimidation to avoid vulnerability</li>
+            <li>The lower chakras are often weak when Manipura is overactive: grounding (Root) and pleasure (Sacral) have been sacrificed for achievement</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- SECTION 5: THE PRACTICE -->
-<section id="practice" class="band section-border-top">
-  <div class="wrap">
-    <p class="eyebrow">Your practice</p>
-    <h2>Working with Anahata</h2>
+    <!-- PRACTICE TAB -->
+    <div id="tab-practice" class="tab-panel" role="tabpanel" aria-labelledby="btn-practice" hidden>
+      <p class="eyebrow" id="practice">Practice</p>
+      <h2>Igniting Manipura</h2>
 
-    <!-- YAM Mantra -->
-    <h3 style="margin-bottom:var(--s-4);">YAM — the seed sound</h3>
-    <div class="mantra-circle">
-      <div class="mantra-ring">
-        <span class="mantra-word">YAM</span>
-        <span class="mantra-sub">यं · Air</span>
+      <div class="mantra-circle">
+        <div class="mantra-ring" role="img" aria-label="RAM mantra for Manipura chakra">
+          <div class="mantra-word">रं</div>
+          <div class="mantra-word" style="font-size:1.6rem;margin-top:.3rem;">RAM</div>
+          <div class="mantra-sub">Manipura · 10 petals</div>
+        </div>
       </div>
-    </div>
-    <div style="background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:var(--s-6);margin-bottom:var(--s-7);">
-      <p style="margin-bottom:var(--s-4);"><strong style="color:var(--moon);">Pronunciation:</strong> YɅHM — the Y is a glide, the most fluid consonant in Sanskrit. It requires no stopping, no friction, no effort. The tongue does not touch anything; the sound flows freely. That a mantra for the chakra of love begins with the most effortless sound is not accidental. The practice begins in effortlessness.</p>
-      <p style="margin-bottom:var(--s-4);">The vibration opens the cardiac plexus and the arms — the arms extend from the heart center, and YAM can be felt moving outward through the chest and into the hands. If you chant with your hands extended, palms facing upward, you may feel warmth or tingling in the palms as the vibration reaches them. Feel the chest soften. Notice if there is any holding, any slight bracing, in the sternum. Let that soften on each repetition.</p>
-      <p style="font-size:.88rem;color:var(--muted);">108 repetitions is traditional. Even 27 repetitions (a quarter mala) creates measurable physiological change: vagal tone increases, cortisol decreases, HRV moves toward coherence. Start where you are.</p>
-    </div>
 
-    <!-- Coherent Breathing -->
-    <div style="background:var(--panel);border:1px solid var(--chakra-col);border-radius:var(--r-2);padding:var(--s-6);margin-bottom:var(--s-7);">
-      <p class="eyebrow">The Heart Practice Above All Others</p>
-      <h3 style="margin-bottom:var(--s-4);">Coherent Breathing — 5 seconds in, 5 seconds out</h3>
-      <p style="margin-bottom:var(--s-5);">This is the single most evidence-based heart chakra practice in existence. Five-second inhale. Five-second exhale. No holding. No force. Exactly 6 breath cycles per minute. This protocol produces measurable heart coherence — the ordered, high-amplitude HRV pattern associated with immune function, emotional regulation, intuition, and the sensation practitioners across all traditions have described as an open heart — in 2 to 4 minutes of sustained practice.</p>
-      <p style="margin-bottom:var(--s-5);">The Hatha Yoga tradition calls slow, even-ratio breathing Ujjayi. The HeartMath Institute calls it coherent breathing. The Sufis built an entire practice lineage around the heart's rhythmic breath (dhikr). Same physiology, different maps.</p>
-      <ol class="coherent-steps">
-        <li><span class="step-n">1</span> Sit comfortably with the spine straight. Place one hand on the center of the chest — not to feel the heartbeat, but to direct attention there.</li>
-        <li><span class="step-n">2</span> Breathe in slowly through the nose for 5 full seconds. Let the chest expand first, then the belly — top-down, like a cup filling.</li>
-        <li><span class="step-n">3</span> Breathe out slowly through the nose for 5 full seconds. Let the belly fall first, then the chest — the cup emptying gently.</li>
-        <li><span class="step-n">4</span> No holding between inhale and exhale — the transition is smooth, continuous, without interruption.</li>
-        <li><span class="step-n">5</span> As you breathe, imagine warmth or a soft green light at the center of the chest. Not visualizing for it to be there — noticing if it might already be.</li>
-        <li><span class="step-n">6</span> Continue for 5 minutes minimum. The HeartMath research shows coherence typically establishes within 2–4 minutes and deepens with continued practice.</li>
+      <div class="sci-block" style="margin-bottom:var(--s-6);">
+        <h3>How to chant RAM for Manipura</h3>
+        <p>RAM (pronounced "rum" with a rolled R) — the seed sound of fire and of the warrior principle. The R is the ignition: feel it roll at the roof of the mouth, like a small fire starting. The A (as in "father") fills the solar plexus; the M seals it in. Chant 108 times while holding the Agni Mudra (curl the ring finger to touch the base of the thumb; extend all other fingers) resting on the thighs. Traditional prescription: 40 consecutive days to rewire a shame pattern.</p>
+      </div>
+
+      <!-- MANTRA COUNTER -->
+      <div class="counter-ring">
+        <h3>RAM mantra counter</h3>
+        <p style="font-size:.9rem;margin-bottom:var(--s-4);">Tap the button with each repetition. 108 = one mala. Traditional Manipura prescription: 108 daily.</p>
+        <div class="count-progress"><div class="count-bar" id="countBar" style="width:0%;"></div></div>
+        <div class="count-display" id="countDisplay">0</div>
+        <div class="count-label" id="countLabel">of 108 · <span id="countPct">0%</span></div>
+        <div class="count-row">
+          <button class="count-btn primary" onclick="increment()" id="countMainBtn">RAM ✦</button>
+          <button class="count-btn" onclick="resetCount()">Reset</button>
+        </div>
+      </div>
+
+      <div class="poses-grid" style="margin-top:var(--s-7);">
+        <div class="pose-card">
+          <div class="pose-num">01 · Asana</div>
+          <h3>Boat Pose</h3>
+          <div class="pose-sanskrit">Navasana</div>
+          <p>The definitive Manipura pose. From seated, lift both legs until the torso and legs form a V-shape. Hold for 5 full breaths while mentally repeating RAM. This is the fire itself: you must want to hold it. Nobody can hold Navasana for you.</p>
+          <ul>
+            <li>Work up to 5 rounds of 5 breaths each</li>
+            <li>Half-boat (knees bent) is a valid modification that still activates Manipura fully</li>
+            <li>The moment you want to release: breathe in, hold one more breath. That breath is Manipura.</li>
+          </ul>
+        </div>
+        <div class="pose-card">
+          <div class="pose-num">02 · Asana</div>
+          <h3>Bow Pose</h3>
+          <div class="pose-sanskrit">Dhanurasana</div>
+          <p>Lie on your belly. Bend both knees and reach back to hold your ankles. Inhale to lift the chest and thighs off the mat simultaneously, pulling back against your hands. The solar plexus is the literal pivot point of this posture — it bears the full weight of the arc.</p>
+          <ul>
+            <li>Hold 5 breaths. Feel the belly massage the floor on each exhale if you release slightly.</li>
+            <li>Rocking forward and back in the pose produces an intense internal massage of the digestive organs</li>
+            <li>Rest in Child's Pose for equal time between repetitions</li>
+          </ul>
+        </div>
+        <div class="pose-card">
+          <div class="pose-num">03 · Asana</div>
+          <h3>Warrior III</h3>
+          <div class="pose-sanskrit">Virabhadrasana III</div>
+          <p>Balance on one leg with the torso and lifted leg parallel to the floor — the body becomes a single arrow. This is the human form of Mesha's teaching: every element committed in one direction. No part of the body can be uncommitted; the posture forces total will engagement.</p>
+          <ul>
+            <li>Engage the core sharply — this is Manipura's bandha (energy lock)</li>
+            <li>Arms can be at sides (easier) or extended forward (harder)</li>
+            <li>5 breaths each side. If you fall: get up, try again without commentary.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mudra-box">
+        <h3>Mudra — Agni Mudra (Fire Mudra)</h3>
+        <p style="margin-top:.5rem;font-size:.92rem;">Curl the ring finger into the base of the thumb. Press the thumb gently on top of the curled ring finger. Extend the other three fingers straight. This mudra activates the fire element in the body — it is said to stimulate the digestive fire (agni), support weight management, and build confidence and decisiveness. Hold during RAM chanting, during meditation, or during difficult conversations.</p>
+      </div>
+
+      <h3 style="margin-bottom:var(--s-4);">Kapalabhati — The Fire Breath</h3>
+      <p style="margin-bottom:var(--s-5);font-size:.95rem;">Kapalabhati ("skull-shining breath") is Manipura's defining pranayama — a series of sharp, forceful exhalations through the nose, with passive inhalations. The pumping action massages the pancreas, liver, and solar plexus nerve plexus. Not to be practiced during pregnancy, menstruation, or with high blood pressure.</p>
+      <ol class="kapala-steps">
+        <li>Sit comfortably. Spine tall. Place both hands on the knees, palms up. Take two or three natural breaths to settle.</li>
+        <li>Inhale halfway — not full. This is your starting position for each cycle.</li>
+        <li>Begin: sharp, active exhalation through the nose (the belly pumps in and up sharply). The inhalation is passive — just let the lungs fill naturally between pumps.</li>
+        <li>Find a rhythm: roughly one pump per second. The sound is a sharp "huh" from the belly. Not the throat — the power comes from below the navel.</li>
+        <li>Start with 30 pumps per round. Rest. Notice the energy in the solar plexus. Build to 3 rounds of 108 pumps each over several weeks.</li>
+        <li>After the final round: take a deep, full inhalation. Hold as long as comfortable. Exhale slowly. This retention (kumbhaka) is where the integration happens.</li>
+        <li>Sit quietly for 2–5 minutes afterward. Notice: this is Manipura open. This alert, settled power is what you are working toward.</li>
       </ol>
     </div>
-
-    <!-- Three Poses -->
-    <h3 style="margin-bottom:var(--s-5);">Three heart poses</h3>
-    <div class="poses-grid">
-      <div class="pose-card">
-        <p class="pose-num">Pose 01</p>
-        <h3>Cobra</h3>
-        <p class="pose-sanskrit">Bhujangasana</p>
-        <p>The chest rises from the ground. The heart leads. The back body supports the heart's courage to open. This is the entry pose for Anahata — accessible, grounding, and immediately effective at opening the cardiac plexus.</p>
-        <ul>
-          <li>Lie face down, hands beside the lower ribs</li>
-          <li>Elbows remain slightly bent — the backbend is supported, not forced</li>
-          <li>Shoulders roll back and down, away from the ears</li>
-          <li>The chest moves forward before it moves upward — lead with the heart, not the head</li>
-          <li>Hold 5 breaths. Release slowly. Repeat 3 times with rests between.</li>
-        </ul>
-      </div>
-      <div class="pose-card">
-        <p class="pose-num">Pose 02</p>
-        <h3>Camel</h3>
-        <p class="pose-sanskrit">Ustrasana</p>
-        <p>The deepest voluntary chest opener, and the most emotionally confronting. The exposure of the throat and chest can bring emotion up without warning — this is the practice working, not going wrong. Do not force the hands to the heels before the chest is ready to open that far.</p>
-        <ul>
-          <li>Kneel with hips above knees, shins parallel</li>
-          <li>Hands on low back first (fingers pointing down) — establish this arch before going deeper</li>
-          <li>If available: curl the toes under to raise the heel height, then reach for the heels</li>
-          <li>Let the head follow the spine's arc — do not drop it back unless the neck is comfortable</li>
-          <li>Come out slowly. Rest in Child's Pose for several breaths after.</li>
-        </ul>
-      </div>
-      <div class="pose-card">
-        <p class="pose-num">Pose 03</p>
-        <h3>Bridge</h3>
-        <p class="pose-sanskrit">Setu Bandha Sarvangasana</p>
-        <p>Grounded, supported heart opening. The earth below supports the chest's rise. When Camel is too much — when the emotional exposure is more than the practice can hold today — Bridge is the practice. It opens the heart while remaining completely earthed.</p>
-        <ul>
-          <li>Lie on your back, knees bent, feet flat and hip-width apart</li>
-          <li>Press the feet into the earth and lift the hips</li>
-          <li>Interlace the hands beneath the back and press the arms and shoulders down as the chest rises</li>
-          <li>The chest presses toward the chin — Anahata and Vishuddha both activated</li>
-          <li>Hold 5–8 breaths. For a yin practice: place a block under the sacrum and remain 3–5 minutes.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Mudra -->
-    <div class="mudra-box">
-      <p class="eyebrow">Mudra</p>
-      <h3 style="margin-bottom:var(--s-4);">Padma Mudra — the Lotus gesture</h3>
-      <p style="margin-bottom:var(--s-4);">Bring both palms together at the center of the chest (Anjali Mudra). Then open the hands like a flower blooming — keeping the pinky fingers, ring fingers, and thumbs touching, while the index and middle fingers spread open and back like lotus petals. The result is a cupped hand shape, like a lotus emerging from water.</p>
-      <p>Padma Mudra is the gesture of the heart opening while remaining rooted in its own center. The touching fingertips at the base of the "flower" are the root — the self that does not dissolve in love. The opening petals are the love itself, moving outward from that stable center. The lotus grows in muddy water and blooms above it. The heart, the same.</p>
-    </div>
   </div>
 </section>
 
-<!-- SECTION 6: YOUR PROFILE -->
-<section id="your-profile" class="band section-alt section-border-top">
+<!-- PROFILE FINDER -->
+<section id="profile" class="band section-border-top section-alt">
   <div class="wrap">
-    <p class="eyebrow">Your connection</p>
-    <h2>How strong is Anahata in your animal?</h2>
-    <p style="margin-bottom:var(--s-6);max-width:60ch;">Every Zodi Animal has a unique chakra signature built from two layers: the Wu Xing element of your birth year and the inherent resonance of your zodiac animal. Enter your birth year to find where Anahata sits in your specific profile — and how to work with it.</p>
+    <p class="eyebrow">Your profile</p>
+    <h2>What's your Manipura story?</h2>
+    <p style="margin-bottom:var(--s-5);max-width:60ch;">Enter your birth year to see how your Zodi Animal relates to the Solar Plexus — whether it's your home chakra, a strength to develop, or a pattern to transform.</p>
     <div class="profile-finder">
-      <input type="number" id="yr2" placeholder="Your birth year (e.g. 1990)" min="1900" max="2025">
-      <br>
-      <button class="find-btn" id="profile-btn">Find my Heart connection</button>
-      <div id="profile-result" hidden></div>
+      <input type="number" id="yearIn" min="1900" max="2050" placeholder="Your birth year, e.g. 1988" aria-label="Enter birth year">
+      <button class="find-btn" onclick="findProfile()">Reveal my Manipura connection ✦</button>
+      <div id="profileCard" class="profile-card" style="display:none;" aria-live="polite">
+        <div class="pc-label" id="pc-label"></div>
+        <div class="pc-strength" id="pc-strength"></div>
+        <p class="pc-msg" id="pc-msg"></p>
+        <div class="share-row">
+          <button class="share-btn" onclick="makeShareCard()">↗ Generate share card</button>
+          <a href="/chakras/" class="share-btn">View all chakras</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SECTION 7: THE TRADITION -->
+<!-- CROSS-TRADITION -->
 <section class="band section-border-top">
   <div class="wrap">
-    <p class="eyebrow">The cross-tradition view</p>
-    <h2>One mountain, many maps</h2>
-    <p style="margin-bottom:var(--s-7);max-width:62ch;">The center. The bridge. The point where heaven and earth meet in the human form. Every tradition knows this place — they simply name it differently. The territory is identical.</p>
+    <p class="eyebrow">Other traditions</p>
+    <h2>The fire of will, across worlds</h2>
     <div class="tradition-grid">
       <div class="trad-card">
-        <p class="trad-eyebrow">Kabbalah</p>
-        <h3>Tiferet — The Beauty</h3>
-        <p>The sixth Sephirah of the Tree of Life, positioned at the precise center of the entire structure. Tiferet means Beauty or Harmony — the point where all branches of the tree integrate into coherent form. It is called the "Christ point" or the "Messiah point" in Kabbalistic commentary: the place where the divine light descending from above (the upper Sephirot — Kether, Chokmah, Binah) meets the human experience rising from below (Yesod, Hod, Netzach, Malkuth).</p>
-        <p style="margin-top:.75rem;">This is Anahata precisely: the bridge between the three lower chakras (body, survival, creativity) and the three higher ones (voice, vision, transcendence). The human heart is the meeting point. Nothing above is accessible without moving through here first.</p>
+        <div class="trad-eyebrow">Kabbalah</div>
+        <h3>Gevurah — Strength and Judgment</h3>
+        <p>The fifth Sephira on the Tree of Life, Gevurah (also called Din, meaning "justice") is the force of divine power applied with discernment. Where Chesed (loving-kindness) gives without limit, Gevurah establishes the necessary boundaries — the cuts, the limits, the "no." This is Manipura's highest function: not the raw aggression of the ego, but the clean power of judgment that knows what serves and what does not. Gevurah is associated with Mars, with red, with the king in battle. Deficient Gevurah is spinelessness; excessive Gevurah is cruelty.</p>
       </div>
       <div class="trad-card">
-        <p class="trad-eyebrow">Taoism</p>
-        <h3>Middle Dantian — The Chest Center</h3>
-        <p>The chest center — Tan Zhong acupoint, Conception Vessel 17, directly in the center of the sternum — is the Middle Dantian in the Taoist three-center system. It stores Qi: the dynamic life force that animates body, mind, and emotional field simultaneously. What depletes it: emotional suppression, grief held without expression, shallow breathing, chronic stress that constricts the chest.</p>
-        <p style="margin-top:.75rem;">What cultivates it: genuine service to others freely given, loving relationships built on truth, open-hearted breathing, the Qi Gong practice of moving Qi through the chest. The Taoist teaching is identical to Anahata's: the heart is not merely a physical organ — it is the center of the body's energy management, and everything depends on whether it is open or closed.</p>
+        <div class="trad-eyebrow">Taoism</div>
+        <h3>Lower Dantian — Wei (Action)</h3>
+        <p>The Lower Dantian ("field of elixir") located two finger-widths below the navel is the primary energy storage center in Taoist inner alchemy — not exactly Manipura, but intimately related. From the Dantian, Qi radiates into action. The Taoist martial arts (Tai Chi, Ba Gua, Xing Yi) all teach that true power originates from the Dantian's centeredness, not from muscular force. The correspondence is exact: Manipura is the fire that powers action; the Dantian is the well from which that fire draws. When both are developed, movement becomes effortless and unstoppable.</p>
       </div>
       <div class="trad-card">
-        <p class="trad-eyebrow">Sufism</p>
-        <h3>Qalb and Ruh — The Spiritual Heart</h3>
-        <p>The Naqshbandi Sufi path describes the heart center as containing two Lataif (subtle centers): Qalb (the spiritual heart, located at the left chest — seat of faith, yearning, and the soul's longing for the divine) and Ruh (the animating spirit, located at the right chest — the breath of divine love moving through the human form).</p>
-        <p style="margin-top:.75rem;">The Sufi spiritual path is, at its core, a sustained heart-opening practice. The dhikr — the rhythmic, devotional repetition of divine names — is the Sufi's YAM: a mantra of love, repeated until the heart becomes what it is repeating. The goal of Sufi practice is the state called Fana: annihilation in the Beloved — which is not destruction of the self but its dissolution in love. Anahata's teaching is identical: the open heart does not cease to exist; it becomes, for a moment, indistinguishable from love itself.</p>
+        <div class="trad-eyebrow">Sufism</div>
+        <h3>Nafs al-Mulhama — The Inspired Self</h3>
+        <p>In the Sufi psychology of the seven Nafs (stages of the self), the third stage — Nafs al-Mulhama (the inspired or illuminated self) — corresponds to Manipura's development. Here the self has moved beyond its lowest impulses (Muladhara's nafs) and its shame cycles (Sacral's nafs) into genuine inspiration: the capacity to receive divine guidance and act on it without being paralyzed by self-doubt. The Sufi teaching: personal will is not opposed to divine will. It is the vehicle through which divine will acts. A purified Manipura is the clearing of the vehicle.</p>
+      </div>
+      <div class="trad-card">
+        <div class="trad-eyebrow">Ancient Egypt</div>
+        <h3>Sekhem — The Power Body</h3>
+        <p>Sekhem was the Egyptian concept of the life-force as power — distinct from the Ib (heart), the Ka (double spirit), or the Ba (soul). Sekhem is specifically the animating power that drives action. The lion-headed goddess Sekhmet embodied Sekhem at its most extreme: the fire that destroys what does not serve life. The hieroglyph for Sekhem shows a scepter (the symbol of authority and directed will) — exactly Manipura's function in the subtle body. Ra's solar disk — the supreme symbol of radiant, willful power — is housed in the body at the solar plexus level.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- BRIDGE CARDS -->
-<section class="band section-alt section-border-top">
+<section class="band section-border-top section-alt">
   <div class="wrap">
-    <p class="eyebrow">Continue your journey</p>
-    <h2>Where next?</h2>
+    <p class="eyebrow">Continue</p>
+    <h2>Where to go next</h2>
     <div class="bridges">
-      <a class="bcard" href="/chakras/">
-        <span class="bch">七</span>
-        <h3>All Seven Chakras</h3>
-        <p>Anahata is the center — the bridge point. See the full map from root to crown and find where your practice wants to go next.</p>
-        <span class="soon">Explore the full map →</span>
+      <a href="/chakras/" class="bcard">
+        <span class="bch">◈</span>
+        <h3>Chakras Hub</h3>
+        <p>Return to the full seven-chakra map. The animated spine, chakra finder, element matrix, and daily practice generator.</p>
+        <span class="soon">← Back to the hub</span>
       </a>
-      <a class="bcard" href="/chakras/manipura/">
-        <span class="bch">🔥</span>
-        <h3>Solar Plexus Chakra</h3>
-        <p>Solar Plexus and Heart are Anahata's immediate neighbors in the Wood and Fire element systems. Personal power in service of love.</p>
-        <span class="soon">Manipura →</span>
+      <a href="/chakras/anahata/" class="bcard">
+        <span class="bch">🦌</span>
+        <h3>Heart Chakra — Anahata</h3>
+        <p>The Black Antelope of Vayu. YAM mantra. The chakra above Manipura — where personal power graduates into love as a practice, not a feeling.</p>
+        <span class="soon">Next: Anahata →</span>
       </a>
-      <a class="bcard" href="/chakras/ajna/">
+      <a href="/chakras/svadhisthana/" class="bcard">
+        <span class="bch">🐊</span>
+        <h3>Sacral Chakra — Svadhisthana</h3>
+        <p>Makara — the sea dragon. VAM mantra. Below Manipura: the creativity and pleasure that feed the will. An empty Sacral means nothing to burn in the Solar Plexus.</p>
+        <span class="soon">← Below: Svadhisthana</span>
+      </a>
+      <a href="/chakras/ajna/" class="bcard">
         <span class="bch">👁</span>
-        <h3>Third Eye Chakra</h3>
-        <p>After the heart opens, the third eye clears. These two chakras work in tandem: love clarifies perception; clear perception deepens love.</p>
-        <span class="soon">Ajna →</span>
+        <h3>Third Eye — Ajna</h3>
+        <p>No animal — the eye that sees all. OM mantra. When Manipura's will is purified, it eventually rises here — where willpower becomes clear seeing, and doing becomes knowing.</p>
+        <span class="soon">Deep dive →</span>
+      </a>
+      <a href="/elements/" class="bcard">
+        <span class="bch">🔥</span>
+        <h3>The Five Elements</h3>
+        <p>Wood feeds your fire. Your element year shapes how Manipura expresses in you. Explore the full Wu Xing system.</p>
+        <span class="soon">Explore elements →</span>
+      </a>
+      <a href="/reading/" class="bcard">
+        <span class="bch">✦</span>
+        <h3>Your Psychic Reading</h3>
+        <p>Your full Zodi Animal reading — personality, forecast, chakra medicine, and the invitation your year carries.</p>
+        <span class="soon">Get your reading →</span>
       </a>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
+
+<div class="toast" id="toast" role="alert" aria-live="assertive"></div>
 
 <script>
-// TAB LOGIC
-document.querySelectorAll('.tab-rail').forEach(function(rail){
-  var btns=rail.querySelectorAll('.tab-btn');
-  btns.forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var panelId=btn.getAttribute('aria-controls');
-      btns.forEach(function(b){b.setAttribute('aria-selected','false');});
-      btn.setAttribute('aria-selected','true');
-      var panels=rail.parentNode.querySelectorAll('.tab-panel');
-      panels.forEach(function(p){p.hidden=true;});
-      var target=document.getElementById(panelId);
-      if(target)target.hidden=false;
+(function(){
+  /* TAB SWITCHING */
+  function switchTab(id){
+    ['body','mind','practice'].forEach(function(t){
+      var panel=document.getElementById('tab-'+t);
+      var btn=document.getElementById('btn-'+t);
+      var active=(t===id);
+      panel.hidden=!active;
+      btn.setAttribute('aria-selected',active);
     });
-  });
-});
-
-// MIND TOGGLE
-document.querySelectorAll('.mind-pill').forEach(function(pill){
-  pill.addEventListener('click',function(){
-    var target=pill.getAttribute('data-target');
-    document.querySelectorAll('.mind-pill').forEach(function(p){p.classList.remove('active');});
-    pill.classList.add('active');
-    document.querySelectorAll('.mind-panel').forEach(function(panel){
-      if(panel.id===target){panel.classList.remove('hidden');}
-      else{panel.classList.add('hidden');}
-    });
-  });
-});
-
-// PROFILE FINDER
-document.getElementById('profile-btn').addEventListener('click',function(){
-  var yr=parseInt(document.getElementById('yr2').value);
-  if(!yr||yr<1900||yr>2025){
-    alert('Please enter a valid birth year between 1900 and 2025.');
-    return;
   }
-  var stems=['Wood','Wood','Fire','Fire','Earth','Earth','Metal','Metal','Water','Water'];
-  var animals=['Rat','Ox','Tiger','Rabbit','Dragon','Snake','Horse','Goat','Monkey','Rooster','Dog','Pig'];
-  var el=stems[((yr-4)%10+10)%10];
-  var an=animals[((yr+8)%12+12)%12];
+  window.switchTab=switchTab;
 
-  var strength,message,practice;
+  /* MIND STATE */
+  function switchMind(id){
+    document.querySelectorAll('.mind-pill').forEach(function(p){ p.classList.remove('active'); });
+    event.target.classList.add('active');
+    document.querySelectorAll('.mind-panel').forEach(function(p){ p.classList.add('hidden'); });
+    var panel=document.getElementById('mp-'+id);
+    if(panel){ panel.classList.remove('hidden'); }
+  }
+  window.switchMind=switchMind;
 
-  // Heart-specific animal checks
-  var heartAnimals=['Rabbit','Pig'];
-  var isHeartAnimal=heartAnimals.includes(an);
+  /* MANTRA COUNTER */
+  var count=0;
+  var goal=108;
+  try{ count=parseInt(localStorage.getItem('zodi_ram_count')||'0')||0; }catch(_e){}
+  function updateCounter(){
+    var d=document.getElementById('countDisplay');
+    var l=document.getElementById('countLabel');
+    var b=document.getElementById('countBar');
+    var p=document.getElementById('countPct');
+    var pct=Math.min(100,Math.round((count/goal)*100));
+    if(d)d.textContent=count;
+    if(l)l.innerHTML='of '+goal+' · <span id="countPct">'+pct+'%</span>';
+    if(b)b.style.width=pct+'%';
+    try{localStorage.setItem('zodi_ram_count',count);}catch(_e){}
+    if(count>=goal){
+      showToast('108 complete. रं RAM. ✦',5000);
+      if(document.getElementById('countMainBtn'))document.getElementById('countMainBtn').textContent='Complete ✦';
+    }
+  }
+  window.increment=function(){
+    count=Math.min(count+1,goal+108);
+    updateCounter();
+  };
+  window.resetCount=function(){
+    count=0;
+    if(document.getElementById('countMainBtn'))document.getElementById('countMainBtn').textContent='RAM ✦';
+    updateCounter();
+  };
+  updateCounter();
 
-  if(el==='Wood'){
-    strength='Primary';
-    message='Wood element calls you first to the Heart — and to the Solar Plexus as its closest sibling. Wood\'s upward force, its unbending orientation toward growth, its deep relationship to the liver and the emotion of anger that the liver stores — all of this meets Anahata. Your heart work may begin not with love but with anger: letting it move, letting it be expressed cleanly, discovering what clears beneath it. Wood that has processed its anger becomes extraordinarily clear compassion.';
-    practice='YAM chanting, Cobra and Camel poses, working with anger as a heart practice before working with love directly.';
-  } else if(el==='Fire'){
-    strength='Primary';
-    message='Fire element lives most naturally at the Heart — your warmth, your radiance, your desire to connect and to be fully seen are expressions of Anahata at its most alive. Your challenge may be the other side of the same gift: the heart that burns so brightly for others may need to learn to receive as fluently as it gives. Coherent breathing is especially valuable for Fire animals — it gives the blazing heart a rhythm that sustains it without consuming it.';
-    practice='Coherent breathing (5-5 protocol) daily, YAM with Padma Mudra, conscious practice of receiving love without deflecting it.';
-  } else if(el==='Metal'){
-    strength='Deep (via grief)';
-    message='Metal element\'s path to the Heart runs through grief — the sorrow of what was loved and lost. This is not a lesser path; it is often the deepest. Metal animals who have allowed their grief to move fully — rather than suppressing it as something to get past — often develop a quality of love that is sharper, cleaner, and more honest than those who have not lost as much. Your heart work begins with the lung: full exhalations, the practice of letting go, making room.';
-    practice='Extended exhalation breathing (inhale 4, exhale 8), supported Fish Pose (heart exposed, held gently by the earth), grief that is allowed to be felt rather than managed.';
-  } else if(isHeartAnimal){
-    strength=an==='Rabbit'?'Double Heart (element + animal)':'Strong (primary animal resonance)';
-    message='The '+an+' animal is inherently Anahata — this is your home, your primary frequency, and the quality that others most recognize in you. '+
-      (an==='Rabbit'?'The Rabbit\'s empathy, sensitivity, and attunement to emotional atmosphere are Heart chakra qualities at their most natural expression. Your gift is feeling; your growing edge is ensuring you do not feel at the cost of your own center. The heart that is entirely porous eventually has nothing to give from.':'The Pig\'s generosity, warmth, and magnanimity are expressions of Anahata at its most beautiful. Your growing edge is the same as your gift taken one step too far: the boundary between generous love and self-erasure requires attention.');
-    practice='YAM chanting, Padma Mudra, coherent breathing. Also: the practice of noticing what you need and asking for it — receiving is the heart\'s growing edge for '+an+' animals.';
-  } else if(el==='Earth'){
-    strength='Accessible (primary: Solar Plexus + Sacral)';
-    message='Earth element calls you primarily to Solar Plexus and Sacral work — nourishment, stability, the body\'s relationship to matter. Heart work for Earth animals is often grounded through the body: the warmth of being physically held, the love that is expressed through feeding and tending. Your entry into Anahata may be through these sensory, embodied expressions of love rather than through the more abstract or emotional dimensions. This is not a lesser path — it is the Earth path.';
-    practice='Bridge Pose (earth-supported heart opening), YAM with hands on the chest, the practice of letting yourself be physically cared for.';
-  } else {
-    // Water element
-    strength='Accessible (primary: Root + Sacral)';
-    message='Water element calls you first to Root and Sacral work — depth, survival, the conservation of vital essence. Heart work for Water animals often opens most readily when the root is stable: when there is enough security to risk being seen. The Water element\'s deepest fear — that the ground will give way — is what the heart must move past in order to love without armor. LAM is your foundation; YAM builds from it.';
-    practice='Establish Root practice first (LAM, Mountain Pose), then introduce YAM. Cobra is a particularly good Water-to-Heart bridge pose.';
+  /* YEAR HELPERS */
+  function getElement(y){
+    var s=['Wood','Wood','Fire','Fire','Earth','Earth','Metal','Metal','Water','Water'];
+    return s[((y-4)%10+10)%10];
+  }
+  function getAnimal(y){
+    var a=['Rat','Ox','Tiger','Rabbit','Dragon','Snake','Horse','Goat','Monkey','Rooster','Dog','Pig'];
+    return a[((y+8)%12+12)%12];
   }
 
-  var r=document.getElementById('profile-result');
-  r.innerHTML='<div class="profile-card"><p class="pc-label">THE '+el.toUpperCase()+' '+an.toUpperCase()+'</p><p class="pc-strength">Heart connection: <strong>'+strength+'</strong></p><p class="pc-msg">'+message+'</p><p class="pc-msg" style="margin-top:.75rem;font-size:.88rem;"><strong style="color:var(--moon);">Recommended entry point:</strong> '+practice+'</p><a class="pc-link" href="/chakras/">← Explore all your chakras</a></div>';
-  r.hidden=false;
-  r.scrollIntoView({behavior:'smooth',block:'nearest'});
-});
+  /* PROFILE DATA */
+  var MANI_AFFINITY={
+    Tiger:['strong','Wood Tiger is one of Manipura\'s most natural expressions — visionary ambition fueled by primal courage. The Tiger\'s challenge is channeling this into sustained commitment rather than explosive bursts that burn out.'],
+    Horse:['strong','Fire Horse. Explosive will, magnetic confidence, and the capacity to lead others into motion. The Horse\'s Manipura shadow is scattering that fire — too many directions, too fast. Pick the direction and stay.'],
+    Dragon:['strong','The Dragon carries tremendous Manipura power — the mythic creature of unquestioned authority. The Dragon\'s growth edge: genuine power doesn\'t need to make itself known. Quiet confidence is still Dragon.'],
+    Rooster:['strong','Metal Rooster brings Manipura\'s will through the lens of precision and standards. The Rooster\'s fire is exacting — it sees exactly where things fall short, including itself. Self-compassion is the Rooster\'s practice.'],
+    Snake:['moderate','Fire Snake. The Snake\'s Manipura is intense but internalized — a burning determination that rarely shows itself. When the Snake commits, it is total. The challenge: acting before certainty arrives (it never does).'],
+    Monkey:['moderate','The Metal Monkey\'s cleverness is Manipura intelligence at its most versatile. But intelligence can be used to avoid commitment. The Monkey\'s practice: use the wit to start, not just to analyze.'],
+    Dog:['moderate','Metal Dog brings Manipura through loyalty and principle — the will to serve something larger than the self. This is Manipura\'s most selfless expression. The Dog must also learn to will for itself, not only for others.'],
+    Rabbit:['developing','Wood Rabbit carries Manipura potential as creative output — the artist\'s Manipura. But the Rabbit\'s gentleness can mask a deep reluctance to assert directly. The practice: your preferences deserve a voice without apology.'],
+    Ox:['developing','Earth Ox has extraordinary Manipura endurance — the slow, unstoppable commitment. The Ox rarely begins; it almost never stops. The development edge: trust your judgment on when to begin.'],
+    Rat:['developing','Water Rat has sharp intelligence at Manipura\'s service — quick pattern recognition, strategic clarity. The Rat\'s challenge is using that intelligence to act, not just to understand. Knowing is not enough.'],
+    Pig:['developing','Water Pig brings warmth and generosity to Manipura — a will oriented toward others\' wellbeing. The Pig must learn that self-assertion is not selfishness. What you want matters too.'],
+    Goat:['developing','Earth Goat has creative and aesthetic Manipura expression — a quiet will that builds beautiful things. The Goat\'s practice: valuing that creative contribution as real work, not as less-than the louder forms of achievement.']
+  };
+
+  window.findProfile=function(){
+    var year=parseInt(document.getElementById('yearIn').value);
+    if(!year||year<1900||year>2050){showToast('Enter a year between 1900–2050');return;}
+    var el=getElement(year);
+    var an=getAnimal(year);
+    var af=MANI_AFFINITY[an]||['developing','Your animal has its own Manipura story. The Solar Plexus always has something to teach — and usually something to heal.'];
+    var card=document.getElementById('profileCard');
+    var labels={strong:'Strong resonance',moderate:'Moderate resonance',developing:'Developing through practice'};
+    document.getElementById('pc-label').textContent=el+' '+an+' — '+labels[af[0]];
+    document.getElementById('pc-strength').textContent=year+' · '+el+' element · '+an+' animal';
+    document.getElementById('pc-msg').textContent=af[1];
+    card.style.display='block';
+  };
+
+  /* SHARE CARD */
+  window.makeShareCard=function(){
+    var year=parseInt(document.getElementById('yearIn').value);
+    if(!year){showToast('Find your profile first');return;}
+    var el=getElement(year);
+    var an=getAnimal(year);
+    var canvas=document.createElement('canvas');
+    canvas.width=1080;canvas.height=1080;
+    var ctx=canvas.getContext('2d');
+    ctx.fillStyle='#0d0e18';ctx.fillRect(0,0,1080,1080);
+    var g=ctx.createRadialGradient(540,480,40,540,480,520);
+    g.addColorStop(0,'#A08000 40');g.addColorStop(1,'transparent');
+    ctx.fillStyle=g;ctx.fillRect(0,0,1080,1080);
+    ctx.strokeStyle='#A0800035';ctx.lineWidth=3;ctx.strokeRect(40,40,1000,1000);
+    ctx.fillStyle='#ece7d8';ctx.font='600 30px Georgia,serif';ctx.textAlign='center';
+    ctx.fillText('THE '+el.toUpperCase()+' '+an.toUpperCase(),540,130);
+    ctx.fillStyle='#A08000cc';ctx.font='26px Georgia,serif';
+    ctx.fillText('मणिपूर · Solar Plexus Chakra',540,180);
+    ctx.fillStyle='#A08000';ctx.font='700 140px Georgia,serif';
+    ctx.shadowColor='#A08000';ctx.shadowBlur=50;
+    ctx.fillText('🐏',540,540);ctx.shadowBlur=0;
+    ctx.fillStyle='#f6efd8';ctx.font='700 44px Georgia,serif';
+    ctx.fillText('Manipura — City of Jewels',540,660);
+    ctx.fillStyle='#adaec2';ctx.font='italic 28px Georgia,serif';
+    ctx.fillText('Shame → Power',540,715);
+    ctx.fillStyle='#A08000';ctx.font='700 52px Georgia,serif';
+    ctx.fillText('RAM',540,800);
+    ctx.fillStyle='#55566e';ctx.font='22px Arial,sans-serif';
+    ctx.fillText('zodianimal.com · find your chakra',540,1040);
+    var a=document.createElement('a');
+    a.download='zodi-'+el.toLowerCase()+'-'+an.toLowerCase()+'-manipura.png';
+    a.href=canvas.toDataURL('image/png');a.click();
+    showToast('Card saved ✦');
+  };
+
+  /* TOAST */
+  function showToast(msg,dur){
+    dur=dur||3000;
+    var t=document.getElementById('toast');
+    t.textContent=msg;t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show');},dur);
+  }
+  window.showToast=showToast;
+
+  /* EMAIL */
+  var form=document.getElementById('zf-news-form');
+  if(form) form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=(document.getElementById('zf-email')||{}).value||'';
+    var note=document.getElementById('zf-rz');
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){if(note)note.textContent="Enter a valid email.";return;}
+    try{localStorage.setItem('zodi_daily_email',email);}catch(_e){}
+    if(note)note.textContent="Saved. Daily practice starts soon.";
+    try{document.getElementById('zf-email').value='';}catch(_e){}
+  });
+})();
 </script>
 <!--om-footer:start-->
 <!-- Zodi Animal universal footer. Single source: components/footer.html,
