@@ -556,8 +556,28 @@ PNAV.HUBS = {
         ["/elements/phases/fire/culture/", "Fire in myth"],
         ["/elements/phases/fire/traditions/", "Fire across traditions"]
       ]],
-      ["/elements/phases/earth/", "Earth 土"],
-      ["/elements/phases/metal/", "Metal 金"],
+      ["/elements/phases/earth/", "Earth 土", [
+        ["/elements/phases/earth/", "Earth overview"],
+        ["/elements/phases/earth/big-small/", "Big & small earth 戊己"],
+        ["/elements/phases/earth/bazi/", "Earth in BaZi"],
+        ["/elements/phases/earth/body/", "Earth in the body"],
+        ["/elements/phases/earth/space/", "Earth in your space"],
+        ["/elements/phases/earth/cycles/", "Earth's two cycles"],
+        ["/elements/phases/earth/animals/", "The Earth animals"],
+        ["/elements/phases/earth/culture/", "Earth in myth"],
+        ["/elements/phases/earth/traditions/", "Earth across traditions"]
+      ]],
+      ["/elements/phases/metal/", "Metal 金", [
+        ["/elements/phases/metal/", "Metal overview"],
+        ["/elements/phases/metal/big-small/", "Big & small metal 庚辛"],
+        ["/elements/phases/metal/bazi/", "Metal in BaZi"],
+        ["/elements/phases/metal/body/", "Metal in the body"],
+        ["/elements/phases/metal/space/", "Metal in your space"],
+        ["/elements/phases/metal/cycles/", "Metal's two cycles"],
+        ["/elements/phases/metal/animals/", "The Metal animals"],
+        ["/elements/phases/metal/culture/", "Metal in myth"],
+        ["/elements/phases/metal/traditions/", "Metal across traditions"]
+      ]],
       ["/elements/phases/water/", "Water 水", [
         ["/elements/phases/water/", "Water overview"],
         ["/elements/phases/water/big-small/", "Big & small water 壬癸"],

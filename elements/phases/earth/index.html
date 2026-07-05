@@ -3,80 +3,103 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Earth 土 · The Five Phases · Zodi Animal</title>
-<meta name="description" content="Earth (土 tǔ), the late summer / between seasons phase of the Wu Xing wheel. Stability, centering, and nourishing, 'that which permits sowing and reaping' (稼穡). The still pivot between th">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Earth 土 · The Five Phases">
-<meta property="og:description" content="What Earth means across the wheel, the body, your space, and your zodiac animal.">
+<title>Earth 土 · The Elements · Zodi Animal</title>
+<meta name="description" content="Earth (土 tǔ), the centre of the wheel. Meet the two earths, big earth 戊 and small earth 己, walk its cycles, and find where Earth sits in your own animal.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Earth 土 · Zodi Animal">
+<meta property="og:description" content="The still centre. Big earth and small earth, the cycles, the body, the four animals, and the myth.">
 <link rel="stylesheet" href="/css/tokens.css" data-pn-assets="/css/tokens.css">
 <link rel="stylesheet" href="/css/type.css" data-pn-assets="/css/type.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap">
 <script src="/js/nav.js" defer></script>
-<style>:root{--el:#d6a13c;--el-soft:rgba(214,161,60,.20)}
-
-:root{--ink:#0d0e18;--ink-2:#131523;--panel:#1a1c30;--panel-2:#22253d;--field:#0c0e1a;
---line:rgba(214,193,140,.16);--line-soft:rgba(214,193,140,.08);--moon:#f6efd8;--ivory:#ece7d8;
---body:#cfcfe0;--muted:#adaec2;--faint:#7f8096;--brass:#d6c18c;
+<style>
+:root{--ink:#12100a;--ink-2:#1a160d;--panel:#241f13;--panel-2:#312a1a;--field:#100e08;
+--line:rgba(214,161,60,.20);--line-soft:rgba(214,161,60,.10);--moon:#f7f0e2;--ivory:#ece0c9;
+--body:#d6c8ab;--muted:#b09a72;--faint:#877455;
+--earth:#d1a24a;--earth-bright:#f0c674;--earth-deep:#8a6420;
 --serif:"Fraunces",Georgia,serif;--sans:"Geist","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:"Space Mono",ui-monospace,monospace;
---r-1:8px;--r-2:14px;--r-3:22px;--r-pill:999px;--e-2:0 8px 30px rgba(0,0,0,.45);--e-3:0 20px 60px rgba(0,0,0,.55);
---maxw:960px;--measure:64ch;--ease-out:cubic-bezier(.16,1,.3,1)}
+--r-1:8px;--r-2:14px;--r-3:22px;--r-pill:999px;--e-2:0 8px 30px rgba(0,0,0,.5);--e-3:0 20px 60px rgba(0,0,0,.6);
+--maxw:1080px;--measure:64ch;--ease-out:cubic-bezier(.16,1,.3,1);--el:var(--earth);--el-soft:rgba(209,162,74,.22)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--ink);color:var(--body);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(680px 420px at 82% -8%,var(--el-soft),transparent 70%),radial-gradient(520px 380px at 6% 10%,rgba(120,140,220,.08),transparent 72%)}
-h1,h2,h3{font-family:var(--serif);color:var(--moon);font-weight:560;line-height:1.14;margin:0}
-a{color:var(--el);text-decoration:none;font-weight:500}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,4vw,36px)}
-.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--el);margin:0 0 .7rem}
-.ribbon{display:flex;gap:.4rem;align-items:center;justify-content:center;flex-wrap:wrap;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);padding:14px 18px;border-bottom:1px solid var(--line-soft)}
-.ribbon a{color:var(--muted);text-decoration:none}.ribbon a:hover{color:var(--el)}.ribbon .dot{opacity:.4}
-.hero{text-align:center;padding:clamp(48px,8vw,96px) 0 clamp(30px,5vw,56px)}
-.hero .bigchar{font-family:var(--serif);font-size:clamp(6rem,20vw,12rem);line-height:.85;color:var(--el);text-shadow:0 0 70px var(--el-soft)}
-.hero h1{font-size:clamp(2.2rem,6vw,3.6rem);margin-top:.4rem}
-.hero .pin{font-family:var(--mono);color:var(--muted);letter-spacing:.14em;margin-top:.5rem}
-.hero .nature{max-width:56ch;margin:1.3rem auto 0;color:var(--ivory);font-size:1.1rem}
-.pills{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-top:1.8rem}
-.pill{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.6rem 1.1rem;border:1px solid var(--line);border-radius:var(--r-pill);background:var(--panel);color:var(--ivory);text-decoration:none;transition:.2s}
-.pill:hover{border-color:var(--el);color:var(--moon);box-shadow:0 0 20px var(--el-soft)}
-.pill.primary{background:var(--el);color:var(--ink);border-color:var(--el);font-weight:600}
-.band{padding:clamp(34px,5vw,60px) 0;border-top:1px solid var(--line-soft)}
-.band h2{font-size:clamp(1.5rem,3.4vw,2.1rem)}
-.band .lead{max-width:var(--measure);color:var(--muted);margin:.7rem 0 0}
-.flowbar{display:flex;align-items:stretch;gap:.6rem;flex-wrap:wrap;margin-top:1.4rem}
-.flowbar .step{flex:1;min-width:150px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:1rem;text-decoration:none;transition:.2s}
-.flowbar .step:hover{border-color:var(--el);transform:translateY(-3px);box-shadow:0 0 24px var(--el-soft)}
-.flowbar .step .k{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
-.flowbar .step .v{color:var(--moon);font-family:var(--serif);font-size:1.15rem;margin-top:.3rem}
-.flowbar .step .c{color:var(--muted);font-size:.86rem;margin-top:.2rem}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:var(--r-2);overflow:hidden;margin-top:1.4rem}
-.cell{background:var(--panel);padding:.8rem 1rem}
-.cell .k{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
-.cell .v{color:var(--ivory);font-size:.96rem;margin-top:.2rem}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.4rem}
-.box{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:1.3rem}
-.box h3{font-size:1.1rem;margin-bottom:.5rem}
-.box p{margin:.4rem 0 0;color:var(--muted);font-size:.94rem}
-.box b{color:var(--ivory);font-weight:500}
-.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem}
-.chip{padding:.35rem .9rem;border:1px solid var(--line);border-radius:var(--r-pill);color:var(--ivory);text-decoration:none;background:color-mix(in oklab,var(--el) 12%,transparent);transition:.2s}
-.chip:hover{border-color:var(--el);color:var(--moon)}
-.note{max-width:var(--measure);margin-top:1.3rem;padding:1rem 1.2rem;background:var(--field);border:1px solid var(--line-soft);border-radius:var(--r-1);color:var(--muted);font-size:.86rem}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(720px 460px at 80% -10%,var(--el-soft),transparent 70%),radial-gradient(560px 400px at 6% 6%,rgba(138,100,32,.24),transparent 72%)}
+h1,h2,h3{font-family:var(--serif);color:var(--moon);font-weight:560;line-height:1.13;margin:0}
+a{color:var(--earth-bright);text-decoration:none;font-weight:500}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--earth-bright);margin:0 0 .7rem}
+.ribbon{display:flex;gap:.4rem;align-items:center;justify-content:center;flex-wrap:wrap;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);padding:14px 18px;border-bottom:1px solid var(--line-soft)}
+.ribbon a{color:var(--muted);text-decoration:none}.ribbon a:hover{color:var(--earth-bright)}.ribbon .dot{opacity:.4}
+.hero{text-align:center;padding:clamp(52px,9vw,120px) 0 clamp(28px,5vw,56px)}
+.hero .bigchar{font-family:var(--serif);font-size:clamp(6rem,20vw,13rem);line-height:.82;color:var(--earth);text-shadow:0 0 80px var(--el-soft)}
+.hero h1{font-size:clamp(2.3rem,6vw,3.8rem);margin-top:.3rem}
+.hero .pin{font-family:var(--mono);color:var(--muted);letter-spacing:.14em;margin-top:.6rem;font-size:.85rem}
+.hero .answer{max-width:58ch;margin:1.3rem auto 0;color:var(--ivory);font-size:1.1rem}
+.band{padding:clamp(40px,6vw,80px) 0;border-top:1px solid var(--line-soft)}
+.band h2{text-align:center;font-size:clamp(1.7rem,3.8vw,2.5rem)}
+.band .sub{text-align:center;max-width:60ch;margin:1rem auto 0;color:var(--muted)}
+.tw{margin-top:clamp(28px,4vw,48px)}
+.tw-toggle{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.6rem}
+.tw-toggle button{appearance:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:.2rem;background:var(--field);border:1px solid var(--line);border-radius:var(--r-2);padding:.9rem 1.6rem;color:var(--muted);font:inherit;transition:.2s;min-width:150px}
+.tw-toggle .c{font-family:var(--serif);font-size:2.2rem;line-height:1;color:var(--earth)}
+.tw-toggle .l{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase}
+.tw-toggle .s{font-size:.9rem;color:var(--faint)}
+.tw-toggle button[aria-selected="true"]{border-color:var(--earth);color:var(--moon);box-shadow:0 0 26px var(--el-soft)}
+.tw-toggle button[aria-selected="true"] .l{color:var(--ivory)}
+.tw-toggle button:hover{border-color:var(--earth);color:var(--moon)}
+.tw-toggle button:focus-visible{outline:2px solid var(--earth);outline-offset:2px}
+.tw-stage{background:linear-gradient(165deg,var(--panel-2),var(--panel) 76%);border:1px solid var(--line);border-left:3px solid var(--earth);border-radius:var(--r-3);box-shadow:var(--e-3);padding:clamp(24px,4vw,40px);position:relative;overflow:hidden}
+.tw-stage::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(460px 240px at 88% -18%,var(--el-soft),transparent 70%)}
+.tw-name{font-family:var(--serif);font-size:1.7rem;color:var(--moon)}
+.tw-name .zh{color:var(--earth)}
+.tw-tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--earth-bright);margin-top:.3rem}
+.tw-img{margin-top:1rem;color:var(--ivory);font-size:1.05rem}
+.tw-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.4rem}
+.tw-box{background:var(--field);border:1px solid var(--line-soft);border-radius:var(--r-2);padding:1rem 1.1rem}
+.tw-box .k{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.tw-box .v{color:var(--ivory);margin-top:.3rem;font-size:.96rem}
+.tw-note{margin-top:1.2rem;color:var(--muted);font-size:.86rem;border-top:1px solid var(--line-soft);padding-top:.9rem}
+.cyc{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-top:clamp(24px,4vw,40px)}
+.cyc a{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:1.1rem;text-decoration:none;transition:.2s;display:block}
+.cyc a:hover{border-color:var(--earth);transform:translateY(-3px);box-shadow:0 0 24px var(--el-soft)}
+.cyc .zh{font-family:var(--serif);font-size:1.3rem;color:var(--earth-bright)}
+.cyc .rel{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:.4rem 0 .2rem}
+.cyc .to{color:var(--moon);font-family:var(--serif);font-size:1.05rem}
+.doors{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:clamp(24px,4vw,44px)}
+.door{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-3);padding:1.4rem;text-decoration:none;transition:.25s;display:block}
+.door:hover{border-color:var(--earth);transform:translateY(-4px);box-shadow:0 0 30px var(--el-soft)}
+.door .dc{font-family:var(--serif);font-size:1.7rem;color:var(--earth)}
+.door h3{font-size:1.05rem;margin:.4rem 0 .3rem;color:var(--moon)}
+.door p{color:var(--muted);font-size:.88rem;margin:0}
+.finish{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:clamp(22px,4vw,40px)}
+.fcard{background:linear-gradient(165deg,var(--panel-2),var(--panel) 78%);border:1px solid var(--line);border-radius:var(--r-3);padding:1.6rem}
+.fcard h3{font-size:1.2rem;margin-bottom:.5rem}
+.fcard p{color:var(--muted);font-size:.92rem;margin:0 0 1rem}
+.btnrow{display:flex;gap:.6rem;flex-wrap:wrap}
+.btn{text-decoration:none;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.7rem 1.2rem;border-radius:var(--r-pill);border:1px solid var(--line);background:var(--field);color:var(--ivory);transition:.2s}
+.btn:hover{border-color:var(--earth);color:var(--moon);box-shadow:0 0 18px var(--el-soft)}
+.btn.primary{background:var(--earth);color:#14100a;border-color:var(--earth);font-weight:600}
+.note{max-width:var(--measure);margin:clamp(30px,5vw,56px) auto 0;padding:1.1rem 1.3rem;background:var(--field);border:1px solid var(--line-soft);border-radius:var(--r-1);color:var(--muted);font-size:.88rem}
 .note b{color:var(--ivory);font-weight:500}
-.walkfoot{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:clamp(30px,5vw,56px) 0;flex-wrap:wrap}
-.walkfoot a{text-decoration:none}
-footer.f{text-align:center;padding:clamp(30px,5vw,56px) 0;border-top:1px solid var(--line-soft);color:var(--faint);font-family:var(--mono);font-size:.72rem;letter-spacing:.12em}
+footer.f{text-align:center;padding:clamp(36px,5vw,64px) 0;border-top:1px solid var(--line-soft);color:var(--faint);font-family:var(--mono);font-size:.72rem;letter-spacing:.12em}
 footer.f a{color:var(--muted);text-decoration:none}
-@media(max-width:680px){.grid{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
+@media(max-width:820px){.doors{grid-template-columns:1fr 1fr}.cyc{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.tw-grid,.finish{grid-template-columns:1fr}.doors{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"Article","headline":"Earth, the Earth phase of Wu Xing","about":"Chinese Five Phases (Wu Xing)","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"Zodi Animal","url":"https://zodianimal.com"},"description":"What the Earth phase means across the generating and controlling cycles, the body, the home, and the Chinese zodiac."},
+{"@type":"WebPage","name":"Earth 土","url":"https://zodianimal.com/elements/phases/earth/","description":"The Earth phase of Wu Xing: the still centre, big earth and small earth, the cycles, the body, the four animals, and the myth.","inLanguage":"en"},
 {"@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"Zodi Animal","item":"https://zodianimal.com/"},
 {"@type":"ListItem","position":2,"name":"The Elements","item":"https://zodianimal.com/elements/"},
 {"@type":"ListItem","position":3,"name":"Earth 土","item":"https://zodianimal.com/elements/phases/earth/"}
+]},
+{"@type":"DefinedTermSet","name":"Earth phase terms","hasDefinedTerm":[
+{"@type":"DefinedTerm","name":"戊 wù","description":"Yang Earth, the big earth: the mountain, the city wall, the dam."},
+{"@type":"DefinedTerm","name":"己 jǐ","description":"Yin Earth, the small earth: the field, the garden, the soft moist soil."},
+{"@type":"DefinedTerm","name":"稼穡 jià sè","description":"The classical nature of Earth: it permits sowing and reaping."}
 ]}
 ]}
 </script>
@@ -170,81 +193,135 @@ footer.f a{color:var(--muted);text-decoration:none}
 <a id="pn-main" tabindex="-1"></a>
 <!--pn-sub:start-->
 <nav class="pn-sub" aria-label="Section">
-  <div class="pn-sub-primary"><ul class="pn-subnav"><li class="pn-sub-item pn-has-drop"><a class="pn-sub-link" href="/elements/phases/wood/" aria-haspopup="true" aria-expanded="false">Wood 木<span class="pn-sub-caret" aria-hidden="true"></span></a><ul class="pn-subdrop"><li><a class="pn-subdrop-link" href="/elements/phases/wood/">Wood overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/big-small/">Big &amp; small wood 甲乙</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/bazi/">Wood in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/body/">Wood in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/space/">Wood in your space</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/cycles/">Wood's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/animals/">The Wood animals</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/culture/">Wood in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/traditions/">Wood across traditions</a></li></ul></li><li class="pn-sub-item pn-has-drop"><a class="pn-sub-link" href="/elements/phases/fire/" aria-haspopup="true" aria-expanded="false">Fire 火<span class="pn-sub-caret" aria-hidden="true"></span></a><ul class="pn-subdrop"><li><a class="pn-subdrop-link" href="/elements/phases/fire/">Fire overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/big-small/">Big &amp; small fire 丙丁</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/bazi/">Fire in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/body/">Fire in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/space/">Fire in your space</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/cycles/">Fire's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/animals/">The Fire animals</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/culture/">Fire in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/traditions/">Fire across traditions</a></li></ul></li><li><a href="/elements/phases/earth/" aria-current="page">Earth 土</a></li><li><a href="/elements/phases/metal/">Metal 金</a></li><li class="pn-sub-item pn-has-drop"><a class="pn-sub-link" href="/elements/phases/water/" aria-haspopup="true" aria-expanded="false">Water 水<span class="pn-sub-caret" aria-hidden="true"></span></a><ul class="pn-subdrop"><li><a class="pn-subdrop-link" href="/elements/phases/water/">Water overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/big-small/">Big &amp; small water 壬癸</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/bazi/">Water in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/body/">Water in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/space/">Water in your space</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/cycles/">Water's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/animals/">The Water animals</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/culture/">Water in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/traditions/">Water across traditions</a></li></ul></li><li><a href="/elements/zodiac/">Elements &amp; your animal</a></li></ul></div>
+  <div class="pn-sub-primary"><ul class="pn-subnav"><li class="pn-sub-item pn-has-drop"><a class="pn-sub-link" href="/elements/phases/wood/" aria-haspopup="true" aria-expanded="false">Wood 木<span class="pn-sub-caret" aria-hidden="true"></span></a><ul class="pn-subdrop"><li><a class="pn-subdrop-link" href="/elements/phases/wood/">Wood overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/big-small/">Big &amp; small wood 甲乙</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/bazi/">Wood in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/body/">Wood in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/space/">Wood in your space</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/cycles/">Wood's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/animals/">The Wood animals</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/culture/">Wood in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/traditions/">Wood across traditions</a></li></ul></li><li class="pn-sub-item pn-has-drop"><a class="pn-sub-link" href="/elements/phases/fire/" aria-haspopup="true" aria-expanded="false">Fire 火<span class="pn-sub-caret" aria-hidden="true"></span></a><ul class="pn-subdrop"><li><a class="pn-subdrop-link" href="/elements/phases/fire/">Fire overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/big-small/">Big &amp; small fire 丙丁</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/bazi/">Fire in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/body/">Fire in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/space/">Fire in your space</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/cycles/">Fire's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/animals/">The Fire animals</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/culture/">Fire in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/traditions/">Fire across traditions</a></li></ul></li><li class="pn-sub-item pn-has-drop pn-has-current"><a class="pn-sub-link" href="/elements/phases/earth/" aria-haspopup="true" aria-expanded="false" aria-current="page">Earth 土<span class="pn-sub-caret" aria-hidden="true"></span></a><ul class="pn-subdrop"><li><a class="pn-subdrop-link" href="/elements/phases/earth/" aria-current="page">Earth overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/big-small/">Big &amp; small earth 戊己</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/bazi/">Earth in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/body/">Earth in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/space/">Earth in your space</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/cycles/">Earth's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/animals/">The Earth animals</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/culture/">Earth in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/traditions/">Earth across traditions</a></li></ul></li><li class="pn-sub-item pn-has-drop"><a class="pn-sub-link" href="/elements/phases/metal/" aria-haspopup="true" aria-expanded="false">Metal 金<span class="pn-sub-caret" aria-hidden="true"></span></a><ul class="pn-subdrop"><li><a class="pn-subdrop-link" href="/elements/phases/metal/">Metal overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/big-small/">Big &amp; small metal 庚辛</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/bazi/">Metal in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/body/">Metal in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/space/">Metal in your space</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/cycles/">Metal's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/animals/">The Metal animals</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/culture/">Metal in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/traditions/">Metal across traditions</a></li></ul></li><li class="pn-sub-item pn-has-drop"><a class="pn-sub-link" href="/elements/phases/water/" aria-haspopup="true" aria-expanded="false">Water 水<span class="pn-sub-caret" aria-hidden="true"></span></a><ul class="pn-subdrop"><li><a class="pn-subdrop-link" href="/elements/phases/water/">Water overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/big-small/">Big &amp; small water 壬癸</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/bazi/">Water in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/body/">Water in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/space/">Water in your space</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/cycles/">Water's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/animals/">The Water animals</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/culture/">Water in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/traditions/">Water across traditions</a></li></ul></li><li><a href="/elements/zodiac/">Elements &amp; your animal</a></li></ul></div>
   <div class="pn-sub-crumb"><ol class="pn-crumb"><li><a href="/">Home</a></li><li><a href="/elements/">The Elements</a></li><li aria-current="page">Earth 土</li></ol></div>
 </nav>
 <!--pn-sub:end-->
 
+<div class="ribbon">
+  <a href="/">Zodi Animal</a><span class="dot">·</span>
+  <a href="/elements/">The Elements</a><span class="dot">·</span>
+  <span style="color:var(--earth-bright)">Earth 土</span>
+</div>
+
 <header class="hero"><div class="wrap">
-  <p class="eyebrow">Phase 3 of 5 · Wu Xing 五行</p>
+  <p class="eyebrow">The still centre of the wheel</p>
   <div class="bigchar" aria-hidden="true">土</div>
   <h1>Earth</h1>
-  <p class="pin">tǔ · Center · Late summer / between seasons</p>
-  <p class="nature">Stability, centering, and nourishing, 'that which permits sowing and reaping' (稼穡). The still pivot between the other phases, the quality of late summer.</p>
-  <div class="pills">
-    <a class="pill primary" href="/elements/#cycles">Turn the wheel</a>
-    <a class="pill" href="/elements/phases/fire/">Fire</a>
-    <a class="pill" href="/elements/phases/metal/">Metal</a>
-  </div>
+  <p class="pin">tǔ · the centre · late summer · the virtue 信 xìn, faithfulness</p>
+  <p class="answer">Earth is the phase that permits sowing and reaping, 稼穡 (jià sè). It is stability and nourishing, the pivot every other phase passes through, the ground that holds. Where the other four are the directions and the seasons, Earth is the still centre between them. In Chinese thought Earth is not one thing: it is the immovable mountain and the soft cultivated field at once. Meet both below.</p>
 </div></header>
 
-<section class="band"><div class="wrap">
-  <p class="eyebrow">Where it sits on the wheel</p>
-  <h2>Earth both feeds and checks</h2>
-  <p class="lead">No phase stands alone. Earth is fed by one neighbour and pours into the next, while it restrains a third and is restrained by a fourth. Follow any thread.</p>
-  <div class="flowbar">
-    <a class="step" href="/elements/phases/fire/"><div class="k">Fed by (mother)</div><div class="v">Fire 火</div><div class="c">nourishes Earth</div></a>
-    <a class="step" href="/elements/phases/metal/"><div class="k">Feeds (child)</div><div class="v">Metal 金</div><div class="c">Earth gives rise to it</div></a>
-    <a class="step" href="/elements/phases/water/"><div class="k">Checks</div><div class="v">Water 水</div><div class="c">Earth keeps it in bounds</div></a>
-    <a class="step" href="/elements/phases/wood/"><div class="k">Checked by</div><div class="v">Wood 木</div><div class="c">restrains an excess of Earth</div></a>
+<section class="band" id="two-earths" aria-labelledby="twh">
+  <div class="wrap">
+    <p class="eyebrow">The centrepiece · 戊 and 己</p>
+    <h2 id="twh">The two earths</h2>
+    <p class="sub">Every phase has a yang face and a yin face. For Earth they even carry their own names: 戊 the great earth and 己 the soft earth. Tap one.</p>
+    <div class="tw">
+      <div class="tw-toggle" role="tablist" aria-label="Big earth or small earth">
+        <button role="tab" id="tw-t-wu" aria-controls="tw-panel" aria-selected="true">
+          <span class="c">戊</span><span class="l">Big earth</span><span class="s">wù · yang</span></button>
+        <button role="tab" id="tw-t-ji" aria-controls="tw-panel" aria-selected="false">
+          <span class="c">己</span><span class="l">Small earth</span><span class="s">jǐ · yin</span></button>
+      </div>
+      <div class="tw-stage" id="tw-panel" role="tabpanel" aria-live="polite"></div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section class="band"><div class="wrap">
-  <p class="eyebrow">The correspondences</p>
-  <h2>How Earth shows up</h2>
-  <div class="grid">
-    <div class="cell"><div class="k">Direction</div><div class="v">Center</div></div><div class="cell"><div class="k">Season</div><div class="v">Late summer / between seasons</div></div><div class="cell"><div class="k">Climate</div><div class="v">Dampness</div></div>
-    <div class="cell"><div class="k">Colour</div><div class="v">Yellow</div></div><div class="cell"><div class="k">Planet</div><div class="v">Saturn</div></div><div class="cell"><div class="k">Flavour</div><div class="v">Sweet</div></div>
-    <div class="cell"><div class="k">Organs</div><div class="v">Spleen · Stomach</div></div><div class="cell"><div class="k">Sense</div><div class="v">Mouth</div></div><div class="cell"><div class="k">Tissue</div><div class="v">Muscles / flesh</div></div>
-    <div class="cell"><div class="k">Emotion</div><div class="v">Pensiveness / worry</div></div><div class="cell"><div class="k">Virtue</div><div class="v">Fidelity</div></div><div class="cell"><div class="k">Guardian</div><div class="v">Yellow Dragon 黃龍 (Huánglóng) / Qilin</div></div>
+<section class="band" aria-labelledby="cych">
+  <div class="wrap">
+    <p class="eyebrow">Where Earth sits on the wheel</p>
+    <h2 id="cych">Earth is the hinge</h2>
+    <p class="sub">Earth is fed by one phase, feeds another, holds a third in check, and is held by a fourth. As the centre, it steadies the whole cycle. Follow any thread.</p>
+    <div class="cyc">
+      <a href="/elements/phases/fire/"><div class="zh">火生土</div><div class="rel">Fed by</div><div class="to">Fire</div></a>
+      <a href="/elements/phases/metal/"><div class="zh">土生金</div><div class="rel">Feeds</div><div class="to">Metal</div></a>
+      <a href="/elements/phases/water/"><div class="zh">土克水</div><div class="rel">Controls</div><div class="to">Water</div></a>
+      <a href="/elements/phases/wood/"><div class="zh">木克土</div><div class="rel">Held by</div><div class="to">Wood</div></a>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section class="band"><div class="wrap">
-  <p class="eyebrow">As a temperament</p>
-  <h2>The Nurturer, the Earth type</h2>
-  <div class="two">
-    <div class="box"><h3>At their best</h3><p><b>Driven by nurture, harmony.</b> Grounded, caring, steady. This is Earth in balance: the nurture felt as a gift, not a demand.</p></div>
-    <div class="box"><h3>When it runs to excess</h3><p>Worried, over-giving, depleted. The classical counterweight is <b><a href="/elements/phases/wood/">Wood 木</a></b>, the phase that steadies Earth on the controlling cycle.</p></div>
+<section class="band" aria-labelledby="drh">
+  <div class="wrap">
+    <p class="eyebrow">Go deeper</p>
+    <h2 id="drh">Eight rooms of Earth</h2>
+    <p class="sub">Everything the research found, one door at a time.</p>
+    <div class="doors">
+      <a class="door" href="/elements/phases/earth/big-small/"><div class="dc">戊己</div><h3>Big &amp; small earth</h3><p>The mountain and the field, temperament by temperament.</p></a>
+      <a class="door" href="/elements/phases/earth/bazi/"><div class="dc">日主</div><h3>Earth in BaZi</h3><p>What it means to be an Earth day master, and the four storehouses.</p></a>
+      <a class="door" href="/elements/phases/earth/body/"><div class="dc">脾</div><h3>Earth in the body</h3><p>The Spleen, transformation, the mouth, and the intellect. Tradition, not medicine.</p></a>
+      <a class="door" href="/elements/phases/earth/space/"><div class="dc">坤</div><h3>Earth in your space</h3><p>The centre, yellow, square forms, and the honest limits of the love corner.</p></a>
+      <a class="door" href="/elements/phases/earth/cycles/"><div class="dc">生克</div><h3>Earth's two cycles</h3><p>How to feed a weak Earth and loosen a heavy one.</p></a>
+      <a class="door" href="/elements/phases/earth/animals/"><div class="dc">辰戌丑未</div><h3>The Earth animals</h3><p>Four, not two: Ox, Dragon, Goat, and Dog, the seam animals.</p></a>
+      <a class="door" href="/elements/phases/earth/culture/"><div class="dc">黄帝</div><h3>Earth in myth</h3><p>The Yellow Emperor, 后土, the altars of soil and grain, and Mount Tai.</p></a>
+      <a class="door" href="/elements/phases/earth/traditions/"><div class="dc">土</div><h3>Across traditions</h3><p>Prithvi, Muladhara, Chi. Earth maps cleanly, but as centre, not corner.</p></a>
+    </div>
   </div>
-  <div class="note"><b>A mirror, not a verdict.</b> Element temperaments are a lens for self-understanding drawn from Five-Element tradition, not a fixed type or a prediction. Most people carry more than one.</div>
-</div></section>
+</section>
 
-<section class="band"><div class="wrap">
-  <p class="eyebrow">In the body &amp; in your space</p>
-  <h2>The same phase, two scales</h2>
-  <div class="two">
-    <div class="box"><h3>In the body</h3><p>In classical Chinese medicine, Earth is traditionally linked to the <b>Spleen</b> and <b>Stomach</b>, the sense of <b>mouth</b>, the tissue of <b>muscles / flesh</b>, the <b>sweet</b> flavour, and the emotion of <b>pensiveness / worry</b>.</p><p class="note" style="margin-top:.8rem"><b>Classical system, not medicine.</b> This describes a traditional correspondence, not diagnosis or treatment.</p></div>
-    <div class="box"><h3>In your space</h3><p>In feng shui, Earth is carried by <b>yellow</b>, flat, square, low forms, and the <b>center</b>. To strengthen Earth in a room, add its mother <b><a href="/elements/phases/fire/">Fire</a></b>; to calm an excess, add its controller <b><a href="/elements/phases/wood/">Wood</a></b> or let it drain into <b><a href="/elements/phases/metal/">Metal</a></b>.</p></div>
+<section class="band" aria-labelledby="fnh">
+  <div class="wrap">
+    <p class="eyebrow">Up to the wheel, down to your animal</p>
+    <h2 id="fnh">Earth is a thread. Your animal is where it lands.</h2>
+    <div class="finish">
+      <div class="fcard">
+        <h3>Up to the five phases</h3>
+        <p>Earth is the centre of a turning wheel. Step back and watch all five feed and check each other.</p>
+        <div class="btnrow"><a class="btn primary" href="/elements/">The five phases</a><a class="btn" href="/elements/#cycles">Turn the cycle wheel</a></div>
+      </div>
+      <div class="fcard">
+        <h3>Down to your animal</h3>
+        <p>Earth claims four animals at the seams of the seasons, and any birth year can add Earth on top. Find yours.</p>
+        <div class="btnrow"><a class="btn primary" href="/elements/zodiac/">Find your element</a><a class="btn" href="/chinese-zodiac/ox/">Ox</a><a class="btn" href="/chinese-zodiac/dragon/">Dragon</a><a class="btn" href="/chinese-zodiac/goat/">Goat</a><a class="btn" href="/chinese-zodiac/dog/">Dog</a></div>
+      </div>
+    </div>
+    <div class="note"><b>Meaning, not prediction.</b> The Earth material here, including the 戊 and 己 temperaments and the BaZi and TCM notes, is symbolic character-lore and classical tradition drawn from Chinese metaphysics. It is a lens for reflection, not a claim of fact about anyone's health, love, or fate. Correspondences vary by lineage. <a href="/elements/traditions/">See how Earth lines up across traditions.</a></div>
   </div>
-</div></section>
+</section>
 
-<section class="band"><div class="wrap">
-  <p class="eyebrow">Your animal</p>
-  <h2>The Earth animals of the zodiac</h2>
-  <p class="lead">These Chinese zodiac animals carry Earth as their fixed branch element. If one is yours, Earth is woven into your Primal Animal.</p>
-  <div class="chips"><a class="chip" href="/chinese-zodiac/ox/">Ox</a><a class="chip" href="/chinese-zodiac/dragon/">Dragon</a><a class="chip" href="/chinese-zodiac/goat/">Goat</a><a class="chip" href="/chinese-zodiac/dog/">Dog</a></div>
-  <div class="note" style="margin-top:1.2rem">Every year also adds a rotating element on top of the fixed one. <a href="/elements/zodiac/">Find your year element</a></div>
-</div></section>
+<footer class="f"><div class="wrap">EARTH 土 · <a href="/elements/">THE FIVE PHASES</a> · <a href="/">ZODI ANIMAL</a></div></footer>
 
-<div class="wrap"><div class="walkfoot">
-  <a class="pill" href="/elements/phases/fire/">Fire 火</a>
-  <a class="pill" href="/elements/">All five phases</a>
-  <a class="pill" href="/elements/phases/metal/">Metal 金</a>
-</div></div>
-
-<footer class="f"><div class="wrap">THE FIVE PHASES · <a href="/">ZODI ANIMAL</a> · Earth 土</div></footer>
+<script>
+(function(){
+"use strict";
+var EARTHS={
+  wu:{char:"戊",name:"Big earth",zh:"戊土",pin:"wù",pole:"Yang Earth 陽土",
+    img:"The mountain, the city wall, the dam, the vast dry ground. 城墙之土, high and broad and immovable, the solid earth that shelters and holds its shape against everything.",
+    best:"Steady and dependable. Honest, tolerant, and magnanimous, broad-minded and slow to anger, a rock others lean on. Calm, protective, and unshaken.",
+    stress:"The mountain will not move. 戊土 can grow stubborn and inflexible, slow and over-cautious, closed-off and hoarding, so fixed in place that nothing new can grow on it.",
+    meets:"Against Water it is the great dam that holds back a river. It is warmed and fed by Fire, gives birth to Metal as ore in its ground, and is parted and loosened by Wood's roots."},
+  ji:{char:"己",name:"Small earth",zh:"己土",pin:"jǐ",pole:"Yin Earth 陰土",
+    img:"The field, the garden, the paddy, the soft moist soil. 田园之土, fertile and receptive, the cultivated earth that quietly grows whatever is planted in it.",
+    best:"Nurturing and resourceful. Gentle, patient, and adaptable, careful and quietly fruitful, good at cultivating both people and plans over time. Perceptive and giving.",
+    stress:"The soil can turn to mud. 己土 can grow over-worrying and indecisive, self-effacing and calculating, holding things in until it is murky and overwhelmed.",
+    meets:"Against Water it soaks up and holds gentle moisture rather than damming a flood. It is fed by Fire, nurtures Metal, and is turned and aerated by Wood so it does not compact."}
+};
+function el(id){return document.getElementById(id);}
+var sel="wu", panel=el("tw-panel"), tW=el("tw-t-wu"), tJ=el("tw-t-ji");
+function render(){
+  var w=EARTHS[sel];
+  tW.setAttribute("aria-selected", sel==="wu"?"true":"false");
+  tJ.setAttribute("aria-selected", sel==="ji"?"true":"false");
+  panel.innerHTML=
+    '<div class="tw-name"><span class="zh">'+w.char+'</span> '+w.name+' <span style="font-family:var(--mono);font-size:.8rem;color:var(--muted)">'+w.zh+' '+w.pin+'</span></div>'+
+    '<div class="tw-tag">'+w.pole+'</div>'+
+    '<p class="tw-img">'+w.img+'</p>'+
+    '<div class="tw-grid">'+
+      '<div class="tw-box"><div class="k">At its best</div><div class="v">'+w.best+'</div></div>'+
+      '<div class="tw-box"><div class="k">Under stress</div><div class="v">'+w.stress+'</div></div>'+
+    '</div>'+
+    '<p class="tw-note"><b style="color:var(--ivory)">How it meets the other phases.</b> '+w.meets+'</p>';
+}
+tW.addEventListener("click",function(){sel="wu";render();});
+tJ.addEventListener("click",function(){sel="ji";render();});
+[tW,tJ].forEach(function(t){t.addEventListener("keydown",function(e){
+  if(e.key==="ArrowRight"||e.key==="ArrowLeft"){e.preventDefault();sel=(sel==="wu"?"ji":"wu");(sel==="wu"?tW:tJ).focus();render();}
+});});
+render();
+})();
+</script>
 <!--om-footer:start-->
 <!-- Zodi Animal universal footer. Single source: components/footer.html,
      baked into every page by build/apply-footer.mjs, styled by
