@@ -534,7 +534,17 @@ PNAV.HUBS = {
     label: "The Elements", root: "/elements/",
     items: [
       ["/elements/", "The five phases"],
-      ["/elements/phases/wood/", "Wood 木"],
+      ["/elements/phases/wood/", "Wood 木", [
+        ["/elements/phases/wood/", "Wood overview"],
+        ["/elements/phases/wood/big-small/", "Big & small wood 甲乙"],
+        ["/elements/phases/wood/bazi/", "Wood in BaZi"],
+        ["/elements/phases/wood/body/", "Wood in the body"],
+        ["/elements/phases/wood/space/", "Wood in your space"],
+        ["/elements/phases/wood/cycles/", "Wood's two cycles"],
+        ["/elements/phases/wood/animals/", "The Wood animals"],
+        ["/elements/phases/wood/culture/", "Wood in myth"],
+        ["/elements/phases/wood/traditions/", "Wood across traditions"]
+      ]],
       ["/elements/phases/fire/", "Fire 火", [
         ["/elements/phases/fire/", "Fire overview"],
         ["/elements/phases/fire/big-small/", "Big & small fire 丙丁"],

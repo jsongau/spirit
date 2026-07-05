@@ -743,99 +743,95 @@
 <script src="js/zodi-lab-seg.js" defer></script>
 <script src="js/zodi-fx.js" defer></script>
 <!--bazi-home:start-->
-<!-- BaZi teaser band. Injected by build/apply-bazi-home.mjs from the
-     hook copy in data/bazi.json. Scoped under .bzhome- so it cannot
-     collide with homepage CSS. Self-contained: no JS, no external assets. -->
+<!-- BaZi power showcase. Injected by build/apply-bazi-home.mjs from the
+     verified worked chart in data/bazi.json. Scoped .bzhome-, no JS. -->
 <style>
-.bzhome{position:relative;margin:0;padding:64px 24px;overflow:hidden;
+.bzhome{position:relative;margin:0;padding:66px 24px;overflow:hidden;
   background:
-    radial-gradient(120% 140% at 82% 12%, rgba(214,164,76,.14), transparent 60%),
-    radial-gradient(120% 120% at 8% 90%, rgba(214,164,76,.06), transparent 55%),
-    linear-gradient(180deg,#12100c 0%, #0c0b08 100%);
-  border-top:1px solid rgba(214,164,76,.22);
-  border-bottom:1px solid rgba(214,164,76,.12);color:#e8e2d4}
-.bzhome-inner{max-width:1040px;margin:0 auto;display:grid;
-  grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
-.bzhome-eyebrow{margin:0 0 14px;font:600 .74rem/1.2 "Space Mono",ui-monospace,monospace;
-  letter-spacing:.22em;text-transform:uppercase;color:#d6a44c}
-.bzhome-h2{margin:0 0 16px;font:560 clamp(1.9rem,4.2vw,2.7rem)/1.08 "Fraunces",Georgia,serif;
-  color:#f5ecd2;letter-spacing:-.01em}
-.bzhome-lede{margin:0 0 26px;max-width:52ch;
-  font:400 clamp(1rem,1.4vw,1.08rem)/1.62 "Geist",system-ui,sans-serif;color:#cbc4b2}
-.bzhome-cta{display:inline-flex;align-items:center;gap:.6em;
-  padding:14px 26px;border-radius:999px;
-  background:linear-gradient(180deg,#e2b664,#d6a44c);color:#1a1509;
-  font:600 .96rem/1 "Geist",system-ui,sans-serif;letter-spacing:.01em;
-  text-decoration:none;border:1px solid rgba(214,164,76,.6);
-  box-shadow:0 10px 30px rgba(214,164,76,.22);
+    radial-gradient(120% 150% at 84% 8%, rgba(214,164,76,.16), transparent 60%),
+    radial-gradient(120% 120% at 6% 92%, rgba(47,140,186,.10), transparent 55%),
+    linear-gradient(180deg,#12100c 0%, #0b0a07 100%);
+  border-top:1px solid rgba(214,164,76,.22);border-bottom:1px solid rgba(214,164,76,.12);color:#e8e2d4}
+.bzhome-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.bzhome-eyebrow{margin:0 0 14px;font:600 .72rem/1.2 "Space Mono",ui-monospace,monospace;letter-spacing:.22em;text-transform:uppercase;color:#d6a44c}
+.bzhome-h2{margin:0 0 14px;font:560 clamp(1.8rem,4vw,2.55rem)/1.1 "Fraunces",Georgia,serif;color:#f5ecd2;letter-spacing:-.01em}
+.bzhome-hook{margin:0 0 22px;max-width:42ch;font:560 clamp(1.05rem,1.7vw,1.25rem)/1.4 "Fraunces",Georgia,serif;color:#e9dcbd;font-style:italic}
+.bzhome-beats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:0 0 26px}
+.bzhome-beat{background:linear-gradient(180deg,rgba(214,164,76,.10),rgba(0,0,0,.10));border:1px solid rgba(214,164,76,.20);border-radius:12px;padding:12px 13px}
+.bzhome-beat-k{display:block;font:600 .6rem/1.2 "Space Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:#d6a44c;margin-bottom:6px}
+.bzhome-beat p{margin:0;font:400 .84rem/1.45 "Geist",system-ui,sans-serif;color:#d7d0be}
+.bzhome-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.bzhome-cta{display:inline-flex;align-items:center;gap:.55em;padding:14px 28px;border-radius:999px;
+  background:linear-gradient(180deg,#e2b664,#d6a44c);color:#1a1509;font:600 .96rem/1 "Geist",system-ui,sans-serif;
+  letter-spacing:.01em;text-decoration:none;border:1px solid rgba(214,164,76,.6);box-shadow:0 10px 30px rgba(214,164,76,.22);
   transition:transform .16s ease, box-shadow .16s ease}
 .bzhome-cta:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(214,164,76,.34)}
-.bzhome-cta .bzhome-arrow{font-size:1.1em;line-height:0;transform:translateY(.02em)}
-.bzhome-note{margin:16px 0 0;font:400 .82rem/1.5 "Geist",system-ui,sans-serif;color:#8f897b}
-/* ---- the four-pillar motif ---- */
-.bzhome-figure{position:relative;display:flex;flex-direction:column;align-items:center;
-  gap:20px;padding:8px}
-.bzhome-glyph{font:500 clamp(3.4rem,9vw,5.2rem)/1 "Noto Serif SC","Fraunces",serif;
-  color:#f5ecd2;letter-spacing:.08em;
-  text-shadow:0 0 34px rgba(214,164,76,.35);opacity:.96}
-.bzhome-glyph small{display:block;margin-top:6px;
-  font:600 .62rem/1.4 "Space Mono",monospace;letter-spacing:.28em;
-  text-transform:uppercase;color:#d6a44c;text-shadow:none}
-.bzhome-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;width:100%;
-  max-width:340px}
+.bzhome-link{font:600 .9rem/1 "Geist",system-ui,sans-serif;color:#d6a44c;text-decoration:none}
+.bzhome-link:hover{color:#f5ecd2}
+.bzhome-note{margin:18px 0 0;font:400 .8rem/1.5 "Geist",system-ui,sans-serif;color:#8f897b}
+/* ---- the verified four-pillar chart ---- */
+.bzhome-figure{position:relative;display:flex;flex-direction:column;align-items:center;gap:16px;padding:8px}
+.bzhome-glyph{font:500 clamp(2.8rem,7vw,4rem)/1 "Noto Serif SC","Fraunces",serif;color:#f5ecd2;letter-spacing:.08em;text-shadow:0 0 34px rgba(214,164,76,.35)}
+.bzhome-glyph small{display:block;margin-top:6px;font:600 .58rem/1.4 "Space Mono",monospace;letter-spacing:.26em;text-transform:uppercase;color:#d6a44c;text-shadow:none}
+.bzhome-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;width:100%;max-width:352px}
 .bzhome-pillar{display:flex;flex-direction:column;align-items:center;gap:8px}
-.bzhome-cell{display:flex;align-items:center;justify-content:center;
-  width:100%;aspect-ratio:1/1;border-radius:10px;
-  border:1px solid rgba(214,164,76,.28);
-  background:linear-gradient(180deg,rgba(214,164,76,.10),rgba(214,164,76,.03));
-  font:500 1.5rem/1 "Noto Serif SC","Fraunces",serif;color:#f0e8d4}
-.bzhome-branch{color:#d6d0c0;border-color:rgba(214,164,76,.18);
-  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01))}
-.bzhome-pillar.is-self .bzhome-cell{border-color:rgba(214,164,76,.62);
-  box-shadow:0 0 0 1px rgba(214,164,76,.25) inset, 0 8px 22px rgba(214,164,76,.16)}
-.bzhome-plabel{font:600 .62rem/1 "Space Mono",monospace;letter-spacing:.14em;
-  text-transform:uppercase;color:#9a9482;margin-top:2px}
+.bzhome-cell{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:1/1;border-radius:10px;
+  border:1px solid rgba(214,164,76,.24);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.01));
+  font:500 1.55rem/1 "Noto Serif SC","Fraunces",serif}
+.bzhome-branch{border-color:rgba(214,164,76,.16)}
+.bzhome-pillar.is-self .bzhome-cell{border-color:rgba(214,164,76,.66);box-shadow:0 0 0 1px rgba(214,164,76,.25) inset,0 8px 22px rgba(214,164,76,.18)}
+.bzhome-plabel{font:600 .58rem/1 "Space Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:#9a9482}
 .bzhome-pillar.is-self .bzhome-plabel{color:#d6a44c}
-@media (max-width:760px){
+.bzhome-cap{margin:2px 0 0;text-align:center;max-width:320px;font:400 .74rem/1.5 "Geist",system-ui,sans-serif;color:#8f897b}
+@media (max-width:820px){
   .bzhome{padding:48px 20px}
-  .bzhome-inner{grid-template-columns:1fr;gap:34px}
+  .bzhome-inner{grid-template-columns:1fr;gap:32px}
   .bzhome-figure{order:-1}
-  .bzhome-pillars{max-width:300px}
+  .bzhome-beats{grid-template-columns:1fr}
 }
 </style>
 <section class="bzhome" aria-labelledby="bzhome-title">
   <div class="bzhome-inner">
     <div class="bzhome-copy">
-      <p class="bzhome-eyebrow">One animal on the surface, eight characters underneath</p>
-      <h2 class="bzhome-h2" id="bzhome-title">The chart hidden beneath your Zodi Animal</h2>
-      <p class="bzhome-lede">You have known one animal your whole life, the one set by your birth year. BaZi is the older system it came from: your year, month, day, and hour read as eight characters across four pillars. A mirror for temperament, balance, and timing, not a prediction and not fate.</p>
-      <a class="bzhome-cta" href="/bazi/">See the chart beneath your animal<span class="bzhome-arrow" aria-hidden="true">&#8250;</span></a>
-      <p class="bzhome-note">A mirror, not a forecast. Kept in Chinese for a thousand years, read here in English.</p>
+      <p class="bzhome-eyebrow">A real chart, read from one birth moment</p>
+      <h2 class="bzhome-h2" id="bzhome-title">Know your power years, your work, and where life is heading</h2>
+      <p class="bzhome-hook">You are a mountain with a maker's hands, built to turn a real craft into a living and to answer to no one but the work.</p>
+      <div class="bzhome-beats">
+          <div class="bzhome-beat"><span class="bzhome-beat-k">Your work</span><p>Built to make your own thing, and let the making pay you.</p></div>
+          <div class="bzhome-beat"><span class="bzhome-beat-k">Your power years</span><p>A turning point tends to open around 2026, near age 38.</p></div>
+          <div class="bzhome-beat"><span class="bzhome-beat-k">Where it heads</span><p>The elements you lacked at birth arrive with time.</p></div>
+      </div>
+      <div class="bzhome-actions">
+        <a class="bzhome-cta" href="/bazi/chart/">Cast your chart</a>
+        <a class="bzhome-link" href="/bazi/#example">See the full reading</a>
+      </div>
+      <p class="bzhome-note">A real chart, read as a mirror for reflection, never a prediction. Our calculator matches a professional almanac character for character.</p>
     </div>
     <div class="bzhome-figure" aria-hidden="true">
-      <div class="bzhome-glyph">八字<small>Four Pillars</small></div>
+      <div class="bzhome-glyph">八字<small>The Four Pillars</small></div>
       <div class="bzhome-pillars">
         <div class="bzhome-pillar">
-          <span class="bzhome-cell bzhome-stem">辛</span>
-          <span class="bzhome-cell bzhome-branch">巳</span>
+          <span class="bzhome-cell bzhome-stem" style="color:#c8a24c">己</span>
+          <span class="bzhome-cell bzhome-branch" style="color:#d1553b">巳</span>
           <span class="bzhome-plabel">Year</span>
         </div>
         <div class="bzhome-pillar">
-          <span class="bzhome-cell bzhome-stem">甲</span>
-          <span class="bzhome-cell bzhome-branch">午</span>
+          <span class="bzhome-cell bzhome-stem" style="color:#c9cdd6">庚</span>
+          <span class="bzhome-cell bzhome-branch" style="color:#d1553b">午</span>
           <span class="bzhome-plabel">Month</span>
         </div>
         <div class="bzhome-pillar is-self">
-          <span class="bzhome-cell bzhome-stem">癸</span>
-          <span class="bzhome-cell bzhome-branch">卯</span>
-          <span class="bzhome-plabel">Day</span>
+          <span class="bzhome-cell bzhome-stem" style="color:#c8a24c">戊</span>
+          <span class="bzhome-cell bzhome-branch" style="color:#d1553b">午</span>
+          <span class="bzhome-plabel">Day · self</span>
         </div>
         <div class="bzhome-pillar">
-          <span class="bzhome-cell bzhome-stem">庚</span>
-          <span class="bzhome-cell bzhome-branch">申</span>
+          <span class="bzhome-cell bzhome-stem" style="color:#c9cdd6">庚</span>
+          <span class="bzhome-cell bzhome-branch" style="color:#c9cdd6">申</span>
           <span class="bzhome-plabel">Hour</span>
         </div>
       </div>
+      <p class="bzhome-cap">The Nautilus: a Cancer Snake, born at 3 in the afternoon.</p>
     </div>
   </div>
 </section>
