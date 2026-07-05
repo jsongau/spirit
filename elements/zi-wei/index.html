@@ -1,0 +1,1950 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zi Wei Dou Shu — The Emperor's Astrology | ZodiAnimal</title>
+  <meta name="description" content="Zi Wei Dou Shu (紫微斗數): the celestial system Chinese imperial courts kept secret for 1,000 years. Explore the 12 palaces, 100 stars, and the Four Forces that map your entire life.">
+  <link rel="canonical" href="https://www.zodianimal.com/elements/zi-wei/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zi Wei Dou Shu — The Emperor's Astrology | ZodiAnimal">
+  <meta property="og:description" content="Your entire life mapped as a 12-room cosmic palace, with 100 stars stationed at the moment of your birth. The celestial system Chinese imperial courts kept secret for a millennium.">
+  <meta property="og:url" content="https://www.zodianimal.com/elements/zi-wei/">
+  <meta property="og:image" content="https://www.zodianimal.com/img/og/zi-wei-hub.jpg">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/nav-core.css">
+  <link rel="stylesheet" href="/css/nav-mega.css">
+  <link rel="stylesheet" href="/css/nav-drawer.css">
+  <link rel="stylesheet" href="/css/nav-sub.css">
+  <link rel="stylesheet" href="/css/bridges.css">
+  <link rel="stylesheet" href="/css/foot.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"WebPage","name":"Zi Wei Dou Shu — The Emperor's Astrology","url":"https://www.zodianimal.com/elements/zi-wei/","description":"Zi Wei Dou Shu: the celestial system Chinese imperial courts kept secret for 1,000 years. Your life mapped as a 12-room cosmic palace with 100 stars and the Four Forces.","inLanguage":"en"},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.zodianimal.com/"},
+      {"@type":"ListItem","position":2,"name":"Elements","item":"https://www.zodianimal.com/elements/"},
+      {"@type":"ListItem","position":3,"name":"Zi Wei Dou Shu","item":"https://www.zodianimal.com/elements/zi-wei/"}
+    ]},
+    {"@type":"DefinedTermSet","name":"Zi Wei Dou Shu terms","hasDefinedTerm":[
+      {"@type":"DefinedTerm","name":"紫微 Zi Wei","description":"The Emperor Star — the pivot of the Zi Wei Dou Shu system, authority and dignity."},
+      {"@type":"DefinedTerm","name":"命宮 Ming Gong","description":"The Command Palace — core identity, life force, and overall destiny pattern."},
+      {"@type":"DefinedTerm","name":"化禄 Hua Lu","description":"The Flow — the transformational force that opens channels and brings resources."},
+      {"@type":"DefinedTerm","name":"化权 Hua Quan","description":"The Power — the transformational force that activates authority."},
+      {"@type":"DefinedTerm","name":"化科 Hua Ke","description":"The Shine — the transformational force that brings recognition."},
+      {"@type":"DefinedTerm","name":"化忌 Hua Ji","description":"The Hook — the transformational force that teaches through obstruction."}
+    ]}
+  ]}
+  </script>
+
+  <style>
+  /* ============================================================
+     Zi Wei Dou Shu Hub — Page-level styles
+     ZodiAnimal dark-first design system, OKLCH tokens
+     All links: color + weight only. NO underline. NO border-bottom.
+  ============================================================ */
+
+  :root {
+    --ink:        oklch(0.16 0.03 275);
+    --ink-2:      oklch(0.20 0.035 275);
+    --panel:      oklch(0.25 0.04 273);
+    --panel-2:    oklch(0.30 0.045 272);
+    --line:       oklch(0.80 0.06 85 / 0.16);
+    --line-soft:  oklch(0.80 0.06 85 / 0.08);
+    --moon:       oklch(0.96 0.02 90);
+    --ivory:      oklch(0.92 0.02 88);
+    --body-text:  oklch(0.84 0.02 280);
+    --muted:      oklch(0.70 0.02 280);
+    --faint:      oklch(0.55 0.02 280);
+    --brass:      oklch(0.78 0.11 85);
+    --brass-dim:  oklch(0.62 0.09 85);
+    --brass-bright: oklch(0.90 0.09 88);
+    --serif:      "Fraunces", Georgia, serif;
+    --sans:       "Geist", "Inter", sans-serif;
+    --mono:       "Space Mono", monospace;
+    --cc:         oklch(0.70 0.20 310);   /* imperial purple — ZWDS accent */
+    --cc-dim:     oklch(0.52 0.18 310);
+    --cc-bright:  oklch(0.82 0.18 312);
+    --cc-soft:    oklch(0.70 0.20 310 / 0.16);
+    --cc-glow:    oklch(0.70 0.20 310 / 0.28);
+    --maxw:       1120px;
+    --r-1:        8px;
+    --r-2:        14px;
+    --r-3:        22px;
+    --r-pill:     999px;
+    --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+    --dur:        320ms;
+    --dur-fast:   180ms;
+  }
+
+  @supports not (color: oklch(0% 0 0)) {
+    :root {
+      --ink: #0d0e18; --ink-2: #131523; --panel: #1a1c30; --panel-2: #22253d;
+      --line: rgba(214,193,140,.16); --line-soft: rgba(214,193,140,.08);
+      --moon: #f6efd8; --ivory: #ece7d8; --body-text: #cfcfe0;
+      --muted: #adaac2; --faint: #7f8096; --brass: #d6c18c; --brass-dim: #a8925c;
+      --cc: #a855c8; --cc-dim: #7b3a98; --cc-bright: #c97ae0;
+      --cc-soft: rgba(168,85,200,.16); --cc-glow: rgba(168,85,200,.28);
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--body-text);
+    font-family: var(--sans);
+    font-size: clamp(1rem, 1.1vw, 1.125rem);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--serif);
+    color: var(--moon);
+    font-weight: 560;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  a {
+    color: var(--cc-bright);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  a:hover { color: var(--moon); }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 clamp(18px, 4vw, 48px);
+  }
+
+  .section-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.70rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--cc-bright);
+    margin: 0 0 0.8rem;
+    display: block;
+  }
+
+  /* ============================================================
+     HERO — animated star field + imperial purple glow
+  ============================================================ */
+
+  .zwds-hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: var(--ink);
+    padding: clamp(80px, 12vw, 140px) 0 clamp(60px, 8vw, 100px);
+  }
+
+  /* Star field canvas */
+  .zwds-star-field {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Imperial glow radials */
+  .zwds-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background:
+      radial-gradient(ellipse 900px 600px at 50% 40%, oklch(0.70 0.20 310 / 0.12), transparent 70%),
+      radial-gradient(ellipse 400px 300px at 30% 80%, oklch(0.70 0.20 310 / 0.06), transparent 70%),
+      radial-gradient(ellipse 500px 350px at 75% 15%, oklch(0.65 0.18 290 / 0.07), transparent 70%);
+  }
+
+  /* CSS star dots — many layers, varying speeds */
+  @keyframes zwds-drift-slow   { from { transform: translateY(0); }   to { transform: translateY(-8px); } }
+  @keyframes zwds-drift-med    { from { transform: translateY(0); }   to { transform: translateY(-14px); } }
+  @keyframes zwds-drift-fast   { from { transform: translateY(0); }   to { transform: translateY(-20px); } }
+  @keyframes zwds-twinkle      { 0%,100% { opacity: 0.9; } 50% { opacity: 0.2; } }
+  @keyframes zwds-twinkle-b    { 0%,100% { opacity: 0.4; } 60% { opacity: 1; } }
+  @keyframes zwds-pulse-glow   { 0%,100% { filter: blur(0px); opacity:0.9; } 50% { filter: blur(2px); opacity:0.5; } }
+
+  .zwds-star-field::before,
+  .zwds-star-field::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  /* Star layer 1 — distant, dim */
+  .zwds-star-field::before {
+    background-image:
+      radial-gradient(1px 1px at 8% 12%, oklch(0.90 0.02 88 / 0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 14% 38%, oklch(0.90 0.02 88 / 0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 22% 61%, oklch(0.90 0.02 88 / 0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 31% 9%, oklch(0.90 0.02 88 / 0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 39% 55%, oklch(0.90 0.02 88 / 0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 47% 27%, oklch(0.90 0.02 88 / 0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 55% 72%, oklch(0.90 0.02 88 / 0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 63% 16%, oklch(0.90 0.02 88 / 0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 71% 44%, oklch(0.90 0.02 88 / 0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 79% 88%, oklch(0.90 0.02 88 / 0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 87% 32%, oklch(0.90 0.02 88 / 0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 93% 64%, oklch(0.90 0.02 88 / 0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 4%  80%, oklch(0.90 0.02 88 / 0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 17% 91%, oklch(0.90 0.02 88 / 0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 26% 48%, oklch(0.90 0.02 88 / 0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 35% 75%, oklch(0.90 0.02 88 / 0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 44% 4%, oklch(0.90 0.02 88 / 0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 52% 92%, oklch(0.90 0.02 88 / 0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 36%, oklch(0.90 0.02 88 / 0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 68% 59%, oklch(0.90 0.02 88 / 0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 76% 20%, oklch(0.90 0.02 88 / 0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 84% 77%, oklch(0.90 0.02 88 / 0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 91% 8%,  oklch(0.90 0.02 88 / 0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 97% 50%, oklch(0.90 0.02 88 / 0.6) 0%, transparent 100%);
+    animation: zwds-drift-slow 8s ease-in-out infinite alternate;
+  }
+
+  /* Star layer 2 — medium, some purple-tinted */
+  .zwds-star-field::after {
+    background-image:
+      radial-gradient(1.5px 1.5px at 11% 25%, oklch(0.82 0.18 312 / 0.7) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 19% 70%, oklch(0.90 0.02 88 / 0.8) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 28% 42%, oklch(0.82 0.18 312 / 0.5) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 37% 87%, oklch(0.90 0.02 88 / 0.7) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 46% 18%, oklch(0.82 0.18 312 / 0.6) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 54% 65%, oklch(0.90 0.02 88 / 0.5) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 62% 30%, oklch(0.82 0.18 312 / 0.8) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 70% 78%, oklch(0.90 0.02 88 / 0.6) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 78% 12%, oklch(0.82 0.18 312 / 0.5) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 86% 55%, oklch(0.90 0.02 88 / 0.7) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 94% 38%, oklch(0.82 0.18 312 / 0.6) 0%, transparent 100%),
+      radial-gradient(2px 2px at 5%  45%, oklch(0.90 0.02 88 / 0.9) 0%, transparent 100%),
+      radial-gradient(2px 2px at 23% 15%, oklch(0.82 0.18 312 / 0.7) 0%, transparent 100%),
+      radial-gradient(2px 2px at 41% 82%, oklch(0.90 0.02 88 / 0.8) 0%, transparent 100%),
+      radial-gradient(2px 2px at 58% 52%, oklch(0.82 0.18 312 / 0.9) 0%, transparent 100%),
+      radial-gradient(2px 2px at 75% 96%, oklch(0.90 0.02 88 / 0.7) 0%, transparent 100%),
+      radial-gradient(2px 2px at 90% 22%, oklch(0.82 0.18 312 / 0.6) 0%, transparent 100%);
+    animation: zwds-drift-med 11s ease-in-out infinite alternate-reverse;
+  }
+
+  /* Bright accent stars — separate divs for independent animation */
+  .zwds-star-bright {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--moon);
+    box-shadow: 0 0 6px 2px var(--cc-glow);
+    animation: zwds-twinkle var(--tw-dur, 4s) var(--tw-delay, 0s) ease-in-out infinite;
+    z-index: 1;
+  }
+
+  .zwds-hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+    padding: 0 clamp(18px, 4vw, 48px);
+  }
+
+  .zwds-hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.70rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--cc-bright);
+    margin: 0 0 1.2rem;
+  }
+
+  .zwds-hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 7vw, 5.2rem);
+    font-weight: 560;
+    font-optical-sizing: auto;
+    line-height: 1.06;
+    color: var(--moon);
+    margin: 0 0 1.4rem;
+    text-wrap: balance;
+  }
+
+  .zwds-hero h1 .zh {
+    display: block;
+    font-size: 0.68em;
+    color: var(--cc-bright);
+    text-shadow: 0 0 40px var(--cc-glow), 0 0 80px var(--cc-soft);
+    letter-spacing: 0.08em;
+  }
+
+  .zwds-hero-sub {
+    font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+    line-height: 1.55;
+    color: var(--ivory);
+    max-width: 62ch;
+    margin: 0 auto 2.4rem;
+  }
+
+  .zwds-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    background: var(--cc);
+    color: oklch(0.12 0.02 275);
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.9rem 2rem;
+    border-radius: var(--r-pill);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+    box-shadow: 0 0 30px var(--cc-glow);
+  }
+  .zwds-cta-primary:hover {
+    background: var(--cc-bright);
+    color: oklch(0.12 0.02 275);
+    box-shadow: 0 0 50px var(--cc-glow), 0 4px 20px oklch(0 0 0 / 0.3);
+    transform: translateY(-2px);
+  }
+
+  .zwds-hero-sigil {
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--serif);
+    font-size: clamp(6rem, 16vw, 11rem);
+    color: var(--cc-soft);
+    line-height: 1;
+    pointer-events: none;
+    z-index: 0;
+    text-shadow: 0 0 120px var(--cc-glow);
+    user-select: none;
+  }
+
+  /* ============================================================
+     SECTION STRUCTURE
+  ============================================================ */
+
+  .zwds-section {
+    padding: clamp(56px, 8vw, 100px) 0;
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .zwds-section-title {
+    font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+    margin: 0 0 0.6rem;
+    text-align: center;
+  }
+
+  .zwds-section-lead {
+    text-align: center;
+    max-width: 58ch;
+    margin: 0 auto 3rem;
+    color: var(--muted);
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+  }
+
+  /* ============================================================
+     SECTION 2 — THREE PILLARS
+  ============================================================ */
+
+  .zwds-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: clamp(28px, 4vw, 48px);
+  }
+
+  .zwds-pillar {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--cc);
+    border-radius: var(--r-2);
+    padding: 2rem 1.6rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color var(--dur-fast), box-shadow var(--dur-fast), transform var(--dur-fast);
+  }
+  .zwds-pillar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 200px 120px at 50% -10%, var(--cc-soft), transparent 70%);
+    pointer-events: none;
+  }
+  .zwds-pillar:hover {
+    border-color: var(--cc);
+    box-shadow: 0 0 30px var(--cc-soft);
+    transform: translateY(-3px);
+  }
+
+  .zwds-pillar-glyph {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    color: var(--cc-bright);
+    line-height: 1;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px var(--cc-glow);
+    position: relative;
+  }
+
+  .zwds-pillar h3 {
+    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+    margin-bottom: 0.7rem;
+    position: relative;
+  }
+
+  .zwds-pillar p {
+    color: var(--body-text);
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    position: relative;
+  }
+
+  /* ============================================================
+     SECTION 3 — BAZI vs ZWDS COMPARISON
+  ============================================================ */
+
+  .zwds-compare {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-top: clamp(28px, 4vw, 48px);
+  }
+
+  .zwds-compare-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--r-3);
+    padding: 2rem 1.8rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .zwds-compare-card--bazi { border-top: 3px solid var(--brass); }
+  .zwds-compare-card--zwds { border-top: 3px solid var(--cc); }
+
+  .zwds-compare-card--bazi::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 180px 100px at 50% -5%, oklch(0.78 0.11 85 / 0.10), transparent 70%);
+    pointer-events: none;
+  }
+  .zwds-compare-card--zwds::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 180px 100px at 50% -5%, var(--cc-soft), transparent 70%);
+    pointer-events: none;
+  }
+
+  .zwds-compare-card-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .zwds-compare-card--bazi .zwds-compare-card-label { color: var(--brass); }
+  .zwds-compare-card--zwds .zwds-compare-card-label { color: var(--cc-bright); }
+
+  .zwds-compare-card-label {
+    font-family: var(--serif);
+    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+    font-weight: 560;
+    display: block;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  .zwds-compare-card p {
+    color: var(--ivory);
+    font-size: 1.05rem;
+    line-height: 1.55;
+    margin: 0;
+    position: relative;
+  }
+
+  .zwds-compare-vs {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    color: var(--cc);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .zwds-compare-bottom {
+    margin-top: 2rem;
+    text-align: center;
+    padding: 1.4rem 2rem;
+    background: var(--panel-2);
+    border: 1px solid var(--cc-soft);
+    border-radius: var(--r-pill);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    color: var(--moon);
+  }
+
+  .zwds-compare-bottom em {
+    font-style: normal;
+    color: var(--cc-bright);
+    font-weight: 600;
+  }
+
+  /* ============================================================
+     SECTION 4 — EXPLORE THE SYSTEM (bridge cards)
+  ============================================================ */
+
+  .zwds-bridge-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    margin-top: clamp(28px, 4vw, 48px);
+  }
+
+  .zwds-bridge-grid .zwds-bridge-wide {
+    grid-column: span 1;
+  }
+
+  .zwds-bridge-grid-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin-top: 1.2rem;
+  }
+
+  .zwds-bridge {
+    display: block;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--r-3);
+    padding: 1.8rem 1.6rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color var(--dur-fast) var(--ease-out),
+                box-shadow var(--dur-fast) var(--ease-out),
+                transform var(--dur-fast) var(--ease-out);
+    text-decoration: none;
+  }
+  .zwds-bridge::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 200px 100px at 50% 0%, var(--cc-soft), transparent 70%);
+    opacity: 0;
+    transition: opacity var(--dur-fast);
+    pointer-events: none;
+  }
+  .zwds-bridge:hover {
+    border-color: var(--cc);
+    box-shadow: 0 4px 40px var(--cc-soft);
+    transform: translateY(-4px);
+  }
+  .zwds-bridge:hover::before { opacity: 1; }
+
+  .zwds-bridge-num {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    color: var(--cc);
+    margin-bottom: 0.7rem;
+    display: block;
+  }
+
+  .zwds-bridge h3 {
+    font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+    margin-bottom: 0.5rem;
+    color: var(--moon);
+    position: relative;
+  }
+
+  .zwds-bridge p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 0 0 1rem;
+    line-height: 1.55;
+    position: relative;
+  }
+
+  .zwds-bridge-arrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--cc-bright);
+    letter-spacing: 0.06em;
+    position: relative;
+  }
+
+  /* ============================================================
+     SECTION 5 — 12 PALACE INTERACTIVE GRID
+  ============================================================ */
+
+  .zwds-palace-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 1rem;
+    margin-top: clamp(28px, 4vw, 48px);
+  }
+
+  .zwds-palace {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--r-2);
+    padding: 1.4rem 1.2rem;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    transition: border-color var(--dur) var(--ease-out),
+                box-shadow var(--dur) var(--ease-out),
+                transform var(--dur) var(--ease-out),
+                background var(--dur) var(--ease-out);
+    min-height: 160px;
+  }
+
+  .zwds-palace::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 180px 120px at 50% 0%, var(--cc-soft), transparent 70%);
+    opacity: 0;
+    transition: opacity var(--dur);
+    pointer-events: none;
+  }
+
+  .zwds-palace:hover {
+    border-color: var(--cc);
+    background: var(--panel-2);
+    box-shadow: 0 0 30px var(--cc-soft), 0 8px 24px oklch(0 0 0 / 0.35);
+    transform: translateY(-3px);
+  }
+  .zwds-palace:hover::before { opacity: 1; }
+
+  /* Front face — always visible */
+  .zwds-palace-front {
+    transition: opacity var(--dur), transform var(--dur) var(--ease-out);
+  }
+
+  .zwds-palace:hover .zwds-palace-front {
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+  }
+
+  /* Back face — revealed on hover */
+  .zwds-palace-back {
+    position: absolute;
+    inset: 1.4rem 1.2rem;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity var(--dur), transform var(--dur) var(--ease-out);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .zwds-palace:hover .zwds-palace-back {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .zwds-palace-num {
+    font-family: var(--mono);
+    font-size: 0.60rem;
+    letter-spacing: 0.22em;
+    color: var(--cc-bright);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  .zwds-palace-zh {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    color: var(--cc);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+    text-shadow: 0 0 16px var(--cc-glow);
+  }
+
+  .zwds-palace-name {
+    font-family: var(--serif);
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    color: var(--moon);
+    font-weight: 560;
+    margin-bottom: 0.25rem;
+  }
+
+  .zwds-palace-pinyin {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--faint);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+
+  .zwds-palace-domain {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  /* Back content */
+  .zwds-palace-back-title {
+    font-family: var(--mono);
+    font-size: 0.60rem;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: var(--cc-bright);
+    margin-bottom: 0.4rem;
+  }
+
+  .zwds-palace-back-desc {
+    font-size: 0.84rem;
+    color: var(--ivory);
+    line-height: 1.5;
+    margin: 0 0 0.6rem;
+    flex: 1;
+  }
+
+  .zwds-palace-back-tip {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.4;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--line-soft);
+    margin: 0;
+  }
+
+  /* ============================================================
+     SECTION 6 — 14 STARS GRID
+  ============================================================ */
+
+  .zwds-stars-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+    margin-top: clamp(28px, 4vw, 48px);
+  }
+
+  .zwds-star-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--r-2);
+    padding: 1.2rem 1rem;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    transition: border-color var(--dur-fast), box-shadow var(--dur-fast), transform var(--dur-fast);
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .zwds-star-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity var(--dur-fast);
+    pointer-events: none;
+    background: radial-gradient(ellipse 120px 80px at 50% 0%, var(--star-color-soft, var(--cc-soft)), transparent 70%);
+  }
+
+  .zwds-star-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 30px var(--star-color-soft, var(--cc-soft));
+  }
+  .zwds-star-card:hover { border-color: var(--star-color, var(--cc)); }
+  .zwds-star-card:hover::before { opacity: 1; }
+
+  .zwds-star-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--star-color, var(--cc));
+    box-shadow: 0 0 8px var(--star-color, var(--cc));
+    margin-bottom: 0.7rem;
+    flex-shrink: 0;
+  }
+
+  .zwds-star-zh {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    color: var(--star-color, var(--cc));
+    line-height: 1;
+    margin-bottom: 0.3rem;
+    position: relative;
+  }
+
+  .zwds-star-name {
+    font-family: var(--serif);
+    font-size: 0.85rem;
+    color: var(--moon);
+    font-weight: 560;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+
+  .zwds-star-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-top: auto;
+    position: relative;
+  }
+
+  .zwds-star-tag {
+    font-family: var(--mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.45rem;
+    border-radius: var(--r-pill);
+    background: oklch(from var(--star-color, var(--cc)) l c h / 0.12);
+    color: var(--star-color, var(--cc));
+    border: 1px solid oklch(from var(--star-color, var(--cc)) l c h / 0.25);
+  }
+
+  /* Star hover tooltip */
+  .zwds-star-card .zwds-star-tip {
+    display: none;
+  }
+  .zwds-star-card:hover .zwds-star-tip {
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0.5rem;
+    background: var(--panel-2);
+    border: 1px solid var(--star-color, var(--cc));
+    border-radius: var(--r-1);
+    padding: 0.6rem 0.8rem;
+    font-size: 0.75rem;
+    color: var(--ivory);
+    white-space: nowrap;
+    z-index: 10;
+    box-shadow: 0 4px 20px oklch(0 0 0 / 0.5);
+    pointer-events: none;
+  }
+
+  /* ============================================================
+     SECTION 7 — FOUR FORCES
+  ============================================================ */
+
+  .zwds-forces {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    margin-top: clamp(28px, 4vw, 48px);
+  }
+
+  .zwds-force {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--r-3);
+    padding: 2rem 1.4rem 1.6rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    transition: border-color var(--dur-fast), box-shadow var(--dur-fast), transform var(--dur-fast);
+  }
+  .zwds-force:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 30px var(--force-color-soft, var(--cc-soft));
+    border-color: var(--force-color, var(--cc));
+  }
+
+  .zwds-force-season-art {
+    width: 100%;
+    height: 80px;
+    border-radius: var(--r-1);
+    margin-bottom: 1.2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Spring — Flow */
+  .zwds-force--lu .zwds-force-season-art {
+    background: linear-gradient(145deg, oklch(0.22 0.04 140) 0%, oklch(0.28 0.08 160) 60%, oklch(0.34 0.10 148) 100%);
+  }
+  .zwds-force--lu .zwds-force-season-art::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle 3px at 20% 60%, oklch(0.74 0.12 160 / 0.8), transparent),
+      radial-gradient(circle 2px at 40% 30%, oklch(0.74 0.12 160 / 0.6), transparent),
+      radial-gradient(circle 3px at 65% 70%, oklch(0.74 0.12 160 / 0.9), transparent),
+      radial-gradient(circle 2px at 80% 40%, oklch(0.74 0.12 160 / 0.7), transparent);
+  }
+
+  /* Summer — Power */
+  .zwds-force--quan .zwds-force-season-art {
+    background: linear-gradient(145deg, oklch(0.22 0.06 60) 0%, oklch(0.30 0.14 55) 60%, oklch(0.26 0.10 45) 100%);
+  }
+  .zwds-force--quan .zwds-force-season-art::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60px 40px at 50% 50%, oklch(0.78 0.22 60 / 0.35), transparent),
+      radial-gradient(circle 4px at 35% 40%, oklch(0.90 0.18 65 / 0.9), transparent),
+      radial-gradient(circle 3px at 65% 60%, oklch(0.90 0.18 65 / 0.7), transparent);
+  }
+
+  /* Autumn — Shine */
+  .zwds-force--ke .zwds-force-season-art {
+    background: linear-gradient(145deg, oklch(0.20 0.05 30) 0%, oklch(0.28 0.10 28) 60%, oklch(0.24 0.08 35) 100%);
+  }
+  .zwds-force--ke .zwds-force-season-art::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80px 20px at 50% 50%, oklch(0.75 0.13 30 / 0.6), transparent),
+      radial-gradient(circle 5px at 50% 50%, oklch(0.88 0.10 32 / 1), transparent 40%),
+      radial-gradient(circle 12px at 50% 50%, oklch(0.75 0.13 30 / 0.4), transparent);
+  }
+
+  /* Winter — Hook */
+  .zwds-force--ji .zwds-force-season-art {
+    background: linear-gradient(145deg, oklch(0.14 0.04 280) 0%, oklch(0.18 0.06 275) 60%, oklch(0.16 0.04 270) 100%);
+  }
+  .zwds-force--ji .zwds-force-season-art::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle 2px at 25% 35%, oklch(0.80 0.06 250 / 0.5), transparent),
+      radial-gradient(circle 2px at 50% 65%, oklch(0.80 0.06 250 / 0.4), transparent),
+      radial-gradient(circle 2px at 75% 45%, oklch(0.80 0.06 250 / 0.6), transparent),
+      radial-gradient(circle 2px at 40% 80%, oklch(0.80 0.06 250 / 0.3), transparent);
+  }
+
+  .zwds-force-season-tag {
+    font-family: var(--mono);
+    font-size: 0.60rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--force-color, var(--cc));
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  .zwds-force-chinese {
+    font-family: var(--serif);
+    font-size: 0.80rem;
+    color: var(--faint);
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .zwds-force-name {
+    font-family: var(--serif);
+    font-size: clamp(1.1rem, 1.6vw, 1.25rem);
+    color: var(--moon);
+    font-weight: 560;
+    display: block;
+    margin-bottom: 0.7rem;
+  }
+
+  .zwds-force-desc {
+    font-size: 0.90rem;
+    color: var(--body-text);
+    line-height: 1.5;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .zwds-forces-cta {
+    text-align: center;
+    margin-top: 2.4rem;
+  }
+
+  /* ============================================================
+     SECTION 8 — READING CTA
+  ============================================================ */
+
+  .zwds-reading-cta {
+    background: var(--panel);
+    border: 1px solid var(--cc);
+    border-radius: var(--r-3);
+    padding: clamp(40px, 6vw, 72px) clamp(24px, 5vw, 60px);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .zwds-reading-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 600px 300px at 50% 0%, var(--cc-glow), transparent 65%),
+      radial-gradient(ellipse 400px 200px at 20% 100%, oklch(0.70 0.20 310 / 0.08), transparent 70%),
+      radial-gradient(ellipse 300px 200px at 80% 100%, oklch(0.65 0.18 290 / 0.06), transparent 70%);
+  }
+
+  .zwds-reading-cta-sigil {
+    font-family: var(--serif);
+    font-size: 5rem;
+    color: var(--cc-soft);
+    line-height: 1;
+    margin-bottom: 1rem;
+    position: relative;
+    text-shadow: 0 0 60px var(--cc-glow);
+  }
+
+  .zwds-reading-cta h2 {
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .zwds-reading-cta p {
+    max-width: 52ch;
+    margin: 0 auto 2rem;
+    color: var(--ivory);
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    line-height: 1.6;
+    position: relative;
+  }
+
+  /* ============================================================
+     SECTION 9 — LEARNING PATH
+  ============================================================ */
+
+  .zwds-path {
+    display: flex;
+    gap: 0;
+    margin-top: clamp(28px, 4vw, 48px);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .zwds-path-step {
+    flex: 1;
+    min-width: 0;
+    padding: 1.6rem 1.4rem;
+    background: var(--panel);
+    border-top: 3px solid var(--line);
+    border-bottom: 1px solid var(--line-soft);
+    border-right: 1px solid var(--line-soft);
+    position: relative;
+    transition: border-top-color var(--dur-fast), background var(--dur-fast);
+  }
+  .zwds-path-step:first-child {
+    border-left: 1px solid var(--line-soft);
+    border-radius: var(--r-2) 0 0 var(--r-2);
+  }
+  .zwds-path-step:last-child {
+    border-radius: 0 var(--r-2) var(--r-2) 0;
+  }
+
+  .zwds-path-step--begin  { border-top-color: var(--cc); }
+  .zwds-path-step--mid    { border-top-color: oklch(0.62 0.22 15); }
+  .zwds-path-step--deep   { border-top-color: oklch(0.58 0.22 270); }
+
+  .zwds-path-step-level {
+    font-family: var(--mono);
+    font-size: 0.60rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .zwds-path-step-title {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--moon);
+    font-weight: 560;
+    margin-bottom: 0.6rem;
+  }
+
+  .zwds-path-step-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .zwds-path-step-links li a {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 400;
+    transition: color var(--dur-fast);
+  }
+  .zwds-path-step-links li a:hover {
+    color: var(--cc-bright);
+    font-weight: 500;
+  }
+
+  .zwds-path-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.5rem;
+    color: var(--cc-soft);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  /* ============================================================
+     RESPONSIVE
+  ============================================================ */
+
+  @media (max-width: 900px) {
+    .zwds-pillars        { grid-template-columns: 1fr; }
+    .zwds-compare        { grid-template-columns: 1fr; }
+    .zwds-compare-vs     { padding: 0.5rem 0; }
+    .zwds-bridge-grid    { grid-template-columns: 1fr 1fr; }
+    .zwds-bridge-grid-bottom { grid-template-columns: 1fr; }
+    .zwds-palace-grid    { grid-template-columns: repeat(2, 1fr); }
+    .zwds-stars-grid     { grid-template-columns: repeat(4, 1fr); }
+    .zwds-forces         { grid-template-columns: repeat(2, 1fr); }
+    .zwds-path           { flex-direction: column; }
+    .zwds-path-step      { border-radius: 0; border-right: 1px solid var(--line-soft); border-left: 1px solid var(--line-soft); }
+    .zwds-path-step:first-child { border-radius: var(--r-2) var(--r-2) 0 0; }
+    .zwds-path-step:last-child  { border-radius: 0 0 var(--r-2) var(--r-2); }
+    .zwds-path-arrow { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .zwds-bridge-grid    { grid-template-columns: 1fr; }
+    .zwds-palace-grid    { grid-template-columns: 1fr; }
+    .zwds-stars-grid     { grid-template-columns: repeat(2, 1fr); }
+    .zwds-forces         { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  </style>
+</head>
+<body class="pn-has-bar">
+
+<!--pn-static:start--><!--pn-static:end-->
+
+<!--pn-sub:start-->
+<nav class="pn-sub" aria-label="Section navigation">
+  <div class="pn-sub-inner">
+    <ol class="pn-breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1">
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/elements/" itemprop="item"><span itemprop="name">Elements</span></a>
+        <meta itemprop="position" content="2">
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/elements/zi-wei/" itemprop="item"><span itemprop="name">Zi Wei Dou Shu</span></a>
+        <meta itemprop="position" content="3">
+      </li>
+    </ol>
+  </div>
+</nav>
+<!--pn-sub:end-->
+
+<a id="pn-main" tabindex="-1"></a>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="zwds-hero" aria-labelledby="zwds-h1">
+
+  <!-- CSS star field -->
+  <div class="zwds-star-field" aria-hidden="true"></div>
+
+  <!-- Individual bright stars at various positions/delays -->
+  <div class="zwds-star-bright" aria-hidden="true"
+       style="width:3px;height:3px;top:12%;left:18%;--tw-dur:3.2s;--tw-delay:0.4s;"></div>
+  <div class="zwds-star-bright" aria-hidden="true"
+       style="width:4px;height:4px;top:24%;left:72%;--tw-dur:4.8s;--tw-delay:1.1s;"></div>
+  <div class="zwds-star-bright" aria-hidden="true"
+       style="width:3px;height:3px;top:38%;left:9%;--tw-dur:3.7s;--tw-delay:2.0s;"></div>
+  <div class="zwds-star-bright" aria-hidden="true"
+       style="width:5px;height:5px;top:8%;left:54%;--tw-dur:5.2s;--tw-delay:0.7s;"></div>
+  <div class="zwds-star-bright" aria-hidden="true"
+       style="width:3px;height:3px;top:62%;left:88%;--tw-dur:3.9s;--tw-delay:1.6s;"></div>
+  <div class="zwds-star-bright" aria-hidden="true"
+       style="width:4px;height:4px;top:78%;left:34%;--tw-dur:4.1s;--tw-delay:0.3s;"></div>
+  <div class="zwds-star-bright" aria-hidden="true"
+       style="width:3px;height:3px;top:45%;left:62%;--tw-dur:3.5s;--tw-delay:2.4s;"></div>
+  <div class="zwds-star-bright" aria-hidden="true"
+       style="width:4px;height:4px;top:88%;left:14%;--tw-dur:4.6s;--tw-delay:1.8s;"></div>
+  <div class="zwds-star-bright" aria-hidden="true"
+       style="width:3px;height:3px;top:19%;left:41%;--tw-dur:3.3s;--tw-delay:0.9s;animation-name:zwds-pulse-glow;"></div>
+  <div class="zwds-star-bright" aria-hidden="true"
+       style="width:6px;height:6px;top:55%;left:50%;--tw-dur:6.0s;--tw-delay:3.0s;animation-name:zwds-pulse-glow;box-shadow:0 0 12px 4px var(--cc-glow);"></div>
+
+  <div class="zwds-hero-inner">
+    <p class="zwds-hero-eyebrow" aria-hidden="true">The Emperor's Astrology</p>
+    <h1 id="zwds-h1">
+      <span class="zh">紫微斗數 · Zi Wei Dou Shu</span>
+      The Emperor's Astrology
+    </h1>
+    <p class="zwds-hero-sub">
+      The celestial system that Chinese imperial courts kept secret for 1,000 years — your entire life mapped as a 12-room cosmic palace, with 100 stars stationed at the moment of your birth.
+    </p>
+    <a class="zwds-cta-primary" href="/account/">Read your palace chart →</a>
+  </div>
+
+  <!-- Large background sigil -->
+  <div class="zwds-hero-sigil" aria-hidden="true">紫</div>
+
+</section>
+
+
+<!-- ============================================================
+     SECTION 2 — THREE PILLARS
+============================================================ -->
+<section class="zwds-section" aria-labelledby="zwds-pillars-h">
+  <div class="wrap">
+    <span class="section-eyebrow">How it works</span>
+    <h2 class="zwds-section-title" id="zwds-pillars-h">The architecture of a life</h2>
+    <p class="zwds-section-lead">Three interlocking structures hold the entire system together. Learn them once and the rest falls into place.</p>
+
+    <div class="zwds-pillars">
+
+      <div class="zwds-pillar">
+        <div class="zwds-pillar-glyph" aria-hidden="true">宮</div>
+        <h3>12 Rooms</h3>
+        <p>Your life divided into 12 palaces, each governing a domain — wealth, relationships, career, health, and more. Every room is permanently furnished by the stars of your birth.</p>
+      </div>
+
+      <div class="zwds-pillar">
+        <div class="zwds-pillar-glyph" aria-hidden="true">星</div>
+        <h3>100+ Stars</h3>
+        <p>Each star is a character: emperors, warriors, scholars, diplomats. Their placement reveals not just who you are, but the forces shaping every decade of your life.</p>
+      </div>
+
+      <div class="zwds-pillar">
+        <div class="zwds-pillar-glyph" aria-hidden="true">化</div>
+        <h3>Four Forces</h3>
+        <p>The Flow, The Power, The Shine, The Hook — four transformational forces that activate specific stars in your chart, changing the energy of every room they touch.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 3 — BAZI vs ZWDS
+============================================================ -->
+<section class="zwds-section" aria-labelledby="zwds-compare-h">
+  <div class="wrap">
+    <span class="section-eyebrow">Two systems, one conversation</span>
+    <h2 class="zwds-section-title" id="zwds-compare-h">BaZi and Zi Wei Dou Shu</h2>
+    <p class="zwds-section-lead">Both systems emerge from the same cosmological tradition. They answer different questions — and they answer them differently.</p>
+
+    <div class="zwds-compare">
+
+      <div class="zwds-compare-card zwds-compare-card--bazi">
+        <span class="zwds-compare-card-eyebrow">八字 · Four Pillars</span>
+        <span class="zwds-compare-card-label">BaZi</span>
+        <p>The elemental weather of your life — what energies shape your character and era. BaZi reads the five phases active in your birth year, month, day, and hour, revealing the elemental constitution you inhabit.</p>
+      </div>
+
+      <div class="zwds-compare-vs" aria-hidden="true">versus</div>
+
+      <div class="zwds-compare-card zwds-compare-card--zwds">
+        <span class="zwds-compare-card-eyebrow">紫微斗數 · Purple Star</span>
+        <span class="zwds-compare-card-label">Zi Wei Dou Shu</span>
+        <p>The map of your life — 12 rooms, 100 characters, every decade revealed. ZWDS plots the entire palace of your existence: which rooms are lit, which stars preside, and how the Four Forces move through them over time.</p>
+      </div>
+
+    </div>
+
+    <p class="zwds-compare-bottom">
+      <em>BaZi</em> tells you the weather. <em>Zi Wei</em> gives you the map.
+    </p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 4 — EXPLORE THE SYSTEM
+============================================================ -->
+<section class="zwds-section" aria-labelledby="zwds-explore-h">
+  <div class="wrap">
+    <span class="section-eyebrow">Navigate the court</span>
+    <h2 class="zwds-section-title" id="zwds-explore-h">Explore the system</h2>
+    <p class="zwds-section-lead">Five doors into the palace. Each opens a complete room of study.</p>
+
+    <div class="zwds-bridge-grid">
+      <a class="zwds-bridge" href="/elements/zi-wei/palaces/">
+        <span class="zwds-bridge-num">01 · The Structure</span>
+        <h3>The 12 Palaces</h3>
+        <p>Your life has 12 rooms. Each is a domain — career, wealth, love, health — furnished by the stars at your birth and activated by time.</p>
+        <span class="zwds-bridge-arrow">Explore the palaces →</span>
+      </a>
+
+      <a class="zwds-bridge" href="/elements/zi-wei/stars/">
+        <span class="zwds-bridge-num">02 · The Characters</span>
+        <h3>The 14 Stars</h3>
+        <p>Every star is a character with a role in your court. Emperors, warriors, scholars, shadows — each one speaks a language your chart translates.</p>
+        <span class="zwds-bridge-arrow">Meet the stars →</span>
+      </a>
+
+      <a class="zwds-bridge" href="/elements/zi-wei/four-forces/">
+        <span class="zwds-bridge-num">03 · The Engine</span>
+        <h3>The Four Forces</h3>
+        <p>The dynamic engine that drives destiny. The Flow, The Power, The Shine, The Hook — four transformations that move through every chart, every year.</p>
+        <span class="zwds-bridge-arrow">Discover the forces →</span>
+      </a>
+    </div>
+
+    <div class="zwds-bridge-grid-bottom">
+      <a class="zwds-bridge" href="/elements/zi-wei/history/">
+        <span class="zwds-bridge-num">04 · The Origin</span>
+        <h3>History &amp; Origins</h3>
+        <p>1,000 years of imperial astrology. How Zi Wei Dou Shu was born in the Song dynasty, refined by scholars, and kept within palace walls for centuries before reaching the world.</p>
+        <span class="zwds-bridge-arrow">Read the history →</span>
+      </a>
+
+      <a class="zwds-bridge" href="/elements/zi-wei/timing/">
+        <span class="zwds-bridge-num">05 · The Calendar</span>
+        <h3>Timing &amp; Cycles</h3>
+        <p>When does each chapter of your life activate? The 10-year decade pillars, the annual chart, and the monthly activations that make ZWDS a living system, not a static map.</p>
+        <span class="zwds-bridge-arrow">Understand the timing →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 5 — 12 PALACES INTERACTIVE GRID
+============================================================ -->
+<section class="zwds-section" aria-labelledby="zwds-palaces-h">
+  <div class="wrap">
+    <span class="section-eyebrow">The twelve rooms</span>
+    <h2 class="zwds-section-title" id="zwds-palaces-h">The 12 Palaces</h2>
+    <p class="zwds-section-lead">Your life is a palace with twelve rooms. Hover any room to reveal its domain — and the reading insight that comes with it.</p>
+
+    <div class="zwds-palace-grid" role="list">
+
+      <!-- Palace 1 -->
+      <div class="zwds-palace" role="listitem" tabindex="0" aria-label="Palace 1: The Command Palace">
+        <div class="zwds-palace-front">
+          <span class="zwds-palace-num">Palace 01</span>
+          <div class="zwds-palace-zh" aria-hidden="true">命宮</div>
+          <div class="zwds-palace-name">The Command Palace</div>
+          <div class="zwds-palace-pinyin">Ming Gong</div>
+          <p class="zwds-palace-domain">Core identity, life force, and the overall destiny pattern</p>
+        </div>
+        <div class="zwds-palace-back" aria-hidden="true">
+          <div class="zwds-palace-back-title">Full Domain</div>
+          <p class="zwds-palace-back-desc">The Command Palace is the throne room — the seat of selfhood. The stars here describe your natural authority, your characteristic way of moving through the world, and the shape of your entire destiny arc. It is the first palace a reader turns to.</p>
+          <p class="zwds-palace-back-tip">Reading tip: The star seated in The Command Palace is never neutral. It is always either a strength to build on or a tension to navigate.</p>
+        </div>
+      </div>
+
+      <!-- Palace 2 -->
+      <div class="zwds-palace" role="listitem" tabindex="0" aria-label="Palace 2: The Peer Circle">
+        <div class="zwds-palace-front">
+          <span class="zwds-palace-num">Palace 02</span>
+          <div class="zwds-palace-zh" aria-hidden="true">兄弟宮</div>
+          <div class="zwds-palace-name">The Peer Circle</div>
+          <div class="zwds-palace-pinyin">Xiong Di Gong</div>
+          <p class="zwds-palace-domain">Siblings, peers, cooperative relationships, and equals</p>
+        </div>
+        <div class="zwds-palace-back" aria-hidden="true">
+          <div class="zwds-palace-back-title">Full Domain</div>
+          <p class="zwds-palace-back-desc">The Peer Circle governs the horizontal relationships in your life — siblings by blood, peers by profession, collaborators by choice. Strong stars here signal rich networks; difficult stars reveal rivalry or betrayal within the circle of equals.</p>
+          <p class="zwds-palace-back-tip">Reading tip: This palace also reveals how you function in groups — whether you lead, cooperate, or quietly compete.</p>
+        </div>
+      </div>
+
+      <!-- Palace 3 -->
+      <div class="zwds-palace" role="listitem" tabindex="0" aria-label="Palace 3: The Mirror of Union">
+        <div class="zwds-palace-front">
+          <span class="zwds-palace-num">Palace 03</span>
+          <div class="zwds-palace-zh" aria-hidden="true">夫妻宮</div>
+          <div class="zwds-palace-name">The Mirror of Union</div>
+          <div class="zwds-palace-pinyin">Fu Qi Gong</div>
+          <p class="zwds-palace-domain">Marriage, partnerships, intimate bonds, and deep alliances</p>
+        </div>
+        <div class="zwds-palace-back" aria-hidden="true">
+          <div class="zwds-palace-back-title">Full Domain</div>
+          <p class="zwds-palace-back-desc">The Mirror of Union does not merely predict love — it reveals the archetype of your intimate partnerships. The stars here describe the nature of the person you are drawn to and the dynamic that emerges when two lives merge.</p>
+          <p class="zwds-palace-back-tip">Reading tip: The opposite palace — The World Stage — is always in conversation with Union. What you seek abroad, you also seek in a partner.</p>
+        </div>
+      </div>
+
+      <!-- Palace 4 -->
+      <div class="zwds-palace" role="listitem" tabindex="0" aria-label="Palace 4: The Legacy Garden">
+        <div class="zwds-palace-front">
+          <span class="zwds-palace-num">Palace 04</span>
+          <div class="zwds-palace-zh" aria-hidden="true">子女宮</div>
+          <div class="zwds-palace-name">The Legacy Garden</div>
+          <div class="zwds-palace-pinyin">Zi Nü Gong</div>
+          <p class="zwds-palace-domain">Children, creativity, lineage, disciples, and living legacy</p>
+        </div>
+        <div class="zwds-palace-back" aria-hidden="true">
+          <div class="zwds-palace-back-title">Full Domain</div>
+          <p class="zwds-palace-back-desc">The Legacy Garden extends beyond children of the body. It encompasses creative output, students you shape, and every project you bring into the world that outlasts you. It is the room where your energy reproduces itself.</p>
+          <p class="zwds-palace-back-tip">Reading tip: Stars here also speak to your relationship with pleasure and spontaneity — the capacity to play.</p>
+        </div>
+      </div>
+
+      <!-- Palace 5 -->
+      <div class="zwds-palace" role="listitem" tabindex="0" aria-label="Palace 5: The Celestial Treasury">
+        <div class="zwds-palace-front">
+          <span class="zwds-palace-num">Palace 05</span>
+          <div class="zwds-palace-zh" aria-hidden="true">財帛宮</div>
+          <div class="zwds-palace-name">The Celestial Treasury</div>
+          <div class="zwds-palace-pinyin">Cai Bo Gong</div>
+          <p class="zwds-palace-domain">Income, wealth, financial approach, and relationship to abundance</p>
+        </div>
+        <div class="zwds-palace-back" aria-hidden="true">
+          <div class="zwds-palace-back-title">Full Domain</div>
+          <p class="zwds-palace-back-desc">The Celestial Treasury reveals not just how much wealth you attract, but how you relate to money as a force. Some charts earn easily and spend faster. Others are slow to accumulate but protect what they build. The star here names your pattern.</p>
+          <p class="zwds-palace-back-tip">Reading tip: The Flow (化禄) landing in this palace is one of the most sought-after configurations in any chart.</p>
+        </div>
+      </div>
+
+      <!-- Palace 6 -->
+      <div class="zwds-palace" role="listitem" tabindex="0" aria-label="Palace 6: The Constitution Map">
+        <div class="zwds-palace-front">
+          <span class="zwds-palace-num">Palace 06</span>
+          <div class="zwds-palace-zh" aria-hidden="true">疾厄宮</div>
+          <div class="zwds-palace-name">The Constitution Map</div>
+          <div class="zwds-palace-pinyin">Ji E Gong</div>
+          <p class="zwds-palace-domain">Health, body constitution, physical vulnerabilities, and vitality</p>
+        </div>
+        <div class="zwds-palace-back" aria-hidden="true">
+          <div class="zwds-palace-back-title">Full Domain</div>
+          <p class="zwds-palace-back-desc">The Constitution Map is read as a guide to the body's inherent strengths and where vigilance is warranted — not as diagnosis. Traditional readings use this palace to understand energy management, recovery patterns, and constitutional tendencies across the decades.</p>
+          <p class="zwds-palace-back-tip">Reading tip: This palace is always read alongside the health-decade activations. A difficult star here is not fixed fate — it names a terrain to navigate.</p>
+        </div>
+      </div>
+
+      <!-- Palace 7 -->
+      <div class="zwds-palace" role="listitem" tabindex="0" aria-label="Palace 7: The World Stage">
+        <div class="zwds-palace-front">
+          <span class="zwds-palace-num">Palace 07</span>
+          <div class="zwds-palace-zh" aria-hidden="true">遷移宮</div>
+          <div class="zwds-palace-name">The World Stage</div>
+          <div class="zwds-palace-pinyin">Qian Yi Gong</div>
+          <p class="zwds-palace-domain">Travel, public persona, success abroad, and life outside the home</p>
+        </div>
+        <div class="zwds-palace-back" aria-hidden="true">
+          <div class="zwds-palace-back-title">Full Domain</div>
+          <p class="zwds-palace-back-desc">The World Stage governs everything that happens when you step beyond the familiar — travel, relocation, public reputation, and how the outside world receives you. Charts with powerful stars here often describe people who shine brightest when they leave home.</p>
+          <p class="zwds-palace-back-tip">Reading tip: This palace sits opposite The Mirror of Union. What you encounter in the world mirrors what you seek in a partner.</p>
+        </div>
+      </div>
+
+      <!-- Palace 8 -->
+      <div class="zwds-palace" role="listitem" tabindex="0" aria-label="Palace 8: The Alliance Court">
+        <div class="zwds-palace-front">
+          <span class="zwds-palace-num">Palace 08</span>
+          <div class="zwds-palace-zh" aria-hidden="true">奴僕宮</div>
+          <div class="zwds-palace-name">The Alliance Court</div>
+          <div class="zwds-palace-pinyin">Nu Pu Gong</div>
+          <p class="zwds-palace-domain">Networks, subordinates, social ecosystem, and those you lead</p>
+        </div>
+        <div class="zwds-palace-back" aria-hidden="true">
+          <div class="zwds-palace-back-title">Full Domain</div>
+          <p class="zwds-palace-back-desc">The Alliance Court maps the web of relationships that exists beneath and around you — employees, supporters, social networks, and the communities that form around your work. It reveals the quality of your loyal base and the risks of betrayal within it.</p>
+          <p class="zwds-palace-back-tip">Reading tip: A chart with The Warrior or The Vanguard here often struggles to delegate — and must learn to trust the court they build.</p>
+        </div>
+      </div>
+
+      <!-- Palace 9 -->
+      <div class="zwds-palace" role="listitem" tabindex="0" aria-label="Palace 9: The Imperial Hall">
+        <div class="zwds-palace-front">
+          <span class="zwds-palace-num">Palace 09</span>
+          <div class="zwds-palace-zh" aria-hidden="true">官祿宮</div>
+          <div class="zwds-palace-name">The Imperial Hall</div>
+          <div class="zwds-palace-pinyin">Guan Lu Gong</div>
+          <p class="zwds-palace-domain">Career, vocation, status, authority, and public achievement</p>
+        </div>
+        <div class="zwds-palace-back" aria-hidden="true">
+          <div class="zwds-palace-back-title">Full Domain</div>
+          <p class="zwds-palace-back-desc">The Imperial Hall is where destiny meets ambition. The stars here describe the vocation that is native to you — the work that activates your deepest capacity. In traditional readings this palace also reveals political standing, institutional authority, and the path to recognition.</p>
+          <p class="zwds-palace-back-tip">Reading tip: The Power (化权) transforming a star in The Imperial Hall is one of the signatures of executive leadership.</p>
+        </div>
+      </div>
+
+      <!-- Palace 10 -->
+      <div class="zwds-palace" role="listitem" tabindex="0" aria-label="Palace 10: The Ancestral Foundation">
+        <div class="zwds-palace-front">
+          <span class="zwds-palace-num">Palace 10</span>
+          <div class="zwds-palace-zh" aria-hidden="true">田宅宮</div>
+          <div class="zwds-palace-name">The Ancestral Foundation</div>
+          <div class="zwds-palace-pinyin">Tian Zhai Gong</div>
+          <p class="zwds-palace-domain">Property, home, family roots, real estate, and ancestral inheritance</p>
+        </div>
+        <div class="zwds-palace-back" aria-hidden="true">
+          <div class="zwds-palace-back-title">Full Domain</div>
+          <p class="zwds-palace-back-desc">The Ancestral Foundation covers what is literally beneath your feet — property, domestic environment, family home, and the inheritance (emotional and material) passed down from the generations before you. A strong palace here supports accumulation and stability.</p>
+          <p class="zwds-palace-back-tip">Reading tip: This palace also describes your psychological relationship to home — whether home is a refuge or a source of tension.</p>
+        </div>
+      </div>
+
+      <!-- Palace 11 -->
+      <div class="zwds-palace" role="listitem" tabindex="0" aria-label="Palace 11: The Soul Palace">
+        <div class="zwds-palace-front">
+          <span class="zwds-palace-num">Palace 11</span>
+          <div class="zwds-palace-zh" aria-hidden="true">福德宮</div>
+          <div class="zwds-palace-name">The Soul Palace</div>
+          <div class="zwds-palace-pinyin">Fu De Gong</div>
+          <p class="zwds-palace-domain">Inner life, spiritual fortune, true contentment, and cosmic merit</p>
+        </div>
+        <div class="zwds-palace-back" aria-hidden="true">
+          <div class="zwds-palace-back-title">Full Domain</div>
+          <p class="zwds-palace-back-desc">The Soul Palace is the most interior room in the palace — the chamber of genuine well-being. It describes the quality of your inner life, your capacity for joy, your spiritual orientation, and the invisible reserve of good fortune that sustains you when the outer rooms fall silent.</p>
+          <p class="zwds-palace-back-tip">Reading tip: Advanced readers consider this palace the most important in the entire chart. What good is success in every other room if The Soul Palace is dark?</p>
+        </div>
+      </div>
+
+      <!-- Palace 12 -->
+      <div class="zwds-palace" role="listitem" tabindex="0" aria-label="Palace 12: The Origin Gate">
+        <div class="zwds-palace-front">
+          <span class="zwds-palace-num">Palace 12</span>
+          <div class="zwds-palace-zh" aria-hidden="true">父母宮</div>
+          <div class="zwds-palace-name">The Origin Gate</div>
+          <div class="zwds-palace-pinyin">Fu Mu Gong</div>
+          <p class="zwds-palace-domain">Parents, authority figures, institutional support, and ancestral legacy</p>
+        </div>
+        <div class="zwds-palace-back" aria-hidden="true">
+          <div class="zwds-palace-back-title">Full Domain</div>
+          <p class="zwds-palace-back-desc">The Origin Gate speaks to the conditions of your beginning — the quality of parental relationship, the support (or its absence) from institutions and authority figures, and the ancestral patterns that arrive before you even choose. It also governs documents, credentials, and official standing.</p>
+          <p class="zwds-palace-back-tip">Reading tip: The Origin Gate and The Soul Palace together describe the invisible scaffold of a life — the roots and the sky a person carries within them.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 6 — THE 14 STARS
+============================================================ -->
+<section class="zwds-section" aria-labelledby="zwds-stars-h">
+  <div class="wrap">
+    <span class="section-eyebrow">The court assembled</span>
+    <h2 class="zwds-section-title" id="zwds-stars-h">The 14 Principal Stars</h2>
+    <p class="zwds-section-lead">Fourteen characters move through your palace, each playing a distinct role. Hover any star to see its element and archetype.</p>
+
+    <div class="zwds-stars-grid" role="list">
+
+      <!-- Zi Wei -->
+      <div class="zwds-star-card" role="listitem"
+           style="--star-color: oklch(0.70 0.20 310); --star-color-soft: oklch(0.70 0.20 310 / 0.16);"
+           tabindex="0" aria-label="Zi Wei — The Emperor Star">
+        <div class="zwds-star-dot" aria-hidden="true"></div>
+        <div class="zwds-star-zh" aria-hidden="true">紫微</div>
+        <div class="zwds-star-name">The Emperor Star</div>
+        <div class="zwds-star-tags">
+          <span class="zwds-star-tag">Authority</span>
+          <span class="zwds-star-tag">Dignity</span>
+          <span class="zwds-star-tag">Leadership</span>
+        </div>
+        <div class="zwds-star-tip">Earth · The sovereign. Where this star sits, the court organizes around it.</div>
+      </div>
+
+      <!-- Tian Ji -->
+      <div class="zwds-star-card" role="listitem"
+           style="--star-color: oklch(0.65 0.18 185); --star-color-soft: oklch(0.65 0.18 185 / 0.16);"
+           tabindex="0" aria-label="Tian Ji — The Strategist">
+        <div class="zwds-star-dot" aria-hidden="true"></div>
+        <div class="zwds-star-zh" aria-hidden="true">天机</div>
+        <div class="zwds-star-name">The Strategist</div>
+        <div class="zwds-star-tags">
+          <span class="zwds-star-tag">Intelligence</span>
+          <span class="zwds-star-tag">Adaptability</span>
+          <span class="zwds-star-tag">Planning</span>
+        </div>
+        <div class="zwds-star-tip">Wood · The advisor. Quick mind, many moves ahead, rarely stays still.</div>
+      </div>
+
+      <!-- Tai Yang -->
+      <div class="zwds-star-card" role="listitem"
+           style="--star-color: oklch(0.78 0.22 60); --star-color-soft: oklch(0.78 0.22 60 / 0.16);"
+           tabindex="0" aria-label="Tai Yang — The Sun Star">
+        <div class="zwds-star-dot" aria-hidden="true"></div>
+        <div class="zwds-star-zh" aria-hidden="true">太阳</div>
+        <div class="zwds-star-name">The Sun Star</div>
+        <div class="zwds-star-tags">
+          <span class="zwds-star-tag">Generosity</span>
+          <span class="zwds-star-tag">Public life</span>
+          <span class="zwds-star-tag">Radiance</span>
+        </div>
+        <div class="zwds-star-tip">Fire · The benefactor. Shines for others first; success comes through public presence.</div>
+      </div>
+
+      <!-- Wu Qu -->
+      <div class="zwds-star-card" role="listitem"
+           style="--star-color: oklch(0.60 0.16 230); --star-color-soft: oklch(0.60 0.16 230 / 0.16);"
+           tabindex="0" aria-label="Wu Qu — The Finance General">
+        <div class="zwds-star-dot" aria-hidden="true"></div>
+        <div class="zwds-star-zh" aria-hidden="true">武曲</div>
+        <div class="zwds-star-name">The Finance General</div>
+        <div class="zwds-star-tags">
+          <span class="zwds-star-tag">Discipline</span>
+          <span class="zwds-star-tag">Wealth</span>
+          <span class="zwds-star-tag">Decisiveness</span>
+        </div>
+        <div class="zwds-star-tip">Metal · The treasurer. Earns through precision; does not tolerate waste or ambiguity.</div>
+      </div>
+
+      <!-- Tian Tong -->
+      <div class="zwds-star-card" role="listitem"
+           style="--star-color: oklch(0.68 0.18 140); --star-color-soft: oklch(0.68 0.18 140 / 0.16);"
+           tabindex="0" aria-label="Tian Tong — The Harmony Star">
+        <div class="zwds-star-dot" aria-hidden="true"></div>
+        <div class="zwds-star-zh" aria-hidden="true">天同</div>
+        <div class="zwds-star-name">The Harmony Star</div>
+        <div class="zwds-star-tags">
+          <span class="zwds-star-tag">Peace</span>
+          <span class="zwds-star-tag">Enjoyment</span>
+          <span class="zwds-star-tag">Artistic</span>
+        </div>
+        <div class="zwds-star-tip">Water · The ease-bringer. Resists conflict by nature; life is pleasurable when this star is well-placed.</div>
+      </div>
+
+      <!-- Lian Zhen -->
+      <div class="zwds-star-card" role="listitem"
+           style="--star-color: oklch(0.62 0.22 15); --star-color-soft: oklch(0.62 0.22 15 / 0.16);"
+           tabindex="0" aria-label="Lian Zhen — The Diplomat">
+        <div class="zwds-star-dot" aria-hidden="true"></div>
+        <div class="zwds-star-zh" aria-hidden="true">廉贞</div>
+        <div class="zwds-star-name">The Diplomat</div>
+        <div class="zwds-star-tags">
+          <span class="zwds-star-tag">Passion</span>
+          <span class="zwds-star-tag">Politics</span>
+          <span class="zwds-star-tag">Hidden affairs</span>
+        </div>
+        <div class="zwds-star-tip">Fire · The negotiator. Moves between courts, holds secrets; powerful but combustible.</div>
+      </div>
+
+      <!-- Tian Fu -->
+      <div class="zwds-star-card" role="listitem"
+           style="--star-color: oklch(0.72 0.18 80); --star-color-soft: oklch(0.72 0.18 80 / 0.16);"
+           tabindex="0" aria-label="Tian Fu — The Treasury Star">
+        <div class="zwds-star-dot" aria-hidden="true"></div>
+        <div class="zwds-star-zh" aria-hidden="true">天府</div>
+        <div class="zwds-star-name">The Treasury Star</div>
+        <div class="zwds-star-tags">
+          <span class="zwds-star-tag">Abundance</span>
+          <span class="zwds-star-tag">Stability</span>
+          <span class="zwds-star-tag">Conservative</span>
+        </div>
+        <div class="zwds-star-tip">Earth · The steward. Accumulates slowly, protects fiercely, endures across decades.</div>
+      </div>
+
+      <!-- Tai Yin -->
+      <div class="zwds-star-card" role="listitem"
+           style="--star-color: oklch(0.72 0.14 240); --star-color-soft: oklch(0.72 0.14 240 / 0.16);"
+           tabindex="0" aria-label="Tai Yin — The Moon Star">
+        <div class="zwds-star-dot" aria-hidden="true"></div>
+        <div class="zwds-star-zh" aria-hidden="true">太阴</div>
+        <div class="zwds-star-name">The Moon Star</div>
+        <div class="zwds-star-tags">
+          <span class="zwds-star-tag">Sensitivity</span>
+          <span class="zwds-star-tag">Wealth</span>
+          <span class="zwds-star-tag">Beauty</span>
+        </div>
+        <div class="zwds-star-tip">Water · The vessel. Feels everything; wealth flows quietly through intuition and relationship.</div>
+      </div>
+
+      <!-- Tan Lang -->
+      <div class="zwds-star-card" role="listitem"
+           style="--star-color: oklch(0.62 0.24 340); --star-color-soft: oklch(0.62 0.24 340 / 0.16);"
+           tabindex="0" aria-label="Tan Lang — The Desire Star">
+        <div class="zwds-star-dot" aria-hidden="true"></div>
+        <div class="zwds-star-zh" aria-hidden="true">贪狼</div>
+        <div class="zwds-star-name">The Desire Star</div>
+        <div class="zwds-star-tags">
+          <span class="zwds-star-tag">Ambition</span>
+          <span class="zwds-star-tag">Talent</span>
+          <span class="zwds-star-tag">Desire</span>
+        </div>
+        <div class="zwds-star-tip">Wood / Water · The polymath. Gifted at many things; the real work is choosing which one to master.</div>
+      </div>
+
+      <!-- Ju Men -->
+      <div class="zwds-star-card" role="listitem"
+           style="--star-color: oklch(0.48 0.16 280); --star-color-soft: oklch(0.48 0.16 280 / 0.16);"
+           tabindex="0" aria-label="Ju Men — The Dark Gate">
+        <div class="zwds-star-dot" aria-hidden="true"></div>
+        <div class="zwds-star-zh" aria-hidden="true">巨门</div>
+        <div class="zwds-star-name">The Dark Gate</div>
+        <div class="zwds-star-tags">
+          <span class="zwds-star-tag">Speech</span>
+          <span class="zwds-star-tag">Secrecy</span>
+          <span class="zwds-star-tag">Investigation</span>
+        </div>
+        <div class="zwds-star-tip">Water · The inquisitor. Sees beneath surfaces; career often succeeds through the power of words alone.</div>
+      </div>
+
+      <!-- Tian Xiang -->
+      <div class="zwds-star-card" role="listitem"
+           style="--star-color: oklch(0.66 0.16 195); --star-color-soft: oklch(0.66 0.16 195 / 0.16);"
+           tabindex="0" aria-label="Tian Xiang — The Prime Minister">
+        <div class="zwds-star-dot" aria-hidden="true"></div>
+        <div class="zwds-star-zh" aria-hidden="true">天相</div>
+        <div class="zwds-star-name">The Prime Minister</div>
+        <div class="zwds-star-tags">
+          <span class="zwds-star-tag">Service</span>
+          <span class="zwds-star-tag">Integrity</span>
+          <span class="zwds-star-tag">Mediation</span>
+        </div>
+        <div class="zwds-star-tip">Water · The executor. Serves the larger vision with precision; thrives in roles of trusted coordination.</div>
+      </div>
+
+      <!-- Tian Liang -->
+      <div class="zwds-star-card" role="listitem"
+           style="--star-color: oklch(0.65 0.16 100); --star-color-soft: oklch(0.65 0.16 100 / 0.16);"
+           tabindex="0" aria-label="Tian Liang — The Elder Star">
+        <div class="zwds-star-dot" aria-hidden="true"></div>
+        <div class="zwds-star-zh" aria-hidden="true">天梁</div>
+        <div class="zwds-star-name">The Elder Star</div>
+        <div class="zwds-star-tags">
+          <span class="zwds-star-tag">Wisdom</span>
+          <span class="zwds-star-tag">Protection</span>
+          <span class="zwds-star-tag">Longevity</span>
+        </div>
+        <div class="zwds-star-tip">Earth · The guardian. Naturally protects others; greatest authority comes in the second half of life.</div>
+      </div>
+
+      <!-- Qi Sha -->
+      <div class="zwds-star-card" role="listitem"
+           style="--star-color: oklch(0.55 0.24 18); --star-color-soft: oklch(0.55 0.24 18 / 0.16);"
+           tabindex="0" aria-label="Qi Sha — The Warrior">
+        <div class="zwds-star-dot" aria-hidden="true"></div>
+        <div class="zwds-star-zh" aria-hidden="true">七杀</div>
+        <div class="zwds-star-name">The Warrior</div>
+        <div class="zwds-star-tags">
+          <span class="zwds-star-tag">Power</span>
+          <span class="zwds-star-tag">Independence</span>
+          <span class="zwds-star-tag">Transformation</span>
+        </div>
+        <div class="zwds-star-tip">Metal · The fighter. Commands through force of will; only thrives when given genuine autonomy.</div>
+      </div>
+
+      <!-- Po Jun -->
+      <div class="zwds-star-card" role="listitem"
+           style="--star-color: oklch(0.58 0.22 270); --star-color-soft: oklch(0.58 0.22 270 / 0.16);"
+           tabindex="0" aria-label="Po Jun — The Vanguard">
+        <div class="zwds-star-dot" aria-hidden="true"></div>
+        <div class="zwds-star-zh" aria-hidden="true">破军</div>
+        <div class="zwds-star-name">The Vanguard</div>
+        <div class="zwds-star-tags">
+          <span class="zwds-star-tag">Breakthrough</span>
+          <span class="zwds-star-tag">Destruction</span>
+          <span class="zwds-star-tag">Renewal</span>
+        </div>
+        <div class="zwds-star-tip">Water · The pioneer. Clears what has become dead weight; true success only comes after the break.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 7 — FOUR FORCES
+============================================================ -->
+<section class="zwds-section" aria-labelledby="zwds-forces-h">
+  <div class="wrap">
+    <span class="section-eyebrow">The dynamic engine</span>
+    <h2 class="zwds-section-title" id="zwds-forces-h">The Four Forces</h2>
+    <p class="zwds-section-lead">Four transformational forces activate specific stars in your chart, changing the energy of every room they touch. They move with the seasons — and with your decades.</p>
+
+    <div class="zwds-forces">
+
+      <div class="zwds-force zwds-force--lu"
+           style="--force-color: oklch(0.74 0.12 160); --force-color-soft: oklch(0.74 0.12 160 / 0.16);">
+        <div class="zwds-force-season-art" aria-hidden="true"></div>
+        <span class="zwds-force-season-tag">Spring · Opening</span>
+        <span class="zwds-force-chinese">化禄 Hua Lu</span>
+        <span class="zwds-force-name">The Flow</span>
+        <p class="zwds-force-desc">"The channel opens. Resources arrive."</p>
+      </div>
+
+      <div class="zwds-force zwds-force--quan"
+           style="--force-color: oklch(0.78 0.22 60); --force-color-soft: oklch(0.78 0.22 60 / 0.16);">
+        <div class="zwds-force-season-art" aria-hidden="true"></div>
+        <span class="zwds-force-season-tag">Summer · Peak</span>
+        <span class="zwds-force-chinese">化权 Hua Quan</span>
+        <span class="zwds-force-name">The Power</span>
+        <p class="zwds-force-desc">"The hand tightens. Authority activates."</p>
+      </div>
+
+      <div class="zwds-force zwds-force--ke"
+           style="--force-color: oklch(0.75 0.13 30); --force-color-soft: oklch(0.75 0.13 30 / 0.16);">
+        <div class="zwds-force-season-art" aria-hidden="true"></div>
+        <span class="zwds-force-season-tag">Autumn · Recognition</span>
+        <span class="zwds-force-chinese">化科 Hua Ke</span>
+        <span class="zwds-force-name">The Shine</span>
+        <p class="zwds-force-desc">"The light catches you. Recognition arrives."</p>
+      </div>
+
+      <div class="zwds-force zwds-force--ji"
+           style="--force-color: oklch(0.80 0.06 250); --force-color-soft: oklch(0.80 0.06 250 / 0.16);">
+        <div class="zwds-force-season-art" aria-hidden="true"></div>
+        <span class="zwds-force-season-tag">Winter · The Lesson</span>
+        <span class="zwds-force-chinese">化忌 Hua Ji</span>
+        <span class="zwds-force-name">The Hook</span>
+        <p class="zwds-force-desc">"The void calls. The lesson begins."</p>
+      </div>
+
+    </div>
+
+    <div class="zwds-forces-cta">
+      <a class="zwds-cta-primary" href="/elements/zi-wei/four-forces/">Discover your Four Forces →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 8 — READING CTA
+============================================================ -->
+<section class="zwds-section" aria-labelledby="zwds-reading-h">
+  <div class="wrap">
+    <div class="zwds-reading-cta">
+      <div class="zwds-reading-cta-sigil" aria-hidden="true">紫微</div>
+      <h2 id="zwds-reading-h">Read Your Celestial Court</h2>
+      <p>Your 12 palaces were furnished at the moment of your birth — every star already in position, every force already assigned. A full Zi Wei Dou Shu reading names what sits in each room and when it comes alive across your decades.</p>
+      <a class="zwds-cta-primary" href="/account/">Begin Your Reading →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SECTION 9 — LEARNING PATH
+============================================================ -->
+<section class="zwds-section" aria-labelledby="zwds-path-h">
+  <div class="wrap">
+    <span class="section-eyebrow">Where to next</span>
+    <h2 class="zwds-section-title" id="zwds-path-h">The learning path</h2>
+    <p class="zwds-section-lead">Zi Wei Dou Shu reveals itself in layers. Three stages, nine doorways.</p>
+
+    <div class="zwds-path" role="list">
+
+      <div class="zwds-path-step zwds-path-step--begin" role="listitem">
+        <span class="zwds-path-step-level">Begin here</span>
+        <div class="zwds-path-step-title">The Palace &amp; the Star</div>
+        <ul class="zwds-path-step-links">
+          <li><a href="/elements/zi-wei/">What is Zi Wei Dou Shu</a></li>
+          <li><a href="/elements/zi-wei/palaces/">The 12 Palaces explained</a></li>
+          <li><a href="/elements/zi-wei/stars/">Meet the 14 stars</a></li>
+          <li><a href="/elements/zi-wei/history/">History &amp; origins</a></li>
+        </ul>
+      </div>
+
+      <div class="zwds-path-arrow" aria-hidden="true">›</div>
+
+      <div class="zwds-path-step zwds-path-step--mid" role="listitem">
+        <span class="zwds-path-step-level">Go deeper</span>
+        <div class="zwds-path-step-title">Forces &amp; Timing</div>
+        <ul class="zwds-path-step-links">
+          <li><a href="/elements/zi-wei/four-forces/">The Four Forces</a></li>
+          <li><a href="/elements/zi-wei/timing/">Decade pillars &amp; cycles</a></li>
+          <li><a href="/elements/zi-wei/stars/">Star archetypes in depth</a></li>
+          <li><a href="/elements/zi-wei/palaces/">Palace oppositions</a></li>
+        </ul>
+      </div>
+
+      <div class="zwds-path-arrow" aria-hidden="true">›</div>
+
+      <div class="zwds-path-step zwds-path-step--deep" role="listitem">
+        <span class="zwds-path-step-level">Advanced reading</span>
+        <div class="zwds-path-step-title">Your Own Chart</div>
+        <ul class="zwds-path-step-links">
+          <li><a href="/account/">Get a full reading</a></li>
+          <li><a href="/elements/zi-wei/palaces/">Read your Command Palace</a></li>
+          <li><a href="/elements/zi-wei/four-forces/">Identify your Four Forces</a></li>
+          <li><a href="/elements/zi-wei/timing/">Time your current decade</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!--om-footer:start--><!--om-footer:end-->
+
+<script src="/js/nav.js"></script>
+<script>
+// Keyboard accessibility for palace grid — allow hover state via keyboard focus
+(function () {
+  'use strict';
+  var palaces = document.querySelectorAll('.zwds-palace[tabindex]');
+  palaces.forEach(function (el) {
+    el.addEventListener('focus', function () {
+      // Browsers apply :focus-visible on tab; we replicate hover reveal via a class
+      el.classList.add('zwds-palace--focused');
+    });
+    el.addEventListener('blur', function () {
+      el.classList.remove('zwds-palace--focused');
+    });
+  });
+})();
+</script>
+<style>
+.zwds-palace--focused .zwds-palace-front {
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+}
+.zwds-palace--focused .zwds-palace-back {
+  opacity: 1;
+  transform: translateY(0);
+}
+.zwds-palace--focused {
+  border-color: var(--cc);
+  background: var(--panel-2);
+  box-shadow: 0 0 30px var(--cc-soft), 0 8px 24px oklch(0 0 0 / 0.35);
+  outline: 2px solid var(--cc);
+  outline-offset: 2px;
+}
+.zwds-palace--focused::before { opacity: 1; }
+</style>
+
+</body>
+</html>

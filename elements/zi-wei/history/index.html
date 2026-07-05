@@ -1,0 +1,1318 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>History &amp; Origins — Zi Wei Dou Shu | ZodiAnimal</title>
+  <meta name="description" content="Zi Wei Dou Shu emerged from the Tang-Song transition — a millennium of refinement inside China's most guarded astronomical chambers. The history, etymology, and philosophy of the Purple Star system.">
+  <meta property="og:title" content="History &amp; Origins — Zi Wei Dou Shu | ZodiAnimal">
+  <meta property="og:description" content="A millennium of refinement inside China's most guarded astronomical chambers. How a celestial art became the most sophisticated destiny system in East Asian history.">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://www.zodianimal.com/elements/zi-wei/history/">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/nav-core.css">
+  <link rel="stylesheet" href="/css/nav-mega.css">
+  <link rel="stylesheet" href="/css/nav-drawer.css">
+  <link rel="stylesheet" href="/css/nav-sub.css">
+  <link rel="stylesheet" href="/css/bridges.css">
+  <link rel="stylesheet" href="/css/foot.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap">
+  <style>
+/* ============================================================
+   DESIGN TOKENS — ZWDS History page
+   ============================================================ */
+:root {
+  --ink: oklch(0.16 0.03 275);
+  --ink-2: oklch(0.20 0.035 275);
+  --panel: oklch(0.25 0.04 273);
+  --panel-2: oklch(0.30 0.045 272);
+  --line: oklch(0.80 0.06 85 / 0.16);
+  --line-soft: oklch(0.80 0.06 85 / 0.09);
+  --moon: oklch(0.96 0.02 90);
+  --ivory: oklch(0.92 0.02 88);
+  --body-text: oklch(0.84 0.02 280);
+  --muted: oklch(0.70 0.02 280);
+  --faint: oklch(0.55 0.02 280);
+  --brass: oklch(0.78 0.11 85);
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Geist", "Inter", sans-serif;
+  --mono: "Space Mono", monospace;
+  --cc: oklch(0.70 0.20 310);
+  --cc-soft: oklch(0.70 0.20 310 / 0.15);
+  --cc-dim: oklch(0.70 0.20 310 / 0.08);
+  --maxw: 1120px;
+  --r-1: 8px;
+  --r-2: 14px;
+  --r-3: 22px;
+  --r-pill: 999px;
+  --measure: 66ch;
+}
+
+/* ============================================================
+   RESET + BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--body-text);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Atmospheric background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(800px 500px at 78% -12%, oklch(0.70 0.20 310 / 0.12), transparent 70%),
+    radial-gradient(580px 420px at 5% 8%, oklch(0.55 0.16 290 / 0.10), transparent 72%),
+    radial-gradient(400px 300px at 50% 110%, oklch(0.70 0.20 310 / 0.06), transparent 65%);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  color: var(--moon);
+  font-weight: 560;
+  line-height: 1.14;
+  margin: 0;
+}
+p { margin: 0; }
+a { text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--cc); outline-offset: 3px; border-radius: 3px; }
+
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 clamp(18px, 4vw, 48px);
+}
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cc);
+  margin: 0 0 0.7rem;
+}
+.band {
+  padding: clamp(40px, 6vw, 80px) 0;
+  border-top: 1px solid var(--line-soft);
+}
+.band:first-child { border-top: none; }
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+  padding: clamp(60px, 10vw, 120px) 0 clamp(30px, 5vw, 60px);
+  text-align: center;
+  position: relative;
+}
+.hero::before {
+  content: "紫微斗數";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--serif);
+  font-size: clamp(5rem, 18vw, 14rem);
+  color: oklch(0.70 0.20 310 / 0.06);
+  white-space: nowrap;
+  pointer-events: none;
+  line-height: 1;
+  user-select: none;
+}
+.hero h1 {
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  letter-spacing: -0.02em;
+  margin: 0.4rem 0 0;
+  position: relative;
+}
+.hero-sub {
+  max-width: 58ch;
+  margin: 1.4rem auto 0;
+  color: var(--ivory);
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  line-height: 1.65;
+  position: relative;
+}
+
+/* Pull quote */
+.pull-quote {
+  max-width: 52ch;
+  margin: 3rem auto 0;
+  padding: 2rem 2.4rem;
+  border-left: 3px solid var(--cc);
+  background: var(--cc-dim);
+  border-radius: 0 var(--r-2) var(--r-2) 0;
+  position: relative;
+}
+.pull-quote::before {
+  content: "\201C";
+  position: absolute;
+  top: -0.2rem;
+  left: 1.2rem;
+  font-family: var(--serif);
+  font-size: 4rem;
+  color: var(--cc);
+  opacity: 0.4;
+  line-height: 1;
+}
+.pull-quote p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  color: var(--moon);
+  line-height: 1.45;
+}
+.pull-quote cite {
+  display: block;
+  margin-top: 0.9rem;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* ============================================================
+   SECTION 2 — ETYMOLOGY
+   ============================================================ */
+.section-title {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  margin-bottom: 0.5rem;
+}
+.section-lead {
+  max-width: var(--measure);
+  color: var(--muted);
+  margin-top: 0.7rem;
+}
+
+.char-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  margin-top: 2.4rem;
+}
+.char-card {
+  background: linear-gradient(160deg, var(--panel-2), var(--panel));
+  border: 1px solid var(--line);
+  border-radius: var(--r-3);
+  padding: 2rem 1.4rem 1.6rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.char-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cc), transparent);
+  opacity: 0.5;
+}
+.char-card:hover {
+  border-color: var(--cc);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px oklch(0.70 0.20 310 / 0.18);
+}
+.char-glyph {
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  color: var(--cc);
+  line-height: 1;
+  display: block;
+  text-shadow: 0 0 60px oklch(0.70 0.20 310 / 0.3);
+}
+.char-pinyin {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+}
+.char-name {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 560;
+  color: var(--moon);
+  margin-top: 0.4rem;
+}
+.char-meaning {
+  font-size: 0.9rem;
+  color: var(--body-text);
+  margin-top: 0.7rem;
+  line-height: 1.55;
+}
+.char-cosmology {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.combined-meaning {
+  margin-top: 2.4rem;
+  padding: 1.6rem 2rem;
+  background: var(--cc-dim);
+  border: 1px solid oklch(0.70 0.20 310 / 0.22);
+  border-radius: var(--r-2);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.4rem;
+}
+.combined-meaning .cm-chars {
+  font-family: var(--serif);
+  font-size: 2.6rem;
+  color: var(--cc);
+  line-height: 1;
+  white-space: nowrap;
+  flex: none;
+}
+.combined-meaning .cm-body h3 {
+  font-size: 1.1rem;
+  color: var(--moon);
+  margin-bottom: 0.4rem;
+}
+.combined-meaning .cm-body p {
+  color: var(--body-text);
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   SECTION 3 — TIMELINE
+   ============================================================ */
+.timeline {
+  position: relative;
+  margin-top: 2.8rem;
+  padding-left: 2.6rem;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--cc), oklch(0.70 0.20 310 / 0.2));
+  border-radius: 1px;
+}
+.tl-item {
+  position: relative;
+  margin-bottom: 0;
+  padding: 0 0 0 0;
+}
+.tl-item + .tl-item {
+  margin-top: 0;
+}
+.tl-connector {
+  position: absolute;
+  left: -2.6rem;
+  top: 0.45rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--cc);
+  box-shadow: 0 0 0 4px oklch(0.70 0.20 310 / 0.18), 0 0 16px oklch(0.70 0.20 310 / 0.35);
+  transition: box-shadow 0.25s, transform 0.25s;
+  cursor: default;
+}
+.tl-body {
+  padding: 1.4rem 1.6rem 1.4rem;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-2);
+  background: var(--panel);
+  margin-bottom: 1.2rem;
+  transition: border-color 0.25s, background 0.25s;
+  cursor: default;
+}
+.tl-item:hover .tl-connector {
+  box-shadow: 0 0 0 6px oklch(0.70 0.20 310 / 0.22), 0 0 24px oklch(0.70 0.20 310 / 0.5);
+  transform: scale(1.2);
+}
+.tl-item:hover .tl-body {
+  border-color: oklch(0.70 0.20 310 / 0.35);
+  background: linear-gradient(160deg, var(--panel-2), var(--panel));
+}
+.tl-era {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cc);
+  margin-bottom: 0.3rem;
+}
+.tl-dynasty {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 560;
+  color: var(--moon);
+  margin-bottom: 0.5rem;
+}
+.tl-desc {
+  color: var(--body-text);
+  font-size: 0.95rem;
+  line-height: 1.62;
+  max-width: 70ch;
+}
+.tl-desc b {
+  color: var(--ivory);
+  font-weight: 600;
+}
+
+/* ============================================================
+   SECTION 4 — COSMIC COURT
+   ============================================================ */
+.court-intro {
+  max-width: var(--measure);
+  margin-top: 1rem;
+  color: var(--body-text);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.court-metaphor {
+  margin-top: 2rem;
+  padding: 1.6rem 1.8rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2);
+  max-width: var(--measure);
+}
+.court-metaphor h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  color: var(--moon);
+}
+.court-metaphor p {
+  color: var(--body-text);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+.court-metaphor p + p {
+  margin-top: 0.7rem;
+}
+
+/* Diagram */
+.court-diagram-wrap {
+  margin-top: 2.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.court-diagram-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+
+.court-diagram {
+  position: relative;
+  width: min(520px, 100%);
+  height: min(520px, 100vw - 36px);
+}
+.cd-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid oklch(0.70 0.20 310 / 0.20);
+}
+.cd-ring-outer {
+  inset: 0;
+}
+.cd-ring-mid {
+  inset: 18%;
+  border-color: oklch(0.70 0.20 310 / 0.12);
+  border-style: dashed;
+}
+.cd-ring-inner {
+  inset: 36%;
+  border-color: oklch(0.70 0.20 310 / 0.25);
+  background: oklch(0.70 0.20 310 / 0.04);
+}
+.cd-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+.cd-center-char {
+  display: block;
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  color: var(--cc);
+  text-shadow: 0 0 30px oklch(0.70 0.20 310 / 0.6);
+  line-height: 1;
+}
+.cd-center-name {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+.cd-star {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  cursor: pointer;
+  z-index: 5;
+}
+.cd-star-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: oklch(0.70 0.20 310 / 0.55);
+  border: 1px solid var(--cc);
+  margin: 0 auto 0.25rem;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.cd-star:hover .cd-star-dot, .cd-star.active .cd-star-dot {
+  background: var(--cc);
+  box-shadow: 0 0 14px oklch(0.70 0.20 310 / 0.7);
+  transform: scale(1.4);
+}
+.cd-star-name {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+  line-height: 1.1;
+  transition: color 0.2s;
+  max-width: 70px;
+}
+.cd-star:hover .cd-star-name, .cd-star.active .cd-star-name {
+  color: var(--cc);
+}
+.cd-star-zh {
+  font-family: var(--serif);
+  font-size: 0.8rem;
+  color: oklch(0.70 0.20 310 / 0.65);
+  display: block;
+}
+
+/* Tooltip */
+.cd-tooltip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  background: var(--panel-2);
+  border: 1px solid var(--cc);
+  border-radius: var(--r-2);
+  padding: 1.1rem 1.4rem;
+  min-width: 200px;
+  max-width: 240px;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  box-shadow: 0 12px 40px oklch(0 0 0 / 0.5);
+}
+.cd-tooltip.visible {
+  opacity: 1;
+}
+.cd-tooltip-zh {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--cc);
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.cd-tooltip-en {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--moon);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.cd-tooltip-role {
+  font-size: 0.85rem;
+  color: var(--body-text);
+  line-height: 1.5;
+}
+.cd-tooltip-title {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cc);
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.court-note {
+  margin-top: 1.4rem;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--faint);
+  text-align: center;
+}
+
+/* ============================================================
+   SECTION 5 — COMPARISON TABLE
+   ============================================================ */
+.compare-intro {
+  max-width: var(--measure);
+  color: var(--muted);
+  margin-top: 0.7rem;
+}
+.table-wrap {
+  margin-top: 2rem;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--r-2);
+}
+table.compare {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+  font-size: 0.94rem;
+}
+table.compare th {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-weight: 400;
+  padding: 0.85rem 1.1rem;
+  text-align: left;
+  background: var(--ink-2, oklch(0.20 0.035 275));
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+table.compare th:first-child {
+  color: var(--muted);
+}
+table.compare th.th-bazi {
+  color: var(--brass);
+}
+table.compare th.th-zwds {
+  color: var(--cc);
+}
+table.compare td {
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--line-soft);
+  vertical-align: top;
+  line-height: 1.55;
+}
+table.compare tr:last-child td {
+  border-bottom: none;
+}
+table.compare td:first-child {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+  padding-right: 1.4rem;
+  min-width: 140px;
+}
+table.compare td:nth-child(2) {
+  color: var(--body-text);
+}
+table.compare td:nth-child(3) {
+  color: var(--moon);
+}
+table.compare tr:hover td {
+  background: oklch(0.70 0.20 310 / 0.04);
+}
+
+.compare-callout {
+  margin-top: 1.8rem;
+  padding: 1.4rem 1.8rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--brass);
+  border-radius: 0 var(--r-2) var(--r-2) 0;
+  max-width: var(--measure);
+}
+.compare-callout p {
+  color: var(--body-text);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+.compare-callout strong {
+  color: var(--ivory);
+}
+
+/* ============================================================
+   SECTION 6 — WESTERN PARALLELS
+   ============================================================ */
+.parallel-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+.parallel-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2);
+  padding: 1.4rem 1.6rem;
+  transition: border-color 0.22s;
+}
+.parallel-card:hover {
+  border-color: oklch(0.70 0.20 310 / 0.4);
+}
+.parallel-card .pc-eq {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cc);
+  margin-bottom: 0.6rem;
+}
+.parallel-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+  color: var(--moon);
+}
+.parallel-card p {
+  color: var(--body-text);
+  font-size: 0.91rem;
+  line-height: 1.62;
+}
+
+.key-distinction {
+  margin-top: 1.8rem;
+  padding: 1.4rem 1.8rem;
+  background: var(--cc-dim);
+  border: 1px solid oklch(0.70 0.20 310 / 0.2);
+  border-radius: var(--r-2);
+  max-width: var(--measure);
+}
+.key-distinction p {
+  color: var(--body-text);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+.key-distinction strong {
+  color: var(--moon);
+}
+
+/* ============================================================
+   SECTION 7 — BRIDGE CARDS
+   ============================================================ */
+.bridge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+.bridge-card {
+  background: linear-gradient(165deg, var(--panel-2), var(--panel) 80%);
+  border: 1px solid var(--line);
+  border-radius: var(--r-3);
+  padding: 1.8rem 1.6rem;
+  display: block;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  color: inherit;
+}
+.bridge-card:hover {
+  border-color: var(--cc);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px oklch(0.70 0.20 310 / 0.18);
+}
+.bridge-card.back {
+  border-color: oklch(0.80 0.06 85 / 0.25);
+}
+.bridge-card.back:hover {
+  border-color: var(--brass);
+  box-shadow: 0 20px 50px oklch(0.78 0.11 85 / 0.15);
+}
+.bc-glyph {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  color: var(--cc);
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+.bridge-card.back .bc-glyph {
+  color: var(--brass);
+}
+.bc-label {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 0.4rem;
+}
+.bc-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 560;
+  color: var(--moon);
+  margin-bottom: 0.5rem;
+}
+.bc-arrow {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--cc);
+  margin-top: 0.8rem;
+  display: block;
+}
+.bridge-card.back .bc-arrow {
+  color: var(--brass);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer.page-foot {
+  text-align: center;
+  padding: clamp(30px, 5vw, 60px) 0;
+  border-top: 1px solid var(--line-soft);
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+}
+footer.page-foot a {
+  color: var(--muted);
+  font-weight: 500;
+}
+footer.page-foot a:hover {
+  color: var(--cc);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .char-grid { grid-template-columns: repeat(2, 1fr); }
+  .parallel-grid { grid-template-columns: 1fr; }
+  .bridge-grid { grid-template-columns: 1fr; }
+  .combined-meaning { flex-direction: column; gap: 0.8rem; }
+}
+@media (max-width: 640px) {
+  .char-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+  .pull-quote { padding: 1.4rem 1.4rem 1.4rem 1.8rem; }
+  .court-diagram { width: 100%; height: 90vw; max-height: 480px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Article","headline":"History & Origins — Zi Wei Dou Shu","description":"Zi Wei Dou Shu emerged from the Tang-Song transition — a millennium of refinement inside China's most guarded astronomical chambers.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"ZodiAnimal","url":"https://www.zodianimal.com"}},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.zodianimal.com/"},
+      {"@type":"ListItem","position":2,"name":"Elements","item":"https://www.zodianimal.com/elements/"},
+      {"@type":"ListItem","position":3,"name":"Zi Wei Dou Shu","item":"https://www.zodianimal.com/elements/zi-wei/"},
+      {"@type":"ListItem","position":4,"name":"History & Origins","item":"https://www.zodianimal.com/elements/zi-wei/history/"}
+    ]}
+  ]}
+  </script>
+</head>
+<body class="pn-has-bar">
+
+<!--pn-static:start--><!--pn-static:end-->
+
+<!--pn-sub:start-->
+<nav class="pn-sub" aria-label="Section navigation">
+  <div class="pn-sub-inner">
+    <ol class="pn-breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1">
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/elements/" itemprop="item"><span itemprop="name">Elements</span></a>
+        <meta itemprop="position" content="2">
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/elements/zi-wei/" itemprop="item"><span itemprop="name">Zi Wei Dou Shu</span></a>
+        <meta itemprop="position" content="3">
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/elements/zi-wei/history/" itemprop="item"><span itemprop="name">History &amp; Origins</span></a>
+        <meta itemprop="position" content="4">
+      </li>
+    </ol>
+  </div>
+</nav>
+<!--pn-sub:end-->
+
+<a id="pn-main" tabindex="-1"></a>
+
+<!-- ============================================================
+     SECTION 1: HERO
+     ============================================================ -->
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Origins of an Imperial Science</p>
+    <h1>Born in the Emperor's Court</h1>
+    <p class="hero-sub">Zi Wei Dou Shu emerged from the Tang-Song transition — a millennium of refinement inside China's most guarded astronomical chambers. This is the story of how a celestial art became the most sophisticated personality and destiny system in East Asian history.</p>
+    <blockquote class="pull-quote">
+      <p>The Purple Star at the pivot of heaven — from it, all destinies radiate.</p>
+      <cite>Classical ZWDS tradition</cite>
+    </blockquote>
+  </div>
+</header>
+
+<!-- ============================================================
+     SECTION 2: ETYMOLOGY — WHAT THE NAME MEANS
+     ============================================================ -->
+<section class="band" aria-labelledby="etymology-title">
+  <div class="wrap">
+    <p class="eyebrow">Etymology</p>
+    <h2 class="section-title" id="etymology-title">What the Name Means</h2>
+    <p class="section-lead">Four characters. One complete cosmology. Each carries a world of meaning — and together they form the most precise name in the canon of celestial arts.</p>
+
+    <div class="char-grid" role="list">
+
+      <article class="char-card" role="listitem">
+        <span class="char-glyph" aria-hidden="true">紫</span>
+        <p class="char-pinyin">Zǐ</p>
+        <p class="char-name">Purple</p>
+        <p class="char-meaning">The imperial color. In Chinese cosmology, the North Star — Polaris — emits a faint purple-violet glow that marks the axis of heaven.</p>
+        <p class="char-cosmology">The color of celestial authority. Only the Emperor's court wore it.</p>
+      </article>
+
+      <article class="char-card" role="listitem">
+        <span class="char-glyph" aria-hidden="true">微</span>
+        <p class="char-pinyin">Wēi</p>
+        <p class="char-name">Subtle Governing</p>
+        <p class="char-meaning">The quality of influence that shapes without force — quiet, pervasive, the kind of power that needs no announcement to be felt in every corner of the realm.</p>
+        <p class="char-cosmology">The Tao that acts without acting. The center that moves all things while itself remaining still.</p>
+      </article>
+
+      <article class="char-card" role="listitem">
+        <span class="char-glyph" aria-hidden="true">斗</span>
+        <p class="char-pinyin">Dǒu</p>
+        <p class="char-name">The Big Dipper</p>
+        <p class="char-meaning">The asterism of seven stars that circles Polaris, never rising, never setting — always watching. In classical astronomy it was the hand of heaven's clock.</p>
+        <p class="char-cosmology">The ladle that pours destiny. Its handle points to the season; its cup holds the fates.</p>
+      </article>
+
+      <article class="char-card" role="listitem">
+        <span class="char-glyph" aria-hidden="true">數</span>
+        <p class="char-pinyin">Shù</p>
+        <p class="char-name">Calculation</p>
+        <p class="char-meaning">Numbers, destiny, the art of computing fate from celestial positions. Not mere arithmetic — this is the idea that cosmic pattern has a grammar that can be read.</p>
+        <p class="char-cosmology">Heaven speaks in number. The sage who learns its dialect reads the unspoken shape of a life.</p>
+      </article>
+
+    </div>
+
+    <div class="combined-meaning" role="note">
+      <div class="cm-chars" aria-hidden="true">紫微斗數</div>
+      <div class="cm-body">
+        <h3>Combined: "The Purple Star's Dipper Calculation"</h3>
+        <p>The art of reading destiny from the Emperor Star and its celestial court — where the unmoving Polaris (Zi Wei) anchors the cosmos, the Big Dipper marks time, and their mathematical relationships reveal the shape of a human life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 3: TIMELINE
+     ============================================================ -->
+<section class="band" aria-labelledby="timeline-title">
+  <div class="wrap">
+    <p class="eyebrow">A Thousand Years of Refinement</p>
+    <h2 class="section-title" id="timeline-title">From Imperial Court to Global Practice</h2>
+    <p class="section-lead">ZWDS did not arrive complete. It accumulated — dynasty by dynasty, school by school — until it became the richly detailed system practiced today.</p>
+
+    <div class="timeline" role="list">
+
+      <div class="tl-item" role="listitem">
+        <div class="tl-connector" aria-hidden="true"></div>
+        <div class="tl-body">
+          <p class="tl-era">618 – 907 CE</p>
+          <p class="tl-dynasty">Tang Dynasty — The Foundation</p>
+          <p class="tl-desc">Early practitioners developed numerical destiny systems integrating <b>Taoism, the I Ching, and systematic astronomical observation</b>. The Tang court employed astrologers of great sophistication. The groundwork for ZWDS's polar-star focus was laid here, as imperial astronomers catalogued the circumpolar stars and assigned them cosmological roles in the governing of destiny.</p>
+        </div>
+      </div>
+
+      <div class="tl-item" role="listitem">
+        <div class="tl-connector" aria-hidden="true"></div>
+        <div class="tl-body">
+          <p class="tl-era">960 – 1127 CE</p>
+          <p class="tl-dynasty">Song Dynasty — Codification</p>
+          <p class="tl-desc"><b>Chen Tuan (陳摶)</b>, a Taoist hermit living in seclusion on Huashan Mountain, synthesized generations of existing knowledge into the structured system of ZWDS as we recognize it today. He integrated the 12-palace framework, the major star personalities, and the natal calculation method. Chen Tuan is venerated as the patriarch of ZWDS, though debate among scholars continues about precisely which innovations were his. He is also credited with transmitting the cosmological diagrams that influenced Neo-Confucian philosophy.</p>
+        </div>
+      </div>
+
+      <div class="tl-item" role="listitem">
+        <div class="tl-connector" aria-hidden="true"></div>
+        <div class="tl-body">
+          <p class="tl-era">1368 – 1644 CE</p>
+          <p class="tl-dynasty">Ming Dynasty — Standardization</p>
+          <p class="tl-desc">The <b>rectangular chart format</b> still used today was standardized during the Ming period. The system was integrated into imperial court practice for selecting auspicious dates, evaluating ministers, and reading the destiny of the realm itself. The 12 palaces found their standard names and positions. The Si Hua (Four Transformations) system was formalized, giving practitioners a mechanism for reading the natal chart's activation through time.</p>
+        </div>
+      </div>
+
+      <div class="tl-item" role="listitem">
+        <div class="tl-connector" aria-hidden="true"></div>
+        <div class="tl-body">
+          <p class="tl-era">1644 – 1912 CE</p>
+          <p class="tl-dynasty">Qing Dynasty — Imperial Secrecy</p>
+          <p class="tl-desc">ZWDS became <b>closely guarded by the imperial court</b> and its official astrologers. Texts were restricted; transmission was controlled through approved lineages. This secrecy, paradoxically, created the rich variation we see today — regional masters developed their own methods without access to competing schools, producing the distinct Qin Tian, Zhong Zhou, and San He lineages that survive as active schools of practice.</p>
+        </div>
+      </div>
+
+      <div class="tl-item" role="listitem">
+        <div class="tl-connector" aria-hidden="true"></div>
+        <div class="tl-body">
+          <p class="tl-era">Post-1945</p>
+          <p class="tl-dynasty">Taiwan Transmission — The Revival</p>
+          <p class="tl-desc">Following the Nationalist retreat to Taiwan, many classical scholars carried their texts and lineage knowledge across the strait. In the relative stability of postwar Taiwan, ZWDS underwent <b>rigorous documentation</b> for the first time — masters began writing systematic texts, creating the foundational body of modern ZWDS literature. Taiwan became the center of serious ZWDS scholarship for the late twentieth century.</p>
+        </div>
+      </div>
+
+      <div class="tl-item" role="listitem">
+        <div class="tl-connector" aria-hidden="true"></div>
+        <div class="tl-body">
+          <p class="tl-era">1980s – 2000s</p>
+          <p class="tl-dynasty">Global Spread</p>
+          <p class="tl-desc">Through Taiwan, Hong Kong, and diaspora communities across Southeast Asia, ZWDS spread beyond the Chinese-speaking world. <b>English-language resources</b> began appearing in the early 2000s, initially as translations of Taiwanese texts. The system found audiences in Japan, Malaysia, Singapore, and eventually Europe and North America. Each transmission adapted the vocabulary — not always cleanly — to its new cultural context.</p>
+        </div>
+      </div>
+
+      <div class="tl-item" role="listitem">
+        <div class="tl-connector" aria-hidden="true"></div>
+        <div class="tl-body">
+          <p class="tl-era">Today</p>
+          <p class="tl-dynasty">A Living Global Practice</p>
+          <p class="tl-desc">Three major school lineages — <b>Qin Tian (欽天), Zhong Zhou (中州), and San He (三合)</b> — maintain active transmission globally. Digital tools have made chart calculation instantaneous and accessible. In-depth interpretation, however, remains a study of years: the 100+ stars, the 12 palaces, the Si Hua system across four chart layers, and the decade-by-decade activation of each palace require genuine immersion to read with fluency.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 4: THE COSMIC COURT MODEL
+     ============================================================ -->
+<section class="band" aria-labelledby="court-title">
+  <div class="wrap">
+    <p class="eyebrow">The Governing Metaphor</p>
+    <h2 class="section-title" id="court-title">The Emperor's Celestial Court</h2>
+
+    <p class="court-intro">ZWDS is built on a profound and surprisingly practical metaphor: the heavens are organized exactly like an imperial court, with the North Star — Polaris, the real-world inspiration for Zi Wei — as the Emperor who never moves, and all other stars as courtiers orbiting in perpetual attendance.</p>
+
+    <div class="court-metaphor">
+      <h3>Why stars have personalities</h3>
+      <p>The 14 major stars are the key courtiers: six in the Purple Star's northern retinue, eight in the Treasury Star's (Tian Fu) southern retinue. Each carries a rank, a duty, a temperament, and a set of relationships — exactly as human courtiers do. Zi Wei governs. Tian Ji strategizes. Wu Qu manages the treasury. Tian Xiang administers the seals.</p>
+      <p>Once you understand that stars have personalities and court roles, you can predict how they'll behave in any palace. A warrior star (Qi Sha) in the Life Palace suggests someone who leads by force of will. A treasury star (Wu Qu) in the Career Palace suggests a path through finance or management. A hermit star (Tian Ji) alone in the Life Palace without supportive companions suggests a self-sufficient but potentially isolated individual who thinks rather than acts.</p>
+    </div>
+
+    <div class="court-diagram-wrap" role="img" aria-label="The 14 major stars of Zi Wei Dou Shu arranged around the Purple Star (Zi Wei) at center. Hover a star to see its role.">
+      <p class="court-diagram-label">Hover any star to reveal its court role</p>
+      <div class="court-diagram" id="court-diagram">
+        <!-- Rings -->
+        <div class="cd-ring cd-ring-outer" aria-hidden="true"></div>
+        <div class="cd-ring cd-ring-mid" aria-hidden="true"></div>
+        <div class="cd-ring cd-ring-inner" aria-hidden="true"></div>
+        <!-- Center -->
+        <div class="cd-center" aria-hidden="true">
+          <span class="cd-center-char">紫微</span>
+          <span class="cd-center-name">Zi Wei · The Emperor</span>
+        </div>
+        <!-- Stars are injected by JS -->
+        <div class="cd-tooltip" id="cd-tooltip" aria-live="polite" aria-atomic="true">
+          <span class="cd-tooltip-zh" id="tt-zh"></span>
+          <span class="cd-tooltip-en" id="tt-en"></span>
+          <span class="cd-tooltip-role" id="tt-role"></span>
+          <span class="cd-tooltip-title" id="tt-title"></span>
+        </div>
+      </div>
+      <p class="court-note">The 14 major stars — 6 northern (Zi Wei retinue) · 8 southern (Tian Fu retinue)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 5: ZWDS vs BAZI
+     ============================================================ -->
+<section class="band" aria-labelledby="compare-title">
+  <div class="wrap">
+    <p class="eyebrow">Two Systems, Two Lenses</p>
+    <h2 class="section-title" id="compare-title">BaZi and Zi Wei Dou Shu</h2>
+    <p class="compare-intro">Both systems calculate from your birth date. Both map a human life across decades. They do this through entirely different logic — and knowing the difference makes each one more useful.</p>
+
+    <div class="table-wrap" role="region" aria-label="BaZi vs Zi Wei Dou Shu comparison">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th scope="col">Dimension</th>
+            <th scope="col" class="th-bazi">BaZi — Four Pillars</th>
+            <th scope="col" class="th-zwds">Zi Wei Dou Shu</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Foundation</td>
+            <td>Four Stems &amp; Branches from birth date</td>
+            <td>Star placement from birth date + time</td>
+          </tr>
+          <tr>
+            <td>Primary metaphor</td>
+            <td>Five elements and their cycles</td>
+            <td>Imperial court with 100+ characters</td>
+          </tr>
+          <tr>
+            <td>Primary logic</td>
+            <td>Elemental interactions — generating and controlling cycles</td>
+            <td>Spatial relationships between palaces and stars</td>
+          </tr>
+          <tr>
+            <td>Timing system</td>
+            <td>10-year luck pillars + annual column</td>
+            <td>10-year Decade Doors + annual activation waves</td>
+          </tr>
+          <tr>
+            <td>Strongest at</td>
+            <td>Character, elemental tendencies, macro life timing</td>
+            <td>Palace-by-palace life domains, precise decade activation</td>
+          </tr>
+          <tr>
+            <td>Western parallel</td>
+            <td>Elemental personality systems</td>
+            <td>Hellenistic house-based astrology</td>
+          </tr>
+          <tr>
+            <td>Complexity</td>
+            <td>Medium — 10 stems × 12 branches</td>
+            <td>High — 12 palaces × 100+ stars × Si Hua system</td>
+          </tr>
+          <tr>
+            <td>Core question</td>
+            <td>"What is your elemental nature?"</td>
+            <td>"Which room of your life palace is lit up right now?"</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="compare-callout" role="note">
+      <p><strong>BaZi and ZWDS are not competitors — they're complementary.</strong> BaZi reveals your elemental constitution and the macro weather of your decades. ZWDS maps the rooms of your life and shows which decade opens which door in which domain. Many practitioners use both: BaZi for elemental character reading, ZWDS for domain-by-domain decade analysis.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 6: WESTERN PARALLELS
+     ============================================================ -->
+<section class="band" aria-labelledby="parallels-title">
+  <div class="wrap">
+    <p class="eyebrow">For the Western Reader</p>
+    <h2 class="section-title" id="parallels-title">What Western Astrologers Will Recognize</h2>
+    <p class="section-lead" style="max-width:var(--measure); color:var(--muted); margin-top:0.7rem;">ZWDS is not Western astrology. But it thinks in recognizable structures — houses, planetary archetypes, timing arcs. Here is the honest translation.</p>
+
+    <div class="parallel-grid">
+
+      <div class="parallel-card">
+        <p class="pc-eq">The 12 Palaces = The 12 Houses</p>
+        <h3>Spatial Life Domains</h3>
+        <p>ZWDS's palace system is structurally very similar to Hellenistic house astrology. Both divide life into 12 domains — career, marriage, wealth, health, travel, and so on. The key difference: in ZWDS, palaces are always read in groups of four (the court relationship system), and no palace is ever read in isolation. Context is everything.</p>
+      </div>
+
+      <div class="parallel-card">
+        <p class="pc-eq">Si Hua = Planetary Dignities / Lots</p>
+        <h3>The Four Forces</h3>
+        <p>When a Heavenly Stem activates a star into a transformation — Hua Lu (blessing), Hua Quan (authority), Hua Ke (reputation), Hua Ji (disruption) — it is structurally similar to a planet receiving a dignity or participating in an aspect configuration. The difference: ZWDS runs this in four simultaneous chart layers: natal, decade, annual, and flying.</p>
+      </div>
+
+      <div class="parallel-card">
+        <p class="pc-eq">14 Major Stars = Planetary Archetypes</p>
+        <h3>Character Signatures</h3>
+        <p>Like Western planets, each major star carries an archetypal personality that colors every palace it occupies. Zi Wei resonates with Sun/Jupiter authority energy. Tai Yin resonates with Moon/Venus receptive energy. Qi Sha carries Mars-like warrior energy. Tian Tong echoes a benevolent Jupiter-Moon quality. The archetypes are genuinely parallel — the court metaphor simply makes them more social and relational.</p>
+      </div>
+
+      <div class="parallel-card">
+        <p class="pc-eq">Decade Doors = Solar Arc / Profections</p>
+        <h3>Activated Timing</h3>
+        <p>The system of 10-year activated palaces — where each decade "opens" a specific life-domain palace and all its star combinations become the foreground of experience — closely resembles solar arc directions or annual profections in Hellenistic practice. The mechanism differs: ZWDS moves through the chart's palace structure rather than calculating new positions from solar movement.</p>
+      </div>
+
+    </div>
+
+    <div class="key-distinction" role="note">
+      <p><strong>The key structural distinction:</strong> ZWDS is more <em>spatial and relational</em> — it asks which room you are in and who else is in that room with you. Western astrology is more <em>symbolic and aspect-based</em> — it asks how the archetypes are relating to each other in an angular grammar of degrees. Neither is superior. They are different instruments tuned to different questions about the same cosmic reality.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 7: WHERE TO NEXT
+     ============================================================ -->
+<section class="band" aria-labelledby="next-title">
+  <div class="wrap">
+    <p class="eyebrow">Continue the Study</p>
+    <h2 class="section-title" id="next-title">Where This Leads</h2>
+
+    <div class="bridge-grid">
+
+      <a class="bridge-card" href="/elements/zi-wei/palaces/">
+        <span class="bc-glyph" aria-hidden="true">宮</span>
+        <p class="bc-label">The architecture</p>
+        <p class="bc-title">Explore the 12 Palaces</p>
+        <p style="font-size:0.9rem; color:var(--body-text); line-height:1.6; margin-top:0.4rem;">The 12 life-domain rooms that hold every star — from the Life Palace at the center to the Servants Palace in the periphery. Learn the palace names, their domains, and how the court system reads them in clusters of four.</p>
+        <span class="bc-arrow">Explore the Palaces →</span>
+      </a>
+
+      <a class="bridge-card" href="/elements/zi-wei/stars/">
+        <span class="bc-glyph" aria-hidden="true">星</span>
+        <p class="bc-label">The characters</p>
+        <p class="bc-title">Meet the 14 Stars</p>
+        <p style="font-size:0.9rem; color:var(--body-text); line-height:1.6; margin-top:0.4rem;">The 14 major stars are the courtiers of this celestial court. Each has a personality, a rank, a set of relationships, and a characteristic way of activating the palace it occupies. This is where the reading becomes vivid.</p>
+        <span class="bc-arrow">Meet the Stars →</span>
+      </a>
+
+      <a class="bridge-card back" href="/elements/zi-wei/">
+        <span class="bc-glyph" aria-hidden="true">紫</span>
+        <p class="bc-label">The hub</p>
+        <p class="bc-title">Back to Zi Wei Hub</p>
+        <p style="font-size:0.9rem; color:var(--body-text); line-height:1.6; margin-top:0.4rem;">Return to the main Zi Wei Dou Shu hub — the overview, the calculation method, the four chart layers, and links to every section of the system.</p>
+        <span class="bc-arrow">← Back to Zi Wei</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!--om-footer:start--><!--om-footer:end-->
+
+<footer class="page-foot">
+  <div class="wrap">
+    ZI WEI DOU SHU · <a href="/">ZODI ANIMAL</a> · History &amp; Origins
+  </div>
+</footer>
+
+<script src="/js/nav.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  /* ============================================================
+     COSMIC COURT DIAGRAM
+     14 major stars placed radially around Polaris/Zi Wei
+     ============================================================ */
+  var STARS = [
+    { zh: "天機", en: "Tian Ji",    title: "The Strategist",   role: "Intelligence, adaptability, analysis. The Emperor's chief advisor — always moving, always calculating the next three steps." },
+    { zh: "太陽", en: "Tai Yang",   title: "The Sun",          role: "Vitality, visibility, public life, the father principle. Illuminates whatever palace it occupies — sometimes too brightly." },
+    { zh: "武曲", en: "Wu Qu",      title: "The Treasury Star", role: "Finance, discipline, decisive action. The Minister of the Treasury — results-oriented, intolerant of waste or sentiment." },
+    { zh: "天同", en: "Tian Tong",  title: "The Ease Star",    role: "Comfort, enjoyment, gentleness. The court musician — brings harmony and pleasure, but can resist effort." },
+    { zh: "廉貞", en: "Lian Zhen",  title: "The Prosecutor",   role: "Ethics, desire, legal matters, hidden power. The court censor — guards morality by day, harbors passion by night." },
+    { zh: "天府", en: "Tian Fu",    title: "The Treasury",     role: "Stability, storage, accumulation. The southern counterpart to Zi Wei — where the Emperor commands, the Treasury sustains." },
+    { zh: "太陰", en: "Tai Yin",    title: "The Moon Star",    role: "Receptivity, femininity, inner life, wealth that accrues quietly. The court's hidden influence — powerful precisely because unseen." },
+    { zh: "貪狼", en: "Tan Lang",   title: "The Desire Star",  role: "Desire, creativity, ambition, seduction. The most charismatic courtier — magnetic and dangerous in equal measure." },
+    { zh: "巨門", en: "Ju Men",     title: "The Gate",         role: "Communication, hidden matters, controversy. Opens every sealed door — and invites dispute as naturally as sunlight." },
+    { zh: "天相", en: "Tian Xiang", title: "The Seal",         role: "Administration, mediation, order. The keeper of the official seal — upholds protocol, mediates between competing factions." },
+    { zh: "天梁", en: "Tian Liang", title: "The Elder",        role: "Protection, wisdom, medicine, the older generation. The court elder who shields — and occasionally obstructs — those in his care." },
+    { zh: "七殺", en: "Qi Sha",     title: "The Warrior",      role: "Power, change, sudden shifts, warrior energy. Seven Killings — the most feared star in the chart, and the most capable when properly directed." },
+    { zh: "破軍", en: "Po Jun",     title: "The Destroyer",    role: "Revolution, destruction, renewal. Breaks what no longer serves — leaves behind clearing and the possibility of something entirely new." },
+    { zh: "文昌", en: "Wen Chang",  title: "The Scholar",      role: "Culture, examinations, writing, elegance. The court's literary star — brings refinement, intellectual achievement, and the favor of those who read." }
+  ];
+
+  var diagram = document.getElementById("court-diagram");
+  var tooltip = document.getElementById("cd-tooltip");
+  var ttZh    = document.getElementById("tt-zh");
+  var ttEn    = document.getElementById("tt-en");
+  var ttRole  = document.getElementById("tt-role");
+  var ttTitle = document.getElementById("tt-title");
+
+  if (!diagram) return;
+
+  var N = STARS.length;
+  var cx = 50; // % center
+  var cy = 50;
+  // Stars placed at 44% radius from center (in % of diagram size)
+  var rx = 44;
+  var ry = 44;
+  var activeEl = null;
+
+  STARS.forEach(function (star, i) {
+    var angle = (i / N) * 2 * Math.PI - Math.PI / 2;
+    var x = cx + rx * Math.cos(angle);
+    var y = cy + ry * Math.sin(angle);
+
+    var el = document.createElement("div");
+    el.className = "cd-star";
+    el.style.left = x + "%";
+    el.style.top  = y + "%";
+    el.setAttribute("role", "button");
+    el.setAttribute("tabindex", "0");
+    el.setAttribute("aria-label", star.en + " — " + star.title + ". " + star.role);
+
+    el.innerHTML =
+      '<div class="cd-star-dot" aria-hidden="true"></div>' +
+      '<div class="cd-star-name" aria-hidden="true"><span class="cd-star-zh">' + star.zh + '</span>' + star.en + '</div>';
+
+    function showTooltip() {
+      if (activeEl && activeEl !== el) activeEl.classList.remove("active");
+      activeEl = el;
+      el.classList.add("active");
+      ttZh.textContent    = star.zh;
+      ttEn.textContent    = star.en;
+      ttRole.textContent  = star.role;
+      ttTitle.textContent = star.title;
+      tooltip.classList.add("visible");
+    }
+    function hideTooltip() {
+      el.classList.remove("active");
+      tooltip.classList.remove("visible");
+      activeEl = null;
+    }
+
+    el.addEventListener("mouseenter", showTooltip);
+    el.addEventListener("mouseleave", hideTooltip);
+    el.addEventListener("focus", showTooltip);
+    el.addEventListener("blur", hideTooltip);
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        if (tooltip.classList.contains("visible") && activeEl === el) {
+          hideTooltip();
+        } else {
+          showTooltip();
+        }
+      }
+    });
+
+    diagram.appendChild(el);
+  });
+
+})();
+</script>
+</body>
+</html>
