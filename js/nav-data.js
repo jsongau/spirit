@@ -268,7 +268,7 @@ PNAV.MAP = [
       rainbow: true,
       body: "The five phases that move through everything — now mapped to the seven chakras, each with its own yoga practice.",
       pills: [
-        ["/elements/",              "All five phases", true],
+        ["/elements/",              "The five elements", true],
         ["/elements/chakras/",      "The 7 chakras",   true],
         ["/elements/chakras/yoga/", "Chakra yoga"]
       ]
@@ -280,6 +280,13 @@ PNAV.MAP = [
         ["/bazi/day-master/",    "Your Day Master"],
         ["/bazi/ten-gods/",      "The Ten Gods"],
         ["/bazi/compatibility/", "You & them"]
+      ]},
+      { title: "Purple Star", mark: "紫微", items: [
+        ["/elements/zi-wei/",             "Zi Wei Dou Shu", "the Emperor's sky"],
+        ["/elements/zi-wei/chart/",       "Read a chart", "school"],
+        ["/elements/zi-wei/stars/",       "The 14 Stars"],
+        ["/elements/zi-wei/palaces/",     "The 12 Palaces"],
+        ["/elements/zi-wei/four-forces/", "The Four Forces"]
       ]},
       { title: "Feng shui", mark: "風水", items: [
         ["/feng-shui/commanding-position/", "Commanding position", "live"],
@@ -354,6 +361,12 @@ PNAV.CRAWL_EXTRA = [
   ["/cosmology/four-pillars/",       "The Four Pillars"],
   ["/elements/",                     "The five phases (Elements hub)"],
   ["/bazi/",                         "BaZi, the Four Pillars of Destiny"],
+  ["/elements/zi-wei/",              "Purple Star Astrology (Zi Wei Dou Shu)"],
+  ["/elements/zi-wei/chart/",        "Learn to read a Purple Star chart"],
+  ["/elements/zi-wei/stars/",        "The 14 major stars"],
+  ["/elements/zi-wei/palaces/",      "The 12 palaces"],
+  ["/elements/zi-wei/four-forces/",  "The Four Forces (Si Hua)"],
+  ["/elements/zi-wei/history/",      "Purple Star history & origins"],
   /* dropped when the standalone Menagerie group folded into Explore +
      Zodiac; keep it linked so no crawlable destination is lost. */
   ["/learn.html",                    "How it works"]
@@ -656,6 +669,36 @@ PNAV.HUBS = {
       ["/elements/#cycles", "The two cycles"],
       ["/elements/#quiz", "What's your element?"],
       ["/elements/zodiac/", "Elements & your animal"]
+    ]
+  },
+  // Nested hub: Zi Wei Dou Shu (Purple Star Astrology) pages resolve here
+  // (not to "elements") via the longest-prefix match in resolveHub. The hub
+  // root is auto-dropped as a tab but still carries the crumb.
+  "elements/zi-wei": {
+    label: "Purple Star (Zi Wei Dou Shu)", root: "/elements/zi-wei/",
+    items: [
+      ["/elements/zi-wei/", "Overview"],
+      ["/elements/zi-wei/history/", "History & origins"],
+      ["/elements/zi-wei/palaces/", "The 12 Palaces"],
+      ["/elements/zi-wei/stars/", "The 14 Stars", [
+        ["/elements/zi-wei/stars/", "All 14 stars"],
+        ["/elements/zi-wei/stars/zi-wei/", "Zi Wei · The Emperor"],
+        ["/elements/zi-wei/stars/tian-ji/", "Tian Ji · The Strategist"],
+        ["/elements/zi-wei/stars/tai-yang/", "Tai Yang · The Sun"],
+        ["/elements/zi-wei/stars/wu-qu/", "Wu Qu · The Finance General"],
+        ["/elements/zi-wei/stars/tian-tong/", "Tian Tong · The Harmony Star"],
+        ["/elements/zi-wei/stars/lian-zhen/", "Lian Zhen · The Diplomat"],
+        ["/elements/zi-wei/stars/tian-fu/", "Tian Fu · The Treasury"],
+        ["/elements/zi-wei/stars/tai-yin/", "Tai Yin · The Moon Star"],
+        ["/elements/zi-wei/stars/tan-lang/", "Tan Lang · The Desire Star"],
+        ["/elements/zi-wei/stars/ju-men/", "Ju Men · The Dark Gate"],
+        ["/elements/zi-wei/stars/tian-xiang/", "Tian Xiang · The Prime Minister"],
+        ["/elements/zi-wei/stars/tian-liang/", "Tian Liang · The Elder"],
+        ["/elements/zi-wei/stars/qi-sha/", "Qi Sha · The Warrior"],
+        ["/elements/zi-wei/stars/po-jun/", "Po Jun · The Vanguard"]
+      ]],
+      ["/elements/zi-wei/four-forces/", "The Four Forces"],
+      ["/elements/zi-wei/chart/", "Read a chart"]
     ]
   },
   // Nested hub: chakra + yoga pages resolve here (not to "elements") via the

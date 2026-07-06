@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Observatory · Homepage concept A · Zodi Animal</title>
+<meta name="description" content="Concept preview A for the zodianimal.com homepage: a celestial observatory where the Western sun wheel and the Chinese year wheel cross to name one of 144 Zodi Animals.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;0,9..144,600;1,9..144,400;1,9..144,560&family=Geist:wght@400;500;600&family=Space+Mono:wght@400;700&family=Ma+Shan+Zheng&display=swap">
+<style>
+/* ============================================================
+   THE OBSERVATORY · homepage concept A · zodianimal.com
+   Tokens verbatim from site/css/tokens.css hex fallbacks.
+   ============================================================ */
+:root{
+  --ink:#0d0e18; --ink-2:#131523; --panel:#1a1c30; --panel-2:#22253d; --field:#0c0e1a;
+  --line:rgba(214,193,140,.16); --line-soft:rgba(214,193,140,.08);
+  --moon:#f6efd8; --ivory:#ece7d8; --body-text:#cfcfe0; --muted:#adaec2; --faint:#7f8096;
+  --brass-dim:#a8925c; --brass:#d6c18c; --brass-bright:#efe2b4;
+  --glow:#1a1c33;
+  --wood:#6fae74; --fire:#d98a86; --earth:#c9a86a; --metal:#c3c8d0; --water:#78b3c6;
+  --jade:#78c39c; --silver:#aebfe0; --amethyst:#b184d6; --rose:#e3a196; --teal:#78b3c6;
+  --serif:"Fraunces","Fraunces Fallback",Georgia,"Times New Roman",serif;
+  --sans:"Geist","Inter","Geist Fallback",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"Space Mono","Space Mono Fallback",ui-monospace,"SFMono-Regular",monospace;
+  --han:"Ma Shan Zheng",var(--serif);
+  --r-1:8px; --r-2:14px; --r-3:22px; --r-pill:999px;
+  --e-2:0 8px 30px rgba(0,0,0,.45);
+  --ease-io:cubic-bezier(.22,.61,.36,1);
+  --maxw:1180px;
+  --accent:var(--brass); --accent-soft:rgba(214,193,140,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--ink);scroll-behavior:smooth;scroll-padding-top:128px}
+body{
+  background:
+    radial-gradient(1100px 640px at 50% -8%, var(--glow) 0%, var(--ink) 62%) no-repeat,
+    var(--ink);
+  color:var(--ivory); font-family:var(--sans); line-height:1.65;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+a{color:var(--brass-bright);text-decoration:none;font-weight:500}
+a:hover{color:var(--moon)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--brass-bright);outline-offset:2px;border-radius:4px}
+img,svg,canvas{display:block;max-width:100%}
+button{font-family:var(--sans);cursor:pointer}
+
+/* faint star chart behind everything */
+.starfield{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.75;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(246,239,216,.55), transparent 60%),
+    radial-gradient(1px 1px at 78% 9%,  rgba(246,239,216,.4), transparent 60%),
+    radial-gradient(1.5px 1.5px at 62% 31%, rgba(174,191,224,.45), transparent 60%),
+    radial-gradient(1px 1px at 31% 54%, rgba(246,239,216,.3), transparent 60%),
+    radial-gradient(1px 1px at 88% 47%, rgba(246,239,216,.35), transparent 60%),
+    radial-gradient(1.5px 1.5px at 8% 79%, rgba(174,191,224,.3), transparent 60%),
+    radial-gradient(1px 1px at 51% 88%, rgba(246,239,216,.3), transparent 60%),
+    radial-gradient(1px 1px at 95% 74%, rgba(246,239,216,.4), transparent 60%),
+    radial-gradient(1px 1px at 42% 7%,  rgba(246,239,216,.35), transparent 60%),
+    radial-gradient(1px 1px at 23% 92%, rgba(214,193,140,.35), transparent 60%);
+}
+main,header.obar,nav.craft,footer{position:relative;z-index:1}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+
+/* ---------- type ---------- */
+.eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-weight:560;font-optical-sizing:auto;font-size:clamp(2.5rem,6.4vw,4.6rem);line-height:1.05;color:var(--moon);letter-spacing:-.01em;text-wrap:balance}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.12;color:var(--moon);text-wrap:balance}
+h3{font-family:var(--serif);font-weight:600;font-size:1.18rem;color:var(--moon)}
+.lede{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2vw,1.3rem);color:var(--brass-bright);max-width:56ch;line-height:1.5}
+p{max-width:66ch}
+.dim{color:var(--body-text);font-size:.96rem}
+.small{color:var(--muted);font-size:.84rem}
+.mono{font-family:var(--mono)}
+.han{font-family:var(--han);font-weight:400}
+ruby rt{font-family:var(--sans);font-size:.56em;color:var(--brass-bright);letter-spacing:.02em}
+
+/* ---------- top bar ---------- */
+.obar{position:sticky;top:0;z-index:40;background:rgba(13,14,24,.82);backdrop-filter:blur(9px);border-bottom:1px solid var(--line-soft)}
+.obar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.brand{font-family:var(--serif);font-size:1.12rem;color:var(--ivory)}
+.brand .z{color:var(--brass)}
+.obar-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--faint)}
+.obar-cta{font-size:.85rem;font-weight:600;color:var(--brass-bright);border:1px solid var(--line);border-radius:var(--r-pill);padding:8px 16px;transition:border-color .2s var(--ease-io)}
+.obar-cta:hover{border-color:var(--brass);color:var(--moon)}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(48px,8vh,96px) 0 clamp(36px,6vh,64px)}
+.hero-head{max-width:820px}
+.hero-head .lede{margin-top:18px}
+.bridge{margin-top:16px;color:var(--muted);font-size:.94rem;max-width:62ch}
+.bridge strong{color:var(--brass-bright);font-weight:600}
+
+.instrument{display:grid;gap:clamp(24px,4vw,48px);margin-top:clamp(32px,5vh,56px);align-items:start}
+@media(min-width:920px){.instrument{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}}
+
+/* the astrolabe */
+.dialwrap{position:relative;margin:0 auto;width:min(92vw,540px)}
+.dial{width:100%;height:auto}
+.dial .plateface{fill:#111327}
+.dial .engraved{stroke:var(--line);fill:none}
+.dial .tick{stroke:rgba(214,193,140,.34)}
+.dial .tick-minor{stroke:rgba(214,193,140,.14)}
+.dial .wglyph{font-size:26px;fill:var(--muted);text-anchor:middle;dominant-baseline:central;font-family:var(--sans);transition:fill .4s}
+.dial .eglyph{font-family:var(--han);font-size:27px;fill:var(--muted);text-anchor:middle;dominant-baseline:central;transition:fill .4s}
+.dial .wglyph.lit{fill:var(--brass-bright)}
+.dial .eglyph.lit{fill:var(--brass-bright)}
+.dial .ringlabel{font-family:var(--mono);font-size:8.5px;letter-spacing:.34em;fill:var(--faint);text-anchor:middle}
+.dial .plateno{font-family:var(--mono);font-size:12px;letter-spacing:.22em;fill:var(--brass-dim);text-anchor:middle}
+.dial .clasp{font-size:15px;fill:var(--brass);text-anchor:middle}
+.ring{transform-origin:270px 270px}
+#driftring{transform-origin:270px 270px}
+.reticle{stroke:var(--brass);fill:none}
+.pointer{fill:var(--brass)}
+
+.handrow{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:16px}
+.handrow .lbl{flex-basis:100%;text-align:center;font-family:var(--mono);font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--faint)}
+.turnbtn{background:var(--panel);border:1px solid var(--line);color:var(--ivory);border-radius:var(--r-pill);padding:8px 15px;font-size:.82rem;font-weight:500;transition:border-color .2s,transform .15s}
+.turnbtn:hover{border-color:var(--brass);transform:translateY(-1px)}
+.turnbtn span{color:var(--brass);margin-right:6px}
+
+/* sighting console */
+.console{display:flex;flex-direction:column;gap:18px}
+.plate{background:
+    radial-gradient(120% 90% at 100% 0%, var(--accent-soft), transparent 46%),
+    linear-gradient(165deg, var(--panel-2), var(--panel) 55%);
+  border:1px solid var(--line);border-radius:var(--r-2);padding:22px 24px;position:relative}
+.plate::before{content:"";position:absolute;inset:0 0 auto 0;height:1px;border-radius:inherit;
+  background:linear-gradient(90deg,transparent,var(--accent-soft) 30%,var(--accent-soft) 70%,transparent)}
+.plate-cap{font-family:var(--mono);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--brass-dim);margin-bottom:14px}
+.datefields{display:flex;gap:10px;flex-wrap:wrap}
+.datefields label{display:flex;flex-direction:column;gap:5px;font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.datefields select,.datefields input{background:var(--field);border:1px solid var(--line);border-radius:10px;color:var(--ivory);font-family:var(--sans);font-size:1rem;padding:11px 12px;min-height:46px}
+.datefields select{min-width:120px}
+.datefields input{width:86px}
+.datefields input#yy{width:104px}
+.btn{appearance:none;border:none;border-radius:12px;padding:13px 22px;font-size:.95rem;font-weight:600;letter-spacing:.02em;
+  background:linear-gradient(135deg,var(--brass-bright),var(--brass-dim));color:#1a160a;
+  box-shadow:0 4px 18px var(--accent-soft);transition:transform .2s var(--ease-io),box-shadow .2s var(--ease-io)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.btn:active{transform:translateY(0) scale(.97)}
+.btn.ghost{background:transparent;color:var(--brass-bright);border:1px solid var(--line);box-shadow:none}
+.btn.ghost:hover{border-color:var(--brass)}
+.sightnote{margin-top:12px;color:var(--faint);font-size:.8rem;max-width:52ch}
+
+.readout .row{display:flex;gap:14px;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--line-soft)}
+.readout .row:last-of-type{border-bottom:none}
+.readout .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-dim);min-width:96px}
+.readout .v{color:var(--ivory);font-size:.95rem}
+.readout .v .g{color:var(--brass);margin-right:6px}
+.creature{font-family:var(--serif);font-weight:560;font-size:clamp(1.8rem,4vw,2.5rem);color:var(--moon);line-height:1.1;margin:14px 0 4px}
+.plateno-line{font-family:var(--mono);font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--brass-dim)}
+.console .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.rite{margin-top:14px;color:var(--muted);font-size:.84rem;font-style:italic;font-family:var(--serif)}
+.rite b{color:var(--brass-bright);font-weight:560}
+
+/* mini 144 grid */
+.gridpanel{margin-top:clamp(36px,6vh,56px)}
+.gridpanel h3{margin-bottom:6px}
+.gridwrap{overflow-x:auto;padding-bottom:6px}
+.zgrid{display:grid;grid-template-columns:auto repeat(12,minmax(16px,1fr));gap:3px;min-width:420px;max-width:640px}
+.zgrid .axis{display:flex;align-items:center;justify-content:center;font-size:.66rem;color:var(--faint);min-height:16px}
+.zgrid .axis.e{font-family:var(--han);font-size:.8rem}
+.zgrid .cell{aspect-ratio:1;border-radius:3px;background:var(--panel);border:1px solid rgba(214,193,140,.07);padding:0;transition:background .3s,border-color .3s,box-shadow .3s}
+.zgrid .cell:hover{border-color:var(--brass-dim)}
+.zgrid .cell.row-lit,.zgrid .cell.col-lit{background:#20233a}
+.zgrid .cell.lit{background:var(--brass);border-color:var(--brass-bright);box-shadow:0 0 12px rgba(214,193,140,.6)}
+.gridcap{margin-top:10px;font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.gridcap b{color:var(--brass-bright);font-weight:700}
+
+/* ---------- systems of the craft sub-nav ---------- */
+.craft{position:sticky;top:58px;z-index:30;background:rgba(13,14,24,.86);backdrop-filter:blur(10px);border-block:1px solid var(--line-soft)}
+.craft .wrap{display:flex;align-items:center;gap:18px;height:54px}
+.craft-label{font-family:var(--mono);font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--faint);white-space:nowrap}
+.craft-list{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.craft-list::-webkit-scrollbar{display:none}
+.craft-list a{--sys:var(--brass);flex:none;font-size:.84rem;font-weight:500;color:var(--muted);padding:7px 13px;border-radius:var(--r-pill);border:1px solid transparent;transition:color .2s,border-color .2s,background .2s;white-space:nowrap}
+.craft-list a:hover{color:var(--ivory)}
+.craft-list a.active{color:var(--sys);border-color:color-mix(in srgb,var(--sys) 40%,transparent);background:color-mix(in srgb,var(--sys) 10%,transparent);font-weight:600}
+@media(max-width:640px){.craft-label{display:none}}
+
+/* ---------- sections ---------- */
+section.sys{padding:clamp(56px,10vh,120px) 0;border-top:1px solid var(--line-soft)}
+section.sys:first-of-type{border-top:none}
+.sys--gates{--accent:var(--amethyst);--accent-soft:rgba(177,132,214,.14)}
+.sys--elements{--accent:var(--wood);--accent-soft:rgba(111,174,116,.14)}
+.sys--bazi{--accent:var(--earth);--accent-soft:rgba(201,168,106,.14)}
+.sys--stars{--accent:var(--teal);--accent-soft:rgba(120,179,198,.14)}
+.sys--fengshui{--accent:var(--jade);--accent-soft:rgba(120,195,156,.14)}
+.sys--stones{--accent:var(--metal);--accent-soft:rgba(195,200,208,.12)}
+.sys--moon{--accent:var(--silver);--accent-soft:rgba(174,191,224,.14)}
+.sys--bonds{--accent:var(--rose);--accent-soft:rgba(227,161,150,.14)}
+.sys--menagerie{--accent:var(--brass-bright);--accent-soft:rgba(239,226,180,.14)}
+.sys .lede{margin-top:14px}
+.sys-head{max-width:760px}
+.sys-cta{margin-top:26px}
+.sys-cta a{--c:var(--accent);color:var(--c);font-weight:600;font-size:.95rem;border:1px solid color-mix(in srgb,var(--c) 36%,transparent);border-radius:var(--r-pill);padding:11px 20px;display:inline-block;transition:background .2s,transform .15s}
+.sys-cta a:hover{background:color-mix(in srgb,var(--c) 12%,transparent);transform:translateY(-1px)}
+
+/* gates */
+.gates{display:grid;gap:12px;margin-top:34px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.gate{background:linear-gradient(165deg,var(--panel-2),var(--panel) 55%);border:1px solid var(--line);border-radius:var(--r-2);padding:20px;position:relative}
+.gate .n{font-family:var(--mono);font-size:.66rem;letter-spacing:.26em;color:var(--accent);margin-bottom:10px;display:block}
+.gate h3{font-size:1.02rem;margin-bottom:6px}
+.gate p{font-size:.86rem;color:var(--muted)}
+.poles{margin-top:26px;font-family:var(--serif);font-style:italic;font-size:1.06rem;color:var(--brass-bright);max-width:58ch}
+
+/* elements wheel */
+.elemgrid{display:grid;gap:clamp(24px,4vw,44px);margin-top:36px;align-items:start}
+@media(min-width:880px){.elemgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.wheelwrap{margin:0 auto;width:min(88vw,460px)}
+.modes{display:flex;gap:8px;margin-bottom:16px;justify-content:center}
+.modebtn{background:var(--panel);border:1px solid var(--line);color:var(--muted);border-radius:var(--r-pill);padding:9px 18px;font-size:.86rem;font-weight:500;transition:color .2s,border-color .2s}
+.modebtn[aria-pressed="true"]{color:var(--moon);border-color:var(--accent);background:var(--accent-soft);font-weight:600}
+.wheel .node{cursor:pointer}
+.wheel .node circle{fill:#14162a;stroke-width:1.5;transition:stroke .3s, filter .3s}
+.wheel .node .zi{font-family:var(--han);font-size:30px;text-anchor:middle;dominant-baseline:central}
+.wheel .node .en{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;fill:var(--muted);text-anchor:middle}
+.wheel .node.sel circle{filter:drop-shadow(0 0 10px currentColor)}
+.wheel .flow{fill:none;stroke-width:1.8;opacity:.85;transition:opacity .4s}
+.wheel .flow.dimmed{opacity:.12}
+.cyclecap{text-align:center;margin:14px auto 0;font-family:var(--serif);font-style:italic;color:var(--brass-bright);font-size:1rem;max-width:44ch}
+.elemcard{background:linear-gradient(165deg,var(--panel-2),var(--panel) 55%);border:1px solid var(--line);border-radius:var(--r-2);padding:24px 26px}
+.elemcard .zi-big{font-family:var(--han);font-size:3rem;line-height:1;margin-bottom:4px}
+.elemcard .pin{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
+.elemcard .row{display:flex;gap:14px;padding:7px 0;border-bottom:1px solid var(--line-soft);font-size:.92rem}
+.elemcard .row:last-of-type{border-bottom:none}
+.elemcard .k{font-family:var(--mono);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-dim);min-width:88px;padding-top:4px}
+.elemcard .motion{margin-top:16px;font-family:var(--serif);font-style:italic;color:var(--ivory);font-size:1rem}
+
+/* teaser cards (static systems) */
+.teaser{display:grid;gap:clamp(24px,4vw,44px);align-items:center;margin-top:34px}
+@media(min-width:880px){.teaser{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.teaser.flip>.tz{order:2}}
+.tz{display:flex;justify-content:center}
+.tz svg{width:min(80vw,340px);height:auto}
+.pillarplate{display:flex;gap:10px;justify-content:center}
+.pillar{background:#14162a;border:1px solid var(--line);border-radius:10px;padding:16px 12px 12px;text-align:center;min-width:66px}
+.pillar .pl{font-family:var(--mono);font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+.pillar .zi{font-family:var(--han);font-size:1.7rem;line-height:1.25;color:var(--ivory)}
+.pillar.dm{border-color:var(--earth);box-shadow:0 0 14px rgba(201,168,106,.25)}
+.pillar.dm .tag{font-family:var(--mono);font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:var(--earth);margin-top:8px;display:block}
+.chiprow{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.chip{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ivory);border:1px solid var(--line);border-radius:var(--r-pill);padding:8px 15px}
+.chip b{color:var(--accent);font-weight:700;margin-right:6px}
+
+/* moon */
+.moongrid{display:grid;gap:clamp(24px,4vw,44px);margin-top:36px;align-items:start}
+@media(min-width:880px){.moongrid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}}
+.moonobs{display:flex;flex-direction:column;align-items:center;gap:18px}
+#moonCanvas{width:min(60vw,210px);height:auto;border-radius:50%;box-shadow:0 0 46px rgba(174,191,224,.22)}
+.moonread{text-align:center}
+.moonread .ph{font-family:var(--serif);font-weight:560;font-size:1.5rem;color:var(--moon)}
+.moonread .st{font-family:var(--mono);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.phasestrip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:4px}
+@media(min-width:560px){.phasestrip{grid-template-columns:repeat(8,1fr)}}
+.phasecell{background:var(--panel);border:1px solid var(--line-soft);border-radius:10px;padding:10px 6px;text-align:center}
+.phasecell.now{border-color:var(--silver);box-shadow:0 0 14px rgba(174,191,224,.25)}
+.phasecell .pn{font-size:.68rem;color:var(--ivory);line-height:1.3}
+.phasecell .pv{font-family:var(--mono);font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:3px}
+.powerrest{display:grid;gap:12px;margin-top:18px}
+@media(min-width:560px){.powerrest{grid-template-columns:1fr 1fr}}
+.prcard{background:linear-gradient(165deg,var(--panel-2),var(--panel) 55%);border:1px solid var(--line);border-radius:var(--r-2);padding:20px}
+.prcard h3{font-size:1rem;margin-bottom:6px}
+.prcard h3 b{color:var(--silver);font-weight:600}
+.prcard p{font-size:.87rem;color:var(--muted)}
+.moondates{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.moondates b{color:var(--silver);font-weight:700}
+
+/* menagerie peek */
+.peek{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.peek a{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 16px;transition:border-color .2s,transform .15s}
+.peek a:hover{border-color:var(--brass);transform:translateY(-2px)}
+.peek .pn{display:block;font-family:var(--serif);font-size:1.05rem;color:var(--moon)}
+.peek .ps{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;color:var(--muted);margin-top:4px}
+
+/* footer */
+footer{border-top:1px solid var(--line-soft);padding:44px 0 64px;margin-top:40px}
+footer .cap{font-family:var(--mono);font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--brass-dim);margin-bottom:14px}
+footer p{color:var(--muted);font-size:.88rem;max-width:62ch}
+.footlinks{display:flex;gap:20px;flex-wrap:wrap;margin-top:18px;font-size:.88rem}
+
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion: no-preference){
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease-io),transform .7s var(--ease-io)}
+  .reveal.is-in{opacity:1;transform:none}
+  .ring{transition:transform 1.2s var(--ease-io)}
+  #driftring{animation:drift 140s linear infinite}
+  @keyframes drift{to{transform:rotate(360deg)}}
+  .dialwrap{animation:breathe 8s ease-in-out infinite}
+  @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.008)}}
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important}
+}
+</style>
+<!--pn-css:start-->
+<link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
+<link rel="stylesheet" href="/css/nav-mega.css" data-pn="/css/nav-mega.css">
+<link rel="stylesheet" href="/css/nav-drawer.css" data-pn="/css/nav-drawer.css">
+<link rel="stylesheet" href="/css/nav-sub.css" data-pn="/css/nav-sub.css">
+<link rel="stylesheet" href="/css/footer.css" data-pn="/css/footer.css">
+<link rel="stylesheet" href="/css/a11y.css" data-pn="/css/a11y.css">
+<!--pn-css:end-->
+<script src="/js/nav.js" defer></script>
+</head>
+<body class="pn-has-bar">
+<!--pn-static:start-->
+<a class="skip-link" href="#pn-main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ico-moonstone" viewBox="0 0 24 24"><path d="M12 2.6c4 2 6.4 5.1 6.4 9.4S16 19.6 12 21.4C8 19.6 5.6 16.3 5.6 12S8 4.6 12 2.6Z" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M12 2.6C10 6 9 9 9 12s1 6 3 9.4" fill="none" stroke="currentColor" stroke-width=".8" opacity=".5"/><ellipse cx="10.4" cy="9" rx="2.2" ry="3.2" fill="currentColor" opacity=".2"/></symbol></svg>
+<header class="pn-bar" role="banner" data-static>
+  <div class="pn-inner">
+    <a class="pn-brand" href="/index.html"><span class="pn-word"><span class="z">Zodi</span> <b>Animal</b></span><span class="pn-tagline">Unlock your<br>Primal Zodiac<br>Animal Spirit</span></a>
+    <nav class="pn-nav" aria-label="Primary">
+        <a class="pn-link pn-find" href="/index.html#read">Find yours</a>
+        <div class="pn-item" data-accent="teal"><button class="pn-trigger" type="button" data-group="1" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Explore<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="brass"><button class="pn-trigger" type="button" data-group="2" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Zodiac<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="amethyst"><button class="pn-trigger" type="button" data-group="3" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Horoscope<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="jade"><button class="pn-trigger" type="button" data-group="4" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Sage Wisdom<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="rose"><button class="pn-trigger" type="button" data-group="5" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Bonds<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="silver"><button class="pn-trigger" type="button" data-group="6" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Moon<span class="chev" aria-hidden="true"></span></button></div>
+    </nav>
+    <div class="pn-tools">
+      <div class="pn-orb" data-orb hidden aria-hidden="true"></div>
+      <a class="pn-id" data-id-chip href="/index.html" hidden></a>
+      <div class="pn-moonwrap">
+        <button class="pn-moon" type="button" data-moon-chip aria-haspopup="true" aria-expanded="false" aria-controls="pn-moonpop" hidden></button>
+        <div class="pn-moonpop" id="pn-moonpop" data-moon-pop role="region" aria-label="Moon phase tonight" hidden>
+          <div class="pnm-head"><span class="pnm-glyph" aria-hidden="true"></span><div><p class="pnm-name"></p><p class="pnm-pct"></p></div></div>
+          <p class="pnm-meaning"></p>
+          <p class="pnm-favors"></p>
+          <a class="pnm-link" href="/moon.html">Read the Moon tonight</a>
+        </div>
+      </div>
+      <a class="pn-ring" data-ring-slot href="/awakening.html" hidden></a>
+      <a class="pn-cta" href="/index.html#read">Reveal my animal <span aria-hidden="true">&#10022;</span></a>
+    </div>
+    <button class="pn-burger" type="button" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </div>
+  <div class="pn-dd" data-dd><div class="pn-dd-mount"></div></div>
+  <div class="pn-panel pn-panel-explore" data-group="1" data-accent="teal" role="region" aria-label="Explore" hidden>
+    <p class="pn-panel-eyebrow">Everything the wheel opens, one animal at the center</p>
+    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">✦</span> Begin</p><a class="pn-row" href="/index.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Find your animal</span></a><a class="pn-row" href="/daily.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Today's reading</span><span class="pn-row-sub" data-dyn="date-today">Mon, Jul 6</span></a><a class="pn-row" href="/year.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Year finder</span></a><a class="pn-row" href="/account.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your account</span><span class="pn-row-sub">Zodi Karma ledger</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Menagerie</p><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">All 144 animals</span></a><a class="pn-row" href="/western-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Western wing</span></a><a class="pn-row" href="/chinese-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Eastern wing</span></a><a class="pn-row" href="/zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Zodiac crossings</span></a><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Rare crossings</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> The Moon</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Last Quarter</span></a><a class="pn-row" href="/moon/phases/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The eight phases</span></a><a class="pn-row" href="/moon/in-your-sign/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Moon in your sign</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days</span></a><a class="pn-row" href="/chinese-zodiac/fire-horse-2026/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Fire Horse 2026</span><span class="pn-row-sub">begins Feb 17</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">⌂</span> Live with it</p><a class="pn-row" href="/feng-shui/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Feng shui</span></a><a class="pn-row" href="/bazi/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">BaZi (Four Pillars)</span><span class="pn-row-sub">eight characters</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span><span class="pn-row-sub">moon, stones, heritage</span></a></div></div>
+    <div class="pn-chips" role="group" aria-label="Western wing"><span class="pn-chips-label">Western wing</span><a class="pn-chip" href="/western-zodiac/aries/" title="Aries" aria-label="Aries">♈</a><a class="pn-chip" href="/western-zodiac/taurus/" title="Taurus" aria-label="Taurus">♉</a><a class="pn-chip" href="/western-zodiac/gemini/" title="Gemini" aria-label="Gemini">♊</a><a class="pn-chip" href="/western-zodiac/cancer/" title="Cancer" aria-label="Cancer">♋</a><a class="pn-chip" href="/western-zodiac/leo/" title="Leo" aria-label="Leo">♌</a><a class="pn-chip" href="/western-zodiac/virgo/" title="Virgo" aria-label="Virgo">♍</a><a class="pn-chip" href="/western-zodiac/libra/" title="Libra" aria-label="Libra">♎</a><a class="pn-chip" href="/western-zodiac/scorpio/" title="Scorpio" aria-label="Scorpio">♏</a><a class="pn-chip" href="/western-zodiac/sagittarius/" title="Sagittarius" aria-label="Sagittarius">♐</a><a class="pn-chip" href="/western-zodiac/capricorn/" title="Capricorn" aria-label="Capricorn">♑</a><a class="pn-chip" href="/western-zodiac/aquarius/" title="Aquarius" aria-label="Aquarius">♒</a><a class="pn-chip" href="/western-zodiac/pisces/" title="Pisces" aria-label="Pisces">♓</a></div>
+    <div class="pn-chips" role="group" aria-label="Eastern wing"><span class="pn-chips-label">Eastern wing</span><a class="pn-chip" href="/chinese-zodiac/rat/" title="Rat" aria-label="Rat">鼠</a><a class="pn-chip" href="/chinese-zodiac/ox/" title="Ox" aria-label="Ox">牛</a><a class="pn-chip" href="/chinese-zodiac/tiger/" title="Tiger" aria-label="Tiger">虎</a><a class="pn-chip" href="/chinese-zodiac/rabbit/" title="Rabbit" aria-label="Rabbit">兔</a><a class="pn-chip" href="/chinese-zodiac/dragon/" title="Dragon" aria-label="Dragon">龙</a><a class="pn-chip" href="/chinese-zodiac/snake/" title="Snake" aria-label="Snake">蛇</a><a class="pn-chip" href="/chinese-zodiac/horse/" title="Horse" aria-label="Horse">马</a><a class="pn-chip" href="/chinese-zodiac/goat/" title="Goat" aria-label="Goat">羊</a><a class="pn-chip" href="/chinese-zodiac/monkey/" title="Monkey" aria-label="Monkey">猴</a><a class="pn-chip" href="/chinese-zodiac/rooster/" title="Rooster" aria-label="Rooster">鸡</a><a class="pn-chip" href="/chinese-zodiac/dog/" title="Dog" aria-label="Dog">狗</a><a class="pn-chip" href="/chinese-zodiac/pig/" title="Pig" aria-label="Pig">猪</a></div>
+    <div class="pn-panel-foot"><a href="/menagerie.html">See all 144 animals</a></div>
+  </div>
+  <div class="pn-panel pn-panel-east" data-group="2" data-accent="brass" role="region" aria-label="Zodiac" hidden>
+    <p class="pn-panel-eyebrow">The Eastern wheel, your birth year's animal</p>
+    <div class="pn-split"><div class="pn-list pn-two" role="group" aria-label="The twelve Eastern animals"><a class="pn-row is-featured" href="/chinese-zodiac/horse/"><span class="pn-glyph pn-cal" aria-hidden="true">马</span><span class="pn-row-name">Horse</span><span class="pn-row-sub">2026 · Fire Horse</span></a><a class="pn-row" href="/chinese-zodiac/rat/"><span class="pn-glyph pn-cal" aria-hidden="true">鼠</span><span class="pn-row-name">Rat</span><span class="pn-row-sub" data-dyn="cn-years-0">1996 · 2008 · 2020</span></a><a class="pn-row" href="/chinese-zodiac/ox/"><span class="pn-glyph pn-cal" aria-hidden="true">牛</span><span class="pn-row-name">Ox</span><span class="pn-row-sub" data-dyn="cn-years-1">1997 · 2009 · 2021</span></a><a class="pn-row" href="/chinese-zodiac/tiger/"><span class="pn-glyph pn-cal" aria-hidden="true">虎</span><span class="pn-row-name">Tiger</span><span class="pn-row-sub" data-dyn="cn-years-2">1998 · 2010 · 2022</span></a><a class="pn-row" href="/chinese-zodiac/rabbit/"><span class="pn-glyph pn-cal" aria-hidden="true">兔</span><span class="pn-row-name">Rabbit</span><span class="pn-row-sub" data-dyn="cn-years-3">1999 · 2011 · 2023</span></a><a class="pn-row" href="/chinese-zodiac/dragon/"><span class="pn-glyph pn-cal" aria-hidden="true">龙</span><span class="pn-row-name">Dragon</span><span class="pn-row-sub" data-dyn="cn-years-4">2000 · 2012 · 2024</span></a><a class="pn-row" href="/chinese-zodiac/snake/"><span class="pn-glyph pn-cal" aria-hidden="true">蛇</span><span class="pn-row-name">Snake</span><span class="pn-row-sub" data-dyn="cn-years-5">2001 · 2013 · 2025</span></a><a class="pn-row" href="/chinese-zodiac/goat/"><span class="pn-glyph pn-cal" aria-hidden="true">羊</span><span class="pn-row-name">Goat</span><span class="pn-row-sub" data-dyn="cn-years-7">1991 · 2003 · 2015</span></a><a class="pn-row" href="/chinese-zodiac/monkey/"><span class="pn-glyph pn-cal" aria-hidden="true">猴</span><span class="pn-row-name">Monkey</span><span class="pn-row-sub" data-dyn="cn-years-8">1992 · 2004 · 2016</span></a><a class="pn-row" href="/chinese-zodiac/rooster/"><span class="pn-glyph pn-cal" aria-hidden="true">鸡</span><span class="pn-row-name">Rooster</span><span class="pn-row-sub" data-dyn="cn-years-9">1993 · 2005 · 2017</span></a><a class="pn-row" href="/chinese-zodiac/dog/"><span class="pn-glyph pn-cal" aria-hidden="true">狗</span><span class="pn-row-name">Dog</span><span class="pn-row-sub" data-dyn="cn-years-10">1994 · 2006 · 2018</span></a><a class="pn-row" href="/chinese-zodiac/pig/"><span class="pn-glyph pn-cal" aria-hidden="true">猪</span><span class="pn-row-name">Pig</span><span class="pn-row-sub" data-dyn="cn-years-11">1995 · 2007 · 2019</span></a></div>
+    <aside class="pn-feature"><span class="pn-feature-cal" aria-hidden="true">馬</span><p class="pn-feature-eyebrow">The year turns</p><h3 class="pn-feature-title">Year of the Fire Horse</h3><p class="pn-feature-body">2026. Once in sixty years the Horse catches fire, a year that rewards the bold and scorches the hesitant. If the Horse is yours, this is your decade's hinge.</p><a class="pn-feature-link" href="/chinese-zodiac/fire-horse-2026/">Read the Fire Horse</a></aside>
+    </div>
+    <div class="pn-chips" role="group" aria-label="Eastern wing"><span class="pn-chips-label">Eastern wing</span><a class="pn-chip pn-cal" href="/chinese-zodiac/rat/" title="Rat" aria-label="Rat">鼠</a><a class="pn-chip pn-cal" href="/chinese-zodiac/ox/" title="Ox" aria-label="Ox">牛</a><a class="pn-chip pn-cal" href="/chinese-zodiac/tiger/" title="Tiger" aria-label="Tiger">虎</a><a class="pn-chip pn-cal" href="/chinese-zodiac/rabbit/" title="Rabbit" aria-label="Rabbit">兔</a><a class="pn-chip pn-cal" href="/chinese-zodiac/dragon/" title="Dragon" aria-label="Dragon">龙</a><a class="pn-chip pn-cal" href="/chinese-zodiac/snake/" title="Snake" aria-label="Snake">蛇</a><a class="pn-chip pn-cal" href="/chinese-zodiac/horse/" title="Horse" aria-label="Horse">马</a><a class="pn-chip pn-cal" href="/chinese-zodiac/goat/" title="Goat" aria-label="Goat">羊</a><a class="pn-chip pn-cal" href="/chinese-zodiac/monkey/" title="Monkey" aria-label="Monkey">猴</a><a class="pn-chip pn-cal" href="/chinese-zodiac/rooster/" title="Rooster" aria-label="Rooster">鸡</a><a class="pn-chip pn-cal" href="/chinese-zodiac/dog/" title="Dog" aria-label="Dog">狗</a><a class="pn-chip pn-cal" href="/chinese-zodiac/pig/" title="Pig" aria-label="Pig">猪</a></div>
+    <div class="pn-panel-foot"><a href="/chinese-zodiac/">See the Eastern wheel</a></div>
+  </div>
+  <div class="pn-panel pn-panel-west" data-group="3" data-accent="amethyst" role="region" aria-label="Horoscope" hidden>
+    <p class="pn-panel-eyebrow">The Western wheel, the sky on your birthday</p>
+    <div class="pn-split"><div class="pn-list pn-two" role="group" aria-label="The twelve Western signs"><a class="pn-row" href="/western-zodiac/aries/" data-sign="aries"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-aries" viewBox="0 0 24 24" role="img" aria-labelledby="aries-t aries-d" xmlns="http://www.w3.org/2000/svg"><title id="aries-t">Aries, the Ram</title><desc id="aries-d">A curved ram-horn arc of stars.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16 L9 10 L13 8 L16 11"/><path d="M13 8 L16 11 L19 9"/></g><g fill="var(--accent-soft)"><circle cx="6" cy="16" r="0.85"/><circle cx="9" cy="10" r="0.85"/><circle cx="13" cy="8" r="1.05"/><circle cx="16" cy="11" r="0.85"/><circle cx="19" cy="9" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="11" cy="14" r="0.4"/><circle cx="17" cy="14" r="0.4"/></g></svg></span><span class="pn-row-name">Aries</span><span class="pn-row-sub">Mar 21 to Apr 19</span></a><a class="pn-row" href="/western-zodiac/taurus/" data-sign="taurus"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-taurus" viewBox="0 0 24 24" role="img" aria-labelledby="taurus-t taurus-d" xmlns="http://www.w3.org/2000/svg"><title id="taurus-t">Taurus, the Bull</title><desc id="taurus-d">A V of the Hyades rising to two horn tips.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8 L9 12 L12 15 L15 12 L18 8"/></g><g fill="var(--accent-soft)"><circle cx="12" cy="15" r="1.05"/><circle cx="9" cy="12" r="0.85"/><circle cx="6" cy="8" r="0.85"/><circle cx="15" cy="12" r="0.85"/><circle cx="18" cy="8" r="0.85"/><circle cx="12" cy="15" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="8" cy="17" r="0.4"/><circle cx="16" cy="17" r="0.4"/></g></svg></span><span class="pn-row-name">Taurus</span><span class="pn-row-sub">Apr 20 to May 20</span></a><a class="pn-row" href="/western-zodiac/gemini/" data-sign="gemini"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-gemini" viewBox="0 0 24 24" role="img" aria-labelledby="gemini-t gemini-d" xmlns="http://www.w3.org/2000/svg"><title id="gemini-t">Gemini, the Twins</title><desc id="gemini-d">Twin parallel columns joined at head and foot.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5 L9 12 L9 19"/><path d="M15 5 L15 12 L15 19"/><path d="M9 5 L15 5"/><path d="M9 19 L15 19"/></g><g fill="var(--accent-soft)"><circle cx="9" cy="5" r="0.85"/><circle cx="9" cy="12" r="0.85"/><circle cx="9" cy="19" r="0.85"/><circle cx="15" cy="5" r="1.05"/><circle cx="15" cy="12" r="0.85"/><circle cx="15" cy="19" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="12" cy="8" r="0.4"/></g></svg></span><span class="pn-row-name">Gemini</span><span class="pn-row-sub">May 21 to Jun 20</span></a><a class="pn-row" href="/western-zodiac/cancer/" data-sign="cancer"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-cancer" viewBox="0 0 24 24" role="img" aria-labelledby="cancer-t cancer-d" xmlns="http://www.w3.org/2000/svg"><title id="cancer-t">Cancer, the Crab</title><desc id="cancer-d">An inverted Y crab body.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M7 5 L12 8 L17 5"/><path d="M12 8 L12 14"/><path d="M8 18 L12 14 L16 18"/></g><g fill="var(--accent-soft)"><circle cx="12" cy="14" r="1.05"/><circle cx="12" cy="8" r="0.85"/><circle cx="7" cy="5" r="0.85"/><circle cx="17" cy="5" r="0.85"/><circle cx="8" cy="18" r="0.85"/><circle cx="16" cy="18" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="12" cy="11" r="0.4"/></g></svg></span><span class="pn-row-name">Cancer</span><span class="pn-row-sub">Jun 21 to Jul 22</span></a><a class="pn-row" href="/western-zodiac/leo/" data-sign="leo"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-leo" viewBox="0 0 24 24" role="img" aria-labelledby="leo-t leo-d" xmlns="http://www.w3.org/2000/svg"><title id="leo-t">Leo, the Lion</title><desc id="leo-d">The sickle curving into a haunch triangle.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7 L6 11 L8 14 L12 15 L15 13"/><path d="M15 13 L15 18 L19 17"/><path d="M10 9 L12 15"/></g><g fill="var(--accent-soft)"><circle cx="7" cy="7" r="0.85"/><circle cx="6" cy="11" r="0.85"/><circle cx="8" cy="14" r="0.85"/><circle cx="12" cy="15" r="0.85"/><circle cx="15" cy="13" r="1.05"/><circle cx="15" cy="18" r="0.85"/><circle cx="19" cy="17" r="0.85"/><circle cx="10" cy="9" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="11" cy="12" r="0.4"/></g></svg></span><span class="pn-row-name">Leo</span><span class="pn-row-sub">Jul 23 to Aug 22</span></a><a class="pn-row" href="/western-zodiac/virgo/" data-sign="virgo"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-virgo" viewBox="0 0 24 24" role="img" aria-labelledby="virgo-t virgo-d" xmlns="http://www.w3.org/2000/svg"><title id="virgo-t">Virgo, the Maiden</title><desc id="virgo-d">A reclining bent line anchored by a bright star.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9 L9 11 L13 10 L16 13"/><path d="M16 13 L18 17"/><path d="M13 10 L12 15"/></g><g fill="var(--accent-soft)"><circle cx="5" cy="9" r="0.85"/><circle cx="9" cy="11" r="0.85"/><circle cx="13" cy="10" r="0.85"/><circle cx="16" cy="13" r="1.05"/><circle cx="18" cy="17" r="0.85"/><circle cx="12" cy="15" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="8" cy="15" r="0.4"/></g></svg></span><span class="pn-row-name">Virgo</span><span class="pn-row-sub">Aug 23 to Sep 22</span></a><a class="pn-row" href="/western-zodiac/libra/" data-sign="libra"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-libra" viewBox="0 0 24 24" role="img" aria-labelledby="libra-t libra-d" xmlns="http://www.w3.org/2000/svg"><title id="libra-t">Libra, the Scales</title><desc id="libra-d">A beam with two hanging pans.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11 L12 7 L18 11"/><path d="M6 11 L6 16"/><path d="M18 11 L18 16"/></g><g fill="var(--accent-soft)"><circle cx="12" cy="7" r="1.05"/><circle cx="6" cy="11" r="0.85"/><circle cx="18" cy="11" r="0.85"/><circle cx="6" cy="16" r="0.85"/><circle cx="18" cy="16" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="12" cy="10" r="0.4"/></g></svg></span><span class="pn-row-name">Libra</span><span class="pn-row-sub">Sep 23 to Oct 22</span></a><a class="pn-row" href="/western-zodiac/scorpio/" data-sign="scorpio"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-scorpio" viewBox="0 0 24 24" role="img" aria-labelledby="scorpio-t scorpio-d" xmlns="http://www.w3.org/2000/svg"><title id="scorpio-t">Scorpio, the Scorpion</title><desc id="scorpio-d">A long curved tail ending in a hooked stinger.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7 L6 11 L9 13 L13 13 L16 15 L18 18 L16 20"/><path d="M8 8 L9 13"/></g><g fill="var(--accent-soft)"><circle cx="5" cy="7" r="0.85"/><circle cx="6" cy="11" r="0.85"/><circle cx="9" cy="13" r="0.85"/><circle cx="13" cy="13" r="1.05"/><circle cx="16" cy="15" r="0.85"/><circle cx="18" cy="18" r="0.85"/><circle cx="16" cy="20" r="0.85"/><circle cx="8" cy="8" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="11" cy="10" r="0.4"/></g></svg></span><span class="pn-row-name">Scorpio</span><span class="pn-row-sub">Oct 23 to Nov 21</span></a><a class="pn-row" href="/western-zodiac/sagittarius/" data-sign="sagittarius"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-sagittarius" viewBox="0 0 24 24" role="img" aria-labelledby="sagittarius-t sagittarius-d" xmlns="http://www.w3.org/2000/svg"><title id="sagittarius-t">Sagittarius, the Archer</title><desc id="sagittarius-d">A drawn bow and the shaft of an arrow.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6 L9 12 L6 18"/><path d="M9 12 L18 7"/><path d="M15 10 L12 13 L9 16"/></g><g fill="var(--accent-soft)"><circle cx="6" cy="6" r="0.85"/><circle cx="6" cy="18" r="0.85"/><circle cx="9" cy="12" r="1.05"/><circle cx="18" cy="7" r="0.85"/><circle cx="15" cy="10" r="0.85"/><circle cx="12" cy="13" r="0.85"/><circle cx="9" cy="16" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="13" cy="9" r="0.4"/></g></svg></span><span class="pn-row-name">Sagittarius</span><span class="pn-row-sub">Nov 22 to Dec 21</span></a><a class="pn-row" href="/western-zodiac/capricorn/" data-sign="capricorn"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-capricorn" viewBox="0 0 24 24" role="img" aria-labelledby="capricorn-t capricorn-d" xmlns="http://www.w3.org/2000/svg"><title id="capricorn-t">Capricorn, the Sea-Goat</title><desc id="capricorn-d">A triangular sea-goat wedge.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8 L10 6 L14 10 L18 17 L9 15 L6 8"/></g><g fill="var(--accent-soft)"><circle cx="6" cy="8" r="0.85"/><circle cx="10" cy="6" r="1.05"/><circle cx="14" cy="10" r="0.85"/><circle cx="18" cy="17" r="0.85"/><circle cx="9" cy="15" r="0.85"/><circle cx="6" cy="8" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="12" cy="13" r="0.4"/></g></svg></span><span class="pn-row-name">Capricorn</span><span class="pn-row-sub">Dec 22 to Jan 19</span></a><a class="pn-row" href="/western-zodiac/aquarius/" data-sign="aquarius"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-aquarius" viewBox="0 0 24 24" role="img" aria-labelledby="aquarius-t aquarius-d" xmlns="http://www.w3.org/2000/svg"><title id="aquarius-t">Aquarius, the Water-Bearer</title><desc id="aquarius-d">Double zigzag water lines.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9 L8 11 L11 9 L14 11 L17 9"/><path d="M5 14 L8 16 L11 14 L14 16 L17 14"/></g><g fill="var(--accent-soft)"><circle cx="5" cy="9" r="0.85"/><circle cx="8" cy="11" r="0.85"/><circle cx="11" cy="9" r="0.85"/><circle cx="14" cy="11" r="0.85"/><circle cx="17" cy="9" r="1.05"/><circle cx="5" cy="14" r="0.85"/><circle cx="8" cy="16" r="0.85"/><circle cx="11" cy="14" r="0.85"/><circle cx="14" cy="16" r="0.85"/><circle cx="17" cy="14" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="11" cy="12" r="0.4"/></g></svg></span><span class="pn-row-name">Aquarius</span><span class="pn-row-sub">Jan 20 to Feb 18</span></a><a class="pn-row" href="/western-zodiac/pisces/" data-sign="pisces"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-pisces" viewBox="0 0 24 24" role="img" aria-labelledby="pisces-t pisces-d" xmlns="http://www.w3.org/2000/svg"><title id="pisces-t">Pisces, the Fishes</title><desc id="pisces-d">Two arcs tied at a central knot star.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 5 L5 9 L6 13"/><path d="M6 5 L12 9 L18 5"/><path d="M6 13 L12 9 L18 13"/><path d="M18 5 L19 9 L18 13"/></g><g fill="var(--accent-soft)"><circle cx="6" cy="5" r="0.85"/><circle cx="5" cy="9" r="0.85"/><circle cx="6" cy="13" r="0.85"/><circle cx="12" cy="9" r="1.05"/><circle cx="18" cy="5" r="0.85"/><circle cx="19" cy="9" r="0.85"/><circle cx="18" cy="13" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="12" cy="14" r="0.4"/></g></svg></span><span class="pn-row-name">Pisces</span><span class="pn-row-sub">Feb 19 to Mar 20</span></a></div>
+    <aside class="pn-feature" data-hz-today><p class="pn-feature-eyebrow" data-hz-date></p><h3 class="pn-feature-title" data-hz-sign></h3><p class="pn-feature-body" data-hz-blurb></p><a class="pn-feature-link" href="/daily.html">Read today's horoscope</a></aside>
+    </div>
+    <div class="pn-chips" role="group" aria-label="The twelve signs"><span class="pn-chips-label">The twelve signs</span><a class="pn-chip" href="/western-zodiac/aries/" title="Aries" aria-label="Aries">♈</a><a class="pn-chip" href="/western-zodiac/taurus/" title="Taurus" aria-label="Taurus">♉</a><a class="pn-chip" href="/western-zodiac/gemini/" title="Gemini" aria-label="Gemini">♊</a><a class="pn-chip" href="/western-zodiac/cancer/" title="Cancer" aria-label="Cancer">♋</a><a class="pn-chip" href="/western-zodiac/leo/" title="Leo" aria-label="Leo">♌</a><a class="pn-chip" href="/western-zodiac/virgo/" title="Virgo" aria-label="Virgo">♍</a><a class="pn-chip" href="/western-zodiac/libra/" title="Libra" aria-label="Libra">♎</a><a class="pn-chip" href="/western-zodiac/scorpio/" title="Scorpio" aria-label="Scorpio">♏</a><a class="pn-chip" href="/western-zodiac/sagittarius/" title="Sagittarius" aria-label="Sagittarius">♐</a><a class="pn-chip" href="/western-zodiac/capricorn/" title="Capricorn" aria-label="Capricorn">♑</a><a class="pn-chip" href="/western-zodiac/aquarius/" title="Aquarius" aria-label="Aquarius">♒</a><a class="pn-chip" href="/western-zodiac/pisces/" title="Pisces" aria-label="Pisces">♓</a></div>
+    <div class="pn-panel-foot"><a href="/horoscopes/">All horoscopes, sign by sign</a></div>
+  </div>
+  <div class="pn-panel pn-panel-sage" data-group="4" data-accent="jade" role="region" aria-label="Sage Wisdom" hidden>
+    <p class="pn-panel-eyebrow">The craft your Zodi Animal practices</p>
+    <div class="pn-cols"><div class="pn-hero"><p class="pn-hero-eyebrow">五行 · featured system</p><h3 class="pn-hero-title">The Elements &amp; the Chakras</h3><div class="pn-hero-phases" aria-hidden="true"><span class="pn-hero-phase pn-hero-phase-0">木</span><span class="pn-hero-phase pn-hero-phase-1">火</span><span class="pn-hero-phase pn-hero-phase-2">土</span><span class="pn-hero-phase pn-hero-phase-3">金</span><span class="pn-hero-phase pn-hero-phase-4">水</span></div><div class="pn-hero-rainbow" aria-hidden="true"><i class="pn-hero-c1"></i><i class="pn-hero-c2"></i><i class="pn-hero-c3"></i><i class="pn-hero-c4"></i><i class="pn-hero-c5"></i><i class="pn-hero-c6"></i><i class="pn-hero-c7"></i></div><p class="pn-hero-body">The five phases that move through everything — now mapped to the seven chakras, each with its own yoga practice.</p><div class="pn-hero-pills"><a class="pn-hero-pill is-key" href="/elements/">The five elements</a><a class="pn-hero-pill is-key" href="/elements/chakras/">The 7 chakras</a><a class="pn-hero-pill" href="/elements/chakras/yoga/">Chakra yoga</a></div></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">八字</span> BaZi</p><a class="pn-row" href="/bazi/chart/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Cast your chart</span><span class="pn-row-sub">tool</span></a><a class="pn-row" href="/bazi/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">What is BaZi</span></a><a class="pn-row" href="/bazi/day-master/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your Day Master</span></a><a class="pn-row" href="/bazi/ten-gods/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Ten Gods</span></a><a class="pn-row" href="/bazi/compatibility/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">You &amp; them</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">紫微</span> Purple Star</p><a class="pn-row" href="/elements/zi-wei/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Zi Wei Dou Shu</span><span class="pn-row-sub">the Emperor's sky</span></a><a class="pn-row" href="/elements/zi-wei/chart/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Read a chart</span><span class="pn-row-sub">school</span></a><a class="pn-row" href="/elements/zi-wei/stars/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The 14 Stars</span></a><a class="pn-row" href="/elements/zi-wei/palaces/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The 12 Palaces</span></a><a class="pn-row" href="/elements/zi-wei/four-forces/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Four Forces</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">風水</span> Feng shui</p><a class="pn-row" href="/feng-shui/commanding-position/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Commanding position</span><span class="pn-row-sub">live</span></a><a class="pn-row" href="/feng-shui/bagua/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The bagua</span></a><a class="pn-row" href="/feng-shui/kua-number/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your Kua number</span></a><a class="pn-row" href="/feng-shui/bedroom/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">In the home</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">❦</span> Proverbs &amp; lore</p><a class="pn-row" href="/proverbs/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Proverb Pond</span><span class="pn-row-sub">all 87</span></a><a class="pn-row" href="/proverbs/study/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Study the proverbs</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a></div></div>
+    <div class="pn-panel-foot"><a href="/elements/">Explore every system</a></div>
+  </div>
+  <div class="pn-panel pn-panel-cards" data-group="5" data-accent="rose" role="region" aria-label="Bonds" hidden>
+    <p class="pn-panel-eyebrow">Two skies, read together</p>
+    <div class="pn-cols"><div class="pn-col"><a class="pn-row" href="/match.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Test a match</span><span class="pn-row-sub">Two birth dates go in. The bond comes back scored across the trines, the clashes, and the elements.</span></a><a class="pn-row" href="/vs.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Challenge a friend</span><span class="pn-row-sub">Send your animal to someone and wonder out loud whether you match.</span></a><a class="pn-row" href="/circle.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Circle of three</span><span class="pn-row-sub">Compare two friends one to one, then read the whole group as a circle.</span></a></div></div>
+    <div class="pn-panel-foot"><a href="/year.html">Find a friend's animal by birth year</a></div>
+  </div>
+  <div class="pn-panel pn-panel-moon" data-group="6" data-accent="silver" role="region" aria-label="Moon" hidden>
+    <p class="pn-panel-eyebrow">The Moon overhead, its phases, and the path they light.</p>
+    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> Tonight</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-full" viewBox="0 0 24 24" role="img" aria-labelledby="moon-full-t moon-full-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-full-t">Full moon</title><desc id="moon-full-d">The whole disc lit.</desc><circle cx="12" cy="12" r="9" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Last Quarter</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days ahead</span><span class="pn-row-sub">the favorable days for you</span></a><a class="pn-row" href="/awakening.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Awakening</span><span class="pn-row-sub">the path from fear to strength</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◈</span> Stones</p><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/traditions/birthstones-and-moonstone/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Birthstones &amp; moonstone</span></a><a class="pn-row" href="/traditions/stones-for-your-animal/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Stones for your animal</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◐</span> The eight phases</p><a class="pn-row" href="/moon/phases/new-moon/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-new" viewBox="0 0 24 24" role="img" aria-labelledby="moon-new-t moon-new-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-new-t">New moon</title><desc id="moon-new-d">The dark disc of the new moon.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">New Moon</span></a><a class="pn-row" href="/moon/phases/waxing-crescent/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waxing-crescent" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waxing-crescent-t moon-waxing-crescent-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waxing-crescent-t">Waxing crescent moon</title><desc id="moon-waxing-crescent-d">A thin lit crescent on the right.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A6.36 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waxing Crescent</span></a><a class="pn-row" href="/moon/phases/first-quarter/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-first-quarter" viewBox="0 0 24 24" role="img" aria-labelledby="moon-first-quarter-t moon-first-quarter-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-first-quarter-t">First quarter moon</title><desc id="moon-first-quarter-d">The right half lit.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A0 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">First Quarter</span></a><a class="pn-row" href="/moon/phases/waxing-gibbous/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waxing-gibbous" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waxing-gibbous-t moon-waxing-gibbous-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waxing-gibbous-t">Waxing gibbous moon</title><desc id="moon-waxing-gibbous-d">Most of the disc lit, growing.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A6.36 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waxing Gibbous</span></a><a class="pn-row" href="/moon/phases/full-moon/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-full" viewBox="0 0 24 24" role="img" aria-labelledby="moon-full-t moon-full-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-full-t">Full moon</title><desc id="moon-full-d">The whole disc lit.</desc><circle cx="12" cy="12" r="9" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Full Moon</span></a><a class="pn-row" href="/moon/phases/waning-gibbous/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waning-gibbous" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waning-gibbous-t moon-waning-gibbous-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waning-gibbous-t">Waning gibbous moon</title><desc id="moon-waning-gibbous-d">Most of the disc lit, shrinking.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A6.36 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waning Gibbous</span></a><a class="pn-row" href="/moon/phases/last-quarter/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-last-quarter" viewBox="0 0 24 24" role="img" aria-labelledby="moon-last-quarter-t moon-last-quarter-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-last-quarter-t">Last quarter moon</title><desc id="moon-last-quarter-d">The left half lit.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A0 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Last Quarter</span></a><a class="pn-row" href="/moon/phases/waning-crescent/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waning-crescent" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waning-crescent-t moon-waning-crescent-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waning-crescent-t">Waning crescent moon</title><desc id="moon-waning-crescent-d">A thin lit crescent on the left.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A6.36 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waning Crescent</span></a></div></div>
+    <div class="pn-panel-foot"><a href="/moon.html">Read the Moon tonight in full</a></div>
+  </div>
+  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/index.html#read">Find yours</a><a href="/index.html">Find your animal</a><a href="/daily.html">Today's reading</a><a href="/year.html">Year finder</a><a href="/account.html">Your account</a><a href="/menagerie.html">All 144 animals</a><a href="/western-zodiac/">Western wing</a><a href="/chinese-zodiac/">Eastern wing</a><a href="/zodiac/">Zodiac crossings</a><a href="/moon.html">The Moon tonight</a><a href="/moon/phases/">The eight phases</a><a href="/moon/in-your-sign/">Moon in your sign</a><a href="/best-days.html">Best days</a><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a><a href="/feng-shui/">Feng shui</a><a href="/bazi/">BaZi (Four Pillars)</a><a href="/habitat/">The Habitat</a><a href="/stones.html">Keeper stones</a><a href="/directions/">Directions</a><a href="/traditions/">Traditions</a><a href="/chinese-zodiac/horse/">Horse</a><a href="/chinese-zodiac/rat/">Rat</a><a href="/chinese-zodiac/ox/">Ox</a><a href="/chinese-zodiac/tiger/">Tiger</a><a href="/chinese-zodiac/rabbit/">Rabbit</a><a href="/chinese-zodiac/dragon/">Dragon</a><a href="/chinese-zodiac/snake/">Snake</a><a href="/chinese-zodiac/goat/">Goat</a><a href="/chinese-zodiac/monkey/">Monkey</a><a href="/chinese-zodiac/rooster/">Rooster</a><a href="/chinese-zodiac/dog/">Dog</a><a href="/chinese-zodiac/pig/">Pig</a><a href="/western-zodiac/aries/">Aries</a><a href="/western-zodiac/taurus/">Taurus</a><a href="/western-zodiac/gemini/">Gemini</a><a href="/western-zodiac/cancer/">Cancer</a><a href="/western-zodiac/leo/">Leo</a><a href="/western-zodiac/virgo/">Virgo</a><a href="/western-zodiac/libra/">Libra</a><a href="/western-zodiac/scorpio/">Scorpio</a><a href="/western-zodiac/sagittarius/">Sagittarius</a><a href="/western-zodiac/capricorn/">Capricorn</a><a href="/western-zodiac/aquarius/">Aquarius</a><a href="/western-zodiac/pisces/">Pisces</a><a href="/bazi/chart/">Cast your chart</a><a href="/bazi/day-master/">Your Day Master</a><a href="/bazi/ten-gods/">The Ten Gods</a><a href="/bazi/compatibility/">You &amp; them</a><a href="/elements/zi-wei/">Zi Wei Dou Shu</a><a href="/elements/zi-wei/chart/">Read a chart</a><a href="/elements/zi-wei/stars/">The 14 Stars</a><a href="/elements/zi-wei/palaces/">The 12 Palaces</a><a href="/elements/zi-wei/four-forces/">The Four Forces</a><a href="/feng-shui/commanding-position/">Commanding position</a><a href="/feng-shui/bagua/">The bagua</a><a href="/feng-shui/kua-number/">Your Kua number</a><a href="/feng-shui/bedroom/">In the home</a><a href="/proverbs/">The Proverb Pond</a><a href="/proverbs/study/">Study the proverbs</a><a href="/elements/">The five elements</a><a href="/elements/chakras/">The 7 chakras</a><a href="/elements/chakras/yoga/">Chakra yoga</a><a href="/match.html">Test a match</a><a href="/vs.html">Challenge a friend</a><a href="/circle.html">Circle of three</a><a href="/awakening.html">The Awakening</a><a href="/traditions/birthstones-and-moonstone/">Birthstones &amp; moonstone</a><a href="/traditions/stones-for-your-animal/">Stones for your animal</a><a href="/moon/phases/new-moon/">New Moon</a><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a><a href="/moon/phases/first-quarter/">First Quarter</a><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a><a href="/moon/phases/full-moon/">Full Moon</a><a href="/moon/phases/waning-gibbous/">Waning Gibbous</a><a href="/moon/phases/last-quarter/">Last Quarter</a><a href="/moon/phases/waning-crescent/">Waning Crescent</a><a href="/horoscopes/">All horoscopes, sign by sign</a><a href="/feng-shui/five-elements/">The five phases</a><a href="/feng-shui/your-animal/">Feng shui for your animal</a><a href="/directions/celestial-animals/">The four celestial animals</a><a href="/cosmology/">Cosmology</a><a href="/cosmology/four-pillars/">The Four Pillars</a><a href="/elements/zi-wei/history/">Purple Star history &amp; origins</a><a href="/learn.html">How it works</a></nav>
+</header>
+<!--pn-static:end-->
+<div class="starfield" aria-hidden="true"></div>
+
+<header class="obar">
+  <div class="wrap">
+    <a class="brand" href="/index.html" aria-label="Zodi Animal home"><span class="z">Zodi</span> <b>Animal</b></a>
+    <span class="obar-tag">The Observatory · concept A</span>
+    <a class="obar-cta" href="#read">Sight your animal <span aria-hidden="true">&#10022;</span></a>
+  </div>
+</header>
+
+<main id="pn-main" tabindex="-1">
+
+<!-- ============ HERO · THE CROSSING INSTRUMENT ============ -->
+<section class="sys" id="animal">
+  <div class="wrap hero">
+    <div class="hero-head">
+      <p class="eyebrow">The Observatory · two skies · 144 crossings</p>
+      <h1>Two skies keep time above you. Where they cross is you.</h1>
+      <p class="lede">The Western sun wheel turns once a year. The Chinese year wheel turns once in twelve. Set both rings to the moment you were born and the instrument sights one creature out of 144.</p>
+      <p class="bridge">Around the web it is called a primal animal. Its full name is your Primal Zodiac Animal. Once it knows you back, we call it your <a href="/zodiac/what-is-a-zodi-animal/">Zodi Animal</a>.</p>
+    </div>
+
+    <div class="instrument" id="read">
+      <!-- the two-wheel astrolabe -->
+      <div>
+        <div class="dialwrap">
+          <svg class="dial" viewBox="0 0 540 540" role="img" aria-label="A two-ring observatory dial. The outer ring carries the twelve Western sun signs, the inner ring the twelve Chinese year animals. The pointer at the top marks the current crossing.">
+            <defs>
+              <radialGradient id="face" cx="50%" cy="42%" r="70%">
+                <stop offset="0%" stop-color="#161930"/><stop offset="100%" stop-color="#0e1020"/>
+              </radialGradient>
+            </defs>
+            <circle cx="270" cy="270" r="262" fill="url(#face)" stroke="rgba(214,193,140,.22)"/>
+            <g id="driftring"><circle cx="270" cy="270" r="253" class="engraved" stroke-dasharray="2 9" opacity=".5"/></g>
+            <circle cx="270" cy="270" r="244" class="engraved"/>
+            <circle cx="270" cy="270" r="192" class="engraved"/>
+            <circle cx="270" cy="270" r="178" class="engraved"/>
+            <circle cx="270" cy="270" r="126" class="engraved"/>
+            <g id="ticks" aria-hidden="true"></g>
+            <g id="ringWest" class="ring" aria-hidden="true"></g>
+            <g id="ringEast" class="ring" aria-hidden="true"></g>
+            <!-- fixed reticle -->
+            <g aria-hidden="true">
+              <path class="pointer" d="M270 12 l7 14 h-14 z"/>
+              <line x1="270" y1="26" x2="270" y2="96" class="reticle" stroke-width="1" opacity=".8"/>
+              <line x1="270" y1="150" x2="270" y2="216" class="reticle" stroke-width="1" opacity=".55"/>
+              <circle cx="270" cy="270" r="92" class="engraved" opacity=".8"/>
+              <line x1="230" y1="270" x2="252" y2="270" class="reticle" stroke-width="1" opacity=".4"/>
+              <line x1="288" y1="270" x2="310" y2="270" class="reticle" stroke-width="1" opacity=".4"/>
+              <text x="270" y="238" class="clasp">&#10022;</text>
+              <text x="270" y="268" class="plateno" id="dialPlate">PLATE 042 / 144</text>
+              <text x="270" y="292" class="ringlabel">ZODIANIMAL.COM</text>
+              <text x="270" y="308" class="ringlabel" style="letter-spacing:.2em">EST. 144 CROSSINGS</text>
+            </g>
+          </svg>
+        </div>
+        <div class="handrow" role="group" aria-label="Turn the rings by hand">
+          <span class="lbl">Or turn the rings by hand</span>
+          <button class="turnbtn" data-turn="w-1" aria-label="Turn the solar ring back"><span aria-hidden="true">&#10554;</span>Solar ring</button>
+          <button class="turnbtn" data-turn="w+1" aria-label="Turn the solar ring forward"><span aria-hidden="true">&#10555;</span>Solar ring</button>
+          <button class="turnbtn" data-turn="e-1" aria-label="Turn the year ring back"><span aria-hidden="true">&#10554;</span>Year ring</button>
+          <button class="turnbtn" data-turn="e+1" aria-label="Turn the year ring forward"><span aria-hidden="true">&#10555;</span>Year ring</button>
+        </div>
+      </div>
+
+      <!-- sighting console -->
+      <div class="console">
+        <div class="plate">
+          <p class="plate-cap">Set the rings by date</p>
+          <form id="sightForm" class="datefields">
+            <label>Month
+              <select id="mm" aria-label="Birth month">
+                <option value="1">January</option><option value="2">February</option><option value="3">March</option>
+                <option value="4">April</option><option value="5">May</option><option value="6" selected>June</option>
+                <option value="7">July</option><option value="8">August</option><option value="9">September</option>
+                <option value="10">October</option><option value="11">November</option><option value="12">December</option>
+              </select>
+            </label>
+            <label>Day <input id="dd" type="number" min="1" max="31" value="28" inputmode="numeric" aria-label="Birth day"></label>
+            <label>Year <input id="yy" type="number" min="1900" max="2032" value="1989" inputmode="numeric" aria-label="Birth year"></label>
+            <label style="justify-content:flex-end"><span style="visibility:hidden">Go</span><button class="btn" type="submit">Sight the crossing</button></label>
+          </form>
+          <p class="sightnote">The wheel turns in your browser and your birthday never leaves this page. Born in late January or early February, the year ring can sit one animal early here; the live Oracle reads the true lunar New Year for 1940 to 2032.</p>
+        </div>
+
+        <div class="plate readout" aria-live="polite">
+          <p class="plate-cap">Sighting plate</p>
+          <div class="row"><span class="k">Solar ring</span><span class="v" id="roWest"><span class="g">&#9803;</span>Cancer · Jun 21 to Jul 22</span></div>
+          <div class="row"><span class="k">Year ring</span><span class="v" id="roEast"><span class="g han">&#34503;</span>Year of the Snake</span></div>
+          <div class="row"><span class="k">Element</span><span class="v" id="roElem">Earth · read from the year 1989</span></div>
+          <p class="creature" id="roName">The Chambered Nautilus</p>
+          <p class="plateno-line" id="roPlate">Plate 042 of 144</p>
+          <div class="btnrow">
+            <a class="btn" id="roCta" href="/index.html#read">Name it on the live Oracle</a>
+            <a class="btn ghost" id="roRead" href="/animals/chambered-nautilus/">Read this animal</a>
+          </div>
+          <p class="rite">Your first naming is a rite the ledger remembers, worth <b>500 Zodi Karma</b>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- the 144 chart -->
+    <div class="gridpanel reveal">
+      <h3>The chart of 144 crossings</h3>
+      <p class="dim" style="margin-bottom:16px">Twelve suns across, twelve years down, one engraved plate in every cell. Touch any cell to swing the rings to it.</p>
+      <div class="gridwrap"><div class="zgrid" id="zgrid" role="group" aria-label="The 144 crossings chart"></div></div>
+      <p class="gridcap" id="gridcap">Sighted: <b>Cancer × Snake · The Chambered Nautilus</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SYSTEMS OF THE CRAFT SUB-NAV ============ -->
+<nav class="craft" aria-label="Systems of the craft">
+  <div class="wrap">
+    <span class="craft-label">Systems of the craft</span>
+    <div class="craft-list" id="craftList">
+      <a href="#animal" style="--sys:var(--brass)" class="active">Your animal</a>
+      <a href="#gates" style="--sys:var(--amethyst)">Five gates</a>
+      <a href="#elements" style="--sys:var(--wood)">Elements</a>
+      <a href="#bazi" style="--sys:var(--earth)">BaZi</a>
+      <a href="#stars" style="--sys:var(--teal)">Stars</a>
+      <a href="#fengshui" style="--sys:var(--jade)">Feng shui</a>
+      <a href="#stones" style="--sys:var(--metal)">Stones</a>
+      <a href="#moon" style="--sys:var(--silver)">Moon</a>
+      <a href="#bonds" style="--sys:var(--rose)">Bonds</a>
+      <a href="#menagerie" style="--sys:var(--brass-bright)">Menagerie</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ FIVE GATES ============ -->
+<section class="sys sys--gates" id="gates">
+  <div class="wrap">
+    <div class="sys-head reveal">
+      <p class="eyebrow">The reading framework</p>
+      <h2>Every reading passes five gates.</h2>
+      <p class="lede">One mechanism traced from where you stand to what you vow. Each gate is dated and falsifiable, and the last one ends in a practice, not a prophecy.</p>
+    </div>
+    <div class="gates reveal">
+      <div class="gate"><span class="n">Gate I</span><h3>Where you stand now</h3><p>An honest present-tense map, fallen or godly.</p></div>
+      <div class="gate"><span class="n">Gate II</span><h3>What you need soon</h3><p>The need itself, not the craving that imitates it.</p></div>
+      <div class="gate"><span class="n">Gate III</span><h3>How to plan the near future</h3><p>Three dated moves inside this lunar cycle and this season.</p></div>
+      <div class="gate"><span class="n">Gate IV</span><h3>What to be aware of</h3><p>Your signature self-sabotage and its early warning sign.</p></div>
+      <div class="gate"><span class="n">Gate V</span><h3>Your godly form</h3><p>The keystone fear, the keystone practice, and a one-sentence vow.</p></div>
+    </div>
+    <p class="poles reveal">Every animal holds two poles. The Fallen Form is ruled by its fear. The Godly Form is the same gifts, aimed.</p>
+    <p class="sys-cta reveal"><a href="/menagerie.html">Read your five gates</a></p>
+  </div>
+</section>
+
+<!-- ============ WU XING ELEMENTS ============ -->
+<section class="sys sys--elements" id="elements">
+  <div class="wrap">
+    <div class="sys-head reveal">
+      <p class="eyebrow">Wu Xing · the five phases</p>
+      <h2>Five phases, two motions.</h2>
+      <p class="lede">Wood, fire, earth, metal, water. <ruby>五行<rt>w&#468; x&#237;ng</rt></ruby> is one moving pattern: a cycle that feeds and a cycle that checks. Choose a motion, then touch a phase to read its plate.</p>
+    </div>
+    <div class="elemgrid">
+      <div class="reveal">
+        <div class="modes" role="group" aria-label="Choose a cycle">
+          <button class="modebtn" id="modeGen" aria-pressed="true">Generating <span class="han" aria-hidden="true">&#29983;</span></button>
+          <button class="modebtn" id="modeCtl" aria-pressed="false">Controlling <span class="han" aria-hidden="true">&#20811;</span></button>
+        </div>
+        <div class="wheelwrap">
+          <svg class="wheel" id="wuxing" viewBox="0 0 440 440" role="img" aria-label="The five element wheel. Arrows trace the generating or controlling cycle between wood, fire, earth, metal, and water."></svg>
+        </div>
+        <p class="cyclecap" id="cyclecap">Wood feeds fire. Fire makes earth of its ash. Earth bears metal. Metal carries water. Water raises wood.</p>
+      </div>
+      <div class="elemcard reveal" id="elemcard" aria-live="polite">
+        <p class="zi-big han" id="ecZi" style="color:var(--wood)">&#26408;</p>
+        <p class="pin" id="ecPin">m&#249; · wood</p>
+        <div class="row"><span class="k">Direction</span><span class="v" id="ecDir">East</span></div>
+        <div class="row"><span class="k">Season</span><span class="v" id="ecSea">Spring</span></div>
+        <div class="row"><span class="k">Guardian</span><span class="v" id="ecGua">Azure Dragon <span class="han">&#38738;&#40845;</span></span></div>
+        <div class="row"><span class="k">Virtue</span><span class="v" id="ecVir">Benevolence</span></div>
+        <p class="motion" id="ecMotion">The push of green through frost, the phase of beginnings. Wood feeds fire and is raised by water.</p>
+      </div>
+    </div>
+    <p class="sys-cta reveal"><a href="/elements/">Enter the element halls</a></p>
+  </div>
+</section>
+
+<!-- ============ BAZI ============ -->
+<section class="sys sys--bazi" id="bazi">
+  <div class="wrap">
+    <div class="teaser">
+      <div class="tz reveal">
+        <div>
+          <div class="pillarplate" aria-label="A worked four pillar chart">
+            <div class="pillar"><span class="pl">Hour</span><span class="zi">&#22764;<br>&#25100;</span></div>
+            <div class="pillar dm"><span class="pl">Day</span><span class="zi">&#25098;<br>&#21320;</span><span class="tag">day master</span></div>
+            <div class="pillar"><span class="pl">Month</span><span class="zi">&#19993;<br>&#23493;</span></div>
+            <div class="pillar"><span class="pl">Year</span><span class="zi">&#30002;<br>&#23376;</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">BaZi · four pillars</p>
+        <h2>The chart beneath your animal.</h2>
+        <p class="dim" style="margin-top:14px">Your year animal is one room of a four-room chart: year, month, day, and hour, eight characters in all. The Observatory keeps a working calculator with true solar time for 31 cities.</p>
+        <p class="sys-cta"><a href="/bazi/chart/">Cast your chart</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ZWDS / STARS ============ -->
+<section class="sys sys--stars" id="stars">
+  <div class="wrap">
+    <div class="teaser flip">
+      <div class="tz reveal">
+        <svg viewBox="0 0 340 240" role="img" aria-label="A small star map of twelve palaces">
+          <rect x="20" y="14" width="300" height="212" rx="10" fill="none" stroke="rgba(120,179,198,.3)"/>
+          <g fill="var(--teal)">
+            <circle cx="70" cy="60" r="3.2"/><circle cx="132" cy="42" r="2.2"/><circle cx="196" cy="66" r="4"/>
+            <circle cx="262" cy="48" r="2.6"/><circle cx="288" cy="108" r="2.2"/><circle cx="236" cy="140" r="3.4"/>
+            <circle cx="168" cy="122" r="2.4"/><circle cx="104" cy="150" r="3"/><circle cx="58" cy="122" r="2.2"/>
+            <circle cx="146" cy="190" r="2.8"/><circle cx="226" cy="196" r="2.2"/><circle cx="290" cy="176" r="2.8"/>
+          </g>
+          <g stroke="rgba(120,179,198,.35)" stroke-width="1" fill="none">
+            <path d="M70 60 132 42 196 66 262 48"/><path d="M196 66 236 140 168 122 104 150 58 122"/>
+            <path d="M236 140 290 176 226 196 146 190"/>
+          </g>
+          <text x="170" y="230" text-anchor="middle" font-family="Space Mono,monospace" font-size="8.5" letter-spacing="3" fill="var(--faint)">TWELVE PALACES · FOURTEEN STARS</text>
+        </svg>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">Zi Wei Dou Shu · the star map</p>
+        <h2>Twelve palaces, fourteen stars.</h2>
+        <p class="dim" style="margin-top:14px">The court astrology imperial China kept to itself for a thousand years: your life drawn as twelve rooms, with the stars stationed at the moment of your birth. BaZi tells you the weather. Zi Wei gives you the map.</p>
+        <p class="sys-cta"><a href="/elements/zi-wei/">See the palaces</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FENG SHUI ============ -->
+<section class="sys sys--fengshui" id="fengshui">
+  <div class="wrap">
+    <div class="teaser">
+      <div class="tz reveal">
+        <svg viewBox="0 0 300 300" role="img" aria-label="The eight trigrams arranged as a bagua">
+          <polygon points="150,26 238,62 274,150 238,238 150,274 62,238 26,150 62,62" fill="none" stroke="rgba(120,195,156,.4)"/>
+          <polygon points="150,64 211,89 236,150 211,211 150,236 89,211 64,150 89,89" fill="none" stroke="rgba(120,195,156,.2)"/>
+          <g font-size="21" fill="var(--jade)" text-anchor="middle" dominant-baseline="central">
+            <text x="150" y="44">&#9776;</text><text x="225" y="76">&#9777;</text><text x="256" y="150">&#9778;</text><text x="225" y="224">&#9779;</text>
+            <text x="150" y="256">&#9780;</text><text x="75" y="224">&#9781;</text><text x="44" y="150">&#9782;</text><text x="75" y="76">&#9783;</text>
+          </g>
+          <text x="150" y="150" text-anchor="middle" dominant-baseline="central" font-family="Space Mono,monospace" font-size="9" letter-spacing="3" fill="var(--faint)">QI SETTLES</text>
+        </svg>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">Feng shui · placement</p>
+        <h2>Arrange the room, settle the breath.</h2>
+        <p class="dim" style="margin-top:14px">Qi gathers where the room lets it settle: a mountain at your back, a bright hall in front. Find your Kua number, take the commanding position, and give your animal's habitat solid ground.</p>
+        <p class="sys-cta"><a href="/feng-shui/">Walk the bagua</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STONES ============ -->
+<section class="sys sys--stones" id="stones">
+  <div class="wrap">
+    <div class="teaser flip">
+      <div class="tz reveal">
+        <svg viewBox="0 0 320 200" role="img" aria-label="Four keeper stones on an engraved tray">
+          <rect x="14" y="150" width="292" height="6" rx="3" fill="rgba(195,200,208,.18)"/>
+          <path d="M52 148 38 116 60 92 84 108 78 148 Z" fill="#232637" stroke="rgba(195,200,208,.5)"/>
+          <path d="M132 148 118 104 144 84 166 112 156 148 Z" fill="#1f2233" stroke="rgba(214,193,140,.45)"/>
+          <path d="M212 148 200 118 220 96 244 106 238 148 Z" fill="#242233" stroke="rgba(177,132,214,.45)"/>
+          <path d="M288 148 272 112 292 94 310 116 302 148 Z" fill="#1e2431" stroke="rgba(120,179,198,.5)"/>
+          <text x="160" y="184" text-anchor="middle" font-family="Space Mono,monospace" font-size="8.5" letter-spacing="3" fill="var(--faint)">CHARGED IN MOONLIGHT</text>
+        </svg>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">The stone library</p>
+        <h2>Four keeper stones, one duty each.</h2>
+        <p class="dim" style="margin-top:14px">Every animal keeps a set of four, chosen for it alone. Moonlight is the one charge that is safe for all of them: cleanse at the dark moon, charge at the full.</p>
+        <div class="chiprow">
+          <span class="chip"><b>I</b>Anchor</span><span class="chip"><b>II</b>Clarity</span>
+          <span class="chip"><b>III</b>Courage</span><span class="chip"><b>IV</b>Boundary</span>
+        </div>
+        <p class="sys-cta"><a href="/stones.html">Meet your stones</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MOON ============ -->
+<section class="sys sys--moon" id="moon">
+  <div class="wrap">
+    <div class="sys-head reveal">
+      <p class="eyebrow">The moon tonight</p>
+      <h2>The clock your nerves already keep.</h2>
+      <p class="lede">The Observatory runs real synodic arithmetic, 29.53 days from new to new. What you see below is tonight's sky, not an illustration.</p>
+    </div>
+    <div class="moongrid">
+      <div class="moonobs reveal">
+        <canvas id="moonCanvas" width="420" height="420" aria-label="Tonight's moon, drawn from its true phase"></canvas>
+        <div class="moonread">
+          <p class="ph" id="moonPhaseName">Waxing Gibbous</p>
+          <p class="st" id="moonStats">64% lit · day 11 of 29.5</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="phasestrip" id="phasestrip" role="list" aria-label="The eight phases and their work"></div>
+        <div class="powerrest">
+          <div class="prcard">
+            <h3><b>Power phase</b> · your night to act</h3>
+            <p>One phase of every cycle belongs to your animal, set by its element and polarity. On that night the live Oracle tells you plainly: tonight is your power phase.</p>
+          </div>
+          <div class="prcard">
+            <h3><b>Rest phase</b> · your night to be quiet</h3>
+            <p>Opposite it waits the rest phase, the night to go dark on purpose, cleanse your stones, and let the streak sleep. The ledger holds; the balance never fades.</p>
+          </div>
+        </div>
+        <div class="moondates">
+          <span>Next new moon · <b id="nextNew">Jul 14</b></span>
+          <span>Next full moon · <b id="nextFull">Jul 29</b></span>
+        </div>
+        <p class="sys-cta"><a href="/moon.html">Read the moon tonight</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BONDS ============ -->
+<section class="sys sys--bonds" id="bonds">
+  <div class="wrap">
+    <div class="teaser">
+      <div class="tz reveal">
+        <svg viewBox="0 0 320 200" role="img" aria-label="Two rings overlapping to form a bond crest">
+          <circle cx="128" cy="100" r="62" fill="none" stroke="rgba(227,161,150,.55)" stroke-width="1.5"/>
+          <circle cx="192" cy="100" r="62" fill="none" stroke="rgba(214,193,140,.55)" stroke-width="1.5"/>
+          <circle cx="160" cy="100" r="7" fill="var(--rose)" opacity=".8"/>
+          <text x="160" y="182" text-anchor="middle" font-family="Space Mono,monospace" font-size="8.5" letter-spacing="3" fill="var(--faint)">TWO SKIES · ONE BOND</text>
+        </svg>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">The relationships laboratory</p>
+        <h2>Two birthdays, read as one bond.</h2>
+        <p class="dim" style="margin-top:14px">The Oracle weighs the trines, secret friends, clashes, and harms, then the Western elements, and names honestly what the bond can carry. Testing a bond is a rite the ledger counts, twice a day.</p>
+        <p class="sys-cta"><a href="/match.html">Test a bond</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENAGERIE ============ -->
+<section class="sys sys--menagerie" id="menagerie">
+  <div class="wrap">
+    <div class="sys-head reveal">
+      <p class="eyebrow">The menagerie</p>
+      <h2>All 144, kept and catalogued.</h2>
+      <p class="lede">From the Sun Bear to the Vampire Squid, every crossing holds one richly kept creature. The Fire Horse arrives with 2026, a crossing that comes once in sixty years.</p>
+    </div>
+    <div class="peek reveal">
+      <a href="/animals/chambered-nautilus/"><span class="pn">Chambered Nautilus</span><span class="ps">Cancer × Snake</span></a>
+      <a href="/animals/capybara/"><span class="pn">Capybara</span><span class="ps">Cancer × Pig</span></a>
+      <a href="/animals/snow-leopard/"><span class="pn">Snow Leopard</span><span class="ps">Scorpio × Goat</span></a>
+      <a href="/animals/axolotl/"><span class="pn">Axolotl</span><span class="ps">Aquarius × Rabbit</span></a>
+      <a href="/animals/sun-bear/"><span class="pn">Sun Bear</span><span class="ps">Aries × Ox</span></a>
+      <a href="/animals/vampire-squid/"><span class="pn">Vampire Squid</span><span class="ps">Pisces × Rat</span></a>
+    </div>
+    <p class="sys-cta reveal"><a href="/menagerie.html">Browse all 144</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="cap">The Observatory · concept preview A</p>
+    <p>A concept study for the zodianimal.com homepage. Nothing here forecasts. Every reading in this house is a mirror you can act on: meaning, not prediction.</p>
+    <div class="footlinks">
+      <a href="/index.html">Find your animal</a>
+      <a href="/moon.html">The moon</a>
+      <a href="/bazi/">BaZi</a>
+      <a href="/menagerie.html">The menagerie</a>
+      <a href="/proverbs/">The Proverb Pond</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ================= data ================= */
+var WEST=[
+ {n:"Aries",g:"♈",d:"Mar 21 to Apr 19"},{n:"Taurus",g:"♉",d:"Apr 20 to May 20"},
+ {n:"Gemini",g:"♊",d:"May 21 to Jun 20"},{n:"Cancer",g:"♋",d:"Jun 21 to Jul 22"},
+ {n:"Leo",g:"♌",d:"Jul 23 to Aug 22"},{n:"Virgo",g:"♍",d:"Aug 23 to Sep 22"},
+ {n:"Libra",g:"♎",d:"Sep 23 to Oct 22"},{n:"Scorpio",g:"♏",d:"Oct 23 to Nov 21"},
+ {n:"Sagittarius",g:"♐",d:"Nov 22 to Dec 21"},{n:"Capricorn",g:"♑",d:"Dec 22 to Jan 19"},
+ {n:"Aquarius",g:"♒",d:"Jan 20 to Feb 18"},{n:"Pisces",g:"♓",d:"Feb 19 to Mar 20"}];
+var EAST=[
+ {n:"Rat",z:"鼠"},{n:"Ox",z:"牛"},{n:"Tiger",z:"虎"},{n:"Rabbit",z:"兔"},
+ {n:"Dragon",z:"龙"},{n:"Snake",z:"蛇"},{n:"Horse",z:"马"},{n:"Goat",z:"羊"},
+ {n:"Monkey",z:"猴"},{n:"Rooster",z:"鸡"},{n:"Dog",z:"狗"},{n:"Pig",z:"猪"}];
+/* rows follow WEST order, cols follow EAST order: "Name|slug" */
+var GRID=[["Fossa|fossa","Sun Bear|sun-bear","Wolverine|wolverine","Springbok|springbok","Secretary Bird|secretary-bird","Loggerhead Shrike|loggerhead-shrike","Pronghorn|pronghorn","Wallcreeper|wallcreeper","Kookaburra|kookaburra","Cassowary|cassowary","Giant Otter|giant-otter","Honey Badger|honey-badger"],
+["Aardwolf|aardwolf","Giant Clam|giant-clam","Sable Antelope|sable-antelope","Koala|koala","Galápagos Tortoise|galapagos-tortoise","Pangolin|pangolin","Moose|moose","Snow Petrel|snow-petrel","Ringtail|ringtail","Superb Bird of Paradise|superb-bird-of-paradise","Banded Mongoose|banded-mongoose","Bongo|bongo"],
+["Meerkat|meerkat","Three-wattled Bellbird|three-wattled-bellbird","Bat-eared Fox|bat-eared-fox","Fennec Fox|fennec-fox","Superb Lyrebird|superb-lyrebird","Cuttlefish|cuttlefish","Swift|swift","Rock Wren|rock-wren","Kea|kea","Fork-tailed Drongo|fork-tailed-drongo","African Grey Parrot|african-grey-parrot","Cacomistle|cacomistle"],
+["Coconut Crab|coconut-crab","Asian Elephant|asian-elephant","Moon Bear|moon-bear","Sea Otter|sea-otter","Humpback Whale|humpback-whale","Chambered Nautilus|chambered-nautilus","Green Sea Turtle|green-sea-turtle","Glasswing Butterfly|glasswing-butterfly","Spotted Cuscus|spotted-cuscus","Emperor Penguin|emperor-penguin","Ribbon Seal|ribbon-seal","Capybara|capybara"],
+["Golden Lion Tamarin|golden-lion-tamarin","Spotted Hyena|spotted-hyena","Harpy Eagle|harpy-eagle","Golden Pheasant|golden-pheasant","Rhinoceros Hornbill|rhinoceros-hornbill","Blue-ringed Octopus|blue-ringed-octopus","Paradise Riflebird|paradise-riflebird","Golden Brushtail Possum|golden-brushtail-possum","Regal Jumping Spider|regal-jumping-spider","Sunset Moth|sunset-moth","Sunbittern|sunbittern","Golden Snub-nosed Monkey|golden-snub-nosed-monkey"],
+["Leafcutter Ant|leafcutter-ant","Beaver|beaver","Dragonfly|dragonfly","Penduline Tit|penduline-tit","Archerfish|archerfish","Trapdoor Spider|trapdoor-spider","Avocet|avocet","Clark's Nutcracker|clarks-nutcracker","New Caledonian Crow|new-caledonian-crow","Weaverbird|weaverbird","Cleaner Wrasse|cleaner-wrasse","Star-nosed Mole|star-nosed-mole"],
+["Red Panda|red-panda","Swan|swan","Arabian Oryx|arabian-oryx","Crowned Crane|crowned-crane","Giant Manta Ray|giant-manta-ray","Paradise Tanager|paradise-tanager","Flamingo|flamingo","Luna Moth|luna-moth","Kissing Gourami|kissing-gourami","Satin Bowerbird|satin-bowerbird","Duetting Frog|duetting-frog","Roseate Spoonbill|roseate-spoonbill"],
+["Tarsier|tarsier","Giant Salamander|giant-salamander","Giant Centipede|giant-centipede","Pallas's Cat|pallass-cat","Gila Monster|gila-monster","Slow Loris|slow-loris","Orca|orca","Snow Leopard|snow-leopard","Elephantnose Fish|elephantnose-fish","Devil's Flower Mantis|devils-flower-mantis","Tasmanian Devil|tasmanian-devil","Deep Sea Anglerfish|deep-sea-anglerfish"],
+["Sandgrouse|sandgrouse","Arctic Tern|arctic-tern","Lanner Falcon|lanner-falcon","Flying Fish|flying-fish","Frigatebird|frigatebird","Sand Cat|sand-cat","Albatross|albatross","Bar-headed Goose|bar-headed-goose","Coati|coati","Roadrunner|roadrunner","Caracara|caracara","Tree Kangaroo|tree-kangaroo"],
+["Marbled Polecat|marbled-polecat","Shoebill|shoebill","Steller's Sea Eagle|stellers-sea-eagle","Mountain Pygmy Possum|mountain-pygmy-possum","Bearded Vulture|bearded-vulture","Tuatara|tuatara","Siberian Crane|siberian-crane","Hercules Beetle|hercules-beetle","Snowy Owl|snowy-owl","Andean Condor|andean-condor","Tibetan Blue Bear|tibetan-blue-bear","Giant Armadillo|giant-armadillo"],
+["Sonoran Desert Toad|sonoran-desert-toad","Vulturine Guineafowl|vulturine-guineafowl","Maned Wolf|maned-wolf","Axolotl|axolotl","Mantis Shrimp|mantis-shrimp","Portuguese Man o' War|portuguese-man-o-war","Sailfish|sailfish","Kakapo|kakapo","Raven|raven","Hoatzin|hoatzin","Vampire Bat|vampire-bat","Platypus|platypus"],
+["Vampire Squid|vampire-squid","Narwhal|narwhal","Leopard Seal|leopard-seal","Moon Jellyfish|moon-jellyfish","Whale Shark|whale-shark","Glass Frog|glass-frog","Sea Angel|sea-angel","Ghost Pipefish|ghost-pipefish","Dumbo Octopus|dumbo-octopus","Mandarin Dragonet|mandarin-dragonet","Beluga|beluga","Blue Glaucus|blue-glaucus"]];
+
+var SVGNS="http://www.w3.org/2000/svg";
+function el(tag,attrs,parent){var n=document.createElementNS(SVGNS,tag);for(var k in attrs)n.setAttribute(k,attrs[k]);if(parent)parent.appendChild(n);return n;}
+
+/* ================= the astrolabe ================= */
+var C=270, dial=document.querySelector(".dial");
+var ticks=document.getElementById("ticks");
+(function buildTicks(){
+  for(var i=0;i<72;i++){
+    var a=i*5*Math.PI/180, major=i%6===0;
+    var r1=major?232:237, r2=244;
+    el("line",{x1:C+r1*Math.sin(a),y1:C-r1*Math.cos(a),x2:C+r2*Math.sin(a),y2:C-r2*Math.cos(a),
+      "class":major?"tick":"tick-minor","stroke-width":major?1.2:.7},ticks);
+  }
+  for(var j=0;j<36;j++){
+    var b=j*10*Math.PI/180;
+    el("line",{x1:C+120*Math.sin(b),y1:C-120*Math.cos(b),x2:C+126*Math.sin(b),y2:C-126*Math.cos(b),"class":"tick-minor","stroke-width":.7},ticks);
+  }
+})();
+var ringWest=document.getElementById("ringWest"), ringEast=document.getElementById("ringEast");
+(function buildRings(){
+  for(var i=0;i<12;i++){
+    var gw=el("g",{transform:"rotate("+(i*30)+" "+C+" "+C+")"},ringWest);
+    var tw=el("text",{x:C,y:C-215,"class":"wglyph","data-i":i},gw); tw.textContent=WEST[i].g;
+    var ge=el("g",{transform:"rotate("+(i*30)+" "+C+" "+C+")"},ringEast);
+    var te=el("text",{x:C,y:C-152,"class":"eglyph","data-i":i},ge); te.textContent=EAST[i].z;
+  }
+})();
+
+/* ================= state + sighting ================= */
+var st={w:3,e:5,year:1989};
+var yearElems=["Metal","Metal","Water","Water","Wood","Wood","Fire","Fire","Earth","Earth"];
+function pad(n){return String(n).padStart(3,"0");}
+function cellData(w,e){var p=GRID[w][e].split("|");return{name:p[0],slug:p[1]};}
+
+function setCrossing(w,e,opts){
+  opts=opts||{};
+  st.w=w; st.e=e;
+  if(opts.year!==undefined)st.year=opts.year; else if(!opts.keepYear)st.year=null;
+  ringWest.style.transform="rotate("+(-30*w)+"deg)";
+  ringEast.style.transform="rotate("+(-30*e)+"deg)";
+  dial.querySelectorAll(".wglyph").forEach(function(t){t.classList.toggle("lit",+t.dataset.i===w);});
+  dial.querySelectorAll(".eglyph").forEach(function(t){t.classList.toggle("lit",+t.dataset.i===e);});
+  var c=cellData(w,e), plate=w*12+e+1;
+  document.getElementById("dialPlate").textContent="PLATE "+pad(plate)+" / 144";
+  document.getElementById("roWest").innerHTML='<span class="g">'+WEST[w].g+'</span>'+WEST[w].n+" · "+WEST[w].d;
+  document.getElementById("roEast").innerHTML='<span class="g han">'+EAST[e].z+'</span>Year of the '+EAST[e].n;
+  var elemRow=document.getElementById("roElem");
+  if(st.year){elemRow.textContent=yearElems[st.year%10]+" · read from the year "+st.year;}
+  else{elemRow.textContent="Set a year to fix the element";}
+  document.getElementById("roName").textContent="The "+c.name;
+  document.getElementById("roPlate").textContent="Plate "+pad(plate)+" of 144";
+  document.getElementById("roRead").href="/animals/"+c.slug+"/";
+  document.getElementById("roRead").textContent="Read the "+c.name;
+  document.getElementById("gridcap").innerHTML="Sighted: <b>"+WEST[w].n+" × "+EAST[e].n+" · The "+c.name+"</b>";
+  paintGrid();
+}
+
+/* ================= the 144 chart ================= */
+var zg=document.getElementById("zgrid"), cells=[];
+(function buildGrid(){
+  var corner=document.createElement("span");corner.className="axis";zg.appendChild(corner);
+  EAST.forEach(function(ea){var s=document.createElement("span");s.className="axis e";s.textContent=ea.z;s.title=ea.n;zg.appendChild(s);});
+  WEST.forEach(function(wv,w){
+    var rl=document.createElement("span");rl.className="axis";rl.textContent=wv.g;rl.title=wv.n;zg.appendChild(rl);
+    EAST.forEach(function(ea,e){
+      var b=document.createElement("button");
+      b.type="button";b.className="cell";b.tabIndex=-1;
+      var c=cellData(w,e);
+      b.title="The "+c.name+" · "+wv.n+" × "+ea.n;
+      b.setAttribute("aria-label","Sight "+wv.n+" crossed with "+ea.n+", the "+c.name);
+      b.dataset.w=w;b.dataset.e=e;
+      b.addEventListener("click",function(){setCrossing(w,e,{});});
+      zg.appendChild(b);cells.push(b);
+    });
+  });
+})();
+function paintGrid(){
+  cells.forEach(function(b){
+    var w=+b.dataset.w,e=+b.dataset.e;
+    b.classList.toggle("lit",w===st.w&&e===st.e);
+    b.classList.toggle("row-lit",w===st.w&&e!==st.e);
+    b.classList.toggle("col-lit",e===st.e&&w!==st.w);
+  });
+}
+
+/* ================= date to crossing ================= */
+function westFrom(m,d){
+  var edges=[[1,20],[2,19],[3,21],[4,20],[5,21],[6,21],[7,23],[8,23],[9,23],[10,23],[11,22],[12,22]];
+  var idxByMonthStart=[10,11,0,1,2,3,4,5,6,7,8,9]; /* sign that begins in month m: Jan=Aquarius */
+  var startDay=edges[m-1][1];
+  if(d>=startDay)return idxByMonthStart[m-1];
+  return (idxByMonthStart[m-1]+11)%12;
+}
+function eastFrom(y){return ((y-4)%12+12)%12;}
+document.getElementById("sightForm").addEventListener("submit",function(ev){
+  ev.preventDefault();
+  var m=+document.getElementById("mm").value, d=+document.getElementById("dd").value||1, y=+document.getElementById("yy").value||1989;
+  d=Math.min(Math.max(d,1),31); y=Math.min(Math.max(y,1900),2032);
+  setCrossing(westFrom(m,d),eastFrom(y),{year:y});
+});
+document.querySelectorAll(".turnbtn").forEach(function(b){
+  b.addEventListener("click",function(){
+    var t=b.dataset.turn, delta=t.slice(1)==="+1"?1:-1;
+    if(t[0]==="w")setCrossing((st.w+delta+12)%12,st.e,{keepYear:false});
+    else setCrossing(st.w,(st.e+delta+12)%12,{keepYear:false});
+  });
+});
+
+/* ================= wu xing wheel ================= */
+var ELEMS=[
+ {n:"Wood",zi:"木",pin:"mù",c:"#6fae74",dir:"East",sea:"Spring",gua:"Azure Dragon 青龍",vir:"Benevolence",
+  line:"The push of green through frost, the phase of beginnings.",gen:"Wood feeds fire and is raised by water.",ctl:"Wood parts earth and is cut by metal."},
+ {n:"Fire",zi:"火",pin:"huǒ",c:"#d98a86",dir:"South",sea:"Summer",gua:"Vermilion Bird 朱雀",vir:"Propriety",
+  line:"Full flame at full noon, the phase of visibility.",gen:"Fire makes earth of its ash and is fed by wood.",ctl:"Fire melts metal and is quenched by water."},
+ {n:"Earth",zi:"土",pin:"tǔ",c:"#c9a86a",dir:"Center",sea:"Late summer",gua:"Yellow Dragon 黃龍",vir:"Trustworthiness",
+  line:"The still point the other four turn around.",gen:"Earth bears metal and is made by fire.",ctl:"Earth dams water and is parted by wood."},
+ {n:"Metal",zi:"金",pin:"jīn",c:"#c3c8d0",dir:"West",sea:"Autumn",gua:"White Tiger 白虎",vir:"Righteousness",
+  line:"The blade and the bell, the phase of refinement.",gen:"Metal carries water and is borne by earth.",ctl:"Metal cuts wood and is melted by fire."},
+ {n:"Water",zi:"水",pin:"shuǐ",c:"#78b3c6",dir:"North",sea:"Winter",gua:"Black Tortoise 玄武",vir:"Wisdom",
+  line:"The deep store beneath the ice, the phase of return.",gen:"Water raises wood and is carried by metal.",ctl:"Water quenches fire and is dammed by earth."}];
+var GEN_CAP="Wood feeds fire. Fire makes earth of its ash. Earth bears metal. Metal carries water. Water raises wood.";
+var CTL_CAP="Wood parts earth. Earth dams water. Water quenches fire. Fire melts metal. Metal cuts wood.";
+var wx=document.getElementById("wuxing"), wxMode="gen", wxSel=0;
+var WC=220, WR=150, NODE_R=42;
+function npos(i){var a=(-90+i*72)*Math.PI/180;return[WC+WR*Math.cos(a),WC+WR*Math.sin(a)];}
+(function buildWheel(){
+  var defs=el("defs",{},wx);
+  ELEMS.forEach(function(e,i){
+    var m=el("marker",{id:"arr"+i,viewBox:"0 0 10 10",refX:"8",refY:"5",markerWidth:"7",markerHeight:"7",orient:"auto-start-reverse"},defs);
+    el("path",{d:"M0 0 L10 5 L0 10 z",fill:e.c},m);
+  });
+  el("circle",{cx:WC,cy:WC,r:WR+NODE_R+14,fill:"none",stroke:"rgba(214,193,140,.1)"},wx);
+  var arrows=el("g",{id:"wxArrows"},wx);
+  function chord(i,j,dashed){
+    var a=npos(i),b=npos(j);
+    var dx=b[0]-a[0],dy=b[1]-a[1],len=Math.hypot(dx,dy);
+    var ox=dx/len*(NODE_R+8),oy=dy/len*(NODE_R+8);
+    return el("path",{d:"M"+(a[0]+ox)+" "+(a[1]+oy)+" L"+(b[0]-ox)+" "+(b[1]-oy),
+      "class":"flow","stroke":ELEMS[i].c,"marker-end":"url(#arr"+i+")",
+      "stroke-dasharray":dashed?"5 5":"none","data-mode":dashed?"ctl":"gen","data-from":i},arrows);
+  }
+  for(var i=0;i<5;i++){chord(i,(i+1)%5,false);chord(i,(i+2)%5,true);}
+  ELEMS.forEach(function(e,i){
+    var p=npos(i);
+    var g=el("g",{"class":"node","data-i":i,tabindex:"0",role:"button","aria-label":e.n+", read its plate",style:"color:"+e.c},wx);
+    el("circle",{cx:p[0],cy:p[1],r:NODE_R,stroke:e.c},g);
+    var zi=el("text",{x:p[0],y:p[1]-4,"class":"zi",fill:e.c},g);zi.textContent=e.zi;
+    var en=el("text",{x:p[0],y:p[1]+24,"class":"en"},g);en.textContent=e.n;
+    g.addEventListener("click",function(){selectElem(i);});
+    g.addEventListener("keydown",function(ev){if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();selectElem(i);}});
+  });
+})();
+function paintWheel(){
+  wx.querySelectorAll(".flow").forEach(function(p){p.classList.toggle("dimmed",p.dataset.mode!==wxMode);});
+  wx.querySelectorAll(".node").forEach(function(n){n.classList.toggle("sel",+n.dataset.i===wxSel);});
+  document.getElementById("cyclecap").textContent=wxMode==="gen"?GEN_CAP:CTL_CAP;
+  var e=ELEMS[wxSel];
+  document.getElementById("ecZi").textContent=e.zi;
+  document.getElementById("ecZi").style.color=e.c;
+  document.getElementById("ecPin").textContent=e.pin+" · "+e.n.toLowerCase();
+  document.getElementById("ecDir").textContent=e.dir;
+  document.getElementById("ecSea").textContent=e.sea;
+  document.getElementById("ecGua").textContent=e.gua;
+  document.getElementById("ecVir").textContent=e.vir;
+  document.getElementById("ecMotion").textContent=e.line+" "+(wxMode==="gen"?e.gen:e.ctl);
+}
+function selectElem(i){wxSel=i;paintWheel();}
+document.getElementById("modeGen").addEventListener("click",function(){wxMode="gen";this.setAttribute("aria-pressed","true");document.getElementById("modeCtl").setAttribute("aria-pressed","false");paintWheel();});
+document.getElementById("modeCtl").addEventListener("click",function(){wxMode="ctl";this.setAttribute("aria-pressed","true");document.getElementById("modeGen").setAttribute("aria-pressed","false");paintWheel();});
+
+/* ================= the moon ================= */
+var SYNODIC=29.53058867, EPOCH=Date.UTC(2000,0,6,18,14)/86400000;
+function moonAge(){var now=Date.now()/86400000;var a=(now-EPOCH)%SYNODIC;return a<0?a+SYNODIC:a;}
+var PHASES=[
+ {n:"New Moon",v:"seed"},{n:"Waxing Crescent",v:"gather"},{n:"First Quarter",v:"decide"},{n:"Waxing Gibbous",v:"refine"},
+ {n:"Full Moon",v:"release"},{n:"Waning Gibbous",v:"give thanks"},{n:"Last Quarter",v:"forgive"},{n:"Waning Crescent",v:"rest"}];
+function phaseIndex(age){
+  var b=[1.845,5.536,9.228,12.919,16.610,20.302,23.993,27.684];
+  for(var i=0;i<8;i++)if(age<b[i])return i;
+  return 0;
+}
+function drawMoon(){
+  var cv=document.getElementById("moonCanvas"),ctx=cv.getContext("2d");
+  var S=cv.width, R=S*.46, cx=S/2, cy=S/2;
+  var age=moonAge(), p=age/SYNODIC;
+  ctx.clearRect(0,0,S,S);
+  /* dark disc */
+  ctx.beginPath();ctx.arc(cx,cy,R,0,7);ctx.fillStyle="#1c1f31";ctx.fill();
+  /* lit shape (mirror for waning) */
+  var waning=p>.5, pm=waning?1-p:p, cosP=Math.cos(2*Math.PI*pm);
+  ctx.save();
+  if(waning){ctx.translate(cx,cy);ctx.scale(-1,1);ctx.translate(-cx,-cy);}
+  var grad=ctx.createRadialGradient(cx-R*.25,cy-R*.3,R*.2,cx,cy,R*1.05);
+  grad.addColorStop(0,"#f8f2dd");grad.addColorStop(1,"#cfc6a2");
+  ctx.beginPath();
+  ctx.arc(cx,cy,R,-Math.PI/2,Math.PI/2,false);
+  ctx.ellipse(cx,cy,Math.abs(cosP)*R,R,0,Math.PI/2,-Math.PI/2,cosP>0);
+  ctx.fillStyle=grad;ctx.fill();
+  ctx.restore();
+  /* faint maria */
+  ctx.save();ctx.beginPath();ctx.arc(cx,cy,R,0,7);ctx.clip();
+  ctx.globalAlpha=.1;ctx.fillStyle="#3a3d52";
+  [[-.25,-.2,.24],[.2,.08,.18],[-.05,.3,.14],[.32,-.28,.11]].forEach(function(m){
+    ctx.beginPath();ctx.arc(cx+m[0]*R,cy+m[1]*R,m[2]*R,0,7);ctx.fill();
+  });
+  ctx.restore();
+  /* readouts */
+  var illum=Math.round((1-Math.cos(2*Math.PI*p))/2*100);
+  var pi=phaseIndex(age);
+  document.getElementById("moonPhaseName").textContent=PHASES[pi].n;
+  document.getElementById("moonStats").textContent=illum+"% lit · day "+Math.round(age)+" of 29.5";
+  /* strip */
+  var strip=document.getElementById("phasestrip");strip.innerHTML="";
+  PHASES.forEach(function(ph,i){
+    var d=document.createElement("div");d.className="phasecell"+(i===pi?" now":"");d.setAttribute("role","listitem");
+    d.innerHTML='<p class="pn">'+ph.n+'</p><p class="pv">'+ph.v+"</p>";
+    strip.appendChild(d);
+  });
+  /* next new / full */
+  var day=86400000, now=Date.now();
+  var toNew=(SYNODIC-age)*day;
+  var toFull=age<SYNODIC/2?(SYNODIC/2-age)*day:(SYNODIC-age+SYNODIC/2)*day;
+  var fmt=function(t){return new Date(t).toLocaleDateString("en-US",{month:"short",day:"numeric"});};
+  document.getElementById("nextNew").textContent=fmt(now+toNew);
+  document.getElementById("nextFull").textContent=fmt(now+toFull);
+}
+
+/* ================= scroll spy + reveals ================= */
+var links=Array.prototype.slice.call(document.querySelectorAll("#craftList a"));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute("href"));});
+var spy=new IntersectionObserver(function(entries){
+  entries.forEach(function(en){
+    if(!en.isIntersecting)return;
+    var id="#"+en.target.id;
+    links.forEach(function(a){a.classList.toggle("active",a.getAttribute("href")===id);});
+  });
+},{rootMargin:"-40% 0px -55% 0px"});
+secs.forEach(function(s){if(s)spy.observe(s);});
+var rev=new IntersectionObserver(function(entries){
+  entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add("is-in");rev.unobserve(en.target);}});
+},{threshold:.18,rootMargin:"0px 0px -8% 0px"});
+document.querySelectorAll(".reveal").forEach(function(n){rev.observe(n);});
+
+/* ================= boot ================= */
+setCrossing(3,5,{year:1989});
+paintWheel();
+drawMoon();
+setInterval(drawMoon,60*60*1000);
+})();
+</script>
+<!--om-footer:start-->
+<!-- Zodi Animal universal footer. Single source: components/footer.html,
+     baked into every page by build/apply-footer.mjs, styled by
+     site/css/footer.css (.zf-foot). All classes are zf- namespaced to avoid
+     collisions with page CSS. Edit this file, rebuild, all pages update. -->
+<footer class="zf-foot" role="contentinfo" aria-label="Site footer">
+  <div class="zf-wrap">
+
+    <div class="zf-rule zf-rule--top"><i>&#9790;</i></div>
+
+    <!-- brand (40%) + daily reading (60%) -->
+    <section class="zf-feature">
+      <div class="zf-brand">
+        <p class="zf-eyebrow">The Primal Zodiac, 144 animals</p>
+        <p class="zf-lockup">Zodi <em>Animal</em></p>
+        <p class="zf-manifesto">One hundred and forty-four animals, born where the Western Sun signs cross the Chinese zodiac years. A slow tradition of meaning, kept under the moon.</p>
+        <a class="zf-cta" href="/index.html#read">Find your Zodi Animal <span class="zf-star">&#10022;</span></a>
+      </div>
+
+      <div class="zf-news">
+        <div class="zf-sky" aria-hidden="true">
+          <span class="zf-tw zf-tw1"></span><span class="zf-tw zf-tw2"></span><span class="zf-tw zf-tw3"></span><span class="zf-tw zf-tw4"></span>
+          <span class="zf-shoot zf-shoot-a"></span><span class="zf-shoot zf-shoot-b"></span><span class="zf-shoot zf-shoot-c"></span>
+        </div>
+        <div class="zf-copy">
+          <p class="zf-eyebrow">The Daily Reading</p>
+          <h2 class="zf-news-h">Your reading, at dawn.</h2>
+          <p class="zf-sub">One short passage for your Zodi Animal each morning. The moon's phase, what it favors, and a line meant for you. Free, and it takes ten seconds to join.</p>
+        </div>
+        <form class="zf-form" id="zf-news-form" novalidate>
+          <label class="zf-sr" for="zf-email">Email address</label>
+          <div class="zf-row">
+            <input id="zf-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-describedby="zf-rz">
+            <button type="submit" class="zf-subbtn">Read with me daily</button>
+          </div>
+          <p class="zf-reassure" id="zf-rz">No noise. Unsubscribe anytime.</p>
+        </form>
+      </div>
+    </section>
+
+    <div class="zf-rule"><i>&#10022;</i></div>
+
+    <!-- link matrix -->
+    <nav class="zf-matrix" aria-label="Footer navigation">
+      <div class="zf-col"><h3>Discover</h3><ul>
+        <li><a href="/index.html">Find your animal</a></li>
+        <li><a href="/menagerie.html">All 144 animals</a></li>
+        <li><a href="/zodiac/">The 144 crossings</a></li>
+        <li><a href="/zodiac/grid/">The 144 grid</a></li>
+        <li><a href="/year.html">Year finder</a></li>
+        <li><a href="/daily.html">Today's reading</a></li>
+      </ul></div>
+      <div class="zf-col"><h3>The two wheels</h3><ul>
+        <li><a href="/western-zodiac/">The Western wheel</a></li>
+        <li><a href="/horoscopes/">All horoscopes</a></li>
+        <li><a href="/chinese-zodiac/">The Eastern wheel</a></li>
+        <li><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a></li>
+        <li><a href="/zodiac/what-is-my-primal-zodiac-animal/">How the crossing works</a></li>
+        <li><a href="/best-days.html">Best days</a></li>
+      </ul></div>
+      <div class="zf-col"><h3>Practice &amp; lore</h3><ul>
+        <li><a href="/feng-shui/">Feng shui</a></li>
+        <li><a href="/feng-shui/bagua/">The bagua</a></li>
+        <li><a href="/feng-shui/kua-number/">Your Kua number</a></li>
+        <li><a href="/stones.html">Keeper stones</a></li>
+        <li><a href="/proverbs/">The Proverb Pond</a></li>
+        <li><a href="/traditions/">Traditions</a></li>
+        <li><a href="/habitat/">The Habitat</a></li>
+      </ul></div>
+      <div class="zf-col"><h3>Bonds &amp; Moon</h3><ul>
+        <li><a href="/match.html">Test a match</a></li>
+        <li><a href="/vs.html">Challenge a friend</a></li>
+        <li><a href="/circle.html">Circle of three</a></li>
+        <li><a href="/moon.html">The Moon tonight</a></li>
+        <li><a href="/moon/phases/">The eight phases</a></li>
+        <li><a href="/awakening.html">The Awakening</a></li>
+      </ul></div>
+      <div class="zf-col"><h3>The system</h3><ul>
+        <li><a href="/learn.html">How it works</a></li>
+        <li><a href="/cosmology/">Cosmology</a></li>
+        <li><a href="/cosmology/four-pillars/">The Four Pillars</a></li>
+        <li><a href="/elements/fire/">The five elements</a></li>
+        <li><a href="/directions/">Directions</a></li>
+        <li><a href="/account.html">Your account</a></li>
+      </ul></div>
+    </nav>
+
+    <div class="zf-rule"><i>&#10022;</i></div>
+
+    <!-- almanac: 12 signs, 12 years -->
+    <section class="zf-almanac" aria-labelledby="zf-almh">
+      <p class="zf-cap"><span class="zf-ttl" id="zf-almh">The Almanac of Signs and Years</span><span class="zf-note">12 Sun signs and 12 zodiac years make 144 Zodi Animals</span></p>
+      <div class="zf-alm-row">
+        <nav class="zf-alm-grid" aria-label="Western zodiac signs">
+          <a href="/western-zodiac/aries/"><span class="zf-gly">&#9800;</span><span class="zf-nm">Aries</span></a>
+          <a href="/western-zodiac/taurus/"><span class="zf-gly">&#9801;</span><span class="zf-nm">Taurus</span></a>
+          <a href="/western-zodiac/gemini/"><span class="zf-gly">&#9802;</span><span class="zf-nm">Gemini</span></a>
+          <a href="/western-zodiac/cancer/"><span class="zf-gly">&#9803;</span><span class="zf-nm">Cancer</span></a>
+          <a href="/western-zodiac/leo/"><span class="zf-gly">&#9804;</span><span class="zf-nm">Leo</span></a>
+          <a href="/western-zodiac/virgo/"><span class="zf-gly">&#9805;</span><span class="zf-nm">Virgo</span></a>
+          <a href="/western-zodiac/libra/"><span class="zf-gly">&#9806;</span><span class="zf-nm">Libra</span></a>
+          <a href="/western-zodiac/scorpio/"><span class="zf-gly">&#9807;</span><span class="zf-nm">Scorpio</span></a>
+          <a href="/western-zodiac/sagittarius/"><span class="zf-gly">&#9808;</span><span class="zf-nm">Sagittarius</span></a>
+          <a href="/western-zodiac/capricorn/"><span class="zf-gly">&#9809;</span><span class="zf-nm">Capricorn</span></a>
+          <a href="/western-zodiac/aquarius/"><span class="zf-gly">&#9810;</span><span class="zf-nm">Aquarius</span></a>
+          <a href="/western-zodiac/pisces/"><span class="zf-gly">&#9811;</span><span class="zf-nm">Pisces</span></a>
+        </nav>
+      </div>
+      <div class="zf-alm-row">
+        <nav class="zf-alm-grid" aria-label="Chinese zodiac years">
+          <a href="/chinese-zodiac/rat/"><span class="zf-gly">&#40736;</span><span class="zf-nm">Rat</span></a>
+          <a href="/chinese-zodiac/ox/"><span class="zf-gly">&#29275;</span><span class="zf-nm">Ox</span></a>
+          <a href="/chinese-zodiac/tiger/"><span class="zf-gly">&#34382;</span><span class="zf-nm">Tiger</span></a>
+          <a href="/chinese-zodiac/rabbit/"><span class="zf-gly">&#20820;</span><span class="zf-nm">Rabbit</span></a>
+          <a href="/chinese-zodiac/dragon/"><span class="zf-gly">&#40857;</span><span class="zf-nm">Dragon</span></a>
+          <a href="/chinese-zodiac/snake/"><span class="zf-gly">&#34503;</span><span class="zf-nm">Snake</span></a>
+          <a href="/chinese-zodiac/horse/"><span class="zf-gly">&#39532;</span><span class="zf-nm">Horse</span></a>
+          <a href="/chinese-zodiac/goat/"><span class="zf-gly">&#32650;</span><span class="zf-nm">Goat</span></a>
+          <a href="/chinese-zodiac/monkey/"><span class="zf-gly">&#29492;</span><span class="zf-nm">Monkey</span></a>
+          <a href="/chinese-zodiac/rooster/"><span class="zf-gly">&#40481;</span><span class="zf-nm">Rooster</span></a>
+          <a href="/chinese-zodiac/dog/"><span class="zf-gly">&#29399;</span><span class="zf-nm">Dog</span></a>
+          <a href="/chinese-zodiac/pig/"><span class="zf-gly">&#29482;</span><span class="zf-nm">Pig</span></a>
+        </nav>
+      </div>
+    </section>
+
+    <div class="zf-rule"><i>&#9790;</i></div>
+
+    <!-- proverb: pinyin on top of each character, tap the speaker to hear it in Mandarin -->
+    <section class="zf-proverb" aria-label="A proverb from the Pond">
+      <p class="zf-hz" lang="zh-Hant">
+        <span class="zf-cal" id="zf-pv-cal"><ruby>守<rt>shǒu</rt></ruby><ruby>得<rt>dé</rt></ruby><ruby>雲<rt>yún</rt></ruby><ruby>開<rt>kāi</rt></ruby><ruby>見<rt>jiàn</rt></ruby><ruby>月<rt>yuè</rt></ruby><ruby>明<rt>míng</rt></ruby></span>
+        <button class="zf-say" id="zf-pv-say" type="button" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="守得雲開見月明"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+      </p>
+      <p class="zf-en" id="zf-pv-en">Hold on until the clouds part, and the bright moon appears.</p>
+      <a class="zf-src" href="/proverbs/">From the Proverb Pond</a>
+    </section>
+
+    <div class="zf-colo">
+      <span class="zf-lead">&copy; <span id="zf-year">2026</span> Zodi Animal. Made under the moon.</span>
+      <span class="zf-disc">A tradition of meaning for reflection. Not medical, psychological, financial, or legal advice.</span>
+    </div>
+
+  </div>
+</footer>
+<script>
+/* Zodi footer: rotating proverb, tap-to-hear pronunciation, on-device newsletter save. */
+(function(){
+  try{ var y=document.getElementById('zf-year'); if(y) y.textContent=new Date().getFullYear(); }catch(e){}
+
+  var P=[
+    {c:[["守","shǒu"],["得","dé"],["雲","yún"],["開","kāi"],["見","jiàn"],["月","yuè"],["明","míng"]],en:"Hold on until the clouds part, and the bright moon appears."},
+    {c:[["上","shàng"],["善","shàn"],["若","ruò"],["水","shuǐ"]],en:"The highest good is like water."},
+    {c:[["瓜","guā"],["熟","shú"],["蒂","dì"],["落","luò"]],en:"When the melon ripens, the stalk falls of itself."},
+    {c:[["順","shùn"],["其","qí"],["自","zì"],["然","rán"]],en:"Let it follow its own nature."},
+    {c:[["塞","sài"],["翁","wēng"],["失","shī"],["馬","mǎ"]],en:"The old man lost his horse. Who is to say it was not good fortune."},
+    {c:[["物","wù"],["極","jí"],["必","bì"],["反","fǎn"]],en:"When a thing reaches its extreme, it turns back the other way."},
+    {c:[["水","shuǐ"],["到","dào"],["渠","qú"],["成","chéng"]],en:"When the water arrives, the channel forms itself."}
+  ];
+  var cur=P[Math.floor(Math.random()*P.length)];
+  var plain=cur.c.map(function(x){return x[0];}).join("");
+  try{
+    document.getElementById('zf-pv-cal').innerHTML=cur.c.map(function(x){return '<ruby>'+x[0]+'<rt>'+x[1]+'</rt></ruby>';}).join("");
+    document.getElementById('zf-pv-en').textContent=cur.en;
+    var sb0=document.getElementById('zf-pv-say'); if(sb0) sb0.setAttribute('data-say',plain);
+  }catch(e){}
+
+  /* the ranked Mandarin voice (Tingting / Meijia / Google), mirrored from
+     proverbs-share.js so the footer sounds the same on pages that don't load it */
+  function zfSpeak(text,btn){
+    if(window.zaSpeak){ window.zaSpeak(text,btn); return; }
+    if(!window.speechSynthesis || !text) return;
+    try{
+      var vs=speechSynthesis.getVoices()||[],best=null,bs=-1;
+      for(var i=0;i<vs.length;i++){
+        var v=vs[i],nm=(v.name||"").toLowerCase(),lg=(v.lang||"").toLowerCase();
+        if(!(/^zh\b|zh[-_]/.test(lg)||/chinese|中文|普通话|國語|mandarin/i.test(v.name||""))) continue;
+        var sc=0;
+        if(/tingting|ting-ting|meijia|mei-jia|sinji|li-mu|yu-shu|han-?yu/.test(nm)) sc+=100;
+        if(/google/.test(nm)) sc+=60;
+        if(/普通话|mandarin|zh-cn|zh_cn|cmn/.test(nm+lg)) sc+=25;
+        if(v.localService===false) sc+=12;
+        if(/female|woman/.test(nm)) sc+=4;
+        if(sc>bs){ bs=sc; best=v; }
+      }
+      var u=new SpeechSynthesisUtterance(text); u.lang="zh-CN"; u.rate=0.78; if(best) u.voice=best;
+      speechSynthesis.cancel(); speechSynthesis.speak(u);
+      if(btn){ btn.classList.add('is-saying'); u.onend=u.onerror=function(){ btn.classList.remove('is-saying'); }; }
+    }catch(e){}
+  }
+  if(window.speechSynthesis){ try{ speechSynthesis.getVoices(); }catch(e){} }
+
+  var say=document.getElementById('zf-pv-say');
+  if(say) say.addEventListener('click',function(){ zfSpeak(say.getAttribute('data-say')||plain, say); });
+
+  var form=document.getElementById('zf-news-form');
+  if(form) form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=(document.getElementById('zf-email')||{}).value||'';
+    var note=document.getElementById('zf-rz');
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ if(note) note.textContent="Enter an email so we can find you."; return; }
+    try{ localStorage.setItem('zodi_daily_email', email); }catch(_e){}
+    if(note) note.textContent="Saved on this device. Daily readings open soon.";
+    try{ document.getElementById('zf-email').value=''; }catch(_e){}
+  });
+})();
+</script>
+<!--om-footer:end-->
+</body>
+</html>
