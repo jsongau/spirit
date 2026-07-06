@@ -276,22 +276,22 @@ PNAV.MAP = [
     cols: [
       { title: "BaZi", mark: "八字", items: [
         ["/bazi/chart/",         "Cast your chart", "tool"],
-        ["/bazi/",               "What is BaZi"],
-        ["/bazi/day-master/",    "Your Day Master"],
-        ["/bazi/ten-gods/",      "The Ten Gods"],
+        ["/bazi/",               "What is BaZi", "八字 Bāzì · eight characters"],
+        ["/bazi/day-master/",    "Your Day Master", "日主 Rìzhǔ"],
+        ["/bazi/ten-gods/",      "The Ten Gods", "十神 Shíshén"],
         ["/bazi/compatibility/", "You & them"]
       ]},
       { title: "Purple Star", mark: "紫微", items: [
-        ["/elements/zi-wei/",             "Zi Wei Dou Shu", "the Emperor's sky"],
-        ["/elements/zi-wei/chart/",       "Read a chart", "school"],
-        ["/elements/zi-wei/stars/",       "The 14 Stars"],
-        ["/elements/zi-wei/palaces/",     "The 12 Palaces"],
-        ["/elements/zi-wei/four-forces/", "The Four Forces"]
+        ["/elements/zi-wei/",             "Zi Wei Dou Shu", "紫微斗数 Zǐwēi Dǒushù"],
+        ["/elements/zi-wei/chart/",       "Read a chart", "命盘 mìngpán · school"],
+        ["/elements/zi-wei/stars/",       "The 14 Stars", "主星 zhǔxīng"],
+        ["/elements/zi-wei/palaces/",     "The 12 Palaces", "十二宫 shí'èr gōng"],
+        ["/elements/zi-wei/four-forces/", "The Four Forces", "四化 sìhuà"]
       ]},
       { title: "Feng shui", mark: "風水", items: [
         ["/feng-shui/commanding-position/", "Commanding position", "live"],
-        ["/feng-shui/bagua/",       "The bagua"],
-        ["/feng-shui/kua-number/",  "Your Kua number"],
+        ["/feng-shui/bagua/",       "The bagua", "八卦 bāguà"],
+        ["/feng-shui/kua-number/",  "Your Kua number", "命卦 mìngguà"],
         ["/feng-shui/bedroom/",     "In the home"]
       ]},
       { title: "Proverbs & lore", mark: "❦", items: [
@@ -678,27 +678,27 @@ PNAV.HUBS = {
     label: "Purple Star (Zi Wei Dou Shu)", root: "/elements/zi-wei/",
     items: [
       ["/elements/zi-wei/", "Overview"],
-      ["/elements/zi-wei/history/", "History & origins"],
-      ["/elements/zi-wei/palaces/", "The 12 Palaces"],
-      ["/elements/zi-wei/stars/", "The 14 Stars", [
-        ["/elements/zi-wei/stars/", "All 14 stars"],
-        ["/elements/zi-wei/stars/zi-wei/", "Zi Wei · The Emperor"],
-        ["/elements/zi-wei/stars/tian-ji/", "Tian Ji · The Strategist"],
-        ["/elements/zi-wei/stars/tai-yang/", "Tai Yang · The Sun"],
-        ["/elements/zi-wei/stars/wu-qu/", "Wu Qu · The Finance General"],
-        ["/elements/zi-wei/stars/tian-tong/", "Tian Tong · The Harmony Star"],
-        ["/elements/zi-wei/stars/lian-zhen/", "Lian Zhen · The Diplomat"],
-        ["/elements/zi-wei/stars/tian-fu/", "Tian Fu · The Treasury"],
-        ["/elements/zi-wei/stars/tai-yin/", "Tai Yin · The Moon Star"],
-        ["/elements/zi-wei/stars/tan-lang/", "Tan Lang · The Desire Star"],
-        ["/elements/zi-wei/stars/ju-men/", "Ju Men · The Dark Gate"],
-        ["/elements/zi-wei/stars/tian-xiang/", "Tian Xiang · The Prime Minister"],
-        ["/elements/zi-wei/stars/tian-liang/", "Tian Liang · The Elder"],
-        ["/elements/zi-wei/stars/qi-sha/", "Qi Sha · The Warrior"],
-        ["/elements/zi-wei/stars/po-jun/", "Po Jun · The Vanguard"]
+      ["/elements/zi-wei/history/", "History & origins 源流 Yuánliú"],
+      ["/elements/zi-wei/palaces/", "The 12 Palaces 十二宫 Shí'èr Gōng"],
+      ["/elements/zi-wei/stars/", "The 14 Stars 主星 Zhǔxīng", [
+        ["/elements/zi-wei/stars/", "All 14 major stars 十四主星"],
+        ["/elements/zi-wei/stars/zi-wei/", "紫微 Zǐwēi · The Emperor"],
+        ["/elements/zi-wei/stars/tian-ji/", "天机 Tiānjī · The Strategist"],
+        ["/elements/zi-wei/stars/tai-yang/", "太阳 Tàiyáng · The Sun"],
+        ["/elements/zi-wei/stars/wu-qu/", "武曲 Wǔqū · The Finance General"],
+        ["/elements/zi-wei/stars/tian-tong/", "天同 Tiāntóng · The Harmony Star"],
+        ["/elements/zi-wei/stars/lian-zhen/", "廉贞 Liánzhēn · The Diplomat"],
+        ["/elements/zi-wei/stars/tian-fu/", "天府 Tiānfǔ · The Treasury"],
+        ["/elements/zi-wei/stars/tai-yin/", "太阴 Tàiyīn · The Moon Star"],
+        ["/elements/zi-wei/stars/tan-lang/", "贪狼 Tānláng · The Desire Star"],
+        ["/elements/zi-wei/stars/ju-men/", "巨门 Jùmén · The Dark Gate"],
+        ["/elements/zi-wei/stars/tian-xiang/", "天相 Tiānxiàng · The Prime Minister"],
+        ["/elements/zi-wei/stars/tian-liang/", "天梁 Tiānliáng · The Elder"],
+        ["/elements/zi-wei/stars/qi-sha/", "七杀 Qīshā · The Warrior"],
+        ["/elements/zi-wei/stars/po-jun/", "破军 Pòjūn · The Vanguard"]
       ]],
-      ["/elements/zi-wei/four-forces/", "The Four Forces"],
-      ["/elements/zi-wei/chart/", "Read a chart"]
+      ["/elements/zi-wei/four-forces/", "The Four Forces 四化 Sìhuà"],
+      ["/elements/zi-wei/chart/", "Read a chart 命盘 Mìngpán"]
     ]
   },
   // Nested hub: chakra + yoga pages resolve here (not to "elements") via the
