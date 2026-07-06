@@ -285,6 +285,14 @@ window.PNAV = window.PNAV || { features: {} };
     top.append(brandLink, closeBtn);
     sheet.appendChild(top);
 
+    /* the primary action, pinned as the drawer's focal point (the .pn-cta
+       button is hidden below 760px, so the reveal must live here on mobile) */
+    const reveal = doc.createElement("a");
+    reveal.className = "pn-drawer-reveal";
+    reveal.href = "/index.html#read";
+    reveal.innerHTML = 'Unlock your Zodi Animal <span class="pn-dr-star" aria-hidden="true">✦</span>';
+    sheet.appendChild(reveal);
+
     /* tool chips strip: the bar's identity chip, moon chip, and
        awakening ring land here so the responsive collapse ladder
        (<1280px ring, <1100px identity, <900px whole bar) loses
@@ -382,6 +390,11 @@ window.PNAV = window.PNAV || { features: {} };
         p.textContent = eyebrow.textContent;
         body.appendChild(p);
       }
+      // clone the featured-system hero (e.g. Sage: the Elements + Chakras) so
+      // its links (/elements/, /elements/chakras/) are reachable on mobile too,
+      // not only on the desktop panel. Without this the whole hero was dropped.
+      const hero = panel.querySelector(".pn-hero");
+      if (hero) body.appendChild(hero.cloneNode(true));
       // clone the real anchors so routing is identical to desktop
       panel.querySelectorAll(".pn-row").forEach((row) => {
         body.appendChild(row.cloneNode(true));
@@ -403,6 +416,9 @@ window.PNAV = window.PNAV || { features: {} };
       head.addEventListener("click", () => {
         const open = group.classList.toggle("open");
         head.setAttribute("aria-expanded", open ? "true" : "false");
+        // measure the real content height so tall panels (Sage, Explore) open
+        // fully instead of being clipped by a fixed max-height.
+        body.style.maxHeight = open ? body.scrollHeight + "px" : "0";
       });
 
       group.append(head, body);

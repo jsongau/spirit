@@ -91,6 +91,30 @@
 .pn-drawer-close:focus-visible { outline: 2px solid var(--brass-bright); outline-offset: 2px; }
 
 /* ------------------------------------------------------------
+   3b. The reveal — the drawer's focal action ("Unlock your Zodi
+   Animal"). Full-width gold button, pinned above everything else.
+   ------------------------------------------------------------ */
+.pn-drawer-reveal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  margin: var(--s-3) 0 var(--s-4);
+  min-height: 54px;
+  padding: 0 var(--s-4);
+  background: linear-gradient(180deg, var(--brass-bright), var(--brass));
+  color: oklch(0.20 0.03 275);
+  font: 600 1.02rem/1 var(--sans);
+  text-decoration: none;
+  border-radius: var(--r-pill);
+  transition: filter var(--dur-fast) var(--ease-io), transform var(--dur-fast) var(--ease-io);
+}
+.pn-drawer-reveal:hover { filter: brightness(1.05); }
+.pn-drawer-reveal:active { transform: translateY(1px); }
+.pn-drawer-reveal:focus-visible { outline: 2px solid var(--brass-bright); outline-offset: 2px; }
+.pn-drawer-reveal .pn-dr-star { opacity: .75; }
+
+/* ------------------------------------------------------------
    4. Accordion group. Per-group accent scoping mirrors the desktop
    panels, so each domain glows its own hue in the drawer too.
    ------------------------------------------------------------ */
@@ -149,7 +173,16 @@
   max-height: 0;
   transition: max-height var(--dur) var(--ease-io);
 }
-.pn-acc-group.open .pn-acc-body { max-height: 200vh; }
+/* fallback ceiling; nav.js sets an exact px height on toggle so tall panels
+   (Sage: hero + 3 columns; Explore) are never clipped. 500vh covers the
+   default-open "This section" group too. */
+.pn-acc-group.open .pn-acc-body { max-height: 500vh; }
+
+/* cloned featured-system hero (Sage: the Elements + Chakras): reset the
+   desktop measure to block width and give the pills real touch targets */
+.pn-acc-body .pn-hero { max-width: none; margin: var(--s-3) 0 var(--s-2); padding: 0; }
+.pn-acc-body .pn-hero-pills { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
+.pn-acc-body .pn-hero-pill { min-height: 44px; display: inline-flex; align-items: center; padding: 0 var(--s-3); }
 
 .pn-acc-body .pn-eyebrow-sub {
   font: 400 .8rem/1.45 var(--sans);
