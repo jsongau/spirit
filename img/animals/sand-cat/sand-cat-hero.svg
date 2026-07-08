@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Sand Cat hero visual">
+  <defs>
+    <radialGradient id="sky" cx="64%" cy="30%" r="90%">
+      <stop offset="0%" stop-color="#2a1a0e"/>
+      <stop offset="55%" stop-color="#180f08"/>
+      <stop offset="100%" stop-color="#0b0705"/>
+    </radialGradient>
+    <radialGradient id="ember" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d98a4a" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#d98a4a" stop-opacity="0.13"/>
+      <stop offset="100%" stop-color="#d98a4a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="coat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c6a068"/>
+      <stop offset="100%" stop-color="#8a6a3c"/>
+    </linearGradient>
+    <linearGradient id="dune" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2a17"/>
+      <stop offset="100%" stop-color="#20150a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <!-- low desert ember on the horizon (the New Moon night runs dark) -->
+  <circle cx="1040" cy="720" r="520" fill="url(#ember)"/>
+
+  <!-- Sagittarius, the archer's arrow: a shaft of stars ending in a barbed head -->
+  <g stroke="#cdbea6" stroke-opacity="0.5" stroke-width="1.4" fill="#f0e9dc" fill-opacity="0.85">
+    <line x1="250" y1="430" x2="560" y2="250"/>
+    <line x1="560" y1="250" x2="500" y2="250"/>
+    <line x1="560" y1="250" x2="560" y2="315"/>
+    <circle cx="250" cy="430" r="3"/><circle cx="360" cy="366" r="4"/>
+    <circle cx="470" cy="303" r="5.4"/><circle cx="560" cy="250" r="5.8"/>
+    <circle cx="500" cy="250" r="3"/><circle cx="560" cy="315" r="3"/>
+  </g>
+  <g fill="#f0e9dc" fill-opacity="0.7">
+    <circle cx="170" cy="250" r="1.6"/><circle cx="720" cy="140" r="1.4"/>
+    <circle cx="1320" cy="200" r="1.8"/><circle cx="1430" cy="420" r="1.4"/>
+    <circle cx="150" cy="560" r="1.2"/><circle cx="880" cy="230" r="1.3"/>
+    <circle cx="1180" cy="120" r="1.3"/>
+  </g>
+
+  <!-- desert dunes -->
+  <path d="M0 812 Q 430 748 860 792 T 1600 782 L1600 1000 L0 1000 Z" fill="url(#dune)"/>
+  <path d="M0 872 Q 540 830 1060 872 T 1600 858 L1600 1000 L0 1000 Z" fill="#170f07"/>
+  <!-- faint ripples on the near dune -->
+  <g stroke="#4a3720" stroke-width="2" fill="none" opacity="0.5">
+    <path d="M120 920 Q 300 905 480 920"/>
+    <path d="M760 936 Q 940 921 1120 936"/>
+    <path d="M1180 912 Q 1330 900 1480 912"/>
+  </g>
+
+  <!-- Sand Cat, seated, front-facing -->
+  <g transform="translate(1000 470)">
+    <!-- ringed tail curling in from the right -->
+    <path d="M150 300 Q 320 300 340 150 Q 352 60 300 30 Q 336 96 316 168 Q 292 248 150 250 Z" fill="url(#coat)"/>
+    <g fill="#3a281a" opacity="0.7">
+      <ellipse cx="326" cy="120" rx="10" ry="20" transform="rotate(24 326 120)"/>
+      <ellipse cx="300" cy="200" rx="11" ry="20" transform="rotate(52 300 200)"/>
+    </g>
+    <ellipse cx="322" cy="66" rx="18" ry="16" fill="#241a10"/>
+
+    <!-- haunches / body -->
+    <ellipse cx="0" cy="215" rx="180" ry="196" fill="url(#coat)"/>
+    <!-- front legs -->
+    <g fill="#b0894e">
+      <rect x="-128" y="300" width="86" height="156" rx="40"/>
+      <rect x="42" y="300" width="86" height="156" rx="40"/>
+    </g>
+    <!-- black paw soles: the fur that lets it cross hot sand -->
+    <ellipse cx="-85" cy="452" rx="46" ry="18" fill="#1a120b"/>
+    <ellipse cx="85" cy="452" rx="46" ry="18" fill="#1a120b"/>
+
+    <!-- head -->
+    <ellipse cx="0" cy="-30" rx="158" ry="140" fill="url(#coat)"/>
+
+    <!-- ears: broad, low, set wide (the sand cat's signature) -->
+    <path d="M-40 -150 L-210 -104 L-150 -256 Z" fill="url(#coat)"/>
+    <path d="M40 -150 L210 -104 L150 -256 Z" fill="url(#coat)"/>
+    <path d="M-68 -146 L-176 -116 L-140 -220 Z" fill="#7a5834"/>
+    <path d="M68 -146 L176 -116 L140 -220 Z" fill="#7a5834"/>
+    <path d="M-86 -144 L-150 -126 L-128 -196 Z" fill="#b5744a" opacity="0.55"/>
+    <path d="M86 -144 L150 -126 L128 -196 Z" fill="#b5744a" opacity="0.55"/>
+
+    <!-- pale muzzle and cheeks -->
+    <ellipse cx="0" cy="34" rx="118" ry="86" fill="#d8b884"/>
+    <ellipse cx="-58" cy="46" rx="52" ry="46" fill="#e2c795"/>
+    <ellipse cx="58" cy="46" rx="52" ry="46" fill="#e2c795"/>
+
+    <!-- reddish cheek and brow lines -->
+    <g stroke="#a86a3e" stroke-width="6" stroke-linecap="round" opacity="0.6" fill="none">
+      <path d="M-150 -70 Q -110 -40 -74 -44"/>
+      <path d="M150 -70 Q 110 -40 74 -44"/>
+      <path d="M-118 40 Q -150 60 -166 92"/>
+      <path d="M118 40 Q 150 60 166 92"/>
+    </g>
+
+    <!-- eyes: amber, slit pupils, with the desert tear-line -->
+    <ellipse cx="-62" cy="-52" rx="27" ry="20" fill="#e6a94a"/>
+    <ellipse cx="62" cy="-52" rx="27" ry="20" fill="#e6a94a"/>
+    <ellipse cx="-62" cy="-52" rx="6" ry="17" fill="#140d07"/>
+    <ellipse cx="62" cy="-52" rx="6" ry="17" fill="#140d07"/>
+    <circle cx="-70" cy="-59" r="4" fill="#fbe7c2" opacity="0.85"/>
+    <circle cx="54" cy="-59" r="4" fill="#fbe7c2" opacity="0.85"/>
+    <path d="M-84 -34 Q -104 4 -96 44" stroke="#7a5030" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M84 -34 Q 104 4 96 44" stroke="#7a5030" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- nose and quiet mouth -->
+    <path d="M-20 6 L20 6 L0 30 Z" fill="#b5744a"/>
+    <path d="M0 30 Q -26 58 -58 52" stroke="#7a5030" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+    <path d="M0 30 Q 26 58 58 52" stroke="#7a5030" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+
+    <!-- whiskers -->
+    <g stroke="#f4ead2" stroke-width="2" stroke-linecap="round" opacity="0.75">
+      <path d="M-70 26 Q -170 14 -244 34" fill="none"/>
+      <path d="M-70 40 Q -168 44 -240 74" fill="none"/>
+      <path d="M70 26 Q 170 14 244 34" fill="none"/>
+      <path d="M70 40 Q 168 44 240 74" fill="none"/>
+    </g>
+
+    <!-- the viper it hunts, coiled at its paws: the Year of the Snake -->
+    <g transform="translate(0 486)">
+      <path d="M-96 22 Q -150 6 -132 -30 Q -114 -60 -70 -50 Q -30 -40 -44 -8 Q -54 12 -20 12 Q 18 12 20 -18"
+            fill="none" stroke="#241a10" stroke-width="15" stroke-linecap="round"/>
+      <path d="M-96 22 Q -150 6 -132 -30 Q -114 -60 -70 -50 Q -30 -40 -44 -8 Q -54 12 -20 12 Q 18 12 20 -18"
+            fill="none" stroke="#d98a4a" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
+      <circle cx="22" cy="-24" r="8" fill="#241a10"/>
+      <line x1="28" y1="-28" x2="44" y2="-34" stroke="#c23b2e" stroke-width="2.4" stroke-linecap="round"/>
+      <line x1="28" y1="-26" x2="44" y2="-20" stroke="#c23b2e" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="20" cy="-27" r="2" fill="#e6a94a"/>
+    </g>
+  </g>
+
+  <!-- Snake glyph, embossed faint in the foreground -->
+  <text x="150" y="640" font-family="Georgia, 'Noto Serif SC', serif" font-size="230" fill="#f0e9dc" fill-opacity="0.06">&#34503;</text>
+
+</svg>
