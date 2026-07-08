@@ -62,11 +62,12 @@
     ];
     form.innerHTML = "";
     form.appendChild(h("p", "pcast-form-eyebrow", "Cast your chart"));
+    form.appendChild(h("p", "pcast-form-optnote", "Optional — the page works without it. Add your birth date for a reading of your own."));
     var row1 = h("div", "pcast-field pcast-date-field");
     var dl = labelFor("pcast-date", "Birth date"); dl.appendChild(h("span", "pcast-opt", " · MM/DD/YYYY")); row1.appendChild(dl);
     var dwrap = h("div", "pcast-date-wrap");
     var date = input("pcast-date", "text"); date.className = "pcast-input"; date.placeholder = "MM / DD / YYYY";
-    date.setAttribute("inputmode", "numeric"); date.autocomplete = "off"; date.required = true; date.maxLength = 14;
+    date.setAttribute("inputmode", "numeric"); date.autocomplete = "off"; date.maxLength = 14;
     dwrap.appendChild(date);
     var calBtn = h("button", "pcast-cal-btn"); calBtn.type = "button"; calBtn.setAttribute("aria-label", "Open calendar");
     calBtn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><rect x="3" y="4.5" width="18" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
@@ -114,7 +115,7 @@
       function navBtn(t, dir) { var x = h("button", "pcast-cal-nav", t); x.type = "button"; x.addEventListener("click", function () { calState.m += dir; if (calState.m < 0) { calState.m = 11; calState.y--; } if (calState.m > 11) { calState.m = 0; calState.y++; } renderCal(); }); return x; }
     }
     var row2 = h("div", "pcast-field");
-    var tl = labelFor("pcast-time", "Birth time"); var opt = h("span", "pcast-opt", " · sets your Life Palace"); tl.appendChild(opt);
+    var tl = labelFor("pcast-time", "Birth time"); var opt = h("span", "pcast-opt", " · anchors your whole chart"); tl.appendChild(opt);
     row2.appendChild(tl);
     var time = input("pcast-time", "time"); row2.appendChild(time);
     var unkWrap = h("label", "pcast-check");
@@ -141,6 +142,8 @@
     /* ---- casting ---- */
     var lastBirth = null;   // {year,month,day,gender}
     var courtCells = {}, courtRooms = {};   // for the interactive living court
+    var boardMode = "palace";   // "palace" = teaching layout (Life top-left); "branch" = authentic chart
+    var lastOut = null;
     function readBirth() {
       var p = parseDate(date.value);
       if (!p) return null;
@@ -156,10 +159,35 @@
       if (!b) { date.focus(); return; }
       lastBirth = b;
       var out = L.castFromBirth(b);
+      lastOut = out;
       renderResult(out, b);
       result.hidden = false;
       result.scrollIntoView({ behavior: "smooth", block: "start" });
+      buildSideRail(b);
     });
+
+    /* ---- left sticky rail: change the birth hour and watch the chart re-adapt live ---- */
+    function buildSideRail(birth) {
+      var rail = document.getElementById("pcast-siderail");
+      if (!rail) { rail = h("div", "pcast-siderail"); rail.id = "pcast-siderail"; document.body.appendChild(rail); }
+      rail.innerHTML = "";
+      rail.appendChild(h("p", "pcast-sr-eyebrow", "Your chart"));
+      rail.appendChild(h("p", "pcast-sr-date", pad(birth.month) + "/" + pad(birth.day) + "/" + birth.year));
+      rail.appendChild(h("p", "pcast-sr-label", "Birth hour"));
+      var sel = document.createElement("select"); sel.className = "pcast-sr-sel"; sel.setAttribute("aria-label", "Birth hour");
+      sel.appendChild(new Option("I don't know", "", birth.hour == null, birth.hour == null));
+      var curIdx = (birth.hour == null) ? -1 : Math.floor((birth.hour + 1) / 2) % 12;
+      for (var i = 0; i < 12; i++) { sel.appendChild(new Option(HOURS[i] + "時 · " + HOUR_RANGE[i], i * 2 + 1, false, i === curIdx)); }
+      sel.addEventListener("change", function () {
+        var b = { year: birth.year, month: birth.month, day: birth.day, gender: birth.gender, hour: sel.value === "" ? null : +sel.value };
+        lastBirth = b; var o = L.castFromBirth(b); lastOut = o; renderResult(o, b); buildSideRail(b);
+      });
+      rail.appendChild(sel);
+      rail.appendChild(h("p", "pcast-sr-hint", "Change the hour to watch the whole chart shift."));
+      var edit = h("button", "pcast-sr-edit", "Edit date / time"); edit.type = "button";
+      edit.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); date.focus(); });
+      rail.appendChild(edit);
+    }
 
     /* ---- render the board ---- */
     function renderResult(out, birth) {
@@ -180,6 +208,7 @@
         result.appendChild(boardEl(null));
       } else {
         result.appendChild(summaryChips(out.chart));
+        result.appendChild(layoutToggle());
         result.appendChild(boardEl(out.chart));
         result.appendChild(h("p", "pcast-court-hint", "Tap a room to light its triangle and mirror across your court."));
         var cap = h("p", "pcast-court-cap"); cap.id = "pcast-court-cap"; result.appendChild(cap);
@@ -201,13 +230,26 @@
     }
     function chip(wrap, k, v) { var c = h("div", "pcast-chip"); c.appendChild(h("span", "pcast-chip-k", k)); c.appendChild(h("span", "pcast-chip-v", v)); wrap.appendChild(c); }
 
+    function layoutToggle() {
+      var wrap = h("div", "pcast-layout-toggle");
+      wrap.setAttribute("role", "group"); wrap.setAttribute("aria-label", "Board layout");
+      [["palace", "Beginner (Life top-left)"], ["branch", "Chart (by branch)"]].forEach(function (m) {
+        var b = h("button", "pcast-lt-btn" + (boardMode === m[0] ? " is-on" : ""), m[1]); b.type = "button";
+        b.setAttribute("aria-pressed", boardMode === m[0] ? "true" : "false");
+        b.addEventListener("click", function () { if (boardMode !== m[0]) { boardMode = m[0]; renderResult(lastOut, lastBirth); } });
+        wrap.appendChild(b);
+      });
+      return wrap;
+    }
     var GRID_ORDER = [0, 1, 2, 3, 7, 11, 15, 14, 13, 12, 8, 4]; // matches the teaching court's palace-fixed layout (Life top-left)
     function boardEl(chart) {
       var board = h("div", "pcast-board");
       if (!chart) board.classList.add("is-locked");
       var PAL_SORTED = (window.ZiweiData.palaces || []).slice().sort(function (a, b) { return a.branchOrder - b.branchOrder; });
       PAL_SORTED.forEach(function (pal, i) {
-        var gi = GRID_ORDER[i], pos = [Math.floor(gi / 4), gi % 4];
+        var pos;
+        if (boardMode === "branch" && chart && chart.palaces[pal.id]) { pos = RING[chart.palaces[pal.id].branchIndex]; }
+        else { var gi = GRID_ORDER[i]; pos = [Math.floor(gi / 4), gi % 4]; }
         var cell = h("div", "pcast-cell");
         cell.style.gridRow = (pos[0] + 1); cell.style.gridColumn = (pos[1] + 1);
         if (!chart) { cell.appendChild(h("span", "pcast-cell-role", pal.hant + " " + (PAL_EN[pal.id] || ""))); board.appendChild(cell); return; }

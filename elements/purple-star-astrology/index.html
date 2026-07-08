@@ -979,6 +979,25 @@
   .pcast-court-cap{font-size:.88rem;color:var(--muted);margin:0 0 12px}
   .pcast-court-cap b{color:var(--ivory)}
   .pcast-read-room.is-hi{border-color:var(--cc-bright);box-shadow:0 0 0 1px var(--cc-soft)}
+  /* board layout toggle (beginner vs authentic chart) */
+  .pcast-layout-toggle{display:inline-flex;border:1px solid var(--line);border-radius:var(--r-pill);overflow:hidden;margin:0 0 12px}
+  .pcast-lt-btn{background:transparent;border:0;color:var(--muted);font:inherit;font-size:.78rem;padding:7px 14px;cursor:pointer;min-height:38px}
+  .pcast-lt-btn+.pcast-lt-btn{border-left:1px solid var(--line)}
+  .pcast-lt-btn.is-on{background:var(--brass);color:#1a1406;font-weight:600}
+  .pcast-lt-btn:not(.is-on):hover{color:var(--moon)}
+  .pcast-lt-btn:focus-visible{outline:2px solid var(--cc);outline-offset:-2px}
+  /* form optional note + left sticky "your chart" rail */
+  .pcast-form-optnote{font-size:.76rem;color:var(--faint);margin:-6px 0 12px;line-height:1.5}
+  .pcast-siderail{position:fixed;left:14px;top:50%;transform:translateY(-50%);width:196px;background:var(--panel-2);border:1px solid var(--line);border-radius:var(--r-2);padding:14px;box-shadow:0 12px 36px rgba(0,0,0,.5);z-index:60}
+  .pcast-sr-eyebrow{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin:0 0 6px}
+  .pcast-sr-date{color:var(--ivory);font-size:.92rem;margin:0 0 12px}
+  .pcast-sr-label{font-size:.76rem;color:var(--muted);margin:0 0 4px}
+  .pcast-sr-sel{width:100%;background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r-1);color:var(--moon);font:inherit;font-size:.84rem;padding:7px 8px;min-height:38px}
+  .pcast-sr-sel:hover{border-color:var(--brass)}
+  .pcast-sr-hint{font-size:.72rem;color:var(--faint);margin:8px 0 10px;line-height:1.45}
+  .pcast-sr-edit{width:100%;background:transparent;border:1px solid var(--line);border-radius:var(--r-1);color:var(--cc-bright);font:inherit;font-size:.8rem;padding:8px;cursor:pointer;min-height:38px}
+  .pcast-sr-edit:hover{border-color:var(--cc)}
+  @media (max-width:1320px){.pcast-siderail{display:none}}
   </style>
 
   <script type="application/ld+json">
@@ -1147,7 +1166,7 @@
 
 <section class="psa-cast-result" id="pcast-result" aria-label="Your cast chart" hidden></section>
 
-<div class="psa-teach-band"><div class="psa-teach-band-inner"><p class="psa-teach-band-txt"><span class="psa-teach-band-tag">Learning track</span> Everything below teaches you to read a chart step by step on a worked example (Mei, born 1996) — not your own chart. Your personal reading appears above once you cast.</p></div></div>
+<div class="psa-teach-band"><div class="psa-teach-band-inner"><p class="psa-teach-band-txt"><span class="psa-teach-band-tag">Learning track</span> Below: learn to read any chart, step by step, with a fully worked example. Add your birth date above for a reading of your own first — the method is the same.</p></div></div>
 
 <div class="psa-layout" id="psa-layout">
   <!-- Wave 2 slot: "Your path" rail. Keep empty and hidden until it ships. -->
