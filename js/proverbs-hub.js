@@ -285,6 +285,35 @@
   var emptyEl = document.getElementById("pvEmpty");
   var clearEl = document.getElementById("pvClear");
   var searchEl = document.getElementById("pvSearch");
+  var activeEl = document.getElementById("pvActive");
+
+  /* the little "you are filtering by …" summary shown when the bar is minimized.
+     Reads the currently-lit chips (so the labels match exactly) plus the search
+     term, and paints them as small chips inside the collapsed header. */
+  function renderActive() {
+    if (!activeEl) return;
+    var parts = [];
+    var q = searchEl && searchEl.value ? searchEl.value.trim() : "";
+    if (q) parts.push("“" + q + "”");
+    var lit = document.querySelectorAll(".pv-controls-body .pv-chips .pv-chip.is-on");
+    for (var i = 0; i < lit.length; i++) {
+      if (!lit[i].getAttribute("data-val")) continue; // skip the "All" chip
+      var t = lit[i].querySelector(".pv-chip-txt");
+      parts.push(t ? t.textContent.trim() : lit[i].textContent.trim());
+    }
+    activeEl.textContent = "";
+    if (!parts.length) return;
+    var label = document.createElement("span");
+    label.className = "pv-active-label";
+    label.textContent = "Filtering by";
+    activeEl.appendChild(label);
+    parts.forEach(function (p) {
+      var s = document.createElement("span");
+      s.className = "pv-active-chip";
+      s.textContent = p;
+      activeEl.appendChild(s);
+    });
+  }
   var state = { theme: "", cat: "", orient: "", animal: "", el: "", q: "" };
   var ATTR = { theme: "theme", cat: "cat", orient: "orient", animal: "animal", el: "el" };
   var PER_PAGE = 15; /* 5 rows × 3 cols */
@@ -350,9 +379,35 @@
     }
 
     html += '</div>';
+
+    /* foot row: the count line, and — once there are enough pages — a
+       "jump to page" box so a reader can skip straight to a number. */
+    html += '<div class="pv-pag-foot">';
     html += '<p class="pv-pag-info">Page ' + (cp + 1) + ' of ' + totalPages
       + ' · ' + total + ' proverb' + (total !== 1 ? 's' : '') + '</p>';
+    if (totalPages > 5) {
+      html += '<div class="pv-pag-jump">'
+        + '<label class="pv-pag-jump-lbl" for="pvPagInput">Jump to</label>'
+        + '<input type="number" id="pvPagInput" class="pv-pag-input" min="1" max="' + totalPages
+        + '" inputmode="numeric" autocomplete="off" aria-label="Go to page number" placeholder="' + (cp + 1) + '">'
+        + '<span class="pv-pag-of">of ' + totalPages + '</span>'
+        + '<button type="button" class="pv-pag-go" data-pag-go>Go</button>'
+        + '</div>';
+    }
+    html += '</div>';
     paginationEl.innerHTML = html;
+  }
+
+  /* read the jump box, clamp to range, and go there */
+  function jumpFromInput() {
+    if (!paginationEl) return;
+    var inp = paginationEl.querySelector(".pv-pag-input");
+    if (!inp) return;
+    var v = parseInt(inp.value, 10);
+    if (isNaN(v)) return;
+    var max = parseInt(inp.getAttribute("max"), 10) || 1;
+    v = Math.max(1, Math.min(max, v));
+    goTo(v - 1);
   }
 
   function apply() {
@@ -385,6 +440,7 @@
 
     var any = state.theme || state.cat || state.orient || state.animal || state.el || state.q;
     if (clearEl) clearEl.hidden = !any;
+    renderActive();
   }
 
   /* pagination click — delegated so it works after innerHTML swap */
@@ -395,16 +451,54 @@
     if (!isNaN(pg)) goTo(pg);
   });
 
+  /* jump-to-page: the Go button, and Enter inside the number box */
+  document.addEventListener("click", function (e) {
+    var g = e.target.closest("[data-pag-go]");
+    if (!g || !paginationEl || !paginationEl.contains(g)) return;
+    jumpFromInput();
+  });
+  document.addEventListener("keydown", function (e) {
+    var t = e.target;
+    if (e.key !== "Enter" || !t || !t.classList || !t.classList.contains("pv-pag-input")) return;
+    if (!paginationEl || !paginationEl.contains(t)) return;
+    e.preventDefault();
+    jumpFromInput();
+  });
+
   /* chip filter — always resets to page 1 */
   document.addEventListener("click", function (e) {
     var chip = e.target.closest(".pv-chip");
     if (!chip) return;
     var g = chip.getAttribute("data-group"), v = chip.getAttribute("data-val");
+    // clicking the already-selected pill toggles it back off (to "All")
+    if (v && state[g] === v) v = "";
     state[g] = v;
     currentPage = 0;
     var sibs = chip.parentNode.querySelectorAll(".pv-chip");
-    for (var i = 0; i < sibs.length; i++) sibs[i].classList.toggle("is-on", sibs[i] === chip);
+    for (var i = 0; i < sibs.length; i++) {
+      sibs[i].classList.toggle("is-on", (sibs[i].getAttribute("data-val") || "") === v);
+    }
     apply();
+  });
+
+  /* theme tag on a card → filter the library to that theme.
+     Reuses the theme chip's own handler so state, active chips, page reset,
+     and count all stay in one place, then scrolls the grid into view. */
+  document.addEventListener("click", function (e) {
+    var pick = e.target.closest("[data-theme-pick]");
+    if (!pick) return;
+    var th = pick.getAttribute("data-theme-pick");
+    var chips = document.querySelectorAll('.pv-chip[data-group="theme"]');
+    var chip = null;
+    for (var i = 0; i < chips.length; i++) {
+      if (chips[i].getAttribute("data-val") === th) { chip = chips[i]; break; }
+    }
+    if (chip) chip.click();
+    var anchor = document.querySelector(".pv-controls") || grid;
+    if (anchor) {
+      var top = anchor.getBoundingClientRect().top + window.scrollY - 120;
+      window.scrollTo({ top: Math.max(0, top), behavior: reduce ? "auto" : "smooth" });
+    }
   });
 
   /* search — resets to page 1 on every keystroke */
@@ -430,21 +524,20 @@
   /* initial render — paginate on load so only the first 15 cards show */
   apply();
 
-  /* ---------- filter bar: manual toggle + auto-collapse on scroll ----------
-     The sticky bar is tall enough to hide cards once scrolled, so it collapses
-     to just its header row. Two independent signals drive that:
+  /* ---------- filter bar: soft one-time collapse, then manual only ----------
+     The sticky bar is tall enough to hide cards once scrolled, so it folds down
+     to just its header row — but only ONCE, with a slow fade, the first time it
+     sticks. After that it never moves on its own; it opens and closes solely
+     when the reader taps the Filters toggle. Two classes drive the collapse:
        .is-collapsed  the reader tapped the toggle (their explicit choice)
-       .is-compact    auto: they scrolled down past the bar's sticky point
-     A manual toggle is honored (userSet) until they return to the very top,
-     where auto takes back over. The scroll handler is rAF-throttled. */
+       .is-compact    the single automatic first-collapse
+     Both share the same slow transition (see .pv-controls-body in the CSS). */
   (function () {
     var controls = document.querySelector(".pv-controls");
     var toggle = document.getElementById("pvFilterToggle");
     if (!controls) return;
 
-    var userSet = false; // has the reader made an explicit choice this scroll session
-
-    // "open" means the body is visible: neither collapse signal is set
+    // "open" means the body is visible: neither collapse class is set
     function isOpen() {
       return !controls.classList.contains("is-collapsed") && !controls.classList.contains("is-compact");
     }
@@ -455,49 +548,33 @@
     }
 
     if (toggle) toggle.addEventListener("click", function () {
-      userSet = true;
       setOpen(!isOpen());
     });
 
-    // Auto-collapse to the header once the bar sticks. A sticky element reports
-    // a circular getBoundingClientRect once stuck, so measuring it is unreliable
-    // (that was the old bug: it never collapsed). Instead, drop a zero-height
-    // sentinel just above the bar and watch it with an IntersectionObserver whose
-    // top margin equals the bar's sticky offset. When the sentinel crosses that
-    // line the bar is stuck, so we collapse; back at the top we expand.
-    var sentinel = document.createElement("div");
-    sentinel.setAttribute("aria-hidden", "true");
-    sentinel.style.cssText = "height:0;margin:0;padding:0;border:0";
-    if (controls.parentNode) controls.parentNode.insertBefore(sentinel, controls);
     var stickTop = parseInt(getComputedStyle(controls).top, 10);
     if (!stickTop || stickTop < 0) stickTop = 150;
 
-    function setCompact(stuck) {
-      if (stuck) {
-        if (userSet) return; // respect a manual choice while scrolled down
-        controls.classList.add("is-compact");
-        if (toggle) toggle.setAttribute("aria-expanded", "false");
-      } else {
-        userSet = false;     // back at the resting place: auto takes over again
-        controls.classList.remove("is-compact", "is-collapsed");
-        if (toggle) toggle.setAttribute("aria-expanded", "true");
-      }
+    // The bar folds shut whenever the reader scrolls DOWN past its sticky line —
+    // a soft settle that clears the filters out of the way of reading. Scrolling
+    // back UP never reopens it; from then on it opens only when they tap the
+    // toggle. (Direction is read from the scroll delta; rAF-throttled.)
+    var lastY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    var ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+        var dy = y - lastY;
+        lastY = y;
+        if (dy > 4 && y > stickTop + 20 && isOpen()) {
+          controls.classList.add("is-compact");
+          if (toggle) toggle.setAttribute("aria-expanded", "false");
+        }
+      });
     }
-
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function (es) {
-        setCompact(!es[0].isIntersecting); // sentinel above the sticky line => stuck
-      }, { rootMargin: (-(stickTop + 1)) + "px 0px 0px 0px", threshold: 0 }).observe(sentinel);
-    } else {
-      var ticking = false;
-      window.addEventListener("scroll", function () {
-        if (ticking) return; ticking = true;
-        requestAnimationFrame(function () {
-          ticking = false;
-          setCompact((window.pageYOffset || document.documentElement.scrollTop || 0) > stickTop + 40);
-        });
-      }, { passive: true });
-    }
+    window.addEventListener("scroll", onScroll, { passive: true });
   })();
 
   /* ---------- background starfield behind the whole page ---------- */

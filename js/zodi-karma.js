@@ -32,7 +32,7 @@
   if (!window.Zodi) return;
 
   var WANDER_CAP = 2000;
-  var WANDER_AMTS = { daily_visit: 100, reveal_animal: 500, proverb_read: 60, moon_check: 80, match_test: 120, share: 150 };
+  var WANDER_AMTS = { daily_visit: 100, reveal_animal: 500, proverb_read: 60, moon_check: 80, match_test: 120, share: 150, daily_oracle: 25 };
 
   function fmt(n) {
     try { return Number(n || 0).toLocaleString("en-US"); } catch (e) { return String(n); }

@@ -182,7 +182,7 @@ The Shen Gong might be called the **"Body Court"** or **"Action Seat"** — emph
 
 **Hua Lu (化祿)** — Transform Enrichment. Abundance, opportunity, smooth flow, affinity. Spring quality.
 
-**Hua Quan (化権)** — Transform Empowerment. Authority, control, amplification. Summer quality.
+**Hua Quan (化權)** — Transform Empowerment. Authority, control, amplification. Summer quality.
 
 **Hua Ke (化科)** — Transform Fame. Recognition, reputation, refinement. Autumn quality.
 

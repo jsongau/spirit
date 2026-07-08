@@ -212,6 +212,8 @@ The system groups palaces in sets of four: one focal palace, two "tri-directiona
 
 The opposite palace is considered more influential than the two lateral companions — it exerts direct pressure and opposition/support on the focal palace.
 
+CORRECTION (2026-07-07): courts 2-4 below are geometrically wrong; see PSA-TERMINOLOGY.md C2 for the corrected sets.
+
 **The four standard courts:**
 - **Life Court**: Life Palace (命宫) — Wealth Palace (财帛宫) — Career Palace (官禄宫) — Friends Palace (交友宫)
 - **Siblings Court**: Siblings (兄弟宫) — Health (疾厄宫) — Property (田宅宫) — Parents (父母宫)

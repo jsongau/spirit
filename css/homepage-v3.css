@@ -1,0 +1,237 @@
+/* ============================================================
+   Zodi Animal — homepage v3 ENHANCEMENT OVERLAY
+   Loaded AFTER homepage-v2.css and the nav/footer CSS. This file
+   only REFINES the approved indexv2 design: it adds styling for
+   the handful of new v3 elements and applies mobile + accessibility
+   fixes. It does not restructure or restyle existing sections, and
+   makes no desktop-layout changes beyond the new elements.
+   Uses the site's existing design tokens (tokens.css) so colours,
+   type, and radii match exactly. Rule honored: no underlined links.
+   ============================================================ */
+
+/* ---------- new element: plain-language hero line ---------- */
+.hero-plain {
+  margin: 10px 0 0;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--body-text, #cfcfe0);   /* readable body colour (NOT the dark --ink-2 bg token) */
+  max-width: var(--measure, 52ch);
+}
+
+/* ---------- new element: returning-state title (was <h1>, now <p>) ---------- */
+/* Match the visual weight of the old sanctum h1 exactly. */
+.sb-title-h {
+  font-family: var(--serif, Georgia, serif);
+  font-weight: 560;
+  line-height: 1.12;
+  letter-spacing: -.01em;
+  font-size: clamp(1.9rem, 5.4vw, 3rem);
+  color: var(--ivory, #ece7d8);   /* bright heading colour (NOT the dark --ink bg token) */
+  margin: .1em 0 .3em;
+}
+
+/* ---------- new section: visible FAQ (mirrors FAQ schema) ----------
+   IMPORTANT: on this site --ink / --ink-2 / --panel are BACKGROUND
+   tokens (near-black). Text must use --ivory / --body-text / --muted. */
+.faq-v3 { padding: clamp(40px, 7vw, 76px) 0; }
+.faq-v3 .faq-list { display: grid; gap: 12px; margin-top: 8px; max-width: 900px; }
+
+.faq-v3 details {
+  background: var(--panel, #1a1c30);
+  border: 1px solid var(--line, rgba(214,193,140,.16));
+  border-radius: var(--r-2, 14px);
+  padding: 0 22px;
+  transition: border-color .18s ease, background .18s ease;
+}
+.faq-v3 details:hover { border-color: var(--brass-dim, #a8925c); }
+.faq-v3 details[open] {
+  background: var(--panel-2, #22253d);
+  border-color: var(--brass, #d6c18c);
+}
+
+.faq-v3 summary {
+  cursor: pointer; list-style: none;
+  padding: 18px 0; min-height: 56px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  font-family: var(--serif, Georgia, serif);
+  font-size: 1.16rem; font-weight: 560;
+  color: var(--ivory, #ece7d8);          /* bright, readable */
+}
+.faq-v3 summary:hover { color: var(--brass-bright, #efe2b4); }
+.faq-v3 summary::-webkit-details-marker { display: none; }
+/* circular brass +/- chip */
+.faq-v3 summary::after {
+  content: "+";
+  flex: none;
+  width: 30px; height: 30px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--line, rgba(214,193,140,.28));
+  color: var(--brass, #d6c18c); font-family: var(--sans, system-ui);
+  font-size: 1.25rem; line-height: 1;
+}
+.faq-v3 details[open] summary::after {
+  content: "\2212";
+  background: var(--brass, #d6c18c); color: #1a1300; border-color: var(--brass, #d6c18c);
+}
+/* answer: readable long-form body colour, hairline off the question */
+.faq-v3 details p {
+  margin: 0; padding: 4px 0 22px;
+  border-top: 1px solid var(--line-soft, rgba(214,193,140,.10));
+  color: var(--body-text, #cfcfe0);   /* inherits the site body font (Geist) */
+  font-size: 1.04rem; line-height: 1.68; max-width: 64ch;
+}
+.faq-v3 details p a { color: var(--brass-bright, #efe2b4); font-weight: 600; }
+.faq-v3 .faq-more { margin-top: 20px; color: var(--muted, #adaec2); font-size: .95rem; }
+
+/* ---------- hand-turn dial controls — "Cinnabar seals" (Concept 甲) ----------
+   Rotation is shown as carved chops: 逆 (nì, against) and 順 (shùn, with),
+   echoing the cinnabar seal on the dial. Ring names in brush hanzi + English.
+   Keeps the existing data-turn buttons so homepage-v2.js wiring is unchanged.
+   Calligraphy uses the Ma Shan Zheng webfont already loaded in the head. */
+.hv2 .handrow.handrig { flex-direction: column; align-items: center; gap: 16px; }
+.handrig-cap {
+  flex-basis: 100%; text-align: center; margin: 0 auto 2px; max-width: 46ch; line-height: 1.9;
+  font-family: var(--mono); font-size: .62rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--faint, #7f8096);
+}
+.handrig-cap .hw { color: var(--brass, #d6c18c); }
+.handrig-cap .hz { font-family: "Ma Shan Zheng", var(--serif, serif); color: var(--brass-bright, #efe2b4); font-size: 1.15rem; vertical-align: -1px; }
+
+.ringseal {
+  display: flex; align-items: center; justify-content: center; gap: 18px;
+  width: 100%; max-width: 460px;
+}
+.ringseal .seal {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  background: transparent; border: 0; padding: 2px; cursor: pointer;
+}
+.ringseal .seal-zi {
+  width: 54px; height: 54px; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(150deg, #b64733, #8e2f22);
+  border: 1px solid rgba(246,239,216,.5); border-radius: 8px;
+  color: #f6efd8; font-family: "Ma Shan Zheng", var(--serif, serif); font-size: 1.95rem; line-height: 1;
+  transition: transform .15s ease, box-shadow .2s ease;
+}
+.ringseal .seal:hover .seal-zi,
+.ringseal .seal:focus-visible .seal-zi {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(182,71,51,.5), inset 0 0 0 1px rgba(246,239,216,.75);
+}
+.ringseal .seal:focus-visible { outline: none; }
+.ringseal .seal:active .seal-zi { transform: scale(.96); }
+.ringseal .seal-gloss {
+  font-family: var(--mono); font-size: .52rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--muted, #adaec2);
+}
+.ringseal .ring-face {
+  flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: 0 6px; min-width: 116px; text-align: center;
+}
+.ringseal .ring-zi { font-family: "Ma Shan Zheng", var(--serif, serif); color: var(--brass, #d6c18c); font-size: 1.75rem; line-height: 1.05; }
+.ringseal .ring-en { font-family: var(--serif, Georgia, serif); color: var(--ivory, #f2ead2); font-size: .9rem; letter-spacing: .02em; }
+
+/* the seals carry the .turnbtn hook so homepage-v2.js wires the wheel-turn click.
+   Neutralize v2's .turnbtn pill styling within the seals (v2 loads first; these win on specificity). */
+.hv2 .ringseal .turnbtn { background: transparent; border: 0; border-radius: 8px; padding: 2px; }
+.hv2 .ringseal .turnbtn:hover { border-color: transparent; transform: none; }
+.hv2 .ringseal .turnbtn span { margin: 0; }
+.hv2 .ringseal .seal-zi { color: #f6efd8; }
+.hv2 .ringseal .seal-gloss { color: var(--muted, #adaec2); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ringseal .seal .seal-zi { transition: none; }
+}
+
+/* small phones: shrink the chops and keep everything on one row */
+@media (max-width: 400px) {
+  .ringseal { gap: 10px; }
+  .ringseal .seal-zi { width: 46px; height: 46px; font-size: 1.6rem; }
+  .ringseal .seal-gloss { font-size: .48rem; letter-spacing: .08em; }
+  .ringseal .ring-face { min-width: 0; }
+  .ringseal .ring-zi { font-size: 1.45rem; }
+  .ringseal .ring-en { font-size: .8rem; }
+}
+
+/* ============================================================
+   ACCESSIBILITY refinements (apply at all widths)
+   ============================================================ */
+
+/* Visible keyboard focus everywhere (kept subtle to match the theme). */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible,
+[role="tab"]:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--brass-bright, #efe4bf);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Media that should never cause horizontal overflow. */
+.hv2 img, .hv2 svg, .hv2 canvas, .zf-foot img, .zf-foot svg { max-width: 100%; }
+
+/* Long words / hanzi never push the layout wider than the screen. */
+.hv2 p, .hv2 h1, .hv2 h2, .hv2 h3, .faq-v3 p, .faq-v3 summary { overflow-wrap: break-word; }
+
+/* ============================================================
+   REDUCED MOTION — stronger, page-wide. Kills the starfield,
+   ring drift, reveal sequences, and shimmer for users who ask.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  #sky { display: none !important; }            /* animated starfield canvas */
+  .rv { opacity: 1 !important; transform: none !important; } /* reveal-on-scroll items shown immediately */
+  #driftring { animation: none !important; }
+}
+
+/* ============================================================
+   MOBILE REFINEMENTS (<= 640px). Layout stacking, tap targets,
+   spacing, wrapping. Desktop is untouched by these rules.
+   ============================================================ */
+@media (max-width: 640px) {
+  /* prevent any accidental horizontal scroll on small screens */
+  html, body { max-width: 100%; overflow-x: hidden; }
+
+  /* comfortable reading + no clipped headings */
+  .hv2 { --measure: 40ch; }
+  .hero h1, .hero .hero-head h1 { font-size: clamp(1.9rem, 8.5vw, 2.6rem); line-height: 1.12; }
+  .hero .lead { font-size: 1.02rem; line-height: 1.55; }
+  .hero-plain { font-size: 1rem; }
+
+  /* date entry: bigger, thumb-friendly fields and CTA */
+  .datefields input {
+    min-height: 48px;
+    font-size: 1.15rem;
+  }
+  .btn, .turnbtn, .say-btn, .modebtn, .gate-tab, .stone-card, .pn-cta, .btn-reveal {
+    min-height: 44px;
+  }
+  .btn-reveal { width: 100%; }
+
+  /* keep the two-ring instrument from overflowing / crowding on phones */
+  .instrument { gap: 20px; }
+  .dialwrap svg.dial { width: 100%; height: auto; }
+
+  /* reduce heavy padding so sections aren't endlessly tall */
+  section > .wrap { padding-top: 8px; padding-bottom: 8px; }
+
+  /* horizontal scrollers stay contained */
+  .gs-scroll, .phasestrip { -webkit-overflow-scrolling: touch; }
+
+  /* footer link matrix: give tap room */
+  .zf-matrix a { display: inline-block; padding: 6px 0; min-height: 40px; }
+}
+
+/* very small phones (<= 360px): stop 3-up date fields from cramping */
+@media (max-width: 360px) {
+  .datefields { gap: 8px; }
+  .datefields input { padding-left: 6px; padding-right: 6px; }
+  .hero .plate.plate-entry { padding-left: 16px; padding-right: 16px; }
+}

@@ -97,6 +97,7 @@
       '</g>' +
       '<g clip-path="url(#zeiClip)">' +
         '<rect x="0" y="18" width="120" height="60" fill="oklch(0.13 0.02 275)"/>' +
+        '<g class="zaw-iris">' +
         '<circle cx="60" cy="48" r="22" fill="url(#zeiC)"/>' +
         '<circle cx="60" cy="48" r="15.5" fill="#eef2f7"/>' +
         '<circle cx="60" cy="48" r="11" fill="#57c8d8"/>' +
@@ -104,13 +105,24 @@
         '<circle cx="60" cy="48" r="3.4" fill="#0a0c18"/>' +
         '<path d="M63.5 42.2 l1 2.3 2.3 1 -2.3 1 -1 2.3 -1-2.3 -2.3-1 2.3-1 Z" fill="#efe2b4"/>' +
         '<ellipse cx="54.5" cy="42.5" rx="3.4" ry="2.1" fill="#ffffff" opacity=".55"/>' +
+        '</g>' +
         /* the lids: card-ink shapes that meet at the centerline when closed */
-        '<path class="zaw-lid zaw-lid-top" d="M8 48 C28 20, 92 20, 112 48 L120 48 L120 -10 L0 -10 L0 48 Z" fill="oklch(0.17 0.03 274)"/>' +
+        '<g class="zaw-lid zaw-lid-top">' +
+          '<path d="M8 48 C28 20, 92 20, 112 48 L120 48 L120 -10 L0 -10 L0 48 Z" fill="oklch(0.17 0.03 274)"/>' +
+          '<path d="M30 44 C46 38.5, 74 38.5, 90 44" fill="none" stroke="url(#zeiL)" stroke-width="1.1" stroke-linecap="round" opacity=".28"/>' +
+          '<path class="zaw-lashline" d="M14 48 C36 38.5, 84 38.5, 106 48" fill="none" stroke="url(#zeiL)" stroke-width="2.6" stroke-linecap="round"/>' +
+          '<g class="zaw-lashes" stroke="url(#zeiL)" stroke-width="1.2" stroke-linecap="round" opacity=".62">' +
+            '<line x1="37" y1="48" x2="34" y2="53.4"/><line x1="49" y1="48.6" x2="47" y2="54"/>' +
+            '<line x1="71" y1="48.6" x2="73" y2="54"/><line x1="83" y1="48" x2="86" y2="53.4"/>' +
+          '</g>' +
+        '</g>' +
         '<path class="zaw-lid zaw-lid-bot" d="M8 48 C28 76, 92 76, 112 48 L120 48 L120 94 L0 94 L0 48 Z" fill="oklch(0.17 0.03 274)"/>' +
       '</g>' +
       '<path d="M8 48 C28 20, 92 20, 112 48 C92 76, 28 76, 8 48 Z" fill="none" stroke="url(#zeiL)" stroke-width="2.4"/>' +
     '</svg>';
   }
+
+  function eyeClosedSVG() { return '<svg class="zaw-eye3 zaw-eye-closed" viewBox="0 0 120 84" aria-hidden="true"><defs><linearGradient id="zec-lid" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#efe2b4"/><stop offset="100%" stop-color="#b99c5e"/></linearGradient><filter id="zec-glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g stroke="url(#zec-lid)" stroke-width="1.6" stroke-linecap="round" opacity=".85"><line x1="60" y1="10" x2="60" y2="2"/><line x1="41" y1="14" x2="37" y2="7"/><line x1="79" y1="14" x2="83" y2="7"/><line x1="25" y1="24" x2="18" y2="19"/><line x1="95" y1="24" x2="102" y2="19"/></g><path d="M8 48 C28 20, 92 20, 112 48 C92 74, 28 74, 8 48 Z" fill="oklch(0.16 0.03 275)" stroke="url(#zec-lid)" stroke-width="2.4" filter="url(#zec-glow)"/><path d="M30 44 C46 38.5, 74 38.5, 90 44" fill="none" stroke="url(#zec-lid)" stroke-width="1.3" stroke-linecap="round" opacity=".3"/><path d="M14 50 C36 40.5, 84 40.5, 106 50" fill="none" stroke="url(#zec-lid)" stroke-width="2.8" stroke-linecap="round" filter="url(#zec-glow)"/><g stroke="url(#zec-lid)" stroke-width="1.3" stroke-linecap="round" opacity=".6"><line x1="37" y1="50.4" x2="34" y2="55.6"/><line x1="49" y1="51.1" x2="47" y2="56.4"/><line x1="71" y1="51.1" x2="73" y2="56.4"/><line x1="83" y1="50.4" x2="86" y2="55.6"/></g></svg>'; }
 
   /* aperture: 0 = shut, 1 = lids fully parted */
   function setAperture(card, frac) {
@@ -128,6 +140,7 @@
     var o = oracle(), r = rites(o), c = animalOf(o);
     var pct = 0; for (var k in WEIGHT) if (r[k]) pct += WEIGHT[k];
     var t = tierFor(pct);
+    var allDone = RITES.every(function (it) { return r[it.id]; });
     var name = c ? c.primal : null;
     var slug = name ? slugify(name) : null;
 
@@ -194,7 +207,8 @@
       setOpen(!card.classList.contains("open"));
     });
 
-    setOpen(!!startOpen, true);
+    var wantOpen = (startOpen === "auto") ? allDone : !!startOpen;
+    setOpen(wantOpen, true);
 
     /* karma line, softly */
     (function karmaLine() {
@@ -215,6 +229,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    (function eyeCss(){ if (document.getElementById("zaw-eye-css")) return; var st=document.createElement("style"); st.id="zaw-eye-css"; st.textContent=".zaw-rays{transition:opacity .9s ease,transform .9s ease;transform-box:fill-box;transform-origin:center}.zaw-card:not(.open) .zaw-rays{opacity:.28;transform:scale(.8)}.zaw-card.open .zaw-rays{opacity:.95}.zaw-lashes,.zaw-lashline{transition:opacity .8s ease}.zaw-card.open .zaw-lashes{opacity:.16}.zaw-card.open .zaw-lashline{opacity:.4}.zaw-iris{transition:transform 1.2s cubic-bezier(.5,.05,.2,1),opacity 1s ease;transform-box:fill-box;transform-origin:center}.zaw-card:not(.open) .zaw-iris{transform:scale(.7);opacity:.4}"; document.head.appendChild(st); })();
     var slot = document.getElementById("zodi-awaken-slot");
     var floating = false;
     if (!slot) {
@@ -223,7 +238,7 @@
       slot.id = "zodi-awaken-slot";
       document.body.appendChild(slot);
     }
-    render(slot, floating, true); /* open on load; the lids part to the earned aperture */
+    render(slot, floating, floating ? "auto" : true); /* floating starts minimized unless every rite is done */
 
     /* the float never sits ON the footer: it glides up to rest above it */
     if (floating) {
@@ -255,7 +270,7 @@
         if (now !== last) {
           last = now;
           var wasOpen = !!slot.querySelector(".zaw-card.open");
-          render(slot, floating, wasOpen);
+          render(slot, floating, wasOpen ? true : "auto");
         }
       } catch (e) {}
     }, 2500);

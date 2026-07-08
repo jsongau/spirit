@@ -1,0 +1,343 @@
+/* ============================================================
+   Zodi Animal — homepage v5 (hero only)
+   The dial/plate/controls collapse into an "Observatory" disclosure;
+   a designed invitation stands in while closed; a compact result
+   lives in the hero. Loaded only on indexv5.html, after v2/v3/v4.
+   ============================================================ */
+
+/* ---------- Observatory invitation — "Celestial Lens" (Concept 1) ---------- */
+.v5-obs-invite.v5-lens {
+  position: relative; max-width: 720px; margin: clamp(18px, 3vh, 30px) auto 0;
+  display: flex; align-items: center; gap: 8px; overflow: hidden; text-align: left;
+  padding: 18px 26px 18px 0;
+  border: 1px solid var(--line, rgba(214,193,140,.16)); border-radius: 14px;
+  background:
+    radial-gradient(120% 90% at 10% 50%, rgba(239,226,180,.08), transparent 55%),
+    linear-gradient(180deg, var(--panel, #1a1c30), var(--bg-2, #0e1124));
+}
+.v5-obs-invite.v5-lens::before { content: ""; position: absolute; left: 190px; top: 16px; bottom: 16px; width: 1px; background: linear-gradient(180deg, transparent, rgba(239,226,180,.32), transparent); box-shadow: 0 0 14px rgba(239,226,180,.2); pointer-events: none; }
+.v5-lens-art { position: relative; flex: 0 0 200px; height: 168px; }
+.v5-lens-disc { position: absolute; left: -90px; top: 50%; transform: translateY(-50%); width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle at center, rgba(239,226,180,.14), transparent 62%); box-shadow: 0 0 90px 8px rgba(239,226,180,.08); }
+.v5-lens-ring { position: absolute; border-radius: 50%; }
+.v5-lens-ring1 { inset: 8px; border: 1.5px solid rgba(214,193,140,.5); box-shadow: 0 0 22px rgba(239,226,180,.16), inset 0 0 28px rgba(239,226,180,.08); }
+.v5-lens-ring2 { inset: 26px; border: 1px solid rgba(214,193,140,.26); background: repeating-conic-gradient(from 0deg, rgba(214,193,140,.4) 0deg 1deg, transparent 1deg 15deg); }
+.v5-lens-ring3 { inset: 66px; border: 1px solid rgba(214,193,140,.3); box-shadow: inset 0 0 36px rgba(182,71,51,.12); }
+.v5-lens-rule { position: absolute; top: 50%; left: 22px; right: 40px; height: 1.5px; background: linear-gradient(90deg, rgba(239,226,180,.7), rgba(214,193,140,.12)); transform: rotate(-24deg); transform-origin: left center; box-shadow: 0 0 8px rgba(239,226,180,.35); }
+.v5-lens-hub { position: absolute; top: 50%; left: 50%; width: 13px; height: 13px; margin: -6.5px 0 0 -6.5px; border-radius: 50%; background: radial-gradient(circle, #efe2b4, #a8925c); box-shadow: 0 0 14px rgba(239,226,180,.55); }
+.v5-lens-body { position: relative; flex: 1 1 auto; min-width: 0; }
+.v5-obs-eyebrow { margin: 0 0 8px; font-family: var(--mono); font-size: .6rem; letter-spacing: .28em; text-transform: uppercase; color: var(--brass, #d6c18c); }
+.v5-obs-heading { margin: 0 0 8px; font-family: var(--serif); font-weight: 400; font-size: clamp(1.2rem, 2.4vw, 1.5rem); line-height: 1.16; color: var(--ivory, #ece7d8); }
+.v5-obs-desc { margin: 0 0 14px; max-width: 46ch; font-size: .9rem; line-height: 1.5; color: var(--muted, #adaec2); }
+.v5-lens-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.v5-obs-count { font-family: var(--mono); font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: var(--brass-dim, #a8925c); border: 1px solid var(--line, rgba(214,193,140,.2)); padding: 5px 11px; border-radius: 20px; }
+@media (max-width: 640px) {
+  .v5-obs-invite.v5-lens { flex-direction: column; text-align: center; padding: 18px 20px; gap: 4px; }
+  .v5-obs-invite.v5-lens::before { display: none; }
+  .v5-lens-art { display: none; }
+  .v5-lens-body { text-align: center; }
+  .v5-lens-actions { justify-content: center; }
+}
+/* The invitation now sits under the hero copy (left column), so it fills that column
+   and the reveal card aligns to the top of the row rather than floating to the bottom. */
+#state-first .hero-top { align-items: start; }
+#state-first .hero-head .v5-obs-invite.v5-lens { max-width: none; margin-left: 0; margin-right: 0; }
+
+/* ---------- red crown: ceremonial line under 本命靈獸, kept to ONE line ---------- */
+.v4-hongbao .rv-eyebrow {
+  max-width: none; margin: 6px auto 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  letter-spacing: .06em; font-size: clamp(.46rem, 1.2vw, .58rem);
+}
+
+/* ---------- open observatory: dial · sighting plate, with manual controls under the plate (2 columns) ---------- */
+/* The seals sit back inside the console column (the original v2 two-column layout). */
+@media (min-width: 1100px) {
+  .v5-observatory .instrument > .handrow { justify-content: flex-start; }
+}
+
+/* ---------- sighting plate: linked animal name + Wu Xing element row ---------- */
+/* The animal name (e.g. "The Cuttlefish") is now the link — the CTA button is removed
+   (kept in the DOM but hidden so the engine keeps writing the animal's URL there). */
+.v5-observatory #roCard .btnrow { display: none; }
+.v5-observatory #roName .v5-name-link {
+  color: inherit; text-decoration: none; cursor: pointer;
+  transition: color .25s ease;
+}
+.v5-observatory #roName .v5-name-link:hover,
+.v5-observatory #roName .v5-name-link:focus-visible { color: var(--brass-bright, #efe2b4); outline: none; }
+
+/* Element row now carries the year animal's Wu Xing element + hanzi, linked to its hall. */
+.v5-observatory #roElem .v5-elem-link {
+  display: inline-flex; align-items: baseline; gap: 8px;
+  color: var(--ivory, #ece7d8); text-decoration: none; cursor: pointer;
+  transition: color .25s ease;
+}
+.v5-observatory #roElem .v5-elem-link:hover,
+.v5-observatory #roElem .v5-elem-link:focus-visible { color: var(--brass-bright, #efe2b4); outline: none; }
+.v5-observatory #roElem .v5-elem-zi {
+  font-family: "Ma Shan Zheng", var(--serif, serif);
+  font-size: 1.15rem; line-height: 1; color: var(--brass, #d6c18c);
+  transition: color .25s ease;
+}
+.v5-observatory #roElem .v5-elem-link:hover .v5-elem-zi { color: var(--brass-bright, #efe2b4); }
+.v5-observatory #roElem .v5-elem-note { color: var(--faint, #7f8096); font-size: .9em; }
+
+/* ---------- mobile: a big, thumb-draggable dial ---------- */
+@media (max-width: 919px) {
+  .v5-observatory .instrument { justify-items: center; }
+  .v5-observatory .instrument .dialwrap { touch-action: none; }
+  .v5-observatory .instrument > .handrow { width: 100%; justify-content: center; }
+}
+
+/* ---------- share card — compact post-reveal invitation (sized to content, no voids) ----------
+   Plain block, padded, centered. No stretch / flex-fill / equal-height anywhere. */
+.v5-share {
+  position: relative; margin: 14px 0 0; padding: 18px 22px 20px; text-align: center;
+  border-radius: 18px; border: 1px solid rgba(214,193,140,.42);
+  background: radial-gradient(120% 80% at 82% 0%, rgba(214,193,140,.06), transparent 55%), linear-gradient(180deg, #191c31, #0f1224);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 16px 40px rgba(0,0,0,.4);
+  animation: v5r-in .4s ease;
+}
+.v5-share[hidden] { display: none; }
+.v5s-spark { position: absolute; color: #efe2b4; pointer-events: none; }
+.v5s-spark-1 { top: 12px; left: 14px; font-size: 9px; opacity: .4; }
+.v5s-spark-2 { top: 34px; right: 16px; font-size: 8px; opacity: .3; color: #6fb7ad; }
+/* orange/coral pill — matches the result card ribbon .v5r-ribbon */
+.v5s-ribbon {
+  display: inline-flex; align-items: center; gap: 8px; margin: 0 auto 16px; padding: 7px 16px; border-radius: 999px;
+  background: linear-gradient(180deg, #E84B3D, #C0271A); box-shadow: 0 4px 14px rgba(192,39,26,.4);
+  font-family: var(--mono); font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; color: #F4EADE; line-height: 1;
+}
+.v5s-ribbon span { color: #F4EADE; opacity: .85; }
+.v5s-title { margin: 0 0 10px; font-family: var(--serif); font-weight: 560; font-size: clamp(1.35rem, 2.5vw, 1.6rem); line-height: 1.12; color: var(--ivory, #ece7d8); }
+.v5s-sub { margin: 0 auto 22px; max-width: 40ch; font-size: .9rem; line-height: 1.5; color: var(--muted, #adaec2); }
+.v5s-label { display: block; margin: 0 0 8px; font-family: var(--mono); font-size: .56rem; letter-spacing: .18em; text-transform: uppercase; color: var(--faint, #7f8096); }
+.v5s-field {
+  display: block; width: 100%; max-width: 620px; box-sizing: border-box; margin: 0 auto 18px; background: #0a0c1a;
+  border: 1px solid rgba(214,193,140,.24); box-shadow: inset 0 2px 6px rgba(0,0,0,.45);
+  color: #efe2b4; border-radius: 10px; padding: 13px 15px; font-size: .8rem; font-family: var(--sans); text-align: center;
+}
+/* primary: content-width, centered — not a full-width banner */
+.v5-share .v5s-primary {
+  display: inline-flex; align-items: center; justify-content: center; width: auto; min-width: 190px; min-height: 48px;
+  margin: 0 auto 12px; padding: 0 28px; font-size: 1rem; color: #1a1300;
+  background: linear-gradient(180deg,#efe2b4,#d6c18c 60%,#c69b3c); box-shadow: 0 8px 22px rgba(138,106,43,.4), inset 0 1px 0 rgba(255,255,255,.4);
+}
+.v5-share .v5s-primary:focus-visible { outline: 2px solid var(--brass-bright, #efe2b4); outline-offset: 3px; }
+/* three compact utility actions, centered row */
+.v5s-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.v5-share .v5s-mini { flex: 0 0 auto; min-width: 96px; justify-content: center; text-align: center; padding: 10px 16px; min-height: 42px; font-size: .82rem; }
+.v5s-toast { margin: 12px 0 0; font-family: var(--mono); font-size: .68rem; letter-spacing: .04em; color: var(--brass-bright, #efe2b4); }
+.v5s-toast[hidden] { display: none; }
+
+/* ---------- "What a Zodi Animal is" explainer + FAQ ---------- */
+.v5-whatis { padding: clamp(40px, 7vh, 84px) 0; }
+.v5-whatis-h { margin: 8px 0 26px; font-family: var(--serif); font-weight: 560; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.1; color: var(--ivory, #ece7d8); }
+.v5-whatis-grid { display: grid; gap: clamp(16px, 2vw, 22px); grid-template-columns: 1fr; }
+@media (min-width: 820px) { .v5-whatis-grid { grid-template-columns: 1fr 1fr; } }
+.v5-wcard {
+  border: 1px solid var(--line, rgba(214,193,140,.16)); border-radius: 16px;
+  padding: clamp(20px, 2.5vw, 28px);
+  background: linear-gradient(180deg, var(--panel, #1a1c30), var(--bg-2, #0e1124));
+}
+.v5-wcard h3 { margin: 0 0 12px; font-family: var(--serif); font-weight: 560; font-size: 1.25rem; color: var(--brass-bright, #efe2b4); }
+.v5-wcard p { margin: 0 0 12px; color: var(--body-text, #cfcfe0); line-height: 1.65; font-size: .98rem; }
+.v5-wcard p:last-child { margin-bottom: 0; }
+.v5-wcard a, .v5-faq a, .v5-wlink { color: var(--brass-bright, #efe2b4); font-weight: 600; text-decoration: none; }
+.v5-wcard a:hover, .v5-faq a:hover, .v5-wlink:hover { color: var(--brass, #d6c18c); }
+.v5-wpersonal { margin-top: clamp(16px, 2vw, 22px); border-color: rgba(214,193,140,.4); box-shadow: 0 0 44px rgba(239,226,180,.07); }
+.v5-wpersonal[hidden] { display: none; }
+.v5-wpersonal .pl-name, .v5-wpersonal .pl-sign, .v5-wpersonal .pl-animal { color: var(--brass-bright, #efe2b4); }
+.v5-lny-note { color: var(--muted, #adaec2) !important; font-size: .92rem !important; }
+.v5-faq { margin-top: clamp(26px, 4vh, 44px); }
+.v5-faq-h { margin: 0 0 14px; font-family: var(--serif); font-weight: 560; font-size: 1.4rem; color: var(--ivory, #ece7d8); }
+.v5-faqitem { border-bottom: 1px solid var(--line, rgba(214,193,140,.14)); }
+.v5-faqitem summary { position: relative; cursor: pointer; list-style: none; padding: 15px 30px 15px 0; font-family: var(--serif); font-size: 1.08rem; color: var(--ivory, #ece7d8); }
+.v5-faqitem summary::-webkit-details-marker { display: none; }
+.v5-faqitem summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); color: var(--brass, #d6c18c); font-family: var(--mono); font-size: 1.25rem; }
+.v5-faqitem[open] summary::after { content: "\2013"; }
+.v5-faqitem summary:hover { color: var(--brass-bright, #efe2b4); }
+.v5-faqitem p { margin: 0 0 16px; max-width: 68ch; color: var(--body-text, #cfcfe0); line-height: 1.6; font-size: .96rem; }
+.v5-faqitem .pl-name, .v5-faqitem .pl-sign, .v5-faqitem .pl-animal { color: var(--brass-bright, #efe2b4); }
+.v5-whatis-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: clamp(24px, 4vh, 36px); }
+
+/* ---------- Proverb of the Day (Proverb Pond card) ---------- */
+.v5-proverb-h { margin: 0 0 6px; font-family: var(--serif); font-weight: 560; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.1; color: var(--ivory, #ece7d8); }
+#proverb-slot { transition: opacity .32s ease; }
+.pf-proverb { margin: 22px 0; padding: 24px 26px; border-left: 3px solid var(--brass, #d6c18c); background: linear-gradient(90deg, rgba(214,193,140,.08), transparent); border-radius: 0 14px 14px 0; }
+.pf-proverb-zh { font-family: "Ma Shan Zheng", "Noto Serif SC", var(--serif, serif); font-size: clamp(2.4rem, 8vw, 3.4rem); line-height: 1.8; color: var(--moon, #f5ecd2); margin: 0 0 14px; letter-spacing: .04em; }
+.pf-proverb-zh ruby { margin: 0 3px; }
+.pf-proverb-zh rt { font-family: var(--sans, "Inter", system-ui, sans-serif); font-size: .62rem; color: var(--brass-bright, #efe2b4); font-weight: 500; letter-spacing: .02em; }
+.pf-proverb-zh .cx-punct { font-size: .7em; opacity: .55; }
+.pf-proverb-lit, .pf-proverb-mean { margin: 3px 0; color: var(--body-text, #cfcfe0); max-width: 64ch; font-size: .95rem; }
+.pf-proverb-lit .k, .pf-proverb-mean .k { display: inline-block; min-width: 82px; color: var(--brass-bright, #efe2b4); font-size: .72rem; text-transform: uppercase; letter-spacing: .09em; }
+.pf-proverb-soul { margin: 14px 0 10px; color: var(--moon, #f5ecd2); font-family: var(--serif, serif); font-size: 1.18rem; font-style: italic; max-width: 60ch; line-height: 1.55; }
+.pf-proverb-note { color: var(--muted, #9a9bb0); font-size: .85rem; margin: 0; }
+.pf-proverb-note a { color: var(--brass-bright, #efe2b4); font-weight: 600; text-decoration: none; }
+.pf-proverb-note a:hover { color: var(--brass, #d6c18c); }
+.proverb-controls { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 18px; }
+#proverb-another { background: transparent; border: 1px solid var(--line-2, rgba(214,193,140,.28)); color: var(--brass-bright, #efe2b4); border-radius: 999px; padding: 11px 20px; min-height: 40px; cursor: pointer; font-family: var(--sans); font-size: .9rem; font-weight: 500; }
+#proverb-another:hover { border-color: var(--brass, #d6c18c); }
+.proverb-controls a { color: var(--brass-bright, #efe2b4); text-decoration: none; font-weight: 600; font-size: .9rem; }
+.proverb-controls a:hover { color: var(--brass, #d6c18c); }
+
+/* ---------- BaZi showcase: today's Four Pillars (adapted from production .bzhome) ---------- */
+.bzhome { position: relative; margin: 0; padding: clamp(40px, 6vh, 66px) clamp(20px, 4vw, 40px); overflow: hidden; border-radius: 20px;
+  background:
+    radial-gradient(120% 150% at 84% 8%, rgba(214,164,76,.16), transparent 60%),
+    radial-gradient(120% 120% at 6% 92%, rgba(47,140,186,.10), transparent 55%),
+    linear-gradient(180deg, #12100c 0%, #0b0a07 100%);
+  border: 1px solid rgba(214,164,76,.2); color: #e8e2d4; }
+.bzhome-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(28px, 4vw, 48px); align-items: center; }
+.bzhome-eyebrow { margin: 0 0 14px; font: 600 .72rem/1.2 var(--mono, "Space Mono", monospace); letter-spacing: .22em; text-transform: uppercase; color: #d6a44c; }
+.bzhome-h2 { margin: 0 0 14px; font-family: var(--serif, "Fraunces", Georgia, serif); font-weight: 560; font-size: clamp(1.8rem, 4vw, 2.55rem); line-height: 1.1; color: #f5ecd2; letter-spacing: -.01em; }
+.bzhome-hook { margin: 0 0 22px; max-width: 44ch; font-family: var(--serif, "Fraunces", Georgia, serif); font-weight: 500; font-size: clamp(1.05rem, 1.7vw, 1.25rem); line-height: 1.4; color: #e9dcbd; font-style: italic; }
+.bzhome-hook b { color: #f5ecd2; font-style: normal; font-weight: 600; }
+.bzhome-beats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 0 0 26px; }
+.bzhome-beat { background: linear-gradient(180deg, rgba(214,164,76,.10), rgba(0,0,0,.10)); border: 1px solid rgba(214,164,76,.20); border-radius: 12px; padding: 12px 13px; }
+.bzhome-beat-k { display: block; font: 600 .6rem/1.2 var(--mono, "Space Mono", monospace); letter-spacing: .12em; text-transform: uppercase; color: #d6a44c; margin-bottom: 6px; }
+.bzhome-beat p { margin: 0; font: 400 .84rem/1.45 var(--sans, system-ui, sans-serif); color: #d7d0be; }
+.bzhome-beat p b { color: #f0e6cf; }
+.bzhome-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.bzhome-cta { display: inline-flex; align-items: center; gap: .55em; padding: 14px 28px; border-radius: 999px;
+  background: linear-gradient(180deg, #e2b664, #d6a44c); color: #1a1509; font: 600 .96rem/1 var(--sans, system-ui, sans-serif);
+  letter-spacing: .01em; text-decoration: none; border: 1px solid rgba(214,164,76,.6); box-shadow: 0 10px 30px rgba(214,164,76,.22);
+  transition: transform .16s ease, box-shadow .16s ease; }
+.bzhome-cta:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(214,164,76,.34); }
+.bzhome-link { font: 600 .9rem/1 var(--sans, system-ui, sans-serif); color: #d6a44c; text-decoration: none; }
+.bzhome-link:hover { color: #f5ecd2; }
+.bzhome-note { margin: 18px 0 0; font: 400 .8rem/1.5 var(--sans, system-ui, sans-serif); color: #8f897b; }
+.bzhome-figure { position: relative; display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 8px; }
+.bzhome-glyph { font-family: "Ma Shan Zheng", "Noto Serif SC", var(--serif, serif); font-weight: 500; font-size: clamp(2.8rem, 7vw, 4rem); line-height: 1; color: #f5ecd2; letter-spacing: .08em; text-shadow: 0 0 34px rgba(214,164,76,.35); text-align: center; }
+.bzhome-glyph small { display: block; margin-top: 8px; font: 600 .58rem/1.4 var(--mono, "Space Mono", monospace); letter-spacing: .26em; text-transform: uppercase; color: #d6a44c; text-shadow: none; }
+.bzhome-pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 11px; width: 100%; max-width: 352px; }
+.bzhome-pillar { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.bzhome-cell { display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 1/1; border-radius: 10px;
+  border: 1px solid rgba(214,164,76,.24); background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.01));
+  font-family: "Ma Shan Zheng", "Noto Serif SC", var(--serif, serif); font-weight: 500; font-size: 1.7rem; line-height: 1; }
+.bzhome-pillar.is-self .bzhome-cell { border-color: rgba(214,164,76,.66); box-shadow: 0 0 0 1px rgba(214,164,76,.25) inset, 0 8px 22px rgba(214,164,76,.18); }
+.bzhome-plabel { font: 600 .58rem/1 var(--mono, "Space Mono", monospace); letter-spacing: .12em; text-transform: uppercase; color: #9a9482; }
+.bzhome-pillar.is-self .bzhome-plabel { color: #d6a44c; }
+.bzhome-cap { margin: 2px 0 0; text-align: center; max-width: 340px; font: 400 .78rem/1.5 var(--sans, system-ui, sans-serif); color: #8f897b; }
+.bzhome-cap b { color: #d6a44c; }
+@media (max-width: 820px) {
+  .bzhome-inner { grid-template-columns: 1fr; gap: 32px; }
+  .bzhome-figure { order: -1; }
+  .bzhome-beats { grid-template-columns: 1fr; }
+}
+
+/* ---------- the collapsible Observatory ---------- */
+.v5-observatory { margin-top: 18px; }
+.v5-observatory[hidden] { display: none; }
+.v5-anim-in { animation: v5-obs-in .4s cubic-bezier(.2,.7,.2,1); }
+@keyframes v5-obs-in { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
+
+.v5-obs-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; max-width: 1100px; margin: 0 auto 6px; padding: 0 4px; }
+.v5-obs-open-head { margin: 0; font-family: var(--serif); font-weight: 560; font-size: 1.15rem; color: var(--ivory, #ece7d8); }
+.v5-obs-open-head:focus-visible { outline: 2px solid var(--brass, #d6c18c); outline-offset: 4px; border-radius: 4px; }
+.v5-obs-close {
+  background: none; border: 1px solid var(--line-2, rgba(214,193,140,.28)); border-radius: 999px;
+  color: var(--brass, #d6c18c); padding: 8px 16px; min-height: 40px; cursor: pointer;
+  font-family: var(--sans); font-size: .85rem; font-weight: 500;
+}
+.v5-obs-close:hover { border-color: var(--brass, #d6c18c); color: var(--brass-bright, #efe2b4); }
+.v5-obs-close-bottom { display: block; margin: 18px auto 0; }
+
+/* ---------- compact in-hero result — "ribbon banner" (Concept B) ---------- */
+.v5-result { position: relative; margin-top: 18px; padding: 4px 0 0; text-align: center; overflow: hidden; }
+.v5-result[hidden] { display: none; }
+.v5r-ribbon {
+  display: inline-flex; align-items: center; gap: 8px; margin: 0 auto 14px; padding: 6px 18px;
+  border-radius: 999px; background: linear-gradient(180deg, #E84B3D, #C0271A); box-shadow: 0 4px 14px rgba(192,39,26,.4);
+  font-family: var(--mono); font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; color: #F4EADE;
+}
+.v5r-ribbon span { color: #F4EADE; }
+.v5r-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.v5r-spark { position: absolute; color: #efe2b4; pointer-events: none; }
+.v5r-spark-1 { top: 40px; left: 15%; font-size: 11px; opacity: .5; }
+.v5r-spark-2 { top: 66px; right: 17%; font-size: 9px; opacity: .5; color: #6fb7ad; }
+.v5r-spark-3 { top: 100px; left: 26%; font-size: 8px; opacity: .35; }
+.v5r-chips { display: flex; align-items: flex-end; justify-content: center; gap: 12px; margin-bottom: 6px; }
+.v5r-col { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.v5r-cname { font-family: var(--mono); font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted, #adaec2); }
+.v5r-chip { width: 40px; height: 40px; border-radius: 9px; display: flex; align-items: center; justify-content: center; }
+.v5r-chip-sun { background: rgba(169,155,214,.16); border: 1px solid rgba(169,155,214,.4); color: #c9bdf0; font-size: 20px; }
+.v5r-chip-year { background: rgba(214,193,140,.14); border: 1px solid rgba(214,193,140,.4); }
+.v5r-chip-year span { font-family: "Ma Shan Zheng", var(--serif, serif); font-size: 22px; color: #efe2b4; line-height: 1; }
+.v5r-x { font-family: var(--mono); font-size: .66rem; letter-spacing: .04em; color: var(--faint, #7f8096); padding-bottom: 10px; }
+.v5r-name {
+  margin: 8px 0 4px; font-family: var(--serif, Georgia, serif); font-weight: 600; font-size: clamp(1.6rem, 4.5vw, 2rem); line-height: 1.08;
+  background: linear-gradient(135deg, #efe2b4, #d6c18c 60%, #a8925c);
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+}
+.v5r-elem { margin: 0 0 16px; font-family: var(--mono); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; color: #6fb7ad; }
+.v5r-acts { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.v5r-acts .btn { flex: 0 1 auto; }
+.v5r-recast { display: block; margin: 12px auto 0; background: none; border: 0; color: var(--faint, #7f8096); font-family: var(--sans); font-size: .82rem; cursor: pointer; min-height: 40px; }
+.v5r-recast:hover { color: var(--ivory, #ece7d8); }
+.v5-result:not([hidden]) { animation: v5r-in .45s ease; }
+@keyframes v5r-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .v5-result:not([hidden]) { animation: none; } .v5r-spark { display: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .v5-anim-in { animation: none; }
+}
+
+/* ============================================================
+   MOBILE OPTIMIZATION — v5 sections on small screens
+   ============================================================ */
+@media (max-width: 700px) {
+  /* hero: give the ceremonial eyebrow and lead room to breathe */
+  .v5-obs-invite.v5-lens { margin-top: 16px; }
+  .v5-lens-body { min-width: 0; }
+}
+@media (max-width: 600px) {
+  /* observatory bar: title + close wrap instead of colliding */
+  .v5-observatory .v5-obs-bar { flex-wrap: wrap; gap: 8px; }
+  .v5-obs-open-head { font-size: 1.05rem; }
+  .v5-obs-close { padding: 8px 14px; }
+
+  /* compact result: full-width action buttons for thumbs */
+  .v5r-name { font-size: clamp(1.5rem, 8vw, 1.9rem); }
+  .v5r-acts { flex-direction: column; }
+  .v5r-acts .btn { width: 100%; justify-content: center; text-align: center; }
+  .v5r-recast-more { display: none; }        /* mobile fallback: just "Try another date" */
+
+  /* share card: tighten on phones */
+  .v5-share { padding: 16px 14px 18px; }
+  .v5-share .v5s-mini { flex: 1 1 auto; }
+
+  /* red crown eyebrow: allow wrap on phones rather than truncate */
+  .v4-hongbao .rv-eyebrow { white-space: normal; overflow: visible; text-overflow: clip; font-size: .56rem; letter-spacing: .1em; line-height: 1.5; }
+
+  /* what a Zodi Animal is: comfortable single column */
+  .v5-whatis { padding: 44px 0; }
+  .v5-whatis-h { font-size: clamp(1.7rem, 8vw, 2.1rem); }
+  .v5-wcard { padding: 18px 16px; }
+  .v5-wcard h3 { font-size: 1.15rem; }
+  .v5-faqitem summary { font-size: 1rem; padding-right: 26px; }
+  .v5-whatis-links .btn { flex: 1 1 100%; justify-content: center; text-align: center; }
+
+  /* proverb: keep the calligraphy readable, tighten the frame */
+  .pf-proverb { padding: 18px 16px; margin: 18px 0; }
+  .pf-proverb-zh { line-height: 1.6; }
+  .proverb-controls { gap: 10px; }
+  #proverb-another { flex: 1 1 100%; }
+  .proverb-controls a { flex: 1 1 auto; }
+
+  /* BaZi: comfortable padding, slightly smaller chart, stacked beats already handled at 820 */
+  .bzhome { padding: 34px 16px; border-radius: 16px; }
+  .bzhome-h2 { font-size: clamp(1.55rem, 7.5vw, 1.9rem); }
+  .bzhome-pillars { max-width: 300px; gap: 8px; }
+  .bzhome-cell { font-size: 1.4rem; border-radius: 8px; }
+  .bzhome-actions { gap: 14px; }
+  .bzhome-cta { flex: 1 1 100%; justify-content: center; }
+}
+@media (max-width: 380px) {
+  .v5s-row { gap: 6px; }
+  .v5-share .v5s-mini { padding: 10px 4px; font-size: .78rem; }
+}
+@media (max-width: 360px) {
+  .bzhome-pillars { max-width: 260px; gap: 6px; }
+  .bzhome-cell { font-size: 1.2rem; }
+  .bzhome-plabel { font-size: .5rem; letter-spacing: .06em; }
+}

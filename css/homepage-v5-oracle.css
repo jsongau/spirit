@@ -1,0 +1,143 @@
+/* ============================================================
+   THE DAILY ORACLE — floating panel (indexv5 only).
+   Scoped to .orc-* . Reuses tokens.css (--brass, --amethyst,
+   --serif, --mono, --r-2 …). Replaces the .zaw-* awakening
+   floater on this page only; the shared widget is untouched.
+   ============================================================ */
+@keyframes orc-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes orc-halo { 0%, 100% { opacity: .30; transform: scale(1); } 50% { opacity: .55; transform: scale(1.12); } }
+@keyframes orc-lift { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* ---- the sealed card ---- */
+.orc-card {
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: var(--r-2);
+  color: var(--body);
+  background:
+    linear-gradient(oklch(0.17 0.03 274), oklch(0.155 0.03 272)) padding-box,
+    conic-gradient(from 210deg,
+      oklch(from var(--brass-dim) l c h / .9), oklch(from var(--amethyst) l c h / .75),
+      oklch(from var(--teal-dim) l c h / .7), oklch(from var(--brass) l c h / .9),
+      oklch(from var(--brass-dim) l c h / .9)) border-box;
+  box-shadow: 0 0 0 1px oklch(0 0 0 / .3), 0 10px 40px oklch(0 0 0 / .35);
+  transition: box-shadow var(--dur-slow) var(--ease-out);
+}
+.orc-card::after {
+  content: "\2726";
+  position: absolute; top: -9px; left: 50%; transform: translateX(-50%);
+  font-size: .7rem; color: var(--brass-bright);
+  background: oklch(0.17 0.03 274); padding: 0 7px; line-height: 1;
+  text-shadow: 0 0 8px oklch(from var(--brass) l c h / .6);
+}
+.orc-card[data-oracle-state="revealed"] { box-shadow: 0 0 0 1px oklch(0 0 0 / .3), 0 0 40px oklch(from var(--amethyst) l c h / .26); }
+.orc-card[data-oracle-state="received"],
+.orc-card[data-oracle-state="received-collapsed"] { box-shadow: 0 0 0 1px oklch(0 0 0 / .3), 0 0 30px oklch(from var(--brass) l c h / .22); }
+
+/* ---- header: eye + kicker + optional toggle ---- */
+.orc-head { display: flex; align-items: center; gap: 11px; padding: 12px 15px 4px; }
+.orc-eye-wrap { position: relative; flex: 0 0 auto; width: 40px; height: 30px; display: grid; place-items: center; }
+.orc-eye { width: 40px; height: auto; overflow: visible; filter: drop-shadow(0 0 9px oklch(0.6 0.12 300 / .45)); }
+.orc-halo {
+  position: absolute; inset: -8px; border-radius: 50%; z-index: -1; pointer-events: none;
+  background: radial-gradient(circle, oklch(from var(--amethyst) l c h / .30), transparent 68%);
+  opacity: .3;
+}
+.orc-closed-layer { transform-origin: 50% 48%; transition: opacity 1.15s cubic-bezier(.62, .02, .16, 1), transform 1.5s cubic-bezier(.62, .02, .16, 1); }
+.orc-open-layer, .orc-rim-open { transition: opacity 1.2s cubic-bezier(.62, .02, .16, 1); }
+.orc-kicker { flex: 1; min-width: 0; font-family: var(--mono); font-size: .62rem; letter-spacing: .17em; text-transform: uppercase; color: var(--faint); }
+.orc-card[data-oracle-state="revealed"] .orc-kicker,
+.orc-card[data-oracle-state="received"] .orc-kicker { color: var(--brass); }
+
+.orc-toggle { flex: 0 0 auto; background: none; border: 0; cursor: pointer; padding: 6px; margin: -6px -4px -6px 0; display: grid; place-items: center; }
+.orc-chev { width: 8px; height: 8px; border-right: 1.5px solid var(--brass-dim); border-bottom: 1.5px solid var(--brass-dim); transform: rotate(45deg); transition: transform var(--dur) var(--ease-io); }
+.orc-card[data-oracle-state="revealed"] .orc-chev,
+.orc-card[data-oracle-state="received"] .orc-chev,
+.orc-card[data-oracle-state="released"] .orc-chev { transform: rotate(225deg); }
+.orc-toggle:focus-visible { outline: 2px solid var(--amethyst-bright); outline-offset: 2px; border-radius: 6px; }
+.orc-sr, .orc-btn .orc-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* ---- bodies ---- */
+.orc-body { padding: 4px 16px 15px; }
+.orc-lead { margin: 2px 0 13px; font-family: var(--serif); font-style: italic; font-size: 1.02rem; line-height: 1.5; color: var(--ivory); }
+.orc-meta { margin: 10px 0 0; font-family: var(--mono); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+
+.orc-mini-line { margin: 2px 0 10px; font-size: .9rem; color: var(--muted); }
+
+/* the revealed quote is the centrepiece */
+.orc-date { margin: 0 0 10px; font-family: var(--mono); font-size: .64rem; letter-spacing: .16em; color: var(--brass); }
+.orc-statement { margin: 0 0 12px; padding: 0; border: 0; font-family: var(--serif); font-size: 1.28rem; line-height: 1.34; color: var(--moon); }
+.orc-statement--sm { font-size: 1.06rem; margin-bottom: 10px; }
+.orc-interp { margin: 0 0 14px; font-size: .92rem; line-height: 1.55; color: var(--body); }
+.orc-attr { margin: 0 0 4px; font-family: var(--mono); font-size: .66rem; letter-spacing: .14em; color: var(--brass-bright); display: flex; flex-direction: column; gap: 3px; }
+.orc-attr-themes { color: var(--muted); letter-spacing: .1em; }
+
+.orc-card[data-oracle-state="revealed"] .orc-body,
+.orc-card[data-oracle-state="received"] .orc-body,
+.orc-card[data-oracle-state="released"] .orc-body { animation: orc-lift .7s var(--ease-out) both; }
+
+/* ---- buttons ---- */
+.orc-actions { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+.orc-btn { font-family: var(--sans); font-size: .86rem; border-radius: var(--r-1); cursor: pointer; min-height: 44px; padding: 0 16px; transition: background var(--dur-fast), border-color var(--dur-fast), color var(--dur-fast); }
+.orc-btn--primary { border: 1px solid oklch(from var(--brass) l c h / .55); background: oklch(from var(--brass) l c h / .14); color: var(--moon); font-weight: 500; letter-spacing: .01em; width: 100%; }
+.orc-btn--primary:hover { background: oklch(from var(--brass) l c h / .24); border-color: var(--brass); }
+.orc-btn--quiet { border: 1px solid transparent; background: none; color: var(--muted); }
+.orc-btn--quiet:hover { color: var(--ivory); background: oklch(from var(--amethyst) l c h / .08); }
+.orc-btn--ghost { border: 1px solid var(--line); background: none; color: var(--brass-bright); }
+.orc-btn--ghost:hover { border-color: var(--brass); color: var(--moon); }
+.orc-btn:focus-visible { outline: 2px solid var(--amethyst-bright); outline-offset: 2px; }
+
+/* ---- completed states ---- */
+.orc-done-line, .orc-mini-line { line-height: 1.45; }
+.orc-done-line { margin: 2px 0 11px; font-size: .9rem; color: var(--muted); }
+.orc-done-head { margin: 2px 0 4px; font-family: var(--serif); font-size: 1.16rem; color: var(--moon); }
+.orc-done-support { margin: 0 0 12px; font-size: .9rem; color: var(--muted); font-style: italic; font-family: var(--serif); }
+.orc-return { margin: 12px 0 0; font-size: .86rem; color: var(--ivory); }
+.orc-reward { margin: 12px 0 0; }
+.orc-zk { font-family: var(--mono); font-size: .72rem; letter-spacing: .06em; color: var(--brass-bright); border: 1px solid oklch(from var(--brass) l c h / .4); border-radius: var(--r-pill); padding: 3px 10px; }
+.orc-done-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.orc-streak { font-family: var(--mono); font-size: .66rem; letter-spacing: .08em; text-transform: uppercase; color: var(--silver-bright); }
+.orc-countdown { font-family: var(--mono); font-size: .64rem; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); font-variant-numeric: tabular-nums; }
+
+/* ---- float anchor: bottom-right, compact, grows on reveal ---- */
+.orc-card.orc-float {
+  position: fixed; right: 18px; bottom: 18px; left: auto; z-index: 60;
+  width: 300px; max-width: calc(100vw - 36px);
+  animation: orc-rise .6s ease both;
+  transition: box-shadow var(--dur-slow) var(--ease-out), bottom .35s var(--ease-out);
+}
+.orc-card.orc-float[data-oracle-state="revealed"],
+.orc-card.orc-float[data-oracle-state="received"],
+.orc-card.orc-float[data-oracle-state="released"] {
+  width: 328px; max-height: calc(100vh - 120px); overflow-y: auto;
+}
+.orc-card.orc-float[data-oracle-state="sealed"]:hover,
+.orc-card.orc-float[data-oracle-state$="-collapsed"]:hover { border-color: var(--brass); }
+
+/* ---- mobile: bottom tray, never covering the form ---- */
+@media (max-width: 720px) {
+  .orc-card.orc-float {
+    right: 10px; left: 10px; bottom: max(10px, env(safe-area-inset-bottom));
+    width: auto; max-width: none;
+    transition: box-shadow var(--dur-slow) var(--ease-out), transform var(--dur) var(--ease-out), opacity var(--dur) var(--ease-out), bottom .35s var(--ease-out);
+  }
+  .orc-card.orc-float[data-oracle-state="revealed"],
+  .orc-card.orc-float[data-oracle-state="received"],
+  .orc-card.orc-float[data-oracle-state="released"] { width: auto; max-height: 78vh; }
+  /* hush while the visitor is entering their birth date */
+  .orc-card.orc-hushed { transform: translateY(140%); opacity: 0; pointer-events: none; }
+}
+
+/* ---- ambient motion, opt-in only ---- */
+@media (prefers-reduced-motion: no-preference) {
+  .orc-card[data-oracle-state="sealed"] .orc-halo,
+  .orc-card[data-oracle-state$="-collapsed"] .orc-halo { animation: orc-halo 5.5s var(--ease-io) infinite; }
+}
+
+/* ---- reduced motion: state without movement ---- */
+@media (prefers-reduced-motion: reduce) {
+  .orc-closed-layer, .orc-open-layer, .orc-rim-open, .orc-chev, .orc-card, .orc-card.orc-float, .orc-halo { transition-duration: .001s; animation: none !important; }
+  .orc-card[data-oracle-state="revealed"] .orc-body,
+  .orc-card[data-oracle-state="received"] .orc-body,
+  .orc-card[data-oracle-state="released"] .orc-body { animation: none; }
+}

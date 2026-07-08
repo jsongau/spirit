@@ -32,21 +32,23 @@ The most important court grouping in any chart reading is the **Life-Career-Weal
 
 ### Opposite Palace Pairs (對宮)
 
+> CORRECTION (2026-07-07): two pairs in the original table (Wealth-Health, Fortune-Parents) were geometrically wrong; corrected below to Wealth-Fortune (財福線) and Health-Parents (父疾線). See docs/purple-star-hub/PSA-TERMINOLOGY.md ruling C8.
+
 | Palace | Opposite Palace |
 |--------|----------------|
 | Life (命宮) | Travel/Migration (遷移宮) |
 | Siblings (兄弟宮) | Servants/Network (奴僕宮) |
 | Spouse (夫妻宮) | Career (官祿宮) |
 | Children (子女宮) | Property (田宅宮) |
-| Wealth (財帛宮) | Health (疾厄宮) |
-| Fortune/Virtue (福德宮) | Parents (父母宮) |
+| Wealth (財帛宮) | Fortune (福德宮) |
+| Health (疾厄宮) | Parents (父母宮) |
 
 ---
 
 ## THE FOUR SI HUA TRANSFORMATIONS IN PALACES
 
 - **化祿 Hua Lu:** The life domain of that palace enters a state of beneficial ease and resource arrival
-- **化権 Hua Quan:** The life domain acquires increased initiative, assertion, and control
+- **化權 Hua Quan:** The life domain acquires increased initiative, assertion, and control
 - **化科 Hua Ke:** The life domain gains the quality of being recognized, publicized, and respected
 - **化忌 Hua Ji:** That palace carries the recurring lesson or pressure point — the deepest karmic work lives here. Not cursed — it is where the most conscious, careful engagement is required, and where deepest growth occurs.
 

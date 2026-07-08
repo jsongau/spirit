@@ -1,0 +1,98 @@
+/* ============================================================
+   Zodi Animal — Path of Awakening floater, brought into indexv5.
+   Extracted verbatim from css/zodi.css (the .zaw-* widget only,
+   none of zodi.css's other globals). Paired with js/zodi-awaken.js.
+   Tokens (--brass, --amethyst, --r-2, --ease-io ...) come from the
+   already-loaded css/tokens.css.
+   ============================================================ */
+@keyframes zaw-rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.zaw-card{position:relative;border:1px solid transparent;border-radius:var(--r-2);padding:0;color:var(--body);
+  background:
+    linear-gradient(oklch(0.17 0.03 274),oklch(0.155 0.03 272)) padding-box,
+    conic-gradient(from 210deg,
+      oklch(from var(--brass-dim) l c h / .9), oklch(from var(--amethyst) l c h / .75),
+      oklch(from var(--teal-dim) l c h / .7), oklch(from var(--brass) l c h / .9),
+      oklch(from var(--brass-dim) l c h / .9)) border-box;
+  box-shadow:0 0 0 1px oklch(0 0 0 / .3),0 10px 40px oklch(0 0 0 / .35)}
+.zaw-card::after{content:"\2726";position:absolute;top:-9px;left:50%;transform:translateX(-50%);
+  font-size:.7rem;color:var(--brass-bright);background:oklch(0.17 0.03 274);padding:0 7px;line-height:1;
+  text-shadow:0 0 8px oklch(from var(--brass) l c h / .6)}
+.zaw-card[data-tier="awakened"]{box-shadow:0 0 0 1px oklch(0 0 0 / .3),0 0 34px oklch(from var(--brass) l c h / .28)}
+
+/* header: eye + one compact line. No duplicated tier below. */
+.zaw-head{display:flex;align-items:center;gap:12px;width:100%;background:none;border:0;cursor:pointer;
+  padding:13px 16px;text-align:left;color:var(--muted);
+  transition:padding 1.3s cubic-bezier(.62,.02,.16,1),gap 1.3s cubic-bezier(.62,.02,.16,1)}
+.zaw-eye3{width:50px;height:auto;flex:0 0 auto;overflow:visible;
+  filter:drop-shadow(0 0 10px oklch(0.6 0.12 300 / .45));transition:width 1.3s cubic-bezier(.62,.02,.16,1)}
+.zaw-card[data-tier="awakened"] .zaw-eye3{filter:drop-shadow(0 0 16px oklch(from var(--brass) l c h / .7))}
+.zaw-lid{transition:transform 1.7s cubic-bezier(.62,.02,.16,1)}
+.zaw-head-txt{display:flex;flex-direction:column;gap:3px;flex:1;min-width:0}
+.zaw-head-kicker{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.zaw-head-tier{font-family:var(--serif);font-size:1.1rem;color:var(--moon);line-height:1;white-space:nowrap}
+.zaw-head-tier b{color:var(--brass-bright);font-weight:400;font-family:var(--mono);font-size:.72em;letter-spacing:.06em}
+.zaw-chev{width:8px;height:8px;flex:0 0 auto;border-right:1.5px solid var(--brass-dim);border-bottom:1.5px solid var(--brass-dim);
+  transform:rotate(45deg);transition:transform 1.2s cubic-bezier(.62,.02,.16,1);margin-right:4px}
+.zaw-card.open .zaw-chev{transform:rotate(225deg)}
+
+/* body: constant padding (audit fix: no padding snap on close) */
+.zaw-bodywrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows 1.3s cubic-bezier(.62,.02,.16,1)}
+.zaw-card.open .zaw-bodywrap{grid-template-rows:1fr}
+.zaw-body{overflow:hidden;min-height:0;padding:0 18px 18px;opacity:0;transform:translateY(-6px);
+  transition:opacity .5s ease,transform .6s var(--ease-out)} /* closing: fade quickly, no ghost */
+.zaw-card.open .zaw-body{opacity:1;transform:none;
+  transition:opacity 1.1s ease .25s,transform 1.3s cubic-bezier(.62,.02,.16,1) .15s} /* opening: slow bloom */
+
+.zaw-whisper{margin:2px 0 12px;font-family:var(--serif);font-style:italic;font-size:.98rem;color:var(--ivory);line-height:1.5}
+.zaw-whisper em{color:var(--brass-bright);font-style:italic}
+.zaw-rites{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.zaw-rites a{display:flex;align-items:center;gap:10px;padding:7px 9px;border-radius:var(--r-1);
+  text-decoration:none;color:var(--body);font-size:.88rem;transition:background var(--dur-fast),color var(--dur-fast)}
+.zaw-rites a:hover{background:oklch(from var(--brass) l c h / .09);color:var(--moon)}
+.zaw-mark{color:var(--faint);font-size:.8rem;width:1em}
+.zaw-rites .done .zaw-mark{color:var(--brass-bright);text-shadow:0 0 8px oklch(from var(--brass) l c h / .5)}
+.zaw-rites .done .zaw-lbl{color:var(--muted);text-decoration:line-through;text-decoration-color:oklch(from var(--brass) l c h / .35)}
+.zaw-rites .next a{border:1px solid oklch(from var(--brass) l c h / .35);background:oklch(from var(--brass) l c h / .06)}
+.zaw-rites .next .zaw-lbl{color:var(--moon)}
+.zaw-zk{margin-left:auto;font-family:var(--mono);font-size:.68rem;color:var(--brass-bright);letter-spacing:.04em}
+.zaw-go{color:var(--brass-bright);margin-left:6px;animation:zaw-nudge 2.2s var(--ease-io) infinite}
+@keyframes zaw-nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
+.zaw-streak{margin:12px 0 0;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--faint)}
+.zaw-streak b{color:var(--silver-bright);font-weight:500}
+.zaw-karma{margin:10px 0 0;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.zaw-karma a{color:var(--brass-bright);text-decoration:none}
+
+/* float: bottom-right anchor, grows upward; pill has a FIXED width so it tweens */
+.zaw-card.zaw-float{position:fixed;right:18px;bottom:18px;left:auto;z-index:60;width:276px;
+  max-width:calc(100vw - 36px);animation:zaw-rise .6s ease both;
+  /* opening: flatten the radius quickly so the growing card is never a tall oval */
+  transition:bottom .35s var(--ease-out),width 1.3s cubic-bezier(.62,.02,.16,1),border-radius .45s ease}
+.zaw-card.zaw-float.open{max-height:calc(100vh - 96px);overflow-y:auto} /* audit fix: cap only when open */
+.zaw-card.zaw-float:not(.open){width:224px;border-radius:var(--r-pill);
+  /* closing: hold the rounded-rect while the body collapses, then round into the
+     pill only in the final moment once the card is already short — the eye stays
+     inside the shape the whole way down instead of riding above a tall oval */
+  transition:bottom .35s var(--ease-out),width 1.3s cubic-bezier(.62,.02,.16,1),border-radius .5s cubic-bezier(.62,.02,.16,1) .9s}
+.zaw-card.zaw-float:not(.open)::after{display:none}
+/* collapsed pill: eye · label · chevron sit as one centered cluster,
+   not stretched edge-to-edge with a hollow middle */
+.zaw-card.zaw-float:not(.open) .zaw-head{min-height:44px;padding:0 16px;gap:10px;align-items:center;justify-content:center}
+.zaw-card.zaw-float:not(.open) .zaw-head-txt{flex:0 1 auto}
+.zaw-card.zaw-float:not(.open) .zaw-chev{margin-right:0}
+/* the eyeball is drawn at 57% down the 0 0 120 84 viewBox, so centring the svg
+   BOX leaves the ball ~1.7px low against the label; lift it onto the centreline */
+.zaw-card.zaw-float:not(.open) .zaw-eye3{width:34px;transform:translateY(-1.7px)}
+.zaw-card.zaw-float:not(.open) .zaw-head-kicker{display:none}
+.zaw-card.zaw-float:not(.open) .zaw-head-tier{font:600 .66rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.zaw-card.zaw-float:not(.open):hover{border-color:var(--brass)}
+@media(max-width:720px){.zaw-card.zaw-float{right:10px;bottom:76px}}
+@media (prefers-reduced-motion: reduce){
+  .zaw-lid,.zaw-bodywrap,.zaw-body,.zaw-chev,.zaw-eye3,.zaw-head,.zaw-card.zaw-float{transition-duration:.3s}
+  /* transition-duration doesn't clear delay: zero the closing radius delay too,
+     or reduced-motion would sit in a dead zone before rounding */
+  .zaw-card.zaw-float,.zaw-card.zaw-float:not(.open){transition-delay:0s}
+  .zaw-go{animation:none}
+  .zaw-card.zaw-float{animation:none}
+}

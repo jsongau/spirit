@@ -282,11 +282,11 @@ PNAV.MAP = [
         ["/bazi/compatibility/", "You & them"]
       ]},
       { title: "Purple Star", mark: "紫微", items: [
-        ["/elements/zi-wei/",             "Zi Wei Dou Shu", "紫微斗数 Zǐwēi Dǒushù"],
-        ["/elements/zi-wei/chart/",       "Read a chart", "命盘 mìngpán · school"],
-        ["/elements/zi-wei/stars/",       "The 14 Stars", "主星 zhǔxīng"],
-        ["/elements/zi-wei/palaces/",     "The 12 Palaces", "十二宫 shí'èr gōng"],
-        ["/elements/zi-wei/four-forces/", "The Four Forces", "四化 sìhuà"]
+        ["/elements/purple-star-astrology/",             "Zi Wei Dou Shu", "紫微斗数 Zǐwēi Dǒushù"],
+        ["/elements/purple-star-astrology/chart/",       "Read a chart", "命盘 mìngpán · school"],
+        ["/elements/purple-star-astrology/stars/",       "The 14 Stars", "主星 zhǔxīng"],
+        ["/elements/purple-star-astrology/palaces/",     "The 12 Palaces", "十二宫 shí'èr gōng"],
+        ["/elements/purple-star-astrology/four-forces/", "The Four Forces", "四化 sìhuà"]
       ]},
       { title: "Feng shui", mark: "風水", items: [
         ["/feng-shui/commanding-position/", "Commanding position", "live"],
@@ -361,12 +361,12 @@ PNAV.CRAWL_EXTRA = [
   ["/cosmology/four-pillars/",       "The Four Pillars"],
   ["/elements/",                     "The five phases (Elements hub)"],
   ["/bazi/",                         "BaZi, the Four Pillars of Destiny"],
-  ["/elements/zi-wei/",              "Purple Star Astrology (Zi Wei Dou Shu)"],
-  ["/elements/zi-wei/chart/",        "Learn to read a Purple Star chart"],
-  ["/elements/zi-wei/stars/",        "The 14 major stars"],
-  ["/elements/zi-wei/palaces/",      "The 12 palaces"],
-  ["/elements/zi-wei/four-forces/",  "The Four Forces (Si Hua)"],
-  ["/elements/zi-wei/history/",      "Purple Star history & origins"],
+  ["/elements/purple-star-astrology/",              "Purple Star Astrology (Zi Wei Dou Shu)"],
+  ["/elements/purple-star-astrology/chart/",        "Learn to read a Purple Star chart"],
+  ["/elements/purple-star-astrology/stars/",        "The 14 major stars"],
+  ["/elements/purple-star-astrology/palaces/",      "The 12 palaces"],
+  ["/elements/purple-star-astrology/four-forces/",  "The Four Forces (Si Hua)"],
+  ["/elements/purple-star-astrology/history/",      "Purple Star history & origins"],
   /* dropped when the standalone Menagerie group folded into Explore +
      Zodiac; keep it linked so no crawlable destination is lost. */
   ["/learn.html",                    "How it works"]
@@ -674,31 +674,31 @@ PNAV.HUBS = {
   // Nested hub: Zi Wei Dou Shu (Purple Star Astrology) pages resolve here
   // (not to "elements") via the longest-prefix match in resolveHub. The hub
   // root is auto-dropped as a tab but still carries the crumb.
-  "elements/zi-wei": {
-    label: "Purple Star (Zi Wei Dou Shu)", root: "/elements/zi-wei/",
+  "elements/purple-star-astrology": {
+    label: "Purple Star (Zi Wei Dou Shu)", root: "/elements/purple-star-astrology/",
     items: [
-      ["/elements/zi-wei/", "Overview"],
-      ["/elements/zi-wei/history/", "History & origins 源流 Yuánliú"],
-      ["/elements/zi-wei/palaces/", "The 12 Palaces 十二宫 Shí'èr Gōng"],
-      ["/elements/zi-wei/stars/", "The 14 Stars 主星 Zhǔxīng", [
-        ["/elements/zi-wei/stars/", "All 14 major stars 十四主星"],
-        ["/elements/zi-wei/stars/zi-wei/", "紫微 Zǐwēi · The Emperor"],
-        ["/elements/zi-wei/stars/tian-ji/", "天机 Tiānjī · The Strategist"],
-        ["/elements/zi-wei/stars/tai-yang/", "太阳 Tàiyáng · The Sun"],
-        ["/elements/zi-wei/stars/wu-qu/", "武曲 Wǔqū · The Finance General"],
-        ["/elements/zi-wei/stars/tian-tong/", "天同 Tiāntóng · The Harmony Star"],
-        ["/elements/zi-wei/stars/lian-zhen/", "廉贞 Liánzhēn · The Diplomat"],
-        ["/elements/zi-wei/stars/tian-fu/", "天府 Tiānfǔ · The Treasury"],
-        ["/elements/zi-wei/stars/tai-yin/", "太阴 Tàiyīn · The Moon Star"],
-        ["/elements/zi-wei/stars/tan-lang/", "贪狼 Tānláng · The Desire Star"],
-        ["/elements/zi-wei/stars/ju-men/", "巨门 Jùmén · The Dark Gate"],
-        ["/elements/zi-wei/stars/tian-xiang/", "天相 Tiānxiàng · The Prime Minister"],
-        ["/elements/zi-wei/stars/tian-liang/", "天梁 Tiānliáng · The Elder"],
-        ["/elements/zi-wei/stars/qi-sha/", "七杀 Qīshā · The Warrior"],
-        ["/elements/zi-wei/stars/po-jun/", "破军 Pòjūn · The Vanguard"]
+      ["/elements/purple-star-astrology/", "Overview"],
+      ["/elements/purple-star-astrology/history/", "History & origins 源流 Yuánliú"],
+      ["/elements/purple-star-astrology/palaces/", "The 12 Palaces 十二宫 Shí'èr Gōng"],
+      ["/elements/purple-star-astrology/stars/", "The 14 Stars 主星 Zhǔxīng", [
+        ["/elements/purple-star-astrology/stars/", "All 14 major stars 十四主星"],
+        ["/elements/purple-star-astrology/stars/zi-wei/", "紫微 Zǐwēi · The Emperor"],
+        ["/elements/purple-star-astrology/stars/tian-ji/", "天机 Tiānjī · The Strategist"],
+        ["/elements/purple-star-astrology/stars/tai-yang/", "太阳 Tàiyáng · The Sun"],
+        ["/elements/purple-star-astrology/stars/wu-qu/", "武曲 Wǔqū · The Finance General"],
+        ["/elements/purple-star-astrology/stars/tian-tong/", "天同 Tiāntóng · The Harmony Star"],
+        ["/elements/purple-star-astrology/stars/lian-zhen/", "廉贞 Liánzhēn · The Diplomat"],
+        ["/elements/purple-star-astrology/stars/tian-fu/", "天府 Tiānfǔ · The Treasury"],
+        ["/elements/purple-star-astrology/stars/tai-yin/", "太阴 Tàiyīn · The Moon Star"],
+        ["/elements/purple-star-astrology/stars/tan-lang/", "贪狼 Tānláng · The Desire Star"],
+        ["/elements/purple-star-astrology/stars/ju-men/", "巨门 Jùmén · The Dark Gate"],
+        ["/elements/purple-star-astrology/stars/tian-xiang/", "天相 Tiānxiàng · The Prime Minister"],
+        ["/elements/purple-star-astrology/stars/tian-liang/", "天梁 Tiānliáng · The Elder"],
+        ["/elements/purple-star-astrology/stars/qi-sha/", "七杀 Qīshā · The Warrior"],
+        ["/elements/purple-star-astrology/stars/po-jun/", "破军 Pòjūn · The Vanguard"]
       ]],
-      ["/elements/zi-wei/four-forces/", "The Four Forces 四化 Sìhuà"],
-      ["/elements/zi-wei/chart/", "Read a chart 命盘 Mìngpán"]
+      ["/elements/purple-star-astrology/four-forces/", "The Four Forces 四化 Sìhuà"],
+      ["/elements/purple-star-astrology/chart/", "Read a chart 命盘 Mìngpán"]
     ]
   },
   // Nested hub: chakra + yoga pages resolve here (not to "elements") via the

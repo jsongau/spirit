@@ -1,0 +1,560 @@
+/* ============================================================
+   Zodi Animal — homepage v4 overlay
+   Hero stays exactly as V3 (full width). The identity rail lives
+   BELOW the sub-nav as a sticky left sidebar beside the content,
+   using the ORIGINAL index.html rail markup + styles (scoped under
+   a .home-v4 wrapper so the rest of home-v4.css never touches this
+   page). The rail rules are appended verbatim at the bottom of this
+   file. Reveal engine stays owned by homepage-v2.js.
+   ============================================================ */
+
+/* ---------- desktop: content becomes [rail][main] ---------- */
+@media (min-width: 1024px) {
+  #pn-main.hv4-main {
+    display: grid;
+    grid-template-columns: [rail] 300px [main] minmax(0, 1fr);
+    column-gap: 40px; row-gap: 0; align-items: start;
+    /* full bleed: rail hugs the left edge, content spans the viewport */
+    max-width: none; margin-inline: 0; padding-inline: clamp(16px, 2.4vw, 40px);
+  }
+  /* space the rail cards apart (the home-v4 flex-column gap lives outside our extract) */
+  .home-v4 #identity-rail { display: flex; flex-direction: column; gap: 16px; }
+  /* full-bleed the "Systems of the craft" sub-bar too */
+  .hv2 .gatestring .gs-inner { max-width: none; }
+  #pn-main.hv4-main > .hv4-railwrap {
+    grid-column: rail; grid-row: 1 / -1;
+    /* clear BOTH the main nav (--pn-bar-h) and the sticky "Systems of the craft"
+       sub-bar (.gatestring, ~48px) so the rail is never covered */
+    position: sticky; top: calc(var(--pn-bar-h, 64px) + 60px); align-self: start;
+  }
+  #pn-main.hv4-main > :not(.hv4-railwrap) { grid-column: main; }
+  #pn-main.hv4-main > section > .wrap { max-width: none; padding-inline: 0; }
+}
+
+/* ---------- empty sighting plate: an invitation to play the dial ---------- */
+.ro-invite { display: none; }
+#roCard.is-dormant > :not(.ro-invite) { display: none; }
+#roCard.is-dormant .ro-invite { display: flex; flex-direction: column; gap: 10px; }
+.ro-invite .roi-eyebrow { margin: 0; font-family: var(--mono); font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: var(--brass-dim, #a8925c); }
+.ro-invite .roi-eyebrow span { color: var(--brass, #d6c18c); }
+.ro-invite .roi-title { margin: 2px 0 2px; font-family: var(--serif); font-size: clamp(1.5rem, 3.4vw, 2rem); line-height: 1.1; color: var(--ivory, #ece7d8); }
+.ro-invite .roi-body { margin: 0; max-width: 46ch; font-size: .96rem; line-height: 1.6; color: var(--muted, #adaec2); }
+.ro-invite .roi-body b { color: var(--brass-bright, #efe2b4); font-weight: 600; }
+.ro-invite .roi-cue { display: flex; align-items: center; gap: 9px; margin: 6px 0 0; font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--brass, #d6c18c); }
+.ro-invite .roi-cue span[lang] { color: var(--brass-bright, #efe2b4); }
+.ro-invite .roi-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--brass, #d6c18c); flex: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .ro-invite .roi-dot { animation: v4-cue-pulse 1.9s ease-out infinite; }
+  @keyframes v4-cue-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(214,193,140,.5); }
+    70% { box-shadow: 0 0 0 12px rgba(214,193,140,0); }
+    100% { box-shadow: 0 0 0 0 rgba(214,193,140,0); }
+  }
+}
+
+/* ---------- mobile / tablet (<1024px): no fixed sidebar ---------- */
+@media (max-width: 1023px) {
+  #pn-main.hv4-main { display: block; }
+  #pn-main.hv4-main:not(.is-named) > .hv4-railwrap { display: none; }
+  #pn-main.hv4-main.is-named > .hv4-railwrap { display: block; margin: 8px 20px 20px; }
+  #pn-main.hv4-main.is-named .hv4-railwrap .home-v4,
+  #pn-main.hv4-main.is-named #identity-rail { max-width: 560px; margin-inline: auto; }
+}
+
+/* show the on-this-page jump on desktop only */
+@media (min-width: 1024px) { .home-v4 .rail-jump { display: block; } }
+@media (max-width: 1023px) { .home-v4 .rail-jump { display: none; } }
+
+/* ============================================================
+   ORIGINAL RAIL STYLES — copied verbatim from css/home-v4.css
+   (lines 242-575). Scoped under .home-v4 so they apply only to the
+   wrapped rail. All variables resolve from tokens.css.
+   ============================================================ */
+.home-v4 #identity-rail > * {
+  position: relative;
+  flex: 0 0 auto;
+  min-height: auto;   /* never shrink below content */
+  margin: 0;
+  transform: none;    /* no effect layer may slide a rail module */
+}
+.home-v4 .rail-card,
+.home-v4 #identity-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: var(--e-1);
+}
+.home-v4 #identity-card { padding: 24px; }
+.home-v4 .rail-kicker,
+.home-v4 #identity-card .rail-kicker {
+  margin: 0;
+  font: 600 .68rem/1 var(--sans);
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.home-v4 .rail-kicker--sec { color: var(--season); }
+
+.home-v4 #identity-sigil {
+  width: 72px;
+  height: 72px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent-soft), transparent);
+  border: 1px solid var(--line-soft);
+  color: var(--accent);
+  /* alive: a slow breathing glow + an occasional shimmer sweep.
+     CSS only; both are stilled under prefers-reduced-motion. */
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 0 14px var(--accent-soft);
+  animation: v4-sigil-glow 6.5s ease-in-out infinite;
+}
+.home-v4 #identity-sigil::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 42%, rgba(255, 255, 255, .16) 50%, transparent 58%) no-repeat;
+  background-size: 240% 100%;
+  background-position: 190% 0;
+  animation: v4-sigil-shimmer 7.5s ease-in-out infinite;
+}
+@keyframes v4-sigil-glow {
+  0%, 100% { box-shadow: 0 0 12px var(--accent-soft); }
+  50%      { box-shadow: 0 0 26px var(--accent-soft), 0 0 52px var(--season-soft); }
+}
+@keyframes v4-sigil-shimmer {
+  0%, 72%   { background-position: 190% 0; }
+  92%, 100% { background-position: -90% 0; }
+}
+.home-v4 .identity-sigil-wait { font-family: var(--serif); font-size: 2rem; color: var(--accent); }
+.home-v4 #identity-name {
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-weight: 560;
+  font-size: 1.55rem;
+  line-height: 1.08;
+  color: var(--moon);
+  margin: 0;
+  text-wrap: balance;
+}
+.home-v4 #identity-name .id-pairing,
+.home-v4 .identity-pairing {
+  display: block;
+  font: 400 .75rem/1.5 var(--mono);
+  letter-spacing: .03em;
+  color: var(--muted);
+  margin: 6px 0 0;
+}
+.home-v4 .identity-invite {
+  font: italic 400 .9rem/1.5 var(--serif);
+  color: var(--body-text);
+  margin: 0;
+}
+.home-v4 #identity-card[data-state="revealed"] .identity-invite { display: none; }
+
+/* the identity CTA takes the canvas gradient sheen contract */
+.home-v4 #identity-share {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 42px;
+  margin-top: 4px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: var(--r-pill);
+  background:
+    linear-gradient(105deg, rgba(255,255,255,0) 42%, rgba(255,255,255,.5) 50%, rgba(255,255,255,0) 58%) no-repeat,
+    linear-gradient(135deg, var(--cta-g1), var(--cta-g2));
+  background-size: 220% 100%, 180% 180%;
+  background-position: -160% 50%, 0% 50%;
+  color: var(--cta-text);
+  font: 700 .85rem/1 var(--sans);
+  cursor: pointer;
+  box-shadow: 0 4px 16px var(--accent-soft);
+  transition: transform .25s var(--ease-io), box-shadow .25s var(--ease-io);
+}
+.home-v4 #identity-share:hover,
+.home-v4 #identity-share:focus-visible {
+  animation: om-sheen .7s ease forwards;
+  background: /* re-assert layers so the hover in home.css can't flatten them */
+    linear-gradient(105deg, rgba(255,255,255,0) 42%, rgba(255,255,255,.5) 50%, rgba(255,255,255,0) 58%) no-repeat,
+    linear-gradient(135deg, var(--cta-g1), var(--cta-g2));
+  background-size: 220% 100%, 180% 180%;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--accent-soft), 0 0 0 3px var(--sec-soft);
+}
+.home-v4 #identity-share:active { transform: scale(.97); }
+
+/* quiet "Start over" reset: hidden until home.js flips the card to
+   data-state="revealed"; a two-step confirm before anything clears */
+.home-v4 .identity-reset { display: none; }
+.home-v4 #identity-card[data-state="revealed"] .identity-reset {
+  display: block;
+  margin-top: 2px;
+}
+.home-v4 #identity-reset {
+  background: none;
+  border: 0;
+  padding: 4px 0;
+  cursor: pointer;
+  font: 400 .72rem/1 var(--sans);
+  color: var(--faint);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color .2s ease;
+}
+.home-v4 #identity-reset:hover,
+.home-v4 #identity-reset:focus-visible { color: var(--rose); }
+.home-v4 .identity-reset-confirm {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font: 400 .72rem/1.5 var(--sans);
+  color: var(--muted);
+}
+.home-v4 .identity-reset-confirm[hidden] { display: none; }
+.home-v4 .identity-reset-confirm .q { flex: 1 1 100%; }
+.home-v4 .identity-reset-confirm button {
+  background: var(--field);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  color: var(--ivory);
+  font: 600 .68rem/1 var(--sans);
+  padding: 7px 12px;
+  cursor: pointer;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.home-v4 .identity-reset-confirm button:hover,
+.home-v4 .identity-reset-confirm button:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px var(--accent-soft);
+}
+.home-v4 #identity-reset-yes { border-color: var(--rose); color: var(--rose); }
+.home-v4 #identity-reset-yes:hover,
+.home-v4 #identity-reset-yes:focus-visible {
+  border-color: var(--rose);
+  box-shadow: 0 0 10px var(--rose);
+}
+
+/* share icon row (canvas sharing widget) — now lives INSIDE the
+   merged identity card, separated by a hairline; no panel-in-a-panel */
+.home-v4 #rail-share[hidden] { display: none; }
+.home-v4 #rail-share {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-soft);
+  background: none;
+  border-inline: 0;
+  border-bottom: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding-inline: 0;
+  padding-bottom: 0;
+}
+.home-v4 .shareRow { display: flex; justify-content: space-between; gap: 4px; }
+.home-v4 .shareRow > a,
+.home-v4 .shareRow > button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--ivory);
+  font-family: var(--sans);
+}
+.home-v4 .shareRow .ic {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.home-v4 .shareRow > a:hover .ic,
+.home-v4 .shareRow > button:hover .ic {
+  border-color: var(--accent);
+  box-shadow: 0 0 14px var(--accent-soft);
+  transform: translateY(-2px);
+}
+.home-v4 .shareRow .lbl { font-size: .62rem; color: var(--muted); }
+
+/* unlocks card (canvas rail unlocks) */
+.home-v4 .unlockList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.home-v4 .unlockList li { display: flex; align-items: center; gap: 9px; }
+.home-v4 .unlockList .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  background: var(--field);
+  box-shadow: inset 0 0 0 1px var(--line);
+  transition: background .4s ease, box-shadow .4s ease;
+}
+.home-v4 .unlockList .u-label { font-size: .82rem; color: var(--faint); transition: color .4s ease; }
+.home-v4 #rail-unlocks[data-revealed="1"] .dot {
+  background: linear-gradient(135deg, var(--accent), var(--season));
+  box-shadow: 0 0 8px var(--accent-soft);
+}
+.home-v4 #rail-unlocks[data-revealed="1"] .u-label { color: var(--ivory); }
+.home-v4 .unlockMeter {
+  height: 6px;
+  border-radius: 99px;
+  background: var(--field);
+  overflow: hidden;
+  margin-top: 2px;
+}
+.home-v4 .unlockMeter i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--season));
+  border-radius: 99px;
+  transition: width .6s ease;
+}
+.home-v4 .unlockLine { margin: 0; font: 400 .7rem/1.4 var(--mono); color: var(--faint); }
+
+/* moon rail card (canvas #moon-rail) */
+.home-v4 #moon-rail {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 14px;
+}
+.home-v4 #moon-rail[hidden] { display: none; }
+.home-v4 #moon-rail .moon-rail-glyph { font-size: 1.6rem; line-height: 1; }
+.home-v4 #moon-rail .moon-rail-body { min-width: 0; }
+.home-v4 #moon-rail .moon-rail-label { margin: 0; font: 500 .85rem/1.5 var(--sans); color: var(--moon); }
+.home-v4 #moon-rail .moon-rail-meaning { margin: 0; font-size: .75rem; line-height: 1.45; color: var(--muted); }
+
+/* awakening slot: meter.js injects a FULL .spirit-meter card in here,
+   so the slot itself must be a transparent flow container — the old
+   card-in-a-card chrome plus the display-scale .spirit-tier is what
+   read as the giant "Waking" colliding with the cards below it. The
+   meter is retuned to rail scale; every part stays in normal flow. */
+.home-v4 #awakening-slot {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  min-height: 96px;
+  border-radius: 20px;
+}
+.home-v4 #awakening-slot:empty {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 20px;
+}
+.home-v4 #awakening-slot .spirit-meter {
+  border-radius: 20px;
+  padding: 18px 16px;
+  gap: var(--s-2);
+}
+.home-v4 #awakening-slot .spirit-orb { width: min(120px, 52%); }
+.home-v4 #awakening-slot .spirit-tier {
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+.home-v4 #awakening-slot .spirit-count,
+.home-v4 #awakening-slot .spirit-next { font-size: .75rem; }
+
+/* "On this page" (canvas rail nav) */
+.home-v4 .rail-jump {
+  border: 1px solid var(--line-soft);
+  border-radius: 20px;
+  padding: 18px 20px;
+}
+.home-v4 .rail-jump p {
+  font: 600 .66rem/1 var(--sans);
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin: 0 0 10px;
+}
+.home-v4 .rail-jump ul { gap: 8px; }
+.home-v4 .rail-jump a { color: var(--body-text); font-size: .82rem; }
+.home-v4 .rail-jump a:hover { color: var(--accent-bright); }
+
+/* ------------------------------------------------------------
+   4. Hero + reader (canvas #read)
+
+/* zodi-rail card copy/CTA (not present in home-v4.css; kept observatory-plain) */
+.home-v4 #zodi-rail .zr-wander { margin: 0; font-size: .82rem; line-height: 1.5; color: var(--muted); }
+.home-v4 #zodi-rail .zr-cta { display: inline-block; margin-top: 4px; font: 600 .8rem/1 var(--sans); color: var(--accent); }
+.home-v4 #zodi-rail .zr-cta:hover { color: var(--accent-bright); }
+
+/* ============================================================
+   v4 DIAL: draggable rings, refined magnetic pointer, lunar ring
+   ============================================================ */
+/* grab affordance (js also sets these inline as a fallback) */
+.dial { cursor: grab; touch-action: pan-y; }
+.dial.is-dragging { cursor: grabbing; }
+
+/* refined pointer needle + lume gem */
+.dial .pointer-grp { pointer-events: none; }
+.dial .pointer-halo { fill: rgba(214,193,140,.18); }
+.dial .pointer {
+  fill: var(--brass, #d6c18c);
+  filter: drop-shadow(0 0 3px rgba(214,193,140,.55));
+  transform-box: fill-box; transform-origin: 50% 100%;
+  transition: filter .2s ease, transform .18s ease;
+}
+.dial .pointer-gem { fill: #fff6df; filter: drop-shadow(0 0 4px rgba(255,246,223,.9)); }
+/* magnetic snap: brighten + a quick spring when a notch commits */
+.dial .pointer.snap { filter: drop-shadow(0 0 9px rgba(239,226,180,.95)); }
+@media (prefers-reduced-motion: no-preference) {
+  .dial .pointer.snap { animation: v4-ptr-snap .18s ease; }
+  @keyframes v4-ptr-snap {
+    0% { transform: translateY(0) scale(1); }
+    40% { transform: translateY(-2px) scale(1.14); }
+    100% { transform: translateY(0) scale(1); }
+  }
+}
+
+/* faint outer ring of the 24 solar terms (二十四节气); today's term lit */
+#v4-solar-terms { pointer-events: none; }
+#v4-solar-terms .v4-term {
+  font-family: "Songti SC", "Noto Serif SC", var(--serif, serif);
+  font-size: 9px; fill: var(--brass, #d6c18c); opacity: .13;
+}
+#v4-solar-terms .v4-term.is-now { opacity: .92; font-size: 11px; font-weight: 600; }
+@media (prefers-reduced-motion: no-preference) {
+  #v4-solar-terms .v4-term.is-now { animation: v4-term-breathe 5s ease-in-out infinite; }
+  @keyframes v4-term-breathe { 0%,100% { opacity: .78; } 50% { opacity: 1; } }
+}
+
+/* ---------- grabbed / locked dial state (shows the ring is held) ---------- */
+.dial.is-dragging { cursor: grabbing; }
+/* the held ring's glyphs brighten; the other ring recedes so focus is obvious */
+.dial.grab-west #ringEast, .dial.grab-east #ringWest { opacity: .38; transition: opacity .2s ease; }
+.dial.grab-west #ringWest .wglyph, .dial.grab-east #ringEast .eglyph { fill: var(--brass-bright, #efe2b4); }
+/* the pointer locks: brighter gem + halo while held */
+.dial .pointer.grab { filter: drop-shadow(0 0 11px rgba(239,226,180,1)); }
+.dial.is-dragging .pointer-halo { fill: rgba(214,193,140,.34); }
+.dial.is-dragging .pointer-gem { filter: drop-shadow(0 0 7px rgba(255,246,223,1)); }
+
+/* ============================================================
+   v4 REVEAL CARD — cinematic glow + third-eye header that opens
+   as the birth date is typed. Keeps the v2 .datefields input style.
+   ============================================================ */
+.v4-reveal { position: relative; overflow: hidden; text-align: center; }
+.v4-reveal > * { position: relative; z-index: 1; }
+.v4-reveal .rv-aura {
+  position: absolute; left: 50%; top: 4%; width: 380px; height: 360px; z-index: 0;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(214,193,140, calc(.10 + var(--ap,0)*.14)), rgba(182,71,51,.05) 45%, transparent 70%);
+  filter: blur(4px); pointer-events: none; transition: background .6s ease;
+}
+/* third eye */
+.v4-reveal .rv-eye { width: 120px; height: 84px; margin: 2px auto 4px; }
+.v4-reveal .rv-eye svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.v4-reveal .rv-rays line { stroke: var(--brass, #d6c18c); stroke-width: 1.4; stroke-linecap: round; opacity: calc(.15 + var(--ap,0)*.75); transition: opacity .5s ease; }
+.v4-reveal .rv-iris { opacity: calc(.4 + var(--ap,0)*.6); filter: drop-shadow(0 0 calc(2px + var(--ap,0)*9px) rgba(214,193,140,.85)); transition: opacity .6s ease, filter .6s ease; }
+.v4-reveal .eye-lid { transition: transform .55s cubic-bezier(.4,0,.2,1); }
+.v4-reveal .eye-lid-top { transform: translateY(calc(var(--ap,0) * -30px)); }
+.v4-reveal .eye-lid-bot { transform: translateY(calc(var(--ap,0) * 30px)); }
+/* copy */
+.v4-reveal .rv-eyebrow { margin: 4px 0 8px; font-family: var(--mono); font-size: .6rem; letter-spacing: .26em; text-transform: uppercase; color: var(--brass-dim, #a8925c); }
+.v4-reveal .rv-eyebrow span { color: var(--brass, #d6c18c); }
+.v4-reveal .rv-title { margin: 0 0 8px; font-family: var(--serif); font-weight: 560; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.14; color: var(--ivory, #ece7d8); }
+.v4-reveal .rv-title .pza { color: var(--brass, #d6c18c); }
+.v4-reveal .rv-sub { margin: 0 auto 18px; max-width: 40ch; font-size: .95rem; line-height: 1.55; color: var(--muted, #adaec2); }
+/* keep the v2 calendar inputs but center them in this card */
+.v4-reveal .datefields { justify-content: center; }
+.v4-reveal .df-hint { text-align: center; }
+.v4-reveal .btn-reveal { margin-inline: auto; }
+/* reward + privacy */
+.v4-reveal .rv-reward { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 16px auto 4px; max-width: 42ch; font-size: .86rem; line-height: 1.5; color: var(--body-text, #cfcfe0); }
+.v4-reveal .rv-reward b { color: var(--brass-bright, #efe2b4); font-weight: 600; }
+.v4-reveal .rv-reward .rv-star { color: var(--brass, #d6c18c); flex: none; }
+.v4-reveal .sightnote { text-align: center; }
+/* reveal burst */
+.v4-reveal.rv-burst .rv-eye { animation: v4-eyeburst .8s ease; }
+@keyframes v4-eyeburst { 0% { filter: none; } 35% { filter: drop-shadow(0 0 24px rgba(239,226,180,.95)); } 100% { filter: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .v4-reveal .eye-lid, .v4-reveal .rv-iris, .v4-reveal .rv-rays line, .v4-reveal .rv-aura { transition: none; }
+  .v4-reveal.rv-burst .rv-eye { animation: none; }
+}
+
+/* ============================================================
+   v4 REVEAL CARD — "Lacquer & Gold" Variation 1 (indigo + red crown).
+   Red/gold palette is SCOPED to .v4-hongbao only; the rest of the
+   indigo site is untouched. Keeps the v2 .datefields inputs + engine.
+   ============================================================ */
+.hv2 .plate.v4-hongbao {
+  padding: 1.5px; border: 0; border-radius: 20px; overflow: hidden;
+  background: linear-gradient(135deg,#8A6A2B,#d6c18c 34%,#efe2b4 48%,#c69b3c 64%,#8A6A2B);
+  box-shadow: 0 24px 60px rgba(0,0,0,.5);
+}
+.hv2 .plate.v4-hongbao::before { display: none; }   /* remove the v2 top hairline */
+
+/* red lacquer crown */
+.v4-hongbao .rv-crown {
+  position: relative; text-align: center; padding: 16px 24px 12px; border-radius: 18px 18px 0 0;
+  background: radial-gradient(130% 170% at 50% 0%, #E84B3D, #E34234 42%, #AA381E 92%);
+}
+.v4-hongbao .rv-fret { height: 7px; margin: -2px -24px 8px; opacity: .4; background: repeating-linear-gradient(90deg, rgba(235,218,176,.6) 0 2px, transparent 2px 6px); }
+.v4-hongbao .rv-hanzi {
+  font-family: "Ma Shan Zheng", var(--serif, serif); font-size: clamp(38px, 7vw, 52px); line-height: 1;
+  background: linear-gradient(135deg,#8A6A2B,#efe2b4 46%,#c69b3c 64%,#8A6A2B);
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+}
+.v4-hongbao .rv-eyebrow { margin: 2px 0 0; font-family: var(--mono); font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: #F4EADE; opacity: .92; }
+
+/* indigo body */
+.v4-hongbao .rv-body { padding: 22px 24px 24px; text-align: center; border-radius: 0 0 18px 18px; background: linear-gradient(180deg, #22253d, #161a30); }
+.v4-hongbao .rv-title {
+  margin: 0 0 8px; font-family: var(--serif, Georgia, serif); font-weight: 600; font-size: clamp(1.5rem, 3.4vw, 1.95rem); line-height: 1.14;
+  background: linear-gradient(135deg,#efe2b4,#d6c18c 55%,#a8925c);
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+}
+.v4-hongbao .rv-title .pza { color: transparent; -webkit-text-fill-color: transparent; }
+.v4-hongbao .rv-sub { margin: 0 auto 20px; max-width: 38ch; font-size: .95rem; line-height: 1.55; color: #b7b7c9; }
+
+/* keep the v2 date inputs, reframe them gold + add the slash separators */
+.v4-hongbao .datefields { justify-content: center; align-items: flex-end; flex-wrap: nowrap; gap: 8px; }
+.v4-hongbao .datefields label { color: #8b8ca3; }
+.v4-hongbao .datefields input { border-color: rgba(214,193,140,.45); background: #0b0e1e; color: #efe2b4; text-align: center; }
+.v4-hongbao #mm, .v4-hongbao #dd { width: 56px; }
+.v4-hongbao #yy { width: 82px; }
+.v4-hongbao .rv-slash { align-self: flex-end; padding-bottom: 12px; font-family: var(--mono); font-size: 1.35rem; color: #d6c18c; }
+.v4-hongbao .df-hint { text-align: center; }
+.v4-hongbao .btn-reveal { margin: 16px auto 0; color: #1a1300; background: linear-gradient(180deg,#efe2b4,#d6c18c 60%,#c69b3c); box-shadow: 0 8px 22px rgba(138,106,43,.4), inset 0 1px 0 rgba(255,255,255,.4); }
+
+/* reward line */
+.v4-hongbao .rv-reward { margin: 14px auto 0; font-size: .85rem; line-height: 1.5; color: #b7b7c9; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.v4-hongbao .rv-reward b { color: #efe2b4; font-weight: 600; }
+.v4-hongbao .rv-reward .rv-star { color: #E84B3D; flex: none; }
+
+/* very small screens: let the date row wrap gracefully */
+@media (max-width: 400px) {
+  .v4-hongbao .datefields { flex-wrap: wrap; }
+  .v4-hongbao .rv-slash { display: none; }
+}

@@ -449,7 +449,8 @@ html.pn-sealing .pn-sub .pn-seam-spark {
    the sub background even if the JS portals it under .pn-sub. */
 .pn-subdrop {
   position: fixed;            /* fixed so the tab-row's overflow can't clip it; nav.js sets top/left */
-  z-index: 130;               /* above bar (120) */
+  z-index: 260;               /* above bar (120) AND the sub-bar's hover-lift (200), so the panel
+                                 is never painted over once nav.js portals it to <body> */
   min-width: 200px;
   margin: 0;
   padding: var(--s-1, .25rem);
