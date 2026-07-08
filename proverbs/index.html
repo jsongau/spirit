@@ -104,29 +104,32 @@ body > .zf-foot{margin-top:0}
 .pv-section-head{margin:0 0 6px}
 .pv-section-head h2{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(1.5rem,4vw,2.1rem);color:var(--moon,#f5ecd2);margin:0}
 .pv-section-head p{color:var(--muted,#9a9bb0);margin:6px 0 0}
+/* the control: a rounded panel when open; when minimized it dissolves so only
+   the floating Filters pill remains — with the active-filter chips inline to its
+   right (never a second line). */
 .pv-controls{margin:18px 0 22px;padding:14px 18px;position:sticky;top:calc(var(--pn-stack-h, 150px) + 10px);z-index:6;border-radius:16px;
   background:#0b1220;border:1px solid rgba(214,193,140,.16);box-shadow:0 18px 40px -30px rgba(0,0,0,.9);
-  transition:background .8s ease,border-color .8s ease,box-shadow .8s ease,padding .8s ease}
-/* when minimized, dissolve the outer container so only the Filters pill (and any
-   active-filter chips) remain — one clean floating layer, not a box in a box. */
+  transition:background .6s ease,border-color .6s ease,box-shadow .6s ease,padding .6s ease}
 .pv-controls.is-compact,
 .pv-controls.is-collapsed{background:transparent;border-color:transparent;box-shadow:none;padding:0}
-/* header row: always visible, holds the Filters toggle + live count + Clear */
-.pv-controls-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
-/* the Filters toggle reads as a real, tappable pill (brass hairline), so it's
-   clearly an affordance and not just a label. */
-.pv-filter-toggle{display:inline-flex;align-items:center;gap:10px;cursor:pointer;
-  background:rgba(214,193,140,.08);border:1px solid rgba(214,193,140,.34);border-radius:999px;padding:8px 16px;
+/* header row: the Filters pill, then the active-filter summary inline beside it */
+.pv-controls-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+/* the pill: a dark ink capsule with a brass hairline — tappable, and no longer
+   gold-on-gold. The bespoke funnel-and-drop mark leads it. */
+.pv-filter-toggle{display:inline-flex;align-items:center;gap:10px;cursor:pointer;flex:0 0 auto;
+  background:rgba(10,17,30,.85);border:1px solid rgba(214,193,140,.4);border-radius:999px;padding:9px 17px;
   color:var(--moon,#f5ecd2);-webkit-tap-highlight-color:transparent;
   transition:background .2s,border-color .2s,box-shadow .2s}
-.pv-filter-toggle:hover{background:rgba(214,193,140,.16);border-color:var(--brass,#d6c18c)}
+.pv-filter-toggle:hover{border-color:var(--brass,#d6c18c);background:rgba(214,193,140,.1)}
 .pv-filter-toggle:focus-visible{outline:none;border-color:var(--brass,#d6c18c);box-shadow:0 0 0 3px rgba(214,193,140,.2)}
-/* when minimized, the pill warms up and gains a soft glow — "tap to open" */
+/* minimized: the pill lifts off the page with a soft glow — "tap to open" */
 .pv-controls.is-compact .pv-filter-toggle,
-.pv-controls.is-collapsed .pv-filter-toggle{background:rgba(214,193,140,.18);border-color:var(--brass,#d6c18c);
-  box-shadow:0 0 0 1px rgba(214,193,140,.22),0 0 24px -8px rgba(214,193,140,.55)}
+.pv-controls.is-collapsed .pv-filter-toggle{border-color:var(--brass,#d6c18c);
+  box-shadow:0 0 0 1px rgba(214,193,140,.22),0 0 26px -8px rgba(214,193,140,.5)}
+.pv-filter-ic{display:inline-flex;color:var(--brass,#d6c18c);flex:0 0 auto}
+.pv-filter-ic svg{display:block}
 .pv-filter-label{font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;color:var(--moon,#f5ecd2)}
-.pv-filter-chev{color:var(--brass-bright,#efe2b4);transition:transform .22s ease;flex:0 0 auto}
+.pv-filter-chev{color:var(--brass-bright,#efe2b4);transition:transform .3s ease;flex:0 0 auto}
 .pv-filter-toggle[aria-expanded="false"] .pv-filter-chev{transform:rotate(-90deg)}
 /* slow, soft collapse — a pond-like settling rather than a snap. The long
    max-height + opacity + drift transitions read as a gentle fade both ways. */
@@ -168,13 +171,13 @@ body > .zf-foot{margin-top:0}
 .pv-chip-ghost{background:transparent;border-color:rgba(214,193,140,.28);color:var(--muted,#9a9bb0)}
 .pv-chip-ghost:hover{border-color:var(--brass,#d6c18c);color:var(--moon,#f5ecd2)}
 .pv-chip-ghost.is-on{background:rgba(214,193,140,.14);border-color:var(--brass,#d6c18c);color:var(--moon,#f5ecd2);font-weight:600}
-.pv-count{margin:0;font-family:"Space Mono",ui-monospace,monospace;font-size:.72rem;color:var(--brass-bright,#efe2b4);letter-spacing:.04em;
-  background:rgba(214,193,140,.08);border:1px solid rgba(214,193,140,.2);border-radius:999px;padding:3px 10px;line-height:1.2}
-.pv-clear{font-size:.72rem;color:var(--muted,#9a9bb0);background:none;border:0;cursor:pointer;text-decoration:underline;flex:0 0 auto}
+.pv-count{margin:0;font-family:"Space Mono",ui-monospace,monospace;font-size:.7rem;color:var(--brass-bright,#efe2b4);letter-spacing:.04em;
+  background:rgba(214,193,140,.1);border:1px solid rgba(214,193,140,.24);border-radius:999px;padding:3px 9px;line-height:1.2;white-space:nowrap}
+.pv-clear{display:block;margin:0 0 12px auto;font-family:"Space Mono",ui-monospace,monospace;font-size:.7rem;letter-spacing:.04em;color:var(--muted,#9a9bb0);background:none;border:0;cursor:pointer;text-decoration:underline}
 .pv-clear:hover{color:var(--moon,#f5ecd2)}
 /* active-filter summary: only appears when the bar is minimized AND filters are
    set, so a collapsed bar still tells you what you're looking at. */
-.pv-active{display:none;flex-wrap:wrap;gap:6px;align-items:center;margin-top:12px}
+.pv-active{display:none;flex-wrap:wrap;gap:6px;align-items:center;min-width:0}
 .pv-controls.is-compact .pv-active:not(:empty),
 .pv-controls.is-collapsed .pv-active:not(:empty){display:flex}
 .pv-active-label{font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.12em;font-size:.6rem;color:var(--muted,#9a9bb0)}
@@ -465,14 +468,15 @@ body > .zf-foot{margin-top:0}
   <section class="pv-controls" aria-label="Filter the proverbs">
     <div class="pv-controls-head">
       <button type="button" class="pv-filter-toggle" id="pvFilterToggle" aria-expanded="true" aria-controls="pvControlsBody">
+        <span class="pv-filter-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M5 6h14l-5.5 6.5V18h-3v-5.5L5 6Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M12 18.9c1.15 1.05 1.15 2.5 0 3.1-1.15-.6-1.15-2.05 0-3.1Z" fill="currentColor"/></svg></span>
         <span class="pv-filter-label">Filters</span>
         <span class="pv-count" id="pvCount" aria-live="polite">500 proverbs</span>
         <svg class="pv-filter-chev" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <button type="button" class="pv-clear" id="pvClear" hidden>Clear filters</button>
+      <div class="pv-active" id="pvActive" aria-live="polite"></div>
     </div>
-    <div class="pv-active" id="pvActive" aria-live="polite"></div>
     <div class="pv-controls-body" id="pvControlsBody">
+      <button type="button" class="pv-clear" id="pvClear" hidden>Clear filters</button>
       <div class="pv-searchwrap">
         <input id="pvSearch" type="search" class="pv-search" placeholder="Search a word, a meaning, or a sound…" aria-label="Search proverbs" autocomplete="off">
       </div>
