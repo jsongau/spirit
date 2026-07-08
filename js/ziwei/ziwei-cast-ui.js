@@ -158,7 +158,6 @@
       renderResult(out, b);
       result.hidden = false;
       result.scrollIntoView({ behavior: "smooth", block: "start" });
-      buildScrubber(b, out);
     });
 
     /* ---- render the board ---- */
@@ -166,7 +165,7 @@
       result.innerHTML = "";
       var yp = out.yearPillar;
       var head = h("div", "pcast-res-head");
-      head.appendChild(h("h2", "pcast-res-title", "Your court"));
+      head.appendChild(h("h2", "pcast-res-title", "Your reading"));
       var meta = h("p", "pcast-res-meta");
       meta.textContent = birth.year + "-" + pad(birth.month) + "-" + pad(birth.day)
         + "  ·  lunar " + out.lunar.lunarYear + "/" + (out.lunar.leap ? "leap " : "") + out.lunar.lunarMonth + "/" + out.lunar.day
@@ -181,6 +180,7 @@
         result.appendChild(summaryChips(out.chart));
         result.appendChild(boardEl(out.chart));
         result.appendChild(legendEl());
+        result.appendChild(readingEl(out.chart, yp));
       }
     }
     function pad(n) { return (n < 10 ? "0" : "") + n; }
@@ -243,7 +243,7 @@
         grid.appendChild(c);
       });
       p.appendChild(grid);
-      p.appendChild(h("p", "pcast-missing-cta", "Scrub the birth hour below to watch the whole chart fall into place — or tick your exact time above and cast again."));
+      p.appendChild(h("p", "pcast-missing-cta", "Enter your exact birth time above and cast again to draw all twelve rooms and your full reading."));
       return p;
     }
 
@@ -253,55 +253,80 @@
       return l;
     }
 
-    /* ---- sticky floating hour scrubber ---- */
-    var scrub = null;
-    function buildScrubber(birth, firstOut) {
-      if (!scrub) {
-        scrub = h("div", "pcast-scrub"); scrub.id = "pcast-scrub";
-        document.body.appendChild(scrub);
-      }
-      scrub.innerHTML = "";
-      var top = h("div", "pcast-scrub-top");
-      top.appendChild(h("span", "pcast-scrub-title", "Try a birth hour"));
-      var close = h("button", "pcast-scrub-x", "✕"); close.setAttribute("aria-label", "Close hour explorer"); top.appendChild(close);
-      scrub.appendChild(top);
-      var readout = h("p", "pcast-scrub-read", "Drag to place the stars by hour.");
-      scrub.appendChild(readout);
-      var slider = document.createElement("input");
-      slider.type = "range"; slider.min = "0"; slider.max = "11"; slider.step = "1";
-      slider.className = "pcast-scrub-range";
-      slider.value = (firstOut && firstOut.hourBranchIndex != null) ? String(firstOut.hourBranchIndex) : "6";
-      scrub.appendChild(slider);
-      var ticks = h("div", "pcast-scrub-ticks");
-      HOURS.forEach(function (hh, i) { var t = h("span", "pcast-scrub-tick", hh); ticks.appendChild(t); });
-      scrub.appendChild(ticks);
-      var use = h("button", "psa-btn pcast-scrub-use", "Use this hour"); scrub.appendChild(use);
-      scrub.classList.add("is-open");
+    /* ---- the personalized reading ---- */
+    var FORCE_MEAN = {
+      lu: "resources and ease flow here",
+      quan: "you gain drive and authority here",
+      ke: "you earn recognition and a good name here",
+      ji: "attention catches here — this is the life lesson to work with"
+    };
+    function primaryStar(stars) { for (var i = 0; i < (stars || []).length; i++) { if (starById[stars[i].id]) return stars[i].id; } return null; }
+    function palLabel(pid) { return palById[pid] ? (palById[pid].hant + " " + (PAL_EN[pid] || "")) : pid; }
 
-      function apply(idx) {
-        var b = { year: birth.year, month: birth.month, day: birth.day, gender: birth.gender, hour: idx * 2 + 1 }; // mid of branch
-        var out = L.castFromBirth(b);
-        renderResult(out, b);
-        if (out.chart) {
-          var lu = "?", ji = "?";
-          Object.keys(out.chart.palaces).forEach(function (pid) {
-            (out.chart.palaces[pid].stars || []).forEach(function (s) {
-              if (s.id === "zi-wei") lu = (PAL_EN[pid] || out.chart.palaces[pid].branch);
-              if (s.hua === "ji") ji = (PAL_EN[pid] || out.chart.palaces[pid].branch);
-            });
-          });
-          readout.textContent = HOURS[idx] + "時 (" + HOUR_RANGE[idx] + ") → Zi Wei in " + lu + " · Hook 忌 on " + ji;
-        }
+    function readingEl(chart, yp) {
+      var wrap = h("div", "pcast-reading");
+
+      /* Life Palace focus */
+      var life = chart.palaces["ming-gong"];
+      var lifeB = h("div", "pcast-read-block pcast-read-life");
+      lifeB.appendChild(h("p", "pcast-read-eyebrow", "Your Life Palace · 命宮"));
+      var lifeStars = (life.stars || []).map(function (s) { return starName(s.id); }).join(" · ") || "no principal star";
+      lifeB.appendChild(h("h3", "pcast-read-h", life.branch + "  ·  " + lifeStars));
+      var lp = primaryStar(life.stars);
+      if (lp && starById[lp].placements && starById[lp].placements["ming-gong"]) {
+        lifeB.appendChild(h("p", "pcast-read-p", starById[lp].placements["ming-gong"].beginner));
+      } else {
+        var opp = palById["ming-gong"].oppositeId;
+        lifeB.appendChild(h("p", "pcast-read-p", "Your Life Palace holds no principal star, so it takes its tone from the room across the court — the " + palLabel(opp) + " Palace. Read the two together."));
       }
-      slider.addEventListener("input", function () { apply(+slider.value); });
-      apply(+slider.value);
-      close.addEventListener("click", function () { scrub.classList.remove("is-open"); });
-      use.addEventListener("click", function () {
-        var idx = +slider.value; time.disabled = false; unk.checked = false;
-        time.value = pad(idx * 2 + 1) + ":00";
-        scrub.classList.remove("is-open");
-        form.dispatchEvent(new Event("submit"));
+      wrap.appendChild(lifeB);
+
+      /* Four Transformations, personalized */
+      var starToPalace = {};
+      Object.keys(chart.palaces).forEach(function (pid) { (chart.palaces[pid].stars || []).forEach(function (s) { starToPalace[s.id] = pid; }); });
+      var tB = h("div", "pcast-read-block");
+      tB.appendChild(h("p", "pcast-read-eyebrow", "Your Four Transformations · 四化 · from your " + yp.name + " year"));
+      var tList = h("div", "pcast-read-hua");
+      ["lu", "quan", "ke", "ji"].forEach(function (fr) {
+        var sid = null; Object.keys(chart.natalHua).forEach(function (k) { if (chart.natalHua[k] === fr) sid = k; });
+        var pid = sid ? starToPalace[sid] : null;
+        var row = h("div", "pcast-read-hua-row pcast-hua-" + fr);
+        row.appendChild(h("span", "pcast-read-hua-badge", HUA_LABEL[fr]));
+        var txt = h("span", "pcast-read-hua-txt");
+        var where = pid ? ("in your " + palLabel(pid) + " Palace") : "elsewhere in your chart";
+        txt.innerHTML = "<b>" + HUA_EN[fr] + "</b> lands on <b>" + (sid ? starName(sid) : "—") + "</b> " + where + " — " + FORCE_MEAN[fr] + ".";
+        row.appendChild(txt);
+        tList.appendChild(row);
       });
+      tB.appendChild(tList);
+      wrap.appendChild(tB);
+
+      /* Room by room */
+      var rB = h("div", "pcast-read-block");
+      rB.appendChild(h("p", "pcast-read-eyebrow", "Room by room · your twelve palaces"));
+      var rooms = h("div", "pcast-read-rooms");
+      (window.ZiweiData.palaces || []).forEach(function (pal) {
+        var pc = chart.palaces[pal.id]; if (!pc) return;
+        var room = h("div", "pcast-read-room"); if (pal.id === "ming-gong") room.classList.add("is-life");
+        var rh = h("div", "pcast-read-room-head");
+        rh.appendChild(h("span", "pcast-read-room-name", pal.hant + " " + (PAL_EN[pal.id] || "")));
+        rh.appendChild(h("span", "pcast-read-room-branch", pc.branch));
+        room.appendChild(rh);
+        if (pal.question) room.appendChild(h("p", "pcast-read-room-q", pal.question));
+        var starsLine = (pc.stars || []).map(function (s) { return starName(s.id) + (s.hua ? " " + HUA_LABEL[s.hua] : ""); }).join(" · ");
+        room.appendChild(h("p", "pcast-read-room-stars", starsLine || "— no principal star —"));
+        var prim = primaryStar(pc.stars);
+        if (prim && starById[prim].placements && starById[prim].placements[pal.id]) {
+          room.appendChild(h("p", "pcast-read-room-p", starById[prim].placements[pal.id].beginner));
+        } else if (pal.oppositeId) {
+          room.appendChild(h("p", "pcast-read-room-p pcast-muted", "Empty of principal stars — read it through its opposite, the " + (PAL_EN[pal.oppositeId] || "opposite") + " Palace."));
+        }
+        rooms.appendChild(room);
+      });
+      rB.appendChild(rooms);
+      wrap.appendChild(rB);
+
+      return wrap;
     }
   });
 })();
