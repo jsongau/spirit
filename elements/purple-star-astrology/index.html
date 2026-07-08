@@ -849,6 +849,109 @@
     .psa-mega-head { grid-template-columns: auto minmax(0, 1fr); }
     .psa-mega-all { grid-column: 1 / -1; margin-top: 2px; }
   }
+  /* ============================================================
+     CAST-YOUR-CHART widget: hero form, twelve-palace board, sticky hour scrubber
+  ============================================================ */
+  .psa-hero-grid { display: grid; gap: clamp(20px, 3vw, 40px); }
+  @media (min-width: 900px) {
+    .psa-hero-grid { grid-template-columns: 350px minmax(0,1fr); grid-template-areas: "form copy"; align-items: center; }
+    .psa-hero-copy { grid-area: copy; } .psa-hero-form { grid-area: form; }
+  }
+  .psa-hero-form { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r-2); padding: 18px 18px 16px; }
+  .pcast-form-eyebrow { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brass); margin: 0 0 12px; }
+  .pcast-field { margin: 0 0 12px; } .pcast-field-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .pcast-label { display: block; font-size: 0.82rem; color: var(--muted); margin: 0 0 4px; }
+  .pcast-opt { color: var(--faint); font-size: 0.74rem; }
+  .pcast-input { width: 100%; background: var(--ink-2); border: 1px solid var(--line); border-radius: var(--r-1); color: var(--moon); font: inherit; font-size: 0.94rem; padding: 9px 10px; min-height: 42px; }
+  .pcast-input:focus-visible { outline: 2px solid var(--brass); outline-offset: 1px; }
+  .pcast-check { display: flex; align-items: center; gap: 7px; margin-top: 7px; font-size: 0.82rem; color: var(--muted); cursor: pointer; }
+  .pcast-check input { width: 16px; height: 16px; accent-color: var(--cc); }
+  .pcast-go { width: 100%; justify-content: center; margin-top: 4px; cursor: pointer; border: 0; font: inherit; }
+  .pcast-note { font-size: 0.72rem; color: var(--faint); margin: 10px 0 0; line-height: 1.5; }
+  .psa-cast-result { max-width: 1000px; margin: 0 auto; padding: 28px clamp(18px, 4vw, 40px) 8px; }
+  .pcast-res-head { margin-bottom: 14px; }
+  .pcast-res-title { font-family: var(--serif); color: var(--moon); font-size: clamp(1.4rem,3vw,2rem); margin: 0; }
+  .pcast-res-meta { font-family: var(--mono); font-size: 0.78rem; color: var(--faint); margin: 6px 0 0; }
+  .pcast-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+  .pcast-chip { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r-pill); padding: 6px 14px; }
+  .pcast-chip-k { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); margin-right: 8px; }
+  .pcast-chip-v { color: var(--ivory); font-size: 0.9rem; }
+  .pcast-board { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; max-width: 780px; margin: 6px 0 14px; }
+  .pcast-cell { position: relative; border: 1px solid var(--line-soft); border-radius: var(--r-1); background: var(--panel); padding: 8px 9px; min-height: 98px; display: flex; flex-direction: column; gap: 4px; }
+  .pcast-cell-branch { position: absolute; top: 6px; right: 8px; font-family: var(--mono); font-size: 0.72rem; color: var(--brass-dim); }
+  .pcast-cell-role { font-size: 0.72rem; color: var(--muted); }
+  .pcast-cell-stars { display: flex; flex-wrap: wrap; gap: 3px 8px; margin-top: auto; }
+  .pcast-star { color: var(--ivory); font-size: 0.98rem; line-height: 1.15; }
+  .pcast-hua { font-size: 0.6em; margin-left: 1px; }
+  .pcast-cell-body { position: absolute; bottom: 6px; right: 8px; font-size: 0.72rem; color: var(--cc-bright); }
+  .pcast-cell.is-life { border-color: var(--brass); box-shadow: inset 0 0 0 1px var(--brass); }
+  .pcast-board.is-locked .pcast-cell { opacity: 0.38; filter: grayscale(0.6); }
+  .pcast-board-center { grid-row: 2 / 4; grid-column: 2 / 4; display: grid; place-items: center; gap: 4px; border: 1px dashed var(--line); border-radius: var(--r-1); text-align: center; }
+  .pcast-center-hant { font-size: 1.3rem; color: var(--ivory); }
+  .pcast-center-sub { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.08em; color: var(--faint); }
+  .pcast-center-lock { font-size: 1.4rem; }
+  .pcast-hua-lu { color: var(--good); } .pcast-hua-quan { color: var(--brass); } .pcast-hua-ke { color: var(--cc-bright); } .pcast-hua-ji { color: #e0685f; }
+  .pcast-missing { background: var(--panel); border: 1px solid var(--line-soft); border-left: 3px solid var(--brass); border-radius: 0 var(--r-2) var(--r-2) 0; padding: 16px 18px; margin: 0 0 14px; }
+  .pcast-missing-h { font-family: var(--serif); color: var(--moon); font-size: 1.1rem; margin: 0; }
+  .pcast-missing-b { color: var(--muted); font-size: 0.9rem; margin: 8px 0 12px; }
+  .pcast-hua-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  @media (max-width: 560px) { .pcast-hua-grid { grid-template-columns: repeat(2, 1fr); } }
+  .pcast-hua-cell { border: 1px solid var(--line-soft); border-radius: var(--r-1); padding: 10px; text-align: center; display: grid; gap: 3px; }
+  .pcast-hua-badge { font-size: 1.1rem; }
+  .pcast-hua-cell.pcast-hua-lu .pcast-hua-badge { color: var(--good); } .pcast-hua-cell.pcast-hua-quan .pcast-hua-badge { color: var(--brass); }
+  .pcast-hua-cell.pcast-hua-ke .pcast-hua-badge { color: var(--cc-bright); } .pcast-hua-cell.pcast-hua-ji .pcast-hua-badge { color: #e0685f; }
+  .pcast-hua-star { color: var(--ivory); font-size: 1rem; } .pcast-hua-name { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+  .pcast-missing-cta { color: var(--cc-bright); font-size: 0.86rem; margin: 12px 0 0; }
+  .pcast-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.8rem; color: var(--muted); }
+  .pcast-legend b { font-weight: 400; }
+  /* sticky floating hour scrubber */
+  .pcast-scrub { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%) translateY(160%); width: min(580px, calc(100vw - 24px)); background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--r-2); padding: 14px 18px 16px; box-shadow: 0 14px 44px rgba(0,0,0,0.55); z-index: 70; transition: transform 0.32s cubic-bezier(0.2,0.7,0.2,1); }
+  .pcast-scrub.is-open { transform: translateX(-50%) translateY(0); }
+  .pcast-scrub-top { display: flex; align-items: center; justify-content: space-between; }
+  .pcast-scrub-title { font-family: var(--serif); color: var(--moon); font-size: 1rem; }
+  .pcast-scrub-x { background: transparent; border: 0; color: var(--faint); font-size: 1rem; cursor: pointer; min-width: 32px; min-height: 32px; }
+  .pcast-scrub-read { font-family: var(--mono); font-size: 0.78rem; color: var(--cc-bright); margin: 6px 0 10px; min-height: 1.2em; }
+  .pcast-scrub-range { width: 100%; accent-color: var(--cc); }
+  .pcast-scrub-ticks { display: flex; justify-content: space-between; margin: 4px 0 12px; font-size: 0.8rem; color: var(--muted); }
+  .pcast-scrub-use { width: 100%; justify-content: center; border: 0; font: inherit; cursor: pointer; }
+  @media (max-width: 560px) { .pcast-scrub-ticks .pcast-scrub-tick:nth-child(even) { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .pcast-scrub { transition: none; } }
+  /* custom birth-date field + calendar popover */
+  .pcast-date-field { position: relative; }
+  .pcast-date-wrap { display: flex; gap: 8px; }
+  .pcast-date-wrap .pcast-input { flex: 1 1 auto; }
+  .pcast-cal-btn { flex: 0 0 auto; width: 44px; min-height: 44px; border: 1px solid var(--line); border-radius: var(--r-1); background: var(--ink-2); color: var(--brass); cursor: pointer; display: grid; place-items: center; }
+  .pcast-cal-btn:hover { border-color: var(--brass); }
+  .pcast-cal { position: absolute; z-index: 80; top: calc(100% + 8px); left: 0; width: min(346px, calc(100vw - 40px)); background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--r-2); box-shadow: 0 16px 44px rgba(0,0,0,0.5); padding: 14px 16px; }
+  @media (min-width: 900px) { .psa-hero-form .pcast-cal { left: calc(100% + 14px); top: 0; } }
+  .pcast-cal-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .pcast-cal-selwrap { flex: 1 1 auto; display: flex; gap: 6px; }
+  .pcast-cal-sel { flex: 1 1 auto; min-width: 0; background: var(--ink-2); border: 1px solid var(--line); border-radius: var(--r-1); color: var(--moon); font: inherit; font-size: 0.86rem; padding: 6px 28px 6px 10px; min-height: 40px; text-overflow: ellipsis; }
+  .pcast-cal-nav { flex: 0 0 auto; width: 40px; min-height: 40px; border: 1px solid var(--line); border-radius: var(--r-1); background: var(--ink-2); color: var(--moon); font-size: 1.1rem; cursor: pointer; }
+  .pcast-cal-nav:hover { border-color: var(--brass); }
+  .pcast-cal-dow { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; margin-bottom: 4px; }
+  .pcast-cal-dow span { text-align: center; font-family: var(--mono); font-size: 0.62rem; color: var(--faint); }
+  .pcast-cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+  .pcast-cal-day { min-height: 40px; border: 0; border-radius: var(--r-1); background: transparent; color: var(--body-text); font: inherit; font-size: 0.9rem; cursor: pointer; }
+  .pcast-cal-day:hover { background: var(--panel); color: var(--moon); }
+  .pcast-cal-day.is-sel { background: var(--brass); color: #1a1406; font-weight: 600; }
+  .pcast-cal-empty { min-height: 40px; }
+  /* calendar accents */
+  .pcast-cal { border-top: 2px solid var(--brass); }
+  .pcast-cal-head { padding-bottom: 8px; margin-bottom: 8px; border-bottom: 1px solid var(--line-soft); }
+  .pcast-cal-nav { border-radius: 50%; display: grid; place-items: center; color: var(--brass); transition: background 0.15s, border-color 0.15s, transform 0.1s; }
+  .pcast-cal-nav:hover { background: var(--cc-soft); border-color: var(--cc); color: var(--moon); }
+  .pcast-cal-nav:active { transform: scale(0.9); }
+  .pcast-cal-sel:hover { border-color: var(--brass); }
+  .pcast-cal-sel:focus-visible { outline: 2px solid var(--cc); outline-offset: 1px; }
+  .pcast-cal-day { transition: background 0.12s, color 0.12s; }
+  .pcast-cal-day:hover { background: var(--cc-soft); color: var(--moon); }
+  .pcast-cal-day.is-sel { box-shadow: 0 0 0 2px var(--cc-soft); }
+  .pcast-cal-dow span:first-child, .pcast-cal-dow span:last-child { color: var(--cc-bright); }
+  @media (max-width: 560px) {
+    .pcast-cal { position: fixed; left: 0; right: 0; bottom: 0; top: auto; width: 100%; max-width: 100%; border-radius: var(--r-2) var(--r-2) 0 0; box-shadow: 0 -12px 44px rgba(0,0,0,0.6); padding: 16px 16px calc(16px + env(safe-area-inset-bottom)); }
+    .pcast-cal-day, .pcast-cal-empty { min-height: 46px; }
+  }
   </style>
 
   <script type="application/ld+json">
@@ -900,7 +1003,7 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ico-moonstone" viewBox="0 0 24 24"><path d="M12 2.6c4 2 6.4 5.1 6.4 9.4S16 19.6 12 21.4C8 19.6 5.6 16.3 5.6 12S8 4.6 12 2.6Z" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M12 2.6C10 6 9 9 9 12s1 6 3 9.4" fill="none" stroke="currentColor" stroke-width=".8" opacity=".5"/><ellipse cx="10.4" cy="9" rx="2.2" ry="3.2" fill="currentColor" opacity=".2"/></symbol></svg>
 <header class="pn-bar" role="banner" data-static>
   <div class="pn-inner">
-    <a class="pn-brand" href="/index.html"><span class="pn-word"><span class="z">Zodi</span> <b>Animal</b></span><span class="pn-tagline">Unlock your<br>Primal Zodiac<br>Animal Spirit</span></a>
+    <a class="pn-brand" href="/index.html"><span class="pn-word"><span class="z">Zodi</span> <b>Animal</b></span><span class="pn-tagline">Reveal your<br>Primal Mirror</span></a>
     <nav class="pn-nav" aria-label="Primary">
         <a class="pn-link pn-find" href="/">Home</a>
         <div class="pn-item" data-accent="teal"><button class="pn-trigger" type="button" data-group="1" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Explore<span class="chev" aria-hidden="true"></span></button></div>
@@ -992,6 +1095,8 @@
     </g>
   </svg>
   <div class="wrap">
+    <div class="psa-hero-grid">
+      <div class="psa-hero-copy">
     <h1>Purple Star Astrology</h1>
     <p class="psa-sub">
       <span class="psa-hant" lang="zh-Hant"><ruby>紫<rt>zǐ</rt></ruby><ruby>微<rt>wēi</rt></ruby><ruby>斗<rt>dǒu</rt></ruby><ruby>數<rt>shù</rt></ruby></span>
@@ -1005,8 +1110,15 @@
       <a class="psa-btn" id="psa-cta-learn" href="#the-court">Start with the palaces</a>
       <a class="psa-btn-quiet" href="/elements/purple-star-astrology/chart/">Cast your chart and use it as your study map</a>
     </div>
+      </div>
+      <form class="psa-hero-form" id="pcast-form" novalidate>
+        <noscript>Enable JavaScript to cast your chart here, or open the full chart page.</noscript>
+      </form>
+    </div>
   </div>
 </header>
+
+<section class="psa-cast-result" id="pcast-result" aria-label="Your cast chart" hidden></section>
 
 <div class="psa-layout" id="psa-layout">
   <!-- Wave 2 slot: "Your path" rail. Keep empty and hidden until it ships. -->
@@ -1339,11 +1451,13 @@
 <script src="../../js/ziwei/ziwei-glossary.js"></script>
 <script src="../../js/ziwei/ziwei-sample-charts.js"></script>
 <script src="../../js/ziwei/ziwei-caster.js"></script>
+<script src="../../js/ziwei/ziwei-lunar.js"></script>
 <script src="../../js/ziwei/ziwei-practice.js"></script>
 <script src="../../js/ziwei/ziwei-teachbacks.js"></script>
 <script src="../../js/ziwei/ziwei-lessons.js"></script>
 <script src="../../js/ziwei/ziwei-progress.js"></script>
 <script src="../../js/ziwei/ziwei-pronunciation.js"></script>
+<script src="../../js/ziwei/ziwei-cast-ui.js"></script>
 <script src="../../js/nav.js" defer></script>
 <script>
 /* Purple Star hub, wave 1. Plain browser JS, no modules, works from file://.
