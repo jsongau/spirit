@@ -1,0 +1,173 @@
+/* ============================================================
+   nav-dock.css — The Reveal Dock (mobile only)
+   Bottom bar carrying the visitor's Zodi Animal, its action
+   sheet, and the share modal. Built by nav-dock.js. Scoped to
+   <=900px so it never shows on desktop (where the bar chip +
+   CTA already carry identity). Brass-on-indigo, theme tokens
+   with explicit fallbacks so it reads correctly everywhere.
+   ============================================================ */
+
+.pn-dock{ display:none; }
+
+@media (max-width:900px){
+
+  /* keep page content clear of the fixed bar */
+  body.pn-has-bar{ padding-bottom:calc(64px + env(safe-area-inset-bottom, 0px)); }
+
+  .pn-dock{
+    position:fixed; left:10px; right:10px;
+    bottom:calc(10px + env(safe-area-inset-bottom, 0px));
+    z-index:60; display:flex; align-items:center; gap:10px;
+    padding:9px 10px 9px 12px; border-radius:18px;
+    background:rgba(12,14,30,.86);
+    -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px);
+    border:1px solid rgba(214,193,140,.26);
+    box-shadow:0 16px 40px -18px #000;
+  }
+  .pn-dock.is-pre{ justify-content:center; }
+
+  /* --- pre-reveal CTA --- */
+  .pn-dock-cta{
+    flex:1; display:inline-flex; align-items:center; justify-content:center; gap:.5em;
+    font-family:var(--serif,"Fraunces",Georgia,serif); font-weight:560; font-size:.95rem;
+    color:#171204; text-decoration:none; padding:12px; border-radius:12px;
+    border:1px solid rgba(239,226,180,.6);
+    background:linear-gradient(115deg,#a8925c,#d6c18c 42%,#efe2b4 56%,#d6c18c 72%,#a8925c);
+    animation:pnDockPulse 2.8s ease-out infinite;
+  }
+  .pn-dock-cta:active{ transform:scale(.98); }
+  .pn-dock-spark{ font-family:var(--sans,system-ui,sans-serif); font-weight:700; }
+  @keyframes pnDockPulse{
+    0%{ box-shadow:0 0 0 0 rgba(214,193,140,.5) }
+    70%{ box-shadow:0 0 0 14px rgba(214,193,140,0) }
+    100%{ box-shadow:0 0 0 0 rgba(214,193,140,0) }
+  }
+  @media (prefers-reduced-motion:reduce){ .pn-dock-cta{ animation:none } }
+
+  /* --- revealed animal chip --- */
+  .pn-dock-animal{
+    flex:1; display:flex; align-items:center; gap:11px; min-width:0;
+    background:none; border:0; color:var(--ink,#ece7d8); cursor:pointer;
+    text-align:left; padding:4px 6px; border-radius:12px; font:inherit;
+  }
+  .pn-dock-animal:active{ background:rgba(214,193,140,.06); }
+  .pn-dock-gl{
+    width:38px; height:38px; flex:none; border-radius:11px; display:grid; place-items:center;
+    font-family:var(--serif,"Fraunces",Georgia,serif); font-size:1.2rem; color:#efe2b4;
+    background:radial-gradient(circle at 40% 30%,rgba(139,123,255,.3),rgba(20,23,45,.9));
+    border:1px solid rgba(214,193,140,.4); box-shadow:0 0 14px rgba(139,123,255,.25);
+  }
+  .pn-dock-nm{
+    font-family:var(--serif,"Fraunces",Georgia,serif); font-weight:560; font-size:.95rem;
+    line-height:1.1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  }
+  .pn-dock-nm small{
+    display:block; font-family:var(--mono,monospace); font-size:.46rem; letter-spacing:.14em;
+    text-transform:uppercase; color:#8a8ca6; margin-top:3px;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  }
+  .pn-dock-chev{ margin-left:auto; color:#8a8ca6; font-size:.7rem; transition:transform .2s; }
+  .pn-dock.sheet-open .pn-dock-chev{ transform:rotate(180deg); }
+
+  .pn-dock-share{
+    width:40px; height:40px; flex:none; border-radius:12px; cursor:pointer;
+    border:1px solid rgba(214,193,140,.24); background:transparent; color:#d6c18c;
+    display:grid; place-items:center;
+  }
+  .pn-dock-share:active{ background:rgba(214,193,140,.08); }
+  .pn-dock-share svg{ width:19px; height:19px; }
+
+  /* --- action sheet --- */
+  .pn-dock-sheet{
+    position:fixed; left:10px; right:10px;
+    bottom:calc(66px + env(safe-area-inset-bottom, 0px));
+    z-index:61; border-radius:16px; overflow:hidden;
+    background:rgba(14,16,32,.97);
+    -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px);
+    border:1px solid rgba(214,193,140,.26); box-shadow:0 20px 50px -20px #000;
+  }
+  .pn-dock-sheet[hidden]{ display:none; }
+  .pn-dock-sheet-cap{
+    font-family:var(--mono,monospace); font-size:.54rem; letter-spacing:.16em;
+    text-transform:uppercase; color:#8a8ca6; padding:11px 16px 5px;
+  }
+  .pn-dock-act{
+    display:flex; align-items:center; gap:12px; padding:14px 16px; text-decoration:none;
+    color:var(--ink,#ece7d8); font-size:.92rem;
+  }
+  .pn-dock-act + .pn-dock-act{ border-top:1px solid rgba(255,255,255,.06); }
+  .pn-dock-act.primary{ background:rgba(214,193,140,.08); }
+  .pn-dock-act.primary b{ color:#efe2b4; font-weight:560; }
+  .pn-dock-ic{ width:30px; flex:none; }
+  .pn-dock-ic svg{ width:30px; height:30px; display:block; margin:0 auto; }
+  .pn-dock-act small{
+    display:block; color:#8a8ca6; font-family:var(--mono,monospace);
+    font-size:.56rem; letter-spacing:.06em; margin-top:2px;
+  }
+
+  /* --- share modal --- */
+  .pn-dock-modalwrap{
+    position:fixed; inset:0; z-index:200; display:flex; align-items:flex-end;
+    background:rgba(9,10,18,.72); -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+  }
+  .pn-dock-modalwrap[hidden]{ display:none; }
+  .pn-dock-modal{
+    position:relative; width:100%; border-radius:20px 20px 0 0;
+    background:linear-gradient(180deg,#1a1c30,#12142a);
+    border:1px solid rgba(214,193,140,.4); border-bottom:0;
+    padding:18px 16px calc(22px + env(safe-area-inset-bottom, 0px));
+    max-height:88vh; overflow-y:auto;
+  }
+  .pn-dock-modal-close{
+    position:absolute; top:14px; right:14px; width:36px; height:36px; border-radius:50%;
+    border:1px solid rgba(214,193,140,.28); background:transparent; color:#adaec2;
+    cursor:pointer; font-size:.9rem;
+  }
+  .pn-dock-k{
+    font-family:var(--mono,monospace); font-size:.54rem; letter-spacing:.16em;
+    text-transform:uppercase; color:#d6c18c; margin:0 0 8px;
+  }
+  .pn-dock-h{
+    font-family:var(--serif,"Fraunces",Georgia,serif); font-weight:560; font-size:1.25rem;
+    margin:0 0 12px; color:#ece7d8;
+  }
+  .pn-dock-card{
+    padding:12px; border:1px solid rgba(214,193,140,.18); border-radius:12px;
+    background:rgba(14,16,32,.5); margin:0 0 14px;
+  }
+  .pn-dock-card p{
+    margin:0; font-family:var(--serif,"Fraunces",Georgia,serif); font-style:italic;
+    font-size:.86rem; color:#ece7d8;
+  }
+  .pn-dock-tiles{ display:grid; grid-template-columns:repeat(4,1fr); gap:9px 8px; }
+  .pn-dock-tile{
+    display:flex; flex-direction:column; align-items:center; gap:6px; padding:4px 2px;
+    color:#8a8ca6; font-size:.56rem; background:transparent; border:0; cursor:pointer;
+  }
+  .pn-dock-bd{
+    width:38px; height:38px; border-radius:50%; display:grid; place-items:center;
+    color:#d6c18c; background:rgba(214,193,140,.06); border:1px solid rgba(214,193,140,.24);
+  }
+  .pn-dock-bd svg{ width:20px; height:20px; display:block; }
+  .pn-dock-bd img{ width:18px; height:18px; display:block; }
+  .pn-dock-tile:active .pn-dock-bd{ background:rgba(214,193,140,.14); }
+
+  .pn-dock-copywrap{ display:flex; justify-content:center; margin-top:16px; }
+  .pn-dock-copy{
+    display:inline-flex; align-items:center; gap:7px; padding:8px 16px; border-radius:999px;
+    border:1px solid rgba(214,193,140,.22); background:transparent; color:#8a8ca6;
+    font-family:var(--mono,monospace); font-size:.58rem; letter-spacing:.16em;
+    text-transform:uppercase; cursor:pointer;
+  }
+  .pn-dock-copy svg{ width:13px; height:13px; }
+  .pn-dock-copy.done{ color:#d6c18c; border-color:rgba(214,193,140,.6); }
+
+  /* lock scroll while modal open */
+  html.pn-dock-lock, html.pn-dock-lock body{ overflow:hidden; }
+
+  /* the bottom-right awakening floater shares the bottom edge with the
+     dock; lift it clear so it never covers the share icon */
+  .zaw-card.zaw-float{
+    bottom:calc(78px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
