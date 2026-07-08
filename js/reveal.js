@@ -21,14 +21,25 @@ window.CINEMA = (function () {
       <section class="half west"><p class="ph">Western sky</p>
         <div class="mark" data-glyph>♋</div><div class="nm" data-sign>Cancer</div><div class="sub">Sun sign</div></section>
       <div class="flash"></div>
-      <div class="bloom"><div class="rays"></div>
-        <div class="cross"><span data-cs></span><b>+</b><span data-ce></span></div>
-        <h2 data-name>…</h2><div class="ess" data-ess></div></div>
-      <button class="btn cinema-cta" type="button">See my full reading</button>`;
+      <div class="cinema-stage">
+        <div class="bloom"><div class="rays"></div>
+          <div class="cross"><span data-cs></span><b>+</b><span data-ce></span></div>
+          <h2 data-name>…</h2><div class="ess" data-ess></div></div>
+        <div class="cinema-actions">
+          <button class="cinema-btn cinema-btn--primary cinema-cta" type="button">See my full reading</button>
+          <div class="cinema-btnrow">
+            <button class="cinema-btn cinema-btn--ghost cinema-share" type="button">Share with a friend</button>
+            <button class="cinema-btn cinema-btn--ghost cinema-home" type="button">Back to home</button>
+          </div>
+          <p class="cinema-toast" data-toast role="status" aria-live="polite"></p>
+        </div>
+      </div>`;
     document.body.appendChild(root);
     cv = root.querySelector(".cv"); ctx = cv.getContext("2d");
     root.querySelector(".skip").addEventListener("click", finishNow);
     root.querySelector(".cinema-cta").addEventListener("click", finishNow);
+    root.querySelector(".cinema-share").addEventListener("click", doShare);
+    root.querySelector(".cinema-home").addEventListener("click", goHome);
     const st = root.querySelector(".sound-toggle");
     st.addEventListener("click", ()=>{ soundOn = !soundOn; st.textContent = soundOn ? "Sound on" : "Sound off"; });
     built = true;
@@ -119,9 +130,10 @@ window.CINEMA = (function () {
     root.querySelector("[data-name]").textContent=c.primal;
     const ess = (window.ENGINE? ENGINE.essence(c.sign,c.animal,c.primal):"");
     root.querySelector("[data-ess]").textContent=ess;
+    const tt = root.querySelector("[data-toast]"); if(tt){ tt.textContent=""; }
 
     const east=root.querySelector(".east"), west=root.querySelector(".west"),
-          flash=root.querySelector(".flash"), bloom=root.querySelector(".bloom"), cta=root.querySelector(".cinema-cta");
+          flash=root.querySelector(".flash"), bloom=root.querySelector(".bloom"), cta=root.querySelector(".cinema-actions");
     [east,west].forEach(e=>e.className=e.className.replace(/ (in|rush)/g,""));
     bloom.classList.remove("go"); flash.classList.remove("go"); cta.classList.remove("go");
     east.style.opacity=west.style.opacity="0";
@@ -146,6 +158,38 @@ window.CINEMA = (function () {
     root.classList.remove("on"); document.body.style.overflow="";
     if(ctx) ctx.clearRect(0,0,cv.width,cv.height);
     if(doneCb){ const cb=doneCb; doneCb=null; cb(current); }
+  }
+
+  /* ---- share / home actions on the reveal end-state ---- */
+  function shareLine(c){
+    if(!c) return "";
+    return "My Zodi Animal is the " + c.primal + ". " + c.sign +
+           " crossed with " + (c.element?c.element+" ":"") + c.animal +
+           ". What's yours? ZodiAnimal.com";
+  }
+  function toast(msg){
+    const t = root && root.querySelector("[data-toast]"); if(!t) return;
+    t.textContent = msg;                 // persistent live region — text set while in a11y tree
+    clearTimeout(toast._t); toast._t = setTimeout(()=>{ t.textContent = ""; }, 3400);
+  }
+  function doShare(){
+    const text = shareLine(current);
+    if(navigator.share){
+      navigator.share({ title:"Zodi Animal", text:text }).catch(()=>{});
+    } else if(navigator.clipboard){
+      navigator.clipboard.writeText(text).then(()=>toast("Link copied — send it to a friend.")).catch(()=>toast("Couldn't copy. Try again."));
+    } else {
+      toast("Sharing isn't available on this browser.");
+    }
+  }
+  function goHome(){
+    finishNow();
+    const p = location.pathname;
+    if(p==="/"||/\/index\.html$/.test(p)){
+      try{ window.scrollTo({top:0,behavior:"smooth"}); }catch(e){ window.scrollTo(0,0); }
+    } else {
+      location.href = "/";
+    }
   }
 
   return { run };

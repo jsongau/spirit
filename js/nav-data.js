@@ -102,10 +102,10 @@ PNAV.DYN = (function () {
    pn-split list) and/or a `cta` object (the free e-book card), rendered
    generically by apply-nav.mjs panelHTML. See that file for the shapes. */
 PNAV.MAP = [
-  { key: "find", h: "Find yours", cls: "pn-find", accent: "brass",
+  { key: "find", h: "Home", cls: "pn-find", accent: "brass",
     layout: "list",
     items: [
-      ["/index.html#read", "Find yours"]
+      ["/", "Home"]
     ]
   },
   { key: "explore", h: "Explore", accent: "teal",

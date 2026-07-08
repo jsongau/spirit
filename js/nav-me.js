@@ -24,40 +24,45 @@ PNAV.features.me = function (ctx) {
   var slot = scope.querySelector("[data-id-chip]");
   if (!slot) return; /* no pre-rendered slot: nothing to hydrate */
 
-  var STORE_KEY = "primal_oracle_v1";
+  var STORE_KEY = "primal_oracle_v1";        /* legacy oracle key: birth + engine */
+  var HOME_KEY = "zodi:home-v2:profile";     /* what the live homepage reveal writes */
   var ENGINE = ctx.ENGINE || window.ENGINE;
 
-  /* read saved state safely */
-  var birth = "";
+  var result = null;
+
+  /* 1) legacy path: a stored birthdate computed by the engine (only on pages that load engine.js) */
   try {
     var raw = window.localStorage.getItem(STORE_KEY);
     if (raw) {
       var data = JSON.parse(raw);
-      if (data && typeof data.birth === "string") birth = data.birth;
+      if (data && typeof data.birth === "string" && ENGINE && typeof ENGINE.compute === "function") {
+        result = ENGINE.compute(data.birth);
+      }
     }
-  } catch (e) {
-    birth = "";
-  }
+  } catch (e) { result = null; }
 
-  var result = null;
-  if (birth && ENGINE && typeof ENGINE.compute === "function") {
+  /* 2) fallback: the homepage profile already holds the named animal and its slug,
+        so the chip renders on every page without needing the engine. */
+  if (!result || !result.primal) {
     try {
-      result = ENGINE.compute(birth);
-    } catch (e) {
-      result = null;
-    }
+      var rawH = window.localStorage.getItem(HOME_KEY);
+      if (rawH) {
+        var p = JSON.parse(rawH);
+        if (p && p.name) result = { primal: p.name, glyph: "✦", slug: p.slug || "" };
+      }
+    } catch (e2) {}
   }
 
-  /* no reveal (or no engine on this page): hide the chip entirely */
+  /* still nothing revealed: hide the chip */
   if (!result || !result.primal) {
     slot.hidden = true;
     return;
   }
 
-  var slug = result.primal
+  var slug = result.slug || (result.primal
     .normalize("NFD").replace(/[̀-ͯ]/g, "")
     .toLowerCase().replace(/['’]/g, "")
-    .replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    .replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, ""));
   slot.setAttribute("href", "/animals/" + slug + "/");
 
   slot.textContent = "";

@@ -111,10 +111,14 @@ window.PNAV = window.PNAV || { features: {} };
         }
         return;
       }
-      if (openIdx !== -1) closeAll(false);
+      const wasOpen = openIdx !== -1;
+      if (wasOpen) closeAll(false);
       const panel = panelFor(i);
       if (!panel) return;
       openIdx = i;
+      /* fade up only on a fresh open; when sliding straight from one panel to the
+         next, swap instantly so the panel and its title never flicker in from zero */
+      panel.style.animation = wasOpen ? "none" : "";
       panel.removeAttribute("hidden");
       panel.classList.add("open");
       markTrigger(i, true);
