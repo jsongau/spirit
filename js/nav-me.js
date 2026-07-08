@@ -89,4 +89,33 @@ PNAV.features.me = function (ctx) {
   slot.setAttribute("aria-label", full + ". Read your animal.");
 
   slot.hidden = false;
+
+  /* First time this animal appears lit (the page after a reveal), play a one-time
+     glow so the handoff feels earned. It never replays for the same animal. */
+  try {
+    var LIT_KEY = "zodi:home-v2:chipLit";
+    if (window.localStorage.getItem(LIT_KEY) !== slug) {
+      injectLitStyle();
+      slot.classList.add("pn-id-lit");
+      window.localStorage.setItem(LIT_KEY, slug);
+      window.setTimeout(function () { slot.classList.remove("pn-id-lit"); }, 2600);
+    }
+  } catch (e) {}
 };
+
+function injectLitStyle() {
+  if (document.getElementById("pn-id-lit-css")) return;
+  var st = document.createElement("style");
+  st.id = "pn-id-lit-css";
+  st.textContent =
+    "@media (prefers-reduced-motion:no-preference){" +
+    ".pn-id.pn-id-lit{animation:pnIdLit 2.2s ease-out}" +
+    "@keyframes pnIdLit{0%{opacity:0;transform:translateY(-3px) scale(.95);box-shadow:0 0 0 0 rgba(214,193,140,0)}" +
+    "25%{opacity:1;transform:none;box-shadow:0 0 20px 2px rgba(214,193,140,.5)}" +
+    "55%{box-shadow:0 0 26px 3px rgba(214,193,140,.42)}" +
+    "100%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(214,193,140,0)}}" +
+    ".pn-id.pn-id-lit .pn-id-glyph{animation:pnIdGlyph 2.2s ease-out}" +
+    "@keyframes pnIdGlyph{0%{filter:none}30%{filter:drop-shadow(0 0 8px rgba(239,226,180,.9))}100%{filter:none}}" +
+    "}";
+  document.head.appendChild(st);
+}
