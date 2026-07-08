@@ -1,0 +1,39 @@
+/* ============================================================
+   ANIMAL PRINT — one-column archival printout of the reading.
+   Loaded with media="print".
+   ============================================================ */
+body.pf-page{background:#fff!important;color:#1a1a1a!important;font-size:11pt;line-height:1.5}
+.pf-page h1,.pf-page h2,.pf-page h3,.pf-page h4,.pf-page strong{color:#000!important}
+.pf-page a{color:#000!important;font-weight:600}
+.pf-page a[href^="/"]::after{content:" (zodianimal.com" attr(href) ")";font-weight:400;font-size:.8em}
+
+/* hide chrome and interactive machinery */
+#rail,#rail-bottom,#read-progress,.skip-link,.pf-hero__actions,.pf-hero__begin,
+.cross-weigh__control,.cw-meter,.cross-weigh__label,.axis-btns,.card__cta,
+.mirror-form__actions,.mirror-ritual input,.mirror-ritual .textarea,
+.ritual-chips,.stone-card .choose,.moon-cta-row,.pf-habitat__cta,
+.pf-essential-close .actions,.pf-proverb__say,.palette-tabs,.palette-bar,
+.palette-bar__key,.pp__tints,.explore-more,.pf-continue__cards,.shareline-box button,
+.overture__cue,.band__glow,.overture__glow,.overture__stars,.descent-close__glow{display:none!important}
+
+/* expand everything JS might have collapsed */
+.pf-work .panel,.rel-panel,.palette-panel,[role="tabpanel"][data-mirror]{display:block!important}
+.reveal{opacity:1!important;transform:none!important}
+
+/* flatten layout */
+.pf-shell,.pf-hero,.pf-dossier .card__body,.band__inner,.overture__inner,
+.mirror,.pf-moon__grid,.pf-elements .identity,.rel-grid,.bridge-row,
+.room-grid,.explore-cards,.stone-grid,.pf-recognition__lines,
+.pf-fusion__halves,.pf-fusion__blocks,.shadow-examples{display:block!important}
+.section{padding:1.2rem 0;page-break-inside:avoid}
+.band,.overture,.descent-close{padding:1rem 0;background:none!important;border:none}
+.pf-dossier .card{border:1pt solid #999;box-shadow:none;background:#fff}
+.pf-dossier .card::before{display:none}
+.pf-hero{min-height:0;padding:0 0 1rem;background:none!important}
+.pf-hero__art{display:none}
+.voice,.band__fact .tag,.band__payoff .tag{border-color:#999;color:#333}
+.eyebrow,.panel-ix,.rail-group{color:#555}
+.pf-proverb{background:none!important;text-align:left}
+.pf-proverb__zh{justify-content:flex-start;color:#000}
+h2,h3{page-break-after:avoid}
+.pf-foot{border-top:1pt solid #999;padding:1rem 0;text-align:left}
