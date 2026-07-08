@@ -201,42 +201,39 @@
     }
     function chip(wrap, k, v) { var c = h("div", "pcast-chip"); c.appendChild(h("span", "pcast-chip-k", k)); c.appendChild(h("span", "pcast-chip-v", v)); wrap.appendChild(c); }
 
+    var GRID_ORDER = [0, 1, 2, 3, 7, 11, 15, 14, 13, 12, 8, 4]; // matches the teaching court's palace-fixed layout (Life top-left)
     function boardEl(chart) {
       var board = h("div", "pcast-board");
       if (!chart) board.classList.add("is-locked");
-      var byBranch = {};
-      if (chart) Object.keys(chart.palaces).forEach(function (pid) { var p = chart.palaces[pid]; byBranch[p.branchIndex] = { pid: pid, stars: p.stars, isBody: p.isBody }; });
-      for (var bi = 0; bi < 12; bi++) {
+      var PAL_SORTED = (window.ZiweiData.palaces || []).slice().sort(function (a, b) { return a.branchOrder - b.branchOrder; });
+      PAL_SORTED.forEach(function (pal, i) {
+        var gi = GRID_ORDER[i], pos = [Math.floor(gi / 4), gi % 4];
         var cell = h("div", "pcast-cell");
-        cell.style.gridRow = (RING[bi][0] + 1); cell.style.gridColumn = (RING[bi][1] + 1);
-        cell.appendChild(h("span", "pcast-cell-branch", L.BRANCHES[bi]));
-        if (chart) {
-          var info = byBranch[bi];
-          if (bi === chart.lifeIndex) cell.classList.add("is-life");
-          if (info && info.pid) {
-            cell.classList.add("pcast-cell-btn"); cell.setAttribute("role", "button"); cell.setAttribute("tabindex", "0");
-            courtCells[info.pid] = cell;
-            (function (pid) {
-              cell.addEventListener("click", function () { selectCourt(pid); });
-              cell.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selectCourt(pid); } });
-            })(info.pid);
-            var role = h("span", "pcast-cell-role", (palById[info.pid] ? palById[info.pid].hant : "") + " " + (PAL_EN[info.pid] || ""));
-            cell.appendChild(role);
-            var sw = h("div", "pcast-cell-stars");
-            (info.stars || []).forEach(function (st) {
-              var se = h("span", "pcast-star", starName(st.id));
-              if (st.hua) { var b = h("sup", "pcast-hua pcast-hua-" + st.hua, HUA_LABEL[st.hua]); se.appendChild(b); }
-              sw.appendChild(se);
-            });
-            cell.appendChild(sw);
-            if (info.isBody) cell.appendChild(h("span", "pcast-cell-body", "身"));
-          }
-        }
+        cell.style.gridRow = (pos[0] + 1); cell.style.gridColumn = (pos[1] + 1);
+        if (!chart) { cell.appendChild(h("span", "pcast-cell-role", pal.hant + " " + (PAL_EN[pal.id] || ""))); board.appendChild(cell); return; }
+        var pc = chart.palaces[pal.id]; if (!pc) { board.appendChild(cell); return; }
+        cell.classList.add("pcast-cell-btn"); cell.setAttribute("role", "button"); cell.setAttribute("tabindex", "0");
+        if (pal.id === "ming-gong") cell.classList.add("is-life");
+        courtCells[pal.id] = cell;
+        (function (pid) {
+          cell.addEventListener("click", function () { selectCourt(pid); });
+          cell.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selectCourt(pid); } });
+        })(pal.id);
+        cell.appendChild(h("span", "pcast-cell-branch", pc.branch));
+        cell.appendChild(h("span", "pcast-cell-role", pal.hant + " " + (PAL_EN[pal.id] || "")));
+        var sw = h("div", "pcast-cell-stars");
+        (pc.stars || []).forEach(function (st) {
+          var se = h("span", "pcast-star", starName(st.id));
+          if (st.hua) { var b = h("sup", "pcast-hua pcast-hua-" + st.hua, HUA_LABEL[st.hua]); se.appendChild(b); }
+          sw.appendChild(se);
+        });
+        cell.appendChild(sw);
+        if (pc.isBody) cell.appendChild(h("span", "pcast-cell-body", "身"));
         board.appendChild(cell);
-      }
+      });
       var center = h("div", "pcast-board-center");
       if (chart) { center.appendChild(h("span", "pcast-center-hant", "紫微斗數")); center.appendChild(h("span", "pcast-center-sub", "your twelve palaces")); }
-      else { center.appendChild(h("span", "pcast-center-lock", "🔒")); center.appendChild(h("span", "pcast-center-sub", "birth hour needed")); }
+      else { center.appendChild(h("span", "pcast-center-lock", "\uD83D\uDD12")); center.appendChild(h("span", "pcast-center-sub", "birth hour needed")); }
       board.appendChild(center);
       return board;
     }
