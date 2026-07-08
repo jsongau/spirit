@@ -140,6 +140,7 @@
 
     /* ---- casting ---- */
     var lastBirth = null;   // {year,month,day,gender}
+    var courtCells = {}, courtRooms = {};   // for the interactive living court
     function readBirth() {
       var p = parseDate(date.value);
       if (!p) return null;
@@ -163,6 +164,7 @@
     /* ---- render the board ---- */
     function renderResult(out, birth) {
       result.innerHTML = "";
+      courtCells = {}; courtRooms = {};
       var yp = out.yearPillar;
       var head = h("div", "pcast-res-head");
       head.appendChild(h("h2", "pcast-res-title", "Your reading"));
@@ -179,8 +181,11 @@
       } else {
         result.appendChild(summaryChips(out.chart));
         result.appendChild(boardEl(out.chart));
+        result.appendChild(h("p", "pcast-court-hint", "Tap a room to light its triangle and mirror across your court."));
+        var cap = h("p", "pcast-court-cap"); cap.id = "pcast-court-cap"; result.appendChild(cap);
         result.appendChild(legendEl());
         result.appendChild(readingEl(out.chart, yp));
+        selectCourt("ming-gong");
       }
     }
     function pad(n) { return (n < 10 ? "0" : "") + n; }
@@ -209,6 +214,12 @@
           var info = byBranch[bi];
           if (bi === chart.lifeIndex) cell.classList.add("is-life");
           if (info && info.pid) {
+            cell.classList.add("pcast-cell-btn"); cell.setAttribute("role", "button"); cell.setAttribute("tabindex", "0");
+            courtCells[info.pid] = cell;
+            (function (pid) {
+              cell.addEventListener("click", function () { selectCourt(pid); });
+              cell.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selectCourt(pid); } });
+            })(info.pid);
             var role = h("span", "pcast-cell-role", (palById[info.pid] ? palById[info.pid].hant : "") + " " + (PAL_EN[info.pid] || ""));
             cell.appendChild(role);
             var sw = h("div", "pcast-cell-stars");
@@ -263,6 +274,21 @@
     function primaryStar(stars) { for (var i = 0; i < (stars || []).length; i++) { if (starById[stars[i].id]) return stars[i].id; } return null; }
     function palLabel(pid) { return palById[pid] ? (palById[pid].hant + " " + (PAL_EN[pid] || "")) : pid; }
 
+    /* interactive living court: light a palace's triangle + mirror and highlight its room */
+    function selectCourt(pid) {
+      if (!courtCells[pid]) return;
+      Object.keys(courtCells).forEach(function (k) { courtCells[k].classList.remove("is-focal", "is-tri", "is-mirror"); });
+      Object.keys(courtRooms).forEach(function (k) { courtRooms[k].classList.remove("is-hi"); });
+      courtCells[pid].classList.add("is-focal");
+      var tri = (palById[pid] && palById[pid].trineIds) || [];
+      tri.forEach(function (t) { if (courtCells[t]) courtCells[t].classList.add("is-tri"); });
+      var mir = palById[pid] && palById[pid].oppositeId;
+      if (mir && courtCells[mir]) courtCells[mir].classList.add("is-mirror");
+      if (courtRooms[pid]) courtRooms[pid].classList.add("is-hi");
+      var cap = document.getElementById("pcast-court-cap");
+      if (cap) cap.innerHTML = "<b>" + palLabel(pid) + "</b> \u00b7 triangle: " + (tri.map(palLabel).join(" & ") || "\u2014") + " \u00b7 mirror: " + (mir ? palLabel(mir) : "\u2014");
+    }
+
     function readingEl(chart, yp) {
       var wrap = h("div", "pcast-reading");
 
@@ -308,6 +334,7 @@
       (window.ZiweiData.palaces || []).forEach(function (pal) {
         var pc = chart.palaces[pal.id]; if (!pc) return;
         var room = h("div", "pcast-read-room"); if (pal.id === "ming-gong") room.classList.add("is-life");
+        room.setAttribute("data-pid", pal.id); courtRooms[pal.id] = room;
         var rh = h("div", "pcast-read-room-head");
         rh.appendChild(h("span", "pcast-read-room-name", pal.hant + " " + (PAL_EN[pal.id] || "")));
         rh.appendChild(h("span", "pcast-read-room-branch", pc.branch));
