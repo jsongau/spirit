@@ -165,9 +165,9 @@
   /* lock scroll while modal open */
   html.pn-dock-lock, html.pn-dock-lock body{ overflow:hidden; }
 
-  /* the bottom-right awakening floater shares the bottom edge with the
-     dock; lift it clear so it never covers the share icon */
-  .zaw-card.zaw-float{
-    bottom:calc(78px + env(safe-area-inset-bottom, 0px)) !important;
-  }
+  /* the bottom-right "Awakening" floater (STIRRING · nn%) competes with
+     the dock for the bottom edge and reads as a stray eye on a phone.
+     The dock now owns the bottom on mobile, so hide the floater here.
+     It still shows on desktop. */
+  .zaw-card.zaw-float{ display:none !important; }
 }

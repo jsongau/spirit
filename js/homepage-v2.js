@@ -497,6 +497,8 @@ function setCrossing(w, e, opts) {
     setCrossing(c.w, c.e, { year: c.eff });
     PROFILE = { w:c.w, e:c.e, year:c.eff, el:c.el, name:c.name, slug:c.slug };
     LS("profile", JSON.stringify(PROFILE));
+    /* let the nav dock (and any other listener) update without a reload */
+    try { window.dispatchEvent(new CustomEvent("zodi:revealed", { detail: PROFILE })); } catch (e) {}
     setHint("Named. The " + c.name + " is kept on this device, and this page becomes its sanctum when you return.", false);
     var rite = $("#roRite");
     if (rite) rite.innerHTML = "Your first sighting is a rite the ledger remembers, worth <b>500 <a href=\"/karmic-board.html\">Zodi Karma</a></b>. Kept on this device only.";
