@@ -47,7 +47,7 @@
   /* --- revealed animal chip --- */
   .pn-dock-animal{
     flex:1; display:flex; align-items:center; gap:11px; min-width:0;
-    background:none; border:0; color:var(--ink,#ece7d8); cursor:pointer;
+    background:none; border:0; color:#ece7d8; cursor:pointer;
     text-align:left; padding:4px 6px; border-radius:12px; font:inherit;
   }
   .pn-dock-animal:active{ background:rgba(214,193,140,.06); }
@@ -93,7 +93,7 @@
   }
   .pn-dock-act{
     display:flex; align-items:center; gap:12px; padding:14px 16px; text-decoration:none;
-    color:var(--ink,#ece7d8); font-size:.92rem;
+    color:#ece7d8; font-size:.92rem;
   }
   .pn-dock-act + .pn-dock-act{ border-top:1px solid rgba(255,255,255,.06); }
   .pn-dock-act.primary{ background:rgba(214,193,140,.08); }
