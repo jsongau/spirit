@@ -1,0 +1,2229 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<!--ga4:start-->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N0731G0W3M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N0731G0W3M');
+</script>
+<!--ga4:end-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Four Forces — Si Hua · Purple Star Astrology (紫微斗數 Zi Wei Dou Shu) | ZodiAnimal</title>
+  <meta name="description" content="Purple Star Astrology: the Si Hua system — four transforming forces that activate specific stars in your chart each year, decade, and lifetime. Find your natal Four Forces with the interactive calculator. 紫微斗數">
+  <meta property="og:title" content="The Four Forces — Si Hua · Purple Star Astrology (紫微斗數 Zi Wei Dou Shu) | ZodiAnimal">
+  <meta property="og:description" content="Every year, every decade, four forces activate in your celestial palace — transforming specific stars, changing the energy of specific rooms. The dynamic engine of destiny. 紫微斗數">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://www.zodianimal.com/elements/purple-star-astrology/four-forces/">
+  <meta name="keywords" content="紫微斗數, 紫微斗数, Zi Wei Dou Shu, Zǐwēi Dǒushù, Purple Star Astrology, ZWDS, 紫微命盤, 命盤, Chinese astrology, 四化, 生年四化, 化祿, 化權, 化科, 化忌, si hua">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_TW">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:locale:alternate" content="zh_HK">
+  <meta property="og:url" content="https://www.zodianimal.com/elements/purple-star-astrology/four-forces/">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/type.css">
+  <link rel="stylesheet" href="/css/nav-core.css">
+  <link rel="stylesheet" href="/css/nav-mega.css">
+  <link rel="stylesheet" href="/css/nav-drawer.css">
+  <link rel="stylesheet" href="/css/nav-sub.css">
+  <link rel="stylesheet" href="/css/a11y.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap">
+  <style>
+/* ============================================================
+   DESIGN TOKENS — Si Hua / Four Forces page
+   ============================================================ */
+:root {
+  --ink: oklch(0.16 0.03 275);
+  --ink-2: oklch(0.20 0.035 275);
+  --panel: oklch(0.25 0.04 273);
+  --panel-2: oklch(0.30 0.045 272);
+  --line: oklch(0.80 0.06 85 / 0.16);
+  --line-soft: oklch(0.80 0.06 85 / 0.09);
+  --moon: oklch(0.96 0.02 90);
+  --ivory: oklch(0.92 0.02 88);
+  --body-text: oklch(0.84 0.02 280);
+  --muted: oklch(0.70 0.02 280);
+  --faint: oklch(0.55 0.02 280);
+  --brass: oklch(0.78 0.11 85);
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Geist", "Inter", sans-serif;
+  --mono: "Space Mono", monospace;
+
+  /* The four force colors */
+  --cc: oklch(0.65 0.20 140);       /* default: spring green for Hua Lu */
+  --cc-lu: oklch(0.65 0.20 140);    /* The Flow — spring green */
+  --cc-quan: oklch(0.58 0.22 25);   /* The Power — summer red */
+  --cc-ke: oklch(0.72 0.14 220);    /* The Shine — autumn silver-blue */
+  --cc-ji: oklch(0.45 0.20 310);    /* The Hook — winter violet */
+
+  --cc-lu-soft: oklch(0.65 0.20 140 / 0.14);
+  --cc-lu-dim: oklch(0.65 0.20 140 / 0.07);
+  --cc-quan-soft: oklch(0.58 0.22 25 / 0.14);
+  --cc-quan-dim: oklch(0.58 0.22 25 / 0.07);
+  --cc-ke-soft: oklch(0.72 0.14 220 / 0.14);
+  --cc-ke-dim: oklch(0.72 0.14 220 / 0.07);
+  --cc-ji-soft: oklch(0.45 0.20 310 / 0.16);
+  --cc-ji-dim: oklch(0.45 0.20 310 / 0.08);
+
+  --maxw: 1120px;
+  --r-1: 8px;
+  --r-2: 14px;
+  --r-3: 22px;
+  --r-pill: 999px;
+  --measure: 66ch;
+}
+
+/* ============================================================
+   RESET + BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--body-text);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Animated atmospheric background — cycles through all four force colors */
+@keyframes bg-cycle {
+  0%    { opacity: 1; }
+  20%   { opacity: 1; }
+  25%   { opacity: 0; }
+  95%   { opacity: 0; }
+  100%  { opacity: 1; }
+}
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.bg-lu {
+  background:
+    radial-gradient(900px 600px at 80% -15%, oklch(0.65 0.20 140 / 0.11), transparent 70%),
+    radial-gradient(600px 440px at 5% 10%, oklch(0.55 0.18 160 / 0.08), transparent 72%);
+  animation: bg-cycle 28s ease-in-out infinite;
+  animation-delay: 0s;
+}
+.bg-quan {
+  background:
+    radial-gradient(900px 600px at 80% -15%, oklch(0.58 0.22 25 / 0.11), transparent 70%),
+    radial-gradient(600px 440px at 5% 10%, oklch(0.50 0.20 40 / 0.08), transparent 72%);
+  animation: bg-cycle 28s ease-in-out infinite;
+  animation-delay: 7s;
+}
+.bg-ke {
+  background:
+    radial-gradient(900px 600px at 80% -15%, oklch(0.72 0.14 220 / 0.11), transparent 70%),
+    radial-gradient(600px 440px at 5% 10%, oklch(0.65 0.12 200 / 0.08), transparent 72%);
+  animation: bg-cycle 28s ease-in-out infinite;
+  animation-delay: 14s;
+}
+.bg-ji {
+  background:
+    radial-gradient(900px 600px at 80% -15%, oklch(0.45 0.20 310 / 0.12), transparent 70%),
+    radial-gradient(600px 440px at 5% 10%, oklch(0.38 0.16 290 / 0.09), transparent 72%);
+  animation: bg-cycle 28s ease-in-out infinite;
+  animation-delay: 21s;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  color: var(--moon);
+  font-weight: 560;
+  line-height: 1.14;
+  margin: 0;
+}
+p { margin: 0; }
+a { text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--cc); outline-offset: 3px; border-radius: 3px; }
+
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 clamp(18px, 4vw, 48px);
+}
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cc);
+  margin: 0 0 0.7rem;
+}
+.band {
+  padding: clamp(40px, 6vw, 80px) 0;
+  border-top: 1px solid var(--line-soft);
+}
+.band:first-child { border-top: none; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  padding: clamp(60px, 10vw, 120px) 0 clamp(30px, 5vw, 60px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--serif);
+  font-size: clamp(5rem, 20vw, 16rem);
+  color: oklch(0.65 0.20 140 / 0.05);
+  white-space: nowrap;
+  pointer-events: none;
+  line-height: 1;
+  user-select: none;
+}
+.hero .eyebrow {
+  color: var(--cc-lu);
+  position: relative;
+}
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 5.6rem);
+  letter-spacing: -0.02em;
+  margin: 0.4rem 0 0;
+  position: relative;
+}
+.hero-chinese {
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--cc-lu);
+  font-style: italic;
+  margin-top: 0.6rem;
+  letter-spacing: 0.06em;
+  position: relative;
+}
+.hero-sub {
+  max-width: 58ch;
+  margin: 1.6rem auto 0;
+  color: var(--ivory);
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  line-height: 1.68;
+  position: relative;
+}
+
+/* Four glyphs in hero */
+.hero-glyphs {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1.2rem, 4vw, 3rem);
+  margin-top: 2.8rem;
+  position: relative;
+}
+.hero-glyph {
+  text-align: center;
+}
+.hero-glyph-char {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1;
+}
+.hero-glyph-char.lu   { color: var(--cc-lu);   text-shadow: 0 0 40px oklch(0.65 0.20 140 / 0.45); }
+.hero-glyph-char.quan { color: var(--cc-quan);  text-shadow: 0 0 40px oklch(0.58 0.22 25 / 0.45); }
+.hero-glyph-char.ke   { color: var(--cc-ke);    text-shadow: 0 0 40px oklch(0.72 0.14 220 / 0.45); }
+.hero-glyph-char.ji   { color: var(--cc-ji);    text-shadow: 0 0 40px oklch(0.45 0.20 310 / 0.5); }
+.hero-glyph-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+/* ============================================================
+   SECTION 2 — FOUR FORCES CARDS
+   ============================================================ */
+.section-title {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  margin-bottom: 0.5rem;
+}
+.section-lead {
+  max-width: var(--measure);
+  color: var(--muted);
+  margin-top: 0.7rem;
+}
+
+.forces-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  margin-top: 2.4rem;
+}
+.force-card {
+  background: linear-gradient(160deg, var(--panel-2), var(--panel));
+  border-radius: var(--r-3);
+  padding: 2rem 1.6rem 1.8rem;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+}
+.force-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid var(--card-color, oklch(0.65 0.20 140 / 0.22));
+  transition: border-color 0.3s;
+  pointer-events: none;
+}
+.force-card::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--card-color, var(--cc-lu)), transparent);
+  border-radius: var(--r-3) var(--r-3) 0 0;
+  opacity: 0.7;
+}
+.force-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px var(--card-shadow, oklch(0.65 0.20 140 / 0.20));
+}
+.force-card:hover::before {
+  border-color: var(--card-color, oklch(0.65 0.20 140 / 0.55));
+}
+
+/* Season illustrations (CSS-only abstract) */
+.force-season {
+  width: 100%;
+  height: 80px;
+  border-radius: var(--r-2);
+  margin-bottom: 1.4rem;
+  position: relative;
+  overflow: hidden;
+  background: var(--card-bg, oklch(0.65 0.20 140 / 0.08));
+}
+/* Spring — flowing curves */
+.force-card.lu .force-season::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: -10%;
+  width: 120%;
+  height: 60px;
+  border-radius: 50%;
+  background: oklch(0.65 0.20 140 / 0.18);
+}
+.force-card.lu .force-season::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 20%;
+  width: 60%;
+  height: 40px;
+  border-radius: 50%;
+  background: oklch(0.65 0.20 140 / 0.26);
+}
+/* Summer — rising peaks */
+.force-card.quan .force-season::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  width: 50%;
+  height: 70px;
+  clip-path: polygon(25% 100%, 50% 0%, 75% 100%);
+  background: oklch(0.58 0.22 25 / 0.25);
+}
+.force-card.quan .force-season::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -5%;
+  width: 60%;
+  height: 55px;
+  clip-path: polygon(25% 100%, 50% 10%, 75% 100%);
+  background: oklch(0.58 0.22 25 / 0.18);
+}
+/* Autumn — scattered circles */
+.force-card.ke .force-season::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 30%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: oklch(0.72 0.14 220 / 0.28);
+  box-shadow: -20px 20px 0 oklch(0.72 0.14 220 / 0.14), 25px 10px 0 oklch(0.72 0.14 220 / 0.18), -40px 5px 0 8px oklch(0.72 0.14 220 / 0.09);
+}
+.force-card.ke .force-season::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  right: 25%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: oklch(0.72 0.14 220 / 0.22);
+  box-shadow: 24px -12px 0 oklch(0.72 0.14 220 / 0.16), -28px 8px 0 12px oklch(0.72 0.14 220 / 0.10);
+}
+/* Winter — crystalline facets */
+.force-card.ji .force-season {
+  background: oklch(0.18 0.04 290 / 0.35);
+}
+.force-card.ji .force-season::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  width: 50px;
+  height: 50px;
+  border: 2px solid oklch(0.45 0.20 310 / 0.30);
+  border-radius: var(--r-1);
+}
+.force-card.ji .force-season::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 50px;
+  height: 50px;
+  border: 2px solid oklch(0.45 0.20 310 / 0.18);
+  border-radius: var(--r-1);
+}
+
+/* Card color assignments */
+.force-card.lu   { --card-color: var(--cc-lu);   --card-shadow: oklch(0.65 0.20 140 / 0.20); --card-bg: oklch(0.65 0.20 140 / 0.06); }
+.force-card.quan { --card-color: var(--cc-quan);  --card-shadow: oklch(0.58 0.22 25 / 0.22);  --card-bg: oklch(0.58 0.22 25 / 0.06);  }
+.force-card.ke   { --card-color: var(--cc-ke);    --card-shadow: oklch(0.72 0.14 220 / 0.22); --card-bg: oklch(0.72 0.14 220 / 0.06); }
+.force-card.ji   { --card-color: var(--cc-ji);    --card-shadow: oklch(0.45 0.20 310 / 0.25); --card-bg: oklch(0.45 0.20 310 / 0.08); }
+
+.force-season-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--card-color);
+  background: oklch(0.16 0.03 275 / 0.8);
+  padding: 0.2em 0.55em;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--card-color);
+}
+
+.force-chinese {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: var(--card-color);
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.force-name {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 560;
+  color: var(--moon);
+  margin-bottom: 0.15rem;
+}
+.force-pinyin {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.force-intro {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.96rem;
+  color: var(--ivory);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid oklch(1 0 0 / 0.06);
+}
+.force-body {
+  font-size: 0.9rem;
+  color: var(--body-text);
+  line-height: 1.65;
+}
+.force-body p + p { margin-top: 0.7rem; }
+.force-keywords {
+  margin-top: 1.1rem;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  color: var(--card-color);
+  opacity: 0.8;
+}
+
+/* ============================================================
+   SECTION 3 — SI HUA CALCULATOR
+   ============================================================ */
+.calc-wrap {
+  max-width: 640px;
+  margin: 2.4rem auto 0;
+}
+.calc-card {
+  background: linear-gradient(160deg, var(--panel-2), var(--panel));
+  border: 1px solid var(--line);
+  border-radius: var(--r-3);
+  padding: clamp(1.6rem, 4vw, 2.8rem);
+}
+
+.calc-field-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.calc-field {
+  flex: 1;
+  min-width: 160px;
+}
+.calc-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+.calc-input {
+  width: 100%;
+  background: var(--ink-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-2);
+  padding: 0.8rem 1.1rem;
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  color: var(--moon);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.calc-input::-webkit-outer-spin-button,
+.calc-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.calc-input:focus {
+  border-color: var(--cc-lu);
+  box-shadow: 0 0 0 3px oklch(0.65 0.20 140 / 0.14);
+}
+
+.calc-toggle-row {
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+.calc-toggle-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--cc-lu);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.calc-toggle-text {
+  font-size: 0.88rem;
+  color: var(--body-text);
+  line-height: 1.5;
+  cursor: pointer;
+}
+.calc-toggle-note {
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  color: var(--faint);
+  font-style: italic;
+}
+
+.calc-btn {
+  display: block;
+  width: 100%;
+  margin-top: 1.6rem;
+  padding: 0.9rem 1.6rem;
+  background: linear-gradient(135deg, oklch(0.65 0.20 140 / 0.18), oklch(0.65 0.20 140 / 0.10));
+  border: 1px solid oklch(0.65 0.20 140 / 0.45);
+  border-radius: var(--r-2);
+  color: var(--moon);
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 560;
+  cursor: pointer;
+  transition: background 0.22s, border-color 0.22s, transform 0.15s, box-shadow 0.22s;
+  letter-spacing: 0.01em;
+}
+.calc-btn:hover {
+  background: linear-gradient(135deg, oklch(0.65 0.20 140 / 0.28), oklch(0.65 0.20 140 / 0.16));
+  border-color: oklch(0.65 0.20 140 / 0.7);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px oklch(0.65 0.20 140 / 0.18);
+}
+.calc-btn:active { transform: translateY(0); }
+
+.calc-disclaimer {
+  margin-top: 1rem;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--faint);
+  text-align: center;
+}
+
+/* Results */
+.calc-results {
+  margin-top: 2rem;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+.calc-results.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.calc-stem-display {
+  text-align: center;
+  margin-bottom: 1.6rem;
+  padding: 1rem 1.4rem;
+  background: oklch(0.20 0.035 275 / 0.6);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-2);
+}
+.calc-stem-char {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  color: var(--moon);
+  display: block;
+  line-height: 1;
+}
+.calc-stem-label {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  display: block;
+  margin-top: 0.35rem;
+  text-transform: uppercase;
+}
+.calc-stem-name {
+  font-size: 0.9rem;
+  color: var(--body-text);
+  margin-top: 0.4rem;
+}
+
+.result-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.result-card {
+  border-radius: var(--r-2);
+  padding: 1.2rem 1.3rem;
+  border: 1px solid transparent;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.result-card.shown {
+  opacity: 1;
+  transform: translateY(0);
+}
+.result-card.res-lu   { background: oklch(0.65 0.20 140 / 0.07); border-color: oklch(0.65 0.20 140 / 0.28); box-shadow: 0 0 0 0 oklch(0.65 0.20 140 / 0); }
+.result-card.res-quan { background: oklch(0.58 0.22 25 / 0.07);  border-color: oklch(0.58 0.22 25 / 0.28);  }
+.result-card.res-ke   { background: oklch(0.72 0.14 220 / 0.07); border-color: oklch(0.72 0.14 220 / 0.28); }
+.result-card.res-ji   { background: oklch(0.45 0.20 310 / 0.09); border-color: oklch(0.45 0.20 310 / 0.32); }
+
+.rc-force {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.rc-force.lu   { color: var(--cc-lu); }
+.rc-force.quan { color: var(--cc-quan); }
+.rc-force.ke   { color: var(--cc-ke); }
+.rc-force.ji   { color: var(--cc-ji); }
+
+.rc-star-coined {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 560;
+  color: var(--moon);
+  display: block;
+  line-height: 1.2;
+  margin-bottom: 0.15rem;
+}
+.rc-star-raw {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 0.7rem;
+}
+.rc-meaning {
+  font-size: 0.87rem;
+  color: var(--body-text);
+  line-height: 1.6;
+}
+
+.calc-layer-note {
+  margin-top: 1.2rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--ink-2);
+  border-radius: var(--r-1);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--faint);
+  line-height: 1.55;
+}
+
+/* ============================================================
+   SECTION 4 — THREE LAYERS DIAGRAM
+   ============================================================ */
+.layers-diagram {
+  margin-top: 2.4rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.layer-panel {
+  position: relative;
+  padding: 1.6rem 1.8rem;
+  border-radius: var(--r-2);
+  border: 1px solid var(--line-soft);
+  cursor: default;
+  transition: border-color 0.25s, background 0.25s, transform 0.25s, box-shadow 0.25s;
+  margin-bottom: -16px;
+  z-index: 1;
+}
+.layer-panel:nth-child(2) { z-index: 2; margin-left: 24px; }
+.layer-panel:nth-child(3) { z-index: 3; margin-left: 48px; margin-bottom: 0; }
+.layer-panel.natal   { background: oklch(0.72 0.14 220 / 0.05); }
+.layer-panel.decade  { background: oklch(0.65 0.20 140 / 0.05); }
+.layer-panel.annual  { background: oklch(0.58 0.22 25 / 0.05); }
+.layer-panel:hover, .layer-panel:focus-within {
+  transform: translateX(6px) scale(1.01);
+  box-shadow: 0 12px 40px oklch(0 0 0 / 0.3);
+  z-index: 10;
+  margin-bottom: -10px;
+}
+.layer-panel:last-child:hover { margin-bottom: 0; }
+.layer-panel.natal:hover   { border-color: oklch(0.72 0.14 220 / 0.5); background: oklch(0.72 0.14 220 / 0.09); }
+.layer-panel.decade:hover  { border-color: oklch(0.65 0.20 140 / 0.5); background: oklch(0.65 0.20 140 / 0.09); }
+.layer-panel.annual:hover  { border-color: oklch(0.58 0.22 25 / 0.5);  background: oklch(0.58 0.22 25 / 0.09); }
+
+.layer-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-right: 0.7rem;
+  flex-shrink: 0;
+}
+.natal  .layer-number { background: oklch(0.72 0.14 220 / 0.18); color: var(--cc-ke); border: 1px solid oklch(0.72 0.14 220 / 0.35); }
+.decade .layer-number { background: oklch(0.65 0.20 140 / 0.18); color: var(--cc-lu); border: 1px solid oklch(0.65 0.20 140 / 0.35); }
+.annual .layer-number { background: oklch(0.58 0.22 25 / 0.18);  color: var(--cc-quan); border: 1px solid oklch(0.58 0.22 25 / 0.35); }
+
+.layer-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+.layer-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 560;
+  color: var(--moon);
+}
+.layer-tag {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-left: 0.8rem;
+  color: var(--faint);
+}
+.layer-body {
+  font-size: 0.9rem;
+  color: var(--body-text);
+  line-height: 1.62;
+  max-width: 60ch;
+}
+
+.layers-callout {
+  margin-top: 2.4rem;
+  padding: 1.4rem 1.8rem;
+  background: oklch(0.45 0.20 310 / 0.07);
+  border: 1px solid oklch(0.45 0.20 310 / 0.25);
+  border-left: 3px solid var(--cc-ji);
+  border-radius: 0 var(--r-2) var(--r-2) 0;
+  max-width: var(--measure);
+}
+.layers-callout p {
+  font-size: 0.95rem;
+  color: var(--body-text);
+  line-height: 1.65;
+}
+.layers-callout strong { color: var(--moon); }
+
+/* ============================================================
+   SECTION 5 — FLYING STARS TEASER
+   ============================================================ */
+.feihua-wrap {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.4rem;
+  align-items: start;
+}
+.feihua-body {
+  color: var(--body-text);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.feihua-body p + p { margin-top: 0.9rem; }
+
+/* Palace diagram with flying arrows */
+.palace-map {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  max-width: 280px;
+}
+.palace-box {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--r-1);
+  padding: 0.6rem 0.5rem;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  position: relative;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, background 0.2s;
+}
+.palace-box.active-src {
+  border-color: var(--cc-lu);
+  background: oklch(0.65 0.20 140 / 0.08);
+  color: var(--cc-lu);
+}
+.palace-box.active-dst {
+  border-color: var(--cc-quan);
+  background: oklch(0.58 0.22 25 / 0.08);
+  color: var(--cc-quan);
+}
+.palace-box.active-dst2 {
+  border-color: var(--cc-ke);
+  background: oklch(0.72 0.14 220 / 0.08);
+  color: var(--cc-ke);
+}
+.palace-center {
+  background: oklch(0.25 0.04 273 / 0.5);
+  border-style: dashed;
+}
+
+/* SVG arrow overlay for the palace map */
+.palace-map-wrap {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.feihua-note {
+  margin-top: 1.2rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--panel);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-1);
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   SECTION 6 — NATAL HOOK FINDER
+   ============================================================ */
+.hook-intro {
+  max-width: var(--measure);
+  margin-top: 0.8rem;
+  color: var(--body-text);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.hook-table-wrap {
+  margin-top: 2rem;
+  border: 1px solid oklch(0.45 0.20 310 / 0.25);
+  border-radius: var(--r-2);
+  overflow: hidden;
+}
+.hook-row {
+  display: grid;
+  grid-template-columns: 180px 160px 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--line-soft);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.hook-row:last-child { border-bottom: none; }
+.hook-row:hover {
+  background: oklch(0.45 0.20 310 / 0.07);
+}
+.hook-row.expanded {
+  background: oklch(0.45 0.20 310 / 0.06);
+}
+.hook-row.expanded .hook-cell-years { border-left-color: var(--cc-ji); }
+.hook-cell {
+  padding: 0.9rem 1.1rem;
+  font-size: 0.9rem;
+  color: var(--body-text);
+  line-height: 1.5;
+  border-right: 1px solid var(--line-soft);
+}
+.hook-cell:last-child { border-right: none; }
+.hook-cell-years {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--cc-ji);
+  border-left: 3px solid oklch(0.45 0.20 310 / 0.25);
+  transition: border-left-color 0.2s;
+}
+.hook-cell-star {
+  font-family: var(--serif);
+  font-size: 0.96rem;
+  color: var(--moon);
+}
+.hook-cell-star small {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 400;
+  margin-top: 0.1rem;
+}
+.hook-cell-meaning {
+  color: var(--body-text);
+  font-size: 0.87rem;
+  line-height: 1.58;
+}
+
+/* Expanded detail row */
+.hook-detail {
+  display: none;
+  grid-column: 1 / -1;
+  padding: 0.9rem 1.1rem 1.1rem 1.4rem;
+  background: oklch(0.45 0.20 310 / 0.05);
+  border-top: 1px solid oklch(0.45 0.20 310 / 0.15);
+  font-size: 0.88rem;
+  color: var(--body-text);
+  line-height: 1.62;
+}
+.hook-detail.open { display: block; }
+.hook-detail strong { color: var(--ivory); }
+.hook-detail-inner {
+  max-width: 68ch;
+}
+
+.hook-footer-note {
+  margin-top: 1.6rem;
+  padding: 1.2rem 1.6rem;
+  background: var(--panel);
+  border: 1px solid oklch(0.45 0.20 310 / 0.20);
+  border-radius: var(--r-2);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ivory);
+  line-height: 1.6;
+  max-width: var(--measure);
+}
+
+/* ============================================================
+   SECTION 7 — BRIDGE CARDS
+   ============================================================ */
+.bridge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+.bridge-card {
+  background: linear-gradient(165deg, var(--panel-2), var(--panel) 80%);
+  border: 1px solid var(--line);
+  border-radius: var(--r-3);
+  padding: 1.8rem 1.6rem;
+  display: block;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  color: inherit;
+}
+.bridge-card:hover {
+  border-color: var(--cc-lu);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px oklch(0.65 0.20 140 / 0.18);
+}
+.bridge-card.back { border-color: oklch(0.80 0.06 85 / 0.25); }
+.bridge-card.back:hover { border-color: var(--brass); box-shadow: 0 20px 50px oklch(0.78 0.11 85 / 0.15); }
+.bc-glyph {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  color: var(--cc-lu);
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+.bridge-card.back .bc-glyph { color: var(--brass); }
+.bc-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); margin-bottom: 0.4rem; }
+.bc-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 560; color: var(--moon); margin-bottom: 0.5rem; }
+.bc-desc { font-size: 0.9rem; color: var(--body-text); line-height: 1.6; margin-top: 0.4rem; }
+.bc-arrow { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em; color: var(--cc-lu); margin-top: 0.8rem; display: block; }
+.bridge-card.back .bc-arrow { color: var(--brass); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer.page-foot {
+  text-align: center;
+  padding: clamp(30px, 5vw, 60px) 0;
+  border-top: 1px solid var(--line-soft);
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+}
+footer.page-foot a { color: var(--muted); font-weight: 500; }
+footer.page-foot a:hover { color: var(--cc-lu); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1000px) {
+  .forces-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 780px) {
+  .feihua-wrap { grid-template-columns: 1fr; }
+  .hook-row { grid-template-columns: 130px 1fr; }
+  .hook-cell-meaning { display: none; }
+  .bridge-grid { grid-template-columns: 1fr; }
+  .result-cards { grid-template-columns: 1fr; }
+}
+@media (max-width: 580px) {
+  .forces-grid { grid-template-columns: 1fr; }
+  .layer-panel:nth-child(2) { margin-left: 12px; }
+  .layer-panel:nth-child(3) { margin-left: 24px; }
+  .hook-row { grid-template-columns: 1fr; }
+  .hook-cell { border-right: none; }
+  .hook-cell-years { border-left-width: 3px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Article","headline":"The Four Forces — Si Hua · Zi Wei Dou Shu","description":"The Si Hua system — four transforming forces that activate specific stars in your chart each year, decade, and lifetime.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"ZodiAnimal","url":"https://www.zodianimal.com"}},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.zodianimal.com/"},
+      {"@type":"ListItem","position":2,"name":"Elements","item":"https://www.zodianimal.com/elements/"},
+      {"@type":"ListItem","position":3,"name":"Zi Wei Dou Shu","item":"https://www.zodianimal.com/elements/purple-star-astrology/"},
+      {"@type":"ListItem","position":4,"name":"The Four Forces","item":"https://www.zodianimal.com/elements/purple-star-astrology/four-forces/"}
+    ]}
+  ]}
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"The Four Forces — Si Hua · Purple Star Astrology (Zi Wei Dou Shu)","url":"https://www.zodianimal.com/elements/purple-star-astrology/four-forces/","inLanguage":"en","about":{"@type":"DefinedTerm","name":"Zi Wei Dou Shu 紫微斗數","alternateName":["Purple Star Astrology","Purple Star","The Emperor's Astrology","Zǐwēi Dǒushù"],"url":"https://www.zodianimal.com/elements/purple-star-astrology/"},"mentions":{"@type":"DefinedTerm","name":"Zodi Animal","alternateName":["Primal Zodiac Animal","Primal Animal","primal animal"],"url":"https://www.zodianimal.com/zodiac/what-is-my-primal-zodiac-animal/"}}</script>
+<!--pn-css:start-->
+<link rel="stylesheet" href="/css/nav-core.css" data-pn="/css/nav-core.css">
+<link rel="stylesheet" href="/css/nav-mega.css" data-pn="/css/nav-mega.css">
+<link rel="stylesheet" href="/css/nav-drawer.css" data-pn="/css/nav-drawer.css">
+<link rel="stylesheet" href="/css/nav-sub.css" data-pn="/css/nav-sub.css">
+<link rel="stylesheet" href="/css/footer.css" data-pn="/css/footer.css">
+<link rel="stylesheet" href="/css/a11y.css" data-pn="/css/a11y.css">
+<!--pn-css:end-->
+<!--pn-crumb-ld:start-->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.zodianimal.com/"},{"@type":"ListItem","position":2,"name":"Purple Star (Zi Wei Dou Shu)","item":"https://www.zodianimal.com/elements/purple-star-astrology/"},{"@type":"ListItem","position":3,"name":"The Four Forces — Si Hua","item":"https://www.zodianimal.com/elements/purple-star-astrology/four-forces/"}]}</script>
+<!--pn-crumb-ld:end-->
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","inLanguage":"en","mainEntity":[{"@type":"Question","name":"What are the Four Transformations (四化 Si Hua) in Purple Star Astrology?","acceptedAnswer":{"@type":"Answer","text":"Four forces, 化祿 the Flow, 化權 the Power, 化科 the Shine, and 化忌 the Hook, that a birth-year Heavenly Stem attaches to four specific stars, changing how each one behaves."}},{"@type":"Question","name":"What is 化忌 the Hook?","acceptedAnswer":{"@type":"Answer","text":"The chart's fixed pressure point and growth edge, the room a life keeps working on. Classical readings treat it as felt hunger that drives effort, never a doom sentence."}},{"@type":"Question","name":"Are the four seasons a real part of the Four Transformations?","acceptedAnswer":{"@type":"Answer","text":"The spring, summer, autumn, and winter framing is a teaching metaphor, not a correspondence table. The mechanism is the Heavenly Stem, not the seasons."}}]}
+  </script>
+</head>
+<body class="pn-has-bar">
+<!--pn-static:start-->
+<a class="skip-link" href="#pn-main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ico-moonstone" viewBox="0 0 24 24"><path d="M12 2.6c4 2 6.4 5.1 6.4 9.4S16 19.6 12 21.4C8 19.6 5.6 16.3 5.6 12S8 4.6 12 2.6Z" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M12 2.6C10 6 9 9 9 12s1 6 3 9.4" fill="none" stroke="currentColor" stroke-width=".8" opacity=".5"/><ellipse cx="10.4" cy="9" rx="2.2" ry="3.2" fill="currentColor" opacity=".2"/></symbol></svg>
+<header class="pn-bar" role="banner" data-static>
+  <div class="pn-inner">
+    <a class="pn-brand" href="/index.html"><span class="pn-word"><span class="z">Zodi</span> <b>Animal</b></span><span class="pn-tagline">Unlock your<br>Primal Zodiac<br>Animal Spirit</span></a>
+    <nav class="pn-nav" aria-label="Primary">
+        <a class="pn-link pn-find" href="/index.html#read">Find yours</a>
+        <div class="pn-item" data-accent="teal"><button class="pn-trigger" type="button" data-group="1" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Explore<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="brass"><button class="pn-trigger" type="button" data-group="2" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Zodiac<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="amethyst"><button class="pn-trigger" type="button" data-group="3" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Horoscope<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="jade"><button class="pn-trigger active" type="button" data-group="4" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Sage Wisdom<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="rose"><button class="pn-trigger" type="button" data-group="5" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Bonds<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="silver"><button class="pn-trigger" type="button" data-group="6" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Moon<span class="chev" aria-hidden="true"></span></button></div>
+    </nav>
+    <div class="pn-tools">
+      <div class="pn-orb" data-orb hidden aria-hidden="true"></div>
+      <a class="pn-id" data-id-chip href="/index.html" hidden></a>
+      <div class="pn-moonwrap">
+        <button class="pn-moon" type="button" data-moon-chip aria-haspopup="true" aria-expanded="false" aria-controls="pn-moonpop" hidden></button>
+        <div class="pn-moonpop" id="pn-moonpop" data-moon-pop role="region" aria-label="Moon phase tonight" hidden>
+          <div class="pnm-head"><span class="pnm-glyph" aria-hidden="true"></span><div><p class="pnm-name"></p><p class="pnm-pct"></p></div></div>
+          <p class="pnm-meaning"></p>
+          <p class="pnm-favors"></p>
+          <a class="pnm-link" href="/moon.html">Read the Moon tonight</a>
+        </div>
+      </div>
+      <a class="pn-ring" data-ring-slot href="/awakening.html" hidden></a>
+      <a class="pn-cta" href="/index.html#read">Reveal my animal <span aria-hidden="true">&#10022;</span></a>
+    </div>
+    <button class="pn-burger" type="button" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </div>
+  <div class="pn-dd" data-dd><div class="pn-dd-mount"></div></div>
+  <div class="pn-panel pn-panel-explore" data-group="1" data-accent="teal" role="region" aria-label="Explore" hidden>
+    <p class="pn-panel-eyebrow">Everything the wheel opens, one animal at the center</p>
+    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">✦</span> Begin</p><a class="pn-row" href="/index.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Find your animal</span></a><a class="pn-row" href="/daily.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Today's reading</span><span class="pn-row-sub" data-dyn="date-today">Mon, Jul 6</span></a><a class="pn-row" href="/year.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Year finder</span></a><a class="pn-row" href="/account.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your account</span><span class="pn-row-sub">Zodi Karma ledger</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Menagerie</p><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">All 144 animals</span></a><a class="pn-row" href="/western-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Western wing</span></a><a class="pn-row" href="/chinese-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Eastern wing</span></a><a class="pn-row" href="/zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Zodiac crossings</span></a><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Rare crossings</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> The Moon</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Last Quarter</span></a><a class="pn-row" href="/moon/phases/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The eight phases</span></a><a class="pn-row" href="/moon/in-your-sign/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Moon in your sign</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days</span></a><a class="pn-row" href="/chinese-zodiac/fire-horse-2026/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Fire Horse 2026</span><span class="pn-row-sub">begins Feb 17</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">⌂</span> Live with it</p><a class="pn-row" href="/feng-shui/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Feng shui</span></a><a class="pn-row" href="/bazi/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">BaZi (Four Pillars)</span><span class="pn-row-sub">eight characters</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span><span class="pn-row-sub">moon, stones, heritage</span></a></div></div>
+    <div class="pn-chips" role="group" aria-label="Western wing"><span class="pn-chips-label">Western wing</span><a class="pn-chip" href="/western-zodiac/aries/" title="Aries" aria-label="Aries">♈</a><a class="pn-chip" href="/western-zodiac/taurus/" title="Taurus" aria-label="Taurus">♉</a><a class="pn-chip" href="/western-zodiac/gemini/" title="Gemini" aria-label="Gemini">♊</a><a class="pn-chip" href="/western-zodiac/cancer/" title="Cancer" aria-label="Cancer">♋</a><a class="pn-chip" href="/western-zodiac/leo/" title="Leo" aria-label="Leo">♌</a><a class="pn-chip" href="/western-zodiac/virgo/" title="Virgo" aria-label="Virgo">♍</a><a class="pn-chip" href="/western-zodiac/libra/" title="Libra" aria-label="Libra">♎</a><a class="pn-chip" href="/western-zodiac/scorpio/" title="Scorpio" aria-label="Scorpio">♏</a><a class="pn-chip" href="/western-zodiac/sagittarius/" title="Sagittarius" aria-label="Sagittarius">♐</a><a class="pn-chip" href="/western-zodiac/capricorn/" title="Capricorn" aria-label="Capricorn">♑</a><a class="pn-chip" href="/western-zodiac/aquarius/" title="Aquarius" aria-label="Aquarius">♒</a><a class="pn-chip" href="/western-zodiac/pisces/" title="Pisces" aria-label="Pisces">♓</a></div>
+    <div class="pn-chips" role="group" aria-label="Eastern wing"><span class="pn-chips-label">Eastern wing</span><a class="pn-chip" href="/chinese-zodiac/rat/" title="Rat" aria-label="Rat">鼠</a><a class="pn-chip" href="/chinese-zodiac/ox/" title="Ox" aria-label="Ox">牛</a><a class="pn-chip" href="/chinese-zodiac/tiger/" title="Tiger" aria-label="Tiger">虎</a><a class="pn-chip" href="/chinese-zodiac/rabbit/" title="Rabbit" aria-label="Rabbit">兔</a><a class="pn-chip" href="/chinese-zodiac/dragon/" title="Dragon" aria-label="Dragon">龙</a><a class="pn-chip" href="/chinese-zodiac/snake/" title="Snake" aria-label="Snake">蛇</a><a class="pn-chip" href="/chinese-zodiac/horse/" title="Horse" aria-label="Horse">马</a><a class="pn-chip" href="/chinese-zodiac/goat/" title="Goat" aria-label="Goat">羊</a><a class="pn-chip" href="/chinese-zodiac/monkey/" title="Monkey" aria-label="Monkey">猴</a><a class="pn-chip" href="/chinese-zodiac/rooster/" title="Rooster" aria-label="Rooster">鸡</a><a class="pn-chip" href="/chinese-zodiac/dog/" title="Dog" aria-label="Dog">狗</a><a class="pn-chip" href="/chinese-zodiac/pig/" title="Pig" aria-label="Pig">猪</a></div>
+    <div class="pn-panel-foot"><a href="/menagerie.html">See all 144 animals</a></div>
+  </div>
+  <div class="pn-panel pn-panel-east" data-group="2" data-accent="brass" role="region" aria-label="Zodiac" hidden>
+    <p class="pn-panel-eyebrow">The Eastern wheel, your birth year's animal</p>
+    <div class="pn-split"><div class="pn-list pn-two" role="group" aria-label="The twelve Eastern animals"><a class="pn-row is-featured" href="/chinese-zodiac/horse/"><span class="pn-glyph pn-cal" aria-hidden="true">马</span><span class="pn-row-name">Horse</span><span class="pn-row-sub">2026 · Fire Horse</span></a><a class="pn-row" href="/chinese-zodiac/rat/"><span class="pn-glyph pn-cal" aria-hidden="true">鼠</span><span class="pn-row-name">Rat</span><span class="pn-row-sub" data-dyn="cn-years-0">1996 · 2008 · 2020</span></a><a class="pn-row" href="/chinese-zodiac/ox/"><span class="pn-glyph pn-cal" aria-hidden="true">牛</span><span class="pn-row-name">Ox</span><span class="pn-row-sub" data-dyn="cn-years-1">1997 · 2009 · 2021</span></a><a class="pn-row" href="/chinese-zodiac/tiger/"><span class="pn-glyph pn-cal" aria-hidden="true">虎</span><span class="pn-row-name">Tiger</span><span class="pn-row-sub" data-dyn="cn-years-2">1998 · 2010 · 2022</span></a><a class="pn-row" href="/chinese-zodiac/rabbit/"><span class="pn-glyph pn-cal" aria-hidden="true">兔</span><span class="pn-row-name">Rabbit</span><span class="pn-row-sub" data-dyn="cn-years-3">1999 · 2011 · 2023</span></a><a class="pn-row" href="/chinese-zodiac/dragon/"><span class="pn-glyph pn-cal" aria-hidden="true">龙</span><span class="pn-row-name">Dragon</span><span class="pn-row-sub" data-dyn="cn-years-4">2000 · 2012 · 2024</span></a><a class="pn-row" href="/chinese-zodiac/snake/"><span class="pn-glyph pn-cal" aria-hidden="true">蛇</span><span class="pn-row-name">Snake</span><span class="pn-row-sub" data-dyn="cn-years-5">2001 · 2013 · 2025</span></a><a class="pn-row" href="/chinese-zodiac/goat/"><span class="pn-glyph pn-cal" aria-hidden="true">羊</span><span class="pn-row-name">Goat</span><span class="pn-row-sub" data-dyn="cn-years-7">1991 · 2003 · 2015</span></a><a class="pn-row" href="/chinese-zodiac/monkey/"><span class="pn-glyph pn-cal" aria-hidden="true">猴</span><span class="pn-row-name">Monkey</span><span class="pn-row-sub" data-dyn="cn-years-8">1992 · 2004 · 2016</span></a><a class="pn-row" href="/chinese-zodiac/rooster/"><span class="pn-glyph pn-cal" aria-hidden="true">鸡</span><span class="pn-row-name">Rooster</span><span class="pn-row-sub" data-dyn="cn-years-9">1993 · 2005 · 2017</span></a><a class="pn-row" href="/chinese-zodiac/dog/"><span class="pn-glyph pn-cal" aria-hidden="true">狗</span><span class="pn-row-name">Dog</span><span class="pn-row-sub" data-dyn="cn-years-10">1994 · 2006 · 2018</span></a><a class="pn-row" href="/chinese-zodiac/pig/"><span class="pn-glyph pn-cal" aria-hidden="true">猪</span><span class="pn-row-name">Pig</span><span class="pn-row-sub" data-dyn="cn-years-11">1995 · 2007 · 2019</span></a></div>
+    <aside class="pn-feature"><span class="pn-feature-cal" aria-hidden="true">馬</span><p class="pn-feature-eyebrow">The year turns</p><h3 class="pn-feature-title">Year of the Fire Horse</h3><p class="pn-feature-body">2026. Once in sixty years the Horse catches fire, a year that rewards the bold and scorches the hesitant. If the Horse is yours, this is your decade's hinge.</p><a class="pn-feature-link" href="/chinese-zodiac/fire-horse-2026/">Read the Fire Horse</a></aside>
+    </div>
+    <div class="pn-chips" role="group" aria-label="Eastern wing"><span class="pn-chips-label">Eastern wing</span><a class="pn-chip pn-cal" href="/chinese-zodiac/rat/" title="Rat" aria-label="Rat">鼠</a><a class="pn-chip pn-cal" href="/chinese-zodiac/ox/" title="Ox" aria-label="Ox">牛</a><a class="pn-chip pn-cal" href="/chinese-zodiac/tiger/" title="Tiger" aria-label="Tiger">虎</a><a class="pn-chip pn-cal" href="/chinese-zodiac/rabbit/" title="Rabbit" aria-label="Rabbit">兔</a><a class="pn-chip pn-cal" href="/chinese-zodiac/dragon/" title="Dragon" aria-label="Dragon">龙</a><a class="pn-chip pn-cal" href="/chinese-zodiac/snake/" title="Snake" aria-label="Snake">蛇</a><a class="pn-chip pn-cal" href="/chinese-zodiac/horse/" title="Horse" aria-label="Horse">马</a><a class="pn-chip pn-cal" href="/chinese-zodiac/goat/" title="Goat" aria-label="Goat">羊</a><a class="pn-chip pn-cal" href="/chinese-zodiac/monkey/" title="Monkey" aria-label="Monkey">猴</a><a class="pn-chip pn-cal" href="/chinese-zodiac/rooster/" title="Rooster" aria-label="Rooster">鸡</a><a class="pn-chip pn-cal" href="/chinese-zodiac/dog/" title="Dog" aria-label="Dog">狗</a><a class="pn-chip pn-cal" href="/chinese-zodiac/pig/" title="Pig" aria-label="Pig">猪</a></div>
+    <div class="pn-panel-foot"><a href="/chinese-zodiac/">See the Eastern wheel</a></div>
+  </div>
+  <div class="pn-panel pn-panel-west" data-group="3" data-accent="amethyst" role="region" aria-label="Horoscope" hidden>
+    <p class="pn-panel-eyebrow">The Western wheel, the sky on your birthday</p>
+    <div class="pn-split"><div class="pn-list pn-two" role="group" aria-label="The twelve Western signs"><a class="pn-row" href="/western-zodiac/aries/" data-sign="aries"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-aries" viewBox="0 0 24 24" role="img" aria-labelledby="aries-t aries-d" xmlns="http://www.w3.org/2000/svg"><title id="aries-t">Aries, the Ram</title><desc id="aries-d">A curved ram-horn arc of stars.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16 L9 10 L13 8 L16 11"/><path d="M13 8 L16 11 L19 9"/></g><g fill="var(--accent-soft)"><circle cx="6" cy="16" r="0.85"/><circle cx="9" cy="10" r="0.85"/><circle cx="13" cy="8" r="1.05"/><circle cx="16" cy="11" r="0.85"/><circle cx="19" cy="9" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="11" cy="14" r="0.4"/><circle cx="17" cy="14" r="0.4"/></g></svg></span><span class="pn-row-name">Aries</span><span class="pn-row-sub">Mar 21 to Apr 19</span></a><a class="pn-row" href="/western-zodiac/taurus/" data-sign="taurus"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-taurus" viewBox="0 0 24 24" role="img" aria-labelledby="taurus-t taurus-d" xmlns="http://www.w3.org/2000/svg"><title id="taurus-t">Taurus, the Bull</title><desc id="taurus-d">A V of the Hyades rising to two horn tips.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8 L9 12 L12 15 L15 12 L18 8"/></g><g fill="var(--accent-soft)"><circle cx="12" cy="15" r="1.05"/><circle cx="9" cy="12" r="0.85"/><circle cx="6" cy="8" r="0.85"/><circle cx="15" cy="12" r="0.85"/><circle cx="18" cy="8" r="0.85"/><circle cx="12" cy="15" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="8" cy="17" r="0.4"/><circle cx="16" cy="17" r="0.4"/></g></svg></span><span class="pn-row-name">Taurus</span><span class="pn-row-sub">Apr 20 to May 20</span></a><a class="pn-row" href="/western-zodiac/gemini/" data-sign="gemini"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-gemini" viewBox="0 0 24 24" role="img" aria-labelledby="gemini-t gemini-d" xmlns="http://www.w3.org/2000/svg"><title id="gemini-t">Gemini, the Twins</title><desc id="gemini-d">Twin parallel columns joined at head and foot.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5 L9 12 L9 19"/><path d="M15 5 L15 12 L15 19"/><path d="M9 5 L15 5"/><path d="M9 19 L15 19"/></g><g fill="var(--accent-soft)"><circle cx="9" cy="5" r="0.85"/><circle cx="9" cy="12" r="0.85"/><circle cx="9" cy="19" r="0.85"/><circle cx="15" cy="5" r="1.05"/><circle cx="15" cy="12" r="0.85"/><circle cx="15" cy="19" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="12" cy="8" r="0.4"/></g></svg></span><span class="pn-row-name">Gemini</span><span class="pn-row-sub">May 21 to Jun 20</span></a><a class="pn-row" href="/western-zodiac/cancer/" data-sign="cancer"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-cancer" viewBox="0 0 24 24" role="img" aria-labelledby="cancer-t cancer-d" xmlns="http://www.w3.org/2000/svg"><title id="cancer-t">Cancer, the Crab</title><desc id="cancer-d">An inverted Y crab body.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M7 5 L12 8 L17 5"/><path d="M12 8 L12 14"/><path d="M8 18 L12 14 L16 18"/></g><g fill="var(--accent-soft)"><circle cx="12" cy="14" r="1.05"/><circle cx="12" cy="8" r="0.85"/><circle cx="7" cy="5" r="0.85"/><circle cx="17" cy="5" r="0.85"/><circle cx="8" cy="18" r="0.85"/><circle cx="16" cy="18" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="12" cy="11" r="0.4"/></g></svg></span><span class="pn-row-name">Cancer</span><span class="pn-row-sub">Jun 21 to Jul 22</span></a><a class="pn-row" href="/western-zodiac/leo/" data-sign="leo"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-leo" viewBox="0 0 24 24" role="img" aria-labelledby="leo-t leo-d" xmlns="http://www.w3.org/2000/svg"><title id="leo-t">Leo, the Lion</title><desc id="leo-d">The sickle curving into a haunch triangle.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7 L6 11 L8 14 L12 15 L15 13"/><path d="M15 13 L15 18 L19 17"/><path d="M10 9 L12 15"/></g><g fill="var(--accent-soft)"><circle cx="7" cy="7" r="0.85"/><circle cx="6" cy="11" r="0.85"/><circle cx="8" cy="14" r="0.85"/><circle cx="12" cy="15" r="0.85"/><circle cx="15" cy="13" r="1.05"/><circle cx="15" cy="18" r="0.85"/><circle cx="19" cy="17" r="0.85"/><circle cx="10" cy="9" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="11" cy="12" r="0.4"/></g></svg></span><span class="pn-row-name">Leo</span><span class="pn-row-sub">Jul 23 to Aug 22</span></a><a class="pn-row" href="/western-zodiac/virgo/" data-sign="virgo"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-virgo" viewBox="0 0 24 24" role="img" aria-labelledby="virgo-t virgo-d" xmlns="http://www.w3.org/2000/svg"><title id="virgo-t">Virgo, the Maiden</title><desc id="virgo-d">A reclining bent line anchored by a bright star.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9 L9 11 L13 10 L16 13"/><path d="M16 13 L18 17"/><path d="M13 10 L12 15"/></g><g fill="var(--accent-soft)"><circle cx="5" cy="9" r="0.85"/><circle cx="9" cy="11" r="0.85"/><circle cx="13" cy="10" r="0.85"/><circle cx="16" cy="13" r="1.05"/><circle cx="18" cy="17" r="0.85"/><circle cx="12" cy="15" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="8" cy="15" r="0.4"/></g></svg></span><span class="pn-row-name">Virgo</span><span class="pn-row-sub">Aug 23 to Sep 22</span></a><a class="pn-row" href="/western-zodiac/libra/" data-sign="libra"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-libra" viewBox="0 0 24 24" role="img" aria-labelledby="libra-t libra-d" xmlns="http://www.w3.org/2000/svg"><title id="libra-t">Libra, the Scales</title><desc id="libra-d">A beam with two hanging pans.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11 L12 7 L18 11"/><path d="M6 11 L6 16"/><path d="M18 11 L18 16"/></g><g fill="var(--accent-soft)"><circle cx="12" cy="7" r="1.05"/><circle cx="6" cy="11" r="0.85"/><circle cx="18" cy="11" r="0.85"/><circle cx="6" cy="16" r="0.85"/><circle cx="18" cy="16" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="12" cy="10" r="0.4"/></g></svg></span><span class="pn-row-name">Libra</span><span class="pn-row-sub">Sep 23 to Oct 22</span></a><a class="pn-row" href="/western-zodiac/scorpio/" data-sign="scorpio"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-scorpio" viewBox="0 0 24 24" role="img" aria-labelledby="scorpio-t scorpio-d" xmlns="http://www.w3.org/2000/svg"><title id="scorpio-t">Scorpio, the Scorpion</title><desc id="scorpio-d">A long curved tail ending in a hooked stinger.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7 L6 11 L9 13 L13 13 L16 15 L18 18 L16 20"/><path d="M8 8 L9 13"/></g><g fill="var(--accent-soft)"><circle cx="5" cy="7" r="0.85"/><circle cx="6" cy="11" r="0.85"/><circle cx="9" cy="13" r="0.85"/><circle cx="13" cy="13" r="1.05"/><circle cx="16" cy="15" r="0.85"/><circle cx="18" cy="18" r="0.85"/><circle cx="16" cy="20" r="0.85"/><circle cx="8" cy="8" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="11" cy="10" r="0.4"/></g></svg></span><span class="pn-row-name">Scorpio</span><span class="pn-row-sub">Oct 23 to Nov 21</span></a><a class="pn-row" href="/western-zodiac/sagittarius/" data-sign="sagittarius"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-sagittarius" viewBox="0 0 24 24" role="img" aria-labelledby="sagittarius-t sagittarius-d" xmlns="http://www.w3.org/2000/svg"><title id="sagittarius-t">Sagittarius, the Archer</title><desc id="sagittarius-d">A drawn bow and the shaft of an arrow.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6 L9 12 L6 18"/><path d="M9 12 L18 7"/><path d="M15 10 L12 13 L9 16"/></g><g fill="var(--accent-soft)"><circle cx="6" cy="6" r="0.85"/><circle cx="6" cy="18" r="0.85"/><circle cx="9" cy="12" r="1.05"/><circle cx="18" cy="7" r="0.85"/><circle cx="15" cy="10" r="0.85"/><circle cx="12" cy="13" r="0.85"/><circle cx="9" cy="16" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="13" cy="9" r="0.4"/></g></svg></span><span class="pn-row-name">Sagittarius</span><span class="pn-row-sub">Nov 22 to Dec 21</span></a><a class="pn-row" href="/western-zodiac/capricorn/" data-sign="capricorn"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-capricorn" viewBox="0 0 24 24" role="img" aria-labelledby="capricorn-t capricorn-d" xmlns="http://www.w3.org/2000/svg"><title id="capricorn-t">Capricorn, the Sea-Goat</title><desc id="capricorn-d">A triangular sea-goat wedge.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8 L10 6 L14 10 L18 17 L9 15 L6 8"/></g><g fill="var(--accent-soft)"><circle cx="6" cy="8" r="0.85"/><circle cx="10" cy="6" r="1.05"/><circle cx="14" cy="10" r="0.85"/><circle cx="18" cy="17" r="0.85"/><circle cx="9" cy="15" r="0.85"/><circle cx="6" cy="8" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="12" cy="13" r="0.4"/></g></svg></span><span class="pn-row-name">Capricorn</span><span class="pn-row-sub">Dec 22 to Jan 19</span></a><a class="pn-row" href="/western-zodiac/aquarius/" data-sign="aquarius"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-aquarius" viewBox="0 0 24 24" role="img" aria-labelledby="aquarius-t aquarius-d" xmlns="http://www.w3.org/2000/svg"><title id="aquarius-t">Aquarius, the Water-Bearer</title><desc id="aquarius-d">Double zigzag water lines.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9 L8 11 L11 9 L14 11 L17 9"/><path d="M5 14 L8 16 L11 14 L14 16 L17 14"/></g><g fill="var(--accent-soft)"><circle cx="5" cy="9" r="0.85"/><circle cx="8" cy="11" r="0.85"/><circle cx="11" cy="9" r="0.85"/><circle cx="14" cy="11" r="0.85"/><circle cx="17" cy="9" r="1.05"/><circle cx="5" cy="14" r="0.85"/><circle cx="8" cy="16" r="0.85"/><circle cx="11" cy="14" r="0.85"/><circle cx="14" cy="16" r="0.85"/><circle cx="17" cy="14" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="11" cy="12" r="0.4"/></g></svg></span><span class="pn-row-name">Aquarius</span><span class="pn-row-sub">Jan 20 to Feb 18</span></a><a class="pn-row" href="/western-zodiac/pisces/" data-sign="pisces"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-pisces" viewBox="0 0 24 24" role="img" aria-labelledby="pisces-t pisces-d" xmlns="http://www.w3.org/2000/svg"><title id="pisces-t">Pisces, the Fishes</title><desc id="pisces-d">Two arcs tied at a central knot star.</desc><g fill="none" stroke="var(--accent)" stroke-width="var(--glyph-stroke,1.5)" stroke-linecap="round" stroke-linejoin="round"><path d="M6 5 L5 9 L6 13"/><path d="M6 5 L12 9 L18 5"/><path d="M6 13 L12 9 L18 13"/><path d="M18 5 L19 9 L18 13"/></g><g fill="var(--accent-soft)"><circle cx="6" cy="5" r="0.85"/><circle cx="5" cy="9" r="0.85"/><circle cx="6" cy="13" r="0.85"/><circle cx="12" cy="9" r="1.05"/><circle cx="18" cy="5" r="0.85"/><circle cx="19" cy="9" r="0.85"/><circle cx="18" cy="13" r="0.85"/></g><g fill="var(--accent)" opacity="0.55"><circle cx="12" cy="14" r="0.4"/></g></svg></span><span class="pn-row-name">Pisces</span><span class="pn-row-sub">Feb 19 to Mar 20</span></a></div>
+    <aside class="pn-feature" data-hz-today><p class="pn-feature-eyebrow" data-hz-date></p><h3 class="pn-feature-title" data-hz-sign></h3><p class="pn-feature-body" data-hz-blurb></p><a class="pn-feature-link" href="/daily.html">Read today's horoscope</a></aside>
+    </div>
+    <div class="pn-chips" role="group" aria-label="The twelve signs"><span class="pn-chips-label">The twelve signs</span><a class="pn-chip" href="/western-zodiac/aries/" title="Aries" aria-label="Aries">♈</a><a class="pn-chip" href="/western-zodiac/taurus/" title="Taurus" aria-label="Taurus">♉</a><a class="pn-chip" href="/western-zodiac/gemini/" title="Gemini" aria-label="Gemini">♊</a><a class="pn-chip" href="/western-zodiac/cancer/" title="Cancer" aria-label="Cancer">♋</a><a class="pn-chip" href="/western-zodiac/leo/" title="Leo" aria-label="Leo">♌</a><a class="pn-chip" href="/western-zodiac/virgo/" title="Virgo" aria-label="Virgo">♍</a><a class="pn-chip" href="/western-zodiac/libra/" title="Libra" aria-label="Libra">♎</a><a class="pn-chip" href="/western-zodiac/scorpio/" title="Scorpio" aria-label="Scorpio">♏</a><a class="pn-chip" href="/western-zodiac/sagittarius/" title="Sagittarius" aria-label="Sagittarius">♐</a><a class="pn-chip" href="/western-zodiac/capricorn/" title="Capricorn" aria-label="Capricorn">♑</a><a class="pn-chip" href="/western-zodiac/aquarius/" title="Aquarius" aria-label="Aquarius">♒</a><a class="pn-chip" href="/western-zodiac/pisces/" title="Pisces" aria-label="Pisces">♓</a></div>
+    <div class="pn-panel-foot"><a href="/horoscopes/">All horoscopes, sign by sign</a></div>
+  </div>
+  <div class="pn-panel pn-panel-sage" data-group="4" data-accent="jade" role="region" aria-label="Sage Wisdom" hidden>
+    <p class="pn-panel-eyebrow">The craft your Zodi Animal practices</p>
+    <div class="pn-cols"><div class="pn-hero"><p class="pn-hero-eyebrow">五行 · featured system</p><h3 class="pn-hero-title">The Elements &amp; the Chakras</h3><div class="pn-hero-phases" aria-hidden="true"><span class="pn-hero-phase pn-hero-phase-0">木</span><span class="pn-hero-phase pn-hero-phase-1">火</span><span class="pn-hero-phase pn-hero-phase-2">土</span><span class="pn-hero-phase pn-hero-phase-3">金</span><span class="pn-hero-phase pn-hero-phase-4">水</span></div><div class="pn-hero-rainbow" aria-hidden="true"><i class="pn-hero-c1"></i><i class="pn-hero-c2"></i><i class="pn-hero-c3"></i><i class="pn-hero-c4"></i><i class="pn-hero-c5"></i><i class="pn-hero-c6"></i><i class="pn-hero-c7"></i></div><p class="pn-hero-body">The five phases that move through everything — now mapped to the seven chakras, each with its own yoga practice.</p><div class="pn-hero-pills"><a class="pn-hero-pill is-key" href="/elements/">The five elements</a><a class="pn-hero-pill is-key" href="/elements/chakras/">The 7 chakras</a><a class="pn-hero-pill" href="/elements/chakras/yoga/">Chakra yoga</a></div></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">八字</span> BaZi</p><a class="pn-row" href="/bazi/chart/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Cast your chart</span><span class="pn-row-sub">tool</span></a><a class="pn-row" href="/bazi/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">What is BaZi</span><span class="pn-row-sub">八字 Bāzì · eight characters</span></a><a class="pn-row" href="/bazi/day-master/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your Day Master</span><span class="pn-row-sub">日主 Rìzhǔ</span></a><a class="pn-row" href="/bazi/ten-gods/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Ten Gods</span><span class="pn-row-sub">十神 Shíshén</span></a><a class="pn-row" href="/bazi/compatibility/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">You &amp; them</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">紫微</span> Purple Star</p><a class="pn-row" href="/elements/purple-star-astrology/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Zi Wei Dou Shu</span><span class="pn-row-sub">紫微斗數 Zǐwēi Dǒushù</span></a><a class="pn-row" href="/elements/purple-star-astrology/chart/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Read a chart</span><span class="pn-row-sub">命盤 mìngpán · school</span></a><a class="pn-row" href="/elements/purple-star-astrology/stars/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The 14 Stars</span><span class="pn-row-sub">主星 zhǔxīng</span></a><a class="pn-row" href="/elements/purple-star-astrology/palaces/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The 12 Palaces</span><span class="pn-row-sub">十二宮 shí'èr gōng</span></a><a class="pn-row active" href="/elements/purple-star-astrology/four-forces/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Four Forces</span><span class="pn-row-sub">四化 sìhuà</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">風水</span> Feng shui</p><a class="pn-row" href="/feng-shui/commanding-position/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Commanding position</span><span class="pn-row-sub">live</span></a><a class="pn-row" href="/feng-shui/bagua/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The bagua</span><span class="pn-row-sub">八卦 bāguà</span></a><a class="pn-row" href="/feng-shui/kua-number/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your Kua number</span><span class="pn-row-sub">命卦 mìngguà</span></a><a class="pn-row" href="/feng-shui/bedroom/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">In the home</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">❦</span> Proverbs &amp; lore</p><a class="pn-row" href="/proverbs/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Proverb Pond</span><span class="pn-row-sub">all 87</span></a><a class="pn-row" href="/proverbs/study/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Study the proverbs</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a></div></div>
+    <div class="pn-panel-foot"><a href="/elements/">Explore every system</a></div>
+  </div>
+  <div class="pn-panel pn-panel-cards" data-group="5" data-accent="rose" role="region" aria-label="Bonds" hidden>
+    <p class="pn-panel-eyebrow">Two skies, read together</p>
+    <div class="pn-cols"><div class="pn-col"><a class="pn-row" href="/match.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Test a match</span><span class="pn-row-sub">Two birth dates go in. The bond comes back scored across the trines, the clashes, and the elements.</span></a><a class="pn-row" href="/vs.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Challenge a friend</span><span class="pn-row-sub">Send your animal to someone and wonder out loud whether you match.</span></a><a class="pn-row" href="/circle.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Circle of three</span><span class="pn-row-sub">Compare two friends one to one, then read the whole group as a circle.</span></a></div></div>
+    <div class="pn-panel-foot"><a href="/year.html">Find a friend's animal by birth year</a></div>
+  </div>
+  <div class="pn-panel pn-panel-moon" data-group="6" data-accent="silver" role="region" aria-label="Moon" hidden>
+    <p class="pn-panel-eyebrow">The Moon overhead, its phases, and the path they light.</p>
+    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> Tonight</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-full" viewBox="0 0 24 24" role="img" aria-labelledby="moon-full-t moon-full-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-full-t">Full moon</title><desc id="moon-full-d">The whole disc lit.</desc><circle cx="12" cy="12" r="9" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Last Quarter</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days ahead</span><span class="pn-row-sub">the favorable days for you</span></a><a class="pn-row" href="/awakening.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Awakening</span><span class="pn-row-sub">the path from fear to strength</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◈</span> Stones</p><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/traditions/birthstones-and-moonstone/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Birthstones &amp; moonstone</span></a><a class="pn-row" href="/traditions/stones-for-your-animal/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Stones for your animal</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◐</span> The eight phases</p><a class="pn-row" href="/moon/phases/new-moon/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-new" viewBox="0 0 24 24" role="img" aria-labelledby="moon-new-t moon-new-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-new-t">New moon</title><desc id="moon-new-d">The dark disc of the new moon.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">New Moon</span></a><a class="pn-row" href="/moon/phases/waxing-crescent/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waxing-crescent" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waxing-crescent-t moon-waxing-crescent-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waxing-crescent-t">Waxing crescent moon</title><desc id="moon-waxing-crescent-d">A thin lit crescent on the right.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A6.36 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waxing Crescent</span></a><a class="pn-row" href="/moon/phases/first-quarter/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-first-quarter" viewBox="0 0 24 24" role="img" aria-labelledby="moon-first-quarter-t moon-first-quarter-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-first-quarter-t">First quarter moon</title><desc id="moon-first-quarter-d">The right half lit.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A0 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">First Quarter</span></a><a class="pn-row" href="/moon/phases/waxing-gibbous/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waxing-gibbous" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waxing-gibbous-t moon-waxing-gibbous-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waxing-gibbous-t">Waxing gibbous moon</title><desc id="moon-waxing-gibbous-d">Most of the disc lit, growing.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A6.36 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waxing Gibbous</span></a><a class="pn-row" href="/moon/phases/full-moon/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-full" viewBox="0 0 24 24" role="img" aria-labelledby="moon-full-t moon-full-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-full-t">Full moon</title><desc id="moon-full-d">The whole disc lit.</desc><circle cx="12" cy="12" r="9" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Full Moon</span></a><a class="pn-row" href="/moon/phases/waning-gibbous/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waning-gibbous" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waning-gibbous-t moon-waning-gibbous-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waning-gibbous-t">Waning gibbous moon</title><desc id="moon-waning-gibbous-d">Most of the disc lit, shrinking.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A6.36 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waning Gibbous</span></a><a class="pn-row" href="/moon/phases/last-quarter/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-last-quarter" viewBox="0 0 24 24" role="img" aria-labelledby="moon-last-quarter-t moon-last-quarter-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-last-quarter-t">Last quarter moon</title><desc id="moon-last-quarter-d">The left half lit.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A0 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Last Quarter</span></a><a class="pn-row" href="/moon/phases/waning-crescent/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waning-crescent" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waning-crescent-t moon-waning-crescent-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waning-crescent-t">Waning crescent moon</title><desc id="moon-waning-crescent-d">A thin lit crescent on the left.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A6.36 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waning Crescent</span></a></div></div>
+    <div class="pn-panel-foot"><a href="/moon.html">Read the Moon tonight in full</a></div>
+  </div>
+  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/index.html#read">Find yours</a><a href="/index.html">Find your animal</a><a href="/daily.html">Today's reading</a><a href="/year.html">Year finder</a><a href="/account.html">Your account</a><a href="/menagerie.html">All 144 animals</a><a href="/western-zodiac/">Western wing</a><a href="/chinese-zodiac/">Eastern wing</a><a href="/zodiac/">Zodiac crossings</a><a href="/moon.html">The Moon tonight</a><a href="/moon/phases/">The eight phases</a><a href="/moon/in-your-sign/">Moon in your sign</a><a href="/best-days.html">Best days</a><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a><a href="/feng-shui/">Feng shui</a><a href="/bazi/">BaZi (Four Pillars)</a><a href="/habitat/">The Habitat</a><a href="/stones.html">Keeper stones</a><a href="/directions/">Directions</a><a href="/traditions/">Traditions</a><a href="/chinese-zodiac/horse/">Horse</a><a href="/chinese-zodiac/rat/">Rat</a><a href="/chinese-zodiac/ox/">Ox</a><a href="/chinese-zodiac/tiger/">Tiger</a><a href="/chinese-zodiac/rabbit/">Rabbit</a><a href="/chinese-zodiac/dragon/">Dragon</a><a href="/chinese-zodiac/snake/">Snake</a><a href="/chinese-zodiac/goat/">Goat</a><a href="/chinese-zodiac/monkey/">Monkey</a><a href="/chinese-zodiac/rooster/">Rooster</a><a href="/chinese-zodiac/dog/">Dog</a><a href="/chinese-zodiac/pig/">Pig</a><a href="/western-zodiac/aries/">Aries</a><a href="/western-zodiac/taurus/">Taurus</a><a href="/western-zodiac/gemini/">Gemini</a><a href="/western-zodiac/cancer/">Cancer</a><a href="/western-zodiac/leo/">Leo</a><a href="/western-zodiac/virgo/">Virgo</a><a href="/western-zodiac/libra/">Libra</a><a href="/western-zodiac/scorpio/">Scorpio</a><a href="/western-zodiac/sagittarius/">Sagittarius</a><a href="/western-zodiac/capricorn/">Capricorn</a><a href="/western-zodiac/aquarius/">Aquarius</a><a href="/western-zodiac/pisces/">Pisces</a><a href="/bazi/chart/">Cast your chart</a><a href="/bazi/day-master/">Your Day Master</a><a href="/bazi/ten-gods/">The Ten Gods</a><a href="/bazi/compatibility/">You &amp; them</a><a href="/elements/purple-star-astrology/">Zi Wei Dou Shu</a><a href="/elements/purple-star-astrology/chart/">Read a chart</a><a href="/elements/purple-star-astrology/stars/">The 14 Stars</a><a href="/elements/purple-star-astrology/palaces/">The 12 Palaces</a><a href="/elements/purple-star-astrology/four-forces/">The Four Forces</a><a href="/feng-shui/commanding-position/">Commanding position</a><a href="/feng-shui/bagua/">The bagua</a><a href="/feng-shui/kua-number/">Your Kua number</a><a href="/feng-shui/bedroom/">In the home</a><a href="/proverbs/">The Proverb Pond</a><a href="/proverbs/study/">Study the proverbs</a><a href="/elements/">The five elements</a><a href="/elements/chakras/">The 7 chakras</a><a href="/elements/chakras/yoga/">Chakra yoga</a><a href="/match.html">Test a match</a><a href="/vs.html">Challenge a friend</a><a href="/circle.html">Circle of three</a><a href="/awakening.html">The Awakening</a><a href="/traditions/birthstones-and-moonstone/">Birthstones &amp; moonstone</a><a href="/traditions/stones-for-your-animal/">Stones for your animal</a><a href="/moon/phases/new-moon/">New Moon</a><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a><a href="/moon/phases/first-quarter/">First Quarter</a><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a><a href="/moon/phases/full-moon/">Full Moon</a><a href="/moon/phases/waning-gibbous/">Waning Gibbous</a><a href="/moon/phases/last-quarter/">Last Quarter</a><a href="/moon/phases/waning-crescent/">Waning Crescent</a><a href="/horoscopes/">All horoscopes, sign by sign</a><a href="/feng-shui/five-elements/">The five phases</a><a href="/feng-shui/your-animal/">Feng shui for your animal</a><a href="/directions/celestial-animals/">The four celestial animals</a><a href="/cosmology/">Cosmology</a><a href="/cosmology/four-pillars/">The Four Pillars</a><a href="/elements/purple-star-astrology/history/">Purple Star history &amp; origins</a><a href="/learn.html">How it works</a></nav>
+</header>
+<!--pn-static:end-->
+<a id="pn-main" tabindex="-1"></a>
+<!--pn-sub:start-->
+<nav class="pn-sub" aria-label="Section">
+  <div class="pn-sub-primary"><ul class="pn-subnav"><li><a href="/elements/purple-star-astrology/history/">History &amp; origins 源流 Yuánliú</a></li><li><a href="/elements/purple-star-astrology/palaces/">The 12 Palaces 十二宮 Shí'èr Gōng</a></li><li class="pn-sub-item pn-has-drop"><a class="pn-sub-link" href="/elements/purple-star-astrology/stars/" aria-haspopup="true" aria-expanded="false">The 14 Stars 主星 Zhǔxīng<span class="pn-sub-caret" aria-hidden="true"></span></a><div class="pn-subdrop"><div class="pn-subgroup"><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/purple-star-astrology/stars/">All 14 major stars 十四主星</a></li><li><a class="pn-subdrop-link" href="/elements/purple-star-astrology/stars/zi-wei/">紫微 Zǐwēi · The Emperor</a></li><li><a class="pn-subdrop-link" href="/elements/purple-star-astrology/stars/tian-ji/">天機 Tiānjī · The Strategist</a></li><li><a class="pn-subdrop-link" href="/elements/purple-star-astrology/stars/tai-yang/">太陽 Tàiyáng · The Sun</a></li><li><a class="pn-subdrop-link" href="/elements/purple-star-astrology/stars/wu-qu/">武曲 Wǔqū · The Finance General</a></li><li><a class="pn-subdrop-link" href="/elements/purple-star-astrology/stars/tian-tong/">天同 Tiāntóng · The Harmony Star</a></li><li><a class="pn-subdrop-link" href="/elements/purple-star-astrology/stars/lian-zhen/">廉貞 Liánzhēn · The Diplomat</a></li><li><a class="pn-subdrop-link" href="/elements/purple-star-astrology/stars/tian-fu/">天府 Tiānfǔ · The Treasury</a></li><li><a class="pn-subdrop-link" href="/elements/purple-star-astrology/stars/tai-yin/">太陰 Tàiyīn · The Moon Star</a></li><li><a class="pn-subdrop-link" href="/elements/purple-star-astrology/stars/tan-lang/">貪狼 Tānláng · The Desire Star</a></li><li><a class="pn-subdrop-link" href="/elements/purple-star-astrology/stars/ju-men/">巨門 Jùmén · The Dark Gate</a></li><li><a class="pn-subdrop-link" href="/elements/purple-star-astrology/stars/tian-xiang/">天相 Tiānxiàng · The Prime Minister</a></li><li><a class="pn-subdrop-link" href="/elements/purple-star-astrology/stars/tian-liang/">天梁 Tiānliáng · The Elder</a></li><li><a class="pn-subdrop-link" href="/elements/purple-star-astrology/stars/qi-sha/">七殺 Qīshā · The Warrior</a></li><li><a class="pn-subdrop-link" href="/elements/purple-star-astrology/stars/po-jun/">破軍 Pòjūn · The Vanguard</a></li></ul></div></div></li><li><a href="/elements/purple-star-astrology/four-forces/" aria-current="page">The Four Forces 四化 Sìhuà</a></li><li><a href="/elements/purple-star-astrology/chart/">Read a chart 命盤 Mìngpán</a></li></ul></div>
+</nav>
+<!--pn-sub:end-->
+<!--pn-crumbbar:start-->
+<nav class="pn-crumbbar" aria-label="Breadcrumb"><ol class="pn-crumb"><li><a href="/">Home</a></li><li><a href="/elements/purple-star-astrology/">Purple Star (Zi Wei Dou Shu)</a></li><li aria-current="page">The Four Forces — Si Hua</li></ol></nav>
+<!--pn-crumbbar:end-->
+
+<!-- Animated background layers — one per force, cycling -->
+<div class="bg-layer bg-lu"   aria-hidden="true"></div>
+<div class="bg-layer bg-quan" aria-hidden="true"></div>
+<div class="bg-layer bg-ke"   aria-hidden="true"></div>
+<div class="bg-layer bg-ji"   aria-hidden="true"></div>
+
+
+<!-- ============================================================
+     SECTION 1: HERO
+     ============================================================ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-bg-text" aria-hidden="true">四化</div>
+    <p class="eyebrow">The Dynamic Engine of Destiny</p>
+    <h1>The Four Forces</h1>
+    <p class="hero-chinese" aria-label="Si Hua in Chinese">四化 — Sì Huà</p>
+    <p class="hero-sub">Every year, every decade, four forces activate in your celestial palace — transforming specific stars, changing the energy of specific rooms. These are not predictions. They are the seasons of your life, cycling through your chart with mathematical precision.</p>
+
+    <div class="hero-glyphs" aria-label="The four forces: Hua Lu, Hua Quan, Hua Ke, Hua Ji">
+      <div class="hero-glyph">
+        <span class="hero-glyph-char lu" aria-hidden="true">化祿</span>
+        <span class="hero-glyph-label">The Flow</span>
+      </div>
+      <div class="hero-glyph">
+        <span class="hero-glyph-char quan" aria-hidden="true">化權</span>
+        <span class="hero-glyph-label">The Power</span>
+      </div>
+      <div class="hero-glyph">
+        <span class="hero-glyph-char ke" aria-hidden="true">化科</span>
+        <span class="hero-glyph-label">The Shine</span>
+      </div>
+      <div class="hero-glyph">
+        <span class="hero-glyph-char ji" aria-hidden="true">化忌</span>
+        <span class="hero-glyph-label">The Hook</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     SECTION 2: THE FOUR FORCES CARDS
+     ============================================================ -->
+<section class="band" aria-labelledby="forces-title">
+  <div class="wrap">
+    <p class="eyebrow">The Cosmic Seasons</p>
+    <h2 class="section-title" id="forces-title">Four Forces, Four Seasons</h2>
+    <p class="section-lead">Classical teachers explain the four transformations through the seasons: the same tree, four times of year. It is a teaching metaphor, not a correspondence table, and the four forces still cover the full range of experience: abundance, authority, recognition, and pressure.</p>
+    <p class="section-lead" style="font-size:.9em;opacity:.8">A teaching metaphor, not a correspondence table. The classical element assignments (Flow Metal, Power Fire, Shine Wood, Hook Water) and the seasons are two separate teachings that do not line up, and that is fine.</p>
+
+    <div class="forces-grid" role="list">
+
+      <!-- THE FLOW — Hua Lu -->
+      <article class="force-card lu" role="listitem">
+        <div class="force-season" aria-hidden="true">
+          <span class="force-season-tag">Spring</span>
+        </div>
+        <span class="force-chinese" aria-hidden="true">化祿</span>
+        <p class="force-name">The Flow</p>
+        <p class="force-pinyin">Huà Lù</p>
+        <p class="force-intro">"The channel opens. A river that was blocked now runs freely — resources, opportunities, and affection enter the domains where The Flow lands."</p>
+        <div class="force-body">
+          <p>The Flow is not passive good luck. Think of it as a blocked pipe finally cleared. Whatever palace in your chart receives The Flow has its channels opened: wealth flows through the Wealth Palace, relationships become easier in the Spouse Palace, creativity multiplies in the Children Palace.</p>
+          <p>Classical teaching uses the metaphor of Spring: the same earth that was frozen becomes soft and receptive. Seeds planted now will grow. But The Flow also has a subtlety: where abundance flows freely, there is also the tendency to take things for granted, to over-indulge, or to spend what arrives as quickly as it comes.</p>
+        </div>
+        <p class="force-keywords">Abundance · Flow · Ease · Affection · Resource-arrival</p>
+      </article>
+
+      <!-- THE POWER — Hua Quan -->
+      <article class="force-card quan" role="listitem">
+        <div class="force-season" aria-hidden="true">
+          <span class="force-season-tag">Summer</span>
+        </div>
+        <span class="force-chinese" aria-hidden="true">化權</span>
+        <p class="force-name">The Power</p>
+        <p class="force-pinyin">Huà Quán</p>
+        <p class="force-intro">"The hand tightens on the lever. Authority activates. Where The Power lands, the native finds unusual command — and unusual responsibility."</p>
+        <div class="force-body">
+          <p>The Power amplifies initiative, control, and dominance in whatever palace it touches. It is the force of Summer — fierce, concentrated, willing to push. In the Career Palace, it signals leadership opportunities and promotions. In the Life Palace, it describes a person of unusually assertive nature who must learn when to exercise authority and when to yield.</p>
+          <p>Classical teaching notes that Quan can tip into authoritarianism when unchecked by supportive stars — the hand that takes control must be wise enough to know when to release it. But at its best, The Power activates talent into achievement.</p>
+        </div>
+        <p class="force-keywords">Authority · Control · Amplification · Leadership · Initiative</p>
+      </article>
+
+      <!-- THE SHINE — Hua Ke -->
+      <article class="force-card ke" role="listitem">
+        <div class="force-season" aria-hidden="true">
+          <span class="force-season-tag">Autumn</span>
+        </div>
+        <span class="force-chinese" aria-hidden="true">化科</span>
+        <p class="force-name">The Shine</p>
+        <p class="force-pinyin">Huà Kē</p>
+        <p class="force-intro">"The light catches you. Recognition arrives in the domains where The Shine lands — not through force, but through the quality of what is already there."</p>
+        <div class="force-body">
+          <p>The Shine is the mildest of the four forces but the most elegant. Where The Flow fills a need and The Power commands, The Shine polishes. It is Autumn's quality — the harvest visible, the light golden and revealing. A palace receiving The Shine acquires reputation, acknowledgment, and ceremonial recognition.</p>
+          <p>In the Career Palace: academic credentials matter, public recognition arrives, the person becomes known for excellence. The Shine does not create what isn't there — it illuminates what already exists. Its limitation: it can make a person satisfied with recognition without pushing for deeper achievement.</p>
+        </div>
+        <p class="force-keywords">Recognition · Reputation · Elegance · Fame · Academic-achievement</p>
+      </article>
+
+      <!-- THE HOOK — Hua Ji -->
+      <article class="force-card ji" role="listitem">
+        <div class="force-season" aria-hidden="true">
+          <span class="force-season-tag">Winter</span>
+        </div>
+        <span class="force-chinese" aria-hidden="true">化忌</span>
+        <p class="force-name">The Hook</p>
+        <p class="force-pinyin">Huà Jì</p>
+        <p class="force-intro">"The void calls. A hunger opens in the domain where The Hook lands — not as curse, but as the pressure that creates growth."</p>
+        <div class="force-body">
+          <p>The Hook is the most misunderstood of the four forces. Classical teaching is explicit: it is not a curse. It is Winter — the season of emptiness that precedes Spring. The Hook creates a void, a deficiency, a hunger in whatever palace it occupies. And voids demand filling.</p>
+          <p>This is why the natal Hook often marks a person's greatest area of unconscious drive: the domain that never feels quite sufficient is the domain where the most extraordinary effort is channeled. The Finance General (Wu Qu) receiving The Hook often produces not financial ruin but a lifelong preoccupation with wealth — and sometimes the most sophisticated financial intelligence, born from having confronted scarcity. The Hook requires careful engagement — not avoidance.</p>
+        </div>
+        <p class="force-keywords">Obstruction · Void · Hunger · Pressure · Transformation</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 3: THE SI HUA CALCULATOR
+     ============================================================ -->
+<section class="band" aria-labelledby="calc-title">
+  <div class="wrap">
+    <p class="eyebrow">Interactive Calculator</p>
+    <h2 class="section-title" id="calc-title">Find Your Four Forces</h2>
+    <p class="section-lead">Enter your Gregorian birth year to see which four stars are transformed in your natal chart.</p>
+
+    <div class="calc-wrap">
+      <div class="calc-card">
+        <div class="calc-field-row">
+          <div class="calc-field">
+            <label class="calc-label" for="birth-year">Birth Year</label>
+            <input
+              class="calc-input"
+              type="number"
+              id="birth-year"
+              name="birth-year"
+              min="1920"
+              max="2010"
+              placeholder="e.g. 1987"
+              aria-describedby="birth-year-hint"
+            >
+          </div>
+        </div>
+
+        <div class="calc-toggle-row">
+          <input type="checkbox" id="early-year" name="early-year">
+          <div>
+            <label class="calc-toggle-text" for="early-year">
+              I was born between January 1 and February 15
+            </label>
+            <p class="calc-toggle-note">
+              The Chinese calendar year begins with Lunar New Year (roughly late January to mid-February). If you were born in early January or February, your birth stem may belong to the prior year.
+            </p>
+          </div>
+        </div>
+
+        <button class="calc-btn" id="calc-btn" type="button" aria-controls="calc-results">
+          Reveal My Four Forces
+        </button>
+
+        <p class="calc-disclaimer" id="birth-year-hint">
+          For educational orientation only — a full reading requires your complete birth data and chart.
+        </p>
+
+        <!-- Results -->
+        <div class="calc-results" id="calc-results" aria-live="polite" aria-atomic="false" role="region" aria-label="Your Four Forces results">
+
+          <div class="calc-stem-display">
+            <span class="calc-stem-char" id="result-stem-char"></span>
+            <span class="calc-stem-label">Your Heavenly Stem</span>
+            <p class="calc-stem-name" id="result-stem-name"></p>
+          </div>
+
+          <div class="result-cards" id="result-cards">
+            <!-- Injected by JS -->
+          </div>
+
+          <p class="calc-layer-note">
+            This shows your <strong>natal Four Forces</strong> — the permanent layer set by your birth year. Your decade forces shift every ten years and require knowing your active Decade Door. Annual forces change each year. A complete reading stacks all three layers across your 12 palaces.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 4: THE THREE LAYERS
+     ============================================================ -->
+<section class="band" aria-labelledby="layers-title">
+  <div class="wrap">
+    <p class="eyebrow">Depth of the System</p>
+    <h2 class="section-title" id="layers-title">The Three Layers of Transformation</h2>
+    <p class="section-lead">Reading only the natal Four Forces is like reading only the opening chapter. Destiny has three stacked layers.</p>
+
+    <div class="layers-diagram" role="list">
+
+      <div class="layer-panel natal" role="listitem" tabindex="0">
+        <div class="layer-header">
+          <span class="layer-number" aria-hidden="true">1</span>
+          <span class="layer-title">Natal Layer — Birth Year</span>
+          <span class="layer-tag">Permanent</span>
+        </div>
+        <p class="layer-body">The foundation. These four transformations are set by your birth year's Heavenly Stem and never change. They define your lifelong patterns — the permanent weather of each palace in your chart. The natal Hook is the most consequential single factor in any ZWDS reading.</p>
+      </div>
+
+      <div class="layer-panel decade" role="listitem" tabindex="0">
+        <div class="layer-header">
+          <span class="layer-number" aria-hidden="true">2</span>
+          <span class="layer-title">Decade Layer — Decade Door</span>
+          <span class="layer-tag">10-Year Cycle</span>
+        </div>
+        <p class="layer-body">The current chapter. Your active decade palace has its own Heavenly Stem — and that stem generates its own Four Forces. These modify the natal layer for a ten-year period, brightening certain palaces and creating pressure in others. When the decade Flow lands on the same palace as your natal Flow, the channel is doubly open.</p>
+      </div>
+
+      <div class="layer-panel annual" role="listitem" tabindex="0">
+        <div class="layer-header">
+          <span class="layer-number" aria-hidden="true">3</span>
+          <span class="layer-title">Annual Layer — Year Wave</span>
+          <span class="layer-tag">Yearly</span>
+        </div>
+        <p class="layer-body">The present scene. The current year's Heavenly Stem generates four more transformations — layering on top of both the natal and decade forces. The annual layer is the finest-grained timing tool in ZWDS: it shows which palace is most alive, most pressured, or most auspicious in any given twelve-month period.</p>
+      </div>
+
+    </div>
+
+    <div class="layers-callout" role="note">
+      <p><strong>The triple-Hook convergence.</strong> When the annual Hook lands on the same palace as the natal Hook — and especially if the decade Hook adds to this — classical teaching marks this as the highest-caution period in a reading. Three layers of the same pressure on one palace demand careful, deliberate attention. This is not doom. It is the moment the deepest lesson of that palace arrives with full force.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 5: FLYING STARS TEASER
+     ============================================================ -->
+<section class="band" aria-labelledby="feihua-title">
+  <div class="wrap">
+    <p class="eyebrow">Advanced Technique</p>
+    <h2 class="section-title" id="feihua-title">The Advanced Technique: Flying Stars</h2>
+    <p class="force-chinese" style="color:var(--cc-ke); margin:0.4rem 0 0; font-size:1.2rem;" aria-label="Fei Hua in Chinese">飞化 — Fēi Huà</p>
+    <p class="section-lead" style="margin-top:0.6rem;">For advanced practitioners, each palace generates its own transformations that fly to other palaces.</p>
+
+    <div class="feihua-wrap">
+      <div>
+        <div class="feihua-body">
+          <p>Once you understand the basic Four Forces, a deeper level awaits. Every palace in your chart has its own Heavenly Stem — and that stem generates its own Four Forces, which "fly" to the palaces where those stars reside.</p>
+          <p>This creates a network of inter-palace connections: the Career Palace's transformations may activate stars in the Wealth Palace; the Wealth Palace's transformations may connect back to the Spouse Palace. Reading these chains is the signature of the northern school of ZWDS, and it's where truly precise life reading becomes possible.</p>
+          <p>A single flying-star chain can describe an event in startling detail: <em>the Career Palace flies its Flow to the Wealth Palace, which flies its Power to the Life Palace</em> — this describes a period where career success funds growth in wealth, which amplifies the person's sense of self and agency.</p>
+        </div>
+        <div class="feihua-note" role="note">
+          Flying Stars (Fei Hua) analysis requires knowing the full twelve-palace chart with all star placements — not just the birth year stem. It is studied after mastering the natal and decade-layer readings.
+        </div>
+      </div>
+
+      <!-- Palace map with flying arrow illustration -->
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <p class="eyebrow" style="text-align:center; margin-bottom:1rem;">Inter-palace connections</p>
+        <div class="palace-map-wrap" role="img" aria-label="Diagram showing transformations flying between the Career, Wealth, and Life palaces">
+          <div class="palace-map">
+            <div class="palace-box">Travel</div>
+            <div class="palace-box">Career<br><small style="color:var(--cc-lu); font-size:0.55rem; letter-spacing:0.06em;">FLOW →</small></div>
+            <div class="palace-box">Servants</div>
+            <div class="palace-box active-dst2">Life<br><small style="font-size:0.55rem; letter-spacing:0.04em;">← Power</small></div>
+            <div class="palace-box palace-center" style="font-size:0.55rem; color:var(--faint);">中<br>Center</div>
+            <div class="palace-box">Health</div>
+            <div class="palace-box">Property</div>
+            <div class="palace-box active-dst">Wealth<br><small style="font-size:0.55rem; letter-spacing:0.04em;">← Flow · Power →</small></div>
+            <div class="palace-box">Children</div>
+          </div>
+          <svg viewBox="0 0 280 280" width="280" height="280" style="position:absolute;top:0;left:0;pointer-events:none;" aria-hidden="true">
+            <!-- Arrow: Career to Wealth -->
+            <defs>
+              <marker id="arr-lu" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+                <polygon points="0 0, 7 3.5, 0 7" fill="oklch(0.65 0.20 140 / 0.7)"/>
+              </marker>
+              <marker id="arr-quan" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+                <polygon points="0 0, 7 3.5, 0 7" fill="oklch(0.58 0.22 25 / 0.7)"/>
+              </marker>
+            </defs>
+            <!-- Career (center-top) to Wealth (center-bottom) -->
+            <path d="M 140 82 C 180 130 180 150 140 198"
+              stroke="oklch(0.65 0.20 140 / 0.55)" stroke-width="1.5" stroke-dasharray="4 3"
+              fill="none" marker-end="url(#arr-lu)"/>
+            <!-- Wealth to Life (bottom-center to left-center) -->
+            <path d="M 95 210 C 60 200 45 160 50 140"
+              stroke="oklch(0.58 0.22 25 / 0.55)" stroke-width="1.5" stroke-dasharray="4 3"
+              fill="none" marker-end="url(#arr-quan)"/>
+          </svg>
+        </div>
+        <p style="font-family:var(--mono); font-size:0.58rem; letter-spacing:0.1em; color:var(--faint); margin-top:0.8rem; text-align:center; max-width:200px; line-height:1.5;">
+          Transformations generated in one palace fly to wherever those stars live
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 6: NATAL HOOK FINDER
+     ============================================================ -->
+<section class="band" aria-labelledby="hook-title">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--cc-ji);">Your Deepest Lesson</p>
+    <h2 class="section-title" id="hook-title">Find The Hook</h2>
+    <p class="hook-intro">The natal Hook (Huà Jì) is considered the most important of all four forces. It permanently occupies a fixed palace in your chart and represents the deepest pressure point in your life — the domain that requires the most conscious, careful engagement.</p>
+    <p class="hook-intro" style="margin-top:0.7rem;">Click any row to see the fuller teaching for that Hook.</p>
+
+    <div class="hook-table-wrap" role="table" aria-label="Natal Hook by birth year stem">
+      <div role="rowgroup">
+        <!-- Rows injected below; JS adds interactivity -->
+
+        <div class="hook-row" data-stem="jia" role="row" tabindex="0" aria-expanded="false">
+          <div class="hook-cell hook-cell-years" role="cell">Jiǎ · 甲<br>1924 · 1934 · 1944<br>1954 · 1964 · 1974<br>1984 · 1994</div>
+          <div class="hook-cell hook-cell-star" role="cell">Tài Yáng<br><small>The Sun Star 太陽</small></div>
+          <div class="hook-cell hook-cell-meaning" role="cell">Guard against overextending yourself in public roles and for others — the Sun dims when it tries to shine for everyone at once.</div>
+          <div class="hook-detail" role="cell">
+            <div class="hook-detail-inner">
+              <p><strong>Hook on Tai Yang — The Sun under pressure.</strong> The Sun Star governs public life, the father principle, generosity, and visible achievement. When the Hook lands here, there is a recurring pattern of overextension: giving more than can be sustained, taking on public burdens that erode the self. At worst, a person with this natal Hook can become chronically depleted by their own generosity.</p>
+              <p style="margin-top:0.7rem;">But the lesson cuts both ways: this same pressure creates exceptional public figures who are driven by a profound need to be seen as worthy, useful, or radiant. The Hook on the Sun often produces extraordinary leaders — because nothing short of extraordinary will quiet the hunger.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hook-row" data-stem="yi" role="row" tabindex="0" aria-expanded="false">
+          <div class="hook-cell hook-cell-years" role="cell">Yǐ · 乙<br>1925 · 1935 · 1945<br>1955 · 1965 · 1975<br>1985 · 1995</div>
+          <div class="hook-cell hook-cell-star" role="cell">Tài Yīn<br><small>The Moon Star 太陰</small></div>
+          <div class="hook-cell hook-cell-meaning" role="cell">Financial anxiety and emotional sensitivity as recurring themes — relational patterns require careful, patient attention.</div>
+          <div class="hook-detail" role="cell">
+            <div class="hook-detail-inner">
+              <p><strong>Hook on Tai Yin — The Moon obscured.</strong> The Moon Star governs the inner life, femininity, financial accumulation through quiet means, and relational receptivity. With the Hook here, emotional sensitivity becomes a pressure point — feelings run deeper than others realize, and financial fluctuation creates disproportionate anxiety.</p>
+              <p style="margin-top:0.7rem;">This Hook often produces deeply intuitive people who are hyperaware of relational undercurrents. The pressure to feel financially secure drives sophisticated wealth behavior — not reckless spending, but careful, sometimes anxious, accumulation. Relationships require extra conscious care: the Moon's sensitivity, hooked, can spiral into rumination or withdrawal.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hook-row" data-stem="bing" role="row" tabindex="0" aria-expanded="false">
+          <div class="hook-cell hook-cell-years" role="cell">Bǐng · 丙<br>1926 · 1936 · 1946<br>1956 · 1966 · 1976<br>1986 · 1996</div>
+          <div class="hook-cell hook-cell-star" role="cell">Lián Zhēn<br><small>The Diplomat 廉貞</small></div>
+          <div class="hook-cell hook-cell-meaning" role="cell">Political and interpersonal complexity; traditional readings advise lasting care around legal matters and hidden dealings.</div>
+          <div class="hook-detail" role="cell">
+            <div class="hook-detail-inner">
+              <p><strong>Hook on Lian Zhen — The Diplomat tested.</strong> Lian Zhen governs ethics, political navigation, desire, and hidden power dynamics. Hooked, it creates a recurring susceptibility to entanglement in interpersonal politics, legal matters, and hidden conflicts. This is the star of the court intrigue — and the Hook means the person will navigate more than their share of it.</p>
+              <p style="margin-top:0.7rem;">The gift of this Hook: extraordinary political intelligence developed through necessity. Those with Hook on Lian Zhen often become masterful at reading hidden agendas and navigating complex social environments — because they've had to. The lesson: maintain ethical clarity under social pressure, especially around legally sensitive matters.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hook-row" data-stem="ding" role="row" tabindex="0" aria-expanded="false">
+          <div class="hook-cell hook-cell-years" role="cell">Dīng · 丁<br>1927 · 1937 · 1947<br>1957 · 1967 · 1977<br>1987 · 1997</div>
+          <div class="hook-cell hook-cell-star" role="cell">Jù Mén<br><small>The Dark Gate 巨門</small></div>
+          <div class="hook-cell hook-cell-meaning" role="cell">Communication and speech create recurring complications — misunderstandings run deeper than they appear.</div>
+          <div class="hook-detail" role="cell">
+            <div class="hook-detail-inner">
+              <p><strong>Hook on Ju Men — The Dark Gate pressed.</strong> Ju Men governs speech, communication, hidden matters, and controversy. Hooked, every domain it occupies becomes a site of recurring verbal dispute, misunderstanding, or hidden conflict that surfaces through words. Readings with this Hook tend to circle back to speech: what was said, or left unsaid, keeps turning up at the center of conflicts.</p>
+              <p style="margin-top:0.7rem;">The compensating gift: exceptional investigative ability and verbal precision developed through necessity. This Hook frequently produces lawyers, therapists, negotiators, and communicators of unusual depth — people who learned to navigate language because language has never been neutral in their experience.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hook-row" data-stem="wu" role="row" tabindex="0" aria-expanded="false">
+          <div class="hook-cell hook-cell-years" role="cell">Wù · 戊<br>1928 · 1938 · 1948<br>1958 · 1968 · 1978<br>1988 · 1998</div>
+          <div class="hook-cell hook-cell-star" role="cell">Tiān Jī<br><small>The Strategist 天機</small></div>
+          <div class="hook-cell hook-cell-meaning" role="cell">Overthinking and restlessness; the mind works against itself when plans are not grounded in action.</div>
+          <div class="hook-detail" role="cell">
+            <div class="hook-detail-inner">
+              <p><strong>Hook on Tian Ji — The Strategist constrained.</strong> Tian Ji governs intelligence, adaptability, planning, and strategic thinking. Hooked, the mind becomes both the gift and the burden: exceptional analytical ability paired with a tendency to overthink, second-guess, and generate plans that never quite land. Restlessness is a hallmark — the inability to stay still long enough to let what was planted actually grow.</p>
+              <p style="margin-top:0.7rem;">The lesson of this Hook is grounding. The Strategist's gift is real — but it requires pairing with decisive action and the willingness to commit to a direction rather than perpetually optimizing the options. Those who learn this often become outstanding planners and analysts. Those who don't can spend a lifetime circling without landing.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hook-row" data-stem="ji" role="row" tabindex="0" aria-expanded="false">
+          <div class="hook-cell hook-cell-years" role="cell">Jǐ · 己<br>1929 · 1939 · 1949<br>1959 · 1969 · 1979<br>1989 · 1999</div>
+          <div class="hook-cell hook-cell-star" role="cell">Wén Qǔ<br><small>Artistic Gift 文曲</small></div>
+          <div class="hook-cell hook-cell-meaning" role="cell">Creative and expressive tension; contracts and spoken promises need extra care across the whole life.</div>
+          <div class="hook-detail" role="cell">
+            <div class="hook-detail-inner">
+              <p><strong>Hook on Wen Qu — The Artistic Gift under tension.</strong> Wen Qu governs eloquence, artistic talent, and oral expression. Hooked, spoken words and creative work become pressure points: promises made verbally are harder to keep; spoken commitments lead to complications; creative gifts feel blocked or unrealized. This person often has genuine artistic talent that is harder to access or express than it appears.</p>
+              <p style="margin-top:0.7rem;">The practical implication: get everything in writing. Avoid relying on verbal agreements. The gift that emerges from this tension is often extraordinary — the creative work that finally does emerge from the pressure of this Hook can be the most authentic and deeply personal expression of any star configuration.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hook-row" data-stem="geng" role="row" tabindex="0" aria-expanded="false">
+          <div class="hook-cell hook-cell-years" role="cell">Gēng · 庚<br>1930 · 1940 · 1950<br>1960 · 1970 · 1980<br>1990 · 2000</div>
+          <div class="hook-cell hook-cell-star" role="cell">Tiān Tóng<br><small>The Harmony Star 天同</small></div>
+          <div class="hook-cell hook-cell-meaning" role="cell">The path of ease becomes effortful — joy requires more intention and cultivation than it does for others.</div>
+          <div class="hook-detail" role="cell">
+            <div class="hook-detail-inner">
+              <p><strong>Hook on Tian Tong — Harmony disrupted.</strong> Tian Tong governs ease, enjoyment, gentleness, and the effortless good life. Hooked, what comes naturally to others — relaxation, pleasure, the feeling of things working out without struggle — requires deliberate effort. The native must work for their ease, which is a quietly exhausting irony.</p>
+              <p style="margin-top:0.7rem;">The gift of this Hook: unusual depth of appreciation when ease and joy are finally cultivated. Those who work through this Hook often develop a profound philosophy of contentment — because they had to earn it consciously. They do not take happiness for granted, which makes them extraordinarily present when it arrives.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hook-row" data-stem="xin" role="row" tabindex="0" aria-expanded="false">
+          <div class="hook-cell hook-cell-years" role="cell">Xīn · 辛<br>1931 · 1941 · 1951<br>1961 · 1971 · 1981<br>1991 · 2001</div>
+          <div class="hook-cell hook-cell-star" role="cell">Wén Chāng<br><small>Literary Talent 文昌</small></div>
+          <div class="hook-cell hook-cell-meaning" role="cell">Documents, paperwork, and written agreements require exceptional precision — this is a lifelong discipline.</div>
+          <div class="hook-detail" role="cell">
+            <div class="hook-detail-inner">
+              <p><strong>Hook on Wen Chang — Written matters under pressure.</strong> Wen Chang governs writing, examinations, academic achievement, and formal documents. Hooked, paperwork becomes a recurring source of complication: contracts have hidden clauses, academic tests underperform relative to actual intelligence, written records create disputes. This person must develop unusually rigorous habits around documentation.</p>
+              <p style="margin-top:0.7rem;">The gift: meticulous writing ability forged under pressure. Those who learn to navigate this Hook often become extraordinary writers, editors, or scholars — precisely because they learned that written precision is not optional. The Hook on Wen Chang does not diminish the literary gift; it demands that it be earned through discipline rather than inherited through ease.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hook-row" data-stem="ren" role="row" tabindex="0" aria-expanded="false">
+          <div class="hook-cell hook-cell-years" role="cell">Rén · 壬<br>1932 · 1942 · 1952<br>1962 · 1972 · 1982<br>1992 · 2002</div>
+          <div class="hook-cell hook-cell-star" role="cell">Wǔ Qǔ<br><small>The Finance General 武曲</small></div>
+          <div class="hook-cell hook-cell-meaning" role="cell">Financial discipline under recurring pressure — execute with care; impulsive financial decisions carry above-average consequence.</div>
+          <div class="hook-detail" role="cell">
+            <div class="hook-detail-inner">
+              <p><strong>Hook on Wu Qu — The Finance General under resistance.</strong> Wu Qu governs wealth, decisive action, discipline, and financial management. Hooked, financial decisions carry unusual weight and consequence. This is not a poverty sentence. Traditional readings treat it as a lifelong prompt to handle money decisions with extra care. Impulsive decisions in money and resources carry disproportionate consequence.</p>
+              <p style="margin-top:0.7rem;">The teaching is execution over instinct. Those who develop rigorous financial discipline often use this Hook to become exceptional managers of resources — because they had no margin for carelessness. The Finance General hooked is not defeated; it is sharpened by the resistance it must operate through.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hook-row" data-stem="gui" role="row" tabindex="0" aria-expanded="false">
+          <div class="hook-cell hook-cell-years" role="cell">Guǐ · 癸<br>1933 · 1943 · 1953<br>1963 · 1973 · 1983<br>1993 · 2003</div>
+          <div class="hook-cell hook-cell-star" role="cell">Tān Láng<br><small>The Desire Star 貪狼</small></div>
+          <div class="hook-cell hook-cell-meaning" role="cell">Ambition and desire create recurring friction — the gifts of desire require wisdom and careful direction.</div>
+          <div class="hook-detail" role="cell">
+            <div class="hook-detail-inner">
+              <p><strong>Hook on Tan Lang — Desire under friction.</strong> Tan Lang is the most charismatic and dangerous star — desire, ambition, creativity, and seduction in one force. Hooked, these drives become pressure rather than gifts: ambition overextends, temptation arrives with consequence, the magnetic pull of wanting creates situations that are harder to exit than enter.</p>
+              <p style="margin-top:0.7rem;">This Hook does not diminish Tan Lang's gifts — it intensifies them to the point of requiring wisdom to navigate. Those who learn to direct their desire consciously often become extraordinarily creative, charismatic, and accomplished. The Desire Star hooked is a fire that must be contained before it can heat rather than burn. The lesson: desire is real information, but it is not a direction. Aim it deliberately.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <p class="hook-footer-note" role="note">
+      "The Hook is not your enemy — it is your teacher. Find which star carries your natal Hook, locate it in your chart, and you'll find where your life's deepest work lives. The palace that carries The Hook is where the most extraordinary effort — and ultimately the most extraordinary growth — is possible."
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 7: WHERE TO NEXT
+     ============================================================ -->
+<section class="band" aria-labelledby="next-title">
+  <div class="wrap">
+    <p class="eyebrow">Continue the Study</p>
+    <h2 class="section-title" id="next-title">Where This Leads</h2>
+
+    <div class="bridge-grid">
+
+      <a class="bridge-card" href="/elements/purple-star-astrology/chart/">
+          <span class="bc-glyph" aria-hidden="true">读</span>
+          <p class="bc-label">The method</p>
+          <p class="bc-title">Learn to Read a Chart</p>
+          <p class="bc-desc">Watch the Four Forces land in a real chart: the 1996 worked example sends the Hook into the Career palace &mdash; then drill it yourself and take the Reader&rsquo;s Exam.</p>
+          <span class="bc-arrow">Enter the Reader&rsquo;s School &rarr;</span>
+        </a>
+        <a class="bridge-card" href="/elements/purple-star-astrology/palaces/">
+        <span class="bc-glyph" aria-hidden="true">宮</span>
+        <p class="bc-label">The architecture</p>
+        <p class="bc-title">The 12 Palaces</p>
+        <p class="bc-desc">The four forces land in specific palaces — but which palace determines what domain of life is affected. Learn the 12 rooms of the celestial court and what each one governs.</p>
+        <span class="bc-arrow">Explore the Palaces →</span>
+      </a>
+
+      <a class="bridge-card" href="/elements/purple-star-astrology/stars/">
+        <span class="bc-glyph" aria-hidden="true">星</span>
+        <p class="bc-label">The characters</p>
+        <p class="bc-title">The 14 Stars</p>
+        <p class="bc-desc">The four forces transform stars — and each star has its own personality that shapes how the transformation plays out. The Finance General under The Flow behaves very differently than the Dark Gate under The Flow.</p>
+        <span class="bc-arrow">Meet the Stars →</span>
+      </a>
+
+      <a class="bridge-card back" href="/elements/purple-star-astrology/">
+        <span class="bc-glyph" aria-hidden="true">紫</span>
+        <p class="bc-label">The hub</p>
+        <p class="bc-title">Back to Zi Wei Hub</p>
+        <p class="bc-desc">Return to the main Zi Wei Dou Shu overview — the full system map, the calculation method, and links to every section of the ZWDS hub.</p>
+        <span class="bc-arrow">← Back to Zi Wei</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!--zwx-court:start-->
+<section class="zwx-court" aria-labelledby="zwx-court-h">
+<style>
+.zwx-court{border-top:1px solid oklch(0.80 0.06 85 / 0.16);background:oklch(0.20 0.035 275);padding:clamp(36px,5vw,56px) clamp(18px,4vw,40px)}
+.zwx-inner{max-width:1120px;margin:0 auto}
+.zwx-court .zwx-kicker{font-family:"Space Mono",monospace;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:oklch(0.70 0.20 310);margin:0 0 10px}
+.zwx-court .zwx-aka{font-family:"Space Mono",monospace;font-size:.78rem;color:oklch(0.55 0.02 280);margin:0 0 20px}
+.zwx-court .zwx-aka b{color:oklch(0.82 0.18 312);font-weight:400}
+.zwx-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.zwx-g h3{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:oklch(0.78 0.11 85);font-weight:400;margin:0 0 8px}
+.zwx-g ul{list-style:none;margin:0;padding:0}
+.zwx-g li{margin:6px 0;font-size:.9rem}
+.zwx-g a{color:oklch(0.84 0.02 280);font-weight:500;text-decoration:none}
+.zwx-g a:hover{color:oklch(0.82 0.18 312)}
+.zwx-g a .zh{font-family:"Space Mono",monospace;font-size:.76rem;color:oklch(0.55 0.02 280);margin-right:6px}
+</style>
+<div class="zwx-inner">
+<p class="zwx-kicker" id="zwx-court-h">The Celestial Court · every door in the hub</p>
+<p class="zwx-aka">紫微斗數 Zǐwēi Dǒushù · known in English as <b>Purple Star Astrology</b> — the Emperor's system, mapped room by room below</p>
+<div class="zwx-groups">
+<div class="zwx-g"><h3>Learn the craft</h3><ul>
+<li><a href="/elements/purple-star-astrology/">What is Purple Star Astrology</a></li>
+<li><a href="/elements/purple-star-astrology/history/">History &amp; origins</a></li>
+<li><a href="/elements/purple-star-astrology/palaces/">The 12 Palaces</a></li>
+<li><a href="/elements/purple-star-astrology/four-forces/">The Four Forces (Si Hua)</a></li>
+<li><a href="/elements/purple-star-astrology/chart/">Read a chart — the Reader's School</a></li>
+</ul></div>
+<div class="zwx-g"><h3>The Northern court</h3><ul>
+<li><a href="/elements/purple-star-astrology/stars/zi-wei/"><span class="zh">紫微</span>Zi Wei · The Emperor</a></li>
+<li><a href="/elements/purple-star-astrology/stars/tian-ji/"><span class="zh">天機</span>Tian Ji · The Strategist</a></li>
+<li><a href="/elements/purple-star-astrology/stars/tai-yang/"><span class="zh">太陽</span>Tai Yang · The Sun</a></li>
+<li><a href="/elements/purple-star-astrology/stars/wu-qu/"><span class="zh">武曲</span>Wu Qu · The Finance General</a></li>
+<li><a href="/elements/purple-star-astrology/stars/tian-tong/"><span class="zh">天同</span>Tian Tong · The Harmony Star</a></li>
+<li><a href="/elements/purple-star-astrology/stars/lian-zhen/"><span class="zh">廉貞</span>Lian Zhen · The Diplomat</a></li>
+</ul></div>
+<div class="zwx-g"><h3>The Southern court</h3><ul>
+<li><a href="/elements/purple-star-astrology/stars/tian-fu/"><span class="zh">天府</span>Tian Fu · The Treasury</a></li>
+<li><a href="/elements/purple-star-astrology/stars/tai-yin/"><span class="zh">太陰</span>Tai Yin · The Moon Star</a></li>
+<li><a href="/elements/purple-star-astrology/stars/tan-lang/"><span class="zh">貪狼</span>Tan Lang · The Desire Star</a></li>
+<li><a href="/elements/purple-star-astrology/stars/ju-men/"><span class="zh">巨門</span>Ju Men · The Dark Gate</a></li>
+<li><a href="/elements/purple-star-astrology/stars/tian-xiang/"><span class="zh">天相</span>Tian Xiang · The Prime Minister</a></li>
+<li><a href="/elements/purple-star-astrology/stars/tian-liang/"><span class="zh">天梁</span>Tian Liang · The Elder</a></li>
+<li><a href="/elements/purple-star-astrology/stars/qi-sha/"><span class="zh">七殺</span>Qi Sha · The Warrior</a></li>
+<li><a href="/elements/purple-star-astrology/stars/po-jun/"><span class="zh">破軍</span>Po Jun · The Vanguard</a></li>
+</ul></div>
+<div class="zwx-g"><h3>Practice &amp; kindred arts</h3><ul>
+<li><a href="/elements/purple-star-astrology/stars/">All 14 stars, side by side</a></li>
+<li><a href="/elements/purple-star-astrology/chart/#wheel">Palace Wheel Explorer</a></li>
+<li><a href="/elements/purple-star-astrology/chart/#drills">Practice drills</a></li>
+<li><a href="/elements/purple-star-astrology/chart/#exam">The Reader's Exam</a></li>
+<li><a href="/bazi/">BaZi — the Four Pillars</a></li>
+<li><a href="/cosmology/">Chinese cosmology</a></li>
+</ul></div>
+</div>
+</div>
+</section>
+<!--zwx-court:end-->
+
+<footer class="page-foot">
+  <div class="wrap">
+    ZI WEI DOU SHU · <a href="/">ZODIANIMAL</a> · The Four Forces — Si Hua
+  </div>
+</footer>
+
+<script src="/js/nav.js" defer></script>
+<script>
+(function () {
+  "use strict";
+
+  /* ============================================================
+     SI HUA DATA TABLES
+     ============================================================ */
+  var siHuaTable = {
+    jia:  { lu: 'Lian Zhen',   quan: 'Po Jun',      ke: 'Wu Qu',       ji: 'Tai Yang' },
+    yi:   { lu: 'Tian Ji',     quan: 'Tian Liang',  ke: 'Zi Wei',      ji: 'Tai Yin' },
+    bing: { lu: 'Tian Tong',   quan: 'Tian Ji',     ke: 'Wen Chang',   ji: 'Lian Zhen' },
+    ding: { lu: 'Tai Yin',     quan: 'Tian Tong',   ke: 'Tian Ji',     ji: 'Ju Men' },
+    wu:   { lu: 'Tan Lang',    quan: 'Tai Yin',     ke: 'You Bi',      ji: 'Tian Ji' },
+    ji:   { lu: 'Wu Qu',       quan: 'Tan Lang',    ke: 'Tian Liang',  ji: 'Wen Qu' },
+    geng: { lu: 'Tai Yang',    quan: 'Wu Qu',       ke: 'Tai Yin',     ji: 'Tian Tong' },
+    xin:  { lu: 'Ju Men',      quan: 'Tai Yang',    ke: 'Wen Qu',      ji: 'Wen Chang' },
+    ren:  { lu: 'Tian Liang',  quan: 'Zi Wei',      ke: 'Zuo Fu',      ji: 'Wu Qu' },
+    gui:  { lu: 'Po Jun',      quan: 'Ju Men',      ke: 'Tai Yin',     ji: 'Tan Lang' }
+  };
+
+  var stemByDigit = {
+    0: 'geng', 1: 'xin', 2: 'ren', 3: 'gui',
+    4: 'jia',  5: 'yi',  6: 'bing', 7: 'ding', 8: 'wu', 9: 'ji'
+  };
+
+  var stemDisplay = {
+    jia:  { char: '甲', pinyin: 'Jiǎ', desc: 'the Wood Yang stem — the first stem, carrying the upward thrust of new growth' },
+    yi:   { char: '乙', pinyin: 'Yǐ',  desc: 'the Wood Yin stem — flexible, adaptive, like a vine finding its path' },
+    bing: { char: '丙', pinyin: 'Bǐng', desc: 'the Fire Yang stem — brilliant, expansive, full of solar vitality' },
+    ding: { char: '丁', pinyin: 'Dīng', desc: 'the Fire Yin stem — the candle flame, concentrated and illuminating' },
+    wu:   { char: '戊', pinyin: 'Wù',  desc: 'the Earth Yang stem — solid, containing, the mountain at the center' },
+    ji:   { char: '己', pinyin: 'Jǐ',  desc: 'the Earth Yin stem — fertile and receptive, the field that nourishes' },
+    geng: { char: '庚', pinyin: 'Gēng', desc: 'the Metal Yang stem — decisive, sharp, the sword that cuts through' },
+    xin:  { char: '辛', pinyin: 'Xīn', desc: 'the Metal Yin stem — refined and precious, the jewel that endures' },
+    ren:  { char: '壬', pinyin: 'Rén', desc: 'the Water Yang stem — the great ocean, deep and inexhaustible' },
+    gui:  { char: '癸', pinyin: 'Guǐ', desc: 'the Water Yin stem — the still pool, reflective and profound' }
+  };
+
+  var starCoined = {
+    'Zi Wei':      'The Emperor Star',
+    'Tian Ji':     'The Strategist',
+    'Tai Yang':    'The Sun Star',
+    'Wu Qu':       'The Finance General',
+    'Tian Tong':   'The Harmony Star',
+    'Lian Zhen':   'The Diplomat',
+    'Tian Fu':     'The Treasury Star',
+    'Tai Yin':     'The Moon Star',
+    'Tan Lang':    'The Desire Star',
+    'Ju Men':      'The Dark Gate',
+    'Tian Xiang':  'The Prime Minister',
+    'Tian Liang':  'The Elder Star',
+    'Qi Sha':      'The Warrior',
+    'Po Jun':      'The Vanguard',
+    'Wen Chang':   'Literary Talent',
+    'Wen Qu':      'Artistic Gift',
+    'Zuo Fu':      'Left Aide',
+    'You Bi':      'Right Assistant'
+  };
+
+  var luMeaning = {
+    'Lian Zhen':   'Resources flow through your social and political networks — diplomacy opens doors.',
+    'Tian Ji':     'Smooth fortune arrives through intelligence and adaptability — flexibility is your gift.',
+    'Tian Tong':   'Joy and ease enter your life — this is a season of flow and satisfaction.',
+    'Tai Yin':     'Financial fortune and beauty arrive — particularly through relationships and intuition.',
+    'Tan Lang':    'Your talents and charisma attract extraordinary opportunities — lean into your gifts.',
+    'Wu Qu':       'Wealth and achievement flow to you through discipline and decisive action.',
+    'Ju Men':      'Your voice and investigative nature bring abundance — speak your truth.',
+    'Tai Yang':    'Fortune arrives through public service and generosity — your radiance attracts.',
+    'Tian Liang':  'Benefactors and wisdom arrive — protection and guidance from elders or mentors.',
+    'Po Jun':      'Breakthrough energy flows — old structures dissolve to make way for the new.'
+  };
+
+  var quanMeaning = {
+    'Po Jun':      'You are empowered to break through — authority comes through pioneering action.',
+    'Tian Liang':  'Authoritative wisdom — you command through earned experience and protection.',
+    'Tian Ji':     'Strategic mastery — your intelligence gives you commanding influence.',
+    'Tian Tong':   'Authority through peace and harmony — you lead by creating environments others thrive in.',
+    'Tai Yin':     'Quiet power amplified — financial and relational authority through sensitivity.',
+    'Tan Lang':    'Your desires and talents drive extraordinary achievement — ambition commands.',
+    'Wu Qu':       'Financial and executive authority — your decisiveness cuts through obstacles.',
+    'Tai Yang':    'Public power and influence — leadership through radiance and giving.',
+    'Ju Men':      'Authority through speech — your words carry unusual power this period.',
+    'Zi Wei':      'The Emperor activates — sovereign authority and dignified leadership.'
+  };
+
+  var keMeaning = {
+    'Wu Qu':       'Reputation for financial discipline and execution — recognized for your effectiveness.',
+    'Zi Wei':      'The Emperor\'s shine — imperial recognition and dignified acknowledgment.',
+    'Wen Chang':   'Literary and academic recognition — talents in writing and speaking are celebrated.',
+    'Tian Ji':     'Recognized for strategic insight — your analysis and adaptability attract praise.',
+    'Tian Liang':  'Honored for wisdom and protection — elder-like recognition and respect.',
+    'Tai Yin':     'Beauty and intuition recognized — celebrated for sensitivity and grace.',
+    'Wen Qu':      'Artistic gifts recognized — creative and eloquent expression wins appreciation.',
+    'You Bi':      'Supporting others brings you recognition — your assistance is celebrated.',
+    'Zuo Fu':      'Your aiding role brings acknowledgment — recognized as the indispensable one.'
+  };
+
+  var jiMeaning = {
+    'Tai Yang':    'The Sun dimmed — guard against overextending yourself in public and for others.',
+    'Tai Yin':     'The Moon obscured — financial anxiety and relational sensitivity heighten.',
+    'Lian Zhen':   'The Diplomat tested — navigating politics, legal matters, and hidden conflicts.',
+    'Ju Men':      'The Dark Gate pressed — disputes through speech; misunderstandings run deep.',
+    'Tian Ji':     'The Strategist constrained — overthinking, restlessness, plans that don\'t land.',
+    'Wen Qu':      'Artistic gifts under tension — beware contracts, documents, and spoken promises.',
+    'Wen Chang':   'Written matters require care — contracts, paperwork, and exams need extra attention.',
+    'Wu Qu':       'Financial caution — the Finance General faces resistance; execute with precision.',
+    'Tian Tong':   'Harmony disrupted — the easy path becomes effortful; joy requires more intention.',
+    'Tan Lang':    'Desires create friction — ambition overextends; temptation brings consequence.'
+  };
+
+  var genericMeaning = {
+    lu:   'Resources and flow arrive in the domain this star governs — abundance and ease increase.',
+    quan: 'Authority and power activate in this domain — take initiative and embrace leadership.',
+    ke:   'Recognition and reputation build in this domain — your excellence here is seen.',
+    ji:   'Pressure and careful engagement are required in this domain — proceed with deliberate care.'
+  };
+
+  function getMeaning(table, starName, fallback) {
+    return table[starName] || fallback;
+  }
+
+  function calculateSiHua(year, earlyInYear) {
+    var stemYear = earlyInYear ? year - 1 : year;
+    var lastDigit = ((stemYear % 10) + 10) % 10;
+    var stemKey = stemByDigit[lastDigit];
+    var forces = siHuaTable[stemKey];
+    return { stemKey: stemKey, forces: forces };
+  }
+
+  /* ============================================================
+     CALCULATOR UI
+     ============================================================ */
+  var input    = document.getElementById('birth-year');
+  var checkbox = document.getElementById('early-year');
+  var btn      = document.getElementById('calc-btn');
+  var results  = document.getElementById('calc-results');
+  var stemChar = document.getElementById('result-stem-char');
+  var stemName = document.getElementById('result-stem-name');
+  var cards    = document.getElementById('result-cards');
+
+  if (!btn) return;
+
+  function buildResultCard(forceKey, forceLabel, chineseLabel, pinyinLabel, starName, meaning) {
+    var coined = starCoined[starName] || starName;
+    var div = document.createElement('div');
+    div.className = 'result-card res-' + forceKey;
+    div.setAttribute('role', 'article');
+    div.setAttribute('aria-label', forceLabel + ': ' + coined);
+    div.innerHTML =
+      '<p class="rc-force ' + forceKey + '">' + chineseLabel + ' ' + pinyinLabel + ' — ' + forceLabel + '</p>' +
+      '<span class="rc-star-coined">' + coined + '</span>' +
+      '<p class="rc-star-raw">' + starName + '</p>' +
+      '<p class="rc-meaning">' + meaning + '</p>';
+    return div;
+  }
+
+  function showResults(year, earlyInYear) {
+    var result = calculateSiHua(year, earlyInYear);
+    if (!result.stemKey) return;
+
+    var stem = stemDisplay[result.stemKey];
+    var f = result.forces;
+
+    // Stem display
+    stemChar.textContent = stem.char;
+    stemName.textContent = 'Your birth year stem is ' + stem.char + ' ' + stem.pinyin + ' — ' + stem.desc + '.';
+
+    // Build cards
+    cards.innerHTML = '';
+
+    var forceConfig = [
+      {
+        key: 'lu',
+        label: 'The Flow',
+        chinese: '化祿',
+        pinyin: 'Huà Lù',
+        star: f.lu,
+        meaning: getMeaning(luMeaning, f.lu, genericMeaning.lu)
+      },
+      {
+        key: 'quan',
+        label: 'The Power',
+        chinese: '化權',
+        pinyin: 'Huà Quán',
+        star: f.quan,
+        meaning: getMeaning(quanMeaning, f.quan, genericMeaning.quan)
+      },
+      {
+        key: 'ke',
+        label: 'The Shine',
+        chinese: '化科',
+        pinyin: 'Huà Kē',
+        star: f.ke,
+        meaning: getMeaning(keMeaning, f.ke, genericMeaning.ke)
+      },
+      {
+        key: 'ji',
+        label: 'The Hook',
+        chinese: '化忌',
+        pinyin: 'Huà Jì',
+        star: f.ji,
+        meaning: getMeaning(jiMeaning, f.ji, genericMeaning.ji)
+      }
+    ];
+
+    forceConfig.forEach(function (fc) {
+      var card = buildResultCard(fc.key, fc.label, fc.chinese, fc.pinyin, fc.star, fc.meaning);
+      cards.appendChild(card);
+    });
+
+    // Show results section
+    results.classList.add('visible');
+
+    // Stagger card animations
+    var allCards = cards.querySelectorAll('.result-card');
+    allCards.forEach(function (c, i) {
+      setTimeout(function () {
+        c.classList.add('shown');
+      }, 80 + i * 180);
+    });
+
+    // Scroll results into view
+    setTimeout(function () {
+      results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+
+  btn.addEventListener('click', function () {
+    var year = parseInt(input.value, 10);
+    var earlyInYear = checkbox.checked;
+
+    // Clear previous card states
+    if (cards) {
+      var prev = cards.querySelectorAll('.result-card');
+      prev.forEach(function (c) { c.classList.remove('shown'); });
+    }
+    results.classList.remove('visible');
+
+    if (!year || year < 1900 || year > 2030) {
+      input.focus();
+      input.style.borderColor = 'oklch(0.58 0.22 25 / 0.7)';
+      input.style.boxShadow = '0 0 0 3px oklch(0.58 0.22 25 / 0.14)';
+      setTimeout(function () {
+        input.style.borderColor = '';
+        input.style.boxShadow = '';
+      }, 1800);
+      return;
+    }
+
+    setTimeout(function () {
+      showResults(year, earlyInYear);
+    }, 60);
+  });
+
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') btn.click();
+  });
+
+  /* ============================================================
+     HOOK FINDER — EXPANDABLE ROWS
+     ============================================================ */
+  var hookRows = document.querySelectorAll('.hook-row');
+  hookRows.forEach(function (row) {
+    var detail = row.querySelector('.hook-detail');
+    if (!detail) return;
+
+    function toggle() {
+      var expanded = row.getAttribute('aria-expanded') === 'true';
+      // Collapse all others
+      hookRows.forEach(function (r) {
+        r.setAttribute('aria-expanded', 'false');
+        r.classList.remove('expanded');
+        var d = r.querySelector('.hook-detail');
+        if (d) d.classList.remove('open');
+      });
+      if (!expanded) {
+        row.setAttribute('aria-expanded', 'true');
+        row.classList.add('expanded');
+        detail.classList.add('open');
+      }
+    }
+
+    row.addEventListener('click', toggle);
+    row.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle();
+      }
+    });
+  });
+
+})();
+</script>
+<!--om-footer:start-->
+<!-- Zodi Animal universal footer. Single source: components/footer.html,
+     baked into every page by build/apply-footer.mjs, styled by
+     site/css/footer.css (.zf-foot). All classes are zf- namespaced to avoid
+     collisions with page CSS. Edit this file, rebuild, all pages update. -->
+<footer class="zf-foot" role="contentinfo" aria-label="Site footer">
+  <div class="zf-wrap">
+
+    <div class="zf-rule zf-rule--top"><i>&#9790;</i></div>
+
+    <!-- brand (40%) + daily reading (60%) -->
+    <section class="zf-feature">
+      <div class="zf-brand">
+        <p class="zf-eyebrow">The Primal Zodiac, 144 animals</p>
+        <p class="zf-lockup">Zodi <em>Animal</em></p>
+        <p class="zf-manifesto">One hundred and forty-four animals, born where the Western Sun signs cross the Chinese zodiac years. A slow tradition of meaning, kept under the moon.</p>
+        <a class="zf-cta" href="/index.html#read">Find your Zodi Animal <span class="zf-star">&#10022;</span></a>
+      </div>
+
+      <div class="zf-news">
+        <div class="zf-sky" aria-hidden="true">
+          <span class="zf-tw zf-tw1"></span><span class="zf-tw zf-tw2"></span><span class="zf-tw zf-tw3"></span><span class="zf-tw zf-tw4"></span>
+          <span class="zf-shoot zf-shoot-a"></span><span class="zf-shoot zf-shoot-b"></span><span class="zf-shoot zf-shoot-c"></span>
+        </div>
+        <div class="zf-copy">
+          <p class="zf-eyebrow">The Daily Reading</p>
+          <h2 class="zf-news-h">Your reading, at dawn.</h2>
+          <p class="zf-sub">One short passage for your Zodi Animal each morning. The moon's phase, what it favors, and a line meant for you. Free, and it takes ten seconds to join.</p>
+        </div>
+        <form class="zf-form" id="zf-news-form" novalidate>
+          <label class="zf-sr" for="zf-email">Email address</label>
+          <div class="zf-row">
+            <input id="zf-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-describedby="zf-rz">
+            <button type="submit" class="zf-subbtn">Read with me daily</button>
+          </div>
+          <p class="zf-reassure" id="zf-rz">No noise. Unsubscribe anytime.</p>
+        </form>
+      </div>
+    </section>
+
+    <div class="zf-rule"><i>&#10022;</i></div>
+
+    <!-- link matrix -->
+    <nav class="zf-matrix" aria-label="Footer navigation">
+      <div class="zf-col"><h3>Discover</h3><ul>
+        <li><a href="/index.html">Find your animal</a></li>
+        <li><a href="/menagerie.html">All 144 animals</a></li>
+        <li><a href="/zodiac/">The 144 crossings</a></li>
+        <li><a href="/zodiac/grid/">The 144 grid</a></li>
+        <li><a href="/year.html">Year finder</a></li>
+        <li><a href="/daily.html">Today's reading</a></li>
+      </ul></div>
+      <div class="zf-col"><h3>The two wheels</h3><ul>
+        <li><a href="/western-zodiac/">The Western wheel</a></li>
+        <li><a href="/horoscopes/">All horoscopes</a></li>
+        <li><a href="/chinese-zodiac/">The Eastern wheel</a></li>
+        <li><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a></li>
+        <li><a href="/zodiac/what-is-my-primal-zodiac-animal/">How the crossing works</a></li>
+        <li><a href="/best-days.html">Best days</a></li>
+      </ul></div>
+      <div class="zf-col"><h3>Practice &amp; lore</h3><ul>
+        <li><a href="/feng-shui/">Feng shui</a></li>
+        <li><a href="/feng-shui/bagua/">The bagua</a></li>
+        <li><a href="/feng-shui/kua-number/">Your Kua number</a></li>
+        <li><a href="/stones.html">Keeper stones</a></li>
+        <li><a href="/proverbs/">The Proverb Pond</a></li>
+        <li><a href="/traditions/">Traditions</a></li>
+        <li><a href="/habitat/">The Habitat</a></li>
+      </ul></div>
+      <div class="zf-col"><h3>Bonds &amp; Moon</h3><ul>
+        <li><a href="/match.html">Test a match</a></li>
+        <li><a href="/vs.html">Challenge a friend</a></li>
+        <li><a href="/circle.html">Circle of three</a></li>
+        <li><a href="/moon.html">The Moon tonight</a></li>
+        <li><a href="/moon/phases/">The eight phases</a></li>
+        <li><a href="/awakening.html">The Awakening</a></li>
+      </ul></div>
+      <div class="zf-col"><h3>The system</h3><ul>
+        <li><a href="/learn.html">How it works</a></li>
+        <li><a href="/cosmology/">Cosmology</a></li>
+        <li><a href="/cosmology/four-pillars/">The Four Pillars</a></li>
+        <li><a href="/elements/fire/">The five elements</a></li>
+        <li><a href="/directions/">Directions</a></li>
+        <li><a href="/account.html">Your account</a></li>
+      </ul></div>
+    </nav>
+
+    <div class="zf-rule"><i>&#10022;</i></div>
+
+    <!-- almanac: 12 signs, 12 years -->
+    <section class="zf-almanac" aria-labelledby="zf-almh">
+      <p class="zf-cap"><span class="zf-ttl" id="zf-almh">The Almanac of Signs and Years</span><span class="zf-note">12 Sun signs and 12 zodiac years make 144 Zodi Animals</span></p>
+      <div class="zf-alm-row">
+        <nav class="zf-alm-grid" aria-label="Western zodiac signs">
+          <a href="/western-zodiac/aries/"><span class="zf-gly">&#9800;</span><span class="zf-nm">Aries</span></a>
+          <a href="/western-zodiac/taurus/"><span class="zf-gly">&#9801;</span><span class="zf-nm">Taurus</span></a>
+          <a href="/western-zodiac/gemini/"><span class="zf-gly">&#9802;</span><span class="zf-nm">Gemini</span></a>
+          <a href="/western-zodiac/cancer/"><span class="zf-gly">&#9803;</span><span class="zf-nm">Cancer</span></a>
+          <a href="/western-zodiac/leo/"><span class="zf-gly">&#9804;</span><span class="zf-nm">Leo</span></a>
+          <a href="/western-zodiac/virgo/"><span class="zf-gly">&#9805;</span><span class="zf-nm">Virgo</span></a>
+          <a href="/western-zodiac/libra/"><span class="zf-gly">&#9806;</span><span class="zf-nm">Libra</span></a>
+          <a href="/western-zodiac/scorpio/"><span class="zf-gly">&#9807;</span><span class="zf-nm">Scorpio</span></a>
+          <a href="/western-zodiac/sagittarius/"><span class="zf-gly">&#9808;</span><span class="zf-nm">Sagittarius</span></a>
+          <a href="/western-zodiac/capricorn/"><span class="zf-gly">&#9809;</span><span class="zf-nm">Capricorn</span></a>
+          <a href="/western-zodiac/aquarius/"><span class="zf-gly">&#9810;</span><span class="zf-nm">Aquarius</span></a>
+          <a href="/western-zodiac/pisces/"><span class="zf-gly">&#9811;</span><span class="zf-nm">Pisces</span></a>
+        </nav>
+      </div>
+      <div class="zf-alm-row">
+        <nav class="zf-alm-grid" aria-label="Chinese zodiac years">
+          <a href="/chinese-zodiac/rat/"><span class="zf-gly">&#40736;</span><span class="zf-nm">Rat</span></a>
+          <a href="/chinese-zodiac/ox/"><span class="zf-gly">&#29275;</span><span class="zf-nm">Ox</span></a>
+          <a href="/chinese-zodiac/tiger/"><span class="zf-gly">&#34382;</span><span class="zf-nm">Tiger</span></a>
+          <a href="/chinese-zodiac/rabbit/"><span class="zf-gly">&#20820;</span><span class="zf-nm">Rabbit</span></a>
+          <a href="/chinese-zodiac/dragon/"><span class="zf-gly">&#40857;</span><span class="zf-nm">Dragon</span></a>
+          <a href="/chinese-zodiac/snake/"><span class="zf-gly">&#34503;</span><span class="zf-nm">Snake</span></a>
+          <a href="/chinese-zodiac/horse/"><span class="zf-gly">&#39532;</span><span class="zf-nm">Horse</span></a>
+          <a href="/chinese-zodiac/goat/"><span class="zf-gly">&#32650;</span><span class="zf-nm">Goat</span></a>
+          <a href="/chinese-zodiac/monkey/"><span class="zf-gly">&#29492;</span><span class="zf-nm">Monkey</span></a>
+          <a href="/chinese-zodiac/rooster/"><span class="zf-gly">&#40481;</span><span class="zf-nm">Rooster</span></a>
+          <a href="/chinese-zodiac/dog/"><span class="zf-gly">&#29399;</span><span class="zf-nm">Dog</span></a>
+          <a href="/chinese-zodiac/pig/"><span class="zf-gly">&#29482;</span><span class="zf-nm">Pig</span></a>
+        </nav>
+      </div>
+    </section>
+
+    <div class="zf-rule"><i>&#9790;</i></div>
+
+    <!-- proverb: pinyin on top of each character, tap the speaker to hear it in Mandarin -->
+    <section class="zf-proverb" aria-label="A proverb from the Pond">
+      <p class="zf-hz" lang="zh-Hant">
+        <span class="zf-cal" id="zf-pv-cal"><ruby>守<rt>shǒu</rt></ruby><ruby>得<rt>dé</rt></ruby><ruby>雲<rt>yún</rt></ruby><ruby>開<rt>kāi</rt></ruby><ruby>見<rt>jiàn</rt></ruby><ruby>月<rt>yuè</rt></ruby><ruby>明<rt>míng</rt></ruby></span>
+        <button class="zf-say" id="zf-pv-say" type="button" aria-label="Hear it read in Mandarin" title="Hear it in Mandarin" data-say="守得雲開見月明"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+      </p>
+      <p class="zf-en" id="zf-pv-en">Hold on until the clouds part, and the bright moon appears.</p>
+      <a class="zf-src" href="/proverbs/">From the Proverb Pond</a>
+    </section>
+
+    <div class="zf-colo">
+      <span class="zf-lead">&copy; <span id="zf-year">2026</span> Zodi Animal. Made under the moon.</span>
+      <span class="zf-disc">A tradition of meaning for reflection. Not medical, psychological, financial, or legal advice.</span>
+    </div>
+
+  </div>
+</footer>
+<script>
+/* Zodi footer: rotating proverb, tap-to-hear pronunciation, on-device newsletter save. */
+(function(){
+  try{ var y=document.getElementById('zf-year'); if(y) y.textContent=new Date().getFullYear(); }catch(e){}
+
+  var P=[
+    {c:[["守","shǒu"],["得","dé"],["雲","yún"],["開","kāi"],["見","jiàn"],["月","yuè"],["明","míng"]],en:"Hold on until the clouds part, and the bright moon appears."},
+    {c:[["上","shàng"],["善","shàn"],["若","ruò"],["水","shuǐ"]],en:"The highest good is like water."},
+    {c:[["瓜","guā"],["熟","shú"],["蒂","dì"],["落","luò"]],en:"When the melon ripens, the stalk falls of itself."},
+    {c:[["順","shùn"],["其","qí"],["自","zì"],["然","rán"]],en:"Let it follow its own nature."},
+    {c:[["塞","sài"],["翁","wēng"],["失","shī"],["馬","mǎ"]],en:"The old man lost his horse. Who is to say it was not good fortune."},
+    {c:[["物","wù"],["極","jí"],["必","bì"],["反","fǎn"]],en:"When a thing reaches its extreme, it turns back the other way."},
+    {c:[["水","shuǐ"],["到","dào"],["渠","qú"],["成","chéng"]],en:"When the water arrives, the channel forms itself."}
+  ];
+  var cur=P[Math.floor(Math.random()*P.length)];
+  var plain=cur.c.map(function(x){return x[0];}).join("");
+  try{
+    document.getElementById('zf-pv-cal').innerHTML=cur.c.map(function(x){return '<ruby>'+x[0]+'<rt>'+x[1]+'</rt></ruby>';}).join("");
+    document.getElementById('zf-pv-en').textContent=cur.en;
+    var sb0=document.getElementById('zf-pv-say'); if(sb0) sb0.setAttribute('data-say',plain);
+  }catch(e){}
+
+  /* the ranked Mandarin voice (Tingting / Meijia / Google), mirrored from
+     proverbs-share.js so the footer sounds the same on pages that don't load it */
+  function zfSpeak(text,btn){
+    if(window.zaSpeak){ window.zaSpeak(text,btn); return; }
+    if(!window.speechSynthesis || !text) return;
+    try{
+      var vs=speechSynthesis.getVoices()||[],best=null,bs=-1;
+      for(var i=0;i<vs.length;i++){
+        var v=vs[i],nm=(v.name||"").toLowerCase(),lg=(v.lang||"").toLowerCase();
+        if(!(/^zh\b|zh[-_]/.test(lg)||/chinese|中文|普通话|國語|mandarin/i.test(v.name||""))) continue;
+        var sc=0;
+        if(/tingting|ting-ting|meijia|mei-jia|sinji|li-mu|yu-shu|han-?yu/.test(nm)) sc+=100;
+        if(/google/.test(nm)) sc+=60;
+        if(/普通话|mandarin|zh-cn|zh_cn|cmn/.test(nm+lg)) sc+=25;
+        if(v.localService===false) sc+=12;
+        if(/female|woman/.test(nm)) sc+=4;
+        if(sc>bs){ bs=sc; best=v; }
+      }
+      var u=new SpeechSynthesisUtterance(text); u.lang="zh-CN"; u.rate=0.78; if(best) u.voice=best;
+      speechSynthesis.cancel(); speechSynthesis.speak(u);
+      if(btn){ btn.classList.add('is-saying'); u.onend=u.onerror=function(){ btn.classList.remove('is-saying'); }; }
+    }catch(e){}
+  }
+  if(window.speechSynthesis){ try{ speechSynthesis.getVoices(); }catch(e){} }
+
+  var say=document.getElementById('zf-pv-say');
+  if(say) say.addEventListener('click',function(){ zfSpeak(say.getAttribute('data-say')||plain, say); });
+
+  var form=document.getElementById('zf-news-form');
+  if(form) form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=(document.getElementById('zf-email')||{}).value||'';
+    var note=document.getElementById('zf-rz');
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ if(note) note.textContent="Enter an email so we can find you."; return; }
+    try{ localStorage.setItem('zodi_daily_email', email); }catch(_e){}
+    if(note) note.textContent="Saved on this device. Daily readings open soon.";
+    try{ document.getElementById('zf-email').value=''; }catch(_e){}
+  });
+})();
+</script>
+<!--om-footer:end-->
+</body>
+</html>
