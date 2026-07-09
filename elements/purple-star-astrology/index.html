@@ -927,6 +927,119 @@
     .pcast-cal { position: fixed; left: 0; right: 0; bottom: 0; top: auto; width: 100%; max-width: 100%; border-radius: var(--r-2) var(--r-2) 0 0; box-shadow: 0 -12px 44px rgba(0,0,0,0.6); padding: 16px 16px calc(16px + env(safe-area-inset-bottom)); }
     .pcast-cal-day, .pcast-cal-empty { min-height: 46px; }
   }
+  /* ============================================================
+     BIRTH TIME: segmented field + 24h/AM·PM toggle + clock popover.
+     Twinned with the date field above it on purpose — same 44px gold trigger button, same
+     popover shell, same bottom-sheet behaviour on a phone. A reader who has learned one of
+     these two controls has learned both.
+  ============================================================ */
+  .pcast-time-field { position: relative; }
+  .pcast-time-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+  .pcast-time-head .pcast-label { margin: 0; }
+  /* the compact variant of the shared segmented toggle: label-only, no sublabel */
+  .zg-toggle-sm { flex: none; padding: 2px; }
+  .zg-toggle-sm .zg-opt { padding: 5px 10px; min-height: 30px; justify-content: center; }
+  .zg-toggle-sm .zg-opt b { font-family: var(--mono); font-size: .64rem; letter-spacing: .06em; }
+  .zg-toggle-sm .zg-thumb { top: 2px; bottom: 2px; }
+  .pcast-time-row { display: flex; gap: 8px; }
+  /* the box is the field; the two <input>s inside it are only glyphs. Focus lights the whole box
+     so the reader sees one control, the way a native time input would look if it could be styled. */
+  .pcast-time-box { flex: 1 1 auto; display: flex; align-items: center; gap: 2px; min-height: 42px; padding: 0 10px;
+    background: var(--ink-2); border: 1px solid var(--line); border-radius: var(--r-1); }
+  .pcast-time-box:focus-within { border-color: var(--brass); outline: 2px solid var(--brass); outline-offset: 1px; }
+  .pcast-time-box.is-disabled { opacity: .45; }
+  .pcast-tseg { width: 2.4ch; padding: 8px 0; background: transparent; border: 0; color: var(--moon);
+    font-family: var(--mono); font-size: 1.02rem; line-height: 1.2; text-align: center; caret-color: var(--brass); }
+  .pcast-tseg::placeholder { color: var(--faint); }
+  .pcast-tseg:focus { outline: 0; background: var(--cc-soft); border-radius: 4px; color: var(--moon); }
+  .pcast-tseg:disabled { cursor: not-allowed; }
+  .pcast-tsep { font-family: var(--mono); font-size: 1.02rem; color: var(--faint); padding: 0 1px; }
+  .pcast-time-box.is-set .pcast-tsep { color: var(--brass-dim); }
+  .pcast-tap { margin-left: auto; min-width: 42px; min-height: 30px; padding: 4px 10px; background: transparent;
+    border: 1px solid var(--line); border-radius: var(--r-pill); color: var(--muted);
+    font-family: var(--mono); font-size: .68rem; letter-spacing: .08em; cursor: pointer; transition: color .15s, border-color .15s; }
+  .pcast-tap:hover { color: var(--moon); border-color: var(--brass); }
+  .pcast-tap:focus-visible { outline: 2px solid var(--brass); outline-offset: 1px; }
+  .pcast-tap[hidden] { display: none; }
+  .pcast-time-box.is-set .pcast-tap { color: var(--brass); border-color: var(--brass-dim); }
+  /* the clock trigger is the calendar button's twin — same size, same gold, same hover */
+  .pcast-clock-btn { flex: 0 0 auto; width: 44px; min-height: 44px; border: 1px solid var(--line); border-radius: var(--r-1); background: var(--ink-2); color: var(--brass); cursor: pointer; display: grid; place-items: center; }
+  .pcast-clock-btn:hover { border-color: var(--brass); }
+  .pcast-clock-btn:focus-visible { outline: 2px solid var(--brass); outline-offset: 1px; }
+  .pcast-clock-btn:disabled { opacity: .45; cursor: not-allowed; }
+  /* ---- the face ---- */
+  .pcast-clock { position: absolute; z-index: 80; top: calc(100% + 8px); left: 0; width: min(300px, calc(100vw - 40px));
+    background: var(--panel-2); border: 1px solid var(--line); border-top: 2px solid var(--brass);
+    border-radius: var(--r-2); box-shadow: 0 16px 44px rgba(0,0,0,0.5); padding: 14px 16px 12px; }
+  .pcast-clock[hidden] { display: none; }
+  @media (min-width: 900px) { .psa-hero-form .pcast-clock { left: calc(100% + 14px); top: 0; } }
+  .pcast-clock-head { padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid var(--line-soft); }
+  .pcast-clock-read { display: flex; align-items: center; gap: 2px; }
+  .pcast-clock-unit { padding: 2px 6px; background: transparent; border: 0; border-radius: 6px; color: var(--faint);
+    font-family: var(--mono); font-size: 1.7rem; line-height: 1.1; cursor: pointer; transition: color .15s, background .15s; }
+  .pcast-clock-unit:hover { color: var(--moon); }
+  .pcast-clock-unit.is-on { color: var(--brass); background: var(--cc-soft); }
+  .pcast-clock-unit:focus-visible { outline: 2px solid var(--brass); outline-offset: 1px; }
+  .pcast-clock-colon { font-family: var(--mono); font-size: 1.7rem; color: var(--faint); }
+  .pcast-clock-ap { margin-left: auto; display: flex; flex-direction: column; gap: 2px; }
+  .pcast-clock-appill { min-width: 42px; min-height: 26px; padding: 2px 8px; background: transparent; border: 1px solid var(--line);
+    border-radius: var(--r-pill); color: var(--muted); font-family: var(--mono); font-size: .66rem; letter-spacing: .08em; cursor: pointer; transition: color .15s, border-color .15s, background .15s; }
+  .pcast-clock-appill:hover { color: var(--moon); border-color: var(--brass); }
+  .pcast-clock-appill.is-on { color: #1a1406; background: var(--brass); border-color: var(--brass); }
+  .pcast-clock-appill:focus-visible { outline: 2px solid var(--brass); outline-offset: 1px; }
+  .pcast-clock-branch { margin: 6px 0 0; font-family: var(--mono); font-size: .68rem; line-height: 1.4; color: var(--faint); }
+  .pcast-clock-branch b { font-weight: 400; color: var(--cc-bright); }
+  .pcast-clock-face { position: relative; width: 100%; aspect-ratio: 1 / 1; max-width: 250px; margin: 0 auto;
+    border-radius: 50%; border: 1px solid var(--line-soft); background: radial-gradient(circle at 50% 50%, var(--panel), var(--ink-2) 70%); }
+  @supports not (aspect-ratio: 1) { .pcast-clock-face { height: 250px; } }
+  .pcast-clock-num { position: absolute; transform: translate(-50%, -50%); width: 34px; height: 34px; display: grid; place-items: center;
+    padding: 0; background: transparent; border: 1px solid transparent; border-radius: 50%; color: var(--body-text);
+    font-family: var(--mono); font-size: .84rem; cursor: pointer; transition: color .12s, background .12s, border-color .12s; z-index: 2; }
+  .pcast-clock-num.is-inner { width: 28px; height: 28px; font-size: .7rem; color: var(--muted); }
+  .pcast-clock-num:hover { color: var(--moon); border-color: var(--cc); background: var(--cc-soft); }
+  .pcast-clock-num:focus-visible { outline: 2px solid var(--brass); outline-offset: 1px; }
+  .pcast-clock-num.is-on { background: var(--brass); border-color: var(--brass); color: #1a1406; font-weight: 600; box-shadow: 0 0 0 3px var(--cc-soft); }
+  /* the hand: bottom-anchored at the pin, so a rotate() about its own base points it at the number */
+  .pcast-clock-hand { position: absolute; left: 50%; bottom: 50%; transform-origin: 50% 100%; width: 2px; height: 34%;
+    background: linear-gradient(to top, var(--brass-dim), var(--brass)); border-radius: 1px; z-index: 1; pointer-events: none;
+    transition: transform .22s cubic-bezier(.5,1.4,.4,1); }
+  .pcast-clock-pin { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 7px; height: 7px;
+    border-radius: 50%; background: var(--brass); box-shadow: 0 0 10px -2px var(--brass); z-index: 3; pointer-events: none; }
+  @media (prefers-reduced-motion: reduce) { .pcast-clock-hand { transition: none; } }
+  .pcast-clock-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 12px; }
+  .pcast-clock-ghost { min-height: 40px; padding: 6px 12px; background: transparent; border: 1px solid var(--line-soft);
+    border-radius: var(--r-pill); color: var(--muted); font: inherit; font-size: .8rem; cursor: pointer; }
+  .pcast-clock-ghost:hover { color: var(--moon); border-color: var(--line); }
+  .pcast-clock-done { min-height: 40px; padding: 6px 20px; background: var(--brass); border: 0; border-radius: var(--r-pill);
+    color: #1a1406; font: inherit; font-size: .84rem; font-weight: 600; cursor: pointer; }
+  .pcast-clock-ghost:focus-visible, .pcast-clock-done:focus-visible { outline: 2px solid var(--cc); outline-offset: 2px; }
+  @media (max-width: 560px) {
+    .pcast-clock { position: fixed; left: 0; right: 0; bottom: 0; top: auto; width: 100%; max-width: 100%;
+      border-radius: var(--r-2) var(--r-2) 0 0; box-shadow: 0 -12px 44px rgba(0,0,0,0.6); padding: 16px 16px calc(16px + env(safe-area-inset-bottom)); }
+    .pcast-clock-face { max-width: min(300px, 76vw); }
+    .pcast-clock-num { width: 40px; height: 40px; font-size: .92rem; }
+    .pcast-clock-num.is-inner { width: 32px; height: 32px; }
+    /* the segments are the primary control on a phone; give them a real tap target */
+    .pcast-time-box { min-height: 48px; }
+    .pcast-tseg { padding: 12px 0; font-size: 1.1rem; }
+    .pcast-clock-btn { width: 48px; min-height: 48px; }
+  }
+  /* ============================================================
+     BIRTH TIMEZONE: offset on the plate, region spelled out beneath.
+     The real <select> lies transparent on top, so the platform picker and its accessibility
+     survive intact and nothing is ever truncated to "China / Taiwan / Sin…".
+  ============================================================ */
+  .pcast-field-2 { align-items: start; }
+  .pcast-tzcol { min-width: 0; }
+  .pcast-tzplate { position: relative; display: flex; align-items: center; gap: 6px; min-height: 42px; padding: 9px 10px;
+    background: var(--ink-2); border: 1px solid var(--line); border-radius: var(--r-1); }
+  .pcast-tzplate:hover { border-color: var(--brass); }
+  .pcast-tzplate:focus-within { border-color: var(--brass); outline: 2px solid var(--brass); outline-offset: 1px; }
+  .pcast-tzval { font-family: var(--mono); font-size: .92rem; color: var(--moon); white-space: nowrap; pointer-events: none; }
+  .pcast-tzcaret { margin-left: auto; font-size: .7rem; color: var(--brass); pointer-events: none; }
+  .pcast-tzsel { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; padding: 0; border: 0; opacity: 0; font: inherit; cursor: pointer; }
+  .pcast-tzhint { margin: 5px 0 0; font-size: .72rem; line-height: 1.4; color: var(--faint); }
+  .pcast-tzhint:empty { display: none; }
   /* personalized reading */
   .pcast-reading{margin-top:18px;display:grid;gap:16px}
   .pcast-read-block{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--r-2);padding:16px 18px}
@@ -1024,7 +1137,11 @@
     --dk-key-bright:oklch(0.95 0.03 250);
     --dk-key-dim:oklch(0.66 0.04 250);
     --dk-bloom:oklch(0.84 0.07 250 / 0.30);
+    /* --dk-thumb MUST equal the ::-webkit-slider-thumb width and --dk-track the track height:
+       the notch geometry, the thumb bloom, and the thumb's own centring all read these two.
+       Change them here, in one place, and everything follows (see the coarse-pointer block). */
     --dk-thumb:14px;
+    --dk-track:4px;
   }
   @supports not (color: oklch(0% 0 0)){
     .pcast-dock{--dk-key:#b9c4da;--dk-key-bright:#e6ecf7;--dk-key-dim:#7f8ba4;--dk-bloom:rgba(185,196,218,.30)}
@@ -1044,7 +1161,12 @@
   /* the single row: identity | beam (flex:1) | live readout | tools, all on one baseline.
      min-height 44 + the safe-area pad = the calc(44px + env(safe-area-inset-bottom)) open height. */
   .pcast-dock-inner{position:relative;max-width:min(96vw,1760px);margin:0 auto;padding:0 clamp(12px,2vw,16px) env(safe-area-inset-bottom);display:flex;align-items:center;gap:12px;min-height:44px}
-  .pcast-dock-chart{display:flex;align-items:center;gap:10px;flex:1;min-width:0;height:44px}
+  /* min-width:min-content, NOT 0. With min-width:0 this row would shrink to nothing while its own
+     flex:none children (the tools cluster) overflowed to the right — where the lesson slot, which
+     comes later in DOM order, painted straight over them. That is how the ✕ ended up behind the
+     "Continue" pill and the tz chip behind its left border. A row that cannot shrink past its
+     content cannot leak its content. The lesson slot is the shrinker now (see .pcast-dock-lesson). */
+  .pcast-dock-chart{display:flex;align-items:center;gap:10px;flex:1 1 auto;min-width:min-content;height:44px}
   .pcast-dock-chart[hidden]{display:none}
   .pcast-dock[data-state="min"] .pcast-dock-chart{display:none}
   /* identity: sigil + eyebrow/date, a quiet ghost button that dash-underlines on hover */
@@ -1063,16 +1185,37 @@
      justify-content:space-between — notch i at i/11, i.e. as if the scale ended at hour 22 — so the
      thumb and its label drifted apart (~23px at hour 10 on a 1200px beam). Never reintroduce a
      second mapping: if you change --dk-thumb, both the thumb and the notches follow it. */
+  /* the beam and its two step buttons are one instrument: [−] beam [+] */
+  .pcast-dk-beamrow{display:flex;align-items:center;gap:6px;flex:1;min-width:0;align-self:stretch}
+  /* a 4px track is a mouse instrument. The steps are the thumb-sized way in, and on a phone they
+     are the ONLY reliable way in — they appear for any coarse pointer and for any narrow viewport. */
+  .pcast-dk-step{position:relative;display:none;flex:none;width:34px;height:34px;place-items:center;padding:0;background:transparent;border:1px solid var(--line);border-radius:50%;color:var(--dk-key);font-family:var(--mono);font-size:1.05rem;line-height:1;cursor:pointer;transition:color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out),transform .08s}
+  .pcast-dk-step::after{content:"";position:absolute;inset:-6px}
+  .pcast-dk-step:hover{color:var(--dk-key-bright);border-color:var(--dk-key-dim)}
+  .pcast-dk-step:active{transform:scale(.92)}
+  .pcast-dk-step:focus-visible{outline:2px solid var(--dk-key);outline-offset:2px}
+  @media (pointer:coarse){.pcast-dk-step{display:grid}}
+  @media (max-width:900px){.pcast-dk-step{display:grid}}
+  @media (prefers-reduced-motion: reduce){.pcast-dk-step{transition:none}}
   .pcast-dk-beam{position:relative;flex:1;min-width:88px;align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:2px}
-  .pcast-dk-beam-range{-webkit-appearance:none;appearance:none;width:100%;margin:0;background:transparent;accent-color:var(--dk-key);cursor:pointer}
+  .pcast-dk-beam-range{-webkit-appearance:none;appearance:none;width:100%;margin:0;background:transparent;accent-color:var(--dk-key);cursor:pointer;touch-action:pan-y}
   .pcast-dk-beam-range:focus-visible{outline:2px solid var(--dk-key);outline-offset:4px;border-radius:var(--r-pill)}
   /* the precision affordance appears only when reached for: track thickens, thumb grows (transform only) */
-  .pcast-dk-beam-range::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:radial-gradient(22px 14px at var(--dk-pos,50%) 50%,var(--dk-bloom),transparent 70%),color-mix(in oklab,var(--dk-key) 22%,var(--line));transition:transform var(--dur-fast) var(--ease-out)}
+  .pcast-dk-beam-range::-webkit-slider-runnable-track{height:var(--dk-track);border-radius:calc(var(--dk-track) / 2);background:radial-gradient(22px 14px at var(--dk-pos,50%) 50%,var(--dk-bloom),transparent 70%),color-mix(in oklab,var(--dk-key) 22%,var(--line));transition:transform var(--dur-fast) var(--ease-out)}
   .pcast-dk-beam:hover .pcast-dk-beam-range::-webkit-slider-runnable-track,.pcast-dk-beam-range:focus-visible::-webkit-slider-runnable-track{transform:scaleY(1.6)}
-  .pcast-dk-beam-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:var(--dk-thumb);height:var(--dk-thumb);margin-top:calc((4px - var(--dk-thumb)) / 2);border-radius:50%;background:var(--dk-key);border:2px solid var(--ink);box-shadow:0 0 10px -2px var(--dk-key);transition:transform var(--dur-fast) var(--ease-out)}
+  .pcast-dk-beam-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:var(--dk-thumb);height:var(--dk-thumb);margin-top:calc((var(--dk-track) - var(--dk-thumb)) / 2);border-radius:50%;background:var(--dk-key);border:2px solid var(--ink);box-shadow:0 0 10px -2px var(--dk-key);transition:transform var(--dur-fast) var(--ease-out)}
   .pcast-dk-beam:hover .pcast-dk-beam-range::-webkit-slider-thumb,.pcast-dk-beam-range:focus-visible::-webkit-slider-thumb{transform:scale(1.25)}
-  .pcast-dk-beam-range::-moz-range-track{height:4px;border-radius:2px;background:color-mix(in oklab,var(--dk-key) 22%,var(--line))}
+  .pcast-dk-beam-range::-moz-range-track{height:var(--dk-track);border-radius:calc(var(--dk-track) / 2);background:color-mix(in oklab,var(--dk-key) 22%,var(--line))}
   .pcast-dk-beam-range::-moz-range-thumb{width:var(--dk-thumb);height:var(--dk-thumb);border-radius:50%;background:var(--dk-key);border:2px solid var(--ink);box-shadow:0 0 10px -2px var(--dk-key)}
+  /* Touch: a fatter thumb on a fatter track, and vertical padding to widen the drag strip. Padding
+     (not height) because it grows the box symmetrically whether the browser tops or centres the
+     runnable track. The --dk-pos / --dk-t calc is horizontal, so it is untouched by either. */
+  @media (pointer:coarse){
+    .pcast-dock{--dk-thumb:22px;--dk-track:6px}
+    .pcast-dk-beam-range{padding:9px 0}
+    /* no hover on a touchscreen, so the notch labels can never be "revealed" — show them at rest */
+    .pcast-dk-tick b{opacity:.55}
+  }
   /* at rest the 12 ticks are 1px notches; labels fade in only on beam hover/focus-within, and are
      absolutely placed so they never reflow the 44px row. The range is the >=40px primary control;
      the notches are secondary quick-jumps with a taller-than-wide hit strip. */
@@ -1087,8 +1230,13 @@
   /* the live tick reads as an ember: a text-shadow glow, not a filter */
   .pcast-dk-tick.is-on::before{background:var(--dk-key-bright)}
   .pcast-dk-tick.is-on b{opacity:1;color:var(--dk-key-bright);text-shadow:0 0 6px var(--dk-bloom)}
-  /* live readout: Gregorian time ivory, Earthly Branch keyed; first thing to drop on narrow screens */
-  .pcast-dk-beam-cur{flex:none;font-family:var(--mono);font-size:.76rem;line-height:1.2;white-space:nowrap;color:var(--ivory)}
+  /* live readout: Gregorian time ivory, Earthly Branch keyed; first thing to drop on narrow screens.
+     FIXED WIDTH, and never empty — it prints "--:-- · no hour yet" until an hour exists. It used to
+     collapse to zero width with no hour, so the first cast shoved the beam, the tz chip and every
+     tool sideways, and the reader could not tell whether the bar had moved or the chart had. The
+     plate is 21ch: "12:00 PM · 午時 11–13" is the widest string it can ever hold. */
+  .pcast-dk-beam-cur{flex:none;width:21ch;text-align:right;font-family:var(--mono);font-size:.76rem;line-height:1.2;white-space:nowrap;color:var(--ivory)}
+  .pcast-dk-beam-cur.is-empty{color:var(--faint)}
   .pcast-dk-beam-cur b,.pcast-dk-beam-cur [lang="zh-Hant"]{font-weight:400;color:var(--dk-key-bright)}
   /* tools: timezone value-button, sound, minimize, close. (The ✦ unlock pill is gone — the wordmark
      and the Home tab already go home. See the <=900px block: #pn-dock now returns whenever the dock
@@ -1115,9 +1263,12 @@
   .pcast-dk-conv[hidden]{display:none}
   /* lesson bar in a charted dock: never a second row — the continue bar collapses to the always-on
      compact chip (the .psa-cb-ico/.psa-cb-short form, promoted from its old <=480px-only rule) */
-  .pcast-dock-lesson{flex:none;display:flex;align-items:center}
+  /* the shrinker. It has an ellipsisable title (.psa-cb-title) and the chart row does not, so when
+     the bar runs out of width the lesson chip is what gives. flex:none here was the bug. */
+  .pcast-dock-lesson{flex:0 1 auto;min-width:0;display:flex;align-items:center}
   .pcast-dock[data-state="min"] .pcast-dock-lesson{display:none}
-  .pcast-dock .psa-continue-bar{position:static;margin:0;padding:0;background:transparent;border:0;z-index:auto}
+  /* the bar is position:fixed;z-index:50 on its own; inside the dock it is just a chip in a row */
+  .pcast-dock .psa-continue-bar{position:static;margin:0;padding:0;background:transparent;border:0;z-index:auto;min-width:0;flex:1 1 auto}
   .psa-cb-ico{display:none;color:var(--dk-key);margin-right:4px}
   .psa-cb-short{display:none}
   .pcast-dock.has-chart .psa-cb-txt{display:none}
@@ -1125,7 +1276,15 @@
   .pcast-dock.has-chart .pcast-dock-lesson .psa-continue-bar{gap:6px;padding:4px 10px;border:1px solid var(--dk-key-dim);border-radius:var(--r-pill);background:color-mix(in oklab,var(--dk-key) 10%,transparent)}
   /* chart-less (lesson only): keep the bar's own readable single row */
   .pcast-dock:not(.has-chart) .pcast-dock-lesson{flex:1;min-height:40px}
-  /* progressive collapse — the beam is the last thing standing and never disappears */
+  /* Progressive collapse — the beam is the last thing standing and never disappears.
+     The readout is the declared sacrificial element. Between 721px (where the phone grid stops) and
+     1099px a 21ch plate plus a lesson chip plus the tools cannot share a 44px row without the row
+     hitting its min-content floor, so when a lesson is present the plate goes. .has-lesson is set
+     once, when the dock adopts the bar, before the dock is ever painted — so this can never read as
+     the bar reflowing mid-session. Below 721px the grid gives the plate its own cell and it returns. */
+  @media (min-width:721px) and (max-width:1099px){
+    .pcast-dock.has-lesson .pcast-dk-beam-cur{display:none}
+  }
   @media (max-width:900px){
     .pcast-dk-idtext{display:none}
     /* One bottom instrument at a time. The ✦ unlock pill used to justify hiding the site-wide Reveal
@@ -1135,19 +1294,43 @@
     body.pcast-dock-open #pn-dock{display:none}
     body.pcast-dock-open.pn-has-bar{padding-bottom:0}
   }
+  /* ---- phones: two rows, not one squeezed one ------------------------------------------------
+     Below 720px the single 44px row was asking a 390px viewport to hold an identity chip, a
+     scrubber, a readout, a timezone select, three icon buttons AND the lesson chip. It didn't:
+     the lesson pill sat on top of the timezone. So .pcast-dock-chart becomes display:contents and
+     its children re-seat themselves in the inner grid — identity and tools on the top line, the
+     full-width beam beneath, the lesson bar (when there is one) beneath that. The beam earns the
+     whole width, which is what makes it draggable at all; the −/+ steps flank it either way.
+     display:contents dissolves .pcast-dock-chart as a box, so .pcast-dk-conv's containing block
+     becomes .pcast-dock-inner (position:relative) — it still floats above the bar. Its own
+     display:none in data-state="min" out-specifies this rule, so minimizing still works. -------- */
   @media (max-width:720px){
     .pcast-dk-tzwrap{padding:0 6px}
     .pcast-dk-tzval{font-size:.66rem}
-  }
-  @media (max-width:560px){
-    .pcast-dk-beam-cur{display:none}
+    .pcast-dock-inner{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"id cur tools" "beam beam beam";align-items:center;column-gap:8px;row-gap:2px;padding-top:4px;min-height:0}
+    .pcast-dock.has-lesson .pcast-dock-inner{grid-template-areas:"id cur tools" "beam beam beam" "lesson lesson lesson";row-gap:4px}
+    .pcast-dock-chart{display:contents}
+    .pcast-dk-id{grid-area:id;min-height:34px}
+    .pcast-dk-beam-cur{grid-area:cur;justify-self:center;width:auto;min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:.7rem}
+    .pcast-dk-tools{grid-area:tools;justify-self:end}
+    .pcast-dk-beamrow{grid-area:beam;min-height:36px}
+    .pcast-dock-lesson{grid-area:lesson;justify-self:stretch;min-width:0;padding-bottom:2px}
+    .pcast-dock.has-chart .pcast-dock-lesson .psa-continue-bar{width:100%;justify-content:space-between}
+    /* the row is wide again, so the lesson chip can say what it is */
+    .pcast-dock.has-chart .psa-cb-txt{display:inline}
+    .pcast-dock.has-chart .psa-cb-short{display:none}
+    /* min state: the grid must collapse to the single pill */
+    .pcast-dock[data-state="min"] .pcast-dock-inner{display:flex}
   }
   @media (max-width:420px){
-    .pcast-dock-inner{gap:8px}
+    .pcast-dock-inner{column-gap:6px}
     .pcast-dk-tools{gap:2px}
     .pcast-dk-sound,.pcast-dk-collapse,.pcast-dk-close{width:28px;height:28px}
-    /* 12 notches crowd a phone: keep every 4th, plus whichever is live. They are absolutely
-       positioned now, so hiding one never shifts the others. */
+    .pcast-dk-beam-cur{font-size:.64rem}
+  }
+  @media (max-width:360px){
+    /* 12 notches crowd a very small phone: keep every 4th, plus whichever is live. They are
+       absolutely positioned, so hiding one never shifts the others. */
     .pcast-dk-tick{visibility:hidden}
     .pcast-dk-tick:nth-child(4n+1),.pcast-dk-tick.is-on{visibility:visible}
   }

@@ -2,8 +2,28 @@
    Birth date (required) + time (optional) + timezone + gender -> ZiweiData.lunar.castFromBirth ->
    renders the twelve-palace board. When the hour is unknown, the board is locked (every star's
    position depends on the hour) and only the hour-independent facts show.
+
+   THE FORM
+   - Birth date: masked MM/DD/YYYY text field + a gold calendar button -> the .pcast-cal popover.
+   - Birth time: OURS, not <input type="time">. Native time inputs draw a different control on every
+     platform (iOS centres a 24-hour stub, Chrome bolts on its own AM/PM), cannot be styled, and put
+     the tap target wherever the OS likes. Instead: two numeric segments that hand off to each other
+     (two digits — or a digit no second digit could extend — advances hour -> minute; Backspace at the
+     head of the minute steps back into the hour and eats one digit), a 24h / AM·PM zgToggle persisted
+     as the pref "clock12", and a gold clock button (twin of the calendar button) that opens the
+     .pcast-clock face. tstate {h,m} is the 24-hour truth; the segments only ever display it.
+   - Birth timezone: the option labels ("China / Taiwan / Singapore (UTC+8)") are far longer than a
+     half-width field, so the native select lies transparent over a short "UTC+8" plate, with the
+     region spelled out beneath. Same trick as the dock's tz chip. Nothing is ever ellipsised.
+
+   THE DOCK (#pcast-dock)
+   The live readout is a FIXED-WIDTH plate that always prints something (a dim "no hour yet" before an
+   hour exists). It used to collapse to zero width, so casting an hour shoved every control in the bar
+   sideways: the geometry of an instrument must not depend on its reading.
+   The beam is flanked by −/+ step buttons — a 4px track is not a thumb target — and its thumb and
+   track thicken under a coarse pointer.
    State lives in ZiweiStudyChart (one source of truth); this file renders the reading and owns
-   the sticky bottom chart dock (#pcast-dock): date chip, timezone select, a 24-hour Gregorian
+   the sticky bottom chart dock: date chip, timezone select, a 24-hour Gregorian
    hour beam (scrub the clock and the whole page re-casts; the readout pairs 12-hour time with
    the branch hour and each branch boundary voices a pentatonic tick), a disclosure line that
    speaks ONLY when the reading is ambiguous (no hour yet, or the 23:xx late-子時 boundary), and
@@ -29,6 +49,9 @@
     var result = document.getElementById("pcast-result");
     if (!form || !result || !window.ZiweiData || !window.ZiweiData.lunar) return;
     var L = window.ZiweiData.lunar;
+    /* the one source of truth. Resolved before the form is built — the birth-time control reads
+       the "clock12" pref while it is still assembling itself. */
+    var SC = window.ZiweiStudyChart || null;
 
     /* ---- reference maps ---- */
     var PAL_EN = {
@@ -287,18 +310,371 @@
       cal.appendChild(grid);
       function navBtn(t, dir) { var x = h("button", "pcast-cal-nav", t); x.type = "button"; x.addEventListener("click", function () { calState.m += dir; if (calState.m < 0) { calState.m = 11; calState.y--; } if (calState.m > 11) { calState.m = 0; calState.y++; } renderCal(); }); return x; }
     }
-    var row2 = h("div", "pcast-field");
-    var tl = labelFor("pcast-time", "Birth time"); var opt = h("span", "pcast-opt", " · anchors your whole chart"); tl.appendChild(opt);
-    row2.appendChild(tl);
-    var time = input("pcast-time", "time"); row2.appendChild(time);
+    /* ============================================================
+       BIRTH TIME — a segmented field, a format toggle, and a clock face.
+       tstate is the 24-hour truth. The two <input> segments are a VIEW of it: they may hold a
+       half-typed "1" mid-keystroke, but every commit round-trips through tstate, and paintTime()
+       is the only thing that ever writes a finished value back into them.
+    ============================================================ */
+    var row2 = h("div", "pcast-field pcast-time-field");
+    var thead = h("div", "pcast-time-head");
+    var tl = labelFor("pcast-time-h", "Birth time"); tl.appendChild(h("span", "pcast-opt", " · anchors your whole chart"));
+    thead.appendChild(tl);
+    row2.appendChild(thead);
+
+    var tstate = { h: null, m: null };   /* 0–23 / 0–59, or null for "unknown" */
+    var mode12 = readClockPref();
+    /* The reader's own convention, remembered. A person who was told "half seven in the evening"
+       should never have to convert it in their head to satisfy a form. */
+    function readClockPref() {
+      try { var p = SC && SC.getPref("clock12"); if (p === true || p === false) return p; } catch (e) {}
+      try { return window.Intl && new Intl.DateTimeFormat().resolvedOptions().hour12 !== false; } catch (e) { return true; }
+    }
+    var clockToggle = zgToggle({
+      ariaLabel: "Clock format",
+      value: mode12 ? "12" : "24",
+      options: [{ value: "24", label: "24h" }, { value: "12", label: "AM · PM" }],
+      onChange: function (v) {
+        mode12 = (v === "12");
+        try { if (SC) SC.setPref("clock12", mode12); } catch (e) {}
+        paintTime();
+        if (clockOpen) paintClock();
+      }
+    });
+    clockToggle.el.classList.add("zg-toggle-sm");
+    thead.appendChild(clockToggle.el);
+
+    var trow = h("div", "pcast-time-row");
+    var tbox = h("div", "pcast-time-box");
+    tbox.setAttribute("role", "group");
+    tbox.setAttribute("aria-label", "Birth time");
+    var segH = timeSeg("pcast-time-h", "Hour");
+    var segM = timeSeg("pcast-time-m", "Minute");
+    tbox.appendChild(segH);
+    tbox.appendChild(h("span", "pcast-tsep", ":")).setAttribute("aria-hidden", "true");
+    tbox.appendChild(segM);
+    var apBtn = h("button", "pcast-tap", "AM"); apBtn.type = "button";
+    apBtn.setAttribute("aria-label", "Toggle AM or PM");
+    tbox.appendChild(apBtn);
+    trow.appendChild(tbox);
+    var clockBtn = h("button", "pcast-clock-btn"); clockBtn.type = "button";
+    clockBtn.setAttribute("aria-label", "Open clock"); clockBtn.setAttribute("aria-expanded", "false");
+    clockBtn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 6.9V12l3.4 2.1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    trow.appendChild(clockBtn);
+    row2.appendChild(trow);
+
     var unkWrap = h("label", "pcast-check");
     var unk = input("pcast-unknown", "checkbox"); unkWrap.appendChild(unk); unkWrap.appendChild(h("span", null, "I don't know my birth time"));
     row2.appendChild(unkWrap);
+
+    var clock = h("div", "pcast-clock"); clock.hidden = true;
+    clock.setAttribute("role", "dialog"); clock.setAttribute("aria-label", "Pick your birth time");
+    clock.addEventListener("click", function (e) { e.stopPropagation(); });
+    row2.appendChild(clock);
     form.appendChild(row2);
+
+    function timeSeg(id, label) {
+      var i = document.createElement("input");
+      i.id = id; i.name = id; i.className = "pcast-tseg"; i.type = "text";
+      i.inputMode = "numeric"; i.autocomplete = "off"; i.maxLength = 2; i.placeholder = "--";
+      i.setAttribute("aria-label", label);
+      return i;
+    }
+    function segMax(el) { return el === segH ? (mode12 ? 12 : 23) : 59; }
+    function caretAtEnd(el) { try { return el.selectionStart === el.selectionEnd && el.selectionStart === el.value.length; } catch (e) { return true; } }
+    /* strict: nothing selected AND the caret is before the first digit. Backspace uses this, so a
+       selected "00" is deleted by the browser first and only the NEXT press reaches into the hour. */
+    function caretAtStart(el) { try { return el.selectionStart === 0 && el.selectionEnd === 0; } catch (e) { return true; } }
+    /* loose: the caret (or the selection) begins at the head. ArrowLeft uses this — a segment is an
+       atomic glyph, so stepping left out of a fully-selected minute should land in the hour, not
+       collapse a selection the reader never made. */
+    function caretAtHead(el) { try { return el.selectionStart === 0; } catch (e) { return true; } }
+    /* True only while WE are moving focus between the two segments. A blur fired by our own hand-off
+       must not run the normalize-and-repaint pass: that pass stamps a complete value back into the
+       hour, which silently undid the digit a Backspace had just eaten out of it. */
+    var handingOff = false;
+    function focusSeg(el, where) {
+      handingOff = true;
+      try {
+        el.focus();
+        if (where === "all") el.select();
+        else { var n = el.value.length; el.setSelectionRange(n, n); }
+      } catch (e) {}
+      handingOff = false;
+    }
+
+    /* Read the two segments back into tstate. Never repaints — the caret lives in there. */
+    function commitSegs() {
+      var hv = segH.value.replace(/\D/g, "");
+      var mv = segM.value.replace(/\D/g, "");
+      if (hv === "") { tstate.h = null; tstate.m = null; return; }
+      var n = +hv;
+      if (mode12) {
+        if (n < 1 || n > 12) n = 12;
+        tstate.h = (n % 12) + (apBtn.textContent === "PM" ? 12 : 0);
+      } else {
+        tstate.h = Math.min(23, n);
+      }
+      /* an hour with no minute is an hour on the hour — Purple Star seats stars by the two-hour
+         branch, so a missing minute is never a missing fact */
+      tstate.m = (mv === "") ? 0 : Math.min(59, +mv);
+    }
+    function paintTime() {
+      var known = tstate.h != null;
+      apBtn.hidden = !mode12;
+      if (mode12) apBtn.textContent = (known && tstate.h >= 12) ? "PM" : "AM";
+      segH.value = known ? (mode12 ? pad((tstate.h % 12) || 12) : pad(tstate.h)) : "";
+      segM.value = known ? pad(tstate.m == null ? 0 : tstate.m) : "";
+      segH.setAttribute("aria-label", mode12 ? "Hour, 1 to 12" : "Hour, 0 to 23");
+      tbox.classList.toggle("is-set", known);
+    }
+    /* Any keystroke in the field is a claim that the hour IS known — untick the checkbox for them. */
+    function onTimeEdited() {
+      if (unk.checked) { unk.checked = false; setTimeDisabled(false); }
+      if (clockOpen) paintClock();
+    }
+    function setTimeDisabled(off) {
+      segH.disabled = segM.disabled = apBtn.disabled = clockBtn.disabled = off;
+      tbox.classList.toggle("is-disabled", off);
+      trow.classList.toggle("is-disabled", off);
+    }
+    function setMeridiem(pm) {
+      if (tstate.h == null) { tstate.h = pm ? 12 : 0; tstate.m = 0; }
+      else tstate.h = (tstate.h % 12) + (pm ? 12 : 0);
+      onTimeEdited(); paintTime();
+    }
+    function bumpSeg(el, dir) {
+      if (tstate.h == null) { tstate.h = 12; tstate.m = 0; }
+      else if (el === segH) tstate.h = (tstate.h + dir + 24) % 24;
+      else tstate.m = ((tstate.m == null ? 0 : tstate.m) + dir + 60) % 60;
+      onTimeEdited(); paintTime(); focusSeg(el, "all");
+    }
+    /* Accumulate a digit, then hand off the moment no second digit could possibly follow:
+       "3" in 24h is 03 (30 is not an hour), "1" waits, because 10/11/12 are all still open. */
+    function pushDigit(el, d) {
+      var max = segMax(el);
+      var cur = el.value.replace(/\D/g, "");
+      var cand = (cur.length === 1 && caretAtEnd(el)) ? cur + d : d;
+      if (+cand > max) cand = d;
+      el.value = cand;
+      commitSegs();
+      var full = cand.length >= 2 || (+cand) * 10 > max;
+      if (full) {
+        paintTime();
+        if (el === segH) focusSeg(segM, "all"); else focusSeg(segM, "end");
+      }
+      onTimeEdited();
+    }
+    function onSegKey(e) {
+      var el = e.target, k = e.key;
+      if (k === "ArrowUp" || k === "ArrowDown") { e.preventDefault(); bumpSeg(el, k === "ArrowUp" ? 1 : -1); return; }
+      if (k === "ArrowRight" && el === segH && caretAtEnd(el)) { e.preventDefault(); focusSeg(segM, "all"); return; }
+      if (k === "ArrowLeft" && el === segM && caretAtHead(el)) { e.preventDefault(); focusSeg(segH, "end"); return; }
+      if (k === "Backspace" && el === segM && caretAtStart(el)) {
+        /* backing out of the minute deletes into the hour — one field, not two */
+        e.preventDefault();
+        segH.value = segH.value.slice(0, -1);
+        commitSegs(); onTimeEdited();
+        focusSeg(segH, "end");
+        return;
+      }
+      if (k === "Delete" && el === segH && caretAtEnd(el)) {
+        e.preventDefault();
+        segM.value = segM.value.slice(1);
+        commitSegs(); onTimeEdited();
+        focusSeg(segM, "end");
+        return;
+      }
+      if (k === ":" || k === "." || k === "/" || k === " ") { e.preventDefault(); if (el === segH) focusSeg(segM, "all"); return; }
+      if (mode12 && /^[apAP]$/.test(k)) { e.preventDefault(); setMeridiem(k.toLowerCase() === "p"); return; }
+      if (/^[0-9]$/.test(k)) { e.preventDefault(); pushDigit(el, k); return; }
+      /* everything else that is a single printable character is not a time */
+      if (k.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) e.preventDefault();
+    }
+    [segH, segM].forEach(function (el) {
+      el.addEventListener("keydown", onSegKey);
+      /* clicking into a segment selects it, so the next digit replaces rather than appends. Skipped
+         during a hand-off, where focusSeg has already placed the caret exactly where it belongs. */
+      el.addEventListener("focus", function () {
+        if (handingOff) return;
+        window.setTimeout(function () { try { if (document.activeElement === el) el.select(); } catch (e) {} }, 0);
+      });
+      /* normalize only when focus truly LEAVES the control — see handingOff */
+      el.addEventListener("blur", function () { if (handingOff) return; commitSegs(); paintTime(); });
+      /* paste / IME / Android soft keyboards never fire keydown with a usable .key */
+      el.addEventListener("input", function () {
+        var v = el.value.replace(/\D/g, "").slice(0, 2);
+        if (v !== el.value) el.value = v;
+        commitSegs(); onTimeEdited();
+      });
+    });
+    apBtn.addEventListener("click", function () { setMeridiem(apBtn.textContent === "AM"); tick(); });
+    unk.addEventListener("change", function () {
+      setTimeDisabled(unk.checked);
+      if (unk.checked) { tstate.h = null; tstate.m = null; closeClock(); paintTime(); }
+    });
+
+    /* ---- the clock face: hour ring, then minute ring, the same gold as the calendar ---- */
+    var clockOpen = false, clockStep = "hour";
+    function clockH() { return tstate.h == null ? 12 : tstate.h; }
+    function clockM() { return tstate.m == null ? 0 : tstate.m; }
+    function openClock() { cal.hidden = true; clockOpen = true; clockStep = "hour"; clock.hidden = false; clockBtn.setAttribute("aria-expanded", "true"); paintClock(); }
+    function closeClock() { if (!clockOpen && clock.hidden) return; clockOpen = false; clock.hidden = true; clockBtn.setAttribute("aria-expanded", "false"); }
+    clockBtn.addEventListener("click", function (e) { e.stopPropagation(); if (clock.hidden) openClock(); else closeClock(); });
+    document.addEventListener("click", function (e) { if (clockOpen && !row2.contains(e.target)) closeClock(); });
+    clock.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" || e.key === "Esc") { e.stopPropagation(); closeClock(); try { clockBtn.focus(); } catch (err) {} }
+    });
+
+    function paintClock() {
+      clock.innerHTML = "";
+      var head = h("div", "pcast-clock-head");
+      var read = h("div", "pcast-clock-read");
+      var hUnit = h("button", "pcast-clock-unit", mode12 ? pad((clockH() % 12) || 12) : pad(clockH()));
+      hUnit.type = "button"; hUnit.setAttribute("aria-label", "Set the hour");
+      hUnit.classList.toggle("is-on", clockStep === "hour");
+      hUnit.addEventListener("click", function () { clockStep = "hour"; paintClock(); });
+      var mUnit = h("button", "pcast-clock-unit", pad(clockM()));
+      mUnit.type = "button"; mUnit.setAttribute("aria-label", "Set the minute");
+      mUnit.classList.toggle("is-on", clockStep === "minute");
+      mUnit.addEventListener("click", function () { clockStep = "minute"; paintClock(); });
+      read.appendChild(hUnit);
+      read.appendChild(h("span", "pcast-clock-colon", ":"));
+      read.appendChild(mUnit);
+      if (mode12) {
+        var pills = h("div", "pcast-clock-ap");
+        [["AM", false], ["PM", true]].forEach(function (p) {
+          var b = h("button", "pcast-clock-appill", p[0]); b.type = "button";
+          var on = (clockH() >= 12) === p[1];
+          b.classList.toggle("is-on", on);
+          b.setAttribute("aria-pressed", on ? "true" : "false");
+          b.addEventListener("click", function () { setMeridiem(p[1]); tick(); paintClock(); });
+          pills.appendChild(b);
+        });
+        read.appendChild(pills);
+      }
+      head.appendChild(read);
+      /* the domain fact, live: which two-hour gate this moment falls in */
+      var bi = branchOf(clockH());
+      var br = h("p", "pcast-clock-branch");
+      br.appendChild(h("b", null, HOURS[bi] + "時"));
+      br.appendChild(document.createTextNode(" · " + HOUR_RANGE[bi] + " · the gate your stars are seated by"));
+      head.appendChild(br);
+      clock.appendChild(head);
+      clock.appendChild(clockFace());
+
+      var foot = h("div", "pcast-clock-foot");
+      var clr = h("button", "pcast-clock-ghost", "I don't know"); clr.type = "button";
+      clr.addEventListener("click", function () {
+        tstate.h = null; tstate.m = null;
+        unk.checked = true; setTimeDisabled(true); paintTime(); closeClock();
+        try { unk.focus(); } catch (e) {}
+      });
+      var done = h("button", "pcast-clock-done", "Done"); done.type = "button";
+      done.addEventListener("click", function () { closeClock(); try { clockBtn.focus(); } catch (e) {} });
+      foot.appendChild(clr); foot.appendChild(done);
+      clock.appendChild(foot);
+    }
+    /* Numbers laid on a circle by trig, not by a 12-cell grid: the hand has to point at them.
+       12h -> one ring (12,1…11). 24h -> outer ring 00–11, inner ring 12–23, which is what a
+       24-hour dial actually is. Minutes -> one ring of the twelve five-minute marks. */
+    function clockFace() {
+      var face = h("div", "pcast-clock-face");
+      face.setAttribute("role", "group");
+      face.setAttribute("aria-label", clockStep === "hour" ? "Hour" : "Minute");
+      function seat(btn, i, r) {
+        var a = (i / 12) * 2 * Math.PI - Math.PI / 2;
+        btn.style.left = (50 + Math.cos(a) * r) + "%";
+        btn.style.top = (50 + Math.sin(a) * r) + "%";
+      }
+      function num(label, on, r, i, onPick) {
+        var b = h("button", "pcast-clock-num", label); b.type = "button";
+        b.classList.toggle("is-on", on);
+        if (r < 34) b.classList.add("is-inner");
+        seat(b, i, r);
+        b.addEventListener("click", function () { onPick(); tick(); });
+        face.appendChild(b);
+      }
+      var handTurn;
+      if (clockStep === "hour") {
+        if (mode12) {
+          for (var i = 0; i < 12; i++) {
+            (function (i) {
+              var h12 = i === 0 ? 12 : i;
+              num(String(h12), ((clockH() % 12) || 12) === h12, 40, i, function () {
+                tstate.h = (h12 % 12) + (clockH() >= 12 ? 12 : 0);
+                if (tstate.m == null) tstate.m = 0;
+                onTimeEdited(); paintTime(); clockStep = "minute"; paintClock();
+              });
+            })(i);
+          }
+        } else {
+          for (var j = 0; j < 24; j++) {
+            (function (j) {
+              var outer = j < 12;
+              num(pad(j), clockH() === j, outer ? 41 : 26, j % 12, function () {
+                tstate.h = j;
+                if (tstate.m == null) tstate.m = 0;
+                onTimeEdited(); paintTime(); clockStep = "minute"; paintClock();
+              });
+            })(j);
+          }
+        }
+        handTurn = ((clockH() % 12) / 12) * 360;
+      } else {
+        for (var k = 0; k < 12; k++) {
+          (function (k) {
+            var mv = k * 5;
+            num(pad(mv), Math.round(clockM() / 5) % 12 === k, 40, k, function () {
+              tstate.m = mv;
+              if (tstate.h == null) tstate.h = 12;
+              onTimeEdited(); paintTime(); paintClock();
+            });
+          })(k);
+        }
+        handTurn = (clockM() / 60) * 360;
+      }
+      var hand = h("span", "pcast-clock-hand"); hand.setAttribute("aria-hidden", "true");
+      hand.style.transform = "translateX(-50%) rotate(" + handTurn + "deg)";
+      face.appendChild(hand);
+      face.appendChild(h("span", "pcast-clock-pin")).setAttribute("aria-hidden", "true");
+      return face;
+    }
+
+    /* ============================================================
+       BIRTH TIMEZONE + GENDER
+       "China / Taiwan / Singapore (UTC+8)" cannot fit a half-width select, and a truncated
+       timezone reads as a broken field. Show the offset — the only part that changes the chart —
+       on a plate, keep the real <select> transparent above it for the platform picker and its
+       free accessibility, and spell the region out underneath where it has room to breathe.
+    ============================================================ */
     var row3 = h("div", "pcast-field pcast-field-2");
-    var tzc = h("div"); tzc.appendChild(labelFor("pcast-tz", "Birth timezone"));
-    var tz = select("pcast-tz", TZ); tzc.appendChild(tz); row3.appendChild(tzc);
+    var tzc = h("div", "pcast-tzcol"); tzc.appendChild(labelFor("pcast-tz", "Birth timezone"));
+    var tzWrapF = h("div", "pcast-tzplate");
+    var tzValF = h("span", "pcast-tzval", "UTC+8"); tzValF.setAttribute("aria-hidden", "true");
+    var tzCaret = h("span", "pcast-tzcaret", "▾"); tzCaret.setAttribute("aria-hidden", "true");
+    var tz = select("pcast-tz", TZ); tz.className = "pcast-tzsel";
+    tzWrapF.appendChild(tzValF); tzWrapF.appendChild(tzCaret); tzWrapF.appendChild(tz);
+    tzc.appendChild(tzWrapF);
+    var tzHint = h("p", "pcast-tzhint", "");
+    tzc.appendChild(tzHint);
+    row3.appendChild(tzc);
     (function preselectTz() { var off = -new Date().getTimezoneOffset() / 60; for (var i = 0; i < TZ.length; i++) { if (TZ[i][0] === String(off)) { tz.value = TZ[i][0]; break; } } })();
+    /* "Eastern Time (UTC−5)" -> plate "UTC−5", hint "Eastern Time". "Auto (device)" has no
+       parenthesised offset, so we compute the device's and say so. */
+    function syncTzForm() {
+      var opt = tz.options[tz.selectedIndex];
+      var lab = opt ? opt.text : "";
+      if (tz.value === "auto") {
+        tzValF.textContent = tzLabel(-new Date().getTimezoneOffset() / 60) || "UTC";
+        tzHint.textContent = "Auto · your device's timezone";
+      } else {
+        var m = lab.match(/^(.*?)\s*\(([^)]*UTC[^)]*)\)\s*$/);
+        tzValF.textContent = m ? m[2] : lab;
+        tzHint.textContent = m ? m[1] : "";
+      }
+      tzWrapF.setAttribute("title", lab);
+    }
     var gc = h("div"); gc.appendChild(labelFor("pcast-gender", "Gender"));
     var gender = select("pcast-gender", [["", "Prefer not to say"], ["female", "Female"], ["male", "Male"]]); gc.appendChild(gender); row3.appendChild(gc);
     form.appendChild(row3);
@@ -306,11 +682,12 @@
     var note = h("p", "pcast-note", "Read as birthplace-local time. Your data stays in your browser — nothing is sent anywhere.");
     form.appendChild(note);
 
+    paintTime();
+    syncTzForm();
+
     function labelFor(id, txt) { var l = h("label", "pcast-label", txt); l.setAttribute("for", id); return l; }
     function input(id, type) { var i = document.createElement("input"); i.id = id; i.name = id; i.type = type; if (type === "date" || type === "time") i.className = "pcast-input"; return i; }
     function select(id, opts) { var s = document.createElement("select"); s.id = id; s.className = "pcast-input"; opts.forEach(function (o) { var op = document.createElement("option"); op.value = o[0]; op.textContent = o[1]; s.appendChild(op); }); return s; }
-
-    unk.addEventListener("change", function () { time.disabled = unk.checked; if (unk.checked) time.value = ""; });
 
     /* ---- casting ---- */
     var lastBirth = null;   // {year,month,day,gender}
@@ -320,13 +697,13 @@
     function readBirth() {
       var p = parseDate(date.value);
       if (!p) return null;
+      commitSegs(); /* the reader may submit with the caret still inside the hour segment */
       var b = { year: p.year, month: p.month, day: p.day, gender: gender.value || null };
-      if (!unk.checked && time.value) { var tp = time.value.split(":"); b.hour = +tp[0]; b.minute = +(tp[1] || 0); }
+      if (!unk.checked && tstate.h != null) { b.hour = tstate.h; b.minute = (tstate.m == null ? 0 : tstate.m); }
       else { b.hour = null; b.minute = null; }
       b.tzOffset = tz.value; /* "auto" is resolved to the device offset by ZiweiStudyChart.save */
       return b;
     }
-    var SC = window.ZiweiStudyChart || null;
     var lastStamp = null;       /* loop guard: serialized stamp of the last rendered birth */
     var scrollOnRender = false; /* scroll to the reading only on an explicit cast */
 
@@ -382,18 +759,23 @@
       var want = pad(b.month) + "/" + pad(b.day) + "/" + b.year;
       if (date.value !== want) date.value = want;
       if (b.hour == null) {
-        if (!unk.checked) { unk.checked = true; time.value = ""; time.disabled = true; }
+        tstate.h = null; tstate.m = null;
+        if (!unk.checked) { unk.checked = true; setTimeDisabled(true); }
       } else {
-        if (unk.checked) { unk.checked = false; time.disabled = false; }
-        time.value = pad(b.hour) + ":" + pad(b.minute == null ? 0 : b.minute);
+        if (unk.checked) { unk.checked = false; setTimeDisabled(false); }
+        tstate.h = b.hour; tstate.m = (b.minute == null ? 0 : b.minute);
       }
+      paintTime();
+      if (clockOpen) paintClock();
       var tzWant = (b.tzOffset == null) ? "auto" : String(b.tzOffset);
       tz.value = tzWant;
       if (tz.value !== tzWant) tz.value = "auto"; /* offset outside the option list */
+      syncTzForm();
       if (b.gender) gender.value = b.gender;
     }
     /* keep the two timezone selects in sync form -> dock */
     tz.addEventListener("change", function () {
+      syncTzForm();
       if (SC && SC.get()) SC.setTz(tz.value);
     });
 
@@ -430,6 +812,9 @@
        element hides — whenever the reading is unambiguous, and speaks only when the reader
        needs to know something the beam cannot show them: no hour yet, or the 23:xx boundary
        where schools disagree. Honesty layer preserved, redundancy dropped. */
+    /* The readout's placeholder. It exists so the plate is never empty and therefore never resizes:
+       the bar's geometry cannot be allowed to depend on whether an hour has been chosen. */
+    var BEAM_EMPTY = "--:-- · no hour yet";
     function convLine(birth) {
       if (birth.hour == null) return "Pick an hour to unlock the full court — try your best guesses.";
       if (birth.hour === 23) {
@@ -463,6 +848,26 @@
       var chartRow = h("div", "pcast-dock-chart");
       chartRow.setAttribute("data-dock-chart", "");
 
+      /* one hour per press. Reads the beam when no hour is set yet, so the first tap on "+" from
+         an unknown hour lands at 13:00 rather than doing nothing. Same pentatonic voice as a scrub. */
+      function stepBtn(dir, glyph, label) {
+        var b = h("button", "pcast-dk-step", glyph); b.type = "button";
+        b.setAttribute("aria-label", label);
+        b.addEventListener("click", function () {
+          if (!SC || !lastBirth) return;
+          var cur = (lastBirth.hour == null) ? (+beamRange.value) : lastBirth.hour;
+          var next = Math.min(BEAM_MAX, Math.max(0, cur + dir));
+          if (next === cur && lastBirth.hour != null) return;
+          var bi = branchOf(next);
+          if (bi !== lastBranch) { lastBranch = bi; tick(HOUR_PITCH[bi]); }
+          setBeamValue(next);
+          beamCur.textContent = beamCurLine(next, null);
+          beamCur.classList.remove("is-empty");
+          SC.setHour(next);
+        });
+        return b;
+      }
+
       /* identity chip: sigil + "Your chart" eyebrow over the birth date; tapping it jumps
          back up to the form to edit the birth date */
       var idBtn = h("button", "pcast-dk-id"); idBtn.type = "button";
@@ -482,7 +887,12 @@
       /* the hour beam: a 24-hour Gregorian scrubber, birthplace-local in the selected
          birth timezone. Slide the range (or tap an even-hour tick) ->
          ZiweiStudyChart.setHour(hour) -> the whole page re-casts through psa:studychart.
-         The beam IS the hour control; there is no separate hour <select>. */
+         The beam IS the hour control; there is no separate hour <select>.
+         It is flanked by −/+ steps: a 4px track is a mouse instrument, and a thumb needs a
+         thumb-sized target. The steps are the ONLY way most phone readers will move the hour. */
+      var beamRow = h("div", "pcast-dk-beamrow");
+      var stepDown = stepBtn(-1, "−", "One hour earlier");
+      beamRow.appendChild(stepDown);
       var beam = h("div", "pcast-dk-beam");
       var beamRange = document.createElement("input");
       beamRange.type = "range";
@@ -513,10 +923,14 @@
         })(ti);
       }
       beam.appendChild(beamTicks);
-      chartRow.appendChild(beam);
+      beamRow.appendChild(beam);
+      var stepUp = stepBtn(1, "+", "One hour later");
+      beamRow.appendChild(stepUp);
+      chartRow.appendChild(beamRow);
 
       /* live readout: 12-hour clock + branch hour. An <output>, but aria-live="off" on purpose
-         — a live region would machine-gun the screen reader on every step of a scrub. */
+         — a live region would machine-gun the screen reader on every step of a scrub.
+         Fixed width (CSS), never empty (BEAM_EMPTY): the plate holds its ground. */
       var beamCur = document.createElement("output");
       beamCur.className = "pcast-dk-beam-cur";
       beamCur.setAttribute("aria-live", "off");
@@ -629,6 +1043,7 @@
         var hr = +beamRange.value;
         beamRange.style.setProperty("--dk-pos", beamPos(hr));
         beamCur.textContent = beamCurLine(hr, null);
+        beamCur.classList.remove("is-empty");
         var bi = branchOf(hr);
         if (bi !== lastBranch) {
           lastBranch = bi;
@@ -646,6 +1061,7 @@
         if (!SC || !lastBirth) return;
         tz.value = tzSel.value;
         if (tz.value !== tzSel.value) tz.value = "auto";
+        syncTzForm(); /* dock -> form: the plate and its region caption follow */
         SC.setTz(tzSel.value);
       });
 
@@ -713,6 +1129,7 @@
 
       dockEls = {
         dock: dock, chartRow: chartRow, dateEl: dateEl, tzSel: tzSel, tzVal: tzVal, conv: conv,
+        beamRow: beamRow, stepDown: stepDown, stepUp: stepUp,
         beamRange: beamRange, beamCur: beamCur, tickEls: tickEls, miniTxt: miniTxt,
         setDockState: setDockState, setBeamValue: setBeamValue, syncTzVal: syncTzVal,
         lessonSlot: lessonSlot, padBody: padBody
@@ -750,7 +1167,11 @@
          screen-reader user hears which zone the hour reads in; the tz chip shows it visually */
       var tzs = tzLabel(birth.tzOffset);
       els.beamRange.setAttribute("aria-label", "Birth hour — 24 clock hours, birthplace-local" + (tzs ? " · " + tzs : ""));
-      els.beamCur.textContent = beamCurLine(birth.hour, birth.minute);
+      /* never blank: an empty plate collapses, and the whole bar slides sideways the moment an
+         hour is chosen. Same width, hour or no hour. */
+      var curLine = beamCurLine(birth.hour, birth.minute);
+      els.beamCur.textContent = curLine || BEAM_EMPTY;
+      els.beamCur.classList.toggle("is-empty", !curLine);
       /* sync the 24-hour beam: known hour lights the nearest even-hour tick; unknown hour
          parks the thumb at noon with nothing lit — the first slide sets the hour for real.
          setBeamValue is a programmatic set: it moves the thumb bloom and the scrub tracker
