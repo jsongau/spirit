@@ -11,7 +11,9 @@
      - Standard meridian selected by Korean era (127.5E / 135E).
      - Ipchun (315 deg) year boundary via exact solar-term instant.
      - Solar-term month segments (not calendar months).
-     - Day rollover: midnight default; zi2300 (jo-ja-si) alternate.
+     - Day rollover (子시): three-way — midnight/자정 (default),
+       yaja/야자시 (this day's Ilju, next day's hour stem),
+       zi2300/조자시 (next day's Ilju). "joja" aliases zi2300.
      - Unknown hour to three pillars, never a fabricated hour.
 
    Depends on saju-astro.js. UMD (browser window.SajuEngine + Node).
@@ -61,6 +63,14 @@
   };
 
   function mod(n, m) { return ((n % m) + m) % m; }
+
+  // ---- 子시 (23:00–24:00) day-boundary schools (SAJU_CALCULATION_ASSUMPTIONS §4) ----
+  // Three-way dispute. Each label names the school AND states what changes.
+  var ZI_PROFILE_LABELS = {
+    midnight: "자정 — this day's Ilju and hour stem",
+    yaja:     "야자시 — this day's Ilju, next day's hour stem",
+    zi2300:   "조자시 — next day's Ilju"
+  };
 
   // integer Julian Day Number for a Gregorian civil date (Fliegel-Van Flandern)
   function jdnCivil(y, m, d) {
@@ -338,11 +348,17 @@
     input = input || {};
     opts = opts || {};
     profile = Object.assign({
-      dayBoundary: "midnight",      // "midnight" | "zi2300"
+      dayBoundary: "midnight",      // "midnight" (자정) | "yaja" (야자시) | "zi2300" (조자시)
       trueSolarTime: true,
       equationOfTime: true,
       meridianMode: "era"           // "era" | "fixed135"
     }, profile || {});
+    // Normalize the 子시 rule to a canonical key. "joja" is an accepted alias for
+    // "zi2300"; any unrecognized value falls back to "midnight" (never throw).
+    var _db = profile.dayBoundary;
+    if (_db === "joja") _db = "zi2300";
+    if (_db !== "yaja" && _db !== "zi2300") _db = "midnight";
+    profile.dayBoundary = _db;
 
     var trace = [], warnings = [], variantSpecs = [];
     function log(step, detail) { trace.push({ step: step, detail: detail }); }
@@ -446,24 +462,41 @@
       variantSpecs.push({ code: "NEAR_MONTH_TERM", label: "Adjacent month", note: "Born near a solar-term edge; the neighbouring month pillar is the alternative.", opts: { monthSegOverride: altSeg } });
     }
 
-    // ---- DAY pillar (with rollover rule) ----
-    var dayShift = 0, ziNote = null;
+    // ---- DAY pillar (with 子시 rollover rule) ----
+    // Two independent knobs, only in the 23:00–24:00 window:
+    //   dayShift      — shift the DAY pillar to the next day (조자시 only)
+    //   hourStemShift — derive the HOUR stem from the next day's stem (야자시 only)
+    // In 조자시 the day index is already shifted, so its hour stem falls out of the
+    // shifted day stem naturally (hourStemShift stays 0 — do not double-shift).
+    var dayShift = 0, hourStemShift = 0, ziNote = null;
     if (!unknownTime && clockMin >= 23 * 60) {
-      if (profile.dayBoundary === "zi2300") { dayShift = 1; ziNote = "zi2300 (조자시/子正): 23:00+ takes the NEXT day's Ilju"; }
-      else { ziNote = "midnight: 23:00–24:00 keeps this day's Ilju (야자시). Alternate rule would change it."; }
+      if (profile.dayBoundary === "zi2300") {
+        dayShift = 1; hourStemShift = 0;
+        ziNote = "조자시/정자시 (zi2300): 23:00–24:00 rolls into the NEXT day's Ilju; the hour stem follows from that next-day stem.";
+      } else if (profile.dayBoundary === "yaja") {
+        dayShift = 0; hourStemShift = 1;
+        ziNote = "야자시 (yaja): 23:00–24:00 keeps THIS day's Ilju, but the hour stem is derived from the NEXT day's stem.";
+      } else {
+        dayShift = 0; hourStemShift = 0;
+        ziNote = "자정 (midnight): 23:00–24:00 keeps this day's Ilju and derives the hour stem from this same day's stem.";
+      }
       warnings.push({ code: "ZI_HOUR_ROLLOVER", level: "warn",
-        message: "Born in the 23:00 hour, the 야자시/조자시 dispute. Default keeps this calendar day's Day Master; the zi2300 profile assigns the next day's. This changes the Day Master itself." });
+        message: "Born in the 23:00–24:00 hour (the first half of 子시), where Korean schools disagree three ways. 자정 (midnight-only) keeps this calendar day's Day Master and its hour stem. 야자시 keeps this day's Day Master but derives the hour stem from the next day's stem. 조자시/정자시 rolls the whole day over to the next day's Day Master. The two alternatives to the active rule are shown for side-by-side comparison." });
       if (!opts._noVariants) {
-        var flipDay = profile.dayBoundary === "zi2300" ? "midnight" : "zi2300";
-        variantSpecs.push({ code: "ZI_HOUR_ROLLOVER",
-          label: flipDay === "zi2300" ? "Next day's Ilju (조자시)" : "This day's Ilju (야자시)",
-          note: "Korean schools disagree whether a 23:00–24:00 birth takes this day's or the next day's Day Master.",
-          profilePatch: { dayBoundary: flipDay } });
+        ["midnight", "yaja", "zi2300"].forEach(function (mode) {
+          if (mode === profile.dayBoundary) return;
+          variantSpecs.push({ code: "ZI_HOUR_ROLLOVER",
+            label: ZI_PROFILE_LABELS[mode],
+            note: "Korean schools disagree three ways over a 23:00–24:00 birth; this is one of the two alternatives to the active rule.",
+            profilePatch: { dayBoundary: mode } });
+        });
       }
     }
     var dayIndex = mod(jdnCivil(Y, Mo, D) + dayShift - ANCHOR_JDN, 60);
     var dStemIdx = mod(dayIndex, 10), dBranchIdx = mod(dayIndex, 12);
-    log("day", { anchor: "2024-01-01 = 甲子", rollover: profile.dayBoundary, shift: dayShift, note: ziNote, stem: STEMS[dStemIdx], branch: BRANCHES[dBranchIdx] });
+    // stem-index of the day the HOUR stem derives from (five-rat 五鼠遁 base)
+    var hourDayStemIdx = mod(dayIndex + hourStemShift, 10);
+    log("day", { anchor: "2024-01-01 = 甲子", rule: profile.dayBoundary, day_index: dayIndex, shift: dayShift, hour_stem_shift: hourStemShift, note: ziNote, stem: STEMS[dStemIdx], branch: BRANCHES[dBranchIdx] });
 
     // ---- HOUR pillar (true solar time) ----
     var hourPillar = null, solar = null;
@@ -501,7 +534,7 @@
       var trueSolarMin = clockMin - dst.offset + lonCorr + eot;
       var hBranchIdx = Math.floor(mod(trueSolarMin + 60, 1440) / 120);
       if (opts.hourBranchOverride != null) { hBranchIdx = mod(opts.hourBranchOverride, 12); log("hour_override", hBranchIdx); }
-      var hStemIdx = mod(dStemIdx * 2 + hBranchIdx, 10);
+      var hStemIdx = mod(hourDayStemIdx * 2 + hBranchIdx, 10);
       hourPillar = { stem: stemObj(hStemIdx), branch: branchObj(hBranchIdx) };
       solar = {
         applied: applied,
@@ -613,7 +646,7 @@
     }
     var primaryLabel = "As calculated";
     if (variantSpecs.some(function (s) { return s.code === "ZI_HOUR_ROLLOVER"; }))
-      primaryLabel = profile.dayBoundary === "zi2300" ? "Next day's Ilju (조자시)" : "This day's Ilju (야자시)";
+      primaryLabel = ZI_PROFILE_LABELS[profile.dayBoundary];
     else if (variantSpecs.some(function (s) { return s.code === "NEAR_IPCHUN"; }))
       primaryLabel = "(" + yearForPillar + " year)";
 
