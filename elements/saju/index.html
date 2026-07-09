@@ -99,6 +99,10 @@
   .saju-scope p{ font-family:var(--sans); color:var(--body-text); }
   .ko{ font-family:var(--korean); }
   .han{ font-family:var(--korean); color:var(--accent-bright); }
+  /* hanja companion glyph — Korean-page hanja is set in the Korean font and left
+     untagged (lang="ko" context), never tagged zh. Colour inherits so it reads as
+     the classical form beside the hangul lead (the 수 水 / 대운 大運 pattern). */
+  .hanja{ font-family:var(--korean); }
   .rom{ font-style:italic; color:var(--muted); }
   .saju-scope a{ color:var(--accent-bright); text-decoration:none; font-weight:500; }
   .saju-scope a:hover{ color:var(--moon); }
@@ -407,8 +411,9 @@
   .dae-card.is-now{ border-color:var(--accent); box-shadow:0 0 0 1px var(--accent-soft); }
   .dae-now{ position:absolute; top:-.82rem; left:50%; transform:translateX(-50%); white-space:nowrap; font-family:var(--mono); font-size:.53rem; letter-spacing:.05em; color:var(--accent-bright); }
   .dae-age{ font-family:var(--mono); font-size:.66rem; color:var(--muted); font-variant-numeric:tabular-nums; }
-  .dae-gan{ font-family:var(--korean); font-size:1.4rem; line-height:1.15; margin:.25rem 0; }
-  .dae-tg{ display:block; font-family:var(--korean); font-size:.72rem; color:var(--faint); }
+  .dae-gan{ font-family:var(--korean); font-size:1.4rem; line-height:1.15; margin:.25rem 0 0; }
+  .dae-han{ display:block; font-family:var(--korean); font-size:.74rem; color:var(--faint); letter-spacing:.1em; line-height:1; margin-top:.16rem; }
+  .dae-tg{ display:block; font-family:var(--korean); font-size:.72rem; color:var(--faint); margin-top:.2rem; }
   .dae-tone{ display:block; font-size:.6rem; margin-top:.35rem; padding-top:.35rem; color:var(--muted); letter-spacing:.02em; }
   .dae-card.tone-supportive .dae-tone{ border-top:2px solid var(--accent); color:var(--accent-bright); }
   .dae-card.tone-challenging .dae-tone{ border-top:1px dashed var(--faint); }
@@ -1191,7 +1196,7 @@
     return '<div class="elbar" role="img" aria-label="Element balance">'+segs+'</div><div class="elkeys">'+keys+'</div>';
   }
   function offStr(min){ var a=Math.abs(min),h=Math.floor(a/60),m=a%60; return (h?h+"h ":"")+m+"m "+(min<0?"before":"after"); }
-  function gan(P,k){ return P[k]?P[k].stem.char+P[k].branch.char:"—"; }
+  function gan(P,k){ return P[k]?P[k].stem.ko+P[k].branch.ko+' <span class="hanja">'+P[k].stem.char+P[k].branch.char+'</span>':"—"; }
   function pillarName(k){ return {year:"Year",month:"Month",day:"Day Master",hour:"Hour"}[k]; }
   function dateline(t){
     if(!t) return "";
@@ -1455,16 +1460,23 @@
   var _dae=null;
   function daeCard(p){
     var toneWord = p.tone==="supportive"?"supportive":(p.tone==="challenging"?"asks more":"steady");
-    return '<div class="dae-card tone-'+p.tone+(p.current?" is-now":"")+'" role="listitem" tabindex="0" aria-label="Age '+p.age_start+' to '+p.age_end+', '+p.stem.char+p.branch.char+', '+p.ten_god.en+', '+toneWord+' decade'+(p.current?", current":"")+'">'+
+    // Korean page: hangul leads (기사), hanja (己巳) is the classical companion, romanization
+    // rides the aria label for the latin reader. Element colour stays on the hangul glyph.
+    var ko=p.stem.ko+p.branch.ko, han=p.stem.char+p.branch.char, rom=p.stem.rom+p.branch.rom.toLowerCase();
+    var aria='Age '+p.age_start+' to '+p.age_end+', '+ko+' '+rom+' '+han+', '+p.ten_god.ko+' '+p.ten_god.en+', '+toneWord+' decade'+(p.current?", current":"");
+    return '<div class="dae-card tone-'+p.tone+(p.current?" is-now":"")+'" role="listitem" tabindex="0" aria-label="'+aria+'">'+
       (p.current?'<span class="dae-now">You are here</span>':'')+
       '<span class="dae-age">'+p.age_start+'–'+p.age_end+'</span>'+
-      '<div class="dae-gan"><span class="'+elClass(p.stem.element)+'">'+p.stem.char+'</span><span class="'+elClass(p.branch.element)+'">'+p.branch.char+'</span></div>'+
+      '<div class="dae-gan"><span class="'+elClass(p.stem.element)+'">'+p.stem.ko+'</span><span class="'+elClass(p.branch.element)+'">'+p.branch.ko+'</span></div>'+
+      '<span class="dae-han hanja" aria-hidden="true">'+han+'</span>'+
       '<span class="dae-tg">'+p.ten_god.ko+'</span>'+
       '<span class="dae-tone">'+toneWord+'</span></div>';
   }
   function daeMetaText(d){
     var sw=d.sewoon;
-    return 'Luck pillars run <b>'+d.direction+'</b>. The first pillar begins at age <b>'+d.daesu+'</b> ('+d.start_precise.years+'y '+d.start_precise.months+'m from birth to the bounding solar term ÷ 3). This year, <b>'+sw.year+' '+sw.stem.char+sw.branch.char+'</b>, overlays as your 세운 — a <span class="tg">'+sw.ten_god.en+' '+sw.ten_god.ko+'</span> year.';
+    // Hangul-first: 병오 leads, 丙午 is the classical companion; ten-god keeps the
+    // page's English-frame order (Resource 인성) used by every other renderer here.
+    return 'Luck pillars run <b>'+d.direction+'</b>. The first pillar begins at age <b>'+d.daesu+'</b> ('+d.start_precise.years+'y '+d.start_precise.months+'m from birth to the bounding solar term ÷ 3). This year, <b>'+sw.year+' '+sw.stem.ko+sw.branch.ko+' <span class="hanja">'+sw.stem.char+sw.branch.char+'</span></b>, overlays as your 세운 — a <span class="tg">'+sw.ten_god.en+' '+sw.ten_god.ko+'</span> year.';
   }
   function renderDaeun(i){
     if(!_dae) return;
