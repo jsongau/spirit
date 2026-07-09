@@ -31,11 +31,50 @@
   .soon .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
   .btn.disabled{opacity:.5;cursor:not-allowed}
   .za-invited{border:1px dashed var(--brass);border-radius:14px;background:var(--panel);
-    padding:16px 20px;margin:0 0 22px;max-width:720px}
+    padding:16px 20px;margin:24px 0 0;max-width:860px}
   .za-invited b{color:var(--moon);font-family:var(--serif);font-weight:600;font-size:1.05rem;display:block;margin-bottom:4px}
   .za-invited p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.55}
+
+  /* ---- the door, rebuilt ---- */
+  .za-hero{display:grid;grid-template-columns:minmax(0,3fr) minmax(300px,2fr);gap:36px;align-items:start;padding-top:28px}
+  @media(max-width:880px){.za-hero{grid-template-columns:1fr;gap:26px}}
+  .za-pitch h1{margin-top:6px}
+  .za-lamps{margin-top:22px}
+  .za-lamps .zk-ally{width:38px;height:38px}
+  .za-lampline{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:10px 0 0}
+  .za-count{font-size:.85rem;color:var(--brass);margin:18px 0 0}
+  .za-card{width:100%}
+  .za-card .zodi-googleBtn{margin-top:2px}
+  .za-fine{font-size:.72rem;color:var(--faint,#7e7f97);line-height:1.6;margin:14px 0 0}
+  .za-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:760px;margin-top:18px}
+  @media(max-width:640px){.za-grid{grid-template-columns:1fr}}
+  .za-item{display:flex;gap:14px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .za-item .za-ico{color:var(--brass-bright);font-size:1.1rem;line-height:1.4;flex:none}
+  .za-item p{margin:0;color:var(--body);font-size:.9rem;line-height:1.55}
+  .za-steps{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:920px}
+  .za-steps li{display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center}
+  @media(max-width:820px){.za-steps{grid-template-columns:1fr;max-width:420px}
+    .za-steps li{flex-direction:row;text-align:left;align-items:flex-start}}
+  .za-steps .zk-ally{width:40px;height:40px;border-color:var(--brass-dim,rgba(214,193,140,.45));flex:none}
+  .za-steps .zk-ally-final{width:46px;height:46px;box-shadow:0 0 16px rgba(214,193,140,.22)}
+  .za-steps p{margin:0;font-size:.85rem;color:var(--body);line-height:1.5}
+  .za-pathline{margin:20px 0 0;color:var(--muted);font-size:.9rem;max-width:560px}
+  .za-markstrip{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;max-width:640px}
+  .za-markline{margin:14px 0 0;color:var(--muted);font-size:.88rem}
+  .za-again{text-align:center}
+  .za-again .za-count{margin-bottom:14px}
+  .za-faq{max-width:640px}
+  .za-qa{border-top:1px solid var(--line-soft,rgba(214,193,140,.1));padding:14px 0}
+  .za-qa:first-of-type{border-top:0}
+  .za-qa .q{margin:0 0 4px;color:var(--moon);font-weight:600;font-size:.95rem}
+  .za-qa .a{margin:0;color:var(--muted);font-size:.88rem;line-height:1.6}
+  .za-sticky{position:fixed;left:0;right:0;bottom:0;z-index:120;padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(10,11,20,.92);border-top:1px solid var(--line);text-align:center}
+  .za-sticky .zodi-authBtn{width:auto;padding:11px 30px}
+  @media(min-width:881px){.za-sticky{display:none!important}}
 </style>
 <link rel="stylesheet" href="css/zodi.css">
+<link rel="stylesheet" href="css/dashboard.css">
 <!--pn-assets:start-->
 <script data-pn-assets="theme-boot">(function(){try{var m=new Date().getMonth();var s=m>=2&&m<=4?"spring":m>=5&&m<=7?"summer":m>=8&&m<=10?"autumn":"winter";var d=document.documentElement;d.dataset.theme="dark";d.dataset.season=s;}catch(e){}})();</script>
 <link rel="stylesheet" href="/css/tokens.css" data-pn-assets="/css/tokens.css">
@@ -143,58 +182,106 @@
 
   <!-- LOGGED-OUT: the door -->
   <section id="zodi-auth-view" hidden>
-    <section class="hero" style="padding-top:24px">
-      <p class="eyebrow">Your account</p>
-      <h1 style="color:var(--moon)">Claim your place on the wheel</h1>
-      <p class="lede">Finding your animal stays free, no account needed. An account gives the Oracle a memory: your animal across devices, your Zodi Karma banked, your streak counted, your name on the Karmic Board. Arriving is worth 1,000 karma on its own.</p>
-    </section>
 
     <div class="za-invited" id="za-invited" hidden>
-      <b>An ally holds the gate open for you.</b>
-      <p>Create your account and you join their Animal Circle. Your own link starts working the moment you arrive.</p>
+      <b id="za-invited-title">An ally opened this door for you.</b>
+      <p>You are joining their Circle, and your own link starts working the moment you arrive. Your five lamps are all still ahead of you.</p>
     </div>
 
-    <section class="band" style="border-top:none;padding-top:0;display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start">
-      <div class="zodi-authCard" style="flex:1 1 340px">
-        <h3 id="za-title">Create your account</h3>
-        <p class="sub" id="za-sub">Email and a password. Nothing else is asked.</p>
-        <form id="za-form" novalidate>
-          <div class="zodi-field" id="za-name-wrap">
-            <label for="za-name">Name on the board</label>
-            <input id="za-name" type="text" maxlength="24" autocomplete="nickname" placeholder="MoonVeiled, EmberFox, you decide">
-          </div>
-          <div class="zodi-field">
-            <label for="za-email">Email</label>
-            <input id="za-email" type="email" autocomplete="email" required placeholder="you@email.com">
-          </div>
-          <div class="zodi-field">
-            <label for="za-pass">Password</label>
-            <input id="za-pass" type="password" autocomplete="new-password" required minlength="8" placeholder="At least 8 characters">
-          </div>
-          <button class="zodi-authBtn" id="za-submit" type="submit">Create account &middot; +1,000 ZK</button>
-          <p class="zodi-authMsg" id="za-msg" role="status"></p>
-        </form>
-        <div class="zodi-or">or</div>
-        <button class="zodi-googleBtn" id="za-google" type="button">
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.2 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/><path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09L2.18 7.07C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.86-3c-1.08.72-2.45 1.16-3.42 1.16-2.86 0-5.29-1.93-6.16-4.53l-3.66 2.84C3.99 20.53 7.7 23 12 23z"/></svg>
-          Continue with Google
-        </button>
-        <p class="zodi-switch"><span id="za-switch-line">Already on the board?</span> <button type="button" id="za-switch">Sign in</button></p>
+    <section class="band za-hero" style="border-top:none">
+      <div class="za-pitch">
+        <p class="eyebrow">Free account</p>
+        <h1 style="color:var(--moon)">Five allies stand between you and your Awakened reading</h1>
+        <p class="lede">Create a free account and your Zodi Animal is saved on every device. You arrive with 1,000 Zodi Karma and a link of your own. When five allies join through it, your Awakened reading opens.</p>
+        <div class="zk-allies za-lamps" aria-hidden="true">
+          <span class="zk-ally">1</span><span class="zk-ally">2</span><span class="zk-ally">3</span><span class="zk-ally">4</span><span class="zk-ally">5</span>
+        </div>
+        <p class="za-lampline">Five lamps. Five allies. Then your Awakened reading.</p>
+        <p class="za-count" id="za-count" hidden></p>
       </div>
 
-      <div style="flex:1 1 300px;max-width:420px">
-        <div class="zodi-stat" style="margin-bottom:14px">
-          <span class="k">What an account holds</span>
-          <p class="s" style="margin-top:10px">Your animal and readings on every device. Your Zodi Karma, banked and compounding. Your return streak and its bonus. Your rank on the Karmic Board, overall and among your Chinese year. And the climb: Wanderer, Seeker, Awakened, Moonbound, Karmic Sage, Blessed by the Gods of Zodi.</p>
+      <div class="za-cardcol">
+        <div class="zodi-authCard za-card">
+          <h3 id="za-title">Create your account</h3>
+          <p class="sub" id="za-sub">Fastest with Google. Email works too.</p>
+          <button class="zodi-googleBtn" id="za-google" type="button">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.2 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/><path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09L2.18 7.07C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.86-3c-1.08.72-2.45 1.16-3.42 1.16-2.86 0-5.29-1.93-6.16-4.53l-3.66 2.84C3.99 20.53 7.7 23 12 23z"/></svg>
+            Continue with Google
+          </button>
+          <div class="zodi-or">or with email</div>
+          <form id="za-form" novalidate>
+            <div class="zodi-field">
+              <label for="za-email">Email</label>
+              <input id="za-email" type="email" autocomplete="email" inputmode="email" required placeholder="you@email.com">
+            </div>
+            <div class="zodi-field">
+              <label for="za-pass">Password</label>
+              <input id="za-pass" type="password" autocomplete="new-password" required minlength="8" placeholder="At least 8 characters">
+            </div>
+            <div class="zodi-field" id="za-name-wrap">
+              <label for="za-name">Name on the board, optional</label>
+              <input id="za-name" type="text" maxlength="24" autocomplete="nickname" placeholder="MoonVeiled, EmberFox, you decide">
+            </div>
+            <button class="zodi-authBtn" id="za-submit" type="submit">Create my account</button>
+            <p class="zodi-authMsg" id="za-msg" role="status"></p>
+          </form>
+          <p class="zodi-switch"><span id="za-switch-line"></span> <button type="button" id="za-switch">I already have an account</button></p>
+          <p class="za-fine">Free. No card. One confirmation email, then we only write when an ally arrives or a reading is ready. Leave anytime.</p>
         </div>
-        <div class="zodi-stat" id="za-wander-card" hidden>
+        <div class="zodi-stat" id="za-wander-card" hidden style="margin-top:14px">
           <span class="k">Unclaimed karma</span>
           <p class="v mono" id="za-wander-amt">0 ZK</p>
           <p class="s">Earned while wandering without an account. It banks itself the moment you arrive.</p>
         </div>
       </div>
     </section>
+
+    <section class="band za-keep">
+      <h2 style="color:var(--moon)">Yours from the first minute</h2>
+      <div class="za-grid">
+        <div class="za-item"><span class="za-ico" aria-hidden="true">&#9789;</span><p>Your animal, saved. Every device, same reading.</p></div>
+        <div class="za-item"><span class="za-ico" aria-hidden="true">&#10022;</span><p>1,000 Zodi Karma, banked on arrival.</p></div>
+        <div class="za-item"><span class="za-ico" aria-hidden="true">&#9737;</span><p>Karma you earned while wandering comes with you.</p></div>
+        <div class="za-item"><span class="za-ico" aria-hidden="true">&#10038;</span><p>Your name on the Karmic Board, and a link that is yours alone.</p></div>
+      </div>
+    </section>
+
+    <section class="band za-path">
+      <h2 style="color:var(--moon)">The path to your Awakened reading</h2>
+      <ol class="za-steps">
+        <li><span class="zk-ally" aria-hidden="true">1</span><p>Arrive and claim your animal</p></li>
+        <li><span class="zk-ally" aria-hidden="true">2</span><p>Copy your link and send it</p></li>
+        <li><span class="zk-ally" aria-hidden="true">3</span><p>The first ally crosses; a lamp lights</p></li>
+        <li><span class="zk-ally" aria-hidden="true">4</span><p>Your Circle grows; the lamps follow</p></li>
+        <li><span class="zk-ally zk-ally-final" aria-hidden="true">5</span><p>The fifth lights, and your Awakened reading opens</p></li>
+      </ol>
+      <p class="za-pathline">Five lamps. When the last one lights, you read what your animal becomes with a Circle behind it.</p>
+    </section>
+
+    <section class="band za-marksec">
+      <h2 style="color:var(--moon)">Twelve marks. One is yours</h2>
+      <div class="za-markstrip" id="za-marks" aria-hidden="true"></div>
+      <p class="za-markline">Pick your mark when you arrive. It stands for you on the Board.</p>
+    </section>
+
+    <section class="band za-again">
+      <p class="za-count" id="za-count2" hidden></p>
+      <button class="btn" id="za-jump" type="button">Create my account</button>
+    </section>
+
+    <section class="band za-faq">
+      <h2 style="color:var(--moon)">Fair questions</h2>
+      <div class="za-qa"><p class="q">Is it free?</p><p class="a">Yes. No card, no paid tier. The reader and the readings stay free either way.</p></div>
+      <div class="za-qa"><p class="q">What email will I get?</p><p class="a">One confirmation, then we only write when an ally arrives or a reading is ready. Unsubscribe anytime.</p></div>
+      <div class="za-qa"><p class="q">Do I have to invite anyone?</p><p class="a">No. Your animal, your karma, and your place on the Board are yours regardless. The Awakened reading is the one part that needs five allies.</p></div>
+      <div class="za-qa"><p class="q">What is a Zodi Animal?</p><p class="a">The animal born where your Western Sun sign crosses your Chinese zodiac year, one of 144. The full story is written at <a href="what-is-a-zodi-animal.html" style="color:var(--brass-bright);font-weight:600">Zodi Animal</a>.</p></div>
+    </section>
+
   </section>
+
+  <div class="za-sticky" id="za-sticky" hidden>
+    <button class="zodi-authBtn" id="za-sticky-btn" type="button">Create my account</button>
+  </div>
 
   <!-- LOGGED-IN: the ledger -->
   <section id="zodi-dash-view" hidden>
@@ -281,17 +368,18 @@
   function show(which){
     $("#zodi-auth-view").hidden = which!=="auth";
     $("#zodi-dash-view").hidden = which!=="dash";
+    if(which!=="auth"){ var sb=$("#za-sticky"); if(sb) sb.hidden=true; }
   }
 
   /* ---- mode toggle ---- */
   function paintMode(){
     var up = mode==="signup";
     $("#za-title").textContent = up?"Create your account":"Sign in";
-    $("#za-sub").textContent = up?"Email and a password. Nothing else is asked.":"Welcome back to the wheel.";
+    $("#za-sub").textContent = up?"Fastest with Google. Email works too.":"Welcome back to the wheel.";
     $("#za-name-wrap").style.display = up?"":"none";
-    $("#za-submit").textContent = up?"Create account · +1,000 ZK":"Sign in";
-    $("#za-switch-line").textContent = up?"Already on the board?":"New to the wheel?";
-    $("#za-switch").textContent = up?"Sign in":"Create an account";
+    $("#za-submit").textContent = up?"Create my account":"Sign me in";
+    $("#za-switch-line").textContent = "";
+    $("#za-switch").textContent = up?"I already have an account":"I need an account";
     $("#za-pass").setAttribute("autocomplete", up?"new-password":"current-password");
     $("#za-msg").textContent="";
   }
@@ -305,8 +393,59 @@
 
   /* ---- an ally's invitation ---- */
   try{
-    if(window.ZodiRef && window.ZodiRef.pending()){ $("#za-invited").hidden=false; }
+    var pendRef = window.ZodiRef && window.ZodiRef.pending();
+    if(pendRef){
+      $("#za-invited").hidden=false;
+      /* the code carries the inviter's animal: GOLDEN-PHEASANT-7K2Q */
+      var stem = String(pendRef).replace(/-[A-Z0-9]{4,}$/,"");
+      if(stem && stem!=="ZODI" && /^[A-Z-]+$/.test(stem)){
+        var animal = stem.toLowerCase().split("-").map(function(w){ return w.charAt(0).toUpperCase()+w.slice(1); }).join(" ");
+        $("#za-invited-title").textContent = "A "+animal+" opened this door for you.";
+      }
+    }
   }catch(e){}
+
+  /* ---- the twelve marks strip ---- */
+  try{
+    if(window.ZodiRef && window.ZodiRef.AVATARS){
+      var strip=$("#za-marks");
+      window.ZodiRef.AVATARS.forEach(function(a){
+        var s=document.createElement("span");
+        s.className="zav zav-h-"+a.hue;
+        s.textContent=a.glyph;
+        strip.appendChild(s);
+      });
+    }
+  }catch(e){}
+
+  /* ---- honest proof: the live count on the board ---- */
+  window.Zodi.ready.then(function(client){
+    if(!client) return;
+    client.from("zodi_profiles").select("id",{count:"exact",head:true}).then(function(r){
+      if(r.error || typeof r.count!=="number" || r.count<1) return;
+      var line=r.count.toLocaleString("en-US")+" profiles stand on the Karmic Board tonight.";
+      var c1=$("#za-count"), c2=$("#za-count2");
+      if(c1){ c1.textContent=line; c1.hidden=false; }
+      if(c2){ c2.textContent=line; c2.hidden=false; }
+    }).catch(function(){});
+  });
+
+  /* ---- the return button + mobile sticky bar ---- */
+  function toCard(){
+    var card=document.querySelector(".za-card");
+    if(card && card.scrollIntoView) card.scrollIntoView({behavior:"smooth",block:"center"});
+    setTimeout(function(){ try{ $("#za-email").focus({preventScroll:true}); }catch(e){} }, 450);
+  }
+  $("#za-jump").addEventListener("click",toCard);
+  $("#za-sticky-btn").addEventListener("click",toCard);
+  (function stickyBar(){
+    var card=document.querySelector(".za-card"), bar=$("#za-sticky");
+    if(!card||!bar||!("IntersectionObserver" in window)) return;
+    new IntersectionObserver(function(entries){
+      var vis=entries[0].isIntersecting;
+      bar.hidden = vis || !$("#zodi-auth-view") || $("#zodi-auth-view").hidden;
+    },{threshold:0}).observe(card);
+  })();
 
   /* ---- where to go after arrival (whitelisted, one shot) ---- */
   function consumeNext(){
@@ -333,7 +472,7 @@
       if(r && r.error){ msg.textContent=r.error.message||"The wheel refused. Try again."; return; }
       if(mode==="signup" && r && r.data && r.data.user && !r.data.session){
         msg.className="zodi-authMsg ok";
-        msg.textContent="Almost there. A confirmation link is on its way to "+email+" — open it and your 1,000 karma is waiting.";
+        msg.textContent="Check your inbox. One email from Zodi Animal confirms you. Open it and your animal is saved, your 1,000 karma is banked, and your link is live.";
         return;
       }
       msg.className="zodi-authMsg ok"; msg.textContent="Signed in.";

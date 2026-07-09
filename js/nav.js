@@ -32,7 +32,7 @@ window.PNAV = window.PNAV || { features: {} };
 
   const CSS = ["/css/nav-core.css", "/css/nav-mega.css", "/css/nav-drawer.css", "/css/nav-dock.css"];
   const JS  = ["/js/nav-data.js", "/js/nav-search.js", "/js/nav-moon.js",
-               "/js/nav-me.js", "/js/nav-progress.js", "/js/nav-a11y.js", "/js/nav-dock.js"];
+               "/js/nav-me.js", "/js/nav-auth.js", "/js/nav-progress.js", "/js/nav-a11y.js", "/js/nav-dock.js"];
 
   const reduceMotion = () =>
     window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -326,6 +326,12 @@ window.PNAV = window.PNAV || { features: {} };
       const ring = bar.querySelector("[data-ring-slot]");
       if (ring && !ring.hidden && ring.firstChild) {
         const c = ring.cloneNode(true);
+        c.hidden = false;
+        chipStrip.appendChild(c);
+      }
+      const acct = bar.querySelector("[data-acct-chip]");
+      if (acct && !acct.hidden && acct.firstChild) {
+        const c = acct.cloneNode(true);
         c.hidden = false;
         chipStrip.appendChild(c);
       }
@@ -1090,7 +1096,7 @@ window.PNAV = window.PNAV || { features: {} };
     };
     PNAV.ctx = ctx;
 
-    ["me", "moon", "progress", "search", "a11y", "dock"].forEach((name) => {
+    ["me", "auth", "moon", "progress", "search", "a11y", "dock"].forEach((name) => {
       const fn = PNAV.features && PNAV.features[name];
       if (typeof fn === "function") { try { fn(ctx); } catch (e) {} }
     });

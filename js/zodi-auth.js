@@ -57,6 +57,12 @@
   }
 
   function notify() {
+    /* cheap sitewide flag: the nav account chip reads this without
+       loading supabase (js/nav-auth.js). */
+    try {
+      if (_session) localStorage.setItem("zodi_signed_in", "1");
+      else localStorage.removeItem("zodi_signed_in");
+    } catch (e) {}
     for (var i = 0; i < _subs.length; i++) {
       try { _subs[i](_session, _profile); } catch (e) {}
     }
