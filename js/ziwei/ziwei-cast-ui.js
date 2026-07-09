@@ -4,8 +4,9 @@
    position depends on the hour) and only the hour-independent facts show.
    State lives in ZiweiStudyChart (one source of truth); this file renders the reading and owns
    the sticky bottom chart dock (#pcast-dock): date chip, birth-hour + timezone selects, a live
-   clock->branch conversion line, an A/B hour-compare affordance, and the "Current lesson" slot
-   the learning track's bottom bar mounts into. Everything re-renders off "psa:studychart".
+   clock->branch conversion line, a twelve-stop hour beam (scrub across the branch hours and the
+   whole page re-casts), and the "Current lesson" slot the learning track's bottom bar mounts
+   into. Everything re-renders off "psa:studychart".
    Plain browser JS, file://-safe, no modules. */
 (function () {
   "use strict";
@@ -48,8 +49,27 @@
     var HOUR_RANGE = ["23–01", "01–03", "03–05", "05–07", "07–09", "09–11", "11–13", "13–15", "15–17", "17–19", "19–21", "21–23"];
 
     var AUX_HANT = { "wen-chang": "文昌", "wen-qu": "文曲", "zuo-fu": "左輔", "you-bi": "右弼" };
+    var AUX_PY = { "wen-chang": "Wénchāng", "wen-qu": "Wénqǔ", "zuo-fu": "Zuǒfǔ", "you-bi": "Yòubì" };
+    var BRANCH_PY = ["zǐ", "chǒu", "yín", "mǎo", "chén", "sì", "wǔ", "wèi", "shēn", "yǒu", "xū", "hài"];
     function h(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
     function starName(id) { var s = starById[id]; return s ? s.hant : (AUX_HANT[id] || id); }
+    /* every star a non-reader can actually read: hant + pinyin + editorial title */
+    function starMeta(id) {
+      var s = starById[id];
+      if (s) return { hant: s.hant, py: s.pinyin || "", title: (s.editorial && s.editorial.title) || "" };
+      return { hant: AUX_HANT[id] || id, py: AUX_PY[id] || "", title: "" };
+    }
+    /* one star as "天府 Tiānfǔ · The Treasury Star" — hant in <b>, latin in a <span>; hua badge kept */
+    function starFullEl(st) {
+      var m = starMeta(st.id);
+      var el = h("span", "pcast-star-full");
+      var hant = h("b", "pcast-star-hant", m.hant);
+      if (st.hua) hant.appendChild(h("sup", "pcast-hua pcast-hua-" + st.hua, HUA_LABEL[st.hua]));
+      el.appendChild(hant);
+      var en = [m.py, m.title].filter(Boolean).join(" · ");
+      if (en) el.appendChild(h("span", "pcast-star-en", en));
+      return el;
+    }
 
     /* ---- build the form controls ---- */
     var TZ = [
@@ -294,8 +314,33 @@
       var conv = h("p", "pcast-dk-conv", ""); conv.id = "pcast-dk-conv";
       chartRow.appendChild(conv);
 
-      var ab = h("div", "pcast-dk-ab");
-      chartRow.appendChild(ab);
+      /* the hour beam: a twelve-stop scrubber over the Earthly Branch hours.
+         Slide the range (or tap a tick) -> ZiweiStudyChart.setHour(branch*2) ->
+         the whole page re-casts through psa:studychart. #pcast-dk-conv is the readout. */
+      var beam = h("div", "pcast-dk-beam");
+      beam.appendChild(h("span", "pcast-dk-beam-lab", "Slide the birth hour"));
+      var beamRange = document.createElement("input");
+      beamRange.type = "range";
+      beamRange.className = "pcast-dk-beam-range";
+      beamRange.min = "0"; beamRange.max = "11"; beamRange.step = "1"; beamRange.value = "6";
+      beamRange.setAttribute("aria-label", "Birth hour — twelve two-hour branches");
+      beam.appendChild(beamRange);
+      var beamTicks = h("div", "pcast-dk-beam-ticks");
+      var tickEls = [];
+      for (var ti = 0; ti < 12; ti++) {
+        (function (idx) {
+          var tick = h("button", "pcast-dk-tick");
+          tick.type = "button";
+          tick.setAttribute("aria-label", HOURS[idx] + "時 · " + HOUR_RANGE[idx]);
+          tick.appendChild(h("b", null, HOURS[idx]));
+          tick.appendChild(h("small", null, HOUR_RANGE[idx]));
+          tick.addEventListener("click", function () { beamPick(idx); });
+          beamTicks.appendChild(tick);
+          tickEls.push(tick);
+        })(ti);
+      }
+      beam.appendChild(beamTicks);
+      chartRow.appendChild(beam);
 
       /* mobile: the site-wide Reveal Dock (#pn-dock) is hidden while the chart dock is live
          (see page CSS); this compact ✦ pill keeps the unlock path one tap away */
@@ -319,14 +364,19 @@
       hourSel.addEventListener("change", function () {
         if (!SC || !lastBirth) return;
         var hour = hourSel.value === "" ? null : +hourSel.value;
-        var st = SC.getPref("studyAB") || null;
-        if (st && hour != null) {
-          if (st.b == null && st.a != null && branchOf(st.a) !== branchOf(hour)) { st.b = hour; st.on = "b"; }
-          else if (st.on === "b") st.b = hour;
-          else st.a = hour;
-          SC.setPref("studyAB", st);
-        }
         SC.setHour(hour);
+      });
+      /* representative clock hour for branch i is i*2 (branchOf(i*2) === i);
+         setHour clears minutes, so the conv line reads as the branch itself */
+      function beamPick(idx) {
+        if (!SC || !lastBirth) return;
+        SC.setHour(idx * 2);
+      }
+      var beamTimer = null;
+      beamRange.addEventListener("input", function () {
+        var idx = +beamRange.value;
+        if (beamTimer) window.clearTimeout(beamTimer);
+        beamTimer = window.setTimeout(function () { beamTimer = null; beamPick(idx); }, 150);
       });
       tzSel.addEventListener("change", function () {
         if (!SC || !lastBirth) return;
@@ -342,42 +392,8 @@
       window.addEventListener("resize", padBody);
       if (window.ResizeObserver) { try { new ResizeObserver(padBody).observe(dock); } catch (err) {} }
 
-      dockEls = { dock: dock, chartRow: chartRow, dateEl: dateEl, hourSel: hourSel, tzSel: tzSel, conv: conv, ab: ab, lessonSlot: lessonSlot, padBody: padBody };
+      dockEls = { dock: dock, chartRow: chartRow, dateEl: dateEl, hourSel: hourSel, tzSel: tzSel, conv: conv, beamRange: beamRange, tickEls: tickEls, lessonSlot: lessonSlot, padBody: padBody };
       return dockEls;
-    }
-
-    /* the tiny A/B hour-compare: pin the current hour as A, pick another as B,
-       tap a pill to flip the whole page between the two candidate readings */
-    function renderAB(birth) {
-      var els = dockEls;
-      els.ab.innerHTML = "";
-      if (!SC) return;
-      var st = SC.getPref("studyAB") || null;
-      if (st) {
-        ["a", "b"].forEach(function (k) {
-          var v = st[k];
-          var pill = h("button", "pcast-dk-pill" + (st.on === k ? " is-on" : ""), k.toUpperCase() + (v != null ? " " + HOURS[branchOf(v)] : " —"));
-          pill.type = "button";
-          pill.setAttribute("aria-pressed", st.on === k ? "true" : "false");
-          if (v == null) pill.disabled = true;
-          pill.addEventListener("click", function () {
-            if (v == null) return;
-            st.on = k; SC.setPref("studyAB", st);
-            SC.setHour(v);
-          });
-          els.ab.appendChild(pill);
-        });
-        if (st.b == null) els.ab.appendChild(h("span", "pcast-dk-abhint", "pick a second hour"));
-      }
-      var ctl = h("button", "pcast-dk-abctl", st ? "clear" : "not sure? compare");
-      ctl.type = "button";
-      if (!st && birth.hour == null) ctl.disabled = true;
-      ctl.addEventListener("click", function () {
-        if (st) SC.setPref("studyAB", null);
-        else SC.setPref("studyAB", { a: birth.hour, b: null, on: "a" });
-        renderAB(SC.get() || birth);
-      });
-      els.ab.appendChild(ctl);
     }
 
     function buildDock(birth) {
@@ -399,7 +415,15 @@
       els.tzSel.value = tzWant;
       if (els.tzSel.value !== tzWant) els.tzSel.value = "auto";
       els.conv.textContent = convLine(birth);
-      renderAB(birth);
+      /* sync the hour beam: known hour lights its branch tick; unknown hour parks the
+         thumb mid-beam with every tick unlit — the first slide sets the hour */
+      var beamIdx = (curIdx < 0) ? 6 : curIdx;
+      if (+els.beamRange.value !== beamIdx) els.beamRange.value = String(beamIdx);
+      els.tickEls.forEach(function (tk, i) {
+        var on = i === curIdx;
+        tk.classList.toggle("is-on", on);
+        tk.setAttribute("aria-pressed", on ? "true" : "false");
+      });
       els.padBody();
     }
 
@@ -421,13 +445,22 @@
         result.appendChild(hourMissingPanel(yp));
         result.appendChild(boardEl(null));
       } else {
-        result.appendChild(summaryChips(out.chart));
-        result.appendChild(layoutToggle());
-        result.appendChild(boardEl(out.chart));
-        result.appendChild(h("p", "pcast-court-hint", "Tap a room to light its triangle and mirror across your court."));
-        var cap = h("p", "pcast-court-cap"); cap.id = "pcast-court-cap"; result.appendChild(cap);
-        result.appendChild(legendEl());
-        result.appendChild(readingEl(out.chart, yp));
+        /* two columns: the board (what you see) left, the room-by-room reading
+           (what it means) right — scrub the hour beam and watch both change */
+        var cols = h("div", "pcast-reading-cols");
+        var colBoard = h("div", "pcast-col-board");
+        var colRooms = h("div", "pcast-col-rooms");
+        colBoard.appendChild(summaryChips(out.chart));
+        colBoard.appendChild(layoutToggle());
+        colBoard.appendChild(h("p", "pcast-branch-note", "The small glyph in each room's corner is its Earthly Branch 地支 — one of twelve fixed seats of the court (子, 丑, 寅 …). Your stars move from chart to chart; the twelve seats never do. Beginner view pins your Life room top-left; Traditional view seats every room at its fixed branch."));
+        colBoard.appendChild(boardEl(out.chart));
+        colBoard.appendChild(h("p", "pcast-court-hint", "Tap a room to light its triangle and mirror across your court."));
+        var cap = h("p", "pcast-court-cap"); cap.id = "pcast-court-cap"; colBoard.appendChild(cap);
+        colBoard.appendChild(legendEl());
+        colRooms.appendChild(readingEl(out.chart, yp));
+        cols.appendChild(colBoard);
+        cols.appendChild(colRooms);
+        result.appendChild(cols);
         selectCourt("ming-gong");
       }
     }
@@ -445,11 +478,13 @@
     function chip(wrap, k, v) { var c = h("div", "pcast-chip"); c.appendChild(h("span", "pcast-chip-k", k)); c.appendChild(h("span", "pcast-chip-v", v)); wrap.appendChild(c); }
 
     function layoutToggle() {
-      var wrap = h("div", "pcast-layout-toggle");
+      var wrap = h("div", "pcast-lt");
       wrap.setAttribute("role", "group"); wrap.setAttribute("aria-label", "Board layout");
-      [["palace", "Beginner (Life top-left)"], ["branch", "Chart (by branch)"]].forEach(function (m) {
-        var b = h("button", "pcast-lt-btn" + (boardMode === m[0] ? " is-on" : ""), m[1]); b.type = "button";
+      [["palace", "Beginner", "Life pinned top-left"], ["branch", "Traditional 地支", "rooms at their fixed branches"]].forEach(function (m) {
+        var b = h("button", "pcast-lt-btn" + (boardMode === m[0] ? " is-on" : "")); b.type = "button";
         b.setAttribute("aria-pressed", boardMode === m[0] ? "true" : "false");
+        b.appendChild(h("b", null, m[1]));
+        b.appendChild(h("small", null, m[2]));
         b.addEventListener("click", function () { if (boardMode !== m[0]) { boardMode = m[0]; renderResult(lastOut, lastBirth); } });
         wrap.appendChild(b);
       });
@@ -475,12 +510,21 @@
           cell.addEventListener("click", function () { selectCourt(pid); });
           cell.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selectCourt(pid); } });
         })(pal.id);
-        cell.appendChild(h("span", "pcast-cell-branch", pc.branch));
+        var bIdx = (pc.branchIndex != null) ? pc.branchIndex : HOURS.indexOf(pc.branch);
+        var brPy = (bIdx >= 0 && BRANCH_PY[bIdx]) ? BRANCH_PY[bIdx] : "";
+        var brEl = h("span", "pcast-cell-branch", pc.branch);
+        if (brPy) brEl.appendChild(h("small", "pcast-cell-branch-py", brPy));
+        brEl.title = pc.branch + (brPy ? " " + brPy : "") + " · Earthly Branch — this room's fixed seat in the court";
+        cell.appendChild(brEl);
         cell.appendChild(h("span", "pcast-cell-role", pal.hant + " " + (PAL_EN[pal.id] || "")));
         var sw = h("div", "pcast-cell-stars");
         (pc.stars || []).forEach(function (st) {
-          var se = h("span", "pcast-star", starName(st.id));
-          if (st.hua) { var b = h("sup", "pcast-hua pcast-hua-" + st.hua, HUA_LABEL[st.hua]); se.appendChild(b); }
+          var m = starMeta(st.id);
+          var se = h("span", "pcast-star");
+          var hant = h("b", "pcast-star-hant", m.hant);
+          if (st.hua) hant.appendChild(h("sup", "pcast-hua pcast-hua-" + st.hua, HUA_LABEL[st.hua]));
+          se.appendChild(hant);
+          if (m.py) se.appendChild(h("small", "pcast-star-py", m.py));
           sw.appendChild(se);
         });
         cell.appendChild(sw);
@@ -549,8 +593,16 @@
       var life = chart.palaces["ming-gong"];
       var lifeB = h("div", "pcast-read-block pcast-read-life");
       lifeB.appendChild(h("p", "pcast-read-eyebrow", "Your Life Palace · 命宮"));
-      var lifeStars = (life.stars || []).map(function (s) { return starName(s.id); }).join(" · ") || "no principal star";
-      lifeB.appendChild(h("h3", "pcast-read-h", life.branch + "  ·  " + lifeStars));
+      var lifeH = h("h3", "pcast-read-h", life.branch + "  ·  ");
+      if ((life.stars || []).length) {
+        life.stars.forEach(function (s, i) {
+          if (i) lifeH.appendChild(document.createTextNode(" · "));
+          lifeH.appendChild(starFullEl(s));
+        });
+      } else {
+        lifeH.appendChild(document.createTextNode("no principal star"));
+      }
+      lifeB.appendChild(lifeH);
       var lp = primaryStar(life.stars);
       if (lp && starById[lp].placements && starById[lp].placements["ming-gong"]) {
         lifeB.appendChild(h("p", "pcast-read-p", starById[lp].placements["ming-gong"].beginner));
@@ -593,8 +645,13 @@
         rh.appendChild(h("span", "pcast-read-room-branch", pc.branch));
         room.appendChild(rh);
         if (pal.question) room.appendChild(h("p", "pcast-read-room-q", pal.question));
-        var starsLine = (pc.stars || []).map(function (s) { return starName(s.id) + (s.hua ? " " + HUA_LABEL[s.hua] : ""); }).join(" · ");
-        room.appendChild(h("p", "pcast-read-room-stars", starsLine || "— no principal star —"));
+        var starsLine = h("p", "pcast-read-room-stars");
+        if ((pc.stars || []).length) {
+          pc.stars.forEach(function (s) { starsLine.appendChild(starFullEl(s)); });
+        } else {
+          starsLine.textContent = "— no principal star —";
+        }
+        room.appendChild(starsLine);
         var prim = primaryStar(pc.stars);
         if (prim && starById[prim].placements && starById[prim].placements[pal.id]) {
           room.appendChild(h("p", "pcast-read-room-p", starById[prim].placements[pal.id].beginner));

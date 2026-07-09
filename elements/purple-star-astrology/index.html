@@ -878,8 +878,8 @@
   .pcast-chip-v { color: var(--ivory); font-size: 0.9rem; }
   .pcast-board { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; max-width: 780px; margin: 6px 0 14px; }
   .pcast-cell { position: relative; border: 1px solid var(--line-soft); border-radius: var(--r-1); background: var(--panel); padding: 8px 9px; min-height: 98px; display: flex; flex-direction: column; gap: 4px; }
-  .pcast-cell-branch { position: absolute; top: 6px; right: 8px; font-family: var(--mono); font-size: 0.72rem; color: var(--brass-dim); }
-  .pcast-cell-role { font-size: 0.72rem; color: var(--muted); }
+  .pcast-cell-branch { position: absolute; top: 6px; right: 8px; font-family: var(--mono); font-size: 0.72rem; color: var(--brass-dim); text-align: right; }
+  .pcast-cell-role { font-size: 0.72rem; color: var(--muted); display: block; padding-right: 34px; }
   .pcast-cell-stars { display: flex; flex-wrap: wrap; gap: 3px 8px; margin-top: auto; }
   .pcast-star { color: var(--ivory); font-size: 0.98rem; line-height: 1.15; }
   .pcast-hua { font-size: 0.6em; margin-left: 1px; }
@@ -980,7 +980,7 @@
   .pcast-court-cap b{color:var(--ivory)}
   .pcast-read-room.is-hi{border-color:var(--cc-bright);box-shadow:0 0 0 1px var(--cc-soft)}
   /* board layout toggle (beginner vs authentic chart) */
-  .pcast-layout-toggle{display:inline-flex;border:1px solid var(--line);border-radius:var(--r-pill);overflow:hidden;margin:0 0 12px}
+  .pcast-layout-toggle,.pcast-lt{display:inline-flex;border:1px solid var(--line);border-radius:var(--r-pill);overflow:hidden;margin:0 0 12px}
   .pcast-lt-btn{background:transparent;border:0;color:var(--muted);font:inherit;font-size:.78rem;padding:7px 14px;cursor:pointer;min-height:38px}
   .pcast-lt-btn+.pcast-lt-btn{border-left:1px solid var(--line)}
   .pcast-lt-btn.is-on{background:var(--brass);color:#1a1406;font-weight:600}
@@ -1016,14 +1016,23 @@
   .pcast-dk-sel:hover{border-color:var(--brass)}
   .pcast-dk-sel:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
   .pcast-dk-conv{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin:0;flex:1 1 220px;min-width:0;line-height:1.45}
-  .pcast-dk-ab{display:flex;align-items:center;gap:6px}
-  .pcast-dk-abctl{background:transparent;border:0;color:var(--faint);font:inherit;font-size:.7rem;text-decoration:underline;text-underline-offset:2px;cursor:pointer;padding:4px;min-height:30px}
-  .pcast-dk-abctl:hover{color:var(--muted)}
-  .pcast-dk-abctl:disabled{opacity:.4;cursor:default;text-decoration:none}
-  .pcast-dk-pill{min-height:30px;padding:2px 10px;border:1px solid var(--line);border-radius:var(--r-pill);background:transparent;color:var(--muted);font:inherit;font-size:.74rem;cursor:pointer}
-  .pcast-dk-pill.is-on{border-color:var(--brass);color:var(--brass);box-shadow:inset 0 0 0 1px var(--brass)}
-  .pcast-dk-pill:disabled{opacity:.45;cursor:default}
-  .pcast-dk-abhint{font-family:var(--mono);font-size:.62rem;color:var(--faint)}
+  /* the hour beam: a twelve-stop scrubber over the Earthly Branch hours (replaces the old A/B pills) */
+  .pcast-dk-beam{flex:1 1 320px;min-width:260px;display:flex;flex-direction:column;gap:4px}
+  .pcast-dk-beam-lab{font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+  .pcast-dk-beam-range{width:100%;accent-color:var(--brass);min-height:28px;cursor:pointer}
+  .pcast-dk-beam-range:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+  .pcast-dk-beam-ticks{display:flex;justify-content:space-between}
+  .pcast-dk-tick{background:transparent;border:0;padding:2px 1px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:0;color:var(--faint);font:inherit}
+  .pcast-dk-tick b{font-weight:400;font-size:.72rem}
+  .pcast-dk-tick small{font-family:var(--mono);font-size:.44rem;letter-spacing:0}
+  .pcast-dk-tick.is-on{color:var(--brass)}
+  .pcast-dk-tick:hover{color:var(--moon)}
+  .pcast-dk-tick:focus-visible{outline:2px solid var(--brass);outline-offset:2px;border-radius:var(--r-1)}
+  @media (max-width:640px){
+    .pcast-dk-beam{flex-basis:100%;min-width:0}
+    .pcast-dk-tick small{display:none}
+    .pcast-dk-tick.is-on small{display:block}
+  }
   .pcast-dock .psa-continue-bar{position:static;padding:4px 0 0;background:transparent;border-top:0;z-index:auto}
   .pcast-dock.has-chart .pcast-dock-lesson .psa-continue-bar{border-top:1px solid var(--line-soft)}
   .psa-cb-ico{display:none;color:var(--brass);margin-right:6px}
@@ -1059,6 +1068,41 @@
   .psa-myseats-btn{background:transparent;border:1px solid var(--line);border-radius:var(--r-pill);color:var(--muted);font:inherit;font-size:.74rem;padding:6px 14px;min-height:34px;cursor:pointer;margin:0 0 10px}
   .psa-myseats-btn:hover{border-color:var(--brass);color:var(--moon)}
   .psa-myseats-btn[hidden]{display:none}
+  /* ---- two-column reading: the board pinned left, the rooms scrolling right,
+     so scrubbing the hour beam shows WHAT CHANGES without losing the board ---- */
+  @media (min-width:1100px){
+    #pcast-result > .pcast-reading-cols{display:grid;grid-template-columns:minmax(430px,46%) 1fr;gap:28px;align-items:start}
+    .pcast-reading-cols .pcast-col-board{position:sticky;top:calc(var(--pn-bar-h,56px) + 60px)}
+    /* the board now lives in a ~430-500px column: let it fill, ease the cells down a step */
+    .pcast-col-board .pcast-board{max-width:none;margin-top:0}
+    .pcast-col-board .pcast-cell{min-height:88px;padding:7px 8px}
+    .pcast-col-board .pcast-star-hant{font-size:.88rem}
+    .pcast-col-board .pcast-cell-role{font-size:.68rem}
+    .pcast-col-board .pcast-legend{gap:8px 12px;font-size:.74rem}
+  }
+  @media (max-width:1099px){
+    #pcast-result > .pcast-reading-cols{display:block}
+    .pcast-reading-cols .pcast-col-board{position:static}
+  }
+  /* ---- star legibility: hant stacked over a tiny pinyin line ---- */
+  .pcast-star{display:inline-flex;flex-direction:column;align-items:flex-start;line-height:1.15}
+  .pcast-star-hant{font-weight:500;color:var(--ivory)}
+  .pcast-star-py{font-family:var(--mono);font-size:.56rem;color:var(--faint);letter-spacing:.02em}
+  .pcast-star-full{display:inline-flex;align-items:baseline;gap:6px;margin-right:10px}
+  .pcast-star-en{font-size:.78rem;color:var(--muted)}
+  /* ---- layout toggle with sublabels + the branch explainer note ---- */
+  .pcast-lt-btn{display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:8px 14px}
+  .pcast-lt-btn small{font-family:var(--mono);font-size:.58rem;color:var(--faint);text-transform:none;letter-spacing:.04em}
+  .pcast-lt-btn.is-on small{color:inherit;opacity:.75}
+  .pcast-branch-note{font-size:.8rem;color:var(--muted);line-height:1.55;margin:8px 0 14px;max-width:620px}
+  .pcast-cell-branch-py{display:block;font-family:var(--mono);font-size:.5rem;color:var(--faint)}
+  /* ---- figures model: tray chips wear their seat in YOUR chart + the seat roll panel ---- */
+  .psa-seal-seat{display:block;font-family:var(--mono);font-size:.5rem;color:var(--faint);letter-spacing:.02em;line-height:1.3;margin-top:3px;max-width:110px;text-align:center}
+  .psa-myseats-roll{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:6px}
+  .psa-myseats-roll li{font-size:.84rem;color:var(--muted);line-height:1.5;border-left:2px solid var(--line-soft);padding-left:10px}
+  .psa-myseats-roll li b{color:var(--ivory);font-weight:400}
+  .psa-myseats-roll li.is-life{border-left-color:var(--brass)}
+  .psa-seat-empty{color:var(--faint);font-style:italic}
   </style>
 
   <script type="application/ld+json">
@@ -2335,21 +2379,36 @@
       doc.addEventListener("pointerup", up);
     });
 
-    /* ---------- your-chart mode: per-star seat notes + "show my seats".
-       With no cast chart none of this shows and the sandbox behaves exactly as shipped. ---------- */
+    /* ---------- your-chart mode: the fourteen seat THEMSELVES from your cast.
+       In "Your chart" source mode the seats lay out on load and on every psa:studychart —
+       no click required. The sandbox stays live: pick up any star to play what-if, and the
+       reset button below the tray brings your real seats back. With no cast chart none of
+       this shows and the sandbox behaves exactly as shipped. ---------- */
     var SC2 = window.ZiweiStudyChart || null;
     var myChart = null, myMap = {}, mySeatsShown = false;
     var starsToggle = null;
     var starsModel = doc.getElementById("psa-stars-model");
     var mySeatsBtn = doc.createElement("button");
     mySeatsBtn.type = "button"; mySeatsBtn.className = "psa-myseats-btn"; mySeatsBtn.hidden = true;
-    mySeatsBtn.textContent = "Show my seats — all fourteen, as they sit in your chart";
+    mySeatsBtn.textContent = "Reset to my seats — all fourteen, as they sit in your chart";
     function starsYourMode() { return !!(myChart && starsToggle && starsToggle.mode() === "your"); }
+    function shortPal(p) { return esc(p.standard).replace(/\s+Palace$/, ""); }
     function mySeatNote(star) {
       if (!star || !starsYourMode() || !myMap[star.id]) return "";
       var mp = palaceById[myMap[star.id]];
       if (!mp) return "";
       return '<p class="psa-yourline">In your chart, <span lang="zh-Hant">' + esc(star.hant) + '</span> sits in your <span lang="zh-Hant">' + esc(mp.hant) + '</span> ' + esc(mp.standard) + '.</p>';
+    }
+    /* every tray chip wears its seat in YOUR chart: "in your 遷移宮 Travel" */
+    function paintSeatTags() {
+      var your = starsYourMode();
+      trayBtns.forEach(function (b) {
+        var tag = b.querySelector(".psa-seal-seat");
+        var mp = your ? palaceById[myMap[b.getAttribute("data-star")] || ""] : null;
+        if (!mp) { if (tag) tag.parentNode.removeChild(tag); return; }
+        if (!tag) { tag = doc.createElement("span"); tag.className = "psa-seal-seat"; b.appendChild(tag); }
+        tag.innerHTML = 'in your <span lang="zh-Hant">' + esc(mp.hant) + '</span> ' + shortPal(mp);
+      });
     }
     function showMySeats() {
       if (!starsYourMode()) return;
@@ -2364,12 +2423,34 @@
       });
       wheel.clearStates();
       if (wheel.centerQ) wheel.centerQ.textContent = "Your fourteen stars, seated as they were at birth.";
+      /* the reading panel becomes the seat roll: every room named, so each figure's
+         address in YOUR court is readable at a glance */
+      var rows = PAL.map(function (p) {
+        var pc = myChart.palaces[p.id];
+        var stars = pc ? (pc.stars || []).map(function (s) {
+          var sd = starById[s.id];
+          return sd ? '<span lang="zh-Hant">' + esc(sd.hant) + '</span> ' + esc(sd.editorial.title) : "";
+        }).filter(Boolean) : [];
+        return '<li' + (p.id === "ming-gong" ? ' class="is-life"' : '') + '><b>in your <span lang="zh-Hant">' + esc(p.hant) + '</span> ' + shortPal(p) + '</b> — ' +
+          (stars.length ? stars.join(", ") : '<span class="psa-seat-empty">no principal star — it borrows from the room across the court</span>') + '</li>';
+      });
+      panel.innerHTML = '<h3>Your fourteen, seated</h3>' +
+        '<p class="psa-card-sub">Laid onto the court exactly as they sat at your birth. Pick up any star from the tray to play what-if; the reset button below the tray brings your real seats back.</p>' +
+        '<ul class="psa-myseats-roll">' + rows.join("") + '</ul>';
       if (live) live.textContent = "All fourteen principal stars laid onto the rooms as they sit in your chart.";
     }
     mySeatsBtn.addEventListener("click", showMySeats);
     function refreshStarsPanel() {
       mySeatsBtn.hidden = !starsYourMode();
-      if (mySeatsShown && starsYourMode()) { showMySeats(); return; }
+      paintSeatTags();
+      /* your chart leads: auto-seat, no click required */
+      if (starsYourMode()) { showMySeats(); return; }
+      if (mySeatsShown) { /* leaving your-chart view: clear the laid seats so Mei's sandbox is clean */
+        mySeatsShown = false;
+        wheel.seat(null, "");
+        wheel.clearStates();
+        if (wheel.centerQ) wheel.centerQ.textContent = "";
+      }
       if (seatedPalace && held) doSeat(PIDX[seatedPalace]);
       else renderPanelPrompt();
     }
@@ -2485,27 +2566,41 @@
     render(current);
     tfReady = true;
 
-    /* ---------- your-chart default: fly the forces from YOUR year stem.
-       Works even when the birth hour is unknown (the stem needs only the year).
-       Mei's 丙 worked stem stays one toggle away; manual stem play still works. ---------- */
+    /* ---------- your-chart default: fly the forces from YOUR birth year.
+       The year input is filled with your year and pushed through applyYear() — the
+       exact same code path as the "Set the year" button, no forked logic — so the
+       stem lights and the four force cards populate from your year. Works even when
+       the birth hour is unknown (the stem needs only the year). Mei's 丙 worked stem
+       stays one toggle away; manual stem play is only re-fed on chart change or
+       mode switch, never on a render tick. ---------- */
     var SCF = window.ZiweiStudyChart || null;
     var tfToggle = null;
     var tfNote = h("p", "psa-tf-srcnote"); tfNote.hidden = true;
     controls.appendChild(tfNote);
+    var tfFedYear = null; /* last year fed into the lab — hour scrubs and re-broadcasts never clobber manual stem play */
     function applyTfSource(fromToggle) {
       if (!SCF) return;
       var sum = SCF.summary();
       var ok = !!(sum && sum.yearName);
       if (tfToggle) tfToggle.setAvailable(ok);
+      var yearInput = doc.getElementById("psa-tf-year-input");
       if (ok && tfToggle && tfToggle.mode() === "your") {
         tfNote.hidden = false;
         tfNote.textContent = "from your " + sum.yearName + " year";
-        var stem = sum.yearName.charAt(0);
-        if (current !== stem) render(stem);
+        var yr = sum.birth && sum.birth.year;
+        if (yr && (fromToggle || tfFedYear !== yr)) {
+          tfFedYear = yr;
+          if (yearInput) yearInput.value = String(yr);
+          applyYear(); /* the Set-the-year button's own path */
+        }
       } else {
         tfNote.hidden = true;
         /* only the toggle itself pulls the lab back to Mei's 丙; manual stem play is never overridden */
-        if (fromToggle && ok && current !== "丙") render("丙");
+        if (fromToggle) {
+          tfFedYear = null;
+          if (yearInput) yearInput.value = "";
+          if (ok && current !== "丙") render("丙");
+        }
       }
     }
     if (SCF && SCF.makeToggle) {
