@@ -22,10 +22,10 @@
 (function (root, factory) {
   var Astro = (typeof require !== "undefined") ? require("./saju-astro.js")
             : root.SajuAstro;
-  var api = factory(Astro);
+  var api = factory(Astro, root);
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.SajuEngine = api;
-})(typeof self !== "undefined" ? self : this, function (Astro) {
+})(typeof self !== "undefined" ? self : this, function (Astro, root) {
   "use strict";
 
   var ENGINE_VERSION = "saju-engine/1.0.0";
@@ -309,6 +309,28 @@
     return out;
   }
 
+  // ---- lunar conversion: dependency-injected / feature-detected -------------
+  // This file never imports saju-lunar.js directly (it must keep working
+  // standalone). A sibling worker ships SajuLunar.lunarToSolar(y, m, d, leap).
+  // We locate it either as an injected opts.lunar or the browser global
+  // root.SajuLunar, and always call through a uniform (y, m, d, isLeap) shape.
+  function findLunarConverter(opts) {
+    var src = opts && opts.lunar;
+    if (typeof src === "function") return src;
+    if (src && typeof src.lunarToSolar === "function") { return function (y, m, d, leap) { return src.lunarToSolar(y, m, d, leap); }; }
+    var g = root && root.SajuLunar;
+    if (g && typeof g.lunarToSolar === "function") { return function (y, m, d, leap) { return g.lunarToSolar(y, m, d, leap); }; }
+    return null;
+  }
+  // normalize whatever the converter returns into { year, month, day }
+  function toSolarDate(r) {
+    if (r == null) return null;
+    if (r instanceof Date) return { year: r.getFullYear(), month: r.getMonth() + 1, day: r.getDate() };
+    if (typeof r === "string") { var p = r.split("-").map(Number); return (p.length >= 3 && !isNaN(p[0])) ? { year: p[0], month: p[1], day: p[2] } : null; }
+    var y = (r.year != null) ? r.year : r.y, m = (r.month != null) ? r.month : r.m, d = (r.day != null) ? r.day : r.d;
+    return (y == null || m == null || d == null) ? null : { year: y, month: m, day: d };
+  }
+
   // ---------------------------------------------------------------------
   //  main entry
   // ---------------------------------------------------------------------
@@ -338,9 +360,26 @@
     log("input", { date: input.date, time: unknownTime ? null : input.time, lon: input.lon != null ? input.lon : null, calendar: input.calendar || "solar" });
 
     if (input.calendar === "lunar" || input.calendar === "lunar-leap") {
-      warnings.push({ code: "LUNAR_NOT_CONVERTED", level: "block",
-        message: "Lunar input needs conversion to a solar date before casting. This engine build does not convert lunar dates; enter the solar (양력) date." });
-      log("calendar", "lunar conversion not implemented, flagged");
+      var isLeapMonth = (input.calendar === "lunar-leap");
+      var conv = findLunarConverter(opts);
+      var sol = conv ? toSolarDate(conv(Y, Mo, D, isLeapMonth)) : null;
+      if (!sol) {
+        // No converter available (or it failed): REFUSE. Reinterpreting the lunar
+        // date string as a solar date would cast a plausible-looking WRONG chart,
+        // so we return no pillars at all — a caller cannot mistake this for a chart.
+        warnings.push({ code: "LUNAR_NOT_CONVERTED", level: "block",
+          message: "Lunar input needs conversion to a solar date before casting. No lunar converter is available in this build; enter the solar (양력) date." });
+        log("calendar", conv ? "lunar conversion failed, refusing to cast" : "lunar conversion unavailable, refusing to cast");
+        return { engine_version: ENGINE_VERSION, error: "lunar-not-converted",
+          input: { date: input.date, time: unknownTime ? null : input.time, longitude: input.lon != null ? input.lon : null, calendar: input.calendar },
+          warnings: warnings, pillars: null };
+      }
+      var lunFrom = input.date + (isLeapMonth ? " (윤달 leap-month lunar)" : " (음력 lunar)");
+      var lunTo = sol.year + "-" + pad(sol.month) + "-" + pad(sol.day);
+      Y = sol.year; Mo = sol.month; D = sol.day;
+      warnings.push({ code: "LUNAR_CONVERTED", level: "note", from: lunFrom, to: lunTo,
+        message: "Lunar (" + (isLeapMonth ? "윤달 leap-month" : "음력") + ") date converted to solar " + lunTo + " before casting." });
+      log("calendar", { converted: true, from: lunFrom, to: lunTo });
     }
 
     // ---- era standard time + DST ----
@@ -429,10 +468,32 @@
     // ---- HOUR pillar (true solar time) ----
     var hourPillar = null, solar = null;
     if (!unknownTime) {
-      var lonCorr = 0, eot = 0, applied = false;
-      if (profile.trueSolarTime && input.lon != null && era.meridian != null) {
-        lonCorr = (input.lon - era.meridian) * 4;             // minutes
-        applied = true;
+      var lonCorr = 0, eot = 0, applied = false, stdMeridian = null, meridianSource = null;
+      if (profile.trueSolarTime && input.lon != null) {
+        // Pick the standard meridian the birthplace clock was actually set to.
+        if (input.utcOffset != null) {
+          // Known UTC offset: derive the standard meridian the way bazi.js does
+          // (utc * 15). Works for any location and for fractional zones
+          // (Korea 1954–61 is +8.5, India +5.5).
+          stdMeridian = input.utcOffset * 15;
+          meridianSource = "utcOffset";
+          applied = true;
+        } else if (input.lon >= 124 && input.lon <= 132) {
+          // No offset, but the longitude is plainly Korean. This is a Korean Saju
+          // engine and the era table is exactly right for Korea, so keep using it
+          // (preserves the existing behavior and the era label).
+          if (era.meridian != null) { stdMeridian = era.meridian; meridianSource = "era"; applied = true; }
+        } else {
+          // Longitude is clearly outside Korea and no UTC offset was supplied.
+          // DECISION: refuse the correction (warn) rather than require the offset.
+          // Applying the Korean era meridian to a foreign longitude produces
+          // nonsense (San Francisco -> ~-1030 min), so we skip the correction and
+          // cast on clock time — the same, safer posture as NO_LONGITUDE — instead
+          // of blocking the chart entirely. Supplying utcOffset enables it.
+          warnings.push({ code: "FOREIGN_LONGITUDE_NO_OFFSET", level: "warn",
+            message: "Birthplace longitude is outside Korea and no UTC offset was given. The true solar time correction was skipped to avoid applying the Korean standard meridian to a foreign location; the hour pillar uses clock time. Provide utcOffset to enable the correction." });
+        }
+        if (applied) lonCorr = (input.lon - stdMeridian) * 4;  // minutes
       }
       if (profile.equationOfTime && applied) {
         eot = Astro.equationOfTimeMinutes(birthJD_UT);
@@ -444,13 +505,15 @@
       hourPillar = { stem: stemObj(hStemIdx), branch: branchObj(hBranchIdx) };
       solar = {
         applied: applied,
+        standard_meridian_e: stdMeridian,
+        meridian_source: meridianSource,
         longitude_correction_min: round(lonCorr, 1),
         equation_of_time_min: round(eot, 1),
         dst_removed_min: dst.offset,
         clock: fmtHM(clockMin),
         true_solar: fmtHM(mod(trueSolarMin, 1440))
       };
-      log("hour", { true_solar: solar.true_solar, correction_min: round(lonCorr + eot, 1), stem: STEMS[hStemIdx], branch: BRANCHES[hBranchIdx] });
+      log("hour", { true_solar: solar.true_solar, standard_meridian_e: stdMeridian, meridian_source: meridianSource, correction_min: round(lonCorr + eot, 1), stem: STEMS[hStemIdx], branch: BRANCHES[hBranchIdx] });
       // hour-branch edge (±20 min of a 2-hour boundary)
       var posInBranch = mod(trueSolarMin + 60, 120);
       if (Math.min(posInBranch, 120 - posInBranch) < 20 && !opts._noVariants) {
@@ -540,7 +603,7 @@
     if (!opts._noVariants) {
       variantSpecs.forEach(function (spec) {
         var vp = Object.assign({}, profile, spec.profilePatch || {});
-        var vo = Object.assign({ _noVariants: true }, spec.opts || {});
+        var vo = Object.assign({ _noVariants: true, lunar: opts.lunar }, spec.opts || {});
         var vc = castChart(input, vp, vo);
         if (vc && vc.pillars) {
           variants.push({ code: spec.code, label: spec.label, note: spec.note,
