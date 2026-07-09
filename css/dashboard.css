@@ -1,0 +1,95 @@
+/* ============================================================
+   ZODI DASHBOARD — the kingdom ledger (dashboard.html) and the
+   Awakened State page (awakened.html). Reuses tokens from
+   oracle.css/tokens.css and components from zodi.css
+   (.zodi-stat, .zodi-authCard, .zodi-authBtn, .kb-prog).
+   Layout only lives here.
+   ============================================================ */
+
+/* ---- page grid: single column, side rail on wide screens ---- */
+.zk-layout{display:grid;gap:22px;grid-template-columns:1fr;align-items:start}
+@media (min-width:960px){
+  .zk-layout{grid-template-columns:minmax(0,1fr) 320px}
+  .zk-rail{position:sticky;top:86px;display:grid;gap:18px}
+}
+.zk-main{display:grid;gap:22px;min-width:0}
+.zk-rail{display:grid;gap:18px}
+
+/* ---- cards ---- */
+.zk-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2,16px);padding:24px 26px}
+.zk-card h2{font-family:var(--serif);color:var(--moon);font-size:1.35rem;margin:0 0 6px;line-height:1.2}
+.zk-card .sub{color:var(--muted);font-size:.9rem;margin:0 0 14px;line-height:1.55}
+.zk-card--awaken{border-color:var(--brass-dim,rgba(214,193,140,.45));
+  background:linear-gradient(165deg,var(--panel),var(--panel2,#1b1e33));
+  box-shadow:inset 0 0 60px rgba(214,193,140,.05)}
+
+/* ---- awakened progress ring row ---- */
+.zk-allies{display:flex;gap:10px;margin:16px 0 6px}
+.zk-ally{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);
+  display:grid;place-items:center;font-size:.78rem;color:var(--faint,#7e7f97);
+  font-family:var(--mono);background:var(--field-bg,#0c0e1a);position:relative}
+.zk-ally.lit{border-color:var(--brass);color:var(--ink,#0a0b14);background:linear-gradient(160deg,var(--brass),var(--brass-bright));
+  box-shadow:0 0 14px rgba(214,193,140,.35)}
+.zk-stage{font-size:.9rem;color:var(--body);margin:10px 0 0;line-height:1.55}
+
+/* ---- referral link row ---- */
+.zk-linkrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.zk-linkrow input{flex:1 1 240px;min-width:0;background:var(--field-bg,#0c0e1a);border:1px solid var(--line);
+  border-radius:10px;color:var(--brass-bright);font-family:var(--mono);font-size:.8rem;padding:11px 14px}
+.zk-linkrow input:focus{outline:2px solid var(--brass);outline-offset:1px}
+.zk-linkbtns{display:flex;gap:10px;flex-wrap:wrap}
+
+/* ---- the circle list ---- */
+.zk-circle{list-style:none;margin:6px 0 0;padding:0}
+.zk-circle li{display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+  padding:13px 2px;border-top:1px solid var(--line-soft,rgba(214,193,140,.1))}
+.zk-circle li:first-child{border-top:0}
+.zk-circle .who{color:var(--moon);font-weight:600;font-size:.95rem}
+.zk-circle .what{color:var(--muted);font-size:.8rem;text-align:right;white-space:nowrap}
+.zk-empty{color:var(--muted);font-size:.9rem;border:1px dashed var(--line);border-radius:12px;
+  padding:18px 20px;margin-top:6px;line-height:1.55}
+
+/* ---- profile record rows ---- */
+.zk-rec{margin:0}
+.zk-rec div{display:flex;justify-content:space-between;gap:14px;padding:9px 0;
+  border-top:1px solid var(--line-soft,rgba(214,193,140,.1));font-size:.86rem}
+.zk-rec div:first-child{border-top:0}
+.zk-rec dt{color:var(--faint,#7e7f97);font-family:var(--mono);font-size:.68rem;
+  letter-spacing:.1em;text-transform:uppercase;align-self:center}
+.zk-rec dd{margin:0;color:var(--body);text-align:right;overflow-wrap:anywhere}
+.zk-rec dd.mono{font-family:var(--mono);color:var(--brass-bright)}
+
+/* ---- coming-next teaser chips ---- */
+.zk-next{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.zk-next span{border:1px solid var(--line);border-radius:999px;padding:8px 16px;
+  font-size:.8rem;color:var(--muted);display:inline-flex;gap:8px;align-items:center}
+.zk-next i{font-style:normal;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--faint,#7e7f97);border:1px solid var(--line-soft,rgba(214,193,140,.1));
+  border-radius:999px;padding:2px 8px}
+
+/* ---- setup (name your animal) ---- */
+.zk-birth{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 4px}
+.zk-birth label{display:grid;gap:6px;font-family:var(--mono);font-size:.66rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--faint,#7e7f97)}
+.zk-birth input{width:86px;background:var(--field-bg,#0c0e1a);border:1px solid var(--line);
+  border-radius:10px;color:var(--ivory);font-family:var(--mono);font-size:1rem;padding:10px 12px;text-align:center}
+.zk-birth input:focus{outline:2px solid var(--brass);outline-offset:1px}
+.zk-remember{border:1px dashed var(--brass-dim,rgba(214,193,140,.45));border-radius:12px;
+  padding:16px 18px;margin-top:10px;font-size:.9rem;color:var(--body);line-height:1.55}
+
+/* ---- awakened page badge ---- */
+.aw-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--brass);
+  border-radius:999px;padding:7px 18px;font-family:var(--mono);font-size:.72rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--brass-bright);margin-bottom:16px;
+  box-shadow:0 0 18px rgba(214,193,140,.2)}
+.aw-count{font-family:var(--serif);font-size:2.4rem;color:var(--moon);margin:14px 0 2px}
+
+/* ---- small screens ---- */
+@media (max-width:520px){
+  .zk-card{padding:20px 18px}
+  .zk-circle li{flex-direction:column;gap:2px}
+  .zk-circle .what{text-align:left}
+}
+
+/* ---- button rows (not defined globally) ---- */
+.btnRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center}

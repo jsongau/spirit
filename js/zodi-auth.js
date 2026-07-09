@@ -120,10 +120,15 @@
     signUpEmail: function (email, pass, name) {
       return ready.then(function () {
         if (!_client) throw new Error("Accounts are waking up. Try again in a moment.");
+        /* Carry a pending referral code into signup metadata so the
+           server can credit the ally even when the confirmation link
+           is opened on another device. Harmless when absent. */
+        var ref = "";
+        try { ref = localStorage.getItem("zodi_pending_ref") || ""; } catch (e) {}
         return _client.auth.signUp({
           email: email, password: pass,
           options: {
-            data: { full_name: name || "" },
+            data: { full_name: name || "", ref: ref },
             emailRedirectTo: (CFG.siteUrl || location.origin) + "/account.html"
           }
         });
