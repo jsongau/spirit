@@ -162,8 +162,21 @@
   .share-modal__copy{display:inline-flex;align-items:center;gap:.45em;min-height:40px;padding:.4em 1em;border:1px solid rgba(214,193,140,.3);border-radius:999px;background:transparent;color:#efe2b4;cursor:pointer;font-family:var(--sans);font-size:.8rem;transition:background .2s,color .2s}
   .share-modal__copy svg{width:15px;height:15px}
   .share-modal__copy:hover,.share-modal__copy.is-copied{background:#d6c18c;color:#171204}
-  @media(max-width:520px){.share-modal__list{grid-template-columns:repeat(3,1fr)}}
-  @media(max-width:380px){.share-modal__list{grid-template-columns:repeat(2,1fr)}}
+  .share-modal__more{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem;overflow:hidden;max-height:0;opacity:0;margin:0;transition:max-height .34s ease,opacity .3s ease,margin .34s ease}
+  .share-modal__more.is-open{max-height:680px;opacity:1;margin:0 0 1.1rem}
+  .share-modal__more.is-open.is-done{overflow:visible}
+  .share-tile .share-plus{transition:transform .3s ease}
+  .share-tile[aria-expanded="true"] .share-plus{transform:rotate(45deg)}
+  .share-modal__qr{position:relative;display:none;flex-direction:column;align-items:center;text-align:center;gap:.8rem;margin:0 0 1.1rem;padding:.6rem 0 .2rem}
+  .share-modal__qr.is-open{display:flex}
+  .share-modal__qr img{width:172px;height:172px;border-radius:14px;border:1px solid rgba(214,193,140,.32);background:#fff;padding:9px;box-shadow:0 12px 30px rgba(0,0,0,.4)}
+  .share-modal__qr-cap{font-family:var(--serif);font-style:italic;font-size:.95rem;line-height:1.45;color:#ece7d8;margin:0;max-width:17rem}
+  .share-modal__qr-back{display:inline-flex;align-items:center;gap:.4em;min-height:38px;padding:.32em 1.1em;border:1px solid rgba(214,193,140,.3);border-radius:999px;background:transparent;color:#efe2b4;cursor:pointer;font-family:var(--sans);font-size:.8rem;transition:background .2s,color .2s}
+  .share-modal__qr-back:hover{background:#d6c18c;color:#171204}
+  .share-hidden{display:none!important}
+
+  @media(max-width:520px){.share-modal__list,.share-modal__more{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:380px){.share-modal__list,.share-modal__more{grid-template-columns:repeat(2,1fr)}}
 
   /* v6: interactive feng shui seat + zi wei palaces (drag + live score) */
   .fs-game,.pz-game{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%}
@@ -1330,6 +1343,13 @@
       <p class="share-modal__preview" data-share-preview></p>
     </div>
     <div class="share-modal__list" data-share-list></div>
+    <div class="share-modal__more" data-share-more></div>
+    <div class="share-modal__qr" data-share-qr>
+      <img alt="QR code that opens zodianimal.com" />
+      <p class="share-modal__qr-cap"></p>
+      <button type="button" class="share-modal__qr-back" data-qr-back>Back to all apps</button>
+    </div>
+
     <div class="share-modal__linkrow">
       <span class="share-modal__url" data-share-url></span>
       <button type="button" class="share-modal__copy" data-share-copy></button>
@@ -1349,6 +1369,17 @@
     linkedin:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.8 8.5H3.9V20h2.9V8.5zM5.3 7.2c1 0 1.7-.7 1.7-1.6-.1-.9-.8-1.6-1.7-1.6s-1.7.7-1.7 1.6c0 .9.7 1.6 1.7 1.6zM20.1 20h-2.9v-5.8c0-1.5-.6-2.4-1.8-2.4-1 0-1.5.7-1.8 1.3-.1.2-.1.6-.1.9V20h-2.9V8.5h2.9v1.3c.4-.6 1.1-1.5 2.7-1.5 2 0 3.9 1.3 3.9 4.2V20z"/></svg>',
     email:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M4 6.5h16v11H4z"/><path fill="none" stroke="currentColor" stroke-width="1.6" d="m4.5 7.5 7.5 6 7.5-6"/></svg>',
     native:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="18" cy="12" r="1.7" fill="currentColor"/></svg>',
+    snapchat:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3c2.4 0 4 1.8 4.1 4.1 0 .6-.1 1.4 0 1.9.3.2.7.2 1.1 0 .5-.2 1 .4.6.8-.3.3-.9.5-1.4.7-.3.1-.4.3-.3.6.5 1.2 1.6 2.2 2.8 2.6.4.1.4.6 0 .8-.5.3-1.3.4-1.7.5-.1.3-.1.6-.3.8-.2.2-.6.1-1 .1-.6-.1-1.3-.1-1.8.2-.5.3-1 .9-2.1 1.1h-.1c-1.1-.2-1.6-.8-2.1-1.1-.5-.3-1.2-.3-1.8-.2-.4 0-.8.1-1-.1-.2-.2-.2-.5-.3-.8-.4-.1-1.2-.2-1.7-.5-.4-.2-.4-.7 0-.8 1.2-.4 2.3-1.4 2.8-2.6.1-.3 0-.5-.3-.6-.5-.2-1.1-.4-1.4-.7-.4-.4.1-1 .6-.8.4.2.8.2 1.1 0 .1-.5 0-1.3 0-1.9C8 4.8 9.6 3 12 3z"/></svg>',
+    wechat:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 5C5.6 5 3 7.1 3 9.8c0 1.5.8 2.9 2.1 3.8L4.6 15.7l2.2-1.1c.5.1 1 .2 1.5.2-.1-.4-.2-.8-.2-1.2 0-2.5 2.4-4.4 5.4-4.4h.4C13.5 6.6 11.5 5 9 5zM7 8c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7S6.6 8 7 8zm4 0c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7.3-.7.7-.7zm2.9 2.4c-2.5 0-4.6 1.7-4.6 3.8 0 2.1 2.1 3.8 4.6 3.8.5 0 1-.1 1.5-.2l1.8.9-.4-1.5c1.1-.7 1.8-1.8 1.8-3 0-2.1-2.1-3.8-4.7-3.8zm-1.6 2.3c.3 0 .6.2.6.6 0 .3-.3.6-.6.6s-.6-.3-.6-.6c0-.4.3-.6.6-.6zm3.2 0c.3 0 .6.2.6.6 0 .3-.3.6-.6.6s-.6-.3-.6-.6c0-.4.3-.6.6-.6z"/></svg>',
+    pinterest:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3.5a8.5 8.5 0 0 0-3.1 16.4c-.1-.7-.1-1.7 0-2.4l1-4.1s-.2-.5-.2-1.2c0-1.2.7-2 1.5-2 .7 0 1 .5 1 1.2 0 .7-.5 1.8-.7 2.9-.2.8.4 1.5 1.3 1.5 1.5 0 2.7-1.6 2.7-4 0-2.1-1.5-3.5-3.6-3.5A3.7 3.7 0 0 0 8 11.6c0 .7.3 1.5.6 1.9.1.1.1.1.1.2l-.2.9c0 .1-.1.2-.3.1-1-.4-1.5-1.8-1.5-2.9 0-2.4 1.7-4.6 5-4.6 2.6 0 4.6 1.9 4.6 4.4 0 2.7-1.7 4.8-4 4.8-.8 0-1.5-.4-1.8-.9l-.5 1.9c-.2.7-.6 1.5-.9 2.1a8.5 8.5 0 1 0 2.8-16z"/></svg>',
+    line:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 4C7 4 3 7.2 3 11.1c0 3.5 3.2 6.4 7.4 7 .3.1.7.2.8.4.1.2.1.5 0 .7l-.1.7c0 .2-.2.8.7.4 3.6-2.1 5.2-4.5 5.9-5.3 1.3-1.4 1.9-2.9 1.9-4.6C21.4 7.2 17 4 12 4zM8.2 13.1H6.5c-.2 0-.4-.2-.4-.4V9.4c0-.2.2-.4.4-.4s.4.2.4.4v2.9h1.3c.2 0 .4.2.4.4s-.2.4-.4.4zm1.6-.4c0 .2-.2.4-.4.4s-.4-.2-.4-.4V9.4c0-.2.2-.4.4-.4s.4.2.4.4v3.3zm3.9 0c0 .2-.1.4-.3.4h-.1s-.2 0-.3-.1l-1.4-1.9v1.6c0 .2-.2.4-.4.4s-.4-.2-.4-.4V9.4c0-.2.1-.3.3-.4.2 0 .3 0 .4.2l1.4 1.9V9.4c0-.2.2-.4.4-.4s.4.2.4.4v3.3zm2.7-2.1c.2 0 .4.2.4.4s-.2.4-.4.4h-1.2v.8h1.2c.2 0 .4.2.4.4s-.2.4-.4.4h-1.6c-.2 0-.4-.2-.4-.4V9.4c0-.2.2-.4.4-.4h1.6c.2 0 .4.2.4.4s-.2.4-.4.4h-1.2v.8h1.2z"/></svg>',
+    tumblr:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 20.5c-2.6 0-4.5-1.3-4.5-4.5v-4.3H7.4V9.1C9.6 8.5 10.5 6.6 10.7 5h2.4v3.6h2.8v3.1h-2.8v3.6c0 1.2.6 1.6 1.5 1.6h1.4v3.6H14z"/></svg>',
+    threads:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.5 11.3c-.1 0-.2-.1-.3-.1-.2-3-1.8-4.7-4.6-4.7-1.7 0-3.1.7-3.9 2l1.5 1c.6-.9 1.5-1.1 2.4-1.1 1.5 0 2.5.9 2.7 2.5-.7-.1-1.4-.2-2.2-.1-2.2.1-3.7 1.4-3.6 3.2.1 1.6 1.4 2.7 3.2 2.6 1.4-.1 2.4-.6 3.1-1.6.5-.7.7-1.5.8-2.5.6.4 1 .9 1.3 1.5.4 1 .5 2.6-.8 3.9-1.1 1.1-2.5 1.6-4.6 1.6-2.3 0-4-.7-5.1-2.2C5.5 15.5 5 13.9 5 12s.5-3.5 1.4-4.6C7.5 5.9 9.2 5.2 11.5 5.2c2.3 0 4 .7 5.2 2.2.6.7 1 1.6 1.2 2.7l1.7-.4c-.3-1.4-.8-2.6-1.6-3.5C16.4 4.3 14.2 3.4 11.5 3.4h-.1C8.7 3.4 6.5 4.3 5 6 3.7 7.6 3 9.6 3 12s.7 4.4 2 6c1.5 1.7 3.7 2.6 6.4 2.6h.1c2.4 0 4.1-.6 5.5-2 1.9-1.9 1.8-4.2 1.2-5.6-.4-1-1.2-1.8-2.2-2.3zm-4.4 4.5c-1 .1-2-.4-2.1-1.2 0-.6.4-1.3 1.9-1.4h.5c.6 0 1.1 0 1.6.1-.2 1.6-1 2.4-1.9 2.5z"/></svg>',
+    bluesky:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 10.6C10.9 8.5 8 5.1 5.4 4.2 4 3.7 3 4.4 3 6.2c0 1.5.8 4.8 1.3 5.4.6.8 1.6 1 2.9.8-2.4.4-2.9 1.9-1.6 3.3 2.4 2.6 3.5-.6 3.8-1.4.1-.2.1-.3.2-.3s.1.1.2.3c.3.8 1.4 4 3.8 1.4 1.3-1.4.8-2.9-1.6-3.3 1.3.2 2.3 0 2.9-.8.5-.6 1.3-3.9 1.3-5.4 0-1.8-1-2.5-2.4-2C16 5.1 13.1 8.5 12 10.6z"/></svg>',
+    instagram:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="16.5" cy="7.5" r="1.05" fill="currentColor"/></svg>',
+    sms:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 4C6.9 4 3 7.2 3 11.2c0 1.9.9 3.6 2.4 4.9-.1 1-.5 2.1-1.3 3 0 .2.1.3.3.3 1.5-.2 2.8-.8 3.8-1.5 1.2.4 2.5.6 3.8.6 5.1 0 9-3.2 9-7.4C21 7.2 17.1 4 12 4zm-3.6 8.3a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4zm3.6 0a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4zm3.6 0a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4z"/></svg>',
+    discord:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.3 5.6A16 16 0 0 0 15.3 4.3l-.2.4a14.9 14.9 0 0 1 3.6 1.5 11 11 0 0 0-9.4 0c-.6-.4-1.8-1-3.6-1.5l-.2-.4A16 16 0 0 0 4.7 5.6C2.3 9 1.7 12.4 2 15.7a16.5 16.5 0 0 0 4.9 2.5l.6-1c-.5-.2-1-.4-1.5-.8l.4-.3a10.6 10.6 0 0 0 9.2 0l.4.3c-.5.4-1 .6-1.5.8l.6 1a16.4 16.4 0 0 0 4.9-2.5c.4-3.9-.6-7.3-2.7-10.1zM9.3 13.6c-.9 0-1.7-.8-1.7-1.9s.8-1.9 1.7-1.9 1.7.9 1.7 1.9-.8 1.9-1.7 1.9zm5.4 0c-.9 0-1.7-.8-1.7-1.9s.8-1.9 1.7-1.9 1.7.9 1.7 1.9-.8 1.9-1.7 1.9z"/></svg>',
+    plus:'<svg class="share-plus" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v12M6 12h12"/></svg>',
     copy:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 15.5A1.8 1.8 0 0 1 4 13.7V6a2 2 0 0 1 2-2h7.7c.8 0 1.5.6 1.7 1.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>'
   };
   var PLATFORMS=[
@@ -1360,6 +1391,19 @@
     {key:'linkedin',label:'LinkedIn',href:function(p){return 'https://www.linkedin.com/sharing/share-offsite/?url='+enc(p.url);}},
     {key:'email',label:'Email',href:function(p){return 'mailto:?subject='+enc(p.title)+'&body='+enc(p.text+'\n\n'+p.url);}}
   ];
+  var MORE=[
+    {key:'instagram',label:'Instagram',open:'https://www.instagram.com/'},
+    {key:'snapchat',label:'Snapchat',open:'https://www.snapchat.com/'},
+    {key:'discord',label:'Discord',open:'https://discord.com/channels/@me'},
+    {key:'threads',label:'Threads',href:function(p){return 'https://www.threads.net/intent/post?text='+enc(p.text+' '+p.url);}},
+    {key:'sms',label:'SMS',href:function(p){return 'sms:?&body='+enc(p.text+' '+p.url);}},
+    {key:'wechat',label:'WeChat'},
+    {key:'pinterest',label:'Pinterest',href:function(p){return 'https://www.pinterest.com/pin/create/button/?url='+enc(p.url)+'&description='+enc(p.text);}},
+    {key:'line',label:'LINE',href:function(p){return 'https://social-plugins.line.me/lineit/share?url='+enc(p.url)+'&text='+enc(p.text);}},
+    {key:'tumblr',label:'Tumblr',href:function(p){return 'https://www.tumblr.com/widgets/share/tool?canonicalUrl='+enc(p.url)+'&caption='+enc(p.text);}},
+    {key:'bluesky',label:'Bluesky',href:function(p){return 'https://bsky.app/intent/compose?text='+enc(p.text+' '+p.url);}}
+  ];
+  var QR_SRC='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUoAAAFKCAIAAAD0S4FSAAAEuElEQVR42u3dwW0bMRCG0SjYDoJUkf5LSRWGa9jcfAoEO9TknyHfu1veXe0H6jAgH/d9fwN29N0jAHkD8gbkDcgbkDcgb5A3IG9A3oC8AXkD8gZ5A/IG5A3IG5A3IG+QNyBvQN6AvAF5A/IG5A3yBuQNyBuQNyBvQN4gb0DegLwBeQPyBuQN8gb2cqX+8Y+fvzZ7lO9vv//5flf+NnVVK99v3f1OfDes3oC8AXmDvAF5A/IG5A3IG5A3HOXqeVmpKZ/n6qbH6p7VyjX3nB7b792wegPyBuQN8gbkDcgbkDcgb0DecJRr4kXXTQjVTUSt7D2W2i+t7o68G1ZvQN6AvEHegLwBeQPyBuQNyBuOdXkE09Wd44nVG5A3IG9A3oC8Qd6AvAF5A/IGXs7U2gCpk0nr5uEm7ltm9QbkDcgbkDcgb5A3IG9A3oC8gZcYObW238zTfnNp3g2rNyBvQN6AvEHegLwBeQPyBuQN/FXTqbXTTq58Pmu18jRW9jyr+1vvhtUbkDcgb5A3IG9A3oC8AXkD8oZjPe779hSaS+3Elvq/WL0BeYO8AXkD8gbkDcgbkDcgb9jYyBNCJ+62lZriqntWdXfk7FGrNyBvkDcgb0DegLwBeQPyBuQNGxt5Qmjd/mGpnclSs2U9n0bqmlNvjtUbkDcgb5A3IG9A3oC8AXkD8oajxE4ITU011X1yz7mllWvu+R3VST0Nqzcgb0DeIG9A3oC8AXkD8gbkDUeJ7bU28bzFnvt49Zyl2292cOIcntUb/DgH5A3IG5A3IG9A3iBvQN5AQ7G91p7bbxLruYkTURPvKHVV9loD5A3IG+QNyBuQNyBvQN6AvIEPsb3Wek5ipc7T3G9nsp53tN+edlZv8OMckDcgb0DegLwBeQPyBnkD48T2Wus5TVU3l7bfRNTEHeDqvqOVT7Z6A/IG5A3yBuQNyBuQNyBvQN5wlGviRadmvFY+uW4nNhN+/+cbnHiKq9Ub/DgH5A3IG5A3IG9A3iBvQN5AQyOn1lLzQ3WfnJqH6yl1RytTek4IBeQNyBuQN8gbkDcgb0DegLyBT4qdEHqanqeL9txNredztnoD8gbkDcgbkDfIG5A3IG9A3sBLxPZa22+HsJW9uCaeell3R3UnoqZ26UvNw1m9wY9zQN6AvAF5A/IG5A3yBuQNNNT0hNCeu17VTWLV/W3djNfEb79uHs7qDcgbkDcgb5A3IG9A3oC8AXkDn3RNvOj99sRauarnTyN1MmnqG6y7o4kzbVZv8OMckDcgb0DegLwBeYO8AXkDDV0eQX89J89WpE4mnbjjndUbkDfIG5A3IG9A3oC8AXmDvIHNmFproeceYD1n2uqeZOqTrd6AvAF5g7wBeQPyBuQNyBuQNxxl5NTaxLMaU7uLpZ7kyp5nqfmwie+V1Rv8OAfkDcgbkDcgb0DegLxB3sA4j/u+I/+4595UK07bLy014zXxzXFCKCBvQN4gb0DegLwBeQPyBuQNfIhNrQFWb0DegLxB3oC8AXkD8gbkDcgb5A3IG5A3IG9A3oC8Qd6AvAF5A/IG5A3IG5A3yBuQNyBvQN6AvAF5g7wBeQPyBuQNyBuQN8gbkDcgb0DegLyBL/kDtNSOVw7LOw0AAAAASUVORK5CYII=';
   function openShare(next){
     payload=Object.assign({},payload,next);
     if(!modal||typeof modal.showModal!=='function'){
@@ -1369,22 +1413,45 @@
     }
     var preview=modal.querySelector('[data-share-preview]');if(preview)preview.textContent=payload.text;
     var urlEl=modal.querySelector('[data-share-url]');if(urlEl)urlEl.textContent=payload.url.replace(/^https:\/\/(www\.)?/,'');
+    var _mo=modal.querySelector('[data-share-more]');if(_mo){_mo.classList.remove('is-open');_mo.classList.remove('is-done');_mo.classList.remove('share-hidden');}
+    var _tg=modal.querySelector('[data-share-toggle]');if(_tg){_tg.setAttribute('aria-expanded','false');var _tl=_tg.querySelector('.share-tile__label');if(_tl)_tl.textContent='More';}
+    var _qv=modal.querySelector('[data-share-qr]');if(_qv)_qv.classList.remove('is-open');
+    var _ls=modal.querySelector('[data-share-list]');if(_ls)_ls.classList.remove('share-hidden');
     if(!modal.open)modal.showModal();
   }
   function initShareModal(){
     modal=document.getElementById('share-modal');
     if(!modal)return;
     var list=modal.querySelector('[data-share-list]');
+    var more=modal.querySelector('[data-share-more]');
+    var qr=modal.querySelector('[data-share-qr]');
+    var moreSet=MORE.slice();
+    if(navigator.share)moreSet.push({key:'native',label:'Device',native:true});
+    function tile(p){return '<button type="button" class="share-tile" data-share="'+p.key+'"'+(p.open?' title="Copies your line, then opens '+p.label+' to paste"':'')+'><span class="share-tile__mark">'+I[p.key]+'</span><span class="share-tile__label">'+p.label+'</span></button>';}
     if(list){
-      list.innerHTML=PLATFORMS.map(function(p){return '<button type="button" class="share-tile" data-share="'+p.key+'"><span class="share-tile__mark">'+I[p.key]+'</span><span class="share-tile__label">'+p.label+'</span></button>';}).join('')+(navigator.share?'<button type="button" class="share-tile" data-share="native"><span class="share-tile__mark">'+I.native+'</span><span class="share-tile__label">More</span></button>':'');
-      list.addEventListener('click',function(e){
-        var btn=e.target.closest('[data-share]');if(!btn)return;
-        var key=btn.getAttribute('data-share');
-        if(key==='native'){if(navigator.share){navigator.share(payload).then(function(){modal.close();}).catch(function(){});}return;}
-        var platform=null;for(var i=0;i<PLATFORMS.length;i++){if(PLATFORMS[i].key===key){platform=PLATFORMS[i];break;}}
-        if(platform){var w=window.open(platform.href(payload),'_blank','noopener,noreferrer,width=640,height=560');if(w)w.opener=null;}
-      });
+      list.innerHTML=PLATFORMS.map(tile).join('')+'<button type="button" class="share-tile" data-share-toggle aria-expanded="false"><span class="share-tile__mark">'+I.plus+'</span><span class="share-tile__label">More</span></button>';
     }
+    if(more)more.innerHTML=moreSet.map(tile).join('');
+    if(qr){var _qi=qr.querySelector('img');if(_qi)_qi.src=QR_SRC;var _qc=qr.querySelector('.share-modal__qr-cap');if(_qc)_qc.textContent='Scan this with WeChat, then tap the dots to send it to your chats. Or copy the link below.';}
+    function showQR(on){if(qr)qr.classList.toggle('is-open',on);if(list)list.classList.toggle('share-hidden',on);if(more)more.classList.toggle('share-hidden',on);}
+    function onTile(e){
+      var tg=e.target.closest('[data-share-toggle]');
+      if(tg){var op=more.classList.toggle('is-open');tg.setAttribute('aria-expanded',op?'true':'false');tg.querySelector('.share-tile__label').textContent=op?'Less':'More';if(op){more.addEventListener('transitionend',function te(ev){if(ev.propertyName==='max-height'){more.classList.add('is-done');more.removeEventListener('transitionend',te);}});}else{more.classList.remove('is-done');}return;}
+      var btn=e.target.closest('[data-share]');if(!btn)return;
+      var key=btn.getAttribute('data-share');
+      if(key==='wechat'){showQR(true);return;}
+      if(key==='native'){if(navigator.share){navigator.share(payload).then(function(){modal.close();}).catch(function(){});}return;}
+      var all=PLATFORMS.concat(MORE),platform=null;
+      for(var i=0;i<all.length;i++){if(all[i].key===key){platform=all[i];break;}}
+      if(!platform)return;
+      if(platform.open){if(navigator.clipboard){try{navigator.clipboard.writeText(payload.text+' '+payload.url);}catch(e2){}}var wo=window.open(platform.open,'_blank','noopener,noreferrer');if(wo)wo.opener=null;return;}
+      if(platform.href){var href=platform.href(payload);if(/^(sms|mailto|tel):/.test(href)){window.location.href=href;}else{var w=window.open(href,'_blank','noopener,noreferrer,width=640,height=600');if(w)w.opener=null;}}
+    }
+    if(list)list.addEventListener('click',onTile);
+    if(more)more.addEventListener('click',onTile);
+    var _qb=modal.querySelector('[data-qr-back]');
+    if(_qb)_qb.addEventListener('click',function(){showQR(false);});
+    
     var copyBtn=modal.querySelector('[data-share-copy]');
     if(copyBtn){
       copyBtn.innerHTML=I.copy+'<span>Copy</span>';
