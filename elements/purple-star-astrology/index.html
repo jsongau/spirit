@@ -998,6 +998,67 @@
   .pcast-sr-edit{width:100%;background:transparent;border:1px solid var(--line);border-radius:var(--r-1);color:var(--cc-bright);font:inherit;font-size:.8rem;padding:8px;cursor:pointer;min-height:38px}
   .pcast-sr-edit:hover{border-color:var(--cc)}
   @media (max-width:1320px){.pcast-siderail{display:none}}
+  /* ---- sticky bottom chart dock (replaces the floating left rail + absorbs the lesson bar) ---- */
+  .pcast-dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;background:color-mix(in oklab,var(--ink-2) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .pcast-dock.has-chart{display:block}
+  @media (max-width:1199px){.pcast-dock.has-lesson{display:block}}
+  .pcast-dock-inner{max-width:1160px;margin:0 auto;padding:8px clamp(12px,3vw,24px) calc(8px + env(safe-area-inset-bottom))}
+  .pcast-dock-chart{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+  .pcast-dock-chart[hidden]{display:none}
+  .pcast-dk-id{display:flex;flex-direction:column;align-items:flex-start;gap:1px;background:transparent;border:0;padding:2px 4px;cursor:pointer;font:inherit}
+  .pcast-dk-eyebrow{font-family:var(--mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+  .pcast-dk-date{font-family:var(--mono);font-size:.86rem;color:var(--ivory);border-bottom:1px dashed var(--line)}
+  .pcast-dk-id:hover .pcast-dk-date{color:var(--moon);border-bottom-color:var(--brass)}
+  .pcast-dk-id:focus-visible{outline:2px solid var(--brass);outline-offset:2px;border-radius:var(--r-1)}
+  .pcast-dk-field{display:flex;flex-direction:column;gap:1px}
+  .pcast-dk-lab{font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+  .pcast-dk-sel{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r-1);color:var(--moon);font:inherit;font-size:.8rem;padding:5px 8px;min-height:36px;max-width:190px}
+  .pcast-dk-sel:hover{border-color:var(--brass)}
+  .pcast-dk-sel:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
+  .pcast-dk-conv{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin:0;flex:1 1 220px;min-width:0;line-height:1.45}
+  .pcast-dk-ab{display:flex;align-items:center;gap:6px}
+  .pcast-dk-abctl{background:transparent;border:0;color:var(--faint);font:inherit;font-size:.7rem;text-decoration:underline;text-underline-offset:2px;cursor:pointer;padding:4px;min-height:30px}
+  .pcast-dk-abctl:hover{color:var(--muted)}
+  .pcast-dk-abctl:disabled{opacity:.4;cursor:default;text-decoration:none}
+  .pcast-dk-pill{min-height:30px;padding:2px 10px;border:1px solid var(--line);border-radius:var(--r-pill);background:transparent;color:var(--muted);font:inherit;font-size:.74rem;cursor:pointer}
+  .pcast-dk-pill.is-on{border-color:var(--brass);color:var(--brass);box-shadow:inset 0 0 0 1px var(--brass)}
+  .pcast-dk-pill:disabled{opacity:.45;cursor:default}
+  .pcast-dk-abhint{font-family:var(--mono);font-size:.62rem;color:var(--faint)}
+  .pcast-dock .psa-continue-bar{position:static;padding:4px 0 0;background:transparent;border-top:0;z-index:auto}
+  .pcast-dock.has-chart .pcast-dock-lesson .psa-continue-bar{border-top:1px solid var(--line-soft)}
+  .psa-cb-ico{display:none;color:var(--brass);margin-right:6px}
+  .psa-cb-short{display:none}
+  @media (max-width:480px){
+    .pcast-dock.has-chart .psa-cb-txt{display:none}
+    .pcast-dock.has-chart .psa-cb-ico,.pcast-dock.has-chart .psa-cb-short{display:inline}
+  }
+  @media (max-width:390px){.pcast-dk-conv{flex-basis:100%}}
+  /* merge with the site-wide mobile Reveal Dock (#pn-dock): while the chart dock is live,
+     one bottom instrument only — the ✦ pill inside the dock carries the unlock path */
+  .pcast-dk-zodi{display:none}
+  @media (max-width:900px){
+    body.pcast-dock-live #pn-dock{display:none}
+    body.pcast-dock-live.pn-has-bar{padding-bottom:0}
+    .pcast-dock.has-chart .pcast-dk-zodi{display:inline-flex;align-items:center;justify-content:center;width:38px;min-height:38px;margin-left:auto;border:1px solid var(--brass);border-radius:var(--r-pill);color:var(--brass);text-decoration:none;font-size:1rem;flex:none}
+    .pcast-dock.has-chart .pcast-dk-zodi:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+  }
+  /* ---- "Your chart / Worked example" source pills + your-chart annotations ---- */
+  .psa-src-toggle{display:flex;justify-content:flex-end;margin:0 0 10px}
+  .psa-src-toggle[hidden]{display:none}
+  .psa-src-btn{background:transparent;border:1px solid var(--line);color:var(--muted);font:inherit;font-size:.72rem;padding:5px 12px;min-height:32px;cursor:pointer}
+  .psa-src-btn:first-child{border-radius:var(--r-pill) 0 0 var(--r-pill)}
+  .psa-src-btn:last-child{border-radius:0 var(--r-pill) var(--r-pill) 0;border-left:0}
+  .psa-src-btn.is-on{background:var(--brass);color:var(--ink);font-weight:600;border-color:var(--brass)}
+  .psa-src-btn:not(.is-on):hover{color:var(--moon)}
+  .psa-src-btn:focus-visible{outline:2px solid var(--cc);outline-offset:-2px}
+  .psa-mychart{display:block;margin-top:3px;font-size:.7rem;color:var(--brass-dim);line-height:1.35}
+  .zws-cell.is-mylife{box-shadow:inset 0 0 0 1px var(--brass)}
+  .zws-cell.is-mybody .psa-mychart::after{content:" · 身";color:var(--cc-bright)}
+  .psa-yourline{margin:10px 0 0;padding-left:10px;border-left:2px solid var(--brass-dim);font-size:.88rem;color:var(--body-text);line-height:1.55}
+  .psa-tf-srcnote{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--brass);margin:4px 0 0}
+  .psa-myseats-btn{background:transparent;border:1px solid var(--line);border-radius:var(--r-pill);color:var(--muted);font:inherit;font-size:.74rem;padding:6px 14px;min-height:34px;cursor:pointer;margin:0 0 10px}
+  .psa-myseats-btn:hover{border-color:var(--brass);color:var(--moon)}
+  .psa-myseats-btn[hidden]{display:none}
   </style>
 
   <script type="application/ld+json">
@@ -1505,6 +1566,7 @@
 <script src="../../js/ziwei/ziwei-lessons.js"></script>
 <script src="../../js/ziwei/ziwei-progress.js"></script>
 <script src="../../js/ziwei/ziwei-pronunciation.js"></script>
+<script src="../../js/ziwei/ziwei-study-chart.js"></script>
 <script src="../../js/ziwei/ziwei-cast-ui.js"></script>
 <script src="../../js/nav.js" defer></script>
 <script>
@@ -1675,6 +1737,7 @@
       }
       html += "<p>" + prText + "</p></div>";
     }
+    html += myCourtLine(p);
     panel.innerHTML = html;
   }
 
@@ -1747,6 +1810,68 @@
   selectPalace(IDX[startId] != null ? IDX[startId] : 0, { user: false });
   setFocus(activeIdx, false);
   if (openedFromTeaser) updateUrl(PAL[activeIdx]);
+
+  /* ---------- your-chart mode (progressive enhancement off "psa:studychart").
+     Without a cast chart nothing here runs and the court behaves exactly as shipped.
+     With one, the twelve room tiles gain your branch + seated stars, your Life/Body
+     rooms are marked, and the explainer panel appends one line about your seat. ---------- */
+  var SC = window.ZiweiStudyChart || null;
+  var myChart = null;
+  var courtToggle = null;
+  if (SC && SC.makeToggle) {
+    courtToggle = SC.makeToggle("srcCourt", function () {
+      paintMyCourt();
+      if (activeIdx >= 0) selectPalace(activeIdx, {});
+    });
+    var courtBox = document.querySelector("#the-court .psa-court");
+    if (courtBox && courtBox.parentElement) courtBox.parentElement.insertBefore(courtToggle.el, courtBox);
+  }
+  function courtYourMode() { return !!(myChart && courtToggle && courtToggle.mode() === "your"); }
+  function myStarNames(pc) {
+    return (pc.stars || []).map(function (s) { return (ZD.starById && ZD.starById[s.id]) ? ZD.starById[s.id].hant : s.id; }).join("、");
+  }
+  function myCourtLine(p) {
+    if (!courtYourMode()) return "";
+    var pc = myChart.palaces[p.id];
+    if (!pc) return "";
+    var names = myStarNames(pc);
+    return '<p class="psa-yourline">In your chart this room sits in <span lang="zh-Hant">' + pc.branch + '</span>' +
+      (names ? ' and holds <span lang="zh-Hant">' + names + '</span>.' : ' and holds no principal star — it tends to borrow its tone from the room across the court.') +
+      (pc.isBody ? ' Your Body Palace <span lang="zh-Hant">身宮</span> sits here too.' : '') + '</p>';
+  }
+  function paintMyCourt() {
+    var your = courtYourMode();
+    PAL.forEach(function (p) {
+      var el = cellById[p.id];
+      if (!el) return;
+      var line = el.querySelector(".psa-mychart");
+      var pc = your ? myChart.palaces[p.id] : null;
+      if (!pc) {
+        if (line) line.parentNode.removeChild(line);
+        el.classList.remove("is-mylife", "is-mybody");
+        return;
+      }
+      if (!line) {
+        line = document.createElement("span");
+        line.className = "psa-mychart";
+        line.setAttribute("lang", "zh-Hant");
+        var nEl = el.querySelector(".n");
+        if (nEl && nEl.nextSibling) el.insertBefore(line, nEl.nextSibling);
+        else el.appendChild(line);
+      }
+      var names = myStarNames(pc);
+      line.textContent = pc.branch + (names ? " · " + names : " · —");
+      el.classList.toggle("is-mylife", p.id === "ming-gong");
+      el.classList.toggle("is-mybody", !!pc.isBody);
+    });
+  }
+  document.addEventListener("psa:studychart", function (e) {
+    var d = e.detail || {};
+    myChart = (d.out && d.out.chart) ? d.out.chart : null;
+    if (courtToggle) courtToggle.setAvailable(!!myChart);
+    paintMyCourt();
+    if (activeIdx >= 0) selectPalace(activeIdx, {});
+  });
 
   /* ---------- subnav: expandable groups + palace jump items ---------- */
   var drops = Array.prototype.slice.call(document.querySelectorAll(".psa-nav [data-drop]"));
@@ -2155,9 +2280,10 @@
         '<div class="psa-layer-body' + (opts.lead ? " psa-layer-lead" : "") + '">' + esc(body) + '</div></details>';
     }
     function renderPanelPrompt() {
-      panel.innerHTML = '<p class="psa-lead">' + (held ? held.pinyin + " is in your hand. Now choose a room in the court." : "Pick a star to begin.") + '</p>';
+      panel.innerHTML = '<p class="psa-lead">' + (held ? held.pinyin + " is in your hand. Now choose a room in the court." : "Pick a star to begin.") + '</p>' + (held ? mySeatNote(held) : "");
     }
     function doSeat(i) {
+      mySeatsShown = false;
       var p = PAL[i]; seatedPalace = p.id;
       var pr = held.placements ? held.placements[p.id] : null;
       wheel.seat(p.id, rubyHant(held.hant, held.rubyPinyin), starAccent(held.id));
@@ -2177,6 +2303,7 @@
         html += '<p>' + esc(held.essence) + '</p>';
       }
       html += '<dl class="psa-panel-court" style="margin-top:14px"><dt><span class="mark">&#9651;</span> Triangle</dt><dd>' + esc(tri0.standard) + " and " + esc(tri1.standard) + '</dd><dt><span class="mark">&#9671;</span> Mirror</dt><dd>' + esc(opp.standard) + '</dd></dl>';
+      html += mySeatNote(held);
       panel.innerHTML = html;
 
       /* persistence copy */
@@ -2206,6 +2333,58 @@
         if (cell) { held = starById[id]; trayBtns.forEach(function (x) { x.setAttribute("aria-pressed", x.getAttribute("data-star") === id ? "true" : "false"); }); doSeat(parseInt(cell.getAttribute("data-idx"), 10)); }
       }
       doc.addEventListener("pointerup", up);
+    });
+
+    /* ---------- your-chart mode: per-star seat notes + "show my seats".
+       With no cast chart none of this shows and the sandbox behaves exactly as shipped. ---------- */
+    var SC2 = window.ZiweiStudyChart || null;
+    var myChart = null, myMap = {}, mySeatsShown = false;
+    var starsToggle = null;
+    var starsModel = doc.getElementById("psa-stars-model");
+    var mySeatsBtn = doc.createElement("button");
+    mySeatsBtn.type = "button"; mySeatsBtn.className = "psa-myseats-btn"; mySeatsBtn.hidden = true;
+    mySeatsBtn.textContent = "Show my seats — all fourteen, as they sit in your chart";
+    function starsYourMode() { return !!(myChart && starsToggle && starsToggle.mode() === "your"); }
+    function mySeatNote(star) {
+      if (!star || !starsYourMode() || !myMap[star.id]) return "";
+      var mp = palaceById[myMap[star.id]];
+      if (!mp) return "";
+      return '<p class="psa-yourline">In your chart, <span lang="zh-Hant">' + esc(star.hant) + '</span> sits in your <span lang="zh-Hant">' + esc(mp.hant) + '</span> ' + esc(mp.standard) + '.</p>';
+    }
+    function showMySeats() {
+      if (!starsYourMode()) return;
+      mySeatsShown = true;
+      PAL.forEach(function (p) {
+        var el = wheel.cells[p.id]; if (!el) return;
+        var pc = myChart.palaces[p.id];
+        var names = pc ? (pc.stars || []).map(function (s) { return (starById[s.id] || {}).hant || ""; }).join(" ") : "";
+        var seat = el.querySelector(".seat");
+        if (seat) seat.innerHTML = names ? '<span lang="zh-Hant">' + names + '</span>' : "";
+        el.classList.toggle("has-star", !!names);
+      });
+      wheel.clearStates();
+      if (wheel.centerQ) wheel.centerQ.textContent = "Your fourteen stars, seated as they were at birth.";
+      if (live) live.textContent = "All fourteen principal stars laid onto the rooms as they sit in your chart.";
+    }
+    mySeatsBtn.addEventListener("click", showMySeats);
+    function refreshStarsPanel() {
+      mySeatsBtn.hidden = !starsYourMode();
+      if (mySeatsShown && starsYourMode()) { showMySeats(); return; }
+      if (seatedPalace && held) doSeat(PIDX[seatedPalace]);
+      else renderPanelPrompt();
+    }
+    if (SC2 && SC2.makeToggle) {
+      starsToggle = SC2.makeToggle("srcStars", refreshStarsPanel);
+      if (starsModel) starsModel.insertBefore(starsToggle.el, starsModel.firstChild);
+      tray.parentNode.insertBefore(mySeatsBtn, tray.nextSibling);
+    }
+    doc.addEventListener("psa:studychart", function (e) {
+      var d = e.detail || {};
+      myChart = (d.out && d.out.chart) ? d.out.chart : null;
+      myMap = {};
+      if (myChart) Object.keys(myChart.palaces).forEach(function (pid) { (myChart.palaces[pid].stars || []).forEach(function (s) { myMap[s.id] = pid; }); });
+      if (starsToggle) starsToggle.setAvailable(!!myChart);
+      refreshStarsPanel();
     });
 
     /* default: seat zi-wei nowhere yet; if the bus already has a star (teaser), pre-pick it */
@@ -2305,6 +2484,35 @@
     doc.getElementById("psa-tf-year-input").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); applyYear(); } });
     render(current);
     tfReady = true;
+
+    /* ---------- your-chart default: fly the forces from YOUR year stem.
+       Works even when the birth hour is unknown (the stem needs only the year).
+       Mei's 丙 worked stem stays one toggle away; manual stem play still works. ---------- */
+    var SCF = window.ZiweiStudyChart || null;
+    var tfToggle = null;
+    var tfNote = h("p", "psa-tf-srcnote"); tfNote.hidden = true;
+    controls.appendChild(tfNote);
+    function applyTfSource(fromToggle) {
+      if (!SCF) return;
+      var sum = SCF.summary();
+      var ok = !!(sum && sum.yearName);
+      if (tfToggle) tfToggle.setAvailable(ok);
+      if (ok && tfToggle && tfToggle.mode() === "your") {
+        tfNote.hidden = false;
+        tfNote.textContent = "from your " + sum.yearName + " year";
+        var stem = sum.yearName.charAt(0);
+        if (current !== stem) render(stem);
+      } else {
+        tfNote.hidden = true;
+        /* only the toggle itself pulls the lab back to Mei's 丙; manual stem play is never overridden */
+        if (fromToggle && ok && current !== "丙") render("丙");
+      }
+    }
+    if (SCF && SCF.makeToggle) {
+      tfToggle = SCF.makeToggle("srcForces", function () { applyTfSource(true); });
+      controls.insertBefore(tfToggle.el, controls.firstChild);
+    }
+    doc.addEventListener("psa:studychart", function () { applyTfSource(false); });
   }());
 
   /* =======================================================
@@ -2320,14 +2528,69 @@
     if (!wheelMount || !TL || !verdict) return;
 
     var wheel = makeWheel(wheelMount, { centerLabel: "Mei's Career", keyboard: true, onSelect: function () {} });
-    /* seat the focal + companion stars from Mei's chart */
+    /* seat the focal + companion stars from the active chart (Mei, or yours when cast) */
     var chart = ZD.sampleChartById.mei;
+    var SCT = window.ZiweiStudyChart || null;
+    var myChart = null;
+    var triToggle = null;
+    var triModel = doc.getElementById("psa-tri-model");
+    function triYourMode() { return !!(myChart && triToggle && triToggle.mode() === "your"); }
+    function activeChart() { return triYourMode() ? myChart : chart; }
+    function clearSeats() {
+      PAL.forEach(function (p) {
+        var cell = wheel.cells[p.id]; if (!cell) return;
+        var seat = cell.querySelector(".seat");
+        if (seat) seat.innerHTML = "";
+        cell.classList.remove("has-star");
+      });
+    }
     function seatFrom(palId) {
       var cell = wheel.cells[palId]; if (!cell) return;
-      var pc = chart.palaces[palId]; if (!pc) return;
-      var names = pc.stars.map(function (s) { return (starById[s.id] || {}).hant || ""; }).join(" ");
+      var pc = activeChart().palaces[palId]; if (!pc) return;
+      var names = (pc.stars || []).map(function (s) { return (starById[s.id] || {}).hant || ""; }).join(" ");
       var seat = cell.querySelector(".seat"); if (seat && names) { seat.innerHTML = '<span lang="zh-Hant">' + names + '</span>'; cell.classList.add("has-star"); }
     }
+    /* narration for YOUR Career court: the same sentence machinery as the reading
+       (per-palace beginner placements), hedged reader-voice, meaning not prediction */
+    var HUA_MEAN = {
+      lu: "resources tend to flow here",
+      quan: "authority tends to gather here",
+      ke: "your name tends to shine here",
+      ji: "attention tends to catch here — the recurring exam, not a doom sentence"
+    };
+    function roomBits(pid) {
+      var pc = myChart.palaces[pid] || { branch: "", stars: [] };
+      var stars = (pc.stars || []).map(function (s) { return starById[s.id] ? { s: starById[s.id], hua: s.hua } : null; }).filter(Boolean);
+      var names = stars.map(function (x) { return x.s.hant + " " + x.s.editorial.title.replace(/^The /, "the "); }).join(" and ");
+      var hua = [];
+      stars.forEach(function (x) {
+        if (!x.hua) return;
+        var t = TFBY[x.hua];
+        hua.push((t ? t.hant + " " + t.editorial.title.replace(/^The /, "the ") : x.hua) + " on " + x.s.hant + " — " + (HUA_MEAN[x.hua] || ""));
+      });
+      var prim = stars.length ? stars[0].s : null;
+      var beg = (prim && prim.placements && prim.placements[pid]) ? prim.placements[pid].beginner : "";
+      return { pc: pc, names: names, hua: hua, beginner: beg };
+    }
+    function yourTexts() {
+      var f = roomBits("guan-lu-gong"), m = roomBits("fu-qi-gong"), t1 = roomBits("ming-gong"), t2 = roomBits("cai-bo-gong");
+      var base = "Read alone, your Career room sits in " + f.pc.branch +
+        (f.names ? " and holds " + f.names + "." : " with no principal star, so it tends to borrow its tone from your Spouse room across the court.");
+      if (f.hua.length) base += " Your year adds " + f.hua.join("; ") + ".";
+      if (f.beginner) base += " " + f.beginner;
+      return {
+        scenarioTitle: "Your Imperial Hall (Career)",
+        base: { verdict: base, caution: TL.base.caution },
+        withMirror: { verdict: "Add the mirror — your Spouse room in " + m.pc.branch + (m.names ? ", holding " + m.names + "." : ", empty of principal stars.") + " One axis, two faces. What the working life asks and what the partnership asks tend to pull on the same nerve, so read the two together before judging either." },
+        withTri1: { verdict: "Bring in the first triangle partner, your Life room in " + t1.pc.branch + (t1.names ? " with " + t1.names + "." : ", empty of principal stars.") + (t1.beginner ? " " + t1.beginner : "") + " The structure suggests your Career is read through who you are before what you do." },
+        withTri2: { verdict: "Add the second triangle partner, your Wealth room in " + t2.pc.branch + (t2.names ? " with " + t2.names + "." : ", empty of principal stars.") + " Work and resources answer together; where one leans, the other tends to follow." },
+        full: {
+          verdict: "Reading all four rooms together: your Life sets the temperament, your Wealth sets the backing, your Spouse mirrors the cost, and your Career carries " + (f.hua.length ? "the year's mark" : "the day-to-day weight") + ". That is a whole-court verdict, held with uncertainty language, not a one-room guess.",
+          method: TL.full.method
+        }
+      };
+    }
+    function texts() { return triYourMode() ? yourTexts() : TL; }
     var toggles = [
       { key: "withMirror", pal: TL.mirror, label: "+ Mirror", type: "mirror" },
       { key: "withTri1", pal: TL.trines[0], label: "+ Triangle", type: "tri" },
@@ -2358,20 +2621,25 @@
       return ids;
     }
     function update(changedKey, added) {
+      var TX = texts();
       var lit = litIds();
+      clearSeats();
       wheel.lightSet(TL.focal, lit);
       [TL.focal].concat(lit).forEach(seatFrom);
+      var centerPy = wheelMount.querySelector('[data-role="center"] .py');
+      if (centerPy) centerPy.textContent = triYourMode() ? "Your Career" : "Mei's Career";
+      wheelMount.setAttribute("aria-label", (triYourMode() ? "Your court." : "Mei's court.") + " The Career room and each companion you add light up.");
       var n = 1 + lit.length;
       progress.textContent = "Reading with " + n + " of 4 rooms.";
-      var parts = ['<h4>' + esc(TL.scenarioTitle) + '</h4>'];
-      parts.push('<p>' + esc(TL.base.verdict) + '</p>');
-      if (!on.withMirror && !on.withTri1 && !on.withTri2) parts.push('<p class="psa-tri-caution">' + esc(TL.base.caution) + '</p>');
-      if (on.withMirror) parts.push('<p>' + esc(TL.withMirror.verdict) + '</p>');
-      if (on.withTri1) parts.push('<p>' + esc(TL.withTri1.verdict) + '</p>');
-      if (on.withTri2) parts.push('<p>' + esc(TL.withTri2.verdict) + '</p>');
+      var parts = ['<h4>' + esc(TX.scenarioTitle) + '</h4>'];
+      parts.push('<p>' + esc(TX.base.verdict) + '</p>');
+      if (!on.withMirror && !on.withTri1 && !on.withTri2) parts.push('<p class="psa-tri-caution">' + esc(TX.base.caution) + '</p>');
+      if (on.withMirror) parts.push('<p>' + esc(TX.withMirror.verdict) + '</p>');
+      if (on.withTri1) parts.push('<p>' + esc(TX.withTri1.verdict) + '</p>');
+      if (on.withTri2) parts.push('<p>' + esc(TX.withTri2.verdict) + '</p>');
       if (on.withMirror && on.withTri1 && on.withTri2) {
-        parts.push('<p>' + esc(TL.full.verdict) + '</p>');
-        parts.push('<p class="psa-tri-method">' + esc(TL.full.method) + '</p>');
+        parts.push('<p>' + esc(TX.full.verdict) + '</p>');
+        parts.push('<p class="psa-tri-method">' + esc(TX.full.method) + '</p>');
         if (!reinforced) { reinforced = true; Sound.lessonComplete(); Reinforce.fire(); if (window.ZiweiProgress) { window.ZiweiProgress.markHall("case"); window.ZiweiProgress.completeLesson("5.2", { via: "triangle" }); } }
         var nx = doc.getElementById("psa-tri-next"); if (nx) nx.textContent = "You watched the reading change three times. Try writing one yourself.";
       }
@@ -2382,6 +2650,16 @@
       }
       publish("palace", TL.focal, "read-the-triangle");
     }
+    if (SCT && SCT.makeToggle) {
+      triToggle = SCT.makeToggle("srcTriangle", function () { update(null, false); });
+      if (triModel) triModel.insertBefore(triToggle.el, triModel.firstChild);
+    }
+    doc.addEventListener("psa:studychart", function (e) {
+      var d = e.detail || {};
+      myChart = (d.out && d.out.chart) ? d.out.chart : null;
+      if (triToggle) triToggle.setAvailable(!!myChart);
+      update(null, false);
+    });
     update(null, false);
   }());
 
@@ -2647,10 +2925,25 @@
       '<div class="psa-track" id="psa-track"></div><p class="psa-card-sub">New to the court. Start with the palaces above.</p></div>' +
       '<div class="psa-card"><h4>Current lesson</h4><p>The Twelve Palace Court</p><p class="psa-card-sub">Be able to name a room and the three rooms it is read with.</p><a class="psa-mini-btn" href="#the-court" data-scroll="the-court">Continue</a></div>' +
       '<div class="psa-card"><h4 class="psa-card-sub" style="font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase">Next</h4><p>Meet the principal stars</p></div>' +
-      '<div class="psa-card"><h4>Chart status</h4><p class="psa-card-sub">No study chart yet. Cast one to annotate your path.</p><a class="psa-mini-btn" href="/elements/purple-star-astrology/chart/">Cast your chart</a></div>';
+      '<div class="psa-card" id="psa-chartstatus">' + chartStatusHtml() + '</div>';
     var track = doc.getElementById("psa-track");
     for (var i = 0; i < 8; i++) { var seg = h("div", "psa-track-seg" + (i === 0 ? " current" : "")); seg.innerHTML = i === 0 ? "◐" : ""; track.appendChild(seg); }
   }
+  /* Chart status: fed by the study chart, refreshed on every psa:studychart. */
+  function chartStatusHtml() {
+    var SCst = window.ZiweiStudyChart;
+    var sum = SCst ? SCst.summary() : null;
+    if (sum) {
+      return '<h4>Chart status</h4><p class="psa-card-sub">Study chart: ' + esc(sum.dateStr) +
+        (sum.hourStr ? ' · <span lang="zh-Hant">' + esc(sum.hourStr) + '</span>' : ' · hour not set') +
+        ' · recast any time from the dock.</p>';
+    }
+    return '<h4>Chart status</h4><p class="psa-card-sub">No study chart yet. Cast one to annotate your path.</p><a class="psa-mini-btn" href="/elements/purple-star-astrology/chart/">Cast your chart</a>';
+  }
+  doc.addEventListener("psa:studychart", function () {
+    var el = doc.getElementById("psa-chartstatus");
+    if (el) el.innerHTML = chartStatusHtml();
+  });
 
   function card(title, bodyHtml) { return '<div class="psa-card"><h4>' + esc(title) + '</h4>' + bodyHtml + '</div>'; }
   function practiceCard(tag) {
@@ -2714,11 +3007,51 @@
       '<div class="psa-sr" aria-live="polite" id="psa-rail-live"></div>';
     var deckMount = doc.getElementById("psa-deck");
     deckDefs[key](deckMount);
+    /* when a study chart exists the living court reads it: one calm card up top */
+    var sumRC = window.ZiweiStudyChart ? window.ZiweiStudyChart.summary() : null;
+    if (sumRC && sumRC.chart) {
+      var lifeStars = (sumRC.chart.palaces["ming-gong"].stars || []).map(function (s) { return (starById[s.id] || {}).hant || ""; }).join(" ");
+      deckMount.insertAdjacentHTML("afterbegin", card("Your chart",
+        '<p class="psa-card-sub">' + esc(sumRC.dateStr) + (sumRC.hourStr ? ' · <span lang="zh-Hant">' + esc(sumRC.hourStr) + '</span>' : "") +
+        ' · Life in <span lang="zh-Hant">' + esc(sumRC.chart.lifeBranch) + '</span>' +
+        (lifeStars ? ' with <span lang="zh-Hant">' + lifeStars + '</span>' : "") + '</p>'));
+    }
     var pc = doc.getElementById("psa-pause-ctl");
     if (pc) pc.addEventListener("click", function () { setMotion(!motionPaused); pc.textContent = motionPaused ? "▶ Resume" : "⏸ Pause"; });
     var rl = doc.getElementById("psa-rail-live");
     if (rl) { rl.textContent = "Court rail: now showing " + key.replace(/-/g, " ") + "."; }
   }
+  /* the living court re-reads the study chart whenever it changes */
+  doc.addEventListener("psa:studychart", function () {
+    var k = currentDeck;
+    if (!k) return;
+    currentDeck = null;
+    renderRightDeck(k);
+  });
+
+  /* ---------- teach band: re-aim the learning track at YOUR chart when one exists.
+     The shipped sentence stays in the served HTML; this swap is enhancement only. ---------- */
+  (function teachBand() {
+    var txt = doc.querySelector(".psa-teach-band-txt");
+    if (!txt) return;
+    var tag = txt.querySelector(".psa-teach-band-tag");
+    var original = txt.innerHTML;
+    doc.addEventListener("psa:studychart", function () {
+      var SCtb = window.ZiweiStudyChart;
+      var sum = SCtb ? SCtb.summary() : null;
+      if (sum && sum.chart) {
+        txt.innerHTML = "";
+        if (tag) txt.appendChild(tag);
+        txt.appendChild(doc.createTextNode(" Below: the same method, now taught on your chart — " + sum.dateStr + " · " + sum.hourStr + ". Mei's worked example stays one toggle away."));
+      } else if (sum) {
+        txt.innerHTML = "";
+        if (tag) txt.appendChild(tag);
+        txt.appendChild(doc.createTextNode(" Below: the same method, ready for your chart — " + sum.dateStr + ". Pick your birth hour in the dock and the full court unlocks."));
+      } else {
+        txt.innerHTML = original;
+      }
+    });
+  }());
 
   /* practice answering (comprehension event) */
   doc.addEventListener("click", function (e) {
@@ -2787,10 +3120,20 @@
   ======================================================= */
   (function buildMobile() {
     var bar = h("div", "psa-continue-bar");
-    bar.innerHTML = '<span class="psa-cb-title">Current lesson: The Twelve Palace Court</span>' +
+    bar.innerHTML = '<span class="psa-cb-title"><span class="psa-cb-ico" aria-hidden="true" lang="zh-Hant">印</span><span class="psa-cb-txt">Current lesson: The Twelve Palace Court</span><span class="psa-cb-short" aria-hidden="true">Lesson</span></span>' +
       '<button type="button" class="psa-cb-continue" data-scroll="the-court">Continue</button>' +
       '<button type="button" class="psa-cb-path" aria-haspopup="dialog">Path</button>';
-    doc.body.appendChild(bar);
+    /* Render into the shared bottom chart dock when it exists so there is exactly ONE
+       bottom dock. Falls back to the old fixed bar when no dock has been built; the
+       dock adopts a body-mounted bar later if a chart gets cast mid-session. */
+    function mountBar() {
+      var dock = doc.getElementById("pcast-dock");
+      var slot = dock ? dock.querySelector("[data-dock-lesson]") : null;
+      if (slot) { slot.appendChild(bar); dock.classList.add("has-lesson"); }
+      else doc.body.appendChild(bar);
+    }
+    if (doc.readyState !== "loading") mountBar();
+    else doc.addEventListener("DOMContentLoaded", mountBar);
     var backdrop = h("div", "psa-sheet-backdrop"); backdrop.hidden = true;
     var sheet = h("div", "psa-sheet"); sheet.hidden = true; sheet.setAttribute("role", "dialog"); sheet.setAttribute("aria-modal", "true"); sheet.setAttribute("aria-label", "Your path and the living court");
     sheet.innerHTML = '<div class="psa-sheet-handle" aria-hidden="true"></div>' +
@@ -2810,7 +3153,7 @@
         body.innerHTML =
           card("Court Novice 入門", '<p class="psa-card-sub">Foundation · new to the court</p>') +
           card("Current lesson", '<p>The Twelve Palace Court</p><a class="psa-mini-btn" href="#the-court" data-scroll="the-court" data-sheet-close>Continue</a>') +
-          card("Chart status", '<p class="psa-card-sub">No study chart yet.</p><a class="psa-mini-btn" href="/elements/purple-star-astrology/chart/">Cast your chart</a>');
+          '<div class="psa-card">' + chartStatusHtml() + '</div>';
       } else {
         body.innerHTML = '<div id="psa-sheet-deck"></div>' +
           '<div style="margin-top:8px"><button type="button" class="psa-sound-toggle" aria-pressed="' + (Sound.isOn() ? "true" : "false") + '"><span class="psa-sound-ico" aria-hidden="true">&#9834;</span> <span class="psa-sound-label">' + (Sound.isOn() ? "Sound on" : "Sound off") + '</span></button></div>';

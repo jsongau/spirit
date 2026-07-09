@@ -1,8 +1,11 @@
 /* ziwei-cast-ui.js — the hero "cast your chart" widget.
    Birth date (required) + time (optional) + timezone + gender -> ZiweiData.lunar.castFromBirth ->
    renders the twelve-palace board. When the hour is unknown, the board is locked (every star's
-   position depends on the hour) and only the hour-independent facts show; a sticky floating
-   hour-scrubber lets the reader try all twelve two-hour branches and watch the chart change.
+   position depends on the hour) and only the hour-independent facts show.
+   State lives in ZiweiStudyChart (one source of truth); this file renders the reading and owns
+   the sticky bottom chart dock (#pcast-dock): date chip, birth-hour + timezone selects, a live
+   clock->branch conversion line, an A/B hour-compare affordance, and the "Current lesson" slot
+   the learning track's bottom bar mounts into. Everything re-renders off "psa:studychart".
    Plain browser JS, file://-safe, no modules. */
 (function () {
   "use strict";
@@ -148,15 +151,27 @@
       var p = parseDate(date.value);
       if (!p) return null;
       var b = { year: p.year, month: p.month, day: p.day, gender: gender.value || null };
-      if (!unk.checked && time.value) b.hour = +time.value.split(":")[0];
-      else b.hour = null;
+      if (!unk.checked && time.value) { var tp = time.value.split(":"); b.hour = +tp[0]; b.minute = +(tp[1] || 0); }
+      else { b.hour = null; b.minute = null; }
+      b.tzOffset = tz.value; /* "auto" is resolved to the device offset by ZiweiStudyChart.save */
       return b;
     }
+    var SC = window.ZiweiStudyChart || null;
+    var lastStamp = null;       /* loop guard: serialized stamp of the last rendered birth */
+    var scrollOnRender = false; /* scroll to the reading only on an explicit cast */
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var b = readBirth();
       if (!b) { date.focus(); return; }
+      if (SC) {
+        scrollOnRender = true;
+        var saved = SC.save(b); /* broadcast -> the psa:studychart handler renders everything */
+        if (window.ZiweiProgress) window.ZiweiProgress.castChart(false);
+        if (saved) return;
+        scrollOnRender = false;
+      }
+      /* fallback when the study-chart module is absent: render directly */
       lastBirth = b;
       var out = L.castFromBirth(b);
       lastOut = out;
@@ -166,27 +181,226 @@
       buildSideRail(b);
     });
 
-    /* ---- left sticky rail: change the birth hour and watch the chart re-adapt live ---- */
-    function buildSideRail(birth) {
-      var rail = document.getElementById("pcast-siderail");
-      if (!rail) { rail = h("div", "pcast-siderail"); rail.id = "pcast-siderail"; document.body.appendChild(rail); }
-      rail.innerHTML = "";
-      rail.appendChild(h("p", "pcast-sr-eyebrow", "Your chart"));
-      rail.appendChild(h("p", "pcast-sr-date", pad(birth.month) + "/" + pad(birth.day) + "/" + birth.year));
-      rail.appendChild(h("p", "pcast-sr-label", "Birth hour"));
-      var sel = document.createElement("select"); sel.className = "pcast-sr-sel"; sel.setAttribute("aria-label", "Birth hour");
-      sel.appendChild(new Option("I don't know", "", birth.hour == null, birth.hour == null));
-      var curIdx = (birth.hour == null) ? -1 : Math.floor((birth.hour + 1) / 2) % 12;
-      for (var i = 0; i < 12; i++) { sel.appendChild(new Option(HOURS[i] + "時 · " + HOUR_RANGE[i], i * 2 + 1, false, i === curIdx)); }
-      sel.addEventListener("change", function () {
-        var b = { year: birth.year, month: birth.month, day: birth.day, gender: birth.gender, hour: sel.value === "" ? null : +sel.value };
-        lastBirth = b; var o = L.castFromBirth(b); lastOut = o; renderResult(o, b); buildSideRail(b);
+    /* Everything renders from the one study-chart event: the cast, the dock,
+       every hour/tz change from the dock, and the restore-on-revisit broadcast. */
+    document.addEventListener("psa:studychart", function (e) {
+      var d = e.detail || {};
+      var b = d.birth;
+      if (!b) return;
+      var s = SC ? SC.stamp(b) : JSON.stringify(b);
+      var changed = s !== lastStamp;
+      lastStamp = s;
+      lastBirth = b;
+      if (changed || result.hidden) {
+        var out = d.out || L.castFromBirth(b);
+        lastOut = out;
+        renderResult(out, b);
+        result.hidden = false;
+        if (scrollOnRender) result.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      scrollOnRender = false;
+      fillForm(b);
+      buildDock(b);
+    });
+
+    /* Prefill the form on revisit (the deferred broadcast then renders the reading, no scroll). */
+    if (SC) {
+      var savedBirth = SC.get();
+      if (savedBirth) fillForm(savedBirth);
+    }
+    function fillForm(b) {
+      var want = pad(b.month) + "/" + pad(b.day) + "/" + b.year;
+      if (date.value !== want) date.value = want;
+      if (b.hour == null) {
+        if (!unk.checked) { unk.checked = true; time.value = ""; time.disabled = true; }
+      } else {
+        if (unk.checked) { unk.checked = false; time.disabled = false; }
+        time.value = pad(b.hour) + ":" + pad(b.minute == null ? 0 : b.minute);
+      }
+      var tzWant = (b.tzOffset == null) ? "auto" : String(b.tzOffset);
+      tz.value = tzWant;
+      if (tz.value !== tzWant) tz.value = "auto"; /* offset outside the option list */
+      if (b.gender) gender.value = b.gender;
+    }
+    /* keep the two timezone selects in sync form -> dock */
+    tz.addEventListener("change", function () {
+      if (SC && SC.get()) SC.setTz(tz.value);
+    });
+
+    /* ============================================================
+       THE STICKY BOTTOM CHART DOCK (replaces the floating left rail).
+       Fixed to the viewport bottom, below the nav dropdowns (z-index 50 vs 119+).
+       Also hosts the learning track's "Current lesson" bar in [data-dock-lesson].
+    ============================================================ */
+    function buildSideRail(birth) { buildDock(birth); } /* name shim for any older caller */
+
+    function branchOf(hour) { return Math.floor((Number(hour) + 1) / 2) % 12; }
+    function tzLabel(off) {
+      if (off == null || isNaN(off)) return "";
+      var sign = off < 0 ? "−" : "+";
+      var a = Math.abs(off), hh = Math.floor(a), mm = Math.round((a - hh) * 60);
+      return "UTC" + sign + hh + (mm ? ":" + (mm < 10 ? "0" + mm : mm) : "");
+    }
+    function convLine(birth) {
+      if (birth.hour == null) return "Pick an hour to unlock the full court — try your best guesses.";
+      var bi = branchOf(birth.hour);
+      var tzs = tzLabel(birth.tzOffset);
+      var line;
+      if (birth.minute != null) line = pad(birth.hour) + ":" + pad(birth.minute) + (tzs ? " in " + tzs : "") + " → " + HOURS[bi] + "時 " + HOUR_RANGE[bi];
+      else line = HOURS[bi] + "時 · " + HOUR_RANGE[bi] + (tzs ? " · read in " + tzs : "");
+      if (birth.hour === 23) line += " · late 子時 — counts toward the next day in some schools; we read it as 子";
+      return line;
+    }
+
+    var dockEls = null;
+    function ensureDock() {
+      if (dockEls) return dockEls;
+      var dock = document.getElementById("pcast-dock");
+      if (!dock) { dock = h("div", "pcast-dock"); dock.id = "pcast-dock"; document.body.appendChild(dock); }
+      var inner = h("div", "pcast-dock-inner");
+
+      var chartRow = h("div", "pcast-dock-chart");
+      chartRow.setAttribute("data-dock-chart", "");
+      chartRow.hidden = true;
+
+      var idBtn = h("button", "pcast-dk-id"); idBtn.type = "button";
+      idBtn.setAttribute("aria-label", "Your chart — edit the birth date in the form above");
+      idBtn.appendChild(h("span", "pcast-dk-eyebrow", "Your chart"));
+      var dateEl = h("span", "pcast-dk-date", "");
+      idBtn.appendChild(dateEl);
+      idBtn.addEventListener("click", function () {
+        form.scrollIntoView({ behavior: "smooth", block: "center" });
+        try { date.focus({ preventScroll: true }); } catch (err) { date.focus(); }
       });
-      rail.appendChild(sel);
-      rail.appendChild(h("p", "pcast-sr-hint", "Change the hour to watch the whole chart shift."));
-      var edit = h("button", "pcast-sr-edit", "Edit date / time"); edit.type = "button";
-      edit.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); date.focus(); });
-      rail.appendChild(edit);
+      chartRow.appendChild(idBtn);
+
+      var hourWrap = h("label", "pcast-dk-field");
+      hourWrap.appendChild(h("span", "pcast-dk-lab", "Birth hour"));
+      var hourSel = document.createElement("select");
+      hourSel.className = "pcast-dk-sel"; hourSel.id = "pcast-dk-hour";
+      hourSel.setAttribute("aria-label", "Birth hour");
+      hourWrap.appendChild(hourSel);
+      chartRow.appendChild(hourWrap);
+
+      var tzWrap = h("label", "pcast-dk-field");
+      tzWrap.appendChild(h("span", "pcast-dk-lab", "Birth timezone"));
+      var tzSel = document.createElement("select");
+      tzSel.className = "pcast-dk-sel"; tzSel.id = "pcast-dk-tz";
+      tzSel.setAttribute("aria-label", "Birth timezone");
+      TZ.forEach(function (o) { tzSel.appendChild(new Option(o[1], o[0])); });
+      tzWrap.appendChild(tzSel);
+      chartRow.appendChild(tzWrap);
+
+      var conv = h("p", "pcast-dk-conv", ""); conv.id = "pcast-dk-conv";
+      chartRow.appendChild(conv);
+
+      var ab = h("div", "pcast-dk-ab");
+      chartRow.appendChild(ab);
+
+      /* mobile: the site-wide Reveal Dock (#pn-dock) is hidden while the chart dock is live
+         (see page CSS); this compact ✦ pill keeps the unlock path one tap away */
+      var zodi = document.createElement("a");
+      zodi.className = "pcast-dk-zodi"; zodi.href = "/";
+      zodi.setAttribute("aria-label", "Unlock Your Zodi Animal");
+      zodi.textContent = "✦";
+      chartRow.appendChild(zodi);
+
+      inner.appendChild(chartRow);
+      var lessonSlot = h("div", "pcast-dock-lesson");
+      lessonSlot.setAttribute("data-dock-lesson", "");
+      inner.appendChild(lessonSlot);
+      dock.appendChild(inner);
+
+      /* absorb the learning track's bottom bar if it was mounted to <body> first,
+         so there is exactly one bottom dock, never two stacked */
+      var strayBar = document.querySelector("body > .psa-continue-bar");
+      if (strayBar) { lessonSlot.appendChild(strayBar); dock.classList.add("has-lesson"); }
+
+      hourSel.addEventListener("change", function () {
+        if (!SC || !lastBirth) return;
+        var hour = hourSel.value === "" ? null : +hourSel.value;
+        var st = SC.getPref("studyAB") || null;
+        if (st && hour != null) {
+          if (st.b == null && st.a != null && branchOf(st.a) !== branchOf(hour)) { st.b = hour; st.on = "b"; }
+          else if (st.on === "b") st.b = hour;
+          else st.a = hour;
+          SC.setPref("studyAB", st);
+        }
+        SC.setHour(hour);
+      });
+      tzSel.addEventListener("change", function () {
+        if (!SC || !lastBirth) return;
+        tz.value = tzSel.value;
+        if (tz.value !== tzSel.value) tz.value = "auto";
+        SC.setTz(tzSel.value);
+      });
+
+      function padBody() {
+        var hgt = dock.offsetHeight; /* 0 while display:none */
+        document.body.style.paddingBottom = hgt ? (hgt + 14) + "px" : "";
+      }
+      window.addEventListener("resize", padBody);
+      if (window.ResizeObserver) { try { new ResizeObserver(padBody).observe(dock); } catch (err) {} }
+
+      dockEls = { dock: dock, chartRow: chartRow, dateEl: dateEl, hourSel: hourSel, tzSel: tzSel, conv: conv, ab: ab, lessonSlot: lessonSlot, padBody: padBody };
+      return dockEls;
+    }
+
+    /* the tiny A/B hour-compare: pin the current hour as A, pick another as B,
+       tap a pill to flip the whole page between the two candidate readings */
+    function renderAB(birth) {
+      var els = dockEls;
+      els.ab.innerHTML = "";
+      if (!SC) return;
+      var st = SC.getPref("studyAB") || null;
+      if (st) {
+        ["a", "b"].forEach(function (k) {
+          var v = st[k];
+          var pill = h("button", "pcast-dk-pill" + (st.on === k ? " is-on" : ""), k.toUpperCase() + (v != null ? " " + HOURS[branchOf(v)] : " —"));
+          pill.type = "button";
+          pill.setAttribute("aria-pressed", st.on === k ? "true" : "false");
+          if (v == null) pill.disabled = true;
+          pill.addEventListener("click", function () {
+            if (v == null) return;
+            st.on = k; SC.setPref("studyAB", st);
+            SC.setHour(v);
+          });
+          els.ab.appendChild(pill);
+        });
+        if (st.b == null) els.ab.appendChild(h("span", "pcast-dk-abhint", "pick a second hour"));
+      }
+      var ctl = h("button", "pcast-dk-abctl", st ? "clear" : "not sure? compare");
+      ctl.type = "button";
+      if (!st && birth.hour == null) ctl.disabled = true;
+      ctl.addEventListener("click", function () {
+        if (st) SC.setPref("studyAB", null);
+        else SC.setPref("studyAB", { a: birth.hour, b: null, on: "a" });
+        renderAB(SC.get() || birth);
+      });
+      els.ab.appendChild(ctl);
+    }
+
+    function buildDock(birth) {
+      var els = ensureDock();
+      els.dock.classList.add("has-chart");
+      document.body.classList.add("pcast-dock-live");
+      els.chartRow.hidden = false;
+      els.dateEl.textContent = pad(birth.month) + "/" + pad(birth.day) + "/" + birth.year;
+      els.hourSel.innerHTML = "";
+      var curIdx = (birth.hour == null) ? -1 : branchOf(birth.hour);
+      els.hourSel.appendChild(new Option("I don't know", "", birth.hour == null, birth.hour == null));
+      for (var i = 0; i < 12; i++) {
+        /* representative clock hour for branch i is i*2 (branchOf(i*2) === i);
+           the old siderail's i*2+1 landed every pick one branch late */
+        var val = (i === curIdx && birth.hour != null) ? birth.hour : i * 2;
+        els.hourSel.appendChild(new Option(HOURS[i] + "時 · " + HOUR_RANGE[i], val, false, i === curIdx));
+      }
+      var tzWant = (birth.tzOffset == null) ? "auto" : String(birth.tzOffset);
+      els.tzSel.value = tzWant;
+      if (els.tzSel.value !== tzWant) els.tzSel.value = "auto";
+      els.conv.textContent = convLine(birth);
+      renderAB(birth);
+      els.padBody();
     }
 
     /* ---- render the board ---- */
