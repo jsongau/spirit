@@ -257,7 +257,9 @@
       ["9.5", "Central Australia (UTC+9:30)"], ["10", "Sydney (UTC+10)"], ["12", "New Zealand (UTC+12)"]
     ];
     form.innerHTML = "";
-    form.appendChild(h("p", "pcast-form-eyebrow", "Cast Your Court"));
+    /* the eyebrow names the INPUT, the button names the ACT. It used to say "Cast Your Court" three
+       inches above a button reading "Cast My Court", which is the same words twice in one panel. */
+    form.appendChild(h("p", "pcast-form-eyebrow", "Your birth moment"));
     form.appendChild(h("p", "pcast-form-optnote", "Enter your birth moment to see where the twelve palaces, stars, and timing doors begin. The chart is not the verdict of your life. It is the map you learn to read."));
     var row1 = h("div", "pcast-field pcast-date-field");
     var dl = labelFor("pcast-date", "Birth date"); dl.appendChild(h("span", "pcast-opt", " · MM/DD/YYYY")); row1.appendChild(dl);
@@ -279,7 +281,11 @@
     calBtn.addEventListener("click", function (e) { e.stopPropagation(); if (cal.hidden) openCal(); else cal.hidden = true; });
     document.addEventListener("click", function (e) { if (!cal.hidden && !row1.contains(e.target)) cal.hidden = true; });
     function syncCalToInput() { var p = parseDate(date.value); if (p) { calState.y = p.year; calState.m = p.month - 1; calState.sel = { y: p.year, m: p.month - 1, d: p.day }; } }
-    function openCal() { syncCalToInput(); cal.hidden = false; renderCal(); }
+    /* Exactly one popover at a time. Both triggers call stopPropagation to survive their own
+       outside-click closers, which means neither can rely on the other's document listener to
+       shut it — each opener must close its sibling by hand. (closeClock is a hoisted declaration
+       defined further down with the time field; it is only ever CALLED after init.) */
+    function openCal() { closeClock(); syncCalToInput(); cal.hidden = false; renderCal(); }
     function parseDate(v) { var m = (v || "").match(/^\s*(\d{1,2})\s*\/\s*(\d{1,2})\s*\/\s*(\d{4})\s*$/); if (!m) return null; var mo = +m[1], da = +m[2], yr = +m[3]; if (mo < 1 || mo > 12 || da < 1 || da > 31 || yr < 1900) return null; return { year: yr, month: mo, day: da }; }
     function renderCal() {
       cal.innerHTML = "";
@@ -518,6 +524,7 @@
     var clockOpen = false, clockStep = "hour";
     function clockH() { return tstate.h == null ? 12 : tstate.h; }
     function clockM() { return tstate.m == null ? 0 : tstate.m; }
+    /* mirror of openCal: each opener closes its sibling by hand */
     function openClock() { cal.hidden = true; clockOpen = true; clockStep = "hour"; clock.hidden = false; clockBtn.setAttribute("aria-expanded", "true"); paintClock(); }
     function closeClock() { if (!clockOpen && clock.hidden) return; clockOpen = false; clock.hidden = true; clockBtn.setAttribute("aria-expanded", "false"); }
     clockBtn.addEventListener("click", function (e) { e.stopPropagation(); if (clock.hidden) openClock(); else closeClock(); });
@@ -649,7 +656,11 @@
        free accessibility, and spell the region out underneath where it has room to breathe.
     ============================================================ */
     var row3 = h("div", "pcast-field pcast-field-2");
-    var tzc = h("div", "pcast-tzcol"); tzc.appendChild(labelFor("pcast-tz", "Birth timezone"));
+    var tzc = h("div", "pcast-tzcol");
+    /* "read as birthplace-local" was a footnote under the button, three fields away from the control
+       it describes. It belongs on the label of the field it governs. */
+    var tzl = labelFor("pcast-tz", "Birth timezone"); tzl.appendChild(h("span", "pcast-opt", " · birthplace-local"));
+    tzc.appendChild(tzl);
     var tzWrapF = h("div", "pcast-tzplate");
     var tzValF = h("span", "pcast-tzval", "UTC+8"); tzValF.setAttribute("aria-hidden", "true");
     var tzCaret = h("span", "pcast-tzcaret", "▾"); tzCaret.setAttribute("aria-hidden", "true");
@@ -678,9 +689,17 @@
     var gc = h("div"); gc.appendChild(labelFor("pcast-gender", "Gender"));
     var gender = select("pcast-gender", [["", "Prefer not to say"], ["female", "Female"], ["male", "Male"]]); gc.appendChild(gender); row3.appendChild(gc);
     form.appendChild(row3);
-    var go = h("button", "psa-btn pcast-go", "Cast My Court"); go.type = "submit"; form.appendChild(go);
-    var note = h("p", "pcast-note", "Read as birthplace-local time. Your data stays in your browser — nothing is sent anywhere.");
-    form.appendChild(note);
+    /* The button now says what the press DOES, and the sub-line says what you get for it. The old
+       label ("Cast My Court") only repeated the eyebrow directly above it, so the form's loudest
+       element carried no information the reader did not already have. */
+    var go = h("button", "psa-btn pcast-go"); go.type = "submit";
+    go.appendChild(h("b", "pcast-go-lab", "Cast my court"));
+    go.appendChild(h("small", "pcast-go-sub", "twelve rooms · fourteen stars · your hour"));
+    form.appendChild(go);
+    /* The removed footnote said two things. "Read as birthplace-local time" now rides the timezone
+       label, where it is actionable. The privacy claim survives here in four words, because a form
+       that asks for a birth moment should not quietly stop promising where that moment goes. */
+    form.appendChild(h("p", "pcast-privacy", "Nothing leaves your browser."));
 
     paintTime();
     syncTzForm();

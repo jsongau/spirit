@@ -853,8 +853,20 @@
   .pcast-input:focus-visible { outline: 2px solid var(--brass); outline-offset: 1px; }
   .pcast-check { display: flex; align-items: center; gap: 7px; margin-top: 7px; font-size: 0.82rem; color: var(--muted); cursor: pointer; }
   .pcast-check input { width: 16px; height: 16px; accent-color: var(--cc); }
-  .pcast-go { width: 100%; justify-content: center; margin-top: 4px; cursor: pointer; border: 0; font: inherit; }
-  .pcast-note { font-size: 0.72rem; color: var(--faint); margin: 10px 0 0; line-height: 1.5; }
+  /* the form's one loud element: two lines, a lit rim, and a press that answers */
+  .pcast-go { width: 100%; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
+    margin-top: 6px; padding: 10px 20px; min-height: 56px; cursor: pointer; border: 0; font: inherit;
+    background: linear-gradient(168deg, var(--brass-bright), var(--brass) 62%);
+    box-shadow: 0 0 0 0 var(--cc-soft), 0 8px 22px -12px var(--brass);
+    transition: box-shadow .18s var(--ease-out), transform .08s var(--ease-out), filter .18s var(--ease-out); }
+  .pcast-go:hover { filter: brightness(1.06); box-shadow: 0 0 0 4px var(--cc-soft), 0 10px 26px -10px var(--brass); }
+  .pcast-go:active { transform: scale(0.985); }
+  .pcast-go:focus-visible { outline: 2px solid var(--cc); outline-offset: 3px; }
+  .pcast-go-lab { font-weight: 600; font-size: 1rem; line-height: 1.2; color: var(--ink); }
+  .pcast-go-sub { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink); opacity: 0.66; line-height: 1.3; }
+  @media (prefers-reduced-motion: reduce) { .pcast-go { transition: none; } .pcast-go:active { transform: none; } }
+  .pcast-privacy { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.08em; color: var(--faint); margin: 9px 0 0; text-align: center; }
   .psa-cast-result { max-width: 1000px; margin: 0 auto; padding: 28px clamp(18px, 4vw, 40px) 8px; }
   .pcast-res-head { margin-bottom: 14px; }
   .pcast-res-title { font-family: var(--serif); color: var(--moon); font-size: clamp(1.4rem,3vw,2rem); margin: 0; }
@@ -968,11 +980,17 @@
   .pcast-clock-btn:focus-visible { outline: 2px solid var(--brass); outline-offset: 1px; }
   .pcast-clock-btn:disabled { opacity: .45; cursor: not-allowed; }
   /* ---- the face ---- */
-  .pcast-clock { position: absolute; z-index: 80; top: calc(100% + 8px); left: 0; width: min(300px, calc(100vw - 40px));
+  /* Above the calendar (z 80). They are mutually exclusive in JS, so this is belt-and-braces —
+     but a popover that can ever render behind another popover is a popover you cannot trust. */
+  .pcast-clock { position: absolute; z-index: 90; top: calc(100% + 8px); left: 0; width: min(300px, calc(100vw - 40px));
     background: var(--panel-2); border: 1px solid var(--line); border-top: 2px solid var(--brass);
-    border-radius: var(--r-2); box-shadow: 0 16px 44px rgba(0,0,0,0.5); padding: 14px 16px 12px; }
+    border-radius: var(--r-2); box-shadow: 0 16px 44px rgba(0,0,0,0.5); padding: 14px 16px 12px;
+    max-height: min(78vh, 560px); overflow-y: auto; overscroll-behavior: contain; }
   .pcast-clock[hidden] { display: none; }
-  @media (min-width: 900px) { .psa-hero-form .pcast-clock { left: calc(100% + 14px); top: 0; } }
+  /* The face is ~430px tall and the time row sits low in the form, so a top-anchored popover ran off
+     the bottom of the viewport and under the sticky dock. Centre it on its own row instead: the panel
+     rises about half its height and the clock button lands beside its middle, not its top edge. */
+  @media (min-width: 900px) { .psa-hero-form .pcast-clock { left: calc(100% + 14px); top: 50%; transform: translateY(-50%); } }
   .pcast-clock-head { padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid var(--line-soft); }
   .pcast-clock-read { display: flex; align-items: center; gap: 2px; }
   .pcast-clock-unit { padding: 2px 6px; background: transparent; border: 0; border-radius: 6px; color: var(--faint);
@@ -1719,9 +1737,14 @@
     <p class="psa-promise">Purple Star Astrology, also known as Zi Wei Dou Shu, maps one birth moment into twelve palaces, fourteen principal stars, and four transformations. Your Zodi Animal names the creature. Purple Star shows the court it walks through.</p>
     <p class="psa-handoff" id="psa-handoff">This page teaches you to read the whole court, in order: room by room, star by star, the way the old court offices did.</p>
     <span class="psa-chip"><span class="seal" lang="zh-Hant" aria-hidden="true"><ruby>印<rt>yìn</rt></ruby></span> Court Novice · Level 1 of 8</span>
+    <!-- The primary CTA used to be "Cast Your Court" pointing at #pcast-form — the form that is
+         already open beside it. Two identical calls to cast, one of them a scroll to something in
+         view. The primary now opens the court, and carries #psa-cta-learn because two JS blocks own
+         that id: one scrolls it to #the-court, the other relabels it "Pick up where you left off"
+         once a star has been moved. The quiet CTA takes the Reader's Path to its own section. -->
     <div class="psa-actions">
-      <a class="psa-btn" href="#pcast-form">Cast Your Court</a>
-      <a class="psa-btn-quiet" id="psa-cta-learn" href="#the-court">Begin the Reader's Path</a>
+      <a class="psa-btn" id="psa-cta-learn" href="#the-court">Enter the 12 Palaces</a>
+      <a class="psa-btn-quiet" href="#readers-path">Begin the Reader's Path</a>
     </div>
     <p class="psa-trust">A beginner-friendly guide to the rooms, stars, forces, triangles, and timing gates of Purple Star Astrology.</p>
       </div>
