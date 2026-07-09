@@ -291,8 +291,8 @@
         },
         "xiong-di-gong": {
           "beginner": "Among peers and siblings you are the one who sets the structure. Cooperation flows when you lead by dignity rather than decree.",
-          "intermediate": "The Emperor in the Peer Circle organises the people around it, and the mirror with the Servants room shows whether that steadiness is returned.",
-          "practitioner": "Read it with its opposite, the Servants Palace, to see whether the native leads peers or quietly manages them from behind.",
+          "intermediate": "The Emperor in the Peer Circle organises the people around it, and the mirror with the Friends room shows whether that steadiness is returned.",
+          "practitioner": "Read it with its opposite, the Friends Palace, to see whether the native leads peers or quietly manages them from behind.",
           "misread": "Taken to mean powerful siblings, when it more often describes the native's own organising role among equals."
         },
         "fu-qi-gong": {
@@ -327,7 +327,7 @@
         },
         "nu-pu-gong": {
           "beginner": "You attract loyal supporters and capable allies. A real court forms around you when you lead them with dignity.",
-          "intermediate": "The Emperor among Servants and allies gathers capable people, and the Siblings mirror shows whether those alliances are mutual or one-directional.",
+          "intermediate": "The Emperor among friends and allies gathers capable people, and the Siblings mirror shows whether those alliances are mutual or one-directional.",
           "practitioner": "Read with the Siblings Palace opposite to weigh loyalty against the classical risk that a lone sovereign attracts followers but few equals.",
           "misread": "Read as a promise of loyal helpers, when it depends on whether the native leads them with dignity or by command."
         },

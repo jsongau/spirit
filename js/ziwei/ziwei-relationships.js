@@ -5,9 +5,9 @@
 
    Corrected court sets (ruling C2), used as the test cases for this file:
      Life court:     ming-gong, cai-bo-gong, guan-lu-gong, qian-yi-gong  (Life, Wealth, Career, Travel, 命財官遷)
-     Siblings court: xiong-di-gong, ji-e-gong, tian-zhai-gong, nu-pu-gong (Siblings, Health, Property, Servants)
+     Siblings court: xiong-di-gong, ji-e-gong, tian-zhai-gong, nu-pu-gong (Siblings, Health, Property, Friends — classically 奴僕宮, the Servants Palace)
      Spouse court:   fu-qi-gong, qian-yi-gong, fu-de-gong, guan-lu-gong  (Spouse, Travel, Fortune, Career)
-     Children court: zi-nu-gong, nu-pu-gong, fu-mu-gong, tian-zhai-gong  (Children, Servants, Parents, Property)
+     Children court: zi-nu-gong, nu-pu-gong, fu-mu-gong, tian-zhai-gong  (Children, Friends, Parents, Property)
 
    Mirror pairs (對宮 Duìgōng), derived as +6 on the wheel:
      ming-gong/qian-yi-gong, xiong-di-gong/nu-pu-gong, fu-qi-gong/guan-lu-gong,

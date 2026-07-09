@@ -716,21 +716,45 @@ window.PNAV = window.PNAV || { features: {} };
       return clamp01(scrollTop / max);
     }
 
+    /* The seam vars are written to .pn-sub, NOT to :root.
+       Writing an inherited custom property on <html> every scroll frame
+       invalidates style for the whole document; on a long page (the Purple
+       Star hub is ~4k nodes) that recalc lands on the same frame Chrome is
+       re-rastering the bar's backdrop-filter, and the nav visibly strobes.
+       Every consumer (.pn-progress*, nav-sub.css) lives INSIDE .pn-sub, so
+       scoping the write there keeps the cascade identical and confines the
+       invalidation to the band. Fallback to :root only if no sub band exists
+       (homepage), where nothing reads the vars anyway.
+       We also skip no-op writes — a scroll of a few px rarely moves either
+       var at the precision the CSS can render. */
+    var varHost = sub || root;
+    var lastScrollVar = "";
+    var lastBeamVar = "";
+
     function update() {
       var scrollTop = window.pageYOffset || doc.documentElement.scrollTop || 0;
       setBound(scrollTop > THRESHOLD);
 
       var p = scrollFraction(scrollTop);
-      root.style.setProperty("--pn-scroll", p.toFixed(4));
+      var scrollVar = p.toFixed(4);
+      if (scrollVar !== lastScrollVar) {
+        varHost.style.setProperty("--pn-scroll", scrollVar);
+        lastScrollVar = scrollVar;
+      }
 
+      var beamVar;
       if (reduceMotion()) {
         // static, restful: fill still shows depth, brightness holds calm.
-        root.style.setProperty("--pn-beam", "0.5");
+        beamVar = "0.5";
       } else {
         // brightness rises to 1 by 75% of the page, then eases down to
         // ~0.15 at the very bottom (the star "burns out" as you land).
         var beam = p <= 0.75 ? (p / 0.75) : (1 - ((p - 0.75) / 0.25) * 0.85);
-        root.style.setProperty("--pn-beam", beam.toFixed(3));
+        beamVar = beam.toFixed(3);
+      }
+      if (beamVar !== lastBeamVar) {
+        varHost.style.setProperty("--pn-beam", beamVar);
+        lastBeamVar = beamVar;
       }
     }
 

@@ -26,28 +26,13 @@
   <meta property="og:description" content="A birth moment read as a court of twelve palaces and fourteen principal stars. Learn to read the whole court, room by room, with your own chart as the study map. 紫微斗數">
   <meta property="og:url" content="https://www.zodianimal.com/elements/purple-star-astrology/">
   <meta property="og:image" content="https://www.zodianimal.com/img/og/zi-wei-hub.jpg">
-  <link rel="stylesheet" href="../../css/tokens.css">
-  <link rel="stylesheet" href="../../css/type.css">
-  <link rel="stylesheet" href="../../css/nav-core.css">
-  <link rel="stylesheet" href="../../css/nav-mega.css">
-  <link rel="stylesheet" href="../../css/nav-drawer.css">
-  <link rel="stylesheet" href="../../css/nav-sub.css">
-  <link rel="stylesheet" href="../../css/a11y.css">
-  <link rel="stylesheet" href="../../css/footer.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap">
+  <!-- Stylesheets and fonts are injected by build/apply-assets.mjs (tokens,
+       type, fonts) and build/apply-nav.mjs (nav-*, a11y, footer) further down
+       this head, with data-pn-assets / data-pn markers. They used to ALSO be
+       hand-listed here, resolving to the same absolute URLs — same sheets
+       parsed and applied twice. Do not re-add them by hand. -->
 
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[
-    {"@type":"WebPage","name":"Purple Star Astrology","alternateName":"Zi Wei Dou Shu","url":"https://www.zodianimal.com/elements/purple-star-astrology/","description":"Purple Star Astrology (Zi Wei Dou Shu, 紫微斗數) reads a birth moment as a court of twelve palaces and fourteen principal stars. Learn the rooms and their geometry, meet the stars, and cast a chart to use as your study map.","inLanguage":"en","about":{"@type":"DefinedTerm","name":"Zi Wei Dou Shu 紫微斗數","alternateName":["Purple Star Astrology","Zǐwēi Dǒushù"],"url":"https://www.zodianimal.com/elements/purple-star-astrology/"}},
-    {"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.zodianimal.com/"},
-      {"@type":"ListItem","position":2,"name":"Elements","item":"https://www.zodianimal.com/elements/"},
-      {"@type":"ListItem","position":3,"name":"Purple Star Astrology","item":"https://www.zodianimal.com/elements/purple-star-astrology/"}
-    ]}
-  ]}
-  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"Purple Star Astrology","alternateName":"Zi Wei Dou Shu","url":"https://www.zodianimal.com/elements/purple-star-astrology/","description":"Purple Star Astrology (Zi Wei Dou Shu, 紫微斗數) reads a birth moment as a court of twelve palaces and fourteen principal stars. Learn the rooms and their geometry, meet the stars, and cast a chart to use as your study map.","inLanguage":"en","about":{"@type":"DefinedTerm","name":"Zi Wei Dou Shu 紫微斗數","alternateName":["Purple Star Astrology","Zǐwēi Dǒushù"],"url":"https://www.zodianimal.com/elements/purple-star-astrology/"}}]}</script>
 
   <style>
   /* ============================================================
@@ -718,6 +703,8 @@
   .psa-timing-controls { display: flex; align-items: flex-end; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
   .psa-timing-controls label { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); display: block; }
   .psa-timing-controls input { width: 110px; min-height: 44px; padding: 8px 12px; background: var(--ink-2); border: 1px solid var(--line); border-radius: var(--r-1); color: var(--moon); font-family: var(--mono); }
+  .psa-timing-controls .psa-src-toggle { flex-basis: 100%; margin: 0 0 4px auto; }
+  .psa-timing-agenote { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.06em; color: var(--brass); margin: 4px 0 12px; line-height: 1.5; }
   .psa-timing-doors { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
   @media (max-width: 560px) { .psa-timing-doors { grid-template-columns: repeat(2, 1fr); } }
   .psa-door-cell { background: var(--ink-2); border: 1px solid var(--line-soft); border-radius: var(--r-1); padding: 8px 10px; min-height: 66px; }
@@ -999,75 +986,128 @@
   .pcast-sr-edit{width:100%;background:transparent;border:1px solid var(--line);border-radius:var(--r-1);color:var(--cc-bright);font:inherit;font-size:.8rem;padding:8px;cursor:pointer;min-height:38px}
   .pcast-sr-edit:hover{border-color:var(--cc)}
   @media (max-width:1320px){.pcast-siderail{display:none}}
-  /* ---- sticky bottom chart dock (replaces the floating left rail + absorbs the lesson bar) ---- */
-  .pcast-dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;background:color-mix(in oklab,var(--ink-2) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  /* ---- sticky bottom chart dock — one lit ~44px instrument row (was a 4-row ~150px stack) ---- */
+  /* @property lets the focus-in conic sweep animate a true angle once; without it the custom prop
+     jumps 0deg->360deg discretely, so the ring just holds still — the static-gradient fallback for free */
+  @property --dk-a{syntax:"<angle>";inherits:false;initial-value:0deg}
+  .pcast-dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;background:var(--ink-2);border-top:1px solid var(--line);isolation:isolate}
+  /* content-gating unchanged: a chart docks at any width; a lesson-only dock only earns the bottom
+     on phones, where the side rail is already gone. data-state (open|min|closed) layers on top. */
   .pcast-dock.has-chart{display:block}
   @media (max-width:1199px){.pcast-dock.has-lesson{display:block}}
-  .pcast-dock-inner{max-width:1160px;margin:0 auto;padding:8px clamp(12px,3vw,24px) calc(8px + env(safe-area-inset-bottom))}
-  .pcast-dock-chart{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+  .pcast-dock[data-state="closed"]{display:none}
+  /* brass inset top hairline: a 1px gradient that reads as a lit edge, not a ruled border */
+  .pcast-dock::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,color-mix(in oklab,var(--brass) 50%,transparent),transparent);pointer-events:none}
+  /* the instrument "wakes" when reached for: a single 0.9s conic ring on focus-within, never a loop */
+  .pcast-dock::after{content:"";position:absolute;inset:0;padding:1px;pointer-events:none;opacity:0;background:conic-gradient(from var(--dk-a),transparent 0 60%,var(--brass) 78%,transparent 92%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+  .pcast-dock:focus-within::after{animation:pcastWake .9s var(--ease-out) 1}
+  @keyframes pcastWake{0%{opacity:.9;--dk-a:0deg}100%{opacity:0;--dk-a:360deg}}
+  /* the single row: identity | beam (flex:1) | live readout | tools, all on one baseline.
+     min-height 44 + the safe-area pad = the calc(44px + env(safe-area-inset-bottom)) open height. */
+  .pcast-dock-inner{position:relative;max-width:min(96vw,1760px);margin:0 auto;padding:0 clamp(12px,2vw,16px) env(safe-area-inset-bottom);display:flex;align-items:center;gap:12px;min-height:44px}
+  .pcast-dock-chart{display:flex;align-items:center;gap:10px;flex:1;min-width:0;height:44px}
   .pcast-dock-chart[hidden]{display:none}
-  .pcast-dk-id{display:flex;flex-direction:column;align-items:flex-start;gap:1px;background:transparent;border:0;padding:2px 4px;cursor:pointer;font:inherit}
-  .pcast-dk-eyebrow{font-family:var(--mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
-  .pcast-dk-date{font-family:var(--mono);font-size:.86rem;color:var(--ivory);border-bottom:1px dashed var(--line)}
+  .pcast-dock[data-state="min"] .pcast-dock-chart{display:none}
+  /* identity: sigil + eyebrow/date, a quiet ghost button that dash-underlines on hover */
+  .pcast-dk-id{display:flex;align-items:center;gap:8px;flex:none;background:transparent;border:0;padding:2px 4px;border-radius:var(--r-1);cursor:pointer;font:inherit}
+  .pcast-dk-sigil{font-family:var(--serif);font-size:1.1rem;line-height:1;color:var(--brass);text-shadow:0 0 8px var(--cc-soft)}
+  .pcast-dk-idtext{display:flex;flex-direction:column;align-items:flex-start;gap:1px;min-width:0}
+  .pcast-dk-eyebrow{font-family:var(--mono);font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+  .pcast-dk-date{font-family:var(--mono);font-size:.8rem;line-height:1.2;color:var(--ivory);border-bottom:1px dashed var(--line)}
   .pcast-dk-id:hover .pcast-dk-date{color:var(--moon);border-bottom-color:var(--brass)}
-  .pcast-dk-id:focus-visible{outline:2px solid var(--brass);outline-offset:2px;border-radius:var(--r-1)}
-  .pcast-dk-field{display:flex;flex-direction:column;gap:1px}
-  .pcast-dk-lab{font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
-  .pcast-dk-sel{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r-1);color:var(--moon);font:inherit;font-size:.8rem;padding:5px 8px;min-height:36px;max-width:190px}
-  .pcast-dk-sel:hover{border-color:var(--brass)}
-  .pcast-dk-sel:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
-  .pcast-dk-conv{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin:0;flex:1 1 220px;min-width:0;line-height:1.45}
-  /* the hour beam: a twelve-stop scrubber over the Earthly Branch hours (replaces the old A/B pills) */
-  .pcast-dk-beam{flex:1 1 320px;min-width:260px;display:flex;flex-direction:column;gap:4px}
-  .pcast-dk-beam-lab{font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
-  .pcast-dk-beam-range{width:100%;accent-color:var(--brass);min-height:28px;cursor:pointer}
-  .pcast-dk-beam-range:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
-  .pcast-dk-beam-ticks{display:flex;justify-content:space-between}
-  .pcast-dk-tick{background:transparent;border:0;padding:2px 1px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:0;color:var(--faint);font-family:var(--mono);font-size:.5rem;letter-spacing:.02em}
-  .pcast-dk-tick b{font-weight:400;font-size:.5rem}
-  .pcast-dk-tick small{font-family:var(--mono);font-size:.44rem;letter-spacing:0}
-  .pcast-dk-tick.is-on{color:var(--brass)}
-  .pcast-dk-tick:hover{color:var(--moon)}
-  .pcast-dk-tick:focus-visible{outline:2px solid var(--brass);outline-offset:2px;border-radius:var(--r-1)}
-  /* the current-hour line above the beam: mono, Gregorian time ivory, branch part brass */
-  .pcast-dk-beam-cur{font-family:var(--mono);font-size:.78rem;color:var(--ivory);line-height:1.3}
+  .pcast-dk-id:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+  /* the hour beam: a 12-stop scrubber over the Earthly-Branch hours. --dk-x (0-100%, set as the thumb
+     travels) parks a small amethyst bloom under the thumb — painted into the background, no shadow spread. */
+  .pcast-dk-beam{position:relative;flex:1;min-width:88px;align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:2px;background:radial-gradient(22px 20px at var(--dk-x,50%) 50%,var(--cc-soft),transparent 70%)}
+  .pcast-dk-beam-range{-webkit-appearance:none;appearance:none;width:100%;margin:0;background:transparent;accent-color:var(--brass);cursor:pointer}
+  .pcast-dk-beam-range:focus-visible{outline:2px solid var(--brass);outline-offset:4px;border-radius:var(--r-pill)}
+  /* the precision affordance appears only when reached for: track thickens, thumb grows (transform only) */
+  .pcast-dk-beam-range::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:color-mix(in oklab,var(--brass) 22%,var(--line));transition:transform var(--dur-fast) var(--ease-out)}
+  .pcast-dk-beam:hover .pcast-dk-beam-range::-webkit-slider-runnable-track,.pcast-dk-beam-range:focus-visible::-webkit-slider-runnable-track{transform:scaleY(1.6)}
+  .pcast-dk-beam-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:12px;height:12px;margin-top:-4px;border-radius:50%;background:var(--brass);border:2px solid var(--ink);box-shadow:0 0 10px -2px var(--brass);transition:transform var(--dur-fast) var(--ease-out)}
+  .pcast-dk-beam:hover .pcast-dk-beam-range::-webkit-slider-thumb,.pcast-dk-beam-range:focus-visible::-webkit-slider-thumb{transform:scale(1.25)}
+  .pcast-dk-beam-range::-moz-range-track{height:4px;border-radius:2px;background:color-mix(in oklab,var(--brass) 22%,var(--line))}
+  .pcast-dk-beam-range::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:var(--brass);border:2px solid var(--ink);box-shadow:0 0 10px -2px var(--brass)}
+  /* at rest the 12 ticks are 1px brass notches; labels fade in only on beam hover/focus-within, and
+     are absolutely placed so they never reflow the 44px row. The range is the >=40px primary control;
+     the notches are secondary quick-jumps with a taller-than-wide hit strip. */
+  .pcast-dk-beam-ticks{display:flex;justify-content:space-between;height:7px;padding:0 5px}
+  .pcast-dk-tick{position:relative;width:1px;padding:0;background:transparent;border:0;cursor:pointer}
+  .pcast-dk-tick::before{content:"";position:absolute;top:0;left:0;width:1px;height:7px;background:color-mix(in oklab,var(--brass) 45%,transparent)}
+  .pcast-dk-tick::after{content:"";position:absolute;top:-18px;left:-12px;right:-12px;bottom:-18px}
+  .pcast-dk-tick b{position:absolute;top:9px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:.5rem;font-weight:400;letter-spacing:.02em;white-space:nowrap;color:var(--faint);opacity:0;transition:opacity var(--dur-fast) var(--ease-out);pointer-events:none}
+  .pcast-dk-beam:hover .pcast-dk-tick b,.pcast-dk-beam:focus-within .pcast-dk-tick b{opacity:1}
+  .pcast-dk-tick:hover::before{background:var(--brass-bright)}
+  .pcast-dk-tick:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+  /* the live tick reads as an ember: a text-shadow glow, not a filter */
+  .pcast-dk-tick.is-on::before{background:var(--brass)}
+  .pcast-dk-tick.is-on b{opacity:1;color:var(--brass);text-shadow:0 0 6px var(--cc-soft)}
+  /* live readout: Gregorian time ivory, Earthly Branch brass; first thing to drop on narrow screens */
+  .pcast-dk-beam-cur{flex:none;font-family:var(--mono);font-size:.76rem;line-height:1.2;white-space:nowrap;color:var(--ivory)}
   .pcast-dk-beam-cur b,.pcast-dk-beam-cur [lang="zh-Hant"]{font-weight:400;color:var(--brass)}
-  /* slim track, brass thumb (accent-color stays as the fallback) */
-  .pcast-dk-beam-range{-webkit-appearance:none;appearance:none;background:transparent}
-  .pcast-dk-beam-range::-webkit-slider-runnable-track{height:3px;border-radius:2px;background:color-mix(in oklab,var(--brass) 22%,var(--line))}
-  .pcast-dk-beam-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;margin-top:-5.5px;border-radius:50%;background:var(--brass);border:2px solid var(--ink);box-shadow:0 0 10px -2px var(--brass)}
-  .pcast-dk-beam-range::-moz-range-track{height:3px;border-radius:2px;background:color-mix(in oklab,var(--brass) 22%,var(--line))}
-  .pcast-dk-beam-range::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--brass);border:2px solid var(--ink);box-shadow:0 0 10px -2px var(--brass)}
-  @media (max-width:640px){
-    .pcast-dk-beam{flex-basis:100%;min-width:0}
-    /* 12 labels crowd a phone: keep every 4th, plus whichever is live */
-    .pcast-dk-tick{visibility:hidden}
-    .pcast-dk-tick:nth-child(4n+1),.pcast-dk-tick.is-on{visibility:visible}
-    .pcast-dk-tick small{display:none}
-    .pcast-dk-tick.is-on small{display:block}
-  }
-  .pcast-dock .psa-continue-bar{position:static;padding:4px 0 0;background:transparent;border-top:0;z-index:auto}
-  .pcast-dock.has-chart .pcast-dock-lesson .psa-continue-bar{border-top:1px solid var(--line-soft)}
-  .psa-cb-ico{display:none;color:var(--brass);margin-right:6px}
+  /* tools: timezone value-button, sound, unlock, minimize, close */
+  .pcast-dk-tools{flex:none;display:flex;align-items:center;gap:4px}
+  /* the real native <select> lies transparent over the value text so the platform picker and its
+     a11y survive; the wrap is the relative anchor for it */
+  .pcast-dk-tzwrap{position:relative;display:inline-flex;align-items:center;height:30px;padding:0 8px;border:1px solid var(--line);border-radius:var(--r-1)}
+  .pcast-dk-tzwrap:hover{border-color:var(--brass)}
+  .pcast-dk-tzwrap:focus-within{border-color:var(--brass);outline:2px solid var(--brass);outline-offset:1px}
+  .pcast-dk-tzval{font-family:var(--mono);font-size:.72rem;white-space:nowrap;color:var(--moon);pointer-events:none}
+  .pcast-dk-sel{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;opacity:0;font:inherit;cursor:pointer}
+  /* ghost icon buttons: warm to brass on hover; a transparent overlay lifts the hit area off the 30px glyph */
+  .pcast-dk-sound,.pcast-dk-collapse,.pcast-dk-close{position:relative;flex:none;width:30px;height:30px;display:grid;place-items:center;padding:0;background:transparent;border:1px solid transparent;border-radius:var(--r-1);color:var(--muted);font-size:.9rem;line-height:1;cursor:pointer;transition:color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out)}
+  .pcast-dk-sound::after,.pcast-dk-collapse::after,.pcast-dk-close::after,.pcast-dk-zodi::after{content:"";position:absolute;inset:-5px}
+  .pcast-dk-sound:hover,.pcast-dk-collapse:hover{color:var(--brass);border-color:var(--line)}
+  .pcast-dk-sound[aria-pressed="false"]{color:var(--faint)}
+  /* close is destructive-ish, so it rests quieter than minimize and only warms, never frames */
+  .pcast-dk-close{color:var(--faint)}
+  .pcast-dk-close:hover{color:var(--brass)}
+  .pcast-dk-sound:focus-visible,.pcast-dk-collapse:focus-visible,.pcast-dk-close:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+  /* the unlock star: the mobile Zodi Animal path, a small brass-ringed pill kept at every width */
+  .pcast-dk-zodi{position:relative;flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid var(--brass);border-radius:var(--r-pill);color:var(--brass);text-decoration:none;font-size:.9rem;box-shadow:0 0 10px -4px var(--brass)}
+  .pcast-dk-zodi:hover{color:var(--brass-bright);background:color-mix(in oklab,var(--brass) 14%,transparent)}
+  .pcast-dk-zodi:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+  /* late-子時 disclosure: rare; floats just above the row as a popover so it never adds height */
+  .pcast-dk-conv{position:absolute;left:clamp(12px,2vw,16px);right:clamp(12px,2vw,16px);bottom:calc(100% + 6px);margin:0;padding:8px 12px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-1);font-family:var(--mono);font-size:.7rem;line-height:1.4;color:var(--muted)}
+  .pcast-dk-conv[hidden]{display:none}
+  /* lesson bar in a charted dock: never a second row — the continue bar collapses to the always-on
+     compact brass chip (the .psa-cb-ico/.psa-cb-short form, promoted from its old <=480px-only rule) */
+  .pcast-dock-lesson{flex:none;display:flex;align-items:center}
+  .pcast-dock[data-state="min"] .pcast-dock-lesson{display:none}
+  .pcast-dock .psa-continue-bar{position:static;margin:0;padding:0;background:transparent;border:0;z-index:auto}
+  .psa-cb-ico{display:none;color:var(--brass);margin-right:4px}
   .psa-cb-short{display:none}
-  @media (max-width:480px){
-    .pcast-dock.has-chart .psa-cb-txt{display:none}
-    .pcast-dock.has-chart .psa-cb-ico,.pcast-dock.has-chart .psa-cb-short{display:inline}
-  }
-  @media (max-width:390px){.pcast-dk-conv{flex-basis:100%}}
-  /* merge with the site-wide mobile Reveal Dock (#pn-dock): while the chart dock is live,
-     one bottom instrument only — the ✦ pill inside the dock carries the unlock path */
-  .pcast-dk-zodi{display:none}
+  .pcast-dock.has-chart .psa-cb-txt{display:none}
+  .pcast-dock.has-chart .psa-cb-ico,.pcast-dock.has-chart .psa-cb-short{display:inline}
+  .pcast-dock.has-chart .pcast-dock-lesson .psa-continue-bar{gap:6px;padding:4px 10px;border:1px solid var(--brass-dim);border-radius:var(--r-pill);background:color-mix(in oklab,var(--brass) 10%,transparent)}
+  /* chart-less (lesson only): keep the bar's own readable single row */
+  .pcast-dock:not(.has-chart) .pcast-dock-lesson{flex:1;min-height:40px}
+  /* progressive collapse — the beam is the last thing standing and never disappears */
   @media (max-width:900px){
+    .pcast-dk-idtext{display:none}
+    /* one bottom instrument only: fold the site-wide Reveal Dock while the chart dock is live */
     body.pcast-dock-live #pn-dock{display:none}
     body.pcast-dock-live.pn-has-bar{padding-bottom:0}
-    .pcast-dock.has-chart .pcast-dk-zodi{display:inline-flex;align-items:center;justify-content:center;width:38px;min-height:38px;margin-left:auto;border:1px solid var(--brass);border-radius:var(--r-pill);color:var(--brass);text-decoration:none;font-size:1rem;flex:none}
-    .pcast-dock.has-chart .pcast-dk-zodi:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+  }
+  @media (max-width:720px){
+    .pcast-dk-tzwrap{padding:0 6px}
+    .pcast-dk-tzval{font-size:.66rem}
+  }
+  @media (max-width:560px){
+    .pcast-dk-beam-cur{display:none}
+  }
+  @media (max-width:420px){
+    .pcast-dock-inner{gap:8px}
+    .pcast-dk-tools{gap:2px}
+    .pcast-dk-sound,.pcast-dk-collapse,.pcast-dk-close,.pcast-dk-zodi{width:28px;height:28px}
+    /* 12 notches crowd a phone: keep every 4th, plus whichever is live */
+    .pcast-dk-tick{visibility:hidden}
+    .pcast-dk-tick:nth-child(4n+1),.pcast-dk-tick.is-on{visibility:visible}
   }
   /* ---- "Your chart / Worked example" source pills + your-chart annotations ---- */
   /* restyled to the .zg-toggle language: small radius, glassy plate, brass-glow
      active state (static thumb-free variant — the DOM comes from ziwei-study-chart.js) */
-  .psa-src-toggle{position:relative;display:flex;width:max-content;gap:2px;padding:3px;margin:0 0 10px auto;border-radius:var(--r-1);background:color-mix(in oklab,var(--panel) 80%,transparent);border:1px solid var(--line);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  .psa-src-toggle{position:relative;display:flex;width:max-content;gap:2px;padding:3px;margin:0 0 10px auto;border-radius:var(--r-1);background:var(--panel);border:1px solid var(--line)}
   .psa-src-toggle[hidden]{display:none}
   .psa-src-btn{position:relative;z-index:1;background:transparent;border:0;border-radius:calc(var(--r-1) - 2px);color:var(--muted);font:inherit;font-size:.72rem;padding:5px 12px;min-height:32px;cursor:pointer;transition:color .15s}
   .psa-src-btn.is-on{background:linear-gradient(160deg,color-mix(in oklab,var(--brass) 28%,var(--panel)),var(--panel));color:var(--ivory);font-weight:600;box-shadow:0 0 0 1px var(--brass),0 0 18px -6px var(--brass),inset 0 0 12px -8px var(--brass)}
@@ -1147,15 +1187,21 @@
   @media (max-width:1099px){
     #pcast-result > .pcast-reading-cols.pcast-bleed{width:auto;margin:0}
   }
-  /* ---- 2. two-up rooms in the right column; the Life card spans both ---- */
+  /* ---- 2. two-up rooms in the right column. The Life card sits in one cell
+       like every other room — it is marked by its brass border, not by width. ---- */
   .pcast-col-rooms .pcast-read-rooms{grid-template-columns:1fr}
   @media (min-width:1280px){
     .pcast-col-rooms .pcast-read-rooms{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .pcast-col-rooms .pcast-read-room.is-life{grid-column:1/-1}
   }
   /* ---- 3. glow toggle: glassy, angular, brass ring that walks the border ---- */
   @property --zg-a{syntax:"<angle>";inherits:false;initial-value:0deg}
-  .zg-toggle{position:relative;display:inline-flex;gap:2px;padding:3px;border-radius:var(--r-1);background:color-mix(in oklab,var(--panel) 80%,transparent);border:1px solid var(--line);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  /* NB: no backdrop-filter here (nor on .pcast-dock / .psa-src-toggle / the
+     star tooltip). Each backdrop-filter re-samples and re-blurs everything
+     behind it on every frame that region repaints, and this one also carried a
+     6s infinite conic ring and scrolled under a bar that blurs its own
+     backdrop. Every one of these sat on a >=80% opaque fill, so the blur was
+     paying full price for an effect you cannot see. Opaque fill instead. */
+  .zg-toggle{position:relative;display:inline-flex;gap:2px;padding:3px;border-radius:var(--r-1);background:var(--panel);border:1px solid var(--line)}
   .zg-toggle::before{
     content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;
     /* without @property, --zg-a animates discretely between 0deg and 360deg — identical
@@ -1179,20 +1225,28 @@
     .zg-toggle::before{animation:none}
     .zg-thumb{transition:none}
   }
-  /* ---- 5. dock collapse: one slim ~40px row, mini date line, chevron ghost button ---- */
-  .pcast-dk-mini{display:none;flex:1 1 auto;min-width:0;font-family:var(--mono);font-size:.78rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .pcast-dk-mini b{font-weight:400;color:var(--brass)}
-  .pcast-dk-collapse{flex:none;width:32px;height:32px;margin-left:auto;display:grid;place-items:center;padding:0;background:transparent;border:1px solid var(--line-soft);border-radius:var(--r-1);color:var(--muted);cursor:pointer}
-  .pcast-dk-collapse:hover{border-color:var(--brass);color:var(--moon)}
-  .pcast-dk-collapse:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
-  .pcast-dk-collapse > *{display:block;transition:transform .2s ease}
-  .pcast-dock:not(.is-collapsed) .pcast-dk-collapse > *{transform:rotate(180deg)}
-  .pcast-dock.is-collapsed .pcast-dock-chart > *:not(.pcast-dk-mini):not(.pcast-dk-collapse){display:none}
-  .pcast-dock.is-collapsed .pcast-dock-lesson{display:none}
-  .pcast-dock.is-collapsed .pcast-dk-mini{display:block}
-  .pcast-dock.is-collapsed .pcast-dock-inner{padding-top:5px;padding-bottom:calc(5px + env(safe-area-inset-bottom))}
-  .pcast-dock.is-collapsed .pcast-dock-chart{flex-wrap:nowrap;align-items:center;min-height:30px}
-  @media (prefers-reduced-motion: reduce){.pcast-dk-collapse > *{transition:none}}
+  /* ---- dock states: minimized pill + closed launcher (driven by data-state on #pcast-dock) ---- */
+  /* min: the chart hides and one right-aligned ~32px pill floats on a transparent, borderless dock */
+  .pcast-dock[data-state="min"]{background:transparent;border-top-color:transparent}
+  .pcast-dock[data-state="min"]::before,.pcast-dock[data-state="min"]::after{display:none}
+  .pcast-dock[data-state="min"] .pcast-dock-inner{min-height:0;padding-top:6px;padding-bottom:calc(6px + env(safe-area-inset-bottom));justify-content:flex-end}
+  .pcast-dk-mini{display:none;align-items:center;gap:8px;height:32px;margin-left:auto;padding:0 14px;background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r-pill);color:var(--muted);font-family:var(--mono);font-size:.76rem;white-space:nowrap;cursor:pointer;box-shadow:0 0 14px -6px var(--brass)}
+  .pcast-dock[data-state="min"] .pcast-dk-mini{display:inline-flex}
+  .pcast-dk-mini:hover{border-color:var(--brass);color:var(--moon)}
+  .pcast-dk-mini:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+  .pcast-dk-mini .pcast-dk-sigil{font-size:.95rem}
+  .pcast-dk-mini-txt{overflow:hidden;text-overflow:ellipsis}
+  .pcast-dk-mini-caret{color:var(--brass);font-size:.7rem}
+  /* closed: the dock is gone; a round brass-ringed FAB waits bottom-right, below modals (z 49) */
+  .pcast-dk-launcher{position:fixed;right:calc(env(safe-area-inset-right) + 16px);bottom:calc(env(safe-area-inset-bottom) + 16px);z-index:49;width:44px;height:44px;display:grid;place-items:center;padding:0;background:var(--ink-2);border:1px solid var(--brass);border-radius:50%;color:var(--brass);font-family:var(--serif);font-size:1.15rem;line-height:1;cursor:pointer;box-shadow:0 0 16px -4px var(--brass),0 6px 20px -10px var(--ink)}
+  .pcast-dk-launcher[hidden]{display:none}
+  .pcast-dk-launcher:hover{color:var(--brass-bright);border-color:var(--brass-bright)}
+  .pcast-dk-launcher:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+  /* reduced motion kills the wake sweep and every affordance transition; glows rest in place */
+  @media (prefers-reduced-motion: reduce){
+    .pcast-dock:focus-within::after{animation:none}
+    .pcast-dk-beam-range::-webkit-slider-runnable-track,.pcast-dk-beam-range::-webkit-slider-thumb,.pcast-dk-tick b,.pcast-dk-sound,.pcast-dk-collapse,.pcast-dk-close{transition:none}
+  }
   /* ---- 6. star element colors + the learn layer (tooltip, legend) ---- */
   .pcast-star[data-elem="wood"],.pcast-star-full[data-elem="wood"],.pcast-elem-legend [data-elem="wood"]{--st-c:var(--st-wood)}
   .pcast-star[data-elem="fire"],.pcast-star-full[data-elem="fire"],.pcast-elem-legend [data-elem="fire"]{--st-c:var(--st-fire)}
@@ -1212,7 +1266,6 @@
     color:var(--st-c,var(--ivory));
     background:color-mix(in oklab,var(--ink-2) 94%,transparent);
     border:1px solid color-mix(in oklab,currentColor 40%,var(--line));
-    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
     box-shadow:0 10px 26px rgba(0,0,0,.45);
     opacity:0;transform:translateY(4px);pointer-events:none;
     transition:opacity .18s ease,transform .18s ease;
@@ -2519,12 +2572,12 @@
     mySeatsBtn.textContent = "Reset to my seats — all fourteen, as they sit in your chart";
     function starsYourMode() { return !!(myChart && starsToggle && starsToggle.mode() === "your"); }
     /* seat-tags speak the reading's dialect: 奴僕宮 is "Friends" here, matching the cast reading */
-    function shortPal(p) { return esc(p.standard).replace(/\s+Palace$/, "").replace(/^Servants$/, "Friends"); }
+    function shortPal(p) { return esc(p.standard).replace(/\s+Palace$/, ""); }
     function mySeatNote(star) {
       if (!star || !starsYourMode() || !myMap[star.id]) return "";
       var mp = palaceById[myMap[star.id]];
       if (!mp) return "";
-      return '<p class="psa-yourline">In your chart, <span lang="zh-Hant">' + esc(star.hant) + '</span> sits in your <span lang="zh-Hant">' + esc(mp.hant) + '</span> ' + esc(mp.standard).replace(/^Servants Palace$/, "Friends Palace") + '.</p>';
+      return '<p class="psa-yourline">In your chart, <span lang="zh-Hant">' + esc(star.hant) + '</span> sits in your <span lang="zh-Hant">' + esc(mp.hant) + '</span> ' + esc(mp.standard) + '.</p>';
     }
     /* every tray chip wears its seat in YOUR chart: "in your 遷移宮 Travel" */
     function paintSeatTags() {
@@ -2679,16 +2732,26 @@
       chipEls.forEach(function (b, k) { b.setAttribute("tabindex", k === idx ? "0" : "-1"); });
       chipEls[idx].focus();
     });
-    /* year → stem: last digit of the year maps to a stem (甲=4 … 癸=3). */
+    /* year → stem: last digit of the GREGORIAN year maps to a stem (甲=4 … 癸=3).
+       This digit map is only an approximation: it is correct solely for births on or
+       after Lunar New Year. A birth in January or early February belongs to the PREVIOUS
+       lunar year, so its true year pillar is one stem earlier and the map returns the
+       wrong stem. The cast chart supplies the true pillar via the stemOverride argument;
+       manual year typing keeps the approximation. */
     var STEM_BY_DIGIT = { 4: "甲", 5: "乙", 6: "丙", 7: "丁", 8: "戊", 9: "己", 0: "庚", 1: "辛", 2: "壬", 3: "癸" };
-    function applyYear() {
+    function applyYear(stemOverride) {
       var v = parseInt(doc.getElementById("psa-tf-year-input").value, 10);
       if (!v || v < 1900 || v > 2100) { if (live) live.textContent = "Enter a four-digit year between 1900 and 2100."; return; }
-      var stem = STEM_BY_DIGIT[v % 10];
+      var digitStem = STEM_BY_DIGIT[v % 10];
+      var stem = stemOverride || digitStem;
       render(stem);
-      if (live) live.textContent = "Year " + v + " is a " + (ZD.stemTableByStem[stem] || {}).pinyin + " year. " + live.textContent;
+      var msg = "Year " + v + " is a " + (ZD.stemTableByStem[stem] || {}).pinyin + " year. ";
+      if (stemOverride && stemOverride !== digitStem) {
+        msg = "You were born before Lunar New Year, so your pillar is " + stem + ", not the " + digitStem + " the calendar year " + v + " suggests. ";
+      }
+      if (live) live.textContent = msg + live.textContent;
     }
-    doc.getElementById("psa-tf-year-set").addEventListener("click", applyYear);
+    doc.getElementById("psa-tf-year-set").addEventListener("click", function () { applyYear(); });
     doc.getElementById("psa-tf-year-input").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); applyYear(); } });
     render(current);
     tfReady = true;
@@ -2712,13 +2775,19 @@
       if (tfToggle) tfToggle.setAvailable(ok);
       var yearInput = doc.getElementById("psa-tf-year-input");
       if (ok && tfToggle && tfToggle.mode() === "your") {
-        tfNote.hidden = false;
-        tfNote.textContent = "from your " + sum.yearName + " year";
+        var trueStem = sum.out && sum.out.yearPillar ? sum.out.yearPillar.stem : null;
         var yr = sum.birth && sum.birth.year;
+        var digitStem = yr ? STEM_BY_DIGIT[yr % 10] : null;
+        tfNote.hidden = false;
+        if (trueStem && digitStem && trueStem !== digitStem) {
+          tfNote.textContent = "from your " + sum.yearName + " year — you were born before Lunar New Year, so your pillar is " + trueStem + ", not the " + digitStem + " the calendar year " + yr + " suggests";
+        } else {
+          tfNote.textContent = "from your " + sum.yearName + " year";
+        }
         if (yr && (fromToggle || tfFedYear !== yr)) {
           tfFedYear = yr;
           if (yearInput) yearInput.value = String(yr);
-          applyYear(); /* the Set-the-year button's own path */
+          applyYear(trueStem); /* the Set-the-year button's own path, true pillar from the cast */
         }
       } else {
         tfNote.hidden = true;
@@ -3685,64 +3754,206 @@
   if (!mei || !doorsMount || !verdict) return;
   var reduceMotion = false; try { reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
 
+  var SCF = window.ZiweiStudyChart || null;
+  var ZDL = ZD.lunar || null;
+  var model = doc.getElementById("psa-timing-model");
+  var controls = model ? model.querySelector(".psa-timing-controls") : null;
+  var hintEl = model ? model.querySelector(".psa-model-hint") : null;
+  /* read the worked-example hint out of the served HTML instead of restating it here,
+     so the crawlable copy and the JS can never drift apart */
+  var MEI_HINT = hintEl ? hintEl.textContent : "";
+
   var firstAge = mei.bureau.firstDoorAge;               /* 6 */
-  var dir = mei.bureau.direction === "forward" ? 1 : -1; /* Mei: backward */
+  var dir = mei.bureau.direction === "forward" ? 1 : -1; /* Mei: counterclockwise */
   var lifeIdx = BRANCHES.indexOf(mei.palaces["ming-gong"].branch);
-  var yearBranchIdx = 6; /* fallback 2026 = 午 */
-  try { yearBranchIdx = (((new Date().getFullYear() - 4) % 12) + 12) % 12; } catch (e) {}
+
+  /* Year Wave keys off the LUNAR year of today, not the Gregorian year — the same class
+     of bug fixed in the Four Forces model. 2026 lunar year is 丙午 (branchIndex 6). This
+     fixes the wave in both Mei mode and your-chart mode. */
+  var now = new Date();
+  var waveBranchIdx = 6, waveName = "丙午", todayLunYear = now.getFullYear();
+  if (ZDL) {
+    try {
+      var todayLun = ZDL.solarToLunar(now.getFullYear(), now.getMonth() + 1, now.getDate());
+      todayLunYear = todayLun.lunarYear;
+      var yb = ZDL.yearStemBranch(todayLunYear);
+      waveBranchIdx = yb.branchIndex; waveName = yb.name;
+    } catch (e) {}
+  }
 
   /* door number hosting a given branch index (door 0 = Life palace) */
   function doorOf(branchIdx) { return (((branchIdx - lifeIdx) * dir) % 12 + 12) % 12; }
   var order = ["ming-gong", "xiong-di-gong", "fu-qi-gong", "zi-nu-gong", "cai-bo-gong", "ji-e-gong", "qian-yi-gong", "nu-pu-gong", "guan-lu-gong", "tian-zhai-gong", "fu-de-gong", "fu-mu-gong"];
-  var cells = {};
+
+  /* per-pid layout { branch, branchIdx, from, to } for the worked example, computed once */
+  var meiLayout = {};
   order.forEach(function (pid) {
     var pc = mei.palaces[pid]; var bIdx = BRANCHES.indexOf(pc.branch);
-    var dn = doorOf(bIdx); var from = firstAge + dn * 10, to = from + 9;
-    var pal = palaceById[pid] || { standard: pid };
+    var dn = doorOf(bIdx); var from = firstAge + dn * 10;
+    meiLayout[pid] = { branch: pc.branch, branchIdx: bIdx, from: from, to: from + 9 };
+  });
+  /* the reader's own layout, from their cast chart's doors + palaces */
+  function yourLayout(sum) {
+    var lay = {}, doorByBranch = {};
+    (sum.chart.doors || []).forEach(function (dr) { doorByBranch[dr.branchIndex] = dr; });
+    order.forEach(function (pid) {
+      var pc = sum.chart.palaces[pid]; if (!pc) return;
+      var dr = doorByBranch[pc.branchIndex] || { from: 0, to: 0 };
+      lay[pid] = { branch: pc.branch, branchIdx: pc.branchIndex, from: dr.from, to: dr.to };
+    });
+    return lay;
+  }
+
+  var cells = {};
+  order.forEach(function (pid) {
     var cell = doc.createElement("div");
-    cell.className = "psa-door-cell"; cell.setAttribute("data-pid", pid); cell.setAttribute("data-from", from); cell.setAttribute("data-to", to);
-    cell.innerHTML = '<span class="zh" lang="zh-Hant">' + pc.branch + ' <span class="n">' + (pal.standard || "") + '</span></span>' +
-      '<span class="ages">ages ' + from + " to " + to + '</span><span class="mark"></span>';
+    cell.className = "psa-door-cell"; cell.setAttribute("data-pid", pid);
     cells[pid] = cell; doorsMount.appendChild(cell);
   });
 
-  function paintWave() {
+  /* age-counting disclosure, shown only in your-chart mode */
+  var ageNote = doc.createElement("p");
+  ageNote.className = "psa-timing-agenote"; ageNote.hidden = true;
+  if (doorsMount.parentNode) doorsMount.parentNode.insertBefore(ageNote, doorsMount);
+
+  /* ---- current view state ---- */
+  var curLayout = meiLayout;   /* which layout the cells + wave currently speak */
+  var yourMode = false;        /* true only when reader chose "your" AND a cast chart with an hour exists */
+
+  function paintCells(layout) {
     order.forEach(function (pid) {
-      var cell = cells[pid]; var bIdx = BRANCHES.indexOf(mei.palaces[pid].branch);
-      var isWave = bIdx === yearBranchIdx;
-      cell.classList.toggle("is-wave", isWave);
-      if (isWave && !cell.classList.contains("is-open")) cell.querySelector(".mark").innerHTML = '<span class="glyph">☀</span> this year';
+      var cell = cells[pid]; var L = layout[pid]; if (!L) return;
+      var pal = palaceById[pid] || { standard: pid };
+      cell.setAttribute("data-from", L.from); cell.setAttribute("data-to", L.to);
+      cell.classList.remove("is-open", "is-wave");
+      cell.innerHTML = '<span class="zh" lang="zh-Hant">' + L.branch + ' <span class="n">' + (pal.standard || "") + '</span></span>' +
+        '<span class="ages">ages ' + L.from + " to " + L.to + '</span><span class="mark"></span>';
     });
   }
-  paintWave();
-  verdict.className = "psa-timing-verdict empty";
-  verdict.textContent = "Enter an age to open its Decade Door. The door sets the decade's theme; the year knocks on one room. Neither rewrites the birth chart.";
 
-  function openDoor(age) {
+  /* the year-wave mark: sun glyph + this lunar year's pillar, tagged so screen readers and
+     the font stack treat 丙午 as Chinese rather than as stray latin glyphs */
+  function waveMark() {
+    return '<span class="glyph">☀</span> <span lang="zh-Hant">' + waveName + '</span> this year';
+  }
+
+  function paintWave() {
+    order.forEach(function (pid) {
+      var cell = cells[pid]; var L = curLayout[pid]; if (!L) return;
+      var isWave = L.branchIdx === waveBranchIdx;
+      cell.classList.toggle("is-wave", isWave);
+      if (isWave && !cell.classList.contains("is-open")) cell.querySelector(".mark").innerHTML = waveMark();
+    });
+  }
+
+  function emptyVerdict() {
+    verdict.className = "psa-timing-verdict empty";
+    verdict.textContent = "Enter an age to open its Decade Door. The door sets the decade's theme; the year knocks on one room. Neither rewrites the birth chart.";
+  }
+
+  /* earned=true only fires progress; the auto-open and event-driven paths pass false so a
+     lesson the reader never did is never marked complete. */
+  function openDoor(age, earned) {
     if (!age || age < 1) { if (live) live.textContent = "Enter an age between 1 and 120."; return; }
     var openedPid = null;
     order.forEach(function (pid) {
-      var cell = cells[pid]; var from = +cell.getAttribute("data-from"), to = +cell.getAttribute("data-to");
+      var cell = cells[pid]; var L = curLayout[pid]; if (!L) return;
+      var from = +cell.getAttribute("data-from"), to = +cell.getAttribute("data-to");
       var open = age >= from && age <= to;
       cell.classList.toggle("is-open", open);
-      var bIdx = BRANCHES.indexOf(mei.palaces[pid].branch);
-      cell.querySelector(".mark").innerHTML = open ? '<span class="glyph" lang="zh-Hant">門</span> door open, ages ' + from + " to " + to : (bIdx === yearBranchIdx ? '<span class="glyph">☀</span> this year' : "");
+      cell.querySelector(".mark").innerHTML = open ? '<span class="glyph" lang="zh-Hant">門</span> door open, ages ' + from + " to " + to : (L.branchIdx === waveBranchIdx ? waveMark() : "");
       if (open) openedPid = pid;
     });
-    var wavePid = order.filter(function (pid) { return BRANCHES.indexOf(mei.palaces[pid].branch) === yearBranchIdx; })[0];
+    var wavePid = order.filter(function (pid) { return curLayout[pid] && curLayout[pid].branchIdx === waveBranchIdx; })[0];
     var doorName = openedPid ? (palaceById[openedPid] || {}).standard : "no door";
-    var waveName = wavePid ? (palaceById[wavePid] || {}).standard : "";
+    var wName = wavePid ? (palaceById[wavePid] || {}).standard : "";
     verdict.className = "psa-timing-verdict";
-    verdict.innerHTML = "At age " + age + ", Mei lives inside the <strong>" + (doorName || "") + "</strong> decade door. This year's wave touches her <strong>" + waveName + "</strong>. " +
-      "The door sets the decade's theme. The year knocks on one room. Neither rewrites the birth chart, which was set the hour she was born.";
-    if (live) live.textContent = "Door open in the " + doorName + ". This year's wave touches " + waveName + ".";
-    if (window.ZiweiProgress) { window.ZiweiProgress.markHall("timing"); window.ZiweiProgress.completeLesson("7.2", { via: "timing" }); }
-    if (window.PSA && window.PSA.reinforce) window.PSA.reinforce();
-    var nx = doc.getElementById("psa-timing-next"); if (nx) nx.textContent = "You opened a door. See how a whole reading walks through them.";
+    if (yourMode) {
+      verdict.innerHTML = "At age " + age + ", you live inside the <strong>" + (doorName || "") + "</strong> decade door. This year's wave touches your <strong>" + wName + "</strong>. " +
+        "The door sets the decade's theme. The year knocks on one room. Neither rewrites the birth chart, which was set the hour you were born.";
+    } else {
+      verdict.innerHTML = "At age " + age + ", Mei lives inside the <strong>" + (doorName || "") + "</strong> decade door. This year's wave touches her <strong>" + wName + "</strong>. " +
+        "The door sets the decade's theme. The year knocks on one room. Neither rewrites the birth chart, which was set the hour she was born.";
+    }
+    if (live) live.textContent = "Door open in the " + doorName + ". This year's wave touches " + wName + ".";
+    if (earned) {
+      if (window.ZiweiProgress) { window.ZiweiProgress.markHall("timing"); window.ZiweiProgress.completeLesson("7.2", { via: "timing" }); }
+      if (window.PSA && window.PSA.reinforce) window.PSA.reinforce();
+      var nx = doc.getElementById("psa-timing-next"); if (nx) nx.textContent = "You opened a door. See how a whole reading walks through them.";
+    }
   }
+
   var ageInput = doc.getElementById("psa-timing-age");
-  doc.getElementById("psa-timing-open").addEventListener("click", function () { openDoor(parseInt(ageInput.value, 10)); });
-  ageInput.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); openDoor(parseInt(ageInput.value, 10)); } });
+  doc.getElementById("psa-timing-open").addEventListener("click", function () { openDoor(parseInt(ageInput.value, 10), true); });
+  ageInput.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); openDoor(parseInt(ageInput.value, 10), true); } });
+
+  /* ---------- your-chart wiring ----------
+     The doors need the birth hour (the Life palace does), so the toggle only shows when a cast
+     chart with an hour exists. With no chart or no hour the toggle stays hidden and the model
+     behaves exactly as it shipped, on Mei. The nominal-age prefill is guarded on the chart stamp
+     the same way the Forces model guards tfFedYear: re-fed only on a toggle flip or a new chart,
+     never on a bare re-render, so a reader looking ahead at age 60 is not stomped by an hour scrub. */
+  var timingToggle = null;
+  var fedBirthKey = null;
+  /* The prefill key is the birth DATE alone, deliberately not SCF.summary().stamp — the stamp
+     carries the hour, so guarding on it would re-feed the nominal age on every hour-beam scrub
+     and stomp a reader who typed 60 to look ahead. Nominal age depends only on the birth year;
+     the doors re-lay themselves under whatever age is already in the box. */
+  function birthKeyOf(sum) {
+    var b = sum && sum.birth;
+    return b ? b.year + "-" + b.month + "-" + b.day : null;
+  }
+  function renderTiming(fromToggle) {
+    var sum = SCF ? SCF.summary() : null;
+    var avail = !!(sum && sum.chart);
+    if (timingToggle) timingToggle.setAvailable(avail);
+    yourMode = !!(avail && timingToggle && timingToggle.mode() === "your");
+
+    var nominalAge = null;
+    if (yourMode) {
+      curLayout = yourLayout(sum);
+      var bureau = sum.chart.bureau || { hant: "", standard: "", num: firstAge };
+      if (hintEl) hintEl.textContent = "Your chart runs a " + bureau.hant + " " + bureau.standard + ", so your first Decade Door opened at age " + bureau.num + ". The door you are standing in is already open below.";
+      if (sum.out && sum.out.lunar) nominalAge = todayLunYear - sum.out.lunar.lunarYear + 1;
+      ageNote.hidden = false;
+      ageNote.textContent = "Purple Star counts age the old way: you were one the day you were born, and everyone turns a year older at Lunar New Year. By that count you are " + nominalAge + ".";
+    } else {
+      curLayout = meiLayout;
+      if (hintEl) hintEl.textContent = MEI_HINT;
+      ageNote.hidden = true; ageNote.textContent = "";
+    }
+
+    paintCells(curLayout);
+    paintWave();
+
+    var keyNow = birthKeyOf(sum);
+    var freshChart = fromToggle || (keyNow && keyNow !== fedBirthKey);
+
+    if (yourMode && freshChart && nominalAge) {
+      fedBirthKey = keyNow;
+      ageInput.value = String(nominalAge);
+      openDoor(nominalAge, false); /* auto-open earns no progress */
+    } else if (!yourMode && fromToggle) {
+      fedBirthKey = null;
+      ageInput.value = "";
+      emptyVerdict();
+    } else {
+      /* bare re-render (hour scrub): keep the reader's typed age, re-open it in the new layout */
+      var a = parseInt(ageInput.value, 10);
+      if (a) openDoor(a, false); else emptyVerdict();
+    }
+  }
+
+  paintCells(curLayout);
+  paintWave();
+  emptyVerdict();
+
+  if (SCF && SCF.makeToggle && controls) {
+    timingToggle = SCF.makeToggle("srcTiming", function () { renderTiming(true); });
+    controls.insertBefore(timingToggle.el, controls.firstChild);
+  }
+  doc.addEventListener("psa:studychart", function () { renderTiming(false); });
+  renderTiming(false);
 })();
 </script>
 
@@ -4048,6 +4259,7 @@
     <div class="zf-colo">
       <span class="zf-lead">&copy; <span id="zf-year">2026</span> Zodi Animal. Made under the moon.</span>
       <span class="zf-disc">A tradition of meaning for reflection. Not medical, psychological, financial, or legal advice.</span>
+      <span class="zf-disc zf-legal"><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/terms.html">Terms of Use</a></span>
     </div>
 
   </div>

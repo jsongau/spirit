@@ -339,7 +339,10 @@ html.pn-sealing .pn-sub .pn-seam-spark {
 /* ---- THE SCROLL SHOOTING-STAR (progress on the seam) ------------- */
 /* nav.js injects `<div class="pn-progress"><i class="pn-progress-star"></i></div>`
    as the FIRST child of .pn-sub, sets --pn-scroll (0->1 page fraction) and
-   --pn-beam (0->1 brightness) on <html>, and toggles html.pn-bound. The
+   --pn-beam (0->1 brightness) ON .pn-sub ITSELF (never on <html>: a per-frame
+   write to an inherited var on the root invalidates style for the whole
+   document), and toggles html.pn-bound. Every rule below therefore reads the
+   vars by inheritance from .pn-sub, so keep these selectors inside it. The
    track spans the seam between the top bar and the sub-nav; it coexists with
    the base .pn-sub::before hairline (that stays the resting line). 60fps:
    width / left / opacity / transform / box-shadow only. */

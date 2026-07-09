@@ -1,4 +1,6 @@
 /* ziwei-pronunciation.js: speak strings and pronunciation helper for the Purple Star hub.
+   Carries the system name, twelve palaces, fourteen principal stars, the four
+   transformation-target auxiliaries (文昌 文曲 左輔 右弼), and the technical terms.
    Generated from docs/purple-star-hub/PSA-TERMINOLOGY.md §6 (pronunciation spec).
    Speak strings are traditional characters; display strings are tone-marked pinyin.
    Lang is zh-CN per the spec (widest voice coverage; zh-TW voices still match the zh prefix).
@@ -25,6 +27,7 @@
     "ji-e-gong": { text: "疾厄宮", pinyin: "Jí'è Gōng", lang: LANG },
     "qian-yi-gong": { text: "遷移宮", pinyin: "Qiānyí Gōng", lang: LANG },
     "nu-pu-gong": { text: "奴僕宮", pinyin: "Núpú Gōng", lang: LANG },
+    "jiao-you-gong": { text: "交友宮", pinyin: "Jiāoyǒu Gōng", lang: LANG },
     "guan-lu-gong": { text: "官祿宮", pinyin: "Guānlù Gōng", lang: LANG },
     "tian-zhai-gong": { text: "田宅宮", pinyin: "Tiánzhái Gōng", lang: LANG },
     "fu-de-gong": { text: "福德宮", pinyin: "Fúdé Gōng", lang: LANG },
@@ -45,6 +48,12 @@
     "tian-liang": { text: "天梁", pinyin: "Tiānliáng", lang: LANG },
     "qi-sha": { text: "七殺", pinyin: "Qīshā", lang: LANG },
     "po-jun": { text: "破軍", pinyin: "Pòjūn", lang: LANG },
+
+    /* Auxiliary stars that appear as four-transformation targets (§6.2) */
+    "wen-chang": { text: "文昌", pinyin: "Wén Chāng", lang: LANG },
+    "wen-qu": { text: "文曲", pinyin: "Wén Qū", lang: LANG },
+    "zuo-fu": { text: "左輔", pinyin: "Zuǒ Fǔ", lang: LANG },
+    "you-bi": { text: "右弼", pinyin: "Yòu Bì", lang: LANG },
 
     /* Transformations and technical terms (§6.3) */
     "si-hua": { text: "四化", pinyin: "Sì Huà", lang: LANG },

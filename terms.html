@@ -1,440 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="dark" data-season="summer">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Metal 金 · The Elements · Zodi Animal</title>
-<meta name="description" content="Metal (金 jīn), the phase of the blade and the harvest. Meet the two metals, big metal 庚 and small metal 辛, walk its cycles, and find where Metal sits in your own animal.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Metal 金 · Zodi Animal">
-<meta property="og:description" content="The phase of the blade and the harvest. Big metal and small metal, the cycles, the body, the animals, and the myth.">
+<title>Terms of Use | Zodi Animal</title>
+<meta name="description" content="The terms for using Zodi Animal. Readings are for reflection and entertainment, not medical, legal, financial, or psychological advice, and the 144-animal system is the site's own work.">
+<link rel="canonical" href="https://www.zodianimal.com/terms.html">
+<meta name="robots" content="index,follow">
+<script src="/js/nav.js" defer></script>
 <style>
-/* ============================================================
-   tokens.css  —  Zodianimal.com design tokens (Phase 0)
-   ------------------------------------------------------------
-   The OKLCH token system from docs/redesign/01-design-language-2026.md
-   (section 2). This file is the SHARED CONTRACT: later phases and the
-   SVG glyph/sigil system reference these variable names verbatim. Do
-   not rename any token below; sections may only OVERRIDE --accent and
-   its ramp to re-tint a domain (see the .section--* helpers at the end).
-
-   Load order: injected render-blocking into <head> by build/apply-assets.mjs
-   so it is FOUC-free and establishes the base layer every page inherits.
-
-   OKLCH is Baseline (~93 to 95% of 2026 browsers). A hex fallback block
-   ships via `@supports not (color: oklch())` for the remainder.
-   No hard-coded hex lives in page geometry; geometry reads these tokens.
-   ============================================================ */
-
-:root {
-  /* ---- Celestial base (dark-first) ---- */
-  --ink:        oklch(0.16 0.03 275);    /* page base, warm indigo-black */
-  --ink-2:      oklch(0.20 0.035 275);   /* raised base */
-  --panel:      oklch(0.25 0.04 273);    /* card */
-  --panel-2:    oklch(0.30 0.045 272);   /* card raised / hover */
-  --field:      oklch(0.14 0.03 276);    /* inputs, wells */
-  --line:       oklch(0.80 0.06 85 / 0.16);  /* hairline, brass-tinted */
-  --line-soft:  oklch(0.80 0.06 85 / 0.08);
-
-  /* ---- Ink on dark ---- */
-  --moon:       oklch(0.96 0.02 90);     /* headline white-gold */
-  --ivory:      oklch(0.92 0.02 88);     /* default text */
-  --body-text:  oklch(0.84 0.02 280);    /* long-form body */
-  --body:       var(--body-text);        /* legacy alias (oracle-era pages
-                                            and hub inline styles read it) */
-  --muted:      oklch(0.70 0.02 280);    /* meta */
-  --faint:      oklch(0.55 0.02 280);    /* captions, disabled */
-
-  /* ---- Brand accent: BRASS / MOONLIGHT (Animal, the hero color) ---- */
-  --brass-dim:    oklch(0.62 0.09 85);
-  --brass:        oklch(0.78 0.11 85);
-  --brass-bright: oklch(0.90 0.09 88);
-
-  /* ---- Per-element accent ramps (matched L/C so hues behave alike) ---- */
-  --jade-dim:     oklch(0.58 0.10 160);  --jade:     oklch(0.74 0.12 160);  --jade-bright:     oklch(0.88 0.10 162);  /* feng shui */
-  --silver-dim:   oklch(0.62 0.05 250);  --silver:   oklch(0.80 0.06 250);  --silver-bright:   oklch(0.92 0.05 250);  /* moon */
-  --amethyst-dim: oklch(0.55 0.13 300);  --amethyst: oklch(0.70 0.15 300);  --amethyst-bright: oklch(0.85 0.12 302);  /* third eye / awakening */
-  --rose-dim:     oklch(0.60 0.11 30);   --rose:     oklch(0.75 0.13 30);   --rose-bright:     oklch(0.88 0.10 32);   /* directions */
-  --teal-dim:     oklch(0.55 0.08 210);  --teal:     oklch(0.72 0.10 210);  --teal-bright:     oklch(0.86 0.08 212);  /* cosmology */
-
-  /* ---- Section accent hook (sections override this one var) ---- */
-  --accent:        var(--brass);
-  --accent-dim:    var(--brass-dim);
-  --accent-bright: var(--brass-bright);
-  /* soft wash of the current accent for hovers, glyph fills, hairline glows */
-  --accent-soft:   oklch(from var(--accent) l c h / 0.16);
-
-  /* ---- Signals ---- */
-  --glow: oklch(0.30 0.06 275);          /* radial hero glow, behind grain */
-
-  /* ---- Texture (doc 01 section 4 reserves these; doc 06 owns the layer) ---- */
-  --grain-opacity: 0.04;
-
-  /* ---- Type stacks (families load in type.css) ---- */
-  --serif: "Fraunces", Georgia, "Times New Roman", serif;
-  --sans:  "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --mono:  "Space Mono", ui-monospace, "SFMono-Regular", monospace;
-
-  /* ---- Spacing (non-linear; --s-8..10 are the "editorial silence" tokens) ---- */
-  --s-1:.25rem; --s-2:.5rem; --s-3:.75rem; --s-4:1rem; --s-5:1.5rem;
-  --s-6:2rem; --s-7:3rem; --s-8:5rem; --s-9:8rem; --s-10:13rem;
-
-  /* ---- Radius / elevation ---- */
-  --r-1:8px; --r-2:14px; --r-3:22px; --r-pill:999px;
-  --e-1: 0 1px 2px oklch(0 0 0 / .4);
-  --e-2: 0 8px 30px oklch(0 0 0 / .45);
-  --e-3: 0 20px 60px oklch(0 0 0 / .55), 0 0 40px var(--glow);
-
-  /* ---- Motion (personality lives in doc 01 section 5) ---- */
-  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);      /* entrances: settle into place */
-  --ease-io:   cubic-bezier(0.65, 0, 0.35, 1);     /* state / toggles */
-  --dur-fast: 180ms; --dur: 320ms; --dur-slow: 640ms; --dur-cine: 1100ms;
-
-  /* ---- Layout ---- */
-  --maxw: 1200px;
-  --measure: 66ch;
-}
-
-/* ------------------------------------------------------------
-   Hex fallback for the ~5% of browsers without OKLCH.
-   Only the surfaces and accents that geometry reads are mapped;
-   the ramps collapse to their base stop. --accent-soft loses its
-   relative-color form and falls back to a fixed brass tint.
-   ------------------------------------------------------------ */
-@supports not (color: oklch(0% 0 0)) {
-  :root {
-    --ink:#0d0e18; --ink-2:#131523; --panel:#1a1c30; --panel-2:#22253d;
-    --field:#0c0e1a;
-    --line:rgba(214,193,140,.16); --line-soft:rgba(214,193,140,.08);
-
-    --moon:#f6efd8; --ivory:#ece7d8; --body-text:#cfcfe0;
-    --muted:#adaec2; --faint:#7f8096;
-
-    --brass-dim:#a8925c; --brass:#d6c18c; --brass-bright:#efe2b4;
-
-    --jade-dim:#4f8f6f;     --jade:#78c39c;     --jade-bright:#a9e6c6;
-    --silver-dim:#7f93bd;   --silver:#aebfe0;   --silver-bright:#d6e2f5;
-    --amethyst-dim:#8a5fb0; --amethyst:#b184d6;  --amethyst-bright:#d6b9f0;
-    --rose-dim:#c07f78;     --rose:#e3a196;     --rose-bright:#f5c8bd;
-    --teal-dim:#4f8296;     --teal:#78b3c6;     --teal-bright:#a9d6e6;
-
-    --accent:#d6c18c; --accent-dim:#a8925c; --accent-bright:#efe2b4;
-    --accent-soft:rgba(214,193,140,.16);
-
-    --glow:#1a1c33;
-
-    --e-1: 0 1px 2px rgba(0,0,0,.4);
-    --e-2: 0 8px 30px rgba(0,0,0,.45);
-    --e-3: 0 20px 60px rgba(0,0,0,.55), 0 0 40px var(--glow);
-  }
-}
-
-/* ------------------------------------------------------------
-   Section accent scoping. Any orbital domain sets --accent (and
-   its ramp) and everything inside inherits the hue. --accent-soft
-   re-derives from the new --accent automatically in OKLCH browsers;
-   the hex fallback keeps the brass tint (acceptable for the 5%).
-   ------------------------------------------------------------ */
-.section--animal    { --accent: var(--brass);    --accent-bright: var(--brass-bright);    --accent-dim: var(--brass-dim); }
-.section--fengshui  { --accent: var(--jade);     --accent-bright: var(--jade-bright);     --accent-dim: var(--jade-dim); }
-.section--moon      { --accent: var(--silver);   --accent-bright: var(--silver-bright);   --accent-dim: var(--silver-dim); }
-.section--awakening { --accent: var(--amethyst); --accent-bright: var(--amethyst-bright); --accent-dim: var(--amethyst-dim); }
-.section--thirdeye  { --accent: var(--amethyst); --accent-bright: var(--amethyst-bright); --accent-dim: var(--amethyst-dim); }
-.section--directions{ --accent: var(--rose);     --accent-bright: var(--rose-bright);     --accent-dim: var(--rose-dim); }
-.section--cosmology { --accent: var(--teal);     --accent-bright: var(--teal-bright);     --accent-dim: var(--teal-dim); }
-
-/* ============================================================
-   v4 SKIN LAYER (doc 14) — dark celestial only.
-   Additive only: no token above is renamed. New tokens:
-     --sec / --sec-dim / --sec-soft   electric-blue secondary (CTA ring)
-     --cta-g1 / --cta-g2 / --cta-text CTA gradient contract (doc 14 §3)
-     --season / --season-soft         the shifting SECOND hue
-     --sky-tint                       faint seasonal sky wash
-   js/theme.js (and the pre-paint boot snippet injected by
-   build/apply-assets.mjs) pin html[data-theme="dark"] and set
-   html[data-season]; JS-off users get the same celestial default.
-   ============================================================ */
-:root {
-  --sec:      #2f7bff;
-  --sec-dim:  #0353d6;
-  --sec-soft: rgba(174,191,224,.30);   /* dark ring is silver-blue (canvas) */
-  --season:      var(--silver);
-  --season-soft: rgba(174,191,224,.14);
-  --sky-tint:    transparent;
-  --cta-g1:   var(--brass-bright);
-  --cta-g2:   var(--season);
-  --cta-text: #1a160a;
-}
-
-/* ---- Seasons: dark shifts the second hue (doc 14 §2) ---- */
-:root[data-season="spring"] { --season:#78c39c; --season-soft:rgba(120,195,156,.14); --sky-tint:rgba(120,195,156,.08); }
-:root[data-season="summer"] { --season:#78b3c6; --season-soft:rgba(120,179,198,.14); --sky-tint:rgba(120,179,198,.08); }
-:root[data-season="autumn"] { --season:#e3a196; --season-soft:rgba(227,161,150,.14); --sky-tint:rgba(227,161,150,.08); }
-:root[data-season="winter"] { --season:#aebfe0; --season-soft:rgba(174,191,224,.14); --sky-tint:rgba(174,191,224,.08); }
-
-/* Dark celestial is the ONLY theme (owner decision 2026-07-01).
-   The pink light-theme token block was removed; --sec/--cta/--season
-   above keep their dark values and the seasons keep shifting. */
-
-</style>
-<style>
-/* ============================================================
-   type.css  —  Zodianimal.com type system (Phase 0)
-   ------------------------------------------------------------
-   Fraunces (variable optical display serif, the "oracle voice")
-   over Geist / Inter (humanist grotesque body), with Space Mono
-   as the whisper for cosmological data. See
-   docs/redesign/01-design-language-2026.md section 1 and
-   docs/redesign/10-tech-stack-performance-a11y-2026.md (2e, font CLS).
-
-   Family stacks (--serif/--sans/--mono) live in tokens.css.
-   The Fraunces + Geist + Space Mono web fonts are requested via the
-   Google Fonts CSS2 <link> that build/apply-assets.mjs injects into
-   <head> with font-display:swap, plus the hero preload for Fraunces.
-
-   FONT LOADING STATUS
-   -------------------
-   Binary WOFF2 download from fonts.gstatic.com is blocked in this
-   build environment, so we ship the Google Fonts CSS2 <link> now.
-   Every family below ALSO has a metrics-matched local fallback
-   @font-face (size-adjust + ascent/descent/line-gap overrides) so the
-   swap from the system fallback to the web font causes no layout shift
-   (CLS well under 0.05). The @font-face src points at local() system
-   fonts only, so it costs zero network and never FOITs.
-
-   TODO (follow-up, tracked): self-host subset Latin WOFF2 under
-   site/fonts/ for Fraunces (opsz+wght), Geist (wght), and Space Mono,
-   swap the Google <link> in apply-assets.mjs for local @font-face src,
-   and preload the hero Fraunces file. Keep these fallback faces; they
-   remain the CLS guard after self-hosting.
-   ============================================================ */
-
-/* ------------------------------------------------------------
-   Metrics-matched fallback @font-face.
-   Each "<Family> Fallback" renders from a local system font but is
-   scaled with size-adjust and the vertical-metric overrides so its
-   box matches the real web font. It is named as the LAST family in
-   each element's font stack (via the utility classes / element rules
-   below) so the browser paints it during swap with no reflow.
-   Override values derived from published font metrics (unitsPerEm,
-   ascent, descent, lineGap, and average glyph advance).
-   ------------------------------------------------------------ */
-
-/* Fraunces (display serif) matched against Georgia/Times */
-@font-face {
-  font-family: "Fraunces Fallback";
-  src: local("Georgia"), local("Times New Roman");
-  size-adjust: 106%;
-  ascent-override: 92%;
-  descent-override: 24%;
-  line-gap-override: 0%;
-}
-
-/* Geist / body grotesque matched against system Arial-metrics fallback.
-   Geist and Inter share near-identical metrics to Arial; one face covers
-   both since Inter is the ship-now body and Geist the upgrade. */
-@font-face {
-  font-family: "Geist Fallback";
-  src: local("Arial"), local("Helvetica Neue"), local("Helvetica");
-  size-adjust: 97%;
-  ascent-override: 96%;
-  descent-override: 24%;
-  line-gap-override: 0%;
-}
-
-/* Space Mono matched against a system monospace */
-@font-face {
-  font-family: "Space Mono Fallback";
-  src: local("Menlo"), local("Consolas"), local("Courier New");
-  size-adjust: 96%;
-  ascent-override: 105%;
-  descent-override: 31%;
-  line-gap-override: 0%;
-}
-
-/* ------------------------------------------------------------
-   Re-declare the family stacks with the metrics-matched fallback
-   appended just before the generic system fonts, so the swap is
-   invisible. tokens.css defines the base --serif/--sans/--mono; here
-   we extend them with the fallback face. Kept as separate vars so we
-   never mutate the contract names in tokens.css.
-   ------------------------------------------------------------ */
-:root {
-  --serif: "Fraunces", "Fraunces Fallback", Georgia, "Times New Roman", serif;
-  --sans:  "Geist", "Inter", "Geist Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --mono:  "Space Mono", "Space Mono Fallback", ui-monospace, "SFMono-Regular", monospace;
-
-  /* ------------------------------------------------------------
-     Fluid, editorial type scale (doc 01 section 1).
-     Big display-to-body contrast on purpose; clamp() so the hero
-     breathes on large screens without breaking mobile.
-     ------------------------------------------------------------ */
-  --fs-hero:    clamp(3.2rem, 9vw, 8rem);      /* animal name, homepage fold */
-  --fs-display: clamp(2.4rem, 5.5vw, 4.5rem);  /* section openers */
-  --fs-h2:      clamp(1.7rem, 3.4vw, 2.6rem);  /* sub-sections */
-  --fs-h3:      clamp(1.25rem, 2vw, 1.55rem);  /* card titles */
-  --fs-lead:    clamp(1.2rem, 2.4vw, 1.75rem); /* essence / italic lede */
-  --fs-body:    clamp(1rem, 1.1vw, 1.125rem);  /* readings */
-  --fs-small:   .8125rem;                       /* meta, captions */
-  --fs-eyebrow: .72rem;                          /* uppercase kickers */
-
-  /* line-heights and tracking used across the type helpers */
-  --lh-display: 1.08;   /* display serif: 1.05 to 1.12 */
-  --lh-body:    1.65;
-  --track-eyebrow: .34em;
-}
-
-/* ------------------------------------------------------------
-   Opt-in type utilities (additive; do not restyle existing pages).
-   Later phases apply these classes; existing oracle.css rules keep
-   working because we do not touch their selectors here.
-   ------------------------------------------------------------ */
-.font-serif { font-family: var(--serif); }
-.font-sans  { font-family: var(--sans); }
-.font-mono  { font-family: var(--mono); }
-
-.t-hero {
-  font-family: var(--serif);
-  font-optical-sizing: auto;   /* Fraunces opsz axis engages at size */
-  font-weight: 560;
-  font-size: var(--fs-hero);
-  line-height: 1.05;
-  text-wrap: balance;
-}
-.t-display {
-  font-family: var(--serif);
-  font-optical-sizing: auto;
-  font-weight: 560;
-  font-size: var(--fs-display);
-  line-height: var(--lh-display);
-  text-wrap: balance;
-}
-.t-h2 { font-family: var(--serif); font-weight: 600; font-size: var(--fs-h2); line-height: var(--lh-display); text-wrap: balance; }
-.t-h3 { font-family: var(--serif); font-weight: 600; font-size: var(--fs-h3); line-height: 1.15; }
-
-.t-lead {
-  font-family: var(--serif);
-  font-style: italic;               /* the reserved "oracle voice" */
-  font-size: var(--fs-lead);
-  line-height: 1.3;
-  color: var(--brass-bright);
-}
-.t-body {
-  font-family: var(--sans);
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-  max-width: var(--measure);
-  text-wrap: pretty;
-}
-.t-small { font-size: var(--fs-small); color: var(--muted); }
-.t-eyebrow {
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: var(--fs-eyebrow);
-  text-transform: uppercase;
-  letter-spacing: var(--track-eyebrow);
-  color: var(--accent);
-}
-.t-data {   /* cosmological figures: dates, counts, 144, moon %, Kua numbers */
-  font-family: var(--mono);
-  font-size: var(--fs-small);
-  letter-spacing: .02em;
-  color: var(--muted);
-}
-
-</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Space+Mono:wght@400&display=swap">
-<script src="https://www.zodianimal.com/js/nav.js" defer></script>
-<style>
-:root{--ink:#0d0f12;--ink-2:#13161b;--panel:#1c2128;--panel-2:#262c35;--field:#0b0d10;
---line:rgba(184,196,210,.20);--line-soft:rgba(184,196,210,.10);--moon:#f2f5f8;--ivory:#e2e8ee;
---body:#c7d0da;--muted:#9aa6b3;--faint:#71808f;
---metal:#aeb7c2;--metal-bright:#dfe6ee;--metal-deep:#79838f;
---serif:"Fraunces",Georgia,serif;--sans:"Geist","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:"Space Mono",ui-monospace,monospace;
---r-1:8px;--r-2:14px;--r-3:22px;--r-pill:999px;--e-2:0 8px 30px rgba(0,0,0,.5);--e-3:0 20px 60px rgba(0,0,0,.6);
---maxw:1080px;--measure:64ch;--ease-out:cubic-bezier(.16,1,.3,1);--el:var(--metal);--el-soft:rgba(174,183,194,.20)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--ink);color:var(--body);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(720px 460px at 80% -10%,var(--el-soft),transparent 70%),radial-gradient(560px 400px at 6% 6%,rgba(121,131,143,.20),transparent 72%)}
-h1,h2,h3{font-family:var(--serif);color:var(--moon);font-weight:560;line-height:1.13;margin:0}
-a{color:var(--metal-bright);text-decoration:none;font-weight:500}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,4vw,40px)}
-.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--metal-bright);margin:0 0 .7rem}
-.ribbon{display:flex;gap:.4rem;align-items:center;justify-content:center;flex-wrap:wrap;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);padding:14px 18px;border-bottom:1px solid var(--line-soft)}
-.ribbon a{color:var(--muted);text-decoration:none}.ribbon a:hover{color:var(--metal-bright)}.ribbon .dot{opacity:.4}
-.hero{text-align:center;padding:clamp(52px,9vw,120px) 0 clamp(28px,5vw,56px)}
-.hero .bigchar{font-family:var(--serif);font-size:clamp(6rem,20vw,13rem);line-height:.82;color:var(--metal);text-shadow:0 0 80px var(--el-soft)}
-.hero h1{font-size:clamp(2.3rem,6vw,3.8rem);margin-top:.3rem}
-.hero .pin{font-family:var(--mono);color:var(--muted);letter-spacing:.14em;margin-top:.6rem;font-size:.85rem}
-.hero .answer{max-width:58ch;margin:1.3rem auto 0;color:var(--ivory);font-size:1.1rem}
-.band{padding:clamp(40px,6vw,80px) 0;border-top:1px solid var(--line-soft)}
-.band h2{text-align:center;font-size:clamp(1.7rem,3.8vw,2.5rem)}
-.band .sub{text-align:center;max-width:60ch;margin:1rem auto 0;color:var(--muted)}
-.tw{margin-top:clamp(28px,4vw,48px)}
-.tw-toggle{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.6rem}
-.tw-toggle button{appearance:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:.2rem;background:var(--field);border:1px solid var(--line);border-radius:var(--r-2);padding:.9rem 1.6rem;color:var(--muted);font:inherit;transition:.2s;min-width:150px}
-.tw-toggle .c{font-family:var(--serif);font-size:2.2rem;line-height:1;color:var(--metal)}
-.tw-toggle .l{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase}
-.tw-toggle .s{font-size:.9rem;color:var(--faint)}
-.tw-toggle button[aria-selected="true"]{border-color:var(--metal);color:var(--moon);box-shadow:0 0 26px var(--el-soft)}
-.tw-toggle button[aria-selected="true"] .l{color:var(--ivory)}
-.tw-toggle button:hover{border-color:var(--metal);color:var(--moon)}
-.tw-toggle button:focus-visible{outline:2px solid var(--metal);outline-offset:2px}
-.tw-stage{background:linear-gradient(165deg,var(--panel-2),var(--panel) 76%);border:1px solid var(--line);border-left:3px solid var(--metal);border-radius:var(--r-3);box-shadow:var(--e-3);padding:clamp(24px,4vw,40px);position:relative;overflow:hidden}
-.tw-stage::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(460px 240px at 88% -18%,var(--el-soft),transparent 70%)}
-.tw-name{font-family:var(--serif);font-size:1.7rem;color:var(--moon)}
-.tw-name .zh{color:var(--metal)}
-.tw-tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--metal-bright);margin-top:.3rem}
-.tw-img{margin-top:1rem;color:var(--ivory);font-size:1.05rem}
-.tw-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.4rem}
-.tw-box{background:var(--field);border:1px solid var(--line-soft);border-radius:var(--r-2);padding:1rem 1.1rem}
-.tw-box .k{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
-.tw-box .v{color:var(--ivory);margin-top:.3rem;font-size:.96rem}
-.tw-note{margin-top:1.2rem;color:var(--muted);font-size:.86rem;border-top:1px solid var(--line-soft);padding-top:.9rem}
-.cyc{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-top:clamp(24px,4vw,40px)}
-.cyc a{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-2);padding:1.1rem;text-decoration:none;transition:.2s;display:block}
-.cyc a:hover{border-color:var(--metal);transform:translateY(-3px);box-shadow:0 0 24px var(--el-soft)}
-.cyc .zh{font-family:var(--serif);font-size:1.3rem;color:var(--metal-bright)}
-.cyc .rel{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:.4rem 0 .2rem}
-.cyc .to{color:var(--moon);font-family:var(--serif);font-size:1.05rem}
-.doors{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:clamp(24px,4vw,44px)}
-.door{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-3);padding:1.4rem;text-decoration:none;transition:.25s;display:block}
-.door:hover{border-color:var(--metal);transform:translateY(-4px);box-shadow:0 0 30px var(--el-soft)}
-.door .dc{font-family:var(--serif);font-size:1.7rem;color:var(--metal)}
-.door h3{font-size:1.05rem;margin:.4rem 0 .3rem;color:var(--moon)}
-.door p{color:var(--muted);font-size:.88rem;margin:0}
-.finish{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:clamp(22px,4vw,40px)}
-.fcard{background:linear-gradient(165deg,var(--panel-2),var(--panel) 78%);border:1px solid var(--line);border-radius:var(--r-3);padding:1.6rem}
-.fcard h3{font-size:1.2rem;margin-bottom:.5rem}
-.fcard p{color:var(--muted);font-size:.92rem;margin:0 0 1rem}
-.btnrow{display:flex;gap:.6rem;flex-wrap:wrap}
-.btn{text-decoration:none;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.7rem 1.2rem;border-radius:var(--r-pill);border:1px solid var(--line);background:var(--field);color:var(--ivory);transition:.2s}
-.btn:hover{border-color:var(--metal);color:var(--moon);box-shadow:0 0 18px var(--el-soft)}
-.btn.primary{background:var(--metal);color:#0e1114;border-color:var(--metal);font-weight:600}
-.note{max-width:var(--measure);margin:clamp(30px,5vw,56px) auto 0;padding:1.1rem 1.3rem;background:var(--field);border:1px solid var(--line-soft);border-radius:var(--r-1);color:var(--muted);font-size:.88rem}
-.note b{color:var(--ivory);font-weight:500}
-footer.f{text-align:center;padding:clamp(36px,5vw,64px) 0;border-top:1px solid var(--line-soft);color:var(--faint);font-family:var(--mono);font-size:.72rem;letter-spacing:.12em}
-footer.f a{color:var(--muted);text-decoration:none}
-@media(max-width:820px){.doors{grid-template-columns:1fr 1fr}.cyc{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.tw-grid,.finish{grid-template-columns:1fr}.doors{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}}
+  body{margin:0;background:#0b0d1c;color:var(--body-text,#cfcfe0);font-family:var(--sans,system-ui,sans-serif);line-height:1.65}
+  .lg-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px clamp(16px,4vw,40px);border-bottom:1px solid rgba(214,193,140,.14)}
+  .lg-mark{font-family:var(--serif,Georgia,serif);font-size:1.15rem;color:var(--ivory,#ece7d8);text-decoration:none;letter-spacing:.01em}
+  .lg-mark b{color:var(--brass-bright,#efe2b4);font-weight:560}
+  .lg-home{font-family:var(--mono,monospace);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass,#d6c18c);text-decoration:none}
+  .lg-home:hover{color:var(--brass-bright,#efe2b4)}
+  .lg-wrap{max-width:760px;margin:0 auto;padding:clamp(28px,5vw,56px) clamp(18px,4vw,40px) 80px}
+  .lg-eyebrow{font-family:var(--mono,monospace);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass,#d6c18c);margin:0 0 10px}
+  .lg-wrap h1{font-family:var(--serif,Georgia,serif);color:var(--ivory,#ece7d8);font-weight:560;font-size:clamp(1.9rem,5vw,2.6rem);line-height:1.15;margin:0 0 6px}
+  .lg-updated{font-family:var(--mono,monospace);font-size:.74rem;letter-spacing:.06em;color:var(--muted,#9a97ad);margin:0 0 30px}
+  .lg-wrap h2{font-family:var(--serif,Georgia,serif);color:var(--ivory,#ece7d8);font-weight:560;font-size:clamp(1.15rem,3vw,1.4rem);margin:38px 0 10px}
+  .lg-wrap p{margin:0 0 14px}
+  .lg-wrap ul{margin:0 0 14px;padding-left:1.2em}
+  .lg-wrap li{margin:0 0 7px}
+  .lg-wrap a{color:var(--brass-bright,#efe2b4);text-decoration:underline;text-underline-offset:2px}
+  .lg-lead{color:var(--ivory,#ece7d8);font-size:1.06rem}
+  .lg-note{font-family:var(--mono,monospace);font-size:.82rem;color:var(--brass,#d6c18c);background:rgba(214,193,140,.06);border:1px solid rgba(214,193,140,.16);border-radius:8px;padding:2px 6px}
+  .lg-more{margin-top:44px;padding-top:20px;border-top:1px solid rgba(214,193,140,.14);font-size:.94rem}
+  .lg-more a{margin-right:18px;white-space:nowrap}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[
-{"@type":"WebPage","name":"Metal 金","url":"https://zodianimal.com/elements/phases/metal/","description":"The Metal phase of Wu Xing: the blade and the harvest, big metal and small metal, the cycles, the body, the animals, and the myth.","inLanguage":"en"},
-{"@type":"BreadcrumbList","itemListElement":[
-{"@type":"ListItem","position":1,"name":"Zodi Animal","item":"https://zodianimal.com/"},
-{"@type":"ListItem","position":2,"name":"The Elements","item":"https://zodianimal.com/elements/"},
-{"@type":"ListItem","position":3,"name":"Metal 金","item":"https://zodianimal.com/elements/phases/metal/"}
-]},
-{"@type":"DefinedTermSet","name":"Metal phase terms","hasDefinedTerm":[
-{"@type":"DefinedTerm","name":"庚 gēng","description":"Yang Metal, the big metal: the sword, the axe, the raw ore."},
-{"@type":"DefinedTerm","name":"辛 xīn","description":"Yin Metal, the small metal: jewelry, gold, gems, the needle."},
-{"@type":"DefinedTerm","name":"從革 cóng gé","description":"The classical nature of Metal: it yields and is reshaped."}
-]}
-]}
+{"@context":"https://schema.org","@type":"WebPage","name":"Terms of Use","headline":"Terms of Use","url":"https://www.zodianimal.com/terms.html","description":"The terms for using Zodi Animal: readings are for reflection and entertainment, not professional advice, and the 144-animal system is the site's own original work.","inLanguage":"en","dateModified":"2026-07-08","isPartOf":{"@type":"WebSite","name":"Zodi Animal","url":"https://www.zodianimal.com/"}}
 </script>
 <!--pn-assets:start-->
 <script data-pn-assets="theme-boot">(function(){try{var m=new Date().getMonth();var s=m>=2&&m<=4?"spring":m>=5&&m<=7?"summer":m>=8&&m<=10?"autumn":"winter";var d=document.documentElement;d.dataset.theme="dark";d.dataset.season=s;}catch(e){}})();</script>
@@ -537,132 +133,69 @@ footer.f a{color:var(--muted);text-decoration:none}
   <nav class="pn-crawl" aria-label="All sections" hidden><a href="/">Home</a><a href="/index.html">Find your animal</a><a href="/daily.html">Today's reading</a><a href="/year.html">Year finder</a><a href="/account.html">Your account</a><a href="/menagerie.html">All 144 animals</a><a href="/western-zodiac/">Western wing</a><a href="/chinese-zodiac/">Eastern wing</a><a href="/zodiac/">Zodiac crossings</a><a href="/moon.html">The Moon tonight</a><a href="/moon/phases/">The eight phases</a><a href="/moon/in-your-sign/">Moon in your sign</a><a href="/best-days.html">Best days</a><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a><a href="/feng-shui/">Feng shui</a><a href="/bazi/">BaZi (Four Pillars)</a><a href="/habitat/">The Habitat</a><a href="/stones.html">Keeper stones</a><a href="/directions/">Directions</a><a href="/traditions/">Traditions</a><a href="/chinese-zodiac/horse/">Horse</a><a href="/chinese-zodiac/rat/">Rat</a><a href="/chinese-zodiac/ox/">Ox</a><a href="/chinese-zodiac/tiger/">Tiger</a><a href="/chinese-zodiac/rabbit/">Rabbit</a><a href="/chinese-zodiac/dragon/">Dragon</a><a href="/chinese-zodiac/snake/">Snake</a><a href="/chinese-zodiac/goat/">Goat</a><a href="/chinese-zodiac/monkey/">Monkey</a><a href="/chinese-zodiac/rooster/">Rooster</a><a href="/chinese-zodiac/dog/">Dog</a><a href="/chinese-zodiac/pig/">Pig</a><a href="/western-zodiac/aries/">Aries</a><a href="/western-zodiac/taurus/">Taurus</a><a href="/western-zodiac/gemini/">Gemini</a><a href="/western-zodiac/cancer/">Cancer</a><a href="/western-zodiac/leo/">Leo</a><a href="/western-zodiac/virgo/">Virgo</a><a href="/western-zodiac/libra/">Libra</a><a href="/western-zodiac/scorpio/">Scorpio</a><a href="/western-zodiac/sagittarius/">Sagittarius</a><a href="/western-zodiac/capricorn/">Capricorn</a><a href="/western-zodiac/aquarius/">Aquarius</a><a href="/western-zodiac/pisces/">Pisces</a><a href="/bazi/chart/">Cast your chart</a><a href="/bazi/day-master/">Your Day Master</a><a href="/bazi/ten-gods/">The Ten Gods</a><a href="/bazi/compatibility/">You &amp; them</a><a href="/elements/purple-star-astrology/">Zi Wei Dou Shu</a><a href="/elements/purple-star-astrology/chart/">Read a chart</a><a href="/elements/purple-star-astrology/stars/">The 14 Stars</a><a href="/elements/purple-star-astrology/palaces/">The 12 Palaces</a><a href="/elements/purple-star-astrology/four-forces/">The Four Forces</a><a href="/feng-shui/commanding-position/">Commanding position</a><a href="/feng-shui/bagua/">The bagua</a><a href="/feng-shui/kua-number/">Your Kua number</a><a href="/feng-shui/bedroom/">In the home</a><a href="/proverbs/">The Proverb Pond</a><a href="/proverbs/study/">Study the proverbs</a><a href="/elements/">The five elements</a><a href="/elements/chakras/">The 7 chakras</a><a href="/elements/chakras/yoga/">Chakra yoga</a><a href="/match.html">Test a match</a><a href="/vs.html">Challenge a friend</a><a href="/circle.html">Circle of three</a><a href="/awakening.html">The Awakening</a><a href="/traditions/birthstones-and-moonstone/">Birthstones &amp; moonstone</a><a href="/traditions/stones-for-your-animal/">Stones for your animal</a><a href="/moon/phases/new-moon/">New Moon</a><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a><a href="/moon/phases/first-quarter/">First Quarter</a><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a><a href="/moon/phases/full-moon/">Full Moon</a><a href="/moon/phases/waning-gibbous/">Waning Gibbous</a><a href="/moon/phases/last-quarter/">Last Quarter</a><a href="/moon/phases/waning-crescent/">Waning Crescent</a><a href="/horoscopes/">All horoscopes, sign by sign</a><a href="/feng-shui/five-elements/">The five phases</a><a href="/feng-shui/your-animal/">Feng shui for your animal</a><a href="/directions/celestial-animals/">The four celestial animals</a><a href="/cosmology/">Cosmology</a><a href="/cosmology/four-pillars/">The Four Pillars</a><a href="/elements/purple-star-astrology/history/">Purple Star history &amp; origins</a><a href="/learn.html">How it works</a></nav>
 </header>
 <!--pn-static:end-->
-<a id="pn-main" tabindex="-1"></a>
 
-<div class="ribbon">
-  <a href="/">Zodi Animal</a><span class="dot">·</span>
-  <a href="/elements/">The Elements</a><span class="dot">·</span>
-  <span style="color:var(--metal-bright)">Metal 金</span>
+<header class="lg-top">
+  <a class="lg-mark" href="/">Zodi <b>Animal</b></a>
+  <a class="lg-home" href="/">&larr; Home</a>
+</header>
+
+<main id="pn-main" tabindex="-1">
+<div class="lg-wrap">
+  <p class="lg-eyebrow">The agreement, in plain words</p>
+  <h1>Terms of Use</h1>
+  <p class="lg-updated">Last updated: 8 July 2026</p>
+
+  <p class="lg-lead">By using Zodi Animal, you agree to these terms. They are meant to be read, not to trip you up. If you do not agree with them, please do not use the site.</p>
+
+  <h2>What this site is for</h2>
+  <p>Zodi Animal is for reflection, education, and entertainment. It offers a symbolic reading built from the crossing of Western Sun signs and Chinese zodiac years. It is about meaning, not prediction. Read your animal as a mirror you can think with, not a forecast of what will happen.</p>
+
+  <h2>Not professional advice</h2>
+  <p>Nothing on this site is medical, legal, financial, or psychological advice, and it is not a substitute for a qualified professional. Do not use a reading to make a health, legal, money, or personal decision. If you need help in any of those areas, speak to a licensed professional.</p>
+
+  <h2>No guarantees</h2>
+  <p>The readings are interpretive, not predictive. We do not promise any outcome, and we do not guarantee that anything a reading suggests will come to pass. The site is provided "as is," and while we work to keep it accurate and available, we cannot promise it will always be correct, complete, or uninterrupted.</p>
+
+  <h2>Our content and the 144-animal system</h2>
+  <p>The writing, readings, artwork, and the particular 144-animal mapping on this site are our original work and are protected by intellectual property law. The underlying calendar facts, such as birth dates, the Lunar New Year boundary, and the zodiac cycles, are not ours and belong to no one. Our specific naming, interpretations, and arrangement of them are.</p>
+  <p>You may read and share links to our pages for personal, non-commercial use. Please do not copy, republish, scrape, or resell our content, or present our readings or 144-animal system as your own, without permission.</p>
+
+  <h2>Acceptable use</h2>
+  <p>When you use the site, please do not:</p>
+  <ul>
+    <li>break the law or use the site to harm others;</li>
+    <li>disrupt, overload, or try to break the site or its systems;</li>
+    <li>scrape or bulk-copy content, or access it through automated means beyond ordinary browsing;</li>
+    <li>misuse any account, or pretend to be someone you are not.</li>
+  </ul>
+
+  <h2>Accounts</h2>
+  <p>Accounts are optional. If you create one, you are responsible for keeping your login details safe and for activity that happens under your account. You may stop using an account at any time. We may suspend or remove an account that is used in a way that breaks these terms.</p>
+
+  <h2>Third-party services and links</h2>
+  <p>The site uses third-party services, such as analytics, sign-in, and advertising, and may link to other sites. We are not responsible for the content or practices of third parties. Your use of their services is governed by their own terms and policies. How your data is handled is described in our <a href="/privacy.html">Privacy Policy</a>.</p>
+
+  <h2>Limitation of liability</h2>
+  <p>To the fullest extent allowed by law, Zodi Animal and the people behind it are not liable for any loss or damage arising from your use of, or reliance on, the site or its readings. You use the site at your own discretion and risk.</p>
+
+  <h2>Changes to the site and these terms</h2>
+  <p>We may change, pause, or remove parts of the site, and we may update these terms. When we update them, we will change the date at the top. If you keep using the site after a change, you accept the updated terms.</p>
+
+  <h2>Governing law</h2>
+  <p>These terms are governed by the laws of <span class="lg-note">[JURISDICTION]</span>, without regard to conflict-of-law rules.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about these terms can be sent to <span class="lg-note">[CONTACT EMAIL]</span>.</p>
+
+  <div class="lg-more">
+    <a href="/">Home</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/menagerie.html">All 144 animals</a>
+    <a href="/learn.html">How it works</a>
+  </div>
 </div>
+</main>
 
-<header class="hero"><div class="wrap">
-  <p class="eyebrow">The phase of the blade and the harvest</p>
-  <div class="bigchar" aria-hidden="true">金</div>
-  <h1>Metal</h1>
-  <p class="pin">jīn · west · autumn · the virtue 義 yì, righteousness</p>
-  <p class="answer">Metal is the phase that yields and is reshaped, 從革 (cóng gé). It is the turn inward, the harvest gathered in, the clean edge that cuts to what matters. In Chinese thought Metal is not one thing: it is the raw sword and the fine jewel at once. Meet both below.</p>
-</div></header>
-
-<section class="band" id="two-metals" aria-labelledby="twh">
-  <div class="wrap">
-    <p class="eyebrow">The centrepiece · 庚 and 辛</p>
-    <h2 id="twh">The two metals</h2>
-    <p class="sub">Every phase has a yang face and a yin face. For Metal they even carry their own names: 庚 the great metal and 辛 the fine metal. Tap one.</p>
-    <div class="tw">
-      <div class="tw-toggle" role="tablist" aria-label="Big metal or small metal">
-        <button role="tab" id="tw-t-geng" aria-controls="tw-panel" aria-selected="true">
-          <span class="c">庚</span><span class="l">Big metal</span><span class="s">gēng · yang</span></button>
-        <button role="tab" id="tw-t-xin" aria-controls="tw-panel" aria-selected="false">
-          <span class="c">辛</span><span class="l">Small metal</span><span class="s">xīn · yin</span></button>
-      </div>
-      <div class="tw-stage" id="tw-panel" role="tabpanel" aria-live="polite"></div>
-    </div>
-  </div>
-</section>
-
-<section class="band" aria-labelledby="cych">
-  <div class="wrap">
-    <p class="eyebrow">Where Metal sits on the wheel</p>
-    <h2 id="cych">Metal never stands alone</h2>
-    <p class="sub">Metal is fed by one phase, feeds another, holds a third in check, and is held by a fourth. Follow any thread to that phase.</p>
-    <div class="cyc">
-      <a href="/elements/phases/earth/"><div class="zh">土生金</div><div class="rel">Fed by</div><div class="to">Earth</div></a>
-      <a href="/elements/phases/water/"><div class="zh">金生水</div><div class="rel">Feeds</div><div class="to">Water</div></a>
-      <a href="/elements/phases/wood/"><div class="zh">金克木</div><div class="rel">Controls</div><div class="to">Wood</div></a>
-      <a href="/elements/phases/fire/"><div class="zh">火克金</div><div class="rel">Held by</div><div class="to">Fire</div></a>
-    </div>
-  </div>
-</section>
-
-<section class="band" aria-labelledby="drh">
-  <div class="wrap">
-    <p class="eyebrow">Go deeper</p>
-    <h2 id="drh">Eight rooms of Metal</h2>
-    <p class="sub">Everything the research found, one door at a time.</p>
-    <div class="doors">
-      <a class="door" href="/elements/phases/metal/big-small/"><div class="dc">庚辛</div><h3>Big &amp; small metal</h3><p>The sword and the jewel, temperament by temperament.</p></a>
-      <a class="door" href="/elements/phases/metal/bazi/"><div class="dc">日主</div><h3>Metal in BaZi</h3><p>What it means to be a Metal day master, season by season.</p></a>
-      <a class="door" href="/elements/phases/metal/body/"><div class="dc">肺</div><h3>Metal in the body</h3><p>The Lung, the breath, the skin, and the corporeal soul. Tradition, not medicine.</p></a>
-      <a class="door" href="/elements/phases/metal/space/"><div class="dc">兌</div><h3>Metal in your space</h3><p>West, white, round forms, and the honest limits of the authority corner.</p></a>
-      <a class="door" href="/elements/phases/metal/cycles/"><div class="dc">生克</div><h3>Metal's two cycles</h3><p>How to feed a weak Metal and temper a hard one.</p></a>
-      <a class="door" href="/elements/phases/metal/animals/"><div class="dc">猴雞</div><h3>The Metal animals</h3><p>Monkey and Rooster, the yang and yin metal of the zodiac.</p></a>
-      <a class="door" href="/elements/phases/metal/culture/"><div class="dc">白虎</div><h3>Metal in myth</h3><p>The White Tiger, 少昊 and 蓐收, the famous swords, and bronze bells.</p></a>
-      <a class="door" href="/elements/phases/metal/traditions/"><div class="dc">金</div><h3>Across traditions</h3><p>The honest gap: Metal has no true Western or Indian twin.</p></a>
-    </div>
-  </div>
-</section>
-
-<section class="band" aria-labelledby="fnh">
-  <div class="wrap">
-    <p class="eyebrow">Up to the wheel, down to your animal</p>
-    <h2 id="fnh">Metal is a thread. Your animal is where it lands.</h2>
-    <div class="finish">
-      <div class="fcard">
-        <h3>Up to the five phases</h3>
-        <p>Metal is one turn of a larger wheel. Step back and watch all five feed and check each other.</p>
-        <div class="btnrow"><a class="btn primary" href="/elements/">The five phases</a><a class="btn" href="/elements/#cycles">Turn the cycle wheel</a></div>
-      </div>
-      <div class="fcard">
-        <h3>Down to your animal</h3>
-        <p>Monkey carries yang metal, Rooster carries yin metal, and any birth year can add Metal on top. Find yours.</p>
-        <div class="btnrow"><a class="btn primary" href="/elements/zodiac/">Find your element</a><a class="btn" href="/chinese-zodiac/monkey/">The Monkey</a><a class="btn" href="/chinese-zodiac/rooster/">The Rooster</a></div>
-      </div>
-    </div>
-    <div class="note"><b>Meaning, not prediction.</b> The Metal material here, including the 庚 and 辛 temperaments and the BaZi and TCM notes, is symbolic character-lore and classical tradition drawn from Chinese metaphysics. It is a lens for reflection, not a claim of fact about anyone's health, wealth, or fate. Correspondences vary by lineage. <a href="/elements/traditions/">See how Metal lines up across traditions.</a></div>
-  </div>
-</section>
-
-<footer class="f"><div class="wrap">METAL 金 · <a href="/elements/">THE FIVE PHASES</a> · <a href="/">ZODI ANIMAL</a></div></footer>
-
-<script>
-(function(){
-"use strict";
-var METALS={
-  geng:{char:"庚",name:"Big metal",zh:"庚金",pin:"gēng",pole:"Yang Metal 陽金",
-    img:"The sword, the axe, the halberd, the cannon, the raw ore and pig iron. 剑戟斧钺, hard unrefined metal, strong and direct, made to cut and to hew.",
-    best:"Decisive and dependable. Tough, loyal, and righteous, a straight-talker who acts where others hesitate. Courageous, just, and effective, a warrior's metal.",
-    stress:"The blade can turn destructive. 庚金 can grow rigid and aggressive, stubborn and over-blunt, cutting where it should hold and breaking what it meant to shape.",
-    meets:"Against Wood it is the axe that fells the tree. It is forged and tempered by Fire, born of Earth as ore, and it gives rise to Water, the edge that a whetstone sharpens."},
-  xin:{char:"辛",name:"Small metal",zh:"辛金",pin:"xīn",pole:"Yin Metal 陰金",
-    img:"Jewelry, gold, gems and pearls, the fine ornament, the needle. 珠玉首饰, refined and finished metal, precise and gleaming, made to adorn and to mend.",
-    best:"Refined and perceptive. Elegant, sharp-minded, and tasteful, meticulous to the last detail and quietly persuasive. Charming, principled, resilient.",
-    stress:"The jewel can turn cold. 辛金 can grow vain and hypersensitive, sharp-tongued and perfectionistic, so fixed on flaw that it chills the room it meant to grace.",
-    meets:"Against Wood it is the fine blade that carves rather than fells. It fears heavy Fire that would melt it, is born of Earth, and gleams when Water washes it clean."}
-};
-function el(id){return document.getElementById(id);}
-var sel="geng", panel=el("tw-panel"), tG=el("tw-t-geng"), tX=el("tw-t-xin");
-function render(){
-  var w=METALS[sel];
-  tG.setAttribute("aria-selected", sel==="geng"?"true":"false");
-  tX.setAttribute("aria-selected", sel==="xin"?"true":"false");
-  panel.innerHTML=
-    '<div class="tw-name"><span class="zh">'+w.char+'</span> '+w.name+' <span style="font-family:var(--mono);font-size:.8rem;color:var(--muted)">'+w.zh+' '+w.pin+'</span></div>'+
-    '<div class="tw-tag">'+w.pole+'</div>'+
-    '<p class="tw-img">'+w.img+'</p>'+
-    '<div class="tw-grid">'+
-      '<div class="tw-box"><div class="k">At its best</div><div class="v">'+w.best+'</div></div>'+
-      '<div class="tw-box"><div class="k">Under stress</div><div class="v">'+w.stress+'</div></div>'+
-    '</div>'+
-    '<p class="tw-note"><b style="color:var(--ivory)">How it meets the other phases.</b> '+w.meets+'</p>';
-}
-tG.addEventListener("click",function(){sel="geng";render();});
-tX.addEventListener("click",function(){sel="xin";render();});
-[tG,tX].forEach(function(t){t.addEventListener("keydown",function(e){
-  if(e.key==="ArrowRight"||e.key==="ArrowLeft"){e.preventDefault();sel=(sel==="geng"?"xin":"geng");(sel==="geng"?tG:tX).focus();render();}
-});});
-render();
-})();
-</script>
 <!--om-footer:start-->
 <!-- Zodi Animal universal footer. Single source: components/footer.html,
      baked into every page by build/apply-footer.mjs, styled by
@@ -804,6 +337,7 @@ render();
     <div class="zf-colo">
       <span class="zf-lead">&copy; <span id="zf-year">2026</span> Zodi Animal. Made under the moon.</span>
       <span class="zf-disc">A tradition of meaning for reflection. Not medical, psychological, financial, or legal advice.</span>
+      <span class="zf-disc zf-legal"><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/terms.html">Terms of Use</a></span>
     </div>
 
   </div>

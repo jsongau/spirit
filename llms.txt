@@ -1,7 +1,7 @@
 <!-- ORIGIN NOTE: every absolute URL below is on https://www.zodianimal.com,
      the same value as DOMAIN in build/config.mjs and PNAV.ORIGIN in
      site/js/nav-data.js. PHASE 8 CUTOVER: flip all of these to
-     https://zodianimal.com in lockstep with DOMAIN. The stale-origin gate in
+     https://www.zodianimal.com in lockstep with DOMAIN. The stale-origin gate in
      build/audit-links.mjs scans this file and fails the build on any foreign
      origin, so a half-applied rebrand cannot ship. -->
 # The Primal Oracle

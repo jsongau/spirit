@@ -253,6 +253,13 @@ body.pn-has-bar header.top{display:none}
 html.pn-bound .pn-bar{
   background:color-mix(in oklab, var(--ink) 95%, transparent);
   border-bottom-color:transparent;
+  /* Drop the blur the moment we bind. At 95% ink there is almost nothing left
+     to see through, but backdrop-filter forces the browser to re-sample and
+     re-blur every pixel behind the bar on every scrolled frame — the single
+     most expensive thing the nav does, and the cause of the strobe on long
+     pages. Unbound (at rest, page not scrolling) the blur costs nothing, so
+     it stays for the glass look on first paint. */
+  -webkit-backdrop-filter:none; backdrop-filter:none;
   transition:background var(--dur,320ms) var(--ease-out,ease),
              border-color var(--dur,320ms) var(--ease-out,ease)}
 @supports not (background: color-mix(in oklab, red, blue)){

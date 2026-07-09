@@ -3,13 +3,20 @@
    renders the twelve-palace board. When the hour is unknown, the board is locked (every star's
    position depends on the hour) and only the hour-independent facts show.
    State lives in ZiweiStudyChart (one source of truth); this file renders the reading and owns
-   the sticky bottom chart dock (#pcast-dock): date chip, birth-hour + timezone selects, a live
-   clock->branch conversion line, a collapsible dock (.pcast-dk-collapse / .pcast-dk-mini,
-   persisted via the studyChart pref "dockCollapsed"), a 24-hour Gregorian hour beam (scrub the
-   clock and the whole page re-casts; live readout pairs 12-hour time with the branch hour),
-   and the "Current lesson" slot the learning track's bottom bar mounts into.
+   the sticky bottom chart dock (#pcast-dock): date chip, timezone select, a 24-hour Gregorian
+   hour beam (scrub the clock and the whole page re-casts; the readout pairs 12-hour time with
+   the branch hour and each branch boundary voices a pentatonic tick), a disclosure line that
+   speaks ONLY when the reading is ambiguous (no hour yet, or the 23:xx late-子時 boundary), and
+   the "Current lesson" slot the learning track's bottom bar mounts into.
+   The dock runs a three-state machine on data-state = open | min | closed (persisted via the
+   studyChart pref "dockState"; the old boolean "dockCollapsed" migrates to "min"): the collapse
+   chevron minimizes to a pill, the ✕ hides it behind a body launcher, Escape-from-within tucks
+   it to min. Interface sound is mute-toggleable, persisted as pref "muted".
+   The beam IS the hour control — there is no separate hour <select> in the dock; it said the
+   same thing a third time and squeezed the timezone select. "I don't know" lives on the form.
    Also ships two small shared APIs other scripts may reuse:
-     window.ZodiTick()  — one soft UI tick (lazy AudioContext, gesture-only, calm-mode aware)
+     window.ZodiTick(freq) — one soft UI tick (lazy AudioContext, gesture-only, calm-mode aware;
+                             no arg = the original sweep, a frequency = a pitched percussive blip)
      window.zgToggle(cfg) — glowing segmented toggle with a sliding .zg-thumb
    Everything re-renders off "psa:studychart".
    Plain browser JS, file://-safe, no modules. */
@@ -54,7 +61,7 @@
     var HOUR_RANGE = ["23–01", "01–03", "03–05", "05–07", "07–09", "09–11", "11–13", "13–15", "15–17", "17–19", "19–21", "21–23"];
 
     var AUX_HANT = { "wen-chang": "文昌", "wen-qu": "文曲", "zuo-fu": "左輔", "you-bi": "右弼" };
-    var AUX_PY = { "wen-chang": "Wénchāng", "wen-qu": "Wénqǔ", "zuo-fu": "Zuǒfǔ", "you-bi": "Yòubì" };
+    var AUX_PY = { "wen-chang": "Wénchāng", "wen-qu": "Wénqū", "zuo-fu": "Zuǒfǔ", "you-bi": "Yòubì" };
     var BRANCH_PY = ["zǐ", "chǒu", "yín", "mǎo", "chén", "sì", "wǔ", "wèi", "shēn", "yǒu", "xū", "hài"];
     function h(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
     function starName(id) { var s = starById[id]; return s ? s.hant : (AUX_HANT[id] || id); }
@@ -68,8 +75,9 @@
       return { hant: AUX_HANT[id] || id, py: AUX_PY[id] || "", title: "", literal: "", elem: "none" };
     }
     /* speak a star's name — never autoplays, only ever called from a tap or key press.
-       ZiweiData.speak knows the 14 principal stars; aux stars fall through to the
-       site-wide zaSpeak voice when a page ships it. */
+       ZiweiData.speak knows the 14 principal stars plus the four transformation-target
+       auxiliaries; anything else falls through to the site-wide zaSpeak voice when a page
+       ships it. */
     function speakStar(id, hant) {
       try {
         var ok = (window.ZiweiData && typeof window.ZiweiData.speak === "function") ? window.ZiweiData.speak(id) : false;
@@ -106,28 +114,46 @@
     function starFullEl(st) { return starEl(st, true); }
 
     /* ---- ZodiTick: the site's one soft UI tick. Lazy AudioContext (created on the first
-       user gesture that asks for it), a ~35ms triangle blip 1400→900Hz, gain peaking ~0.05,
-       hard stop. Never autoplays; silent entirely in calm mode (prefers-reduced-motion). ---- */
+       user gesture that asks for it), gain peaking ~0.05, hard stop. Never autoplays; silent
+       entirely in calm mode (prefers-reduced-motion).
+       ZodiTick(freq) — optional frequency. Called with NO argument it plays the original
+       ~35ms 1400→900Hz sweep, byte-for-byte, so every existing caller (zgToggle, the dock
+       collapse) is unchanged. Called WITH a frequency it plays a fixed-pitch percussive blip
+       (~2ms attack, exponential decay to silence over ~70ms) — the dock's hour scrub asks for
+       this so the twelve branch hours can each speak their own pentatonic pitch on one timbre. ---- */
     if (!window.ZodiTick) {
       window.ZodiTick = (function () {
         var ctx = null;
-        return function () {
+        return function (freq) {
           try {
             if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
             var AC = window.AudioContext || window.webkitAudioContext;
             if (!AC) return;
             if (!ctx) ctx = new AC();
-            if (ctx.state === "suspended" && ctx.resume) ctx.resume();
+            /* callers are all gesture handlers — resume here so the first tick isn't swallowed */
+            if (ctx.state !== "running" && ctx.resume) ctx.resume();
             var t = ctx.currentTime;
             var osc = ctx.createOscillator(), g = ctx.createGain();
             osc.type = "triangle";
-            osc.frequency.setValueAtTime(1400, t);
-            osc.frequency.exponentialRampToValueAtTime(900, t + 0.035);
-            g.gain.setValueAtTime(0.0001, t);
-            g.gain.exponentialRampToValueAtTime(0.05, t + 0.008);
-            g.gain.exponentialRampToValueAtTime(0.0001, t + 0.035);
-            osc.connect(g); g.connect(ctx.destination);
-            osc.start(t); osc.stop(t + 0.04);
+            if (typeof freq === "number" && isFinite(freq)) {
+              /* pitched, percussive: struck rather than beeped. Kept in the 600–1400Hz band. */
+              var f = Math.max(600, Math.min(1400, freq));
+              osc.frequency.setValueAtTime(f, t);
+              g.gain.setValueAtTime(0.0001, t);
+              g.gain.exponentialRampToValueAtTime(0.05, t + 0.002);
+              g.gain.exponentialRampToValueAtTime(0.0001, t + 0.07);
+              osc.connect(g); g.connect(ctx.destination);
+              osc.start(t); osc.stop(t + 0.08);
+            } else {
+              /* the original soft tick — untouched, so existing callers sound identical */
+              osc.frequency.setValueAtTime(1400, t);
+              osc.frequency.exponentialRampToValueAtTime(900, t + 0.035);
+              g.gain.setValueAtTime(0.0001, t);
+              g.gain.exponentialRampToValueAtTime(0.05, t + 0.008);
+              g.gain.exponentialRampToValueAtTime(0.0001, t + 0.035);
+              osc.connect(g); g.connect(ctx.destination);
+              osc.start(t); osc.stop(t + 0.04);
+            }
           } catch (err) {}
         };
       })();
@@ -157,7 +183,7 @@
         b.addEventListener("click", function () {
           if (cur === o.value) return;
           set(o.value);
-          try { window.ZodiTick(); } catch (err) {}
+          tick(); /* mute-aware wrapper — the user's dock sound preference gates this too */
           if (cfg.onChange) cfg.onChange(o.value);
         });
         wrap.appendChild(b); btns.push(b);
@@ -376,12 +402,6 @@
       return "UTC" + sign + hh + (mm ? ":" + (mm < 10 ? "0" + mm : mm) : "");
     }
     /* friendly timezone name for the beam label — the option text when we know it, UTC math when we don't */
-    function tzName(off) {
-      if (off == null || isNaN(off)) return "";
-      var key = String(off);
-      for (var i = 1; i < TZ.length; i++) { if (TZ[i][0] === key) return TZ[i][1]; }
-      return tzLabel(off);
-    }
     function clock12(hour, minute) {
       var m = (minute == null) ? 0 : minute;
       var ap = hour < 12 ? "AM" : "PM";
@@ -394,76 +414,66 @@
       var bi = branchOf(hour);
       return clock12(hour, minute) + " · " + HOURS[bi] + "時 " + HOUR_RANGE[bi];
     }
+    /* The conversion line is now a DISCLOSURE line, not a restatement. The beam already
+       prints the clock->branch math ("4:00 PM · 申時 15–17") and its label carries the
+       timezone, so repeating it here only made the dock taller. This returns "" — and the
+       element hides — whenever the reading is unambiguous, and speaks only when the reader
+       needs to know something the beam cannot show them: no hour yet, or the 23:xx boundary
+       where schools disagree. Honesty layer preserved, redundancy dropped. */
     function convLine(birth) {
       if (birth.hour == null) return "Pick an hour to unlock the full court — try your best guesses.";
-      var bi = branchOf(birth.hour);
-      var tzs = tzLabel(birth.tzOffset);
-      var line;
-      if (birth.minute != null) line = pad(birth.hour) + ":" + pad(birth.minute) + (tzs ? " in " + tzs : "") + " → " + HOURS[bi] + "時 " + HOUR_RANGE[bi];
-      else line = HOURS[bi] + "時 · " + HOUR_RANGE[bi] + (tzs ? " · read in " + tzs : "");
-      if (birth.hour === 23) line += " · late 子時 — counts toward the next day in some schools; we read it as 子";
-      return line;
+      if (birth.hour === 23) {
+        var bi = branchOf(birth.hour);
+        return HOURS[bi] + "時 · late 子時 — counts toward the next day in some schools; we read it as 子";
+      }
+      return "";
     }
+
+    /* mute lives in the studyChart pref "muted"; read it fresh so a toggle in one place is
+       felt everywhere without wiring listeners. tick() is the one mute-aware entry point every
+       caller in this file uses — ZodiTick still owns the reduced-motion guard on its own. */
+    function isMuted() { try { return !!(SC && SC.getPref("muted") === true); } catch (err) { return false; } }
+    function tick(freq) { if (isMuted()) return; try { window.ZodiTick(freq); } catch (err) {} }
+
+    /* Twelve branch hours -> six major-pentatonic pitches, each voiced for two hours, rising
+       子->亥. Pentatonic so no two hours ever clash and any scrub reads as melody, not noise;
+       one octave (E5..E6) keeps every pitch inside the 600–1400Hz band the tick lives in. */
+    var HOUR_PITCH = [659, 659, 784, 784, 880, 880, 1047, 1047, 1175, 1175, 1319, 1319];
 
     var dockEls = null;
     function ensureDock() {
       if (dockEls) return dockEls;
       var dock = document.getElementById("pcast-dock");
       if (!dock) { dock = h("div", "pcast-dock"); dock.id = "pcast-dock"; document.body.appendChild(dock); }
+      dock.setAttribute("role", "region");
+      dock.setAttribute("aria-label", "Chart time controls");
+      dock.setAttribute("data-state", "open");
       var inner = h("div", "pcast-dock-inner");
-
-      /* collapsed summary strip — Worker B's CSS shows it only while the dock
-         carries .is-collapsed and hides everything else */
-      var mini = h("div", "pcast-dk-mini");
-      var miniTxt = h("span", "pcast-dk-mini-txt", "");
-      mini.appendChild(miniTxt);
-      inner.appendChild(mini);
 
       var chartRow = h("div", "pcast-dock-chart");
       chartRow.setAttribute("data-dock-chart", "");
-      chartRow.hidden = true;
 
+      /* identity chip: sigil + "Your chart" eyebrow over the birth date; tapping it jumps
+         back up to the form to edit the birth date */
       var idBtn = h("button", "pcast-dk-id"); idBtn.type = "button";
       idBtn.setAttribute("aria-label", "Your chart — edit the birth date in the form above");
-      idBtn.appendChild(h("span", "pcast-dk-eyebrow", "Your chart"));
+      idBtn.appendChild(h("span", "pcast-dk-sigil", "紫")).setAttribute("aria-hidden", "true");
+      var idText = h("span", "pcast-dk-idtext");
+      idText.appendChild(h("span", "pcast-dk-eyebrow", "Your chart"));
       var dateEl = h("span", "pcast-dk-date", "");
-      idBtn.appendChild(dateEl);
+      idText.appendChild(dateEl);
+      idBtn.appendChild(idText);
       idBtn.addEventListener("click", function () {
         form.scrollIntoView({ behavior: "smooth", block: "center" });
         try { date.focus({ preventScroll: true }); } catch (err) { date.focus(); }
       });
       chartRow.appendChild(idBtn);
 
-      var hourWrap = h("label", "pcast-dk-field");
-      hourWrap.appendChild(h("span", "pcast-dk-lab", "Birth hour"));
-      var hourSel = document.createElement("select");
-      hourSel.className = "pcast-dk-sel"; hourSel.id = "pcast-dk-hour";
-      hourSel.setAttribute("aria-label", "Birth hour");
-      hourWrap.appendChild(hourSel);
-      chartRow.appendChild(hourWrap);
-
-      var tzWrap = h("label", "pcast-dk-field");
-      tzWrap.appendChild(h("span", "pcast-dk-lab", "Birth timezone"));
-      var tzSel = document.createElement("select");
-      tzSel.className = "pcast-dk-sel"; tzSel.id = "pcast-dk-tz";
-      tzSel.setAttribute("aria-label", "Birth timezone");
-      TZ.forEach(function (o) { tzSel.appendChild(new Option(o[1], o[0])); });
-      tzWrap.appendChild(tzSel);
-      chartRow.appendChild(tzWrap);
-
-      var conv = h("p", "pcast-dk-conv", ""); conv.id = "pcast-dk-conv";
-      chartRow.appendChild(conv);
-
       /* the hour beam: a 24-hour Gregorian scrubber, birthplace-local in the selected
          birth timezone. Slide the range (or tap an even-hour tick) ->
          ZiweiStudyChart.setHour(hour) -> the whole page re-casts through psa:studychart.
-         The live readout pairs the 12-hour clock with the branch hour so the two clocks
-         teach each other; #pcast-dk-conv stays the precise conversion line. */
+         The beam IS the hour control; there is no separate hour <select>. */
       var beam = h("div", "pcast-dk-beam");
-      var beamLab = h("span", "pcast-dk-beam-lab", "Slide the birth hour");
-      beam.appendChild(beamLab);
-      var beamCur = h("span", "pcast-dk-beam-cur", "");
-      beam.appendChild(beamCur);
       var beamRange = document.createElement("input");
       beamRange.type = "range";
       beamRange.className = "pcast-dk-beam-range";
@@ -476,47 +486,133 @@
         (function (idx) {
           var hr = idx * 2;
           var lab = hr === 0 ? "12AM" : (hr === 12 ? "12PM" : String(hr % 12));
-          var tick = h("button", "pcast-dk-tick");
-          tick.type = "button";
-          tick.setAttribute("aria-label", clock12(hr, 0) + " · " + HOURS[branchOf(hr)] + "時 " + HOUR_RANGE[branchOf(hr)]);
-          tick.appendChild(h("b", null, lab));
-          tick.addEventListener("click", function () { if (SC && lastBirth) SC.setHour(hr); });
-          beamTicks.appendChild(tick);
-          tickEls.push(tick);
+          var tk = h("button", "pcast-dk-tick");
+          tk.type = "button";
+          tk.setAttribute("aria-label", clock12(hr, 0) + " · " + HOURS[branchOf(hr)] + "時 " + HOUR_RANGE[branchOf(hr)]);
+          tk.appendChild(h("b", null, lab));
+          tk.addEventListener("click", function () { if (SC && lastBirth) SC.setHour(hr); });
+          beamTicks.appendChild(tk);
+          tickEls.push(tk);
         })(ti);
       }
       beam.appendChild(beamTicks);
       chartRow.appendChild(beam);
 
+      /* live readout: 12-hour clock + branch hour. An <output>, but aria-live="off" on purpose
+         — a live region would machine-gun the screen reader on every step of a scrub. */
+      var beamCur = document.createElement("output");
+      beamCur.className = "pcast-dk-beam-cur";
+      beamCur.setAttribute("aria-live", "off");
+      chartRow.appendChild(beamCur);
+
+      /* right-edge tool cluster: timezone, mute, unlock, minimize, close */
+      var tools = h("div", "pcast-dk-tools");
+
+      /* timezone: a real native <select> for the picker + free a11y, sat invisibly over a short
+         "UTC+8" label Worker A styles. We keep the label text in sync with the chosen option. */
+      var tzWrap = h("span", "pcast-dk-tzwrap");
+      var tzVal = h("span", "pcast-dk-tzval", "UTC+8");
+      tzVal.setAttribute("aria-hidden", "true");
+      var tzSel = document.createElement("select");
+      tzSel.className = "pcast-dk-sel"; tzSel.id = "pcast-dk-tz";
+      tzSel.setAttribute("aria-label", "Birth timezone");
+      TZ.forEach(function (o) { tzSel.appendChild(new Option(o[1], o[0])); });
+      tzWrap.appendChild(tzVal);
+      tzWrap.appendChild(tzSel);
+      tools.appendChild(tzWrap);
+      /* short offset from the option label's "(...UTC...)" chunk, else its first 8 chars */
+      function syncTzVal() {
+        var opt = tzSel.options[tzSel.selectedIndex];
+        var lab = opt ? opt.text : "";
+        var m = lab.match(/\(([^)]*UTC[^)]*)\)/);
+        tzVal.textContent = m ? m[1] : lab.slice(0, 8);
+      }
+
+      var soundBtn = h("button", "pcast-dk-sound"); soundBtn.type = "button";
+      soundBtn.appendChild(document.createTextNode("◍"));
+      tools.appendChild(soundBtn);
+
       /* mobile: the site-wide Reveal Dock (#pn-dock) is hidden while the chart dock is live
          (see page CSS); this compact ✦ pill keeps the unlock path one tap away */
       var zodi = document.createElement("a");
       zodi.className = "pcast-dk-zodi"; zodi.href = "/";
-      zodi.setAttribute("aria-label", "Unlock Your Zodi Animal");
+      zodi.setAttribute("aria-label", "Unlock your Zodi Animal");
       zodi.textContent = "✦";
-      chartRow.appendChild(zodi);
+      tools.appendChild(zodi);
+
+      var collapseBtn = h("button", "pcast-dk-collapse"); collapseBtn.type = "button";
+      collapseBtn.textContent = "▾";
+      collapseBtn.setAttribute("aria-expanded", "true");
+      collapseBtn.setAttribute("aria-controls", "pcast-dock");
+      collapseBtn.setAttribute("aria-label", "Minimize the chart dock");
+      tools.appendChild(collapseBtn);
+
+      var closeBtn = h("button", "pcast-dk-close"); closeBtn.type = "button";
+      closeBtn.textContent = "✕";
+      closeBtn.setAttribute("aria-label", "Hide the chart dock");
+      tools.appendChild(closeBtn);
+
+      chartRow.appendChild(tools);
+
+      /* late-子時 disclosure — Worker A floats it above the bar so it never adds a row.
+         When/why it shows is unchanged (see convLine): only ever for an ambiguous reading. */
+      var conv = h("p", "pcast-dk-conv", ""); conv.id = "pcast-dk-conv"; conv.hidden = true;
+      chartRow.appendChild(conv);
 
       inner.appendChild(chartRow);
+
+      /* the minimized pill (shown only in data-state="min"); tapping it re-opens the dock */
+      var mini = h("button", "pcast-dk-mini"); mini.type = "button";
+      mini.appendChild(h("span", "pcast-dk-sigil", "紫")).setAttribute("aria-hidden", "true");
+      var miniTxt = h("span", "pcast-dk-mini-txt", "");
+      mini.appendChild(miniTxt);
+      mini.appendChild(h("span", "pcast-dk-mini-caret", "▴")).setAttribute("aria-hidden", "true");
+      inner.appendChild(mini);
+
       var lessonSlot = h("div", "pcast-dock-lesson");
       lessonSlot.setAttribute("data-dock-lesson", "");
       inner.appendChild(lessonSlot);
       dock.appendChild(inner);
+
+      /* the closed-state launcher lives on <body>, a sibling of the dock, so it survives the
+         dock's own hidden state. One per document. */
+      var launcher = document.getElementById("pcast-dock-launcher");
+      if (!launcher) {
+        launcher = h("button", "pcast-dk-launcher", "紫");
+        launcher.id = "pcast-dock-launcher"; launcher.type = "button";
+        launcher.setAttribute("aria-label", "Show the chart dock");
+        launcher.hidden = true;
+        document.body.appendChild(launcher);
+      }
 
       /* absorb the learning track's bottom bar if it was mounted to <body> first,
          so there is exactly one bottom dock, never two stacked */
       var strayBar = document.querySelector("body > .psa-continue-bar");
       if (strayBar) { lessonSlot.appendChild(strayBar); dock.classList.add("has-lesson"); }
 
-      hourSel.addEventListener("change", function () {
-        if (!SC || !lastBirth) return;
-        var hour = hourSel.value === "" ? null : +hourSel.value;
-        SC.setHour(hour);
-      });
-      /* scrub -> instant local readout, throttled re-cast (~120ms) */
-      var beamTimer = null;
+      /* --dk-x is the thumb-bloom position. Set it on the BEAM element only — a per-frame
+         custom-property write on <html> invalidates style for the whole document (the bug we
+         just pulled out of js/nav.js); scoping it to the beam keeps the recalc local. */
+      function setBeamValue(v) {
+        beamRange.value = String(v);
+        lastBranch = branchOf(v);                 /* keep the scrub tracker honest on programmatic sets */
+        beam.style.setProperty("--dk-x", (v / 23 * 100) + "%");
+      }
+
+      /* scrub -> instant local readout + thumb bloom, a pentatonic tick only when the scrub
+         crosses a branch-hour boundary (throttled ~70ms, never on programmatic sets), and a
+         throttled re-cast (~120ms). */
+      var beamTimer = null, lastBranch = branchOf(+beamRange.value), lastTickAt = 0;
       beamRange.addEventListener("input", function () {
         var hr = +beamRange.value;
+        beam.style.setProperty("--dk-x", (hr / 23 * 100) + "%");
         beamCur.textContent = beamCurLine(hr, null);
+        var bi = branchOf(hr);
+        if (bi !== lastBranch) {
+          lastBranch = bi;
+          var now = (window.performance && performance.now) ? performance.now() : Date.now();
+          if (now - lastTickAt >= 70) { lastTickAt = now; tick(HOUR_PITCH[bi]); }
+        }
         if (beamTimer) window.clearTimeout(beamTimer);
         beamTimer = window.setTimeout(function () {
           beamTimer = null;
@@ -524,6 +620,7 @@
         }, 120);
       });
       tzSel.addEventListener("change", function () {
+        syncTzVal();
         if (!SC || !lastBirth) return;
         tz.value = tzSel.value;
         if (tz.value !== tzSel.value) tz.value = "auto";
@@ -531,39 +628,82 @@
       });
 
       function padBody() {
-        var hgt = dock.offsetHeight; /* 0 while display:none */
+        var hgt = dock.hidden ? 0 : dock.offsetHeight; /* 0 while closed or display:none */
+        /* offsetHeight ALREADY contains .pcast-dock-inner's padding-bottom, which IS
+           env(safe-area-inset-bottom). Adding the inset again here reserved the iPhone
+           notch twice and left a dead band above the footer. Measure, don't re-add. */
         document.body.style.paddingBottom = hgt ? (hgt + 14) + "px" : "";
       }
       window.addEventListener("resize", padBody);
       if (window.ResizeObserver) { try { new ResizeObserver(padBody).observe(dock); } catch (err) {} }
 
-      /* collapse chevron at the dock's right edge — Jay wants to see the whole board.
-         Collapsed state persists as the studyChart pref "dockCollapsed". */
-      var collapseBtn = h("button", "pcast-dk-collapse");
-      collapseBtn.type = "button";
-      collapseBtn.textContent = "▾";
-      collapseBtn.setAttribute("aria-expanded", "true");
-      collapseBtn.setAttribute("aria-label", "Collapse the chart dock");
-      function setCollapsed(on, persist) {
-        on = !!on;
-        dock.classList.toggle("is-collapsed", on);
-        collapseBtn.textContent = on ? "▴" : "▾";
-        collapseBtn.setAttribute("aria-expanded", on ? "false" : "true");
-        collapseBtn.setAttribute("aria-label", on ? "Expand the chart dock" : "Collapse the chart dock");
-        if (persist && SC) { try { SC.setPref("dockCollapsed", on); } catch (err) {} }
+      /* ---- the three-state machine: open | min | closed ----
+         data-state is the single source of truth Worker A styles from; JS owns the attribute,
+         the launcher/dock hidden flags, the aria, and the body padding. Persisted as the string
+         pref "dockState". */
+      function setDockState(next, persist) {
+        if (next !== "open" && next !== "min" && next !== "closed") next = "open";
+        dock.dataset.state = next;
+        var open = next === "open";
+        dock.hidden = next === "closed";
+        launcher.hidden = next !== "closed";
+        collapseBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        if (persist && SC) { try { SC.setPref("dockState", next); } catch (err) {} }
         padBody();
       }
-      collapseBtn.addEventListener("click", function () {
-        setCollapsed(!dock.classList.contains("is-collapsed"), true);
-        try { window.ZodiTick(); } catch (err) {}
+      collapseBtn.addEventListener("click", function () { setDockState("min", true); tick(); });
+      closeBtn.addEventListener("click", function () { setDockState("closed", true); tick(); });
+      mini.addEventListener("click", function () { setDockState("open", true); });
+      launcher.addEventListener("click", function () {
+        setDockState("open", true);
+        /* focus return: bring the keyboard user to the control that mirrors the launcher */
+        try { collapseBtn.focus(); } catch (err) {}
       });
-      inner.appendChild(collapseBtn);
-      /* tapping the collapsed summary opens the dock back up too */
-      mini.addEventListener("click", function () { if (dock.classList.contains("is-collapsed")) setCollapsed(false, true); });
+      /* Escape tucks the dock away, but ONLY from within it — never a global handler, never a
+         focus trap (this is a non-modal toolbar). The listener sits on the dock, so it only
+         hears keydowns from focus already inside. */
+      dock.addEventListener("keydown", function (e) {
+        if ((e.key === "Escape" || e.key === "Esc") && dock.dataset.state === "open") {
+          setDockState("min", true);
+          try { mini.focus(); } catch (err) {}
+          tick();
+        }
+      });
 
-      dockEls = { dock: dock, chartRow: chartRow, dateEl: dateEl, hourSel: hourSel, tzSel: tzSel, conv: conv, beamRange: beamRange, beamLab: beamLab, beamCur: beamCur, tickEls: tickEls, miniTxt: miniTxt, setCollapsed: setCollapsed, lessonSlot: lessonSlot, padBody: padBody };
-      /* restore the visitor's last collapse choice */
-      if (SC) { try { if (SC.getPref("dockCollapsed")) setCollapsed(true, false); } catch (err) {} }
+      /* the mute toggle. aria-pressed reads as "sound on": pressed/◍ = audible, unpressed/◌ =
+         muted. Persisted as pref "muted". Un-muting confirms itself with a single tick. */
+      function applyMute(muted) {
+        soundBtn.setAttribute("aria-pressed", muted ? "false" : "true");
+        soundBtn.textContent = muted ? "◌" : "◍";
+        soundBtn.setAttribute("aria-label", muted ? "Unmute interface sound" : "Mute interface sound");
+      }
+      soundBtn.addEventListener("click", function () {
+        var nowMuted = !isMuted();
+        try { if (SC) SC.setPref("muted", nowMuted); } catch (err) {}
+        applyMute(nowMuted);
+        if (!nowMuted) tick(HOUR_PITCH[6]); /* a taste of the sound they just turned back on */
+      });
+      applyMute(isMuted());
+
+      dockEls = {
+        dock: dock, chartRow: chartRow, dateEl: dateEl, tzSel: tzSel, tzVal: tzVal, conv: conv,
+        beamRange: beamRange, beamCur: beamCur, tickEls: tickEls, miniTxt: miniTxt,
+        setDockState: setDockState, setBeamValue: setBeamValue, syncTzVal: syncTzVal,
+        lessonSlot: lessonSlot, padBody: padBody
+      };
+
+      /* restore the visitor's last choice. Migrate the old boolean "dockCollapsed": if the new
+         string pref is unset but the old one says collapsed, start minimized. Never auto-open a
+         dock the user deliberately closed. */
+      var startState = "open";
+      if (SC) {
+        try {
+          var saved = SC.getPref("dockState");
+          if (saved === "open" || saved === "min" || saved === "closed") startState = saved;
+          else if (SC.getPref("dockCollapsed") === true) startState = "min";
+        } catch (err) {}
+      }
+      setDockState(startState, false);
       return dockEls;
     }
 
@@ -571,29 +711,26 @@
       var els = ensureDock();
       els.dock.classList.add("has-chart");
       document.body.classList.add("pcast-dock-live");
-      els.chartRow.hidden = false;
       els.dateEl.textContent = pad(birth.month) + "/" + pad(birth.day) + "/" + birth.year;
-      els.hourSel.innerHTML = "";
-      var curIdx = (birth.hour == null) ? -1 : branchOf(birth.hour);
-      els.hourSel.appendChild(new Option("I don't know", "", birth.hour == null, birth.hour == null));
-      for (var i = 0; i < 12; i++) {
-        /* representative clock hour for branch i is i*2 (branchOf(i*2) === i);
-           the old siderail's i*2+1 landed every pick one branch late */
-        var val = (i === curIdx && birth.hour != null) ? birth.hour : i * 2;
-        els.hourSel.appendChild(new Option(HOURS[i] + "時 · " + HOUR_RANGE[i], val, false, i === curIdx));
-      }
       var tzWant = (birth.tzOffset == null) ? "auto" : String(birth.tzOffset);
       els.tzSel.value = tzWant;
       if (els.tzSel.value !== tzWant) els.tzSel.value = "auto";
-      els.conv.textContent = convLine(birth);
-      /* the beam is birthplace-local — say which timezone it's reading in */
-      var tzn = tzName(birth.tzOffset);
-      els.beamLab.textContent = "Slide the birth hour" + (tzn ? " · " + tzn : "");
+      els.syncTzVal(); /* programmatic set — keep the short "UTC+8" label in step, no tick */
+      /* disclosure only — empty for an unambiguous reading, and then it hides entirely */
+      var cl = convLine(birth);
+      els.conv.textContent = cl;
+      els.conv.hidden = !cl;
+      /* the beam is birthplace-local — carry the short offset ("UTC+8") in its aria-label so a
+         screen-reader user hears which zone the hour reads in; the tz chip shows it visually */
+      var tzs = tzLabel(birth.tzOffset);
+      els.beamRange.setAttribute("aria-label", "Birth hour — 24 clock hours, birthplace-local" + (tzs ? " · " + tzs : ""));
       els.beamCur.textContent = beamCurLine(birth.hour, birth.minute);
       /* sync the 24-hour beam: known hour lights the nearest even-hour tick; unknown hour
-         parks the thumb at noon with nothing lit — the first slide sets the hour for real */
+         parks the thumb at noon with nothing lit — the first slide sets the hour for real.
+         setBeamValue is a programmatic set: it moves the thumb bloom and the scrub tracker
+         WITHOUT firing a pentatonic tick. */
       var beamVal = (birth.hour == null) ? 12 : birth.hour;
-      if (+els.beamRange.value !== beamVal) els.beamRange.value = String(beamVal);
+      els.setBeamValue(beamVal); /* also seeds --dk-x so the thumb bloom sits right before any scrub */
       var evenHour = (birth.hour == null) ? -1 : (Math.round(birth.hour / 2) * 2) % 24;
       els.tickEls.forEach(function (tk, i) {
         var on = (i * 2) === evenHour;

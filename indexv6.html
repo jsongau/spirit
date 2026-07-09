@@ -1419,7 +1419,7 @@
   function wire(){
     initShareModal();
     var share=document.getElementById('v5rShare');
-    if(share)share.addEventListener('click',function(){openShare({title:'Zodi Animal',text:crossingText(),url:'https://zodianimal.com'});});
+    if(share)share.addEventListener('click',function(){openShare({title:'Zodi Animal',text:crossingText(),url:'https://www.zodianimal.com'});});
     var res=document.getElementById('v5Result');
     if(res)new MutationObserver(enrich).observe(res,{childList:true,subtree:true,characterData:true});
     enrich();
@@ -1785,6 +1785,7 @@
     <div class="zf-colo">
       <span class="zf-lead">&copy; <span id="zf-year">2026</span> Zodi Animal. Made under the moon.</span>
       <span class="zf-disc">A tradition of meaning for reflection. Not medical, psychological, financial, or legal advice.</span>
+      <span class="zf-disc zf-legal"><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/terms.html">Terms of Use</a></span>
     </div>
 
   </div>

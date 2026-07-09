@@ -377,7 +377,7 @@ PNAV.FEATURED = { href: "/circle.html", title: "Read your circle of three", blur
 /* Canonical origin for absolute URLs (breadcrumb JSON-LD, etc.).
    Client-side JS, so this stays a literal (it cannot import build/config.mjs).
    It must hold the SAME value as DOMAIN in build/config.mjs. PHASE 8 CUTOVER:
-   flip this literal to https://zodianimal.com in lockstep with DOMAIN and the
+   flip this literal to https://www.zodianimal.com in lockstep with DOMAIN and the
    llms.txt URLs. The stale-origin gate in build/audit-links.mjs fails the
    build if this and DOMAIN ever disagree at ship time. */
 PNAV.ORIGIN = "https://www.zodianimal.com";

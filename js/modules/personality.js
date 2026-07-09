@@ -4,7 +4,10 @@
    matched against this animal's canonical shape (read from the data
    island). Close on every axis => a true <Animal>; one or more traits
    carried differently => a rare <Animal>, naming the axis that diverges.
-   Progressive enhancement: JS off, the CTA still links to the route. */
+   Progressive enhancement: the CTA's href is #dossier — the section it already
+   sits in — so with JS off it is a harmless no-op rather than a broken promise.
+   It used to point at /animals/<slug>/personality/, a route nobody ever built,
+   so it 404'd. If that route is generated one day, point the href back at it. */
 export function initPersonality(ctx) {
   const dlg = document.getElementById('pt-modal');
   const open = document.getElementById('pt-open');

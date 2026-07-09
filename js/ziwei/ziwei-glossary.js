@@ -43,7 +43,7 @@
       standard: "opposite palace",
       editorial: { title: "the mirror palace", editorial: true },
       plain: "The room directly across the chart.",
-      practitioner: "Exerts the strongest companion influence. The six fixed pairs follow the wheel geometry: Life-Travel, Siblings-Servants, Spouse-Career, Children-Property, Wealth-Fortune, Health-Parents.",
+      practitioner: "Exerts the strongest companion influence. The six fixed pairs follow the wheel geometry: Life-Travel, Siblings-Friends (classically 奴僕宮, the Servants Palace), Spouse-Career, Children-Property, Wealth-Fortune, Health-Parents.",
       sourceNote: "PSA-TERMINOLOGY §1.5 lists Wealth-Health and Fortune-Parents among the pairs; those palaces are adjacent, not facing, so ruling D3 (geometry wins) stores the geometric pairs, matching the C2 corrected courts. See ziwei-relationships.js.",
       source: ["purple-star-hub/PSA-TERMINOLOGY.md#1.5", "purple-star-hub/PSA-MASTER-PLAN.md#D3"]
     },
