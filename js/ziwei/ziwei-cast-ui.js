@@ -234,8 +234,8 @@
       ["9.5", "Central Australia (UTC+9:30)"], ["10", "Sydney (UTC+10)"], ["12", "New Zealand (UTC+12)"]
     ];
     form.innerHTML = "";
-    form.appendChild(h("p", "pcast-form-eyebrow", "Cast your chart"));
-    form.appendChild(h("p", "pcast-form-optnote", "Optional — the page works without it. Add your birth date for a reading of your own."));
+    form.appendChild(h("p", "pcast-form-eyebrow", "Cast Your Court"));
+    form.appendChild(h("p", "pcast-form-optnote", "Enter your birth moment to see where the twelve palaces, stars, and timing doors begin. The chart is not the verdict of your life. It is the map you learn to read."));
     var row1 = h("div", "pcast-field pcast-date-field");
     var dl = labelFor("pcast-date", "Birth date"); dl.appendChild(h("span", "pcast-opt", " · MM/DD/YYYY")); row1.appendChild(dl);
     var dwrap = h("div", "pcast-date-wrap");
@@ -302,7 +302,7 @@
     var gc = h("div"); gc.appendChild(labelFor("pcast-gender", "Gender"));
     var gender = select("pcast-gender", [["", "Prefer not to say"], ["female", "Female"], ["male", "Male"]]); gc.appendChild(gender); row3.appendChild(gc);
     form.appendChild(row3);
-    var go = h("button", "psa-btn pcast-go", "Cast my chart"); go.type = "submit"; form.appendChild(go);
+    var go = h("button", "psa-btn pcast-go", "Cast My Court"); go.type = "submit"; form.appendChild(go);
     var note = h("p", "pcast-note", "Read as birthplace-local time. Your data stays in your browser — nothing is sent anywhere.");
     form.appendChild(note);
 

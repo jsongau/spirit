@@ -1335,6 +1335,48 @@
   .pcast-elem-legend span{display:inline-flex;align-items:center;gap:6px}
   .pcast-elem-legend i{width:10px;height:10px;border-radius:50%;flex:none;background:var(--st-c,var(--faint));box-shadow:0 0 8px -2px var(--st-c,transparent)}
   .pcast-elem-legend small{flex-basis:100%;font-size:.58rem;letter-spacing:.04em;color:var(--faint)}
+
+  /* ============================================================
+     Refinement pass (2026-07): hero eyebrow + trust line, SEO lede,
+     what-you-will-learn cards, Zodi pull-quote, show-you section,
+     four-system map. Static styles only; no animation added, so the
+     page-wide prefers-reduced-motion kill switch above still covers
+     everything.
+  ============================================================ */
+  .psa-eyebrow { margin: 0 0 12px; }
+  .psa-eyebrow-en { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brass); }
+  .psa-trust { margin: 14px 0 0; max-width: 62ch; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; color: var(--faint); line-height: 1.7; }
+
+  .psa-orient { border-bottom: 1px solid var(--line-soft); padding: clamp(30px, 4.5vw, 46px) 0 clamp(34px, 5vw, 52px); }
+  .psa-lede { margin: 0; max-width: 74ch; font-size: 1.02rem; line-height: 1.7; }
+  .psa-learn-h { margin: 28px 0 0; font-size: clamp(1.25rem, 2.2vw, 1.6rem); }
+  .psa-learn-grid { list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+  @media (max-width: 1080px) { .psa-learn-grid { grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); } }
+  @media (max-width: 560px) { .psa-learn-grid { grid-template-columns: 1fr; } }
+  .psa-learn-card { display: block; height: 100%; background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r-1); padding: 14px 14px 16px; }
+  .psa-learn-card:hover { border-color: var(--line); }
+  .psa-learn-card .n { display: block; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.18em; color: var(--brass); }
+  .psa-learn-card .t { display: block; margin-top: 6px; font-family: var(--serif); font-size: 1rem; font-weight: 500; color: var(--moon); line-height: 1.25; }
+  .psa-learn-card .d { display: block; margin-top: 6px; font-size: 0.84rem; font-weight: 400; color: var(--muted); line-height: 1.5; }
+  .psa-pull { margin: 30px 0 0; padding: 4px 0 4px 22px; border-left: 3px solid var(--brass); max-width: 62ch; }
+  .psa-pull p { margin: 0; font-family: var(--serif); font-size: 1.16rem; line-height: 1.6; color: var(--ivory); }
+
+  .psa-show { border-bottom: 1px solid var(--line-soft); padding: clamp(36px, 5.5vw, 60px) 0 clamp(38px, 5.5vw, 62px); background: var(--ink-2); }
+  .psa-show h2 { font-size: clamp(1.5rem, 2.8vw, 2.1rem); }
+
+  .psa-fourmap { list-style: none; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; max-width: 62rem; }
+  @media (max-width: 860px) { .psa-fourmap { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .psa-fourmap { grid-template-columns: 1fr; } }
+  .psa-fourmap li { background: var(--ink-2); border: 1px solid var(--line-soft); border-radius: var(--r-1); padding: 12px 14px; }
+  .psa-fourmap li.is-here { border-color: var(--line); }
+  .psa-fourmap .sys { display: block; font-family: var(--serif); font-size: 1rem; font-weight: 500; }
+  .psa-fourmap span.sys { color: var(--moon); }
+  .psa-fourmap .role { display: block; margin-top: 4px; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
+
+  @media (max-width: 719px) {
+    .psa-actions { flex-direction: column; align-items: stretch; }
+    .psa-actions .psa-btn, .psa-actions .psa-btn-quiet { justify-content: center; text-align: center; }
+  }
   </style>
 
   <script type="application/ld+json">
@@ -1343,11 +1385,16 @@
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","inLanguage":"en","mainEntity":[
-    {"@type":"Question","name":"What is Purple Star Astrology (紫微斗數 Zi Wei Dou Shu)?","acceptedAnswer":{"@type":"Answer","text":"A Chinese chart system that maps a birth moment as twelve palaces with fourteen principal stars, placed by lunar date and hour. It is read as a life map and a decision aid, not as fatalism."}},
-    {"@type":"Question","name":"Is Purple Star Astrology the same as BaZi?","acceptedAnswer":{"@type":"Answer","text":"No. They are different calculations from the same birth moment. BaZi reads the balance of the five elements; Purple Star maps twelve life domains with named stars. Serious readers use both and never blend them."}},
-    {"@type":"Question","name":"Does the Emperor star (紫微 Zi Wei) undergo the Four Transformations?","acceptedAnswer":{"@type":"Answer","text":"It never receives the Flow (化祿) or the Hook (化忌). It takes the Power (化權) in Ren years and the Shine (化科) in Yi years. Tian Fu and Tian Xiang do not transform at all."}},
+    {"@type":"Question","name":"What is Purple Star Astrology?","acceptedAnswer":{"@type":"Answer","text":"Purple Star Astrology is a Chinese birth chart system that reads one birth moment as a court: twelve palaces for the domains of a life, fourteen principal stars for the characters who occupy them, and four transformations that color the whole cast. It grew up alongside the imperial calendar offices, and it still reads best in that register — as a map for reflection and better questions, not a machine for verdicts. Start with the twelve palaces and the rest follows."}},
+    {"@type":"Question","name":"Is Purple Star Astrology the same as Zi Wei Dou Shu?","acceptedAnswer":{"@type":"Answer","text":"Yes. Zi Wei Dou Shu (紫微斗數) is the system's Chinese name, and Purple Star Astrology is its most common English rendering. Both point to the same method: a chart cast from the lunar date and hour, anchored by the Zi Wei star — the Purple Star, or Emperor. You may also see it shortened to ZWDS. This guide uses the names interchangeably and keeps the traditional characters close."}},
+    {"@type":"Question","name":"Is Purple Star Astrology the same as BaZi?","acceptedAnswer":{"@type":"Answer","text":"No, though they are often read together. Both begin from the same birth moment. BaZi reads the flow of the five elements — your energetic climate and its seasons. Purple Star maps twelve life rooms and the star characters seated in them, then reads the relationships between the rooms. One gives you weather, the other gives you a floor plan. Careful readers use both and never blend the two calculations. BaZi has its own hub here."}},
+    {"@type":"Question","name":"What are the twelve palaces?","acceptedAnswer":{"@type":"Answer","text":"The twelve palaces are the rooms of the chart, one for each domain of a life: self, siblings, marriage, children, wealth, health, travel, friends, career, property, fortune, and parents. Each palace holds a question rather than a verdict, and no room is read alone — every room answers with its two triangle partners and the room across the court. Learn the room before judging the star. The full room files live on the palaces page."}},
+    {"@type":"Question","name":"What are the fourteen major stars?","acceptedAnswer":{"@type":"Answer","text":"The fourteen principal stars are the recurring characters of the court — the Emperor, the Strategist, the Sun, the Finance General, the Moon Star, and nine more. Each carries a temperament, a strength, and a blind spot, and each bends to the room it sits in. A star is never good or bad on its own; it is read in place, with its companions. Meet all fourteen, one page each, at the stars gallery."}},
+    {"@type":"Question","name":"What are the Four Transformations?","acceptedAnswer":{"@type":"Answer","text":"The Four Transformations — the Flow, the Power, the Shine, and the Hook — are colorings that attach to four stars in every chart, set by the birth-year stem. The Flow tends to ease and open. The Power concentrates authority. The Shine brings visibility and grace. The Hook marks where things catch, repeat, or ask for attention. They activate the chart rather than rewrite it. The four forces page walks each one slowly."}},
+    {"@type":"Question","name":"How do I start reading my chart?","acceptedAnswer":{"@type":"Answer","text":"Cast a chart first — the form at the top of this page needs only a birth date, and adding the hour sharpens it. Then read in order: find your Life Palace, name the room, meet the star seated there, and add the triangle before you conclude anything. Read relationships, not isolated symbols. When you are ready for the full method, the Reader's School drills a five-step reading until it holds."}},
     {"@type":"Question","name":"How is a Purple Star chart cast?","acceptedAnswer":{"@type":"Answer","text":"From the lunar month, day, and hour, plus the birth-year stem. The month and hour set the Life Palace, the Five Element Bureau and the day place the Zi Wei star, and the other thirteen stars fall into fixed positions from there."}},
-    {"@type":"Question","name":"Can a Purple Star chart predict my future?","acceptedAnswer":{"@type":"Answer","text":"It describes tendencies and timing, not fixed events. A responsible reading names what a domain leans toward and when it is under pressure or well supported, and it leaves the choice with you."}},
+    {"@type":"Question","name":"Does the Emperor star (紫微 Zi Wei) undergo the Four Transformations?","acceptedAnswer":{"@type":"Answer","text":"It never receives the Flow (化祿) or the Hook (化忌). It takes the Power (化權) in Ren years and the Shine (化科) in Yi years. Tian Fu and Tian Xiang do not transform at all."}},
+    {"@type":"Question","name":"Can a Purple Star chart predict my future?","acceptedAnswer":{"@type":"Answer","text":"It describes themes and timing emphasis, not verdicts. A responsible reading names what a domain leans toward, and when it tends to be under pressure or well supported — then leaves the choice with you."}},
     {"@type":"Question","name":"Do I need an account to learn here?","acceptedAnswer":{"@type":"Answer","text":"No. Every lesson is free and reachable without an account. Saving your progress is optional and unlocks nothing."}}
   ]}
   </script>
@@ -1480,19 +1527,20 @@
   <div class="wrap">
     <div class="psa-hero-grid">
       <div class="psa-hero-copy">
-    <h1>Purple Star Astrology</h1>
-    <p class="psa-sub">
+    <p class="psa-sub psa-eyebrow">
       <span class="psa-hant" lang="zh-Hant"><ruby>紫<rt>zǐ</rt></ruby><ruby>微<rt>wēi</rt></ruby><ruby>斗<rt>dǒu</rt></ruby><ruby>數<rt>shù</rt></ruby></span>
       <button type="button" class="say-btn" data-say-id="zi-wei-dou-shu" aria-label="Hear Zi Wei Dou Shu spoken in Mandarin" hidden><span class="say-ring"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6v4h3l4 3V3L5 6H2z" fill="currentColor"/><path d="M11 5.5a3.5 3.5 0 0 1 0 5M12.8 3.6a6 6 0 0 1 0 8.8" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span></button>
-      <span class="psa-sub-note">Purple Star Astrology is one of several English names for the system; the traditional name comes first.</span>
+      <span class="psa-eyebrow-en">· Purple Star Astrology</span>
     </p>
-    <p class="psa-promise">Learn to read a Chinese star chart the way the old court offices did: room by room, star by star, with your own chart as the study map.</p>
-    <p class="psa-handoff" id="psa-handoff">One birth moment, twelve rooms, fourteen principal stars. This page teaches you to read the whole court, in order.</p>
+    <h1>The Palace Map Behind Your Primal Mirror</h1>
+    <p class="psa-promise">Purple Star Astrology, also known as Zi Wei Dou Shu, maps one birth moment into twelve palaces, fourteen principal stars, and four transformations. Your Zodi Animal names the creature. Purple Star shows the court it walks through.</p>
+    <p class="psa-handoff" id="psa-handoff">This page teaches you to read the whole court, in order: room by room, star by star, the way the old court offices did.</p>
     <span class="psa-chip"><span class="seal" lang="zh-Hant" aria-hidden="true"><ruby>印<rt>yìn</rt></ruby></span> Court Novice · Level 1 of 8</span>
     <div class="psa-actions">
-      <a class="psa-btn" id="psa-cta-learn" href="#the-court">Start with the palaces</a>
-      <a class="psa-btn-quiet" href="/elements/purple-star-astrology/chart/">Cast your chart and use it as your study map</a>
+      <a class="psa-btn" href="#pcast-form">Cast Your Court</a>
+      <a class="psa-btn-quiet" id="psa-cta-learn" href="#the-court">Begin the Reader's Path</a>
     </div>
+    <p class="psa-trust">A beginner-friendly guide to the rooms, stars, forces, triangles, and timing gates of Purple Star Astrology.</p>
       </div>
       <form class="psa-hero-form" id="pcast-form" novalidate>
         <noscript>Enable JavaScript to cast your chart here, or open the full chart page.</noscript>
@@ -1501,7 +1549,39 @@
   </div>
 </header>
 
+<!-- ============================================================
+     SECTION 0b — refinement pass: lede, what you will learn, positioning
+============================================================ -->
+<section class="psa-orient" id="what-you-will-learn" aria-labelledby="psa-learn-h">
+  <div class="wrap">
+    <p class="psa-lede">Purple Star Astrology, also known as Zi Wei Dou Shu, is a Chinese birth chart system that maps a person's life into twelve palaces, fourteen principal stars, and four transformations. This guide teaches the system step by step for Western readers: first the rooms, then the stars, then the palace triangle, then timing.</p>
+    <h2 id="psa-learn-h" class="psa-learn-h">What you will learn</h2>
+    <ul class="psa-learn-grid">
+      <li><a class="psa-learn-card" href="#the-court"><span class="n">01</span><span class="t">The Twelve Palaces</span><span class="d">The life rooms where meaning appears.</span></a></li>
+      <li><a class="psa-learn-card" href="#the-stars"><span class="n">02</span><span class="t">The Fourteen Principal Stars</span><span class="d">The characters who occupy the court.</span></a></li>
+      <li><a class="psa-learn-card" href="#four-transformations"><span class="n">03</span><span class="t">The Four Transformations</span><span class="d">The forces that activate luck, authority, difficulty, and change.</span></a></li>
+      <li><a class="psa-learn-card" href="#read-the-triangle"><span class="n">04</span><span class="t">The Palace Triangle</span><span class="d">The three-room pattern that makes a reading coherent.</span></a></li>
+      <li><a class="psa-learn-card" href="/elements/purple-star-astrology/chart/"><span class="n">05</span><span class="t">The Timing Doors</span><span class="d">The decade and year gates that show when themes become louder.</span></a></li>
+    </ul>
+    <blockquote class="psa-pull">
+      <p>Your <a href="/">Zodi Animal</a> gives you the living symbol. Purple Star gives you the palace map behind it. One names the creature. The other shows the court it walks through.</p>
+    </blockquote>
+  </div>
+</section>
+
 <section class="psa-cast-result" id="pcast-result" aria-label="Your cast chart" hidden></section>
+
+<!-- ============================================================
+     SECTION 0c — refinement pass: what the system is for
+============================================================ -->
+<section class="psa-show" id="what-it-shows" aria-labelledby="psa-show-h">
+  <div class="wrap">
+    <span class="section-eyebrow">The use of a map</span>
+    <h2 id="psa-show-h">What Purple Star Can Show You</h2>
+    <p class="psa-lead">Purple Star Astrology is for the shape of a life, not the mood of a day. Ask the court and it answers in tendencies: which life rooms tend to carry authority, where pressure gathers, where luck flows, what repeats, where conflict or inheritance sits, which strengths stay hidden until someone names them.</p>
+    <p class="psa-lead">It does not replace choice. It hands you a map for asking better questions — of the chart, and of yourself. The chart is a map, not a prison.</p>
+  </div>
+</section>
 
 <div class="psa-teach-band"><div class="psa-teach-band-inner"><p class="psa-teach-band-txt"><span class="psa-teach-band-tag">Learning track</span> Below: learn to read any chart, step by step, with a fully worked example. Add your birth date above for a reading of your own first — the method is the same.</p></div></div>
 
@@ -1779,47 +1859,61 @@
     <div class="wrap"><div class="psa-next" id="psa-path-cta" hidden></div></div>
 
     <!-- ============================================================
-         SECTION 7b — Common questions (FAQ, matches FAQPage schema)
+         SECTION 8 — among the systems (bridge B1: BaZi weather / map),
+         moved above the FAQ in the refinement pass
     ============================================================ -->
-    <section class="psa-section" id="faq" aria-labelledby="psa-faq-h">
-      <div class="wrap">
-        <span class="section-eyebrow">Common questions</span>
-        <h2 id="psa-faq-h">Questions about Purple Star Astrology</h2>
-        <div class="psa-faq" style="margin-top:18px;max-width:74ch">
-          <details class="psa-layer"><summary>What is Purple Star Astrology (<span lang="zh-Hant">紫微斗數</span> Zi Wei Dou Shu)?</summary><div class="psa-layer-body">A Chinese chart system that maps a birth moment as twelve palaces with fourteen principal stars, placed by lunar date and hour. It is read as a life map and a decision aid, not as fatalism.</div></details>
-          <details class="psa-layer"><summary>Is Purple Star Astrology the same as BaZi?</summary><div class="psa-layer-body">No. They are different calculations from the same birth moment. BaZi reads the balance of the five elements; Purple Star maps twelve life domains with named stars. Serious readers use both and never blend them.</div></details>
-          <details class="psa-layer"><summary>Does the Emperor star (<span lang="zh-Hant">紫微</span> Zi Wei) undergo the Four Transformations?</summary><div class="psa-layer-body">It never receives the Flow (<span lang="zh-Hant">化祿</span>) or the Hook (<span lang="zh-Hant">化忌</span>). It takes the Power (<span lang="zh-Hant">化權</span>) in Ren years and the Shine (<span lang="zh-Hant">化科</span>) in Yi years. Tian Fu and Tian Xiang do not transform at all.</div></details>
-          <details class="psa-layer"><summary>How is a Purple Star chart cast?</summary><div class="psa-layer-body">From the lunar month, day, and hour, plus the birth-year stem. The month and hour set the Life Palace, the Five Element Bureau and the day place the Zi Wei star, and the other thirteen stars fall into fixed positions from there.</div></details>
-          <details class="psa-layer"><summary>Can a Purple Star chart predict my future?</summary><div class="psa-layer-body">It describes tendencies and timing, not fixed events. A responsible reading names what a domain leans toward and when it is under pressure or well supported, and it leaves the choice with you.</div></details>
-          <details class="psa-layer"><summary>Do I need an account to learn here?</summary><div class="psa-layer-body">No. Every lesson is free and reachable without an account. Saving your progress is optional and unlocks nothing.</div></details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 8 — among the systems (bridge B1: BaZi weather / map)
-    ============================================================ -->
-    <section class="psa-section psa-endcap" id="among-the-systems" aria-labelledby="psa-compare-h">
+    <section class="psa-section" id="among-the-systems" aria-labelledby="psa-compare-h">
       <div class="wrap">
         <span class="section-eyebrow">Among the systems</span>
-        <h2 id="psa-compare-h">BaZi and Purple Star</h2>
-        <p class="psa-lead">Both systems grow from the same cosmological tradition. They answer different questions, and they answer them differently.</p>
+        <h2 id="psa-compare-h">BaZi and Zi Wei Dou Shu</h2>
+        <p class="psa-lead">Both grow from the same cosmological tradition. Both begin at your birth moment. They answer different questions.</p>
 
         <div class="psa-compare">
           <div class="psa-compare-card psa-compare-card--bazi">
             <span class="eyebrow"><span lang="zh-Hant"><ruby>八<rt>bā</rt></ruby><ruby>字<rt>zì</rt></ruby></span> · Four Pillars</span>
             <span class="label">BaZi</span>
-            <p>The elemental weather of your life: the five phases active in your birth year, month, day, and hour, and the elemental constitution you inhabit.</p>
+            <p>Element flow, seasonal balance, energetic timing. The climate you were born into, and how it tends to move.</p>
           </div>
           <div class="psa-compare-card psa-compare-card--zwds">
             <span class="eyebrow"><span lang="zh-Hant"><ruby>紫<rt>zǐ</rt></ruby><ruby>微<rt>wēi</rt></ruby><ruby>斗<rt>dǒu</rt></ruby><ruby>數<rt>shù</rt></ruby></span> · Purple Star</span>
             <span class="label">Purple Star Astrology</span>
-            <p>The map of your life: twelve rooms, the stars stationed in each at birth, and how the whole court answers when one room is asked.</p>
+            <p>Palace placement, star characters, life domains, chart relationships. The rooms of a life, and how they answer each other.</p>
           </div>
         </div>
 
         <p class="psa-compare-line"><em>BaZi</em> tells you the weather. <em>Purple Star</em> gives you the map.</p>
-        <p class="psa-compare-note">They are separate systems and this site never blends them. When you want the weather, <a href="/bazi/">read the Four Pillars at the BaZi hub</a>.</p>
+
+        <ul class="psa-fourmap" aria-label="The four systems on this site">
+          <li><a class="sys" href="/">Zodi Animal</a><span class="role">The archetype</span></li>
+          <li><a class="sys" href="/bazi/">BaZi</a><span class="role">The energetic climate</span></li>
+          <li><a class="sys" href="/feng-shui/">Feng Shui</a><span class="role">The environment</span></li>
+          <li class="is-here"><span class="sys">Purple Star</span><span class="role">The palace map · you are here</span></li>
+        </ul>
+
+        <p class="psa-compare-note">Four systems, one birth, no blending. When you want the weather, <a href="/bazi/">read the Four Pillars at the BaZi hub</a>.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7b — Common questions (FAQ, matches FAQPage schema)
+    ============================================================ -->
+    <section class="psa-section psa-endcap" id="faq" aria-labelledby="psa-faq-h">
+      <div class="wrap">
+        <span class="section-eyebrow">Common questions</span>
+        <h2 id="psa-faq-h">Questions about Purple Star Astrology</h2>
+        <div class="psa-faq" style="margin-top:18px;max-width:74ch">
+          <details class="psa-layer"><summary>What is Purple Star Astrology?</summary><div class="psa-layer-body">Purple Star Astrology is a Chinese birth chart system that reads one birth moment as a court: twelve palaces for the domains of a life, fourteen principal stars for the characters who occupy them, and four transformations that color the whole cast. It grew up alongside the imperial calendar offices, and it still reads best in that register — as a map for reflection and better questions, not a machine for verdicts. Start with <a href="/elements/purple-star-astrology/palaces/">the twelve palaces</a> and the rest follows.</div></details>
+          <details class="psa-layer"><summary>Is Purple Star Astrology the same as Zi Wei Dou Shu?</summary><div class="psa-layer-body">Yes. Zi Wei Dou Shu (<span lang="zh-Hant">紫微斗數</span>) is the system's Chinese name, and Purple Star Astrology is its most common English rendering. Both point to the same method: a chart cast from the lunar date and hour, anchored by the Zi Wei star — the Purple Star, or Emperor. You may also see it shortened to ZWDS. This guide uses the names interchangeably and keeps the traditional characters close.</div></details>
+          <details class="psa-layer"><summary>Is Purple Star Astrology the same as BaZi?</summary><div class="psa-layer-body">No, though they are often read together. Both begin from the same birth moment. BaZi reads the flow of the five elements — your energetic climate and its seasons. Purple Star maps twelve life rooms and the star characters seated in them, then reads the relationships between the rooms. One gives you weather, the other gives you a floor plan. Careful readers use both and never blend the two calculations. <a href="/bazi/">BaZi has its own hub here</a>.</div></details>
+          <details class="psa-layer"><summary>What are the twelve palaces?</summary><div class="psa-layer-body">The twelve palaces are the rooms of the chart, one for each domain of a life: self, siblings, marriage, children, wealth, health, travel, friends, career, property, fortune, and parents. Each palace holds a question rather than a verdict, and no room is read alone — every room answers with its two triangle partners and the room across the court. Learn the room before judging the star. The full room files live on <a href="/elements/purple-star-astrology/palaces/">the palaces page</a>.</div></details>
+          <details class="psa-layer"><summary>What are the fourteen major stars?</summary><div class="psa-layer-body">The fourteen principal stars are the recurring characters of the court — the Emperor, the Strategist, the Sun, the Finance General, the Moon Star, and nine more. Each carries a temperament, a strength, and a blind spot, and each bends to the room it sits in. A star is never good or bad on its own; it is read in place, with its companions. Meet all fourteen, one page each, at <a href="/elements/purple-star-astrology/stars/">the stars gallery</a>.</div></details>
+          <details class="psa-layer"><summary>What are the Four Transformations?</summary><div class="psa-layer-body">The Four Transformations — the Flow, the Power, the Shine, and the Hook — are colorings that attach to four stars in every chart, set by the birth-year stem. The Flow tends to ease and open. The Power concentrates authority. The Shine brings visibility and grace. The Hook marks where things catch, repeat, or ask for attention. They activate the chart rather than rewrite it. <a href="/elements/purple-star-astrology/four-forces/">The four forces page</a> walks each one slowly.</div></details>
+          <details class="psa-layer"><summary>How do I start reading my chart?</summary><div class="psa-layer-body">Cast a chart first — the form at the top of this page needs only a birth date, and adding the hour sharpens it. Then read in order: find your Life Palace, name the room, meet the star seated there, and add the triangle before you conclude anything. Read relationships, not isolated symbols. When you are ready for the full method, <a href="/elements/purple-star-astrology/chart/">the Reader's School</a> drills a five-step reading until it holds.</div></details>
+          <details class="psa-layer"><summary>How is a Purple Star chart cast?</summary><div class="psa-layer-body">From the lunar month, day, and hour, plus the birth-year stem. The month and hour set the Life Palace, the Five Element Bureau and the day place the Zi Wei star, and the other thirteen stars fall into fixed positions from there.</div></details>
+          <details class="psa-layer"><summary>Does the Emperor star (<span lang="zh-Hant">紫微</span> Zi Wei) undergo the Four Transformations?</summary><div class="psa-layer-body">It never receives the Flow (<span lang="zh-Hant">化祿</span>) or the Hook (<span lang="zh-Hant">化忌</span>). It takes the Power (<span lang="zh-Hant">化權</span>) in Ren years and the Shine (<span lang="zh-Hant">化科</span>) in Yi years. Tian Fu and Tian Xiang do not transform at all.</div></details>
+          <details class="psa-layer"><summary>Can a Purple Star chart predict my future?</summary><div class="psa-layer-body">It describes themes and timing emphasis, not verdicts. A responsible reading names what a domain leans toward, and when it tends to be under pressure or well supported — then leaves the choice with you.</div></details>
+          <details class="psa-layer"><summary>Do I need an account to learn here?</summary><div class="psa-layer-body">No. Every lesson is free and reachable without an account. Saving your progress is optional and unlocks nothing.</div></details>
+        </div>
       </div>
     </section>
 
