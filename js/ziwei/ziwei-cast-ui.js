@@ -36,6 +36,12 @@
       "cai-bo-gong": "Wealth", "ji-e-gong": "Health", "qian-yi-gong": "Travel", "nu-pu-gong": "Friends",
       "guan-lu-gong": "Career", "tian-zhai-gong": "Property", "fu-de-gong": "Fortune", "fu-mu-gong": "Parents"
     };
+    /* Authored prose from the data files goes through this before any innerHTML. The strings are
+       ours, not user input, but "&" and "<" appear in copy and a raw ampersand is invalid markup. */
+    function esc(s) {
+      return String(s == null ? "" : s)
+        .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
     var palById = {};
     (window.ZiweiData.palaces || []).forEach(function (p) { palById[p.id] = p; });
     var starById = {};
@@ -59,6 +65,10 @@
     var RING = { 5: [0, 0], 6: [0, 1], 7: [0, 2], 8: [0, 3], 4: [1, 0], 9: [1, 3], 3: [2, 0], 10: [2, 3], 2: [3, 0], 1: [3, 1], 0: [3, 2], 11: [3, 3] };
     var HOURS = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"];
     var HOUR_RANGE = ["23–01", "01–03", "03–05", "05–07", "07–09", "09–11", "11–13", "13–15", "15–17", "17–19", "19–21", "21–23"];
+    /* the dock beam's <input type=range> max. Hours are 0..23, so 23 — and the tick notches,
+       the thumb bloom, and the range itself all derive their position from this one number.
+       Hard-coding it in three places is how the notches drifted off the thumb. */
+    var BEAM_MAX = 23;
 
     var AUX_HANT = { "wen-chang": "文昌", "wen-qu": "文曲", "zuo-fu": "左輔", "you-bi": "右弼" };
     var AUX_PY = { "wen-chang": "Wénchāng", "wen-qu": "Wénqū", "zuo-fu": "Zuǒfǔ", "you-bi": "Yòubì" };
@@ -477,7 +487,7 @@
       var beamRange = document.createElement("input");
       beamRange.type = "range";
       beamRange.className = "pcast-dk-beam-range";
-      beamRange.min = "0"; beamRange.max = "23"; beamRange.step = "1"; beamRange.value = "12";
+      beamRange.min = "0"; beamRange.max = String(BEAM_MAX); beamRange.step = "1"; beamRange.value = "12";
       beamRange.setAttribute("aria-label", "Birth hour — 24 clock hours, birthplace-local");
       beam.appendChild(beamRange);
       var beamTicks = h("div", "pcast-dk-beam-ticks");
@@ -488,6 +498,13 @@
           var lab = hr === 0 ? "12AM" : (hr === 12 ? "12PM" : String(hr % 12));
           var tk = h("button", "pcast-dk-tick");
           tk.type = "button";
+          /* --dk-t is this notch's position on the SAME scale the range thumb rides:
+             hour / BEAM_MAX, unitless. The CSS resolves it through
+                left: thumbW/2 + var(--dk-t) * (100% - thumbW)
+             which is exactly where the browser parks the thumb for that value. Do not
+             lay these out with flex/space-between: that maps notch i to i/11, i.e. it
+             pretends the scale ends at hour 22, and the label drifts off the thumb. */
+          tk.style.setProperty("--dk-t", String(hr / BEAM_MAX));
           tk.setAttribute("aria-label", clock12(hr, 0) + " · " + HOURS[branchOf(hr)] + "時 " + HOUR_RANGE[branchOf(hr)]);
           tk.appendChild(h("b", null, lab));
           tk.addEventListener("click", function () { if (SC && lastBirth) SC.setHour(hr); });
@@ -532,13 +549,12 @@
       soundBtn.appendChild(document.createTextNode("◍"));
       tools.appendChild(soundBtn);
 
-      /* mobile: the site-wide Reveal Dock (#pn-dock) is hidden while the chart dock is live
-         (see page CSS); this compact ✦ pill keeps the unlock path one tap away */
-      var zodi = document.createElement("a");
-      zodi.className = "pcast-dk-zodi"; zodi.href = "/";
-      zodi.setAttribute("aria-label", "Unlock your Zodi Animal");
-      zodi.textContent = "✦";
-      tools.appendChild(zodi);
+      /* The ✦ unlock pill used to live here. It linked to "/", which the wordmark and the Home tab
+         already do, so it was a third door to the same room inside a 44px instrument. Removed.
+         It was load-bearing on phones, though: the page CSS hid the site-wide Reveal Dock outright
+         while the chart dock existed, and ✦ carried the unlock path in its place. That suppression
+         now keys on body.pcast-dock-open (see setDockState), so #pn-dock returns the moment this
+         dock is minimized or closed. Do not re-hide it on pcast-dock-live. */
 
       var collapseBtn = h("button", "pcast-dk-collapse"); collapseBtn.type = "button";
       collapseBtn.textContent = "▾";
@@ -590,13 +606,19 @@
       var strayBar = document.querySelector("body > .psa-continue-bar");
       if (strayBar) { lessonSlot.appendChild(strayBar); dock.classList.add("has-lesson"); }
 
-      /* --dk-x is the thumb-bloom position. Set it on the BEAM element only — a per-frame
-         custom-property write on <html> invalidates style for the whole document (the bug we
-         just pulled out of js/nav.js); scoping it to the beam keeps the recalc local. */
+      /* --dk-pos is where the thumb's CENTRE actually is, and therefore where the bloom belongs.
+         A native range does not travel 0->100%: the centre runs from thumbW/2 to width-thumbW/2.
+         Hand the browser its own formula back rather than approximating with a bare percentage,
+         and the notches (which resolve --dk-t through the identical calc in CSS) line up for free.
+         Written on the RANGE element, never on <html> — a per-frame custom-property write on the
+         root invalidates style for the whole document (the bug we pulled out of js/nav.js). */
+      function beamPos(v) {
+        return "calc(var(--dk-thumb) / 2 + " + (v / BEAM_MAX) + " * (100% - var(--dk-thumb)))";
+      }
       function setBeamValue(v) {
         beamRange.value = String(v);
         lastBranch = branchOf(v);                 /* keep the scrub tracker honest on programmatic sets */
-        beam.style.setProperty("--dk-x", (v / 23 * 100) + "%");
+        beamRange.style.setProperty("--dk-pos", beamPos(v));
       }
 
       /* scrub -> instant local readout + thumb bloom, a pentatonic tick only when the scrub
@@ -605,7 +627,7 @@
       var beamTimer = null, lastBranch = branchOf(+beamRange.value), lastTickAt = 0;
       beamRange.addEventListener("input", function () {
         var hr = +beamRange.value;
-        beam.style.setProperty("--dk-x", (hr / 23 * 100) + "%");
+        beamRange.style.setProperty("--dk-pos", beamPos(hr));
         beamCur.textContent = beamCurLine(hr, null);
         var bi = branchOf(hr);
         if (bi !== lastBranch) {
@@ -648,6 +670,10 @@
         dock.hidden = next === "closed";
         launcher.hidden = next !== "closed";
         collapseBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        /* Only an OPEN chart dock owns the bottom edge, so only an open one may fold the site-wide
+           Reveal Dock away on phones. Minimized or closed, #pn-dock comes back — otherwise a phone
+           has no Reveal CTA anywhere, since .pn-cta is display:none below 760px. */
+        document.body.classList.toggle("pcast-dock-open", open);
         if (persist && SC) { try { SC.setPref("dockState", next); } catch (err) {} }
         padBody();
       }
@@ -730,7 +756,7 @@
          setBeamValue is a programmatic set: it moves the thumb bloom and the scrub tracker
          WITHOUT firing a pentatonic tick. */
       var beamVal = (birth.hour == null) ? 12 : birth.hour;
-      els.setBeamValue(beamVal); /* also seeds --dk-x so the thumb bloom sits right before any scrub */
+      els.setBeamValue(beamVal); /* also seeds --dk-pos so the thumb bloom sits right before any scrub */
       var evenHour = (birth.hour == null) ? -1 : (Math.round(birth.hour / 2) * 2) % 24;
       els.tickEls.forEach(function (tk, i) {
         var on = (i * 2) === evenHour;
@@ -748,7 +774,10 @@
       result.innerHTML = "";
       courtCells = {}; courtRooms = {};
       var yp = out.yearPillar;
-      var head = h("div", "pcast-res-head");
+      /* pcast-bleed: the head must break out of .psa-cast-result's 1000px column exactly the way
+         the reading below it does, or it floats inward and reads as centered over a full-bleed
+         board. Same class, same left edge. */
+      var head = h("div", "pcast-res-head pcast-bleed");
       head.appendChild(h("h2", "pcast-res-title", "Your reading"));
       var meta = h("p", "pcast-res-meta");
       meta.textContent = birth.year + "-" + pad(birth.month) + "-" + pad(birth.day)
@@ -953,19 +982,63 @@
       Object.keys(chart.palaces).forEach(function (pid) { (chart.palaces[pid].stars || []).forEach(function (s) { starToPalace[s.id] = pid; }); });
       var tB = h("div", "pcast-read-block");
       tB.appendChild(h("p", "pcast-read-eyebrow", "Your Four Transformations · 四化 · from your " + yp.name + " year"));
+      /* The stem of the year you were born re-colours four stars, once, permanently. It does not
+         add stars or move them. It changes how the four it touches BEHAVE — which is why a chart
+         with no transformation in a room still speaks, and a room with two is not twice as loud.
+         Read this before the four lines below, or they read as a scorecard. They are not one. */
+      tB.appendChild(h("p", "pcast-read-note",
+        "Your birth-year stem re-colours four of your stars, and only those four. Nothing is added and nothing moves. "
+        + "Three of these are usually called auspicious and one is not, but that is the shallow reading: "
+        + "the Flow can make a room too easy to leave alone, and the Hook marks the room you will keep returning to until you learn it. "
+        + "What each one tells you is where your attention goes without being asked."));
       var tList = h("div", "pcast-read-hua");
+      /* ziwei-transformations.js exports the ARRAY as .transformations and the lookup as
+         .transformationById — not a {items} wrapper. Prefer the lookup; fall back to the array. */
+      var TRANS = window.ZiweiData.transformationById || {};
+      if (!TRANS.lu) {
+        TRANS = {};
+        (window.ZiweiData.transformations || []).forEach(function (t) { TRANS[t.id] = t; });
+      }
       ["lu", "quan", "ke", "ji"].forEach(function (fr) {
         var sid = null; Object.keys(chart.natalHua).forEach(function (k) { if (chart.natalHua[k] === fr) sid = k; });
         var pid = sid ? starToPalace[sid] : null;
+        var t = TRANS[fr] || {};
+        var pal = pid ? palById[pid] : null;
         var row = h("div", "pcast-read-hua-row pcast-hua-" + fr);
         row.appendChild(h("span", "pcast-read-hua-badge", HUA_LABEL[fr]));
         var txt = h("span", "pcast-read-hua-txt");
-        var where = pid ? ("in your " + palLabel(pid) + " Palace") : "elsewhere in your chart";
-        txt.innerHTML = "<b>" + HUA_EN[fr] + "</b> lands on <b>" + (sid ? starName(sid) : "—") + "</b> " + where + " — " + FORCE_MEAN[fr] + ".";
+
+        /* the authored natalEffect is templated on {star}; the palace clause is the reader's own */
+        var effect = (t.natalEffect || FORCE_MEAN[fr] || "").replace("{star}", sid ? starName(sid) : "that star");
+        var where = pal
+          ? ("in your " + palLabel(pid) + " Palace, the room that asks <em>" + esc(pal.question) + "</em>")
+          : "elsewhere in your chart";
+
+        var lines = "<b>" + HUA_EN[fr] + "</b> " + (t.hant ? "<span lang=\"zh-Hant\">" + t.hant + "</span> " : "")
+          + "lands on <b>" + (sid ? starName(sid) : "—") + "</b> " + where + ". "
+          + "<span class=\"pcast-hua-effect\">" + effect + ".</span>";
+        if (pal && pal.domain) lines += " <span class=\"pcast-hua-domain\">" + esc(pal.domain) + "</span>";
+        if (t.caution) lines += " <span class=\"pcast-hua-caution\">" + esc(t.caution) + "</span>";
+        txt.innerHTML = lines;
         row.appendChild(txt);
         tList.appendChild(row);
       });
       tB.appendChild(tList);
+      /* the practitioner layer, folded away: it is the same four forces read as a working reader
+         reads them, and it is the wrong first thing to meet. */
+      var tDeep = h("details", "pcast-read-deep");
+      tDeep.appendChild(h("summary", null, "How a reader weighs these four"));
+      var tDeepList = h("div", "pcast-read-deep-body");
+      ["lu", "quan", "ke", "ji"].forEach(function (fr) {
+        var t = TRANS[fr]; if (!t || !t.practitioner) return;
+        var p = h("p", "pcast-read-deep-p");
+        p.innerHTML = "<b>" + HUA_LABEL[fr] + " " + HUA_EN[fr] + "</b> " + esc(t.practitioner);
+        tDeepList.appendChild(p);
+      });
+      tDeepList.appendChild(h("p", "pcast-read-deep-p pcast-muted",
+        "No single force decides a room. A star carries its transformation into every room its triangle touches, so a Hook in one place is answered three rooms away. Read the geometry before the verdict."));
+      tDeep.appendChild(tDeepList);
+      tB.appendChild(tDeep);
       wrap.appendChild(tB);
 
       /* Room by room */
@@ -989,8 +1062,38 @@
         }
         room.appendChild(starsLine);
         var prim = primaryStar(pc.stars);
-        if (prim && starById[prim].placements && starById[prim].placements[pal.id]) {
-          room.appendChild(h("p", "pcast-read-room-p", starById[prim].placements[pal.id].beginner));
+        var place = prim && starById[prim].placements ? starById[prim].placements[pal.id] : null;
+        if (place) {
+          room.appendChild(h("p", "pcast-read-room-p", place.beginner));
+          /* The ladder was authored all the way down — beginner, intermediate, practitioner,
+             misread, for all 14 stars in all 12 rooms — and only the first rung was ever rendered.
+             The rest opens on demand: a reading you can descend is honest, a reading that opens at
+             practitioner depth is a wall. `misread` matters most: it names what this placement is
+             NOT, which is the only thing standing between a study chart and a fortune cookie. */
+          var deep = h("details", "pcast-read-deep");
+          deep.appendChild(h("summary", null, "Read this room deeper"));
+          var body = h("div", "pcast-read-deep-body");
+          if (place.intermediate) {
+            var pi = h("p", "pcast-read-deep-p");
+            pi.innerHTML = "<b>How it is read</b> " + esc(place.intermediate);
+            body.appendChild(pi);
+          }
+          if (place.practitioner) {
+            var pp = h("p", "pcast-read-deep-p");
+            pp.innerHTML = "<b>What a reader checks</b> " + esc(place.practitioner);
+            body.appendChild(pp);
+          }
+          if (place.misread) {
+            var pm = h("p", "pcast-read-deep-p pcast-read-misread");
+            pm.innerHTML = "<b>Commonly misread</b> " + esc(place.misread);
+            body.appendChild(pm);
+          }
+          if (pal.oppositeId) {
+            body.appendChild(h("p", "pcast-read-deep-p pcast-muted",
+              "Never read this room alone. It answers with its two triangle partners and its mirror, the "
+              + (PAL_EN[pal.oppositeId] || "opposite") + " Palace across the court."));
+          }
+          if (body.childNodes.length) { deep.appendChild(body); room.appendChild(deep); }
         } else if (pal.oppositeId) {
           room.appendChild(h("p", "pcast-read-room-p pcast-muted", "No principal star seats here — normal in every chart. The room borrows its voice from the " + (PAL_EN[pal.oppositeId] || "opposite") + " Palace across the court; read that room to hear this one."));
         }

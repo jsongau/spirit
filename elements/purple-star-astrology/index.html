@@ -950,6 +950,31 @@
   .pcast-read-room-stars{font-size:.9rem;color:var(--ivory);margin:0 0 6px}
   .pcast-read-room-p{font-size:.84rem;color:var(--muted);margin:0;line-height:1.5}
   .pcast-read-room-p.pcast-muted{color:var(--faint);font-style:italic}
+  /* ---- the depth ladder: authored beginner/intermediate/practitioner/misread, opened on demand.
+     A <details> keeps every word in the served HTML (crawlers read it, doc 09 §content rule) while
+     the room still opens at one paragraph. ---- */
+  .pcast-read-note{font-size:.84rem;color:var(--muted);line-height:1.6;margin:0 0 12px;max-width:72ch;
+    border-left:2px solid var(--brass-dim);padding-left:12px}
+  .pcast-read-deep{margin-top:10px}
+  .pcast-read-deep>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+    font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--brass-dim);padding:2px 0;min-height:24px}
+  .pcast-read-deep>summary::-webkit-details-marker{display:none}
+  .pcast-read-deep>summary::before{content:"+";font-size:.9rem;line-height:1;color:var(--brass)}
+  .pcast-read-deep[open]>summary::before{content:"–"}
+  .pcast-read-deep>summary:hover{color:var(--brass)}
+  .pcast-read-deep>summary:focus-visible{outline:2px solid var(--brass);outline-offset:2px;border-radius:var(--r-1)}
+  .pcast-read-deep-body{padding:8px 0 2px;display:grid;gap:8px}
+  .pcast-read-deep-p{margin:0;font-size:.82rem;line-height:1.55;color:var(--muted)}
+  .pcast-read-deep-p b{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--faint);font-weight:400;margin-bottom:2px}
+  .pcast-read-misread{border-left:2px solid color-mix(in oklab,#e0685f 60%,transparent);padding-left:10px}
+  .pcast-read-misread b{color:color-mix(in oklab,#e0685f 80%,var(--ivory))}
+  /* the transformation rows earn a second and third clause: what it does, whose room, the caution */
+  .pcast-hua-effect{color:var(--ivory)}
+  .pcast-hua-domain{display:block;margin-top:3px;color:var(--faint);font-size:.95em}
+  .pcast-hua-caution{display:block;margin-top:3px;color:var(--faint);font-style:italic;font-size:.95em}
+  .pcast-read-hua-txt em{color:var(--moon);font-style:italic}
   /* learning-track band (separates the personal reading from the sample-chart lessons) */
   .psa-teach-band{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);background:var(--ink-2);padding:14px 0;margin:0 0 4px}
   .psa-teach-band-inner{max-width:1000px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
@@ -990,16 +1015,30 @@
   /* @property lets the focus-in conic sweep animate a true angle once; without it the custom prop
      jumps 0deg->360deg discretely, so the ring just holds still — the static-gradient fallback for free */
   @property --dk-a{syntax:"<angle>";inherits:false;initial-value:0deg}
+  /* PALETTE — "moonlight". Four knobs, scoped to the dock, so a recolor is a four-line diff and
+     never leaks into the reading. The dock is an instrument, not content: it deliberately does NOT
+     wear the page's --brass (the chart's own metal) or --cc (the star accent). --dk-thumb MUST equal
+     the ::-webkit-slider-thumb width; the tick geometry below reads it. */
+  .pcast-dock{
+    --dk-key:oklch(0.84 0.05 250);
+    --dk-key-bright:oklch(0.95 0.03 250);
+    --dk-key-dim:oklch(0.66 0.04 250);
+    --dk-bloom:oklch(0.84 0.07 250 / 0.30);
+    --dk-thumb:14px;
+  }
+  @supports not (color: oklch(0% 0 0)){
+    .pcast-dock{--dk-key:#b9c4da;--dk-key-bright:#e6ecf7;--dk-key-dim:#7f8ba4;--dk-bloom:rgba(185,196,218,.30)}
+  }
   .pcast-dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;background:var(--ink-2);border-top:1px solid var(--line);isolation:isolate}
   /* content-gating unchanged: a chart docks at any width; a lesson-only dock only earns the bottom
      on phones, where the side rail is already gone. data-state (open|min|closed) layers on top. */
   .pcast-dock.has-chart{display:block}
   @media (max-width:1199px){.pcast-dock.has-lesson{display:block}}
   .pcast-dock[data-state="closed"]{display:none}
-  /* brass inset top hairline: a 1px gradient that reads as a lit edge, not a ruled border */
-  .pcast-dock::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,color-mix(in oklab,var(--brass) 50%,transparent),transparent);pointer-events:none}
+  /* inset top hairline: a 1px gradient that reads as a lit edge, not a ruled border */
+  .pcast-dock::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,color-mix(in oklab,var(--dk-key) 50%,transparent),transparent);pointer-events:none}
   /* the instrument "wakes" when reached for: a single 0.9s conic ring on focus-within, never a loop */
-  .pcast-dock::after{content:"";position:absolute;inset:0;padding:1px;pointer-events:none;opacity:0;background:conic-gradient(from var(--dk-a),transparent 0 60%,var(--brass) 78%,transparent 92%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+  .pcast-dock::after{content:"";position:absolute;inset:0;padding:1px;pointer-events:none;opacity:0;background:conic-gradient(from var(--dk-a),transparent 0 60%,var(--dk-key) 78%,transparent 92%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
   .pcast-dock:focus-within::after{animation:pcastWake .9s var(--ease-out) 1}
   @keyframes pcastWake{0%{opacity:.9;--dk-a:0deg}100%{opacity:0;--dk-a:360deg}}
   /* the single row: identity | beam (flex:1) | live readout | tools, all on one baseline.
@@ -1010,84 +1049,91 @@
   .pcast-dock[data-state="min"] .pcast-dock-chart{display:none}
   /* identity: sigil + eyebrow/date, a quiet ghost button that dash-underlines on hover */
   .pcast-dk-id{display:flex;align-items:center;gap:8px;flex:none;background:transparent;border:0;padding:2px 4px;border-radius:var(--r-1);cursor:pointer;font:inherit}
-  .pcast-dk-sigil{font-family:var(--serif);font-size:1.1rem;line-height:1;color:var(--brass);text-shadow:0 0 8px var(--cc-soft)}
+  .pcast-dk-sigil{font-family:var(--serif);font-size:1.1rem;line-height:1;color:var(--dk-key);text-shadow:0 0 8px var(--dk-bloom)}
   .pcast-dk-idtext{display:flex;flex-direction:column;align-items:flex-start;gap:1px;min-width:0}
-  .pcast-dk-eyebrow{font-family:var(--mono);font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+  .pcast-dk-eyebrow{font-family:var(--mono);font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dk-key-dim)}
   .pcast-dk-date{font-family:var(--mono);font-size:.8rem;line-height:1.2;color:var(--ivory);border-bottom:1px dashed var(--line)}
-  .pcast-dk-id:hover .pcast-dk-date{color:var(--moon);border-bottom-color:var(--brass)}
-  .pcast-dk-id:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
-  /* the hour beam: a 12-stop scrubber over the Earthly-Branch hours. --dk-x (0-100%, set as the thumb
-     travels) parks a small amethyst bloom under the thumb — painted into the background, no shadow spread. */
-  .pcast-dk-beam{position:relative;flex:1;min-width:88px;align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:2px;background:radial-gradient(22px 20px at var(--dk-x,50%) 50%,var(--cc-soft),transparent 70%)}
-  .pcast-dk-beam-range{-webkit-appearance:none;appearance:none;width:100%;margin:0;background:transparent;accent-color:var(--brass);cursor:pointer}
-  .pcast-dk-beam-range:focus-visible{outline:2px solid var(--brass);outline-offset:4px;border-radius:var(--r-pill)}
+  .pcast-dk-id:hover .pcast-dk-date{color:var(--moon);border-bottom-color:var(--dk-key)}
+  .pcast-dk-id:focus-visible{outline:2px solid var(--dk-key);outline-offset:2px}
+  /* ---- THE BEAM: one geometry, shared by the thumb, the bloom, and the notches --------------
+     A native range thumb's CENTRE travels from thumbW/2 to (width - thumbW/2). So value v sits at
+        thumbW/2 + (v/23) * (100% - thumbW)
+     JS sets --dk-pos to exactly that calc() for the live value, and stamps --dk-t = hour/23 on each
+     notch, which resolves through the SAME formula below. The notches used to be spread with
+     justify-content:space-between — notch i at i/11, i.e. as if the scale ended at hour 22 — so the
+     thumb and its label drifted apart (~23px at hour 10 on a 1200px beam). Never reintroduce a
+     second mapping: if you change --dk-thumb, both the thumb and the notches follow it. */
+  .pcast-dk-beam{position:relative;flex:1;min-width:88px;align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:2px}
+  .pcast-dk-beam-range{-webkit-appearance:none;appearance:none;width:100%;margin:0;background:transparent;accent-color:var(--dk-key);cursor:pointer}
+  .pcast-dk-beam-range:focus-visible{outline:2px solid var(--dk-key);outline-offset:4px;border-radius:var(--r-pill)}
   /* the precision affordance appears only when reached for: track thickens, thumb grows (transform only) */
-  .pcast-dk-beam-range::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:color-mix(in oklab,var(--brass) 22%,var(--line));transition:transform var(--dur-fast) var(--ease-out)}
+  .pcast-dk-beam-range::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:radial-gradient(22px 14px at var(--dk-pos,50%) 50%,var(--dk-bloom),transparent 70%),color-mix(in oklab,var(--dk-key) 22%,var(--line));transition:transform var(--dur-fast) var(--ease-out)}
   .pcast-dk-beam:hover .pcast-dk-beam-range::-webkit-slider-runnable-track,.pcast-dk-beam-range:focus-visible::-webkit-slider-runnable-track{transform:scaleY(1.6)}
-  .pcast-dk-beam-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:12px;height:12px;margin-top:-4px;border-radius:50%;background:var(--brass);border:2px solid var(--ink);box-shadow:0 0 10px -2px var(--brass);transition:transform var(--dur-fast) var(--ease-out)}
+  .pcast-dk-beam-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:var(--dk-thumb);height:var(--dk-thumb);margin-top:calc((4px - var(--dk-thumb)) / 2);border-radius:50%;background:var(--dk-key);border:2px solid var(--ink);box-shadow:0 0 10px -2px var(--dk-key);transition:transform var(--dur-fast) var(--ease-out)}
   .pcast-dk-beam:hover .pcast-dk-beam-range::-webkit-slider-thumb,.pcast-dk-beam-range:focus-visible::-webkit-slider-thumb{transform:scale(1.25)}
-  .pcast-dk-beam-range::-moz-range-track{height:4px;border-radius:2px;background:color-mix(in oklab,var(--brass) 22%,var(--line))}
-  .pcast-dk-beam-range::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:var(--brass);border:2px solid var(--ink);box-shadow:0 0 10px -2px var(--brass)}
-  /* at rest the 12 ticks are 1px brass notches; labels fade in only on beam hover/focus-within, and
-     are absolutely placed so they never reflow the 44px row. The range is the >=40px primary control;
+  .pcast-dk-beam-range::-moz-range-track{height:4px;border-radius:2px;background:color-mix(in oklab,var(--dk-key) 22%,var(--line))}
+  .pcast-dk-beam-range::-moz-range-thumb{width:var(--dk-thumb);height:var(--dk-thumb);border-radius:50%;background:var(--dk-key);border:2px solid var(--ink);box-shadow:0 0 10px -2px var(--dk-key)}
+  /* at rest the 12 ticks are 1px notches; labels fade in only on beam hover/focus-within, and are
+     absolutely placed so they never reflow the 44px row. The range is the >=40px primary control;
      the notches are secondary quick-jumps with a taller-than-wide hit strip. */
-  .pcast-dk-beam-ticks{display:flex;justify-content:space-between;height:7px;padding:0 5px}
-  .pcast-dk-tick{position:relative;width:1px;padding:0;background:transparent;border:0;cursor:pointer}
-  .pcast-dk-tick::before{content:"";position:absolute;top:0;left:0;width:1px;height:7px;background:color-mix(in oklab,var(--brass) 45%,transparent)}
-  .pcast-dk-tick::after{content:"";position:absolute;top:-18px;left:-12px;right:-12px;bottom:-18px}
+  .pcast-dk-beam-ticks{position:relative;height:7px}
+  .pcast-dk-tick{position:absolute;top:0;left:calc(var(--dk-thumb) / 2 + var(--dk-t,0) * (100% - var(--dk-thumb)));transform:translateX(-50%);width:9px;height:7px;padding:0;background:transparent;border:0;cursor:pointer}
+  .pcast-dk-tick::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:7px;background:color-mix(in oklab,var(--dk-key) 45%,transparent)}
+  .pcast-dk-tick::after{content:"";position:absolute;top:-18px;left:-10px;right:-10px;bottom:-18px}
   .pcast-dk-tick b{position:absolute;top:9px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:.5rem;font-weight:400;letter-spacing:.02em;white-space:nowrap;color:var(--faint);opacity:0;transition:opacity var(--dur-fast) var(--ease-out);pointer-events:none}
   .pcast-dk-beam:hover .pcast-dk-tick b,.pcast-dk-beam:focus-within .pcast-dk-tick b{opacity:1}
-  .pcast-dk-tick:hover::before{background:var(--brass-bright)}
-  .pcast-dk-tick:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+  .pcast-dk-tick:hover::before{background:var(--dk-key-bright)}
+  .pcast-dk-tick:focus-visible{outline:2px solid var(--dk-key);outline-offset:3px}
   /* the live tick reads as an ember: a text-shadow glow, not a filter */
-  .pcast-dk-tick.is-on::before{background:var(--brass)}
-  .pcast-dk-tick.is-on b{opacity:1;color:var(--brass);text-shadow:0 0 6px var(--cc-soft)}
-  /* live readout: Gregorian time ivory, Earthly Branch brass; first thing to drop on narrow screens */
+  .pcast-dk-tick.is-on::before{background:var(--dk-key-bright)}
+  .pcast-dk-tick.is-on b{opacity:1;color:var(--dk-key-bright);text-shadow:0 0 6px var(--dk-bloom)}
+  /* live readout: Gregorian time ivory, Earthly Branch keyed; first thing to drop on narrow screens */
   .pcast-dk-beam-cur{flex:none;font-family:var(--mono);font-size:.76rem;line-height:1.2;white-space:nowrap;color:var(--ivory)}
-  .pcast-dk-beam-cur b,.pcast-dk-beam-cur [lang="zh-Hant"]{font-weight:400;color:var(--brass)}
-  /* tools: timezone value-button, sound, unlock, minimize, close */
+  .pcast-dk-beam-cur b,.pcast-dk-beam-cur [lang="zh-Hant"]{font-weight:400;color:var(--dk-key-bright)}
+  /* tools: timezone value-button, sound, minimize, close. (The ✦ unlock pill is gone — the wordmark
+     and the Home tab already go home. See the <=900px block: #pn-dock now returns whenever the dock
+     is not OPEN, so phones keep a Reveal CTA.) */
   .pcast-dk-tools{flex:none;display:flex;align-items:center;gap:4px}
   /* the real native <select> lies transparent over the value text so the platform picker and its
      a11y survive; the wrap is the relative anchor for it */
   .pcast-dk-tzwrap{position:relative;display:inline-flex;align-items:center;height:30px;padding:0 8px;border:1px solid var(--line);border-radius:var(--r-1)}
-  .pcast-dk-tzwrap:hover{border-color:var(--brass)}
-  .pcast-dk-tzwrap:focus-within{border-color:var(--brass);outline:2px solid var(--brass);outline-offset:1px}
+  .pcast-dk-tzwrap:hover{border-color:var(--dk-key-dim)}
+  .pcast-dk-tzwrap:focus-within{border-color:var(--dk-key);outline:2px solid var(--dk-key);outline-offset:1px}
   .pcast-dk-tzval{font-family:var(--mono);font-size:.72rem;white-space:nowrap;color:var(--moon);pointer-events:none}
   .pcast-dk-sel{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;opacity:0;font:inherit;cursor:pointer}
-  /* ghost icon buttons: warm to brass on hover; a transparent overlay lifts the hit area off the 30px glyph */
+  /* ghost icon buttons: warm to the key on hover; a transparent overlay lifts the hit area off the 30px glyph */
   .pcast-dk-sound,.pcast-dk-collapse,.pcast-dk-close{position:relative;flex:none;width:30px;height:30px;display:grid;place-items:center;padding:0;background:transparent;border:1px solid transparent;border-radius:var(--r-1);color:var(--muted);font-size:.9rem;line-height:1;cursor:pointer;transition:color var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out)}
-  .pcast-dk-sound::after,.pcast-dk-collapse::after,.pcast-dk-close::after,.pcast-dk-zodi::after{content:"";position:absolute;inset:-5px}
-  .pcast-dk-sound:hover,.pcast-dk-collapse:hover{color:var(--brass);border-color:var(--line)}
+  .pcast-dk-sound::after,.pcast-dk-collapse::after,.pcast-dk-close::after{content:"";position:absolute;inset:-5px}
+  .pcast-dk-sound:hover,.pcast-dk-collapse:hover{color:var(--dk-key-bright);border-color:var(--line)}
   .pcast-dk-sound[aria-pressed="false"]{color:var(--faint)}
   /* close is destructive-ish, so it rests quieter than minimize and only warms, never frames */
   .pcast-dk-close{color:var(--faint)}
-  .pcast-dk-close:hover{color:var(--brass)}
-  .pcast-dk-sound:focus-visible,.pcast-dk-collapse:focus-visible,.pcast-dk-close:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
-  /* the unlock star: the mobile Zodi Animal path, a small brass-ringed pill kept at every width */
-  .pcast-dk-zodi{position:relative;flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid var(--brass);border-radius:var(--r-pill);color:var(--brass);text-decoration:none;font-size:.9rem;box-shadow:0 0 10px -4px var(--brass)}
-  .pcast-dk-zodi:hover{color:var(--brass-bright);background:color-mix(in oklab,var(--brass) 14%,transparent)}
-  .pcast-dk-zodi:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+  .pcast-dk-close:hover{color:var(--dk-key-bright)}
+  .pcast-dk-sound:focus-visible,.pcast-dk-collapse:focus-visible,.pcast-dk-close:focus-visible{outline:2px solid var(--dk-key);outline-offset:2px}
   /* late-子時 disclosure: rare; floats just above the row as a popover so it never adds height */
   .pcast-dk-conv{position:absolute;left:clamp(12px,2vw,16px);right:clamp(12px,2vw,16px);bottom:calc(100% + 6px);margin:0;padding:8px 12px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-1);font-family:var(--mono);font-size:.7rem;line-height:1.4;color:var(--muted)}
   .pcast-dk-conv[hidden]{display:none}
   /* lesson bar in a charted dock: never a second row — the continue bar collapses to the always-on
-     compact brass chip (the .psa-cb-ico/.psa-cb-short form, promoted from its old <=480px-only rule) */
+     compact chip (the .psa-cb-ico/.psa-cb-short form, promoted from its old <=480px-only rule) */
   .pcast-dock-lesson{flex:none;display:flex;align-items:center}
   .pcast-dock[data-state="min"] .pcast-dock-lesson{display:none}
   .pcast-dock .psa-continue-bar{position:static;margin:0;padding:0;background:transparent;border:0;z-index:auto}
-  .psa-cb-ico{display:none;color:var(--brass);margin-right:4px}
+  .psa-cb-ico{display:none;color:var(--dk-key);margin-right:4px}
   .psa-cb-short{display:none}
   .pcast-dock.has-chart .psa-cb-txt{display:none}
   .pcast-dock.has-chart .psa-cb-ico,.pcast-dock.has-chart .psa-cb-short{display:inline}
-  .pcast-dock.has-chart .pcast-dock-lesson .psa-continue-bar{gap:6px;padding:4px 10px;border:1px solid var(--brass-dim);border-radius:var(--r-pill);background:color-mix(in oklab,var(--brass) 10%,transparent)}
+  .pcast-dock.has-chart .pcast-dock-lesson .psa-continue-bar{gap:6px;padding:4px 10px;border:1px solid var(--dk-key-dim);border-radius:var(--r-pill);background:color-mix(in oklab,var(--dk-key) 10%,transparent)}
   /* chart-less (lesson only): keep the bar's own readable single row */
   .pcast-dock:not(.has-chart) .pcast-dock-lesson{flex:1;min-height:40px}
   /* progressive collapse — the beam is the last thing standing and never disappears */
   @media (max-width:900px){
     .pcast-dk-idtext{display:none}
-    /* one bottom instrument only: fold the site-wide Reveal Dock while the chart dock is live */
-    body.pcast-dock-live #pn-dock{display:none}
-    body.pcast-dock-live.pn-has-bar{padding-bottom:0}
+    /* One bottom instrument at a time. The ✦ unlock pill used to justify hiding the site-wide Reveal
+       Dock outright; with ✦ gone, #pn-dock must come BACK the moment the chart dock stops occupying
+       the bottom edge — otherwise phones have no Reveal CTA at all (.pn-cta is display:none <=760px).
+       So the suppression keys on pcast-dock-open, not pcast-dock-live. */
+    body.pcast-dock-open #pn-dock{display:none}
+    body.pcast-dock-open.pn-has-bar{padding-bottom:0}
   }
   @media (max-width:720px){
     .pcast-dk-tzwrap{padding:0 6px}
@@ -1099,8 +1145,9 @@
   @media (max-width:420px){
     .pcast-dock-inner{gap:8px}
     .pcast-dk-tools{gap:2px}
-    .pcast-dk-sound,.pcast-dk-collapse,.pcast-dk-close,.pcast-dk-zodi{width:28px;height:28px}
-    /* 12 notches crowd a phone: keep every 4th, plus whichever is live */
+    .pcast-dk-sound,.pcast-dk-collapse,.pcast-dk-close{width:28px;height:28px}
+    /* 12 notches crowd a phone: keep every 4th, plus whichever is live. They are absolutely
+       positioned now, so hiding one never shifts the others. */
     .pcast-dk-tick{visibility:hidden}
     .pcast-dk-tick:nth-child(4n+1),.pcast-dk-tick.is-on{visibility:visible}
   }
@@ -1175,18 +1222,24 @@
   @supports not (color: oklch(0% 0 0)){
     :root{--st-wood:#69c69a;--st-fire:#e0806a;--st-earth:#cfa46a;--st-metal:#b9c4da;--st-water:#5da3bd}
   }
-  /* ---- 1. full-bleed reading: the board+rooms break out of the 1000px column ---- */
+  /* ---- 1. full-bleed reading: the head, the board and the rooms all break out of the 1000px
+       column together. .pcast-bleed is the ONE escape hatch — anything that must share the
+       board's left edge wears it. (The head used to stay in the narrow column, so "Your reading"
+       floated inward and read as centred over a full-bleed board.) ---- */
   @media (min-width:1100px){
-    #pcast-result > .pcast-reading-cols.pcast-bleed{
+    #pcast-result > .pcast-bleed{
       width:min(96vw,1760px);
       margin-left:calc(50% - min(48vw,880px));
+    }
+    #pcast-result > .pcast-reading-cols.pcast-bleed{
       grid-template-columns:minmax(500px,42%) 1fr;
       gap:clamp(20px,3vw,44px);
     }
   }
   @media (max-width:1099px){
-    #pcast-result > .pcast-reading-cols.pcast-bleed{width:auto;margin:0}
+    #pcast-result > .pcast-bleed{width:auto;margin:0}
   }
+  .pcast-res-head.pcast-bleed{text-align:left}
   /* ---- 2. two-up rooms in the right column. The Life card sits in one cell
        like every other room — it is marked by its brass border, not by width. ---- */
   .pcast-col-rooms .pcast-read-rooms{grid-template-columns:1fr}
