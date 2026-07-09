@@ -978,6 +978,7 @@
   .pcast-court-hint{font-size:.8rem;color:var(--faint);margin:2px 0 6px}
   .pcast-court-cap{font-size:.88rem;color:var(--muted);margin:0 0 12px}
   .pcast-court-cap b{color:var(--ivory)}
+  .pcast-court-cap-live{display:block;margin-top:5px;color:var(--ivory)}
   .pcast-read-room.is-hi{border-color:var(--cc-bright);box-shadow:0 0 0 1px var(--cc-soft)}
   /* board layout toggle (beginner vs authentic chart) */
   .pcast-layout-toggle,.pcast-lt{display:inline-flex;border:1px solid var(--line);border-radius:var(--r-pill);overflow:hidden;margin:0 0 12px}
@@ -1022,14 +1023,26 @@
   .pcast-dk-beam-range{width:100%;accent-color:var(--brass);min-height:28px;cursor:pointer}
   .pcast-dk-beam-range:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
   .pcast-dk-beam-ticks{display:flex;justify-content:space-between}
-  .pcast-dk-tick{background:transparent;border:0;padding:2px 1px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:0;color:var(--faint);font:inherit}
-  .pcast-dk-tick b{font-weight:400;font-size:.72rem}
+  .pcast-dk-tick{background:transparent;border:0;padding:2px 1px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:0;color:var(--faint);font-family:var(--mono);font-size:.5rem;letter-spacing:.02em}
+  .pcast-dk-tick b{font-weight:400;font-size:.5rem}
   .pcast-dk-tick small{font-family:var(--mono);font-size:.44rem;letter-spacing:0}
   .pcast-dk-tick.is-on{color:var(--brass)}
   .pcast-dk-tick:hover{color:var(--moon)}
   .pcast-dk-tick:focus-visible{outline:2px solid var(--brass);outline-offset:2px;border-radius:var(--r-1)}
+  /* the current-hour line above the beam: mono, Gregorian time ivory, branch part brass */
+  .pcast-dk-beam-cur{font-family:var(--mono);font-size:.78rem;color:var(--ivory);line-height:1.3}
+  .pcast-dk-beam-cur b,.pcast-dk-beam-cur [lang="zh-Hant"]{font-weight:400;color:var(--brass)}
+  /* slim track, brass thumb (accent-color stays as the fallback) */
+  .pcast-dk-beam-range{-webkit-appearance:none;appearance:none;background:transparent}
+  .pcast-dk-beam-range::-webkit-slider-runnable-track{height:3px;border-radius:2px;background:color-mix(in oklab,var(--brass) 22%,var(--line))}
+  .pcast-dk-beam-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;margin-top:-5.5px;border-radius:50%;background:var(--brass);border:2px solid var(--ink);box-shadow:0 0 10px -2px var(--brass)}
+  .pcast-dk-beam-range::-moz-range-track{height:3px;border-radius:2px;background:color-mix(in oklab,var(--brass) 22%,var(--line))}
+  .pcast-dk-beam-range::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--brass);border:2px solid var(--ink);box-shadow:0 0 10px -2px var(--brass)}
   @media (max-width:640px){
     .pcast-dk-beam{flex-basis:100%;min-width:0}
+    /* 12 labels crowd a phone: keep every 4th, plus whichever is live */
+    .pcast-dk-tick{visibility:hidden}
+    .pcast-dk-tick:nth-child(4n+1),.pcast-dk-tick.is-on{visibility:visible}
     .pcast-dk-tick small{display:none}
     .pcast-dk-tick.is-on small{display:block}
   }
@@ -1052,12 +1065,12 @@
     .pcast-dock.has-chart .pcast-dk-zodi:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
   }
   /* ---- "Your chart / Worked example" source pills + your-chart annotations ---- */
-  .psa-src-toggle{display:flex;justify-content:flex-end;margin:0 0 10px}
+  /* restyled to the .zg-toggle language: small radius, glassy plate, brass-glow
+     active state (static thumb-free variant — the DOM comes from ziwei-study-chart.js) */
+  .psa-src-toggle{position:relative;display:flex;width:max-content;gap:2px;padding:3px;margin:0 0 10px auto;border-radius:var(--r-1);background:color-mix(in oklab,var(--panel) 80%,transparent);border:1px solid var(--line);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
   .psa-src-toggle[hidden]{display:none}
-  .psa-src-btn{background:transparent;border:1px solid var(--line);color:var(--muted);font:inherit;font-size:.72rem;padding:5px 12px;min-height:32px;cursor:pointer}
-  .psa-src-btn:first-child{border-radius:var(--r-pill) 0 0 var(--r-pill)}
-  .psa-src-btn:last-child{border-radius:0 var(--r-pill) var(--r-pill) 0;border-left:0}
-  .psa-src-btn.is-on{background:var(--brass);color:var(--ink);font-weight:600;border-color:var(--brass)}
+  .psa-src-btn{position:relative;z-index:1;background:transparent;border:0;border-radius:calc(var(--r-1) - 2px);color:var(--muted);font:inherit;font-size:.72rem;padding:5px 12px;min-height:32px;cursor:pointer;transition:color .15s}
+  .psa-src-btn.is-on{background:linear-gradient(160deg,color-mix(in oklab,var(--brass) 28%,var(--panel)),var(--panel));color:var(--ivory);font-weight:600;box-shadow:0 0 0 1px var(--brass),0 0 18px -6px var(--brass),inset 0 0 12px -8px var(--brass)}
   .psa-src-btn:not(.is-on):hover{color:var(--moon)}
   .psa-src-btn:focus-visible{outline:2px solid var(--cc);outline-offset:-2px}
   .psa-mychart{display:block;margin-top:3px;font-size:.7rem;color:var(--brass-dim);line-height:1.35}
@@ -1084,11 +1097,13 @@
     #pcast-result > .pcast-reading-cols{display:block}
     .pcast-reading-cols .pcast-col-board{position:static}
   }
-  /* ---- star legibility: hant stacked over a tiny pinyin line ---- */
-  .pcast-star{display:inline-flex;flex-direction:column;align-items:flex-start;line-height:1.15}
+  /* ---- star legibility: tiny pinyin line stacked over the hant ---- */
+  .pcast-star{position:relative;display:inline-flex;flex-direction:column;align-items:flex-start;line-height:1.15}
+  .pcast-star:hover,.pcast-star:focus-visible{z-index:6}
   .pcast-star-hant{font-weight:500;color:var(--ivory)}
-  .pcast-star-py{font-family:var(--mono);font-size:.56rem;color:var(--faint);letter-spacing:.02em}
-  .pcast-star-full{display:inline-flex;align-items:baseline;gap:6px;margin-right:10px}
+  .pcast-star-py{display:block;font-family:var(--mono);font-size:.54rem;color:var(--faint);letter-spacing:.03em}
+  .pcast-star-full{position:relative;display:inline-flex;align-items:baseline;gap:6px;margin-right:10px}
+  .pcast-star-full .pcast-star-py{font-size:.6rem}
   .pcast-star-en{font-size:.78rem;color:var(--muted)}
   /* ---- layout toggle with sublabels + the branch explainer note ---- */
   .pcast-lt-btn{display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:8px 14px}
@@ -1103,6 +1118,117 @@
   .psa-myseats-roll li b{color:var(--ivory);font-weight:400}
   .psa-myseats-roll li.is-life{border-left-color:var(--brass)}
   .psa-seat-empty{color:var(--faint);font-style:italic}
+  /* ============================================================
+     Round 3 — full-bleed reading, glow toggles, dock collapse,
+     five-element star colors + learn layer (styles the markup
+     contract emitted by js/ziwei/ziwei-cast-ui.js)
+  ============================================================ */
+  /* ---- five-element page tokens: none exist in tokens.css, so they live here.
+     Muted jewel tones tuned to the dark celestial base (OKLCH like the site ramps). ---- */
+  :root{
+    --st-wood:  oklch(0.74 0.12 160); /* jade green */
+    --st-fire:  oklch(0.72 0.14 33);  /* ember coral */
+    --st-earth: oklch(0.76 0.10 72);  /* amber ochre */
+    --st-metal: oklch(0.84 0.05 250); /* moon silver */
+    --st-water: oklch(0.66 0.10 218); /* deep aqua */
+  }
+  @supports not (color: oklch(0% 0 0)){
+    :root{--st-wood:#69c69a;--st-fire:#e0806a;--st-earth:#cfa46a;--st-metal:#b9c4da;--st-water:#5da3bd}
+  }
+  /* ---- 1. full-bleed reading: the board+rooms break out of the 1000px column ---- */
+  @media (min-width:1100px){
+    #pcast-result > .pcast-reading-cols.pcast-bleed{
+      width:min(96vw,1760px);
+      margin-left:calc(50% - min(48vw,880px));
+      grid-template-columns:minmax(500px,42%) 1fr;
+      gap:clamp(20px,3vw,44px);
+    }
+  }
+  @media (max-width:1099px){
+    #pcast-result > .pcast-reading-cols.pcast-bleed{width:auto;margin:0}
+  }
+  /* ---- 2. two-up rooms in the right column; the Life card spans both ---- */
+  .pcast-col-rooms .pcast-read-rooms{grid-template-columns:1fr}
+  @media (min-width:1280px){
+    .pcast-col-rooms .pcast-read-rooms{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .pcast-col-rooms .pcast-read-room.is-life{grid-column:1/-1}
+  }
+  /* ---- 3. glow toggle: glassy, angular, brass ring that walks the border ---- */
+  @property --zg-a{syntax:"<angle>";inherits:false;initial-value:0deg}
+  .zg-toggle{position:relative;display:inline-flex;gap:2px;padding:3px;border-radius:var(--r-1);background:color-mix(in oklab,var(--panel) 80%,transparent);border:1px solid var(--line);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  .zg-toggle::before{
+    content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;
+    /* without @property, --zg-a animates discretely between 0deg and 360deg — identical
+       angles, so the ring simply holds still: the static-gradient fallback for free */
+    background:conic-gradient(from var(--zg-a,0deg),transparent 0 70%,var(--brass) 82%,transparent 94%);
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+    animation:zgSpin 6s linear infinite;
+  }
+  @keyframes zgSpin{to{--zg-a:360deg}}
+  .zg-opt{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:8px 16px;background:transparent;border:0;color:var(--muted);font:inherit;cursor:pointer;transition:color .15s}
+  .zg-opt b{font-weight:500;font-size:.8rem;line-height:1.2}
+  .zg-opt small{font-family:var(--mono);font-size:.58rem;color:var(--faint);letter-spacing:.04em}
+  .zg-opt:focus-visible{outline:2px solid var(--brass);outline-offset:-2px;border-radius:calc(var(--r-1) - 2px)}
+  .zg-opt[aria-selected="true"]{color:var(--ivory)}
+  .zg-opt[aria-selected="true"] small{color:var(--brass)}
+  .zg-thumb{position:absolute;top:3px;bottom:3px;z-index:0;background:linear-gradient(160deg,color-mix(in oklab,var(--brass) 28%,var(--panel)),var(--panel));border:1px solid var(--brass);border-radius:calc(var(--r-1) - 2px);box-shadow:0 0 18px -6px var(--brass),inset 0 0 12px -8px var(--brass);transition:left .28s cubic-bezier(.5,1.4,.4,1),width .28s cubic-bezier(.5,1.4,.4,1)}
+  @media (prefers-reduced-motion: reduce){
+    .zg-toggle::before{animation:none}
+    .zg-thumb{transition:none}
+  }
+  /* ---- 5. dock collapse: one slim ~40px row, mini date line, chevron ghost button ---- */
+  .pcast-dk-mini{display:none;flex:1 1 auto;min-width:0;font-family:var(--mono);font-size:.78rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pcast-dk-mini b{font-weight:400;color:var(--brass)}
+  .pcast-dk-collapse{flex:none;width:32px;height:32px;margin-left:auto;display:grid;place-items:center;padding:0;background:transparent;border:1px solid var(--line-soft);border-radius:var(--r-1);color:var(--muted);cursor:pointer}
+  .pcast-dk-collapse:hover{border-color:var(--brass);color:var(--moon)}
+  .pcast-dk-collapse:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+  .pcast-dk-collapse > *{display:block;transition:transform .2s ease}
+  .pcast-dock:not(.is-collapsed) .pcast-dk-collapse > *{transform:rotate(180deg)}
+  .pcast-dock.is-collapsed .pcast-dock-chart > *:not(.pcast-dk-mini):not(.pcast-dk-collapse){display:none}
+  .pcast-dock.is-collapsed .pcast-dock-lesson{display:none}
+  .pcast-dock.is-collapsed .pcast-dk-mini{display:block}
+  .pcast-dock.is-collapsed .pcast-dock-inner{padding-top:5px;padding-bottom:calc(5px + env(safe-area-inset-bottom))}
+  .pcast-dock.is-collapsed .pcast-dock-chart{flex-wrap:nowrap;align-items:center;min-height:30px}
+  @media (prefers-reduced-motion: reduce){.pcast-dk-collapse > *{transition:none}}
+  /* ---- 6. star element colors + the learn layer (tooltip, legend) ---- */
+  .pcast-star[data-elem="wood"],.pcast-star-full[data-elem="wood"],.pcast-elem-legend [data-elem="wood"]{--st-c:var(--st-wood)}
+  .pcast-star[data-elem="fire"],.pcast-star-full[data-elem="fire"],.pcast-elem-legend [data-elem="fire"]{--st-c:var(--st-fire)}
+  .pcast-star[data-elem="earth"],.pcast-star-full[data-elem="earth"],.pcast-elem-legend [data-elem="earth"]{--st-c:var(--st-earth)}
+  .pcast-star[data-elem="metal"],.pcast-star-full[data-elem="metal"],.pcast-elem-legend [data-elem="metal"]{--st-c:var(--st-metal)}
+  .pcast-star[data-elem="water"],.pcast-star-full[data-elem="water"],.pcast-elem-legend [data-elem="water"]{--st-c:var(--st-water)}
+  .pcast-star[data-elem]:not([data-elem="none"]) .pcast-star-hant,
+  .pcast-star-full[data-elem]:not([data-elem="none"]) b{
+    color:var(--st-c,var(--ivory));
+    text-shadow:0 0 10px color-mix(in oklab,currentColor 25%,transparent);
+  }
+  .pcast-star[data-elem="none"] .pcast-star-hant,.pcast-star-full[data-elem="none"] b{color:var(--ivory)}
+  /* tooltip: literal + title, border tinted by the star's element */
+  .pcast-star-tip{
+    position:absolute;left:0;bottom:calc(100% + 6px);z-index:5;min-width:180px;max-width:240px;
+    padding:10px 12px;border-radius:var(--r-1);
+    color:var(--st-c,var(--ivory));
+    background:color-mix(in oklab,var(--ink-2) 94%,transparent);
+    border:1px solid color-mix(in oklab,currentColor 40%,var(--line));
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    box-shadow:0 10px 26px rgba(0,0,0,.45);
+    opacity:0;transform:translateY(4px);pointer-events:none;
+    transition:opacity .18s ease,transform .18s ease;
+  }
+  .pcast-star:hover .pcast-star-tip,
+  .pcast-star:focus-visible .pcast-star-tip,
+  .pcast-star:focus-within .pcast-star-tip,
+  .pcast-star-full:hover .pcast-star-tip{opacity:1;transform:translateY(0)}
+  .pcast-star-tip > *:first-child{display:block;font-family:var(--serif);font-style:italic;font-size:.78rem;line-height:1.4;color:var(--ivory)}
+  .pcast-star-tip > *:last-child:not(:first-child){display:block;margin-top:4px;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;font-style:normal;color:var(--muted)}
+  @media (prefers-reduced-motion: reduce){.pcast-star-tip{transition:none}}
+  /* legend: five swatch dots + a faint caption */
+  .pcast-elem-legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:10px 0 0;font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;color:var(--muted)}
+  .pcast-elem-legend span{display:inline-flex;align-items:center;gap:6px}
+  .pcast-elem-legend i{width:10px;height:10px;border-radius:50%;flex:none;background:var(--st-c,var(--faint));box-shadow:0 0 8px -2px var(--st-c,transparent)}
+  .pcast-elem-legend small{flex-basis:100%;font-size:.58rem;letter-spacing:.04em;color:var(--faint)}
   </style>
 
   <script type="application/ld+json">
@@ -2392,12 +2518,13 @@
     mySeatsBtn.type = "button"; mySeatsBtn.className = "psa-myseats-btn"; mySeatsBtn.hidden = true;
     mySeatsBtn.textContent = "Reset to my seats — all fourteen, as they sit in your chart";
     function starsYourMode() { return !!(myChart && starsToggle && starsToggle.mode() === "your"); }
-    function shortPal(p) { return esc(p.standard).replace(/\s+Palace$/, ""); }
+    /* seat-tags speak the reading's dialect: 奴僕宮 is "Friends" here, matching the cast reading */
+    function shortPal(p) { return esc(p.standard).replace(/\s+Palace$/, "").replace(/^Servants$/, "Friends"); }
     function mySeatNote(star) {
       if (!star || !starsYourMode() || !myMap[star.id]) return "";
       var mp = palaceById[myMap[star.id]];
       if (!mp) return "";
-      return '<p class="psa-yourline">In your chart, <span lang="zh-Hant">' + esc(star.hant) + '</span> sits in your <span lang="zh-Hant">' + esc(mp.hant) + '</span> ' + esc(mp.standard) + '.</p>';
+      return '<p class="psa-yourline">In your chart, <span lang="zh-Hant">' + esc(star.hant) + '</span> sits in your <span lang="zh-Hant">' + esc(mp.hant) + '</span> ' + esc(mp.standard).replace(/^Servants Palace$/, "Friends Palace") + '.</p>';
     }
     /* every tray chip wears its seat in YOUR chart: "in your 遷移宮 Travel" */
     function paintSeatTags() {
@@ -3765,6 +3892,18 @@
     var examOk = (PROG.raw().exams.readers.best || 0) >= 18;
     if (tbDone && examOk) PROG.completeLevel("L8");
   }
+})();
+</script>
+
+<script>
+/* Learning-track source toggles click like the glow toggles: same tick, one delegated
+   listener (the buttons are built by ziwei-study-chart.js; window.ZodiTick by cast-ui). */
+(function () {
+  "use strict";
+  document.addEventListener("click", function (e) {
+    var t = e.target && e.target.closest ? e.target.closest(".psa-src-btn") : null;
+    if (t && window.ZodiTick) { try { window.ZodiTick(); } catch (err) {} }
+  });
 })();
 </script>
 

@@ -4,9 +4,14 @@
    position depends on the hour) and only the hour-independent facts show.
    State lives in ZiweiStudyChart (one source of truth); this file renders the reading and owns
    the sticky bottom chart dock (#pcast-dock): date chip, birth-hour + timezone selects, a live
-   clock->branch conversion line, a twelve-stop hour beam (scrub across the branch hours and the
-   whole page re-casts), and the "Current lesson" slot the learning track's bottom bar mounts
-   into. Everything re-renders off "psa:studychart".
+   clock->branch conversion line, a collapsible dock (.pcast-dk-collapse / .pcast-dk-mini,
+   persisted via the studyChart pref "dockCollapsed"), a 24-hour Gregorian hour beam (scrub the
+   clock and the whole page re-casts; live readout pairs 12-hour time with the branch hour),
+   and the "Current lesson" slot the learning track's bottom bar mounts into.
+   Also ships two small shared APIs other scripts may reuse:
+     window.ZodiTick()  — one soft UI tick (lazy AudioContext, gesture-only, calm-mode aware)
+     window.zgToggle(cfg) — glowing segmented toggle with a sliding .zg-thumb
+   Everything re-renders off "psa:studychart".
    Plain browser JS, file://-safe, no modules. */
 (function () {
   "use strict";
@@ -53,23 +58,132 @@
     var BRANCH_PY = ["zǐ", "chǒu", "yín", "mǎo", "chén", "sì", "wǔ", "wèi", "shēn", "yǒu", "xū", "hài"];
     function h(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
     function starName(id) { var s = starById[id]; return s ? s.hant : (AUX_HANT[id] || id); }
-    /* every star a non-reader can actually read: hant + pinyin + editorial title */
+    /* the data stores elements as yin/yang pairs ("yin-earth", "yang-fire");
+       the board only colors by the bare element — strip the polarity */
+    function elemOf(e) { if (!e) return "none"; var p = String(e).split("-"); return p[p.length - 1] || "none"; }
+    /* every star a non-reader can actually read: hant + pinyin + literal + editorial title + element */
     function starMeta(id) {
       var s = starById[id];
-      if (s) return { hant: s.hant, py: s.pinyin || "", title: (s.editorial && s.editorial.title) || "" };
-      return { hant: AUX_HANT[id] || id, py: AUX_PY[id] || "", title: "" };
+      if (s) return { hant: s.hant, py: s.pinyin || "", title: (s.editorial && s.editorial.title) || "", literal: s.literal || "", elem: elemOf(s.element) };
+      return { hant: AUX_HANT[id] || id, py: AUX_PY[id] || "", title: "", literal: "", elem: "none" };
     }
-    /* one star as "天府 Tiānfǔ · The Treasury Star" — hant in <b>, latin in a <span>; hua badge kept */
-    function starFullEl(st) {
+    /* speak a star's name — never autoplays, only ever called from a tap or key press.
+       ZiweiData.speak knows the 14 principal stars; aux stars fall through to the
+       site-wide zaSpeak voice when a page ships it. */
+    function speakStar(id, hant) {
+      try {
+        var ok = (window.ZiweiData && typeof window.ZiweiData.speak === "function") ? window.ZiweiData.speak(id) : false;
+        if (!ok && !window.ZIWEI_SOUND_OPTOUT && typeof window.zaSpeak === "function") window.zaSpeak(hant);
+      } catch (err) {}
+    }
+    /* one star chip, shared by board cells (.pcast-star) and reading lines (.pcast-star-full):
+       pinyin on top so the latin reader lands first, hant beneath, data-elem for element color,
+       a literal-translation tooltip (.pcast-star-tip, shown by CSS on hover/focus), and
+       tap-to-pronounce. full=true adds the editorial title inline (.pcast-star-en). */
+    function starEl(st, full) {
       var m = starMeta(st.id);
-      var el = h("span", "pcast-star-full");
+      var el = h("span", full ? "pcast-star-full" : "pcast-star");
+      el.setAttribute("data-elem", m.elem);
+      el.setAttribute("tabindex", "0");
+      el.setAttribute("role", "button");
+      el.setAttribute("aria-label", (m.py ? m.py + " " : "") + m.hant + (m.literal ? " — " + m.literal : "") + " · tap to hear it spoken");
+      if (m.py) el.appendChild(h("small", "pcast-star-py", m.py));
       var hant = h("b", "pcast-star-hant", m.hant);
       if (st.hua) hant.appendChild(h("sup", "pcast-hua pcast-hua-" + st.hua, HUA_LABEL[st.hua]));
       el.appendChild(hant);
-      var en = [m.py, m.title].filter(Boolean).join(" · ");
-      if (en) el.appendChild(h("span", "pcast-star-en", en));
+      if (full && m.title) el.appendChild(h("span", "pcast-star-en", m.title));
+      if (m.literal || m.title) {
+        var tip = h("span", "pcast-star-tip");
+        if (m.literal) tip.appendChild(h("span", "pcast-star-tip-lit", m.literal));
+        if (m.title) tip.appendChild(h("span", "pcast-star-tip-title", m.title));
+        el.appendChild(tip);
+      }
+      /* pronounce on the star itself; stop only this tap from bubbling into the cell's court-select */
+      el.addEventListener("click", function (e) { e.stopPropagation(); speakStar(st.id, m.hant); });
+      el.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.stopPropagation(); speakStar(st.id, m.hant); } });
       return el;
     }
+    function starFullEl(st) { return starEl(st, true); }
+
+    /* ---- ZodiTick: the site's one soft UI tick. Lazy AudioContext (created on the first
+       user gesture that asks for it), a ~35ms triangle blip 1400→900Hz, gain peaking ~0.05,
+       hard stop. Never autoplays; silent entirely in calm mode (prefers-reduced-motion). ---- */
+    if (!window.ZodiTick) {
+      window.ZodiTick = (function () {
+        var ctx = null;
+        return function () {
+          try {
+            if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+            var AC = window.AudioContext || window.webkitAudioContext;
+            if (!AC) return;
+            if (!ctx) ctx = new AC();
+            if (ctx.state === "suspended" && ctx.resume) ctx.resume();
+            var t = ctx.currentTime;
+            var osc = ctx.createOscillator(), g = ctx.createGain();
+            osc.type = "triangle";
+            osc.frequency.setValueAtTime(1400, t);
+            osc.frequency.exponentialRampToValueAtTime(900, t + 0.035);
+            g.gain.setValueAtTime(0.0001, t);
+            g.gain.exponentialRampToValueAtTime(0.05, t + 0.008);
+            g.gain.exponentialRampToValueAtTime(0.0001, t + 0.035);
+            osc.connect(g); g.connect(ctx.destination);
+            osc.start(t); osc.stop(t + 0.04);
+          } catch (err) {}
+        };
+      })();
+    }
+
+    /* ---- zgToggle: the glowing segmented toggle.
+       cfg = { ariaLabel, value, options: [{ value, label, sub }], onChange(value) }
+       Returns { el, set(value), value(), remeasure() }.
+       Markup: .zg-toggle[role=tablist] > .zg-thumb + .zg-opt[role=tab]×n, each option
+       <b>label</b><small>sublabel</small>. The absolutely-positioned .zg-thumb slides to
+       the active option (left/width from offset measurement, re-measured on resize).
+       Switching plays ZodiTick. Shared as window.zgToggle for other panels. ---- */
+    function zgToggle(cfg) {
+      var wrap = h("div", "zg-toggle");
+      wrap.setAttribute("role", "tablist");
+      if (cfg.ariaLabel) wrap.setAttribute("aria-label", cfg.ariaLabel);
+      var thumb = h("span", "zg-thumb");
+      thumb.setAttribute("aria-hidden", "true");
+      wrap.appendChild(thumb);
+      var cur = cfg.value, btns = [];
+      (cfg.options || []).forEach(function (o) {
+        var b = h("button", "zg-opt"); b.type = "button";
+        b.setAttribute("role", "tab");
+        b.setAttribute("data-value", String(o.value));
+        b.appendChild(h("b", null, o.label));
+        if (o.sub) b.appendChild(h("small", null, o.sub));
+        b.addEventListener("click", function () {
+          if (cur === o.value) return;
+          set(o.value);
+          try { window.ZodiTick(); } catch (err) {}
+          if (cfg.onChange) cfg.onChange(o.value);
+        });
+        wrap.appendChild(b); btns.push(b);
+      });
+      function paint() {
+        var active = null;
+        btns.forEach(function (b) {
+          var on = b.getAttribute("data-value") === String(cur);
+          b.classList.toggle("is-on", on);
+          b.setAttribute("aria-selected", on ? "true" : "false");
+          b.tabIndex = on ? 0 : -1;
+          if (on) active = b;
+        });
+        if (active && active.offsetWidth) {
+          thumb.style.left = active.offsetLeft + "px";
+          thumb.style.width = active.offsetWidth + "px";
+        }
+      }
+      function set(v) { cur = v; paint(); }
+      function onResize() { if (!wrap.isConnected) { window.removeEventListener("resize", onResize); return; } paint(); }
+      window.addEventListener("resize", onResize);
+      /* offsets are 0 until the node joins the document — measure again on the next frame */
+      if (window.requestAnimationFrame) window.requestAnimationFrame(paint); else window.setTimeout(paint, 0);
+      return { el: wrap, set: set, value: function () { return cur; }, remeasure: paint };
+    }
+    window.zgToggle = zgToggle;
 
     /* ---- build the form controls ---- */
     var TZ = [
@@ -261,6 +375,25 @@
       var a = Math.abs(off), hh = Math.floor(a), mm = Math.round((a - hh) * 60);
       return "UTC" + sign + hh + (mm ? ":" + (mm < 10 ? "0" + mm : mm) : "");
     }
+    /* friendly timezone name for the beam label — the option text when we know it, UTC math when we don't */
+    function tzName(off) {
+      if (off == null || isNaN(off)) return "";
+      var key = String(off);
+      for (var i = 1; i < TZ.length; i++) { if (TZ[i][0] === key) return TZ[i][1]; }
+      return tzLabel(off);
+    }
+    function clock12(hour, minute) {
+      var m = (minute == null) ? 0 : minute;
+      var ap = hour < 12 ? "AM" : "PM";
+      var h12 = hour % 12; if (h12 === 0) h12 = 12;
+      return h12 + ":" + pad(m) + " " + ap;
+    }
+    /* the beam's live readout: 12-hour clock + branch hour, e.g. "4:00 PM · 申時 15–17" */
+    function beamCurLine(hour, minute) {
+      if (hour == null) return "";
+      var bi = branchOf(hour);
+      return clock12(hour, minute) + " · " + HOURS[bi] + "時 " + HOUR_RANGE[bi];
+    }
     function convLine(birth) {
       if (birth.hour == null) return "Pick an hour to unlock the full court — try your best guesses.";
       var bi = branchOf(birth.hour);
@@ -278,6 +411,13 @@
       var dock = document.getElementById("pcast-dock");
       if (!dock) { dock = h("div", "pcast-dock"); dock.id = "pcast-dock"; document.body.appendChild(dock); }
       var inner = h("div", "pcast-dock-inner");
+
+      /* collapsed summary strip — Worker B's CSS shows it only while the dock
+         carries .is-collapsed and hides everything else */
+      var mini = h("div", "pcast-dk-mini");
+      var miniTxt = h("span", "pcast-dk-mini-txt", "");
+      mini.appendChild(miniTxt);
+      inner.appendChild(mini);
 
       var chartRow = h("div", "pcast-dock-chart");
       chartRow.setAttribute("data-dock-chart", "");
@@ -314,27 +454,33 @@
       var conv = h("p", "pcast-dk-conv", ""); conv.id = "pcast-dk-conv";
       chartRow.appendChild(conv);
 
-      /* the hour beam: a twelve-stop scrubber over the Earthly Branch hours.
-         Slide the range (or tap a tick) -> ZiweiStudyChart.setHour(branch*2) ->
-         the whole page re-casts through psa:studychart. #pcast-dk-conv is the readout. */
+      /* the hour beam: a 24-hour Gregorian scrubber, birthplace-local in the selected
+         birth timezone. Slide the range (or tap an even-hour tick) ->
+         ZiweiStudyChart.setHour(hour) -> the whole page re-casts through psa:studychart.
+         The live readout pairs the 12-hour clock with the branch hour so the two clocks
+         teach each other; #pcast-dk-conv stays the precise conversion line. */
       var beam = h("div", "pcast-dk-beam");
-      beam.appendChild(h("span", "pcast-dk-beam-lab", "Slide the birth hour"));
+      var beamLab = h("span", "pcast-dk-beam-lab", "Slide the birth hour");
+      beam.appendChild(beamLab);
+      var beamCur = h("span", "pcast-dk-beam-cur", "");
+      beam.appendChild(beamCur);
       var beamRange = document.createElement("input");
       beamRange.type = "range";
       beamRange.className = "pcast-dk-beam-range";
-      beamRange.min = "0"; beamRange.max = "11"; beamRange.step = "1"; beamRange.value = "6";
-      beamRange.setAttribute("aria-label", "Birth hour — twelve two-hour branches");
+      beamRange.min = "0"; beamRange.max = "23"; beamRange.step = "1"; beamRange.value = "12";
+      beamRange.setAttribute("aria-label", "Birth hour — 24 clock hours, birthplace-local");
       beam.appendChild(beamRange);
       var beamTicks = h("div", "pcast-dk-beam-ticks");
       var tickEls = [];
       for (var ti = 0; ti < 12; ti++) {
         (function (idx) {
+          var hr = idx * 2;
+          var lab = hr === 0 ? "12AM" : (hr === 12 ? "12PM" : String(hr % 12));
           var tick = h("button", "pcast-dk-tick");
           tick.type = "button";
-          tick.setAttribute("aria-label", HOURS[idx] + "時 · " + HOUR_RANGE[idx]);
-          tick.appendChild(h("b", null, HOURS[idx]));
-          tick.appendChild(h("small", null, HOUR_RANGE[idx]));
-          tick.addEventListener("click", function () { beamPick(idx); });
+          tick.setAttribute("aria-label", clock12(hr, 0) + " · " + HOURS[branchOf(hr)] + "時 " + HOUR_RANGE[branchOf(hr)]);
+          tick.appendChild(h("b", null, lab));
+          tick.addEventListener("click", function () { if (SC && lastBirth) SC.setHour(hr); });
           beamTicks.appendChild(tick);
           tickEls.push(tick);
         })(ti);
@@ -366,17 +512,16 @@
         var hour = hourSel.value === "" ? null : +hourSel.value;
         SC.setHour(hour);
       });
-      /* representative clock hour for branch i is i*2 (branchOf(i*2) === i);
-         setHour clears minutes, so the conv line reads as the branch itself */
-      function beamPick(idx) {
-        if (!SC || !lastBirth) return;
-        SC.setHour(idx * 2);
-      }
+      /* scrub -> instant local readout, throttled re-cast (~120ms) */
       var beamTimer = null;
       beamRange.addEventListener("input", function () {
-        var idx = +beamRange.value;
+        var hr = +beamRange.value;
+        beamCur.textContent = beamCurLine(hr, null);
         if (beamTimer) window.clearTimeout(beamTimer);
-        beamTimer = window.setTimeout(function () { beamTimer = null; beamPick(idx); }, 150);
+        beamTimer = window.setTimeout(function () {
+          beamTimer = null;
+          if (SC && lastBirth) SC.setHour(hr);
+        }, 120);
       });
       tzSel.addEventListener("change", function () {
         if (!SC || !lastBirth) return;
@@ -392,7 +537,33 @@
       window.addEventListener("resize", padBody);
       if (window.ResizeObserver) { try { new ResizeObserver(padBody).observe(dock); } catch (err) {} }
 
-      dockEls = { dock: dock, chartRow: chartRow, dateEl: dateEl, hourSel: hourSel, tzSel: tzSel, conv: conv, beamRange: beamRange, tickEls: tickEls, lessonSlot: lessonSlot, padBody: padBody };
+      /* collapse chevron at the dock's right edge — Jay wants to see the whole board.
+         Collapsed state persists as the studyChart pref "dockCollapsed". */
+      var collapseBtn = h("button", "pcast-dk-collapse");
+      collapseBtn.type = "button";
+      collapseBtn.textContent = "▾";
+      collapseBtn.setAttribute("aria-expanded", "true");
+      collapseBtn.setAttribute("aria-label", "Collapse the chart dock");
+      function setCollapsed(on, persist) {
+        on = !!on;
+        dock.classList.toggle("is-collapsed", on);
+        collapseBtn.textContent = on ? "▴" : "▾";
+        collapseBtn.setAttribute("aria-expanded", on ? "false" : "true");
+        collapseBtn.setAttribute("aria-label", on ? "Expand the chart dock" : "Collapse the chart dock");
+        if (persist && SC) { try { SC.setPref("dockCollapsed", on); } catch (err) {} }
+        padBody();
+      }
+      collapseBtn.addEventListener("click", function () {
+        setCollapsed(!dock.classList.contains("is-collapsed"), true);
+        try { window.ZodiTick(); } catch (err) {}
+      });
+      inner.appendChild(collapseBtn);
+      /* tapping the collapsed summary opens the dock back up too */
+      mini.addEventListener("click", function () { if (dock.classList.contains("is-collapsed")) setCollapsed(false, true); });
+
+      dockEls = { dock: dock, chartRow: chartRow, dateEl: dateEl, hourSel: hourSel, tzSel: tzSel, conv: conv, beamRange: beamRange, beamLab: beamLab, beamCur: beamCur, tickEls: tickEls, miniTxt: miniTxt, setCollapsed: setCollapsed, lessonSlot: lessonSlot, padBody: padBody };
+      /* restore the visitor's last collapse choice */
+      if (SC) { try { if (SC.getPref("dockCollapsed")) setCollapsed(true, false); } catch (err) {} }
       return dockEls;
     }
 
@@ -415,15 +586,23 @@
       els.tzSel.value = tzWant;
       if (els.tzSel.value !== tzWant) els.tzSel.value = "auto";
       els.conv.textContent = convLine(birth);
-      /* sync the hour beam: known hour lights its branch tick; unknown hour parks the
-         thumb mid-beam with every tick unlit — the first slide sets the hour */
-      var beamIdx = (curIdx < 0) ? 6 : curIdx;
-      if (+els.beamRange.value !== beamIdx) els.beamRange.value = String(beamIdx);
+      /* the beam is birthplace-local — say which timezone it's reading in */
+      var tzn = tzName(birth.tzOffset);
+      els.beamLab.textContent = "Slide the birth hour" + (tzn ? " · " + tzn : "");
+      els.beamCur.textContent = beamCurLine(birth.hour, birth.minute);
+      /* sync the 24-hour beam: known hour lights the nearest even-hour tick; unknown hour
+         parks the thumb at noon with nothing lit — the first slide sets the hour for real */
+      var beamVal = (birth.hour == null) ? 12 : birth.hour;
+      if (+els.beamRange.value !== beamVal) els.beamRange.value = String(beamVal);
+      var evenHour = (birth.hour == null) ? -1 : (Math.round(birth.hour / 2) * 2) % 24;
       els.tickEls.forEach(function (tk, i) {
-        var on = i === curIdx;
+        var on = (i * 2) === evenHour;
         tk.classList.toggle("is-on", on);
         tk.setAttribute("aria-pressed", on ? "true" : "false");
       });
+      /* collapsed summary: YOUR CHART · date · branch · clock */
+      els.miniTxt.textContent = "YOUR CHART · " + pad(birth.month) + "/" + pad(birth.day) + "/" + birth.year
+        + (birth.hour == null ? "" : " · " + HOURS[branchOf(birth.hour)] + "時 · " + clock12(birth.hour, birth.minute));
       els.padBody();
     }
 
@@ -446,17 +625,24 @@
         result.appendChild(boardEl(null));
       } else {
         /* two columns: the board (what you see) left, the room-by-room reading
-           (what it means) right — scrub the hour beam and watch both change */
-        var cols = h("div", "pcast-reading-cols");
+           (what it means) right — scrub the hour beam and watch both change.
+           .pcast-bleed lets Worker B's CSS break the pair out to ~96vw. */
+        var cols = h("div", "pcast-reading-cols pcast-bleed");
         var colBoard = h("div", "pcast-col-board");
         var colRooms = h("div", "pcast-col-rooms");
         colBoard.appendChild(summaryChips(out.chart));
         colBoard.appendChild(layoutToggle());
-        colBoard.appendChild(h("p", "pcast-branch-note", "The small glyph in each room's corner is its Earthly Branch 地支 — one of twelve fixed seats of the court (子, 丑, 寅 …). Your stars move from chart to chart; the twelve seats never do. Beginner view pins your Life room top-left; Traditional view seats every room at its fixed branch."));
+        colBoard.appendChild(h("p", "pcast-branch-note", "The small glyph in each room's corner is its Earthly Branch 地支 — one of twelve fixed seats of the court (子, 丑, 寅 …). Your stars move from chart to chart; the twelve seats never do. Beginner view pins your Life room top-left; Advanced view seats every room at its true branch seat."));
         colBoard.appendChild(boardEl(out.chart));
         colBoard.appendChild(h("p", "pcast-court-hint", "Tap a room to light its triangle and mirror across your court."));
         var cap = h("p", "pcast-court-cap"); cap.id = "pcast-court-cap"; colBoard.appendChild(cap);
+        /* what "triangle" and "mirror" even mean — rendered once, always visible under the cap */
+        var explain = h("div", "pcast-court-explain");
+        explain.innerHTML = "<p><b>Triangle 三方</b> — every room is read with two partners that always answer it; the three light up together and are read as one sentence, never alone.</p>"
+          + "<p><b>Mirror 對宮</b> — the room straight across the court: its strongest single companion. What the mirror holds leans into this room, especially when the room itself is empty.</p>";
+        colBoard.appendChild(explain);
         colBoard.appendChild(legendEl());
+        colBoard.appendChild(elemLegendEl());
         colRooms.appendChild(readingEl(out.chart, yp));
         cols.appendChild(colBoard);
         cols.appendChild(colRooms);
@@ -478,17 +664,15 @@
     function chip(wrap, k, v) { var c = h("div", "pcast-chip"); c.appendChild(h("span", "pcast-chip-k", k)); c.appendChild(h("span", "pcast-chip-v", v)); wrap.appendChild(c); }
 
     function layoutToggle() {
-      var wrap = h("div", "pcast-lt");
-      wrap.setAttribute("role", "group"); wrap.setAttribute("aria-label", "Board layout");
-      [["palace", "Beginner", "Life pinned top-left"], ["branch", "Traditional 地支", "rooms at their fixed branches"]].forEach(function (m) {
-        var b = h("button", "pcast-lt-btn" + (boardMode === m[0] ? " is-on" : "")); b.type = "button";
-        b.setAttribute("aria-pressed", boardMode === m[0] ? "true" : "false");
-        b.appendChild(h("b", null, m[1]));
-        b.appendChild(h("small", null, m[2]));
-        b.addEventListener("click", function () { if (boardMode !== m[0]) { boardMode = m[0]; renderResult(lastOut, lastBirth); } });
-        wrap.appendChild(b);
-      });
-      return wrap;
+      return zgToggle({
+        ariaLabel: "Board layout",
+        value: boardMode,
+        options: [
+          { value: "palace", label: "Beginner", sub: "Life pinned top-left" },
+          { value: "branch", label: "Advanced 地支", sub: "every room at its true seat" }
+        ],
+        onChange: function (v) { boardMode = v; renderResult(lastOut, lastBirth); }
+      }).el;
     }
     var GRID_ORDER = [0, 1, 2, 3, 7, 11, 15, 14, 13, 12, 8, 4]; // matches the teaching court's palace-fixed layout (Life top-left)
     function boardEl(chart) {
@@ -518,15 +702,7 @@
         cell.appendChild(brEl);
         cell.appendChild(h("span", "pcast-cell-role", pal.hant + " " + (PAL_EN[pal.id] || "")));
         var sw = h("div", "pcast-cell-stars");
-        (pc.stars || []).forEach(function (st) {
-          var m = starMeta(st.id);
-          var se = h("span", "pcast-star");
-          var hant = h("b", "pcast-star-hant", m.hant);
-          if (st.hua) hant.appendChild(h("sup", "pcast-hua pcast-hua-" + st.hua, HUA_LABEL[st.hua]));
-          se.appendChild(hant);
-          if (m.py) se.appendChild(h("small", "pcast-star-py", m.py));
-          sw.appendChild(se);
-        });
+        (pc.stars || []).forEach(function (st) { sw.appendChild(starEl(st, false)); });
         cell.appendChild(sw);
         if (pc.isBody) cell.appendChild(h("span", "pcast-cell-body", "身"));
         board.appendChild(cell);
@@ -560,6 +736,20 @@
       l.innerHTML = '<span><b class="pcast-hua-lu">祿</b> Flow</span><span><b class="pcast-hua-quan">權</b> Power</span><span><b class="pcast-hua-ke">科</b> Shine</span><span><b class="pcast-hua-ji">忌</b> Hook</span><span><b>身</b> Body Palace</span>';
       return l;
     }
+    /* the five-element swatch row — Worker B colors each <i> by its data-elem */
+    function elemLegendEl() {
+      var l = h("div", "pcast-elem-legend");
+      [["wood", "Wood 木"], ["fire", "Fire 火"], ["earth", "Earth 土"], ["metal", "Metal 金"], ["water", "Water 水"]].forEach(function (e) {
+        var s = h("span");
+        var sw = document.createElement("i");
+        sw.setAttribute("data-elem", e[0]);
+        s.appendChild(sw);
+        s.appendChild(document.createTextNode(e[1]));
+        l.appendChild(s);
+      });
+      l.appendChild(h("span", "pcast-elem-legend-cap", "star colors follow the star's element"));
+      return l;
+    }
 
     /* ---- the personalized reading ---- */
     var FORCE_MEAN = {
@@ -583,7 +773,16 @@
       if (mir && courtCells[mir]) courtCells[mir].classList.add("is-mirror");
       if (courtRooms[pid]) courtRooms[pid].classList.add("is-hi");
       var cap = document.getElementById("pcast-court-cap");
-      if (cap) cap.innerHTML = "<b>" + palLabel(pid) + "</b> \u00b7 triangle: " + (tri.map(palLabel).join(" & ") || "\u2014") + " \u00b7 mirror: " + (mir ? palLabel(mir) : "\u2014");
+      if (cap) {
+        /* the technical line, then the same thing in plain speech \u2014
+           "Your Wealth is read with Career and Life beside it, and Fortune across from it." */
+        var triPlain = tri.map(function (t) { return PAL_EN[t] || t; });
+        var live = "Your " + (PAL_EN[pid] || pid) + " is read with "
+          + (triPlain.length ? triPlain.join(" and ") + " beside it" : "its court beside it")
+          + (mir ? ", and " + (PAL_EN[mir] || mir) + " across from it." : ".");
+        cap.innerHTML = "<b>" + palLabel(pid) + "</b> \u00b7 triangle: " + (tri.map(palLabel).join(" & ") || "\u2014") + " \u00b7 mirror: " + (mir ? palLabel(mir) : "\u2014")
+          + '<span class="pcast-court-cap-live">' + live + "</span>";
+      }
     }
 
     function readingEl(chart, yp) {
@@ -608,7 +807,7 @@
         lifeB.appendChild(h("p", "pcast-read-p", starById[lp].placements["ming-gong"].beginner));
       } else {
         var opp = palById["ming-gong"].oppositeId;
-        lifeB.appendChild(h("p", "pcast-read-p", "Your Life Palace holds no principal star, so it takes its tone from the room across the court — the " + palLabel(opp) + " Palace. Read the two together."));
+        lifeB.appendChild(h("p", "pcast-read-p", "Your Life Palace holds no principal star — and that is not a lack. Somewhere between four and six of the twelve rooms sit empty in almost every chart ever cast. An empty Life room is read as open: you take your tone from the room straight across the court — your " + palLabel(opp) + " Palace — and many readers treat this as a life that writes itself through where you go, not what you were handed. Read the two rooms as one sentence."));
       }
       wrap.appendChild(lifeB);
 
@@ -656,7 +855,7 @@
         if (prim && starById[prim].placements && starById[prim].placements[pal.id]) {
           room.appendChild(h("p", "pcast-read-room-p", starById[prim].placements[pal.id].beginner));
         } else if (pal.oppositeId) {
-          room.appendChild(h("p", "pcast-read-room-p pcast-muted", "Empty of principal stars — read it through its opposite, the " + (PAL_EN[pal.oppositeId] || "opposite") + " Palace."));
+          room.appendChild(h("p", "pcast-read-room-p pcast-muted", "No principal star seats here — normal in every chart. The room borrows its voice from the " + (PAL_EN[pal.oppositeId] || "opposite") + " Palace across the court; read that room to hear this one."));
         }
         rooms.appendChild(room);
       });
