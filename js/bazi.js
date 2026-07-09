@@ -40,10 +40,99 @@
     return { branch: branch, yr: y };
   }
   // near a solar-term boundary? (within 1 day) -> flag provisional
+  // ONLY used as the fallback path when window.SajuAstro is unavailable.
   function nearBoundary(m, d) {
     var b = [[2, 4], [3, 6], [4, 5], [5, 6], [6, 6], [7, 7], [8, 8], [9, 8], [10, 8], [11, 7], [12, 7], [1, 6]];
     for (var i = 0; i < b.length; i++) { if (b[i][0] === m && Math.abs(b[i][1] - d) <= 1) return true; }
     return false;
+  }
+  // ---- real solar terms (window.SajuAstro) with graceful fallback ----
+  // The 12 "jie" (節) that open each solar month, keyed by ecliptic longitude.
+  var JIE = {
+    315: ["立春", "Start of Spring"], 345: ["驚蟄", "Awakening of Insects"],
+    15: ["清明", "Pure Brightness"], 45: ["立夏", "Start of Summer"],
+    75: ["芒種", "Grain in Ear"], 105: ["小暑", "Minor Heat"],
+    135: ["立秋", "Start of Autumn"], 165: ["白露", "White Dew"],
+    195: ["寒露", "Cold Dew"], 225: ["立冬", "Start of Winter"],
+    255: ["大雪", "Major Snow"], 285: ["小寒", "Minor Cold"]
+  };
+  var MON3 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  function pillarStr(yr) { return STEMS[mod(yr - 4, 10)] + BRANCHES[mod(yr - 4, 12)]; }
+  function fmtInstant(A, jd, offH) {
+    var k = A.jdToUTC(jd + offH / 24);
+    var h = k.hour, ap = h < 12 ? "am" : "pm", h12 = (h % 12) || 12;
+    return MON3[k.month - 1] + " " + k.day + ", " + h12 + ":" + (k.minute < 10 ? "0" + k.minute : k.minute) + " " + ap;
+  }
+  /* Assign the BaZi YEAR and MONTH branch from REAL solar-term instants, using
+     the birth date and, when known, the birth time + longitude/UTC. Mirrors the
+     conventions in site/js/saju/saju-engine.js (立春 = 315° year boundary; the
+     month branch is the 30°-wide solar-term segment) so the two engines never
+     disagree. Self-contained + dependency-injected via window.SajuAstro so the
+     agreement harness can lift it verbatim. Falls back to the date table when
+     the ephemeris helper is absent — bazi.js must never throw for a missing
+     script. Returns pillar-relevant INDICES plus a raw `boundary` object for the
+     honesty layer (text is built by the caller). */
+  function termAssign(o) {
+    var A = window.SajuAstro;
+    if (!A || typeof A.solarTermJD !== "function") {
+      var sm = solarMonth(o.year, o.month, o.day);
+      return { yr: sm.yr, branch: sm.branch, precise: false, nearFallback: nearBoundary(o.month, o.day), boundary: null };
+    }
+    var y = o.year, m = o.month, d = o.day;
+    var timeKnown = !!(o.known && o.hour != null);
+    var clockMin = timeKnown ? (o.hour * 60 + (o.minute || 0)) : 720; // date-only births sample local noon
+    var offH = (o.utc != null) ? o.utc : 9;                            // reference zone when UTC unknown
+    var jd = A.julianDayUTC(y, m, d, 0) + (clockMin - offH * 60) / 1440; // birth instant in UT
+    var sunLong = A.sunApparentLongitude(jd);
+    function termNear(lon) {
+      var best = null, bg = Infinity;
+      [y - 1, y, y + 1].forEach(function (yy) { var t = A.solarTermJD(yy, lon), g = Math.abs(t - jd); if (g < bg) { bg = g; best = t; } });
+      return best;
+    }
+    // YEAR pillar — 立春 (315°) of THIS calendar year is the sole boundary.
+    var ipchun = A.solarTermJD(y, 315);
+    var yr = (jd < ipchun) ? y - 1 : y;
+    // MONTH branch — the 30° solar-term segment the sun sits in (315° => 寅, index 2).
+    var seg = Math.floor((((sunLong - 315) % 360) + 360) % 360 / 30);
+    var branch = (((2 + seg) % 12) + 12) % 12;
+    // Honesty layer — the nearest jie boundary and whether the birth is ambiguous.
+    var monthLon = ((315 + seg * 30) % 360 + 360) % 360;
+    var openTerm = termNear(monthLon);
+    var nextLon = (monthLon + 30) % 360;
+    var nextTerm = termNear(nextLon);
+    var nearOpen = (jd - openTerm) <= (nextTerm - jd);
+    var nearLon = nearOpen ? monthLon : nextLon;
+    var nearTerm = nearOpen ? openTerm : nextTerm;
+    var offsetMin = Math.round((jd - nearTerm) * 1440); // signed: + after the term
+    var ambiguous;
+    if (timeKnown) { ambiguous = Math.abs(offsetMin) < 20; }
+    else { var tl = A.jdToUTC(nearTerm + offH / 24); ambiguous = (tl.year === y && tl.month === m && tl.day === d); }
+    var boundary = null;
+    if (ambiguous) {
+      var isYear = (nearLon === 315);
+      var altYr = isYear ? (yr === y ? y - 1 : y) : yr;
+      var altBranch = isYear ? (nearOpen ? 1 : 2) : (nearOpen ? (((branch - 1) % 12) + 12) % 12 : (branch + 1) % 12);
+      boundary = { kind: isYear ? "year" : "month", longitude: nearLon, instantJD: nearTerm,
+        offsetMin: offsetMin, timeKnown: timeKnown, offH: offH,
+        yr: yr, branch: branch, altYr: altYr, altBranch: altBranch };
+    }
+    return { yr: yr, branch: branch, precise: true, boundary: boundary };
+  }
+  function boundaryNote(A, bd) {
+    var jn = JIE[bd.longitude] || ["the season boundary", ""], term = jn[0], termEn = jn[1];
+    var which = bd.kind === "year" ? "year and month pillars" : "month pillar";
+    var alt = bd.kind === "year"
+      ? (pillarStr(bd.altYr) + " year with a " + BRANCHES[bd.altBranch] + " month")
+      : ("a " + BRANCHES[bd.altBranch] + " month");
+    if (bd.timeKnown) {
+      var mins = Math.abs(bd.offsetMin), rel = bd.offsetMin >= 0 ? "after" : "before";
+      return "You were born " + mins + " minute" + (mins === 1 ? "" : "s") + " " + rel + " " + term + " (" + termEn + ", " +
+        fmtInstant(A, bd.instantJD, bd.offH) + "). That close to the turn, your " + which + " could go either way. The other reading is " +
+        alt + " — if your recorded time is even slightly off, confirm the exact minute.";
+    }
+    return "Your birth date is the day of " + term + " (" + termEn + ", " + fmtInstant(A, bd.instantJD, bd.offH) +
+      "), the moment the season turns. Without your birth time your " + which + " could be this chart or " + alt +
+      ". Add your exact time to settle which.";
   }
   // birthplace table: [name, longitude east+, standard UTC offset hours]
   var CITIES = [
@@ -75,13 +164,13 @@
   }
   function castChart(o) {
     var y = o.year, m = o.month, d = o.day;
-    var sm = solarMonth(y, m, d);
-    var yStem = mod(sm.yr - 4, 10), yBr = mod(sm.yr - 4, 12);
-    var mBr = sm.branch;
+    var t = termAssign(o);
+    var yStem = mod(t.yr - 4, 10), yBr = mod(t.yr - 4, 12);
+    var mBr = t.branch;
     var mStem = mod((yStem % 5) * 2 + 2 + mod(mBr - 2, 12), 10);
     var dIdx = mod(jdn(y, m, d) - 2451545 + 54, 60);
     var dStem = dIdx % 10, dBr = dIdx % 12;
-    var out = { dayStem: STEMS[dStem], dayStemIdx: dStem, notes: [] };
+    var out = { dayStem: STEMS[dStem], dayStemIdx: dStem, notes: [], boundary: null };
     out.pillars = [
       { label: "Year", sub: "ancestry, early life", stem: STEMS[yStem], branch: BRANCHES[yBr] },
       { label: "Month", sub: "upbringing, the season", stem: STEMS[mStem], branch: BRANCHES[mBr] },
@@ -101,7 +190,20 @@
         hourBranch: BRANCHES[hBr], crossed: hBr !== clockBr, near: nearHr };
       if (nearHr) out.notes.push("Your true solar time is close to an hour (时辰) boundary, so the hour pillar could go either way. If you can, confirm the exact minute.");
     }
-    if (nearBoundary(m, d)) out.notes.push("Your birth date is within a day of a season boundary, so the month and year pillars may shift. Confirm with a professional almanac.");
+    if (!t.precise) {
+      out.notes.push("The precise season boundaries need the astronomy helper, which did not load, so the month and year pillars fall back to a date table and could be a day off right at a season change.");
+      if (t.nearFallback) out.notes.push("Your birth date is within a day of a season boundary, so the month and year pillars may shift. Confirm with a professional almanac.");
+    } else if (t.boundary) {
+      var A = window.SajuAstro, bd = t.boundary;
+      out.boundary = {
+        kind: bd.kind,
+        term: (JIE[bd.longitude] || ["", ""])[0], termEn: (JIE[bd.longitude] || ["", ""])[1],
+        instant: fmtInstant(A, bd.instantJD, bd.offH), offsetMin: bd.offsetMin, timeKnown: bd.timeKnown,
+        primary: { yearPillar: pillarStr(bd.yr), monthBranch: BRANCHES[bd.branch] },
+        alternative: { yearPillar: pillarStr(bd.altYr), monthBranch: BRANCHES[bd.altBranch] }
+      };
+      out.notes.push(boundaryNote(A, bd));
+    }
     return out;
   }
 

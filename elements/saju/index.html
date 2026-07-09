@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="../../css/nav-sub.css">
   <link rel="stylesheet" href="../../css/a11y.css">
   <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="../../css/saju-dock.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,400&family=Geist:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700&family=Space+Mono:wght@400&display=swap">
@@ -49,6 +50,34 @@
   ============================================================ */
   :root{
     --korean: "Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  }
+  /* Five-element instrument tokens consumed by the moonlight cast dock
+     (site/css/saju-dock.css). Six palettes × four knobs (base / -bright ≈ +0.10 L
+     / -dim ≈ −0.15 L, held lighter for fire+water so each clears 4.5:1 as text on
+     --ink-2 / -bloom = the hue at .34 alpha, the light under the thumb).
+     금 metal = classical 金 white = moonlight, and --el-none (the resting state)
+     is that same moonlight. 수 water is authored here as a deep luminous indigo:
+     classical 水 is black/deep blue, kept in the siblings' L/C family so the
+     instrument doesn't lurch when a Water Day Master casts. Colour is never the
+     only channel — the 한글 (목/화/토/금/수) always sits beside the tinted glyph.
+     oklch primary with hex fallbacks, mirroring purple-star-astrology's --st-*. */
+  :root{
+    --el-none:oklch(0.84 0.05 250);   --el-none-bright:oklch(0.94 0.05 250);   --el-none-dim:oklch(0.69 0.05 250);   --el-none-bloom:oklch(0.84 0.05 250 / 0.34);
+    --el-wood:oklch(0.74 0.12 160);   --el-wood-bright:oklch(0.84 0.12 160);   --el-wood-dim:oklch(0.59 0.12 160);   --el-wood-bloom:oklch(0.74 0.12 160 / 0.34);
+    --el-fire:oklch(0.72 0.14 33);    --el-fire-bright:oklch(0.82 0.14 33);    --el-fire-dim:oklch(0.62 0.14 33);    --el-fire-bloom:oklch(0.72 0.14 33 / 0.34);
+    --el-earth:oklch(0.78 0.11 85);   --el-earth-bright:oklch(0.88 0.11 85);   --el-earth-dim:oklch(0.63 0.11 85);   --el-earth-bloom:oklch(0.78 0.11 85 / 0.34);
+    --el-metal:oklch(0.84 0.05 250);  --el-metal-bright:oklch(0.94 0.05 250);  --el-metal-dim:oklch(0.69 0.05 250);  --el-metal-bloom:oklch(0.84 0.05 250 / 0.34);
+    --el-water:oklch(0.72 0.12 274);  --el-water-bright:oklch(0.82 0.12 274);  --el-water-dim:oklch(0.62 0.12 274);  --el-water-bloom:oklch(0.72 0.12 274 / 0.34);
+  }
+  @supports not (color: oklch(0% 0 0)){
+    :root{
+      --el-none:#b3ceeb;  --el-none-bright:#d3efff;  --el-none-dim:#849eba;  --el-none-bloom:rgba(179,206,235,0.34);
+      --el-wood:#5dc291;  --el-wood-bright:#7fe3b0;  --el-wood-dim:#269364;  --el-wood-bloom:rgba(93,194,145,0.34);
+      --el-fire:#ef816a;  --el-fire-bright:#ffa188;  --el-fire-dim:#cc624c;  --el-fire-bloom:rgba(239,129,106,0.34);
+      --el-earth:#d8b260; --el-earth-bright:#f9d280; --el-earth-dim:#a8832e; --el-earth-bloom:rgba(216,178,96,0.34);
+      --el-metal:#b3ceeb; --el-metal-bright:#d3efff; --el-metal-dim:#849eba; --el-metal-bloom:rgba(179,206,235,0.34);
+      --el-water:#8d9ef0; --el-water-bright:#acbeff; --el-water-dim:#707fce; --el-water-bloom:rgba(141,158,240,0.34);
+    }
   }
   /* Saju domain re-tint: obangsaek-leaning — deep indigo base, cinnabar+brass accents */
   .saju-scope{
@@ -537,7 +566,7 @@
 <link rel="stylesheet" href="/css/a11y.css" data-pn="/css/a11y.css">
 <!--pn-css:end-->
 <!--pn-crumb-ld:start-->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.zodianimal.com/"},{"@type":"ListItem","position":2,"name":"The Elements","item":"https://www.zodianimal.com/elements/"},{"@type":"ListItem","position":3,"name":"Korean Destiny Astrology (Saju Palja)","item":"https://www.zodianimal.com/elements/saju/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.zodianimal.com/"},{"@type":"ListItem","position":2,"name":"Saju Palja","item":"https://www.zodianimal.com/elements/saju/"}]}</script>
 <!--pn-crumb-ld:end-->
 </head>
 <body class="pn-has-bar">
@@ -552,7 +581,7 @@
         <div class="pn-item" data-accent="teal"><button class="pn-trigger" type="button" data-group="1" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Explore<span class="chev" aria-hidden="true"></span></button></div>
         <div class="pn-item" data-accent="brass"><button class="pn-trigger" type="button" data-group="2" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Zodiac<span class="chev" aria-hidden="true"></span></button></div>
         <div class="pn-item" data-accent="amethyst"><button class="pn-trigger" type="button" data-group="3" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Horoscope<span class="chev" aria-hidden="true"></span></button></div>
-        <div class="pn-item" data-accent="jade"><button class="pn-trigger" type="button" data-group="4" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Sage Wisdom<span class="chev" aria-hidden="true"></span></button></div>
+        <div class="pn-item" data-accent="jade"><button class="pn-trigger active" type="button" data-group="4" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Sage Wisdom<span class="chev" aria-hidden="true"></span></button></div>
         <div class="pn-item" data-accent="rose"><button class="pn-trigger" type="button" data-group="5" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Bonds<span class="chev" aria-hidden="true"></span></button></div>
         <div class="pn-item" data-accent="silver"><button class="pn-trigger" type="button" data-group="6" aria-haspopup="true" aria-expanded="false"><svg class="pn-stone" aria-hidden="true"><use href="#ico-moonstone"/></svg>Moon<span class="chev" aria-hidden="true"></span></button></div>
     </nav>
@@ -576,7 +605,7 @@
   <div class="pn-dd" data-dd><div class="pn-dd-mount"></div></div>
   <div class="pn-panel pn-panel-explore" data-group="1" data-accent="teal" role="region" aria-label="Explore" hidden>
     <p class="pn-panel-eyebrow">Everything the wheel opens, one animal at the center</p>
-    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">✦</span> Begin</p><a class="pn-row" href="/index.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Find your animal</span></a><a class="pn-row" href="/daily.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Today's reading</span><span class="pn-row-sub" data-dyn="date-today">Wed, Jul 8</span></a><a class="pn-row" href="/year.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Year finder</span></a><a class="pn-row" href="/account.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your account</span><span class="pn-row-sub">Zodi Karma ledger</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Menagerie</p><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">All 144 animals</span></a><a class="pn-row" href="/western-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Western wing</span></a><a class="pn-row" href="/chinese-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Eastern wing</span></a><a class="pn-row" href="/zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Zodiac crossings</span></a><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Rare crossings</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> The Moon</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Waning Crescent</span></a><a class="pn-row" href="/moon/phases/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The eight phases</span></a><a class="pn-row" href="/moon/in-your-sign/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Moon in your sign</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days</span></a><a class="pn-row" href="/chinese-zodiac/fire-horse-2026/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Fire Horse 2026</span><span class="pn-row-sub">begins Feb 17</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">⌂</span> Live with it</p><a class="pn-row" href="/feng-shui/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Feng shui</span></a><a class="pn-row" href="/bazi/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">BaZi (Four Pillars)</span><span class="pn-row-sub">eight characters</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span><span class="pn-row-sub">moon, stones, heritage</span></a></div></div>
+    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">✦</span> Begin</p><a class="pn-row" href="/index.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Find your animal</span></a><a class="pn-row" href="/daily.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Today's reading</span><span class="pn-row-sub" data-dyn="date-today">Thu, Jul 9</span></a><a class="pn-row" href="/year.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Year finder</span></a><a class="pn-row" href="/account.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your account</span><span class="pn-row-sub">Zodi Karma ledger</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Menagerie</p><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">All 144 animals</span></a><a class="pn-row" href="/western-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Western wing</span></a><a class="pn-row" href="/chinese-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Eastern wing</span></a><a class="pn-row" href="/zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Zodiac crossings</span></a><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Rare crossings</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> The Moon</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Waning Crescent</span></a><a class="pn-row" href="/moon/phases/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The eight phases</span></a><a class="pn-row" href="/moon/in-your-sign/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Moon in your sign</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days</span></a><a class="pn-row" href="/chinese-zodiac/fire-horse-2026/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Fire Horse 2026</span><span class="pn-row-sub">begins Feb 17</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">⌂</span> Live with it</p><a class="pn-row" href="/feng-shui/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Feng shui</span></a><a class="pn-row" href="/bazi/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">BaZi (Four Pillars)</span><span class="pn-row-sub">eight characters</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span><span class="pn-row-sub">moon, stones, heritage</span></a></div></div>
     <div class="pn-chips" role="group" aria-label="Western wing"><span class="pn-chips-label">Western wing</span><a class="pn-chip" href="/western-zodiac/aries/" title="Aries" aria-label="Aries">♈</a><a class="pn-chip" href="/western-zodiac/taurus/" title="Taurus" aria-label="Taurus">♉</a><a class="pn-chip" href="/western-zodiac/gemini/" title="Gemini" aria-label="Gemini">♊</a><a class="pn-chip" href="/western-zodiac/cancer/" title="Cancer" aria-label="Cancer">♋</a><a class="pn-chip" href="/western-zodiac/leo/" title="Leo" aria-label="Leo">♌</a><a class="pn-chip" href="/western-zodiac/virgo/" title="Virgo" aria-label="Virgo">♍</a><a class="pn-chip" href="/western-zodiac/libra/" title="Libra" aria-label="Libra">♎</a><a class="pn-chip" href="/western-zodiac/scorpio/" title="Scorpio" aria-label="Scorpio">♏</a><a class="pn-chip" href="/western-zodiac/sagittarius/" title="Sagittarius" aria-label="Sagittarius">♐</a><a class="pn-chip" href="/western-zodiac/capricorn/" title="Capricorn" aria-label="Capricorn">♑</a><a class="pn-chip" href="/western-zodiac/aquarius/" title="Aquarius" aria-label="Aquarius">♒</a><a class="pn-chip" href="/western-zodiac/pisces/" title="Pisces" aria-label="Pisces">♓</a></div>
     <div class="pn-chips" role="group" aria-label="Eastern wing"><span class="pn-chips-label">Eastern wing</span><a class="pn-chip" href="/chinese-zodiac/rat/" title="Rat" aria-label="Rat">鼠</a><a class="pn-chip" href="/chinese-zodiac/ox/" title="Ox" aria-label="Ox">牛</a><a class="pn-chip" href="/chinese-zodiac/tiger/" title="Tiger" aria-label="Tiger">虎</a><a class="pn-chip" href="/chinese-zodiac/rabbit/" title="Rabbit" aria-label="Rabbit">兔</a><a class="pn-chip" href="/chinese-zodiac/dragon/" title="Dragon" aria-label="Dragon">龙</a><a class="pn-chip" href="/chinese-zodiac/snake/" title="Snake" aria-label="Snake">蛇</a><a class="pn-chip" href="/chinese-zodiac/horse/" title="Horse" aria-label="Horse">马</a><a class="pn-chip" href="/chinese-zodiac/goat/" title="Goat" aria-label="Goat">羊</a><a class="pn-chip" href="/chinese-zodiac/monkey/" title="Monkey" aria-label="Monkey">猴</a><a class="pn-chip" href="/chinese-zodiac/rooster/" title="Rooster" aria-label="Rooster">鸡</a><a class="pn-chip" href="/chinese-zodiac/dog/" title="Dog" aria-label="Dog">狗</a><a class="pn-chip" href="/chinese-zodiac/pig/" title="Pig" aria-label="Pig">猪</a></div>
     <div class="pn-panel-foot"><a href="/menagerie.html">See all 144 animals</a></div>
@@ -599,7 +628,7 @@
   </div>
   <div class="pn-panel pn-panel-sage" data-group="4" data-accent="jade" role="region" aria-label="Sage Wisdom" hidden>
     <p class="pn-panel-eyebrow">The craft your Zodi Animal practices</p>
-    <div class="pn-cols"><div class="pn-hero"><p class="pn-hero-eyebrow">五行 · featured system</p><h3 class="pn-hero-title">The Elements &amp; the Chakras</h3><div class="pn-hero-phases" aria-hidden="true"><span class="pn-hero-phase pn-hero-phase-0">木</span><span class="pn-hero-phase pn-hero-phase-1">火</span><span class="pn-hero-phase pn-hero-phase-2">土</span><span class="pn-hero-phase pn-hero-phase-3">金</span><span class="pn-hero-phase pn-hero-phase-4">水</span></div><div class="pn-hero-rainbow" aria-hidden="true"><i class="pn-hero-c1"></i><i class="pn-hero-c2"></i><i class="pn-hero-c3"></i><i class="pn-hero-c4"></i><i class="pn-hero-c5"></i><i class="pn-hero-c6"></i><i class="pn-hero-c7"></i></div><p class="pn-hero-body">The five phases that move through everything — now mapped to the seven chakras, each with its own yoga practice.</p><div class="pn-hero-pills"><a class="pn-hero-pill is-key" href="/elements/">The five elements</a><a class="pn-hero-pill is-key" href="/elements/chakras/">The 7 chakras</a><a class="pn-hero-pill" href="/elements/chakras/yoga/">Chakra yoga</a></div></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">八字</span> BaZi</p><a class="pn-row" href="/bazi/chart/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Cast your chart</span><span class="pn-row-sub">tool</span></a><a class="pn-row" href="/bazi/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">What is BaZi</span><span class="pn-row-sub">八字 Bāzì · eight characters</span></a><a class="pn-row" href="/bazi/day-master/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your Day Master</span><span class="pn-row-sub">日主 Rìzhǔ</span></a><a class="pn-row" href="/bazi/ten-gods/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Ten Gods</span><span class="pn-row-sub">十神 Shíshén</span></a><a class="pn-row" href="/bazi/compatibility/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">You &amp; them</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">紫微</span> Purple Star</p><a class="pn-row" href="/elements/purple-star-astrology/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Zi Wei Dou Shu</span><span class="pn-row-sub">紫微斗数 Zǐwēi Dǒushù</span></a><a class="pn-row" href="/elements/purple-star-astrology/chart/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Read a chart</span><span class="pn-row-sub">命盘 mìngpán · school</span></a><a class="pn-row" href="/elements/purple-star-astrology/stars/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The 14 Stars</span><span class="pn-row-sub">主星 zhǔxīng</span></a><a class="pn-row" href="/elements/purple-star-astrology/palaces/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The 12 Palaces</span><span class="pn-row-sub">十二宫 shí'èr gōng</span></a><a class="pn-row" href="/elements/purple-star-astrology/four-forces/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Four Forces</span><span class="pn-row-sub">四化 sìhuà</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">風水</span> Feng shui</p><a class="pn-row" href="/feng-shui/commanding-position/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Commanding position</span><span class="pn-row-sub">live</span></a><a class="pn-row" href="/feng-shui/bagua/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The bagua</span><span class="pn-row-sub">八卦 bāguà</span></a><a class="pn-row" href="/feng-shui/kua-number/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your Kua number</span><span class="pn-row-sub">命卦 mìngguà</span></a><a class="pn-row" href="/feng-shui/bedroom/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">In the home</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">❦</span> Proverbs &amp; lore</p><a class="pn-row" href="/proverbs/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Proverb Pond</span><span class="pn-row-sub">all 87</span></a><a class="pn-row" href="/proverbs/study/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Study the proverbs</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a></div></div>
+    <div class="pn-cols"><div class="pn-hero"><p class="pn-hero-eyebrow">五行 · featured system</p><h3 class="pn-hero-title">The Elements &amp; the Chakras</h3><div class="pn-hero-phases" aria-hidden="true"><span class="pn-hero-phase pn-hero-phase-0">木</span><span class="pn-hero-phase pn-hero-phase-1">火</span><span class="pn-hero-phase pn-hero-phase-2">土</span><span class="pn-hero-phase pn-hero-phase-3">金</span><span class="pn-hero-phase pn-hero-phase-4">水</span></div><div class="pn-hero-rainbow" aria-hidden="true"><i class="pn-hero-c1"></i><i class="pn-hero-c2"></i><i class="pn-hero-c3"></i><i class="pn-hero-c4"></i><i class="pn-hero-c5"></i><i class="pn-hero-c6"></i><i class="pn-hero-c7"></i></div><p class="pn-hero-body">The five phases that move through everything — now mapped to the seven chakras, each with its own yoga practice.</p><div class="pn-hero-pills"><a class="pn-hero-pill is-key" href="/elements/">The five elements</a><a class="pn-hero-pill is-key" href="/elements/chakras/">The 7 chakras</a><a class="pn-hero-pill" href="/elements/chakras/yoga/">Chakra yoga</a></div></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">四柱</span> Four Pillars</p><a class="pn-row" href="/bazi/chart/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Cast your chart</span><span class="pn-row-sub">tool</span></a><a class="pn-row" href="/bazi/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">BaZi</span><span class="pn-row-sub">八字 Bāzì · the Chinese reading</span></a><a class="pn-row active" href="/elements/saju/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Saju Palja</span><span class="pn-row-sub">사주팔자 · the Korean reading</span></a><a class="pn-row" href="/bazi/day-master/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your Day Master</span><span class="pn-row-sub">日主 Rìzhǔ</span></a><a class="pn-row" href="/bazi/ten-gods/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Ten Gods</span><span class="pn-row-sub">十神 Shíshén</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">紫微</span> Purple Star</p><a class="pn-row" href="/elements/purple-star-astrology/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Zi Wei Dou Shu</span><span class="pn-row-sub">紫微斗数 Zǐwēi Dǒushù</span></a><a class="pn-row" href="/elements/purple-star-astrology/chart/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Read a chart</span><span class="pn-row-sub">命盘 mìngpán · school</span></a><a class="pn-row" href="/elements/purple-star-astrology/stars/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The 14 Stars</span><span class="pn-row-sub">主星 zhǔxīng</span></a><a class="pn-row" href="/elements/purple-star-astrology/palaces/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The 12 Palaces</span><span class="pn-row-sub">十二宫 shí'èr gōng</span></a><a class="pn-row" href="/elements/purple-star-astrology/four-forces/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Four Forces</span><span class="pn-row-sub">四化 sìhuà</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">風水</span> Feng shui</p><a class="pn-row" href="/feng-shui/commanding-position/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Commanding position</span><span class="pn-row-sub">live</span></a><a class="pn-row" href="/feng-shui/bagua/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The bagua</span><span class="pn-row-sub">八卦 bāguà</span></a><a class="pn-row" href="/feng-shui/kua-number/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your Kua number</span><span class="pn-row-sub">命卦 mìngguà</span></a><a class="pn-row" href="/feng-shui/bedroom/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">In the home</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">❦</span> Proverbs &amp; lore</p><a class="pn-row" href="/proverbs/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Proverb Pond</span><span class="pn-row-sub">all 87</span></a><a class="pn-row" href="/proverbs/study/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Study the proverbs</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a></div></div>
     <div class="pn-panel-foot"><a href="/elements/">Explore every system</a></div>
   </div>
   <div class="pn-panel pn-panel-cards" data-group="5" data-accent="rose" role="region" aria-label="Bonds" hidden>
@@ -612,16 +641,11 @@
     <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> Tonight</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-full" viewBox="0 0 24 24" role="img" aria-labelledby="moon-full-t moon-full-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-full-t">Full moon</title><desc id="moon-full-d">The whole disc lit.</desc><circle cx="12" cy="12" r="9" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Waning Crescent</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days ahead</span><span class="pn-row-sub">the favorable days for you</span></a><a class="pn-row" href="/awakening.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Awakening</span><span class="pn-row-sub">the path from fear to strength</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◈</span> Stones</p><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/traditions/birthstones-and-moonstone/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Birthstones &amp; moonstone</span></a><a class="pn-row" href="/traditions/stones-for-your-animal/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Stones for your animal</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◐</span> The eight phases</p><a class="pn-row" href="/moon/phases/new-moon/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-new" viewBox="0 0 24 24" role="img" aria-labelledby="moon-new-t moon-new-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-new-t">New moon</title><desc id="moon-new-d">The dark disc of the new moon.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">New Moon</span></a><a class="pn-row" href="/moon/phases/waxing-crescent/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waxing-crescent" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waxing-crescent-t moon-waxing-crescent-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waxing-crescent-t">Waxing crescent moon</title><desc id="moon-waxing-crescent-d">A thin lit crescent on the right.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A6.36 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waxing Crescent</span></a><a class="pn-row" href="/moon/phases/first-quarter/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-first-quarter" viewBox="0 0 24 24" role="img" aria-labelledby="moon-first-quarter-t moon-first-quarter-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-first-quarter-t">First quarter moon</title><desc id="moon-first-quarter-d">The right half lit.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A0 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">First Quarter</span></a><a class="pn-row" href="/moon/phases/waxing-gibbous/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waxing-gibbous" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waxing-gibbous-t moon-waxing-gibbous-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waxing-gibbous-t">Waxing gibbous moon</title><desc id="moon-waxing-gibbous-d">Most of the disc lit, growing.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 1 12 21 A6.36 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waxing Gibbous</span></a><a class="pn-row" href="/moon/phases/full-moon/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-full" viewBox="0 0 24 24" role="img" aria-labelledby="moon-full-t moon-full-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-full-t">Full moon</title><desc id="moon-full-d">The whole disc lit.</desc><circle cx="12" cy="12" r="9" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Full Moon</span></a><a class="pn-row" href="/moon/phases/waning-gibbous/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waning-gibbous" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waning-gibbous-t moon-waning-gibbous-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waning-gibbous-t">Waning gibbous moon</title><desc id="moon-waning-gibbous-d">Most of the disc lit, shrinking.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A6.36 9 0 0 0 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waning Gibbous</span></a><a class="pn-row" href="/moon/phases/last-quarter/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-last-quarter" viewBox="0 0 24 24" role="img" aria-labelledby="moon-last-quarter-t moon-last-quarter-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-last-quarter-t">Last quarter moon</title><desc id="moon-last-quarter-d">The left half lit.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A0 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Last Quarter</span></a><a class="pn-row" href="/moon/phases/waning-crescent/"><span class="pn-glyph" aria-hidden="true"><svg class="glyph glyph-moon-waning-crescent" viewBox="0 0 24 24" role="img" aria-labelledby="moon-waning-crescent-t moon-waning-crescent-d" xmlns="http://www.w3.org/2000/svg"><title id="moon-waning-crescent-t">Waning crescent moon</title><desc id="moon-waning-crescent-d">A thin lit crescent on the left.</desc><circle cx="12" cy="12" r="9" fill="var(--atmo-bottom,#05070f)"/><path d="M12 3 A9 9 0 0 0 12 21 A6.36 9 0 0 1 12 3 Z" fill="var(--accent)"/><circle cx="12" cy="12" r="9" fill="none" stroke="var(--accent-soft)" stroke-width="0.75" opacity="0.7"/></svg></span><span class="pn-row-name">Waning Crescent</span></a></div></div>
     <div class="pn-panel-foot"><a href="/moon.html">Read the Moon tonight in full</a></div>
   </div>
-  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/">Home</a><a href="/index.html">Find your animal</a><a href="/daily.html">Today's reading</a><a href="/year.html">Year finder</a><a href="/account.html">Your account</a><a href="/menagerie.html">All 144 animals</a><a href="/western-zodiac/">Western wing</a><a href="/chinese-zodiac/">Eastern wing</a><a href="/zodiac/">Zodiac crossings</a><a href="/moon.html">The Moon tonight</a><a href="/moon/phases/">The eight phases</a><a href="/moon/in-your-sign/">Moon in your sign</a><a href="/best-days.html">Best days</a><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a><a href="/feng-shui/">Feng shui</a><a href="/bazi/">BaZi (Four Pillars)</a><a href="/habitat/">The Habitat</a><a href="/stones.html">Keeper stones</a><a href="/directions/">Directions</a><a href="/traditions/">Traditions</a><a href="/chinese-zodiac/horse/">Horse</a><a href="/chinese-zodiac/rat/">Rat</a><a href="/chinese-zodiac/ox/">Ox</a><a href="/chinese-zodiac/tiger/">Tiger</a><a href="/chinese-zodiac/rabbit/">Rabbit</a><a href="/chinese-zodiac/dragon/">Dragon</a><a href="/chinese-zodiac/snake/">Snake</a><a href="/chinese-zodiac/goat/">Goat</a><a href="/chinese-zodiac/monkey/">Monkey</a><a href="/chinese-zodiac/rooster/">Rooster</a><a href="/chinese-zodiac/dog/">Dog</a><a href="/chinese-zodiac/pig/">Pig</a><a href="/western-zodiac/aries/">Aries</a><a href="/western-zodiac/taurus/">Taurus</a><a href="/western-zodiac/gemini/">Gemini</a><a href="/western-zodiac/cancer/">Cancer</a><a href="/western-zodiac/leo/">Leo</a><a href="/western-zodiac/virgo/">Virgo</a><a href="/western-zodiac/libra/">Libra</a><a href="/western-zodiac/scorpio/">Scorpio</a><a href="/western-zodiac/sagittarius/">Sagittarius</a><a href="/western-zodiac/capricorn/">Capricorn</a><a href="/western-zodiac/aquarius/">Aquarius</a><a href="/western-zodiac/pisces/">Pisces</a><a href="/bazi/chart/">Cast your chart</a><a href="/bazi/day-master/">Your Day Master</a><a href="/bazi/ten-gods/">The Ten Gods</a><a href="/bazi/compatibility/">You &amp; them</a><a href="/elements/purple-star-astrology/">Zi Wei Dou Shu</a><a href="/elements/purple-star-astrology/chart/">Read a chart</a><a href="/elements/purple-star-astrology/stars/">The 14 Stars</a><a href="/elements/purple-star-astrology/palaces/">The 12 Palaces</a><a href="/elements/purple-star-astrology/four-forces/">The Four Forces</a><a href="/feng-shui/commanding-position/">Commanding position</a><a href="/feng-shui/bagua/">The bagua</a><a href="/feng-shui/kua-number/">Your Kua number</a><a href="/feng-shui/bedroom/">In the home</a><a href="/proverbs/">The Proverb Pond</a><a href="/proverbs/study/">Study the proverbs</a><a href="/elements/">The five elements</a><a href="/elements/chakras/">The 7 chakras</a><a href="/elements/chakras/yoga/">Chakra yoga</a><a href="/match.html">Test a match</a><a href="/vs.html">Challenge a friend</a><a href="/circle.html">Circle of three</a><a href="/awakening.html">The Awakening</a><a href="/traditions/birthstones-and-moonstone/">Birthstones &amp; moonstone</a><a href="/traditions/stones-for-your-animal/">Stones for your animal</a><a href="/moon/phases/new-moon/">New Moon</a><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a><a href="/moon/phases/first-quarter/">First Quarter</a><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a><a href="/moon/phases/full-moon/">Full Moon</a><a href="/moon/phases/waning-gibbous/">Waning Gibbous</a><a href="/moon/phases/last-quarter/">Last Quarter</a><a href="/moon/phases/waning-crescent/">Waning Crescent</a><a href="/horoscopes/">All horoscopes, sign by sign</a><a href="/feng-shui/five-elements/">The five phases</a><a href="/feng-shui/your-animal/">Feng shui for your animal</a><a href="/directions/celestial-animals/">The four celestial animals</a><a href="/cosmology/">Cosmology</a><a href="/cosmology/four-pillars/">The Four Pillars</a><a href="/elements/purple-star-astrology/history/">Purple Star history &amp; origins</a><a href="/learn.html">How it works</a></nav>
+  <nav class="pn-crawl" aria-label="All sections" hidden><a href="/">Home</a><a href="/index.html">Find your animal</a><a href="/daily.html">Today's reading</a><a href="/year.html">Year finder</a><a href="/account.html">Your account</a><a href="/menagerie.html">All 144 animals</a><a href="/western-zodiac/">Western wing</a><a href="/chinese-zodiac/">Eastern wing</a><a href="/zodiac/">Zodiac crossings</a><a href="/moon.html">The Moon tonight</a><a href="/moon/phases/">The eight phases</a><a href="/moon/in-your-sign/">Moon in your sign</a><a href="/best-days.html">Best days</a><a href="/chinese-zodiac/fire-horse-2026/">Fire Horse 2026</a><a href="/feng-shui/">Feng shui</a><a href="/bazi/">BaZi (Four Pillars)</a><a href="/habitat/">The Habitat</a><a href="/stones.html">Keeper stones</a><a href="/directions/">Directions</a><a href="/traditions/">Traditions</a><a href="/chinese-zodiac/horse/">Horse</a><a href="/chinese-zodiac/rat/">Rat</a><a href="/chinese-zodiac/ox/">Ox</a><a href="/chinese-zodiac/tiger/">Tiger</a><a href="/chinese-zodiac/rabbit/">Rabbit</a><a href="/chinese-zodiac/dragon/">Dragon</a><a href="/chinese-zodiac/snake/">Snake</a><a href="/chinese-zodiac/goat/">Goat</a><a href="/chinese-zodiac/monkey/">Monkey</a><a href="/chinese-zodiac/rooster/">Rooster</a><a href="/chinese-zodiac/dog/">Dog</a><a href="/chinese-zodiac/pig/">Pig</a><a href="/western-zodiac/aries/">Aries</a><a href="/western-zodiac/taurus/">Taurus</a><a href="/western-zodiac/gemini/">Gemini</a><a href="/western-zodiac/cancer/">Cancer</a><a href="/western-zodiac/leo/">Leo</a><a href="/western-zodiac/virgo/">Virgo</a><a href="/western-zodiac/libra/">Libra</a><a href="/western-zodiac/scorpio/">Scorpio</a><a href="/western-zodiac/sagittarius/">Sagittarius</a><a href="/western-zodiac/capricorn/">Capricorn</a><a href="/western-zodiac/aquarius/">Aquarius</a><a href="/western-zodiac/pisces/">Pisces</a><a href="/bazi/chart/">Cast your chart</a><a href="/elements/saju/">Saju Palja</a><a href="/bazi/day-master/">Your Day Master</a><a href="/bazi/ten-gods/">The Ten Gods</a><a href="/elements/purple-star-astrology/">Zi Wei Dou Shu</a><a href="/elements/purple-star-astrology/chart/">Read a chart</a><a href="/elements/purple-star-astrology/stars/">The 14 Stars</a><a href="/elements/purple-star-astrology/palaces/">The 12 Palaces</a><a href="/elements/purple-star-astrology/four-forces/">The Four Forces</a><a href="/feng-shui/commanding-position/">Commanding position</a><a href="/feng-shui/bagua/">The bagua</a><a href="/feng-shui/kua-number/">Your Kua number</a><a href="/feng-shui/bedroom/">In the home</a><a href="/proverbs/">The Proverb Pond</a><a href="/proverbs/study/">Study the proverbs</a><a href="/elements/">The five elements</a><a href="/elements/chakras/">The 7 chakras</a><a href="/elements/chakras/yoga/">Chakra yoga</a><a href="/match.html">Test a match</a><a href="/vs.html">Challenge a friend</a><a href="/circle.html">Circle of three</a><a href="/awakening.html">The Awakening</a><a href="/traditions/birthstones-and-moonstone/">Birthstones &amp; moonstone</a><a href="/traditions/stones-for-your-animal/">Stones for your animal</a><a href="/moon/phases/new-moon/">New Moon</a><a href="/moon/phases/waxing-crescent/">Waxing Crescent</a><a href="/moon/phases/first-quarter/">First Quarter</a><a href="/moon/phases/waxing-gibbous/">Waxing Gibbous</a><a href="/moon/phases/full-moon/">Full Moon</a><a href="/moon/phases/waning-gibbous/">Waning Gibbous</a><a href="/moon/phases/last-quarter/">Last Quarter</a><a href="/moon/phases/waning-crescent/">Waning Crescent</a><a href="/horoscopes/">All horoscopes, sign by sign</a><a href="/feng-shui/five-elements/">The five phases</a><a href="/feng-shui/your-animal/">Feng shui for your animal</a><a href="/directions/celestial-animals/">The four celestial animals</a><a href="/cosmology/">Cosmology</a><a href="/cosmology/four-pillars/">The Four Pillars</a><a href="/bazi/compatibility/">BaZi compatibility (合婚)</a><a href="/elements/purple-star-astrology/history/">Purple Star history &amp; origins</a><a href="/learn.html">How it works</a></nav>
 </header>
 <!--pn-static:end-->
-<!--pn-sub:start-->
-<nav class="pn-sub" aria-label="Section">
-  <div class="pn-sub-primary"><ul class="pn-subnav"><li class="pn-sub-item pn-has-drop"><a class="pn-sub-link" href="/elements/phases/wood/" aria-haspopup="true" aria-expanded="false">Wood 木<span class="pn-sub-caret" aria-hidden="true"></span></a><div class="pn-subdrop pn-subdrop--wide"><div class="pn-subgroup" role="group" aria-label="The phase"><p class="pn-subgroup-label" aria-hidden="true">The phase</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/wood/">Wood overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/big-small/">Big &amp; small wood 甲乙</a></li></ul></div><div class="pn-subgroup" role="group" aria-label="In chart &amp; body"><p class="pn-subgroup-label" aria-hidden="true">In chart &amp; body</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/wood/bazi/">Wood in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/body/">Wood in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/space/">Wood in your space</a></li></ul></div><div class="pn-subgroup" role="group" aria-label="How it moves"><p class="pn-subgroup-label" aria-hidden="true">How it moves</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/wood/cycles/">Wood's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/animals/">The Wood animals</a></li></ul></div><div class="pn-subgroup" role="group" aria-label="Myth &amp; lore"><p class="pn-subgroup-label" aria-hidden="true">Myth &amp; lore</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/wood/culture/">Wood in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/wood/traditions/">Wood across traditions</a></li></ul></div></div></li><li class="pn-sub-item pn-has-drop"><a class="pn-sub-link" href="/elements/phases/fire/" aria-haspopup="true" aria-expanded="false">Fire 火<span class="pn-sub-caret" aria-hidden="true"></span></a><div class="pn-subdrop pn-subdrop--wide"><div class="pn-subgroup" role="group" aria-label="The phase"><p class="pn-subgroup-label" aria-hidden="true">The phase</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/fire/">Fire overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/big-small/">Big &amp; small fire 丙丁</a></li></ul></div><div class="pn-subgroup" role="group" aria-label="In chart &amp; body"><p class="pn-subgroup-label" aria-hidden="true">In chart &amp; body</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/fire/bazi/">Fire in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/body/">Fire in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/space/">Fire in your space</a></li></ul></div><div class="pn-subgroup" role="group" aria-label="How it moves"><p class="pn-subgroup-label" aria-hidden="true">How it moves</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/fire/cycles/">Fire's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/animals/">The Fire animals</a></li></ul></div><div class="pn-subgroup" role="group" aria-label="Myth &amp; lore"><p class="pn-subgroup-label" aria-hidden="true">Myth &amp; lore</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/fire/culture/">Fire in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/fire/traditions/">Fire across traditions</a></li></ul></div></div></li><li class="pn-sub-item pn-has-drop"><a class="pn-sub-link" href="/elements/phases/earth/" aria-haspopup="true" aria-expanded="false">Earth 土<span class="pn-sub-caret" aria-hidden="true"></span></a><div class="pn-subdrop pn-subdrop--wide"><div class="pn-subgroup" role="group" aria-label="The phase"><p class="pn-subgroup-label" aria-hidden="true">The phase</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/earth/">Earth overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/big-small/">Big &amp; small earth 戊己</a></li></ul></div><div class="pn-subgroup" role="group" aria-label="In chart &amp; body"><p class="pn-subgroup-label" aria-hidden="true">In chart &amp; body</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/earth/bazi/">Earth in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/body/">Earth in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/space/">Earth in your space</a></li></ul></div><div class="pn-subgroup" role="group" aria-label="How it moves"><p class="pn-subgroup-label" aria-hidden="true">How it moves</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/earth/cycles/">Earth's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/animals/">The Earth animals</a></li></ul></div><div class="pn-subgroup" role="group" aria-label="Myth &amp; lore"><p class="pn-subgroup-label" aria-hidden="true">Myth &amp; lore</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/earth/culture/">Earth in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/earth/traditions/">Earth across traditions</a></li></ul></div></div></li><li class="pn-sub-item pn-has-drop"><a class="pn-sub-link" href="/elements/phases/metal/" aria-haspopup="true" aria-expanded="false">Metal 金<span class="pn-sub-caret" aria-hidden="true"></span></a><div class="pn-subdrop pn-subdrop--wide"><div class="pn-subgroup" role="group" aria-label="The phase"><p class="pn-subgroup-label" aria-hidden="true">The phase</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/metal/">Metal overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/big-small/">Big &amp; small metal 庚辛</a></li></ul></div><div class="pn-subgroup" role="group" aria-label="In chart &amp; body"><p class="pn-subgroup-label" aria-hidden="true">In chart &amp; body</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/metal/bazi/">Metal in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/body/">Metal in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/space/">Metal in your space</a></li></ul></div><div class="pn-subgroup" role="group" aria-label="How it moves"><p class="pn-subgroup-label" aria-hidden="true">How it moves</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/metal/cycles/">Metal's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/animals/">The Metal animals</a></li></ul></div><div class="pn-subgroup" role="group" aria-label="Myth &amp; lore"><p class="pn-subgroup-label" aria-hidden="true">Myth &amp; lore</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/metal/culture/">Metal in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/metal/traditions/">Metal across traditions</a></li></ul></div></div></li><li class="pn-sub-item pn-has-drop"><a class="pn-sub-link" href="/elements/phases/water/" aria-haspopup="true" aria-expanded="false">Water 水<span class="pn-sub-caret" aria-hidden="true"></span></a><div class="pn-subdrop pn-subdrop--wide"><div class="pn-subgroup" role="group" aria-label="The phase"><p class="pn-subgroup-label" aria-hidden="true">The phase</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/water/">Water overview</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/big-small/">Big &amp; small water 壬癸</a></li></ul></div><div class="pn-subgroup" role="group" aria-label="In chart &amp; body"><p class="pn-subgroup-label" aria-hidden="true">In chart &amp; body</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/water/bazi/">Water in BaZi</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/body/">Water in the body</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/space/">Water in your space</a></li></ul></div><div class="pn-subgroup" role="group" aria-label="How it moves"><p class="pn-subgroup-label" aria-hidden="true">How it moves</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/water/cycles/">Water's two cycles</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/animals/">The Water animals</a></li></ul></div><div class="pn-subgroup" role="group" aria-label="Myth &amp; lore"><p class="pn-subgroup-label" aria-hidden="true">Myth &amp; lore</p><ul class="pn-subgroup-list"><li><a class="pn-subdrop-link" href="/elements/phases/water/culture/">Water in myth</a></li><li><a class="pn-subdrop-link" href="/elements/phases/water/traditions/">Water across traditions</a></li></ul></div></div></li><li><a href="/elements/zodiac/">Elements &amp; your animal</a></li></ul></div>
-</nav>
-<!--pn-sub:end-->
 <!--pn-crumbbar:start-->
-<nav class="pn-crumbbar" aria-label="Breadcrumb"><ol class="pn-crumb"><li><a href="/">Home</a></li><li><a href="/elements/">The Elements</a></li><li aria-current="page">Korean Destiny Astrology (Saju Palja)</li></ol></nav>
+<nav class="pn-crumbbar" aria-label="Breadcrumb"><ol class="pn-crumb"><li><a href="/">Home</a></li><li aria-current="page">Saju Palja</li></ol></nav>
 <!--pn-crumbbar:end-->
 
 <div class="saju-scope">
@@ -731,14 +755,14 @@
               <label for="bplace">Birthplace</label>
               <select id="bplace" name="bplace">
                 <optgroup label="Korea">
-                  <option value="127.0,seoul">Seoul (127.0°E)</option>
-                  <option value="129.08,busan">Busan (129.08°E)</option>
-                  <option value="126.52,jeju">Jeju (126.52°E)</option>
+                  <option value="127.0,seoul,9">Seoul (127.0°E)</option>
+                  <option value="129.08,busan,9">Busan (129.08°E)</option>
+                  <option value="126.52,jeju,9">Jeju (126.52°E)</option>
                 </optgroup>
                 <optgroup label="Elsewhere">
-                  <option value="139.69,tokyo">Tokyo (139.69°E)</option>
-                  <option value="-118.24,la">Los Angeles (118.24°W)</option>
-                  <option value="-73.94,ny">New York (73.94°W)</option>
+                  <option value="139.69,tokyo,9">Tokyo (139.69°E)</option>
+                  <option value="-118.24,la,-8">Los Angeles (118.24°W)</option>
+                  <option value="-73.94,ny,-5">New York (73.94°W)</option>
                   <option value="unknown">Somewhere else / not sure</option>
                 </optgroup>
               </select>
@@ -956,9 +980,12 @@
 </div><!-- /saju-scope -->
 <script src="../../js/nav.js" defer></script>
 <script src="../../js/saju/saju-astro.js"></script>
+<script src="../../js/saju/saju-lunar.js"></script>
 <script src="../../js/saju/saju-engine.js"></script>
 <script src="../../js/saju/saju-interpret.js"></script>
 <script src="../../js/saju/saju-academy.js"></script>
+<script src="../../js/saju/saju-study-chart.js"></script>
+<script src="../../js/saju/saju-cast-ui.js"></script>
 <script>
 (function(){
   "use strict";
@@ -1050,22 +1077,53 @@
   });
 
   // calendar pills (single-select radiogroup) -> mirror into hidden #bcal
+  // 윤달 (leap month) is NEVER guessed: the leap pill is hidden until the
+  // entered 음력 year+month actually HAS a leap twin at that month
+  // (SajuLunar.leapMonthOf). Served markup shows all three pills so a JS-off
+  // reader still has the choice and the engine handles it.
+  var refreshLeapAffordance = function(){};
+  var setCalendar = function(){};   // exposed for restore-on-revisit prefill
   (function(){
     var grp=document.querySelector(".cal-pills"); if(!grp) return;
     var pills=Array.prototype.slice.call(grp.querySelectorAll("button")), hidden=document.getElementById("bcal");
-    function sel(i){ pills.forEach(function(b,j){ var on=j===i; b.setAttribute("aria-checked",on?"true":"false"); b.tabIndex=on?0:-1; if(on&&hidden) hidden.value=b.getAttribute("data-cal"); }); }
+    var leapPill=grp.querySelector('button[data-cal="lunar-leap"]');
+    var yEl=document.getElementById("bYear"), mEl=document.getElementById("bMonth");
+    function sel(i){ pills.forEach(function(b,j){ var on=j===i; b.setAttribute("aria-checked",on?"true":"false"); b.tabIndex=on?0:-1; if(on&&hidden) hidden.value=b.getAttribute("data-cal"); }); refreshLeapAffordance(); }
+    function selByCal(cal){ for(var i=0;i<pills.length;i++){ if(pills[i].getAttribute("data-cal")===cal){ sel(i); return; } } sel(0); }
+    setCalendar = selByCal;
+    refreshLeapAffordance = function(){
+      if(!leapPill) return;
+      var cal = hidden ? hidden.value : "solar";
+      var lunarCtx = (cal==="lunar" || cal==="lunar-leap");
+      var y=parseInt(((yEl&&yEl.value)||"").trim(),10), m=parseInt(((mEl&&mEl.value)||"").trim(),10);
+      var has=false;
+      if(lunarCtx && window.SajuLunar && y>=SajuLunar.MIN_YEAR && y<=SajuLunar.MAX_YEAR && m>=1 && m<=12){
+        try{ has = (SajuLunar.leapMonthOf(y)===m); }catch(e){ has=false; }
+      }
+      if(has){ leapPill.hidden=false; }
+      else {
+        leapPill.hidden=true;
+        // a reader cannot submit isLeapMonth:true for a month with no leap twin:
+        // if 윤달 was selected and is no longer valid, fall back to 음력.
+        if(cal==="lunar-leap"){ selByCal("lunar"); return; }
+      }
+    };
     pills.forEach(function(b,i){
       b.addEventListener("click",function(){ sel(i); b.classList.add("no-tip"); });   // dismiss tooltip on pick so it can't stack
       b.addEventListener("mouseleave",function(){ b.classList.remove("no-tip"); });    // re-enable once the pointer leaves
     });
     grp.addEventListener("keydown",function(e){
-      var cur=pills.map(function(b){return b.getAttribute("aria-checked")==="true";}).indexOf(true); if(cur<0)cur=0;
+      var vis=pills.filter(function(b){ return !b.hidden; });
+      var cur=vis.map(function(b){return b.getAttribute("aria-checked")==="true";}).indexOf(true); if(cur<0)cur=0;
       var n=null;
-      if(e.key==="ArrowRight"||e.key==="ArrowDown") n=(cur+1)%pills.length;
-      else if(e.key==="ArrowLeft"||e.key==="ArrowUp") n=(cur-1+pills.length)%pills.length;
-      else if(e.key==="Home") n=0; else if(e.key==="End") n=pills.length-1;
-      if(n!==null){ e.preventDefault(); sel(n); pills[n].focus(); }
+      if(e.key==="ArrowRight"||e.key==="ArrowDown") n=(cur+1)%vis.length;
+      else if(e.key==="ArrowLeft"||e.key==="ArrowUp") n=(cur-1+vis.length)%vis.length;
+      else if(e.key==="Home") n=0; else if(e.key==="End") n=vis.length-1;
+      if(n!==null){ e.preventDefault(); var idx=pills.indexOf(vis[n]); sel(idx); pills[idx].focus(); }
     });
+    // re-evaluate the leap affordance whenever the year or month changes
+    [yEl,mEl].forEach(function(el){ if(el) el.addEventListener("input", refreshLeapAffordance); });
+    refreshLeapAffordance(); // hide 윤달 on load (JS-off keeps it visible)
   })();
   // progressive disclosure of optional fields
   (function(){
@@ -1492,30 +1550,150 @@
     renderCompare(0);
   }
 
-  if(form){ form.addEventListener("submit", function(e){
-    e.preventDefault();
-    var yy=(document.getElementById("bYear").value||"").trim(), mo=(document.getElementById("bMonth").value||"").trim(), dd=(document.getElementById("bDay").value||"").trim();
-    var Yn=+yy, Mn=+mo, Dn=+dd;
-    if(!yy||!mo||!dd||Yn<1900||Yn>2035||Mn<1||Mn>12||Dn<1||Dn>31){ report.innerHTML='<p class="placeholder">Enter your birth month, day, and year — for example 08 / 08 / 1990.</p>'; return; }
-    function p2(n){ return (n<10?"0":"")+n; }
-    var dv = yy.padStart(4,"0")+"-"+p2(Mn)+"-"+p2(Dn);
-    if(!(window.SajuEngine)){ report.innerHTML='<p class="placeholder">The chart engine is still loading — try again in a moment.</p>'; return; }
+  // ---- Western Sun sign from a SOLAR date (standard tropical ranges) ----
+  // A sign STARTS on (month, day); before Jan 20 the sign is Capricorn.
+  var SIGN_STARTS = [[1,20,"aquarius"],[2,19,"pisces"],[3,21,"aries"],[4,20,"taurus"],
+    [5,21,"gemini"],[6,21,"cancer"],[7,23,"leo"],[8,23,"virgo"],[9,23,"libra"],
+    [10,23,"scorpio"],[11,22,"sagittarius"],[12,22,"capricorn"]];
+  var SIGN_LABEL = {capricorn:"Capricorn",aquarius:"Aquarius",pisces:"Pisces",aries:"Aries",
+    taurus:"Taurus",gemini:"Gemini",cancer:"Cancer",leo:"Leo",virgo:"Virgo",libra:"Libra",
+    scorpio:"Scorpio",sagittarius:"Sagittarius"};
+  function westernSign(m,d){
+    if(!(m>=1&&m<=12&&d>=1&&d<=31)) return null;
+    var sign="capricorn";
+    for(var i=0;i<SIGN_STARTS.length;i++){ var z=SIGN_STARTS[i];
+      if(m>z[0] || (m===z[0] && d>=z[1])) sign=z[2]; }
+    return sign;
+  }
+  // The 12 year-branch animals map straight to the 144 /zodiac/<sign>-<animal>/
+  // crossing slugs (all 12×12 verified live on disk).
+  var ANIMAL_SLUG = {Rat:"rat",Ox:"ox",Tiger:"tiger",Rabbit:"rabbit",Dragon:"dragon",
+    Snake:"snake",Horse:"horse",Goat:"goat",Monkey:"monkey",Rooster:"rooster",Dog:"dog",Pig:"pig"};
 
-    var placeVal = document.getElementById("bplace").value;
-    var lon = null;
-    if(placeVal && placeVal!=="unknown"){ lon = parseFloat(placeVal.split(",")[0]); }
-    var noTime = notime.checked;
-    var sexVal = document.getElementById("sex").value;
-    var input = {
-      date: dv,
-      time: noTime ? null : (btime.value || null),
-      unknownTime: noTime || !btime.value,
-      lon: lon,
-      calendar: document.getElementById("bcal").value,
-      sex: sexVal || null
-    };
-    var chart = window.SajuEngine.castChart(input, {}); // engine defaults (Korean conventions)
-    if(chart.error){ report.innerHTML='<p class="placeholder">'+esc(chart.error)+'</p>'; return; }
+  // A door to the reader's Zodi Animal crossing — never a promise. Rendered only
+  // when the year-branch animal is known AND the Sun sign resolves to a real slug.
+  function crossingHtml(chart, solarDate){
+    try{
+      var yb = chart && chart.pillars && chart.pillars.year && chart.pillars.year.branch;
+      if(!yb || !yb.animal) return "";
+      var animalSlug = ANIMAL_SLUG[yb.animal]; if(!animalSlug) return "";
+      var pp = String(solarDate||"").split("-");
+      var sign = westernSign(parseInt(pp[1],10), parseInt(pp[2],10));
+      if(!sign || !SIGN_LABEL[sign]) return "";
+      var href = "/zodiac/"+sign+"-"+animalSlug+"/";
+      var label = SIGN_LABEL[sign]+" "+yb.animal;
+      return '<div style="margin-top:1.2rem;padding:1rem 1.1rem;border:1px solid var(--line);border-radius:var(--r-2);background:var(--panel)">'+
+        '<p class="sub" style="margin-bottom:.45rem">Your Zodi Animal crossing</p>'+
+        '<p style="margin:0 0 .7rem;color:var(--body-text);line-height:1.6">Your year-pillar branch <b class="'+elClass(yb.element)+'">'+esc(yb.ko)+'</b> ('+esc(yb.char)+') is the '+esc(yb.animal)+'. With your Sun in '+SIGN_LABEL[sign]+', your two wheels cross here — the '+esc(label)+'.</p>'+
+        '<a href="'+href+'">Read the '+esc(label)+'</a></div>';
+    }catch(e){ return ""; }
+  }
+
+  // Clock → true solar → hour-branch chain, straight from out.solar_time.
+  function branchHours(idx){ var s=(2*idx+23)%24; return {s:s,e:(s+2)%24}; }
+  function solarChainHtml(chart){
+    var st=chart.solar_time, tr=chart.time_resolution, P=chart.pillars;
+    if(!P || !P.hour || !P.hour.branch || !st) return ""; // three-pillar: hour withheld
+    var hb=P.hour.branch, rg=branchHours(hb.index);
+    var hourLabel = hb.ko+"시 "+rg.s+"–"+rg.e;
+    var clockLabel = st.clock+" "+(tr && tr.standard_time ? tr.standard_time : "KST");
+    var ws=chart.warnings||[];
+    var arrow='<span class="dl-off">→</span>';
+    var chain;
+    if(st.applied){
+      chain = esc(clockLabel)+' '+arrow+' '+esc(st.true_solar)+' true solar '+arrow+' <b class="'+elClass(hb.element)+'">'+esc(hourLabel)+'</b>';
+    } else {
+      var foreign = ws.some(function(w){return w.code==="FOREIGN_LONGITUDE_NO_OFFSET";});
+      var why = foreign ? "longitude outside Korea, no UTC offset — solar correction skipped"
+                        : "birthplace unknown — no solar correction";
+      chain = esc(clockLabel)+' '+arrow+' <b class="'+elClass(hb.element)+'">'+esc(hourLabel)+'</b> <span class="dl-off">· '+why+'</span>';
+    }
+    return '<p class="sub" style="margin-top:1rem">Clock to true solar time</p><p class="rdm" style="line-height:1.75">'+chain+'</p>';
+  }
+
+  // Turn a thrown SajuLunar error into a plain, kind, specific message.
+  function lunarErrorMessage(e, Y, Mo, D, leap){
+    var msg=String((e&&e.message)||e||"");
+    var dateKo="음력 "+Y+"년 "+(leap?"윤":"")+Mo+"월 "+D+"일";
+    var mm;
+    if((mm=msg.match(/only (\d+) days/))) return dateKo+" does not exist — that month had only "+mm[1]+" days.";
+    if((mm=msg.match(/leap month is month (\d+)/))) return dateKo+" isn't a 윤달: in "+Y+" the leap month is month "+mm[1]+", not month "+Mo+".";
+    if(/no leap month/.test(msg)) return dateKo+" isn't a 윤달: the year "+Y+" has no leap month.";
+    if(/supported range|outside the supported/.test(msg)) return dateKo+" is outside the range this converter covers (lunar years 1900–2100).";
+    return dateKo+" couldn't be converted to a solar date — please check the month and day.";
+  }
+
+  function pad2(n){ return (n<10?"0":"")+n; }
+  var _prefillKey = null, _pendingScroll = false;
+
+  // Reflect a stored birth back into the form. GUARD ON birthKey(birth), NEVER on
+  // stamp() — the stamp carries the hour, so guarding on it would re-feed the form on
+  // every dock hour-scrub and stomp whatever the reader typed (a bug already shipped
+  // once on the ZWDS page; not shipping it twice).
+  function prefillForm(birth){
+    if(!birth) return;
+    var k = window.SajuStudyChart ? window.SajuStudyChart.birthKey(birth) : (birth.year+"-"+birth.month+"-"+birth.day);
+    if(k === _prefillKey) return;
+    _prefillKey = k;
+    var y=document.getElementById("bYear"), m=document.getElementById("bMonth"), d=document.getElementById("bDay");
+    if(y) y.value = birth.year || "";
+    if(m) m.value = birth.month || "";
+    if(d) d.value = birth.day || "";
+    setCalendar(birth.calendar || "solar");
+    refreshLeapAffordance();
+    if(birth.hour==null){ if(notime) notime.checked=true; if(btime){ btime.value=""; btime.disabled=true; } }
+    else { if(notime) notime.checked=false; if(btime){ btime.disabled=false; btime.value=pad2(birth.hour)+":"+pad2(birth.minute==null?0:birth.minute); } }
+    var bplace=document.getElementById("bplace");
+    if(bplace){
+      var key=birth.place&&birth.place.key, matched=false;
+      if(key) Array.prototype.forEach.call(bplace.options,function(o){ if(o.value.split(",")[1]===key){ bplace.value=o.value; matched=true; } });
+      if(!matched) bplace.value = birth.place ? "unknown" : "";
+    }
+    var sexEl=document.getElementById("sex"); if(sexEl) sexEl.value = birth.sex || "";
+    var adv=document.getElementById("gateAdv"), more=document.getElementById("gateMore");
+    if(adv && more && ((birth.hour!=null)||birth.place||birth.sex)){ adv.hidden=false; more.setAttribute("aria-expanded","true"); }
+  }
+
+  // The single render path. Fed ONLY by the saju:studychart event (wired below); the
+  // page never calls castChart. Scrubbing the dock's hour beam re-fires the event with
+  // a new hour, so it lands here and re-renders the whole reading. Every honest state
+  // (engine still loading, lunar refused, three-pillar cast) is handled without a throw
+  // and without contradicting the dock's own disclosures.
+  function handleStudyChart(detail){
+    if(!report) return;
+    var birth = detail && detail.birth, chart = detail && detail.out;
+    if(!birth) return;                 // nothing stored yet — keep the placeholder
+    prefillForm(birth);                // reflect the stored birth (guarded on birthKey)
+    if(!chart){
+      report.innerHTML='<p class="placeholder">This birth couldn’t be cast just now — the chart engine may still be loading. Give it a moment, or re-enter your date.</p>';
+      return;
+    }
+    if(chart.error){
+      if(chart.error==="lunar-not-converted"){
+        report.innerHTML='<p class="placeholder">The lunar-to-solar converter didn’t load, so a 음력 date can’t be cast safely — reading a lunar date as if it were solar would produce the wrong chart. Please enter your solar (양력) birth date instead.</p>';
+      } else {
+        report.innerHTML='<p class="placeholder">'+esc(chart.error)+'</p>';
+      }
+      return;
+    }
+    if(!chart.pillars){
+      report.innerHTML='<p class="placeholder">This birth couldn’t be resolved into pillars. Check the date — and if it’s a 음력 date, confirm that month and day exist that year.</p>';
+      return;
+    }
+    renderChart(chart, birth);
+  }
+
+  function renderChart(chart, birth){
+    var calVal = birth.calendar, Yn = birth.year, Mn = birth.month, Dn = birth.day;
+    // The solar date actually cast (a lunar input converts to a different day).
+    var solarDate = (chart.input && chart.input.date) || "";
+    (chart.warnings||[]).forEach(function(w){ if(w.code==="LUNAR_CONVERTED" && w.to) solarDate=w.to; });
+    // Show the reader the conversion: they typed one date, we cast another.
+    var lunarLineHtml = "";
+    if(calVal==="lunar" || calVal==="lunar-leap"){
+      var leapPfx = calVal==="lunar-leap" ? "윤" : "";
+      lunarLineHtml = '<p class="sub" style="margin-top:1rem">Lunar → solar</p><p class="rdm">음력 '+Yn+'년 '+leapPfx+Mn+'월 '+Dn+'일 <span class="dl-off">→</span> 양력 '+esc(solarDate)+'</p>';
+    }
     _lastChart = chart; // feed the Academy chart-based drills
     syncTeaching(chart); // lock the four-pillars teaching section to the real chart
 
@@ -1546,7 +1724,10 @@
     rows += row("Era", tr.era);
     rows += row("Standard time", tr.standard_time + (tr.meridian_e? " · "+tr.meridian_e+"°E":""));
     if(st){
-      rows += row("Clock → true solar", st.applied ? (st.clock+" → "+st.true_solar) : (st.clock+" (no correction — place unknown)"));
+      var skipReason = (chart.warnings||[]).some(function(w){return w.code==="FOREIGN_LONGITUDE_NO_OFFSET";})
+        ? " (no correction — longitude outside Korea, no UTC offset)"
+        : " (no correction — place unknown)";
+      rows += row("Clock → true solar", st.applied ? (st.clock+" → "+st.true_solar) : (st.clock+skipReason));
       if(st.applied) rows += row("Correction", (st.longitude_correction_min)+" min longitude"+(st.equation_of_time_min?(" + "+st.equation_of_time_min+" min EoT"):"") );
     } else {
       rows += row("Hour", "unknown — three-pillar cast");
@@ -1574,7 +1755,7 @@
 
     report.innerHTML = nav +
       sec("rsec-chart",
-        '<p class="sub">Your Saju · '+(three?"three pillars":"four pillars")+'</p><h3>The eight characters, cast</h3>'+chartHtml+dmHtml+balHtml,
+        '<p class="sub">Your Saju · '+(three?"three pillars":"four pillars")+'</p><h3>The eight characters, cast</h3>'+chartHtml+dmHtml+lunarLineHtml+solarChainHtml(chart)+balHtml+crossingHtml(chart, solarDate),
         "rsec-reading","Your reading") +
       sec("rsec-reading", rdHtml, "rsec-elements","Your elements") +
       sec("rsec-elements", wxHtml+strHtml, "rsec-climate","Climate & time") +
@@ -1589,8 +1770,56 @@
 
     wireReading(); wireWuxing(); wireDaeun(); wireCompare(); wireResultNav();
     collapseGate(); // fold the form to the side rail so the reading takes the full width
-    var top=document.getElementById("rsec-chart"); if(top) top.scrollIntoView({behavior: reduce?"auto":"smooth", block:"nearest"});
+    if(_pendingScroll){ _pendingScroll=false; var top=document.getElementById("rsec-chart"); if(top) top.scrollIntoView({behavior: reduce?"auto":"smooth", block:"nearest"}); }
+  }
+
+  // ---- Birth Gate submit → the ONE store (never castChart from the page again) ----
+  if(form){ form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var yy=(document.getElementById("bYear").value||"").trim(), mo=(document.getElementById("bMonth").value||"").trim(), dd=(document.getElementById("bDay").value||"").trim();
+    var Yn=+yy, Mn=+mo, Dn=+dd;
+    if(!yy||!mo||!dd||Yn<1900||Yn>2035||Mn<1||Mn>12||Dn<1||Dn>31){ report.innerHTML='<p class="placeholder">Enter your birth month, day, and year — for example 08 / 08 / 1990.</p>'; return; }
+    var calVal = document.getElementById("bcal").value;
+    // Keep the 음력 gating on the page: pre-validate the lunar date through SajuLunar so a
+    // nonexistent day or a bad 윤달 flag speaks plainly HERE, before anything is stored.
+    // (The store's cast swallows an engine throw into out=null, so this is the only place
+    //  the human message survives. When SajuLunar is absent the engine instead returns
+    //  {error:"lunar-not-converted"}, handled downstream in handleStudyChart.)
+    if((calVal==="lunar"||calVal==="lunar-leap") && window.SajuLunar){
+      try{ window.SajuLunar.lunarToSolar(Yn, Mn, Dn, calVal==="lunar-leap"); }
+      catch(err){ report.innerHTML='<p class="placeholder">'+esc(lunarErrorMessage(err, Yn, Mn, Dn, calVal==="lunar-leap"))+'</p>'; return; }
+    }
+    if(!window.SajuStudyChart){ report.innerHTML='<p class="placeholder">The chart engine is still loading — try again in a moment.</p>'; return; }
+    // Build the birthplace. Pass the FULL utcOffset — the store withholds it for Korean
+    // longitudes (124–132°E) on its own; we do not re-implement (or fight) that guard.
+    var placeVal = document.getElementById("bplace").value, place=null;
+    if(placeVal && placeVal!=="unknown"){
+      var pp=placeVal.split(","), lon=parseFloat(pp[0]), ut=pp.length>2?parseFloat(pp[2]):NaN;
+      place = { key: pp[1]||null, lon: isNaN(lon)?null:lon, utcOffset: isNaN(ut)?null:ut };
+    }
+    var noTime = notime.checked, hasTime = !noTime && !!btime.value, hh=null, mm=null;
+    if(hasTime){ var tp=btime.value.split(":"); hh=parseInt(tp[0],10); mm=parseInt(tp[1],10); if(isNaN(mm)) mm=0; }
+    var sexVal = document.getElementById("sex").value; // "", "both", "male", "female"
+    var birth = {
+      year: Yn, month: Mn, day: Dn,
+      hour: hasTime ? hh : null,
+      minute: hasTime ? mm : null,
+      calendar: calVal,
+      place: place,
+      sex: (sexVal==="male"||sexVal==="female") ? sexVal : null, // the store carries no "both"
+      dayBoundary: "midnight"
+    };
+    // One store, one event: save() persists + broadcasts saju:studychart synchronously,
+    // and handleStudyChart renders #report. _pendingScroll marks this as a fresh cast so
+    // the reading scrolls into view (a passive restore or hour-scrub must not hijack scroll).
+    _pendingScroll = true;
+    if(!window.SajuStudyChart.save(birth)) _pendingScroll = false; // invalid birth: no event fired
   }); }
+
+  // The ONE render path: every fresh cast and every dock hour-scrub arrives here. The
+  // store also re-broadcasts a saved birth one tick after load, so a returning reader
+  // lands on their own chart with the form pre-filled and zero clicks.
+  document.addEventListener("saju:studychart", function(e){ handleStudyChart(e.detail); });
 })();
 </script>
 <!--om-footer:start-->

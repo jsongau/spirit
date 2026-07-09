@@ -274,12 +274,21 @@ PNAV.MAP = [
       ]
     },
     cols: [
-      { title: "BaZi", mark: "八字", items: [
-        ["/bazi/chart/",         "Cast your chart", "tool"],
-        ["/bazi/",               "What is BaZi", "八字 Bāzì · eight characters"],
-        ["/bazi/day-master/",    "Your Day Master", "日主 Rìzhǔ"],
-        ["/bazi/ten-gods/",      "The Ten Gods", "十神 Shíshén"],
-        ["/bazi/compatibility/", "You & them"]
+      /* The four-pillars family: one eight-character engine, read two ways.
+         BaZi (八字, Chinese) and Saju (사주팔자, Korean) sit as PEERS under one
+         shared method — Saju is never nested under BaZi. Framing per
+         docs/saju/BAZI-SAJU-RELATIONSHIP-AND-FRAMING.md ("two living
+         traditions of the same Four Pillars method"). Day Master + Ten Gods
+         are the shared machinery, so they read as family, not Chinese-only.
+         Budget: 5 rows (the cap). /bazi/compatibility/ was demoted to seat
+         Saju; it still lives in the bazi hub's "Read your own" dropdown and
+         in PNAV.CRAWL_EXTRA, so no crawl reach was lost. */
+      { title: "Four Pillars", mark: "四柱", items: [
+        ["/bazi/chart/",      "Cast your chart", "tool"],
+        ["/bazi/",            "BaZi", "八字 Bāzì · the Chinese reading"],
+        ["/elements/saju/",   "Saju Palja", "사주팔자 · the Korean reading"],
+        ["/bazi/day-master/", "Your Day Master", "日主 Rìzhǔ"],
+        ["/bazi/ten-gods/",   "The Ten Gods", "十神 Shíshén"]
       ]},
       { title: "Purple Star", mark: "紫微", items: [
         ["/elements/purple-star-astrology/",             "Zi Wei Dou Shu", "紫微斗数 Zǐwēi Dǒushù"],
@@ -361,6 +370,9 @@ PNAV.CRAWL_EXTRA = [
   ["/cosmology/four-pillars/",       "The Four Pillars"],
   ["/elements/",                     "The five phases (Elements hub)"],
   ["/bazi/",                         "BaZi, the Four Pillars of Destiny"],
+  /* demoted from the Sage Wisdom "Four Pillars" column when Saju took its
+     seat; still reachable via the bazi hub's "Read your own" dropdown. */
+  ["/bazi/compatibility/",           "BaZi compatibility (合婚)"],
   ["/elements/purple-star-astrology/",              "Purple Star Astrology (Zi Wei Dou Shu)"],
   ["/elements/purple-star-astrology/chart/",        "Learn to read a Purple Star chart"],
   ["/elements/purple-star-astrology/stars/",        "The 14 major stars"],
@@ -739,6 +751,34 @@ PNAV.HUBS = {
         ["/elements/chakras/sahasrara/yoga/", "Yoga"]
       ]]
     ]
+  },
+  // Nested hub: Korean Saju Palja resolves here (not to "elements") via the
+  // longest-prefix match in resolveHub, so the Saju page keeps its OWN
+  // breadcrumb + BreadcrumbList instead of inheriting the Elements
+  // (Wood/Fire/Earth…) sub-nav it currently falls through to. Framing per
+  // docs/saju/BAZI-SAJU-RELATIONSHIP-AND-FRAMING.md: Saju is a sibling
+  // tradition of BaZi, not "the Korean version," so it earns its own crumb.
+  //
+  // items:[] TODAY: only /elements/saju/ exists on disk — one rich single
+  // page. A grouped bazi-shape sub-nav cannot render yet: apply-nav's
+  // Overview filter drops any /elements/saju/#anchor top-level item (norm()
+  // strips the hash, so every anchor equals the hub root), and the
+  // docs/saju-v2 spokes (chart/, four-pillars/, ten-gods/, korean-words/…)
+  // are NOT built — listing them would 404 audit-links. When a real spoke
+  // ships, upgrade to the grouped shape, e.g.:
+  //   items: [
+  //     ["/elements/saju/chart/", "Cast your Saju", [
+  //       ["/elements/saju/chart/", "Cast your chart"],
+  //       ["/elements/saju/#report", "A worked example"]
+  //     ]],
+  //     ["/elements/saju/four-pillars/", "Learn the pieces", [ ... ]]
+  //   ]
+  // For now the empty items[] emits only the breadcrumb + JSON-LD (enough to
+  // un-orphan the page in the hierarchy); the human entry point is the Sage
+  // Wisdom "Four Pillars" column row.
+  "elements/saju": {
+    label: "Saju Palja", root: "/elements/saju/",
+    items: []
   },
   "moon": {
     label: "The Moon", root: "/moon.html",

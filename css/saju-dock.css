@@ -1,0 +1,230 @@
+/* ============================================================
+   saju-dock.css — #scast-dock, the moonlight instrument for
+   /elements/saju/. ONE 44px dock, five 오행 palettes.
+
+   Ported from Jay's dock-preview.html (six colour studies over a
+   single dock). The ZWDS "pcast-" dock is a SEPARATE file; the two
+   must never collide, hence the "scast-" prefix on every selector
+   here. Do not let them share a class.
+
+   Tokens only. Dark celestial only. This file defines NO hues of
+   its own — the five element palettes live in the PAGE :root as
+   --el-* custom properties and are consumed here.
+
+   TOKENS CONSUMED FROM THE PAGE
+     Base (site/css/tokens.css):
+       --ink  --ink-2  --line  --line-soft  --ivory  --moon
+       --muted  --faint  --serif  --sans  --mono  --r-1  --r-pill
+     Element palettes — the page :root MUST define all 24
+     (four knobs per element + the resting "none"/moonlight set):
+       --el-none  --el-none-bright  --el-none-dim  --el-none-bloom
+       --el-wood  --el-wood-bright  --el-wood-dim  --el-wood-bloom
+       --el-fire  --el-fire-bright  --el-fire-dim  --el-fire-bloom
+       --el-earth --el-earth-bright --el-earth-dim --el-earth-bloom
+       --el-metal --el-metal-bright --el-metal-dim --el-metal-bloom
+       --el-water --el-water-bright --el-water-dim --el-water-bloom
+   ============================================================ */
+
+@property --dk-a{ syntax:"<angle>"; inherits:false; initial-value:0deg }
+
+/* ---- the four knobs, driven by ONE attribute: data-el ----------
+   The JS sets data-el on #scast-dock to the reader's Day Master
+   element after a cast; to "none" (moonlight) before a cast; AND to
+   "none" whenever sajuPalette="moonlight". Moonlight removes hue as
+   an information channel entirely — it is also the accessible mode.
+   No JS repaint of colour: one attribute, the instrument re-tunes. */
+#scast-dock{
+  --dk-thumb:14px;   /* MUST equal the ::-webkit-slider-thumb width below */
+  --dk-key:var(--el-none); --dk-key-bright:var(--el-none-bright);
+  --dk-key-dim:var(--el-none-dim); --dk-bloom:var(--el-none-bloom);
+}
+#scast-dock[data-el="none"] { --dk-key:var(--el-none);  --dk-key-bright:var(--el-none-bright);  --dk-key-dim:var(--el-none-dim);  --dk-bloom:var(--el-none-bloom) }
+#scast-dock[data-el="wood"] { --dk-key:var(--el-wood);  --dk-key-bright:var(--el-wood-bright);  --dk-key-dim:var(--el-wood-dim);  --dk-bloom:var(--el-wood-bloom) }
+#scast-dock[data-el="fire"] { --dk-key:var(--el-fire);  --dk-key-bright:var(--el-fire-bright);  --dk-key-dim:var(--el-fire-dim);  --dk-bloom:var(--el-fire-bloom) }
+#scast-dock[data-el="earth"]{ --dk-key:var(--el-earth); --dk-key-bright:var(--el-earth-bright); --dk-key-dim:var(--el-earth-dim); --dk-bloom:var(--el-earth-bloom) }
+#scast-dock[data-el="metal"]{ --dk-key:var(--el-metal); --dk-key-bright:var(--el-metal-bright); --dk-key-dim:var(--el-metal-dim); --dk-bloom:var(--el-metal-bloom) }
+#scast-dock[data-el="water"]{ --dk-key:var(--el-water); --dk-key-bright:var(--el-water-bright); --dk-key-dim:var(--el-water-dim); --dk-bloom:var(--el-water-bloom) }
+
+/* ============================================================
+   THE SHELL
+   ============================================================ */
+#scast-dock{ position:fixed; left:0; right:0; bottom:0; z-index:50; isolation:isolate;
+  background:var(--ink-2); border-top:1px solid var(--line);
+  font-family:var(--sans); color:var(--ivory);
+  transition:background .5s ease, border-color .5s ease }
+#scast-dock[data-state="closed"]{ display:none }
+
+/* brass/element inset top hairline — the "lit instrument" edge. One gradient. */
+#scast-dock::before{ content:""; position:absolute; top:0; left:0; right:0; height:1px; pointer-events:none;
+  background:linear-gradient(90deg,transparent,color-mix(in oklab,var(--dk-key) 55%,transparent),transparent) }
+
+/* one-shot conic wake on :focus-within. NOT a loop — a looping glow in a
+   fixed bottom bar is the strobe bug. Disabled under prefers-reduced-motion. */
+#scast-dock::after{ content:""; position:absolute; inset:0; pointer-events:none; opacity:0;
+  background:conic-gradient(from var(--dk-a),transparent 0 72%,color-mix(in oklab,var(--dk-key) 40%,transparent) 84%,transparent 96%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude; padding:1px; border-radius:inherit }
+#scast-dock:focus-within::after{ animation:dkWake .9s ease-out 1 }
+@keyframes dkWake{ 0%{opacity:0} 20%{opacity:1} 100%{--dk-a:360deg;opacity:0} }
+
+.scast-dock-inner{ position:relative; max-width:min(96vw,1760px); margin:0 auto;
+  padding:0 clamp(12px,2vw,16px) env(safe-area-inset-bottom);
+  display:flex; align-items:center; gap:12px; min-height:44px }
+
+#scast-dock[data-state="min"] .scast-chart{ display:none }
+.scast-chart{ display:flex; align-items:center; gap:10px; flex:1; min-width:0; height:44px }
+
+/* ---- identity ---- */
+.scast-dk-id{ display:flex; align-items:center; gap:8px; flex:none; background:transparent; border:0;
+  padding:2px 4px 2px 0; cursor:pointer; font:inherit; color:inherit }
+.scast-dk-sigil{ font-family:var(--serif); font-size:1.05rem; color:var(--dk-key); line-height:1;
+  transition:color .5s ease }
+.scast-dk-idtext{ display:flex; flex-direction:column; align-items:flex-start; gap:0; min-width:0 }
+.scast-dk-eyebrow{ font-family:var(--mono); font-size:.52rem; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--dk-key-dim); line-height:1.3; transition:color .5s ease }
+.scast-dk-date{ font-family:var(--mono); font-size:.8rem; color:var(--ivory); line-height:1.2; white-space:nowrap }
+.scast-dk-id:hover .scast-dk-date{ color:var(--moon) }
+.scast-dk-id:focus-visible{ outline:2px solid var(--dk-key); outline-offset:2px; border-radius:var(--r-1) }
+
+/* ---- the beam ------------------------------------------------
+   GEOMETRY CONTRACT (carried verbatim from dock-preview.html;
+   it cost a bug to find):
+   a native range thumb's CENTRE travels from thumbW/2 to
+   width - thumbW/2. So the position of value v is
+       thumbW/2 + (v/23) * (100% - thumbW)
+   The tick notches MUST use the SAME formula, via --dk-t, or they
+   drift. --dk-thumb MUST equal the ::-webkit-slider-thumb width;
+   changing one without the other silently drifts the whole beam.
+   Do NOT lay the notches out with justify-content:space-between —
+   that maps notch i to i/11, as if the scale ended at hour 22, and
+   hour 10 lands ~2% left of its label.
+   --------------------------------------------------------------- */
+.scast-dk-beam{ position:relative; flex:1; min-width:120px; display:flex; flex-direction:column; gap:2px; padding:6px 0 0 }
+.scast-dk-beam-range{ -webkit-appearance:none; appearance:none; width:100%; margin:0; height:14px;
+  background:transparent; cursor:pointer; display:block }
+.scast-dk-beam-range::-webkit-slider-runnable-track{ height:3px; border-radius:2px;
+  background:
+    radial-gradient(22px 14px at var(--dk-pos,50%) 50%, var(--dk-bloom), transparent 70%),
+    color-mix(in oklab,var(--dk-key) 24%,var(--line));
+  transition:transform .14s ease }
+.scast-dk-beam-range::-webkit-slider-thumb{ -webkit-appearance:none; appearance:none;
+  width:var(--dk-thumb); height:var(--dk-thumb); margin-top:calc((3px - var(--dk-thumb)) / 2);
+  border-radius:50%; background:var(--dk-key); border:2px solid var(--ink);
+  box-shadow:0 0 10px -1px var(--dk-key); transition:transform .14s ease, background .5s ease, box-shadow .5s ease }
+.scast-dk-beam-range::-moz-range-track{ height:3px; border-radius:2px; background:color-mix(in oklab,var(--dk-key) 24%,var(--line)) }
+.scast-dk-beam-range::-moz-range-thumb{ width:var(--dk-thumb); height:var(--dk-thumb); border-radius:50%;
+  background:var(--dk-key); border:2px solid var(--ink); box-shadow:0 0 10px -1px var(--dk-key) }
+/* precision affordance: appears ONLY when you reach for it (hover/focus) */
+.scast-dk-beam:hover .scast-dk-beam-range::-webkit-slider-runnable-track,
+.scast-dk-beam-range:focus-visible::-webkit-slider-runnable-track{ transform:scaleY(1.6) }
+.scast-dk-beam:hover .scast-dk-beam-range::-webkit-slider-thumb,
+.scast-dk-beam-range:focus-visible::-webkit-slider-thumb{ transform:scale(1.22) }
+.scast-dk-beam-range:focus-visible{ outline:2px solid var(--dk-key); outline-offset:4px; border-radius:var(--r-pill) }
+
+.scast-dk-beam-ticks{ position:relative; height:12px }
+.scast-dk-tick{ position:absolute; top:0;
+  /* the one formula, shared with the thumb */
+  left:calc(var(--dk-thumb) / 2 + var(--dk-t) * (100% - var(--dk-thumb)));
+  transform:translateX(-50%);
+  width:9px; height:12px; padding:0; background:transparent; border:0; cursor:pointer }
+.scast-dk-tick::before{ content:""; position:absolute; left:50%; top:0; width:1px; height:4px;
+  transform:translateX(-50%); background:color-mix(in oklab,var(--dk-key) 45%,transparent) }
+.scast-dk-tick::after{ content:""; position:absolute; inset:-8px -6px }   /* hit area */
+.scast-dk-tick b{ position:absolute; left:50%; top:5px; transform:translateX(-50%);
+  font-family:var(--mono); font-weight:400; font-size:.5rem; color:var(--faint);
+  opacity:0; transition:opacity .16s ease; white-space:nowrap; pointer-events:none }
+/* labels are silent (opacity:0) until you hover/focus — that is why the dock reads as 44px of calm */
+.scast-dk-beam:hover .scast-dk-tick b,.scast-dk-beam:focus-within .scast-dk-tick b{ opacity:1 }
+.scast-dk-tick.is-on::before{ background:var(--dk-key-bright); height:6px }
+.scast-dk-tick.is-on b{ opacity:1; color:var(--dk-key-bright); text-shadow:0 0 8px var(--dk-key) }
+.scast-dk-tick:focus-visible{ outline:2px solid var(--dk-key); outline-offset:2px; border-radius:3px }
+
+.scast-dk-beam-cur{ flex:none; font-family:var(--mono); font-size:.76rem; color:var(--ivory); white-space:nowrap }
+.scast-dk-beam-cur b{ font-weight:400; color:var(--dk-key-bright) }
+
+/* ---- the conversion line — the credibility centrepiece.
+   20:10 GMT+9 → 19:38 true solar → 술시 19–21
+   Floated ABOVE the 44px row so it never adds a control row; a slim
+   chip readable over page content. Shown whenever the hour is known,
+   and it carries the disclosures (NO_LONGITUDE / FOREIGN / PRE_STANDARD
+   / ZI_HOUR_ROLLOVER / NEAR_HOUR_EDGE / three-pillar). ---- */
+.scast-dk-conv{ position:absolute; left:0; bottom:calc(100% + 6px); margin:0; max-width:96vw;
+  padding:4px 10px; background:color-mix(in oklab,var(--ink-2) 92%,transparent);
+  border:1px solid var(--line-soft); border-left:2px solid var(--dk-key-dim); border-radius:var(--r-1);
+  font-family:var(--mono); font-size:.68rem; line-height:1.45; color:var(--muted); white-space:normal }
+.scast-dk-conv b{ font-weight:400; color:var(--dk-key-bright) }
+.scast-dk-conv[hidden]{ display:none }
+#scast-dock[data-state="min"] .scast-dk-conv{ display:none }
+
+/* ---- tools cluster ---- */
+.scast-dk-tools{ display:flex; align-items:center; gap:4px; flex:none }
+.scast-dk-sound,.scast-dk-collapse,.scast-dk-close{ position:relative; flex:none; width:30px; height:30px;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:transparent; border:0; border-radius:var(--r-1); cursor:pointer;
+  color:var(--muted); font-size:.9rem; line-height:1; transition:color .15s, background .15s }
+.scast-dk-sound::after,.scast-dk-collapse::after,.scast-dk-close::after{ content:""; position:absolute; inset:-5px }
+.scast-dk-close{ color:var(--faint) }   /* quieter: it is the destructive one */
+.scast-dk-sound:hover,.scast-dk-collapse:hover,.scast-dk-close:hover{ color:var(--dk-key-bright); background:color-mix(in oklab,var(--dk-key) 12%,transparent) }
+.scast-dk-sound:focus-visible,.scast-dk-collapse:focus-visible,.scast-dk-close:focus-visible{ outline:2px solid var(--dk-key); outline-offset:2px }
+.scast-dk-sound[aria-pressed="false"]{ color:var(--faint) }
+
+/* ---- the palette toggle (SajuStudyChart.makeToggle output) mounted here ---- */
+.scast-dk-tools .saju-src-toggle{ display:inline-flex; align-items:center; gap:2px; margin-right:2px;
+  padding:2px; border:1px solid var(--line); border-radius:var(--r-pill); background:var(--ink-2) }
+.scast-dk-tools .saju-src-toggle[hidden]{ display:none }
+.scast-dk-tools .saju-src-btn{ font:inherit; font-family:var(--mono); font-size:.62rem; letter-spacing:.02em;
+  padding:3px 9px; border:0; border-radius:var(--r-pill); background:transparent; color:var(--muted); cursor:pointer;
+  min-height:22px; transition:color .15s, background .15s }
+.scast-dk-tools .saju-src-btn:hover{ color:var(--moon) }
+.scast-dk-tools .saju-src-btn.is-on{ color:var(--ink); background:var(--dk-key) }
+.scast-dk-tools .saju-src-btn:focus-visible{ outline:2px solid var(--dk-key); outline-offset:2px }
+
+/* ---- minimized pill ---- */
+.scast-dk-mini{ display:none; align-items:center; gap:8px; height:32px; margin-left:auto; padding:0 14px;
+  background:var(--ink-2); border:1px solid var(--dk-key-dim); border-radius:var(--r-pill);
+  color:var(--ivory); font:inherit; font-size:.76rem; cursor:pointer; box-shadow:0 0 14px -6px var(--dk-key) }
+.scast-dk-mini:hover{ border-color:var(--dk-key) }
+.scast-dk-mini:focus-visible{ outline:2px solid var(--dk-key); outline-offset:2px }
+.scast-dk-mini-txt{ font-family:var(--mono) }
+.scast-dk-mini .scast-dk-sigil{ font-size:.95rem }
+#scast-dock[data-state="min"]{ background:transparent; border-top-color:transparent }
+#scast-dock[data-state="min"]::before,#scast-dock[data-state="min"]::after{ display:none }
+#scast-dock[data-state="min"] .scast-dock-inner{ min-height:0; padding-top:6px;
+  padding-bottom:calc(6px + env(safe-area-inset-bottom)); justify-content:flex-end }
+#scast-dock[data-state="min"] .scast-dk-mini{ display:inline-flex }
+
+/* ---- closed: the restore launcher (lives on <body>, id not class) ---- */
+#scast-launcher{ position:fixed; right:calc(env(safe-area-inset-right) + 16px);
+  bottom:calc(env(safe-area-inset-bottom) + 16px); z-index:49;
+  width:44px; height:44px; border-radius:50%; display:grid; place-items:center;
+  background:var(--ink-2); border:1px solid var(--dk-key); color:var(--dk-key);
+  font-family:var(--serif); font-size:1.1rem; cursor:pointer; box-shadow:0 0 18px -6px var(--dk-key);
+  transition:color .5s ease, border-color .5s ease, box-shadow .5s ease }
+#scast-launcher:hover{ color:var(--dk-key-bright); box-shadow:0 0 24px -4px var(--dk-key) }
+#scast-launcher[hidden]{ display:none }
+#scast-launcher:focus-visible{ outline:2px solid var(--dk-key); outline-offset:3px }
+
+@media (max-width:900px){ .scast-dk-idtext{ display:none } }
+@media (max-width:560px){ .scast-dk-beam-cur{ display:none } }
+
+/* ============================================================
+   MOBILE — the site Reveal Dock (#pn-dock, shown ≤900px, z-index 60)
+   shares the bottom edge with this dock.
+   DECISION: only an OPEN #scast-dock folds #pn-dock away; minimized
+   or closed, it returns. #scast-dock carries NO unlock/reveal path of
+   its own (Jay's preview removed the ✦ that used to), so it must NEVER
+   hide the site's only mobile CTA permanently — that was the exact
+   ✦-consequence bug from the ZWDS hub. body.scast-dock-open is toggled
+   by the JS for the open state ALONE, so the CTA is one minimize away.
+   ============================================================ */
+@media (max-width:900px){
+  body.scast-dock-open .pn-dock{ display:none }
+}
+
+@media (prefers-reduced-motion:reduce){
+  #scast-dock,.scast-dk-sigil,.scast-dk-eyebrow,#scast-launcher{ transition:none }
+  #scast-dock:focus-within::after{ animation:none }
+  .scast-dk-beam-range::-webkit-slider-runnable-track,
+  .scast-dk-beam-range::-webkit-slider-thumb,
+  .scast-dk-tick b{ transition:none }
+}
