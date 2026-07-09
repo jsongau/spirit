@@ -89,6 +89,26 @@
 
   function link(code) { return LINK_BASE + "/?ref=" + encodeURIComponent(code || ""); }
 
+  /* ---- The twelve medallions: every soul picks a mark ---- */
+  var AVATARS = [
+    { key: "north-star", glyph: "✦", hue: "brass" },
+    { key: "ember-star", glyph: "✧", hue: "rose"  },
+    { key: "young-moon", glyph: "☽", hue: "moon"  },
+    { key: "old-moon",   glyph: "☾", hue: "violet"},
+    { key: "half-moon",  glyph: "◐", hue: "sky"   },
+    { key: "dark-moon",  glyph: "●", hue: "ink"   },
+    { key: "full-moon",  glyph: "○", hue: "moon"  },
+    { key: "sun-disc",   glyph: "☉", hue: "brass" },
+    { key: "moon-bloom", glyph: "❋", hue: "jade"  },
+    { key: "flare",      glyph: "✺", hue: "rose"  },
+    { key: "six-rays",   glyph: "✶", hue: "sky"   },
+    { key: "lantern",    glyph: "❂", hue: "violet"}
+  ];
+  function avatar(key) {
+    for (var i = 0; i < AVATARS.length; i++) if (AVATARS[i].key === key) return AVATARS[i];
+    return AVATARS[0];
+  }
+
   function stageLine(n) {
     n = Number(n) || 0;
     if (n <= 0) return "No allies yet. The deeper form of your animal sleeps until five stand with you.";
@@ -99,6 +119,8 @@
 
   window.ZodiRef = {
     GOAL: GOAL,
+    AVATARS: AVATARS,
+    avatar: avatar,
     pending: pending,
     claim: attemptClaim,
     state: state,

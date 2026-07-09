@@ -66,7 +66,7 @@
     if (!_client || !_session) { _profile = null; notify(); return Promise.resolve(null); }
     return _client
       .from("zodi_profiles")
-      .select("id,display_name,primal_name,primal_slug,chinese_zodiac,western_sign,zodi_karma,streak_days,best_streak")
+      .select("id,display_name,username,avatar_key,primal_name,primal_slug,chinese_zodiac,western_sign,zodi_karma,streak_days,best_streak")
       .eq("user_id", _session.user.id)
       .maybeSingle()
       .then(function (r) { _profile = r.data || null; notify(); return _profile; })

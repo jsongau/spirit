@@ -113,3 +113,22 @@ Same-person multi-email or incognito farming is not blocked client-side
 retroactively). The awakened reading itself is a placeholder page. Referral
 codes never regenerate to the animal-based form if minted before an animal was
 saved. The supabase-js CDN include tracks `@2` rather than a pinned version.
+
+## Added 2026-07-09, later the same day: profiles and the birth record
+
+Accounts now carry a public username (unique, lowercase, 3 to 20 characters)
+and a chosen mark (one of twelve medallions in `ZodiRef.AVATARS`), plus a
+private first name and last initial. The circle showcase renders each ally as
+mark, First name plus initial, @username, animal, and join date; that data
+reaches the referrer only through `zodi_referral_state()`.
+
+The dashboard's birth record card stores the full birth moment (date, hour,
+minute, birthplace, device timezone) in `zodi_private` and caches it at
+localStorage `zodi_birth` via `js/zodi-birth.js`. The three cast tools read
+that cache on load and cast automatically when the visitor has no chart of
+their own yet: Saju (`SajuStudyChart.save`), Purple Star
+(`ZiweiStudyChart.save`), and BaZi (fills the mounted controls and clicks
+cast). A chart the visitor already cast always wins. The cache is cleared on
+sign out. Known limit: cast pages do not load the auth layer, so the prefill
+works on devices where the dashboard has been visited once; a fresh device
+needs one dashboard visit to warm the cache.

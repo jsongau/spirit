@@ -270,3 +270,29 @@ grant execute on function public.zodi_referral_state() to authenticated;
 revoke all on function public.zodi_protect_referrals() from public, anon, authenticated;
 revoke all on function public.zodi_protect_karma() from public, anon, authenticated;
 revoke all on function public.zodi_handle_new_user() from public, anon, authenticated;
+
+-- 11) Usernames, avatars, and the full birth record (applied separately as
+--     migration "zodi_profiles_username_avatar_birth_record").
+alter table public.zodi_profiles
+  add column if not exists username text
+    check (username is null or username ~ '^[a-z0-9_]{3,20}$'),
+  add column if not exists avatar_key text
+    check (avatar_key is null or avatar_key ~ '^[a-z0-9-]{2,32}$');
+create unique index if not exists zodi_profiles_username_key
+  on public.zodi_profiles (lower(username));
+alter table public.zodi_private
+  add column if not exists first_name text
+    check (first_name is null or length(first_name) between 1 and 40),
+  add column if not exists last_initial text
+    check (last_initial is null or last_initial ~ '^[A-Za-z]$'),
+  add column if not exists birth_hour int
+    check (birth_hour is null or birth_hour between 0 and 23),
+  add column if not exists birth_minute int
+    check (birth_minute is null or birth_minute between 0 and 59),
+  add column if not exists birth_place text
+    check (birth_place is null or length(birth_place) <= 120),
+  add column if not exists birth_tz text
+    check (birth_tz is null or length(birth_tz) <= 64);
+-- zodi_referral_state() was replaced in the same migration to return
+-- username, avatar_key, first_name, and last_initial for each circle member;
+-- see the live definition in the database for the current source.

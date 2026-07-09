@@ -852,6 +852,9 @@
   .pcast-input { width: 100%; background: var(--ink-2); border: 1px solid var(--line); border-radius: var(--r-1); color: var(--moon); font: inherit; font-size: 0.94rem; padding: 9px 10px; min-height: 42px; }
   .pcast-input:focus-visible { outline: 2px solid var(--brass); outline-offset: 1px; }
   .pcast-check { display: flex; align-items: center; gap: 7px; margin-top: 7px; font-size: 0.82rem; color: var(--muted); cursor: pointer; }
+  /* seated under the timezone now, so it needs its own breathing room rather than the time field's */
+  .pcast-check-tz { margin-top: 10px; align-items: flex-start; line-height: 1.35; }
+  .pcast-check-tz input { flex: none; margin-top: 1px; }
   .pcast-check input { width: 16px; height: 16px; accent-color: var(--cc); }
   /* the form's one loud element: two lines, a lit rim, and a press that answers */
   .pcast-go { width: 100%; flex-direction: column; align-items: center; justify-content: center; gap: 1px;
@@ -901,6 +904,10 @@
   .pcast-hua-cell.pcast-hua-ke .pcast-hua-badge { color: var(--cc-bright); } .pcast-hua-cell.pcast-hua-ji .pcast-hua-badge { color: #e0685f; }
   .pcast-hua-star { color: var(--ivory); font-size: 1rem; } .pcast-hua-name { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
   .pcast-missing-cta { color: var(--cc-bright); font-size: 0.86rem; margin: 12px 0 0; }
+  /* No hour: the court is drawn anyway, seated at 午時. The panel says it, the board keeps saying it. */
+  .pcast-noon { margin-bottom: 18px; }
+  .pcast-board.is-assumed { outline: 1px dashed var(--brass-dim, var(--brass)); outline-offset: 6px; border-radius: var(--r-1); }
+  .pcast-assumed-cap { font-family: var(--mono); font-size: 0.68rem; line-height: 1.5; letter-spacing: 0.05em; color: var(--brass); margin: 12px 0 0; }
   .pcast-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.8rem; color: var(--muted); }
   .pcast-legend b { font-weight: 400; }
   /* custom birth-date field + calendar popover */
@@ -4680,5 +4687,7 @@
 })();
 </script>
 <!--om-footer:end-->
+<!-- signed-in birth record prefill: fills and casts from the saved dashboard record -->
+<script src="/js/zodi-birth.js" defer></script>
 </body>
 </html>

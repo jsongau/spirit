@@ -545,6 +545,176 @@
   .finalcta h2{ font-size:clamp(2rem,5vw,3.2rem); }
   .disclaim{ font-size:.82rem; color:var(--faint); max-width:60ch; margin:1.2rem auto 0; line-height:1.55; }
   </style>
+  <style id="saju-hero-cast">
+  /* ============================================================
+     SAJU HERO — cast-your-chart widget, styled to match the Purple Star
+     hero (same input language) but wired to the Saju engine + Korean labels.
+     Token bridge: the ported .pcast-* rules speak brass/cc/ink-2; alias them
+     to the Saju cinnabar palette so one paste keeps the whole look coherent.
+  ============================================================ */
+  .saju-scope .saju-hero-form{
+    --brass: var(--accent); --brass-bright: var(--accent-bright); --brass-dim: var(--accent-dim);
+    --cc: var(--accent); --cc-soft: var(--accent-soft); --cc-bright: var(--accent-bright);
+    --ink-2: var(--field);
+  }
+  /* hero becomes a two-column court: form on the left, the promise on the right */
+  .saju-scope .saju-hero{ text-align:left; padding-block:clamp(2.4rem,6vw,4.4rem) clamp(2rem,5vw,3.4rem); }
+  .saju-hero-grid{ display:grid; gap:clamp(20px,3vw,40px); align-items:center; }
+  @media (min-width:920px){
+    .saju-hero-grid{ grid-template-columns:358px minmax(0,1fr); grid-template-areas:"form copy"; }
+    .saju-hero-copy{ grid-area:copy; } .saju-hero-form{ grid-area:form; }
+  }
+  .saju-hero-copy .eyebrow{ display:block; margin-bottom:.5rem; }
+  .saju-hero-copy h1{ font-size:clamp(2.3rem,5.6vw,3.9rem); margin:.2rem 0 .3rem; }
+  .saju-hero-copy .hanline{ font-family:var(--korean); font-size:clamp(1rem,2.6vw,1.4rem); color:var(--accent-bright); letter-spacing:.1em; }
+  .saju-hero-copy .tagline{ font-family:var(--serif); font-style:italic; font-size:clamp(1.15rem,3vw,1.7rem); color:var(--ivory); margin:1rem 0 .2rem; max-width:24ch; }
+  .saju-hero-copy .lede{ max-width:52ch; margin:1rem 0 0; font-size:1.02rem; line-height:1.6; }
+  .saju-hero-copy .cta-row{ display:flex; flex-wrap:wrap; gap:.7rem; margin-top:1.4rem; }
+  .saju-hero-copy .lede.fine{ margin-top:1.2rem; font-size:.9rem; color:var(--faint); }
+
+  /* ---- the form panel ---- */
+  .saju-hero-form{ background:var(--panel); border:1px solid var(--line-soft); border-radius:var(--r-2); padding:18px 18px 16px; box-shadow:var(--e-2,0 12px 34px -18px rgba(0,0,0,.6)); }
+  .pcast-form-eyebrow{ font-family:var(--mono); font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-bright); margin:0 0 10px; }
+  .pcast-form-optnote{ font-size:.82rem; color:var(--muted); line-height:1.5; margin:-2px 0 14px; }
+  .pcast-field{ margin:0 0 12px; } .pcast-field-2{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .pcast-label{ display:block; font-family:var(--sans); font-size:.82rem; color:var(--muted); margin:0 0 4px; }
+  .pcast-opt{ color:var(--faint); font-size:.74rem; }
+  .pcast-input{ width:100%; background:var(--field); border:1px solid var(--line); border-radius:var(--r-1); color:var(--ivory); font:inherit; font-size:.96rem; padding:9px 10px; min-height:42px; }
+  .pcast-input::placeholder{ color:var(--faint); }
+  .pcast-input:focus-visible{ outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent); }
+  .pcast-check{ display:flex; align-items:center; gap:7px; margin-top:8px; font-size:.82rem; color:var(--muted); cursor:pointer; }
+  .pcast-check input{ width:16px; height:16px; accent-color:var(--accent); }
+  .pcast-check-tz{ margin-top:10px; align-items:flex-start; line-height:1.35; }
+  .pcast-check-tz input{ flex:none; margin-top:1px; }
+
+  /* the one loud element — the gold two-line cast button */
+  .pcast-go{ width:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px;
+    margin-top:6px; padding:10px 20px; min-height:56px; cursor:pointer; border:0; font:inherit; border-radius:var(--r-pill);
+    background:linear-gradient(168deg,var(--accent-bright),var(--accent) 62%);
+    box-shadow:0 0 0 0 var(--accent-soft),0 8px 22px -12px var(--accent);
+    transition:box-shadow .18s var(--ease-out),transform .08s var(--ease-out),filter .18s var(--ease-out); }
+  .pcast-go:hover{ filter:brightness(1.06); box-shadow:0 0 0 4px var(--accent-soft),0 10px 26px -10px var(--accent); }
+  .pcast-go:active{ transform:scale(.985); }
+  .pcast-go:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+  .pcast-go-lab{ font-family:var(--sans); font-weight:600; font-size:1rem; line-height:1.2; color:oklch(0.18 0.04 40); }
+  .pcast-go-sub{ font-family:var(--mono); font-size:.58rem; letter-spacing:.12em; text-transform:uppercase; color:oklch(0.18 0.04 40); opacity:.66; line-height:1.3; }
+  @media (prefers-reduced-motion:reduce){ .pcast-go{ transition:none; } .pcast-go:active{ transform:none; } }
+  .pcast-privacy{ font-family:var(--mono); font-size:.64rem; letter-spacing:.08em; color:var(--faint); margin:9px 0 0; text-align:center; }
+
+  /* ---- date field + calendar popover ---- */
+  .pcast-date-field{ position:relative; }
+  .pcast-date-wrap{ display:flex; gap:8px; }
+  .pcast-date-wrap .pcast-input{ flex:1 1 auto; }
+  .pcast-cal-btn,.pcast-clock-btn{ flex:0 0 auto; width:44px; min-height:44px; border:1px solid var(--line); border-radius:var(--r-1); background:var(--field); color:var(--accent-bright); cursor:pointer; display:grid; place-items:center; transition:border-color .15s; }
+  .pcast-cal-btn:hover,.pcast-clock-btn:hover{ border-color:var(--accent); }
+  .pcast-cal-btn:focus-visible,.pcast-clock-btn:focus-visible{ outline:2px solid var(--accent); outline-offset:1px; }
+  .pcast-clock-btn:disabled{ opacity:.45; cursor:not-allowed; }
+  .pcast-cal{ position:absolute; z-index:80; top:calc(100% + 8px); left:0; width:min(346px,calc(100vw - 40px));
+    background:var(--panel-2); border:1px solid var(--line); border-top:2px solid var(--accent); border-radius:var(--r-2);
+    box-shadow:0 16px 44px rgba(0,0,0,.5); padding:14px 16px; }
+  .pcast-cal[hidden]{ display:none; }
+  @media (min-width:920px){ .saju-hero-form .pcast-cal{ left:calc(100% + 14px); top:0; } }
+  .pcast-cal-head{ display:flex; align-items:center; gap:8px; padding-bottom:8px; margin-bottom:8px; border-bottom:1px solid var(--line-soft); }
+  .pcast-cal-selwrap{ flex:1 1 auto; display:flex; gap:6px; }
+  .pcast-cal-sel{ flex:1 1 auto; min-width:0; background:var(--field); border:1px solid var(--line); border-radius:var(--r-1); color:var(--ivory); font:inherit; font-size:.86rem; padding:6px 10px; min-height:40px; }
+  .pcast-cal-sel:hover{ border-color:var(--accent); }
+  .pcast-cal-sel:focus-visible{ outline:2px solid var(--accent); outline-offset:1px; }
+  .pcast-cal-nav{ flex:0 0 auto; width:40px; min-height:40px; border:1px solid var(--line); border-radius:50%; background:var(--field); color:var(--accent-bright); font-size:1.1rem; cursor:pointer; display:grid; place-items:center; transition:background .15s,border-color .15s,transform .1s; }
+  .pcast-cal-nav:hover{ background:var(--accent-soft); border-color:var(--accent); color:var(--moon); }
+  .pcast-cal-nav:active{ transform:scale(.9); }
+  .pcast-cal-dow{ display:grid; grid-template-columns:repeat(7,1fr); gap:2px; margin-bottom:4px; }
+  .pcast-cal-dow span{ text-align:center; font-family:var(--mono); font-size:.62rem; color:var(--faint); }
+  .pcast-cal-dow span:first-child,.pcast-cal-dow span:last-child{ color:var(--accent-bright); }
+  .pcast-cal-grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:2px; }
+  .pcast-cal-day{ min-height:40px; border:0; border-radius:var(--r-1); background:transparent; color:var(--body-text); font:inherit; font-size:.9rem; cursor:pointer; transition:background .12s,color .12s; }
+  .pcast-cal-day:hover{ background:var(--accent-soft); color:var(--moon); }
+  .pcast-cal-day.is-sel{ background:var(--accent); color:oklch(0.18 0.04 40); font-weight:600; box-shadow:0 0 0 2px var(--accent-soft); }
+  .pcast-cal-empty{ min-height:40px; }
+
+  /* ---- calendar-type pills (Saju-specific: 양력/음력/윤달) shown compact ---- */
+  .pcast-caltype{ display:flex; gap:.4rem; flex-wrap:wrap; }
+  .pcast-caltype button{ position:relative; display:flex; flex-direction:column; align-items:center; gap:.05rem; flex:1 1 0; min-width:82px;
+    padding:.5rem .4rem; background:var(--field); border:1px solid var(--line); border-radius:var(--r-1); cursor:pointer; transition:border-color .15s,box-shadow .15s; }
+  .pcast-caltype .cal-ko{ font-family:var(--korean); font-size:.98rem; color:var(--accent-bright); }
+  .pcast-caltype .cal-en{ font-family:var(--mono); font-size:.56rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+  .pcast-caltype button[aria-checked="true"]{ border-color:var(--accent); box-shadow:inset 0 0 0 1px var(--accent-soft); }
+  .pcast-caltype button:hover{ border-color:var(--accent); }
+  .pcast-caltype button:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  .pcast-caltype button[hidden]{ display:none; }
+
+  /* ---- birth time: segmented field + 24h/AM·PM toggle + clock ---- */
+  .pcast-time-field{ position:relative; }
+  .pcast-time-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:4px; }
+  .pcast-time-head .pcast-label{ margin:0; }
+  .pcast-time-row{ display:flex; gap:8px; }
+  .pcast-time-box{ flex:1 1 auto; display:flex; align-items:center; gap:2px; min-height:42px; padding:0 10px;
+    background:var(--field); border:1px solid var(--line); border-radius:var(--r-1); }
+  .pcast-time-box:focus-within{ border-color:var(--accent); outline:2px solid var(--accent); outline-offset:1px; }
+  .pcast-time-box.is-disabled{ opacity:.45; }
+  .pcast-tseg{ width:2.4ch; padding:8px 0; background:transparent; border:0; color:var(--ivory); font-family:var(--mono); font-size:1.02rem; line-height:1.2; text-align:center; caret-color:var(--accent); }
+  .pcast-tseg::placeholder{ color:var(--faint); }
+  .pcast-tseg:focus{ outline:0; background:var(--accent-soft); border-radius:4px; }
+  .pcast-tseg:disabled{ cursor:not-allowed; }
+  .pcast-tsep{ font-family:var(--mono); font-size:1.02rem; color:var(--faint); padding:0 1px; }
+  .pcast-time-box.is-set .pcast-tsep{ color:var(--accent-dim); }
+  .pcast-tap{ margin-left:auto; min-width:42px; min-height:30px; padding:4px 10px; background:transparent; border:1px solid var(--line); border-radius:var(--r-pill); color:var(--muted); font-family:var(--mono); font-size:.68rem; letter-spacing:.08em; cursor:pointer; transition:color .15s,border-color .15s; }
+  .pcast-tap:hover{ color:var(--moon); border-color:var(--accent); }
+  .pcast-tap:focus-visible{ outline:2px solid var(--accent); outline-offset:1px; }
+  .pcast-tap[hidden]{ display:none; }
+  .pcast-time-box.is-set .pcast-tap{ color:var(--accent-bright); border-color:var(--accent-dim); }
+
+  /* the shared segmented toggle (24h / AM·PM) */
+  .zg-toggle{ position:relative; display:inline-flex; gap:2px; padding:3px; border-radius:var(--r-1); background:var(--field); border:1px solid var(--line); }
+  .zg-thumb{ position:absolute; top:3px; bottom:3px; z-index:0; background:linear-gradient(160deg,color-mix(in oklab,var(--accent) 28%,var(--panel)),var(--panel)); border:1px solid var(--accent); border-radius:calc(var(--r-1) - 2px); box-shadow:0 0 18px -6px var(--accent),inset 0 0 12px -8px var(--accent); transition:left .28s cubic-bezier(.5,1.4,.4,1),width .28s cubic-bezier(.5,1.4,.4,1); }
+  .zg-opt{ position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; gap:1px; padding:8px 16px; background:transparent; border:0; color:var(--muted); font:inherit; cursor:pointer; transition:color .15s; }
+  .zg-opt b{ font-weight:500; font-size:.8rem; line-height:1.2; }
+  .zg-opt:focus-visible{ outline:2px solid var(--accent); outline-offset:-2px; border-radius:calc(var(--r-1) - 2px); }
+  .zg-opt[aria-selected="true"]{ color:var(--ivory); }
+  .zg-toggle-sm{ flex:none; padding:2px; }
+  .zg-toggle-sm .zg-opt{ padding:5px 10px; min-height:30px; justify-content:center; }
+  .zg-toggle-sm .zg-opt b{ font-family:var(--mono); font-size:.64rem; letter-spacing:.06em; }
+  .zg-toggle-sm .zg-thumb{ top:2px; bottom:2px; }
+  @media (prefers-reduced-motion:reduce){ .zg-thumb{ transition:none; } }
+
+  /* compact clock popover — hour + minute quick pick */
+  .pcast-clock{ position:absolute; z-index:90; top:calc(100% + 8px); left:0; width:min(300px,calc(100vw - 40px));
+    background:var(--panel-2); border:1px solid var(--line); border-top:2px solid var(--accent); border-radius:var(--r-2);
+    box-shadow:0 16px 44px rgba(0,0,0,.5); padding:12px 14px; max-height:min(70vh,440px); overflow-y:auto; overscroll-behavior:contain; }
+  .pcast-clock[hidden]{ display:none; }
+  @media (min-width:920px){ .saju-hero-form .pcast-clock{ left:calc(100% + 14px); top:50%; transform:translateY(-50%); } }
+  .pcast-clock-h{ font-family:var(--mono); font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); margin:2px 0 6px; }
+  .pcast-clock-h:not(:first-child){ margin-top:12px; }
+  .pcast-clock-grid{ display:grid; gap:4px; }
+  .pcast-clock-grid.hours{ grid-template-columns:repeat(6,1fr); }
+  .pcast-clock-grid.mins{ grid-template-columns:repeat(6,1fr); }
+  .pcast-clock-cell{ min-height:34px; border:1px solid var(--line); border-radius:var(--r-1); background:var(--field); color:var(--body-text); font-family:var(--mono); font-size:.82rem; cursor:pointer; transition:background .12s,color .12s,border-color .12s; }
+  .pcast-clock-cell:hover{ background:var(--accent-soft); color:var(--moon); border-color:var(--accent); }
+  .pcast-clock-cell.is-on{ background:var(--accent); color:oklch(0.18 0.04 40); border-color:var(--accent); font-weight:600; }
+  .pcast-clock-branch{ margin:8px 0 0; font-family:var(--mono); font-size:.68rem; line-height:1.4; color:var(--faint); }
+  .pcast-clock-branch b{ font-weight:400; color:var(--accent-bright); }
+
+  /* ---- timezone / birthplace plate ---- */
+  .pcast-tzplate{ position:relative; display:flex; align-items:center; gap:6px; min-height:42px; padding:9px 10px; background:var(--field); border:1px solid var(--line); border-radius:var(--r-1); transition:border-color .15s; }
+  .pcast-tzplate:hover{ border-color:var(--accent); }
+  .pcast-tzplate:focus-within{ border-color:var(--accent); outline:2px solid var(--accent); outline-offset:1px; }
+  .pcast-tzval{ font-family:var(--mono); font-size:.9rem; color:var(--ivory); white-space:nowrap; pointer-events:none; overflow:hidden; text-overflow:ellipsis; }
+  .pcast-tzcaret{ margin-left:auto; font-size:.7rem; color:var(--accent-bright); pointer-events:none; }
+  .pcast-tzsel{ position:absolute; inset:0; width:100%; height:100%; margin:0; padding:0; border:0; opacity:0; font:inherit; cursor:pointer; }
+  .pcast-tzhint{ margin:5px 0 0; font-size:.72rem; line-height:1.4; color:var(--faint); }
+  .pcast-tzhint:empty{ display:none; }
+
+  /* optional extras disclosure (luck timeline) */
+  .pcast-more{ margin-top:2px; width:100%; text-align:left; background:transparent; border:0; border-top:1px dashed var(--line); padding:11px 2px 3px; color:var(--muted); font-family:var(--sans); font-size:.84rem; cursor:pointer; display:flex; align-items:center; gap:.4rem; }
+  .pcast-more:hover{ color:var(--moon); }
+  .pcast-more .opt{ margin-left:auto; font-family:var(--mono); font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); }
+  .pcast-more-body[hidden]{ display:none; }
+  .pcast-select{ width:100%; background:var(--field); border:1px solid var(--line); border-radius:var(--r-1); color:var(--ivory); font:inherit; font-size:.92rem; padding:9px 10px; min-height:42px; }
+  .pcast-select:focus-visible{ outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent); }
+  @media (max-width:560px){
+    .pcast-cal,.pcast-clock{ position:fixed; left:0; right:0; bottom:0; top:auto; width:100%; max-width:100%; transform:none; border-radius:var(--r-2) var(--r-2) 0 0; box-shadow:0 -12px 44px rgba(0,0,0,.6); padding:16px 16px calc(16px + env(safe-area-inset-bottom)); }
+    .saju-hero-form .pcast-cal,.saju-hero-form .pcast-clock{ left:0; top:auto; }
+  }
+  </style>
 <!--pn-assets:start-->
 <script data-pn-assets="theme-boot">(function(){try{var m=new Date().getMonth();var s=m>=2&&m<=4?"spring":m>=5&&m<=7?"summer":m>=8&&m<=10?"autumn":"winter";var d=document.documentElement;d.dataset.theme="dark";d.dataset.season=s;}catch(e){}})();</script>
 <link rel="stylesheet" href="/css/tokens.css" data-pn-assets="/css/tokens.css">
@@ -674,48 +844,43 @@
 <main id="pn-main" tabindex="-1">
   <!-- HERO -->
   <header class="saju-hero wrap" id="start">
-    <p class="eyebrow">Korean Destiny Astrology</p>
-    <h1>Saju Palja</h1>
-    <p class="hanline"><span class="ko">사주팔자</span> · <span class="han">四柱八字</span></p>
-    <p class="tagline">Four moments. Eight characters. A lifetime of patterns.</p>
-    <p class="lede">Your birth year, month, day, and hour each become one <em>heavenly stem</em> above one <em>earthly branch</em>, four pillars, eight characters. Korean masters read them the way you'd read a house: which season it was built in, what holds it up, where it strains. This hub is a school hiding inside a reading. Every conclusion will eventually trace back to the chart, the calculation, and the rule that produced it.</p>
-    <div class="cta-row">
-      <button class="btn btn-primary" data-scroll="#birth-gate">Raise your four pillars</button>
-      <button class="btn" data-scroll="#four-pillars">Learn the system first</button>
-    </div>
-    <p class="lede" style="margin-top:1.6rem;font-size:.92rem;color:var(--faint)">Saju is a Korean practice within a shared East Asian Four Pillars tradition, its own vocabulary, teachers, consultation culture, and time conventions. A reflective tradition, not a science of guaranteed events.</p>
-  </header>
+    <div class="saju-hero-grid">
+      <div class="saju-hero-copy">
+        <p class="eyebrow">Korean Destiny Astrology</p>
+        <h1>Saju Palja</h1>
+        <p class="hanline"><span class="ko">사주팔자</span> · <span class="han">四柱八字</span></p>
+        <p class="tagline">Four moments. Eight characters. A lifetime of patterns.</p>
+        <p class="lede">Your birth year, month, day, and hour each become one <em>heavenly stem</em> above one <em>earthly branch</em>, four pillars, eight characters. Korean masters read them the way you'd read a house: which season it was built in, what holds it up, where it strains. This hub is a school hiding inside a reading, and every conclusion traces back to the chart, the calculation, and the rule that produced it.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" data-scroll="#four-pillars">Learn the system first</button>
+          <button class="btn" data-scroll="#academy">Enter the Academy</button>
+        </div>
+        <p class="lede fine">Saju is a Korean practice within a shared East Asian Four Pillars tradition, its own vocabulary, teachers, consultation culture, and time conventions. A reflective tradition, not a science of guaranteed events.</p>
+      </div>
 
-  <!-- BIRTH GATE -->
-  <section class="band wrap" id="birth-gate">
-    <div class="sec-head">
-      <span class="eyebrow">The Birth Gate · <span class="ko">입문</span></span>
-      <h2>Where your chart begins</h2>
-      <p class="intro">Before anything is cast, we resolve <em>when</em> and <em>where</em> you were born, because Korean Saju corrects the clock to true solar time, and Korea's own standard time has changed across history. Give the gate your birth details and it casts your eight characters with the deterministic engine, and shows exactly how each was calculated. This is the calculation, not the fortune, the reading that interprets these characters is the next phase.</p>
-    </div>
+      <form class="saju-hero-form" id="gateForm" novalidate>
+        <p class="pcast-form-eyebrow">Your birth moment</p>
+        <p class="pcast-form-optnote">Give the gate your birth details and it raises your eight characters with the deterministic engine, corrected to true solar time. This is the calculation, not the verdict of your life.</p>
 
-    <div class="gate">
-      <!-- form -->
-      <form class="gate-card" id="gateForm" novalidate>
-        <h3>Your birth moment</h3>
-        <p class="why">Your date and calendar are all we need to begin. Add your time and place for the full four-pillar chart, or leave them and we cast three pillars rather than invent an hour.</p>
+        <!-- hidden compat fields: the visible controls above write these; submit + prefill read them -->
+        <input type="hidden" id="bMonth" value="">
+        <input type="hidden" id="bDay" value="">
+        <input type="hidden" id="bYear" value="">
+        <input type="hidden" id="bcal" value="solar">
+        <input type="hidden" id="btime" value="">
 
-        <div class="field">
-          <label id="bdateLbl">Birth date</label>
-          <div class="saju-seg" role="group" aria-labelledby="bdateLbl">
-            <label class="ss">Month<input class="ss-m" id="bMonth" inputmode="numeric" maxlength="2" placeholder="MM" autocomplete="bday-month" aria-label="Birth month"></label>
-            <span class="ss-sep" aria-hidden="true">/</span>
-            <label class="ss">Day<input class="ss-d" id="bDay" inputmode="numeric" maxlength="2" placeholder="DD" autocomplete="bday-day" aria-label="Birth day"></label>
-            <span class="ss-sep" aria-hidden="true">/</span>
-            <label class="ss">Year<input class="ss-y" id="bYear" inputmode="numeric" maxlength="4" placeholder="YYYY" autocomplete="bday-year" aria-label="Birth year"></label>
+        <div class="pcast-field pcast-date-field">
+          <label class="pcast-label" for="sMask">Birth date <span class="pcast-opt">· MM/DD/YYYY</span></label>
+          <div class="pcast-date-wrap">
+            <input class="pcast-input" id="sMask" type="text" inputmode="numeric" autocomplete="off" maxlength="14" placeholder="MM / DD / YYYY" aria-label="Birth date">
+            <button class="pcast-cal-btn" id="sCalBtn" type="button" aria-label="Open calendar" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><rect x="3" y="4.5" width="18" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
           </div>
-          <span class="hint">The Saju year turns at Ipchun (Beginning of Spring, ~Feb 4), not January 1.</span>
+          <div class="pcast-cal" id="sCal" hidden></div>
         </div>
 
-        <div class="field">
-          <label id="calLbl">Calendar</label>
-          <input type="hidden" id="bcal" value="solar">
-          <div class="cal-pills" role="radiogroup" aria-labelledby="calLbl">
+        <div class="pcast-field">
+          <label class="pcast-label" id="calLbl">Calendar <span class="pcast-opt">· the year turns at Ipchun, not Jan 1</span></label>
+          <div class="cal-pills pcast-caltype" role="radiogroup" aria-labelledby="calLbl">
             <button type="button" role="radio" aria-checked="true" tabindex="0" data-cal="solar" aria-describedby="tip-solar">
               <span class="cal-ko">양력</span><span class="cal-en">Solar</span>
               <span class="cal-tip" role="tooltip" id="tip-solar">Standard Western (Gregorian) calendar. If your birth certificate shows the date, pick <span class="tko">양력</span>.</span>
@@ -731,70 +896,80 @@
           </div>
         </div>
 
-        <button class="btn btn-primary" type="submit" style="width:100%;margin-top:.5rem">Cast my chart</button>
-        <!--privacy line removed per request-->
+        <div class="pcast-field pcast-time-field">
+          <div class="pcast-time-head">
+            <label class="pcast-label" id="sTimeLbl">Birth time <span class="pcast-opt">· anchors the hour pillar</span></label>
+            <div class="zg-toggle zg-toggle-sm" id="sClockFmt" role="tablist" aria-label="Clock format">
+              <span class="zg-thumb" aria-hidden="true"></span>
+              <button type="button" class="zg-opt" role="tab" data-value="24" aria-selected="true"><b>24h</b></button>
+              <button type="button" class="zg-opt" role="tab" data-value="12" aria-selected="false"><b>AM · PM</b></button>
+            </div>
+          </div>
+          <div class="pcast-time-row">
+            <div class="pcast-time-box" id="sTimeBox" role="group" aria-labelledby="sTimeLbl">
+              <input class="pcast-tseg" id="segH" type="text" inputmode="numeric" autocomplete="off" maxlength="2" placeholder="--" aria-label="Hour">
+              <span class="pcast-tsep" aria-hidden="true">:</span>
+              <input class="pcast-tseg" id="segM" type="text" inputmode="numeric" autocomplete="off" maxlength="2" placeholder="--" aria-label="Minute">
+              <button type="button" class="pcast-tap" id="segAP" hidden aria-label="Toggle AM or PM">AM</button>
+            </div>
+            <button type="button" class="pcast-clock-btn" id="sClockBtn" aria-label="Open clock" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 6.9V12l3.4 2.1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="pcast-clock" id="sClock" hidden role="dialog" aria-label="Pick your birth time"></div>
+          <label class="pcast-check pcast-check-tz"><input type="checkbox" id="notime"><span>I don't know my birth time — cast three pillars</span></label>
+        </div>
 
-        <button class="gate-disc" id="gateMore" type="button" aria-expanded="false" aria-controls="gateAdv">Add birth time, place &amp; luck timeline <span class="gate-disc-opt">optional</span></button>
+        <div class="pcast-field">
+          <label class="pcast-label" for="bplace">Birthplace <span class="pcast-opt">· sets the true-solar correction</span></label>
+          <div class="pcast-tzplate">
+            <span class="pcast-tzval" id="bplaceVal">Seoul (127.0°E)</span>
+            <span class="pcast-tzcaret" aria-hidden="true">▾</span>
+            <select class="pcast-tzsel" id="bplace" name="bplace" aria-label="Birthplace">
+              <optgroup label="Korea">
+                <option value="127.0,seoul,9">Seoul (127.0°E)</option>
+                <option value="129.08,busan,9">Busan (129.08°E)</option>
+                <option value="126.52,jeju,9">Jeju (126.52°E)</option>
+              </optgroup>
+              <optgroup label="Elsewhere">
+                <option value="139.69,tokyo,9">Tokyo (139.69°E)</option>
+                <option value="-118.24,la,-8">Los Angeles (118.24°W)</option>
+                <option value="-73.94,ny,-5">New York (73.94°W)</option>
+                <option value="unknown">Somewhere else / not sure</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
 
-        <div class="gate-adv" id="gateAdv" hidden>
-          <div class="row2">
-            <div class="field">
-              <label for="btime">Birth time</label>
-              <input type="time" id="btime" name="btime">
-            </div>
-            <div class="field">
-              <label for="conf">Time confidence</label>
-              <select id="conf" name="conf">
-                <option value="exact">Exact, from a record</option>
-                <option value="approx">Approximate, an hour or two</option>
-                <option value="rough">Rough, a family memory</option>
-              </select>
-            </div>
-          </div>
-          <div class="checkline">
-            <input type="checkbox" id="notime" name="notime">
-            <label for="notime" style="margin:0">I don't know my birth time, cast three pillars</label>
-          </div>
-          <div class="row2" style="margin-top:.85rem">
-            <div class="field">
-              <label for="bplace">Birthplace</label>
-              <select id="bplace" name="bplace">
-                <optgroup label="Korea">
-                  <option value="127.0,seoul,9">Seoul (127.0°E)</option>
-                  <option value="129.08,busan,9">Busan (129.08°E)</option>
-                  <option value="126.52,jeju,9">Jeju (126.52°E)</option>
-                </optgroup>
-                <optgroup label="Elsewhere">
-                  <option value="139.69,tokyo,9">Tokyo (139.69°E)</option>
-                  <option value="-118.24,la,-8">Los Angeles (118.24°W)</option>
-                  <option value="-73.94,ny,-5">New York (73.94°W)</option>
-                  <option value="unknown">Somewhere else / not sure</option>
-                </optgroup>
-              </select>
-            </div>
-            <div class="field">
-              <label for="sex">Luck timeline (대운)</label>
-              <select id="sex" name="sex">
-                <option value="">Skip it</option>
-                <option value="both">Show both directions</option>
-                <option value="male">Sex at birth: male (남)</option>
-                <option value="female">Sex at birth: female (여)</option>
-              </select>
-            </div>
-          </div>
-          <span class="hint">Birthplace longitude drives the true solar time correction. Sex at birth <em>only</em> sets which way the luck pillars run, it never changes the interpretation; choose "both" to read either flow.</span>
+        <button class="pcast-go" type="submit">
+          <span class="pcast-go-lab">Raise my four pillars</span>
+          <span class="pcast-go-sub">사주팔자 · eight characters · true solar</span>
+        </button>
+        <p class="pcast-privacy">Nothing leaves your browser.</p>
+
+        <button type="button" class="pcast-more" id="sMoreBtn" aria-expanded="false" aria-controls="sMoreBody">Luck timeline <span class="opt">optional</span></button>
+        <div class="pcast-more-body" id="sMoreBody" hidden>
+          <label class="pcast-label" for="sex">Direction of the luck pillars <span class="ko">대운</span></label>
+          <select class="pcast-select" id="sex" name="sex">
+            <option value="">Skip it</option>
+            <option value="both">Show both directions</option>
+            <option value="male">Sex at birth: male (남)</option>
+            <option value="female">Sex at birth: female (여)</option>
+          </select>
+          <p class="pcast-tzhint">Sex at birth only sets which way the luck pillars run. It never changes the reading; choose "both" to read either flow.</p>
         </div>
       </form>
+    </div>
+  </header>
 
-      <!-- side-rail tab: reopens the form after it collapses on cast -->
-      <button class="gate-rail" id="gateRail" type="button" aria-label="Edit birth details" title="Edit birth details">
-        <span class="rail-i" aria-hidden="true">✎</span><span class="rail-t">Edit birth</span>
-      </button>
+  <!-- BIRTH GATE -->
+  <section class="band wrap" id="birth-gate">
+    <div class="sec-head">
+      <span class="eyebrow">The Birth Gate · <span class="ko">입문</span></span>
+      <h2>How your chart was resolved</h2>
+      <p class="intro">Before anything is cast, we resolve <em>when</em> and <em>where</em> you were born, because Korean Saju corrects the clock to true solar time, and Korea's own standard time has changed across history. Raise your pillars in the panel above and this report shows exactly how each of your eight characters was calculated. This is the calculation, not the fortune, the reading that interprets these characters is the next phase.</p>
+    </div>
 
-      <!-- report -->
-      <div class="report" id="report" aria-live="polite">
-        <p class="placeholder">Your <strong>assumptions &amp; boundary report</strong> appears here. It shows which Korean standard meridian applied to your birth date, the true solar time correction for your longitude, and whether you were born close to a boundary where reasonable schools disagree, Ipchun, the late-night Zi hour, or an hour edge. This is the machinery a "Chinese calculator with Korean labels" would quietly get wrong.</p>
-      </div>
+    <div class="report" id="report" aria-live="polite">
+      <p class="placeholder">Your <strong>assumptions &amp; boundary report</strong> appears here after you cast above. It shows which Korean standard meridian applied to your birth date, the true solar time correction for your longitude, and whether you were born close to a boundary where reasonable schools disagree — Ipchun, the late-night Zi hour, or an hour edge. This is the machinery a "Chinese calculator with Korean labels" would quietly get wrong.</p>
     </div>
     <p class="gate-note">Defaults follow <code>SAJU_CALCULATION_ASSUMPTIONS.md</code>: true solar time on, standard meridian selected by era, Ipchun year boundary, midnight day-rollover with 야자시/조자시 offered as a documented setting. Every disputed rule is logged in the rule conflict matrix rather than silently chosen.</p>
   </section>
@@ -1834,6 +2009,208 @@
   document.addEventListener("saju:studychart", function(e){ handleStudyChart(e.detail); });
 })();
 </script>
+<script>
+/* Saju hero cast form — the Purple-Star input widgets (masked date + calendar,
+   segmented time + 24h/AM·PM toggle + clock, timezone plate) wired to the Saju
+   store. These controls write the hidden compat fields (#bYear/#bMonth/#bDay,
+   #btime) that the page's existing submit + prefill already read, so the whole
+   cast pipeline is untouched — this only changes the SKIN of the inputs.
+   Plain browser JS, file://-safe, idempotent. */
+(function(){
+  "use strict";
+  if(window.__sajuHeroForm) return;
+  function ready(fn){ if(document.readyState!=="loading") fn(); else document.addEventListener("DOMContentLoaded",fn); }
+  ready(function(){
+    var mask=document.getElementById("sMask"); if(!mask) return;
+    window.__sajuHeroForm=true;
+    var SC=window.SajuStudyChart||null;
+    var bY=document.getElementById("bYear"), bM=document.getElementById("bMonth"), bD=document.getElementById("bDay");
+    var calBtn=document.getElementById("sCalBtn"), cal=document.getElementById("sCal"), dateField=mask.closest(".pcast-date-field");
+    var segH=document.getElementById("segH"), segM=document.getElementById("segM"), segAP=document.getElementById("segAP");
+    var timeBox=document.getElementById("sTimeBox"), timeRow=timeBox?timeBox.parentNode:null, timeField=timeBox?timeBox.closest(".pcast-time-field"):null;
+    var fmt=document.getElementById("sClockFmt"), clockBtn=document.getElementById("sClockBtn"), clock=document.getElementById("sClock");
+    var notime=document.getElementById("notime"), btime=document.getElementById("btime");
+    var bplace=document.getElementById("bplace"), bplaceVal=document.getElementById("bplaceVal");
+    var moreBtn=document.getElementById("sMoreBtn"), moreBody=document.getElementById("sMoreBody"), sex=document.getElementById("sex");
+
+    function pad(n){ return (n<10?"0":"")+n; }
+    function mod(n,m){ return ((n%m)+m)%m; }
+    /* branch of a clock hour: 자 covers 23 & 0, 축 covers 1 & 2 … */
+    function branchOf(hr){ return Math.floor((mod(hr,24)+1)%24/2); }
+    var BR_KO=["자","축","인","묘","진","사","오","미","신","유","술","해"];
+    var BR_RANGE=["23–01","01–03","03–05","05–07","07–09","09–11","11–13","13–15","15–17","17–19","19–21","21–23"];
+
+    /* ---------- DATE: masked field + calendar popover ---------- */
+    function fmtDigits(s){ var d=s.replace(/\D/g,"").slice(0,8); var o=d.slice(0,2); if(d.length>2)o+="/"+d.slice(2,4); if(d.length>4)o+="/"+d.slice(4,8); return o; }
+    function parseDate(v){ var m=(v||"").match(/^\s*(\d{1,2})\s*\/\s*(\d{1,2})\s*\/\s*(\d{4})\s*$/); if(!m) return null; var mo=+m[1],da=+m[2],yr=+m[3]; if(mo<1||mo>12||da<1||da>31||yr<1900||yr>2100) return null; return {year:yr,month:mo,day:da}; }
+    function writeDateHidden(p){ if(p){ if(bY)bY.value=p.year; if(bM)bM.value=p.month; if(bD)bD.value=p.day; } else { if(bY)bY.value=""; if(bM)bM.value=""; if(bD)bD.value=""; } }
+    var calState={y:1990,m:0,sel:null};
+    function syncCalToInput(){ var p=parseDate(mask.value); if(p){ calState.y=p.year; calState.m=p.month-1; calState.sel={y:p.year,m:p.month-1,d:p.day}; } }
+    mask.addEventListener("input",function(){ mask.value=fmtDigits(mask.value); var p=parseDate(mask.value); writeDateHidden(p); if(p&&cal&&!cal.hidden){ syncCalToInput(); renderCal(); } });
+    function h(tag,cls,txt){ var e=document.createElement(tag); if(cls)e.className=cls; if(txt!=null)e.textContent=txt; return e; }
+    function renderCal(){
+      cal.innerHTML="";
+      var head=h("div","pcast-cal-head");
+      head.appendChild(navBtn("‹",-1));
+      var mid=h("div","pcast-cal-selwrap");
+      var mSel=document.createElement("select"); mSel.className="pcast-cal-sel"; mSel.setAttribute("aria-label","Month");
+      ["January","February","March","April","May","June","July","August","September","October","November","December"].forEach(function(nm,i){ var o=document.createElement("option"); o.value=i; o.textContent=nm; if(i===calState.m)o.selected=true; mSel.appendChild(o); });
+      mSel.addEventListener("change",function(){ calState.m=+mSel.value; renderCal(); });
+      var ySel=document.createElement("select"); ySel.className="pcast-cal-sel"; ySel.setAttribute("aria-label","Year");
+      var nowY=(new Date()).getFullYear();
+      for(var yy=nowY;yy>=1900;yy--){ var o2=document.createElement("option"); o2.value=yy; o2.textContent=yy; if(yy===calState.y)o2.selected=true; ySel.appendChild(o2); }
+      ySel.addEventListener("change",function(){ calState.y=+ySel.value; renderCal(); });
+      mid.appendChild(mSel); mid.appendChild(ySel); head.appendChild(mid);
+      head.appendChild(navBtn("›",1));
+      cal.appendChild(head);
+      var dow=h("div","pcast-cal-dow"); ["S","M","T","W","T","F","S"].forEach(function(d){ dow.appendChild(h("span",null,d)); }); cal.appendChild(dow);
+      var grid=h("div","pcast-cal-grid");
+      var first=new Date(calState.y,calState.m,1).getDay();
+      var days=new Date(calState.y,calState.m+1,0).getDate();
+      for(var i=0;i<first;i++) grid.appendChild(h("span","pcast-cal-empty"));
+      for(var dn=1;dn<=days;dn++){
+        var bd=h("button","pcast-cal-day",String(dn)); bd.type="button";
+        if(calState.sel&&calState.sel.y===calState.y&&calState.sel.m===calState.m&&calState.sel.d===dn) bd.classList.add("is-sel");
+        (function(dd){ bd.addEventListener("click",function(){ mask.value=pad(calState.m+1)+"/"+pad(dd)+"/"+calState.y; calState.sel={y:calState.y,m:calState.m,d:dd}; writeDateHidden(parseDate(mask.value)); closeCal(); mask.focus(); }); })(dn);
+        grid.appendChild(bd);
+      }
+      cal.appendChild(grid);
+      function navBtn(t,dir){ var x=h("button","pcast-cal-nav",t); x.type="button"; x.addEventListener("click",function(){ calState.m+=dir; if(calState.m<0){calState.m=11;calState.y--;} if(calState.m>11){calState.m=0;calState.y++;} renderCal(); }); return x; }
+    }
+    function openCal(){ closeClock(); syncCalToInput(); cal.hidden=false; calBtn.setAttribute("aria-expanded","true"); renderCal(); }
+    function closeCal(){ if(cal.hidden) return; cal.hidden=true; calBtn.setAttribute("aria-expanded","false"); }
+    if(cal){ cal.addEventListener("click",function(e){ e.stopPropagation(); }); }
+    calBtn.addEventListener("click",function(e){ e.stopPropagation(); if(cal.hidden) openCal(); else closeCal(); });
+    document.addEventListener("click",function(e){ if(cal&&!cal.hidden&&dateField&&!dateField.contains(e.target)) closeCal(); });
+
+    /* ---------- TIME: segmented field + toggle + clock ---------- */
+    var tstate={h:null,m:null};
+    function readClockPref(){ try{ var p=SC&&SC.getPref("clock12"); if(p===true||p===false) return p; }catch(e){} try{ return window.Intl && new Intl.DateTimeFormat().resolvedOptions().hour12!==false; }catch(e){ return true; } }
+    var mode12=readClockPref();
+    /* zg toggle */
+    var fmtBtns=fmt?Array.prototype.slice.call(fmt.querySelectorAll(".zg-opt")):[];
+    var fmtThumb=fmt?fmt.querySelector(".zg-thumb"):null;
+    function paintFmt(){
+      var active=null;
+      fmtBtns.forEach(function(b){ var on=b.getAttribute("data-value")===(mode12?"12":"24"); b.classList.toggle("is-on",on); b.setAttribute("aria-selected",on?"true":"false"); b.tabIndex=on?0:-1; if(on)active=b; });
+      if(active&&fmtThumb&&active.offsetWidth){ fmtThumb.style.left=active.offsetLeft+"px"; fmtThumb.style.width=active.offsetWidth+"px"; }
+    }
+    fmtBtns.forEach(function(b){ b.addEventListener("click",function(){ var v=b.getAttribute("data-value"); var m12=(v==="12"); if(m12===mode12) return; mode12=m12; try{ if(SC)SC.setPref("clock12",mode12); }catch(e){} paintFmt(); paintTime(); if(!clock.hidden) renderClock(); }); });
+    window.addEventListener("resize",paintFmt);
+
+    function segMax(el){ return el===segH?(mode12?12:23):59; }
+    function caretEnd(el){ try{ return el.selectionStart===el.selectionEnd&&el.selectionStart===el.value.length; }catch(e){ return true; } }
+    function caretStart(el){ try{ return el.selectionStart===0&&el.selectionEnd===0; }catch(e){ return true; } }
+    var handoff=false;
+    function focusSeg(el,where){ handoff=true; try{ el.focus(); if(where==="all")el.select(); else{ var n=el.value.length; el.setSelectionRange(n,n); } }catch(e){} handoff=false; }
+    function commitSegs(){
+      var hv=segH.value.replace(/\D/g,""), mv=segM.value.replace(/\D/g,"");
+      if(hv===""){ tstate.h=null; tstate.m=null; return; }
+      var n=+hv;
+      if(mode12){ if(n<1||n>12)n=12; tstate.h=(n%12)+(segAP.textContent==="PM"?12:0); }
+      else tstate.h=Math.min(23,n);
+      tstate.m=(mv==="")?0:Math.min(59,+mv);
+    }
+    function paintTime(){
+      var known=tstate.h!=null;
+      segAP.hidden=!mode12;
+      if(mode12) segAP.textContent=(known&&tstate.h>=12)?"PM":"AM";
+      segH.value=known?(mode12?pad((tstate.h%12)||12):pad(tstate.h)):"";
+      segM.value=known?pad(tstate.m==null?0:tstate.m):"";
+      segH.setAttribute("aria-label",mode12?"Hour, 1 to 12":"Hour, 0 to 23");
+      timeBox.classList.toggle("is-set",known);
+      writeTimeHidden();
+    }
+    function writeTimeHidden(){ if(!btime) return; if(notime&&notime.checked||tstate.h==null){ btime.value=""; } else { btime.value=pad(tstate.h)+":"+pad(tstate.m==null?0:tstate.m); } }
+    function onTimeEdited(){ if(notime&&notime.checked){ notime.checked=false; setTimeDisabled(false); } if(!clock.hidden) renderClock(); writeTimeHidden(); }
+    function setTimeDisabled(off){ segH.disabled=segM.disabled=segAP.disabled=clockBtn.disabled=off; timeBox.classList.toggle("is-disabled",off); }
+    function setMeridiem(pm){ if(tstate.h==null){ tstate.h=pm?12:0; tstate.m=0; } else tstate.h=(tstate.h%12)+(pm?12:0); onTimeEdited(); paintTime(); }
+    function bumpSeg(el,dir){ if(tstate.h==null){ tstate.h=12; tstate.m=0; } else if(el===segH) tstate.h=(tstate.h+dir+24)%24; else tstate.m=((tstate.m==null?0:tstate.m)+dir+60)%60; onTimeEdited(); paintTime(); focusSeg(el,"all"); }
+    function pushDigit(el,d){
+      var max=segMax(el), cur=el.value.replace(/\D/g,"");
+      var cand=(cur.length===1&&caretEnd(el))?cur+d:d; if(+cand>max)cand=d;
+      el.value=cand; commitSegs();
+      var full=cand.length>=2||(+cand)*10>max;
+      if(full){ paintTime(); if(el===segH) focusSeg(segM,"all"); else focusSeg(segM,"end"); }
+      onTimeEdited();
+    }
+    function onSegKey(e){
+      var el=e.target,k=e.key;
+      if(k==="ArrowUp"||k==="ArrowDown"){ e.preventDefault(); bumpSeg(el,k==="ArrowUp"?1:-1); return; }
+      if(k==="ArrowRight"&&el===segH&&caretEnd(el)){ e.preventDefault(); focusSeg(segM,"all"); return; }
+      if(k==="ArrowLeft"&&el===segM&&caretStart(el)){ e.preventDefault(); focusSeg(segH,"end"); return; }
+      if(k==="Backspace"&&el===segM&&caretStart(el)){ e.preventDefault(); segH.value=segH.value.slice(0,-1); commitSegs(); onTimeEdited(); focusSeg(segH,"end"); return; }
+      if(k===":"||k==="."||k==="/"||k===" "){ e.preventDefault(); if(el===segH) focusSeg(segM,"all"); return; }
+      if(mode12&&/^[apAP]$/.test(k)){ e.preventDefault(); setMeridiem(k.toLowerCase()==="p"); return; }
+      if(/^[0-9]$/.test(k)){ e.preventDefault(); pushDigit(el,k); return; }
+      if(k.length===1&&!e.ctrlKey&&!e.metaKey&&!e.altKey) e.preventDefault();
+    }
+    [segH,segM].forEach(function(el){
+      el.addEventListener("keydown",onSegKey);
+      el.addEventListener("focus",function(){ if(handoff) return; window.setTimeout(function(){ try{ if(document.activeElement===el)el.select(); }catch(e){} },0); });
+      el.addEventListener("blur",function(){ if(handoff) return; commitSegs(); paintTime(); });
+      el.addEventListener("input",function(){ var v=el.value.replace(/\D/g,"").slice(0,2); if(v!==el.value)el.value=v; commitSegs(); onTimeEdited(); });
+    });
+    segAP.addEventListener("click",function(){ setMeridiem(segAP.textContent==="AM"); });
+    if(notime){ notime.addEventListener("change",function(){ setTimeDisabled(notime.checked); if(notime.checked){ tstate.h=null; tstate.m=null; closeClock(); paintTime(); } }); }
+
+    /* clock popover: 24-hour grid + minute steps + branch hint */
+    function renderClock(){
+      clock.innerHTML="";
+      clock.appendChild(h("p","pcast-clock-h","Hour"));
+      var hg=h("div","pcast-clock-grid hours");
+      for(var hr=0;hr<24;hr++){
+        (function(v){ var c=h("button","pcast-clock-cell",(v<10?"0":"")+v); c.type="button"; if(tstate.h===v)c.classList.add("is-on");
+          c.addEventListener("click",function(){ tstate.h=v; if(tstate.m==null)tstate.m=0; onTimeEdited(); paintTime(); renderClock(); }); hg.appendChild(c); })(hr);
+      }
+      clock.appendChild(hg);
+      clock.appendChild(h("p","pcast-clock-h","Minute"));
+      var mg=h("div","pcast-clock-grid mins");
+      [0,5,10,15,20,25,30,35,40,45,50,55].forEach(function(v){ var c=h("button","pcast-clock-cell",(v<10?"0":"")+v); c.type="button"; if((tstate.m==null?0:tstate.m)===v)c.classList.add("is-on");
+        c.addEventListener("click",function(){ if(tstate.h==null)tstate.h=0; tstate.m=v; onTimeEdited(); paintTime(); renderClock(); }); mg.appendChild(c); });
+      clock.appendChild(mg);
+      if(tstate.h!=null){ var bi=branchOf(tstate.h); var hint=h("p","pcast-clock-branch"); hint.innerHTML=pad(tstate.h)+":"+pad(tstate.m==null?0:tstate.m)+" → <b>"+BR_KO[bi]+"시 "+BR_RANGE[bi]+"</b>"; clock.appendChild(hint); }
+    }
+    function openClock(){ if(clockBtn.disabled) return; closeCal(); clock.hidden=false; clockBtn.setAttribute("aria-expanded","true"); renderClock(); }
+    function closeClock(){ if(clock.hidden) return; clock.hidden=true; clockBtn.setAttribute("aria-expanded","false"); }
+    if(clock){ clock.addEventListener("click",function(e){ e.stopPropagation(); }); }
+    clockBtn.addEventListener("click",function(e){ e.stopPropagation(); if(clock.hidden) openClock(); else closeClock(); });
+    document.addEventListener("click",function(e){ if(clock&&!clock.hidden&&timeField&&!timeField.contains(e.target)) closeClock(); });
+    clock.addEventListener("keydown",function(e){ if(e.key==="Escape"||e.key==="Esc"){ e.stopPropagation(); closeClock(); try{ clockBtn.focus(); }catch(err){} } });
+
+    /* ---------- birthplace plate ---------- */
+    function paintPlace(){ if(!bplace||!bplaceVal) return; var o=bplace.options[bplace.selectedIndex]; bplaceVal.textContent=o?o.textContent:""; }
+    if(bplace){ bplace.addEventListener("change",paintPlace); }
+
+    /* ---------- luck-timeline disclosure ---------- */
+    if(moreBtn&&moreBody){ moreBtn.addEventListener("click",function(){ var open=moreBody.hidden; moreBody.hidden=!open; moreBtn.setAttribute("aria-expanded",open?"true":"false"); }); }
+
+    /* ---------- sync visible controls FROM the hidden fields (after prefill / restore) ---------- */
+    var _syncKey=null;
+    function syncFromHidden(force){
+      // date
+      var y=bY&&bY.value, m=bM&&bM.value, d=bD&&bD.value;
+      var key=[y,m,d,btime&&btime.value,notime&&notime.checked,bplace&&bplace.value].join("|");
+      if(!force&&key===_syncKey) { paintPlace(); return; }
+      _syncKey=key;
+      if(y&&m&&d){ mask.value=pad(+m)+"/"+pad(+d)+"/"+(""+y).slice(0,4); }
+      // time
+      if(notime&&notime.checked){ tstate.h=null; tstate.m=null; setTimeDisabled(true); }
+      else if(btime&&btime.value){ var tp=btime.value.split(":"); var hh=parseInt(tp[0],10), mm=parseInt(tp[1],10); if(!isNaN(hh)){ tstate.h=hh; tstate.m=isNaN(mm)?0:mm; setTimeDisabled(false); } }
+      else { tstate.h=null; tstate.m=null; setTimeDisabled(false); }
+      paintTime();
+      paintPlace();
+      if(sex&&sex.value&&moreBody&&moreBody.hidden){ moreBody.hidden=false; if(moreBtn)moreBtn.setAttribute("aria-expanded","true"); }
+    }
+    document.addEventListener("saju:studychart",function(){ window.setTimeout(function(){ syncFromHidden(false); },0); });
+
+    /* ---------- init ---------- */
+    paintFmt(); paintTime(); paintPlace();
+    if(window.requestAnimationFrame) window.requestAnimationFrame(paintFmt); else window.setTimeout(paintFmt,60);
+    syncFromHidden(true);
+  });
+})();
+</script>
 <!--om-footer:start-->
 <!-- Zodi Animal universal footer. Single source: components/footer.html,
      baked into every page by build/apply-footer.mjs, styled by
@@ -2043,5 +2420,7 @@
 })();
 </script>
 <!--om-footer:end-->
+<!-- signed-in birth record prefill: fills and casts from the saved dashboard record -->
+<script src="/js/zodi-birth.js" defer></script>
 </body>
 </html>

@@ -217,23 +217,74 @@
 
         <!-- The record -->
         <div class="zk-card" id="zk-profile">
-          <h2 style="font-size:1.1rem">The Oracle's record of you</h2>
+          <div class="zk-idrow">
+            <span class="zav zav-lg" id="zk-me-av" aria-hidden="true">✦</span>
+            <div>
+              <p class="zk-id-name" id="zk-me-name">&mdash;</p>
+              <p class="zk-id-uname" id="zk-me-uname"></p>
+            </div>
+          </div>
           <dl class="zk-rec">
-            <div><dt>Name on the board</dt><dd id="zk-rec-name">&mdash;</dd></div>
+            <div><dt>Name</dt><dd id="zk-rec-fullname">&mdash;</dd></div>
             <div><dt>Email</dt><dd id="zk-rec-email">&mdash;</dd></div>
             <div><dt>Animal</dt><dd id="zk-rec-animal">Not yet named</dd></div>
             <div><dt>Ally code</dt><dd class="mono" id="zk-rec-code">&mdash;</dd></div>
             <div><dt>Joined</dt><dd id="zk-rec-joined">&mdash;</dd></div>
           </dl>
-          <form id="zk-nameform" style="margin-top:16px">
-            <div class="zodi-field" style="margin-bottom:10px">
-              <label for="zk-name">Change your name</label>
-              <input id="zk-name" type="text" maxlength="24" autocomplete="nickname">
+          <button class="zodi-signout" id="zk-edit-toggle" type="button" style="margin-top:14px">Edit my record</button>
+
+          <form id="zk-editor" hidden style="margin-top:16px">
+            <p class="zk-ed-label">Your mark</p>
+            <div class="zk-avgrid" id="zk-av-grid" role="radiogroup" aria-label="Choose your mark"></div>
+            <div class="zodi-field" style="margin:12px 0 10px">
+              <label for="zk-ed-display">Name on the board</label>
+              <input id="zk-ed-display" type="text" maxlength="24" autocomplete="nickname">
             </div>
-            <button class="zodi-authBtn" type="submit" style="width:auto;padding:9px 20px;font-size:.82rem">Save name</button>
-            <p class="zodi-authMsg" id="zk-name-msg" role="status"></p>
+            <div class="zodi-field" style="margin-bottom:10px">
+              <label for="zk-ed-username">Username</label>
+              <input id="zk-ed-username" type="text" maxlength="20" autocomplete="username" placeholder="moonveiled" spellcheck="false">
+              <p class="zk-ed-hint">Lowercase letters, numbers, underscores. 3 to 20 characters.</p>
+            </div>
+            <div class="zk-namepair">
+              <div class="zodi-field">
+                <label for="zk-ed-first">First name</label>
+                <input id="zk-ed-first" type="text" maxlength="40" autocomplete="given-name">
+              </div>
+              <div class="zodi-field zk-initial">
+                <label for="zk-ed-last">Last initial</label>
+                <input id="zk-ed-last" type="text" maxlength="1" autocomplete="off">
+              </div>
+            </div>
+            <p class="zk-ed-hint" style="margin-top:2px">Your circle sees you as First name plus initial, like Maya G.</p>
+            <button class="zodi-authBtn" type="submit" style="width:auto;padding:9px 20px;font-size:.82rem;margin-top:10px">Save my record</button>
+            <p class="zodi-authMsg" id="zk-ed-msg" role="status"></p>
           </form>
+
           <button class="zodi-signout" id="zk-signout" type="button">Sign out</button>
+        </div>
+
+        <!-- The birth record -->
+        <div class="zk-card" id="zk-birth-card">
+          <h2 style="font-size:1.1rem">Your birth record</h2>
+          <p class="sub">The exact hour and place sharpen the finer charts. Purple Star, BaZi, and Saju all read from this, filled in for you.</p>
+          <form id="zk-birthrec" novalidate>
+            <div class="zk-birth">
+              <label>Month<input id="zk-rm" inputmode="numeric" maxlength="2" placeholder="MM" autocomplete="bday-month"></label>
+              <label>Day<input id="zk-rd" inputmode="numeric" maxlength="2" placeholder="DD" autocomplete="bday-day"></label>
+              <label>Year<input id="zk-ry" inputmode="numeric" maxlength="4" placeholder="YYYY" autocomplete="bday-year"></label>
+            </div>
+            <div class="zk-birth" style="margin-top:2px">
+              <label>Hour<select id="zk-rh"></select></label>
+              <label>Minute<input id="zk-rmin" inputmode="numeric" maxlength="2" placeholder="00"></label>
+            </div>
+            <div class="zodi-field" style="margin:10px 0">
+              <label for="zk-rplace">Birthplace</label>
+              <input id="zk-rplace" type="text" maxlength="120" placeholder="City, country">
+            </div>
+            <p class="zk-ed-hint" id="zk-rtz"></p>
+            <button class="zodi-authBtn" type="submit" style="width:auto;padding:9px 20px;font-size:.82rem;margin-top:6px">Save my record</button>
+            <p class="zodi-authMsg" id="zk-rec-msg" role="status"></p>
+          </form>
         </div>
 
         <!-- Karma lives where it always did -->
@@ -268,6 +319,7 @@
 <script src="js/zodi-config.js"></script>
 <script src="js/zodi-auth.js"></script>
 <script src="js/zodi-referrals.js"></script>
+<script src="js/zodi-birth.js"></script>
 <script src="js/zodi-karma.js" defer></script>
 <script src="js/zodi-awaken.js" defer></script>
 <script src="js/zodi-fx.js" defer></script>
@@ -277,12 +329,20 @@
   var $=function(s){return document.querySelector(s);};
   var MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   var GOAL=(window.ZodiRef&&window.ZodiRef.GOAL)||5;
-  var booted=false, redirectTimer=null;
+  var booted=false, redirectTimer=null, ME=null, PRIV=null;
 
   function slugify(s){ return String(s||"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,""); }
   function fmtDate(v){
     var d=new Date(v); if(isNaN(d)) return "";
     return d.getDate()+" "+MONTHS[d.getMonth()]+" "+d.getFullYear();
+  }
+  function medallion(key, cls){
+    var a=window.ZodiRef.avatar(key);
+    var s=document.createElement("span");
+    s.className="zav "+(cls||"")+" zav-h-"+a.hue;
+    s.setAttribute("aria-hidden","true");
+    s.textContent=a.glyph;
+    return s;
   }
 
   /* ---- gate: this page belongs to a signed-in soul ---- */
@@ -291,7 +351,7 @@
     if(!session){ if(booted) toDoor(); return; }
     if(redirectTimer){ clearTimeout(redirectTimer); redirectTimer=null; }
     if(!booted){ booted=true; boot(); }
-    if(profile) paintProfile(profile);
+    if(profile){ ME=profile; paintProfile(profile); }
   });
   window.Zodi.ready.then(function(client){
     if(!client){ toDoor(); return; }
@@ -303,16 +363,18 @@
 
   function boot(){
     $("#zk-app").hidden=false;
+    hourSelect();
+    tzLine();
     paintKingdom();
+    loadPrivate();
     document.addEventListener("zodi:ally-claimed", function(){ paintKingdom(true); });
   }
 
-  /* ---- the referral state: progress, link, circle ---- */
+  /* ---- the referral state: progress, link, circle showcase ---- */
   function paintKingdom(force){
     window.ZodiRef.state(force).then(function(st){
       var n = st ? Number(st.referral_count)||0 : 0;
       var open = !!(st && st.awakened_unlocked);
-      /* ally lamps */
       var row=$("#zk-allies"); row.innerHTML="";
       for(var i=1;i<=GOAL;i++){
         var dot=document.createElement("span");
@@ -325,7 +387,6 @@
       $("#zk-stage").textContent=window.ZodiRef.stageLine(n);
       var cta=$("#zk-awaken-cta");
       if(open||n>=GOAL){ cta.textContent="See my Awakened State"; cta.href="/awakened.html"; }
-      /* link card */
       if(st&&st.referral_code){
         $("#zk-link").value=window.ZodiRef.link(st.referral_code);
         $("#zk-rec-code").textContent=st.referral_code;
@@ -333,7 +394,7 @@
       }else{
         $("#zk-copy-msg").textContent = st ? "" : "The ledger is quiet right now. Look again in a moment.";
       }
-      /* circle */
+      /* the showcase */
       var list=$("#zk-circle"), empty=$("#zk-circle-empty");
       list.innerHTML="";
       var circle=(st&&st.circle)||[];
@@ -341,11 +402,19 @@
       for(var j=0;j<circle.length;j++){
         var c=circle[j];
         var li=document.createElement("li");
+        li.appendChild(medallion(c.avatar_key));
+        var block=document.createElement("span"); block.className="zk-who-block";
         var who=document.createElement("span"); who.className="who";
-        who.textContent=c.display_name||"A quiet soul";
+        who.textContent = c.first_name ? (c.first_name+(c.last_initial?" "+c.last_initial+".":"")) : (c.display_name||"A quiet soul");
+        block.appendChild(who);
+        if(c.username){
+          var un=document.createElement("span"); un.className="zk-uname";
+          un.textContent="@"+c.username;
+          block.appendChild(un);
+        }
         var what=document.createElement("span"); what.className="what";
         what.textContent=(c.primal_name||"Animal not set yet")+" · Joined "+fmtDate(c.joined_at);
-        li.appendChild(who); li.appendChild(what);
+        li.appendChild(block); li.appendChild(what);
         list.appendChild(li);
       }
     });
@@ -365,13 +434,149 @@
       $("#zk-setup").hidden=false;
       offerRemembered();
     }
-    $("#zk-rec-name").textContent=profile.display_name||"—";
-    $("#zk-name").value=profile.display_name||"";
+    var av=window.ZodiRef.avatar(profile.avatar_key);
+    var mine=$("#zk-me-av");
+    mine.textContent=av.glyph;
+    mine.className="zav zav-lg zav-h-"+av.hue;
+    $("#zk-me-name").textContent=profile.display_name||"Unnamed Spirit";
+    $("#zk-me-uname").textContent=profile.username?("@"+profile.username):"";
+    $("#zk-ed-display").value=profile.display_name||"";
+    $("#zk-ed-username").value=profile.username||"";
+    markAvatar(profile.avatar_key);
     if(s&&s.user){
       $("#zk-rec-email").textContent=s.user.email||"—";
       if(s.user.created_at) $("#zk-rec-joined").textContent=fmtDate(s.user.created_at);
     }
   }
+
+  function loadPrivate(){
+    var client=window.Zodi.client(), profile=window.Zodi.profile();
+    if(!client||!profile) { setTimeout(loadPrivate, 600); return; }
+    client.from("zodi_private")
+      .select("first_name,last_initial,birth_year,birth_month,birth_day,birth_hour,birth_minute,birth_place,birth_tz")
+      .eq("profile_id",profile.id).maybeSingle()
+      .then(function(r){
+        PRIV=(r&&r.data)||null;
+        if(!PRIV) return;
+        $("#zk-rec-fullname").textContent = PRIV.first_name ? (PRIV.first_name+(PRIV.last_initial?" "+PRIV.last_initial.toUpperCase()+".":"")) : "—";
+        $("#zk-ed-first").value=PRIV.first_name||"";
+        $("#zk-ed-last").value=(PRIV.last_initial||"").toUpperCase();
+        if(PRIV.birth_month) $("#zk-rm").value=PRIV.birth_month;
+        if(PRIV.birth_day) $("#zk-rd").value=PRIV.birth_day;
+        if(PRIV.birth_year) $("#zk-ry").value=PRIV.birth_year;
+        $("#zk-rh").value=(typeof PRIV.birth_hour==="number")?String(PRIV.birth_hour):"";
+        if(typeof PRIV.birth_minute==="number") $("#zk-rmin").value=("0"+PRIV.birth_minute).slice(-2);
+        if(PRIV.birth_place) $("#zk-rplace").value=PRIV.birth_place;
+      });
+  }
+
+  /* ---- the editor: mark, names, username ---- */
+  var pickedAvatar=null;
+  (function buildAvGrid(){
+    var grid=$("#zk-av-grid");
+    window.ZodiRef.AVATARS.forEach(function(a){
+      var b=document.createElement("button");
+      b.type="button"; b.className="zav zav-pick zav-h-"+a.hue;
+      b.setAttribute("role","radio"); b.setAttribute("aria-checked","false");
+      b.setAttribute("aria-label","Mark: "+a.key.replace(/-/g," "));
+      b.dataset.key=a.key; b.textContent=a.glyph;
+      b.addEventListener("click",function(){ pickedAvatar=a.key; markAvatar(a.key); });
+      grid.appendChild(b);
+    });
+  })();
+  function markAvatar(key){
+    var picks=document.querySelectorAll(".zav-pick");
+    for(var i=0;i<picks.length;i++){
+      var on=picks[i].dataset.key===(key||window.ZodiRef.AVATARS[0].key);
+      picks[i].classList.toggle("on",on);
+      picks[i].setAttribute("aria-checked",on?"true":"false");
+    }
+  }
+  $("#zk-edit-toggle").addEventListener("click",function(){
+    var ed=$("#zk-editor");
+    ed.hidden=!ed.hidden;
+    this.textContent=ed.hidden?"Edit my record":"Close the editor";
+  });
+  $("#zk-editor").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var m=$("#zk-ed-msg"); m.className="zodi-authMsg";
+    var display=$("#zk-ed-display").value.trim();
+    var uname=$("#zk-ed-username").value.trim().toLowerCase();
+    var first=$("#zk-ed-first").value.trim();
+    var last=$("#zk-ed-last").value.trim().toUpperCase();
+    if(display.length<2){ m.textContent="Two characters at least for the board name."; return; }
+    if(uname && !/^[a-z0-9_]{3,20}$/.test(uname)){ m.textContent="Usernames are 3 to 20 characters: lowercase letters, numbers, underscores."; return; }
+    if(last && !/^[A-Z]$/.test(last)){ m.textContent="The last initial is a single letter."; return; }
+    var upd={ display_name:display, username:uname||null };
+    if(pickedAvatar) upd.avatar_key=pickedAvatar;
+    var client=window.Zodi.client(), profile=window.Zodi.profile();
+    client.from("zodi_profiles").update(upd).eq("user_id",window.Zodi.session().user.id)
+      .then(function(r){
+        if(r.error){
+          m.textContent = (r.error.code==="23505"||/duplicate|unique/i.test(r.error.message))
+            ? "That username is taken. Try another."
+            : (r.error.message||"The record did not take it. Try once more.");
+          return;
+        }
+        var privUpd={ profile_id:profile.id, first_name:first||null, last_initial:last||null };
+        client.from("zodi_private").upsert(privUpd,{onConflict:"profile_id"}).then(function(){
+          m.className="zodi-authMsg ok"; m.textContent="Saved. The record holds.";
+          window.Zodi.refreshProfile();
+          loadPrivate();
+        },function(){
+          m.className="zodi-authMsg ok"; m.textContent="Saved. The record holds.";
+          window.Zodi.refreshProfile();
+        });
+      });
+  });
+
+  /* ---- the birth record ---- */
+  function hourSelect(){
+    var sel=$("#zk-rh");
+    var opt=document.createElement("option");
+    opt.value=""; opt.textContent="Time unknown";
+    sel.appendChild(opt);
+    for(var h=0;h<24;h++){
+      var o=document.createElement("option");
+      o.value=String(h);
+      o.textContent=("0"+h).slice(-2)+":00";
+      sel.appendChild(o);
+    }
+  }
+  function tzLine(){
+    try{
+      var tz=Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if(tz) $("#zk-rtz").textContent="Timezone read from this device: "+tz+".";
+    }catch(e){}
+  }
+  $("#zk-birthrec").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var msg=$("#zk-rec-msg"); msg.className="zodi-authMsg";
+    var m=parseInt($("#zk-rm").value,10), d=parseInt($("#zk-rd").value,10), y=parseInt($("#zk-ry").value,10);
+    if(!m||!d||!y||y<1900||y>2100){ msg.textContent="The record needs the full date, month, day and year."; return; }
+    var iso=y+"-"+("0"+m).slice(-2)+"-"+("0"+d).slice(-2);
+    var c=window.ENGINE?window.ENGINE.compute(iso):null;
+    if(!c||!c.primal){ msg.textContent="The record needs a real date."; return; }
+    var hv=$("#zk-rh").value;
+    var rec={
+      year:y, month:m, day:d,
+      hour: hv===""?null:parseInt(hv,10),
+      minute: parseInt($("#zk-rmin").value,10)||0,
+      place: $("#zk-rplace").value.trim(),
+      tz: (function(){ try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||""; }catch(e){ return ""; } })()
+    };
+    window.ZodiBirth.set(rec).then(function(){
+      /* keep the animal in step with the date */
+      var fields={ primal_name:c.primal, primal_slug:slugify(c.primal), western_sign:c.sign, chinese_zodiac:c.animal };
+      var client=window.Zodi.client();
+      client.from("zodi_profiles").update(fields).eq("user_id",window.Zodi.session().user.id).then(function(){
+        msg.className="zodi-authMsg ok";
+        msg.textContent="Saved. The finer charts will read from this.";
+        if(window.ZodiKarma) window.ZodiKarma.award("profile_complete");
+        window.Zodi.refreshProfile();
+      });
+    });
+  });
 
   /* ---- setup: a remembered reveal, or the birthday form ---- */
   function rememberedProfile(){
@@ -424,6 +629,7 @@
           window.Zodi.refreshProfile();
         };
         if(birth){
+          window.ZodiBirth.set({ year:birth.birth_year, month:birth.birth_month, day:birth.birth_day, hour:null, minute:0, place:"", tz:"" });
           return client.from("zodi_private")
             .upsert({ profile_id:profile.id, birth_month:birth.birth_month, birth_day:birth.birth_day, birth_year:birth.birth_year },{ onConflict:"profile_id" })
             .then(after,after);
@@ -455,18 +661,9 @@
     }).catch(function(){});
   });
 
-  /* ---- name + sign out ---- */
-  $("#zk-nameform").addEventListener("submit",function(ev){
-    ev.preventDefault();
-    var v=$("#zk-name").value.trim(), m=$("#zk-name-msg"); m.className="zodi-authMsg";
-    if(v.length<2){ m.textContent="Two characters at least."; return; }
-    window.Zodi.client().from("zodi_profiles").update({display_name:v}).eq("user_id",window.Zodi.session().user.id)
-      .then(function(r){
-        if(r.error){ m.textContent=r.error.message; }
-        else{ m.className="zodi-authMsg ok"; m.textContent="Saved. The board will show it."; window.Zodi.refreshProfile(); }
-      });
-  });
+  /* ---- sign out ---- */
   $("#zk-signout").addEventListener("click",function(){
+    if(window.ZodiBirth) window.ZodiBirth.clear();
     window.Zodi.signOut().then(function(){ location.replace("/account.html"); });
   });
 
