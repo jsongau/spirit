@@ -420,8 +420,22 @@
     });
   }
 
+  /* ---- a mark tried on before arrival gets adopted once ---- */
+  var adoptedMark=false;
+  function adoptPendingMark(profile){
+    if(adoptedMark||!profile||profile.avatar_key) return;
+    var key=null;
+    try{ key=localStorage.getItem("zodi_pending_avatar"); }catch(e){}
+    if(!key) return;
+    adoptedMark=true;
+    try{ localStorage.removeItem("zodi_pending_avatar"); }catch(e){}
+    window.Zodi.client().from("zodi_profiles").update({avatar_key:key}).eq("user_id",window.Zodi.session().user.id)
+      .then(function(r){ if(!r.error) window.Zodi.refreshProfile(); });
+  }
+
   /* ---- the profile record + hero + setup ---- */
   function paintProfile(profile){
+    adoptPendingMark(profile);
     var s=window.Zodi.session();
     if(profile.primal_name){
       $("#zk-hello").textContent="The "+profile.primal_name+" holds court";
@@ -590,8 +604,8 @@
     if(!p){ $("#zk-remember").hidden=true; return; }
     $("#zk-remember").hidden=false;
     $("#zk-birthform").style.display="none";
-    var w=(window.ORACLE&&typeof p.w==="number")?ORACLE.WEST_ORDER[p.w]:null;
-    var e=(window.ORACLE&&typeof p.e==="number")?ORACLE.CHINESE_ORDER[p.e]:null;
+    var w=(typeof ORACLE!=="undefined"&&typeof p.w==="number")?ORACLE.WEST_ORDER[p.w]:null;
+    var e=(typeof ORACLE!=="undefined"&&typeof p.e==="number")?ORACLE.CHINESE_ORDER[p.e]:null;
     $("#zk-remember-line").textContent="The wheel remembers a reading: the "+p.name+(w&&e?", "+w+" crossed with the "+e+".":".");
     $("#zk-save-remembered").onclick=function(){
       saveAnimal({ primal_name:p.name, primal_slug:p.slug||slugify(p.name), western_sign:w, chinese_zodiac:e }, null, p.name);

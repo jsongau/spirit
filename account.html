@@ -72,6 +72,26 @@
     background:rgba(10,11,20,.92);border-top:1px solid var(--line);text-align:center}
   .za-sticky .zodi-authBtn{width:auto;padding:11px 30px}
   @media(min-width:881px){.za-sticky{display:none!important}}
+  .za-lamps button.zk-ally{cursor:pointer;font:inherit;font-family:var(--mono);transition:transform .15s ease,box-shadow .25s ease}
+  .za-lamps button.zk-ally:hover{transform:translateY(-3px)}
+  .za-lamps button.zk-ally:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+  .za-lamps.za-moment .zk-ally.lit{box-shadow:0 0 22px rgba(214,193,140,.55)}
+  .za-tryresult{margin-top:20px;border:1px solid var(--brass-dim,rgba(214,193,140,.45));border-radius:16px;
+    background:linear-gradient(165deg,var(--panel),var(--panel2,#1b1e33));padding:22px 26px;max-width:560px}
+  .za-tr-name{margin:0;font-family:var(--serif);font-size:1.7rem;color:var(--moon);line-height:1.2}
+  .za-tr-cross{margin:6px 0 0;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--brass)}
+  .za-tr-essence{margin:12px 0 0;color:var(--body);font-size:.92rem;line-height:1.6}
+  .za-boardlist{list-style:none;margin:18px 0 0;padding:0;max-width:560px}
+  .za-boardlist li{display:flex;align-items:baseline;gap:14px;padding:11px 2px;border-top:1px solid var(--line-soft,rgba(214,193,140,.1))}
+  .za-boardlist li:first-child{border-top:0}
+  .za-boardlist .rk{font-family:var(--mono);font-size:.72rem;color:var(--faint,#7e7f97);width:26px;flex:none}
+  .za-boardlist .nm{color:var(--moon);font-weight:600;font-size:.92rem;flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .za-boardlist .an{color:var(--muted);font-size:.78rem;white-space:nowrap}
+  .za-boardlist .zk{font-family:var(--mono);color:var(--brass-bright);font-size:.8rem;white-space:nowrap}
+  .za-markstrip .zav{cursor:pointer;padding:0;font:inherit;font-size:1.05rem;transition:transform .12s ease}
+  .za-markstrip .zav:hover{transform:translateY(-2px)}
+  .za-markstrip .zav:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+  .za-markstrip .zav.on{outline:2px solid var(--brass);outline-offset:2px}
 </style>
 <link rel="stylesheet" href="css/zodi.css">
 <link rel="stylesheet" href="css/dashboard.css">
@@ -193,10 +213,10 @@
         <p class="eyebrow">Free account</p>
         <h1 style="color:var(--moon)">Five allies stand between you and your Awakened reading</h1>
         <p class="lede">Create a free account and your Zodi Animal is saved on every device. You arrive with 1,000 Zodi Karma and a link of your own. When five allies join through it, your Awakened reading opens.</p>
-        <div class="zk-allies za-lamps" aria-hidden="true">
-          <span class="zk-ally">1</span><span class="zk-ally">2</span><span class="zk-ally">3</span><span class="zk-ally">4</span><span class="zk-ally">5</span>
+        <div class="zk-allies za-lamps" id="za-lamps" role="group" aria-label="How the five allies work. Tap the lamps to see.">
+          <button type="button" class="zk-ally" data-lamp="1" aria-pressed="false">1</button><button type="button" class="zk-ally" data-lamp="2" aria-pressed="false">2</button><button type="button" class="zk-ally" data-lamp="3" aria-pressed="false">3</button><button type="button" class="zk-ally" data-lamp="4" aria-pressed="false">4</button><button type="button" class="zk-ally" data-lamp="5" aria-pressed="false">5</button>
         </div>
-        <p class="za-lampline">Five lamps. Five allies. Then your Awakened reading.</p>
+        <p class="za-lampline" id="za-lampline" aria-live="polite">Five lamps. Five allies. Tap them and see.</p>
         <p class="za-count" id="za-count" hidden></p>
       </div>
 
@@ -236,6 +256,27 @@
       </div>
     </section>
 
+    <section class="band za-try">
+      <h2 style="color:var(--moon)">Meet your animal first</h2>
+      <p class="sub" style="color:var(--muted);max-width:520px">The wheel needs one date. Nothing is stored until you choose to keep it.</p>
+      <form id="za-tryform" novalidate>
+        <div class="zk-birth">
+          <label>Month<input id="za-tm" inputmode="numeric" maxlength="2" placeholder="MM" autocomplete="off"></label>
+          <label>Day<input id="za-td" inputmode="numeric" maxlength="2" placeholder="DD" autocomplete="off"></label>
+          <label>Year<input id="za-ty" inputmode="numeric" maxlength="4" placeholder="YYYY" autocomplete="off"></label>
+        </div>
+        <button class="zodi-authBtn" type="submit" style="width:auto;padding:10px 24px;font-size:.85rem">Name my animal</button>
+        <p class="zodi-authMsg" id="za-try-msg" role="status"></p>
+      </form>
+      <div class="za-tryresult" id="za-tryresult" hidden>
+        <p class="za-tr-name" id="za-tr-name"></p>
+        <p class="za-tr-cross" id="za-tr-cross"></p>
+        <p class="za-tr-essence" id="za-tr-essence"></p>
+        <button class="zodi-authBtn" id="za-tr-save" type="button" style="width:auto;padding:10px 24px;font-size:.85rem;margin-top:12px">Save this animal</button>
+        <p class="za-fine" style="margin-top:8px">Saving needs the account. The reading above is yours either way.</p>
+      </div>
+    </section>
+
     <section class="band za-keep">
       <h2 style="color:var(--moon)">Yours from the first minute</h2>
       <div class="za-grid">
@@ -244,6 +285,12 @@
         <div class="za-item"><span class="za-ico" aria-hidden="true">&#9737;</span><p>Karma you earned while wandering comes with you.</p></div>
         <div class="za-item"><span class="za-ico" aria-hidden="true">&#10038;</span><p>Your name on the Karmic Board, and a link that is yours alone.</p></div>
       </div>
+    </section>
+
+    <section class="band za-board" id="za-board" hidden>
+      <h2 style="color:var(--moon)">The board tonight</h2>
+      <p class="sub" style="color:var(--muted)">The top of the Karmic Board, read live from the ledger.</p>
+      <ol class="za-boardlist" id="za-boardlist"></ol>
     </section>
 
     <section class="band za-path">
@@ -260,8 +307,8 @@
 
     <section class="band za-marksec">
       <h2 style="color:var(--moon)">Twelve marks. One is yours</h2>
-      <div class="za-markstrip" id="za-marks" aria-hidden="true"></div>
-      <p class="za-markline">Pick your mark when you arrive. It stands for you on the Board.</p>
+      <div class="za-markstrip" id="za-marks" role="group" aria-label="The twelve marks. Choose one to keep for your arrival."></div>
+      <p class="za-markline" id="za-markline" aria-live="polite">Try one on. It stands for you on the Board, and your choice waits for your arrival.</p>
     </section>
 
     <section class="band za-again">
@@ -405,18 +452,118 @@
     }
   }catch(e){}
 
-  /* ---- the twelve marks strip ---- */
+  /* ---- the twelve marks: try one on ---- */
   try{
     if(window.ZodiRef && window.ZodiRef.AVATARS){
       var strip=$("#za-marks");
+      var kept=null;
+      try{ kept=localStorage.getItem("zodi_pending_avatar"); }catch(e2){}
       window.ZodiRef.AVATARS.forEach(function(a){
-        var s=document.createElement("span");
-        s.className="zav zav-h-"+a.hue;
-        s.textContent=a.glyph;
-        strip.appendChild(s);
+        var b=document.createElement("button");
+        b.type="button";
+        b.className="zav zav-h-"+a.hue+(a.key===kept?" on":"");
+        b.dataset.key=a.key;
+        b.setAttribute("aria-pressed", a.key===kept?"true":"false");
+        b.setAttribute("aria-label","Mark: "+a.key.replace(/-/g," "));
+        b.textContent=a.glyph;
+        b.addEventListener("click",function(){
+          var marks=strip.querySelectorAll(".zav");
+          for(var i=0;i<marks.length;i++){ marks[i].classList.remove("on"); marks[i].setAttribute("aria-pressed","false"); }
+          b.classList.add("on"); b.setAttribute("aria-pressed","true");
+          try{ localStorage.setItem("zodi_pending_avatar", a.key); }catch(e3){}
+          $("#za-markline").textContent="Kept. The "+a.key.replace(/-/g," ")+" waits for your arrival.";
+        });
+        strip.appendChild(b);
       });
     }
   }catch(e){}
+
+  /* ---- the lamps: a demonstration you can feel ---- */
+  (function lampDemo(){
+    var wrap=$("#za-lamps"), line=$("#za-lampline");
+    if(!wrap||!line) return;
+    var lamps=wrap.querySelectorAll(".zk-ally");
+    var DEMO=[
+      "One ally has crossed. Four more and the reading opens.",
+      "Two stand with you. The circle is forming.",
+      "Three. The lamps answer each other now.",
+      "Four. One ally from the opening.",
+      "The fifth lights, and your Awakened reading opens. This is the moment the link earns."
+    ];
+    function setTo(n){
+      for(var i=0;i<lamps.length;i++){
+        var on=i<n;
+        lamps[i].classList.toggle("lit",on);
+        lamps[i].textContent=on?"\u2726":String(i+1);
+        lamps[i].setAttribute("aria-pressed",on?"true":"false");
+      }
+      wrap.classList.toggle("za-moment",n>=5);
+      line.textContent = n>0 ? DEMO[n-1] : "Five lamps. Five allies. Tap them and see.";
+    }
+    for(var i=0;i<lamps.length;i++){
+      (function(idx){
+        lamps[idx].addEventListener("click",function(){
+          var lit=wrap.querySelectorAll(".lit").length;
+          setTo(lit===idx+1?idx:idx+1);
+        });
+      })(i);
+    }
+  })();
+
+  /* ---- meet your animal first ---- */
+  (function tryWheel(){
+    var form=$("#za-tryform");
+    if(!form) return;
+    var CURRENT=null;
+    form.addEventListener("submit",function(ev){
+      ev.preventDefault();
+      var msg=$("#za-try-msg"); msg.className="zodi-authMsg";
+      var m=parseInt($("#za-tm").value,10), d=parseInt($("#za-td").value,10), y=parseInt($("#za-ty").value,10);
+      if(!m||!d||!y||y<1900||y>2100){ msg.textContent="The wheel needs the full date, month, day and year."; return; }
+      var iso=y+"-"+("0"+m).slice(-2)+"-"+("0"+d).slice(-2);
+      var c=window.ENGINE?window.ENGINE.compute(iso):null;
+      if(!c||!c.primal){ msg.textContent="The wheel needs a real date."; return; }
+      msg.textContent="";
+      CURRENT=c;
+      $("#za-tr-name").textContent="The "+c.primal;
+      $("#za-tr-cross").textContent=c.sign+" crossed with the "+c.animal+(c.element?" \u00b7 "+c.element:"");
+      var ess=""; try{ ess=window.ENGINE.essence(c.sign,c.animal,c.primal)||""; }catch(e){}
+      $("#za-tr-essence").textContent=ess?(ess.charAt(0).toUpperCase()+ess.slice(1)+"."):"";
+      $("#za-tryresult").hidden=false;
+      $("#za-tryresult").scrollIntoView({behavior:"smooth",block:"nearest"});
+    });
+    $("#za-tr-save").addEventListener("click",function(){
+      if(!CURRENT) return;
+      try{
+        var w=(typeof ORACLE!=="undefined"&&ORACLE.WEST_ORDER)?ORACLE.WEST_ORDER.indexOf(CURRENT.sign):-1;
+        var e=(typeof ORACLE!=="undefined"&&ORACLE.CHINESE_ORDER)?ORACLE.CHINESE_ORDER.indexOf(CURRENT.animal):-1;
+        var slug=String(CURRENT.primal).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
+        localStorage.setItem("zodi_pending_animal", JSON.stringify({ w:(w>=0?w:null), e:(e>=0?e:null), year:CURRENT.effYear||null, el:CURRENT.element||null, name:CURRENT.primal, slug:slug }));
+        localStorage.setItem("zodi_next","/dashboard.html");
+      }catch(e2){}
+      toCard();
+    });
+  })();
+
+  /* ---- the board tonight, live ---- */
+  window.Zodi.ready.then(function(client){
+    if(!client) return;
+    client.rpc("zodi_board",{p_zodiac:null,p_limit:5}).then(function(r){
+      if(r.error||!r.data||!r.data.length) return;
+      var list=$("#za-boardlist");
+      list.innerHTML="";
+      for(var i=0;i<r.data.length;i++){
+        var row=r.data[i], li=document.createElement("li");
+        var rk=document.createElement("span"); rk.className="rk"; rk.textContent="#"+(row.rank||i+1);
+        var nm=document.createElement("span"); nm.className="nm"; nm.textContent=row.display_name||"A quiet soul";
+        var an=document.createElement("span"); an.className="an"; an.textContent=row.primal_name||"";
+        var zk=document.createElement("span"); zk.className="zk"; zk.textContent=Number(row.zodi_karma||0).toLocaleString("en-US")+" ZK";
+        li.appendChild(rk); li.appendChild(nm); li.appendChild(an); li.appendChild(zk);
+        list.appendChild(li);
+      }
+      $("#za-board").hidden=false;
+    }).catch(function(){});
+  });
 
   /* ---- honest proof: the live count on the board ---- */
   window.Zodi.ready.then(function(client){
@@ -511,7 +658,7 @@
       try{
         var p=JSON.parse(localStorage.getItem("zodi_pending_animal")||"null");
         if(!p){ p=JSON.parse(localStorage.getItem("zodi:home-v2:profile")||"null"); }
-        if(p && p.name && window.ORACLE){
+        if(p && p.name && typeof ORACLE!=="undefined"){
           upd={ primal_name:p.name, primal_slug:p.slug||slugify(p.name),
                 chinese_zodiac:(typeof p.e==="number"?ORACLE.CHINESE_ORDER[p.e]:null),
                 western_sign:(typeof p.w==="number"?ORACLE.WEST_ORDER[p.w]:null) };
