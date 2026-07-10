@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A humpback whale's tubercled head and long pectoral fin at rest in dark water, glowing song-rings around it, a thin new moon above">
+  <defs>
+    <linearGradient id="hwo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#182e36"/>
+      <stop offset="100%" stop-color="#070f12"/>
+    </linearGradient>
+    <linearGradient id="hwo-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3c5866"/>
+      <stop offset="55%" stop-color="#233842"/>
+      <stop offset="100%" stop-color="#111d23"/>
+    </linearGradient>
+    <linearGradient id="hwo-belly" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cdd9d6"/>
+      <stop offset="100%" stop-color="#8fa39e"/>
+    </linearGradient>
+    <filter id="hwo-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#hwo-bg)"/>
+
+  <!-- thin new moon -->
+  <g opacity="0.7">
+    <circle cx="330" cy="72" r="24" fill="#c9c2a8" opacity="0.5"/>
+    <circle cx="319" cy="65" r="22" fill="url(#hwo-bg)"/>
+  </g>
+
+  <!-- song rings -->
+  <g fill="none" stroke="#5c8a96" stroke-width="1.6" filter="url(#hwo-glow)" opacity="0.3">
+    <circle cx="200" cy="280" r="90"/>
+    <circle cx="200" cy="280" r="140"/>
+    <circle cx="200" cy="280" r="190"/>
+  </g>
+
+  <!-- the long pectoral fin -->
+  <g filter="url(#hwo-glow)" opacity="0.98">
+    <path d="M250 300 C300 270 356 236 396 190 C402 206 400 226 388 242 C348 282 300 308 258 326 Z" fill="url(#hwo-belly)"/>
+    <path d="M250 300 C300 272 348 240 390 200" stroke="#5a6f6a" stroke-width="2.4" fill="none" opacity="0.4"/>
+  </g>
+
+  <!-- body, arcing -->
+  <path d="M120 460 C96 400 106 330 160 280 C196 246 236 228 264 230 C278 230 282 242 276 254 C264 280 266 310 288 326 C304 336 306 354 292 368 C270 390 240 404 212 424 C176 448 148 452 120 460 Z" fill="url(#hwo-body)"/>
+
+  <!-- throat pleats -->
+  <g stroke="#0e181c" stroke-width="2.4" opacity="0.35" fill="none" stroke-linecap="round">
+    <path d="M186 330 C200 352 212 378 218 406"/>
+    <path d="M204 314 C220 336 232 362 240 390"/>
+  </g>
+
+  <!-- head with tubercles -->
+  <g>
+    <path d="M264 230 C276 232 282 242 276 254 C268 268 264 282 267 296 C255 288 244 276 240 262 C236 248 244 234 264 230 Z" fill="url(#hwo-body)"/>
+    <circle cx="256" cy="238" r="4.4" fill="#182a30"/>
+    <circle cx="245" cy="247" r="4" fill="#182a30"/>
+    <circle cx="260" cy="250" r="3.6" fill="#182a30"/>
+    <circle cx="248" cy="260" r="3.6" fill="#182a30"/>
+    <circle cx="261" cy="264" r="3.2" fill="#182a30"/>
+    <circle cx="238" cy="270" r="4.4" fill="#060d10"/>
+    <circle cx="236.5" cy="268.5" r="1.3" fill="#cdd9d6"/>
+  </g>
+</svg>

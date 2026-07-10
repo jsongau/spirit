@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A humpback whale breaching, its long pectoral fin extended like a wing, concentric song-rings glowing around it, a thin new moon above dark water">
+  <defs>
+    <radialGradient id="hw-sky" cx="58%" cy="26%" r="95%">
+      <stop offset="0%" stop-color="#203a44"/>
+      <stop offset="55%" stop-color="#12242c"/>
+      <stop offset="100%" stop-color="#080f13"/>
+    </radialGradient>
+    <linearGradient id="hw-sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#12262c" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#0d1e24"/>
+      <stop offset="100%" stop-color="#060d10"/>
+    </linearGradient>
+    <linearGradient id="hw-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3c5866"/>
+      <stop offset="55%" stop-color="#233842"/>
+      <stop offset="100%" stop-color="#111d23"/>
+    </linearGradient>
+    <linearGradient id="hw-belly" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cdd9d6"/>
+      <stop offset="100%" stop-color="#8fa39e"/>
+    </linearGradient>
+    <radialGradient id="hw-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e9e2ce"/>
+      <stop offset="70%" stop-color="#c9c2a8"/>
+      <stop offset="100%" stop-color="#8f8a72"/>
+    </radialGradient>
+    <filter id="hw-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#hw-sky)"/>
+  <rect x="0" y="380" width="800" height="420" fill="url(#hw-sea)"/>
+
+  <!-- thin new moon -->
+  <g opacity="0.75">
+    <circle cx="646" cy="140" r="42" fill="url(#hw-moon)" opacity="0.55"/>
+    <circle cx="628" cy="129" r="39" fill="url(#hw-sky)"/>
+  </g>
+
+  <!-- song rings, concentric, glowing outward from the breach -->
+  <g fill="none" stroke="#5c8a96" stroke-width="2" filter="url(#hw-glow)" opacity="0.32">
+    <circle cx="392" cy="430" r="150"/>
+    <circle cx="392" cy="430" r="230"/>
+    <circle cx="392" cy="430" r="310"/>
+  </g>
+
+  <!-- the splash at the waterline -->
+  <g fill="none" stroke="#cdd9d6" stroke-linecap="round" opacity="0.55">
+    <path d="M210 610 C230 580 250 566 268 560" stroke-width="7"/>
+    <path d="M186 636 C214 606 244 588 270 580" stroke-width="6"/>
+    <path d="M560 640 C536 606 508 586 480 576" stroke-width="7"/>
+    <path d="M600 664 C566 626 530 602 494 590" stroke-width="6"/>
+    <path d="M300 660 C312 636 326 618 342 606" stroke-width="5"/>
+    <path d="M440 664 C428 638 412 618 396 604" stroke-width="5"/>
+  </g>
+
+  <!-- tail fluke, cutting the waterline at lower left -->
+  <path d="M150 700 C200 664 264 656 300 672 C270 690 246 706 240 730 C210 716 176 710 150 700 Z" fill="url(#hw-body)"/>
+  <path d="M150 700 C200 664 264 656 300 672 C284 682 268 690 254 700 C216 686 180 690 150 700 Z" fill="#0e181c" opacity="0.4"/>
+
+  <!-- the long pectoral fin, extended like a wing -->
+  <g filter="url(#hw-glow)" opacity="0.98">
+    <path d="M470 380 C560 340 660 300 736 240 C744 262 742 288 726 310 C660 366 580 402 500 424 Z" fill="url(#hw-belly)"/>
+    <path d="M470 380 C560 344 650 308 722 254" stroke="#5a6f6a" stroke-width="3" fill="none" opacity="0.4"/>
+  </g>
+
+  <!-- body, arcing up out of the water -->
+  <path d="M240 700 C210 600 220 480 300 400 C350 350 410 320 452 320 C470 320 476 336 468 352 C450 388 452 430 486 452 C508 466 512 490 494 508 C462 540 420 560 380 590 C330 626 280 660 240 700 Z" fill="url(#hw-body)"/>
+
+  <!-- throat pleats on the underside -->
+  <g stroke="#0e181c" stroke-width="3" opacity="0.35" fill="none" stroke-linecap="round">
+    <path d="M300 470 C320 500 336 536 344 574"/>
+    <path d="M324 448 C346 480 362 516 372 554"/>
+    <path d="M350 428 C372 458 388 492 398 528"/>
+  </g>
+
+  <!-- head with tubercles (knobby bumps) along the rostrum -->
+  <g>
+    <path d="M452 320 C468 322 476 336 468 352 C458 372 452 392 456 410 C440 400 424 384 418 364 C412 344 424 326 452 320 Z" fill="url(#hw-body)"/>
+    <circle cx="440" cy="332" r="6" fill="#182a30"/>
+    <circle cx="424" cy="344" r="5.5" fill="#182a30"/>
+    <circle cx="452" cy="346" r="5" fill="#182a30"/>
+    <circle cx="432" cy="360" r="5" fill="#182a30"/>
+    <circle cx="450" cy="366" r="4.5" fill="#182a30"/>
+    <!-- eye -->
+    <circle cx="418" cy="372" r="6" fill="#060d10"/>
+    <circle cx="416" cy="370" r="1.8" fill="#cdd9d6"/>
+  </g>
+</svg>
