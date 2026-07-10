@@ -377,7 +377,7 @@ PNAV.MAP = [
     ]
   },
   { key: "bonds", h: "Bonds", accent: "rose",
-    eyebrow: "Two skies, read together",
+    eyebrow: "Two skies read together, and the climb you share",
     foot: ["/year.html", "Find a friend's animal by birth year"],
     layout: "cards",
     items: [
@@ -389,20 +389,23 @@ PNAV.MAP = [
         "Compare two friends one to one, then read the whole group as a circle."]
     ],
     /* the Climb: the whole game in the nav. Tier names + thresholds are
-       the TIERS ladder in js/zodi-auth.js; keep them in lockstep. */
+       the TIERS ladder in js/zodi-auth.js; keep them in lockstep. Earn
+       sources in the intro match the earn map in js/zodi-karma.js. No
+       exchange language anywhere: this is merit, not currency. */
     climb: { label: "The Climb · Zodi Karma",
+      intro: "Zodi Karma is the merit your animal gathers: the daily visit, the proverbs you study, the moons you check, the matches you test. It buys nothing. It only lifts you through the six stations.",
       ladder: [
-        ["✦", "Blessed by the Gods of Zodi", "100,000 ZK"],
-        ["☯", "Karmic Sage", "60,000 ZK"],
-        ["☽", "Moonbound",   "30,000 ZK"],
-        ["◉", "Awakened",    "10,000 ZK"],
-        ["○", "Seeker",      "2,000 ZK"],
-        ["·", "Wanderer",    "0 ZK"]
+        ["✦", "Blessed by the Gods of Zodi", "100,000"],
+        ["☯", "Karmic Sage", "60,000"],
+        ["☽", "Moonbound",   "30,000"],
+        ["◉", "Awakened",    "10,000"],
+        ["○", "Seeker",      "2,000"],
+        ["·", "Wanderer",    "0"]
       ],
       links: [
         ["/karmic-board.html", "The Karmic Board", "every soul ranked, overall and by zodiac year", "zodiac-day"],
-        ["/account.html",      "Your ZK ledger",   "every point, where it came from"],
-        ["/awakening.html",    "The Awakening",    "the path from fear to strength"]
+        ["/account.html",      "Your Book of Karma", "every deed remembered, every point accounted"],
+        ["/awakened.html",     "The Primal Mirror",  "the Awakened State, your animal's deeper form, kept for account holders"]
       ] }
   }
 ];
