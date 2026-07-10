@@ -98,11 +98,12 @@
   .saju-scope h1,.saju-scope h2,.saju-scope h3{ font-family:var(--serif); font-weight:560; line-height:1.08; color:var(--moon); letter-spacing:-0.01em; }
   .saju-scope p{ font-family:var(--sans); color:var(--body-text); }
   .ko{ font-family:var(--korean); }
-  .han{ font-family:var(--korean); color:var(--accent-bright); }
+  /* hanja are the supporting cast on this page: grey, secondary to hangul + English */
+  .han{ font-family:var(--korean); color:var(--faint); }
   /* hanja companion glyph — Korean-page hanja is set in the Korean font and left
-     untagged (lang="ko" context), never tagged zh. Colour inherits so it reads as
-     the classical form beside the hangul lead (the 수 水 / 대운 大運 pattern). */
-  .hanja{ font-family:var(--korean); }
+     untagged (lang="ko" context), never tagged zh. Grey by rule: the classical form
+     stands quietly beside the hangul lead (the 수 水 / 대운 大運 pattern). */
+  .hanja{ font-family:var(--korean); color:var(--faint); }
   .rom{ font-style:italic; color:var(--muted); }
   .saju-scope a{ color:var(--accent-bright); text-decoration:none; font-weight:500; }
   .saju-scope a:hover{ color:var(--moon); }
@@ -244,8 +245,13 @@
      --saju-nav-top and (bar + this nav) into --saju-stick, so the tab bar, the
      section anchors, and the sticky rail stack without overlap. The bar has a
      fixed height, so pinning never reflows the page. */
+  /* full-bleed strip: setStickyOffsets() measures the reading's left inset into
+     --saju-bleed, so the blurred bar + border run edge to edge of the viewport
+     while the tabs stay on the content's left edge. Measured, so no 100vw
+     scrollbar drift and no horizontal overflow, ever. */
   .rnav{ position:sticky; top:var(--saju-nav-top,46px); z-index:30; display:flex; gap:2px; height:46px; align-items:stretch;
-    overflow-x:auto; scrollbar-width:none; margin:0 0 1.1rem;
+    overflow-x:auto; scrollbar-width:none;
+    margin:0 calc(-1 * var(--saju-bleed, 0px)) 1.1rem; padding-inline:var(--saju-bleed, 0px);
     background:oklch(0.14 0.03 276 / .78); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line-soft); }
   .rnav::-webkit-scrollbar{ display:none; }
@@ -286,7 +292,7 @@
   @keyframes sayp{ 0%,100%{ opacity:1 } 50%{ opacity:.45 } }
   .rdm .dm-rom{ font-family:var(--mono); font-size:.8rem; color:var(--muted); }
   .rdm .dm-hanja{ color:var(--faint); }
-  .term .line .say{ margin-left:.35rem; width:1.2rem; height:1.2rem; }
+  .term .line .say{ width:1.2rem; height:1.2rem; }
   .term .line .say svg{ width:.72rem; height:.72rem; }
   .rpill .rel{ font-size:.6rem; color:var(--faint); }
   .rdm{ font-size:.95rem; color:var(--ivory); margin:.2rem 0 .8rem; line-height:1.9; }
@@ -507,34 +513,44 @@
   .rtip-hrow b{ font-family:var(--korean); font-size:1.02rem; line-height:1; font-weight:500; }
   @media(prefers-reduced-motion:reduce){ .rtip{ transition:none; } }
 
-  /* --- post-cast reading: a locked left rail (chips, chart, chain, tally) and a
-         colorful right-hand card flow. The rail sticks below the section tabs at its
-         NATURAL height, never with an inner scrollbar; if a short viewport can't
-         hold it whole, JS drops the stick (.no-stick) so it scrolls with the page.
-         The cards run as two independent stacks, so mismatched card heights can
-         never leave a hole. --- */
+  /* --- post-cast reading: a HARD-LOCKED left rail (chips, chart, chain, tally)
+         and a colorful right-hand card flow. Same pattern as the homepage identity
+         rail: the left column STRETCHES to the full height of the grid row (the
+         whole reading), and the anchor inside is a plain position:sticky block at
+         natural height. No max-height, no inner scrollbar, no drop-the-stick
+         fallback. On viewports too short to hold the whole rail, setStickyOffsets()
+         slides the sticky top up just enough that the rail's BOTTOM pins on screen,
+         so nothing ever clips. The cards run as two independent stacks, so
+         mismatched card heights can never leave a hole. --- */
   .rr-chips{ display:flex; flex-direction:column; gap:6px; margin:0 0 1rem; }
   .rr-chip{ display:flex; align-items:baseline; justify-content:space-between; gap:12px;
     background:var(--panel); border:1px solid var(--line-soft); border-radius:var(--r-1); padding:7px 12px; }
-  .rr-chip-k{ font-family:var(--mono); font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); }
+  .rr-chip-k{ font-family:var(--mono); font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); white-space:nowrap; }
   .rr-chip-v{ color:var(--ivory); font-size:.9rem; text-align:right; }
   .rr-chip-v .ko{ color:var(--accent-bright); }
   .rr-cols{ margin-top:.4rem; }
   @media(min-width:900px){
     .rr-cols{ display:grid; grid-template-columns:minmax(330px,460px) minmax(0,1fr); gap:clamp(26px,3vw,48px); align-items:start; }
-    .rr-left{ align-self:start; }
+    .rr-left{ align-self:stretch; } /* full row height: this is the sticky's travel room */
     .rr-anchor{ position:sticky; top:var(--saju-stick,104px); padding-bottom:4px; }
-    .rr-anchor.no-stick{ position:static; }
-    /* compact rail contents so the whole column usually fits a laptop viewport */
-    .rr-anchor .rr-chips{ gap:5px; margin-bottom:.75rem; }
-    .rr-anchor .rr-chip{ padding:5px 10px; }
-    .rr-anchor .rr-chip-v{ font-size:.84rem; }
-    .rr-anchor .rchart{ gap:.4rem; margin:.3rem 0 .7rem; }
-    .rr-anchor .rpill{ padding:.48rem .22rem; }
-    .rr-anchor .rgan-ko{ font-size:1.72rem; margin-top:.4rem; }
-    .rr-anchor .rhanja{ margin-top:.4rem; padding-top:.3rem; }
-    .rr-anchor .rsay{ margin-top:.22rem; }
-    .rr-anchor .elkeys{ gap:.55rem; }
+    /* compact rail: the three chips fold into one tight 3-across summary row */
+    .rr-anchor .rr-chips{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:5px; margin-bottom:.7rem; }
+    .rr-anchor .rr-chip{ flex-direction:column; align-items:flex-start; gap:2px; padding:6px 9px; }
+    .rr-anchor .rr-chip-k{ font-size:.54rem; }
+    .rr-anchor .rr-chip-v{ font-size:.78rem; text-align:left; }
+    /* pillar cards a size down: the rail must fit a 900px-tall laptop whole */
+    .rr-anchor .rchart{ gap:.35rem; margin:.25rem 0 .6rem; }
+    .rr-anchor .rpill{ padding:.4rem .2rem; }
+    .rr-anchor .rcap{ font-size:.54rem; }
+    .rr-anchor .rgan-ko{ font-size:1.55rem; margin-top:.35rem; }
+    .rr-anchor .rhanja{ font-size:.62rem; margin-top:.3rem; padding-top:.25rem; }
+    .rr-anchor .rel{ font-size:.56rem; }
+    .rr-anchor .rsay{ margin-top:.18rem; }
+    .rr-anchor .rdm{ font-size:.88rem; line-height:1.6; margin:.15rem 0 .5rem; }
+    .rr-anchor .sub{ margin-bottom:.15rem; }
+    .rr-anchor .elbar{ margin:.4rem 0 .35rem; }
+    .rr-anchor .elkeys{ gap:.5rem; }
+    .rr-anchor .rr-deep{ margin-top:.5rem; font-size:.8rem; }
   }
   @media(max-width:899px){ .rr-right{ margin-top:1.5rem; } }
   .rr-right, #rsec-reading{ scroll-margin-top:calc(var(--saju-stick,112px) + 6px); }
@@ -819,6 +835,20 @@
   .gloss.kt{ cursor:pointer; }
   .eyebrow .kt, .diffcard .n .kt, .pillar .cap .kt{ font-size:1em; }
 
+  /* --- Korean term units never break across lines, and the pronounce speaker
+         rides IMMEDIATELY after the hangul it speaks (5px gap), never at the end
+         of an English heading. .ko-unit is the shared wrapper: hangul + speaker
+         (+ rom) as one unbreakable inline unit. --- */
+  .ko-unit{ display:inline-flex; align-items:center; gap:5px; vertical-align:middle; white-space:nowrap; }
+  .ko-unit .rr-rom{ margin-left:1px; }
+  .kt, .kt-g, .kt-r, .stk{ white-space:nowrap; }
+  .rr-eyebrow .ko, .rmod-eyebrow .ko, .rr-verdict .ko, .rr-chip-v .ko,
+  .sj-float-ch, .sj-float-card .ko, .term .line .ko, .hanline .ko, .dl-han{ white-space:nowrap; }
+  .sj-float-ch{ flex:0 0 auto; }
+  /* the rail's one-line clock chain (clock, true solar, hour branch) */
+  .rr-chain{ font-size:.82rem; line-height:1.55; margin:.15rem 0 .5rem; }
+  .rr-chain-k{ font-family:var(--mono); font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; margin-right:.35rem; }
+
   /* the reading region now nests the interactive module sections inside the right
      column, so the sticky rail runs beside the WHOLE reading, not just the cards */
   .rr-right .rsec{ border-top:1px solid var(--line); margin-top:1.6rem; padding-top:1.4rem; }
@@ -1044,9 +1074,10 @@
   .scard-inner{ padding:clamp(1.2rem,3vw,2.2rem) 0 clamp(.9rem,2.2vw,1.5rem); text-align:center; position:relative; }
   .scard-eyebrow{ font-family:var(--mono); font-size:.64rem; letter-spacing:.2em; text-transform:uppercase; color:var(--accent-bright); margin:0 0 .7rem; }
   .scard-eyebrow span{ color:var(--muted); margin:0 .3em; }
-  .scard-crest{ display:flex; align-items:baseline; justify-content:center; gap:.45rem; margin:.1rem 0 .45rem; font-family:var(--korean); line-height:1; }
-  .scard-animal{ font-size:clamp(2.2rem,7vw,3.3rem); }
-  .scard-dm{ font-size:clamp(1.5rem,4.6vw,2.1rem); opacity:.9; }
+  /* the hanja pair is supporting cast: one uniform size, grey, sitting quietly
+     UNDER the animal-name title — the English name is the hero of the banner */
+  .scard-crest{ display:flex; align-items:baseline; justify-content:center; gap:.55rem; margin:.15rem 0 .5rem; font-family:var(--korean); line-height:1; }
+  .scard-crest .hanja{ font-size:clamp(1.35rem,3.4vw,1.8rem); color:var(--faint); }
   .scard-title{ font-family:var(--serif); font-weight:560; font-size:clamp(1.9rem,5.4vw,2.9rem); margin:.1rem 0 .35rem; color:var(--moon); letter-spacing:-.01em; }
   .scard-coords{ font-family:var(--mono); font-size:.78rem; letter-spacing:.02em; color:var(--muted); margin:0 0 1.1rem; }
   .scard-coords b{ color:var(--ivory); font-weight:400; }
@@ -1672,7 +1703,7 @@
       var x=null; C.forEach(function(y){ if(y.key===key) x=y; });
       if(!x){ showIndex(); return; }
       body.innerHTML=back()+
-        '<div class="sj-float-hd"><span class="sj-float-ch">'+esc(x.ko)+'</span><div><h3>'+esc(x.title)+'</h3><span class="sj-float-pin">'+esc(x.rom||'')+(x.rom?' · ':'')+esc(x.han)+'</span></div>'+sayBtn(x.ko)+'</div>'+
+        '<div class="sj-float-hd"><span class="ko-unit"><span class="sj-float-ch">'+esc(x.ko)+'</span>'+sayBtn(x.ko)+'</span><div><h3>'+esc(x.title)+'</h3><span class="sj-float-pin">'+esc(x.rom||'')+(x.rom?' · ':'')+'<span class="hanja">'+esc(x.han)+'</span></span></div></div>'+
         x.body.map(function(p){ return '<p>'+esc(p)+'</p>'; }).join('')+
         '<p class="sj-float-note">A tradition of meaning for reflection and study, never a prediction of fixed events.</p>';
       wire(); body.scrollTop=0;
@@ -1861,7 +1892,7 @@
   var g = document.getElementById("glossary");
   if(g){ g.innerHTML = GLO.map(function(t){
     return '<div class="term"><p class="en">'+t[0]+'</p>'+
-      '<p class="line"><span class="ko">'+t[2]+'</span> <span class="rom">'+t[1]+'</span>'+sayBtn(t[2])+' <span class="han">'+t[3]+'</span></p>'+
+      '<p class="line"><span class="ko-unit"><span class="ko">'+t[2]+'</span>'+sayBtn(t[2])+'</span> <span class="rom">'+t[1]+'</span> <span class="han">'+t[3]+'</span></p>'+
       '<p class="mean">'+t[4]+'</p></div>';
   }).join(""); }
 
@@ -2135,7 +2166,7 @@
     if(!t) return "";
     var parts=t.name.split(" ");
     var off=(Math.abs(t.offset_min)<1440)?'<span class="dl-off">born '+offStr(t.offset_min)+'</span>':'';
-    return '<details class="dlx"><summary><span class="dl-term"><span class="dl-han">'+parts[0]+' '+parts[1]+'</span> '+parts[2]+'</span>'+off+'</summary>'+
+    return '<details class="dlx"><summary><span class="dl-term"><span class="dl-han">'+parts[0]+'</span> <span class="hanja">'+parts[1]+'</span> '+parts[2]+'</span>'+off+'</summary>'+
       '<div class="dlx-body"><span class="dl-time">'+t.instant_kst+'</span><p class="dlx-note">'+note+'</p></div></details>';
   }
   // contained module card for the interactive sections (wheel, strength, climate, clock)
@@ -2375,8 +2406,9 @@
   // Key Korean terms in card headings: hangul + Revised Romanization + a pronounce
   // button. Same speechSynthesis machinery as the pillar speakers (ko-KR speaks any
   // hangul string), so the reader can hear every term she is learning.
+  // one unbreakable unit: hangul, then the speaker RIGHT after it, then the rom
   function termEyebrow(en, ko, rom){
-    return en+' · <span class="ko">'+ko+'</span> <span class="rr-rom">'+rom+'</span>'+sayBtn(ko);
+    return en+' · <span class="ko-unit"><span class="ko">'+ko+'</span>'+sayBtn(ko)+'<span class="rr-rom">'+rom+'</span></span>';
   }
   var VERDICT_ROM={ "극신약":"Geuksinyak", "신약":"Sinyak", "중화":"Junghwa", "신강":"Singang", "극신강":"Geuksingang" };
   function rrCard(mod, eyebrow, body){ return '<div class="rr-card'+(mod?' rr-card--'+mod:'')+'"><p class="rr-eyebrow">'+eyebrow+'</p>'+body+'</div>'; }
@@ -2392,9 +2424,9 @@
     var dm=chart.day_master;
     var claims=(by.Pattern||[]).map(claimHtml).join("");
     return rrCard(dm.element.toLowerCase(), termEyebrow('Your Day Master','일간','Ilgan'),
-      '<div class="rr-dmhero"><span class="rr-dmglyph '+elClass(dm.element)+'">'+esc(dm.ko)+'</span>'+
-        '<div class="rr-dm-l"><b>'+esc(dm.rom)+' · '+(dm.yin?'yin':'yang')+' '+dm.element+' '+sayBtn(dm.ko)+'</b>'+
-        '<span>'+esc(dm.char)+' in hanja</span></div></div>'+
+      '<div class="rr-dmhero"><span class="ko-unit"><span class="rr-dmglyph '+elClass(dm.element)+'">'+esc(dm.ko)+'</span>'+sayBtn(dm.ko)+'</span>'+
+        '<div class="rr-dm-l"><b>'+esc(dm.rom)+' · '+(dm.yin?'yin':'yang')+' '+dm.element+'</b>'+
+        '<span><span class="hanja">'+esc(dm.char)+'</span> in hanja</span></div></div>'+
       '<p class="rr-p">Your day of birth casts <b class="'+elClass(dm.element)+'">'+esc(dm.ko)+'</b> as the self this whole reading turns around; every card here reads the chart from its side.</p>'+
       claims);
   }
@@ -2412,7 +2444,7 @@
       '<li>'+(s.deukji?'Rooted at its own day branch':'No root at its own day branch')+' · '+koTerm('득지','deukji')+'</li>'+
       '<li>'+(s.deukse?'Allied overall':'Outnumbered overall')+' · '+koTerm('득세','deukse')+'</li></ul>';
     return rrCard('earth', termEyebrow('Strength','억부','Eokbu'),
-      '<p class="rr-verdict">'+esc(s.verdict.en)+' · <span class="ko">'+esc(s.verdict.ko)+'</span> <span class="rr-rom">'+rom+'</span> '+esc(s.verdict.han)+' '+sayBtn(s.verdict.ko)+'</p>'+
+      '<p class="rr-verdict">'+esc(s.verdict.en)+' · <span class="ko-unit"><span class="ko">'+esc(s.verdict.ko)+'</span>'+sayBtn(s.verdict.ko)+'<span class="rr-rom">'+rom+'</span></span> <span class="hanja">'+esc(s.verdict.han)+'</span></p>'+
       stats+
       '<p class="rr-p">By the '+glk('eokbu','억부','eokbu')+' method, three classical inputs set the verdict:</p>'+facts+
       '<p class="rr-note">One lens among several, not a grade. The Elements section further down shows the full meter and reasoning.</p>');
@@ -2567,16 +2599,25 @@
       var sh=(sub && sub.offsetHeight)?sub.offsetHeight:46;
       var nh=(nav && nav.offsetHeight)?nav.offsetHeight:46;
       de.style.setProperty("--saju-nav-top", sh+"px");
-      de.style.setProperty("--saju-stick", (sh+nh+14)+"px");
-      // the rail never scrolls inside itself: if it can't fit the viewport whole,
-      // drop the stick so it simply scrolls with the page
+      var stick=sh+nh+14;
+      de.style.setProperty("--saju-stick", stick+"px");
+      // full-bleed tab bar: measure the reading's left inset so the bar's strip
+      // spans the whole viewport while the tabs hold the content edge
+      var rep=document.getElementById("report");
+      if(rep) de.style.setProperty("--saju-bleed", Math.max(0, Math.round(rep.getBoundingClientRect().left))+"px");
+      // hard-lock the rail (the homepage identity-rail pattern): plain sticky at
+      // natural height, never an inner scrollbar, never a dropped stick. On a
+      // viewport too short to hold the whole rail under the bars, the sticky top
+      // slides up just enough that the rail's BOTTOM pins 16px above the fold.
+      // Nothing clips, nothing overflows.
       var anchor=document.querySelector(".rr-anchor");
       if(anchor && window.innerHeight){
-        anchor.classList.toggle("no-stick", anchor.scrollHeight > (window.innerHeight - (sh+nh+14) - 18));
+        anchor.style.top=Math.min(stick, window.innerHeight - anchor.offsetHeight - 16)+"px";
       }
     }catch(e){}
   }
   window.addEventListener("resize", setStickyOffsets);
+  window.addEventListener("load", setStickyOffsets);
 
   // Exclusive pillar tooltips: each cast pillar registers with the page's one
   // popover controller (window.__sjPop), so opening any tooltip closes the previous
@@ -2847,12 +2888,12 @@
       var href = "/zodiac/"+sign+"-"+animalSlug+"/";
       var dmPhrase = (dm.yin?"yin":"yang")+" "+dm.element;        // e.g. "yang Earth"
       var identity = (window.SajuInterpret && SajuInterpret.identityFor) ? SajuInterpret.identityFor(dm.element) : "";
-      var yc = WX_COLORS[yb.element]||"var(--accent)", dc = WX_COLORS[dm.element]||"var(--accent)";
+      // hanja pair: uniform size, grey, UNDER the title. The animal name leads
       return '<div class="scard" id="scard" data-crossing="'+esc(label)+'" data-dm="'+esc(dmPhrase)+' ('+esc(dm.char)+')" data-href="'+href+'">'+
         '<div class="scard-inner">'+
           '<p class="scard-eyebrow">Your Zodi Animal <span aria-hidden="true">&#215;</span> Saju</p>'+
-          '<div class="scard-crest"><span class="scard-animal" style="color:'+yc+'">'+esc(yb.char)+'</span><span class="scard-dm" style="color:'+dc+'">'+esc(dm.char)+'</span></div>'+
           '<h3 class="scard-title">'+esc(label)+'</h3>'+
+          '<div class="scard-crest" aria-hidden="true"><span class="scard-animal hanja">'+esc(yb.char)+'</span><span class="scard-dm hanja">'+esc(dm.char)+'</span></div>'+
           '<p class="scard-coords"><b>'+SIGN_LABEL[sign]+'</b> sun · <b>'+esc(yb.animal)+'</b> year · <b>'+esc(dmPhrase)+'</b> day</p>'+
           (identity?'<p class="scard-identity">'+esc(identity)+'</p>':'')+
           '<div class="scard-actions">'+
@@ -2901,7 +2942,8 @@
                         : "birthplace unknown — no solar correction";
       chain = esc(clockLabel)+' '+arrow+' <b class="'+elClass(hb.element)+'">'+esc(hourLabel)+'</b> <span class="dl-off">· '+why+'</span>';
     }
-    return '<p class="sub" style="margin-top:.7rem">Clock to '+gl('truesolar','true solar time')+'</p><p class="rdm" style="line-height:1.6;margin-bottom:.55rem">'+chain+'</p>';
+    // one tight line in the rail: label and chain together, no separate heading
+    return '<p class="rdm rr-chain"><span class="rr-chain-k">Clock to '+gl('truesolar','true solar')+'</span> '+chain+'</p>';
   }
 
   // Turn a thrown SajuLunar error into a plain, kind, specific message.
@@ -2993,7 +3035,7 @@
     var P = chart.pillars, three = chart.three_pillar_mode, dm = chart.day_master;
     var b = chart.boundaries || {}, vars = chart.variants || [];
     var chartHtml = grid(P);
-    var dmHtml = '<p class="rdm">Day Master · <b>'+stak(dm.ko,dm.rom)+'</b> '+sayBtn(dm.ko)+' · '+(dm.yin?"yin":"yang")+' '+dm.element+
+    var dmHtml = '<p class="rdm">Day Master · <span class="ko-unit"><b>'+stak(dm.ko,dm.rom)+'</b>'+sayBtn(dm.ko)+'</span> · '+(dm.yin?"yin":"yang")+' '+dm.element+
       (three?'. Your hour pillar is still open, slide the time bar at the bottom to find it.':'.')+'</p>';
     var by = interpSections(chart);
     var chipsHtml = summaryChips(chart);
@@ -3022,7 +3064,7 @@
 
     // editorial solar-term rows (exact-minute), as a contained module of expandable rows
     var dlHtml = modCard('cinnabar',
-      '<span class="ko">절기</span> <span class="rr-rom">Jeolgi</span>'+sayBtn('절기'),
+      '<span class="ko-unit"><span class="ko">절기</span>'+sayBtn('절기')+'<span class="rr-rom">Jeolgi</span></span>',
       'The cosmic clock',
       'The two solar-term instants that bound your chart. Open a row for the exact minute.',
       dlxRow(b.ipchun,'This exact instant opens the Saju year. The year pillar counts from '+koTerm('입춘','Ipchun')+', not from January 1.')+
@@ -3071,17 +3113,17 @@
     // the full height of the reading and accompanies it to the end.
     var rightHtml = cardsHtml +
       sec("rsec-elements",
-        modCard('cinnabar','<span class="ko">오행</span> <span class="rr-rom">Ohaeng</span>'+sayBtn('오행'),
+        modCard('cinnabar','<span class="ko-unit"><span class="ko">오행</span>'+sayBtn('오행')+'<span class="rr-rom">Ohaeng</span></span>',
           'The five elements at work',
           'Select an element to light its generating and controlling lines, its count, and how it stands to your Day Master.',
           wxHtml)+
-        (strHtml?modCard('earth','<span class="ko">억부</span> <span class="rr-rom">Eokbu</span>'+sayBtn('억부'),
+        (strHtml?modCard('earth','<span class="ko-unit"><span class="ko">억부</span>'+sayBtn('억부')+'<span class="rr-rom">Eokbu</span></span>',
           'Day Master strength',
           'Three classical inputs set the verdict. Select a row to see which side of the meter it feeds.',
           strHtml):''),
         "rsec-climate","Climate") +
       sec("rsec-climate",
-        (climHtml?modCard('water','<span class="ko">조후</span> <span class="rr-rom">Johu</span>'+sayBtn('조후'),
+        (climHtml?modCard('water','<span class="ko-unit"><span class="ko">조후</span>'+sayBtn('조후')+'<span class="rr-rom">Johu</span></span>',
           'Climate cross-check',
           'Two lenses read the same chart. Choose 억부 or 조후 to see which element each one points to.',
           climHtml):''),
