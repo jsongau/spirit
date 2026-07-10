@@ -3,11 +3,12 @@
    This file renders NOTHING of the reading itself (the page's inline models do
    that). It owns exactly one thing: the sticky bottom chart dock — the identity
    chip that wears the reader's Day Master, the 24-hour Korean hour beam, the
-   true-solar conversion line, the palette toggle, the mute, and the three-state
-   machine (open | min | closed).
+   readout that carries the true-solar correction, the birthplace timezone chip,
+   the mute, and the three-state machine (open | min | closed). Same anatomy as
+   the ZWDS pcast dock: id chip | − beam + | readout | tz · mute · ▾ · ✕.
 
    It CONSUMES window.SajuStudyChart:
-     get / summary / setHour / getPref / setPref / makeToggle
+     get / summary / setHour / getPref / setPref
    and re-renders off ONE document event, "saju:studychart"
      detail = { birth, out }   (out = the raw SajuEngine cast, or null)
 
@@ -19,8 +20,9 @@
    scrub readout and the pentatonic tick, before the throttled re-cast lands.)
 
    The dock wears the Day Master: data-el on #scast-dock ← the element of
-   out.day_master. sajuPalette="moonlight" forces data-el="none" (moonlight),
-   removing hue as an information channel — the accessible mode.
+   out.day_master; "none" (moonlight) before a cast. The palette toggle that
+   used to sit in the tools cluster is gone by owner ruling; tradition is the
+   one palette and the moonlight set survives only as the pre-cast resting look.
 
    Sound is 궁상각치우: each branch sounds the 오음 note of its OWN element, the
    four Earth branches (진술축미) separated by octave so the scale still rises.
@@ -83,6 +85,40 @@
       return String(out.day_master.element).toLowerCase();
     }
     function branchLabel(idx) { return BRANCH_KO[idx] + "시 " + BRANCH_RANGE[idx]; }  /* "술시 19–21" */
+
+    /* engine "HH:MM" strings → the readout's 12-hour clock forms */
+    function hm12(hm) {          /* "14:23" → "2:23 PM" */
+      var m = /^(\d{1,2}):(\d{2})$/.exec(hm || "");
+      if (!m) return hm || "";
+      var h = mod(+m[1], 24), h12 = h % 12; if (h12 === 0) h12 = 12;
+      return h12 + ":" + m[2] + " " + (h < 12 ? "AM" : "PM");
+    }
+    function hm12short(hm) {     /* "14:26" → "2:26" — the AM/PM is already said by the clock time */
+      var m = /^(\d{1,2}):(\d{2})$/.exec(hm || "");
+      if (!m) return hm || "";
+      var h12 = mod(+m[1], 24) % 12; if (h12 === 0) h12 = 12;
+      return h12 + ":" + m[2];
+    }
+    /* the timezone chip: "GMT+9" / "GMT+8:30" / "GMT-8", from a numeric UTC offset */
+    function gmtLabel(off) {
+      if (off == null || isNaN(off)) return "";
+      var sign = off < 0 ? "-" : "+";
+      var a = Math.abs(off), hh = Math.floor(a), mm = Math.round((a - hh) * 60);
+      return "GMT" + sign + hh + (mm ? ":" + pad(mm) : "");
+    }
+    /* What the chip says. Korean birthplaces read the ERA label (the engine's own
+       meridian table: GMT+8:30 for 1954–61 births, GMT+9 today); foreign birthplaces
+       read the offset the form supplied; no birthplace reads as unknown. */
+    function tzChipLabel(birth, out) {
+      var pl = birth && birth.place;
+      var korean = pl && pl.lon != null && pl.lon >= 124 && pl.lon <= 132;
+      if (pl && pl.utcOffset != null && !korean) return gmtLabel(pl.utcOffset);
+      if (korean && out && out.time_resolution && out.time_resolution.standard_time) {
+        return String(out.time_resolution.standard_time).split(" ")[0];  /* strip "(forced)" */
+      }
+      if (pl && pl.utcOffset != null) return gmtLabel(pl.utcOffset);
+      return "";
+    }
 
     /* ---- sound: own lazy AudioContext, created only inside a gesture handler ---- */
     var actx = null;
@@ -218,19 +254,27 @@
       cur.textContent = BEAM_EMPTY;
       chart.appendChild(cur);
 
-      /* right-edge tools: palette toggle, mute, minimize, close */
+      /* right-edge tools: timezone chip, mute, minimize, close — same cluster, same order
+         as the ZWDS dock. (The 전통 색 / ☾ Moonlight palette toggle that used to open this
+         cluster was removed by owner ruling; nothing renders it anymore.) */
       var tools = el("div", "scast-dk-tools");
 
-      /* palette toggle (전통 색 / ☾ Moonlight), persisted as sajuPalette by makeToggle itself.
-         The tiny "colors" caption names the control; without it the pair reads as a mystery. */
-      var palCap = el("span", "scast-dk-palcap", "colors");
-      palCap.setAttribute("aria-hidden", "true");
-      tools.appendChild(palCap);
-      var pal = SC.makeToggle("sajuPalette", [["tradition", "전통 색"], ["moonlight", "☾ Moonlight"]], function () { applyPalette(); });
-      pal.el.setAttribute("aria-label", "Colour palette — Moonlight uses one pale palette and removes hue as an information channel (also the accessible mode)");
-      pal.el.title = "Moonlight: one pale palette, no hue as an information channel — the accessible mode.";
-      pal.setAvailable(true);
-      tools.appendChild(pal.el);
+      /* the timezone chip. ZWDS puts a live <select> here because that page lets you change
+         the zone; Saju derives the zone FROM the birthplace, so the chip is a jump button:
+         it reads "GMT+9" style and tapping it takes you to the Birthplace field to change it. */
+      var tzBtn = el("button", "scast-dk-tz"); tzBtn.type = "button";
+      var tzVal = el("span", "scast-dk-tzval", "GMT+9");
+      tzVal.setAttribute("aria-hidden", "true");
+      tzBtn.appendChild(tzVal);
+      tzBtn.title = "Birth timezone, set by your birthplace. Tap to change the birthplace in the form above.";
+      tzBtn.setAttribute("aria-label", "Birth timezone, set by your birthplace. Edit the birthplace in the form above.");
+      tzBtn.addEventListener("click", function () {
+        var plate = document.getElementById("bplace");
+        var target = plate ? (plate.closest(".pcast-field") || plate) : (document.getElementById("gateForm") || null);
+        if (target && target.scrollIntoView) { try { target.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) { target.scrollIntoView(); } }
+        if (plate) { try { plate.focus({ preventScroll: true }); } catch (e) { try { plate.focus(); } catch (e2) {} } }
+      });
+      tools.appendChild(tzBtn);
 
       var soundBtn = el("button", "scast-dk-sound"); soundBtn.type = "button";
       soundBtn.textContent = "◍";  /* ◍ */
@@ -350,6 +394,7 @@
 
       dockEls = {
         dock: dock, sigil: sigil, miniSigil: miniSigil, dateEl: dateEl, cur: cur, conv: conv,
+        tzBtn: tzBtn, tzVal: tzVal,
         range: range, tickEls: tickEls, miniTxt: miniTxt, launcher: launcher,
         setState: setState, padBody: padBody,
         setLastScrubBranch: function (b) { lastScrubBranch = b; }
@@ -362,16 +407,34 @@
       return dockEls;
     }
 
-    /* palette: moonlight forces data-el="none" (hue removed); tradition wears the element */
+    /* the dock wears the Day Master element; "none" (moonlight) only before a cast.
+       The palette toggle is gone: tradition is the one palette, and the old sajuPalette
+       pref is deliberately ignored so no reader is stranded in a mode they can't leave. */
     function applyPalette() {
       if (!dockEls) return;
-      var moonlight = false;
-      try { moonlight = SC.getPref("sajuPalette") === "moonlight"; } catch (e) {}
       var element = elLower(lastOut);
-      dockEls.dock.setAttribute("data-el", moonlight ? "none" : (element || "none"));
+      dockEls.dock.setAttribute("data-el", element || "none");
     }
 
-    /* build the conversion line from the real engine chain + its disclosures */
+    /* The full conversion chain — "14:23 GMT+9 → 14:26 true solar → 미시 13–15".
+       It used to be the always-on floating pill; the fold into the ZWDS-style readout
+       moved the visible chain onto the readout plate, and this plain-text form now
+       rides the plate's title so the whole story is one hover away. */
+    function fullChain(out) {
+      if (!out || out.error || !out.pillars || !out.pillars.hour) return "";
+      var hb = out.pillars.hour.branch;
+      var solar = out.solar_time;
+      var eraLabel = (out.time_resolution && out.time_resolution.standard_time) ? out.time_resolution.standard_time : "";
+      var clock = (solar && solar.clock) ? solar.clock : ((out.input && out.input.time) ? out.input.time : "");
+      var head = clock + (eraLabel ? " " + eraLabel : "");
+      if (solar && solar.applied) return head + " → " + solar.true_solar + " true solar → " + branchLabel(hb.index);
+      return head + " → " + branchLabel(hb.index);
+    }
+
+    /* The floating pill is a DISCLOSURE line now, exactly like the ZWDS dock's:
+       it speaks only when the reader needs to know something the readout cannot
+       show them (no hour yet, or a boundary the schools argue over), and hides
+       for an unambiguous reading. Never fake numbers; always name what was skipped. */
     function buildConv(out) {
       if (!out || out.error || !out.pillars) return "";
       if (out.three_pillar_mode || !out.pillars.hour) {
@@ -381,21 +444,6 @@
         var animal = yba && yba.animal ? yba.animal : "";
         return "시주 미정 · slide to find your hour" + (animal ? " — your " + animal + " is already set" : "");
       }
-      var hb = out.pillars.hour.branch;
-      var hbLabel = "<b>" + branchLabel(hb.index) + "</b>";
-      var solar = out.solar_time;
-      var eraLabel = (out.time_resolution && out.time_resolution.standard_time) ? out.time_resolution.standard_time : "";
-      var clock = (solar && solar.clock) ? solar.clock : ((out.input && out.input.time) ? out.input.time : "");
-      var head = clock + (eraLabel ? " " + eraLabel : "");
-
-      var line;
-      if (solar && solar.applied) {
-        line = head + " → " + solar.true_solar + " true solar → " + hbLabel;
-      } else {
-        line = head + " → " + hbLabel;   /* correction skipped — no fake true-solar value */
-      }
-
-      /* disclosures — never fake numbers, always name what was skipped and why */
       var codes = {};
       (out.warnings || []).forEach(function (w) { if (w && w.code) codes[w.code] = w; });
       var notes = [];
@@ -414,8 +462,7 @@
         });
         notes.push("within 20 min of the 시 edge" + (adj ? " — adjacent hour " + adj : ""));
       }
-      if (notes.length) line += " · " + notes.join(" · ");
-      return line;
+      return notes.join(" · ");
     }
 
     /* render the dock off the settled event — corrected values only */
@@ -450,16 +497,35 @@
       });
 
       /* settled readout — CORRECTED branch (never the naive summary value). The plate always
-         prints: a known hour shows the corrected branch, an unknown one shows BEAM_EMPTY. */
+         prints: a known hour shows the corrected branch, an unknown one shows BEAM_EMPTY.
+         When the true-solar correction ran, the plate carries it inline — the old floating
+         pill's chain, folded into the ZWDS-style readout: "2:23 PM → 2:26 · 미시 13–15". */
+      var chain = fullChain(out);
       if (known && birth.hour != null) {
-        els.cur.innerHTML = clock12(birth.hour) + " · <b>" + branchLabel(hb.index) + "</b>";
+        var solar = out.solar_time;
+        var clockStr = (solar && solar.clock) ? hm12(solar.clock) : clock12(birth.hour);
+        var head = clockStr;
+        if (solar && solar.applied && solar.true_solar && solar.true_solar !== solar.clock) {
+          head += " → " + hm12short(solar.true_solar);
+        }
+        els.cur.innerHTML = head + " · <b>" + branchLabel(hb.index) + "</b>";
         els.cur.classList.remove("is-empty");
+        els.cur.title = chain;   /* the whole story — clock, standard, true solar, branch — on hover */
       } else {
         els.cur.textContent = BEAM_EMPTY;
         els.cur.classList.add("is-empty");
+        els.cur.removeAttribute("title");
       }
 
-      /* conversion line */
+      /* timezone chip — reflects the chosen birthplace's offset (era-true for Korea) */
+      var tzl = tzChipLabel(birth, out);
+      els.tzVal.textContent = tzl || "--";   /* same placeholder register as the "--:--" plate */
+      els.tzBtn.setAttribute("aria-label", (tzl ? "Birth timezone " + tzl : "Birth timezone unknown")
+        + ", set by your birthplace. Edit the birthplace in the form above.");
+      /* the beam is birthplace-local — say which zone in its aria-label, as ZWDS does */
+      els.range.setAttribute("aria-label", "Birth hour — 24 clock hours, birthplace-local" + (tzl ? " · " + tzl : ""));
+
+      /* disclosure line — floats above the bar only when the reading is ambiguous */
       var cl = buildConv(out);
       els.conv.innerHTML = cl;
       els.conv.hidden = !cl;
@@ -471,8 +537,8 @@
       els.padBody();
     }
 
-    /* Everything re-renders off the ONE event — the cast, every hour scrub, the palette
-       toggle, and the restore-on-revisit broadcast. Nothing else drives the dock. */
+    /* Everything re-renders off the ONE event — the cast, every hour scrub, and the
+       restore-on-revisit broadcast. Nothing else drives the dock. */
     document.addEventListener("saju:studychart", function (e) {
       var d = e.detail || {};
       if (!d.birth) return;

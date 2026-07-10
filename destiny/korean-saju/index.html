@@ -447,6 +447,48 @@
   .rd-note{ font-size:.8rem; color:var(--faint); margin-top:1rem; line-height:1.5; }
   @media(prefers-reduced-motion:no-preference){ #rdRest[data-revealed]{ animation:climin .3s var(--ease-out); } }
 
+  /* --- full-bleed reading: only the post-cast region opens to the ZWDS scale.
+         The section's prose head stays capped by .sec-head; every other band keeps --maxw. --- */
+  .wrap--cast{ max-width:1400px; }
+
+  /* --- hover glossary: the BaZi hub's .gloss pattern, Saju-skinned (gold term, CSS-only tip) --- */
+  .gloss{ color:var(--accent-bright); cursor:help; font-weight:600; position:relative; }
+  .gloss:hover::after,.gloss:focus::after{ content:attr(data-tip); position:absolute; left:50%; bottom:calc(100% + 9px);
+    transform:translateX(-50%); width:min(280px,74vw); background:var(--ink-2); border:1px solid var(--accent);
+    border-radius:var(--r-1); padding:.65rem .85rem; font:400 .82rem/1.5 var(--sans); letter-spacing:0; text-transform:none;
+    color:var(--ivory); white-space:normal; text-align:left; z-index:260; box-shadow:0 14px 40px rgba(0,0,0,.55); }
+  .gloss:hover::before,.gloss:focus::before{ content:""; position:absolute; left:50%; bottom:calc(100% + 3px);
+    transform:translateX(-50%); border:6px solid transparent; border-top-color:var(--accent); z-index:260; }
+  .gloss:focus{ outline:none; }
+  .gloss:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; border-radius:2px; }
+
+  /* --- structured pillar tooltips: the BaZi chart-cell pattern on the cast pillars.
+         Opens BELOW the cell (the rail is sticky near the top, above would clip). --- */
+  .rpill{ position:relative; cursor:pointer; }
+  .rpill:hover,.rpill:focus,.rpill:focus-within{ z-index:200; }
+  .rpill:focus{ outline:2px solid var(--accent); outline-offset:2px; }
+  .rtip{ position:absolute; left:50%; top:calc(100% + 12px); transform:translateX(-50%); width:min(300px,86vw);
+    background:linear-gradient(180deg,var(--ink-2),var(--ink)); border:1px solid var(--accent); border-radius:var(--r-2);
+    padding:.85rem .95rem; text-align:left; opacity:0; visibility:hidden; pointer-events:none;
+    transition:opacity .16s var(--ease-out); z-index:250; box-shadow:0 20px 56px rgba(0,0,0,.72); }
+  .rtip::after{ content:""; position:absolute; left:50%; bottom:100%; transform:translateX(-50%);
+    border:7px solid transparent; border-bottom-color:var(--accent); }
+  .rpill:hover .rtip,.rpill:focus .rtip,.rpill:focus-within .rtip{ opacity:1; visibility:visible; }
+  .rchart .rpill:first-child .rtip{ left:0; transform:none; }
+  .rchart .rpill:first-child .rtip::after{ left:14%; }
+  .rchart .rpill:last-child .rtip{ left:auto; right:0; transform:none; }
+  .rchart .rpill:last-child .rtip::after{ left:auto; right:14%; transform:none; }
+  .rtip-head{ display:flex; align-items:baseline; gap:.5rem; margin-bottom:.15rem; }
+  .rtip-char{ font-family:var(--korean); font-size:1.5rem; line-height:1; color:var(--moon); }
+  .rtip-role{ font-family:var(--mono); font-size:.62rem; letter-spacing:.07em; text-transform:uppercase; color:var(--accent-bright); font-weight:600; }
+  .rtip-sub{ font-family:var(--mono); font-size:.58rem; letter-spacing:.09em; text-transform:uppercase; color:var(--faint); margin-bottom:.45rem; }
+  .rtip p{ margin:0; font:400 .83rem/1.5 var(--sans); color:var(--ivory); }
+  .rtip-hid{ margin-top:.6rem; padding-top:.55rem; border-top:1px solid var(--line-soft); display:flex; flex-direction:column; gap:.3rem; }
+  .rtip-hlabel{ font-family:var(--mono); font-size:.56rem; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); }
+  .rtip-hrow{ display:flex; align-items:baseline; gap:.45rem; font-size:.8rem; color:var(--muted); }
+  .rtip-hrow b{ font-family:var(--korean); font-size:1.02rem; line-height:1; font-weight:500; }
+  @media(prefers-reduced-motion:reduce){ .rtip{ transition:none; } }
+
   /* --- post-cast reading: summary chips + two columns (chart left, reading cards right) --- */
   .rr-chips{ display:flex; flex-wrap:wrap; gap:8px; margin:.2rem 0 1.1rem; }
   .rr-chip{ background:var(--panel); border:1px solid var(--line-soft); border-radius:var(--r-pill); padding:6px 14px; }
@@ -455,7 +497,7 @@
   .rr-chip-v .ko{ color:var(--accent-bright); }
   .rr-cols{ margin-top:.4rem; }
   @media(min-width:900px){
-    .rr-cols{ display:grid; grid-template-columns:minmax(320px,44%) 1fr; gap:26px; align-items:start; }
+    .rr-cols{ display:grid; grid-template-columns:minmax(320px,420px) 1fr; gap:clamp(26px,3.5vw,52px); align-items:start; }
     /* the chart is the reader's anchor: it holds still while the cards scroll past.
        90px clears the site bar + the sticky result mini-nav. */
     .rr-anchor{ position:sticky; top:90px; }
@@ -481,6 +523,39 @@
   .keep-cta--academy{ margin-top:1.6rem; }
   .keep-cta--band{ max-width:640px; margin:0 auto clamp(2.4rem,6vw,4rem); }
   .zodi-signed-in .keep-cta{ display:none; }
+
+  /* --- "How it is read" floater: the BaZi [data-float] shape, cinnabar-skinned.
+         Sits ABOVE the cast dock; JS keeps its bottom in step with the dock's height. --- */
+  .sj-float{ position:fixed; right:18px; bottom:calc(env(safe-area-inset-bottom, 0px) + 72px); z-index:60; }
+  .sj-float-btn{ font-family:var(--mono); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; font-weight:600;
+    padding:.7rem 1.15rem; border-radius:var(--r-pill); background:linear-gradient(180deg,var(--accent-bright),var(--accent));
+    color:oklch(0.18 0.04 40); border:1px solid transparent; box-shadow:0 12px 34px rgba(0,0,0,.55); cursor:pointer; }
+  .sj-float-btn:hover{ filter:brightness(1.06); }
+  .sj-float-btn:focus-visible{ outline:2px solid var(--accent-bright); outline-offset:2px; }
+  .sj-float.is-open .sj-float-btn{ opacity:.5; }
+  .sj-float-panel{ position:absolute; right:0; bottom:calc(100% + 10px); width:min(390px,92vw); max-height:min(70vh,640px);
+    overflow:auto; background:linear-gradient(180deg,var(--ink-2),var(--ink)); border:1px solid var(--accent);
+    border-radius:var(--r-3); box-shadow:0 26px 76px rgba(0,0,0,.72); padding:1rem 1.15rem; }
+  .sj-float-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:.7rem; }
+  .sj-float-head strong{ font-family:var(--serif); color:var(--moon); font-size:1.05rem; }
+  .sj-float-x{ background:none; border:0; color:var(--muted); font-size:1rem; cursor:pointer; padding:.2rem; }
+  .sj-float-x:hover{ color:var(--moon); }
+  .sj-float-lead{ color:var(--muted); font-size:.85rem; margin:0 0 .8rem; line-height:1.5; }
+  .sj-float-cards{ display:flex; flex-direction:column; gap:.4rem; }
+  .sj-float-card{ text-align:left; background:var(--panel); border:1px solid var(--line); border-radius:var(--r-2);
+    padding:.7rem .85rem; color:var(--ivory); cursor:pointer; font:inherit; }
+  .sj-float-card:hover{ border-color:var(--accent); }
+  .sj-float-card b{ font-family:var(--serif); font-weight:560; font-size:.98rem; }
+  .sj-float-card .ko{ color:var(--accent-bright); }
+  .sj-float-back{ background:none; border:0; color:var(--accent-bright); font-family:var(--mono); font-size:.62rem;
+    letter-spacing:.06em; text-transform:uppercase; cursor:pointer; padding:0; margin-bottom:.5rem; }
+  .sj-float-hd{ display:flex; gap:.75rem; align-items:center; margin-bottom:.5rem; }
+  .sj-float-ch{ font-family:var(--korean); font-size:2rem; color:var(--accent-bright); line-height:1; }
+  .sj-float-pin{ font-family:var(--mono); font-size:.68rem; color:var(--muted); }
+  .sj-float-body h3{ font-family:var(--serif); color:var(--moon); font-size:1.2rem; margin:.1rem 0; }
+  .sj-float-body>p{ color:var(--ivory); font-size:.9rem; line-height:1.55; }
+  .sj-float-note{ margin-top:.9rem; color:var(--faint); font-size:.78rem; }
+  @media(max-width:680px){ .sj-float{ right:10px; } .sj-float-panel{ width:min(390px,calc(100vw - 20px)); } }
 
   /* Sage Academy */
   .ac-wrap{ display:grid; grid-template-columns:230px 1fr; gap:1.5rem; margin-top:1.8rem; align-items:start; }
@@ -597,7 +672,9 @@
   .saju-scope .saju-hero{ text-align:left; padding-block:clamp(2.4rem,6vw,4.4rem) clamp(2rem,5vw,3.4rem); }
   .saju-hero-grid{ display:grid; gap:clamp(20px,3vw,40px); align-items:center; }
   @media (min-width:920px){
-    .saju-hero-grid{ grid-template-columns:358px minmax(0,1fr); grid-template-areas:"form copy"; }
+    /* 460px, not 358: the Birthplace + Luck direction row needs room for its longest
+       plate label ("San Francisco (122.42°W)") with nothing ellipsised. */
+    .saju-hero-grid{ grid-template-columns:460px minmax(0,1fr); grid-template-areas:"form copy"; }
     .saju-hero-copy{ grid-area:copy; } .saju-hero-form{ grid-area:form; }
   }
   .saju-hero-copy .eyebrow{ display:block; margin-bottom:.5rem; }
@@ -612,7 +689,9 @@
   .saju-hero-form{ background:var(--panel); border:1px solid var(--line-soft); border-radius:var(--r-2); padding:18px 18px 16px; box-shadow:var(--e-2,0 12px 34px -18px rgba(0,0,0,.6)); }
   .pcast-form-eyebrow{ font-family:var(--mono); font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-bright); margin:0 0 10px; }
   .pcast-form-optnote{ font-size:.82rem; color:var(--muted); line-height:1.5; margin:-2px 0 10px; }
-  .pcast-field{ margin:0 0 12px; } .pcast-field-2{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  /* the two-up row is Birthplace + Luck direction; the birthplace plate carries the longer
+     labels ("San Francisco (122.42°W)"), so it earns the wider column. */
+  .pcast-field{ margin:0 0 12px; } .pcast-field-2{ display:grid; grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); gap:10px; }
   .pcast-field-2 > div{ display:flex; flex-direction:column; justify-content:flex-end; min-width:0; }
   .pcast-field-2 .pcast-label{ min-width:0; }
   @media (max-width:479px){ .pcast-field-2{ grid-template-columns:1fr; } }
@@ -837,7 +916,7 @@
   <div class="pn-dd" data-dd><div class="pn-dd-mount"></div></div>
   <div class="pn-panel pn-panel-explore" data-group="1" data-accent="teal" role="region" aria-label="Explore" hidden>
     <p class="pn-panel-eyebrow">Everything the wheel opens, one animal at the center</p>
-    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">✦</span> Begin</p><a class="pn-row" href="/index.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Find your animal</span></a><a class="pn-row" href="/daily.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Today's reading</span><span class="pn-row-sub" data-dyn="date-today">Thu, Jul 9</span></a><a class="pn-row" href="/year.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Year finder</span></a><a class="pn-row" href="/account.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your account</span><span class="pn-row-sub">Zodi Karma ledger</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Menagerie</p><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">All 144 animals</span></a><a class="pn-row" href="/western-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Western wing</span></a><a class="pn-row" href="/chinese-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Eastern wing</span></a><a class="pn-row" href="/zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Zodiac crossings</span></a><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Rare crossings</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> The Moon</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Waning Crescent</span></a><a class="pn-row" href="/moon/phases/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The eight phases</span></a><a class="pn-row" href="/moon/in-your-sign/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Moon in your sign</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days</span></a><a class="pn-row" href="/chinese-zodiac/fire-horse-2026/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Fire Horse 2026</span><span class="pn-row-sub">begins Feb 17</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">⌂</span> Live with it</p><a class="pn-row" href="/feng-shui/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Feng shui</span></a><a class="pn-row" href="/destiny/bazi-four-pillars/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">BaZi (Four Pillars)</span><span class="pn-row-sub">eight characters</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span><span class="pn-row-sub">moon, stones, heritage</span></a></div></div>
+    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">✦</span> Begin</p><a class="pn-row" href="/index.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Find your animal</span></a><a class="pn-row" href="/daily.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Today's reading</span><span class="pn-row-sub" data-dyn="date-today">Fri, Jul 10</span></a><a class="pn-row" href="/year.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Year finder</span></a><a class="pn-row" href="/account.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your account</span><span class="pn-row-sub">Zodi Karma ledger</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Menagerie</p><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">All 144 animals</span></a><a class="pn-row" href="/western-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Western wing</span></a><a class="pn-row" href="/chinese-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Eastern wing</span></a><a class="pn-row" href="/zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Zodiac crossings</span></a><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Rare crossings</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> The Moon</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Waning Crescent</span></a><a class="pn-row" href="/moon/phases/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The eight phases</span></a><a class="pn-row" href="/moon/in-your-sign/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Moon in your sign</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days</span></a><a class="pn-row" href="/chinese-zodiac/fire-horse-2026/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Fire Horse 2026</span><span class="pn-row-sub">begins Feb 17</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">⌂</span> Live with it</p><a class="pn-row" href="/feng-shui/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Feng shui</span></a><a class="pn-row" href="/destiny/bazi-four-pillars/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">BaZi (Four Pillars)</span><span class="pn-row-sub">eight characters</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span><span class="pn-row-sub">moon, stones, heritage</span></a></div></div>
     <div class="pn-chips" role="group" aria-label="Western wing"><span class="pn-chips-label">Western wing</span><a class="pn-chip" href="/western-zodiac/aries/" title="Aries" aria-label="Aries">♈</a><a class="pn-chip" href="/western-zodiac/taurus/" title="Taurus" aria-label="Taurus">♉</a><a class="pn-chip" href="/western-zodiac/gemini/" title="Gemini" aria-label="Gemini">♊</a><a class="pn-chip" href="/western-zodiac/cancer/" title="Cancer" aria-label="Cancer">♋</a><a class="pn-chip" href="/western-zodiac/leo/" title="Leo" aria-label="Leo">♌</a><a class="pn-chip" href="/western-zodiac/virgo/" title="Virgo" aria-label="Virgo">♍</a><a class="pn-chip" href="/western-zodiac/libra/" title="Libra" aria-label="Libra">♎</a><a class="pn-chip" href="/western-zodiac/scorpio/" title="Scorpio" aria-label="Scorpio">♏</a><a class="pn-chip" href="/western-zodiac/sagittarius/" title="Sagittarius" aria-label="Sagittarius">♐</a><a class="pn-chip" href="/western-zodiac/capricorn/" title="Capricorn" aria-label="Capricorn">♑</a><a class="pn-chip" href="/western-zodiac/aquarius/" title="Aquarius" aria-label="Aquarius">♒</a><a class="pn-chip" href="/western-zodiac/pisces/" title="Pisces" aria-label="Pisces">♓</a></div>
     <div class="pn-chips" role="group" aria-label="Eastern wing"><span class="pn-chips-label">Eastern wing</span><a class="pn-chip" href="/chinese-zodiac/rat/" title="Rat" aria-label="Rat">鼠</a><a class="pn-chip" href="/chinese-zodiac/ox/" title="Ox" aria-label="Ox">牛</a><a class="pn-chip" href="/chinese-zodiac/tiger/" title="Tiger" aria-label="Tiger">虎</a><a class="pn-chip" href="/chinese-zodiac/rabbit/" title="Rabbit" aria-label="Rabbit">兔</a><a class="pn-chip" href="/chinese-zodiac/dragon/" title="Dragon" aria-label="Dragon">龙</a><a class="pn-chip" href="/chinese-zodiac/snake/" title="Snake" aria-label="Snake">蛇</a><a class="pn-chip" href="/chinese-zodiac/horse/" title="Horse" aria-label="Horse">马</a><a class="pn-chip" href="/chinese-zodiac/goat/" title="Goat" aria-label="Goat">羊</a><a class="pn-chip" href="/chinese-zodiac/monkey/" title="Monkey" aria-label="Monkey">猴</a><a class="pn-chip" href="/chinese-zodiac/rooster/" title="Rooster" aria-label="Rooster">鸡</a><a class="pn-chip" href="/chinese-zodiac/dog/" title="Dog" aria-label="Dog">狗</a><a class="pn-chip" href="/chinese-zodiac/pig/" title="Pig" aria-label="Pig">猪</a></div>
     <div class="pn-panel-foot"><a href="/menagerie.html">See all 144 animals</a></div>
@@ -1049,7 +1128,7 @@
             </div>
           </div>
           <div>
-            <label class="pcast-label" for="sex">Luck direction <span class="pcast-opt">· 대운 · optional</span></label>
+            <label class="pcast-label" for="sex">Luck direction <span class="pcast-opt">· 대운</span></label>
             <select class="pcast-select" id="sex" name="sex">
               <option value="">Skip it</option>
               <option value="both">Show both directions</option>
@@ -1069,7 +1148,7 @@
   </header>
 
   <!-- BIRTH GATE -->
-  <section class="band wrap" id="birth-gate">
+  <section class="band wrap wrap--cast" id="birth-gate">
     <div class="sec-head">
       <span class="eyebrow">The Birth Gate · <span class="ko">입문</span></span>
       <h2>How your chart was resolved</h2>
@@ -1279,6 +1358,124 @@
       <p class="keep-cta-fine">Free. No card. Your birth details stay yours.</p>
     </div>
   </div>
+
+  <!-- "How it is read" floater: the BaZi hub's [data-float] shape, Saju concepts,
+       cinnabar skin. Index of concepts -> short card -> back. Sits above the cast dock. -->
+  <div class="sj-float" data-float>
+    <button class="sj-float-btn" type="button" data-float-open aria-expanded="false">How it is read</button>
+    <div class="sj-float-panel" role="dialog" aria-label="How a Saju chart is read" hidden>
+      <div class="sj-float-head"><strong>How a Saju chart is read</strong><button type="button" class="sj-float-x" data-float-close aria-label="Close">&#10005;</button></div>
+      <div class="sj-float-body" data-float-body></div>
+    </div>
+  </div>
+  <script>
+  (function(){
+    "use strict";
+    var root=document.querySelector('.sj-float[data-float]'); if(!root) return;
+    var panel=root.querySelector('.sj-float-panel'), body=root.querySelector('[data-float-body]'), ob=root.querySelector('[data-float-open]');
+    function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    /* Every card: hangul first, hanja beside it, plain hedged English. Doctrine the page
+       already teaches; no predictions, no prescriptions. */
+    var C=[
+      {key:'saju', ko:'사주팔자', han:'四柱八字', title:'Saju Palja, the whole thing', body:[
+        'Four pillars, eight characters. Your birth year, month, day, and hour each become one Heavenly Stem over one Earthly Branch, and the reading is how those eight characters relate to the one that stands for you.',
+        'It is read as a pattern for reflection, a house you can walk through, never a fixed fate.']},
+      {key:'pillars', ko:'네 기둥', han:'四柱', title:'The four pillars, four life areas', body:[
+        'Year (년주): ancestry, early life, and the world you were born into.',
+        'Month (월주): the season, and the single strongest influence on the whole chart.',
+        'Day (일주): the self and your closest partnerships; its stem is you.',
+        'Hour (시주): later years, output, and legacy, the pillar most sensitive to true solar time.']},
+      {key:'ilgan', ko:'일간', han:'日干', title:'The Day Master', body:[
+        'The stem of your day of birth. It stands for you, and every other character in the chart is read by how it supports, drains, presses on, or fuels this one glyph.']},
+      {key:'sipsin', ko:'십신', han:'十神', title:'The Ten Gods', body:[
+        'Ten names for how each character relates to your Day Master: peers, output, wealth, officers, and resource, each in a yin and a yang form.',
+        'They read as relations and tendencies, never verdicts about people in your life.']},
+      {key:'ganjii', ko:'천간과 지지', han:'天干地支', title:'Stems and branches', body:[
+        'The ten Heavenly Stems (천간) are the top row; each carries one of the five elements in yin or yang form. The twelve Earthly Branches (지지) are the bottom row: seasons, hours, and the zodiac animals.',
+        'A stem over a branch names one pillar out of sixty possible pairs.']},
+      {key:'jijanggan', ko:'지장간', han:'地藏干', title:'The hidden stems', body:[
+        'Inside each branch, one to three stems lie concealed. They are why a chart runs deeper than its eight visible characters, and much of a careful reading happens there.',
+        'Hover or tab to any pillar on your cast chart to see them listed.']},
+      {key:'strength', ko:'신강 · 신약', han:'身强 · 身弱', title:'Strong and weak selves', body:[
+        'A strong (신강) Day Master has power to spare and tends to do best with an outlet; a weak (신약) one is steadied by support.',
+        'Neither is better. The aim in this tradition is balance, 중화 中和, and the verdict is a lens for reflection, not a grade.']},
+      {key:'yongsin', ko:'용신', han:'用神', title:'The useful element', body:[
+        'The element a chart is said to lean on for balance, its steadying medicine. Different methods can name different elements, which is why this page shows the cross-check openly.',
+        'It describes a way of reading the chart, not a lucky charm or an instruction.']},
+      {key:'eokbu', ko:'억부', han:'抑扶', title:'The strength method', body:[
+        'One traditional method: weigh what supports the Day Master against what drains it, season first, then pick the element that restores balance.',
+        'One lens among several; readers weight the factors differently.']},
+      {key:'johu', ko:'조후', han:'調候', title:'The climate method', body:[
+        'Reads the chart as weather: hot or cold, damp or dry, from the birth season and the visible Fire and Water. A hot chart is said to want cooling, a cold one warmth.',
+        'A symbolic temperament image, never advice about where to live or what to do.']},
+      {key:'daeun', ko:'대운', han:'大運', title:'The luck decades', body:[
+        'Ten-year seasons stepped off the month pillar, forward or reverse by an old convention. They lay changing weather over the fixed chart.',
+        'Supportive decades read as tailwinds, harder ones as seasons that ask more of you. Tendencies to prepare for, never a schedule.']},
+      {key:'sewoon', ko:'세운', han:'歲運', title:'The annual pillar', body:[
+        'Each passing year lays one more stem and branch over your chart, read the same way the decades are.',
+        'It sets the tone of a year, not a forecast of events.']},
+      {key:'yajasi', ko:'야자시', han:'夜子時', title:'The midnight boundary', body:[
+        'Korean schools split the late-night Rat hour (23:00 to 01:00) differently, so a birth near midnight can cast two defensible day pillars.',
+        'When your birth sits on that edge, this page shows both charts rather than quietly picking one.']},
+      {key:'truesolar', ko:'진태양시', han:'眞太陽時', title:'True solar time', body:[
+        'The clock corrected to where the sun actually stood over your birthplace, including Korea’s own standard-time changes across history.',
+        'Korean Saju applies this correction before choosing the hour pillar, which is why the same clock time can cast different hours in different places.']}
+    ];
+    function open(){ panel.hidden=false; root.classList.add('is-open'); ob.setAttribute('aria-expanded','true'); }
+    function close(){ panel.hidden=true; root.classList.remove('is-open'); ob.setAttribute('aria-expanded','false'); }
+    ob.addEventListener('click', function(){ if(panel.hidden){ showIndex(); open(); } else close(); });
+    root.querySelector('[data-float-close]').addEventListener('click', close);
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !panel.hidden) close(); });
+    function back(){ return '<button type="button" class="sj-float-back" data-back>Back to all</button>'; }
+    function showIndex(){
+      body.innerHTML='<p class="sj-float-lead">Every character is a relationship to your Day Master, the self. Pick a concept to see what it means, in this page’s own hedged terms.</p>'+
+        '<div class="sj-float-cards">'+C.map(function(x){
+          return '<button type="button" class="sj-float-card" data-c="'+x.key+'"><b><span class="ko">'+esc(x.ko)+'</span> · '+esc(x.title)+'</b></button>';
+        }).join('')+'</div>';
+      wire();
+    }
+    function showConcept(key){
+      var x=null; C.forEach(function(y){ if(y.key===key) x=y; });
+      if(!x){ showIndex(); return; }
+      body.innerHTML=back()+
+        '<div class="sj-float-hd"><span class="sj-float-ch">'+esc(x.ko)+'</span><div><h3>'+esc(x.title)+'</h3><span class="sj-float-pin">'+esc(x.han)+'</span></div></div>'+
+        x.body.map(function(p){ return '<p>'+esc(p)+'</p>'; }).join('')+
+        '<p class="sj-float-note">A tradition of meaning for reflection and study, never a prediction of fixed events.</p>';
+      wire(); body.scrollTop=0;
+    }
+    function wire(){
+      Array.prototype.forEach.call(body.querySelectorAll('[data-c]'), function(b){ b.addEventListener('click', function(){ showConcept(b.getAttribute('data-c')); }); });
+      var bk=body.querySelector('[data-back]'); if(bk) bk.addEventListener('click', showIndex);
+    }
+    /* the cast pillar cells are role="button" (BaZi pattern): a click or Enter opens the
+       four-pillars card here. The pronounce (.say) button inside a cell keeps its own job. */
+    window.__sjFloat={ openConcept:function(k){ open(); showConcept(k); } };
+    function cellOf(t){ var say=false, cell=null;
+      while(t && t.nodeType===1){ if(t.classList){ if(t.classList.contains('say')) say=true; if(t.classList.contains('rpill')){ cell=t; break; } } t=t.parentNode; }
+      return say?null:cell; }
+    document.addEventListener('click', function(e){ if(cellOf(e.target)){ open(); showConcept('pillars'); } });
+    document.addEventListener('keydown', function(e){
+      if((e.key==='Enter'||e.key===' ') && e.target && e.target.classList && e.target.classList.contains('rpill')){
+        e.preventDefault(); open(); showConcept('pillars');
+      }
+    });
+    /* Never collide with the cast dock: the dock owns the bottom edge and pads <body>
+       itself (taller on phones), so the floater tracks the dock's live height. When the
+       dock is closed its ☾ launcher (#scast-launcher) holds the corner instead. */
+    var dockRO=null;
+    function place(){
+      var dock=document.getElementById('scast-dock'), l=document.getElementById('scast-launcher'), h=0;
+      if(dock && !dock.hidden && dock.dataset.state!=='closed') h=dock.offsetHeight;
+      if(h) root.style.bottom=(h+12)+'px';
+      else if(l && !l.hidden) root.style.bottom='calc(env(safe-area-inset-bottom, 0px) + 72px)';
+      else root.style.bottom='';
+      if(dock && !dockRO && window.ResizeObserver){ try{ dockRO=new ResizeObserver(place); dockRO.observe(dock); }catch(e){} }
+    }
+    place();
+    window.addEventListener('resize', place);
+    var tries=0, iv=setInterval(function(){ place(); if(dockRO || ++tries>20) clearInterval(iv); }, 500);
+  })();
+  </script>
 </main>
 </div><!-- /saju-scope -->
 <script src="../../js/nav.js" defer></script>
@@ -1446,15 +1643,47 @@
   var EL_ORDER=["Wood","Fire","Earth","Metal","Water"];
   function elClass(el){ return "el-"+String(el).toLowerCase(); }
   function rk(ch,rom,cls){ return '<ruby class="rk'+(cls?" "+cls:"")+'">'+ch+'<rp>(</rp><rt>'+rom+'</rt><rp>)</rp></ruby>'; }
-  function pill(key,P,changed){
+  // life-area lines mirror the teaching section's own copy (page doctrine, not new claims)
+  var PILLAR_ROLE={
+    "Year 년":  ["Year pillar · 년주",  "It speaks to ancestry, early life, and the world you were born into."],
+    "Month 월": ["Month pillar · 월주", "It carries the season, the single strongest influence on the whole chart."],
+    "Day 일":   ["Day pillar · 일주",   "It holds the self and your closest partnerships."],
+    "Hour 시":  ["Hour pillar · 시주",  "It speaks to later years, output, and legacy."]
+  };
+  // Structured tooltip on a cast pillar: character, role, yin/yang element, one hedged
+  // sentence, and the branch's hidden stems (지장간) as the engine exposes them.
+  function pillTip(key,P,dayIdx){
+    var E=window.SajuEngine, role=PILLAR_ROLE[key]||[key,""];
+    var tgS=null;
+    if(!P.is_day_master && E && E.tenGod && dayIdx!=null) tgS=E.tenGod(dayIdx,P.stem.index);
+    var meaning = P.is_day_master
+      ? 'Its stem is your Day Master: '+(P.stem.yin?'yin':'yang')+' '+P.stem.element+', the self the whole chart is read around. '+role[1]
+      : role[1]+(tgS?' Its stem reads as your '+esc(tgS)+' seen from the Day Master, a relation to read, not a verdict.':'');
+    var hid=(P.branch.hidden_stems||[]).slice().reverse(); // engine order is [residual..main]; show main first
+    var hidHtml='';
+    if(hid.length && E && E.stemObj){
+      hidHtml='<div class="rtip-hid"><span class="rtip-hlabel">Hidden inside · 지장간</span>'+hid.map(function(h){
+        var so=E.stemObj(h.index);
+        var tg=(!P.is_day_master||h.index!==P.stem.index) && E.tenGod && dayIdx!=null ? E.tenGod(dayIdx,h.index) : null;
+        return '<span class="rtip-hrow"><b class="'+elClass(h.element)+'">'+(so?so.ko+' ':'')+esc(h.char)+'</b> '+h.element+(tg?' · '+esc(tg):'')+'</span>';
+      }).join('')+'</div>';
+    }
+    return '<div class="rtip" role="tooltip">'+
+      '<div class="rtip-head"><span class="rtip-char">'+P.stem.ko+P.branch.ko+'</span><span class="rtip-role">'+role[0]+'</span></div>'+
+      '<div class="rtip-sub">'+P.stem.char+P.branch.char+' · '+(P.stem.yin?'yin':'yang')+' '+P.stem.element+' over '+P.branch.element+' · '+P.branch.animal+'</div>'+
+      '<p>'+meaning+'</p>'+hidHtml+'</div>';
+  }
+  function pill(key,P,changed,dayIdx){
     if(!P) return "";
     var ko=P.stem.ko+P.branch.ko, hanja=P.stem.char+P.branch.char;
-    return '<div class="rpill'+(P.is_day_master?" dm":"")+(changed?" changed":"")+'">'+
+    var aria=key+' pillar, '+ko+' '+hanja+', '+P.stem.element+' over '+P.branch.element+(P.is_day_master?', your Day Master':'')+', open detail';
+    return '<div class="rpill'+(P.is_day_master?" dm":"")+(changed?" changed":"")+'" tabindex="0" role="button" aria-label="'+esc(aria)+'">'+
       '<div class="rcap">'+key+'</div>'+
       '<div class="rgan-ko">'+rk(P.stem.ko,P.stem.rom,elClass(P.stem.element))+rk(P.branch.ko,P.branch.rom,elClass(P.branch.element))+'</div>'+
       '<div class="rhanja">'+hanja+'</div>'+
       '<div class="rel">'+P.stem.element+' · '+P.branch.animal+'</div>'+
-      '<div class="rsay">'+sayBtn(ko)+'</div></div>';
+      '<div class="rsay">'+sayBtn(ko)+'</div>'+
+      pillTip(key,P,dayIdx)+'</div>';
   }
   // once a chart is cast, lock the teaching "four pillars" section to the user's real pillars
   function syncTeaching(chart){
@@ -1484,11 +1713,12 @@
   }
   function grid(P,changed){
     changed = changed || [];
+    var di = (P.day && P.day.stem) ? P.day.stem.index : null;
     return '<div class="rchart'+(P.hour?"":" three")+'">'+
-      pill("Year 년",P.year,changed.indexOf("year")>=0)+
-      pill("Month 월",P.month,changed.indexOf("month")>=0)+
-      pill("Day 일",P.day,changed.indexOf("day")>=0)+
-      (P.hour?pill("Hour 시",P.hour,changed.indexOf("hour")>=0):"")+'</div>';
+      pill("Year 년",P.year,changed.indexOf("year")>=0,di)+
+      pill("Month 월",P.month,changed.indexOf("month")>=0,di)+
+      pill("Day 일",P.day,changed.indexOf("day")>=0,di)+
+      (P.hour?pill("Hour 시",P.hour,changed.indexOf("hour")>=0,di):"")+'</div>';
   }
   function row(k,v){ return '<li><span class="k">'+k+'</span><span class="v">'+v+'</span></li>'; }
   function elbar(bal){
@@ -1657,11 +1887,29 @@
     (rd.sections||[]).forEach(function(s){ by[s.key]=s.claims; });
     return by;
   }
+  // ---- hover glossary (the BaZi .gloss pattern): hangul + hanja + plain English, hedged.
+  // Tips are plain text only (they ride a data attribute); no quotes, no markup.
+  var GTIP = {
+    ilgan:    "일간 日干, the Day Master. The stem of your day of birth stands for you; the other seven characters are read by how they support or spend it.",
+    eokbu:    "억부 抑扶, strength balancing. One traditional method that weighs whether the Day Master runs strong or weak, then looks for the element that steadies it. One lens among several.",
+    johu:     "조후 調候, climate balancing. Reads the chart as weather, hot or cold, damp or dry, and asks what would temper it. A symbolic temperament image, never a life instruction.",
+    daeun:    "대운 大運, the luck decades. Ten-year seasons stepped off the month pillar. They read as changing weather over a fixed chart, tendencies to prepare for, never a schedule.",
+    sewoon:   "세운 歲運, the annual pillar. Each passing year lays one more stem and branch over your chart; it reads as the tone of a year, not a forecast of events.",
+    sipsin:   "십신 十神, the Ten Gods. Ten names for how each character relates to your Day Master, as support, drain, pressure, wealth, or peer. Relations to read, not verdicts.",
+    cheongan: "천간 天干, the Heavenly Stems. The ten top-row characters; each carries one of the five elements in its yin or yang form.",
+    jiji:     "지지 地支, the Earthly Branches. The twelve bottom-row characters, the seasons, hours, and zodiac animals, each hiding one to three stems inside.",
+    yajasi:   "야자시 夜子時, the midnight boundary. Korean schools split the 23:00 to 01:00 Rat hour differently, so a birth near midnight can cast two defensible day pillars.",
+    truesolar:"진태양시, true solar time. The clock corrected to where the sun actually stood over your birthplace; Korean Saju applies this before choosing the hour pillar."
+  };
+  function gl(id,label){
+    var tip=String(GTIP[id]||"").replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
+    return '<span class="gloss" tabindex="0" data-tip="'+tip+'">'+label+'</span>';
+  }
   function rrChip(k,v){ return '<div class="rr-chip"><span class="rr-chip-k">'+k+'</span><span class="rr-chip-v">'+v+'</span></div>'; }
   function summaryChips(chart){
     var dm=chart.day_master, P=chart.pillars, out='';
-    out+=rrChip('Day Master · 일간','<span class="ko">'+esc(dm.ko)+'</span> · '+(dm.yin?"yin":"yang")+' '+dm.element+' <span class="hanja">'+esc(dm.char)+'</span>');
-    if(chart.strength && chart.strength.verdict) out+=rrChip('Strength · 억부', esc(chart.strength.verdict.en)+' · <span class="ko">'+esc(chart.strength.verdict.ko)+'</span>');
+    out+=rrChip(gl('ilgan','Day Master · 일간'),'<span class="ko">'+esc(dm.ko)+'</span> · '+(dm.yin?"yin":"yang")+' '+dm.element+' <span class="hanja">'+esc(dm.char)+'</span>');
+    if(chart.strength && chart.strength.verdict) out+=rrChip(gl('eokbu','Strength · 억부'), esc(chart.strength.verdict.en)+' · <span class="ko">'+esc(chart.strength.verdict.ko)+'</span>');
     else if(chart.climate && chart.climate.season) out+=rrChip('Season', esc(chart.climate.season.name)+' · <span class="hanja">'+esc(chart.climate.season.branch)+'</span>');
     if(P.hour && P.hour.branch){ var rg=branchHours(P.hour.branch.index); out+=rrChip('Hour · 시','<span class="ko">'+esc(P.hour.branch.ko)+'시</span> · '+rg.s+'–'+rg.e); }
     return '<div class="rr-chips">'+out+'</div>';
@@ -1669,26 +1917,66 @@
   function rrCard(eyebrow, body){ return '<div class="rr-card"><p class="rr-eyebrow">'+eyebrow+'</p>'+body+'</div>'; }
   function cardHowTo(chart){
     var dm=chart.day_master;
+    var tg=(chart.ten_gods||[]).filter(function(t){ return t.pillar!=="day"; });
+    var tgLine = tg.length
+      ? '<p class="rr-p">Read against it, your other visible stems carry these '+gl('sipsin','Ten Gods (<span class="ko">십신</span>)')+': '+
+        tg.map(function(t){ return '<b>'+esc(t.stem)+'</b> in the '+t.pillar+' pillar reads as '+esc(t.ten_god); }).join('; ')+
+        '. Tendencies of relation, not verdicts.</p>'
+      : '';
     return rrCard('How to read this · <span class="ko">읽는 법</span>',
-      '<p class="rr-p">Start at the Day pillar. Its top character, <b class="'+elClass(dm.element)+'">'+esc(dm.ko)+'</b> ('+esc(dm.char)+'), is your Day Master (<span class="ko">일간</span>): that one glyph stands for you, and the other seven characters are read against it, as support, drain, pressure, or fuel.</p>'+
-      '<p class="rr-p">The chart beside this is the calculation; these cards are one way of reading it. Open "why this" under any line to see the evidence it stands on.</p>');
+      '<p class="rr-p">Start at the Day pillar. Its top character, <b class="'+elClass(dm.element)+'">'+esc(dm.ko)+'</b> ('+esc(dm.char)+'), is your '+gl('ilgan','Day Master (<span class="ko">일간</span>)')+': that one glyph stands for you, and the other seven characters are read against it, as support, drain, pressure, or fuel.</p>'+
+      '<p class="rr-p">Each pillar stacks a Heavenly Stem ('+gl('cheongan','천간')+') over an Earthly Branch ('+gl('jiji','지지')+'). Hover or tab to any pillar on the chart beside this to open it: its role, its yin or yang element, and the stems hidden inside its branch.</p>'+
+      tgLine+
+      '<p class="rr-p">The chart is the calculation; these cards are one way of reading it. Open "why this" under any line to see the evidence it stands on.</p>');
+  }
+  // Engine-backed depth for the current-life card: the 억부 verdict with its three
+  // classical inputs (득령/득지/득세), and the visible element tally. Nothing invented.
+  function strengthLede(chart){
+    var s=chart.strength; if(!s || !s.verdict || !window.SajuEngine) return '';
+    var W=window.SajuEngine.WUXING, bal=chart.element_balance||{};
+    var counts=EL_ORDER.map(function(e){ return '<b class="'+elClass(e)+'">'+W.ko[e]+'</b> '+(bal[e]||0); }).join(' · ');
+    var fav=s.favorable && s.favorable.primary;
+    var out='<p class="rr-p">By the '+gl('eokbu','억부')+' method your Day Master reads <b>'+esc(s.verdict.en)+'</b> (<span class="ko">'+esc(s.verdict.ko)+'</span> '+esc(s.verdict.han)+'), weighing '+s.support_weight+' of support against '+s.weakening_weight+' that drains: '+
+      (s.deukryeong?'born in season':'born out of season')+' (득령), '+
+      (s.deukji?'rooted at its own day branch':'without a root at its own day branch')+' (득지), '+
+      (s.deukse?'allied overall':'outnumbered overall')+' (득세).</p>';
+    out+='<p class="rr-p">Counting the visible characters, your elements tally '+counts+'.'+
+      (fav?' That balance is why this reading leans on <b>'+W.ko[fav]+' '+W.han[fav]+'</b> as the steadying element; one method’s lens, not a prescription.':'')+'</p>';
+    return out;
   }
   function cardCurrentLife(chart, by){
     var claims=[].concat(by.Pattern||[], by.Activation||[], by.Range||[]);
-    if(!claims.length) return "";
-    return rrCard('Your current life · <span class="ko">지금의 나</span>', claims.map(claimHtml).join(""));
+    var lede=strengthLede(chart);
+    if(!claims.length && !lede) return "";
+    return rrCard('Your current life · <span class="ko">지금의 나</span>', lede + claims.map(claimHtml).join(""));
+  }
+  // Engine-backed depth for the future card: the decade you are inside right now, and
+  // the one after it, straight from the daeun list (tone + ten god as computed).
+  function daeunNow(chart){
+    var d=chart.daeun || (chart.daeun_both ? chart.daeun_both.male : null);
+    if(!d || !d.periods) return '';
+    var cur=null, next=null;
+    d.periods.forEach(function(p,i){ if(p.current){ cur=p; next=d.periods[i+1]||null; } });
+    if(!cur) return '';
+    function toneWord(t){ return t==="supportive"?"supportive":(t==="challenging"?"more demanding":"mixed"); }
+    var line='<p class="rr-p">Right now the timeline sits inside your <b>'+cur.stem.ko+cur.branch.ko+'</b> <span class="hanja">'+cur.stem.char+cur.branch.char+'</span> decade (ages '+cur.age_start+' to '+cur.age_end+'), which reads as a <span class="tg">'+esc(cur.ten_god.en)+' '+esc(cur.ten_god.ko)+'</span> season and leans '+toneWord(cur.tone)+' for your Day Master.';
+    if(next) line+=' The season after it, <b>'+next.stem.ko+next.branch.ko+'</b> <span class="hanja">'+next.stem.char+next.branch.char+'</span>, begins around age '+next.age_start+' and reads '+toneWord(next.tone)+'.';
+    if(chart.daeun_both) line+=' This follows the '+esc(d.direction)+' timeline shown first below; the toggle flips it.';
+    line+=' Tendencies to prepare for, never a schedule.</p>';
+    return line;
   }
   function cardFuture(chart, by){
     var body='';
     if(chart.daeun || chart.daeun_both){
       body+=(by.Choice||[]).map(claimHtml).join("");
+      body+=daeunNow(chart);
       body+=buildDaeun(chart.daeun, chart.daeun_both);
       body+='<p class="rr-p" style="margin-top:.8rem">A supportive decade tends to reward building: starting things, widening your ground, saying yes a little more often. A demanding one is not a bad decade, it leans toward consolidating: finish what is open, simplify, keep your footing, and let the season carry less weight than your choices do.</p>';
       body+=(by.Carry||[]).map(claimHtml).join("");
     } else {
-      body+='<p class="rr-note">Your ten-year timeline (<span class="ko">대운</span>) was not cast, because no luck direction was chosen. Pick one under <a href="#start">Luck direction</a> in the birth form and cast again; everything else in this reading holds as it is.</p>';
+      body+='<p class="rr-note">Your ten-year timeline ('+gl('daeun','<span class="ko">대운</span>')+') was not cast, because no luck direction was chosen. Pick one under <a href="#start">Luck direction</a> in the birth form and cast again; everything else in this reading holds as it is.</p>';
     }
-    return rrCard('Future planning · <span class="ko">대운</span>, the ten-year seasons', body);
+    return rrCard('Future planning · '+gl('daeun','<span class="ko">대운</span>')+', the ten-year seasons', body);
   }
   function cardWatch(chart, by){
     var body='<p class="rr-note">Things to hold lightly: the places where this chart’s arithmetic is sensitive, not omens.</p>';
@@ -1698,11 +1986,15 @@
       if(cl.temp.en!=="temperate") lean.push(cl.temp.en);
       if(cl.damp.en!=="balanced") lean.push(cl.damp.en);
       if(lean.length){
-        body+='<span class="rr-caution">The chart’s climate (조후) leans '+lean.join(" and ")+
-          (cl.primary?'; a little more '+esc(W.ko[cl.primary])+' '+esc(W.han[cl.primary])+' tends to steady the pacing':'')+'.</span>';
+        body+='<span class="rr-caution">The chart’s climate ('+gl('johu','조후')+') leans '+lean.join(" and ")+
+          ' (heat '+cl.heat+', moisture '+cl.moisture+' on the engine’s scale, from a '+esc(cl.season.name)+' month branch)'+
+          (cl.primary?'; a little more '+esc(W.ko[cl.primary])+' '+esc(W.han[cl.primary])+(cl.primaryStem?', classically '+esc(cl.primaryStem):'')+', tends to steady the pacing':'')+'.</span>';
       } else {
-        body+='<span class="rr-caution">The climate (조후) reads close to temperate; no strong lean asks for correcting.</span>';
+        body+='<span class="rr-caution">The climate ('+gl('johu','조후')+') reads close to temperate (heat '+cl.heat+', moisture '+cl.moisture+' on the engine’s scale); no strong lean asks for correcting.</span>';
       }
+    }
+    if(chart.strength && chart.strength.extreme){
+      body+='<span class="rr-caution">The strength read sits at an extreme ('+chart.strength.index+' of 100), where the '+gl('eokbu','억부')+' method itself is least reliable; a chart this one-sided may follow the 종격 follow-pattern instead. Hold the verdict loosely.</span>';
     }
     var ws=chart.warnings||[];
     ws.forEach(function(w){ body+='<span class="rr-caution">'+esc(w.message)+'</span>'; });
@@ -1832,7 +2124,7 @@
     var sw=d.sewoon;
     // Hangul-first: 병오 leads, 丙午 is the classical companion; ten-god keeps the
     // page's English-frame order (Resource 인성) used by every other renderer here.
-    return 'Luck pillars run <b>'+d.direction+'</b>. The first pillar begins at age <b>'+d.daesu+'</b> ('+d.start_precise.years+'y '+d.start_precise.months+'m from birth to the bounding solar term ÷ 3). This year, <b>'+sw.year+' '+sw.stem.ko+sw.branch.ko+' <span class="hanja">'+sw.stem.char+sw.branch.char+'</span></b>, overlays as your 세운 — a <span class="tg">'+sw.ten_god.en+' '+sw.ten_god.ko+'</span> year.';
+    return 'Luck pillars run <b>'+d.direction+'</b>. The first pillar begins at age <b>'+d.daesu+'</b> ('+d.start_precise.years+'y '+d.start_precise.months+'m from birth to the bounding solar term ÷ 3). This year, <b>'+sw.year+' '+sw.stem.ko+sw.branch.ko+' <span class="hanja">'+sw.stem.char+sw.branch.char+'</span></b>, overlays as your '+gl('sewoon','세운')+', a <span class="tg">'+sw.ten_god.en+' '+sw.ten_god.ko+'</span> year.';
   }
   function renderDaeun(i){
     if(!_dae) return;
@@ -2027,7 +2319,7 @@
                         : "birthplace unknown — no solar correction";
       chain = esc(clockLabel)+' '+arrow+' <b class="'+elClass(hb.element)+'">'+esc(hourLabel)+'</b> <span class="dl-off">· '+why+'</span>';
     }
-    return '<p class="sub" style="margin-top:1rem">Clock to true solar time</p><p class="rdm" style="line-height:1.75">'+chain+'</p>';
+    return '<p class="sub" style="margin-top:1rem">Clock to '+gl('truesolar','true solar time')+'</p><p class="rdm" style="line-height:1.75">'+chain+'</p>';
   }
 
   // Turn a thrown SajuLunar error into a plain, kind, specific message.
@@ -2153,7 +2445,7 @@
       rows += row("Hour", "unknown — three-pillar cast");
     }
     rows += row("Year boundary", "Ipchun (입춘) — exact solar-term instant");
-    rows += row("Day rollover", chart.rule_profile.dayBoundary==="zi2300" ? "zi 23:00 (조자시)" : "midnight (야자시/조자시 available)");
+    rows += row("Day rollover", chart.rule_profile.dayBoundary==="zi2300" ? "zi 23:00 (조자시)" : "midnight ("+gl('yajasi','야자시')+"/조자시 available)");
 
     var ws = chart.warnings || [];
     var flagHtml = ws.length ? '<p class="sub" style="margin-top:1.2rem">Boundary flags</p><div>'+ws.map(function(w){
