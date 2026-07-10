@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A close portrait of a bat-eared fox in dry grass at night, its huge ears raised and turned, a dark mask across its eyes, no moon in the starlit sky above">
+  <defs>
+    <linearGradient id="befo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#221a10"/>
+      <stop offset="100%" stop-color="#0b0906"/>
+    </linearGradient>
+    <linearGradient id="befo-fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c9a06a"/>
+      <stop offset="60%" stop-color="#9c7644"/>
+      <stop offset="100%" stop-color="#5c4527"/>
+    </linearGradient>
+    <radialGradient id="befo-earinner" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#e8c9a3"/>
+      <stop offset="100%" stop-color="#9c7644"/>
+    </radialGradient>
+    <filter id="befo-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#befo-bg)"/>
+
+  <!-- stars, no moon -->
+  <g filter="url(#befo-glow)" opacity="0.8">
+    <circle cx="60" cy="50" r="1.4" fill="#e9d9bd"/>
+    <circle cx="330" cy="40" r="1.2" fill="#e9d9bd"/>
+    <circle cx="260" cy="80" r="1.6" fill="#e9d9bd"/>
+    <circle cx="100" cy="110" r="1.1" fill="#e9d9bd"/>
+    <circle cx="360" cy="120" r="1.3" fill="#e9d9bd"/>
+  </g>
+
+  <!-- distant grass silhouette -->
+  <path d="M0 330 C50 310 90 340 140 315 C190 292 240 322 300 305 C340 292 370 310 400 300 L400 500 L0 500 Z" fill="#1a130c"/>
+  <g stroke="#3a2c18" stroke-width="2.5" stroke-linecap="round" opacity="0.5">
+    <path d="M40 360 L36 320"/>
+    <path d="M90 375 L96 330"/>
+    <path d="M320 365 L326 322"/>
+    <path d="M360 380 L354 335"/>
+  </g>
+
+  <!-- fox, close portrait, head raised, ears wide -->
+  <g>
+    <!-- body / shoulders, low in frame -->
+    <path d="M110 500 C90 440 108 380 160 355 C210 330 270 340 300 385 C325 420 320 465 300 500 Z" fill="url(#befo-fur)"/>
+    <!-- pale chest -->
+    <path d="M160 500 C150 460 158 420 182 400 C210 418 218 460 208 500 Z" fill="#e9d9bd" opacity="0.7"/>
+
+    <!-- head -->
+    <ellipse cx="204" cy="300" rx="66" ry="58" fill="url(#befo-fur)"/>
+
+    <!-- muzzle -->
+    <path d="M170 330 C140 326 112 340 96 362 C114 378 152 380 182 366 Z" fill="url(#befo-fur)"/>
+    <path d="M108 358 C98 360 90 364 84 362 C90 354 100 350 112 352 Z" fill="#14110d"/>
+
+    <!-- mask -->
+    <path d="M164 282 C172 266 200 262 216 272 C202 282 182 288 164 282 Z" fill="#1c1a18" opacity="0.85"/>
+    <ellipse cx="178" cy="290" rx="14" ry="10" fill="#1c1a18"/>
+    <ellipse cx="238" cy="284" rx="14" ry="10" fill="#1c1a18"/>
+    <circle cx="176" cy="292" r="4.8" fill="#e9d9bd"/>
+    <circle cx="236" cy="286" r="4.8" fill="#e9d9bd"/>
+
+    <!-- left ear, raised and turned toward viewer -->
+    <path d="M150 258 C104 244 66 268 60 320 C74 344 112 348 144 326 C164 308 168 278 150 258 Z" fill="url(#befo-fur)"/>
+    <path d="M142 270 C112 262 84 278 78 312 C90 326 116 328 136 312 C148 300 150 284 142 270 Z" fill="url(#befo-earinner)"/>
+    <path d="M148 260 C106 248 70 270 62 318" fill="none" stroke="#1c1a18" stroke-width="4" opacity="0.6"/>
+
+    <!-- right ear, raised tall, catching starlight -->
+    <path d="M244 254 C242 190 292 156 326 196 C348 222 342 272 302 292 C278 302 250 282 244 254 Z" fill="url(#befo-fur)"/>
+    <path d="M256 258 C256 208 292 182 314 210 C328 230 322 264 292 276 C274 282 260 274 256 258 Z" fill="url(#befo-earinner)"/>
+    <path d="M248 256 C246 196 288 164 320 198" fill="none" stroke="#1c1a18" stroke-width="4" opacity="0.6"/>
+  </g>
+</svg>

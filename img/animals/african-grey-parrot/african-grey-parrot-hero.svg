@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="An African grey parrot perched alone in a dark equatorial rainforest at night, ash-grey feathers catching pale moonlight, its scarlet tail glowing beneath a hushed canopy, a full moon rising above the treeline">
+  <defs>
+    <radialGradient id="agp-sky" cx="60%" cy="26%" r="95%">
+      <stop offset="0%" stop-color="#241f18"/>
+      <stop offset="55%" stop-color="#16130e"/>
+      <stop offset="100%" stop-color="#0c0a07"/>
+    </radialGradient>
+    <radialGradient id="agp-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f5f0e2"/>
+      <stop offset="62%" stop-color="#d9d2c2"/>
+      <stop offset="100%" stop-color="#a89e88"/>
+    </radialGradient>
+    <linearGradient id="agp-feather" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9c9486"/>
+      <stop offset="55%" stop-color="#726b5d"/>
+      <stop offset="100%" stop-color="#3e392f"/>
+    </linearGradient>
+    <linearGradient id="agp-feather-dark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5c564a"/>
+      <stop offset="100%" stop-color="#2a261f"/>
+    </linearGradient>
+    <linearGradient id="agp-tail" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d1503a"/>
+      <stop offset="55%" stop-color="#9c3527"/>
+      <stop offset="100%" stop-color="#551710"/>
+    </linearGradient>
+    <radialGradient id="agp-face" cx="45%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#f2ede0"/>
+      <stop offset="100%" stop-color="#cec5b0"/>
+    </radialGradient>
+    <filter id="agp-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="11" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="agp-glow-soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="b2"/>
+      <feMerge><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#agp-sky)"/>
+
+  <!-- full moon, rising over the roost -->
+  <g filter="url(#agp-glow)">
+    <circle cx="584" cy="168" r="74" fill="url(#agp-moon)"/>
+  </g>
+
+  <!-- distant rainforest ridgeline -->
+  <path d="M0 540 L60 486 L120 528 L190 460 L250 522 L320 452 L390 526 L460 468 L530 534 L600 474 L680 530 L760 480 L800 520 L800 800 L0 800 Z" fill="#120f0a" opacity="0.9"/>
+  <path d="M0 610 L80 552 L150 598 L240 534 L330 602 L420 540 L510 606 L610 548 L700 606 L800 556 L800 800 L0 800 Z" fill="#0a0805"/>
+
+  <!-- the roosting branch -->
+  <path d="M120 638 C260 610 470 616 690 588" stroke="#2b2419" stroke-width="14" fill="none" stroke-linecap="round" opacity="0.9"/>
+  <path d="M120 638 C260 610 470 616 690 588" stroke="#4a3f2c" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- the bird -->
+  <g>
+    <!-- tail, fanned, the one bright signature -->
+    <g filter="url(#agp-glow-soft)">
+      <path d="M398 552 C372 630 340 700 300 758 C336 726 372 686 392 634 C398 668 398 712 392 756 C420 706 434 656 430 606 C446 636 456 682 452 730 C468 682 468 630 448 588 Z" fill="url(#agp-tail)"/>
+    </g>
+
+    <!-- folded wing, layered feather-dark -->
+    <path d="M470 462 C520 470 552 520 546 584 C540 636 508 668 462 674 C500 632 512 574 500 522 C494 494 482 474 470 462 Z" fill="url(#agp-feather-dark)"/>
+    <path d="M480 486 C512 500 528 536 522 574" stroke="#7a7263" stroke-width="3" fill="none" opacity="0.5" stroke-linecap="round"/>
+    <path d="M474 512 C502 524 514 552 508 582" stroke="#7a7263" stroke-width="3" fill="none" opacity="0.4" stroke-linecap="round"/>
+
+    <!-- body mass -->
+    <path d="M336 462 C328 404 366 356 424 352 C486 348 534 396 538 458 C542 528 512 590 462 618 C408 646 358 620 340 566 C326 526 330 490 336 462 Z" fill="url(#agp-feather)"/>
+
+    <!-- subtle barred feather texture -->
+    <path d="M356 470 C374 460 398 458 418 466" stroke="#c7c0af" stroke-width="2" fill="none" opacity="0.35" stroke-linecap="round"/>
+    <path d="M350 508 C376 498 406 496 430 506" stroke="#c7c0af" stroke-width="2" fill="none" opacity="0.3" stroke-linecap="round"/>
+    <path d="M354 546 C382 538 414 536 440 546" stroke="#c7c0af" stroke-width="2" fill="none" opacity="0.25" stroke-linecap="round"/>
+
+    <!-- feet gripping the branch -->
+    <path d="M394 618 C392 632 388 642 378 648 M410 622 C410 636 408 646 402 652 M426 618 C430 632 432 642 440 648" stroke="#1c1712" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.85"/>
+
+    <!-- head -->
+    <g>
+      <ellipse cx="418" cy="392" rx="62" ry="58" fill="url(#agp-feather)"/>
+      <!-- bare white face patch -->
+      <path d="M368 384 C368 358 390 340 414 342 C404 360 398 384 402 408 C384 406 370 398 368 384 Z" fill="url(#agp-face)"/>
+      <!-- eye -->
+      <circle cx="398" cy="384" r="9" fill="#efe6cc"/>
+      <circle cx="398" cy="384" r="4.2" fill="#100d0a"/>
+      <!-- beak, hooked -->
+      <path d="M366 398 C352 400 340 408 334 420 C346 424 360 422 370 414 C376 424 376 436 368 446 C388 442 400 424 396 404 C390 398 378 396 366 398 Z" fill="#161210"/>
+      <!-- crown highlight -->
+      <path d="M382 348 C400 338 428 338 448 350" stroke="#c7c0af" stroke-width="2" fill="none" opacity="0.3" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

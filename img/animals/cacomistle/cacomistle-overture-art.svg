@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A cacomistle perched on a high dark branch, its ringed tail curled beside it, a fig cluster nearby and a thin new moon barely visible above the canopy">
+  <defs>
+    <linearGradient id="cmo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#182620"/>
+      <stop offset="100%" stop-color="#0a120e"/>
+    </linearGradient>
+    <radialGradient id="cmo-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e9ddc0" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0a120e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cmo-fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5c6357"/>
+      <stop offset="100%" stop-color="#262f27"/>
+    </linearGradient>
+    <linearGradient id="cmo-band" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e7d9bb"/>
+      <stop offset="100%" stop-color="#b8a37e"/>
+    </linearGradient>
+    <filter id="cmo-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#cmo-bg)"/>
+
+  <!-- barely-there new moon -->
+  <g filter="url(#cmo-glow)" opacity="0.55">
+    <circle cx="312" cy="78" r="26" fill="url(#cmo-moon)"/>
+  </g>
+
+  <!-- branch -->
+  <path d="M0 200 C90 180 160 210 230 188 C280 172 340 195 400 170" stroke="#1c2820" stroke-width="10" fill="none" opacity="0.85"/>
+
+  <!-- fig cluster -->
+  <circle cx="330" cy="230" r="9" fill="#8a6f45" opacity="0.8"/>
+  <circle cx="348" cy="242" r="7" fill="#8a6f45" opacity="0.7"/>
+  <circle cx="336" cy="252" r="6" fill="#6f5735" opacity="0.7"/>
+
+  <!-- the cacomistle, compact, perched, tail curled beside it -->
+  <g>
+    <!-- tail curling around -->
+    <path d="M150 300 C100 320 70 370 90 420 C105 455 145 470 185 458 C155 445 130 415 128 378 C126 345 138 315 165 298 Z" fill="url(#cmo-fur)"/>
+    <path d="M100 340 l16 -10" stroke="url(#cmo-band)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M92 375 l18 -6" stroke="url(#cmo-band)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M98 410 l18 -3" stroke="url(#cmo-band)" stroke-width="11" stroke-linecap="round"/>
+    <path d="M118 440 l17 2" stroke="url(#cmo-band)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M150 456 l16 4" stroke="#e7d9bb" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- body -->
+    <path d="M170 250 C210 240 250 258 262 300 C272 335 260 372 228 388 C196 402 160 388 148 352 C138 322 144 280 170 250 Z" fill="url(#cmo-fur)"/>
+
+    <!-- head -->
+    <ellipse cx="212" cy="256" rx="34" ry="30" fill="url(#cmo-fur)"/>
+    <circle cx="190" cy="238" r="10" fill="#20281f"/>
+    <circle cx="232" cy="240" r="10" fill="#20281f"/>
+    <ellipse cx="192" cy="250" rx="10" ry="11" fill="#cdbf9c" opacity="0.35"/>
+    <ellipse cx="230" cy="252" rx="10" ry="11" fill="#cdbf9c" opacity="0.35"/>
+    <circle cx="192" cy="251" r="3.6" fill="#e9ddc0"/>
+    <circle cx="230" cy="253" r="3.6" fill="#e9ddc0"/>
+    <ellipse cx="210" cy="278" rx="5" ry="3.5" fill="#e9ddc0"/>
+
+    <!-- front paws on the branch -->
+    <path d="M172 380 q-4 10 2 18 M188 388 q-4 10 2 18" stroke="#e7d9bb" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+  </g>
+</svg>

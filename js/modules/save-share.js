@@ -3,8 +3,54 @@
    account layer can read zodi:*:saved to import later. */
 import { openShare } from './share-modal.js';
 
+/* ---- referral plumbing ----------------------------------------------------
+   Every account is meant to carry a referral code so we can see who signed up
+   under whom. Two roles:
+   1) A visitor who arrives on a shared link (?ref=CODE) is the referred one.
+      CODE is stashed as zodi:referredby and passed to every signup link, so the
+      account that gets created records its referrer.
+   2) A user who shares gets their own code appended to the shared URL, so the
+      people they bring in are attributed to them. Until real auth exists we
+      persist a stable per-browser code (zodi:myref) to stand in for it.
+   Both keys are global (not slug-scoped) so they follow the reader across every
+   animal page. ------------------------------------------------------------- */
+const LS = { get: k => { try { return localStorage.getItem(k); } catch { return null; } },
+             set: (k, v) => { try { localStorage.setItem(k, v); } catch {} } };
+function myRef() {
+  let m = LS.get('zodi:myref');
+  if (!m) { m = Math.random().toString(36).slice(2, 10); LS.set('zodi:myref', m); }
+  return m;
+}
+function captureIncomingRef() {
+  try {
+    const u = new URL(location.href);
+    const ref = u.searchParams.get('ref');
+    if (ref) {
+      LS.set('zodi:referredby', ref);
+      u.searchParams.delete('ref');
+      history.replaceState(null, '', u.pathname + (u.searchParams.toString() ? '?' + u.searchParams : '') + u.hash);
+    }
+  } catch {}
+}
+function withRef(url, code) {
+  if (!code) return url;
+  try { const u = new URL(url, location.href); u.searchParams.set('ref', code); return u.href; }
+  catch { return url + (url.includes('?') ? '&' : '?') + 'ref=' + encodeURIComponent(code); }
+}
+function decorateAccountLinks() {
+  const referredBy = LS.get('zodi:referredby');
+  if (!referredBy) return;
+  document.querySelectorAll('a[data-account-link]').forEach(a => {
+    a.setAttribute('href', withRef(a.getAttribute('href'), referredBy));
+  });
+}
+
 export function initSaveShare(ctx) {
   const name = ctx.data.name || 'this animal';
+  captureIncomingRef();
+  decorateAccountLinks();
+  /* the shared URL carries the sharer's code so their referrals are tracked */
+  const shareUrl = () => withRef(location.href.split(/[?#]/)[0], myRef());
 
   /* Save buttons */
   const saveBtns = [...document.querySelectorAll('[data-action="save"]')];
@@ -37,11 +83,12 @@ export function initSaveShare(ctx) {
     if (later) later.addEventListener('click', () => { ctx.ls.set('account:dismissed', '1'); modal.close(); });
   }
 
-  /* Share buttons — prefer the reader's own ritual line when present */
-  const shareText = () => (ctx.ls.get('mirror:line') || ctx.data.shareLine || document.title);
+  /* Share buttons — the crossing line, matching the front-page share sheet.
+     A reader who has written their own mirror line shares that instead. */
+  const shareText = () => (ctx.ls.get('mirror:line') || `My Zodi Animal is the ${name}. What's yours?`);
   [...document.querySelectorAll('[data-action="share"]')].forEach(b => {
     b.addEventListener('click', () => {
-      openShare({ title: document.title, text: shareText(), url: location.href.split('#')[0] });
+      openShare({ title: `My Zodi Animal is the ${name}`, text: shareText(), url: shareUrl() });
     });
   });
 

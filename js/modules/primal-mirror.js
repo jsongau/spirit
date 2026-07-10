@@ -8,7 +8,7 @@ export function initMirror(ctx) {
   const mirror = document.getElementById('nature');
   if (!mirror) return;
 
-  const tabs = [...mirror.querySelectorAll('.mirror-track [role="tab"]')];
+  const tabs = [...mirror.querySelectorAll('.mirror-gates [role="tab"]')];
   const keys = tabs.map(t => t.dataset.mirror);
   const fill = document.getElementById('mtrack-fill');
   const note = document.getElementById('mirror-note');

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A superb lyrebird standing on a raked earthen mound in a dark forest gully, its long lyre-shaped tail fanned up and forward over its body and head, a half-lit first quarter moon behind the trees">
+  <defs>
+    <radialGradient id="sl-sky" cx="58%" cy="26%" r="95%">
+      <stop offset="0%" stop-color="#241a10"/>
+      <stop offset="55%" stop-color="#160f09"/>
+      <stop offset="100%" stop-color="#0a0704"/>
+    </radialGradient>
+    <radialGradient id="sl-mound" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#6e4c2c"/>
+      <stop offset="60%" stop-color="#493018"/>
+      <stop offset="100%" stop-color="#26160c"/>
+    </radialGradient>
+    <radialGradient id="sl-tail" cx="42%" cy="85%" r="90%">
+      <stop offset="0%" stop-color="#f0dcb4"/>
+      <stop offset="45%" stop-color="#c98a4d"/>
+      <stop offset="100%" stop-color="#7a3a20"/>
+    </radialGradient>
+    <linearGradient id="sl-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a4d3c"/>
+      <stop offset="100%" stop-color="#241c14"/>
+    </linearGradient>
+    <radialGradient id="sl-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f1ead6"/>
+      <stop offset="70%" stop-color="#d9c9a0"/>
+      <stop offset="100%" stop-color="#a4906a"/>
+    </radialGradient>
+    <filter id="sl-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="11" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#sl-sky)"/>
+
+  <!-- first quarter moon, half lit -->
+  <g filter="url(#sl-glow)" opacity="0.9">
+    <circle cx="618" cy="150" r="52" fill="#160f09"/>
+    <path d="M618 98 A52 52 0 0 1 618 202 Z" fill="url(#sl-moon)"/>
+  </g>
+
+  <!-- distant gully treeline -->
+  <path d="M0 500 L60 450 L120 490 L180 430 L250 495 L320 425 L390 500 L460 435 L530 505 L600 445 L680 500 L740 450 L800 500 L800 800 L0 800 Z" fill="#14100a" opacity="0.9"/>
+  <path d="M0 560 L80 505 L150 555 L230 495 L310 560 L390 500 L470 565 L560 500 L650 565 L730 505 L800 560 L800 800 L0 800 Z" fill="#0d0a06"/>
+
+  <!-- fern fronds either side -->
+  <path d="M40 720 C90 660 90 590 60 540" stroke="#241a10" stroke-width="5" fill="none" opacity="0.7" stroke-linecap="round"/>
+  <path d="M760 730 C710 670 715 600 748 550" stroke="#241a10" stroke-width="5" fill="none" opacity="0.7" stroke-linecap="round"/>
+
+  <!-- the raked earthen mound -->
+  <ellipse cx="400" cy="700" rx="240" ry="76" fill="url(#sl-mound)"/>
+  <path d="M210 700 C300 680 500 680 590 700" stroke="#2e1c10" stroke-width="3" fill="none" opacity="0.55"/>
+  <path d="M225 718 C310 702 490 702 575 718" stroke="#2e1c10" stroke-width="3" fill="none" opacity="0.5"/>
+  <ellipse cx="270" cy="734" rx="10" ry="4" fill="#2e1c10" opacity="0.5"/>
+  <ellipse cx="530" cy="738" rx="12" ry="4" fill="#2e1c10" opacity="0.5"/>
+  <ellipse cx="360" cy="742" rx="8" ry="3" fill="#2e1c10" opacity="0.45"/>
+
+  <!-- the lyre tail, fanned up and forward over the body -->
+  <g filter="url(#sl-glow)">
+    <!-- fine filamentary fan feathers -->
+    <g stroke="#ecd9b4" fill="none" stroke-linecap="round" opacity="0.65">
+      <path d="M400 566 Q 356 330 322 172" stroke-width="3"/>
+      <path d="M400 566 Q 378 320 350 168" stroke-width="3"/>
+      <path d="M400 566 Q 392 310 378 162" stroke-width="3"/>
+      <path d="M400 566 Q 408 310 422 162" stroke-width="3"/>
+      <path d="M400 566 Q 422 320 450 168" stroke-width="3"/>
+      <path d="M400 566 Q 444 330 478 172" stroke-width="3"/>
+    </g>
+    <!-- two central plain tail feathers -->
+    <path d="M392 566 C 384 470 386 350 397 224 C 400 300 402 440 400 566 Z" fill="#6b4a2e"/>
+    <path d="M408 566 C 416 470 414 350 403 224 C 400 300 398 440 400 566 Z" fill="#54381f"/>
+    <!-- outer left lyrate horn -->
+    <path d="M394 566 C 322 522 262 432 254 322 C 250 258 276 210 316 190 C 296 244 298 320 320 396 C 340 462 366 518 402 566 Z" fill="url(#sl-tail)"/>
+    <path d="M300 240 C292 280 296 330 314 380" stroke="#3a2214" stroke-width="4" fill="none" opacity="0.55"/>
+    <path d="M282 300 C280 340 288 384 306 424" stroke="#3a2214" stroke-width="4" fill="none" opacity="0.45"/>
+    <!-- outer right lyrate horn -->
+    <path d="M406 566 C 478 522 538 432 546 322 C 550 258 524 210 484 190 C 504 244 502 320 480 396 C 460 462 434 518 398 566 Z" fill="url(#sl-tail)"/>
+    <path d="M500 240 C508 280 504 330 486 380" stroke="#3a2214" stroke-width="4" fill="none" opacity="0.55"/>
+    <path d="M518 300 C520 340 512 384 494 424" stroke="#3a2214" stroke-width="4" fill="none" opacity="0.45"/>
+  </g>
+
+  <!-- body, standing on the mound -->
+  <g>
+    <path d="M348 690 C336 630 356 580 400 574 C444 580 464 630 452 690 C447 730 426 754 400 756 C374 754 353 730 348 690 Z" fill="url(#sl-body)"/>
+    <!-- folded wing -->
+    <path d="M356 618 C348 650 350 686 366 716 C378 682 380 646 374 616 Z" fill="#332a1e" opacity="0.8"/>
+    <!-- legs -->
+    <path d="M382 752 C380 774 378 792 378 806" stroke="#1c150e" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M418 752 C420 774 422 792 422 806" stroke="#1c150e" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M368 806 l20 0 M392 806 l-4 -8 M392 806 l10 -6 M408 806 l20 0 M408 806 l6 -8 M408 806 l-6 -8" stroke="#1c150e" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- head and beak -->
+    <circle cx="400" cy="556" r="30" fill="url(#sl-body)"/>
+    <path d="M400 546 L432 552 L400 562 Z" fill="#171008"/>
+    <circle cx="410" cy="550" r="3.4" fill="#f0dcb4"/>
+  </g>
+</svg>

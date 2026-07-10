@@ -2,7 +2,24 @@
    radar, feng shui palette tints, add-to-calendar, and proverb speech.
    Every feature degrades to nothing; content never depends on it. */
 export function initAmbience(ctx) {
-  reveals(ctx); radar(ctx); palette(); calendar(ctx); speech();
+  reveals(ctx); radar(ctx); palette(); calendar(ctx); speech(); equalizeProverbTiles();
+}
+
+/* Keep the proverb character tiles a uniform size even when a gloss needs more
+   than one word (e.g. "great vessel"). Every tile is grown to the width of the
+   widest, and the gloss is allowed to wrap, so the row never looks ragged. */
+function equalizeProverbTiles() {
+  const tiles = [...document.querySelectorAll('.pf-proverb__char')];
+  if (tiles.length < 2) return;
+  const apply = () => {
+    tiles.forEach(t => { t.style.width = ''; });
+    let w = 0;
+    tiles.forEach(t => { w = Math.max(w, t.offsetWidth); });
+    tiles.forEach(t => { t.style.width = w + 'px'; });
+  };
+  apply();
+  let raf;
+  addEventListener('resize', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(apply); }, { passive: true });
 }
 
 /* ---- reveal on scroll ---- */
@@ -175,22 +192,59 @@ function calendar(ctx) {
   });
 }
 
-/* ---- proverb pronunciation ---- */
+/* ---- proverb pronunciation ----
+   One whole-verse button (.pf-proverb__say) reads the full proverb; the
+   character tiles (.pf-proverb__char) read one hanzi each. Pinyin is shown
+   once, on the tiles — never doubled on the ruby above the verse.
+   Voice pick prefers a proper, natural Mandarin voice over the OS default:
+   Google 普通话 and Microsoft Neural (Xiaoxiao/Yunxi/Xiaoyi) first, then
+   Apple's Ting-Ting/Meijia, then any zh/cmn voice. getVoices() populates
+   asynchronously, so we resolve the voice at click time and also listen
+   for voiceschanged. */
 function speech() {
-  const main = [...document.querySelectorAll('.pf-proverb__say')];
+  const main = [...document.querySelectorAll('.pf-proverb__say, .pf-ziwei__say')];
   const chars = [...document.querySelectorAll('.pf-proverb__char[data-say]')];
   const btns = [...main, ...chars];
   if (!btns.length) return;
   const hint = document.querySelector('.pf-proverb__hint');
-  if (!('speechSynthesis' in window)) { main.forEach(b => { b.hidden = true; }); if (hint) hint.hidden = true; return; }
-  const zhVoice = () => (speechSynthesis.getVoices() || []).find(v => /^zh|cmn/i.test(v.lang)) || null;
+  if (!('speechSynthesis' in window)) {
+    /* no TTS: hide the pronounce buttons, but keep the pinyin, which is still
+       useful to read. */
+    main.forEach(b => { b.hidden = true; });
+    if (hint) hint.hidden = true;
+    return;
+  }
+
+  /* preference-ranked Mandarin voice, highest quality first */
+  const RANK = [
+    v => /google/i.test(v.name) && /^(zh|cmn)/i.test(v.lang),          // Google 普通话 (Chrome)
+    v => /(xiaoxiao|yunxi|xiaoyi|yunyang|neural).*?/i.test(v.name) && /^zh/i.test(v.lang), // MS Neural
+    v => /(ting-?ting|tingting|meijia|sinji|li-?mu|yu-?shu)/i.test(v.name), // Apple
+    v => /^zh-CN|^cmn/i.test(v.lang),                                   // any Mandarin, mainland
+    v => /^zh/i.test(v.lang)                                            // any Chinese
+  ];
+  let cached = null;
+  const pickVoice = () => {
+    const voices = speechSynthesis.getVoices() || [];
+    if (!voices.length) return null;
+    for (const test of RANK) { const hit = voices.find(test); if (hit) return hit; }
+    return null;
+  };
+  const refresh = () => { cached = pickVoice() || cached; };
+  refresh();
+  if (typeof speechSynthesis.addEventListener === 'function') {
+    speechSynthesis.addEventListener('voiceschanged', refresh);
+  }
+
   btns.forEach(b => b.addEventListener('click', () => {
     const u = new SpeechSynthesisUtterance(b.dataset.say);
-    const v = zhVoice();
+    const v = cached || pickVoice();
     if (v) { u.voice = v; u.lang = v.lang; } else { u.lang = 'zh-CN'; }
-    u.rate = 0.8;
+    /* slower for a single character or a star name than for the flowing verse */
+    u.rate = (b.classList.contains('pf-proverb__char') || b.classList.contains('pf-ziwei__say')) ? 0.64 : 0.78;
+    u.pitch = 1;
     u.onstart = () => b.classList.add('is-speaking');
-    u.onend = () => b.classList.remove('is-speaking');
+    u.onend = u.onerror = () => b.classList.remove('is-speaking');
     speechSynthesis.cancel(); speechSynthesis.speak(u);
   }));
 }

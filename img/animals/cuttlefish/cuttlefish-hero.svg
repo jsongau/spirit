@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A cuttlefish hovering over a sandy sea floor, one side of its body glowing warm coral and gold, the other side dim and camouflaged, a wave of dark bands rippling across its mantle">
+  <defs>
+    <radialGradient id="cf-water" cx="50%" cy="28%" r="95%">
+      <stop offset="0%" stop-color="#1c2436"/>
+      <stop offset="55%" stop-color="#131a29"/>
+      <stop offset="100%" stop-color="#0b0f18"/>
+    </radialGradient>
+    <linearGradient id="cf-mantle-warm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8a15f"/>
+      <stop offset="45%" stop-color="#c8532e"/>
+      <stop offset="100%" stop-color="#7a3a54"/>
+    </linearGradient>
+    <linearGradient id="cf-mantle-cool" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3c4a55"/>
+      <stop offset="45%" stop-color="#2b3a42"/>
+      <stop offset="100%" stop-color="#171f26"/>
+    </linearGradient>
+    <radialGradient id="cf-glow-warm" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f0b878" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#f0b878" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cf-sand" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#3a3226"/>
+      <stop offset="100%" stop-color="#171410"/>
+    </radialGradient>
+    <linearGradient id="cf-fin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a6a9e" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#3f4f6a" stop-opacity="0.55"/>
+    </linearGradient>
+    <filter id="cf-blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="cf-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#cf-water)"/>
+
+  <!-- suspended particulate / current drift -->
+  <g opacity="0.35">
+    <circle cx="120" cy="140" r="2.5" fill="#8fa6c2"/>
+    <circle cx="660" cy="110" r="2" fill="#8fa6c2"/>
+    <circle cx="200" cy="640" r="2.2" fill="#c8b090"/>
+    <circle cx="560" cy="200" r="1.6" fill="#8fa6c2"/>
+    <circle cx="90" cy="420" r="2" fill="#8fa6c2"/>
+    <circle cx="710" cy="470" r="2.4" fill="#c8b090"/>
+  </g>
+
+  <!-- teal current bands, upper water -->
+  <path d="M-20 120 C160 90 260 150 420 110 C560 78 660 120 820 90" stroke="#3f8f8a" stroke-width="3" fill="none" opacity="0.25"/>
+  <path d="M-20 180 C140 210 300 160 460 200 C600 234 700 190 820 210" stroke="#5aa0a8" stroke-width="2" fill="none" opacity="0.18"/>
+
+  <!-- sea floor -->
+  <path d="M0 660 C120 630 220 668 340 646 C460 624 540 664 660 640 C720 628 770 646 800 636 L800 800 L0 800 Z" fill="url(#cf-sand)"/>
+  <ellipse cx="400" cy="672" rx="360" ry="26" fill="#100e0a" opacity="0.5"/>
+
+  <!-- soft ambient glow behind the animal -->
+  <circle cx="420" cy="360" r="260" fill="url(#cf-glow-warm)" opacity="0.5" filter="url(#cf-blur)"/>
+
+  <!-- the cuttlefish, hovering three-quarter, mantle split warm/cool -->
+  <g>
+    <!-- fin fringe, undulating along the mantle -->
+    <path d="M250 300 C210 340 205 420 235 500 C250 540 270 560 292 574 C270 500 262 400 272 320 Z" fill="url(#cf-fin)" filter="url(#cf-soft)"/>
+    <path d="M548 300 C588 340 593 420 563 500 C548 540 528 560 506 574 C528 500 536 400 526 320 Z" fill="url(#cf-fin)" filter="url(#cf-soft)"/>
+
+    <!-- mantle: warm half (left, facing viewer) -->
+    <path d="M400 210 C320 210 268 264 262 340 C256 420 280 500 330 552 C358 580 380 590 400 592 L400 210 Z" fill="url(#cf-mantle-warm)"/>
+    <!-- mantle: cool / camouflaged half (right, facing away) -->
+    <path d="M400 210 C480 210 532 264 538 340 C544 420 520 500 470 552 C442 580 420 590 400 592 L400 210 Z" fill="url(#cf-mantle-cool)"/>
+
+    <!-- passing-cloud bands rippling across the mantle -->
+    <g opacity="0.55">
+      <path d="M270 320 C330 310 470 310 530 320" stroke="#1c1410" stroke-width="10" fill="none" opacity="0.35"/>
+      <path d="M264 380 C330 368 470 368 536 380" stroke="#1c1410" stroke-width="14" fill="none" opacity="0.3"/>
+      <path d="M278 450 C336 438 464 438 522 450" stroke="#1c1410" stroke-width="10" fill="none" opacity="0.28"/>
+    </g>
+
+    <!-- head and large eyes -->
+    <ellipse cx="400" cy="238" rx="70" ry="46" fill="#2b2420"/>
+    <ellipse cx="358" cy="236" rx="20" ry="20" fill="#0d0b09"/>
+    <ellipse cx="358" cy="236" rx="9" ry="9" fill="#f0b878"/>
+    <ellipse cx="442" cy="236" rx="20" ry="20" fill="#0d0b09"/>
+    <ellipse cx="442" cy="236" rx="9" ry="9" fill="#6f8a95"/>
+
+    <!-- eight arms, radiating downward -->
+    <path d="M370 260 C346 300 330 340 322 380" stroke="#40372c" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M388 264 C374 310 366 356 364 400" stroke="#40372c" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M412 264 C426 310 434 356 436 400" stroke="#33383c" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M430 260 C454 300 470 340 478 380" stroke="#33383c" stroke-width="9" fill="none" stroke-linecap="round"/>
+
+    <!-- two long feeding tentacles, shot forward -->
+    <path d="M382 268 C350 330 300 380 232 402" stroke="#e8a15f" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.85"/>
+    <circle cx="232" cy="402" r="9" fill="#e8a15f" opacity="0.85"/>
+    <path d="M418 268 C452 328 500 372 566 388" stroke="#7a8fa0" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.8"/>
+    <circle cx="566" cy="388" r="9" fill="#7a8fa0" opacity="0.8"/>
+  </g>
+
+  <!-- foreground drifting particles for depth -->
+  <g opacity="0.25">
+    <circle cx="180" cy="560" r="2" fill="#f0b878"/>
+    <circle cx="600" cy="600" r="2.2" fill="#8fa6c2"/>
+    <circle cx="640" cy="520" r="1.8" fill="#8fa6c2"/>
+  </g>
+</svg>

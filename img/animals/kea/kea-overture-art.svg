@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A kea parrot's head and shoulders in close view, olive-bronze feathers against a dark alpine sky, one wing edge lifted to show a trace of orange-red beneath, a small full moon above the ridgeline">
+  <defs>
+    <linearGradient id="ko-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c2216"/>
+      <stop offset="100%" stop-color="#0b0f08"/>
+    </linearGradient>
+    <radialGradient id="ko-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f4f1e4"/>
+      <stop offset="100%" stop-color="#b7ae86"/>
+    </radialGradient>
+    <linearGradient id="ko-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a9a5b"/>
+      <stop offset="60%" stop-color="#556234"/>
+      <stop offset="100%" stop-color="#2a301d"/>
+    </linearGradient>
+    <linearGradient id="ko-wing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4a5731"/>
+      <stop offset="100%" stop-color="#1f2515"/>
+    </linearGradient>
+    <radialGradient id="ko-flash" cx="35%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#f2bd63"/>
+      <stop offset="55%" stop-color="#dd6f2c"/>
+      <stop offset="100%" stop-color="#8e3618"/>
+    </radialGradient>
+    <filter id="ko-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#ko-bg)"/>
+
+  <!-- small full moon -->
+  <g filter="url(#ko-glow)">
+    <circle cx="306" cy="92" r="36" fill="url(#ko-moon)"/>
+  </g>
+
+  <!-- distant ridgeline -->
+  <path d="M0 190 C60 168 110 188 160 172 C210 156 260 176 320 158 C350 149 380 156 400 148 L400 260 L0 260 Z" fill="#141810" opacity="0.85"/>
+
+  <!-- shoulders / body base -->
+  <path d="M100 470 C68 420 74 340 122 305 C168 272 232 276 264 316 C298 358 296 420 268 462 C236 500 148 500 100 470 Z" fill="url(#ko-body)"/>
+
+  <!-- lifted wing edge with the flash -->
+  <path d="M232 330 C278 312 316 328 330 366 C340 392 328 418 298 424 C306 392 296 360 266 342 C254 335 242 332 232 330 Z" fill="url(#ko-wing)"/>
+  <g filter="url(#ko-glow)">
+    <path d="M276 366 C296 370 312 384 316 404 C298 405 278 394 270 376 Z" fill="url(#ko-flash)"/>
+  </g>
+
+  <!-- head -->
+  <ellipse cx="150" cy="286" rx="52" ry="48" fill="url(#ko-body)"/>
+  <path d="M126 250 C122 238 132 230 140 236 C144 226 158 226 160 238 C170 232 180 242 174 254" fill="#59683a" opacity="0.7"/>
+
+  <!-- decurved bill -->
+  <path d="M104 296 C82 298 66 314 68 334 C70 350 86 354 100 344 C90 332 88 316 98 302 C102 296 104 296 104 296 Z" fill="#282a23"/>
+
+  <!-- eye -->
+  <circle cx="134" cy="272" r="6.5" fill="#101208"/>
+  <circle cx="136" cy="269" r="2.4" fill="#e6e0c8"/>
+</svg>

@@ -7,8 +7,15 @@ export function initReadingProgress(ctx) {
   const sections = [...new Set(chapters.map(c => c.dataset.target))]
     .map(id => document.getElementById(id)).filter(Boolean);
   const progressEl = document.getElementById('rail-progress');
-  const total = new Set(chapters.map(c => c.dataset.target)).size;
-  const visited = new Set(ctx.ls.getJSON('visited', []));
+  const meterFill = document.getElementById('rail-meter-fill');
+  /* the chapters that actually exist on THIS page (the layout changes between
+     versions, so stored ids may point at sections that are gone) */
+  const validTargets = new Set(chapters.map(c => c.dataset.target));
+  const total = validTargets.size;
+  /* drop any stored ids that no longer exist so the count can never exceed total */
+  const visited = new Set(ctx.ls.getJSON('visited', []).filter(id => validTargets.has(id)));
+  ctx.ls.setJSON('visited', [...visited]);
+  const readCount = () => Math.min(total, [...visited].filter(id => validTargets.has(id)).length);
 
   function paint(currentId) {
     chapters.forEach(c => {
@@ -16,7 +23,9 @@ export function initReadingProgress(ctx) {
       if (cur) c.setAttribute('aria-current', 'true'); else c.removeAttribute('aria-current');
       c.classList.toggle('is-visited', visited.has(c.dataset.target) && !cur);
     });
-    if (progressEl) progressEl.innerHTML = `<b>${visited.size}</b> of ${total} chapters`;
+    const n = readCount();
+    if (progressEl) progressEl.innerHTML = `<b>${n}</b> of ${total} chapters read`;
+    if (meterFill) meterFill.style.width = total ? `${Math.min(100, (n / total) * 100)}%` : '0%';
   }
 
   if ('IntersectionObserver' in window) {

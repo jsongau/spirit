@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A bat-eared fox crouched low in dry savanna grass at dusk, one enormous ear turned toward the ground, a termite mound rising against a starlit, moonless sky">
+  <defs>
+    <radialGradient id="bef-sky" cx="50%" cy="22%" r="95%">
+      <stop offset="0%" stop-color="#2a2015"/>
+      <stop offset="55%" stop-color="#18130d"/>
+      <stop offset="100%" stop-color="#0c0a07"/>
+    </radialGradient>
+    <linearGradient id="bef-horizon" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a4022" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#5a4022" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="bef-fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c9a06a"/>
+      <stop offset="55%" stop-color="#9c7644"/>
+      <stop offset="100%" stop-color="#5c4527"/>
+    </linearGradient>
+    <linearGradient id="bef-fur-pale" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e9d9bd"/>
+      <stop offset="100%" stop-color="#c9a06a"/>
+    </linearGradient>
+    <radialGradient id="bef-earinner" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#e8c9a3"/>
+      <stop offset="100%" stop-color="#9c7644"/>
+    </radialGradient>
+    <filter id="bef-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#bef-sky)"/>
+
+  <!-- stars, no moon: this animal runs on the New Moon -->
+  <g filter="url(#bef-glow)" opacity="0.8">
+    <circle cx="120" cy="90" r="1.6" fill="#e9d9bd"/>
+    <circle cx="230" cy="60" r="1.2" fill="#e9d9bd"/>
+    <circle cx="340" cy="110" r="1.8" fill="#e9d9bd"/>
+    <circle cx="500" cy="70" r="1.3" fill="#e9d9bd"/>
+    <circle cx="620" cy="120" r="1.6" fill="#e9d9bd"/>
+    <circle cx="700" cy="60" r="1.2" fill="#e9d9bd"/>
+    <circle cx="80" cy="180" r="1.1" fill="#e9d9bd"/>
+    <circle cx="760" cy="160" r="1.4" fill="#e9d9bd"/>
+    <circle cx="430" cy="45" r="1.1" fill="#e9d9bd"/>
+  </g>
+
+  <!-- warm dusk band low on the horizon -->
+  <rect x="0" y="430" width="800" height="180" fill="url(#bef-horizon)"/>
+
+  <!-- distant termite mound -->
+  <path d="M520 560 C520 500 560 460 600 460 C645 460 685 500 690 560 C692 590 500 590 520 560 Z" fill="#3a2a17" opacity="0.9"/>
+  <path d="M530 560 C560 520 640 520 670 560 Z" fill="#2a1e10" opacity="0.7"/>
+
+  <!-- dry grass ridgeline -->
+  <path d="M0 600 L60 560 L110 590 L170 550 L230 585 L300 545 L370 590 L440 555 L520 595 L600 560 L680 595 L760 555 L800 590 L800 800 L0 800 Z" fill="#241a10"/>
+  <path d="M0 650 L90 610 L160 645 L250 600 L340 650 L430 605 L520 655 L610 615 L700 655 L800 620 L800 800 L0 800 Z" fill="#150f09"/>
+
+  <!-- individual grass blades -->
+  <g stroke="#4a3a20" stroke-width="3" stroke-linecap="round" opacity="0.5">
+    <path d="M60 620 L54 570"/>
+    <path d="M150 630 L158 580"/>
+    <path d="M250 615 L242 560"/>
+    <path d="M420 640 L430 585"/>
+    <path d="M560 620 L552 570"/>
+    <path d="M700 640 L710 585"/>
+  </g>
+
+  <!-- the fox, crouched low, head turned, one ear angled toward the ground -->
+  <g>
+    <!-- tail, black tip -->
+    <path d="M470 700 C540 690 585 650 590 605 C592 660 555 715 490 725 Z" fill="url(#bef-fur)"/>
+    <path d="M555 615 C575 630 588 650 590 670 C570 665 555 645 550 622 Z" fill="#1c1a18"/>
+
+    <!-- haunch / body mass, low crouch -->
+    <path d="M270 720 C230 660 240 585 300 545 C350 512 430 508 480 540 C540 578 555 645 530 705 C495 745 320 750 270 720 Z" fill="url(#bef-fur)"/>
+
+    <!-- pale underbelly -->
+    <path d="M300 700 C290 660 300 615 330 590 C370 610 385 665 375 710 C355 725 320 720 300 700 Z" fill="url(#bef-fur-pale)" opacity="0.75"/>
+
+    <!-- black lower legs -->
+    <path d="M310 718 C304 680 308 650 322 632 C338 650 340 685 334 720 Z" fill="#1c1a18"/>
+    <path d="M420 726 C414 686 418 654 434 634 C450 654 452 690 444 726 Z" fill="#1c1a18"/>
+
+    <!-- head, turned and lowered toward the ground -->
+    <g transform="translate(300,430) rotate(-12)">
+      <!-- muzzle, pointed -->
+      <path d="M-10 40 C-45 34 -80 46 -100 70 C-80 84 -40 86 -8 74 Z" fill="url(#bef-fur)"/>
+      <path d="M-70 66 C-82 68 -92 72 -98 70 C-92 62 -80 58 -68 60 Z" fill="#14110d"/>
+      <!-- head mass -->
+      <ellipse cx="30" cy="30" rx="62" ry="54" fill="url(#bef-fur)"/>
+      <!-- raccoon-like mask -->
+      <path d="M-14 8 C-6 -6 20 -10 34 -2 C22 8 4 14 -14 8 Z" fill="#1c1a18" opacity="0.85"/>
+      <ellipse cx="-2" cy="16" rx="13" ry="9" fill="#1c1a18"/>
+      <ellipse cx="54" cy="10" rx="13" ry="9" fill="#1c1a18"/>
+      <!-- eyes -->
+      <circle cx="0" cy="18" r="4.5" fill="#e9d9bd"/>
+      <circle cx="52" cy="12" r="4.5" fill="#e9d9bd"/>
+
+      <!-- near ear: huge, angled down toward the ground -->
+      <path d="M-30 -10 C-70 -30 -104 -10 -112 40 C-100 62 -66 66 -38 44 C-22 24 -18 2 -30 -10 Z" fill="url(#bef-fur)"/>
+      <path d="M-40 0 C-64 -10 -86 4 -92 34 C-80 46 -58 48 -42 32 C-32 20 -32 8 -40 0 Z" fill="url(#bef-earinner)"/>
+      <path d="M-32 -8 C-66 -26 -96 -8 -104 36" fill="none" stroke="#1c1a18" stroke-width="4" opacity="0.6"/>
+
+      <!-- far ear: upright, tall, catching the starlit sky -->
+      <path d="M64 -18 C58 -80 104 -108 132 -66 C148 -36 140 8 106 24 C86 32 68 10 64 -18 Z" fill="url(#bef-fur)"/>
+      <path d="M76 -22 C74 -66 104 -84 122 -56 C132 -36 126 -4 100 6 C86 10 78 -6 76 -22 Z" fill="url(#bef-earinner)"/>
+      <path d="M68 -20 C64 -72 102 -100 128 -64" fill="none" stroke="#1c1a18" stroke-width="4" opacity="0.6"/>
+    </g>
+  </g>
+</svg>

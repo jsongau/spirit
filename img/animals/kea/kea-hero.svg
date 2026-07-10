@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A kea parrot perched on a high alpine rock ledge under a full moon, olive-bronze feathers catching the light, one wing lifted to reveal a flash of orange-red beneath it, a bent scrap of wire glinting on the stone near its feet">
+  <defs>
+    <radialGradient id="k-sky" cx="60%" cy="26%" r="95%">
+      <stop offset="0%" stop-color="#242b1e"/>
+      <stop offset="55%" stop-color="#171b13"/>
+      <stop offset="100%" stop-color="#0c0e09"/>
+    </radialGradient>
+    <radialGradient id="k-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f6f3e6"/>
+      <stop offset="55%" stop-color="#e6e0c8"/>
+      <stop offset="100%" stop-color="#b7ae86"/>
+    </radialGradient>
+    <linearGradient id="k-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a9a5b"/>
+      <stop offset="55%" stop-color="#59683a"/>
+      <stop offset="100%" stop-color="#2c3320"/>
+    </linearGradient>
+    <linearGradient id="k-wing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4f5c34"/>
+      <stop offset="100%" stop-color="#232a17"/>
+    </linearGradient>
+    <radialGradient id="k-flash" cx="35%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#f4c268"/>
+      <stop offset="55%" stop-color="#e0752f"/>
+      <stop offset="100%" stop-color="#9c3c1a"/>
+    </radialGradient>
+    <linearGradient id="k-rock" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5e646b"/>
+      <stop offset="100%" stop-color="#1e2124"/>
+    </linearGradient>
+    <filter id="k-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#k-sky)"/>
+
+  <!-- full moon -->
+  <g filter="url(#k-glow)">
+    <circle cx="586" cy="164" r="82" fill="url(#k-moon)"/>
+  </g>
+  <!-- thin cloud wisp crossing the moon -->
+  <path d="M500 150 C540 138 610 142 660 158" stroke="#171b13" stroke-width="14" fill="none" opacity="0.35"/>
+
+  <!-- distant alpine ridgeline -->
+  <path d="M0 520 L60 466 L130 508 L190 440 L250 500 L320 420 L390 495 L460 430 L530 500 L600 445 L680 505 L750 450 L800 500 L800 800 L0 800 Z" fill="#12160e" opacity="0.9"/>
+  <path d="M0 590 L80 540 L150 580 L230 510 L310 585 L390 520 L470 590 L560 530 L650 590 L730 540 L800 585 L800 800 L0 800 Z" fill="#0b0f08"/>
+
+  <!-- rock ledge -->
+  <path d="M180 705 C260 655 360 645 440 655 C540 668 640 650 730 690 C770 706 795 730 800 755 L800 800 L150 800 Z" fill="url(#k-rock)"/>
+  <path d="M150 800 L150 760 C220 735 300 725 380 730 C480 736 560 720 650 735 C710 745 760 765 800 790 L800 800 Z" fill="#14171a" opacity="0.85"/>
+
+  <!-- bent scrap of wire near the feet, something taken apart -->
+  <path d="M392 738 C402 726 416 730 412 744 C424 738 434 750 422 756 C412 760 400 754 396 746" stroke="#8a9098" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- the kea -->
+  <g>
+    <!-- tail, trailing down and to the right -->
+    <path d="M470 690 C495 715 535 726 566 710 C540 692 505 682 470 690 Z" fill="url(#k-wing)"/>
+
+    <!-- folded far leg / grip -->
+    <path d="M410 700 C406 718 404 736 408 752" stroke="#1c2015" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M440 702 C438 720 438 738 442 754" stroke="#1c2015" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M403 752 q-6 8 -2 14 M410 754 q-2 10 2 14 M418 753 q2 9 6 13" stroke="#c7cf9e" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.7"/>
+    <path d="M435 754 q-6 8 -2 14 M442 756 q-2 10 2 14 M450 755 q2 9 6 13" stroke="#c7cf9e" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.7"/>
+
+    <!-- body mass -->
+    <path d="M368 640 C328 590 334 498 386 462 C424 436 476 432 512 458 C558 490 568 548 552 610 C536 666 498 698 456 702 C420 705 392 682 368 640 Z" fill="url(#k-body)"/>
+
+    <!-- lifted wing, raised open to the sky -->
+    <path d="M478 478 C532 452 584 466 606 518 C620 554 606 594 566 606 C578 562 570 518 532 494 C516 484 496 480 478 478 Z" fill="url(#k-wing)"/>
+
+    <!-- the orange-red flash under the raised wing, the signature -->
+    <g filter="url(#k-glow)">
+      <path d="M535 528 C562 532 586 550 592 578 C568 580 540 566 528 542 Z" fill="url(#k-flash)"/>
+    </g>
+
+    <!-- head, tilted down toward the wire on the rock -->
+    <ellipse cx="358" cy="452" rx="50" ry="46" fill="url(#k-body)"/>
+    <!-- fluffed crown feathers -->
+    <path d="M336 412 C332 398 342 390 352 396 C356 386 370 386 372 398 C382 392 392 402 386 414" fill="#59683a" opacity="0.7"/>
+
+    <!-- the decurved bill, hooked toward the wire -->
+    <path d="M316 460 C296 462 282 476 284 494 C286 508 300 512 312 504 C304 494 302 480 310 468 C314 462 316 460 316 460 Z" fill="#2a2c25"/>
+    <path d="M312 504 C318 512 330 512 336 504" stroke="#14150f" stroke-width="3" fill="none" opacity="0.6"/>
+
+    <!-- eye catching moonlight -->
+    <circle cx="342" cy="440" r="6" fill="#111309"/>
+    <circle cx="344" cy="437" r="2.2" fill="#e6e0c8"/>
+  </g>
+
+</svg>

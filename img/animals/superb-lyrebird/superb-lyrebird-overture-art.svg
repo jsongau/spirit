@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A superb lyrebird's lyre-shaped tail fanned above a raked mound on the dark forest floor, a thin first quarter moon overhead">
+  <defs>
+    <linearGradient id="slo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c140c"/>
+      <stop offset="100%" stop-color="#0a0704"/>
+    </linearGradient>
+    <radialGradient id="slo-tail" cx="42%" cy="85%" r="90%">
+      <stop offset="0%" stop-color="#f0dcb4"/>
+      <stop offset="45%" stop-color="#c98a4d"/>
+      <stop offset="100%" stop-color="#7a3a20"/>
+    </radialGradient>
+    <radialGradient id="slo-mound" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#6e4c2c"/>
+      <stop offset="100%" stop-color="#26160c"/>
+    </radialGradient>
+    <radialGradient id="slo-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f1ead6"/>
+      <stop offset="100%" stop-color="#a4906a"/>
+    </radialGradient>
+    <filter id="slo-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#slo-bg)"/>
+
+  <!-- thin first quarter moon -->
+  <g filter="url(#slo-glow)" opacity="0.9">
+    <circle cx="312" cy="78" r="30" fill="#140e08"/>
+    <path d="M312 48 A30 30 0 0 1 312 108 Z" fill="url(#slo-moon)"/>
+  </g>
+
+  <!-- distant ferns -->
+  <path d="M0 260 C60 235 90 210 70 170" stroke="#20160d" stroke-width="4" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M400 300 C340 270 320 235 344 195" stroke="#20160d" stroke-width="4" fill="none" opacity="0.6" stroke-linecap="round"/>
+
+  <!-- mound -->
+  <ellipse cx="198" cy="452" rx="140" ry="42" fill="url(#slo-mound)"/>
+  <path d="M90 452 C150 440 250 440 306 452" stroke="#2e1c10" stroke-width="2" fill="none" opacity="0.55"/>
+
+  <!-- lyre tail, fanned -->
+  <g filter="url(#slo-glow)">
+    <g stroke="#ecd9b4" fill="none" stroke-linecap="round" opacity="0.65">
+      <path d="M198 360 Q 172 220 150 120" stroke-width="2.4"/>
+      <path d="M198 360 Q 188 210 172 116" stroke-width="2.4"/>
+      <path d="M198 360 Q 206 210 222 116" stroke-width="2.4"/>
+      <path d="M198 360 Q 224 220 248 120" stroke-width="2.4"/>
+    </g>
+    <path d="M192 360 C186 292 188 210 196 132 C199 190 200 280 198 360 Z" fill="#6b4a2e"/>
+    <path d="M204 360 C210 292 208 210 200 132 C199 190 198 280 198 360 Z" fill="#54381f"/>
+    <!-- left horn -->
+    <path d="M194 360 C142 328 100 262 94 180 C92 134 110 100 138 86 C124 124 126 178 142 232 C156 280 174 322 200 360 Z" fill="url(#slo-tail)"/>
+    <path d="M116 150 C110 178 114 214 128 250" stroke="#3a2214" stroke-width="2.6" fill="none" opacity="0.5"/>
+    <!-- right horn -->
+    <path d="M204 360 C256 328 298 262 304 180 C306 134 288 100 260 86 C274 124 272 178 256 232 C242 280 224 322 198 360 Z" fill="url(#slo-tail)"/>
+    <path d="M282 150 C288 178 284 214 270 250" stroke="#3a2214" stroke-width="2.6" fill="none" opacity="0.5"/>
+  </g>
+
+  <!-- body -->
+  <g>
+    <path d="M168 420 C160 380 174 348 198 344 C222 348 236 380 228 420 C224 448 210 464 198 465 C186 464 172 448 168 420 Z" fill="#3a3226"/>
+    <path d="M174 372 C168 392 170 414 180 434 C188 412 190 388 186 370 Z" fill="#241d15" opacity="0.8"/>
+    <path d="M188 460 C187 472 186 482 186 490" stroke="#140e08" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+    <path d="M210 460 C211 472 212 482 212 490" stroke="#140e08" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+    <circle cx="198" cy="332" r="17" fill="#3a3226"/>
+    <path d="M198 326 L218 330 L198 336 Z" fill="#140e08"/>
+    <circle cx="204" cy="328" r="2" fill="#f0dcb4"/>
+  </g>
+</svg>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A rock wren silhouette against a canyon wall at dusk, a row of paved stones leading toward a dark crevice, a waxing crescent moon overhead">
+  <defs>
+    <linearGradient id="rwo-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2a1c"/>
+      <stop offset="50%" stop-color="#221810"/>
+      <stop offset="100%" stop-color="#0f0b08"/>
+    </linearGradient>
+    <radialGradient id="rwo-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f4ead2"/>
+      <stop offset="65%" stop-color="#dcc79a"/>
+      <stop offset="100%" stop-color="#a9835c"/>
+    </radialGradient>
+    <linearGradient id="rwo-rock" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6b5540"/>
+      <stop offset="60%" stop-color="#3d2e20"/>
+      <stop offset="100%" stop-color="#1a130d"/>
+    </linearGradient>
+    <linearGradient id="rwo-bird" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c7bfae"/>
+      <stop offset="60%" stop-color="#a9926f"/>
+      <stop offset="100%" stop-color="#6b5844"/>
+    </linearGradient>
+    <radialGradient id="rwo-crevice" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#241a12"/>
+      <stop offset="100%" stop-color="#080604"/>
+    </radialGradient>
+    <filter id="rwo-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="20" fill="url(#rwo-sky)"/>
+
+  <!-- waxing crescent, high and small -->
+  <g filter="url(#rwo-glow)">
+    <circle cx="290" cy="92" r="34" fill="url(#rwo-moon)"/>
+    <circle cx="277" cy="84" r="31" fill="url(#rwo-sky)"/>
+  </g>
+
+  <!-- distant canyon rim -->
+  <path d="M0 210 L50 182 L96 202 L150 168 L200 198 L256 162 L308 200 L360 172 L400 202 L400 500 L0 500 Z" fill="#241a12" opacity="0.85"/>
+
+  <!-- canyon wall, the main rock mass -->
+  <path d="M0 330 C70 300 120 340 190 320 C260 300 300 350 400 320 L400 500 L0 500 Z" fill="url(#rwo-rock)"/>
+  <path d="M0 400 C90 372 170 410 250 384 C310 364 360 388 400 378 L400 500 L0 500 Z" fill="#241a12" opacity="0.9"/>
+
+  <!-- the crevice -->
+  <path d="M230 348 C224 320 246 296 274 296 C302 296 320 324 314 352 C306 384 240 384 230 348 Z" fill="url(#rwo-crevice)"/>
+
+  <!-- paved walkway of stones leading to the crevice -->
+  <g fill="#8c7455" opacity="0.9">
+    <ellipse cx="150" cy="430" rx="14" ry="6.5"/>
+    <ellipse cx="180" cy="418" rx="13" ry="6"/>
+    <ellipse cx="210" cy="404" rx="13" ry="6"/>
+    <ellipse cx="238" cy="390" rx="12" ry="5.5"/>
+    <ellipse cx="262" cy="374" rx="11" ry="5"/>
+  </g>
+  <g fill="#b89568" opacity="0.5">
+    <ellipse cx="150" cy="428" rx="7" ry="2.6"/>
+    <ellipse cx="210" cy="402" rx="6" ry="2.4"/>
+    <ellipse cx="262" cy="372" rx="6" ry="2.2"/>
+  </g>
+
+  <!-- the rock wren, perched, singing -->
+  <g filter="url(#rwo-glow)">
+    <!-- body -->
+    <path d="M120 360 C106 330 118 296 152 282 C186 268 220 284 228 316 C234 342 220 370 188 380 C160 388 132 380 120 360 Z" fill="url(#rwo-bird)"/>
+    <!-- speckling -->
+    <g fill="#4f3c2a" opacity="0.5">
+      <circle cx="142" cy="324" r="2.6"/>
+      <circle cx="158" cy="310" r="2.2"/>
+      <circle cx="172" cy="334" r="2.4"/>
+      <circle cx="186" cy="318" r="2"/>
+      <circle cx="176" cy="352" r="2.2"/>
+      <circle cx="150" cy="346" r="2"/>
+    </g>
+    <!-- cocked tail -->
+    <path d="M120 360 C98 354 78 338 70 314 C94 318 114 334 128 356 Z" fill="#3d2e20"/>
+    <!-- wing -->
+    <path d="M140 322 C156 314 176 314 188 328 C174 338 152 340 140 322 Z" fill="#3d2e20" opacity="0.7"/>
+    <!-- head -->
+    <ellipse cx="216" cy="288" rx="22" ry="21" fill="url(#rwo-bird)"/>
+    <!-- throat -->
+    <path d="M206 298 C212 306 226 306 230 298 C224 292 212 292 206 298 Z" fill="#e6ddc8" opacity="0.8"/>
+    <!-- bill -->
+    <path d="M236 286 C252 282 266 284 274 290 C264 293 250 295 236 291 Z" fill="#1a130d"/>
+    <!-- eye -->
+    <circle cx="224" cy="280" r="3" fill="#0e0b08"/>
+    <circle cx="225" cy="279" r="0.9" fill="#e6ddc8"/>
+    <!-- legs -->
+    <path d="M164 372 L158 392 M182 376 L178 396" stroke="#1a130d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- foreground dark talus, bottom edge -->
+  <path d="M0 460 C80 444 150 470 230 452 C300 436 350 456 400 448 L400 500 L0 500 Z" fill="#0c0906"/>
+
+</svg>

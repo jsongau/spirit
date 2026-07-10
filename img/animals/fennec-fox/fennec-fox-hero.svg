@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A fennec fox sitting alert atop a dark dune under a starlit new-moon sky, its enormous ears catching the last warm light, a burrow entrance shadowed in the sand below">
+  <defs>
+    <radialGradient id="ff-sky" cx="60%" cy="26%" r="95%">
+      <stop offset="0%" stop-color="#2a1f14"/>
+      <stop offset="45%" stop-color="#1a130c"/>
+      <stop offset="100%" stop-color="#100b07"/>
+    </radialGradient>
+    <linearGradient id="ff-dune" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7a5330"/>
+      <stop offset="100%" stop-color="#241708"/>
+    </linearGradient>
+    <linearGradient id="ff-dune2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a3018"/>
+      <stop offset="100%" stop-color="#160e07"/>
+    </linearGradient>
+    <linearGradient id="ff-fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8c088"/>
+      <stop offset="100%" stop-color="#c9925a"/>
+    </linearGradient>
+    <linearGradient id="ff-fur-dark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c9925a"/>
+      <stop offset="100%" stop-color="#8a5f34"/>
+    </linearGradient>
+    <radialGradient id="ff-ear-in" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#3c2414"/>
+      <stop offset="100%" stop-color="#1c1108"/>
+    </radialGradient>
+    <radialGradient id="ff-star" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f3e6c8"/>
+      <stop offset="100%" stop-color="#f3e6c8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ff-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ff-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#ff-sky)"/>
+
+  <!-- scattered stars, no moon: new moon sky -->
+  <g opacity="0.85">
+    <circle cx="120" cy="110" r="2.4" fill="url(#ff-star)"/>
+    <circle cx="210" cy="70" r="1.8" fill="url(#ff-star)"/>
+    <circle cx="330" cy="130" r="2.1" fill="url(#ff-star)"/>
+    <circle cx="470" cy="60" r="1.6" fill="url(#ff-star)"/>
+    <circle cx="600" cy="100" r="2.6" fill="url(#ff-star)"/>
+    <circle cx="690" cy="150" r="1.9" fill="url(#ff-star)"/>
+    <circle cx="90" cy="220" r="1.5" fill="url(#ff-star)"/>
+    <circle cx="740" cy="250" r="2.2" fill="url(#ff-star)"/>
+    <circle cx="410" cy="40" r="1.4" fill="url(#ff-star)"/>
+    <circle cx="560" cy="200" r="1.3" fill="url(#ff-star)"/>
+  </g>
+
+  <!-- far dune ridgeline -->
+  <path d="M0 500 C90 460 160 500 240 470 C320 442 380 480 460 455 C540 430 610 470 690 445 C740 430 780 445 800 440 L800 800 L0 800 Z" fill="url(#ff-dune2)" opacity="0.9"/>
+  <!-- near dune ridgeline, the fox's perch -->
+  <path d="M0 620 C100 560 180 600 260 555 C340 512 420 570 520 540 C610 513 690 560 800 530 L800 800 L0 800 Z" fill="url(#ff-dune)"/>
+
+  <!-- wind ripples on the near dune -->
+  <g stroke="#3a2410" stroke-width="3" fill="none" opacity="0.45">
+    <path d="M40 660 Q90 650 140 662 T240 660"/>
+    <path d="M300 690 Q350 680 400 692 T500 688"/>
+    <path d="M540 640 Q590 630 640 642 T740 638"/>
+  </g>
+
+  <!-- burrow entrance, shadowed in the sand -->
+  <ellipse cx="600" cy="700" rx="46" ry="18" fill="#0e0904" opacity="0.85"/>
+  <ellipse cx="600" cy="696" rx="34" ry="12" fill="#000000" opacity="0.7"/>
+
+  <!-- the fox, seated three-quarter, alert -->
+  <g filter="url(#ff-soft)">
+    <!-- tail curled at side, dark tip -->
+    <path d="M470 700 C520 690 555 655 548 610 C544 585 520 575 500 585 C520 600 526 630 508 655 C492 678 470 685 448 690 Z" fill="url(#ff-fur-dark)"/>
+    <ellipse cx="512" cy="592" rx="20" ry="14" fill="#241708"/>
+
+    <!-- body -->
+    <path d="M300 720 C270 660 278 590 330 555 C375 525 430 528 465 560 C500 592 505 660 480 715 C440 740 350 742 300 720 Z" fill="url(#ff-fur)"/>
+    <!-- chest / belly lighter fur -->
+    <path d="M340 715 C325 675 330 630 355 605 C380 585 415 588 430 610 C445 635 440 680 420 715 C395 725 365 725 340 715 Z" fill="#f4e3c6" opacity="0.85"/>
+
+    <!-- forelegs -->
+    <path d="M330 738 C324 700 328 665 344 645 C360 665 362 702 356 738 Z" fill="#c9925a"/>
+    <path d="M400 740 C394 702 398 667 414 647 C430 667 432 704 426 740 Z" fill="#c9925a"/>
+    <!-- dark paw tips -->
+    <path d="M330 736 q1 8 8 10 M400 738 q1 8 8 10" stroke="#3a2410" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+
+    <!-- head -->
+    <g>
+      <path d="M300 510 C296 480 314 452 350 448 C386 444 412 466 414 498 C416 522 400 542 372 548 C342 554 304 540 300 510 Z" fill="url(#ff-fur)"/>
+      <!-- muzzle -->
+      <path d="M296 505 C270 508 250 522 244 534 C252 546 274 550 296 544 C306 534 306 516 296 505 Z" fill="#f4e3c6"/>
+      <ellipse cx="248" cy="533" rx="7" ry="5" fill="#1c1108"/>
+      <!-- eye -->
+      <circle cx="322" cy="500" r="8" fill="#1c1108"/>
+      <circle cx="325" cy="497" r="2.4" fill="#f3e6c8"/>
+    </g>
+
+    <!-- the enormous ears, the signature, catching the last light -->
+    <g filter="url(#ff-glow)">
+      <path d="M312 452 C296 392 288 330 302 278 C336 302 358 356 358 416 C358 432 344 448 322 456 Z" fill="url(#ff-fur)"/>
+      <path d="M320 444 C310 396 306 348 316 308 C338 328 350 368 350 410 C350 422 338 436 320 444 Z" fill="url(#ff-ear-in)"/>
+
+      <path d="M378 456 C400 400 414 340 406 284 C368 304 342 356 338 416 C336 434 354 450 378 456 Z" fill="url(#ff-fur)"/>
+      <path d="M370 448 C386 402 396 354 392 312 C366 330 350 370 348 412 C347 426 358 440 370 448 Z" fill="url(#ff-ear-in)"/>
+    </g>
+  </g>
+
+</svg>

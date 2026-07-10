@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A meerkat standing upright on a sand mound in the high sit posture, scanning a dusk sky over the Kalahari while a half-lit first quarter moon hangs above the dunes">
+  <defs>
+    <radialGradient id="mk-sky" cx="56%" cy="26%" r="95%">
+      <stop offset="0%" stop-color="#2c2013"/>
+      <stop offset="55%" stop-color="#1b140b"/>
+      <stop offset="100%" stop-color="#100b06"/>
+    </radialGradient>
+    <radialGradient id="mk-moon-lit" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f6ecd2"/>
+      <stop offset="65%" stop-color="#ecdcb4"/>
+      <stop offset="100%" stop-color="#d3a75c"/>
+    </radialGradient>
+    <linearGradient id="mk-dune-far" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#26190f"/>
+      <stop offset="100%" stop-color="#150f09"/>
+    </linearGradient>
+    <linearGradient id="mk-dune-near" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c130b"/>
+      <stop offset="100%" stop-color="#0e0a05"/>
+    </linearGradient>
+    <linearGradient id="mk-fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c9975a"/>
+      <stop offset="55%" stop-color="#a97a3f"/>
+      <stop offset="100%" stop-color="#7c5730"/>
+    </linearGradient>
+    <radialGradient id="mk-face" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#f6ecd8"/>
+      <stop offset="100%" stop-color="#dcc59a"/>
+    </radialGradient>
+    <linearGradient id="mk-mound" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a6a3f"/>
+      <stop offset="100%" stop-color="#4f3a22"/>
+    </linearGradient>
+    <filter id="mk-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#mk-sky)"/>
+
+  <!-- first quarter moon: lit right half, dark left half -->
+  <g filter="url(#mk-glow)">
+    <path d="M614 116 a66 66 0 0 1 0 132 Z" fill="url(#mk-moon-lit)"/>
+    <path d="M614 116 a66 66 0 0 0 0 132 Z" fill="#120c07"/>
+  </g>
+
+  <!-- far dune ridge -->
+  <path d="M0 560 L80 520 L150 548 L220 500 L290 540 L360 495 L430 545 L510 505 L580 550 L660 510 L740 552 L800 515 L800 800 L0 800 Z" fill="url(#mk-dune-far)" opacity="0.9"/>
+  <!-- near dune ridge -->
+  <path d="M0 630 L100 590 L190 625 L280 575 L370 630 L460 580 L560 632 L650 585 L740 630 L800 590 L800 800 L0 800 Z" fill="url(#mk-dune-near)"/>
+
+  <!-- distant mob, heads down, digging -->
+  <g opacity="0.75">
+    <path d="M150 706 C144 690 156 678 170 682 C182 685 186 700 178 710 C170 718 156 716 150 706 Z" fill="#1b130b"/>
+    <path d="M600 712 C594 698 604 686 617 690 C628 694 631 707 624 716 C616 723 605 721 600 712 Z" fill="#1b130b"/>
+    <path d="M660 700 C654 688 663 678 674 681 C684 684 687 695 681 703 C674 710 665 708 660 700 Z" fill="#1b130b"/>
+  </g>
+
+  <!-- excavated mound the sentinel stands on -->
+  <path d="M258 772 C240 730 268 690 330 682 C395 674 455 690 470 730 C480 754 468 774 440 780 L280 780 C266 780 262 776 258 772 Z" fill="url(#mk-mound)"/>
+
+  <!-- meerkat, standing tall in the high sit -->
+  <g>
+    <!-- tail bracing against the mound -->
+    <path d="M430 758 C466 720 480 640 462 570 C452 610 440 660 424 700 C416 725 418 745 430 758 Z" fill="url(#mk-fur)" opacity="0.92"/>
+
+    <!-- hind legs / haunches, planted -->
+    <path d="M336 776 C322 730 328 690 352 668 C376 690 382 730 372 776 Z" fill="#8a6238"/>
+    <path d="M380 776 C368 732 374 694 396 672 C418 694 424 732 414 776 Z" fill="#8a6238"/>
+
+    <!-- torso, elongated and upright -->
+    <path d="M338 690 C312 610 322 500 366 452 C392 424 428 424 452 452 C486 498 486 600 462 686 C444 706 356 706 338 690 Z" fill="url(#mk-fur)"/>
+
+    <!-- pale belly banding -->
+    <path d="M372 640 C366 590 372 530 392 486 C412 530 418 590 412 640 C398 652 384 652 372 640 Z" fill="#e3cfa8" opacity="0.35"/>
+
+    <!-- forepaws held close at the chest, the high-sit posture -->
+    <path d="M358 560 C344 548 340 526 350 510 C362 520 368 542 366 562 Z" fill="#8a6238"/>
+    <path d="M446 560 C460 548 464 526 454 510 C442 520 436 542 438 562 Z" fill="#8a6238"/>
+
+    <!-- neck -->
+    <path d="M378 452 C374 430 380 412 400 404 C420 412 426 430 422 452 Z" fill="url(#mk-fur)"/>
+
+    <!-- head, tilted up toward the sky -->
+    <g>
+      <ellipse cx="401" cy="378" rx="46" ry="42" fill="url(#mk-face)"/>
+      <!-- crown patch -->
+      <path d="M372 350 C386 332 416 332 430 350 C424 366 378 366 372 350 Z" fill="#a97a3f" opacity="0.85"/>
+      <!-- small crescent ears -->
+      <path d="M362 356 a14 14 0 1 1 4 26 a10 10 0 1 0 -4 -26 Z" fill="#241a10"/>
+      <path d="M440 356 a14 14 0 1 0 -4 26 a10 10 0 1 1 4 -26 Z" fill="#241a10"/>
+      <!-- black eye masks -->
+      <ellipse cx="384" cy="378" rx="11" ry="14" fill="#1b130b"/>
+      <ellipse cx="418" cy="378" rx="11" ry="14" fill="#1b130b"/>
+      <circle cx="386" cy="378" r="4" fill="#f0e6cf"/>
+      <circle cx="420" cy="378" r="4" fill="#f0e6cf"/>
+      <!-- muzzle and nose -->
+      <path d="M392 396 C396 408 406 408 410 396 C406 388 396 388 392 396 Z" fill="#c9975a" opacity="0.6"/>
+      <ellipse cx="401" cy="400" rx="5" ry="4" fill="#150f09"/>
+    </g>
+  </g>
+</svg>

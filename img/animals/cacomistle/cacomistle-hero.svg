@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A cacomistle descending a mossy cloud-forest trunk headfirst in full dark, its long black-and-cream ringed tail curved above it for balance, a nearly invisible new moon low in the canopy gap">
+  <defs>
+    <radialGradient id="cm-sky" cx="58%" cy="28%" r="95%">
+      <stop offset="0%" stop-color="#1c2a23"/>
+      <stop offset="55%" stop-color="#131f19"/>
+      <stop offset="100%" stop-color="#0a120e"/>
+    </radialGradient>
+    <radialGradient id="cm-moonrim" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e9ddc0"/>
+      <stop offset="70%" stop-color="#b8a37e" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#0a120e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cm-trunk" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a352c"/>
+      <stop offset="100%" stop-color="#141d17"/>
+    </linearGradient>
+    <linearGradient id="cm-fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5c6357"/>
+      <stop offset="100%" stop-color="#262f27"/>
+    </linearGradient>
+    <linearGradient id="cm-tailband" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e7d9bb"/>
+      <stop offset="100%" stop-color="#b8a37e"/>
+    </linearGradient>
+    <filter id="cm-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#cm-sky)"/>
+
+  <!-- new moon, almost fully dark, one thin lit rim -->
+  <g filter="url(#cm-glow)" opacity="0.8">
+    <circle cx="600" cy="150" r="46" fill="url(#cm-moonrim)"/>
+    <circle cx="612" cy="150" r="42" fill="url(#cm-sky)"/>
+  </g>
+
+  <!-- distant canopy ridgeline -->
+  <path d="M0 520 L60 470 L130 510 L190 450 L260 505 L330 445 L400 512 L470 452 L540 515 L610 460 L680 518 L750 465 L800 510 L800 800 L0 800 Z" fill="#101a14" opacity="0.9"/>
+  <path d="M0 580 L80 530 L150 575 L230 510 L310 578 L390 520 L470 585 L560 525 L640 585 L720 530 L800 580 L800 800 L0 800 Z" fill="#0a130e"/>
+
+  <!-- the trunk, running diagonal, the animal descending head first -->
+  <path d="M660 90 C560 220 470 330 400 470 C360 550 335 640 320 740 L360 745 C378 650 405 560 445 480 C512 350 590 245 690 120 Z" fill="url(#cm-trunk)"/>
+  <!-- bark texture -->
+  <path d="M600 200 C560 260 520 320 480 390 M560 260 C520 320 485 380 450 445 M520 330 C485 385 455 440 425 500" stroke="#0d1712" stroke-width="4" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <!-- moss patches -->
+  <ellipse cx="470" cy="360" rx="30" ry="14" fill="#2e4433" opacity="0.55"/>
+  <ellipse cx="410" cy="500" rx="24" ry="11" fill="#2e4433" opacity="0.5"/>
+
+  <!-- the long ringed tail, curved up and away above the body for balance -->
+  <g>
+    <path d="M470 330 C540 290 610 260 650 190 C670 155 665 110 630 90 C650 130 648 170 620 205 C580 260 520 285 460 330 Z" fill="url(#cm-fur)"/>
+    <path d="M478 322 l18 -14" stroke="url(#cm-tailband)" stroke-width="16" stroke-linecap="round"/>
+    <path d="M520 296 l16 -16" stroke="url(#cm-tailband)" stroke-width="16" stroke-linecap="round"/>
+    <path d="M560 266 l15 -17" stroke="url(#cm-tailband)" stroke-width="15" stroke-linecap="round"/>
+    <path d="M595 228 l13 -17" stroke="url(#cm-tailband)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M620 185 l10 -16" stroke="url(#cm-tailband)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M634 145 l6 -14" stroke="#e7d9bb" stroke-width="9" stroke-linecap="round"/>
+  </g>
+
+  <!-- body, elongated, head-down mid-descent -->
+  <path d="M430 380 C405 420 388 468 380 520 C374 560 378 600 398 630 C420 655 452 660 478 640 C500 620 508 588 502 552 C495 500 472 450 450 405 Z" fill="url(#cm-fur)"/>
+
+  <!-- forelegs gripping the trunk -->
+  <path d="M400 470 C378 490 362 512 356 540 C374 536 392 522 404 500 Z" fill="#20281f"/>
+  <path d="M448 415 C428 438 414 462 410 490 C428 484 444 468 454 445 Z" fill="#20281f"/>
+  <path d="M356 538 q-8 10 -4 20 M366 545 q-8 10 -4 20 M376 550 q-8 10 -4 20" stroke="#e7d9bb" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- head, pointed muzzle, large eyes catching moonlight -->
+  <g>
+    <ellipse cx="432" cy="398" rx="42" ry="36" fill="url(#cm-fur)"/>
+    <path d="M400 418 C398 440 420 450 434 438 C444 428 440 412 424 408 C414 406 404 410 400 418 Z" fill="#3a4438"/>
+    <circle cx="404" cy="378" r="12" fill="#20281f"/>
+    <circle cx="452" cy="382" r="12" fill="#20281f"/>
+    <ellipse cx="404" cy="390" rx="12" ry="13" fill="#cdbf9c" opacity="0.35"/>
+    <ellipse cx="448" cy="396" rx="12" ry="13" fill="#cdbf9c" opacity="0.35"/>
+    <circle cx="405" cy="391" r="4" fill="#e9ddc0"/>
+    <circle cx="447" cy="397" r="4" fill="#e9ddc0"/>
+    <ellipse cx="428" cy="428" rx="6" ry="4" fill="#e9ddc0"/>
+  </g>
+
+  <!-- hindquarters and rear feet, rotated ankle for the headfirst descent -->
+  <path d="M470 560 C500 570 528 590 538 620 C520 632 494 630 476 614 C462 600 460 578 470 560 Z" fill="#20281f"/>
+  <path d="M478 618 q6 10 16 12 M492 624 q6 10 16 12" stroke="#e7d9bb" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.65"/>
+
+</svg>

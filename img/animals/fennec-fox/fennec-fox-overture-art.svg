@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A fennec fox curled at the mouth of its burrow beneath dune grass, ears raised to the dark, a starlit new-moon sky above the sand" >
+  <defs>
+    <linearGradient id="ffo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#241a10"/>
+      <stop offset="100%" stop-color="#100b06"/>
+    </linearGradient>
+    <linearGradient id="ffo-dune" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5c3d1f"/>
+      <stop offset="100%" stop-color="#1a1108"/>
+    </linearGradient>
+    <linearGradient id="ffo-fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8c088"/>
+      <stop offset="100%" stop-color="#bb8750"/>
+    </linearGradient>
+    <linearGradient id="ffo-fur2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8c088"/>
+      <stop offset="100%" stop-color="#bb8750"/>
+    </linearGradient>
+    <radialGradient id="ffo-star" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f3e6c8"/>
+      <stop offset="100%" stop-color="#f3e6c8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ffo-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#ffo-bg)"/>
+
+  <!-- stars, no moon -->
+  <g opacity="0.85">
+    <circle cx="70" cy="60" r="1.6" fill="url(#ffo-star)"/>
+    <circle cx="150" cy="40" r="1.3" fill="url(#ffo-star)"/>
+    <circle cx="260" cy="70" r="1.8" fill="url(#ffo-star)"/>
+    <circle cx="330" cy="50" r="1.4" fill="url(#ffo-star)"/>
+    <circle cx="40" cy="120" r="1.2" fill="url(#ffo-star)"/>
+    <circle cx="300" cy="130" r="1.5" fill="url(#ffo-star)"/>
+    <circle cx="200" cy="30" r="1.1" fill="url(#ffo-star)"/>
+  </g>
+
+  <!-- dune -->
+  <path d="M0 320 C60 290 120 310 180 292 C240 274 300 300 400 280 L400 500 L0 500 Z" fill="url(#ffo-dune)"/>
+
+  <!-- dune grass at the burrow mouth -->
+  <g stroke="#3a2410" stroke-width="3" fill="none" opacity="0.7" stroke-linecap="round">
+    <path d="M60 360 C56 330 66 310 58 288"/>
+    <path d="M74 362 C78 336 70 314 80 294"/>
+    <path d="M320 340 C316 316 326 300 318 282"/>
+    <path d="M334 342 C338 320 330 302 340 286"/>
+  </g>
+
+  <!-- burrow entrance -->
+  <ellipse cx="200" cy="420" rx="60" ry="20" fill="#0a0603" opacity="0.85"/>
+  <ellipse cx="200" cy="415" rx="42" ry="13" fill="#000000" opacity="0.65"/>
+
+  <!-- fox curled at the mouth of the burrow -->
+  <g>
+    <path d="M120 430 C104 402 112 366 148 350 C186 334 230 340 250 368 C268 394 260 424 232 438 C196 454 148 452 120 430 Z" fill="url(#ffo-fur2)"/>
+    <!-- tail curled around -->
+    <path d="M232 436 C264 430 284 408 278 380 C274 362 256 356 244 364 C256 374 258 392 244 406 C232 418 216 424 200 426 Z" fill="#8a5f34"/>
+
+    <!-- head, lowered and alert -->
+    <ellipse cx="150" cy="356" rx="38" ry="34" fill="url(#ffo-fur)"/>
+    <path d="M120 358 C102 360 88 370 84 380 C90 390 106 393 122 388 C130 380 130 366 120 358 Z" fill="#f4e3c6"/>
+    <ellipse cx="88" cy="379" rx="5" ry="4" fill="#1c1108"/>
+    <circle cx="152" cy="352" r="6" fill="#1c1108"/>
+    <circle cx="154" cy="349" r="1.8" fill="#f3e6c8"/>
+
+    <!-- ears raised toward the dark -->
+    <g filter="url(#ffo-glow)">
+      <path d="M138 330 C128 292 122 254 132 220 C156 236 172 272 172 310 C172 320 160 330 144 334 Z" fill="url(#ffo-fur)"/>
+      <path d="M144 324 C138 296 134 266 142 240 C156 254 164 280 164 306 C164 314 154 322 144 324 Z" fill="#3c2414"/>
+
+      <path d="M176 334 C192 298 202 258 194 222 C168 240 154 274 152 310 C151 322 162 332 176 334 Z" fill="url(#ffo-fur)"/>
+      <path d="M170 326 C182 298 190 268 184 244 C166 258 156 284 154 308 C153 316 162 324 170 326 Z" fill="#3c2414"/>
+    </g>
+  </g>
+</svg>

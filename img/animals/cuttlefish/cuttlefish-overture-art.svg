@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A small cuttlefish drifting above dark sand, one edge of its mantle lit warm bronze, the other edge dim teal, a First Quarter moon shape glowing faintly above">
+  <defs>
+    <linearGradient id="cfo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#161c2a"/>
+      <stop offset="100%" stop-color="#0a0d15"/>
+    </linearGradient>
+    <linearGradient id="cfo-warm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8a15f"/>
+      <stop offset="100%" stop-color="#a8452f"/>
+    </linearGradient>
+    <linearGradient id="cfo-cool" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3c4a55"/>
+      <stop offset="100%" stop-color="#1a222b"/>
+    </linearGradient>
+    <radialGradient id="cfo-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ecd9bd"/>
+      <stop offset="100%" stop-color="#ecd9bd" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="cfo-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#cfo-bg)"/>
+
+  <!-- First Quarter moon, half lit -->
+  <g filter="url(#cfo-glow)" opacity="0.8">
+    <circle cx="300" cy="86" r="30" fill="url(#cfo-moon)"/>
+    <path d="M300 58 A28 28 0 0 1 300 114 Z" fill="#ecd9bd" opacity="0.55"/>
+  </g>
+
+  <!-- current lines -->
+  <path d="M0 160 C80 148 140 172 220 156 C280 144 340 164 400 150" stroke="#3f8f8a" stroke-width="2" fill="none" opacity="0.22"/>
+  <path d="M0 210 C90 226 160 202 240 218 C300 230 350 210 400 222" stroke="#5aa0a8" stroke-width="1.6" fill="none" opacity="0.16"/>
+
+  <!-- sand floor -->
+  <path d="M0 430 C80 418 160 434 240 424 C300 416 350 428 400 420 L400 500 L0 500 Z" fill="#171410"/>
+
+  <!-- cuttlefish, small, hovering -->
+  <g>
+    <!-- fins -->
+    <path d="M140 250 C118 275 114 320 132 366 C142 390 154 402 168 410 C154 366 148 300 156 258 Z" fill="#5c4a6e" opacity="0.6"/>
+    <path d="M256 250 C278 275 282 320 264 366 C254 390 242 402 228 410 C242 366 248 300 240 258 Z" fill="#3f4f6a" opacity="0.6"/>
+
+    <!-- mantle, split -->
+    <path d="M198 190 C158 190 132 220 128 262 C124 306 138 350 166 380 C180 394 190 400 198 402 L198 190 Z" fill="url(#cfo-warm)"/>
+    <path d="M198 190 C238 190 264 220 268 262 C272 306 258 350 230 380 C216 394 206 400 198 402 L198 190 Z" fill="url(#cfo-cool)"/>
+
+    <!-- passing cloud ripple -->
+    <path d="M132 250 C165 244 231 244 264 250" stroke="#120e0a" stroke-width="6" fill="none" opacity="0.3"/>
+    <path d="M129 288 C165 280 231 280 267 288" stroke="#120e0a" stroke-width="7" fill="none" opacity="0.26"/>
+
+    <!-- head + eyes -->
+    <ellipse cx="198" cy="206" rx="38" ry="24" fill="#241e1a"/>
+    <circle cx="178" cy="204" r="10" fill="#0d0b09"/>
+    <circle cx="178" cy="204" r="4.4" fill="#e8a15f"/>
+    <circle cx="218" cy="204" r="10" fill="#0d0b09"/>
+    <circle cx="218" cy="204" r="4.4" fill="#6f8a95"/>
+
+    <!-- two feeding tentacles -->
+    <path d="M184 220 C166 250 138 276 100 288" stroke="#e8a15f" stroke-width="3.4" fill="none" stroke-linecap="round" opacity="0.85"/>
+    <circle cx="100" cy="288" r="5" fill="#e8a15f" opacity="0.85"/>
+    <path d="M212 220 C230 248 258 270 296 280" stroke="#7a8fa0" stroke-width="3.4" fill="none" stroke-linecap="round" opacity="0.8"/>
+    <circle cx="296" cy="280" r="5" fill="#7a8fa0" opacity="0.8"/>
+  </g>
+</svg>
