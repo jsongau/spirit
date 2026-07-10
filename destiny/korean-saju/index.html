@@ -124,8 +124,9 @@
   .saju-hero .hanline{ font-family:var(--korean); font-size:clamp(1.1rem,3vw,1.6rem); color:var(--accent-bright); letter-spacing:.12em; }
   .saju-hero .tagline{ font-family:var(--serif); font-style:italic; font-size:clamp(1.25rem,3.4vw,1.9rem); color:var(--ivory); margin:1.1rem auto .2rem; max-width:22ch; }
   .saju-hero .lede{ max-width:56ch; margin:1.2rem auto 0; font-size:1.06rem; line-height:1.62; }
-  .cta-row{ display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap; margin-top:2rem; }
-  .btn{ font-family:var(--sans); font-weight:600; font-size:1rem; padding:.85rem 1.5rem; border-radius:var(--r-pill);
+  .cta-row{ display:flex; gap:.8rem; justify-content:center; align-items:center; flex-wrap:wrap; margin-top:2rem; }
+  .btn{ display:inline-flex; align-items:center; justify-content:center; min-height:52px;
+    font-family:var(--sans); font-weight:600; font-size:1rem; line-height:1.2; padding:.7rem 1.5rem; border-radius:var(--r-pill);
     border:1px solid var(--line); background:transparent; color:var(--ivory); cursor:pointer; transition:all var(--dur) var(--ease-out); }
   .btn:hover{ border-color:var(--accent); color:var(--moon); }
   .btn-primary{ background:linear-gradient(180deg,var(--accent-bright),var(--accent)); color:oklch(0.18 0.04 40); border-color:transparent; }
@@ -446,6 +447,41 @@
   .rd-note{ font-size:.8rem; color:var(--faint); margin-top:1rem; line-height:1.5; }
   @media(prefers-reduced-motion:no-preference){ #rdRest[data-revealed]{ animation:climin .3s var(--ease-out); } }
 
+  /* --- post-cast reading: summary chips + two columns (chart left, reading cards right) --- */
+  .rr-chips{ display:flex; flex-wrap:wrap; gap:8px; margin:.2rem 0 1.1rem; }
+  .rr-chip{ background:var(--panel); border:1px solid var(--line-soft); border-radius:var(--r-pill); padding:6px 14px; }
+  .rr-chip-k{ font-family:var(--mono); font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); margin-right:8px; }
+  .rr-chip-v{ color:var(--ivory); font-size:.9rem; }
+  .rr-chip-v .ko{ color:var(--accent-bright); }
+  .rr-cols{ margin-top:.4rem; }
+  @media(min-width:900px){
+    .rr-cols{ display:grid; grid-template-columns:minmax(320px,44%) 1fr; gap:26px; align-items:start; }
+    /* the chart is the reader's anchor: it holds still while the cards scroll past.
+       90px clears the site bar + the sticky result mini-nav. */
+    .rr-anchor{ position:sticky; top:90px; }
+  }
+  @media(max-width:899px){ .rr-right{ margin-top:1.5rem; } }
+  .rr-right{ scroll-margin-top:112px; }
+  .rr-card{ background:var(--panel); border:1px solid var(--line-soft); border-radius:var(--r-2); padding:16px 18px; }
+  .rr-card + .rr-card, .rr-right .keep-cta, .rr-right .rr-card + div[style]{ margin-top:14px; }
+  .rr-eyebrow{ font-family:var(--mono); font-size:.64rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-bright); margin:0 0 8px; }
+  .rr-p{ font-size:.98rem; color:var(--body-text); line-height:1.62; margin:0 0 .7rem; }
+  .rr-p:last-child{ margin-bottom:0; }
+  .rr-note{ font-size:.9rem; color:var(--muted); line-height:1.58; margin:.2rem 0 .6rem; }
+  .rr-caution{ display:block; font-style:italic; color:var(--faint); font-size:.92rem; line-height:1.58; padding:.4rem 0; border-top:1px solid var(--line-soft); }
+  .rr-caution:first-of-type{ border-top:0; }
+  .rr-card .dae{ margin-top:.8rem; }
+  .rr-card .rd-sec{ margin-top:1rem; }
+
+  /* --- "Keep this chart" account card: one calm bordered block, reused at each deep point --- */
+  .keep-cta{ background:var(--panel); border:1px solid var(--accent-soft); border-left:3px solid var(--accent); border-radius:var(--r-2); padding:clamp(1.15rem,2.6vw,1.6rem); text-align:left; }
+  .keep-cta h3{ font-size:1.2rem; margin:0 0 .45rem; }
+  .keep-cta p{ font-size:.95rem; line-height:1.62; color:var(--body-text); max-width:60ch; margin:0 0 1rem; }
+  .keep-cta p.keep-cta-fine{ font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; color:var(--faint); margin:.7rem 0 0; }
+  .keep-cta--academy{ margin-top:1.6rem; }
+  .keep-cta--band{ max-width:640px; margin:0 auto clamp(2.4rem,6vw,4rem); }
+  .zodi-signed-in .keep-cta{ display:none; }
+
   /* Sage Academy */
   .ac-wrap{ display:grid; grid-template-columns:230px 1fr; gap:1.5rem; margin-top:1.8rem; align-items:start; }
   @media(max-width:760px){ .ac-wrap{ grid-template-columns:1fr; } }
@@ -569,14 +605,17 @@
   .saju-hero-copy .hanline{ font-family:var(--korean); font-size:clamp(1rem,2.6vw,1.4rem); color:var(--accent-bright); letter-spacing:.1em; }
   .saju-hero-copy .tagline{ font-family:var(--serif); font-style:italic; font-size:clamp(1.15rem,3vw,1.7rem); color:var(--ivory); margin:1rem 0 .2rem; max-width:24ch; }
   .saju-hero-copy .lede{ max-width:52ch; margin:1rem 0 0; font-size:1.02rem; line-height:1.6; }
-  .saju-hero-copy .cta-row{ display:flex; flex-wrap:wrap; gap:.7rem; margin-top:1.4rem; }
+  .saju-hero-copy .cta-row{ display:flex; align-items:center; flex-wrap:wrap; gap:.7rem; margin-top:1.4rem; justify-content:flex-start; }
   .saju-hero-copy .lede.fine{ margin-top:1.2rem; font-size:.9rem; color:var(--faint); }
 
   /* ---- the form panel ---- */
   .saju-hero-form{ background:var(--panel); border:1px solid var(--line-soft); border-radius:var(--r-2); padding:18px 18px 16px; box-shadow:var(--e-2,0 12px 34px -18px rgba(0,0,0,.6)); }
   .pcast-form-eyebrow{ font-family:var(--mono); font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-bright); margin:0 0 10px; }
-  .pcast-form-optnote{ font-size:.82rem; color:var(--muted); line-height:1.5; margin:-2px 0 14px; }
+  .pcast-form-optnote{ font-size:.82rem; color:var(--muted); line-height:1.5; margin:-2px 0 10px; }
   .pcast-field{ margin:0 0 12px; } .pcast-field-2{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .pcast-field-2 > div{ display:flex; flex-direction:column; justify-content:flex-end; min-width:0; }
+  .pcast-field-2 .pcast-label{ min-width:0; }
+  @media (max-width:479px){ .pcast-field-2{ grid-template-columns:1fr; } }
   .pcast-label{ display:block; font-family:var(--sans); font-size:.82rem; color:var(--muted); margin:0 0 4px; }
   .pcast-opt{ color:var(--faint); font-size:.74rem; }
   .pcast-input{ width:100%; background:var(--field); border:1px solid var(--line); border-radius:var(--r-1); color:var(--ivory); font:inherit; font-size:.96rem; padding:9px 10px; min-height:42px; }
@@ -633,8 +672,8 @@
 
   /* ---- calendar-type pills (Saju-specific: 양력/음력/윤달) shown compact ---- */
   .pcast-caltype{ display:flex; gap:.4rem; flex-wrap:wrap; }
-  .pcast-caltype button{ position:relative; display:flex; flex-direction:column; align-items:center; gap:.05rem; flex:1 1 0; min-width:82px;
-    padding:.5rem .4rem; background:var(--field); border:1px solid var(--line); border-radius:var(--r-1); cursor:pointer; transition:border-color .15s,box-shadow .15s; }
+  .pcast-caltype button{ position:relative; display:flex; flex-direction:column; align-items:center; gap:.05rem; flex:1 1 0; min-width:74px;
+    padding:.34rem .4rem; background:var(--field); border:1px solid var(--line); border-radius:var(--r-1); cursor:pointer; transition:border-color .15s,box-shadow .15s; }
   .pcast-caltype .cal-ko{ font-family:var(--korean); font-size:.98rem; color:var(--accent-bright); }
   .pcast-caltype .cal-en{ font-family:var(--mono); font-size:.56rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
   .pcast-caltype button[aria-checked="true"]{ border-color:var(--accent); box-shadow:inset 0 0 0 1px var(--accent-soft); }
@@ -729,10 +768,6 @@
   .scard-foot{ font-family:var(--mono); font-size:.6rem; letter-spacing:.08em; color:var(--faint); margin:1.15rem 0 0; }
 
   /* optional extras disclosure (luck timeline) */
-  .pcast-more{ margin-top:2px; width:100%; text-align:left; background:transparent; border:0; border-top:1px dashed var(--line); padding:11px 2px 3px; color:var(--muted); font-family:var(--sans); font-size:.84rem; cursor:pointer; display:flex; align-items:center; gap:.4rem; }
-  .pcast-more:hover{ color:var(--moon); }
-  .pcast-more .opt{ margin-left:auto; font-family:var(--mono); font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); }
-  .pcast-more-body[hidden]{ display:none; }
   .pcast-select{ width:100%; background:var(--field); border:1px solid var(--line); border-radius:var(--r-1); color:var(--ivory); font:inherit; font-size:.92rem; padding:9px 10px; min-height:42px; }
   .pcast-select:focus-visible{ outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent); }
   @media (max-width:560px){
@@ -802,7 +837,7 @@
   <div class="pn-dd" data-dd><div class="pn-dd-mount"></div></div>
   <div class="pn-panel pn-panel-explore" data-group="1" data-accent="teal" role="region" aria-label="Explore" hidden>
     <p class="pn-panel-eyebrow">Everything the wheel opens, one animal at the center</p>
-    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">✦</span> Begin</p><a class="pn-row" href="/index.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Find your animal</span></a><a class="pn-row" href="/daily.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Today's reading</span><span class="pn-row-sub" data-dyn="date-today">Fri, Jul 10</span></a><a class="pn-row" href="/year.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Year finder</span></a><a class="pn-row" href="/account.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your account</span><span class="pn-row-sub">Zodi Karma ledger</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Menagerie</p><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">All 144 animals</span></a><a class="pn-row" href="/western-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Western wing</span></a><a class="pn-row" href="/chinese-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Eastern wing</span></a><a class="pn-row" href="/zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Zodiac crossings</span></a><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Rare crossings</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> The Moon</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Waning Crescent</span></a><a class="pn-row" href="/moon/phases/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The eight phases</span></a><a class="pn-row" href="/moon/in-your-sign/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Moon in your sign</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days</span></a><a class="pn-row" href="/chinese-zodiac/fire-horse-2026/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Fire Horse 2026</span><span class="pn-row-sub">begins Feb 17</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">⌂</span> Live with it</p><a class="pn-row" href="/feng-shui/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Feng shui</span></a><a class="pn-row" href="/destiny/bazi-four-pillars/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">BaZi (Four Pillars)</span><span class="pn-row-sub">eight characters</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span><span class="pn-row-sub">moon, stones, heritage</span></a></div></div>
+    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">✦</span> Begin</p><a class="pn-row" href="/index.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Find your animal</span></a><a class="pn-row" href="/daily.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Today's reading</span><span class="pn-row-sub" data-dyn="date-today">Thu, Jul 9</span></a><a class="pn-row" href="/year.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Year finder</span></a><a class="pn-row" href="/account.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your account</span><span class="pn-row-sub">Zodi Karma ledger</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Menagerie</p><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">All 144 animals</span></a><a class="pn-row" href="/western-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Western wing</span></a><a class="pn-row" href="/chinese-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Eastern wing</span></a><a class="pn-row" href="/zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Zodiac crossings</span></a><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Rare crossings</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> The Moon</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Waning Crescent</span></a><a class="pn-row" href="/moon/phases/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The eight phases</span></a><a class="pn-row" href="/moon/in-your-sign/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Moon in your sign</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days</span></a><a class="pn-row" href="/chinese-zodiac/fire-horse-2026/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Fire Horse 2026</span><span class="pn-row-sub">begins Feb 17</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">⌂</span> Live with it</p><a class="pn-row" href="/feng-shui/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Feng shui</span></a><a class="pn-row" href="/destiny/bazi-four-pillars/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">BaZi (Four Pillars)</span><span class="pn-row-sub">eight characters</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span><span class="pn-row-sub">moon, stones, heritage</span></a></div></div>
     <div class="pn-chips" role="group" aria-label="Western wing"><span class="pn-chips-label">Western wing</span><a class="pn-chip" href="/western-zodiac/aries/" title="Aries" aria-label="Aries">♈</a><a class="pn-chip" href="/western-zodiac/taurus/" title="Taurus" aria-label="Taurus">♉</a><a class="pn-chip" href="/western-zodiac/gemini/" title="Gemini" aria-label="Gemini">♊</a><a class="pn-chip" href="/western-zodiac/cancer/" title="Cancer" aria-label="Cancer">♋</a><a class="pn-chip" href="/western-zodiac/leo/" title="Leo" aria-label="Leo">♌</a><a class="pn-chip" href="/western-zodiac/virgo/" title="Virgo" aria-label="Virgo">♍</a><a class="pn-chip" href="/western-zodiac/libra/" title="Libra" aria-label="Libra">♎</a><a class="pn-chip" href="/western-zodiac/scorpio/" title="Scorpio" aria-label="Scorpio">♏</a><a class="pn-chip" href="/western-zodiac/sagittarius/" title="Sagittarius" aria-label="Sagittarius">♐</a><a class="pn-chip" href="/western-zodiac/capricorn/" title="Capricorn" aria-label="Capricorn">♑</a><a class="pn-chip" href="/western-zodiac/aquarius/" title="Aquarius" aria-label="Aquarius">♒</a><a class="pn-chip" href="/western-zodiac/pisces/" title="Pisces" aria-label="Pisces">♓</a></div>
     <div class="pn-chips" role="group" aria-label="Eastern wing"><span class="pn-chips-label">Eastern wing</span><a class="pn-chip" href="/chinese-zodiac/rat/" title="Rat" aria-label="Rat">鼠</a><a class="pn-chip" href="/chinese-zodiac/ox/" title="Ox" aria-label="Ox">牛</a><a class="pn-chip" href="/chinese-zodiac/tiger/" title="Tiger" aria-label="Tiger">虎</a><a class="pn-chip" href="/chinese-zodiac/rabbit/" title="Rabbit" aria-label="Rabbit">兔</a><a class="pn-chip" href="/chinese-zodiac/dragon/" title="Dragon" aria-label="Dragon">龙</a><a class="pn-chip" href="/chinese-zodiac/snake/" title="Snake" aria-label="Snake">蛇</a><a class="pn-chip" href="/chinese-zodiac/horse/" title="Horse" aria-label="Horse">马</a><a class="pn-chip" href="/chinese-zodiac/goat/" title="Goat" aria-label="Goat">羊</a><a class="pn-chip" href="/chinese-zodiac/monkey/" title="Monkey" aria-label="Monkey">猴</a><a class="pn-chip" href="/chinese-zodiac/rooster/" title="Rooster" aria-label="Rooster">鸡</a><a class="pn-chip" href="/chinese-zodiac/dog/" title="Dog" aria-label="Dog">狗</a><a class="pn-chip" href="/chinese-zodiac/pig/" title="Pig" aria-label="Pig">猪</a></div>
     <div class="pn-panel-foot"><a href="/menagerie.html">See all 144 animals</a></div>
@@ -879,7 +914,7 @@
 
       <form class="saju-hero-form" id="gateForm" novalidate>
         <p class="pcast-form-eyebrow">Your birth moment</p>
-        <p class="pcast-form-optnote">Give the gate your birth details and it raises your eight characters with the deterministic engine, corrected to true solar time. This is the calculation, not the verdict of your life.</p>
+        <p class="pcast-form-optnote">Your eight characters, raised by the deterministic engine and corrected to true solar time.</p>
 
         <!-- hidden compat fields: the visible controls above write these; submit + prefill read them -->
         <input type="hidden" id="bMonth" value="">
@@ -938,23 +973,88 @@
           <p class="pcast-nohour-hint" id="sNoHourHint" hidden>No problem. You'll still get your reading and your Zodi Animal. Slide the time bar at the bottom to try each hour and watch your fourth pillar land.</p>
         </div>
 
-        <div class="pcast-field">
-          <label class="pcast-label" for="bplace">Birthplace <span class="pcast-opt">· sets the true-solar correction</span></label>
-          <div class="pcast-tzplate">
-            <span class="pcast-tzval" id="bplaceVal">Seoul (127.0°E)</span>
-            <span class="pcast-tzcaret" aria-hidden="true">▾</span>
-            <select class="pcast-tzsel" id="bplace" name="bplace" aria-label="Birthplace">
-              <optgroup label="Korea">
-                <option value="127.0,seoul,9">Seoul (127.0°E)</option>
-                <option value="129.08,busan,9">Busan (129.08°E)</option>
-                <option value="126.52,jeju,9">Jeju (126.52°E)</option>
-              </optgroup>
-              <optgroup label="Elsewhere">
-                <option value="139.69,tokyo,9">Tokyo (139.69°E)</option>
-                <option value="-118.24,la,-8">Los Angeles (118.24°W)</option>
-                <option value="-73.94,ny,-5">New York (73.94°W)</option>
+        <div class="pcast-field pcast-field-2">
+          <div>
+            <label class="pcast-label" for="bplace">Birthplace <span class="pcast-opt">· true solar</span></label>
+            <div class="pcast-tzplate">
+              <span class="pcast-tzval" id="bplaceVal">Seoul (127.0°E)</span>
+              <span class="pcast-tzcaret" aria-hidden="true">▾</span>
+              <select class="pcast-tzsel" id="bplace" name="bplace" aria-label="Birthplace">
+                <optgroup label="Korea">
+                  <option value="127.0,seoul,9">Seoul (127.0°E)</option>
+                  <option value="129.08,busan,9">Busan (129.08°E)</option>
+                  <option value="126.71,incheon,9">Incheon (126.71°E)</option>
+                  <option value="128.60,daegu,9">Daegu (128.60°E)</option>
+                  <option value="127.38,daejeon,9">Daejeon (127.38°E)</option>
+                  <option value="126.85,gwangju,9">Gwangju (126.85°E)</option>
+                  <option value="129.31,ulsan,9">Ulsan (129.31°E)</option>
+                  <option value="127.03,suwon,9">Suwon (127.03°E)</option>
+                  <option value="126.52,jeju,9">Jeju (126.52°E)</option>
+                </optgroup>
+                <optgroup label="Asia">
+                  <option value="139.69,tokyo,9">Tokyo (139.69°E)</option>
+                  <option value="135.50,osaka,9">Osaka (135.50°E)</option>
+                  <option value="116.40,beijing,8">Beijing (116.40°E)</option>
+                  <option value="121.47,shanghai,8">Shanghai (121.47°E)</option>
+                  <option value="114.17,hongkong,8">Hong Kong (114.17°E)</option>
+                  <option value="121.56,taipei,8">Taipei (121.56°E)</option>
+                  <option value="103.82,singapore,8">Singapore (103.82°E)</option>
+                  <option value="100.50,bangkok,7">Bangkok (100.50°E)</option>
+                  <option value="105.85,hanoi,7">Hanoi (105.85°E)</option>
+                  <option value="120.98,manila,8">Manila (120.98°E)</option>
+                  <option value="106.85,jakarta,7">Jakarta (106.85°E)</option>
+                  <option value="101.69,kualalumpur,8">Kuala Lumpur (101.69°E)</option>
+                  <option value="77.21,delhi,5.5">Delhi (77.21°E)</option>
+                  <option value="72.88,mumbai,5.5">Mumbai (72.88°E)</option>
+                </optgroup>
+                <optgroup label="Americas">
+                  <option value="-118.24,la,-8">Los Angeles (118.24°W)</option>
+                  <option value="-122.42,sanfrancisco,-8">San Francisco (122.42°W)</option>
+                  <option value="-122.33,seattle,-8">Seattle (122.33°W)</option>
+                  <option value="-104.99,denver,-7">Denver (104.99°W)</option>
+                  <option value="-87.63,chicago,-6">Chicago (87.63°W)</option>
+                  <option value="-95.37,houston,-6">Houston (95.37°W)</option>
+                  <option value="-79.38,toronto,-5">Toronto (79.38°W)</option>
+                  <option value="-123.12,vancouver,-8">Vancouver (123.12°W)</option>
+                  <option value="-73.94,ny,-5">New York (73.94°W)</option>
+                  <option value="-71.06,boston,-5">Boston (71.06°W)</option>
+                  <option value="-84.39,atlanta,-5">Atlanta (84.39°W)</option>
+                  <option value="-80.19,miami,-5">Miami (80.19°W)</option>
+                  <option value="-99.13,mexicocity,-6">Mexico City (99.13°W)</option>
+                  <option value="-46.63,saopaulo,-3">Sao Paulo (46.63°W)</option>
+                  <option value="-58.38,buenosaires,-3">Buenos Aires (58.38°W)</option>
+                </optgroup>
+                <optgroup label="Europe &amp; Middle East">
+                  <option value="-0.13,london,0">London (0.13°W)</option>
+                  <option value="2.35,paris,1">Paris (2.35°E)</option>
+                  <option value="13.40,berlin,1">Berlin (13.40°E)</option>
+                  <option value="-3.70,madrid,1">Madrid (3.70°W)</option>
+                  <option value="12.50,rome,1">Rome (12.50°E)</option>
+                  <option value="4.90,amsterdam,1">Amsterdam (4.90°E)</option>
+                  <option value="18.07,stockholm,1">Stockholm (18.07°E)</option>
+                  <option value="37.62,moscow,3">Moscow (37.62°E)</option>
+                  <option value="28.98,istanbul,3">Istanbul (28.98°E)</option>
+                  <option value="55.27,dubai,4">Dubai (55.27°E)</option>
+                </optgroup>
+                <optgroup label="Africa &amp; Oceania">
+                  <option value="31.24,cairo,2">Cairo (31.24°E)</option>
+                  <option value="28.05,johannesburg,2">Johannesburg (28.05°E)</option>
+                  <option value="3.40,lagos,1">Lagos (3.40°E)</option>
+                  <option value="151.21,sydney,10">Sydney (151.21°E)</option>
+                  <option value="144.96,melbourne,10">Melbourne (144.96°E)</option>
+                  <option value="174.76,auckland,12">Auckland (174.76°E)</option>
+                </optgroup>
                 <option value="unknown">Somewhere else / not sure</option>
-              </optgroup>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="pcast-label" for="sex">Luck direction <span class="pcast-opt">· 대운 · optional</span></label>
+            <select class="pcast-select" id="sex" name="sex">
+              <option value="">Skip it</option>
+              <option value="both">Show both directions</option>
+              <option value="male">Sex at birth: male (남)</option>
+              <option value="female">Sex at birth: female (여)</option>
             </select>
           </div>
         </div>
@@ -964,18 +1064,6 @@
           <span class="pcast-go-sub">사주팔자 · eight characters · true solar</span>
         </button>
         <p class="pcast-privacy">Nothing leaves your browser.</p>
-
-        <button type="button" class="pcast-more" id="sMoreBtn" aria-expanded="false" aria-controls="sMoreBody">Luck timeline <span class="opt">optional</span></button>
-        <div class="pcast-more-body" id="sMoreBody" hidden>
-          <label class="pcast-label" for="sex">Direction of the luck pillars <span class="ko">대운</span></label>
-          <select class="pcast-select" id="sex" name="sex">
-            <option value="">Skip it</option>
-            <option value="both">Show both directions</option>
-            <option value="male">Sex at birth: male (남)</option>
-            <option value="female">Sex at birth: female (여)</option>
-          </select>
-          <p class="pcast-tzhint">Sex at birth only sets which way the luck pillars run. It never changes the reading; choose "both" to read either flow.</p>
-        </div>
       </form>
     </div>
   </header>
@@ -1123,6 +1211,12 @@
       <div class="ac-ladder" id="acLadder"></div>
       <div class="ac-runner" id="acRunner"></div>
     </div>
+    <div class="keep-cta keep-cta--academy">
+      <h3>Keep this chart</h3>
+      <p>A free account saves your birth record, so every reading on the site casts from it, and reads your Saju and your Zodi Animal as one self-portrait: the pillars for the pattern, the animal for the face it wears.</p>
+      <a class="btn btn-primary" href="/account.html">Create your free account</a>
+      <p class="keep-cta-fine">Free. No card. Your birth details stay yours.</p>
+    </div>
   </section>
 
   <!-- ETHICS -->
@@ -1176,6 +1270,15 @@
     <div class="cta-row"><button class="btn btn-primary" data-scroll="#birth-gate">Open the Birth Gate</button></div>
     <p class="disclaim">Korean Destiny Astrology is offered as a tradition of meaning for reflection and study. It is not medical, psychological, financial, or legal advice, and it does not predict fixed events.</p>
   </section>
+
+  <div class="wrap">
+    <div class="keep-cta keep-cta--band">
+      <h3>Keep this chart</h3>
+      <p>A free account saves your birth record, so every reading on the site casts from it, and reads your Saju and your Zodi Animal as one self-portrait: the pillars for the pattern, the animal for the face it wears.</p>
+      <a class="btn btn-primary" href="/account.html">Create your free account</a>
+      <p class="keep-cta-fine">Free. No card. Your birth details stay yours.</p>
+    </div>
+  </div>
 </main>
 </div><!-- /saju-scope -->
 <script src="../../js/nav.js" defer></script>
@@ -1190,6 +1293,10 @@
 (function(){
   "use strict";
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // A signed-in reader already has an account: hide every "Keep this chart" card.
+  // Same signal nav-auth.js reads ("zodi_signed_in", written by js/zodi-auth.js).
+  try{ if(localStorage.getItem("zodi_signed_in")==="1") document.documentElement.classList.add("zodi-signed-in"); }catch(e){}
 
   // ---- Korean pronunciation (voice), preferring a female Korean voice ----
   var SPK='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>';
@@ -1539,26 +1646,80 @@
   }
   function traceBlock(c){ return '<details class="trace"><summary>why this</summary><div class="trace-body">'+claimRows(c)+'</div></details>'; }
   function claimHtml(c){ return '<div class="rd-claim"><p class="rd-stmt">'+esc(c.statement)+'</p>'+traceBlock(c)+'</div>'; }
-  function sectionHtml(sec){ return '<div class="rd-sec rd-sec--'+sec.key.toLowerCase()+'"><p class="rd-sec-t">'+esc(sec.title)+'</p>'+sec.claims.map(claimHtml).join("")+'</div>'; }
-  function buildReading(chart){
-    if(!window.SajuInterpret) return "";
+  // ---- the post-cast reading: summary chips + a stack of reading cards ----
+  // Every sentence below is built from the engine's own output for this birth (or from
+  // saju-interpret.js claims, which are linted). Nothing is invented, nothing is predicted.
+  function interpSections(chart){
+    if(!window.SajuInterpret) return {};
     var activeDaeun = chart.daeun || (chart.daeun_both? chart.daeun_both.male : null);
     var rd = window.SajuInterpret.interpret(chart, {daeun:activeDaeun});
-    if(!rd.sections || !rd.sections.length) return "";
-    var first=rd.sections[0], lead=first.claims[0];
-    var restHtml='';
-    var firstRest=first.claims.slice(1);
-    if(firstRest.length) restHtml+='<div class="rd-sec rd-sec--'+first.key.toLowerCase()+'">'+firstRest.map(claimHtml).join("")+'</div>';
-    for(var i=1;i<rd.sections.length;i++) restHtml+=sectionHtml(rd.sections[i]);
-    var note = chart.daeun_both? '<p class="rd-note">Timing reflects the forward (남 · 순행) direction; use the River of Time toggle below to read the other.</p>':'';
-    return '<div class="rd"><p class="sub">Your reading</p>'+
-      '<p class="rd-lead">'+esc(lead.statement)+'</p>'+traceBlock(lead)+
-      '<button class="btn" id="rdMore" type="button" style="margin-top:.9rem">Continue the reading</button>'+
-      '<div id="rdRest" hidden>'+restHtml+note+'</div></div>';
+    var by={};
+    (rd.sections||[]).forEach(function(s){ by[s.key]=s.claims; });
+    return by;
   }
-  function wireReading(){
-    var b=document.getElementById("rdMore"); if(!b) return;
-    b.addEventListener("click",function(){ var r=document.getElementById("rdRest"); if(r){ r.hidden=false; r.setAttribute("data-revealed","1"); var f=r.querySelector(".rd-stmt"); if(f) f.setAttribute("tabindex","-1"), f.focus&&f.focus(); } b.style.display="none"; });
+  function rrChip(k,v){ return '<div class="rr-chip"><span class="rr-chip-k">'+k+'</span><span class="rr-chip-v">'+v+'</span></div>'; }
+  function summaryChips(chart){
+    var dm=chart.day_master, P=chart.pillars, out='';
+    out+=rrChip('Day Master · 일간','<span class="ko">'+esc(dm.ko)+'</span> · '+(dm.yin?"yin":"yang")+' '+dm.element+' <span class="hanja">'+esc(dm.char)+'</span>');
+    if(chart.strength && chart.strength.verdict) out+=rrChip('Strength · 억부', esc(chart.strength.verdict.en)+' · <span class="ko">'+esc(chart.strength.verdict.ko)+'</span>');
+    else if(chart.climate && chart.climate.season) out+=rrChip('Season', esc(chart.climate.season.name)+' · <span class="hanja">'+esc(chart.climate.season.branch)+'</span>');
+    if(P.hour && P.hour.branch){ var rg=branchHours(P.hour.branch.index); out+=rrChip('Hour · 시','<span class="ko">'+esc(P.hour.branch.ko)+'시</span> · '+rg.s+'–'+rg.e); }
+    return '<div class="rr-chips">'+out+'</div>';
+  }
+  function rrCard(eyebrow, body){ return '<div class="rr-card"><p class="rr-eyebrow">'+eyebrow+'</p>'+body+'</div>'; }
+  function cardHowTo(chart){
+    var dm=chart.day_master;
+    return rrCard('How to read this · <span class="ko">읽는 법</span>',
+      '<p class="rr-p">Start at the Day pillar. Its top character, <b class="'+elClass(dm.element)+'">'+esc(dm.ko)+'</b> ('+esc(dm.char)+'), is your Day Master (<span class="ko">일간</span>): that one glyph stands for you, and the other seven characters are read against it, as support, drain, pressure, or fuel.</p>'+
+      '<p class="rr-p">The chart beside this is the calculation; these cards are one way of reading it. Open "why this" under any line to see the evidence it stands on.</p>');
+  }
+  function cardCurrentLife(chart, by){
+    var claims=[].concat(by.Pattern||[], by.Activation||[], by.Range||[]);
+    if(!claims.length) return "";
+    return rrCard('Your current life · <span class="ko">지금의 나</span>', claims.map(claimHtml).join(""));
+  }
+  function cardFuture(chart, by){
+    var body='';
+    if(chart.daeun || chart.daeun_both){
+      body+=(by.Choice||[]).map(claimHtml).join("");
+      body+=buildDaeun(chart.daeun, chart.daeun_both);
+      body+='<p class="rr-p" style="margin-top:.8rem">A supportive decade tends to reward building: starting things, widening your ground, saying yes a little more often. A demanding one is not a bad decade, it leans toward consolidating: finish what is open, simplify, keep your footing, and let the season carry less weight than your choices do.</p>';
+      body+=(by.Carry||[]).map(claimHtml).join("");
+    } else {
+      body+='<p class="rr-note">Your ten-year timeline (<span class="ko">대운</span>) was not cast, because no luck direction was chosen. Pick one under <a href="#start">Luck direction</a> in the birth form and cast again; everything else in this reading holds as it is.</p>';
+    }
+    return rrCard('Future planning · <span class="ko">대운</span>, the ten-year seasons', body);
+  }
+  function cardWatch(chart, by){
+    var body='<p class="rr-note">Things to hold lightly: the places where this chart’s arithmetic is sensitive, not omens.</p>';
+    var cl=chart.climate;
+    if(cl && cl.temp && window.SajuEngine){
+      var W=window.SajuEngine.WUXING, lean=[];
+      if(cl.temp.en!=="temperate") lean.push(cl.temp.en);
+      if(cl.damp.en!=="balanced") lean.push(cl.damp.en);
+      if(lean.length){
+        body+='<span class="rr-caution">The chart’s climate (조후) leans '+lean.join(" and ")+
+          (cl.primary?'; a little more '+esc(W.ko[cl.primary])+' '+esc(W.han[cl.primary])+' tends to steady the pacing':'')+'.</span>';
+      } else {
+        body+='<span class="rr-caution">The climate (조후) reads close to temperate; no strong lean asks for correcting.</span>';
+      }
+    }
+    var ws=chart.warnings||[];
+    ws.forEach(function(w){ body+='<span class="rr-caution">'+esc(w.message)+'</span>'; });
+    if(!ws.length) body+='<span class="rr-caution">Clean cast: no boundary conflicts under the default Korean rules.</span>';
+    body+='<p class="rr-p" style="margin-top:.7rem">Each of these comes from the calculation itself, not from a judgment: <a href="#rsec-calc">see how your chart was resolved</a>.</p>';
+    (by.Reflection||[]).forEach(function(c){ body+='<div class="rd-sec rd-sec--reflection">'+claimHtml(c)+'</div>'; });
+    (by.Escalation||[]).forEach(function(c){ body+='<div class="rd-sec rd-sec--escalation">'+claimHtml(c)+'</div>'; });
+    return rrCard('What to watch · <span class="ko">주의점</span>', body);
+  }
+  // The account card, rendered once at the end of the reading stack. Same copy as the
+  // two static placements (Academy, before the footer); hidden for signed-in readers.
+  function keepCtaHtml(){
+    return '<div class="keep-cta">'+
+      '<h3>Keep this chart</h3>'+
+      '<p>A free account saves your birth record, so every reading on the site casts from it, and reads your Saju and your Zodi Animal as one self-portrait: the pillars for the pattern, the animal for the face it wears.</p>'+
+      '<a class="btn btn-primary" href="/account.html">Create your free account</a>'+
+      '<p class="keep-cta-fine">Free. No card. Your birth details stay yours.</p></div>';
   }
 
   // result section mini-nav: smooth jump + scroll-spy active highlighting
@@ -1960,14 +2121,15 @@
     var chartHtml = grid(P);
     var dmHtml = '<p class="rdm">Day Master · <b>'+rk(dm.ko,dm.rom)+'</b> '+sayBtn(dm.ko)+' — '+(dm.yin?"yin":"yang")+' '+dm.element+' <span class="dm-hanja">('+dm.char+')</span>'+
       (three?'. Your hour pillar is still open — slide the time bar at the bottom to find it.':'.')+'</p>';
-    var rdHtml = buildReading(chart);
+    var by = interpSections(chart);
+    var chipsHtml = summaryChips(chart);
+    var cardsHtml = cardHowTo(chart) + cardCurrentLife(chart, by) + cardFuture(chart, by) + cardWatch(chart, by) + crossingHtml(chart, solarDate) + keepCtaHtml();
     var balHtml = elbar(chart.element_balance);
     var needEl = (chart.yongsin && chart.yongsin.leadElement) ? chart.yongsin.leadElement
                : (chart.strength && chart.strength.favorable ? chart.strength.favorable.primary : null);
     var wxHtml = buildWuxing(chart.element_balance, dm.element, needEl);
     var strHtml = buildStrength(chart.strength);
     var climHtml = buildClimate(chart.climate, chart.yongsin);
-    var daeHtml = buildDaeun(chart.daeun, chart.daeun_both);
 
     // editorial solar-term datelines (exact-minute)
     var dlHtml = '<p class="sub" style="margin-top:1.2rem">The cosmic clock</p>'+
@@ -2008,17 +2170,23 @@
       '<a data-goto="rsec-chart" class="active">Chart</a>'+
       '<a data-goto="rsec-reading">Reading</a>'+
       '<a data-goto="rsec-elements">Elements</a>'+
-      '<a data-goto="rsec-climate">Climate &amp; time</a>'+
+      '<a data-goto="rsec-climate">Climate</a>'+
       '<a data-goto="rsec-calc">Calculation</a></nav>';
 
     report.innerHTML = nav +
       sec("rsec-chart",
         shareCardHtml(chart, solarDate)+
-        '<p class="sub">Your Saju · '+(three?"three pillars, one to go":"four pillars")+'</p><h3>The eight characters, cast</h3>'+chartHtml+dmHtml+lunarLineHtml+solarChainHtml(chart)+balHtml+crossingHtml(chart, solarDate),
-        "rsec-reading","Your reading") +
-      sec("rsec-reading", rdHtml, "rsec-elements","Your elements") +
-      sec("rsec-elements", wxHtml+strHtml, "rsec-climate","Climate & time") +
-      sec("rsec-climate", climHtml+daeHtml, "rsec-calc","How it was cast") +
+        chipsHtml+
+        '<div class="rr-cols">'+
+          '<div class="rr-left"><div class="rr-anchor">'+
+            '<p class="sub">Your Saju · '+(three?"three pillars, one to go":"four pillars")+'</p><h3>The eight characters, cast</h3>'+
+            chartHtml+dmHtml+lunarLineHtml+solarChainHtml(chart)+balHtml+
+          '</div></div>'+
+          '<div class="rr-right" id="rsec-reading">'+cardsHtml+'</div>'+
+        '</div>',
+        "rsec-elements","Your elements") +
+      sec("rsec-elements", wxHtml+strHtml, "rsec-climate","Climate") +
+      sec("rsec-climate", climHtml, "rsec-calc","How it was cast") +
       sec("rsec-calc",
         dlHtml+
         '<p class="sub" style="margin-top:1.2rem">How it was calculated</p><ul class="assump">'+rows+'</ul>'+
@@ -2027,7 +2195,7 @@
         '<button class="rsec-next" data-goto="birth-gate" style="margin-top:1.4rem">Cast another chart</button>',
         null,null);
 
-    wireReading(); wireWuxing(); wireDaeun(); wireCompare(); wireResultNav(); wireShareCard();
+    wireWuxing(); wireDaeun(); wireCompare(); wireResultNav(); wireShareCard();
     collapseGate(); // fold the form to the side rail so the reading takes the full width
     if(_pendingScroll){ _pendingScroll=false; var top=document.getElementById("rsec-chart"); if(top) top.scrollIntoView({behavior: reduce?"auto":"smooth", block:"nearest"}); }
   }
@@ -2104,7 +2272,6 @@
     var notime=document.getElementById("notime"), btime=document.getElementById("btime"), noHourHint=document.getElementById("sNoHourHint");
     function updateNoHourHint(){ if(noHourHint) noHourHint.hidden=!(notime&&notime.checked); }
     var bplace=document.getElementById("bplace"), bplaceVal=document.getElementById("bplaceVal");
-    var moreBtn=document.getElementById("sMoreBtn"), moreBody=document.getElementById("sMoreBody"), sex=document.getElementById("sex");
 
     function pad(n){ return (n<10?"0":"")+n; }
     function mod(n,m){ return ((n%m)+m)%m; }
@@ -2255,9 +2422,6 @@
     function paintPlace(){ if(!bplace||!bplaceVal) return; var o=bplace.options[bplace.selectedIndex]; bplaceVal.textContent=o?o.textContent:""; }
     if(bplace){ bplace.addEventListener("change",paintPlace); }
 
-    /* ---------- luck-timeline disclosure ---------- */
-    if(moreBtn&&moreBody){ moreBtn.addEventListener("click",function(){ var open=moreBody.hidden; moreBody.hidden=!open; moreBtn.setAttribute("aria-expanded",open?"true":"false"); }); }
-
     /* ---------- sync visible controls FROM the hidden fields (after prefill / restore) ---------- */
     var _syncKey=null;
     function syncFromHidden(force){
@@ -2274,7 +2438,6 @@
       paintTime();
       paintPlace();
       updateNoHourHint();
-      if(sex&&sex.value&&moreBody&&moreBody.hidden){ moreBody.hidden=false; if(moreBtn)moreBtn.setAttribute("aria-expanded","true"); }
     }
     document.addEventListener("saju:studychart",function(){ window.setTimeout(function(){ syncFromHidden(false); },0); });
 
@@ -2334,6 +2497,7 @@
         <li><a href="/menagerie.html">All 144 animals</a></li>
         <li><a href="/zodiac/">The 144 crossings</a></li>
         <li><a href="/zodiac/grid/">The 144 grid</a></li>
+        <li><a href="/horoscope-animals/">Horoscope animals</a></li>
         <li><a href="/year.html">Year finder</a></li>
         <li><a href="/daily.html">Today's reading</a></li>
       </ul></div>

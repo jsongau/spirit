@@ -221,8 +221,12 @@
       /* right-edge tools: palette toggle, mute, minimize, close */
       var tools = el("div", "scast-dk-tools");
 
-      /* palette toggle (전통 / Moonlight), persisted as sajuPalette by makeToggle itself */
-      var pal = SC.makeToggle("sajuPalette", [["tradition", "전통"], ["moonlight", "Moonlight"]], function () { applyPalette(); });
+      /* palette toggle (전통 색 / ☾ Moonlight), persisted as sajuPalette by makeToggle itself.
+         The tiny "colors" caption names the control; without it the pair reads as a mystery. */
+      var palCap = el("span", "scast-dk-palcap", "colors");
+      palCap.setAttribute("aria-hidden", "true");
+      tools.appendChild(palCap);
+      var pal = SC.makeToggle("sajuPalette", [["tradition", "전통 색"], ["moonlight", "☾ Moonlight"]], function () { applyPalette(); });
       pal.el.setAttribute("aria-label", "Colour palette — Moonlight uses one pale palette and removes hue as an information channel (also the accessible mode)");
       pal.el.title = "Moonlight: one pale palette, no hue as an information channel — the accessible mode.";
       pal.setAvailable(true);

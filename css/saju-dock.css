@@ -186,12 +186,15 @@
 .scast-dk-sound[aria-pressed="false"]{ color:var(--faint) }
 
 /* ---- the palette toggle (SajuStudyChart.makeToggle output) mounted here ---- */
+/* its caption: a lowercase mono whisper, same register as the beam readout */
+.scast-dk-palcap{ flex:none; align-self:center; font-family:var(--mono); font-size:.58rem; letter-spacing:.1em;
+  color:var(--faint); line-height:1; white-space:nowrap; margin-right:2px }
 .scast-dk-tools .saju-src-toggle{ display:inline-flex; align-items:center; gap:2px; margin-right:2px;
   padding:2px; border:1px solid var(--line); border-radius:var(--r-pill); background:var(--ink-2) }
 .scast-dk-tools .saju-src-toggle[hidden]{ display:none }
 .scast-dk-tools .saju-src-btn{ font:inherit; font-family:var(--mono); font-size:.62rem; letter-spacing:.02em;
   padding:3px 9px; border:0; border-radius:var(--r-pill); background:transparent; color:var(--muted); cursor:pointer;
-  min-height:22px; transition:color .15s, background .15s }
+  min-height:22px; white-space:nowrap; transition:color .15s, background .15s }
 .scast-dk-tools .saju-src-btn:hover{ color:var(--moon) }
 .scast-dk-tools .saju-src-btn.is-on{ color:var(--ink); background:var(--dk-key) }
 .scast-dk-tools .saju-src-btn:focus-visible{ outline:2px solid var(--dk-key); outline-offset:2px }
@@ -222,7 +225,7 @@
 #scast-launcher:focus-visible{ outline:2px solid var(--dk-key); outline-offset:3px }
 
 @media (max-width:900px){ .scast-dk-idtext{ display:none } }
-@media (max-width:560px){ .scast-dk-beam-cur{ display:none } }
+@media (max-width:560px){ .scast-dk-beam-cur,.scast-dk-palcap{ display:none } }
 
 /* ============================================================
    MOBILE — the site Reveal Dock (#pn-dock, shown ≤900px, z-index 60)
