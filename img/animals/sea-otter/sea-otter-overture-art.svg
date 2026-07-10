@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A sea otter's head and folded forepaws at rest in dark water, a rock held glowing at its chest, kelp fronds rising at the edges">
+  <defs>
+    <linearGradient id="soo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#16302a"/>
+      <stop offset="100%" stop-color="#0a1512"/>
+    </linearGradient>
+    <linearGradient id="soo-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5c4830"/>
+      <stop offset="100%" stop-color="#291f14"/>
+    </linearGradient>
+    <linearGradient id="soo-head" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cdbd97"/>
+      <stop offset="100%" stop-color="#8f7c56"/>
+    </linearGradient>
+    <radialGradient id="soo-rock" cx="42%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#f2e9d4"/>
+      <stop offset="55%" stop-color="#c3ad84"/>
+      <stop offset="100%" stop-color="#7c6a4d"/>
+    </radialGradient>
+    <filter id="soo-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#soo-bg)"/>
+
+  <!-- thin new moon -->
+  <g opacity="0.7">
+    <circle cx="326" cy="76" r="26" fill="#c9c2a8" opacity="0.5"/>
+    <circle cx="313" cy="68" r="24" fill="url(#soo-bg)"/>
+  </g>
+
+  <!-- kelp at the edges -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M30 500 C44 400 16 340 46 260" stroke="#233d2c" stroke-width="12" opacity="0.85"/>
+    <path d="M30 500 C44 400 16 340 46 260" stroke="#3f6a48" stroke-width="4" opacity="0.6"/>
+    <path d="M368 500 C352 410 380 350 356 280" stroke="#20392a" stroke-width="12" opacity="0.85"/>
+    <path d="M368 500 C352 410 380 350 356 280" stroke="#48744f" stroke-width="4" opacity="0.55"/>
+  </g>
+
+  <!-- shoulders / upper body -->
+  <path d="M140 500 C120 440 126 380 160 340 C186 310 214 310 240 340 C274 380 280 440 260 500 Z" fill="url(#soo-body)"/>
+
+  <!-- forepaws folded on the chest -->
+  <path d="M158 356 C144 364 136 378 136 394 C136 408 148 418 164 414 C182 410 194 394 194 376 Z" fill="url(#soo-body)"/>
+  <path d="M242 356 C256 364 264 378 264 394 C264 408 252 418 236 414 C218 410 206 394 206 376 Z" fill="url(#soo-body)"/>
+  <g stroke="#1c150c" stroke-width="2" opacity="0.4" stroke-linecap="round">
+    <path d="M146 384 q8 12 20 15"/>
+    <path d="M254 384 q-8 12 -20 15"/>
+  </g>
+
+  <!-- the kept rock, glowing at the chest -->
+  <g filter="url(#soo-glow)">
+    <circle cx="200" cy="382" r="32" fill="url(#soo-rock)"/>
+  </g>
+
+  <!-- head -->
+  <g>
+    <ellipse cx="200" cy="200" rx="82" ry="72" fill="url(#soo-head)"/>
+    <circle cx="140" cy="156" r="14" fill="#5c4830"/>
+    <circle cx="260" cy="156" r="14" fill="#5c4830"/>
+    <circle cx="140" cy="156" r="6.5" fill="#2b2015"/>
+    <circle cx="260" cy="156" r="6.5" fill="#2b2015"/>
+    <ellipse cx="200" cy="236" rx="44" ry="28" fill="#e9e2ce" opacity="0.85"/>
+    <ellipse cx="200" cy="222" rx="9" ry="6.5" fill="#2b2015"/>
+    <g stroke="#efe6d0" stroke-width="1.4" opacity="0.55" stroke-linecap="round">
+      <path d="M168 234 C142 230 118 228 96 232"/>
+      <path d="M168 243 C142 247 118 251 94 256"/>
+      <path d="M232 234 C258 230 282 228 304 232"/>
+      <path d="M232 243 C258 247 282 251 306 256"/>
+    </g>
+    <circle cx="172" cy="190" r="6.5" fill="#1c150c"/>
+    <circle cx="228" cy="190" r="6.5" fill="#1c150c"/>
+    <circle cx="169.5" cy="187.5" r="2" fill="#efe6d0"/>
+    <circle cx="225.5" cy="187.5" r="2" fill="#efe6d0"/>
+  </g>
+</svg>

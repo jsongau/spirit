@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A sea otter floating on its back in dark kelp-green water, a rock held glowing against its chest between both forepaws, a thin new moon low in the sky">
+  <defs>
+    <radialGradient id="so-water" cx="50%" cy="34%" r="95%">
+      <stop offset="0%" stop-color="#1c3832"/>
+      <stop offset="55%" stop-color="#12241f"/>
+      <stop offset="100%" stop-color="#0a1512"/>
+    </radialGradient>
+    <radialGradient id="so-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e9e2ce"/>
+      <stop offset="70%" stop-color="#c9c2a8"/>
+      <stop offset="100%" stop-color="#8f8a72"/>
+    </radialGradient>
+    <linearGradient id="so-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5c4830"/>
+      <stop offset="100%" stop-color="#291f14"/>
+    </linearGradient>
+    <linearGradient id="so-head" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cdbd97"/>
+      <stop offset="100%" stop-color="#8f7c56"/>
+    </linearGradient>
+    <radialGradient id="so-rock" cx="42%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#f2e9d4"/>
+      <stop offset="55%" stop-color="#c3ad84"/>
+      <stop offset="100%" stop-color="#7c6a4d"/>
+    </radialGradient>
+    <linearGradient id="so-flipper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a3a26"/>
+      <stop offset="100%" stop-color="#231a10"/>
+    </linearGradient>
+    <filter id="so-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="so-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#so-water)"/>
+
+  <!-- thin new moon, low light -->
+  <g filter="url(#so-soft)" opacity="0.8">
+    <circle cx="626" cy="150" r="46" fill="url(#so-moon)" opacity="0.55"/>
+    <circle cx="606" cy="138" r="43" fill="url(#so-water)"/>
+  </g>
+
+  <!-- surface ripples -->
+  <g stroke="#3a6058" stroke-width="2" fill="none" opacity="0.35">
+    <path d="M40 190 C160 172 260 208 380 188 C500 168 600 202 760 182"/>
+    <path d="M20 240 C150 222 270 256 400 236 C540 214 640 250 780 232"/>
+  </g>
+
+  <!-- kelp fronds rising from below -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M96 800 C112 660 60 560 108 430 C140 350 96 300 128 210" stroke="#233d2c" stroke-width="16" opacity="0.85"/>
+    <path d="M96 800 C112 660 60 560 108 430 C140 350 96 300 128 210" stroke="#3f6a48" stroke-width="6" opacity="0.6"/>
+    <path d="M700 800 C676 670 730 580 690 460 C662 372 706 320 672 236" stroke="#20392a" stroke-width="18" opacity="0.85"/>
+    <path d="M700 800 C676 670 730 580 690 460 C662 372 706 320 672 236" stroke="#48744f" stroke-width="7" opacity="0.55"/>
+    <path d="M596 800 C610 700 578 630 606 540" stroke="#1c3426" stroke-width="12" opacity="0.7"/>
+  </g>
+
+  <!-- hind flippers, splayed below the tail -->
+  <g fill="url(#so-flipper)" opacity="0.95">
+    <path d="M340 700 C300 720 268 762 274 800 L360 800 C368 758 370 720 360 690 Z"/>
+    <path d="M460 700 C500 720 532 762 526 800 L440 800 C432 758 430 720 440 690 Z"/>
+    <path d="M300 792 q-14 6 -24 22 M320 796 q-10 8 -16 24" stroke="#170f08" stroke-width="3" opacity="0.5"/>
+    <path d="M500 792 q14 6 24 22 M480 796 q10 8 16 24" stroke="#170f08" stroke-width="3" opacity="0.5"/>
+  </g>
+  <!-- short flat tail between the flippers -->
+  <path d="M368 690 C368 740 380 780 400 800 C420 780 432 740 432 690 C410 670 390 670 368 690 Z" fill="url(#so-flipper)"/>
+
+  <!-- body, floating belly-up -->
+  <path d="M300 330 C258 380 250 470 268 560 C282 630 320 680 400 700 C480 680 518 630 532 560 C550 470 542 380 500 330 C470 296 330 296 300 330 Z" fill="url(#so-body)"/>
+
+  <!-- fur texture hatching -->
+  <g stroke="#1c150c" stroke-width="2" opacity="0.28" stroke-linecap="round">
+    <path d="M310 400 q10 30 4 62 M340 380 q8 34 2 70 M370 372 q6 36 0 76 M400 370 q0 38 0 78 M430 372 q-6 36 0 76 M460 380 q-8 34 -2 70 M492 400 q-10 30 -4 62"/>
+    <path d="M296 470 q8 34 2 66 M508 470 q-8 34 -2 66"/>
+  </g>
+
+  <!-- forepaws, folded together on the chest -->
+  <path d="M330 420 C312 430 300 448 300 468 C300 486 314 498 334 494 C356 490 372 470 372 448 Z" fill="url(#so-body)"/>
+  <path d="M470 420 C488 430 500 448 500 468 C500 486 486 498 466 494 C444 490 428 470 428 448 Z" fill="url(#so-body)"/>
+  <g stroke="#1c150c" stroke-width="2.4" opacity="0.4" stroke-linecap="round">
+    <path d="M312 452 q10 14 24 18 M330 470 q10 10 22 10"/>
+    <path d="M488 452 q-10 14 -24 18 M470 470 q-10 10 -22 10"/>
+  </g>
+
+  <!-- the kept rock, held against the chest, glowing -->
+  <g filter="url(#so-glow)">
+    <circle cx="400" cy="450" r="40" fill="url(#so-rock)"/>
+    <path d="M378 436 q10 -10 26 -8 M372 456 q14 8 30 4" stroke="#7c6a4d" stroke-width="2" opacity="0.5" fill="none"/>
+  </g>
+
+  <!-- head, tilted back toward the moon -->
+  <g>
+    <ellipse cx="400" cy="240" rx="98" ry="86" fill="url(#so-head)"/>
+    <!-- small rounded ears -->
+    <circle cx="330" cy="188" r="17" fill="#5c4830"/>
+    <circle cx="470" cy="188" r="17" fill="#5c4830"/>
+    <circle cx="330" cy="188" r="8" fill="#2b2015"/>
+    <circle cx="470" cy="188" r="8" fill="#2b2015"/>
+    <!-- muzzle -->
+    <ellipse cx="400" cy="284" rx="52" ry="34" fill="#e9e2ce" opacity="0.85"/>
+    <ellipse cx="400" cy="268" rx="11" ry="8" fill="#2b2015"/>
+    <!-- whiskers -->
+    <g stroke="#efe6d0" stroke-width="1.6" opacity="0.55" stroke-linecap="round">
+      <path d="M360 282 C330 278 300 276 272 280"/>
+      <path d="M360 292 C330 296 300 300 270 306"/>
+      <path d="M440 282 C470 278 500 276 528 280"/>
+      <path d="M440 292 C470 296 500 300 530 306"/>
+    </g>
+    <!-- eyes -->
+    <circle cx="366" cy="228" r="8" fill="#1c150c"/>
+    <circle cx="434" cy="228" r="8" fill="#1c150c"/>
+    <circle cx="363" cy="225" r="2.4" fill="#efe6d0"/>
+    <circle cx="431" cy="225" r="2.4" fill="#efe6d0"/>
+  </g>
+</svg>
