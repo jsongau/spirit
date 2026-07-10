@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A single Pronghorn standing alert on open dusk grassland, ears up, watching an empty horizon">
+  <defs>
+    <linearGradient id="ph-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c0f08"/>
+      <stop offset="55%" stop-color="#a83226"/>
+      <stop offset="100%" stop-color="#e0693f"/>
+    </linearGradient>
+    <radialGradient id="ph-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbe3c0" stop-opacity=".85"/>
+      <stop offset="55%" stop-color="#f4c9a0" stop-opacity=".30"/>
+      <stop offset="100%" stop-color="#c9552f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ph-ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3c2415"/>
+      <stop offset="100%" stop-color="#241407"/>
+    </linearGradient>
+    <linearGradient id="ph-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d9a06a"/>
+      <stop offset="100%" stop-color="#7a4f2c"/>
+    </linearGradient>
+    <filter id="ph-blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="500" rx="18" fill="url(#ph-sky)"/>
+  <g filter="url(#ph-blur)" opacity=".95">
+    <circle cx="320" cy="100" r="24" fill="#f4c9a0" fill-opacity=".85"/>
+    <circle cx="320" cy="100" r="58" fill="url(#ph-sun)"/>
+  </g>
+  <path d="M0 372 C88.0 358 168.0 382 240.0 368 C320.0 358 360.0 378 400 370 L400 500 L0 500 Z"
+        fill="url(#ph-ground)" opacity=".96"/>
+  <g opacity=".65"><path d="M12 386 Q16 380.0 20 376" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M38 391 Q35 382.0 32 376" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M62 396 Q66 384.0 70 376" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M88 401 Q85 386.0 82 376" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M112 386 Q116 380.0 120 376" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M138 391 Q135 382.0 132 376" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M162 396 Q166 384.0 170 376" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M188 401 Q185 386.0 182 376" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M212 386 Q216 380.0 220 376" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M238 391 Q235 382.0 232 376" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M262 396 Q266 384.0 270 376" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M288 401 Q285 386.0 282 376" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M312 386 Q316 380.0 320 376" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M338 391 Q335 382.0 332 376" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M362 396 Q366 384.0 370 376" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M388 401 Q385 386.0 382 376" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/></g>
+  
+  <g id="ph-pronghorn" transform="translate(210,300) scale(0.66)">
+    <g id="ph-legs-back">
+      <path d="M-64 22 L-66 78" fill="none" stroke="#7a4f2c" stroke-width="9" stroke-linecap="round"/>
+      <path d="M-12 22 L-10 78" fill="none" stroke="#7a4f2c" stroke-width="9" stroke-linecap="round"/>
+    </g>
+    <path d="M-86 -8 Q-98 2 -94 16" fill="none" stroke="#7a4f2c" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M-84 -6 C-90 -22 -78 -34 -58 -36 C-30 -38 -2 -36 16 -24 C26 -16 28 -4 24 6 C16 20 -6 26 -30 26 C-52 26 -72 18 -80 6 C-84 2 -84 -2 -84 -6 Z" fill="url(#ph-body)" stroke="#120a05" stroke-opacity=".9" stroke-width="1.8"/>
+    <path d="M-82 -4 C-92 -2 -98 8 -92 18 C-84 27 -68 28 -60 20 C-62 10 -70 -2 -82 -4 Z" fill="#f4ead9" fill-opacity=".98" stroke="#120a05" stroke-opacity=".3" stroke-width="1"/>
+    <path d="M-62 -44 C-56 -66 -44 -88 -24 -102 C-18 -106 -12 -102 -14 -94 C-28 -82 -40 -62 -44 -40 Z" fill="url(#ph-body)" stroke="#120a05" stroke-opacity=".85" stroke-width="1.4"/><path d="M-20 -126 Q-28 -154 -18 -176 Q-14 -184 -24 -186" fill="none" stroke="#171008" stroke-width="5" stroke-linecap="round"/><path d="M-6 -126 Q-2 -156 -8 -178 Q-10 -186 0 -188" fill="none" stroke="#171008" stroke-width="5" stroke-linecap="round"/><path d="M-28 -106 C-32 -118 -24 -128 -12 -128 C0 -128 8 -120 6 -108 C5 -100 -2 -94 -12 -94 C-20 -94 -26 -99 -28 -106 Z" fill="url(#ph-body)" stroke="#120a05" stroke-opacity=".85" stroke-width="1.4"/><path d="M-24 -126 Q-34 -140 -28 -150" fill="none" stroke="#7a4f2c" stroke-width="6" stroke-linecap="round"/><path d="M-10 -128 Q-8 -144 0 -152" fill="none" stroke="#7a4f2c" stroke-width="6" stroke-linecap="round"/><path d="M-28 -108 Q-32 -100 -28 -92" fill="none" stroke="#2b1a10" stroke-width="4.5" stroke-linecap="round" opacity=".8"/><path d="M-44 -42 Q-36 -66 -26 -86" fill="none" stroke="#2b1a10" stroke-width="4.5" stroke-linecap="round" opacity=".6"/><circle cx="-8" cy="-110" r="2.6" fill="#120a05"/><circle cx="-9" cy="-111" r=".9" fill="#f4ead9" fill-opacity=".8"/>
+    <g id="ph-legs-front">
+      <path d="M-40 24 L-42 80" fill="none" stroke="#b97a4a" stroke-width="9.5" stroke-linecap="round"/>
+      <path d="M6 24 L8 80" fill="none" stroke="#b97a4a" stroke-width="9.5" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

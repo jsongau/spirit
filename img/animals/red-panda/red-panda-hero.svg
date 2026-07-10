@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Atmospheric placeholder study for the Red Panda, in the The Quiet Custodian palette, standing in for bespoke art not yet commissioned">
+  <defs>
+    <radialGradient id="g1" cx="62%" cy="20%" r="100%">
+      <stop offset="0%" stop-color="#e8c98a" stop-opacity="0.35"/>
+      <stop offset="45%" stop-color="#231512"/>
+      <stop offset="100%" stop-color="#231512"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#b5602f"/>
+      <stop offset="100%" stop-color="#b5602f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shaft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8c98a" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#e8c98a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#g1)"/>
+  <circle cx="155" cy="251" r="60" fill="url(#g2)" opacity="0.05"/>
+<circle cx="14" cy="507" r="83" fill="url(#g2)" opacity="0.08"/>
+<circle cx="585" cy="630" r="106" fill="url(#g2)" opacity="0.11"/>
+<circle cx="133" cy="526" r="129" fill="url(#g2)" opacity="0.14"/>
+<circle cx="116" cy="396" r="152" fill="url(#g2)" opacity="0.05"/>
+<circle cx="604" cy="39" r="175" fill="url(#g2)" opacity="0.08"/>
+<circle cx="184" cy="230" r="198" fill="url(#g2)" opacity="0.11"/>
+  <polygon points="540,0 800,0 800,800 620,800" fill="url(#shaft)"/>
+  <circle cx="400" cy="400" r="230" fill="none" stroke="#b5602f" stroke-opacity="0.5" stroke-width="1.5"/>
+  <circle cx="400" cy="400" r="170" fill="none" stroke="#e8c98a" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="400" y="410" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#e8c98a" opacity="0.9">Red Panda</text>
+  <text x="400" y="446" text-anchor="middle" font-family="Georgia, serif" font-size="14" letter-spacing="3" fill="#b5602f" opacity="0.85">THE QUIET CUSTODIAN</text>
+</svg>

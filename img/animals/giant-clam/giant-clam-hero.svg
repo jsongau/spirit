@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A giant clam fused into a coral reef, its fluted shell half sunk in the coral, mantle fanned wide open beneath a shaft of sunlight falling through clear water, small fish drifting past unconcerned">
+  <defs>
+    <radialGradient id="gc-water" cx="50%" cy="8%" r="105%">
+      <stop offset="0%" stop-color="#1e5266"/>
+      <stop offset="55%" stop-color="#123344"/>
+      <stop offset="100%" stop-color="#0b2430"/>
+    </radialGradient>
+    <linearGradient id="gc-sunbeam" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#fdf6da" stop-opacity=".55"/>
+      <stop offset="45%" stop-color="#bfe6de" stop-opacity=".16"/>
+      <stop offset="100%" stop-color="#bfe6de" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="gc-shell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8ddc0"/>
+      <stop offset="100%" stop-color="#93825f"/>
+    </linearGradient>
+    <linearGradient id="gc-mantle" x1="0" y1="0" x2="1" y2="0.3">
+      <stop offset="0%" stop-color="#2fa79a"/>
+      <stop offset="100%" stop-color="#1f7a72"/>
+    </linearGradient>
+    <radialGradient id="gc-glow" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fdf6da" stop-opacity=".5"/>
+      <stop offset="60%" stop-color="#2fa79a" stop-opacity=".14"/>
+      <stop offset="100%" stop-color="#2fa79a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="gc-blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="800" rx="24" fill="url(#gc-water)"/>
+  <path d="M290 0 L550 0 L700 688.0 L140 688.0 Z" fill="url(#gc-sunbeam)"/>
+  <g opacity=".9"><path d="M0 640 C144.0 622 272.0 654 400.0 636 C544.0 620 672.0 650 800 634 L800 800 L0 800 Z" fill="#264a45"/>
+    <circle cx="57" cy="649" r="22" fill="#173230" opacity=".85"/>
+    <circle cx="171" cy="653" r="32" fill="#173230" opacity=".85"/>
+    <circle cx="286" cy="657" r="42" fill="#173230" opacity=".85"/>
+    <circle cx="400" cy="649" r="22" fill="#173230" opacity=".85"/>
+    <circle cx="514" cy="653" r="32" fill="#173230" opacity=".85"/>
+    <circle cx="629" cy="657" r="42" fill="#173230" opacity=".85"/>
+    <circle cx="743" cy="649" r="22" fill="#173230" opacity=".85"/></g>
+  <g opacity=".8"><path d="M120 260 L110.0 253.0 L110.0 267.0 Z" fill="#e8c25a" opacity=".85"/><path d="M120 260 C136.0 251.0 154.0 254.0 160.0 260 C154.0 266.0 136.0 269.0 120 260 Z" fill="#e8c25a" opacity=".85"/><circle cx="150" cy="258" r="1.6" fill="#081418"/>
+  <path d="M660 200 L668.0 194.4 L668.0 205.6 Z" fill="#e8c25a" opacity=".85"/><path d="M660 200 C647.2 192.8 632.8 195.2 628.0 200 C632.8 204.8 647.2 207.2 660 200 Z" fill="#e8c25a" opacity=".85"/><circle cx="636" cy="199" r="1.3" fill="#081418"/>
+  <path d="M700 420 L706.0 415.8 L706.0 424.2 Z" fill="#e8c25a" opacity=".85"/><path d="M700 420 C690.4 414.6 679.6 416.4 676.0 420 C679.6 423.6 690.4 425.4 700 420 Z" fill="#e8c25a" opacity=".85"/><circle cx="682" cy="419" r="1.0" fill="#081418"/></g>
+  <ellipse cx="420" cy="540" rx="379.5" ry="280.5" fill="url(#gc-glow)"/>
+  
+  <g id="gc-clam" transform="translate(420,540) scale(1.65)">
+    <ellipse cx="0" cy="156" rx="190" ry="26" fill="#081418" fill-opacity=".4"/>
+    <path d="M-170 120 M-170 120 L-137 106 L-104 55 L-72 46 L-39 -5 L-6 -14 L-6 150 L-170 150 Z" fill="url(#gc-shell)" stroke="#081418" stroke-opacity=".8" stroke-width="1.8"/>
+    <path d="M6 150 L6 -24 M6 -24 L39 21 L72 29 L106 78 L139 86 L172 136 L172 150 Z" fill="url(#gc-shell)" stroke="#081418" stroke-opacity=".8" stroke-width="1.8"/>
+    <line x1="-150" y1="128" x2="-70" y2="2" stroke="#6f6045" stroke-opacity=".35" stroke-width="2"/>
+      <line x1="-116" y1="128" x2="-32" y2="2" stroke="#6f6045" stroke-opacity=".35" stroke-width="2"/>
+      <line x1="-82" y1="128" x2="6" y2="2" stroke="#6f6045" stroke-opacity=".35" stroke-width="2"/>
+      <line x1="-48" y1="128" x2="44" y2="2" stroke="#6f6045" stroke-opacity=".35" stroke-width="2"/>
+      <line x1="150" y1="128" x2="70" y2="-2" stroke="#6f6045" stroke-opacity=".35" stroke-width="2"/>
+      <line x1="116" y1="128" x2="32" y2="-2" stroke="#6f6045" stroke-opacity=".35" stroke-width="2"/>
+      <line x1="82" y1="128" x2="-6" y2="-2" stroke="#6f6045" stroke-opacity=".35" stroke-width="2"/>
+      <line x1="48" y1="128" x2="-44" y2="-2" stroke="#6f6045" stroke-opacity=".35" stroke-width="2"/>
+    <g filter="url(#gc-blur)">
+      <path d="M-140 58 C-110 18 -60 2 -8 8 C44 2 96 16 134 52 C108 70 70 82 22 80 C-2 92 -34 92 -58 80 C-96 82 -122 72 -140 58 Z" fill="url(#gc-mantle)" stroke="#081418" stroke-opacity=".5" stroke-width="1.4"/>
+      <circle cx="-96" cy="40" r="8" fill="#e0b23c" opacity=".8"/><circle cx="-52" cy="60" r="6" fill="#3f8fd6" opacity=".8"/><circle cx="-16" cy="44" r="7" fill="#8a5fc0" opacity=".8"/><circle cx="26" cy="58" r="6" fill="#e0b23c" opacity=".8"/><circle cx="66" cy="42" r="8" fill="#3f8fd6" opacity=".8"/><circle cx="100" cy="56" r="6" fill="#8a5fc0" opacity=".8"/><circle cx="-70" cy="66" r="4" fill="#e0b23c" opacity=".8"/><circle cx="10" cy="70" r="4" fill="#3f8fd6" opacity=".8"/><circle cx="48" cy="68" r="4" fill="#8a5fc0" opacity=".8"/>
+    </g>
+  </g>
+</svg>

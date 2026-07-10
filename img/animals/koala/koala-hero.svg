@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A koala wedged motionless in the fork of a eucalyptus branch at dusk, eyes half-closed, one paw resting near a half-eaten gum leaf, a thin waxing crescent moon showing through the canopy">
+  <defs>
+    <radialGradient id="ko-dusk" cx="62%" cy="78%" r="95%">
+      <stop offset="0%" stop-color="#3a3420"/>
+      <stop offset="45%" stop-color="#20281c"/>
+      <stop offset="100%" stop-color="#171f14"/>
+    </radialGradient>
+    <radialGradient id="ko-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ece7cf" stop-opacity=".5"/>
+      <stop offset="60%" stop-color="#ece7cf" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#ece7cf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ko-glow" cx="48%" cy="42%" r="62%">
+      <stop offset="0%" stop-color="#f3ecd4"/>
+      <stop offset="55%" stop-color="#c3cdb6"/>
+      <stop offset="100%" stop-color="#caa15a"/>
+    </radialGradient>
+    <linearGradient id="ko-fur" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#c3cdb6"/>
+      <stop offset="60%" stop-color="#9aa78e"/>
+      <stop offset="100%" stop-color="#6c7a62"/>
+    </linearGradient>
+    <linearGradient id="ko-bark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7a5f40"/>
+      <stop offset="100%" stop-color="#3c2e1e"/>
+    </linearGradient>
+    <linearGradient id="ko-leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8ca77c"/>
+      <stop offset="100%" stop-color="#5c7a52"/>
+    </linearGradient>
+    <filter id="ko-blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="800" rx="24" fill="url(#ko-dusk)"/>
+  <circle cx="646" cy="132" r="62" fill="url(#ko-moon)"/><circle cx="646" cy="132" r="40" fill="#ece7cf" opacity=".95"/><circle cx="626.0" cy="129.6" r="38.0" fill="#171f14"/>
+  <g id="ko-canopy" opacity=".9"><path id="top-leaf-c0" transform="translate(30.0,80) rotate(-30) scale(1.4)" d="M0 0 C10 -14 30 -18 46 -8 C34 -2 26 4 18 14 C10 22 4 26 0 28 C-4 20 -8 10 -6 0 C-4 -6 -2 -4 0 0 Z" fill="url(#ko-leaf)" stroke="#5c7a52" stroke-opacity=".5" stroke-width="1"/>
+    <path id="top-leaf-c1" transform="translate(138.0,64) rotate(7) scale(1.7)" d="M0 0 C10 -14 30 -18 46 -8 C34 -2 26 4 18 14 C10 22 4 26 0 28 C-4 20 -8 10 -6 0 C-4 -6 -2 -4 0 0 Z" fill="url(#ko-leaf)" stroke="#5c7a52" stroke-opacity=".5" stroke-width="1"/>
+    <path id="top-leaf-c2" transform="translate(190.0,64) rotate(44) scale(2.0)" d="M0 0 C10 -14 30 -18 46 -8 C34 -2 26 4 18 14 C10 22 4 26 0 28 C-4 20 -8 10 -6 0 C-4 -6 -2 -4 0 0 Z" fill="url(#ko-leaf)" stroke="#5c7a52" stroke-opacity=".5" stroke-width="1"/>
+    <path id="top-leaf-c3" transform="translate(298.0,80) rotate(-19) scale(1.4)" d="M0 0 C10 -14 30 -18 46 -8 C34 -2 26 4 18 14 C10 22 4 26 0 28 C-4 20 -8 10 -6 0 C-4 -6 -2 -4 0 0 Z" fill="url(#ko-leaf)" stroke="#5c7a52" stroke-opacity=".5" stroke-width="1"/>
+    <path id="top-leaf-c4" transform="translate(350.0,64) rotate(18) scale(1.7)" d="M0 0 C10 -14 30 -18 46 -8 C34 -2 26 4 18 14 C10 22 4 26 0 28 C-4 20 -8 10 -6 0 C-4 -6 -2 -4 0 0 Z" fill="url(#ko-leaf)" stroke="#5c7a52" stroke-opacity=".5" stroke-width="1"/>
+    <path id="top-leaf-c5" transform="translate(458.0,64) rotate(55) scale(2.0)" d="M0 0 C10 -14 30 -18 46 -8 C34 -2 26 4 18 14 C10 22 4 26 0 28 C-4 20 -8 10 -6 0 C-4 -6 -2 -4 0 0 Z" fill="url(#ko-leaf)" stroke="#5c7a52" stroke-opacity=".5" stroke-width="1"/>
+    <path id="top-leaf-c6" transform="translate(510.0,80) rotate(-8) scale(1.4)" d="M0 0 C10 -14 30 -18 46 -8 C34 -2 26 4 18 14 C10 22 4 26 0 28 C-4 20 -8 10 -6 0 C-4 -6 -2 -4 0 0 Z" fill="url(#ko-leaf)" stroke="#5c7a52" stroke-opacity=".5" stroke-width="1"/>
+    <path id="top-leaf-c7" transform="translate(618.0,64) rotate(29) scale(1.7)" d="M0 0 C10 -14 30 -18 46 -8 C34 -2 26 4 18 14 C10 22 4 26 0 28 C-4 20 -8 10 -6 0 C-4 -6 -2 -4 0 0 Z" fill="url(#ko-leaf)" stroke="#5c7a52" stroke-opacity=".5" stroke-width="1"/>
+    <path id="top-leaf-c8" transform="translate(670.0,64) rotate(66) scale(2.0)" d="M0 0 C10 -14 30 -18 46 -8 C34 -2 26 4 18 14 C10 22 4 26 0 28 C-4 20 -8 10 -6 0 C-4 -6 -2 -4 0 0 Z" fill="url(#ko-leaf)" stroke="#5c7a52" stroke-opacity=".5" stroke-width="1"/>
+    <path id="top-leaf-c9" transform="translate(778.0,80) rotate(3) scale(1.4)" d="M0 0 C10 -14 30 -18 46 -8 C34 -2 26 4 18 14 C10 22 4 26 0 28 C-4 20 -8 10 -6 0 C-4 -6 -2 -4 0 0 Z" fill="url(#ko-leaf)" stroke="#5c7a52" stroke-opacity=".5" stroke-width="1"/></g>
+  <ellipse cx="400" cy="577.5" rx="94.5" ry="16.8" fill="#120e0a" fill-opacity=".35"/>
+  <g id="main-branch"><path d="M380 598 L386 732 L416 732 L418 598 Z" fill="url(#ko-bark)"/><path d="M396 600 C360 540 290 490 158 375" fill="none" stroke="url(#ko-bark)" stroke-width="32" stroke-linecap="round"/><path d="M404 600 C442 542 518 496 652 413" fill="none" stroke="url(#ko-bark)" stroke-width="28" stroke-linecap="round"/><ellipse cx="400" cy="592" rx="48" ry="16" fill="#3c2e1e" opacity=".7"/></g>
+  
+  <g id="ko-koala" transform="translate(400,420) scale(1.05)">
+    <path d="M-68 58 C-92 66 -108 82 -108 100 C-108 112 -96 118 -84 114 C-76 96 -70 78 -62 66 Z" fill="url(#ko-fur)" stroke="#120e0a" stroke-opacity=".5" stroke-width="1.2"/>
+    <path d="M74 64 C98 72 112 88 110 106 C108 117 96 122 85 117 C79 99 74 82 68 70 Z" fill="url(#ko-fur)" stroke="#120e0a" stroke-opacity=".5" stroke-width="1.2"/>
+    <path d="M-108 104 L-114 114" stroke="#120e0a" stroke-width="2" stroke-linecap="round"/>
+      <path d="M-100 104 L-106 114" stroke="#120e0a" stroke-width="2" stroke-linecap="round"/>
+      <path d="M-92 104 L-98 114" stroke="#120e0a" stroke-width="2" stroke-linecap="round"/>
+    <path d="M110 106 L116 116" stroke="#120e0a" stroke-width="2" stroke-linecap="round"/>
+      <path d="M102 106 L108 116" stroke="#120e0a" stroke-width="2" stroke-linecap="round"/>
+      <path d="M94 106 L100 116" stroke="#120e0a" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="-58" cy="-138" r="36" fill="#6c7a62" stroke="#120e0a" stroke-opacity=".55" stroke-width="1.4"/>
+    <ellipse cx="-46" cy="-124" rx="12" ry="16" fill="#e9e4d2" opacity=".85" transform="rotate(-20 -46 -124)"/>
+    <circle cx="54" cy="-132" r="34" fill="#6c7a62" stroke="#120e0a" stroke-opacity=".55" stroke-width="1.4"/>
+    <ellipse cx="43" cy="-119" rx="11" ry="15" fill="#e9e4d2" opacity=".85" transform="rotate(20 43 -119)"/>
+    <path d="M-70 -100 C-95 -70 -100 -20 -95 30 C-90 80 -70 120 -20 135 C20 148 70 130 92 90 C108 50 104 0 96 -40 C88 -80 60 -108 15 -118 C-20 -126 -50 -120 -70 -100 Z" fill="url(#ko-fur)" stroke="#120e0a" stroke-opacity=".85" stroke-width="1.8"/>
+    <path d="M-70 -100 C-95 -70 -100 -20 -95 30"
+          fill="none" stroke="#c3cdb6" stroke-opacity=".3" stroke-width="2"/>
+    <ellipse cx="-4" cy="-58" rx="46" ry="34" fill="#e9e4d2"/>
+    <path d="M-20 -80 C-24 -90 -14 -98 -2 -98 C12 -98 22 -89 18 -78 C14 -68 -2 -64 -12 -68 C-17 -70 -18 -74 -20 -80 Z" fill="#241c14"/>
+    <path d="M-38 -100 Q-26 -108 -14 -100" fill="none" stroke="#120e0a" stroke-width="4.4" stroke-linecap="round"/>
+    <path d="M14 -98 Q26 -106 38 -98" fill="none" stroke="#120e0a" stroke-width="4.4" stroke-linecap="round"/>
+  </g>
+  <path id="hero-leaf-hero0" transform="translate(508,522) rotate(-22) scale(1.8)" d="M0 0 C10 -14 30 -18 46 -8 C34 -2 26 4 18 14 C10 22 4 26 0 28 C-4 20 -8 10 -6 0 C-4 -6 -2 -4 0 0 Z" fill="url(#ko-leaf)" stroke="#5c7a52" stroke-opacity=".5" stroke-width="1"/>
+  <g id="ko-canopy-fg" opacity=".55"><path id="fg-leaf-c0" transform="translate(56.66666666666667,762.0) rotate(-30) scale(1.4)" d="M0 0 C10 -14 30 -18 46 -8 C34 -2 26 4 18 14 C10 22 4 26 0 28 C-4 20 -8 10 -6 0 C-4 -6 -2 -4 0 0 Z" fill="url(#ko-leaf)" stroke="#5c7a52" stroke-opacity=".5" stroke-width="1"/>
+    <path id="fg-leaf-c1" transform="translate(218.0,746.0) rotate(7) scale(1.7)" d="M0 0 C10 -14 30 -18 46 -8 C34 -2 26 4 18 14 C10 22 4 26 0 28 C-4 20 -8 10 -6 0 C-4 -6 -2 -4 0 0 Z" fill="url(#ko-leaf)" stroke="#5c7a52" stroke-opacity=".5" stroke-width="1"/>
+    <path id="fg-leaf-c2" transform="translate(323.33333333333337,746.0) rotate(44) scale(2.0)" d="M0 0 C10 -14 30 -18 46 -8 C34 -2 26 4 18 14 C10 22 4 26 0 28 C-4 20 -8 10 -6 0 C-4 -6 -2 -4 0 0 Z" fill="url(#ko-leaf)" stroke="#5c7a52" stroke-opacity=".5" stroke-width="1"/>
+    <path id="fg-leaf-c3" transform="translate(484.6666666666667,762.0) rotate(-19) scale(1.4)" d="M0 0 C10 -14 30 -18 46 -8 C34 -2 26 4 18 14 C10 22 4 26 0 28 C-4 20 -8 10 -6 0 C-4 -6 -2 -4 0 0 Z" fill="url(#ko-leaf)" stroke="#5c7a52" stroke-opacity=".5" stroke-width="1"/>
+    <path id="fg-leaf-c4" transform="translate(590.0,746.0) rotate(18) scale(1.7)" d="M0 0 C10 -14 30 -18 46 -8 C34 -2 26 4 18 14 C10 22 4 26 0 28 C-4 20 -8 10 -6 0 C-4 -6 -2 -4 0 0 Z" fill="url(#ko-leaf)" stroke="#5c7a52" stroke-opacity=".5" stroke-width="1"/>
+    <path id="fg-leaf-c5" transform="translate(751.3333333333334,746.0) rotate(55) scale(2.0)" d="M0 0 C10 -14 30 -18 46 -8 C34 -2 26 4 18 14 C10 22 4 26 0 28 C-4 20 -8 10 -6 0 C-4 -6 -2 -4 0 0 Z" fill="url(#ko-leaf)" stroke="#5c7a52" stroke-opacity=".5" stroke-width="1"/></g>
+</svg>

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A saddleback Galápagos tortoise reaching its neck up toward a cactus pad in the low dawn light, closer and calmer">
+  <defs>
+    <radialGradient id="gt-sky" cx="60%" cy="18%" r="95%">
+      <stop offset="0%" stop-color="#3a2a16"/>
+      <stop offset="55%" stop-color="#241a0e"/>
+      <stop offset="100%" stop-color="#171008"/>
+    </radialGradient>
+    <radialGradient id="gt-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8b56a" stop-opacity=".7"/>
+      <stop offset="60%" stop-color="#e8b56a" stop-opacity=".24"/>
+      <stop offset="100%" stop-color="#e8b56a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gt-glow" cx="50%" cy="42%" r="62%">
+      <stop offset="0%" stop-color="#f6dfae"/>
+      <stop offset="55%" stop-color="#63805a"/>
+      <stop offset="100%" stop-color="#c9843c"/>
+    </radialGradient>
+    <linearGradient id="gt-shell" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#a4813f"/>
+      <stop offset="100%" stop-color="#4c3a1f"/>
+    </linearGradient>
+    <linearGradient id="gt-ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a3520"/>
+      <stop offset="100%" stop-color="#301f10"/>
+    </linearGradient>
+    <filter id="gt-blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="500" rx="18" fill="url(#gt-sky)"/>
+  <g opacity=".95"><circle cx="320" cy="118" r="24" fill="#e8b56a" fill-opacity=".85" stroke="#f6dfae" stroke-opacity=".25" stroke-width="1"/>
+  <circle cx="320" cy="118" r="54" fill="url(#gt-sun)"/></g>
+  <path d="M0 364 C88.0 348 168.0 378 256.0 356 C328.0 344 368.0 370 400 360 L400 500 L0 500 Z"
+        fill="url(#gt-ground)" opacity=".95"/>
+  <g opacity=".8"><path d="M19 378 L42 384 L65 373" fill="none" stroke="#301f10" stroke-width="1.6" stroke-linecap="round" opacity=".55" transform="rotate(8 19 378)"/>
+    <path d="M100 386 L128 394 L156 380" fill="none" stroke="#301f10" stroke-width="1.6" stroke-linecap="round" opacity=".55" transform="rotate(-6 100 386)"/>
+    <path d="M133 394 L166 403 L199 387" fill="none" stroke="#301f10" stroke-width="1.6" stroke-linecap="round" opacity=".55" transform="rotate(8 133 394)"/>
+    <path d="M214 378 L252 389 L290 370" fill="none" stroke="#301f10" stroke-width="1.6" stroke-linecap="round" opacity=".55" transform="rotate(-6 214 378)"/>
+    <path d="M247 386 L270 392 L293 381" fill="none" stroke="#301f10" stroke-width="1.6" stroke-linecap="round" opacity=".55" transform="rotate(8 247 386)"/>
+    <path d="M328 394 L356 402 L384 388" fill="none" stroke="#301f10" stroke-width="1.6" stroke-linecap="round" opacity=".55" transform="rotate(-6 328 394)"/>
+    <path d="M361 378 L394 387 L427 371" fill="none" stroke="#301f10" stroke-width="1.6" stroke-linecap="round" opacity=".55" transform="rotate(8 361 378)"/>
+    <ellipse cx="70" cy="398" rx="9" ry="5" fill="#301f10" opacity=".7"/>
+    <ellipse cx="170" cy="408" rx="13" ry="8" fill="#301f10" opacity=".7"/>
+    <ellipse cx="270" cy="398" rx="17" ry="10" fill="#301f10" opacity=".7"/>
+    <ellipse cx="370" cy="408" rx="9" ry="5" fill="#301f10" opacity=".7"/></g>
+  
+  <g id="gt-cactus" filter="url(#gt-blur)">
+    <path d="M245.1 397.6 C242.4 370.4 243.8 343.2 251.9 318.7 C254.6 310.6 258.7 310.6 261.4 318.7 C268.2 343.2 269.6 370.4 266.9 397.6 Z" fill="url(#gt-glow)" stroke="#3f5530" stroke-opacity=".7" stroke-width="1.6"/>
+    <path d="M250.6 329.6 C232.9 324.2 219.3 310.6 220.6 294.2 C222.0 282.0 235.6 283.4 245.1 292.9 C251.9 299.7 253.3 317.4 250.6 329.6 Z" fill="url(#gt-glow)" stroke="#3f5530" stroke-opacity=".7" stroke-width="1.4"/>
+    <path d="M257.4 320.1 C268.2 313.3 283.2 311.9 285.9 297.0 C288.0 286.1 276.4 282.0 266.9 288.8 C260.1 294.2 254.6 307.8 257.4 320.1 Z" fill="url(#gt-glow)" stroke="#3f5530" stroke-opacity=".7" stroke-width="1.4"/>
+    <path d="M251.9 297.0 C245.1 287.4 247.8 269.8 258.7 265.7 C268.2 263.0 275.0 273.8 271.0 284.7 C268.2 292.9 258.7 298.3 251.9 297.0 Z" fill="url(#gt-glow)" stroke="#3f5530" stroke-opacity=".7" stroke-width="1.4"/>
+    <circle cx="246.5" cy="284.7" r="0.7" fill="#e8d2a0" opacity=".6"/>
+      <circle cx="250.6" cy="291.5" r="0.7" fill="#e8d2a0" opacity=".6"/>
+      <circle cx="254.6" cy="284.7" r="0.7" fill="#e8d2a0" opacity=".6"/>
+      <circle cx="258.7" cy="291.5" r="0.7" fill="#e8d2a0" opacity=".6"/>
+      <circle cx="262.8" cy="284.7" r="0.7" fill="#e8d2a0" opacity=".6"/>
+      <circle cx="266.9" cy="291.5" r="0.7" fill="#e8d2a0" opacity=".6"/>
+  </g>
+  <ellipse cx="156" cy="351.6" rx="78.0" ry="14.6" fill="#0d0904" fill-opacity=".45"/>
+  
+  <g id="gt-tortoise" transform="translate(156,270) scale(0.6)">
+    <g id="gt-legs-back">
+            <path d="M-20 80 L-24 140" fill="none" stroke="#3c2c18" stroke-width="30" stroke-linecap="round"/>
+            <path d="M50 82 L52 140" fill="none" stroke="#5c4526" stroke-width="30" stroke-linecap="round"/>
+    </g>
+    <path d="M134 30 Q156 46 150 70" fill="none" stroke="#3c2c18" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-70 -50 C-84 -70 -90 -98 -84 -128 C-80 -152 -66 -172 -46 -186 C-38 -192 -30 -192 -26 -184 C-34 -170 -46 -154 -50 -132 C-54 -108 -50 -84 -38 -62 C-48 -54 -60 -50 -70 -50 Z" fill="#5c4526" stroke="#0d0904" stroke-opacity=".85" stroke-width="1.6"/>
+    <path d="M-40 -190 C-46 -202 -40 -214 -26 -216 C-14 -218 -4 -208 -4 -196 C-4 -186 -12 -178 -24 -178 C-32 -178 -38 -182 -40 -190 Z" fill="#5c4526" stroke="#0d0904" stroke-opacity=".85" stroke-width="1.6"/>
+    <circle cx="-26" cy="-198" r="2.6" fill="#0d0904"/><circle cx="-27" cy="-199" r=".9" fill="#e8d2a0" fill-opacity=".8"/>
+    <path d="M-128 10 C-136 -30 -118 -64 -78 -78 C-58 -85 -40 -70 -30 -52 C-6 -70 40 -78 86 -62 C124 -48 146 -14 142 22 C138 56 108 82 62 90 C10 98 -52 96 -96 78 C-118 68 -124 42 -128 10 Z" fill="url(#gt-shell)" stroke="#0d0904" stroke-opacity=".9" stroke-width="2"/>
+    <path d="M-40 -40 C4 -52 52 -50 92 -32" fill="none" stroke="#e8d2a0" stroke-opacity=".2" stroke-width="2"/>
+    <path d="M-30 14 C16 2 66 4 108 22" fill="none" stroke="#e8d2a0" stroke-opacity=".16" stroke-width="2"/>
+    <path d="M-78 -78 C-58 -85 -40 -70 -30 -52 C-42 -46 -58 -46 -68 -56 C-74 -63 -77 -70 -78 -78 Z" fill="#a4813f" fill-opacity=".55" stroke="#e8d2a0" stroke-opacity=".4" stroke-width="1.4"/>
+    <g id="gt-legs-front">
+      <path d="M-96 56 L-104 134" fill="none" stroke="#3c2c18" stroke-width="30" stroke-linecap="round"/>
+            <path d="M104 58 L112 132" fill="none" stroke="#5c4526" stroke-width="28" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Atmospheric placeholder study for the Satin Bowerbird, in the The Exacting Curator palette, standing in for bespoke art not yet commissioned">
+  <defs>
+    <radialGradient id="g1" cx="62%" cy="20%" r="100%">
+      <stop offset="0%" stop-color="#8fb2de" stop-opacity="0.35"/>
+      <stop offset="45%" stop-color="#171a1f"/>
+      <stop offset="100%" stop-color="#171a1f"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2255a4"/>
+      <stop offset="100%" stop-color="#2255a4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shaft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fb2de" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#8fb2de" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#g1)"/>
+  <circle cx="619" cy="778" r="60" fill="url(#g2)" opacity="0.05"/>
+<circle cx="735" cy="486" r="83" fill="url(#g2)" opacity="0.08"/>
+<circle cx="474" cy="424" r="106" fill="url(#g2)" opacity="0.11"/>
+<circle cx="467" cy="74" r="129" fill="url(#g2)" opacity="0.14"/>
+<circle cx="303" cy="615" r="152" fill="url(#g2)" opacity="0.05"/>
+<circle cx="342" cy="32" r="175" fill="url(#g2)" opacity="0.08"/>
+<circle cx="334" cy="490" r="198" fill="url(#g2)" opacity="0.11"/>
+  <polygon points="540,0 800,0 800,800 620,800" fill="url(#shaft)"/>
+  <circle cx="400" cy="400" r="230" fill="none" stroke="#2255a4" stroke-opacity="0.5" stroke-width="1.5"/>
+  <circle cx="400" cy="400" r="170" fill="none" stroke="#8fb2de" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="400" y="410" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#8fb2de" opacity="0.9">Satin Bowerbird</text>
+  <text x="400" y="446" text-anchor="middle" font-family="Georgia, serif" font-size="14" letter-spacing="3" fill="#2255a4" opacity="0.85">THE EXACTING CURATOR</text>
+</svg>

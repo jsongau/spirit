@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Small atmospheric placeholder study for the Red Panda, standing in for bespoke art not yet commissioned">
+  <defs>
+    <radialGradient id="o1" cx="58%" cy="22%" r="100%">
+      <stop offset="0%" stop-color="#e8c98a" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#231512"/>
+      <stop offset="100%" stop-color="#231512"/>
+    </radialGradient>
+    <radialGradient id="o2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#b5602f"/>
+      <stop offset="100%" stop-color="#b5602f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#o1)"/>
+  <circle cx="37" cy="140" r="40" fill="url(#o2)" opacity="0.06"/>
+<circle cx="247" cy="218" r="57" fill="url(#o2)" opacity="0.09"/>
+<circle cx="76" cy="276" r="74" fill="url(#o2)" opacity="0.12"/>
+<circle cx="50" cy="216" r="91" fill="url(#o2)" opacity="0.06"/>
+  <circle cx="200" cy="260" r="120" fill="none" stroke="#b5602f" stroke-opacity="0.5" stroke-width="1.2"/>
+  <text x="200" y="266" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#e8c98a" opacity="0.9">Red Panda</text>
+</svg>

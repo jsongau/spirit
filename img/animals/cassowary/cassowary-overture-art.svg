@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A cassowary at closer range in shadowed undergrowth, casque lit by a narrow shaft of light, calm and still">
+  <defs>
+    <radialGradient id="cw-forest" cx="62%" cy="14%" r="95%">
+      <stop offset="0%" stop-color="#182617"/>
+      <stop offset="55%" stop-color="#0e1610"/>
+      <stop offset="100%" stop-color="#0b120c"/>
+    </radialGradient>
+    <linearGradient id="cw-beam" x1="0.7" y1="0" x2="0.2" y2="1">
+      <stop offset="0%" stop-color="#f2d9a0" stop-opacity=".55"/>
+      <stop offset="60%" stop-color="#f2d9a0" stop-opacity=".14"/>
+      <stop offset="100%" stop-color="#f2d9a0" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="cw-fruitglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f0a868" stop-opacity=".9"/>
+      <stop offset="60%" stop-color="#c9633a" stop-opacity=".5"/>
+      <stop offset="100%" stop-color="#c9633a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cw-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#262c39"/>
+      <stop offset="100%" stop-color="#0a0c11"/>
+    </linearGradient>
+    <linearGradient id="cw-neck" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2b5f7a"/>
+      <stop offset="100%" stop-color="#1c4256"/>
+    </linearGradient>
+    <linearGradient id="cw-casque" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a6a45"/>
+      <stop offset="100%" stop-color="#5f4a30"/>
+    </linearGradient>
+    <filter id="cw-blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="500" rx="18" fill="url(#cw-forest)"/>
+  <polygon points="300,0 400,0 260,470 190,470" fill="url(#cw-beam)"/>
+  <path d="M0 384 C88.0 368 160.0 398 240.0 380 C320.0 368 360.0 394 400 382 L400 500 L0 500 Z"
+        fill="#0d2015" opacity=".9"/>
+  
+  <g filter="url(#cw-blur)">
+    <circle cx="236" cy="420" r="13.6" fill="url(#cw-fruitglow)"/>
+    <path d="M227.3 420.0 C227.3 415.0 231.0 411.9 236.0 411.9 C241.0 411.9 244.7 415.0 244.7 420.0 C244.7 424.3 241.0 426.8 236.0 426.8 C231.0 426.8 227.3 424.3 227.3 420.0 Z" fill="#c9633a" stroke="#050705" stroke-opacity=".5" stroke-width="1"/>
+  </g>
+  <g id="cw-vines"><path d="M30 0 C25.2 60.0 36.0 120.0 27.6 200" fill="none" stroke="#0d2015" stroke-width="2.0" stroke-linecap="round" opacity=".75"/><path d="M370 0 C365.2 66.0 376.0 132.0 367.6 220" fill="none" stroke="#0d2015" stroke-width="2.0" stroke-linecap="round" opacity=".75"/></g>
+  <ellipse cx="192" cy="456.15999999999997" rx="53.32" ry="12.68" fill="#050705" fill-opacity=".5"/>
+  
+  <g id="cw-cassowary" transform="translate(192,352) scale(0.62)">
+    <g id="cw-legs-back"><path d="M-38 60 L-46 164" fill="none" stroke="#241f16" stroke-width="15" stroke-linecap="round"/><path d="M-46 164 L-64 180 M-46 164 L-40 184 M-46 164 L-30 178" fill="none" stroke="#241f16" stroke-width="6" stroke-linecap="round"/></g>
+    <path d="M64 -90 C96 -104 120 -96 130 -74 C112 -78 90 -78 68 -68 Z" fill="#0a0c11" stroke="#050705" stroke-opacity=".8" stroke-width="1.4"/>
+    <path d="M-96 -10 C-118 -34 -112 -70 -80 -88 C-48 -106 -4 -108 30 -92 C66 -76 86 -42 84 -4 C82 30 60 58 22 68 C-16 78 -58 72 -84 48 C-100 32 -104 8 -96 -10 Z" fill="url(#cw-body)" stroke="#050705" stroke-opacity=".9" stroke-width="1.8"/>
+    <path d="M-58 -78 C-72 -108 -78 -142 -72 -176 C-68 -200 -54 -220 -34 -232 C-46 -208 -50 -182 -46 -158 C-42 -128 -30 -100 -12 -82 C-28 -72 -46 -70 -58 -78 Z" fill="url(#cw-neck)" stroke="#050705" stroke-opacity=".7" stroke-width="1.4"/>
+    <path d="M-14 -224 C-10 -208 -10 -190 -16 -176 C-22 -190 -24 -208 -20 -224 Z" fill="#8f2b2b" stroke="#601c1c" stroke-width="1"/>
+    <path d="M-46 -224 C-52 -238 -46 -252 -32 -258 C-18 -264 -2 -258 4 -244 C10 -232 4 -218 -10 -212 C-24 -206 -40 -210 -46 -224 Z" fill="url(#cw-neck)" stroke="#050705" stroke-opacity=".8" stroke-width="1.4"/>
+    <path d="M-34 -250 C-32 -274 -20 -296 -6 -306 C-14 -286 -14 -264 -18 -246 C-24 -244 -30 -246 -34 -250 Z" fill="url(#cw-casque)" stroke="#050705" stroke-opacity=".7" stroke-width="1.2"/>
+    <path d="M2 -246 L26 -238 L2 -232 Z" fill="#5f4a30" stroke="#050705" stroke-opacity=".7" stroke-width="1"/>
+    <circle cx="-30" cy="-234" r="3.2" fill="#050705"/><circle cx="-31" cy="-235" r="1" fill="#cdbf9a" fill-opacity=".8"/>
+    <g id="cw-legs-front"><path d="M18 64 L26 168" fill="none" stroke="#3a3226" stroke-width="16" stroke-linecap="round"/><path d="M26 168 L6 182" fill="none" stroke="#d9cdb0" stroke-width="6" stroke-linecap="round"/><path d="M26 168 L30 188" fill="none" stroke="#3a3226" stroke-width="6" stroke-linecap="round"/><path d="M26 168 L44 180" fill="none" stroke="#3a3226" stroke-width="6" stroke-linecap="round"/></g>
+  </g>
+  <g id="cw-foliage"><path d="M30 500 C21.0 473.0 24.6 446.0 30 424.4 C35.4 446.0 39.0 473.0 30 500 Z" fill="#0d2015" opacity=".92" transform="rotate(-6 30 500)"/>
+    <path d="M90 500 C80.0 470.0 84.0 440.0 90 416.0 C96.0 440.0 100.0 470.0 90 500 Z" fill="#0d2015" opacity=".92" transform="rotate(6 90 500)"/>
+    <path d="M330 500 C320.5 471.5 324.3 443.0 330 420.2 C335.7 443.0 339.5 471.5 330 500 Z" fill="#0d2015" opacity=".92" transform="rotate(-8 330 500)"/>
+    <path d="M380 500 C370.0 470.0 374.0 440.0 380 416.0 C386.0 440.0 390.0 470.0 380 500 Z" fill="#234a2c" opacity=".92" transform="rotate(4 380 500)"/>
+    <path d="M20 420 C13.0 399.0 15.8 378.0 20 361.2 C24.2 378.0 27.0 399.0 20 420 Z" fill="#0d2015" opacity=".92" transform="rotate(0 20 420)"/></g>
+</svg>

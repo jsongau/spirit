@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A beaver swims low across a still dusk pond toward the dam and lodge it built">
+  <defs>
+    <linearGradient id="bv-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a1f2c"/>
+      <stop offset="55%" stop-color="#4a2f2e"/>
+      <stop offset="100%" stop-color="#8a5a3a"/>
+    </linearGradient>
+    <radialGradient id="bv-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f6cf95" stop-opacity=".85"/>
+      <stop offset="55%" stop-color="#f2b06a" stop-opacity=".3"/>
+      <stop offset="100%" stop-color="#f2b06a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bv-water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a4530"/>
+      <stop offset="35%" stop-color="#241c18"/>
+      <stop offset="100%" stop-color="#120e10"/>
+    </linearGradient>
+    <linearGradient id="bv-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6b4c2a"/>
+      <stop offset="100%" stop-color="#2b1e12"/>
+    </linearGradient>
+    <linearGradient id="bv-dam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6b4c2a"/>
+      <stop offset="100%" stop-color="#2b1e11"/>
+    </linearGradient>
+    <radialGradient id="bv-glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#f6dcae"/>
+      <stop offset="55%" stop-color="#c98f4a" stop-opacity=".6"/>
+      <stop offset="100%" stop-color="#c98f4a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="bv-blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="500" rx="18" fill="url(#bv-sky)"/>
+  <g opacity=".9"><circle cx="300" cy="92" r="24" fill="#f2b06a" fill-opacity=".8" stroke="#f6cf95" stroke-opacity=".2" stroke-width="1"/>
+  <circle cx="300" cy="92" r="58" fill="url(#bv-sun)"/></g>
+  <g id="bv-trees" opacity=".9"><path d="M5.0 220 L8 194 L23.0 220 Z" fill="#0c0808"/>
+    <path d="M27.0 220 L42 181 L45.0 220 Z" fill="#160f0d"/>
+    <path d="M105.0 220 L114 168 L123.0 220 Z" fill="#0c0808"/>
+    <path d="M127.0 220 L130 189 L145.0 220 Z" fill="#160f0d"/>
+    <path d="M205.0 220 L220 176 L223.0 220 Z" fill="#0c0808"/>
+    <path d="M227.0 220 L236 163 L245.0 220 Z" fill="#160f0d"/>
+    <path d="M305.0 220 L308 184 L323.0 220 Z" fill="#0c0808"/>
+    <path d="M327.0 220 L342 171 L345.0 220 Z" fill="#160f0d"/>
+    <path d="M405.0 220 L414 192 L423.0 220 Z" fill="#0c0808"/></g>
+  <path d="M0 236 L400 236 L400 500 L0 500 Z" fill="url(#bv-water)" opacity=".97"/>
+  <g opacity=".8"><path d="M0 266 Q64 261 136 266 T272 266 T400 266" fill="none" stroke="#8a6a44" stroke-width="1.4" stroke-linecap="round" opacity="0.30"/>
+    <path d="M0 288 Q64 281 136 288 T272 288 T400 288" fill="none" stroke="#8a6a44" stroke-width="1.4" stroke-linecap="round" opacity="0.26"/>
+    <path d="M0 310 Q64 301 136 310 T272 310 T400 310" fill="none" stroke="#8a6a44" stroke-width="1.4" stroke-linecap="round" opacity="0.22"/>
+    <path d="M0 332 Q64 327 136 332 T272 332 T400 332" fill="none" stroke="#8a6a44" stroke-width="1.4" stroke-linecap="round" opacity="0.18"/>
+    <path d="M0 354 Q64 347 136 354 T272 354 T400 354" fill="none" stroke="#8a6a44" stroke-width="1.4" stroke-linecap="round" opacity="0.14"/></g>
+  
+  <g id="bv-dam">
+    <path d="M10 268 C86 256 154 276 200 270 C246 264 314 256 390 268 L390 312 L10 312 Z" fill="url(#bv-dam)" stroke="#0a0705" stroke-opacity=".7" stroke-width="1.6"/>
+    <line x1="20" y1="274" x2="38" y2="270" stroke="#2b1e11" stroke-width="3" stroke-linecap="round" opacity=".55"/><line x1="46" y1="274" x2="64" y2="270" stroke="#2b1e11" stroke-width="3" stroke-linecap="round" opacity=".55"/><line x1="72" y1="274" x2="90" y2="270" stroke="#2b1e11" stroke-width="3" stroke-linecap="round" opacity=".55"/><line x1="98" y1="274" x2="116" y2="270" stroke="#2b1e11" stroke-width="3" stroke-linecap="round" opacity=".55"/><line x1="124" y1="274" x2="142" y2="270" stroke="#2b1e11" stroke-width="3" stroke-linecap="round" opacity=".55"/><line x1="150" y1="274" x2="168" y2="270" stroke="#2b1e11" stroke-width="3" stroke-linecap="round" opacity=".55"/><line x1="176" y1="274" x2="194" y2="270" stroke="#2b1e11" stroke-width="3" stroke-linecap="round" opacity=".55"/><line x1="202" y1="274" x2="220" y2="270" stroke="#2b1e11" stroke-width="3" stroke-linecap="round" opacity=".55"/><line x1="228" y1="274" x2="246" y2="270" stroke="#2b1e11" stroke-width="3" stroke-linecap="round" opacity=".55"/><line x1="254" y1="274" x2="272" y2="270" stroke="#2b1e11" stroke-width="3" stroke-linecap="round" opacity=".55"/><line x1="280" y1="274" x2="298" y2="270" stroke="#2b1e11" stroke-width="3" stroke-linecap="round" opacity=".55"/><line x1="306" y1="274" x2="324" y2="270" stroke="#2b1e11" stroke-width="3" stroke-linecap="round" opacity=".55"/><line x1="332" y1="274" x2="350" y2="270" stroke="#2b1e11" stroke-width="3" stroke-linecap="round" opacity=".55"/><line x1="358" y1="274" x2="376" y2="270" stroke="#2b1e11" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+    <path d="M185 268 C192 288 200 304 200 324" fill="none" stroke="#5a4530" stroke-width="4" stroke-opacity=".5" stroke-linecap="round"/>
+  </g>
+  
+  <g id="bv-lodge">
+    <path d="M268 297 C266 264 298 247 321 250 C348 253 369 272 368 297 L368 322 L268 322 Z" fill="#563d24" stroke="#0a0705" stroke-opacity=".6" stroke-width="1.4"/>
+    <line x1="280" y1="285" x2="288" y2="274" stroke="#2f2013" stroke-width="1.4" stroke-linecap="round" opacity=".45"/><line x1="293" y1="285" x2="301" y2="274" stroke="#2f2013" stroke-width="1.4" stroke-linecap="round" opacity=".45"/><line x1="307" y1="285" x2="315" y2="274" stroke="#2f2013" stroke-width="1.4" stroke-linecap="round" opacity=".45"/><line x1="320" y1="285" x2="328" y2="274" stroke="#2f2013" stroke-width="1.4" stroke-linecap="round" opacity=".45"/><line x1="334" y1="285" x2="342" y2="274" stroke="#2f2013" stroke-width="1.4" stroke-linecap="round" opacity=".45"/><line x1="347" y1="285" x2="356" y2="274" stroke="#2f2013" stroke-width="1.4" stroke-linecap="round" opacity=".45"/><line x1="361" y1="285" x2="369" y2="274" stroke="#2f2013" stroke-width="1.4" stroke-linecap="round" opacity=".45"/>
+    <ellipse cx="319" cy="289" rx="14" ry="9" fill="#2f2013" opacity=".94"/>
+  </g>
+  
+  <g id="bv-beaver" transform="translate(170,352) scale(0.95)">
+    <path d="M-126 30 Q-70 42 -10 30 T60 28" fill="none" stroke="#8a6a44" stroke-width="2" stroke-opacity=".4" stroke-linecap="round"/>
+    <path d="M-56 2 C-78 -2 -104 2 -118 10 C-124 14 -122 20 -112 22 C-90 26 -66 18 -52 10 Z" fill="#20191a" stroke="#0a0705" stroke-opacity=".8" stroke-width="1.4"/>
+    <line x1="-64" y1="6" x2="-70" y2="16" stroke="#0a0705" stroke-opacity=".35" stroke-width="1.2"/>
+    <line x1="-78" y1="6" x2="-84" y2="16" stroke="#0a0705" stroke-opacity=".35" stroke-width="1.2"/>
+    <line x1="-92" y1="6" x2="-98" y2="16" stroke="#0a0705" stroke-opacity=".35" stroke-width="1.2"/>
+    <line x1="-106" y1="6" x2="-112" y2="16" stroke="#0a0705" stroke-opacity=".35" stroke-width="1.2"/>
+    <path d="M-58 6 C-54 -16 -30 -30 -2 -30 C22 -30 40 -20 46 -4 C30 6 -2 10 -30 9 C-42 9 -52 8 -58 6 Z" fill="url(#bv-body)" stroke="#0a0705" stroke-opacity=".9" stroke-width="1.8"/>
+    <path d="M28 -2 C24 -18 34 -32 50 -32 C66 -31 78 -20 80 -10 C72 -3 56 -1 42 -2 C36 -2 31 -2 28 -2 Z" fill="url(#bv-body)" stroke="#0a0705" stroke-opacity=".9" stroke-width="1.6"/>
+    <rect x="74" y="-11" width="4" height="6" rx="1" fill="#d9a24a" stroke="#0a0705" stroke-width=".6"/><rect x="78.5" y="-11" width="4" height="6" rx="1" fill="#d9a24a" stroke="#0a0705" stroke-width=".6"/>
+    <ellipse cx="44" cy="-31" rx="5" ry="4" fill="#2b1e12" stroke="#0a0705" stroke-opacity=".7" stroke-width="1"/>
+    <circle cx="56" cy="-22" r="3" fill="#0a0705"/><circle cx="55" cy="-23" r="1" fill="#f6dcae" fill-opacity=".85"/>
+  </g>
+</svg>

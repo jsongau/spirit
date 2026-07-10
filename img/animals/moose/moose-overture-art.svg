@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A bull moose at rest chest-deep in a dusk-lit lake, closer and calmer, its antlers catching the last light">
+  <defs>
+    <linearGradient id="ms-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#241d2c"/>
+      <stop offset="55%" stop-color="#4a3040"/>
+      <stop offset="100%" stop-color="#7a4a3d"/>
+    </linearGradient>
+    <radialGradient id="ms-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f6d9a8" stop-opacity=".85"/>
+      <stop offset="55%" stop-color="#f2c48a" stop-opacity=".3"/>
+      <stop offset="100%" stop-color="#f2c48a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ms-water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3c5866"/>
+      <stop offset="35%" stop-color="#1f333d"/>
+      <stop offset="100%" stop-color="#101a20"/>
+    </linearGradient>
+    <linearGradient id="ms-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4a3527"/>
+      <stop offset="100%" stop-color="#1b140e"/>
+    </linearGradient>
+    <linearGradient id="ms-antler" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e7cd94"/>
+      <stop offset="60%" stop-color="#cbaa6c"/>
+      <stop offset="100%" stop-color="#93763f"/>
+    </linearGradient>
+    <filter id="ms-blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="500" rx="18" fill="url(#ms-sky)"/>
+  <circle cx="112" cy="172" r="26" fill="#f2c48a" fill-opacity=".85"/>
+  <circle cx="112" cy="172" r="60" fill="url(#ms-sun)"/>
+  <g id="ms-tree" opacity=".92"><path d="M24 255.36 L24 262.92" stroke="#0b1012" stroke-width="1.3" stroke-linecap="round"/><path d="M11.4 251.6 L24 235.2 L36.6 251.6 Z" fill="#12181a"/><path d="M14.8 244.5 L24 231.0 L33.2 244.5 Z" fill="#12181a"/><path d="M18.1 238.3 L24 227.6 L29.9 238.3 Z" fill="#12181a"/>
+    <path d="M350 248.0 L350 257.0" stroke="#0b1012" stroke-width="1.5" stroke-linecap="round"/><path d="M335.0 243.6 L350 224.0 L365.0 243.6 Z" fill="#12181a"/><path d="M339.0 235.1 L350 219.0 L361.0 235.1 Z" fill="#12181a"/><path d="M343.0 227.7 L350 215.0 L357.0 227.7 Z" fill="#12181a"/></g>
+  <path d="M0 252 L400 252 L400 500 L0 500 Z" fill="url(#ms-water)"/>
+  <g opacity=".8"><path d="M-6 278 Q20 274 46 278" fill="none" stroke="#5a7482" stroke-width="1.6" stroke-linecap="round" opacity="0.5"/>
+    <path d="M24 287 Q60 283 96 287" fill="none" stroke="#5a7482" stroke-width="1.6" stroke-linecap="round" opacity="0.5"/>
+    <path d="M54 296 Q100 292 146 296" fill="none" stroke="#5a7482" stroke-width="1.6" stroke-linecap="round" opacity="0.5"/>
+    <path d="M114 305 Q140 301 166 305" fill="none" stroke="#5a7482" stroke-width="1.6" stroke-linecap="round" opacity="0.5"/>
+    <path d="M144 278 Q180 274 216 278" fill="none" stroke="#5a7482" stroke-width="1.6" stroke-linecap="round" opacity="0.5"/>
+    <path d="M174 287 Q220 283 266 287" fill="none" stroke="#5a7482" stroke-width="1.6" stroke-linecap="round" opacity="0.5"/>
+    <path d="M234 296 Q260 292 286 296" fill="none" stroke="#5a7482" stroke-width="1.6" stroke-linecap="round" opacity="0.5"/>
+    <path d="M264 305 Q300 301 336 305" fill="none" stroke="#5a7482" stroke-width="1.6" stroke-linecap="round" opacity="0.5"/>
+    <path d="M294 278 Q340 274 386 278" fill="none" stroke="#5a7482" stroke-width="1.6" stroke-linecap="round" opacity="0.5"/>
+    <path d="M354 287 Q380 283 406 287" fill="none" stroke="#5a7482" stroke-width="1.6" stroke-linecap="round" opacity="0.5"/></g>
+  <g transform="translate(236,435.08) scale(0.86,-0.516) translate(0,2)" filter="url(#ms-blur)"><g opacity="0.22"><path d="M-14 -70 Q-17.72 -94.8 -25.16 -114.64" fill="none" stroke="#93763f" stroke-width="3.1" stroke-linecap="round" opacity="0.132"/><path d="M-14 -70 C-18.96 -88.6 -17.72 -105.96000000000001 -27.64 -119.6 C-36.32 -130.76 -52.44 -135.72 -67.32 -129.51999999999998 C-58.64 -122.08 -57.4 -113.4 -64.84 -105.96000000000001 C-73.52 -109.68 -83.44 -105.96000000000001 -87.16 -96.03999999999999 C-76.0 -94.8 -68.56 -88.6 -71.03999999999999 -79.92 C-62.36 -81.16 -53.68 -76.2 -49.96 -67.52 C-41.28 -72.48 -32.6 -71.24 -26.4 -63.8 C-21.439999999999998 -68.76 -17.72 -73.72 -14 -70 Z" fill="url(#ms-antler)" stroke="#0a0806" stroke-opacity=".8" stroke-width="1.6"/></g><g opacity="0.22"><path d="M18 -80 Q21.72 -104.8 29.16 -124.64" fill="none" stroke="#93763f" stroke-width="3.1" stroke-linecap="round" opacity="0.132"/><path d="M18 -80 C22.96 -98.6 21.72 -115.96000000000001 31.64 -129.6 C40.32 -140.76 56.44 -145.72 71.32 -139.51999999999998 C62.64 -132.07999999999998 61.4 -123.4 68.84 -115.96000000000001 C77.52 -119.68 87.44 -115.96000000000001 91.16 -106.03999999999999 C80.0 -104.8 72.56 -98.6 75.03999999999999 -89.92 C66.36 -91.16 57.68 -86.2 53.96 -77.52 C45.28 -82.48 36.6 -81.24 30.4 -73.8 C25.439999999999998 -78.76 21.72 -83.72 18 -80 Z" fill="url(#ms-antler)" stroke="#0a0806" stroke-opacity=".8" stroke-width="1.6"/></g></g>
+  <ellipse cx="236" cy="342.2" rx="103.2" ry="16.04" fill="#3c5866" fill-opacity=".35"/>
+  
+  <g id="ms-moose" transform="translate(236,282) scale(0.86)">
+    <path d="M-96 70 C-104 38 -92 10 -58 -2 C-30 -12 2 -10 24 6 C40 18 46 40 42 70 Z" fill="url(#ms-body)" stroke="#0a0806" stroke-opacity=".85" stroke-width="1.8"/>
+    <g opacity="1.0"><path d="M-14 -70 Q-17.72 -94.8 -25.16 -114.64" fill="none" stroke="#93763f" stroke-width="3.1" stroke-linecap="round" opacity="0.6"/><path d="M-14 -70 C-18.96 -88.6 -17.72 -105.96000000000001 -27.64 -119.6 C-36.32 -130.76 -52.44 -135.72 -67.32 -129.51999999999998 C-58.64 -122.08 -57.4 -113.4 -64.84 -105.96000000000001 C-73.52 -109.68 -83.44 -105.96000000000001 -87.16 -96.03999999999999 C-76.0 -94.8 -68.56 -88.6 -71.03999999999999 -79.92 C-62.36 -81.16 -53.68 -76.2 -49.96 -67.52 C-41.28 -72.48 -32.6 -71.24 -26.4 -63.8 C-21.439999999999998 -68.76 -17.72 -73.72 -14 -70 Z" fill="url(#ms-antler)" stroke="#0a0806" stroke-opacity=".8" stroke-width="1.6"/></g>
+    <g opacity="1.0"><path d="M18 -80 Q21.72 -104.8 29.16 -124.64" fill="none" stroke="#93763f" stroke-width="3.1" stroke-linecap="round" opacity="0.6"/><path d="M18 -80 C22.96 -98.6 21.72 -115.96000000000001 31.64 -129.6 C40.32 -140.76 56.44 -145.72 71.32 -139.51999999999998 C62.64 -132.07999999999998 61.4 -123.4 68.84 -115.96000000000001 C77.52 -119.68 87.44 -115.96000000000001 91.16 -106.03999999999999 C80.0 -104.8 72.56 -98.6 75.03999999999999 -89.92 C66.36 -91.16 57.68 -86.2 53.96 -77.52 C45.28 -82.48 36.6 -81.24 30.4 -73.8 C25.439999999999998 -78.76 21.72 -83.72 18 -80 Z" fill="url(#ms-antler)" stroke="#0a0806" stroke-opacity=".8" stroke-width="1.6"/></g>
+    <path d="M-30 -8 C-46 -26 -48 -52 -30 -70 C-14 -86 12 -88 30 -74 C46 -62 50 -42 42 -24 C58 -18 68 -2 64 18 C60 36 46 48 30 50 C16 52 2 44 -6 30 C-18 30 -30 18 -30 -8 Z" fill="url(#ms-body)" stroke="#0a0806" stroke-opacity=".9" stroke-width="1.8"/>
+    <path d="M-28 -58 C-46 -64 -58 -56 -56 -44 C-46 -46 -34 -50 -28 -58 Z" fill="#1b140e" stroke="#0a0806" stroke-opacity=".7" stroke-width="1.2"/>
+    <path d="M10 -76 C4 -92 14 -100 28 -96 C22 -88 18 -82 10 -76 Z" fill="#2c2119" stroke="#0a0806" stroke-opacity=".7" stroke-width="1.2"/>
+    <path d="M40 18 C38 34 40 48 46 58" fill="none" stroke="#1b140e" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="-6" cy="-40" r="3.2" fill="#0a0806"/><circle cx="-7" cy="-41" r="1" fill="#e7cd94" fill-opacity=".8"/>
+    <path d="M52 40 C48.8 52.8 56.8 64.0 50.4 78.4" fill="none" stroke="#4c6a4a" stroke-width="1.3" stroke-linecap="round" opacity=".85"/><ellipse cx="51.2" cy="57.6" rx="2.7" ry="5.6" fill="#4c6a4a" opacity=".85" transform="rotate(18 51.2 57.6)"/>
+    <path d="M58 44 C55.6 53.6 61.6 62.0 56.8 72.8" fill="none" stroke="#4c6a4a" stroke-width="1.0" stroke-linecap="round" opacity=".85"/><ellipse cx="57.4" cy="57.2" rx="2.0" ry="4.2" fill="#4c6a4a" opacity=".85" transform="rotate(18 57.4 57.2)"/>
+  </g>
+</svg>

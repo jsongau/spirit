@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A single Pronghorn at full stride across an open, empty plain at dusk, no other animal in view, running toward nothing visible on the horizon">
+  <defs>
+    <linearGradient id="ph-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c0f08"/>
+      <stop offset="55%" stop-color="#a83226"/>
+      <stop offset="100%" stop-color="#e0693f"/>
+    </linearGradient>
+    <radialGradient id="ph-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbe3c0" stop-opacity=".85"/>
+      <stop offset="55%" stop-color="#f4c9a0" stop-opacity=".30"/>
+      <stop offset="100%" stop-color="#c9552f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ph-ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3c2415"/>
+      <stop offset="100%" stop-color="#241407"/>
+    </linearGradient>
+    <linearGradient id="ph-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d9a06a"/>
+      <stop offset="100%" stop-color="#7a4f2c"/>
+    </linearGradient>
+    <filter id="ph-blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="800" rx="24" fill="url(#ph-sky)"/>
+  <g filter="url(#ph-blur)" opacity=".95">
+    <circle cx="650" cy="190" r="46" fill="#f4c9a0" fill-opacity=".85"/>
+    <circle cx="650" cy="190" r="80" fill="url(#ph-sun)"/>
+  </g>
+  <path d="M0 560 C176.0 546 336.0 570 480.0 556 C640.0 546 720.0 566 800 558 L800 800 L0 800 Z"
+        fill="url(#ph-ground)" opacity=".96"/>
+  <g opacity=".65"><path d="M25 574 Q28 568.0 32 564" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M75 579 Q72 570.0 70 564" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M125 584 Q128 572.0 132 564" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M175 589 Q172 574.0 170 564" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M225 574 Q228 568.0 232 564" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M275 579 Q272 570.0 270 564" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M325 584 Q328 572.0 332 564" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M375 589 Q372 574.0 370 564" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M425 574 Q428 568.0 432 564" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M475 579 Q472 570.0 470 564" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M525 584 Q528 572.0 532 564" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M575 589 Q572 574.0 570 564" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M625 574 Q628 568.0 632 564" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M675 579 Q672 570.0 670 564" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M725 584 Q728 572.0 732 564" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+    <path d="M775 589 Q772 574.0 770 564" fill="none" stroke="#241407" stroke-width="2.2" stroke-linecap="round" opacity=".7"/></g>
+  
+  <g id="ph-pronghorn" transform="translate(470,470) scale(1.0)">
+    <g id="ph-legs-back">
+      <path d="M-88 14 L-122 34 L-140 72" fill="none" stroke="#7a4f2c" stroke-width="9" stroke-linecap="round"/>
+      <path d="M-14 22 L-8 50 L-18 74" fill="none" stroke="#7a4f2c" stroke-width="9" stroke-linecap="round"/>
+    </g>
+    <path d="M-100 -6 Q-114 4 -110 20" fill="none" stroke="#7a4f2c" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M-98 -8 C-104 -26 -92 -40 -72 -42 C-40 -46 -4 -44 18 -30 C30 -22 34 -8 30 4 C22 22 -2 30 -34 30 C-62 30 -86 20 -96 6 C-100 2 -98 -4 -98 -8 Z" fill="url(#ph-body)" stroke="#120a05" stroke-opacity=".9" stroke-width="1.8"/>
+    <path d="M-96 -2 C-104 2 -106 14 -98 22 C-90 29 -76 29 -70 22 C-72 12 -80 2 -96 -2 Z" fill="#f4ead9" fill-opacity=".92" stroke="#120a05" stroke-opacity=".3" stroke-width="1"/>
+    <path d="M-76 -48 C-70 -70 -58 -92 -38 -106 C-32 -110 -26 -106 -28 -98 C-42 -86 -54 -66 -58 -44 Z" fill="url(#ph-body)" stroke="#120a05" stroke-opacity=".85" stroke-width="1.4"/><path d="M-34 -130 Q-42 -158 -32 -180 Q-28 -188 -38 -190" fill="none" stroke="#171008" stroke-width="5" stroke-linecap="round"/><path d="M-20 -130 Q-16 -160 -22 -182 Q-24 -190 -14 -192" fill="none" stroke="#171008" stroke-width="5" stroke-linecap="round"/><path d="M-42 -110 C-46 -122 -38 -132 -26 -132 C-14 -132 -6 -124 -8 -112 C-9 -104 -16 -98 -26 -98 C-34 -98 -40 -103 -42 -110 Z" fill="url(#ph-body)" stroke="#120a05" stroke-opacity=".85" stroke-width="1.4"/><path d="M-38 -130 Q-48 -144 -42 -154" fill="none" stroke="#7a4f2c" stroke-width="6" stroke-linecap="round"/><path d="M-24 -132 Q-22 -148 -14 -156" fill="none" stroke="#7a4f2c" stroke-width="6" stroke-linecap="round"/><path d="M-42 -112 Q-46 -104 -42 -96" fill="none" stroke="#2b1a10" stroke-width="4.5" stroke-linecap="round" opacity=".8"/><path d="M-58 -46 Q-50 -70 -40 -90" fill="none" stroke="#2b1a10" stroke-width="4.5" stroke-linecap="round" opacity=".6"/><circle cx="-22" cy="-114" r="2.6" fill="#120a05"/><circle cx="-23" cy="-115" r=".9" fill="#f4ead9" fill-opacity=".8"/>
+    <g id="ph-legs-front">
+      <path d="M-66 22 L-70 50 L-56 76" fill="none" stroke="#b97a4a" stroke-width="9.5" stroke-linecap="round"/>
+      <path d="M-2 18 L36 40 L50 82" fill="none" stroke="#b97a4a" stroke-width="9.5" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

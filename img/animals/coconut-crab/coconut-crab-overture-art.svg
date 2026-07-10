@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A coconut crab at rest on dark sand beside a cracked coconut, closer and calmer">
+  <defs>
+    <radialGradient id="cc-night" cx="66%" cy="20%" r="92%">
+      <stop offset="0%" stop-color="#16222c"/>
+      <stop offset="55%" stop-color="#0e161f"/>
+      <stop offset="100%" stop-color="#0b121a"/>
+    </radialGradient>
+    <radialGradient id="cc-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e9dfc4" stop-opacity=".35"/>
+      <stop offset="70%" stop-color="#e9dfc4" stop-opacity=".12"/>
+      <stop offset="100%" stop-color="#e9dfc4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cc-glow" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#f3ecd6"/>
+      <stop offset="55%" stop-color="#e9dfc4"/>
+      <stop offset="100%" stop-color="#b98f4a"/>
+    </radialGradient>
+    <linearGradient id="cc-shell" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4a6a8c"/>
+      <stop offset="100%" stop-color="#1d2f42"/>
+    </linearGradient>
+    <filter id="cc-blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="500" rx="18" fill="url(#cc-night)"/>
+  <g opacity=".9"><circle cx="340" cy="62" r="16" fill="#0b121a" stroke="#cdd9e2" stroke-opacity=".3" stroke-width="1.2"/>
+  <circle cx="340" cy="62" r="34" fill="url(#cc-moon)"/></g>
+  <g id="cc-tree"><path d="M38 540 Q32 470 40 440" fill="none" stroke="#0a1319" stroke-width="7" stroke-linecap="round"/>
+    <path d="M40 440 Q-4 420 -30 452" fill="none" stroke="#0a1319" stroke-width="5" stroke-linecap="round"/>
+    <path d="M40 440 Q10 404 -2 386" fill="none" stroke="#0a1319" stroke-width="4" stroke-linecap="round"/>
+    <path d="M40 440 Q84 420 110 452" fill="none" stroke="#0a1319" stroke-width="5" stroke-linecap="round"/>
+    <path d="M40 440 Q70 404 82 386" fill="none" stroke="#0a1319" stroke-width="4" stroke-linecap="round"/>
+    <path d="M350 490 Q344 420 352 390" fill="none" stroke="#0a1319" stroke-width="7" stroke-linecap="round"/>
+    <path d="M352 390 Q308 370 282 402" fill="none" stroke="#0a1319" stroke-width="5" stroke-linecap="round"/>
+    <path d="M352 390 Q322 354 310 336" fill="none" stroke="#0a1319" stroke-width="4" stroke-linecap="round"/>
+    <path d="M352 390 Q396 370 422 402" fill="none" stroke="#0a1319" stroke-width="5" stroke-linecap="round"/>
+    <path d="M352 390 Q382 354 394 336" fill="none" stroke="#0a1319" stroke-width="4" stroke-linecap="round"/></g>
+  <path d="M0 372 C80.0 346 160.0 386 248.0 364 C320.0 350 360.0 378 400 368 L400 500 L0 500 Z"
+        fill="#12202b" opacity=".92"/>
+  
+  <g filter="url(#cc-blur)">
+    <path d="M242.0 359.5 C236.0 346.0 248.0 329.5 266.0 325.0 C285.5 320.5 302.0 329.5 305.0 346.0 C308.0 362.5 300.5 377.5 284.0 382.0 C266.0 386.5 246.5 376.0 242.0 359.5 Z" fill="#8a6a3c" stroke="#05070b" stroke-opacity=".85" stroke-width="1.6"/>
+    <path d="M258.5 341.5 C263.0 334.0 275.0 332.5 282.5 338.5 C288.5 344.5 285.5 353.5 276.5 356.5 C266.0 359.5 255.5 350.5 258.5 341.5 Z" fill="url(#cc-glow)"/>
+  </g>
+  <ellipse cx="190" cy="402.6" rx="80.6" ry="15.92" fill="#05070b" fill-opacity=".5"/>
+  
+  <g id="cc-crab" transform="translate(190,260) scale(0.62)">
+    <g id="cc-legs-back">
+      <path d="M-40 20 Q-130 70 -210 150" fill="none" stroke="#1d2f42" stroke-width="10" stroke-linecap="round"/>
+            <path d="M-30 46 Q-108 128 -168 230" fill="none" stroke="#1d2f42" stroke-width="10" stroke-linecap="round"/>
+            <path d="M-8 58 Q-66 158 -96 268" fill="none" stroke="#1d2f42" stroke-width="9" stroke-linecap="round"/>
+    </g>
+    <path d="M-90 -24 C-130 -40 -152 -72 -148 -104 L-124 -98 C-124 -76 -108 -54 -80 -42 Z" fill="#2b3f56" stroke="#05070b" stroke-opacity=".85" stroke-width="1.4"/>
+    <path d="M-148 -104 C-160 -118 -156 -136 -140 -142 C-128 -146 -116 -140 -114 -128 C-122 -124 -124 -114 -124 -98 Z" fill="#4a6a8c" stroke="#05070b" stroke-opacity=".9" stroke-width="1.4"/>
+    <path d="M-118 -14 C-128 -58 -96 -98 -46 -112 C-14 -120 20 -120 54 -108 C100 -92 126 -54 120 -6 C114 40 78 78 22 92 C-30 104 -82 92 -108 58 C-126 32 -124 6 -118 -14 Z" fill="url(#cc-shell)" stroke="#05070b" stroke-opacity=".95" stroke-width="1.8"/>
+    <path d="M-118 -14 C-128 -58 -96 -98 -46 -112"
+          fill="none" stroke="#8fb4cc" stroke-opacity=".28" stroke-width="2.2"/>
+    <path d="M-30 -108 q -6 -22 -2 -34" fill="none" stroke="#05070b" stroke-width="4" stroke-linecap="round"/><circle cx="-32" cy="-144" r="5.5" fill="#05070b"/><circle cx="-33" cy="-146" r="1.6" fill="#8fb4cc" fill-opacity=".8"/><path d="M6 -112 q 2 -22 8 -33" fill="none" stroke="#05070b" stroke-width="4" stroke-linecap="round"/><circle cx="16" cy="-147" r="5.5" fill="#05070b"/><circle cx="15" cy="-149" r="1.6" fill="#8fb4cc" fill-opacity=".8"/>
+    <path d="M-6 -116 q 6 -34 2 -66" fill="none" stroke="#8a6a3c" stroke-opacity=".85" stroke-width="1.8" stroke-linecap="round"/><circle cx="-4" cy="-182" r="1.8" fill="#c9a24a" fill-opacity=".85"/><path d="M18 -116 q 16 -34 28 -66" fill="none" stroke="#8a6a3c" stroke-opacity=".85" stroke-width="1.8" stroke-linecap="round"/><circle cx="24" cy="-182" r="1.8" fill="#c9a24a" fill-opacity=".85"/>
+    <path d="M96 -30 C150 -10 186 40 196 96 C202 134 196 168 176 192 L150 176 C168 150 172 118 160 90 C146 58 118 30 86 8 Z" fill="#4a6a8c" stroke="#05070b" stroke-opacity=".9" stroke-width="1.6"/>
+    <path d="M176 192 C190 206 188 230 166 244 C146 256 122 250 112 234 C128 226 118 210 100 206 C112 190 134 180 150 176 Z" fill="#4a6a8c" stroke="#05070b" stroke-opacity=".95" stroke-width="1.7"/>
+    <path d="M150 176 C168 150 172 118 160 90"
+          fill="none" stroke="#8fb4cc" stroke-opacity=".26" stroke-width="1.8"/>
+    <g id="cc-legs-front">
+            <path d="M44 30 Q108 96 150 200" fill="none" stroke="#2b3f56" stroke-width="10" stroke-linecap="round"/>
+            <path d="M34 52 Q84 140 106 250" fill="none" stroke="#2b3f56" stroke-width="9" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

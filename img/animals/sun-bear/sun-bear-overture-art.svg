@@ -1,58 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Placeholder: Sun Bear portrait">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A sun bear reaching into a glowing tree hollow, closer and calmer, its gold chest crescent lit against the dark canopy">
   <defs>
-    <radialGradient id="ob-sky" cx="52%" cy="34%" r="82%">
-      <stop offset="0%" stop-color="#1a1c2b"/>
-      <stop offset="58%" stop-color="#0d0e18"/>
-      <stop offset="100%" stop-color="#090a12"/>
+    <radialGradient id="sb-night" cx="30%" cy="24%" r="95%">
+      <stop offset="0%" stop-color="#1f160c"/>
+      <stop offset="55%" stop-color="#140d07"/>
+      <stop offset="100%" stop-color="#0a0603"/>
     </radialGradient>
-    <radialGradient id="ob-sun" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#d6c18c" stop-opacity="0.42"/>
-      <stop offset="55%" stop-color="#d6c18c" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#d6c18c" stop-opacity="0"/>
+    <radialGradient id="sb-honey" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffe9a8"/>
+      <stop offset="45%" stop-color="#e0a83c" stop-opacity=".85"/>
+      <stop offset="100%" stop-color="#e0a83c" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="ob-bear" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#20222f"/>
-      <stop offset="100%" stop-color="#0e0f18"/>
+    <radialGradient id="sb-crest" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#f7dfa0"/>
+      <stop offset="100%" stop-color="#e7b64f"/>
+    </radialGradient>
+    <linearGradient id="sb-bark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#54402a"/>
+      <stop offset="100%" stop-color="#241a0e"/>
     </linearGradient>
+    <linearGradient id="sb-fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a221c"/>
+      <stop offset="100%" stop-color="#0c0906"/>
+    </linearGradient>
+    <filter id="sb-blur" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="sb-blur-soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
-
-  <rect width="800" height="1000" fill="url(#ob-sky)"/>
-  <rect x="14" y="14" width="772" height="972" rx="10" fill="none" stroke="#d6c18c" stroke-opacity="0.28" stroke-width="1.5"/>
-  <circle cx="400" cy="360" r="330" fill="url(#ob-sun)"/>
-
-  <!-- faint stars -->
-  <g fill="#ece7d8" fill-opacity="0.6">
-    <circle cx="150" cy="180" r="1.8"/><circle cx="640" cy="150" r="1.5"/>
-    <circle cx="700" cy="380" r="1.4"/><circle cx="110" cy="420" r="1.3"/>
-    <circle cx="560" cy="90" r="1.2"/><circle cx="240" cy="110" r="1.4"/>
-  </g>
-
-  <!-- Sun bear, seated portrait -->
-  <g transform="translate(400 470)">
-    <ellipse cx="0" cy="215" rx="205" ry="205" fill="url(#ob-bear)"/>
-    <g fill="#12131d">
-      <rect x="-140" y="300" width="86" height="150" rx="40"/>
-      <rect x="54" y="300" width="86" height="150" rx="40"/>
+  <rect width="400" height="500" rx="18" fill="url(#sb-night)"/>
+  <g id="sb-canopy" opacity=".9"><path d="M8.099999999999998 47.5 C11.399999999999999 28.799999999999997 30.1 20.0 42.2 22.2 C56.5 17.799999999999997 74.1 27.7 76.30000000000001 43.1 C65.3 39.8 49.9 36.5 38.9 38.7 C27.9 36.5 16.9 43.1 8.099999999999998 47.5 Z" fill="#1a2010"/>
+    <path d="M162.3 32.5 C166.2 10.399999999999999 188.3 0.0 202.6 2.599999999999998 C219.5 -2.6000000000000014 240.3 9.099999999999998 242.9 27.3 C229.9 23.4 211.7 19.5 198.7 22.1 C185.7 19.5 172.7 27.3 162.3 32.5 Z" fill="#10140a"/>
+    <path d="M331.0 49.0 C334.0 32.0 351.0 24.0 362.0 26.0 C375.0 22.0 391.0 31.0 393.0 45.0 C383.0 42.0 369.0 39.0 359.0 41.0 C349.0 39.0 339.0 45.0 331.0 49.0 Z" fill="#1a2010"/></g>
+  
+  <g id="sb-trunk">
+    <path d="M240 48 C230 175 234 343 230 470 L350 470 C346 343 350 175 340 48 Z" fill="url(#sb-bark)" stroke="#000000" stroke-opacity=".8" stroke-width="1.6"/>
+    <path d="M266 56 C262 217 270 364 264 464" fill="none" stroke="#241a0e" stroke-opacity=".55" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M286 56 C282 217 290 364 284 464" fill="none" stroke="#241a0e" stroke-opacity=".55" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M306 56 C302 217 310 364 304 464" fill="none" stroke="#241a0e" stroke-opacity=".55" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M326 56 C322 217 330 364 324 464" fill="none" stroke="#241a0e" stroke-opacity=".55" stroke-width="2.4" stroke-linecap="round"/>
+    <g filter="url(#sb-blur)">
+      <circle cx="278" cy="224" r="54" fill="url(#sb-honey)" opacity=".85"/>
     </g>
-    <g stroke="#d6c18c" stroke-width="5" stroke-linecap="round" opacity="0.75">
-      <line x1="-122" y1="452" x2="-122" y2="470"/><line x1="-98" y1="452" x2="-98" y2="472"/><line x1="-74" y1="452" x2="-74" y2="470"/>
-      <line x1="74" y1="452" x2="74" y2="470"/><line x1="98" y1="452" x2="98" y2="472"/><line x1="122" y1="452" x2="122" y2="470"/>
+    <path d="M249 224 C256 195 288 190 302 208 C312 226 300 251 281 256 C262 254 246 237 249 224 Z" fill="#0d0904"/>
+    <g filter="url(#sb-blur-soft)">
+      <ellipse cx="280" cy="229" rx="16" ry="12"
+               fill="url(#sb-honey)"/>
     </g>
-    <circle cx="0" cy="-40" r="160" fill="url(#ob-bear)"/>
-    <circle cx="-130" cy="-148" r="50" fill="#20222f"/>
-    <circle cx="130" cy="-148" r="50" fill="#20222f"/>
-    <circle cx="-130" cy="-148" r="25" fill="#0e0f18"/>
-    <circle cx="130" cy="-148" r="25" fill="#0e0f18"/>
-    <ellipse cx="0" cy="34" rx="94" ry="74" fill="#c9b17f"/>
-    <ellipse cx="0" cy="54" rx="56" ry="36" fill="#b49b63"/>
-    <ellipse cx="0" cy="10" rx="28" ry="19" fill="#0c0d15"/>
-    <circle cx="-60" cy="-56" r="14" fill="#0c0d15"/>
-    <circle cx="60" cy="-56" r="14" fill="#0c0d15"/>
-    <circle cx="-55" cy="-61" r="4" fill="#d6c18c"/>
-    <circle cx="65" cy="-61" r="4" fill="#d6c18c"/>
-    <!-- the sun crescent -->
-    <path d="M -92 150 Q 0 280 92 150" fill="none" stroke="#d6c18c" stroke-width="24" stroke-linecap="round"/>
-    <path d="M -92 150 Q 0 280 92 150" fill="none" stroke="#efe3bd" stroke-width="7" stroke-linecap="round" opacity="0.55"/>
   </g>
-
+  <ellipse cx="168" cy="391.0" rx="60.720000000000006" ry="14.56" fill="#000000" fill-opacity=".55"/>
+  
+  <g id="sb-bear" transform="translate(168,292) scale(0.66)">
+    <path d="M-86 30 Q-104 44 -98 62" fill="none" stroke="#0c0906" stroke-width="9" stroke-linecap="round"/>
+    <g id="sb-legs-back"><path d="M-62 58 L-70 128" fill="none" stroke="#0c0906" stroke-width="20" stroke-linecap="round"/>
+      <path d="M8 72 L6 134" fill="none" stroke="#0c0906" stroke-width="20" stroke-linecap="round"/></g>
+    <path d="M40 60 L58 126" fill="none" stroke="#181310" stroke-width="19" stroke-linecap="round"/>
+    <path d="M-92 -10 C-100 -42 -78 -70 -42 -78 C-8 -86 30 -78 52 -52 C70 -30 72 4 62 34 C52 62 26 80 -8 82 C-44 84 -78 68 -92 38 C-98 22 -98 4 -92 -10 Z" fill="url(#sb-fur)" stroke="#000000" stroke-opacity=".85" stroke-width="1.8"/>
+    <path d="M-14 2 C2 -10 24 -10 38 2 C30 16 14 24 2 22 C-8 20 -14 10 -14 2 Z" fill="url(#sb-crest)" opacity=".95"/>
+    <path d="M-70 -56 C-84 -78 -78 -104 -54 -114 C-32 -122 -6 -116 8 -98 C20 -82 16 -62 2 -48 C-14 -34 -38 -32 -54 -40 C-64 -45 -68 -50 -70 -56 Z" fill="#181310" stroke="#000000" stroke-opacity=".85" stroke-width="1.6"/>
+    <circle cx="-72" cy="-98" r="13" fill="#0c0906" stroke="#000000" stroke-opacity=".7" stroke-width="1.2"/>
+    <circle cx="-24" cy="-112" r="12" fill="#0c0906" stroke="#000000" stroke-opacity=".7" stroke-width="1.2"/>
+    <path d="M-46 -46 C-58 -40 -62 -28 -54 -18 C-46 -8 -30 -6 -20 -14 C-14 -22 -16 -34 -24 -42 C-30 -48 -38 -50 -46 -46 Z" fill="#2a221c" opacity=".9"/>
+    <circle cx="-46" cy="-58" r="3.2" fill="#000000"/><circle cx="-47" cy="-59" r="1" fill="#e8ddbe" fill-opacity=".8"/>
+    <ellipse cx="-40" cy="-22" rx="5.2" ry="3.6" fill="#000000"/>
+    <path d="M-30 -14 C64 -23 159 -66 240 -108" fill="none" stroke="#0c0906" stroke-width="17" stroke-linecap="round"/>
+    <path d="M-30 -14 C64 -23 159 -66 240 -108" fill="none" stroke="#181310" stroke-width="10" stroke-linecap="round" opacity=".7"/>
+    <g filter="url(#sb-blur-soft)">
+      <path d="M234 -104 C250 -96 264 -98 274 -110" fill="none" stroke="#c65c3e" stroke-width="4.6" stroke-linecap="round"/>
+    </g>
+    <g id="sb-claws"><path d="M240 -108 L254 -114" fill="none" stroke="#e8ddbe" stroke-width="3.4" stroke-linecap="round"/>
+      <path d="M240 -108 L256 -106" fill="none" stroke="#e8ddbe" stroke-width="3.4" stroke-linecap="round"/>
+      <path d="M240 -108 L253 -97" fill="none" stroke="#e8ddbe" stroke-width="3.4" stroke-linecap="round"/></g>
+  </g>
 </svg>

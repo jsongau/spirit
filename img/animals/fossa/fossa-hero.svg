@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A Fossa descending a rainforest tree trunk head-first at dusk, claws gripping the bark, tail curling up into a darkening canopy, one eye catching a point of orange light">
+  <defs>
+    <radialGradient id="fs-night" cx="50%" cy="18%" r="95%">
+      <stop offset="0%" stop-color="#1c3247"/>
+      <stop offset="55%" stop-color="#122333"/>
+      <stop offset="100%" stop-color="#0e1720"/>
+    </radialGradient>
+    <linearGradient id="fs-horizon" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a170f" stop-opacity="0"/>
+      <stop offset="72%" stop-color="#2a170f" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#4a2a1c" stop-opacity=".8"/>
+    </linearGradient>
+    <linearGradient id="fs-trunk" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4a3524"/>
+      <stop offset="55%" stop-color="#2f2118"/>
+      <stop offset="100%" stop-color="#1c130d"/>
+    </linearGradient>
+    <linearGradient id="fs-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7a4a34"/>
+      <stop offset="100%" stop-color="#4e2f22"/>
+    </linearGradient>
+    <radialGradient id="fs-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8a752" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#e8a752" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="fs-blur" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="800" rx="24" fill="url(#fs-night)"/>
+  <rect width="800" height="800" rx="24" fill="url(#fs-horizon)"/>
+  <g id="fs-canopy" opacity=".92"><path d="M7 83 C14 50 43 37 58 40 C75 35 101 50 108 78 C91 69 72 64 57 68 C41 64 23 69 7 83 Z" fill="#132a24"/>
+    <path d="M154 84 C162 45 198 29 216 33 C237 27 268 45 276 78 C255 68 233 62 214 66 C195 62 173 68 154 84 Z" fill="#132a24"/>
+    <path d="M253 86 C263 40 304 20 326 25 C350 18 386 40 396 78 C372 66 345 59 323 64 C302 59 275 66 253 86 Z" fill="#132a24"/>
+    <path d="M431 83 C438 50 467 37 482 40 C499 35 525 50 532 78 C515 69 496 64 481 68 C465 64 447 69 431 83 Z" fill="#132a24"/>
+    <path d="M530 84 C538 45 574 29 592 33 C613 27 644 45 652 78 C631 68 609 62 590 66 C571 62 549 68 530 84 Z" fill="#132a24"/>
+    <path d="M677 86 C687 40 728 20 750 25 C774 18 810 40 820 78 C796 66 769 59 747 64 C726 59 699 66 677 86 Z" fill="#132a24"/></g>
+  <g id="fs-canopy-back" opacity=".55"><path d="M21 57 C28 24 56 11 72 14 C89 9 114 24 121 52 C104 43 85 38 70 42 C55 38 36 43 21 57 Z" fill="#0b1a16"/>
+    <path d="M194 58 C202 19 238 3 256 7 C277 1 308 19 316 52 C295 42 273 36 254 40 C235 36 213 42 194 58 Z" fill="#0b1a16"/>
+    <path d="M320 60 C330 14 371 -6 392 -1 C417 -8 453 14 463 52 C438 40 412 33 390 38 C368 33 342 40 320 60 Z" fill="#0b1a16"/>
+    <path d="M525 57 C532 24 560 11 576 14 C593 9 618 24 625 52 C608 43 589 38 574 42 C559 38 540 43 525 57 Z" fill="#0b1a16"/>
+    <path d="M650 58 C658 19 694 3 712 7 C733 1 764 19 772 52 C751 42 729 36 710 40 C691 36 669 42 650 58 Z" fill="#0b1a16"/></g>
+  
+  <g id="fs-trunk">
+    <path d="M387 40 C381 400 391 720 385 760
+             L475 760 C469 720 479 400 473 40 Z"
+          fill="url(#fs-trunk)" stroke="#0a0806" stroke-opacity=".5" stroke-width="1.4"/>
+    <path d="M415 70 C421 130 411 190 420 260"
+          fill="none" stroke="#1c130d" stroke-opacity=".55" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M447 110 C442 170 451 230 442 300"
+          fill="none" stroke="#1c130d" stroke-opacity=".4" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <g filter="url(#fs-blur)" opacity=".85"><circle cx="360" cy="706" r="30" fill="url(#fs-glow)"/></g><g filter="url(#fs-blur)" opacity=".85"><circle cx="500" cy="726" r="22" fill="url(#fs-glow)"/></g>
+  <ellipse cx="430" cy="754" rx="138" ry="14" fill="#0a0806" fill-opacity=".35"/>
+  
+  <g id="fs-fossa" transform="translate(430,430) scale(1.05)">
+    <path d="M-40 -70 C-60 -58 -70 -40 -68 -20" fill="none" stroke="#4e2f22" stroke-width="9" stroke-linecap="round"/>
+    <path d="M-42 -30 C-62 -18 -70 0 -66 20" fill="none" stroke="#7a4a34" stroke-width="9" stroke-linecap="round"/>
+    <path d="M-68 -20 l-6 4 m--6 -1 l-6 -2" fill="none" stroke="#d9c9a8" stroke-opacity=".85" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M-66 20 l-6 4 m--6 -1 l-6 -2" fill="none" stroke="#d9c9a8" stroke-opacity=".85" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M-24 -124 C-40 -158 -34 -198 -4 -222 C18 -240 22 -268 6 -292" fill="none" stroke="#4e2f22" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-30 -132 C-52 -118 -58 -84 -46 -52 C-36 -28 -40 2 -30 30 C-20 58 -24 88 -8 110 C2 124 16 128 24 118 C14 96 16 70 8 44 C0 16 4 -14 -4 -44 C-10 -70 -6 -100 8 -120 C-4 -130 -18 -136 -30 -132 Z" fill="url(#fs-body)" stroke="#0a0806" stroke-opacity=".85" stroke-width="1.6"/>
+    <path d="M-30 -132 C-52 -118 -58 -84 -46 -52"
+          fill="none" stroke="#e8d9c2" stroke-opacity=".22" stroke-width="1.8"/>
+    <path d="M18 126 C34 140 40 156 38 172" fill="none" stroke="#7a4a34" stroke-width="9" stroke-linecap="round"/>
+    <path d="M-4 140 C2 156 2 172 -6 184" fill="none" stroke="#4e2f22" stroke-width="9" stroke-linecap="round"/>
+    <path d="M38 172 l6 4 m-6 -1 l6 -2" fill="none" stroke="#d9c9a8" stroke-opacity=".85" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M-6 184 l6 4 m-6 -1 l6 -2" fill="none" stroke="#d9c9a8" stroke-opacity=".85" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M-4 108 C-16 118 -20 136 -12 152 C-4 168 16 176 32 170 C46 164 52 148 46 134 C40 118 24 108 8 108 C4 108 0 108 -4 108 Z" fill="url(#fs-body)" stroke="#0a0806" stroke-opacity=".85" stroke-width="1.6"/>
+    <path d="M2 108 C-2 96 8 88 18 94 C16 102 10 108 2 108 Z" fill="#4e2f22" stroke="#0a0806" stroke-opacity=".7" stroke-width="1"/>
+    <path d="M22 106 C22 94 34 88 42 96 C38 104 30 110 22 106 Z" fill="#4e2f22" stroke="#0a0806" stroke-opacity=".7" stroke-width="1"/>
+    <g filter="url(#fs-blur)"><circle cx="30" cy="140" r="9" fill="url(#fs-glow)"/><circle cx="30" cy="140" r="3.2" fill="#0a0806"/><circle cx="31.4" cy="138.6" r="1" fill="#e8d9c2" fill-opacity=".9"/></g>
+  </g>
+</svg>

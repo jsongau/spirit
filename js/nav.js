@@ -405,16 +405,26 @@ window.PNAV = window.PNAV || { features: {} };
       // not only on the desktop panel. Without this the whole hero was dropped.
       const hero = panel.querySelector(".pn-hero");
       if (hero) body.appendChild(hero.cloneNode(true));
+      // v3 lead cards (the Destiny launch, the Feng Shui calendar + Moon
+      // mini) route on mobile too: clone them ahead of the rows.
+      panel.querySelectorAll(".pn-col-card .pn-card, .pn-col-card .pn-moonmini")
+        .forEach((el) => body.appendChild(el.cloneNode(true)));
+      // the five element doors (Destiny) as tap tiles
+      const phases = panel.querySelector(".pn-phases");
+      if (phases) body.appendChild(phases.cloneNode(true));
       // clone the real anchors so routing is identical to desktop
       panel.querySelectorAll(".pn-row").forEach((row) => {
         body.appendChild(row.cloneNode(true));
       });
-      // the feature aside (Fire Horse / Today's horoscope) and the e-book
+      // the feature aside (Zodiac Day / Today's horoscope) and the e-book
       // CTA carry real destinations too; clone them so the drawer routes
       // everywhere the desktop panel does (the today spans are filled by
       // initHoroscope, which runs across the whole document after this).
       const feature = panel.querySelector(".pn-feature");
       if (feature) body.appendChild(feature.cloneNode(true));
+      // the Climb (Bonds): ladder + the three doors of the game
+      const climb = panel.querySelector(".pn-climb");
+      if (climb) body.appendChild(climb.cloneNode(true));
       const cta = panel.querySelector(".pn-panel-cta");
       if (cta) body.appendChild(cta.cloneNode(true));
       panel.querySelectorAll(".pn-chips").forEach((chips) => {
@@ -558,7 +568,7 @@ window.PNAV = window.PNAV || { features: {} };
   function refreshDyn() {
     const dyn = PNAV.DYN;
     if (!dyn) return;
-    Array.from(doc.querySelectorAll(".pn-row-sub[data-dyn]")).forEach((el) => {
+    Array.from(doc.querySelectorAll("[data-dyn]")).forEach((el) => {
       try {
         const key = el.getAttribute("data-dyn") || "";
         if (key === "date-today" && dyn.todayLabel) el.textContent = dyn.todayLabel();
@@ -566,6 +576,18 @@ window.PNAV = window.PNAV || { features: {} };
         else if (key.indexOf("cn-years-") === 0 && dyn.yearBand) {
           const i = parseInt(key.slice(9), 10);
           if (i >= 0 && i < 12) el.textContent = dyn.yearBand(i);
+        }
+        // v3 keys: the dated card eyebrows, the Zodiac Day block, and the
+        // Moon mini readout (Feng Shui & Moon).
+        else if (key === "card-date" && dyn.todayLabel) {
+          el.textContent = (el.getAttribute("data-label") || "") + " · " + dyn.todayLabel();
+        }
+        else if (key === "day-title" && dyn.dayTitle) el.textContent = dyn.dayTitle();
+        else if (key === "day-branch" && dyn.dayBranch) el.textContent = dyn.dayBranch();
+        else if (key === "day-climb" && dyn.dayClimb) el.textContent = dyn.dayClimb();
+        else if (key === "moon-full" && dyn.moonInfo) {
+          var mi = dyn.moonInfo();
+          el.textContent = mi.name + " · " + mi.pct + " lit";
         }
       } catch (e) {}
     });

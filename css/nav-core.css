@@ -339,3 +339,14 @@ html.pn-bound .pn-bar::after{content:""; position:absolute; left:0; right:0; bot
 .pn-item[data-accent="jade"]     .pn-trigger{--accent:var(--jade);--accent-bright:var(--jade-bright);--accent-soft:oklch(from var(--jade) l c h / .18)}
 .pn-item[data-accent="rose"]     .pn-trigger{--accent:var(--rose);--accent-bright:var(--rose-bright);--accent-soft:oklch(from var(--rose) l c h / .18)}
 .pn-item[data-accent="silver"]   .pn-trigger{--accent:var(--silver);--accent-bright:var(--silver-bright);--accent-soft:oklch(from var(--silver) l c h / .18)}
+
+/* V3 (Jul 2026): the merged account chip's small state hint
+   ("free" / "save it" / "my kingdom") inside .pn-id. */
+.pn-id .pn-id-hint{
+  font:400 .6rem/1.2 var(--mono);
+  letter-spacing:.04em;
+  color:var(--body-text);
+  white-space:nowrap;
+}
+.pn-id:hover .pn-id-hint,.pn-id:focus-visible .pn-id-hint{color:var(--moon)}
+@media (max-width:1180px){ .pn-id .pn-id-hint{display:none} }

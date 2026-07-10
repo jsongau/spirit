@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A springbok caught at the peak of a pronk, all four legs off the ground, back arched, its pale dorsal fan raised, alone on open dry-grass veld under a wide, low sun">
+  <defs>
+    <linearGradient id="sb-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7a3f2c"/>
+      <stop offset="55%" stop-color="#d97a3f"/>
+      <stop offset="100%" stop-color="#f6c877"/>
+    </linearGradient>
+    <radialGradient id="sb-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff3d0" stop-opacity=".95"/>
+      <stop offset="60%" stop-color="#f3a94c" stop-opacity=".35"/>
+      <stop offset="100%" stop-color="#f3a94c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sb-ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b98a45"/>
+      <stop offset="100%" stop-color="#8a6330"/>
+    </linearGradient>
+    <linearGradient id="sb-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dba86a"/>
+      <stop offset="100%" stop-color="#a06a36"/>
+    </linearGradient>
+    <radialGradient id="sb-fan" cx="50%" cy="60%" r="60%">
+      <stop offset="0%" stop-color="#fff3d0"/>
+      <stop offset="60%" stop-color="#f7ecd6"/>
+      <stop offset="100%" stop-color="#f3a94c" stop-opacity=".5"/>
+    </radialGradient>
+    <filter id="sb-blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="800" rx="24" fill="url(#sb-sky)"/>
+  <g opacity=".95"><circle cx="600" cy="170" r="60" fill="#fff3d0" fill-opacity=".92"/>
+  <circle cx="600" cy="170" r="94" fill="url(#sb-sun)"/></g>
+  <g id="sb-trees"><path d="M70 647.8 Q68.6 635.2 70 624" fill="none" stroke="#6b4a26" stroke-width="2.4" stroke-linecap="round"/><path d="M49.0 624.7 C51.8 617.0 64.4 613.5 70 614.2 C75.6 613.5 88.2 617.0 91.0 624.7 C82.6 621.9 75.6 620.5 70 621.2 C64.4 620.5 57.4 621.9 49.0 624.7 Z" fill="#6b4a26" opacity=".8"/><path d="M140 620.7 Q138.9 610.8 140 602" fill="none" stroke="#6b4a26" stroke-width="1.9" stroke-linecap="round"/><path d="M123.5 602.55 C125.7 596.5 135.6 593.75 140 594.3 C144.4 593.75 154.3 596.5 156.5 602.55 C149.9 600.35 144.4 599.25 140 599.8 C135.6 599.25 130.1 600.35 123.5 602.55 Z" fill="#6b4a26" opacity=".8"/><path d="M730 642.1 Q728.7 630.4 730 620" fill="none" stroke="#6b4a26" stroke-width="2.2" stroke-linecap="round"/><path d="M710.5 620.65 C713.1 613.5 724.8 610.25 730 610.9 C735.2 610.25 746.9 613.5 749.5 620.65 C741.7 618.05 735.2 616.75 730 617.4 C724.8 616.75 718.3 618.05 710.5 620.65 Z" fill="#6b4a26" opacity=".8"/></g>
+  <path d="M0 560 C176.0 546 336.0 572 480.0 556 C640.0 546 720.0 566 800 558 L800 800 L0 800 Z"
+        fill="url(#sb-ground)" opacity=".95"/>
+  <g opacity=".7"><path d="M25 574 Q28 568.0 30 564" fill="none" stroke="#6b4a26" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+    <path d="M75 579 Q72 570.0 70 564" fill="none" stroke="#6b4a26" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+    <path d="M125 584 Q128 572.0 130 564" fill="none" stroke="#6b4a26" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+    <path d="M175 574 Q172 568.0 170 564" fill="none" stroke="#6b4a26" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+    <path d="M225 579 Q228 570.0 230 564" fill="none" stroke="#6b4a26" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+    <path d="M275 584 Q272 572.0 270 564" fill="none" stroke="#6b4a26" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+    <path d="M325 574 Q328 568.0 330 564" fill="none" stroke="#6b4a26" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+    <path d="M375 579 Q372 570.0 370 564" fill="none" stroke="#6b4a26" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+    <path d="M425 584 Q428 572.0 430 564" fill="none" stroke="#6b4a26" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+    <path d="M475 574 Q472 568.0 470 564" fill="none" stroke="#6b4a26" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+    <path d="M525 579 Q528 570.0 530 564" fill="none" stroke="#6b4a26" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+    <path d="M575 584 Q572 572.0 570 564" fill="none" stroke="#6b4a26" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+    <path d="M625 574 Q628 568.0 630 564" fill="none" stroke="#6b4a26" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+    <path d="M675 579 Q672 570.0 670 564" fill="none" stroke="#6b4a26" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+    <path d="M725 584 Q728 572.0 730 564" fill="none" stroke="#6b4a26" stroke-width="2.2" stroke-linecap="round" opacity=".75"/>
+    <path d="M775 574 Q772 568.0 770 564" fill="none" stroke="#6b4a26" stroke-width="2.2" stroke-linecap="round" opacity=".75"/></g>
+  <ellipse cx="392" cy="606" rx="96" ry="16" fill="#100b05" fill-opacity=".38"/>
+  
+  <g id="sb-springbok" transform="translate(380,470) scale(1.15)">
+    <g id="sb-legs-back">
+      <path d="M-32 40 L-40 114" fill="none" stroke="#a06a36" stroke-width="13" stroke-linecap="round"/>
+      <path d="M24 40 L22 118" fill="none" stroke="#a06a36" stroke-width="13" stroke-linecap="round"/>
+    </g>
+    <path d="M92 -30 Q112 -10 104 20" fill="none" stroke="#a06a36" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M-95 10 C-100 -25 -70 -55 -30 -66 C-5 -74 25 -74 50 -64 C80 -52 98 -22 95 8 C92 30 70 44 40 46 C5 50 -35 50 -65 42 C-85 36 -96 24 -95 10 Z" fill="url(#sb-body)" stroke="#100b05" stroke-opacity=".85" stroke-width="1.6"/>
+    <path d="M-80 22 C-50 38 10 40 55 30 C70 26 80 18 84 8 C70 30 30 42 -15 42 C-45 42 -70 34 -80 22 Z" fill="#f2e6cf" fill-opacity=".92"/>
+    <path d="M-88 2 C-55 16 5 20 55 12 C75 8 88 2 93 -6" fill="none" stroke="#2a1c10" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+    <g filter="url(#sb-blur)">
+      <path d="M-15 -66 C-22 -96 -10 -124 8 -140 C10 -118 14 -98 22 -80 C30 -100 34 -122 44 -136 C42 -112 40 -90 38 -70 C30 -64 18 -62 6 -63 C-3 -64 -10 -65 -15 -66 Z" fill="url(#sb-fan)" stroke="#f7ecd6" stroke-opacity=".5" stroke-width="1"/>
+    </g>
+    <path d="M-84 -40 C-96 -58 -90 -80 -74 -88 C-76 -68 -76 -52 -70 -38 Z" fill="#a06a36" stroke="#100b05" stroke-opacity=".8" stroke-width="1.2"/>
+    <path d="M-92 -42 C-104 -58 -100 -78 -86 -86 C-88 -66 -88 -52 -80 -40 Z" fill="#c98a4e" stroke="#100b05" stroke-opacity=".8" stroke-width="1.2"/>
+    <path d="M-92 -44 C-102 -70 -92 -96 -70 -110 C-62 -114 -58 -106 -64 -98" fill="none" stroke="#100b05" stroke-width="4.2" stroke-linecap="round"/>
+    <path d="M-84 -46 C-92 -72 -80 -98 -58 -112 C-50 -116 -46 -108 -52 -100" fill="none" stroke="#100b05" stroke-width="4.2" stroke-linecap="round"/>
+    <path d="M-70 -40 C-95 -42 -118 -30 -132 -8 C-145 12 -150 34 -144 48 C-137 40 -127 30 -117 16 C-104 -2 -87 -20 -70 -28 C-68 -32 -68 -36 -70 -40 Z" fill="url(#sb-body)" stroke="#100b05" stroke-opacity=".85" stroke-width="1.5"/>
+    <path d="M-128 18 C-136 28 -142 38 -144 47 C-138 44 -130 36 -122 24 Z" fill="#f2e6cf" fill-opacity=".9"/>
+    <path d="M-118 14 L-108 -8" fill="none" stroke="#2a1c10" stroke-width="2.6" stroke-linecap="round" opacity=".85"/>
+    <circle cx="-118" cy="-14" r="3.2" fill="#100b05"/><circle cx="-119" cy="-15" r="1" fill="#f2e6cf" fill-opacity=".8"/>
+    <g id="sb-legs-front">
+      <path d="M-14 44 L-20 122" fill="none" stroke="#c98a4e" stroke-width="13" stroke-linecap="round"/>
+      <path d="M6 44 L2 124" fill="none" stroke="#c98a4e" stroke-width="13" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

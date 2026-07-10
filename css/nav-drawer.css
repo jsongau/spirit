@@ -332,3 +332,28 @@
 @media (min-width: 901px) {
   .pn-drawer { display: none !important; }
 }
+
+/* ============================================================
+   V3 ADDITION (Jul 2026) — drawer clones of the new panel blocks,
+   and the full-bleed fix: cloned cards keep an inset hairline so
+   no border is ever clipped by the sheet's edge.
+   ============================================================ */
+.pn-acc-body .pn-card,
+.pn-acc-body .pn-feature,
+.pn-acc-body .pn-moonmini,
+.pn-acc-body .pn-fhmini,
+.pn-acc-body .pn-climb {
+  margin: var(--s-3) 2px;
+  max-width: none;
+}
+.pn-acc-body .pn-card-wm { font-size: 64px; top: -10px; }
+.pn-acc-body .pn-phases {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  margin: var(--s-3) 2px;
+}
+.pn-acc-body .pn-ph { min-height: 52px; padding: 9px 2px 7px; }
+.pn-acc-body .pn-climb-grid { grid-template-columns: 1fr; }
+.pn-acc-body .pn-climb { padding: var(--s-3); }
+/* tall panels (Destiny, Feng Shui & Moon) must never clip their clones */
+.pn-acc-group.open .pn-acc-body { max-height: none; }

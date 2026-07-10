@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A small grey Wallcreeper clings to a bare, near-vertical mountain cliff, one wing flicked open to flash crimson and black against an otherwise featureless wall of grey rock, alone beneath a pale, high-altitude sky">
+  <defs>
+    <linearGradient id="wc-rock" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0%" stop-color="#7d8892"/>
+      <stop offset="42%" stop-color="#5c6670"/>
+      <stop offset="100%" stop-color="#2b3238"/>
+    </linearGradient>
+    <linearGradient id="wc-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cfd8de"/>
+      <stop offset="100%" stop-color="#93a0a9" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="wc-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e2954a" stop-opacity=".85"/>
+      <stop offset="55%" stop-color="#c23b2e" stop-opacity=".4"/>
+      <stop offset="100%" stop-color="#c23b2e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wc-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#88919a"/>
+      <stop offset="100%" stop-color="#4a525c"/>
+    </linearGradient>
+    <filter id="wc-blur" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="800" rx="24" fill="url(#wc-rock)"/>
+  <rect x="0" y="0" width="800" height="150" fill="url(#wc-sky)"/>
+  <path d="M-60 158 L-40 118 L60 84 L150 108 L260 72 L360 112 L460 88 L560 122 L660 96 L760 124 L860 108 L860 158 Z" fill="#2b3238" opacity=".55"/>
+  <g opacity=".9"><path d="M-40 135.9 C176.0 60.4 440.00000000000006 120.8 560.0 45.3 C688.0 -15.1 840 75.5 840 75.5 L840 795.0 L-40 795.0 Z" fill="#5c6670" opacity=".55"/>
+  <path d="M-40 377.5 C144.0 317.09999999999997 320.0 422.80000000000007 496.0 347.3 C656.0 286.9 752.0 377.5 840 347.3 L840 795.0 L-40 795.0 Z" fill="#454e57" opacity=".6"/>
+  <path d="M-40 588.9 C192.0 543.6 400.0 634.1999999999999 608.0 558.7 C720.0 513.4000000000001 784.0 588.9 840 558.7 L840 795.0 L-40 795.0 Z" fill="#2b3238" opacity=".55"/></g>
+  <path d="M360 260 Q450 375 539 466 T640 620" fill="none" stroke="#1c2226" stroke-width="5" stroke-linecap="round" opacity=".8"/><path d="M360 260 Q450 375 539 466 T640 620" fill="none" stroke="#7d8892" stroke-width="1.2" stroke-linecap="round" opacity=".22" transform="translate(1,-1)"/>
+  
+  <g id="wc-wallcreeper" transform="translate(520,470) scale(0.85)">
+    <ellipse cx="0" cy="70" rx="70" ry="16" fill="#0b0a08" fill-opacity=".35"/>
+    <path d="M-6 50 L-14 76 L-22 80" fill="none" stroke="#242428" stroke-width="3.2" stroke-linecap="round"/><path d="M8 52 L16 78 L24 82" fill="none" stroke="#242428" stroke-width="3.2" stroke-linecap="round"/>
+    <path d="M2 62 C10 82 8 100 -2 112 C-6 96 -6 78 2 62 Z" fill="#4a525c"/>
+    <g filter="url(#wc-blur)">
+      <path d="M-8 -38 C-46 -58 -84 -64 -110 -48 C-100 -30 -72 -18 -38 -14 C-22 -12 -10 -20 -8 -38 Z" fill="#c23b2e" stroke="#8f2a20" stroke-width="1.2"/>
+      <path d="M-110 -48 C-134 -52 -158 -46 -172 -30 C-156 -18 -132 -12 -108 -16 C-98 -24 -98 -40 -110 -48 Z" fill="#1c1f22" stroke="#8f2a20" stroke-opacity=".5" stroke-width="1"/>
+      <circle cx="-132" cy="-32" r="3.6" fill="#eae7de"/>
+      <circle cx="-152" cy="-26" r="2.8" fill="#eae7de"/>
+    </g>
+    <path d="M-2 -90 C-20 -84 -30 -50 -28 -10 C-26 26 -14 58 4 66 C18 72 30 58 32 30 C34 -6 28 -46 14 -78 C8 -88 4 -92 -2 -90 Z" fill="url(#wc-body)" stroke="#1c1f22" stroke-opacity=".85" stroke-width="1.6"/>
+    <path d="M8 -30 C20 -18 24 6 18 30 C10 42 -2 40 -4 26 C-2 2 0 -18 8 -30 Z" fill="#4a525c" stroke="#1c1f22" stroke-opacity=".6" stroke-width="1"/>
+    <path d="M-4 -114 m-19,0 a19,17 0 1,0 38,0 a19,17 0 1,0 -38,0" fill="url(#wc-body)" stroke="#1c1f22" stroke-opacity=".85" stroke-width="1.4"/>
+    <path d="M-16 -102 C-10 -92 2 -88 12 -94 C4 -84 -10 -84 -16 -102 Z" fill="#d9d3c5" opacity=".92"/>
+    <path d="M15 -118 Q38 -110 48 -90 Q52 -80 49 -72" fill="none" stroke="#242428" stroke-width="4.4" stroke-linecap="round"/>
+    <circle cx="2" cy="-118" r="3.2" fill="#0c0a08"/><circle cx="1" cy="-119" r="1" fill="#d9d3c5" fill-opacity=".85"/>
+  </g>
+</svg>

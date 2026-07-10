@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="An Asian elephant at rest beside a pale skull in moonlit grass, closer and calmer">
+  <defs>
+    <radialGradient id="ae-night" cx="66%" cy="20%" r="92%">
+      <stop offset="0%" stop-color="#2c2013"/>
+      <stop offset="55%" stop-color="#1f170d"/>
+      <stop offset="100%" stop-color="#1c150c"/>
+    </radialGradient>
+    <radialGradient id="ae-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f2e2c4" stop-opacity=".55"/>
+      <stop offset="65%" stop-color="#f2e2c4" stop-opacity=".22"/>
+      <stop offset="100%" stop-color="#f2e2c4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ae-glow" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#f6ecd6"/>
+      <stop offset="55%" stop-color="#e8ddbe"/>
+      <stop offset="100%" stop-color="#c99a4a"/>
+    </radialGradient>
+    <linearGradient id="ae-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6b4f30"/>
+      <stop offset="100%" stop-color="#332512"/>
+    </linearGradient>
+    <filter id="ae-blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="400" height="500" rx="18" fill="url(#ae-night)"/>
+  <g opacity=".95"><circle cx="336" cy="66" r="22" fill="#f2e2c4" fill-opacity=".9" stroke="#e8ddbe" stroke-opacity=".25" stroke-width="1"/>
+  <circle cx="336" cy="66" r="48" fill="url(#ae-moon)"/></g>
+  <g id="ae-tree"><path d="M34 480.5 Q32.35 458.5 34 442" fill="none" stroke="#170f08" stroke-width="3.9" stroke-linecap="round"/><path d="M-4.5 443.1 C1.0 429.9 23.0 423.3 34 425.5 C45.0 423.3 67.0 429.9 72.5 443.1 C61.5 438.7 45.0 436.5 34 437.6 C23.0 436.5 6.4999999999999964 438.7 -4.5 443.1 Z" fill="#170f08"/>
+    <path d="M356 446.0 Q354.2 422.0 356 404" fill="none" stroke="#170f08" stroke-width="4.2" stroke-linecap="round"/><path d="M314.0 405.2 C320.0 390.8 344.0 383.6 356 386.0 C368.0 383.6 392.0 390.8 398.0 405.2 C386.0 400.4 368.0 398.0 356 399.2 C344.0 398.0 326.0 400.4 314.0 405.2 Z" fill="#170f08"/></g>
+  <path d="M0 372 C80.0 352 160.0 388 248.0 366 C320.0 354 360.0 380 400 370 L400 500 L0 500 Z"
+        fill="#241a0f" opacity=".92"/>
+  <g opacity=".7"><path d="M14 392 Q17 383.6 20 378" fill="none" stroke="#170f08" stroke-width="2.4" stroke-linecap="round" opacity=".8"/>
+    <path d="M43 398 Q40 386.0 37 378" fill="none" stroke="#170f08" stroke-width="2.4" stroke-linecap="round" opacity=".8"/>
+    <path d="M71 404 Q74 388.4 77 378" fill="none" stroke="#170f08" stroke-width="2.4" stroke-linecap="round" opacity=".8"/>
+    <path d="M100 392 Q97 383.6 94 378" fill="none" stroke="#170f08" stroke-width="2.4" stroke-linecap="round" opacity=".8"/>
+    <path d="M129 398 Q132 386.0 135 378" fill="none" stroke="#170f08" stroke-width="2.4" stroke-linecap="round" opacity=".8"/>
+    <path d="M157 404 Q154 388.4 151 378" fill="none" stroke="#170f08" stroke-width="2.4" stroke-linecap="round" opacity=".8"/>
+    <path d="M186 392 Q189 383.6 192 378" fill="none" stroke="#170f08" stroke-width="2.4" stroke-linecap="round" opacity=".8"/>
+    <path d="M214 398 Q211 386.0 208 378" fill="none" stroke="#170f08" stroke-width="2.4" stroke-linecap="round" opacity=".8"/>
+    <path d="M243 404 Q246 388.4 249 378" fill="none" stroke="#170f08" stroke-width="2.4" stroke-linecap="round" opacity=".8"/>
+    <path d="M271 392 Q268 383.6 265 378" fill="none" stroke="#170f08" stroke-width="2.4" stroke-linecap="round" opacity=".8"/>
+    <path d="M300 398 Q303 386.0 306 378" fill="none" stroke="#170f08" stroke-width="2.4" stroke-linecap="round" opacity=".8"/>
+    <path d="M329 404 Q326 388.4 323 378" fill="none" stroke="#170f08" stroke-width="2.4" stroke-linecap="round" opacity=".8"/>
+    <path d="M357 392 Q360 383.6 363 378" fill="none" stroke="#170f08" stroke-width="2.4" stroke-linecap="round" opacity=".8"/>
+    <path d="M386 398 Q383 386.0 380 378" fill="none" stroke="#170f08" stroke-width="2.4" stroke-linecap="round" opacity=".8"/></g>
+  
+  <g filter="url(#ae-blur)">
+    <path d="M244.0 372.0 Q223.7 381.4 212.8 398.6" fill="none" stroke="#e8ddbe" stroke-opacity=".85" stroke-width="3.9" stroke-linecap="round"/>
+    <path d="M259.6 375.2 Q275.2 387.6 281.4 403.2" fill="none" stroke="#e8ddbe" stroke-opacity=".85" stroke-width="3.9" stroke-linecap="round"/>
+    <path d="M231.5 362.7 C228.4 348.6 239.3 337.7 254.9 336.2 C270.5 334.6 283.0 344.0 284.5 356.4 C286.1 367.4 278.3 376.7 264.2 378.3 C248.6 379.8 234.6 372.0 231.5 362.7 Z" fill="url(#ae-glow)" stroke="#0d0904" stroke-opacity=".6" stroke-width="1.4"/>
+  </g>
+  <ellipse cx="176" cy="389.03999999999996" rx="93.0" ry="17.16" fill="#0d0904" fill-opacity=".5"/>
+  
+  <g id="ae-elephant" transform="translate(176,270) scale(0.62)">
+    <g id="ae-legs-back">
+            <path d="M56 82 L58 192" fill="none" stroke="#4a3620" stroke-width="28" stroke-linecap="round"/>
+            <path d="M118 64 L126 186" fill="none" stroke="#4a3620" stroke-width="26" stroke-linecap="round"/>
+    </g>
+    <path d="M148 -22 Q176 30 170 86" fill="none" stroke="#332512" stroke-width="5" stroke-linecap="round"/>
+    <path d="M-150 -70 C-170 -92 -150 -116 -118 -118 C-90 -120 -70 -116 -58 -104 C-20 -118 40 -122 90 -112 C128 -104 156 -78 160 -40 C164 -6 152 30 140 60 C128 82 96 90 60 82 C10 90 -40 86 -72 68 C-108 48 -130 18 -138 -12 C-142 -30 -148 -50 -150 -70 Z" fill="url(#ae-body)" stroke="#0d0904" stroke-opacity=".9" stroke-width="1.8"/>
+    <path d="M-150 -70 C-170 -92 -150 -116 -118 -118"
+          fill="none" stroke="#d9c9a3" stroke-opacity=".24" stroke-width="2.2"/>
+    <path d="M-96 -96 C-134 -102 -176 -78 -184 -34 C-188 -4 -176 26 -150 38 C-160 8 -158 -26 -140 -54 C-128 -72 -110 -86 -96 -96 Z" fill="#332512" stroke="#0d0904" stroke-opacity=".85" stroke-width="1.4"/>
+    <path d="M-140 6 Q-166 28 -172 58" fill="none" stroke="#e8ddbe" stroke-opacity=".9" stroke-width="4.2" stroke-linecap="round"/>
+    <path d="M-130 16 Q-150 38 -156 64" fill="none" stroke="#e8ddbe" stroke-opacity=".9" stroke-width="4.2" stroke-linecap="round"/>
+    <path d="M-146 -18 C-160 8 -158 40 -142 68 C-128 94 -118 122 -122 150 C-125 170 -112 186 -92 190 C-104 178 -108 162 -100 150 C-112 124 -116 96 -108 66 C-100 38 -104 8 -118 -16 Z" fill="#4a3620" stroke="#0d0904" stroke-opacity=".9" stroke-width="1.6"/>
+    <circle cx="-118" cy="-72" r="3.4" fill="#0d0904"/><circle cx="-119" cy="-73" r="1" fill="#d9c9a3" fill-opacity=".8"/>
+    <g id="ae-legs-front">
+      <path d="M-104 50 L-112 188" fill="none" stroke="#332512" stroke-width="26" stroke-linecap="round"/>
+            <path d="M-42 72 L-46 192" fill="none" stroke="#332512" stroke-width="28" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>
