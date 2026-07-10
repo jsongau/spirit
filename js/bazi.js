@@ -608,74 +608,343 @@
   }
 
   function mountCast(root) {
-    var gen = B.generating || {}, ctl = B.controlling || {};
-    var MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
     var hourLabels = ["12 am","1 am","2 am","3 am","4 am","5 am","6 am","7 am","8 am","9 am","10 am","11 am","12 pm","1 pm","2 pm","3 pm","4 pm","5 pm","6 pm","7 pm","8 pm","9 pm","10 pm","11 pm"];
-    function opts(a, b, sel) { var s = ""; for (var i = a; i <= b; i++) s += '<option' + (i === sel ? " selected" : "") + ">" + i + "</option>"; return s; }
+    var exploreHour = 15; /* kept for render()'s explore banner path */
+    function pad2(n) { return (n < 10 ? "0" : "") + n; }
+    function branchOfHour(hh) { return Math.floor(mod(hh + 1, 24) / 2); }
 
-    var dateRow = el("div", "bz-cast-form");
-    dateRow.innerHTML =
-      '<div class="bz-selblock bz-span2"><span class="bz-sellabel">Birth date</span><input class="bz-select bz-date" type="date" data-c="date" min="1900-01-01" max="2100-12-31" value="1990-07-15"></div>' +
-      '<div class="bz-selblock bz-span2"><span class="bz-sellabel">Sex <span class="gloss" tabindex="0" data-tip="Used only to set the direction of the luck pillars (大运), which run forward or backward depending on birth sex and the birth-year polarity.">for luck 大运</span></span><select class="bz-select" data-c="sex"><option value="">Choose…</option><option value="female">Female</option><option value="male">Male</option></select></div>';
-    root.appendChild(dateRow);
+    /* ============================================================
+       THE BIRTH-MOMENT FORM, twinned with the Purple Star caster.
+       Date: masked MM/DD/YYYY field + a gold calendar popover.
+       Time: OURS, not <input type="time">. Native time inputs draw a
+       different control on every platform and cannot be styled, so:
+       two numeric segments that hand off to each other, a 24h / AM·PM
+       toggle, and a gold clock face. tstate {h,m} is the 24-hour
+       truth; the segments only ever display it. The true-solar-time
+       birthplace select and the luck-direction sex select ride below.
+    ============================================================ */
+    var form = el("form", "bzc-form");
+    form.setAttribute("novalidate", "novalidate");
+    root.appendChild(form);
 
-    var mode = "general";
-    var toggle = el("div", "bz-modes"); toggle.setAttribute("role", "radiogroup"); toggle.setAttribute("aria-label", "Birth time");
-    [["general", "I don't know my time"], ["known", "I know my time"], ["explore", "Explore the hour"]].forEach(function (mm) {
-      var b = el("button", "bz-mode"); b.type = "button"; b.textContent = mm[1]; b.setAttribute("data-mode", mm[0]); b.setAttribute("role", "radio");
-      b.addEventListener("click", function () { setMode(mm[0]); });
-      toggle.appendChild(b);
+    /* ---- birth date ---- */
+    var fDate = el("div", "bzc-field");
+    var dLab = el("label", "bzc-label", 'Birth date <span class="bzc-opt">· MM/DD/YYYY</span>');
+    dLab.setAttribute("for", "bzc-date");
+    fDate.appendChild(dLab);
+    var dWrap = el("div", "bzc-inwrap");
+    var date = document.createElement("input");
+    date.id = "bzc-date"; date.type = "text"; date.className = "bzc-input";
+    date.placeholder = "MM / DD / YYYY"; date.autocomplete = "off"; date.maxLength = 14;
+    date.setAttribute("inputmode", "numeric"); date.setAttribute("data-c", "date");
+    dWrap.appendChild(date);
+    var calBtn = el("button", "bzc-popbtn", '<svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><rect x="3" y="4.5" width="18" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>');
+    calBtn.type = "button"; calBtn.setAttribute("aria-label", "Open calendar");
+    dWrap.appendChild(calBtn);
+    fDate.appendChild(dWrap);
+    var cal = el("div", "bzc-cal"); cal.hidden = true; fDate.appendChild(cal);
+    cal.addEventListener("click", function (e) { e.stopPropagation(); });
+    form.appendChild(fDate);
+
+    var calState = { y: 1995, m: 6, sel: null };
+    function fmtDigits(s) { var d = s.replace(/\D/g, "").slice(0, 8); var o = d.slice(0, 2); if (d.length > 2) o += "/" + d.slice(2, 4); if (d.length > 4) o += "/" + d.slice(4, 8); return o; }
+    /* accepts MM/DD/YYYY typed by hand and YYYY-MM-DD from a saved birth record */
+    function parseDate(v) {
+      function chk(y, mo, d) { return (mo < 1 || mo > 12 || d < 1 || d > 31 || y < 1900 || y > 2100) ? null : { y: y, m: mo, d: d }; }
+      var m = (v || "").match(/^\s*(\d{1,2})\s*\/\s*(\d{1,2})\s*\/\s*(\d{4})\s*$/);
+      if (m) return chk(+m[3], +m[1], +m[2]);
+      m = (v || "").match(/^\s*(\d{4})-(\d{1,2})-(\d{1,2})\s*$/);
+      if (m) return chk(+m[1], +m[2], +m[3]);
+      return null;
+    }
+    date.addEventListener("input", function () { date.value = fmtDigits(date.value); if (parseDate(date.value) && !cal.hidden) { syncCal(); renderCal(); } });
+    calBtn.addEventListener("click", function (e) { e.stopPropagation(); if (cal.hidden) openCal(); else cal.hidden = true; });
+    document.addEventListener("click", function (e) { if (!cal.hidden && !fDate.contains(e.target)) cal.hidden = true; });
+    function syncCal() { var p = parseDate(date.value); if (p) { calState.y = p.y; calState.m = p.m - 1; calState.sel = { y: p.y, m: p.m - 1, d: p.d }; } }
+    function openCal() { closeClock(); syncCal(); cal.hidden = false; renderCal(); }
+    function renderCal() {
+      cal.innerHTML = "";
+      var head = el("div", "bzc-cal-head");
+      head.appendChild(navBtn("‹", -1));
+      var mid = el("div", "bzc-cal-selwrap");
+      var mSel = document.createElement("select"); mSel.className = "bzc-cal-sel"; mSel.setAttribute("aria-label", "Month");
+      ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].forEach(function (nm, i) { var o = document.createElement("option"); o.value = i; o.textContent = nm; if (i === calState.m) o.selected = true; mSel.appendChild(o); });
+      mSel.addEventListener("change", function () { calState.m = +mSel.value; renderCal(); });
+      var ySel = document.createElement("select"); ySel.className = "bzc-cal-sel"; ySel.setAttribute("aria-label", "Year");
+      var nowY = new Date().getFullYear();
+      for (var yy = nowY; yy >= 1900; yy--) { var o2 = document.createElement("option"); o2.value = yy; o2.textContent = yy; if (yy === calState.y) o2.selected = true; ySel.appendChild(o2); }
+      ySel.addEventListener("change", function () { calState.y = +ySel.value; renderCal(); });
+      mid.appendChild(mSel); mid.appendChild(ySel); head.appendChild(mid);
+      head.appendChild(navBtn("›", 1));
+      cal.appendChild(head);
+      var dow = el("div", "bzc-cal-dow"); ["S", "M", "T", "W", "T", "F", "S"].forEach(function (d) { dow.appendChild(el("span", null, d)); }); cal.appendChild(dow);
+      var grid = el("div", "bzc-cal-grid");
+      var first = new Date(calState.y, calState.m, 1).getDay();
+      var days = new Date(calState.y, calState.m + 1, 0).getDate();
+      for (var i = 0; i < first; i++) grid.appendChild(el("span", "bzc-cal-empty"));
+      for (var dn = 1; dn <= days; dn++) {
+        var bd = el("button", "bzc-cal-day", String(dn)); bd.type = "button";
+        if (calState.sel && calState.sel.y === calState.y && calState.sel.m === calState.m && calState.sel.d === dn) bd.classList.add("is-sel");
+        (function (dd) { bd.addEventListener("click", function () { date.value = pad2(calState.m + 1) + "/" + pad2(dd) + "/" + calState.y; calState.sel = { y: calState.y, m: calState.m, d: dd }; cal.hidden = true; }); })(dn);
+        grid.appendChild(bd);
+      }
+      cal.appendChild(grid);
+      function navBtn(t, dir) { var x = el("button", "bzc-cal-nav", t); x.type = "button"; x.addEventListener("click", function () { calState.m += dir; if (calState.m < 0) { calState.m = 11; calState.y--; } if (calState.m > 11) { calState.m = 0; calState.y++; } renderCal(); }); return x; }
+    }
+
+    /* ---- birth time: two segments, a format toggle, a clock face ---- */
+    var fTime = el("div", "bzc-field bzc-time-field");
+    var tHead = el("div", "bzc-time-head");
+    var tLab = el("label", "bzc-label", 'Birth time <span class="bzc-opt">· sets your hour pillar</span>');
+    tLab.setAttribute("for", "bzc-time-h");
+    tHead.appendChild(tLab);
+    var tstate = { h: null, m: null };
+    var mode12 = (function () { try { return !(window.Intl && new Intl.DateTimeFormat().resolvedOptions().hour12 === false); } catch (e) { return true; } })();
+    var fmtWrap = el("div", "bzc-fmt");
+    fmtWrap.setAttribute("role", "radiogroup"); fmtWrap.setAttribute("aria-label", "Clock format");
+    [["24", "24h"], ["12", "AM · PM"]].forEach(function (oo) {
+      var b = el("button", "bzc-fmt-opt", oo[1]); b.type = "button"; b.setAttribute("data-v", oo[0]); b.setAttribute("role", "radio");
+      b.addEventListener("click", function () { mode12 = oo[0] === "12"; paintFmt(); paintTime(); if (clockOpen) paintClock(); });
+      fmtWrap.appendChild(b);
     });
-    root.appendChild(toggle);
+    function paintFmt() { Array.prototype.forEach.call(fmtWrap.children, function (b) { var on = (b.getAttribute("data-v") === "12") === mode12; b.classList.toggle("is-on", on); b.setAttribute("aria-checked", on ? "true" : "false"); }); }
+    tHead.appendChild(fmtWrap);
+    fTime.appendChild(tHead);
 
-    var controls = el("div", "bz-cast-controls"); root.appendChild(controls);
-    var btnRow = el("div", "bz-actions"); var cast = el("button", "pill primary", "Cast my chart"); cast.type = "button"; btnRow.appendChild(cast); root.appendChild(btnRow);
-    var out = el("div", "bz-panel"); out.setAttribute("aria-live", "polite");
+    var tRow = el("div", "bzc-inwrap");
+    var tBox = el("div", "bzc-timebox");
+    tBox.setAttribute("role", "group"); tBox.setAttribute("aria-label", "Birth time");
+    function timeSeg(id, label) {
+      var i = document.createElement("input");
+      i.id = id; i.className = "bzc-tseg"; i.type = "text";
+      i.inputMode = "numeric"; i.autocomplete = "off"; i.maxLength = 2; i.placeholder = "--";
+      i.setAttribute("aria-label", label);
+      return i;
+    }
+    var segH = timeSeg("bzc-time-h", "Hour");
+    var segM = timeSeg("bzc-time-m", "Minute");
+    tBox.appendChild(segH);
+    tBox.appendChild(el("span", "bzc-tsep", ":")).setAttribute("aria-hidden", "true");
+    tBox.appendChild(segM);
+    var apBtn = el("button", "bzc-tap", "AM"); apBtn.type = "button"; apBtn.setAttribute("aria-label", "Toggle AM or PM");
+    tBox.appendChild(apBtn);
+    tRow.appendChild(tBox);
+    var clockBtn = el("button", "bzc-popbtn", '<svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 6.9V12l3.4 2.1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    clockBtn.type = "button"; clockBtn.setAttribute("aria-label", "Open clock"); clockBtn.setAttribute("aria-expanded", "false");
+    tRow.appendChild(clockBtn);
+    fTime.appendChild(tRow);
+    var clock = el("div", "bzc-clock"); clock.hidden = true;
+    clock.setAttribute("role", "dialog"); clock.setAttribute("aria-label", "Pick your birth time");
+    clock.addEventListener("click", function (e) { e.stopPropagation(); });
+    fTime.appendChild(clock);
+    var unkWrap = el("label", "bzc-check");
+    var unk = document.createElement("input"); unk.type = "checkbox"; unk.id = "bzc-unk";
+    unkWrap.appendChild(unk); unkWrap.appendChild(el("span", null, "I don't know my birth time"));
+    fTime.appendChild(unkWrap);
+    form.appendChild(fTime);
+
+    function segMax(elm) { return elm === segH ? (mode12 ? 12 : 23) : 59; }
+    function caretAtEnd(elm) { try { return elm.selectionStart === elm.selectionEnd && elm.selectionStart === elm.value.length; } catch (e) { return true; } }
+    function caretAtStart(elm) { try { return elm.selectionStart === 0 && elm.selectionEnd === 0; } catch (e) { return true; } }
+    function caretAtHead(elm) { try { return elm.selectionStart === 0; } catch (e) { return true; } }
+    var handingOff = false;
+    function focusSeg(elm, where) {
+      handingOff = true;
+      try { elm.focus(); if (where === "all") elm.select(); else { var n = elm.value.length; elm.setSelectionRange(n, n); } } catch (e) {}
+      handingOff = false;
+    }
+    function commitSegs() {
+      var hv = segH.value.replace(/\D/g, ""), mv = segM.value.replace(/\D/g, "");
+      if (hv === "") { tstate.h = null; tstate.m = null; return; }
+      var n = +hv;
+      if (mode12) { if (n < 1 || n > 12) n = 12; tstate.h = (n % 12) + (apBtn.textContent === "PM" ? 12 : 0); }
+      else tstate.h = Math.min(23, n);
+      tstate.m = (mv === "") ? 0 : Math.min(59, +mv);
+    }
+    function paintTime() {
+      var known = tstate.h != null;
+      apBtn.hidden = !mode12;
+      if (mode12) apBtn.textContent = (known && tstate.h >= 12) ? "PM" : "AM";
+      segH.value = known ? (mode12 ? pad2((tstate.h % 12) || 12) : pad2(tstate.h)) : "";
+      segM.value = known ? pad2(tstate.m == null ? 0 : tstate.m) : "";
+      segH.setAttribute("aria-label", mode12 ? "Hour, 1 to 12" : "Hour, 0 to 23");
+      tBox.classList.toggle("is-set", known);
+    }
+    function onTimeEdited() { if (unk.checked) { unk.checked = false; setTimeDisabled(false); } if (clockOpen) paintClock(); }
+    function setTimeDisabled(off) { segH.disabled = segM.disabled = apBtn.disabled = clockBtn.disabled = off; tBox.classList.toggle("is-disabled", off); }
+    function setMeridiem(pm) { if (tstate.h == null) { tstate.h = pm ? 12 : 0; tstate.m = 0; } else tstate.h = (tstate.h % 12) + (pm ? 12 : 0); onTimeEdited(); paintTime(); }
+    function bumpSeg(elm, dir) { if (tstate.h == null) { tstate.h = 12; tstate.m = 0; } else if (elm === segH) tstate.h = mod(tstate.h + dir, 24); else tstate.m = mod((tstate.m == null ? 0 : tstate.m) + dir, 60); onTimeEdited(); paintTime(); focusSeg(elm, "all"); }
+    function pushDigit(elm, d) {
+      var max = segMax(elm), cur = elm.value.replace(/\D/g, "");
+      var cand = (cur.length === 1 && caretAtEnd(elm)) ? cur + d : d;
+      if (+cand > max) cand = d;
+      elm.value = cand;
+      commitSegs();
+      var full = cand.length >= 2 || (+cand) * 10 > max;
+      if (full) { paintTime(); if (elm === segH) focusSeg(segM, "all"); else focusSeg(segM, "end"); }
+      onTimeEdited();
+    }
+    function onSegKey(e) {
+      var elm = e.target, k = e.key;
+      if (k === "ArrowUp" || k === "ArrowDown") { e.preventDefault(); bumpSeg(elm, k === "ArrowUp" ? 1 : -1); return; }
+      if (k === "ArrowRight" && elm === segH && caretAtEnd(elm)) { e.preventDefault(); focusSeg(segM, "all"); return; }
+      if (k === "ArrowLeft" && elm === segM && caretAtHead(elm)) { e.preventDefault(); focusSeg(segH, "end"); return; }
+      if (k === "Backspace" && elm === segM && caretAtStart(elm)) { e.preventDefault(); segH.value = segH.value.slice(0, -1); commitSegs(); onTimeEdited(); focusSeg(segH, "end"); return; }
+      if (k === ":" || k === "." || k === "/" || k === " ") { e.preventDefault(); if (elm === segH) focusSeg(segM, "all"); return; }
+      if (mode12 && /^[apAP]$/.test(k)) { e.preventDefault(); setMeridiem(k.toLowerCase() === "p"); return; }
+      if (/^[0-9]$/.test(k)) { e.preventDefault(); pushDigit(elm, k); return; }
+      if (k.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) e.preventDefault();
+    }
+    [segH, segM].forEach(function (elm) {
+      elm.addEventListener("keydown", onSegKey);
+      elm.addEventListener("focus", function () { if (handingOff) return; window.setTimeout(function () { try { if (document.activeElement === elm) elm.select(); } catch (e) {} }, 0); });
+      elm.addEventListener("blur", function () { if (handingOff) return; commitSegs(); paintTime(); });
+      elm.addEventListener("input", function () { var v = elm.value.replace(/\D/g, "").slice(0, 2); if (v !== elm.value) elm.value = v; commitSegs(); onTimeEdited(); });
+    });
+    apBtn.addEventListener("click", function () { setMeridiem(apBtn.textContent === "AM"); });
+    unk.addEventListener("change", function () { setTimeDisabled(unk.checked); if (unk.checked) { tstate.h = null; tstate.m = null; closeClock(); paintTime(); } });
+
+    /* ---- the clock face: hour ring, then minute ring ---- */
+    var clockOpen = false, clockStep = "hour";
+    var HRANGE = ["11 pm to 1 am", "1 to 3 am", "3 to 5 am", "5 to 7 am", "7 to 9 am", "9 to 11 am", "11 am to 1 pm", "1 to 3 pm", "3 to 5 pm", "5 to 7 pm", "7 to 9 pm", "9 to 11 pm"];
+    function clockH() { return tstate.h == null ? 12 : tstate.h; }
+    function clockM() { return tstate.m == null ? 0 : tstate.m; }
+    function openClock() { cal.hidden = true; clockOpen = true; clockStep = "hour"; clock.hidden = false; clockBtn.setAttribute("aria-expanded", "true"); paintClock(); }
+    function closeClock() { if (!clockOpen && clock.hidden) return; clockOpen = false; clock.hidden = true; clockBtn.setAttribute("aria-expanded", "false"); }
+    clockBtn.addEventListener("click", function (e) { e.stopPropagation(); if (clock.hidden) openClock(); else closeClock(); });
+    document.addEventListener("click", function (e) { if (clockOpen && !fTime.contains(e.target)) closeClock(); });
+    clock.addEventListener("keydown", function (e) { if (e.key === "Escape" || e.key === "Esc") { e.stopPropagation(); closeClock(); try { clockBtn.focus(); } catch (err) {} } });
+    function paintClock() {
+      clock.innerHTML = "";
+      var head = el("div", "bzc-clock-head");
+      var read = el("div", "bzc-clock-read");
+      var hUnit = el("button", "bzc-clock-unit", mode12 ? pad2((clockH() % 12) || 12) : pad2(clockH()));
+      hUnit.type = "button"; hUnit.setAttribute("aria-label", "Set the hour");
+      hUnit.classList.toggle("is-on", clockStep === "hour");
+      hUnit.addEventListener("click", function () { clockStep = "hour"; paintClock(); });
+      var mUnit = el("button", "bzc-clock-unit", pad2(clockM()));
+      mUnit.type = "button"; mUnit.setAttribute("aria-label", "Set the minute");
+      mUnit.classList.toggle("is-on", clockStep === "minute");
+      mUnit.addEventListener("click", function () { clockStep = "minute"; paintClock(); });
+      read.appendChild(hUnit); read.appendChild(el("span", "bzc-clock-colon", ":")); read.appendChild(mUnit);
+      if (mode12) {
+        var pills = el("div", "bzc-clock-ap");
+        [["AM", false], ["PM", true]].forEach(function (p) {
+          var b = el("button", "bzc-clock-appill", p[0]); b.type = "button";
+          var on = (clockH() >= 12) === p[1];
+          b.classList.toggle("is-on", on); b.setAttribute("aria-pressed", on ? "true" : "false");
+          b.addEventListener("click", function () { setMeridiem(p[1]); paintClock(); });
+          pills.appendChild(b);
+        });
+        read.appendChild(pills);
+      }
+      head.appendChild(read);
+      var bi = branchOfHour(clockH()), bb = B.branches[bi];
+      var br = el("p", "bzc-clock-branch", "<b>" + bb.char + "時</b> · the " + bb.animal + " hour · " + HRANGE[bi] + " · the gate that seats your hour pillar");
+      head.appendChild(br);
+      clock.appendChild(head);
+      clock.appendChild(clockFace());
+      var foot = el("div", "bzc-clock-foot");
+      var clr = el("button", "bzc-clock-ghost", "I don't know"); clr.type = "button";
+      clr.addEventListener("click", function () { tstate.h = null; tstate.m = null; unk.checked = true; setTimeDisabled(true); paintTime(); closeClock(); try { unk.focus(); } catch (e) {} });
+      var done = el("button", "bzc-clock-done", "Done"); done.type = "button";
+      done.addEventListener("click", function () { closeClock(); try { clockBtn.focus(); } catch (e) {} });
+      foot.appendChild(clr); foot.appendChild(done);
+      clock.appendChild(foot);
+    }
+    function clockFace() {
+      var face = el("div", "bzc-clock-face");
+      face.setAttribute("role", "group"); face.setAttribute("aria-label", clockStep === "hour" ? "Hour" : "Minute");
+      function seat(btn, i, r) { var a = (i / 12) * 2 * Math.PI - Math.PI / 2; btn.style.left = (50 + Math.cos(a) * r) + "%"; btn.style.top = (50 + Math.sin(a) * r) + "%"; }
+      function num(label, on, r, i, onPick) {
+        var b = el("button", "bzc-clock-num", label); b.type = "button";
+        b.classList.toggle("is-on", on);
+        if (r < 34) b.classList.add("is-inner");
+        seat(b, i, r);
+        b.addEventListener("click", onPick);
+        face.appendChild(b);
+      }
+      var handTurn;
+      if (clockStep === "hour") {
+        if (mode12) {
+          for (var i = 0; i < 12; i++) (function (i) {
+            var h12 = i === 0 ? 12 : i;
+            num(String(h12), ((clockH() % 12) || 12) === h12, 40, i, function () {
+              tstate.h = (h12 % 12) + (clockH() >= 12 ? 12 : 0);
+              if (tstate.m == null) tstate.m = 0;
+              onTimeEdited(); paintTime(); clockStep = "minute"; paintClock();
+            });
+          })(i);
+        } else {
+          for (var j = 0; j < 24; j++) (function (j) {
+            num(pad2(j), clockH() === j, j < 12 ? 41 : 26, j % 12, function () {
+              tstate.h = j;
+              if (tstate.m == null) tstate.m = 0;
+              onTimeEdited(); paintTime(); clockStep = "minute"; paintClock();
+            });
+          })(j);
+        }
+        handTurn = ((clockH() % 12) / 12) * 360;
+      } else {
+        for (var k = 0; k < 12; k++) (function (k) {
+          var mv = k * 5;
+          num(pad2(mv), Math.round(clockM() / 5) % 12 === k, 40, k, function () {
+            tstate.m = mv;
+            if (tstate.h == null) tstate.h = 12;
+            onTimeEdited(); paintTime(); paintClock();
+          });
+        })(k);
+        handTurn = (clockM() / 60) * 360;
+      }
+      var hand = el("span", "bzc-clock-hand"); hand.setAttribute("aria-hidden", "true");
+      hand.style.transform = "translateX(-50%) rotate(" + handTurn + "deg)";
+      face.appendChild(hand);
+      var pin = el("span", "bzc-clock-pin"); pin.setAttribute("aria-hidden", "true");
+      face.appendChild(pin);
+      return face;
+    }
+
+    /* ---- birthplace (true solar time) + sex (luck direction) ---- */
+    var fRow = el("div", "bzc-two");
+    var plc = el("div", "bzc-field");
+    var pLab = el("label", "bzc-label", 'Birthplace <span class="bzc-opt">· true solar time 真太阳时</span>');
+    pLab.setAttribute("for", "bzc-place"); plc.appendChild(pLab);
+    var placeSel = document.createElement("select");
+    placeSel.id = "bzc-place"; placeSel.className = "bzc-input bzc-sel";
+    placeSel.innerHTML = '<option value="">Use clock time as-is (skip)</option>' + CITIES.map(function (c2, i) { return '<option value="' + i + '">' + c2[0] + "</option>"; }).join("") + '<option value="other">Other, enter longitude…</option>';
+    plc.appendChild(placeSel);
+    var adv = el("div", "bzc-adv"); adv.hidden = true;
+    adv.innerHTML = '<div><label class="bzc-label" for="bzc-lon">Longitude (east +, west −)</label><input class="bzc-input" id="bzc-lon" type="number" step="0.1" min="-180" max="180" value="0"></div><div><label class="bzc-label" for="bzc-utc">UTC offset (hours)</label><input class="bzc-input" id="bzc-utc" type="number" step="0.5" min="-12" max="14" value="0"></div>';
+    plc.appendChild(adv);
+    placeSel.addEventListener("change", function () { adv.hidden = placeSel.value !== "other"; });
+    fRow.appendChild(plc);
+    var sx = el("div", "bzc-field");
+    var sLab = el("label", "bzc-label", 'Sex <span class="bzc-opt">· sets the luck direction 大运</span>');
+    sLab.setAttribute("for", "bzc-sex"); sx.appendChild(sLab);
+    var sexSel = document.createElement("select");
+    sexSel.id = "bzc-sex"; sexSel.className = "bzc-input bzc-sel";
+    sexSel.innerHTML = '<option value="">Choose…</option><option value="female">Female</option><option value="male">Male</option>';
+    sx.appendChild(sexSel);
+    fRow.appendChild(sx);
+    form.appendChild(fRow);
+
+    var go = el("button", "bzc-go", '<b class="bzc-go-lab">Cast my chart</b><small class="bzc-go-sub">eight characters · your Day Master · your decades</small>');
+    go.type = "submit";
+    form.appendChild(go);
+    form.appendChild(el("p", "bzc-privacy", "Nothing leaves your browser."));
+
+    var out = el("div", "bz-panel");
+    out.setAttribute("aria-live", "polite");
+    out.innerHTML = '<p class="bz-hint">Add your birth date, then cast your chart. No birth time? The reading still holds; only the hour pillar waits.</p>';
     root.appendChild(out);
 
-    var exploreHour = 15;
-    setMode("general");
+    paintFmt(); paintTime();
 
-    function setMode(mm) {
-      mode = mm;
-      Array.prototype.forEach.call(toggle.querySelectorAll(".bz-mode"), function (b) { var on = b.getAttribute("data-mode") === mm; b.classList.toggle("is-on", on); b.setAttribute("aria-checked", on ? "true" : "false"); });
-      renderControls();
-      cast.style.display = (mode === "explore") ? "none" : "";
-      if (mode === "explore") doExplore();
-      else out.innerHTML = '<p class="bz-hint">Pick your birth date, then cast your chart.</p>';
-    }
-    function renderControls() {
-      if (mode === "known") {
-        var cityOpts = '<option value="">Use clock time as-is (skip)</option>' + CITIES.map(function (c, i) { return '<option value="' + i + '">' + c[0] + "</option>"; }).join("") + '<option value="other">Other, enter longitude…</option>';
-        controls.innerHTML =
-          '<div class="bz-cast-form">' +
-          '<div class="bz-selblock bz-span2"><span class="bz-sellabel">Time of birth</span><input class="bz-select bz-date" type="time" data-c="time" value="12:00"></div>' +
-          '<div class="bz-selblock bz-span2"><span class="bz-sellabel">Birthplace <span class="gloss" tabindex="0" data-tip="真太阳时 zhēn tài yáng shí, true solar time. BaZi runs on the sun at your birthplace, so your longitude and the date shift the real hour. Optional.">true solar time</span></span><select class="bz-select" data-c="place">' + cityOpts + "</select></div>" +
-          "</div>" +
-          '<div data-adv style="display:none"><div class="bz-cast-form"><div class="bz-selblock"><span class="bz-sellabel">Longitude (east +, west −)</span><input class="bz-select" data-c="lon" type="number" step="0.1" min="-180" max="180" value="0"></div><div class="bz-selblock"><span class="bz-sellabel">UTC offset (hours)</span><input class="bz-select" data-c="utc" type="number" step="0.5" min="-12" max="14" value="0"></div></div></div>';
-        var pl = controls.querySelector('[data-c="place"]');
-        pl.addEventListener("change", function (e) { controls.querySelector("[data-adv]").style.display = (e.target.value === "other") ? "" : "none"; });
-      } else if (mode === "explore") {
-        controls.innerHTML =
-          '<div class="bz-explore-banner">Exploring. Step the hour to watch the Hour pillar and its Ten God change. A teaching view, not your real chart.</div>' +
-          '<div class="bz-stepper"><button type="button" class="bz-pill" data-step="-1">earlier</button><span class="bz-stepper-label" data-explabel></span><button type="button" class="bz-pill" data-step="1">later</button></div>';
-        Array.prototype.forEach.call(controls.querySelectorAll("[data-step]"), function (bn) { bn.addEventListener("click", function () { exploreHour = mod(exploreHour + parseInt(bn.getAttribute("data-step"), 10), 24); doExplore(); }); });
-        updateExpLabel();
-      } else {
-        controls.innerHTML = '<p class="bz-note-inline">Most people do not know their exact birth time, and that is fine. A general reading still gives you your Day Master, its strength, your useful element, and your full ten-year luck timeline. Only the hour pillar, and anything resting on it, stays open.</p>';
-      }
-    }
-    function updateExpLabel() { var n = controls.querySelector("[data-explabel]"); if (n) n.textContent = hourLabels[exploreHour]; }
-    function dv(c) { var n = dateRow.querySelector('[data-c="' + c + '"]'); return n ? n.value : ""; }
-    function cv(c) { var n = controls.querySelector('[data-c="' + c + '"]'); return n ? n.value : ""; }
-    function birthParts() { var v = dv("date"); if (!v) return null; var p = v.split("-"); return { y: parseInt(p[0], 10), m: parseInt(p[1], 10), d: parseInt(p[2], 10) }; }
-    function timeParts() { var v = cv("time"); if (!v) return { h: 12, min: 0 }; var p = v.split(":"); return { h: parseInt(p[0], 10) || 0, min: parseInt(p[1], 10) || 0 }; }
-    function dateOK() { var b = birthParts(); return !!(b && b.y >= 1900 && b.y <= 2100); }
     function place() {
-      var pv = cv("place");
-      if (mode !== "known" || pv === "" || pv == null) return null;
-      if (pv === "other") { var lon = parseFloat(cv("lon")), utc = parseFloat(cv("utc")); if (isNaN(lon) || isNaN(utc)) return null; return { lon: lon, utc: utc, name: "your longitude" }; }
-      var c = CITIES[parseInt(pv, 10)]; return c ? { lon: c[1], utc: c[2], name: c[0] } : null;
+      var pv = placeSel.value;
+      if (pv === "" || pv == null || unk.checked || tstate.h == null) return null;
+      if (pv === "other") { var lon = parseFloat(document.getElementById("bzc-lon").value), utc = parseFloat(document.getElementById("bzc-utc").value); if (isNaN(lon) || isNaN(utc)) return null; return { lon: lon, utc: utc, name: "your longitude" }; }
+      var c2 = CITIES[parseInt(pv, 10)]; return c2 ? { lon: c2[1], utc: c2[2], name: c2[0] } : null;
     }
     function reduceMotion() { return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; }
     function scrollToResult() { try { setTimeout(function () { out.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60); } catch (e) {} }
@@ -685,21 +954,28 @@
       showCasting(); scrollToResult();
       setTimeout(function () { render(chart, ropt); }, 560);
     }
-    cast.addEventListener("click", function () {
-      if (!dateOK()) { out.innerHTML = '<p class="bz-hint">Please pick a birth date (year 1900 to 2100).</p>'; return; }
-      var b = birthParts(), y = b.y, m = b.m, d = b.d, sex = dv("sex");
-      if (mode === "general") { doReveal(castChart({ year: y, month: m, day: d, known: false }), { birth:{y:y,m:m,d:d}, sex:sex, animate:true }); return; }
-      var pl = place(), tp = timeParts();
-      var o = { year: y, month: m, day: d, hour: tp.h, minute: tp.min, known: true };
+    function castNow() {
+      var p = parseDate(date.value);
+      if (!p) { out.innerHTML = '<p class="bz-hint">Add your birth date first (any year 1900 to 2100).</p>'; try { date.focus(); } catch (e) {} return; }
+      commitSegs();
+      var sex = sexSel.value;
+      if (unk.checked || tstate.h == null) { doReveal(castChart({ year: p.y, month: p.m, day: p.d, known: false }), { birth: { y: p.y, m: p.m, d: p.d }, sex: sex, animate: true }); return; }
+      var pl = place();
+      var o = { year: p.y, month: p.m, day: p.d, hour: tstate.h, minute: tstate.m || 0, known: true };
       if (pl) { o.lon = pl.lon; o.utc = pl.utc; }
-      doReveal(castChart(o), { placeName: pl ? pl.name : null, birth:{y:y,m:m,d:d}, sex:sex, animate:true });
-    });
-    function doExplore() {
-      if (!dateOK()) { out.innerHTML = '<p class="bz-hint">Pick a birth date first, then explore the hour.</p>'; return; }
-      updateExpLabel();
-      var b = birthParts();
-      render(castChart({ year: b.y, month: b.m, day: b.d, hour: exploreHour, minute: 0, known: true }), { explore: true, birth:{y:b.y,m:b.m,d:b.d}, sex:dv("sex") });
+      doReveal(castChart(o), { placeName: pl ? pl.name : null, birth: { y: p.y, m: p.m, d: p.d }, sex: sex, animate: true });
     }
+    form.addEventListener("submit", function (e) { e.preventDefault(); castNow(); });
+
+    /* the saved birth record (zodi-birth.js) fills and casts through this */
+    root.__bzPrefill = function (rec) {
+      if (!rec || !rec.year) return;
+      date.value = pad2(rec.month) + "/" + pad2(rec.day) + "/" + rec.year;
+      if (typeof rec.hour === "number") { tstate.h = rec.hour; tstate.m = rec.minute || 0; unk.checked = false; setTimeDisabled(false); }
+      else { tstate.h = null; tstate.m = null; unk.checked = true; setTimeDisabled(true); }
+      paintTime();
+      castNow();
+    };
 
     function godOf(node) { var g = godFor(dmPhase(), dmPol(), node.phase, node.polarity); return g ? g : null; }
     var _dm;
@@ -775,7 +1051,7 @@
       var godsBlock = '<div class="bz-read-sec"><span class="bz-k">Your Ten Gods (' + glossI("主星 / 副星", "主星 zhǔ xīng are the gods on your visible stems; 副星 fù xīng are the gods of the hidden stems. Tap any to learn it.") + ')</span><div class="bz-godtags">' + presList + '</div>' + (lines.length ? "<p>" + lines.join(" ") + "</p>" : "") + "</div>";
 
       // --- luck pillars ---
-      var luckArc = "", luckBlock;
+      var luckArc = "", luckBlock, firstGood = null;
       if (!opt.sex) luckBlock = '<div class="bz-read-sec"><span class="bz-k">Your luck decades (大运)</span><p class="bz-note-inline">Choose your sex in the form above (it sets the direction of the luck pillars) to see your ten-year decades.</p></div>';
       else {
         var yPol = stemByChar[c.pillars[0].stem].polarity;
@@ -792,7 +1068,7 @@
           var cl = feeds && !drains ? "supportive" : (drains && !feeds ? "demanding" : "mixed"), ageF = sa + k * 10, ageT = ageF + 9;
           var yF = birthY ? birthY + ageF : null;
           var when = (curAge == null) ? "" : (curAge > ageT ? " is-past" : (curAge >= ageF ? " is-now" : ""));
-          if (cl === "supportive" && (curAge == null || ageF >= curAge)) good.push(ageF);
+          if (cl === "supportive" && (curAge == null || ageF >= curAge)) { good.push(ageF); if (!firstGood) firstGood = { age: ageF, year: yF, pillar: ds.char + db.char, god: g2.en }; }
           var nowTag = when.indexOf("is-now") > -1 ? '<span class="bz-now">now</span>' : "";
           cells += '<div class="bz-luckcell' + (cl === "supportive" ? " is-good" : (cl === "demanding" ? " is-hard" : "")) + when + '" data-god="' + g2.char + '" tabindex="0" role="button">' + nowTag + "<b>" + ds.char + db.char + "</b><i>age " + ageF + (yF ? " · " + yF : "") + "</i><em>" + g2.en + "</em></div>";
         }
@@ -809,6 +1085,43 @@
       var SD = { strong: "do its best work with outlets and something real to carry", balanced: "adapt and hold its own without being ruled by any one pull", weak: "flourish with good backing, steady allies, and room to rest" };
       var arcTxt = opt.sex ? luckArc : "moves through a mix of seasons (add your sex above for the luck direction)";
       var synth = '<div class="bz-portrait bz-synth"><span class="bz-k">What this life means</span><p>At heart, this is a ' + dm.polarity + " " + dm.phase + " self, " + dm.keywords.slice(0, 3).join(", ") + ". It reads as a <b>" + st.verdict + "</b> chart, " + SM[st.verdict] + ", so it tends to " + SD[st.verdict] + ". " + (domName ? "Its strongest current is <b>" + domName + "</b>, " + domGloss + " so this life leans toward " + domLean + " " : "") + "The elements it most leans on are " + joinNames(uf.useful) + ". Across the decades it " + arcTxt + ", so the season of life matters as much as the chart. Read whole, this is a life built to <b>" + (VERB[domG] || "find its own balance") + "</b>: not a fate written down, but a grain to work with, most itself when it leans into " + uf.useful[0] + " and gives its " + (domName || "gifts") + " real room.</p></div>";
+
+      // --- the power reading: the five cards a practitioner would open with ---
+      function pcard(kk, tt) { return '<div class="bz-power-card"><span class="bz-k">' + kk + '</span><p>' + tt + '</p></div>'; }
+      var hasWealthP = tg.wealth >= 0.5;
+      var WORKT = {
+        output: "This chart carries a maker's mark. Output is its strongest current" + (domName ? ", led by the " + domName + (domEntry ? " (" + domEntry.char + ")" : "") : "") + ": it tends to think by producing, and its best work is something made, said, or built." + (hasWealthP ? " Wealth sits in the chart for that output to feed (食神生财, the craft that feeds the fortune), so the making itself can become the living." : " Give it something to produce and the rest of the chart falls in line."),
+        wealth: "This chart faces its work head-on. Wealth is its strongest current" + (domName ? ", led by the " + domName : "") + ": tangible results, real resources, things handled and grown. It tends to be happiest when effort lands somewhere countable." + (st.verdict === "weak" ? " One caution from the classics (财多身弱): the self runs light for all it carries, so build backing before reaching further." : ""),
+        resource: "Learning is the engine of this chart. Resource runs strongest" + (domName ? ", led by the " + domName : "") + ": it gathers knowledge, backing, and care, and does its best work where study, teaching, or protection sit near the center. The one risk of plenty is knowledge that never converts; it wants an outlet to pour into.",
+        power: "Structure found this chart early. Authority is its strongest current" + (domName ? ", led by the " + domName : "") + ": duty, responsibility, and the weight of being answerable. Carried well, that pressure reads as command, and this self tends to be handed real things to hold.",
+        companion: "This chart stands on its own feet. Companions run strongest" + (domName ? ", led by the " + domName : "") + ": independence, self-identity, peers and rivals in equal measure." + (tg.wealth < 1 ? " With Wealth thin, the classical warning 比劫争财 applies: mark clearly what is yours, and give the drive its own arena." : " The drive does best with an arena of its own.")
+      };
+      var workTxt = (WORKT[domG] || WORKT.companion) + (domLean ? " Fields that fit: " + domLean : "");
+      var offP = pres["正官"], shaP = pres["七杀"], authTxt;
+      if (tg.power < 0.25) authTxt = "No Officer star appears at birth: no boss placed above you, and no ready-made ladder. The structure you answer to tends to be one you build yourself. The freedom is real, and so is the flip side: position and recognition here are earned and made, not inherited.";
+      else if (offP && offP.revealed) authTxt = "A revealed Direct Officer (正官) stands in the chart: authority through proper channels. This self tends to rise inside structures, by duties met and rules honored, and to be trusted with responsibility early. The name matters here; guard it.";
+      else if (shaP && shaP.revealed) authTxt = "Seven Killings (七杀) stands revealed: raw, unbuffered authority. Pressure is a feature of this chart, not a fault, and handled well it forges command, the kind of leadership earned in hard seasons rather than granted in calm ones.";
+      else authTxt = "Authority sits hidden in the branches rather than revealed on the stems: a quiet claim to structure and duty that tends to surface later in life, or when a season of pressure calls it up. Until then it reads as conscientiousness rather than rank.";
+      var pyTxt;
+      if (!opt.sex) pyTxt = "The luck decades run forward or backward depending on birth sex. Choose yours in the form above and this card names the decade to prepare for, with its year and the god it carries.";
+      else if (firstGood) pyTxt = "Around " + (firstGood.year || ("age " + firstGood.age)) + ", near age " + firstGood.age + ", you enter the " + firstGood.pillar + " decade, a supportive season for the elements this chart leans on (" + joinNames(uf.useful) + "). It arrives carrying the " + firstGood.god + ". Treat it as a season to prepare for, not a prize that lands on its own.";
+      else pyTxt = "No single decade ahead reads as easy weather; this chart's seasons come mixed. That favors steady building over waiting for a golden year, and it makes the useful elements (" + joinNames(uf.useful) + ") worth choosing on purpose.";
+      var HEADT = {
+        strong: "A strong self tends toward the slow, earned climb: quiet and self-made at the start, more recognized and more resourced as the supportive decades arrive. The mountain does not rush. It accumulates.",
+        balanced: "A balanced self rides its seasons lightly: it bends with the demanding decades and opens up in the supportive ones, rarely thrown far off its line. The steadiness is the gift; the seasons set the pace.",
+        weak: "A supported self grows into its chart: the early decades build the backing it runs on, and the later ones let it spend that backing well. It tends to finish stronger than it starts."
+      };
+      var headTxt = "Across the decades this chart " + (opt.sex ? luckArc : "moves through a mix of seasons") + ". " + HEADT[st.verdict];
+      var spouseB = branchByChar[c.pillars[2].branch];
+      var LOVET = {
+        resource: "support and steady care close to home, a partnership that feeds and settles you",
+        companion: "an equal at your side, partnership as friendship first, two whole people keeping their own ground",
+        output: "expression close to home, a bond kept alive by making, talking, and shared play",
+        wealth: "a hands-on, providing warmth, love shown by building something real together",
+        power: "structure close to home, a partner who steadies you and stretches you, and a bond taken seriously"
+      };
+      var loveTxt = "Your day branch is the " + spouseB.animal + " (" + spouseB.phase + "), and it sits in the spouse palace. It reads as " + (LOVET[groupOfPhase(dm.phase, spouseB.phase)] || LOVET.companion) + ". A " + dm.polarity + " " + dm.phase + " self tends to bring its " + dm.keywords[0] + " side to the bond. Kept light: a tendency, not a promise.";
+      var powerBlock = '<div class="bz-read-sec"><span class="bz-k">The power reading</span><div class="bz-power">' + pcard("Your work", workTxt) + pcard("Authority", authTxt) + pcard("Your power years", pyTxt) + pcard("Where it is heading", headTxt) + pcard("In love", loveTxt) + '</div></div>';
 
       // --- notes / hedges ---
       var extra = []; if (st.near) extra.push("This chart sits near the balance line, so read the strength lightly; small details could tip it.");
@@ -839,7 +1152,7 @@
         hourSel = '<div class="bz-read-sec bz-hoursel"><span class="bz-k">Your birth hour ' + glossI("(时辰)", "时辰 shí chen, the two-hour block of your birth. It sets the fourth pillar: later life, children, and what you make. Swap it to see the reading change.") + ' — swap to see how it changes</span><select class="bz-select" data-hoursel>' + ho + '</select></div>';
       }
       var castlead = '<p class="bz-castlead">Your Day Master is <b>' + dm.char + " " + dm.pinyin + "</b>, " + dm.polarity + " " + dm.phase + ". " + cap(dm.imagery) + ". This is you, the character every other part of the chart is read against.</p>";
-      var pieces = [castlead, grid, hourSel, solar, shareCard, strengthBlock, pillarBlock, godsBlock, luckBlock, yearBlock, synth, generalNote, (notes ? '<div class="bz-note-inline">' + notes + "</div>" : ""), links, '<p class="bz-note-inline">A reading of tendencies from a classical system, a mirror and a grain to work with, not a verdict and not a prediction. What you do with it is yours.</p>'].filter(Boolean);
+      var pieces = [castlead, grid, hourSel, solar, shareCard, strengthBlock, pillarBlock, godsBlock, powerBlock, luckBlock, yearBlock, synth, generalNote, (notes ? '<div class="bz-note-inline">' + notes + "</div>" : ""), links, '<p class="bz-note-inline">A reading of tendencies from a classical system, a mirror and a grain to work with, not a verdict and not a prediction. What you do with it is yours.</p>'].filter(Boolean);
       var body = opt.animate ? '<div class="bz-anim">' + pieces.map(function (p, i) { return '<div class="bz-reveal-step" style="animation-delay:' + (i * 75) + 'ms">' + p + "</div>"; }).join("") + "</div>" : pieces.join("");
       out.innerHTML = banner + body;
 

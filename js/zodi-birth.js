@@ -125,24 +125,15 @@
       return;
     }
 
-    /* BaZi (bazi/chart/): no store; fill the mounted controls and cast. */
+    /* BaZi (bazi/chart/): no store; the cast widget exposes a prefill hook. */
     var tries = 0;
     (function bz() {
       var root = document.querySelector('[data-bz="cast"]');
       if (!root) return; /* not this page */
-      var date = root.querySelector('[data-c="date"]');
-      if (!date) { if (++tries < 20) setTimeout(bz, 150); return; }
-      if (date.dataset.zodiFilled) return;
-      date.dataset.zodiFilled = "1";
-      date.value = rec.year + "-" + pad2(rec.month) + "-" + pad2(rec.day);
-      if (typeof rec.hour === "number") {
-        var mode = root.querySelector('.bz-mode[data-mode="known"]');
-        if (mode) mode.click();
-        var time = root.querySelector('[data-c="time"]');
-        if (time) time.value = pad2(rec.hour) + ":" + pad2(rec.minute || 0);
-      }
-      var castBtn = root.querySelector(".pill.primary");
-      if (castBtn) castBtn.click();
+      if (!root.__bzPrefill) { if (++tries < 20) setTimeout(bz, 150); return; }
+      if (root.dataset.zodiFilled) return;
+      root.dataset.zodiFilled = "1";
+      root.__bzPrefill(rec);
     })();
   }
 

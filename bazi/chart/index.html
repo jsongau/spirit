@@ -314,6 +314,107 @@ a.bz-el:hover{border-color:var(--el);color:var(--moon)}
 @media(max-width:680px){.bz-float-panel{right:8px;left:8px;width:auto;bottom:68px}.bz-float{right:10px;bottom:10px}}
 @media(max-width:680px){.doors{grid-template-columns:1fr}.two{grid-template-columns:1fr}.bz-grid-anim{grid-template-columns:repeat(4,1fr)}.bz-grid-stem{grid-template-columns:repeat(2,1fr)}.bz-finder{grid-template-columns:1fr}.bz-cellrow{grid-template-columns:1fr}.bz-role{min-width:96px}.bz-two-soft{grid-template-columns:1fr}.bz-pglyph{font-size:1.7rem}.bz-godtag{display:none}.bz-cast-form{grid-template-columns:1fr 1fr}.bzseal{display:none}.bzwatermark{font-size:38vw;top:-2rem}.bzpil{min-width:0;flex:1;padding:.7rem .3rem}.bz-paper::before{display:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}}
+/* ---- the birth-moment form (bzc-*), twinned with the Purple Star caster ---- */
+.bzc-form{margin-top:1.4rem;max-width:560px}
+.bzc-field{position:relative;margin:0 0 14px}
+.bzc-label{display:block;font-size:.82rem;color:var(--muted);margin:0 0 4px}
+.bzc-opt{color:var(--faint);font-size:.74rem}
+.bzc-inwrap{display:flex;gap:8px}
+.bzc-input{flex:1 1 auto;width:100%;min-height:44px;background:var(--field);border:1px solid var(--line);border-radius:var(--r-1);color:var(--moon);font:inherit;font-size:.95rem;padding:9px 10px}
+.bzc-input:focus-visible{outline:2px solid var(--el);outline-offset:1px}
+.bzc-popbtn{flex:0 0 auto;width:44px;min-height:44px;border:1px solid var(--line);border-radius:var(--r-1);background:var(--field);color:var(--el);cursor:pointer;display:grid;place-items:center;transition:border-color .15s}
+.bzc-popbtn:hover{border-color:var(--el)}
+.bzc-popbtn:focus-visible{outline:2px solid var(--el);outline-offset:1px}
+.bzc-popbtn:disabled{opacity:.45;cursor:not-allowed}
+.bzc-cal{position:absolute;z-index:80;top:calc(100% + 8px);left:0;width:min(346px,calc(100vw - 40px));background:var(--panel-2);border:1px solid var(--line);border-top:2px solid var(--el);border-radius:var(--r-2);box-shadow:0 16px 44px rgba(0,0,0,.5);padding:14px 16px}
+.bzc-cal[hidden]{display:none}
+.bzc-cal-head{display:flex;align-items:center;gap:8px;padding-bottom:8px;margin-bottom:8px;border-bottom:1px solid var(--line-soft)}
+.bzc-cal-selwrap{flex:1 1 auto;display:flex;gap:6px}
+.bzc-cal-sel{flex:1 1 auto;min-width:0;background:var(--field);border:1px solid var(--line);border-radius:var(--r-1);color:var(--moon);font:inherit;font-size:.86rem;padding:6px 24px 6px 10px;min-height:40px}
+.bzc-cal-sel:hover{border-color:var(--el)}
+.bzc-cal-sel:focus-visible{outline:2px solid var(--el);outline-offset:1px}
+.bzc-cal-nav{flex:0 0 auto;width:40px;min-height:40px;border:1px solid var(--line);border-radius:50%;background:var(--field);color:var(--el);font-size:1.1rem;cursor:pointer;display:grid;place-items:center;transition:background .15s,border-color .15s,transform .1s}
+.bzc-cal-nav:hover{background:var(--el-soft);border-color:var(--el);color:var(--moon)}
+.bzc-cal-nav:active{transform:scale(.9)}
+.bzc-cal-dow{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:4px}
+.bzc-cal-dow span{text-align:center;font-family:var(--mono);font-size:.62rem;color:var(--faint)}
+.bzc-cal-dow span:first-child,.bzc-cal-dow span:last-child{color:var(--el)}
+.bzc-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.bzc-cal-day{min-height:40px;border:0;border-radius:var(--r-1);background:transparent;color:var(--body);font:inherit;font-size:.9rem;cursor:pointer;transition:background .12s,color .12s}
+.bzc-cal-day:hover{background:var(--el-soft);color:var(--moon)}
+.bzc-cal-day.is-sel{background:var(--el);color:var(--ink);font-weight:600;box-shadow:0 0 0 2px var(--el-soft)}
+.bzc-cal-empty{min-height:40px}
+.bzc-time-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.bzc-time-head .bzc-label{margin:0}
+.bzc-fmt{display:flex;gap:2px;padding:2px;border:1px solid var(--line);border-radius:var(--r-pill);background:var(--field)}
+.bzc-fmt-opt{padding:5px 10px;min-height:30px;border:0;border-radius:var(--r-pill);background:transparent;color:var(--muted);font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;cursor:pointer;transition:color .15s,background .15s}
+.bzc-fmt-opt:hover{color:var(--moon)}
+.bzc-fmt-opt.is-on{background:var(--el);color:var(--ink);font-weight:600}
+.bzc-timebox{flex:1 1 auto;display:flex;align-items:center;gap:2px;min-height:44px;padding:0 10px;background:var(--field);border:1px solid var(--line);border-radius:var(--r-1)}
+.bzc-timebox:focus-within{border-color:var(--el);outline:2px solid var(--el);outline-offset:1px}
+.bzc-timebox.is-disabled{opacity:.45}
+.bzc-tseg{width:2.4ch;padding:8px 0;background:transparent;border:0;color:var(--moon);font-family:var(--mono);font-size:1.02rem;line-height:1.2;text-align:center;caret-color:var(--el)}
+.bzc-tseg::placeholder{color:var(--faint)}
+.bzc-tseg:focus{outline:0;background:var(--el-soft);border-radius:4px}
+.bzc-tseg:disabled{cursor:not-allowed}
+.bzc-tsep{font-family:var(--mono);font-size:1.02rem;color:var(--faint);padding:0 1px}
+.bzc-timebox.is-set .bzc-tsep{color:var(--el)}
+.bzc-tap{margin-left:auto;min-width:42px;min-height:30px;padding:4px 10px;background:transparent;border:1px solid var(--line);border-radius:var(--r-pill);color:var(--muted);font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;cursor:pointer;transition:color .15s,border-color .15s}
+.bzc-tap:hover{color:var(--moon);border-color:var(--el)}
+.bzc-tap[hidden]{display:none}
+.bzc-timebox.is-set .bzc-tap{color:var(--el);border-color:var(--el)}
+.bzc-check{display:flex;align-items:center;gap:7px;margin-top:8px;font-size:.82rem;color:var(--muted);cursor:pointer}
+.bzc-check input{width:16px;height:16px;accent-color:var(--el)}
+.bzc-clock{position:absolute;z-index:90;top:calc(100% + 8px);left:0;width:min(300px,calc(100vw - 40px));background:var(--panel-2);border:1px solid var(--line);border-top:2px solid var(--el);border-radius:var(--r-2);box-shadow:0 16px 44px rgba(0,0,0,.5);padding:14px 16px 12px;max-height:min(78vh,560px);overflow-y:auto;overscroll-behavior:contain}
+.bzc-clock[hidden]{display:none}
+.bzc-clock-head{padding-bottom:10px;margin-bottom:10px;border-bottom:1px solid var(--line-soft)}
+.bzc-clock-read{display:flex;align-items:center;gap:2px}
+.bzc-clock-unit{padding:2px 6px;background:transparent;border:0;border-radius:6px;color:var(--faint);font-family:var(--mono);font-size:1.7rem;line-height:1.1;cursor:pointer;transition:color .15s,background .15s}
+.bzc-clock-unit:hover{color:var(--moon)}
+.bzc-clock-unit.is-on{color:var(--el);background:var(--el-soft)}
+.bzc-clock-unit:focus-visible{outline:2px solid var(--el);outline-offset:1px}
+.bzc-clock-colon{font-family:var(--mono);font-size:1.7rem;color:var(--faint)}
+.bzc-clock-ap{margin-left:auto;display:flex;flex-direction:column;gap:2px}
+.bzc-clock-appill{min-width:42px;min-height:26px;padding:2px 8px;background:transparent;border:1px solid var(--line);border-radius:var(--r-pill);color:var(--muted);font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;cursor:pointer;transition:color .15s,border-color .15s,background .15s}
+.bzc-clock-appill:hover{color:var(--moon);border-color:var(--el)}
+.bzc-clock-appill.is-on{color:var(--ink);background:var(--el);border-color:var(--el)}
+.bzc-clock-branch{margin:6px 0 0;font-family:var(--mono);font-size:.68rem;line-height:1.4;color:var(--faint)}
+.bzc-clock-branch b{font-weight:400;color:var(--el)}
+.bzc-clock-face{position:relative;width:100%;aspect-ratio:1/1;max-width:250px;margin:0 auto;border-radius:50%;border:1px solid var(--line-soft);background:radial-gradient(circle at 50% 50%,var(--panel),var(--field) 70%)}
+.bzc-clock-num{position:absolute;transform:translate(-50%,-50%);width:34px;height:34px;display:grid;place-items:center;padding:0;background:transparent;border:1px solid transparent;border-radius:50%;color:var(--body);font-family:var(--mono);font-size:.84rem;cursor:pointer;transition:color .12s,background .12s,border-color .12s;z-index:2}
+.bzc-clock-num.is-inner{width:28px;height:28px;font-size:.7rem;color:var(--muted)}
+.bzc-clock-num:hover{color:var(--moon);border-color:var(--el);background:var(--el-soft)}
+.bzc-clock-num:focus-visible{outline:2px solid var(--el);outline-offset:1px}
+.bzc-clock-num.is-on{background:var(--el);border-color:var(--el);color:var(--ink);font-weight:600;box-shadow:0 0 0 3px var(--el-soft)}
+.bzc-clock-hand{position:absolute;left:50%;bottom:50%;transform-origin:50% 100%;width:2px;height:34%;background:linear-gradient(to top,color-mix(in oklab,var(--el) 55%,transparent),var(--el));border-radius:1px;z-index:1;pointer-events:none;transition:transform .22s cubic-bezier(.5,1.4,.4,1)}
+.bzc-clock-pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:7px;height:7px;border-radius:50%;background:var(--el);box-shadow:0 0 10px -2px var(--el);z-index:3;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.bzc-clock-hand{transition:none}}
+.bzc-clock-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px}
+.bzc-clock-ghost{min-height:40px;padding:6px 12px;background:transparent;border:1px solid var(--line-soft);border-radius:var(--r-pill);color:var(--muted);font:inherit;font-size:.8rem;cursor:pointer}
+.bzc-clock-ghost:hover{color:var(--moon);border-color:var(--line)}
+.bzc-clock-done{min-height:40px;padding:6px 20px;background:var(--el);border:0;border-radius:var(--r-pill);color:var(--ink);font:inherit;font-size:.84rem;font-weight:600;cursor:pointer}
+.bzc-clock-ghost:focus-visible,.bzc-clock-done:focus-visible{outline:2px solid var(--el);outline-offset:2px}
+.bzc-two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bzc-adv{margin-top:8px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.bzc-adv[hidden]{display:none}
+.bzc-go{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-height:56px;margin-top:4px;background:var(--el);border:0;border-radius:var(--r-2);cursor:pointer;transition:filter .15s,box-shadow .15s,transform .08s}
+.bzc-go:hover{filter:brightness(1.06);box-shadow:0 0 0 4px var(--el-soft),0 10px 26px -10px var(--el)}
+.bzc-go:active{transform:scale(.985)}
+.bzc-go:focus-visible{outline:2px solid var(--moon);outline-offset:3px}
+.bzc-go-lab{font-weight:600;font-size:1rem;line-height:1.2;color:var(--ink)}
+.bzc-go-sub{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:color-mix(in oklab,var(--ink) 72%,transparent)}
+.bzc-privacy{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:var(--faint);margin:9px 0 0;text-align:center}
+@media(max-width:560px){
+.bzc-two{grid-template-columns:1fr}
+.bzc-cal,.bzc-clock{position:fixed;left:0;right:0;bottom:0;top:auto;width:100%;max-width:100%;border-radius:var(--r-2) var(--r-2) 0 0;box-shadow:0 -12px 44px rgba(0,0,0,.6);padding:16px 16px calc(16px + env(safe-area-inset-bottom))}
+.bzc-cal-day,.bzc-cal-empty{min-height:46px}
+.bzc-clock-face{max-width:min(300px,76vw)}
+.bzc-clock-num{width:40px;height:40px;font-size:.92rem}
+.bzc-clock-num.is-inner{width:32px;height:32px}
+.bzc-timebox{min-height:48px}
+.bzc-tseg{padding:12px 0;font-size:1.1rem}
+.bzc-popbtn{width:48px;min-height:48px}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Cast Your Chart · BaZi · Zodi Animal","inLanguage":"en","about":"BaZi (Four Pillars of Destiny)","isPartOf":{"@type":"WebSite","name":"Zodi Animal","url":"https://www.zodianimal.com/"},"description":"Enter your birth date and time to build your four pillars, meet your Day Master, and see the elements hidden in your branches."}]}</script>
 <script src="/js/nav.js" defer></script>
@@ -379,7 +480,7 @@ a.bz-el:hover{border-color:var(--el);color:var(--moon)}
   <div class="pn-dd" data-dd><div class="pn-dd-mount"></div></div>
   <div class="pn-panel pn-panel-explore" data-group="1" data-accent="teal" role="region" aria-label="Explore" hidden>
     <p class="pn-panel-eyebrow">Everything the wheel opens, one animal at the center</p>
-    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">✦</span> Begin</p><a class="pn-row" href="/index.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Find your animal</span></a><a class="pn-row" href="/daily.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Today's reading</span><span class="pn-row-sub" data-dyn="date-today">Fri, Jul 10</span></a><a class="pn-row" href="/year.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Year finder</span></a><a class="pn-row" href="/account.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your account</span><span class="pn-row-sub">Zodi Karma ledger</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Menagerie</p><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">All 144 animals</span></a><a class="pn-row" href="/western-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Western wing</span></a><a class="pn-row" href="/chinese-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Eastern wing</span></a><a class="pn-row" href="/zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Zodiac crossings</span></a><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Rare crossings</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> The Moon</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Waning Crescent</span></a><a class="pn-row" href="/moon/phases/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The eight phases</span></a><a class="pn-row" href="/moon/in-your-sign/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Moon in your sign</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days</span></a><a class="pn-row" href="/chinese-zodiac/fire-horse-2026/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Fire Horse 2026</span><span class="pn-row-sub">begins Feb 17</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">⌂</span> Live with it</p><a class="pn-row" href="/feng-shui/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Feng shui</span></a><a class="pn-row" href="/destiny/bazi-four-pillars/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">BaZi (Four Pillars)</span><span class="pn-row-sub">eight characters</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span><span class="pn-row-sub">moon, stones, heritage</span></a></div></div>
+    <div class="pn-cols"><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">✦</span> Begin</p><a class="pn-row" href="/index.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Find your animal</span></a><a class="pn-row" href="/daily.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Today's reading</span><span class="pn-row-sub" data-dyn="date-today">Thu, Jul 9</span></a><a class="pn-row" href="/year.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Year finder</span></a><a class="pn-row" href="/account.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Your account</span><span class="pn-row-sub">Zodi Karma ledger</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">◆</span> Menagerie</p><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">All 144 animals</span></a><a class="pn-row" href="/western-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Western wing</span></a><a class="pn-row" href="/chinese-zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Eastern wing</span></a><a class="pn-row" href="/zodiac/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Zodiac crossings</span></a><a class="pn-row" href="/menagerie.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Rare crossings</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">☾</span> The Moon</p><a class="pn-row" href="/moon.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Moon tonight</span><span class="pn-row-sub" data-dyn="moon-phase">Waning Crescent</span></a><a class="pn-row" href="/moon/phases/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The eight phases</span></a><a class="pn-row" href="/moon/in-your-sign/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Moon in your sign</span></a><a class="pn-row" href="/best-days.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Best days</span></a><a class="pn-row" href="/chinese-zodiac/fire-horse-2026/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Fire Horse 2026</span><span class="pn-row-sub">begins Feb 17</span></a></div><div class="pn-col"><p class="pn-col-title"><span class="pn-col-mark" aria-hidden="true">⌂</span> Live with it</p><a class="pn-row" href="/feng-shui/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Feng shui</span></a><a class="pn-row" href="/destiny/bazi-four-pillars/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">BaZi (Four Pillars)</span><span class="pn-row-sub">eight characters</span></a><a class="pn-row" href="/habitat/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">The Habitat</span></a><a class="pn-row" href="/stones.html"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Keeper stones</span></a><a class="pn-row" href="/directions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Directions</span></a><a class="pn-row" href="/traditions/"><span class="pn-glyph" aria-hidden="true"></span><span class="pn-row-name">Traditions</span><span class="pn-row-sub">moon, stones, heritage</span></a></div></div>
     <div class="pn-chips" role="group" aria-label="Western wing"><span class="pn-chips-label">Western wing</span><a class="pn-chip" href="/western-zodiac/aries/" title="Aries" aria-label="Aries">♈</a><a class="pn-chip" href="/western-zodiac/taurus/" title="Taurus" aria-label="Taurus">♉</a><a class="pn-chip" href="/western-zodiac/gemini/" title="Gemini" aria-label="Gemini">♊</a><a class="pn-chip" href="/western-zodiac/cancer/" title="Cancer" aria-label="Cancer">♋</a><a class="pn-chip" href="/western-zodiac/leo/" title="Leo" aria-label="Leo">♌</a><a class="pn-chip" href="/western-zodiac/virgo/" title="Virgo" aria-label="Virgo">♍</a><a class="pn-chip" href="/western-zodiac/libra/" title="Libra" aria-label="Libra">♎</a><a class="pn-chip" href="/western-zodiac/scorpio/" title="Scorpio" aria-label="Scorpio">♏</a><a class="pn-chip" href="/western-zodiac/sagittarius/" title="Sagittarius" aria-label="Sagittarius">♐</a><a class="pn-chip" href="/western-zodiac/capricorn/" title="Capricorn" aria-label="Capricorn">♑</a><a class="pn-chip" href="/western-zodiac/aquarius/" title="Aquarius" aria-label="Aquarius">♒</a><a class="pn-chip" href="/western-zodiac/pisces/" title="Pisces" aria-label="Pisces">♓</a></div>
     <div class="pn-chips" role="group" aria-label="Eastern wing"><span class="pn-chips-label">Eastern wing</span><a class="pn-chip" href="/chinese-zodiac/rat/" title="Rat" aria-label="Rat">鼠</a><a class="pn-chip" href="/chinese-zodiac/ox/" title="Ox" aria-label="Ox">牛</a><a class="pn-chip" href="/chinese-zodiac/tiger/" title="Tiger" aria-label="Tiger">虎</a><a class="pn-chip" href="/chinese-zodiac/rabbit/" title="Rabbit" aria-label="Rabbit">兔</a><a class="pn-chip" href="/chinese-zodiac/dragon/" title="Dragon" aria-label="Dragon">龙</a><a class="pn-chip" href="/chinese-zodiac/snake/" title="Snake" aria-label="Snake">蛇</a><a class="pn-chip" href="/chinese-zodiac/horse/" title="Horse" aria-label="Horse">马</a><a class="pn-chip" href="/chinese-zodiac/goat/" title="Goat" aria-label="Goat">羊</a><a class="pn-chip" href="/chinese-zodiac/monkey/" title="Monkey" aria-label="Monkey">猴</a><a class="pn-chip" href="/chinese-zodiac/rooster/" title="Rooster" aria-label="Rooster">鸡</a><a class="pn-chip" href="/chinese-zodiac/dog/" title="Dog" aria-label="Dog">狗</a><a class="pn-chip" href="/chinese-zodiac/pig/" title="Pig" aria-label="Pig">猪</a></div>
     <div class="pn-panel-foot"><a href="/menagerie.html">See all 144 animals</a></div>
@@ -535,6 +636,7 @@ Array.prototype.forEach.call(document.querySelectorAll('[data-concept]'),functio
         <li><a href="/menagerie.html">All 144 animals</a></li>
         <li><a href="/zodiac/">The 144 crossings</a></li>
         <li><a href="/zodiac/grid/">The 144 grid</a></li>
+        <li><a href="/horoscope-animals/">Horoscope animals</a></li>
         <li><a href="/year.html">Year finder</a></li>
         <li><a href="/daily.html">Today's reading</a></li>
       </ul></div>
