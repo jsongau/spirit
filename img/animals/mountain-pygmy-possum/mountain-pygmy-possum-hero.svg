@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A tiny mountain pygmy possum with large dark eyes peers from a snow-rimmed gap between granite boulders, its grey fur catching cold light while lichen and a bare alpine shrub root hold the rocks in place">
+  <defs>
+    <radialGradient id="mp-sky" cx="55%" cy="22%" r="95%">
+      <stop offset="0%" stop-color="#2b3540"/>
+      <stop offset="45%" stop-color="#171e26"/>
+      <stop offset="100%" stop-color="#0b0f14"/>
+    </radialGradient>
+    <linearGradient id="mp-rock1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5c6670"/>
+      <stop offset="100%" stop-color="#242b32"/>
+    </linearGradient>
+    <linearGradient id="mp-rock2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#414a52"/>
+      <stop offset="100%" stop-color="#1a1f25"/>
+    </linearGradient>
+    <linearGradient id="mp-snow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eef3f5"/>
+      <stop offset="100%" stop-color="#c3cdd2"/>
+    </linearGradient>
+    <linearGradient id="mp-fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#aab0aa"/>
+      <stop offset="100%" stop-color="#767d78"/>
+    </linearGradient>
+    <linearGradient id="mp-fur-dark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#767d78"/>
+      <stop offset="100%" stop-color="#454c48"/>
+    </linearGradient>
+    <radialGradient id="mp-gap-in" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#1c2126"/>
+      <stop offset="100%" stop-color="#08090b"/>
+    </radialGradient>
+    <radialGradient id="mp-star" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#dfe9ec"/>
+      <stop offset="100%" stop-color="#dfe9ec" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="mp-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="mp-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#mp-sky)"/>
+
+  <!-- thin high stars, cold sky -->
+  <g opacity="0.8">
+    <circle cx="110" cy="90" r="2.1" fill="url(#mp-star)"/>
+    <circle cx="220" cy="60" r="1.6" fill="url(#mp-star)"/>
+    <circle cx="360" cy="110" r="1.9" fill="url(#mp-star)"/>
+    <circle cx="500" cy="50" r="1.4" fill="url(#mp-star)"/>
+    <circle cx="640" cy="95" r="2.3" fill="url(#mp-star)"/>
+    <circle cx="720" cy="160" r="1.7" fill="url(#mp-star)"/>
+    <circle cx="80" cy="200" r="1.3" fill="url(#mp-star)"/>
+    <circle cx="760" cy="230" r="1.9" fill="url(#mp-star)"/>
+  </g>
+
+  <!-- far ridgeline under snow -->
+  <path d="M0 470 C90 430 170 460 250 435 C330 410 400 445 480 420 C560 397 630 430 710 405 C750 392 780 405 800 400 L800 800 L0 800 Z" fill="url(#mp-rock2)" opacity="0.9"/>
+
+  <!-- snowfield sweeping down -->
+  <path d="M0 560 C110 520 190 545 270 515 C350 487 430 520 520 500 C610 480 690 510 800 485 L800 800 L0 800 Z" fill="url(#mp-snow)" opacity="0.92"/>
+
+  <!-- boulder field, the possum's whole world -->
+  <ellipse cx="180" cy="700" rx="150" ry="60" fill="url(#mp-rock1)"/>
+  <ellipse cx="430" cy="730" rx="190" ry="70" fill="url(#mp-rock2)"/>
+  <ellipse cx="660" cy="700" rx="140" ry="58" fill="url(#mp-rock1)"/>
+
+  <!-- snow caught in the rock seams -->
+  <path d="M60 660 Q160 640 260 662" stroke="#e8eef1" stroke-width="10" fill="none" opacity="0.55" stroke-linecap="round"/>
+  <path d="M330 690 Q440 668 560 690" stroke="#e8eef1" stroke-width="10" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <path d="M560 660 Q650 640 740 660" stroke="#e8eef1" stroke-width="9" fill="none" opacity="0.5" stroke-linecap="round"/>
+
+  <!-- lichen patches on stone -->
+  <g opacity="0.55" fill="#8a9a72">
+    <circle cx="130" cy="672" r="10"/>
+    <circle cx="600" cy="678" r="8"/>
+    <circle cx="700" cy="660" r="7"/>
+  </g>
+
+  <!-- bare alpine shrub root, gripping the gap the possum trusts -->
+  <path d="M420 640 C400 610 396 578 412 552 M412 552 C400 540 388 536 372 540 M412 552 C420 538 434 534 448 540" stroke="#5f7a52" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.85"/>
+
+  <!-- the measured gap, dark and exact -->
+  <ellipse cx="420" cy="666" rx="58" ry="24" fill="#05070a" opacity="0.9"/>
+  <ellipse cx="420" cy="660" rx="42" ry="16" fill="url(#mp-gap-in)"/>
+
+  <!-- the possum, tiny, alert, peering from the counted gap -->
+  <g filter="url(#mp-soft)">
+    <!-- prehensile tail curled along the stone -->
+    <path d="M470 672 C512 668 540 646 534 616 C531 600 512 592 498 600 C512 610 516 630 502 646 C490 660 476 664 460 666 Z" fill="url(#mp-fur-dark)"/>
+
+    <!-- body, small and round, half inside the gap -->
+    <path d="M360 668 C348 640 354 610 380 596 C404 582 432 586 448 604 C462 620 462 648 448 668 C424 682 384 682 360 668 Z" fill="url(#mp-fur)"/>
+    <!-- pale belly -->
+    <path d="M388 664 C382 646 386 626 400 616 C412 608 426 610 432 622 C438 634 434 654 424 664 C412 668 398 668 388 664 Z" fill="#c9cfc9" opacity="0.8"/>
+
+    <!-- forepaws, dexterous, gripping the stone edge -->
+    <path d="M378 672 C374 662 376 652 384 646 C390 654 390 664 386 672 Z" fill="#767d78"/>
+    <path d="M420 674 C416 664 418 654 426 648 C432 656 432 666 428 674 Z" fill="#767d78"/>
+
+    <!-- head, rounded, whiskered -->
+    <g>
+      <circle cx="392" cy="592" r="34" fill="url(#mp-fur)"/>
+      <!-- muzzle, small and pointed -->
+      <path d="M366 596 C352 598 342 606 338 614 C344 622 356 624 368 620 C374 612 374 602 366 596 Z" fill="#c9cfc9"/>
+      <circle cx="342" cy="612" r="4" fill="#0e1114"/>
+      <!-- whiskers -->
+      <g stroke="#e8ecef" stroke-width="1.4" opacity="0.6">
+        <path d="M340 610 L306 604"/>
+        <path d="M340 616 L304 618"/>
+        <path d="M344 622 L310 630"/>
+      </g>
+      <!-- the enormous dark eye, defining feature -->
+      <circle cx="384" cy="588" r="13" fill="#0e1114"/>
+      <circle cx="388" cy="583" r="3.6" fill="#eef3f5"/>
+      <!-- rounded ear -->
+      <circle cx="410" cy="566" r="12" fill="url(#mp-fur-dark)"/>
+      <circle cx="410" cy="566" r="7" fill="#2a3038"/>
+    </g>
+  </g>
+
+  <!-- faint drifting snow in the foreground -->
+  <g fill="#eef3f5" opacity="0.5" filter="url(#mp-glow)">
+    <circle cx="180" cy="560" r="2.2"/>
+    <circle cx="250" cy="600" r="1.8"/>
+    <circle cx="560" cy="580" r="2"/>
+    <circle cx="620" cy="620" r="1.6"/>
+  </g>
+</svg>

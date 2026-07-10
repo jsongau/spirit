@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A shoebill stands motionless in still swamp water at dawn, huge shoe-shaped bill lowered, pale eyes fixed on the water, papyrus reeds silhouetted against a flat grey sky">
+  <defs>
+    <radialGradient id="sb-sky" cx="55%" cy="22%" r="100%">
+      <stop offset="0%" stop-color="#3a3f30"/>
+      <stop offset="45%" stop-color="#22261c"/>
+      <stop offset="100%" stop-color="#12130e"/>
+    </radialGradient>
+    <radialGradient id="sb-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f0d9a3"/>
+      <stop offset="60%" stop-color="#d1953e"/>
+      <stop offset="100%" stop-color="#a4472c"/>
+    </radialGradient>
+    <linearGradient id="sb-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a9080"/>
+      <stop offset="100%" stop-color="#3a3d30"/>
+    </linearGradient>
+    <linearGradient id="sb-bodyLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b7ad8f"/>
+      <stop offset="100%" stop-color="#7a8070"/>
+    </linearGradient>
+    <linearGradient id="sb-bill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d9c98a"/>
+      <stop offset="100%" stop-color="#8a7a48"/>
+    </linearGradient>
+    <linearGradient id="sb-water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a5240"/>
+      <stop offset="100%" stop-color="#161a10"/>
+    </linearGradient>
+    <filter id="sb-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="sb-soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.5" result="b2"/>
+      <feMerge><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="sb-mist" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#sb-sky)"/>
+
+  <!-- low pale sun, hidden in haze -->
+  <g filter="url(#sb-glow)" opacity="0.75">
+    <circle cx="586" cy="220" r="58" fill="url(#sb-sun)"/>
+  </g>
+
+  <!-- distant papyrus line, flat horizon -->
+  <path d="M0 430 C40 410 46 380 54 410 C62 386 68 366 74 412 C86 402 92 420 100 408 C112 398 118 420 128 410 L128 452 L0 452 Z" fill="#12140d" opacity="0.85"/>
+  <path d="M560 400 C572 376 578 350 586 402 C598 388 606 406 614 396 C624 384 632 404 642 394 L642 452 L556 452 Z" fill="#12140d" opacity="0.8"/>
+  <path d="M0 452 L800 452 L800 480 L0 480 Z" fill="#181b12" opacity="0.6"/>
+
+  <!-- still water -->
+  <rect x="0" y="452" width="800" height="348" fill="url(#sb-water)"/>
+  <path d="M0 470 C120 462 180 478 260 468 C360 456 460 476 560 464 C640 456 720 470 800 462 L800 480 L0 480 Z" fill="#2a2f22" opacity="0.6"/>
+
+  <!-- reflection of sun on water -->
+  <ellipse cx="586" cy="512" rx="30" ry="10" fill="#d1953e" opacity="0.3"/>
+
+  <!-- near papyrus reeds, silhouette, framing right side -->
+  <g fill="#0e100b" opacity="0.92">
+    <path d="M700 800 L706 520 L712 800 Z"/>
+    <path d="M726 800 L734 480 L742 800 Z"/>
+    <path d="M756 800 L760 540 L766 800 Z"/>
+    <path d="M690 500 C700 488 712 486 718 494 C710 500 700 502 690 500 Z"/>
+    <path d="M718 460 C730 448 744 448 750 458 C740 464 728 466 718 460 Z"/>
+    <path d="M748 522 C758 512 770 512 776 520 C768 526 758 528 748 522 Z"/>
+  </g>
+  <g fill="#0e100b" opacity="0.8">
+    <path d="M30 800 L36 560 L42 800 Z"/>
+    <path d="M56 800 L60 600 L66 800 Z"/>
+    <path d="M20 580 C30 570 42 570 48 578 C40 584 30 586 20 580 Z"/>
+  </g>
+
+  <!-- the shoebill, standing, bill lowered toward the water -->
+  <g filter="url(#sb-soft)">
+    <!-- far leg, deep in water -->
+    <path d="M392 700 L386 590 L398 590 L406 700 Z" fill="#20241a"/>
+    <!-- tail feathers -->
+    <path d="M300 560 C270 570 250 596 252 624 C270 620 296 596 306 572 Z" fill="url(#sb-body)"/>
+
+    <!-- body mass, barrel chest, grey-blue plumage -->
+    <path d="M320 420 C290 460 278 520 300 576 C320 616 372 632 420 616 C468 600 494 556 486 504 C480 462 448 424 402 408 C374 398 342 402 320 420 Z" fill="url(#sb-body)"/>
+
+    <!-- wing, folded, lighter tone catching low light -->
+    <path d="M340 440 C330 490 336 546 366 588 C390 570 404 528 398 480 C394 452 372 434 340 440 Z" fill="url(#sb-bodyLight)" opacity="0.9"/>
+
+    <!-- near leg, long, thin, planted in shallow water -->
+    <path d="M398 616 C392 650 390 684 392 712 L406 712 C410 682 410 650 412 618 Z" fill="#20241a"/>
+    <path d="M382 712 L416 712 L420 722 L378 722 Z" fill="#14170f"/>
+
+    <!-- neck, thick, rising toward the head -->
+    <path d="M400 410 C392 380 396 344 416 316 C440 322 456 350 452 384 C448 402 424 416 400 410 Z" fill="url(#sb-bodyLight)"/>
+
+    <!-- head, held low, angled down toward the water -->
+    <g>
+      <ellipse cx="454" cy="322" rx="46" ry="40" fill="url(#sb-bodyLight)"/>
+      <!-- small feather crest at back of head -->
+      <path d="M486 300 C500 292 512 294 516 304 C506 312 492 310 486 300 Z" fill="#5c6249"/>
+
+      <!-- the massive shoe-shaped bill, hooked tip -->
+      <path d="M494 306 C540 302 578 316 592 340 C598 352 594 364 580 370 C556 380 522 372 500 352 C490 340 488 320 494 306 Z" fill="url(#sb-bill)"/>
+      <path d="M578 368 C588 372 596 380 594 390 C586 392 576 386 574 376 Z" fill="#6b5c30"/>
+      <path d="M500 322 C536 320 566 330 580 344" fill="none" stroke="#6b5c30" stroke-width="2" opacity="0.6"/>
+      <!-- bill spots -->
+      <g fill="#4a3f22" opacity="0.55">
+        <circle cx="520" cy="316" r="3"/>
+        <circle cx="544" cy="322" r="3.5"/>
+        <circle cx="562" cy="336" r="3"/>
+        <circle cx="530" cy="336" r="2.5"/>
+      </g>
+
+      <!-- the stare: pale, unblinking eye -->
+      <circle cx="464" cy="316" r="8" fill="#e8dcae"/>
+      <circle cx="464" cy="316" r="3.4" fill="#141810"/>
+      <path d="M448 306 C456 300 472 300 480 308" fill="none" stroke="#3a3d30" stroke-width="3" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- ripple rings, the only motion in the frame -->
+  <g stroke="#7a8070" stroke-width="1.4" fill="none" opacity="0.4">
+    <ellipse cx="404" cy="716" rx="26" ry="6"/>
+    <ellipse cx="404" cy="716" rx="46" ry="10"/>
+    <ellipse cx="404" cy="716" rx="68" ry="15"/>
+  </g>
+
+  <!-- foreground water texture, dark silhouette -->
+  <path d="M0 760 C80 748 160 764 240 752 C340 738 440 758 540 746 C620 736 720 754 800 744 L800 800 L0 800 Z" fill="#0d0f09"/>
+</svg>

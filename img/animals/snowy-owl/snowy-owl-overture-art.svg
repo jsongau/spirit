@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A snowy owl's head and shoulders close against a pale winter sky, dark barred plumage across white feathers, yellow eyes watching over an open snowfield">
+  <defs>
+    <linearGradient id="soo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#25384a"/>
+      <stop offset="55%" stop-color="#7f97a3"/>
+      <stop offset="100%" stop-color="#e6ecec"/>
+    </linearGradient>
+    <linearGradient id="soo-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#dbe3e7"/>
+    </linearGradient>
+    <radialGradient id="soo-eye" cx="42%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#fff3c4"/>
+      <stop offset="45%" stop-color="#f0c23c"/>
+      <stop offset="100%" stop-color="#8a5e12"/>
+    </radialGradient>
+    <linearGradient id="soo-snow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eef2f4"/>
+      <stop offset="100%" stop-color="#c7d2d9"/>
+    </linearGradient>
+    <filter id="soo-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#soo-bg)"/>
+
+  <!-- distant snowfield -->
+  <path d="M0 400 C80 380 160 402 240 386 C300 374 350 392 400 380 L400 500 L0 500 Z" fill="url(#soo-snow)" opacity="0.9"/>
+
+  <!-- shoulders / folded wings -->
+  <path d="M120 360 C90 400 76 450 82 500 L318 500 C324 450 310 400 280 360 C260 420 240 448 200 448 C160 448 140 420 120 360 Z" fill="url(#soo-body)"/>
+  <path d="M130 400 L160 392 M126 424 L156 418 M244 392 L274 400 M248 418 L278 424" stroke="#aab5bc" stroke-width="4" fill="none" opacity="0.5" stroke-linecap="round"/>
+
+  <!-- head -->
+  <circle cx="200" cy="240" r="118" fill="url(#soo-body)"/>
+
+  <!-- facial disc contour -->
+  <path d="M116 210 C132 186 164 172 200 172 C236 172 268 186 284 210" stroke="#c7d2d9" stroke-width="4" fill="none" opacity="0.5" stroke-linecap="round"/>
+
+  <!-- crown barring -->
+  <path d="M150 150 L164 140 M250 150 L236 140 M120 200 L104 194 M280 200 L296 194" stroke="#aab5bc" stroke-width="4" fill="none" opacity="0.4" stroke-linecap="round"/>
+
+  <!-- eyes -->
+  <g filter="url(#soo-glow)">
+    <circle cx="158" cy="230" r="38" fill="#191612"/>
+    <circle cx="242" cy="230" r="38" fill="#191612"/>
+    <circle cx="158" cy="230" r="29" fill="url(#soo-eye)"/>
+    <circle cx="242" cy="230" r="29" fill="url(#soo-eye)"/>
+    <circle cx="158" cy="230" r="12" fill="#141210"/>
+    <circle cx="242" cy="230" r="12" fill="#141210"/>
+    <circle cx="148" cy="218" r="6" fill="#fffaf0"/>
+    <circle cx="232" cy="218" r="6" fill="#fffaf0"/>
+  </g>
+
+  <!-- beak -->
+  <path d="M190 270 C190 286 197 300 200 310 C203 300 210 286 210 270 C205 280 195 280 190 270 Z" fill="#5b5148"/>
+
+  <!-- cheek barring -->
+  <path d="M124 250 L142 256 M276 250 L258 256 M140 288 L156 290 M260 288 L244 290" stroke="#aab5bc" stroke-width="4" fill="none" opacity="0.4" stroke-linecap="round"/>
+</svg>

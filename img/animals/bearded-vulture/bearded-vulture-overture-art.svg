@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A bearded vulture's head in profile, rust-orange face and black beard bristles, beside a pale bone resting on a mountain rock">
+  <defs>
+    <linearGradient id="bvo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c130a"/>
+      <stop offset="100%" stop-color="#0a0705"/>
+    </linearGradient>
+    <linearGradient id="bvo-head" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2e2c0"/>
+      <stop offset="55%" stop-color="#d9a45c"/>
+      <stop offset="100%" stop-color="#a1531f"/>
+    </linearGradient>
+    <linearGradient id="bvo-bone" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2e6cc"/>
+      <stop offset="100%" stop-color="#c9a26a"/>
+    </linearGradient>
+    <radialGradient id="bvo-rock" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#4a3a26"/>
+      <stop offset="100%" stop-color="#241a10"/>
+    </radialGradient>
+    <filter id="bvo-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#bvo-bg)"/>
+
+  <!-- distant ridgeline -->
+  <path d="M0 300 C60 284 110 306 170 288 C220 274 280 294 340 280 C365 274 384 280 400 274 L400 500 L0 500 Z" fill="#150f09" opacity="0.9"/>
+
+  <!-- the rock, lower left, holding a bone -->
+  <g>
+    <ellipse cx="96" cy="420" rx="76" ry="30" fill="url(#bvo-rock)"/>
+    <g transform="translate(96,404) rotate(-14)">
+      <rect x="-5" y="-30" width="10" height="60" rx="5" fill="url(#bvo-bone)"/>
+      <circle cx="0" cy="-28" r="7" fill="url(#bvo-bone)"/>
+      <circle cx="0" cy="28" r="7" fill="url(#bvo-bone)"/>
+    </g>
+  </g>
+
+  <!-- vulture head, upper right, in profile -->
+  <g filter="url(#bvo-glow)">
+    <ellipse cx="252" cy="176" rx="64" ry="56" fill="url(#bvo-head)"/>
+  </g>
+  <!-- black band through the eye -->
+  <path d="M206 160 C222 150 244 150 262 160 C246 172 220 172 206 160 Z" fill="#161410"/>
+  <circle cx="222" cy="164" r="6" fill="#161410"/>
+
+  <!-- the beard, three black bristle tufts at the chin -->
+  <g>
+    <path d="M222 206 C216 224 212 242 222 258 C230 242 236 224 232 206 Z" fill="#0a0705"/>
+    <path d="M236 210 C232 228 232 246 240 260 C246 246 248 228 244 210 Z" fill="#0a0705"/>
+    <path d="M250 206 C250 224 254 242 262 254 C266 236 266 218 260 206 Z" fill="#0a0705"/>
+  </g>
+
+  <!-- bill -->
+  <path d="M196 182 C176 182 158 188 144 200 C160 210 180 212 198 206 Z" fill="#3a2c1c"/>
+
+  <!-- foreground ridge -->
+  <path d="M0 456 C90 440 190 462 280 442 C320 434 360 440 400 428" stroke="#0d0906" stroke-width="10" fill="none" opacity="0.85"/>
+</svg>

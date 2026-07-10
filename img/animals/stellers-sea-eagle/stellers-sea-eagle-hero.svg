@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A Steller's sea eagle perched on driftwood above a cold river mouth at dusk, its massive yellow bill lowered toward the current, white shoulders and wedge tail bright against a dark body, distant snowy coastal peaks behind it">
+  <defs>
+    <radialGradient id="se-sky" cx="58%" cy="24%" r="95%">
+      <stop offset="0%" stop-color="#3a4a52"/>
+      <stop offset="55%" stop-color="#212f38"/>
+      <stop offset="100%" stop-color="#0f171c"/>
+    </radialGradient>
+    <radialGradient id="se-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f2e7c8"/>
+      <stop offset="60%" stop-color="#d9b978"/>
+      <stop offset="100%" stop-color="#a98a52"/>
+    </radialGradient>
+    <linearGradient id="se-water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2f4a56"/>
+      <stop offset="100%" stop-color="#0c1518"/>
+    </linearGradient>
+    <linearGradient id="se-mantle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a332c"/>
+      <stop offset="100%" stop-color="#15100d"/>
+    </linearGradient>
+    <linearGradient id="se-shoulder" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4f1e6"/>
+      <stop offset="100%" stop-color="#c9c6b8"/>
+    </linearGradient>
+    <linearGradient id="se-bill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0c96a"/>
+      <stop offset="100%" stop-color="#c99a2e"/>
+    </linearGradient>
+    <filter id="se-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#se-sky)"/>
+
+  <!-- low winter sun, high over the coast -->
+  <g filter="url(#se-glow)">
+    <circle cx="592" cy="164" r="78" fill="url(#se-sun)"/>
+  </g>
+
+  <!-- distant snowy coastal peaks, Kamchatka ridgeline -->
+  <path d="M0 420 L90 350 L150 400 L230 320 L300 390 L380 300 L460 380 L540 310 L620 385 L710 330 L800 400 L800 470 L0 470 Z" fill="#26333a" opacity="0.85"/>
+  <path d="M90 350 L120 372 L150 400 M230 320 L262 356 L300 390 M380 300 L418 342 L460 380 M540 310 L578 348 L620 385 M710 330 L752 366 L800 400" stroke="#dfe6e6" stroke-width="10" fill="none" opacity="0.5" stroke-linecap="round"/>
+
+  <!-- river mouth / sea, dark and cold -->
+  <rect x="0" y="470" width="800" height="330" fill="url(#se-water)"/>
+  <path d="M0 500 C120 486 220 512 340 494 C460 478 560 506 680 490 C730 484 770 492 800 486" stroke="#3d5560" stroke-width="4" fill="none" opacity="0.5"/>
+  <path d="M0 560 C140 546 260 572 400 556 C540 542 660 566 800 550" stroke="#3d5560" stroke-width="3" fill="none" opacity="0.35"/>
+
+  <!-- drifting ice floes -->
+  <ellipse cx="120" cy="560" rx="60" ry="14" fill="#d9dede" opacity="0.5"/>
+  <ellipse cx="660" cy="600" rx="80" ry="16" fill="#d9dede" opacity="0.4"/>
+  <ellipse cx="230" cy="650" rx="50" ry="12" fill="#d9dede" opacity="0.35"/>
+
+  <!-- salmon breaking the surface, small, distant -->
+  <path d="M540 545 q10 -10 20 0 q-10 8 -20 0 Z" fill="#8a6b58" opacity="0.7"/>
+
+  <!-- driftwood perch, weathered and pale -->
+  <path d="M170 660 C300 636 480 630 660 652" stroke="#5a5044" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M170 660 C300 636 480 630 660 652" stroke="#847867" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- the eagle, perched three-quarter, bill lowered toward the water -->
+  <g>
+    <!-- folded wing / body mass, dark -->
+    <path d="M300 654 C266 578 274 486 336 434 C378 400 442 396 484 428 C548 476 562 570 528 646 C500 704 458 730 406 732 C354 733 322 706 300 654 Z" fill="url(#se-mantle)"/>
+    <path d="M332 456 C310 508 306 574 330 628" stroke="#0b0908" stroke-width="6" fill="none" opacity="0.5"/>
+    <path d="M362 436 C338 498 336 568 362 624" stroke="#0b0908" stroke-width="6" fill="none" opacity="0.4"/>
+
+    <!-- white shoulder / mantle patch, the field mark -->
+    <path d="M320 452 C348 420 402 414 428 440 C446 460 440 494 412 508 C382 522 340 512 322 486 C312 472 312 462 320 452 Z" fill="url(#se-shoulder)"/>
+
+    <!-- white thigh patch -->
+    <path d="M360 626 C378 610 406 612 418 634 C426 652 416 674 396 680 C376 686 358 674 356 654 C355 644 356 634 360 626 Z" fill="url(#se-shoulder)"/>
+
+    <!-- wedge-shaped white tail -->
+    <path d="M470 620 C512 630 548 648 566 674 C540 672 508 668 478 660 C466 648 466 632 470 620 Z" fill="url(#se-shoulder)"/>
+
+    <!-- head, dark brown -->
+    <g>
+      <ellipse cx="382" cy="386" rx="58" ry="52" fill="url(#se-mantle)"/>
+
+      <!-- massive yellow bill, lowered toward the water below -->
+      <path d="M368 408 C392 408 420 420 438 444 C420 448 396 446 378 434 C368 426 364 416 368 408 Z" fill="url(#se-bill)"/>
+      <path d="M420 428 C428 432 434 438 436 444 C428 444 420 440 415 435 Z" fill="#8a6420" opacity="0.6"/>
+
+      <!-- eye, watchful -->
+      <circle cx="368" cy="378" r="7" fill="#161210"/>
+      <circle cx="370" cy="375" r="2.2" fill="#f2e7c8"/>
+    </g>
+
+    <!-- yellow legs and dark talons gripping the driftwood -->
+    <path d="M354 690 C352 668 356 652 368 642" stroke="#d9a441" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M416 694 C418 670 414 654 402 646" stroke="#d9a441" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M340 652 q-14 6 -22 18 M356 658 q-8 12 -10 24 M376 660 q0 14 4 26" stroke="#1a1611" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M430 656 q14 4 24 16 M414 662 q10 10 14 22 M396 664 q2 14 -2 26" stroke="#1a1611" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

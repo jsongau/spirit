@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A Siberian Crane landing on a wide shallow wetland at dusk, wings still spread mid-descent, its plumage pure white except for black wingtip primaries, a bare brick-red mask across its face and pink-red legs trailing into the water below, reeds and a flat horizon stretching behind it">
+  <defs>
+    <linearGradient id="sc-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c2422"/>
+      <stop offset="45%" stop-color="#141c1a"/>
+      <stop offset="100%" stop-color="#0c1210"/>
+    </linearGradient>
+    <linearGradient id="sc-water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#16211f"/>
+      <stop offset="100%" stop-color="#0a1210"/>
+    </linearGradient>
+    <linearGradient id="sc-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4efe4"/>
+      <stop offset="60%" stop-color="#e9e2d3"/>
+      <stop offset="100%" stop-color="#cfc6b3"/>
+    </linearGradient>
+    <linearGradient id="sc-wing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#efe9db"/>
+      <stop offset="55%" stop-color="#d9d1bd"/>
+      <stop offset="100%" stop-color="#141110"/>
+    </linearGradient>
+    <radialGradient id="sc-mask" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#e07a56"/>
+      <stop offset="45%" stop-color="#a8412d"/>
+      <stop offset="100%" stop-color="#6f2519"/>
+    </radialGradient>
+    <radialGradient id="sc-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f4efe4" stop-opacity="0.4"/>
+      <stop offset="55%" stop-color="#a8412d" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#a8412d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sc-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e9b48a" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#e9b48a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sc-soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+    <filter id="sc-glowf" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#sc-sky)"/>
+
+  <!-- low sun over the wetland horizon -->
+  <circle cx="600" cy="238" r="150" fill="url(#sc-sun)" filter="url(#sc-soft)"/>
+  <circle cx="600" cy="238" r="46" fill="#f0c9a0" opacity="0.85"/>
+
+  <!-- far shoreline -->
+  <path d="M0 372 C90 358 150 372 220 360 C300 346 360 366 440 352 C520 338 590 358 670 344 C730 334 770 350 800 342 L800 420 L0 420 Z" fill="#101a17" opacity="0.85"/>
+
+  <!-- the wetland, wide and flat -->
+  <rect x="0" y="404" width="800" height="396" fill="url(#sc-water)"/>
+  <path d="M0 404 C120 396 200 412 320 402 C440 392 520 410 640 400 C710 394 760 404 800 398 L800 460 C700 470 620 452 520 462 C420 472 320 452 200 464 C120 472 60 462 0 466 Z" fill="#1a2724" opacity="0.65"/>
+
+  <!-- long reflected light on the water -->
+  <ellipse cx="560" cy="470" rx="60" ry="220" fill="url(#sc-glow)" filter="url(#sc-soft)" opacity="0.5"/>
+
+  <!-- reeds, left and right frame -->
+  <g stroke="#2c3b2e" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.8">
+    <path d="M62 700 C58 600 68 500 54 420"/>
+    <path d="M92 706 C90 618 100 520 86 440"/>
+    <path d="M122 700 C124 612 112 520 128 448"/>
+    <path d="M700 712 C696 618 708 522 690 452"/>
+    <path d="M736 706 C740 616 728 524 744 458"/>
+  </g>
+  <g fill="#3a4d3c" opacity="0.85">
+    <ellipse cx="54" cy="418" rx="7" ry="16"/>
+    <ellipse cx="86" cy="438" rx="6" ry="14"/>
+    <ellipse cx="128" cy="446" rx="6" ry="15"/>
+    <ellipse cx="690" cy="450" rx="7" ry="15"/>
+    <ellipse cx="744" cy="456" rx="6" ry="14"/>
+  </g>
+
+  <!-- water ripples spreading from where the feet are about to touch -->
+  <g stroke="#3d514a" stroke-width="2.5" fill="none" opacity="0.5">
+    <ellipse cx="404" cy="676" rx="70" ry="14"/>
+    <ellipse cx="404" cy="676" rx="110" ry="20"/>
+  </g>
+
+  <!-- the crane, wings still spread mid-descent -->
+  <g>
+    <!-- trailing legs, pink-red, reaching for the water -->
+    <path d="M372 594 C368 630 362 660 352 686" stroke="#c1594a" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <path d="M424 594 C430 630 438 660 450 686" stroke="#c1594a" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <path d="M352 686 l-14 10 M352 686 l6 14 M352 686 l16 4" stroke="#c1594a" stroke-width="5" stroke-linecap="round"/>
+    <path d="M450 686 l14 10 M450 686 l-4 14 M450 686 l-16 3" stroke="#c1594a" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- tail plumes -->
+    <path d="M366 566 C348 596 336 626 336 654 C356 636 372 606 380 574 Z" fill="url(#sc-body)" opacity="0.92"/>
+    <path d="M436 566 C454 596 466 626 466 654 C446 636 430 606 422 574 Z" fill="url(#sc-body)" opacity="0.92"/>
+
+    <!-- body, near-vertical as it drops toward the water -->
+    <path d="M354 470 C338 520 340 566 366 600 C390 626 416 626 438 600 C462 566 464 520 448 470 C430 434 372 434 354 470 Z" fill="url(#sc-body)"/>
+
+    <!-- left wing, fully spread and angled back -->
+    <path d="M356 494 C270 476 200 428 158 350 C132 300 128 250 146 206 C176 264 214 314 262 350 C306 382 336 424 360 470 Z" fill="url(#sc-wing)"/>
+    <!-- right wing, mirrored -->
+    <path d="M446 494 C532 476 602 428 644 350 C670 300 674 250 656 206 C626 264 588 314 540 350 C496 382 466 424 442 470 Z" fill="url(#sc-wing)"/>
+
+    <!-- black primaries at each wingtip, the one dark mark -->
+    <path d="M158 350 C142 330 134 306 132 280 C150 296 164 316 172 338 Z" fill="#161311"/>
+    <path d="M146 206 C160 224 172 244 178 264 C158 254 144 234 134 214 Z" fill="#161311"/>
+    <path d="M644 350 C660 330 668 306 670 280 C652 296 638 316 630 338 Z" fill="#161311"/>
+    <path d="M656 206 C642 224 630 244 624 264 C644 254 658 234 668 214 Z" fill="#161311"/>
+
+    <!-- wing feather striations -->
+    <path d="M220 320 C244 340 274 356 308 366 M580 320 C556 340 526 356 492 366" stroke="#8a8270" stroke-width="2.5" fill="none" opacity="0.5"/>
+
+    <!-- neck, extended forward and slightly down toward the water -->
+    <path d="M396 470 C388 428 388 388 402 352 C412 328 428 316 444 314 C440 344 428 372 416 402 C408 424 404 448 404 470 Z" fill="url(#sc-body)"/>
+
+    <!-- head -->
+    <g filter="url(#sc-glowf)">
+      <ellipse cx="452" cy="304" rx="30" ry="26" fill="url(#sc-body)"/>
+      <!-- the bare red mask, forecrown to face -->
+      <path d="M432 288 C430 274 440 262 456 260 C470 262 478 276 474 292 C468 306 442 308 432 288 Z" fill="url(#sc-mask)"/>
+      <!-- bill -->
+      <path d="M472 300 C498 302 520 310 536 324 C516 322 494 318 476 310 Z" fill="#5a4a38"/>
+      <!-- eye -->
+      <circle cx="450" cy="296" r="3.4" fill="#f2e6c8"/>
+      <circle cx="450" cy="296" r="1.5" fill="#161311"/>
+    </g>
+  </g>
+
+  <!-- a second crane, far and small, already landed -->
+  <g opacity="0.55">
+    <ellipse cx="600" cy="540" rx="9" ry="20" fill="#dcd4c2"/>
+    <path d="M596 522 C592 512 596 502 604 500 C610 504 610 514 606 522 Z" fill="#a8412d"/>
+    <path d="M596 560 l-2 14 M604 560 l2 14" stroke="#c1594a" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

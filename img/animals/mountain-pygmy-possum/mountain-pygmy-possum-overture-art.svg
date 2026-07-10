@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A mountain pygmy possum curled small in a snow-rimmed boulder crevice, tail wrapped close, one dark eye open toward the cold alpine sky above" >
+  <defs>
+    <linearGradient id="mpo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#232c34"/>
+      <stop offset="100%" stop-color="#0b0f14"/>
+    </linearGradient>
+    <linearGradient id="mpo-rock" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4c5760"/>
+      <stop offset="100%" stop-color="#191f25"/>
+    </linearGradient>
+    <linearGradient id="mpo-snow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eef3f5"/>
+      <stop offset="100%" stop-color="#bcc7cc"/>
+    </linearGradient>
+    <linearGradient id="mpo-fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#aab0aa"/>
+      <stop offset="100%" stop-color="#767d78"/>
+    </linearGradient>
+    <linearGradient id="mpo-fur2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#aab0aa"/>
+      <stop offset="100%" stop-color="#767d78"/>
+    </linearGradient>
+    <radialGradient id="mpo-star" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#dfe9ec"/>
+      <stop offset="100%" stop-color="#dfe9ec" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="mpo-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#mpo-bg)"/>
+
+  <!-- thin stars, cold sky -->
+  <g opacity="0.8">
+    <circle cx="60" cy="55" r="1.5" fill="url(#mpo-star)"/>
+    <circle cx="140" cy="35" r="1.2" fill="url(#mpo-star)"/>
+    <circle cx="250" cy="65" r="1.7" fill="url(#mpo-star)"/>
+    <circle cx="320" cy="45" r="1.3" fill="url(#mpo-star)"/>
+    <circle cx="35" cy="115" r="1.1" fill="url(#mpo-star)"/>
+    <circle cx="290" cy="125" r="1.4" fill="url(#mpo-star)"/>
+  </g>
+
+  <!-- distant snowfield -->
+  <path d="M0 300 C60 270 120 292 180 274 C240 256 300 282 400 262 L400 500 L0 500 Z" fill="url(#mpo-snow)" opacity="0.85"/>
+
+  <!-- boulder mass around the crevice -->
+  <path d="M0 340 C50 300 110 322 170 300 C230 280 290 310 400 288 L400 500 L0 500 Z" fill="url(#mpo-rock)"/>
+
+  <!-- lichen on the near stone -->
+  <g opacity="0.5" fill="#8a9a72">
+    <circle cx="70" cy="368" r="7"/>
+    <circle cx="330" cy="350" r="6"/>
+  </g>
+
+  <!-- bare shrub root gripping the crevice edge -->
+  <path d="M300 340 C286 318 284 296 296 278 M296 278 C286 268 276 265 264 268" stroke="#5f7a52" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.85"/>
+
+  <!-- the measured gap, snow-rimmed -->
+  <ellipse cx="200" cy="420" rx="66" ry="22" fill="#05070a" opacity="0.85"/>
+  <ellipse cx="200" cy="414" rx="46" ry="14" fill="#000000" opacity="0.6"/>
+  <path d="M144 404 Q200 388 256 404" stroke="#eef3f5" stroke-width="7" fill="none" opacity="0.6" stroke-linecap="round"/>
+
+  <!-- possum curled small at the mouth of the gap -->
+  <g>
+    <path d="M148 428 C134 402 142 370 174 356 C208 342 246 348 264 372 C280 394 274 420 250 432 C218 446 174 446 148 428 Z" fill="url(#mpo-fur2)"/>
+    <!-- prehensile tail wrapped fully around the curled body -->
+    <path d="M250 430 C280 424 298 404 292 378 C288 362 272 356 260 364 C272 372 274 388 262 400 C250 412 236 418 222 420 Z" fill="#454c48"/>
+
+    <!-- head, small, tucked but alert -->
+    <circle cx="172" cy="360" r="32" fill="url(#mpo-fur)"/>
+    <path d="M148 364 C134 366 124 374 120 382 C126 390 138 393 150 388 C156 380 156 370 148 364 Z" fill="#c9cfc9"/>
+    <circle cx="124" cy="381" r="3.6" fill="#0e1114"/>
+    <!-- whiskers -->
+    <g stroke="#e8ecef" stroke-width="1.2" opacity="0.55">
+      <path d="M122 379 L94 373"/>
+      <path d="M122 384 L92 388"/>
+    </g>
+    <!-- one dark eye, open toward the sky -->
+    <circle cx="166" cy="355" r="11" fill="#0e1114"/>
+    <circle cx="169" cy="351" r="3" fill="#eef3f5"/>
+    <!-- small rounded ear -->
+    <circle cx="190" cy="336" r="10" fill="#454c48"/>
+    <circle cx="190" cy="336" r="6" fill="#232c34"/>
+  </g>
+
+  <!-- faint drifting snow -->
+  <g fill="#eef3f5" opacity="0.5" filter="url(#mpo-glow)">
+    <circle cx="90" cy="300" r="1.8"/>
+    <circle cx="320" cy="310" r="1.5"/>
+    <circle cx="250" cy="270" r="1.6"/>
+  </g>
+</svg>

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A Tibetan Blue Bear standing still and distant on a misted ridge, its dark blue-grey coat and pale throat collar half lost to the fog closing in around it">
+  <defs>
+    <linearGradient id="tbbo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#212a33"/>
+      <stop offset="100%" stop-color="#0a0d11"/>
+    </linearGradient>
+    <linearGradient id="tbbo-peaks" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#333d48"/>
+      <stop offset="100%" stop-color="#171c22"/>
+    </linearGradient>
+    <linearGradient id="tbbo-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#545b69"/>
+      <stop offset="55%" stop-color="#363c47"/>
+      <stop offset="100%" stop-color="#15181d"/>
+    </linearGradient>
+    <radialGradient id="tbbo-collar" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#e8ddc9"/>
+      <stop offset="60%" stop-color="#c9b98a"/>
+      <stop offset="100%" stop-color="#867a5b"/>
+    </radialGradient>
+    <linearGradient id="tbbo-mist" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#232b34" stop-opacity="0"/>
+      <stop offset="55%" stop-color="#1e252d" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#171c22" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="tbbo-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="tbbo-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#tbbo-bg)"/>
+
+  <!-- distant peaks -->
+  <path d="M0 190 L60 150 L110 178 L170 130 L230 172 L290 138 L340 176 L400 150 L400 500 L0 500 Z" fill="url(#tbbo-peaks)" opacity="0.75"/>
+  <ellipse cx="150" cy="200" rx="170" ry="34" fill="#232b34" opacity="0.55" filter="url(#tbbo-soft)"/>
+  <ellipse cx="290" cy="230" rx="150" ry="34" fill="#1c232b" opacity="0.6" filter="url(#tbbo-soft)"/>
+
+  <!-- scree ridge underfoot -->
+  <path d="M0 300 C70 288 130 300 190 292 C250 284 300 296 340 288 C365 284 385 290 400 286 L400 500 L0 500 Z" fill="#1c222a"/>
+  <path d="M40 316 l10 -7 M100 306 l11 -8 M170 314 l10 -7 M250 302 l11 -8 M330 312 l10 -7" stroke="#0d1114" stroke-width="3" opacity="0.4" stroke-linecap="round"/>
+
+  <!-- the bear, standing at a distance, mostly still -->
+  <g filter="url(#tbbo-glow)">
+    <!-- far legs -->
+    <path d="M170 372 C166 400 164 424 168 444 L184 444 C186 422 186 398 182 370 Z" fill="url(#tbbo-body)" opacity="0.85"/>
+    <path d="M226 378 C222 404 220 426 224 444 L240 444 C242 422 242 400 238 376 Z" fill="url(#tbbo-body)" opacity="0.85"/>
+
+    <!-- body -->
+    <path d="M156 268 C150 300 152 336 172 360 C192 380 226 380 244 358 C260 338 260 300 250 270 C232 244 178 240 156 268 Z" fill="url(#tbbo-body)"/>
+
+    <!-- near legs -->
+    <path d="M172 356 C166 388 162 416 166 446 L186 446 C188 416 188 384 184 354 Z" fill="url(#tbbo-body)"/>
+    <path d="M222 358 C218 390 216 418 220 446 L240 446 C242 416 242 386 238 356 Z" fill="url(#tbbo-body)"/>
+
+    <!-- neck -->
+    <path d="M164 262 C152 244 146 224 148 204 C166 210 180 224 188 244 C182 252 172 258 164 262 Z" fill="url(#tbbo-body)"/>
+
+    <!-- pale collar, the one bright note -->
+    <path d="M154 216 C160 232 170 244 182 252 C174 258 164 260 156 256 C144 244 138 228 138 212 C144 210 150 212 154 216 Z" fill="url(#tbbo-collar)"/>
+
+    <!-- head -->
+    <g>
+      <path d="M126 176 C120 194 124 214 138 228 C152 240 172 240 182 226 C192 214 192 194 180 178 C166 160 138 156 126 176 Z" fill="url(#tbbo-body)"/>
+      <path d="M120 206 C112 210 104 220 102 232 C114 236 126 232 134 224 C130 216 126 210 120 206 Z" fill="#20262f"/>
+      <circle cx="106" cy="228" r="3.5" fill="#0a0c0e"/>
+      <circle cx="140" cy="170" r="10" fill="url(#tbbo-body)"/>
+      <circle cx="176" cy="168" r="10" fill="url(#tbbo-body)"/>
+      <circle cx="140" cy="171" r="4.5" fill="#141920"/>
+      <circle cx="176" cy="169" r="4.5" fill="#141920"/>
+      <circle cx="148" cy="200" r="3" fill="#0a0c0e"/>
+    </g>
+  </g>
+
+  <!-- fog closing back in -->
+  <rect x="0" y="320" width="400" height="180" fill="url(#tbbo-mist)"/>
+  <ellipse cx="200" cy="360" rx="220" ry="50" fill="#1a2028" opacity="0.5" filter="url(#tbbo-soft)"/>
+</svg>

@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A bearded vulture gliding on huge slate-grey wings above a high mountain cliff at dusk, its breast stained rust-orange, black bristles at its chin, a bone falling from its talons toward a pale rock ossuary far below">
+  <defs>
+    <radialGradient id="bv-sky" cx="60%" cy="22%" r="95%">
+      <stop offset="0%" stop-color="#241608"/>
+      <stop offset="55%" stop-color="#160f08"/>
+      <stop offset="100%" stop-color="#0b0806"/>
+    </radialGradient>
+    <radialGradient id="bv-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f6ddb0"/>
+      <stop offset="60%" stop-color="#d9a45c"/>
+      <stop offset="100%" stop-color="#a1531f"/>
+    </radialGradient>
+    <linearGradient id="bv-wing" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a463e"/>
+      <stop offset="100%" stop-color="#161410"/>
+    </linearGradient>
+    <linearGradient id="bv-breast" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e9d2ab"/>
+      <stop offset="55%" stop-color="#c9812f"/>
+      <stop offset="100%" stop-color="#8a4a1f"/>
+    </linearGradient>
+    <linearGradient id="bv-head" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2e2c0"/>
+      <stop offset="100%" stop-color="#d9c39a"/>
+    </linearGradient>
+    <linearGradient id="bv-cliff" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2c1c"/>
+      <stop offset="100%" stop-color="#120d08"/>
+    </linearGradient>
+    <linearGradient id="bv-bone" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2e6cc"/>
+      <stop offset="100%" stop-color="#c9a26a"/>
+    </linearGradient>
+    <filter id="bv-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bv-glow-soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#bv-sky)"/>
+
+  <!-- low sun / dusk glow -->
+  <g filter="url(#bv-glow)">
+    <circle cx="600" cy="180" r="72" fill="url(#bv-sun)" opacity="0.9"/>
+  </g>
+
+  <!-- distant mountain ridgelines -->
+  <path d="M0 460 L90 400 L170 445 L250 380 L330 440 L410 370 L490 435 L570 385 L650 438 L730 395 L800 432 L800 800 L0 800 Z" fill="#1c130a" opacity="0.92"/>
+  <path d="M0 540 L100 480 L190 530 L280 460 L370 528 L460 470 L550 532 L640 478 L730 530 L800 488 L800 800 L0 800 Z" fill="#120d07"/>
+
+  <!-- near cliff face, lower left -->
+  <path d="M0 800 L0 560 C60 520 120 546 170 500 C210 462 200 410 260 392 C300 380 320 420 300 470 C280 520 320 560 300 620 C280 680 200 700 160 760 C140 780 100 800 0 800 Z" fill="url(#bv-cliff)"/>
+  <path d="M40 660 C90 640 130 660 160 630" stroke="#0a0705" stroke-width="6" fill="none" opacity="0.6"/>
+
+  <!-- the ossuary rock, pale, waiting, lower right of the cliff -->
+  <g>
+    <ellipse cx="248" cy="700" rx="70" ry="26" fill="#0a0705" opacity="0.4"/>
+    <path d="M196 706 C204 672 236 654 268 660 C300 666 314 696 300 720 C284 746 236 748 210 730 C198 722 194 716 196 706 Z" fill="url(#bv-bone)" opacity="0.9"/>
+  </g>
+
+  <!-- falling bone, mid-air between the vulture and the rock -->
+  <g transform="translate(330,470) rotate(28)">
+    <rect x="-6" y="-38" width="12" height="76" rx="6" fill="url(#bv-bone)"/>
+    <circle cx="0" cy="-36" r="9" fill="url(#bv-bone)"/>
+    <circle cx="0" cy="36" r="9" fill="url(#bv-bone)"/>
+  </g>
+
+  <!-- vulture, gliding, wings spread, three-quarter from below -->
+  <g>
+    <!-- long diamond tail -->
+    <path d="M470 330 C486 400 488 466 468 520 C452 466 452 400 458 336 Z" fill="#4a463e"/>
+
+    <!-- far wing, upper -->
+    <path d="M470 300 C400 250 300 236 210 268 C170 282 150 300 140 316 C220 300 320 300 400 336 C430 348 456 340 470 300 Z" fill="url(#bv-wing)"/>
+
+    <!-- body, breast stained rust -->
+    <path d="M420 320 C400 360 396 420 420 470 C440 508 470 522 496 508 C520 494 528 452 516 408 C506 368 470 330 420 320 Z" fill="url(#bv-breast)"/>
+
+    <!-- near wing, spread wide, lower -->
+    <path d="M500 400 C580 420 660 470 720 540 C690 550 654 548 616 530 C560 504 512 466 484 424 Z" fill="url(#bv-wing)"/>
+    <path d="M496 440 C566 470 626 516 668 572 C640 578 608 570 576 550 C534 524 502 486 486 452 Z" fill="#161410" opacity="0.65"/>
+
+    <!-- head -->
+    <g>
+      <ellipse cx="452" cy="298" rx="34" ry="30" fill="url(#bv-head)"/>
+      <!-- black band through the eye -->
+      <path d="M424 288 C434 282 448 282 460 288 C452 296 436 296 424 288 Z" fill="#161410"/>
+      <circle cx="436" cy="292" r="4" fill="#161410"/>
+      <!-- the beard, black bristles at the chin -->
+      <g filter="url(#bv-glow-soft)">
+        <path d="M420 312 C416 324 414 336 420 346 C426 336 430 324 428 312 Z" fill="#0a0705"/>
+        <path d="M428 314 C426 326 426 338 432 348 C436 338 438 326 436 314 Z" fill="#0a0705"/>
+        <path d="M436 312 C436 324 438 336 444 344 C446 332 446 320 442 312 Z" fill="#0a0705"/>
+      </g>
+      <!-- bill -->
+      <path d="M410 296 C398 296 388 300 380 308 C390 314 402 316 412 312 Z" fill="#3a2c1c"/>
+    </g>
+  </g>
+
+  <!-- foreground ridge, dark, framing the drop -->
+  <path d="M0 800 C120 760 220 780 340 758 C460 736 600 760 800 720 L800 800 Z" fill="#0a0705" opacity="0.9"/>
+</svg>

@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A dark blue-grey Tibetan Blue Bear standing on a high scree ridge, its pale throat collar just visible as mist closes around the mountains behind it">
+  <defs>
+    <radialGradient id="tbb-sky" cx="50%" cy="28%" r="95%">
+      <stop offset="0%" stop-color="#2a3440"/>
+      <stop offset="55%" stop-color="#161d24"/>
+      <stop offset="100%" stop-color="#0a0d11"/>
+    </radialGradient>
+    <linearGradient id="tbb-peaks-far" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a4552"/>
+      <stop offset="100%" stop-color="#232b34"/>
+    </linearGradient>
+    <linearGradient id="tbb-peaks-near" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a333d"/>
+      <stop offset="100%" stop-color="#151a20"/>
+    </linearGradient>
+    <linearGradient id="tbb-scree" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3f4650"/>
+      <stop offset="100%" stop-color="#181d22"/>
+    </linearGradient>
+    <linearGradient id="tbb-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a6272"/>
+      <stop offset="45%" stop-color="#3a404c"/>
+      <stop offset="100%" stop-color="#181b21"/>
+    </linearGradient>
+    <linearGradient id="tbb-body-dark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#484f5c"/>
+      <stop offset="100%" stop-color="#14171c"/>
+    </linearGradient>
+    <radialGradient id="tbb-collar" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#e8ddc9"/>
+      <stop offset="55%" stop-color="#c9b98a"/>
+      <stop offset="100%" stop-color="#8a7d5e"/>
+    </radialGradient>
+    <linearGradient id="tbb-mist" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#232b34" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#232b34" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#1a2028" stop-opacity="0.92"/>
+    </linearGradient>
+    <filter id="tbb-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="tbb-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#tbb-sky)"/>
+
+  <!-- far peaks, half-lost to weather -->
+  <path d="M0 300 L90 210 L160 268 L240 168 L330 250 L410 190 L500 260 L580 200 L660 258 L740 202 L800 250 L800 800 L0 800 Z" fill="url(#tbb-peaks-far)" opacity="0.7"/>
+  <!-- near ridgeline -->
+  <path d="M0 400 L100 340 L190 388 L280 320 L360 380 L450 330 L540 386 L630 336 L720 384 L800 344 L800 800 L0 800 Z" fill="url(#tbb-peaks-near)"/>
+
+  <!-- drifting mist bands over the mountains -->
+  <ellipse cx="240" cy="330" rx="260" ry="48" fill="#2a323c" opacity="0.5" filter="url(#tbb-soft)"/>
+  <ellipse cx="560" cy="360" rx="300" ry="55" fill="#232a33" opacity="0.55" filter="url(#tbb-soft)"/>
+  <ellipse cx="400" cy="430" rx="420" ry="70" fill="#1c222a" opacity="0.6" filter="url(#tbb-soft)"/>
+
+  <!-- scree slope the bear stands on -->
+  <path d="M0 470 C120 448 220 470 320 452 C420 434 520 460 620 442 C700 428 760 448 800 440 L800 800 L0 800 Z" fill="url(#tbb-scree)"/>
+  <path d="M60 500 l14 -10 M140 486 l16 -12 M230 498 l14 -10 M330 480 l16 -12 M430 494 l14 -10 M540 478 l16 -12 M640 496 l14 -10 M720 482 l16 -12" stroke="#0e1216" stroke-width="4" opacity="0.4" stroke-linecap="round"/>
+
+  <!-- the bear, standing broadside on the ridge, head turned toward the viewer -->
+  <g filter="url(#tbb-glow)">
+    <!-- far hind leg -->
+    <path d="M430 610 C426 660 424 700 428 736 L456 736 C458 700 458 656 452 608 Z" fill="url(#tbb-body-dark)"/>
+    <!-- far front leg -->
+    <path d="M300 560 C294 610 292 654 296 692 L326 692 C328 652 330 606 324 558 Z" fill="url(#tbb-body-dark)"/>
+
+    <!-- rump / hindquarters -->
+    <path d="M420 460 C470 452 512 480 520 540 C526 590 500 630 452 640 C416 646 388 620 384 574 C380 522 384 470 420 460 Z" fill="url(#tbb-body)"/>
+
+    <!-- shoulder hump and back -->
+    <path d="M258 470 C286 428 336 404 388 410 C430 414 460 440 476 476 C486 498 476 512 452 508 C420 502 392 494 366 500 C332 508 300 522 280 552 C264 520 252 494 258 470 Z" fill="url(#tbb-body)"/>
+
+    <!-- belly line -->
+    <path d="M292 540 C330 570 400 582 452 566 C470 560 486 548 496 534 C486 566 458 588 420 596 C372 606 320 592 292 562 Z" fill="url(#tbb-body-dark)" opacity="0.7"/>
+
+    <!-- near front leg -->
+    <path d="M292 552 C282 606 278 654 282 698 L316 698 C320 652 322 602 316 550 Z" fill="url(#tbb-body)"/>
+    <path d="M282 690 q17 14 34 0" stroke="#0e1114" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- near hind leg -->
+    <path d="M418 606 C410 656 406 700 412 738 L448 738 C452 698 452 652 448 604 Z" fill="url(#tbb-body)"/>
+    <path d="M412 730 q19 14 36 0" stroke="#0e1114" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- neck -->
+    <path d="M262 460 C240 430 226 396 228 362 C258 372 282 396 296 428 C288 442 274 452 262 460 Z" fill="url(#tbb-body)"/>
+
+    <!-- pale collar patch at the throat -->
+    <path d="M234 380 C246 408 262 428 282 442 C270 452 254 456 240 452 C222 434 210 408 208 380 C216 376 226 376 234 380 Z" fill="url(#tbb-collar)"/>
+
+    <!-- head, turned toward the viewer -->
+    <g>
+      <path d="M180 320 C172 350 176 384 198 406 C220 424 250 424 268 404 C284 386 284 356 268 330 C250 302 202 296 180 320 Z" fill="url(#tbb-body)"/>
+      <!-- muzzle -->
+      <path d="M172 372 C158 378 146 392 144 408 C160 414 178 410 190 398 C186 388 180 378 172 372 Z" fill="url(#tbb-body-dark)"/>
+      <circle cx="150" cy="404" r="5" fill="#0c0f12"/>
+      <!-- ears -->
+      <circle cx="200" cy="308" r="15" fill="url(#tbb-body)"/>
+      <circle cx="250" cy="302" r="15" fill="url(#tbb-body)"/>
+      <circle cx="200" cy="309" r="7" fill="#141920"/>
+      <circle cx="250" cy="303" r="7" fill="#141920"/>
+      <!-- eye -->
+      <circle cx="212" cy="360" r="4.5" fill="#0a0c0e"/>
+    </g>
+  </g>
+
+  <!-- mist rolling back in over the lower body -->
+  <rect x="0" y="560" width="800" height="240" fill="url(#tbb-mist)"/>
+  <ellipse cx="380" cy="640" rx="380" ry="90" fill="#1c222a" opacity="0.55" filter="url(#tbb-soft)"/>
+  <ellipse cx="200" cy="600" rx="220" ry="60" fill="#20262f" opacity="0.5" filter="url(#tbb-soft)"/>
+</svg>

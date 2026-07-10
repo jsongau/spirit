@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A glossy black Hercules beetle gripping a fallen rainforest log with its two curved horns, rust-colored light catching the shell's edge, a sliver of new moon barely visible through the canopy above">
+  <defs>
+    <radialGradient id="hb-sky" cx="55%" cy="22%" r="95%">
+      <stop offset="0%" stop-color="#1c1108"/>
+      <stop offset="55%" stop-color="#120b05"/>
+      <stop offset="100%" stop-color="#0a0603"/>
+    </radialGradient>
+    <linearGradient id="hb-shell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2c1a"/>
+      <stop offset="45%" stop-color="#1c140b"/>
+      <stop offset="100%" stop-color="#080503"/>
+    </linearGradient>
+    <linearGradient id="hb-shellsheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c9622f" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#8a5a2e" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="hb-horn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a4327"/>
+      <stop offset="55%" stop-color="#2c2013"/>
+      <stop offset="100%" stop-color="#0f0a05"/>
+    </linearGradient>
+    <linearGradient id="hb-log" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2a17"/>
+      <stop offset="100%" stop-color="#160f08"/>
+    </linearGradient>
+    <radialGradient id="hb-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8d6ae" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#8a5a2e" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="hb-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#hb-sky)"/>
+
+  <!-- new moon, barely a sliver, high through the canopy -->
+  <g filter="url(#hb-glow)" opacity="0.5">
+    <circle cx="612" cy="150" r="30" fill="url(#hb-moon)"/>
+  </g>
+  <path d="M628 128 A30 30 0 1 0 628 172 A22 26 0 1 1 628 128 Z" fill="#e8d6ae" opacity="0.35"/>
+
+  <!-- distant canopy silhouette -->
+  <path d="M0 210 C60 160 120 200 190 150 C250 110 320 190 400 140 C470 100 540 180 620 130 C690 90 750 160 800 120 L800 320 L0 320 Z" fill="#0d0904" opacity="0.9"/>
+
+  <!-- forest floor, layered leaf litter -->
+  <path d="M0 620 C120 580 220 620 340 590 C460 560 560 610 680 585 C730 575 770 585 800 595 L800 800 L0 800 Z" fill="#140d06"/>
+  <path d="M0 690 C140 660 260 700 400 670 C540 640 660 690 800 665 L800 800 L0 800 Z" fill="#0a0603"/>
+
+  <!-- the fallen log the beetle grips, running diagonally -->
+  <path d="M40 760 C220 700 420 690 620 620 C680 600 730 590 780 600 L800 660 C730 660 660 685 590 705 C400 760 210 770 40 800 Z" fill="url(#hb-log)"/>
+  <path d="M120 730 C300 685 480 680 660 630" stroke="#0a0603" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M150 748 C320 706 490 700 650 654" stroke="#0a0603" stroke-width="2" fill="none" opacity="0.5"/>
+  <!-- exposed rot at the log's broken end -->
+  <ellipse cx="700" cy="612" rx="46" ry="20" fill="#5a4327" opacity="0.55"/>
+  <ellipse cx="700" cy="612" rx="30" ry="12" fill="#241a0e" opacity="0.7"/>
+
+  <!-- fallen, half-eaten fruit near the log -->
+  <ellipse cx="150" cy="742" rx="16" ry="12" fill="#7a2f14" opacity="0.7"/>
+  <ellipse cx="180" cy="758" rx="11" ry="8" fill="#5a4327" opacity="0.6"/>
+
+  <!-- the beetle, three-quarter, gripping the log with both horns lowered -->
+  <g>
+    <!-- rear legs braced on the log -->
+    <path d="M470 640 C520 660 560 700 566 748 C540 742 500 716 480 682 Z" fill="#1c140b"/>
+    <path d="M540 610 C596 618 640 652 654 698 C626 700 584 670 556 636 Z" fill="#1c140b"/>
+
+    <!-- abdomen / elytra, glossy and huge -->
+    <path d="M330 540 C300 470 340 400 420 380 C500 362 570 396 596 460 C620 520 604 590 552 630 C480 682 380 640 330 540 Z" fill="url(#hb-shell)"/>
+    <path d="M340 480 C360 430 420 400 480 404 C540 408 580 444 594 490 C560 452 500 428 440 430 C390 432 356 452 340 480 Z" fill="url(#hb-shellsheen)"/>
+    <!-- central seam of the elytra -->
+    <path d="M462 388 C452 460 452 560 470 636" stroke="#050302" stroke-width="4" fill="none" opacity="0.7"/>
+    <!-- rim highlight -->
+    <path d="M420 382 C500 366 566 396 594 456" stroke="#c9622f" stroke-width="3" fill="none" opacity="0.4"/>
+
+    <!-- foreleg gripping the log's edge -->
+    <path d="M330 560 C296 566 268 592 260 630 C286 632 316 612 332 584 Z" fill="#241a0e"/>
+
+    <!-- thorax -->
+    <ellipse cx="292" cy="452" rx="72" ry="60" fill="url(#hb-shell)"/>
+    <path d="M240 430 C260 404 320 402 344 428 C312 420 268 420 240 430 Z" fill="url(#hb-shellsheen)"/>
+
+    <!-- head, small, beneath the horns -->
+    <ellipse cx="196" cy="470" rx="30" ry="26" fill="#120d07"/>
+
+    <!-- the cephalic horn, shorter, curving up from the head -->
+    <path d="M182 452 C160 400 168 340 210 300 C218 340 214 392 210 440 C220 400 246 372 278 366 C262 408 232 442 206 462 Z" fill="url(#hb-horn)"/>
+    <path d="M198 420 C186 384 190 342 214 312" stroke="#c9622f" stroke-width="2.4" fill="none" opacity="0.4"/>
+
+    <!-- the thoracic horn, long, curving forward and down from the thorax -->
+    <path d="M250 410 C210 350 216 270 288 220 C320 198 356 196 372 216 C336 224 300 250 274 288 C300 268 332 258 360 262 C330 292 288 320 254 356 C284 342 316 340 344 352 C304 380 268 402 236 424 Z" fill="url(#hb-horn)"/>
+    <path d="M270 380 C240 330 250 268 306 226" stroke="#c9622f" stroke-width="2.6" fill="none" opacity="0.45"/>
+
+    <!-- small eye, catching the rust light -->
+    <circle cx="182" cy="464" r="5" fill="#c9622f" opacity="0.85"/>
+  </g>
+</svg>

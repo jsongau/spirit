@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A snowy owl perched on a bare tundra hummock at dusk, white plumage barred with dark grey, piercing yellow eyes fixed on the open snowfield, pale winter sky behind it">
+  <defs>
+    <linearGradient id="so-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c2b38"/>
+      <stop offset="45%" stop-color="#3b5468"/>
+      <stop offset="75%" stop-color="#a6bcc4"/>
+      <stop offset="100%" stop-color="#e6ecec"/>
+    </linearGradient>
+    <radialGradient id="so-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fdf6e3"/>
+      <stop offset="55%" stop-color="#f2dfae"/>
+      <stop offset="100%" stop-color="#e0c98a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="so-snow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4f7f8"/>
+      <stop offset="100%" stop-color="#d7dfe3"/>
+    </linearGradient>
+    <linearGradient id="so-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e3e9ec"/>
+    </linearGradient>
+    <linearGradient id="so-wing" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eef2f4"/>
+      <stop offset="100%" stop-color="#c7d2d9"/>
+    </linearGradient>
+    <radialGradient id="so-eye" cx="42%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#fff3c4"/>
+      <stop offset="45%" stop-color="#f0c23c"/>
+      <stop offset="100%" stop-color="#8a5e12"/>
+    </radialGradient>
+    <linearGradient id="so-hummock" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c3ccd1"/>
+      <stop offset="100%" stop-color="#8f9aa1"/>
+    </linearGradient>
+    <filter id="so-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#so-sky)"/>
+
+  <!-- low arctic sun -->
+  <g filter="url(#so-glow)">
+    <circle cx="586" cy="308" r="120" fill="url(#so-sun)"/>
+    <circle cx="586" cy="308" r="46" fill="#fdf6e3" opacity="0.9"/>
+  </g>
+
+  <!-- distant flat horizon line -->
+  <path d="M-10 470 C120 452 240 468 380 452 C500 438 620 458 810 442 L810 470 L-10 470 Z" fill="#c3ccd1" opacity="0.6"/>
+
+  <!-- open snowfield -->
+  <path d="M-10 486 C160 458 320 494 480 468 C600 448 700 476 810 458 L810 800 L-10 800 Z" fill="url(#so-snow)"/>
+  <path d="M-10 560 C180 536 340 568 520 542 C640 524 720 552 810 534 L810 800 L-10 800 Z" fill="#e8edf0"/>
+
+  <!-- sparse dark tussocks, far field -->
+  <ellipse cx="120" cy="500" rx="10" ry="4" fill="#8f9aa1" opacity="0.5"/>
+  <ellipse cx="640" cy="512" rx="14" ry="5" fill="#8f9aa1" opacity="0.45"/>
+  <ellipse cx="720" cy="560" rx="16" ry="5" fill="#8f9aa1" opacity="0.4"/>
+  <ellipse cx="70" cy="600" rx="18" ry="6" fill="#8f9aa1" opacity="0.4"/>
+
+  <!-- hummock the owl stands on -->
+  <path d="M240 700 C260 640 320 606 400 606 C480 606 546 642 566 700 C580 736 560 760 480 762 C420 764 380 762 320 762 C260 762 226 738 240 700 Z" fill="url(#so-hummock)"/>
+  <path d="M280 700 C300 664 350 640 400 640 C452 640 498 666 520 700" stroke="#7a848c" stroke-width="3" fill="none" opacity="0.4" stroke-linecap="round"/>
+
+  <!-- the owl -->
+  <g>
+    <!-- far wing, folded, trailing barred flight feathers -->
+    <path d="M470 420 C540 440 590 500 596 580 C598 640 570 686 520 706 C540 650 540 590 512 540 C490 500 470 470 450 448 Z" fill="url(#so-wing)"/>
+    <path d="M498 470 L560 486 M492 500 L556 520 M486 532 L546 556 M480 564 L534 592" stroke="#8f9aa1" stroke-width="4" fill="none" opacity="0.55" stroke-linecap="round"/>
+
+    <!-- tail -->
+    <path d="M392 690 C398 726 402 754 400 776 C420 754 430 726 428 692 Z" fill="url(#so-body)"/>
+    <path d="M400 706 L402 760 M410 700 L416 752" stroke="#c7d2d9" stroke-width="3" fill="none" opacity="0.6" stroke-linecap="round"/>
+
+    <!-- near wing, folded close along the body -->
+    <path d="M320 430 C260 456 224 512 222 580 C222 636 250 680 296 700 C282 646 284 588 308 540 C328 500 348 464 366 442 Z" fill="url(#so-body)"/>
+    <path d="M258 486 L296 470 M254 520 L290 508 M252 556 L286 546 M254 592 L284 584" stroke="#a9b4bb" stroke-width="4" fill="none" opacity="0.55" stroke-linecap="round"/>
+
+    <!-- body / breast -->
+    <path d="M330 452 C346 400 366 372 400 372 C434 372 454 400 470 452 C494 512 494 600 464 660 C444 700 358 700 336 660 C306 600 306 512 330 452 Z" fill="url(#so-body)"/>
+
+    <!-- breast and belly barring -->
+    <path d="M354 470 L446 470 M348 500 L452 500 M344 532 L456 532 M342 566 L458 566 M344 600 L456 600 M350 632 L450 632" stroke="#aab5bc" stroke-width="4" fill="none" opacity="0.55" stroke-linecap="round"/>
+
+    <!-- legs, feathered white, feet gripping the hummock -->
+    <path d="M362 656 C358 682 358 704 364 720" stroke="#e3e9ec" stroke-width="20" fill="none" stroke-linecap="round"/>
+    <path d="M438 656 C442 682 442 704 436 720" stroke="#e3e9ec" stroke-width="20" fill="none" stroke-linecap="round"/>
+    <path d="M352 720 L342 732 M364 722 L364 736 M376 720 L384 732" stroke="#c9a227" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M428 720 L418 732 M440 722 L440 736 M452 720 L460 732" stroke="#c9a227" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+    <!-- head -->
+    <circle cx="400" cy="330" r="102" fill="url(#so-body)"/>
+
+    <!-- facial disc barring, faint -->
+    <path d="M330 300 C346 284 370 276 400 276 C430 276 454 284 470 300" stroke="#c7d2d9" stroke-width="4" fill="none" opacity="0.5" stroke-linecap="round"/>
+    <path d="M320 350 L340 356 M480 350 L460 356" stroke="#aab5bc" stroke-width="4" fill="none" opacity="0.4" stroke-linecap="round"/>
+
+    <!-- eyes, huge and forward facing -->
+    <g filter="url(#so-glow)">
+      <circle cx="362" cy="322" r="34" fill="#191612"/>
+      <circle cx="438" cy="322" r="34" fill="#191612"/>
+      <circle cx="362" cy="322" r="26" fill="url(#so-eye)"/>
+      <circle cx="438" cy="322" r="26" fill="url(#so-eye)"/>
+      <circle cx="362" cy="322" r="11" fill="#141210"/>
+      <circle cx="438" cy="322" r="11" fill="#141210"/>
+      <circle cx="354" cy="312" r="5" fill="#fffaf0"/>
+      <circle cx="430" cy="312" r="5" fill="#fffaf0"/>
+    </g>
+
+    <!-- beak -->
+    <path d="M392 358 C392 372 398 384 400 392 C402 384 408 372 408 358 C404 366 396 366 392 358 Z" fill="#5b5148"/>
+
+    <!-- crown and cheek barring -->
+    <path d="M340 268 L352 260 M460 268 L448 260 M320 300 L306 296" stroke="#aab5bc" stroke-width="4" fill="none" opacity="0.4" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A glossy black Hercules beetle braced on a decaying log at the edge of the rainforest floor, its two curved horns lowered, a thin new moon crescent above the tree line" >
+  <defs>
+    <linearGradient id="hbo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#180f07"/>
+      <stop offset="100%" stop-color="#080503"/>
+    </linearGradient>
+    <linearGradient id="hbo-shell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2c1a"/>
+      <stop offset="45%" stop-color="#1c140b"/>
+      <stop offset="100%" stop-color="#080503"/>
+    </linearGradient>
+    <linearGradient id="hbo-sheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c9622f" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="hbo-horn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a4327"/>
+      <stop offset="55%" stop-color="#2c2013"/>
+      <stop offset="100%" stop-color="#0f0a05"/>
+    </linearGradient>
+    <linearGradient id="hbo-log" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2a17"/>
+      <stop offset="100%" stop-color="#140d06"/>
+    </linearGradient>
+    <filter id="hbo-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#hbo-bg)"/>
+
+  <!-- thin new moon crescent, high and small -->
+  <g filter="url(#hbo-glow)" opacity="0.55">
+    <path d="M314 78 A18 18 0 1 0 314 114 A13 16 0 1 1 314 78 Z" fill="#e8d6ae"/>
+  </g>
+
+  <!-- distant canopy line -->
+  <path d="M0 130 C50 100 100 128 150 100 C210 68 260 118 320 90 C350 76 380 100 400 84 L400 190 L0 190 Z" fill="#0d0904" opacity="0.9"/>
+
+  <!-- forest floor -->
+  <path d="M0 360 C80 340 160 366 240 348 C300 334 350 350 400 344 L400 500 L0 500 Z" fill="#120b05"/>
+
+  <!-- the log -->
+  <path d="M10 470 C110 430 220 424 330 384 C355 375 378 370 400 374 L400 420 C360 424 320 438 280 452 C190 484 100 492 10 500 Z" fill="url(#hbo-log)"/>
+  <path d="M50 456 C150 428 250 424 340 392" stroke="#080503" stroke-width="2" fill="none" opacity="0.6"/>
+  <ellipse cx="360" cy="384" rx="26" ry="11" fill="#5a4327" opacity="0.5"/>
+
+  <!-- the beetle braced on the log, horns lowered -->
+  <g>
+    <!-- rear legs -->
+    <path d="M228 386 C258 398 282 424 288 454 C270 450 246 430 232 408 Z" fill="#1c140b"/>
+    <path d="M270 366 C304 372 330 394 338 422 C318 424 292 404 274 380 Z" fill="#1c140b"/>
+
+    <!-- elytra -->
+    <path d="M164 328 C146 286 170 244 216 232 C264 220 306 242 322 280 C338 318 328 360 296 384 C250 416 192 386 164 328 Z" fill="url(#hbo-shell)"/>
+    <path d="M172 292 C186 260 224 242 262 246 C298 250 320 272 328 300 C306 276 268 260 230 262 C200 264 180 276 172 292 Z" fill="url(#hbo-sheen)"/>
+    <path d="M232 236 C224 282 224 344 236 388" stroke="#050302" stroke-width="3" fill="none" opacity="0.7"/>
+
+    <!-- foreleg on the log edge -->
+    <path d="M164 340 C144 344 128 360 122 382 C138 384 156 372 166 356 Z" fill="#241a0e"/>
+
+    <!-- thorax -->
+    <ellipse cx="140" cy="272" rx="42" ry="36" fill="url(#hbo-shell)"/>
+
+    <!-- head -->
+    <ellipse cx="92" cy="284" rx="18" ry="16" fill="#120d07"/>
+
+    <!-- cephalic horn -->
+    <path d="M84 272 C70 240 74 202 100 178 C106 202 104 234 100 264 C108 240 124 222 144 218 C134 244 116 264 98 278 Z" fill="url(#hbo-horn)"/>
+
+    <!-- thoracic horn -->
+    <path d="M122 246 C98 208 102 158 146 128 C166 114 188 112 198 124 C176 130 154 146 138 168 C154 156 174 150 192 152 C172 172 148 190 128 212 C146 204 166 202 182 210 C160 226 138 238 118 252 Z" fill="url(#hbo-horn)"/>
+
+    <!-- eye -->
+    <circle cx="82" cy="280" r="3" fill="#c9622f" opacity="0.85"/>
+  </g>
+</svg>

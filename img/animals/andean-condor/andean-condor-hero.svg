@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="An Andean condor soaring with fully spread black wings banded in white, bare grey-pink head and neck, gliding above a layered ridgeline of the Andes under a pale high-altitude sky">
+  <defs>
+    <radialGradient id="ac-sky" cx="50%" cy="24%" r="95%">
+      <stop offset="0%" stop-color="#4a4e54"/>
+      <stop offset="55%" stop-color="#26282d"/>
+      <stop offset="100%" stop-color="#14110d"/>
+    </radialGradient>
+    <radialGradient id="ac-sun" cx="45%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#f4e6cf"/>
+      <stop offset="60%" stop-color="#c98a4a"/>
+      <stop offset="100%" stop-color="#7a4520"/>
+    </radialGradient>
+    <linearGradient id="ac-wing" x1="0.05" y1="0.05" x2="0.95" y2="0.9">
+      <stop offset="0%" stop-color="#08090b"/>
+      <stop offset="45%" stop-color="#1c1e22"/>
+      <stop offset="100%" stop-color="#34373d"/>
+    </linearGradient>
+    <linearGradient id="ac-wingtip" x1="0" y1="0" x2="1" y2="0.2">
+      <stop offset="0%" stop-color="#0a0b0d"/>
+      <stop offset="100%" stop-color="#3d4147"/>
+    </linearGradient>
+    <linearGradient id="ac-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#26282d"/>
+      <stop offset="100%" stop-color="#0c0d0f"/>
+    </linearGradient>
+    <linearGradient id="ac-skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c98a72"/>
+      <stop offset="55%" stop-color="#a8604a"/>
+      <stop offset="100%" stop-color="#7a3a1e"/>
+    </linearGradient>
+    <linearGradient id="ac-collar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4efe6"/>
+      <stop offset="100%" stop-color="#cdd3d8"/>
+    </linearGradient>
+    <radialGradient id="ac-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#b46a35" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#b46a35" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ac-soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <filter id="ac-blur-sm" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#ac-sky)"/>
+
+  <!-- high pale sun, distant -->
+  <g filter="url(#ac-blur-sm)">
+    <circle cx="588" cy="150" r="58" fill="url(#ac-sun)"/>
+  </g>
+
+  <!-- Andean ridgeline, layered -->
+  <path d="M0 560 C80 500 140 540 210 500 C280 460 330 520 400 490 C470 460 520 515 590 485 C660 455 720 500 800 470 L800 800 L0 800 Z" fill="#1c1a19" opacity="0.92"/>
+  <path d="M0 630 C90 590 160 615 230 590 C300 565 350 605 420 585 C490 565 540 610 610 590 C680 570 730 605 800 590 L800 800 L0 800 Z" fill="#100e0d"/>
+  <path d="M0 690 C100 665 200 685 300 665 C400 645 500 680 600 660 C680 645 740 670 800 660 L800 800 L0 800 Z" fill="#0a0908"/>
+
+  <!-- ambient glow behind the bird -->
+  <ellipse cx="400" cy="410" rx="300" ry="230" fill="url(#ac-glow)" filter="url(#ac-soft)"/>
+
+  <!-- the condor, wings fully spread, gliding -->
+  <g>
+    <!-- left wing -->
+    <path d="M382 430 C300 418 190 402 96 392 C48 388 20 396 8 414 C40 438 90 456 150 470 C110 478 66 480 30 486 C58 512 118 528 186 530 C150 548 104 556 66 566 C110 584 182 588 244 578 C296 570 342 542 378 500 Z" fill="url(#ac-wing)"/>
+    <!-- left wingtip slots -->
+    <path d="M96 392 C48 388 20 396 8 414" stroke="#08090b" stroke-width="3" fill="none" opacity="0.5"/>
+    <path d="M8 414 C40 438 90 456 150 470" stroke="#3d4147" stroke-width="2" fill="none" opacity="0.4"/>
+    <!-- left white wing band -->
+    <path d="M330 452 C270 448 200 444 140 448 C170 462 220 472 270 472 C300 470 320 462 330 452 Z" fill="url(#ac-collar)" opacity="0.85"/>
+
+    <!-- right wing -->
+    <path d="M418 430 C500 418 610 402 704 392 C752 388 780 396 792 414 C760 438 710 456 650 470 C690 478 734 480 770 486 C742 512 682 528 614 530 C650 548 696 556 734 566 C690 584 618 588 556 578 C504 570 458 542 422 500 Z" fill="url(#ac-wing)"/>
+    <path d="M704 392 C752 388 780 396 792 414" stroke="#08090b" stroke-width="3" fill="none" opacity="0.5"/>
+    <path d="M792 414 C760 438 710 456 650 470" stroke="#3d4147" stroke-width="2" fill="none" opacity="0.4"/>
+    <path d="M470 452 C530 448 600 444 660 448 C630 462 580 472 530 472 C500 470 480 462 470 452 Z" fill="url(#ac-collar)" opacity="0.85"/>
+
+    <!-- tail -->
+    <path d="M380 520 C388 560 392 600 400 632 C408 600 412 560 420 520 Z" fill="url(#ac-wingtip)"/>
+
+    <!-- body -->
+    <path d="M400 386 C378 386 366 416 368 460 C370 496 380 520 400 536 C420 520 430 496 432 460 C434 416 422 386 400 386 Z" fill="url(#ac-body)"/>
+
+    <!-- white downy collar at base of neck -->
+    <ellipse cx="400" cy="392" rx="34" ry="14" fill="url(#ac-collar)"/>
+
+    <!-- bare neck -->
+    <path d="M390 388 C384 366 384 340 390 320 C394 306 406 306 410 320 C416 340 416 366 410 388 Z" fill="url(#ac-skin)"/>
+
+    <!-- bare head -->
+    <ellipse cx="400" cy="304" rx="20" ry="18" fill="url(#ac-skin)"/>
+    <!-- caruncle comb -->
+    <path d="M394 288 C392 278 396 270 400 268 C404 270 408 278 406 288 Z" fill="#8a3a24" opacity="0.85"/>
+    <!-- eye -->
+    <circle cx="392" cy="302" r="2.4" fill="#1a0f0a"/>
+    <!-- hooked beak -->
+    <path d="M382 306 C368 308 356 314 350 322 C358 320 368 318 380 316 C384 314 384 308 382 306 Z" fill="#e8dcc4"/>
+    <path d="M350 322 C356 326 364 328 374 328" stroke="#7a6a48" stroke-width="1.4" fill="none" opacity="0.6"/>
+  </g>
+</svg>

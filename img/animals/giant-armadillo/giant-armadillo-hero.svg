@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A giant armadillo with a banded, plated shell digs at the mouth of a fresh burrow beneath a starlit, moonless sky, one enormous curved claw torn deep into the dark earth beside a broken termite mound">
+  <defs>
+    <radialGradient id="ga-sky" cx="50%" cy="18%" r="100%">
+      <stop offset="0%" stop-color="#211c17"/>
+      <stop offset="55%" stop-color="#151109"/>
+      <stop offset="100%" stop-color="#0a0805"/>
+    </radialGradient>
+    <linearGradient id="ga-ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#231b12"/>
+      <stop offset="55%" stop-color="#16110b"/>
+      <stop offset="100%" stop-color="#0a0705"/>
+    </linearGradient>
+    <radialGradient id="ga-burrow" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#020202"/>
+      <stop offset="100%" stop-color="#0d0906"/>
+    </radialGradient>
+    <linearGradient id="ga-shell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c07a45"/>
+      <stop offset="50%" stop-color="#8a4f2b"/>
+      <stop offset="100%" stop-color="#4c2c19"/>
+    </linearGradient>
+    <linearGradient id="ga-shell-2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a8623a"/>
+      <stop offset="100%" stop-color="#5c3520"/>
+    </linearGradient>
+    <linearGradient id="ga-belly" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c9a487"/>
+      <stop offset="100%" stop-color="#8a6650"/>
+    </linearGradient>
+    <linearGradient id="ga-claw" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e4dcc9"/>
+      <stop offset="100%" stop-color="#a9a49b"/>
+    </linearGradient>
+    <linearGradient id="ga-mound" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7a4526"/>
+      <stop offset="100%" stop-color="#3b2314"/>
+    </linearGradient>
+    <filter id="ga-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ga-soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#ga-sky)"/>
+
+  <!-- moonless sky: scattered stars, no moon -->
+  <g fill="#e8dcc4">
+    <circle cx="120" cy="90" r="1.6" opacity="0.8"/>
+    <circle cx="210" cy="60" r="1.1" opacity="0.6"/>
+    <circle cx="300" cy="110" r="1.4" opacity="0.7"/>
+    <circle cx="380" cy="70" r="1.8" opacity="0.85"/>
+    <circle cx="460" cy="120" r="1.1" opacity="0.55"/>
+    <circle cx="540" cy="66" r="1.5" opacity="0.75"/>
+    <circle cx="610" cy="100" r="1.2" opacity="0.6"/>
+    <circle cx="680" cy="72" r="1.7" opacity="0.8"/>
+    <circle cx="740" cy="130" r="1.1" opacity="0.5"/>
+    <circle cx="60" cy="150" r="1.2" opacity="0.6"/>
+    <circle cx="170" cy="180" r="1.0" opacity="0.5"/>
+    <circle cx="440" cy="170" r="1.0" opacity="0.5"/>
+    <circle cx="600" cy="180" r="1.3" opacity="0.6"/>
+    <circle cx="730" cy="200" r="1.1" opacity="0.55"/>
+  </g>
+
+  <!-- distant treeline, near-black -->
+  <path d="M0 300 C90 276 160 300 230 282 C300 264 360 292 430 274 C500 256 560 286 630 268 C690 254 750 274 800 262 L800 380 L0 380 Z" fill="#0d0a06" opacity="0.9"/>
+
+  <!-- rolling dark ground -->
+  <path d="M0 400 C120 372 260 396 400 372 C540 350 660 384 800 360 L800 800 L0 800 Z" fill="url(#ga-ground)"/>
+
+  <!-- broken termite mound, torn open, background left -->
+  <g>
+    <path d="M96 512 C70 500 66 460 96 432 C120 410 158 406 182 424 C210 444 214 486 190 512 C168 534 122 534 96 512 Z" fill="url(#ga-mound)"/>
+    <path d="M120 470 C132 452 158 448 172 462 C160 468 140 470 128 486 C122 480 118 476 120 470 Z" fill="#241708" opacity="0.8"/>
+    <path d="M104 500 C96 490 98 476 110 468" stroke="#2c1a0c" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+    <path d="M150 430 C160 420 176 420 184 430" stroke="#2c1a0c" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/>
+  </g>
+
+  <!-- scattered torn earth around the burrow mouth -->
+  <g fill="#1c130a" opacity="0.85">
+    <ellipse cx="470" cy="620" rx="150" ry="34"/>
+    <ellipse cx="560" cy="600" rx="70" ry="20"/>
+    <ellipse cx="380" cy="612" rx="60" ry="16"/>
+  </g>
+  <g fill="#3a2313" opacity="0.7">
+    <ellipse cx="430" cy="606" rx="14" ry="8"/>
+    <ellipse cx="500" cy="596" rx="10" ry="6"/>
+    <ellipse cx="560" cy="614" rx="12" ry="7"/>
+    <ellipse cx="360" cy="620" rx="9" ry="5"/>
+  </g>
+
+  <!-- the burrow mouth, foreground right, total dark -->
+  <ellipse cx="560" cy="660" rx="112" ry="52" fill="url(#ga-burrow)"/>
+  <ellipse cx="560" cy="660" rx="112" ry="52" fill="none" stroke="#2c1a0c" stroke-width="6" opacity="0.6"/>
+
+  <!-- long banded tail, sweeping back left of the body -->
+  <path d="M220 668 C176 648 148 604 148 556 C148 548 158 546 162 554 C166 596 190 632 228 652 Z" fill="url(#ga-shell-2)"/>
+  <g stroke="#2c1a0c" stroke-width="3" opacity="0.5" fill="none">
+    <path d="M164 560 C176 574 186 590 196 606"/>
+    <path d="M176 594 C188 606 198 620 208 634"/>
+  </g>
+
+  <!-- hind leg, low and short -->
+  <path d="M300 700 C292 680 296 658 316 646 C334 636 354 640 360 656 C364 674 352 696 330 706 C316 712 304 710 300 700 Z" fill="url(#ga-shell-2)"/>
+
+  <!-- main body: the domed, banded shell -->
+  <g>
+    <path d="M228 656 C204 592 226 512 290 468 C348 428 430 420 494 448 C560 478 596 542 590 610 C584 674 528 716 456 726 C374 738 264 724 228 656 Z" fill="url(#ga-shell)"/>
+
+    <!-- carapace bands, curved plate rows across the domed shell -->
+    <g stroke="#3a2312" stroke-width="4" fill="none" opacity="0.7">
+      <path d="M244 588 C310 552 430 546 566 588"/>
+      <path d="M234 626 C312 594 452 588 582 628"/>
+      <path d="M246 664 C324 638 462 634 570 668"/>
+      <path d="M272 696 C340 678 452 676 540 700"/>
+    </g>
+    <!-- pale plate highlights along the top of each band -->
+    <g fill="#d69a63" opacity="0.5">
+      <path d="M290 552 C350 534 470 530 548 556 L548 560 C470 536 352 540 292 558 Z"/>
+      <path d="M280 592 C350 566 470 562 560 596 L560 600 C470 568 352 572 282 596 Z"/>
+    </g>
+
+    <!-- pale underside sliver, low and forward -->
+    <path d="M232 660 C224 690 236 716 264 726 C250 704 244 680 250 658 Z" fill="url(#ga-belly)" opacity="0.85"/>
+  </g>
+
+  <!-- conical head, lowered toward the ground, nose to the earth -->
+  <g>
+    <path d="M232 592 C196 578 166 550 154 512 C148 492 158 478 176 480 C204 484 226 508 238 540 C246 562 244 580 232 592 Z" fill="url(#ga-shell-2)"/>
+    <!-- small rounded ear -->
+    <circle cx="202" cy="500" r="12" fill="#3a2213"/>
+    <!-- blunt snout tip -->
+    <ellipse cx="160" cy="514" rx="14" ry="10" fill="#2c1a0e"/>
+    <!-- small, near-shut eye -->
+    <path d="M196 522 C200 518 208 518 212 522" stroke="#100a06" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- foreleg driving down into the earth -->
+  <path d="M246 606 C232 634 224 664 232 692 C238 704 254 706 262 694 C270 664 272 630 262 604 Z" fill="url(#ga-shell-2)"/>
+
+  <!-- the enormous curved digging claw, torn into the ground at the burrow mouth -->
+  <g filter="url(#ga-glow)">
+    <path d="M232 690 C214 700 196 718 186 744 C182 754 192 764 202 758 C220 742 236 722 248 700 Z" fill="url(#ga-claw)"/>
+    <path d="M186 744 C168 758 148 780 136 806" stroke="url(#ga-claw)" stroke-width="16" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- warm rim light along the shell, facing away from the dark burrow -->
+  <g filter="url(#ga-soft)" opacity="0.45">
+    <path d="M290 468 C348 428 430 420 494 448" stroke="#d69a63" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

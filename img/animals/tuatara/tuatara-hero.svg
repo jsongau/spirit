@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A grey-green tuatara resting at the mouth of a mossy burrow on a cold New Zealand island at night, its spiny dorsal crest raised low along its back, a faint pale mark on the crown of its head where a third eye once showed">
+  <defs>
+    <radialGradient id="tt-sky" cx="50%" cy="18%" r="95%">
+      <stop offset="0%" stop-color="#182a28"/>
+      <stop offset="55%" stop-color="#0e1c1c"/>
+      <stop offset="100%" stop-color="#070f10"/>
+    </radialGradient>
+    <linearGradient id="tt-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7c8f74"/>
+      <stop offset="55%" stop-color="#556652"/>
+      <stop offset="100%" stop-color="#2e3a2c"/>
+    </linearGradient>
+    <linearGradient id="tt-belly" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a3ab8e"/>
+      <stop offset="100%" stop-color="#6b7860"/>
+    </linearGradient>
+    <linearGradient id="tt-crest" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9aab84"/>
+      <stop offset="100%" stop-color="#465241"/>
+    </linearGradient>
+    <radialGradient id="tt-moon" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#eef4e6"/>
+      <stop offset="55%" stop-color="#c7d4bd"/>
+      <stop offset="100%" stop-color="#c7d4bd" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="tt-eye3" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#eaf3e2"/>
+      <stop offset="60%" stop-color="#a9c19a"/>
+      <stop offset="100%" stop-color="#a9c19a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="tt-glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="tt-softglow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="20" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#tt-sky)"/>
+
+  <!-- cold moon, far above -->
+  <g opacity="0.9" filter="url(#tt-softglow)">
+    <circle cx="600" cy="120" r="58" fill="url(#tt-moon)"/>
+  </g>
+  <circle cx="600" cy="120" r="30" fill="#e7efdd" opacity="0.85"/>
+
+  <!-- distant wind-scoured cliffs -->
+  <path d="M0 300 L120 250 L260 295 L400 235 L560 290 L680 245 L800 285 L800 460 L0 460 Z" fill="#0c1817" opacity="0.85"/>
+  <path d="M0 360 L150 320 L300 355 L470 305 L620 350 L800 315 L800 500 L0 500 Z" fill="#081211" opacity="0.9"/>
+
+  <!-- island ground, wind-bent scrub and moss -->
+  <path d="M0 520 C130 470 240 500 340 470 C460 435 560 480 680 460 C740 450 780 470 800 480 L800 800 L0 800 Z" fill="#111c15"/>
+  <path d="M0 610 C160 570 280 605 400 580 C540 550 660 600 800 570 L800 800 L0 800 Z" fill="#0a120d"/>
+
+  <!-- moss patches -->
+  <g opacity="0.55">
+    <ellipse cx="150" cy="600" rx="90" ry="22" fill="#233a26"/>
+    <ellipse cx="640" cy="560" rx="110" ry="26" fill="#233a26"/>
+    <ellipse cx="330" cy="650" rx="70" ry="18" fill="#1c3020"/>
+  </g>
+
+  <!-- burrow mouth, dark opening in the bank -->
+  <path d="M120 640 C120 560 200 500 320 500 C440 500 500 570 500 650 C500 720 420 760 300 760 C190 760 120 710 120 640 Z" fill="#050b08"/>
+  <path d="M150 640 C150 575 220 525 320 525 C420 525 470 585 470 645 C470 700 405 730 305 730 C210 730 150 695 150 640 Z" fill="#0a1410" opacity="0.9"/>
+
+  <!-- a fern frond at the burrow mouth -->
+  <g stroke="#3a5236" stroke-width="4" fill="none" opacity="0.75">
+    <path d="M110 560 C90 520 95 470 130 430"/>
+    <path d="M118 545 L95 535 M124 520 L100 510 M130 495 L108 485 M136 470 L116 460 M141 448 L124 438"/>
+  </g>
+  <g stroke="#3a5236" stroke-width="4" fill="none" opacity="0.65">
+    <path d="M560 520 C595 480 600 430 570 385"/>
+    <path d="M552 505 L578 495 M546 480 L572 470 M541 456 L565 447 M537 432 L560 423"/>
+  </g>
+
+  <!-- hind legs, gripping the stone at the burrow lip -->
+  <path d="M300 700 C295 685 290 675 275 668 C260 662 240 662 226 672" stroke="#3c4a38" stroke-width="18" fill="none" stroke-linecap="round"/>
+  <path d="M225 675 C218 680 213 686 210 693 M225 675 C222 683 219 690 216 697 M225 672 C230 680 232 688 231 696" stroke="#2a352a" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <!-- tail, trailing back into the burrow -->
+  <path d="M420 705 C470 715 520 705 555 675 C580 653 590 630 585 610" fill="none" stroke="url(#tt-body)" stroke-width="34" stroke-linecap="round"/>
+  <g stroke="#3a4636" stroke-width="7" fill="none" opacity="0.7" stroke-linecap="round">
+    <path d="M440 692 L448 715"/>
+    <path d="M470 698 L476 722"/>
+    <path d="M500 695 L504 719"/>
+    <path d="M528 685 L530 709"/>
+  </g>
+
+  <!-- body, low and settled against the ground -->
+  <path d="M235 660 C205 615 210 555 260 520 C310 486 385 480 430 505 C400 535 385 570 400 610 C412 642 400 675 365 690 C320 708 265 703 235 660 Z" fill="url(#tt-body)"/>
+
+  <!-- belly light, catching the moon -->
+  <path d="M270 640 C255 610 262 575 292 555 C282 590 285 618 305 648 C290 655 278 652 270 640 Z" fill="url(#tt-belly)" opacity="0.85"/>
+
+  <!-- dorsal crest, spines held low along the neck and back -->
+  <g fill="url(#tt-crest)">
+    <path d="M430 505 L448 486 L444 512 Z"/>
+    <path d="M414 495 L430 474 L428 502 Z"/>
+    <path d="M395 490 L409 468 L410 496 Z"/>
+    <path d="M375 490 L385 466 L390 496 Z"/>
+    <path d="M355 494 L361 469 L372 498 Z"/>
+    <path d="M335 501 L338 476 L352 503 Z"/>
+    <path d="M316 511 L316 486 L332 510 Z"/>
+  </g>
+
+  <!-- head, blunt and deliberate -->
+  <path d="M448 512 C468 500 488 500 502 516 C514 530 512 550 496 560 C478 572 452 566 442 548 C436 536 438 522 448 512 Z" fill="url(#tt-body)"/>
+
+  <!-- eye, round and unhurried -->
+  <ellipse cx="480" cy="528" rx="9" ry="10" fill="#0a0e08"/>
+  <circle cx="477" cy="524" r="2.6" fill="#dfe9d2"/>
+
+  <!-- the third eye, a pale mark under scale on the crown -->
+  <g filter="url(#tt-glow)" opacity="0.8">
+    <circle cx="452" cy="503" r="5.5" fill="url(#tt-eye3)"/>
+  </g>
+  <circle cx="452" cy="503" r="2.4" fill="#3f4a3a" opacity="0.75"/>
+
+  <!-- faint scale texture on the flank -->
+  <g opacity="0.28">
+    <ellipse cx="320" cy="580" rx="16" ry="9" fill="#1f2a1d"/>
+    <ellipse cx="290" cy="610" rx="14" ry="8" fill="#1f2a1d"/>
+    <ellipse cx="350" cy="620" rx="15" ry="8" fill="#18211a"/>
+  </g>
+
+  <!-- foreleg, planted on the moss -->
+  <path d="M300 650 C280 660 262 662 244 655" stroke="#3c4a38" stroke-width="17" fill="none" stroke-linecap="round"/>
+  <path d="M244 654 C238 660 234 667 232 675 M244 651 C240 658 237 665 236 672 M246 648 C246 656 246 663 247 670" stroke="#2a352a" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+</svg>

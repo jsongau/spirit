@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A marbled polecat, blotched black, cream, and orange, arches at the mouth of a borrowed burrow on the steppe under a nearly dark new moon">
+  <defs>
+    <linearGradient id="mpo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f1710"/>
+      <stop offset="100%" stop-color="#0c0806"/>
+    </linearGradient>
+    <radialGradient id="mpo-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2a2016"/>
+      <stop offset="70%" stop-color="#181109"/>
+      <stop offset="100%" stop-color="#0c0805"/>
+    </radialGradient>
+    <linearGradient id="mpo-fur" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3a2b1c"/>
+      <stop offset="50%" stop-color="#241a12"/>
+      <stop offset="100%" stop-color="#17110b"/>
+    </linearGradient>
+    <radialGradient id="mpo-face" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#f4ead2"/>
+      <stop offset="100%" stop-color="#d9c396"/>
+    </radialGradient>
+    <linearGradient id="mpo-mound" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7a5a34"/>
+      <stop offset="100%" stop-color="#402e1a"/>
+    </linearGradient>
+    <filter id="mpo-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#mpo-bg)"/>
+
+  <!-- new moon, nearly dark -->
+  <g filter="url(#mpo-glow)">
+    <circle cx="302" cy="90" r="30" fill="url(#mpo-moon)"/>
+    <circle cx="302" cy="90" r="30" fill="none" stroke="#4a3a26" stroke-width="1.2" opacity="0.6"/>
+  </g>
+  <g opacity="0.5" fill="#e8ddc7">
+    <circle cx="70" cy="60" r="1.3"/>
+    <circle cx="130" cy="40" r="1"/>
+    <circle cx="230" cy="30" r="1.1"/>
+    <circle cx="350" cy="150" r="1.2"/>
+  </g>
+
+  <!-- steppe line -->
+  <path d="M0 190 C70 172 130 196 190 178 C250 160 320 188 400 168 L400 500 L0 500 Z" fill="#160f09" opacity="0.85"/>
+  <path d="M0 240 C80 222 150 248 210 230 C280 210 340 236 400 220 L400 500 L0 500 Z" fill="#0d0905"/>
+
+  <!-- borrowed burrow mouth -->
+  <g>
+    <ellipse cx="176" cy="466" rx="52" ry="16" fill="#08050300"/>
+    <path d="M126 466 C122 448 142 434 176 431 C214 428 240 440 246 456 C248 466 240 474 226 476 L142 476 C134 476 130 470 126 466 Z" fill="url(#mpo-mound)"/>
+    <ellipse cx="176" cy="466" rx="34" ry="10" fill="#050302"/>
+  </g>
+
+  <!-- polecat, arched, threat display -->
+  <g>
+    <!-- puffed tail -->
+    <path d="M296 434 C328 392 328 328 300 278 C288 300 278 336 274 372 C270 402 278 424 296 434 Z" fill="url(#mpo-fur)"/>
+    <g opacity="0.9">
+      <ellipse cx="308" cy="388" rx="12" ry="7" fill="#e3b27a" transform="rotate(-58 308 388)"/>
+      <ellipse cx="292" cy="346" rx="11" ry="6" fill="#efe2c4" transform="rotate(-58 292 346)"/>
+      <ellipse cx="284" cy="304" rx="10" ry="5.5" fill="#e3b27a" transform="rotate(-58 284 304)"/>
+    </g>
+
+    <!-- hind legs -->
+    <path d="M256 470 C249 442 255 418 271 406 C285 420 289 446 282 470 Z" fill="#1c140d"/>
+    <path d="M222 472 C216 446 220 424 234 412 C246 426 250 450 244 472 Z" fill="#1c140d"/>
+
+    <!-- arched spine -->
+    <path d="M156 440 C138 396 141 342 173 300 C198 266 244 249 280 258 C316 267 338 297 338 335 C338 366 320 391 292 399 C260 409 230 415 205 434 C190 444 172 447 156 440 Z" fill="url(#mpo-fur)"/>
+
+    <!-- marbling -->
+    <g opacity="0.95">
+      <path d="M185 398 C181 381 188 364 204 358 C217 364 220 381 213 396 C204 405 191 406 185 398 Z" fill="#e3b27a"/>
+      <path d="M228 376 C222 358 231 339 248 333 C262 340 265 360 256 376 C246 387 233 387 228 376 Z" fill="#efe2c4"/>
+      <path d="M266 344 C262 328 270 313 287 309 C299 316 301 334 293 349 C283 358 271 356 266 344 Z" fill="#e3b27a"/>
+      <path d="M170 366 C165 352 171 337 184 333 C194 339 197 353 191 365 C183 373 175 373 170 366 Z" fill="#efe2c4" opacity="0.85"/>
+    </g>
+
+    <!-- forelegs -->
+    <path d="M186 448 C176 430 178 410 191 396 C202 410 205 430 199 448 Z" fill="#1c140d"/>
+    <path d="M164 442 C154 426 156 408 168 396 C178 408 181 426 175 442 Z" fill="#1c140d"/>
+
+    <!-- neck, low and forward -->
+    <path d="M148 404 C131 388 121 369 121 350 C136 340 154 343 164 359 C173 373 167 391 148 404 Z" fill="url(#mpo-fur)"/>
+
+    <!-- head, hissing -->
+    <g>
+      <ellipse cx="102" cy="356" rx="30" ry="25" fill="url(#mpo-face)" transform="rotate(-16 102 356)"/>
+      <path d="M80 335 C91 324 113 324 124 335 C120 346 84 346 80 335 Z" fill="#f4ead2" transform="rotate(-16 102 356)"/>
+      <path d="M82 330 a9 9 0 1 1 4 -17 a7 7 0 1 0 -4 17 Z" fill="#efe2c4" transform="rotate(-16 102 356)"/>
+      <path d="M124 332 a9 9 0 1 0 -4 -17 a7 7 0 1 1 4 17 Z" fill="#efe2c4" transform="rotate(-16 102 356)"/>
+      <ellipse cx="91" cy="355" rx="8" ry="10" fill="#120c07" transform="rotate(-16 102 356)"/>
+      <ellipse cx="117" cy="352" rx="8" ry="10" fill="#120c07" transform="rotate(-16 102 356)"/>
+      <circle cx="92" cy="355" r="2.6" fill="#f0e6cf" transform="rotate(-16 102 356)"/>
+      <circle cx="118" cy="352" r="2.6" fill="#f0e6cf" transform="rotate(-16 102 356)"/>
+      <path d="M68 376 C74 389 96 393 106 383 C99 371 79 368 68 376 Z" fill="#12100d" transform="rotate(-16 102 356)"/>
+      <ellipse cx="70" cy="364" rx="3" ry="2.4" fill="#0c0805" transform="rotate(-16 102 356)"/>
+    </g>
+  </g>
+</svg>

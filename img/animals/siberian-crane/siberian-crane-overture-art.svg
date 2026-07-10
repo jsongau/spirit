@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Close view of a Siberian Crane's head and neck against a muted wetland dusk, its plumage pure white, a bare brick-red mask covering its forecrown and face, dark bill lowered toward the water, one black-tipped wing rising behind it">
+  <defs>
+    <linearGradient id="sco-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a221f"/>
+      <stop offset="100%" stop-color="#0a1210"/>
+    </linearGradient>
+    <linearGradient id="sco-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4efe4"/>
+      <stop offset="60%" stop-color="#e9e2d3"/>
+      <stop offset="100%" stop-color="#cfc6b3"/>
+    </linearGradient>
+    <linearGradient id="sco-wing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#efe9db"/>
+      <stop offset="55%" stop-color="#d9d1bd"/>
+      <stop offset="100%" stop-color="#141110"/>
+    </linearGradient>
+    <radialGradient id="sco-mask" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#e07a56"/>
+      <stop offset="45%" stop-color="#a8412d"/>
+      <stop offset="100%" stop-color="#6f2519"/>
+    </radialGradient>
+    <radialGradient id="sco-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e9b48a" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#e9b48a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sco-soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <filter id="sco-glow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#sco-bg)"/>
+
+  <!-- low sun -->
+  <circle cx="300" cy="130" r="120" fill="url(#sco-sun)" filter="url(#sco-soft)"/>
+  <circle cx="300" cy="130" r="30" fill="#f0c9a0" opacity="0.8"/>
+
+  <!-- far shoreline -->
+  <path d="M0 210 C50 200 90 212 140 202 C190 192 230 206 280 196 C320 188 360 200 400 194 L400 240 L0 240 Z" fill="#101a17" opacity="0.85"/>
+
+  <!-- water below -->
+  <rect x="0" y="228" width="400" height="272" fill="#0e1917"/>
+  <ellipse cx="220" cy="330" rx="150" ry="60" fill="#182521" opacity="0.5"/>
+
+  <!-- reed at the edge -->
+  <path d="M32 500 C28 420 38 340 24 270" stroke="#2c3b2e" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <ellipse cx="24" cy="266" rx="6" ry="14" fill="#3a4d3c" opacity="0.85"/>
+
+  <!-- wing rising behind, black-tipped -->
+  <path d="M256 268 C312 250 350 206 364 148 C372 112 368 78 350 48 C338 92 318 132 288 162 C260 188 246 224 240 262 Z" fill="url(#sco-wing)"/>
+  <path d="M350 48 C336 66 326 86 320 106 C338 96 350 76 358 56 Z" fill="#161311"/>
+  <path d="M364 148 C350 158 338 172 330 188 C348 182 362 166 372 150 Z" fill="#161311"/>
+
+  <!-- neck, curving down toward the water -->
+  <path d="M212 320 C198 276 196 234 210 196 C220 170 236 156 254 152 C248 184 236 216 224 250 C216 274 212 298 212 320 Z" fill="url(#sco-body)"/>
+
+  <!-- body, base of frame -->
+  <path d="M170 380 C158 420 162 458 186 486 C204 500 226 500 244 486 C264 458 266 420 254 380 C238 350 186 350 170 380 Z" fill="url(#sco-body)"/>
+
+  <!-- head, lowered -->
+  <g filter="url(#sco-glow)">
+    <ellipse cx="262" cy="146" rx="30" ry="26" fill="url(#sco-body)"/>
+    <!-- bare red mask -->
+    <path d="M242 130 C240 116 250 104 266 102 C280 104 288 118 284 134 C278 148 252 150 242 130 Z" fill="url(#sco-mask)"/>
+    <!-- bill, lowered toward the water -->
+    <path d="M250 150 C240 172 226 190 208 202 C220 182 232 162 240 142 Z" fill="#5a4a38"/>
+    <!-- eye -->
+    <circle cx="256" cy="140" r="3.2" fill="#f2e6c8"/>
+    <circle cx="256" cy="140" r="1.4" fill="#161311"/>
+  </g>
+
+  <!-- ripple where the reflection would begin -->
+  <ellipse cx="220" cy="470" rx="80" ry="12" fill="none" stroke="#3d514a" stroke-width="2" opacity="0.5"/>
+</svg>

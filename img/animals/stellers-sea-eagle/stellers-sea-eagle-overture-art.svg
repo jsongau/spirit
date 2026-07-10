@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A Steller's sea eagle's head and shoulder close among driftwood, its huge yellow bill catching cold light, white shoulder patch bright against a dark body, a pale winter sun glowing faintly above the water">
+  <defs>
+    <linearGradient id="seo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#243138"/>
+      <stop offset="100%" stop-color="#0a1114"/>
+    </linearGradient>
+    <radialGradient id="seo-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f2e7c8"/>
+      <stop offset="100%" stop-color="#b7935a"/>
+    </radialGradient>
+    <linearGradient id="seo-mantle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a332c"/>
+      <stop offset="100%" stop-color="#15100d"/>
+    </linearGradient>
+    <linearGradient id="seo-shoulder" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4f1e6"/>
+      <stop offset="100%" stop-color="#c9c6b8"/>
+    </linearGradient>
+    <linearGradient id="seo-bill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0c96a"/>
+      <stop offset="100%" stop-color="#c99a2e"/>
+    </linearGradient>
+    <filter id="seo-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#seo-bg)"/>
+
+  <!-- faint winter sun over the water -->
+  <g filter="url(#seo-glow)" opacity="0.85">
+    <circle cx="308" cy="86" r="42" fill="url(#seo-sun)"/>
+  </g>
+
+  <!-- driftwood branches -->
+  <path d="M0 168 C80 150 140 176 200 158 C250 144 320 164 400 146" stroke="#4a4236" stroke-width="6" fill="none" opacity="0.6"/>
+  <path d="M30 486 C90 448 92 380 150 356" stroke="#4a4236" stroke-width="5" fill="none" opacity="0.5"/>
+
+  <!-- water line, cold and dark -->
+  <rect x="0" y="430" width="400" height="70" fill="#101b20" opacity="0.85"/>
+  <path d="M0 448 C100 438 180 456 280 444 C320 440 360 446 400 442" stroke="#33474f" stroke-width="3" fill="none" opacity="0.5"/>
+
+  <!-- eagle, head and shoulder, close -->
+  <g>
+    <!-- shoulder / folded wing mass, dark -->
+    <path d="M114 480 C84 418 96 336 158 296 C210 262 282 274 312 328 C338 376 322 440 288 478 Z" fill="url(#seo-mantle)"/>
+
+    <!-- white shoulder patch -->
+    <path d="M132 350 C154 322 200 316 224 340 C240 358 234 388 210 400 C184 412 148 404 134 382 C126 370 126 360 132 350 Z" fill="url(#seo-shoulder)"/>
+
+    <!-- head -->
+    <g>
+      <ellipse cx="196" cy="264" rx="50" ry="44" fill="url(#seo-mantle)"/>
+
+      <!-- massive yellow bill -->
+      <path d="M180 286 C206 284 234 296 250 320 C230 326 206 322 188 308 C180 300 176 292 180 286 Z" fill="url(#seo-bill)"/>
+      <path d="M228 302 C236 306 242 312 244 318 C236 318 228 314 223 309 Z" fill="#8a6420" opacity="0.6"/>
+
+      <!-- eye -->
+      <circle cx="180" cy="256" r="6" fill="#161210"/>
+      <circle cx="182" cy="253" r="1.8" fill="#f2e7c8"/>
+    </g>
+  </g>
+</svg>

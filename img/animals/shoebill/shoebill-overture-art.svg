@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A shoebill at rest near still water, head low, bill catching the last light, papyrus silhouetted against a flat dawn sky">
+  <defs>
+    <linearGradient id="sbo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2e321f"/>
+      <stop offset="100%" stop-color="#12130e"/>
+    </linearGradient>
+    <radialGradient id="sbo-sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f0d9a3"/>
+      <stop offset="100%" stop-color="#a4472c"/>
+    </radialGradient>
+    <linearGradient id="sbo-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b7ad8f"/>
+      <stop offset="100%" stop-color="#3a3d30"/>
+    </linearGradient>
+    <linearGradient id="sbo-bill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d9c98a"/>
+      <stop offset="100%" stop-color="#8a7a48"/>
+    </linearGradient>
+    <filter id="sbo-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#sbo-bg)"/>
+
+  <!-- low sun, hazed -->
+  <g filter="url(#sbo-glow)" opacity="0.7">
+    <circle cx="308" cy="108" r="36" fill="url(#sbo-sun)"/>
+  </g>
+
+  <!-- flat papyrus horizon -->
+  <path d="M0 210 C30 196 34 176 40 200 C48 182 52 168 58 202 C68 194 74 208 82 200 L82 226 L0 226 Z" fill="#12140d" opacity="0.85"/>
+  <path d="M0 236 C90 220 170 236 260 218 C310 208 360 224 400 214 L400 500 L0 500 Z" fill="#161811"/>
+
+  <!-- still water strip -->
+  <rect x="0" y="260" width="400" height="240" fill="#1c2015"/>
+  <path d="M0 272 C60 266 100 276 150 270 C210 262 270 274 330 268 C355 265 380 270 400 266 L400 280 L0 280 Z" fill="#2a2f22" opacity="0.6"/>
+
+  <!-- near papyrus reeds -->
+  <g fill="#0d0f0a" opacity="0.9">
+    <path d="M350 500 L354 320 L360 500 Z"/>
+    <path d="M370 500 L376 290 L382 500 Z"/>
+    <path d="M342 340 C350 330 360 330 366 338 C358 344 348 346 342 340 Z"/>
+  </g>
+
+  <!-- the shoebill, standing, head low, at rest -->
+  <g>
+    <!-- far leg -->
+    <path d="M182 440 L178 372 L188 372 L194 440 Z" fill="#1c2015"/>
+
+    <!-- body -->
+    <path d="M150 262 C126 296 116 344 134 388 C150 420 194 434 232 420 C270 406 292 370 286 328 C282 294 256 264 218 252 C196 244 168 246 150 262 Z" fill="url(#sbo-body)"/>
+
+    <!-- near leg -->
+    <path d="M188 388 C184 414 182 440 184 462 L196 462 C198 438 198 414 200 390 Z" fill="#1c2015"/>
+    <path d="M176 462 L204 462 L208 470 L172 470 Z" fill="#12140d"/>
+
+    <!-- neck -->
+    <path d="M196 254 C190 230 194 202 210 180 C230 186 242 208 238 234 C234 248 214 258 196 254 Z" fill="#8a9080"/>
+
+    <!-- head and bill, lowered -->
+    <g>
+      <ellipse cx="240" cy="188" rx="34" ry="30" fill="#8a9080"/>
+      <path d="M266 172 C300 168 328 180 338 198 C342 208 338 218 328 222 C308 230 282 224 264 208 C256 198 256 182 266 172 Z" fill="url(#sbo-bill)"/>
+      <path d="M320 220 C328 224 334 230 332 238 C326 240 318 236 316 228 Z" fill="#6b5c30"/>
+      <g fill="#4a3f22" opacity="0.55">
+        <circle cx="284" cy="182" r="2.4"/>
+        <circle cx="302" cy="188" r="2.8"/>
+        <circle cx="314" cy="200" r="2.4"/>
+      </g>
+      <!-- the stare -->
+      <circle cx="248" cy="184" r="6.2" fill="#e8dcae"/>
+      <circle cx="248" cy="184" r="2.6" fill="#141810"/>
+      <path d="M236 176 C242 172 254 172 260 178" fill="none" stroke="#3a3d30" stroke-width="2.4" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- ripple rings -->
+  <g stroke="#7a8070" stroke-width="1.2" fill="none" opacity="0.4">
+    <ellipse cx="190" cy="466" rx="18" ry="4"/>
+    <ellipse cx="190" cy="466" rx="32" ry="7"/>
+  </g>
+</svg>

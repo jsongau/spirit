@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A tuatara's head and raised dorsal crest at the mouth of a dark, mossy burrow, a pale mark showing faintly on the crown of its head" >
+  <defs>
+    <linearGradient id="tto-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#132522"/>
+      <stop offset="100%" stop-color="#070d0c"/>
+    </linearGradient>
+    <linearGradient id="tto-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7c8f74"/>
+      <stop offset="100%" stop-color="#3a4837"/>
+    </linearGradient>
+    <linearGradient id="tto-crest" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9aab84"/>
+      <stop offset="100%" stop-color="#465241"/>
+    </linearGradient>
+    <radialGradient id="tto-eye3" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#eaf3e2"/>
+      <stop offset="60%" stop-color="#a9c19a"/>
+      <stop offset="100%" stop-color="#a9c19a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="tto-glow" x="-90%" y="-90%" width="280%" height="280%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#tto-bg)"/>
+
+  <!-- thin cold moonlight, far above -->
+  <path d="M255 0 L295 0 L280 160 L235 160 Z" fill="#1c332e" opacity="0.35"/>
+
+  <!-- burrow mouth, dark earth -->
+  <path d="M20 330 C20 260 90 210 190 210 C290 210 340 265 340 335 C340 400 270 435 180 435 C100 435 20 400 20 330 Z" fill="#050b08"/>
+  <path d="M45 330 C45 275 105 235 190 235 C275 235 315 285 315 335 C315 385 260 405 185 405 C115 405 45 380 45 330 Z" fill="#0a1410" opacity="0.9"/>
+
+  <!-- moss at the lip -->
+  <ellipse cx="100" cy="380" rx="60" ry="16" fill="#233a26" opacity="0.6"/>
+  <ellipse cx="270" cy="360" rx="55" ry="15" fill="#1c3020" opacity="0.55"/>
+
+  <!-- a fern frond -->
+  <g stroke="#3a5236" stroke-width="3" fill="none" opacity="0.7">
+    <path d="M40 260 C25 225 30 185 58 155"/>
+    <path d="M46 248 L28 240 M51 227 L32 219 M56 206 L38 198"/>
+  </g>
+
+  <!-- body, settled low -->
+  <path d="M120 340 C98 305 102 258 142 232 C182 206 240 202 275 222 C252 246 240 274 252 306 C261 330 251 356 224 368 C188 383 145 375 120 340 Z" fill="url(#tto-body)"/>
+
+  <!-- dorsal crest -->
+  <g fill="url(#tto-crest)">
+    <path d="M275 222 L289 207 L286 227 Z"/>
+    <path d="M262 214 L274 197 L272 219 Z"/>
+    <path d="M247 210 L257 192 L258 214 Z"/>
+    <path d="M231 210 L238 191 L242 214 Z"/>
+    <path d="M215 213 L219 194 L228 216 Z"/>
+    <path d="M199 219 L200 200 L212 220 Z"/>
+  </g>
+
+  <!-- head -->
+  <path d="M285 226 C300 217 316 217 327 229 C336 240 334 256 321 264 C307 273 287 268 279 254 C274 245 276 234 285 226 Z" fill="url(#tto-body)"/>
+
+  <!-- eye -->
+  <ellipse cx="310" cy="238" rx="6.5" ry="7.5" fill="#0a0e08"/>
+  <circle cx="308" cy="235" r="1.9" fill="#dfe9d2"/>
+
+  <!-- the third eye, pale mark under scale -->
+  <g filter="url(#tto-glow)" opacity="0.85">
+    <circle cx="288" cy="220" r="4.2" fill="url(#tto-eye3)"/>
+  </g>
+  <circle cx="288" cy="220" r="1.8" fill="#3f4a3a" opacity="0.75"/>
+
+  <!-- foreleg on the moss -->
+  <path d="M150 348 C134 356 119 358 104 352" stroke="#3c4a38" stroke-width="13" fill="none" stroke-linecap="round"/>
+  <path d="M104 351 C99 356 96 361 94 367 M104 349 C101 354 99 359 98 364 M106 347 C106 352 106 358 107 363" stroke="#2a352a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+</svg>
