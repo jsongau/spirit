@@ -537,7 +537,7 @@
     .rr-anchor .elkeys{ gap:.55rem; }
   }
   @media(max-width:899px){ .rr-right{ margin-top:1.5rem; } }
-  .rr-right{ scroll-margin-top:calc(var(--saju-stick,112px) + 6px); }
+  .rr-right, #rsec-reading{ scroll-margin-top:calc(var(--saju-stick,112px) + 6px); }
   /* the card flow: wide cards run full width; paired cards live in two independent
      vertical stacks, each packing its own column, so there is never dead space */
   .rr-grid{ display:flex; flex-direction:column; gap:14px; }
@@ -798,6 +798,64 @@
   details.src ol{ margin:0; padding-left:1.3rem; }
   details.src li{ font-size:.86rem; color:var(--muted); line-height:1.5; margin-bottom:.5rem; }
   .tier{ font-family:var(--mono); font-size:.68rem; padding:.05rem .4rem; border-radius:4px; background:var(--accent-soft); color:var(--accent-bright); margin-right:.4rem; }
+
+  /* --- koTerm: every taught Korean word is spelled, clickable, audible. The rom
+         sits directly above its hangul (the .stk pattern), a persistent faint tint
+         plus a speaker glyph on hover/focus mark it as pressable. NO underline. --- */
+  .kt{ display:inline-flex; flex-direction:column; align-items:center; vertical-align:middle; position:relative;
+    padding:.1em .6em .12em .3em; border-radius:.45em; cursor:pointer; line-height:1.05;
+    background:color-mix(in oklab, var(--accent) 7%, transparent); transition:background .15s var(--ease-out); }
+  .kt:hover{ background:color-mix(in oklab, var(--accent) 16%, transparent); }
+  .kt:focus{ outline:none; }
+  .kt:focus-visible{ outline:2px solid var(--accent); outline-offset:1px; background:color-mix(in oklab, var(--accent) 16%, transparent); }
+  .kt-r{ font-family:var(--mono); font-weight:500; font-size:.55em; letter-spacing:.02em; color:var(--accent-bright); line-height:1.1; margin-bottom:.18em; white-space:nowrap; }
+  .kt-g{ font-family:var(--korean); color:var(--accent-bright); line-height:1.12; white-space:nowrap; }
+  .kt:not(.gloss)::after{ content:""; position:absolute; right:.12em; bottom:.28em; width:.5em; height:.5em; background:var(--accent-bright);
+    opacity:0; transition:opacity .15s var(--ease-out); pointer-events:none;
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 9v6h4l5 4V5L8 9H4z'/%3E%3Cpath d='M16.5 8.5a4 4 0 0 1 0 7' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 9v6h4l5 4V5L8 9H4z'/%3E%3Cpath d='M16.5 8.5a4 4 0 0 1 0 7' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat; }
+  .kt:not(.gloss):hover::after, .kt:not(.gloss):focus-visible::after, .kt.saying:not(.gloss)::after{ opacity:.95; }
+  /* a glossed koTerm keeps its data-tip bubble on ::after; the tint + cursor carry the click affordance */
+  .gloss.kt{ cursor:pointer; }
+  .eyebrow .kt, .diffcard .n .kt, .pillar .cap .kt{ font-size:1em; }
+
+  /* the reading region now nests the interactive module sections inside the right
+     column, so the sticky rail runs beside the WHOLE reading, not just the cards */
+  .rr-right .rsec{ border-top:1px solid var(--line); margin-top:1.6rem; padding-top:1.4rem; }
+  .rr-deep{ display:inline-block; margin-top:.7rem; font-family:var(--sans); font-size:.85rem; font-weight:600; color:var(--accent-bright); }
+  .rr-deep:hover{ color:var(--moon); }
+  .rtip-more{ display:inline-block; margin-top:.55rem; font-size:.78rem; font-weight:600; color:var(--accent-bright); }
+  .rtip-more:hover{ color:var(--moon); }
+  #four-pillars, #eight{ scroll-margin-top:calc(var(--saju-nav-top,46px) + 14px); }
+
+  /* --- try-the-hour instrument: the four-pillars intro grids text left, widget right --- */
+  .fp-head{ display:grid; grid-template-columns:minmax(0,1fr) minmax(300px,430px); gap:clamp(1.4rem,3.5vw,3.2rem); align-items:start; }
+  @media(max-width:920px){ .fp-head{ grid-template-columns:1fr; } }
+  .hplay{ background:var(--panel); border:1px solid var(--line-soft); border-top:2px solid var(--accent); border-radius:var(--r-2); padding:1.05rem 1.15rem 1.15rem; }
+  .hplay-eyebrow{ font-family:var(--mono); font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-bright); margin:0 0 .5rem; display:flex; align-items:center; gap:.5rem; }
+  .hplay-intro{ font-size:.85rem; color:var(--muted); line-height:1.55; margin:0 0 .8rem; }
+  .hplay-hero{ display:flex; align-items:flex-start; gap:.9rem; margin:0 0 .85rem; }
+  .hplay-pill{ flex:0 0 auto; text-align:center; background:var(--field); border:1px solid var(--line); border-radius:var(--r-2); padding:.6rem .8rem .5rem; min-width:92px; }
+  .hplay-pill .stk{ margin:0 .1em; }
+  .hplay-pill .stk-g{ font-size:1.9rem; }
+  .hpv-han{ display:block; font-family:var(--korean); font-size:.78rem; color:var(--faint); margin-top:.35rem; padding-top:.3rem; border-top:1px solid var(--line-soft); }
+  .hpv-el{ display:block; font-family:var(--mono); font-size:.56rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-top:.3rem; }
+  .hplay-side{ min-width:0; }
+  .hplay-tag{ display:inline-block; font-family:var(--mono); font-size:.58rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent-bright); border:1px solid var(--accent-soft); border-radius:var(--r-pill); padding:.14rem .5rem; margin-bottom:.4rem; }
+  .hplay-line{ font-size:.82rem; color:var(--body-text); line-height:1.5; margin:0; }
+  .hplay-reset{ margin-top:.5rem; font-family:var(--sans); font-size:.8rem; font-weight:600; color:var(--accent-bright); background:transparent; border:1px solid var(--line); border-radius:var(--r-pill); padding:.28rem .75rem; cursor:pointer; }
+  .hplay-reset:hover{ border-color:var(--accent); color:var(--moon); }
+  .hplay-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:6px; }
+  @media(max-width:420px){ .hplay-grid{ grid-template-columns:repeat(3,1fr); } }
+  .hblock{ display:flex; flex-direction:column; align-items:center; gap:1px; font-family:var(--sans); background:var(--field); border:1px solid var(--line); border-radius:var(--r-1); padding:.4rem .2rem .35rem; cursor:pointer; color:var(--body-text); }
+  .hblock:hover{ border-color:var(--accent); }
+  .hblock:focus-visible{ outline:2px solid var(--accent); outline-offset:1px; }
+  .hblock .hb-r{ font-family:var(--mono); font-size:.52rem; letter-spacing:.04em; color:var(--accent-bright); line-height:1.1; }
+  .hblock .hb-ko{ font-family:var(--korean); font-size:1rem; line-height:1.15; color:var(--ivory); }
+  .hblock .hb-t{ font-family:var(--mono); font-size:.56rem; color:var(--faint); }
+  .hblock[aria-pressed="true"]{ border-color:var(--accent); box-shadow:inset 0 0 0 1px var(--accent-soft); background:color-mix(in oklab, var(--accent) 10%, transparent); }
+  .hblock.mine .hb-t::after{ content:" · you"; color:var(--accent-bright); }
+  .pillar .hp-tag{ position:absolute; inset:0 0 auto auto; margin:.5rem; font-family:var(--mono); font-size:.56rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent-bright); border:1px solid var(--accent-soft); border-radius:var(--r-pill); padding:.1rem .45rem; background:var(--panel); }
 
   .finalcta{ text-align:center; padding-block:clamp(3rem,8vw,5rem); }
   .finalcta h2{ font-size:clamp(2rem,5vw,3.2rem); }
@@ -1307,7 +1365,7 @@
   <!-- BIRTH GATE -->
   <section class="band wrap wrap--cast" id="birth-gate">
     <div class="sec-head">
-      <span class="eyebrow">The Birth Gate · <span class="ko">입문</span></span>
+      <span class="eyebrow">The Birth Gate · <span class="kt" role="button" tabindex="0" data-say="입문" aria-label="Hear 입문 in Korean"><span class="kt-r">immun</span><span class="kt-g">입문</span></span></span>
       <h2>How your chart was resolved</h2>
       <p class="intro">Before anything is cast, we resolve <em>when</em> and <em>where</em> you were born, because Korean Saju corrects the clock to true solar time, and Korea's own standard time has changed across history. Raise your pillars in the panel above and this report shows exactly how each of your eight characters was calculated. This is the calculation, not the fortune, the reading that interprets these characters is the next phase.</p>
     </div>
@@ -1315,16 +1373,19 @@
     <div class="report" id="report" aria-live="polite">
       <p class="placeholder">Your <strong>assumptions &amp; boundary report</strong> appears here after you cast above. It shows which Korean standard meridian applied to your birth date, the true solar time correction for your longitude, and whether you were born close to a boundary where reasonable schools disagree — Ipchun, the late-night Zi hour, or an hour edge. This is the machinery a "Chinese calculator with Korean labels" would quietly get wrong.</p>
     </div>
-    <p class="gate-note">Defaults follow <code>SAJU_CALCULATION_ASSUMPTIONS.md</code>: true solar time on, standard meridian selected by era, Ipchun year boundary, midnight day-rollover with 야자시/조자시 offered as a documented setting. Every disputed rule is logged in the rule conflict matrix rather than silently chosen.</p>
+    <p class="gate-note">Defaults follow <code>SAJU_CALCULATION_ASSUMPTIONS.md</code>: true solar time on, standard meridian selected by era, Ipchun year boundary, midnight day-rollover with <span class="kt" role="button" tabindex="0" data-say="야자시" aria-label="Hear 야자시 in Korean"><span class="kt-r">yajasi</span><span class="kt-g">야자시</span></span>/<span class="kt" role="button" tabindex="0" data-say="조자시" aria-label="Hear 조자시 in Korean"><span class="kt-r">jojasi</span><span class="kt-g">조자시</span></span> offered as a documented setting. Every disputed rule is logged in the rule conflict matrix rather than silently chosen.</p>
   </section>
 
   <!-- FOUR PILLARS -->
   <section class="band wrap" id="four-pillars">
+    <div class="fp-head">
     <div class="sec-head">
-      <span class="eyebrow">The Four Pillars · <span class="ko">사주</span> · <span class="han">四柱</span></span>
+      <span class="eyebrow">The Four Pillars · <span class="kt" role="button" tabindex="0" data-say="사주" aria-label="Hear 사주 in Korean"><span class="kt-r">saju</span><span class="kt-g">사주</span></span> · <span class="han">四柱</span></span>
       <h2>A house raised in four stages</h2>
-      <p class="intro">Your birth splits into four moments: the <b>year</b>, <b>month</b>, <b>day</b>, and <b>hour</b> you were born. Saju turns each moment into one <em>pillar</em>, a Heavenly Stem (<span class="ko">천간</span>, on top) stacked over an Earthly Branch (<span class="ko">지지</span>, below). Four pillars make the eight characters. The Day pillar's stem is <em>you</em>, the Day Master that the whole reading turns around.</p>
-      <p class="pillar-legend">The <span class="lg-stem">Heavenly Stem</span> (<span class="ko">천간</span>) is one of ten and carries an element in its yin or yang form. The <span class="lg-branch">Earthly Branch</span> (<span class="ko">지지</span>) is one of twelve and carries a season and a zodiac animal. A stem and a branch together name one pillar out of sixty possible pairs.</p>
+      <p class="intro">Your birth splits into four moments: the <b>year</b>, <b>month</b>, <b>day</b>, and <b>hour</b> you were born. Saju turns each moment into one <em>pillar</em>, a Heavenly Stem (<span class="kt" role="button" tabindex="0" data-say="천간" aria-label="Hear 천간 in Korean"><span class="kt-r">cheongan</span><span class="kt-g">천간</span></span>, on top) stacked over an Earthly Branch (<span class="kt" role="button" tabindex="0" data-say="지지" aria-label="Hear 지지 in Korean"><span class="kt-r">jiji</span><span class="kt-g">지지</span></span>, below). Four pillars make the eight characters. The Day pillar's stem is <em>you</em>, the Day Master that the whole reading turns around.</p>
+      <p class="pillar-legend">The <span class="lg-stem">Heavenly Stem</span> is one of ten and carries an element in its yin or yang form. The <span class="lg-branch">Earthly Branch</span> is one of twelve and carries a season and a zodiac animal. A stem and a branch together name one pillar out of sixty possible pairs.</p>
+    </div>
+    <div class="hplay" id="hourPlay" hidden></div>
     </div>
 
     <div class="sample-note">
@@ -1334,7 +1395,7 @@
 
     <div class="house" id="house">
       <div class="pillar is-self-no" data-i="0">
-        <span class="cap">Year · <span class="ko">년주</span></span>
+        <span class="cap">Year · <span class="kt" role="button" tabindex="0" data-say="년주" aria-label="Hear 년주 in Korean"><span class="kt-r">nyeonju</span><span class="kt-g">년주</span></span></span>
         <p class="ko-name">Nyeonju</p>
         <p class="en-name">Year</p>
         <div class="blocks"><div class="blk stem"><ruby class="rk">갑<rp>(</rp><rt>Gap</rt><rp>)</rp></ruby></div><div class="blk branch"><ruby class="rk">자<rp>(</rp><rt>Ja</rt><rp>)</rp></ruby></div></div>
@@ -1342,7 +1403,7 @@
         <p class="gov">It speaks to ancestry, early life, and the world you were born into.</p>
       </div>
       <div class="pillar" data-i="1">
-        <span class="cap">Month · <span class="ko">월주</span></span>
+        <span class="cap">Month · <span class="kt" role="button" tabindex="0" data-say="월주" aria-label="Hear 월주 in Korean"><span class="kt-r">wolju</span><span class="kt-g">월주</span></span></span>
         <p class="ko-name">Wolju</p>
         <p class="en-name">Month</p>
         <div class="blocks"><div class="blk stem"><ruby class="rk">병<rp>(</rp><rt>Byeong</rt><rp>)</rp></ruby></div><div class="blk branch"><ruby class="rk">인<rp>(</rp><rt>In</rt><rp>)</rp></ruby></div></div>
@@ -1351,15 +1412,15 @@
       </div>
       <div class="pillar is-self" data-i="2">
         <span class="self">일 · the self</span>
-        <span class="cap">Day · <span class="ko">일주</span></span>
+        <span class="cap">Day · <span class="kt" role="button" tabindex="0" data-say="일주" aria-label="Hear 일주 in Korean"><span class="kt-r">ilju</span><span class="kt-g">일주</span></span></span>
         <p class="ko-name">Ilju</p>
         <p class="en-name">Day</p>
         <div class="blocks"><div class="blk stem"><ruby class="rk">무<rp>(</rp><rt>Mu</rt><rp>)</rp></ruby></div><div class="blk branch"><ruby class="rk">오<rp>(</rp><rt>O</rt><rp>)</rp></ruby></div></div>
         <p class="from">Built from your birth <b>day</b> in the ceaseless 60-day cycle.</p>
-        <p class="gov">The self and your closest partnerships. Its stem is your Day Master (<span class="ko">일간</span>).</p>
+        <p class="gov">The self and your closest partnerships. Its stem is your Day Master (<span class="kt" role="button" tabindex="0" data-say="일간" aria-label="Hear 일간 in Korean"><span class="kt-r">ilgan</span><span class="kt-g">일간</span></span>).</p>
       </div>
       <div class="pillar" data-i="3">
-        <span class="cap">Hour · <span class="ko">시주</span></span>
+        <span class="cap">Hour · <span class="kt" role="button" tabindex="0" data-say="시주" aria-label="Hear 시주 in Korean"><span class="kt-r">siju</span><span class="kt-g">시주</span></span></span>
         <p class="ko-name">Siju</p>
         <p class="en-name">Hour</p>
         <div class="blocks"><div class="blk stem"><ruby class="rk">경<rp>(</rp><rt>Gyeong</rt><rp>)</rp></ruby></div><div class="blk branch"><ruby class="rk">신<rp>(</rp><rt>Sin</rt><rp>)</rp></ruby></div></div>
@@ -1377,23 +1438,23 @@
   <!-- EIGHT CHARACTERS -->
   <section class="band wrap" id="eight">
     <div class="sec-head">
-      <span class="eyebrow">The Eight Characters · <span class="ko">팔자</span></span>
+      <span class="eyebrow">The Eight Characters · <span class="kt" role="button" tabindex="0" data-say="팔자" aria-label="Hear 팔자 in Korean"><span class="kt-r">palja</span><span class="kt-g">팔자</span></span></span>
       <h2>Ten stems, twelve branches</h2>
-      <p class="intro">Every character is drawn from two small alphabets. The ten <em>heavenly stems</em> (<span class="ko">천간</span>, <span class="rom">cheongan</span>) carry the Five Elements in their yin and yang forms. The twelve <em>earthly branches</em> (<span class="ko">지지</span>, <span class="rom">jiji</span>) carry the seasons and the familiar zodiac animals, and each hides one to three stems inside it.</p>
+      <p class="intro">Every character is drawn from two small alphabets. The ten <em>heavenly stems</em> (<span class="kt" role="button" tabindex="0" data-say="천간" aria-label="Hear 천간 in Korean"><span class="kt-r">cheongan</span><span class="kt-g">천간</span></span>) carry the Five Elements in their yin and yang forms. The twelve <em>earthly branches</em> (<span class="kt" role="button" tabindex="0" data-say="지지" aria-label="Hear 지지 in Korean"><span class="kt-r">jiji</span><span class="kt-g">지지</span></span>) carry the seasons and the familiar zodiac animals, and each hides one to three stems inside it.</p>
     </div>
     <div class="diff">
       <div class="diffcard">
-        <span class="n">천간 · 天干</span>
+        <span class="n"><span class="kt" role="button" tabindex="0" data-say="천간" aria-label="Hear 천간 in Korean"><span class="kt-r">cheongan</span><span class="kt-g">천간</span></span> · 天干</span>
         <h3>The ten Heavenly Stems</h3>
         <p><span class="han">甲 乙 丙 丁 戊 己 庚 辛 壬 癸</span><br>Wood, Fire, Earth, Metal, Water, each as a yang and a yin stem. Your Day Master is one of these ten, and the season it was born into decides whether it stands strong or thin.</p>
       </div>
       <div class="diffcard">
-        <span class="n">지지 · 地支</span>
+        <span class="n"><span class="kt" role="button" tabindex="0" data-say="지지" aria-label="Hear 지지 in Korean"><span class="kt-r">jiji</span><span class="kt-g">지지</span></span> · 地支</span>
         <h3>The twelve Earthly Branches</h3>
         <p><span class="han">子 丑 寅 卯 辰 巳 午 未 申 酉 戌 亥</span><br>The Rat through the Pig, but in Saju they are seasons and hours, not just animals. Branches combine, clash, and punish one another, and those interactions drive the timing of a life.</p>
       </div>
       <div class="diffcard">
-        <span class="n">지장간 · 地藏干</span>
+        <span class="n"><span class="kt" role="button" tabindex="0" data-say="지장간" aria-label="Hear 지장간 in Korean"><span class="kt-r">jijanggan</span><span class="kt-g">지장간</span></span> · 地藏干</span>
         <h3>The hidden stems</h3>
         <p>Inside each branch, one to three stems lie hidden, the <span class="rom">jijanggan</span>. They are why a chart is deeper than its eight visible characters. We store their traditional order and seasonal role, never a made-up percentage dressed as science.</p>
       </div>
@@ -1419,17 +1480,17 @@
     </div>
     <div class="diff">
       <div class="diffcard">
-        <span class="n">01 · <span class="ko">진태양시</span></span>
+        <span class="n">01 · <span class="kt" role="button" tabindex="0" data-say="진태양시" aria-label="Hear 진태양시 in Korean"><span class="kt-r">jintaeyangsi</span><span class="kt-g">진태양시</span></span></span>
         <h3>True solar time is a Korean default</h3>
         <p>Korea's clock runs on the 135°E meridian, but Seoul sits near 127°E, so the clock is about 32 minutes ahead of the real sun. Korean Manseryeok subtracts that before setting the hour pillar. Standard Chinese practice on Beijing time doesn't, and near an hour boundary that flips the whole hour pillar.</p>
       </div>
       <div class="diffcard">
-        <span class="n">02 · <span class="ko">표준시 역사</span></span>
+        <span class="n">02 · <span class="kt" role="button" tabindex="0" data-say="표준시 역사" aria-label="Hear 표준시 역사 in Korean"><span class="kt-r">pyojunsi yeoksa</span><span class="kt-g">표준시 역사</span></span></span>
         <h3>Korea's meridian changed by era</h3>
         <p>Korea used GMT+8:30 from 1908, GMT+9 under Japanese rule from 1912, back to GMT+8:30 from 1954 to 1961, then GMT+9 again. A correct engine picks the meridian by <em>birth date</em>. The same wall-clock birth in 1955 and 1965 gets a different true solar time.</p>
       </div>
       <div class="diffcard">
-        <span class="n">03 · <span class="ko">야자시 · 조자시</span></span>
+        <span class="n">03 · <span class="kt" role="button" tabindex="0" data-say="야자시" aria-label="Hear 야자시 in Korean"><span class="kt-r">yajasi</span><span class="kt-g">야자시</span></span> · <span class="kt" role="button" tabindex="0" data-say="조자시" aria-label="Hear 조자시 in Korean"><span class="kt-r">jojasi</span><span class="kt-g">조자시</span></span></span>
         <h3>The late-night day dispute</h3>
         <p>The traditional day starts at 23:00, the civil day at midnight. For births in that final hour, Korean schools genuinely disagree on which day's Day Master applies, which is why two apps can give the same person two charts. We surface the choice instead of hiding it.</p>
       </div>
@@ -1439,7 +1500,7 @@
   <!-- SAGE ACADEMY -->
   <section class="band wrap" id="academy">
     <div class="sec-head">
-      <span class="eyebrow">Sage Academy · <span class="ko">명리학당</span></span>
+      <span class="eyebrow">Sage Academy · <span class="kt" role="button" tabindex="0" data-say="명리학당" aria-label="Hear 명리학당 in Korean"><span class="kt-r">myeongnihakdang</span><span class="kt-g">명리학당</span></span></span>
       <h2>Learn to read it yourself</h2>
       <p class="intro">This hub is a school hiding inside a reading. Work the drills and you'll derive a chart the way a reader does, stems and branches, the five-element relations, the Ten Gods, seasonal command, strength, and timing. You climb the seven ranks by getting fresh questions right, never by clicking through. Cast your chart above and some drills will use it; the rest draw on varied sample charts so you learn the rule, not one example.</p>
     </div>
@@ -1741,6 +1802,20 @@
   // one delegated handler for every pronounce button on the page
   document.addEventListener("click", function(e){ var t=e.target; while(t && t.nodeType===1){ if(t.classList && t.classList.contains("say")){ sayKo(t.getAttribute("data-say"), t); return; } t=t.parentNode; } });
 
+  // ---- koTerm: a taught Korean word, spelled above (rom) and audible on click.
+  // The chime IS the speech; no extra tick. Keyboard: Enter/Space speak too.
+  // Never wraps decorative hangul or anything already inside a .say control.
+  function koTerm(ko, rom){
+    return '<span class="kt" role="button" tabindex="0" data-say="'+ko+'" aria-label="Hear '+ko+' in Korean">'+
+      '<span class="kt-r">'+rom+'</span><span class="kt-g">'+ko+'</span></span>';
+  }
+  document.addEventListener("click", function(e){ var t=e.target; while(t && t.nodeType===1){ if(t.classList && t.classList.contains("kt")){ sayKo(t.getAttribute("data-say"), t); return; } t=t.parentNode; } });
+  document.addEventListener("keydown", function(e){
+    if(e.key!=="Enter" && e.key!==" ") return;
+    var t=e.target;
+    if(t && t.classList && t.classList.contains("kt")){ e.preventDefault(); sayKo(t.getAttribute("data-say"), t); }
+  });
+
   // gentle ticks on rewarding opens: the floater (only when it opens), and the
   // "why this" / cosmic-clock disclosures. Clicks only, never hover; ZodiTick is
   // itself silent in calm mode.
@@ -1870,10 +1945,10 @@
   function stak(ch,rom,cls){ return '<span class="stk'+(cls?" "+cls:"")+'"><span class="stk-r">'+rom+'</span><span class="stk-g">'+ch+'</span></span>'; }
   // life-area lines mirror the teaching section's own copy (page doctrine, not new claims)
   var PILLAR_ROLE={
-    "Year 년":  ["Year pillar · 년주 Nyeonju",  "It speaks to ancestry, early life, and the world you were born into."],
-    "Month 월": ["Month pillar · 월주 Wolju", "It carries the season, the single strongest influence on the whole chart."],
-    "Day 일":   ["Day pillar · 일주 Ilju",   "It holds the self and your closest partnerships."],
-    "Hour 시":  ["Hour pillar · 시주 Siju",  "It speaks to later years, output, and legacy."]
+    "Year 년":  ["Year pillar · "+koTerm('년주','Nyeonju'),  "It speaks to ancestry, early life, and the world you were born into."],
+    "Month 월": ["Month pillar · "+koTerm('월주','Wolju'), "It carries the season, the single strongest influence on the whole chart."],
+    "Day 일":   ["Day pillar · "+koTerm('일주','Ilju'),   "It holds the self and your closest partnerships."],
+    "Hour 시":  ["Hour pillar · "+koTerm('시주','Siju'),  "It speaks to later years, output, and legacy."]
   };
   // Structured tooltip on a cast pillar: character, role, yin/yang element, one hedged
   // sentence, and the branch's hidden stems (지장간) as the engine exposes them.
@@ -1896,7 +1971,8 @@
     return '<div class="rtip" role="tooltip">'+
       '<div class="rtip-head"><span class="rtip-char">'+stak(P.stem.ko,P.stem.rom)+stak(P.branch.ko,P.branch.rom)+'</span><span class="rtip-role">'+role[0]+'</span></div>'+
       '<div class="rtip-sub">'+P.stem.char+P.branch.char+' · '+(P.stem.yin?'yin':'yang')+' '+P.stem.element+' over '+P.branch.element+' · '+P.branch.animal+'</div>'+
-      '<p>'+meaning+'</p>'+hidHtml+'</div>';
+      '<p>'+meaning+'</p>'+hidHtml+
+      '<a class="rtip-more" href="#four-pillars">Walk the whole pillar system</a></div>';
   }
   function pill(key,P,changed,dayIdx){
     if(!P) return "";
@@ -1925,17 +2001,115 @@
         blocks.innerHTML='<div class="blk stem">·</div><div class="blk branch">·</div>'; pil.classList.remove("raised");
       }
     });
+    // The pillars above are the reader's own now: the sample banner retires quietly
+    // (no banner, no extra button) and the try-the-hour instrument beside the intro
+    // carries the live context instead.
     var note=document.querySelector(".sample-note");
-    if(note){
-      note.innerHTML='<p><b>These are your pillars</b>, cast from your birth on '+esc(chart.input.date)+
-        (chart.three_pillar_mode?'. Your hour pillar is still open — slide the time bar at the bottom to try each hour and watch your fourth pillar land.':'.')+
-        ' The Day pillar’s stem <b>'+P.day.stem.ko+'</b> is your Day Master.</p>'+
-        '<button class="btn" id="teachChange" type="button">Change my birth details</button>';
-      var nb=document.getElementById("teachChange"); if(nb) nb.addEventListener("click",function(){ var f=document.getElementById("start")||document.getElementById("gateForm"); if(f&&f.scrollIntoView){try{f.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});}catch(e){f.scrollIntoView();}} var mk=document.getElementById("sMask"); if(mk){try{mk.focus({preventScroll:true});}catch(e){}} });
-    }
+    if(note) note.style.display="none";
     var demo=document.querySelector("#four-pillars .cta-row"); if(demo) demo.style.display="none";
     var more=document.querySelector(".pillar-more"); if(more) more.style.display="none";
+    // hand the fresh cast to the hour instrument and drop any exploration
+    HP.chart=chart; HP.exploring=null; HP.houseHour=null; hpRender();
   }
+
+  // ---- Try the hour: the display-layer instrument beside the four-pillars intro.
+  // It never writes the store and never re-renders the reading. Each exploration is
+  // recast through the engine's own hourBranchOverride (the same path its boundary
+  // variants use), so no pillar math is forked here. The teaching Hour card below
+  // mirrors the explored hour with an "exploring" tag and a reset.
+  var HP={ chart:null, exploring:null, houseHour:null };
+  // six rising pentatonic tones (E5 G5 A5 C6 D6 E6) walked upward across the twelve
+  // blocks, one step per two blocks, all inside ZodiTick's 600-1400Hz band
+  var HP_TONES=[659.25,783.99,880.00,1046.50,1174.66,1318.51];
+  function hpInput(){
+    var c=HP.chart;
+    // no cast yet: a fixed sample birth whose resting hour matches the sample cards (경신)
+    if(!c || !c.input) return { date:"1984-02-14", time:"16:00", calendar:"solar" };
+    // the same input the engine echoed for the reader's cast; the branch below is
+    // forced, so an unknown birth time borrows noon purely to steady the day pillar
+    return { date:c.input.date, time:c.input.time||"12:00", calendar:c.input.calendar||"solar" };
+  }
+  function hpCast(branchIdx){
+    var E=window.SajuEngine; if(!E || !E.castChart) return null;
+    var prof={ dayBoundary:(HP.chart && HP.chart.rule_profile && HP.chart.rule_profile.dayBoundary)||"midnight" };
+    var opts=window.SajuLunar?{lunar:window.SajuLunar}:{};
+    opts.hourBranchOverride=branchIdx;
+    var out=null; try{ out=E.castChart(hpInput(), prof, opts); }catch(e){ out=null; }
+    return (out && out.pillars) ? out.pillars.hour : null;
+  }
+  function hpActualHour(){ return (HP.chart && HP.chart.pillars && HP.chart.pillars.hour) || null; }
+  // the index the instrument rests on when nothing is being explored
+  function hpRestIdx(){ var a=hpActualHour(); if(a) return a.branch.index; return HP.chart?null:8; }
+  function hpRender(){
+    var box=document.getElementById("hourPlay"); if(!box || !window.SajuEngine) return;
+    var E=window.SajuEngine, actual=hpActualHour(), mineIdx=actual?actual.branch.index:null;
+    var expIdx=HP.exploring, restIdx=hpRestIdx();
+    var showIdx = expIdx!=null ? expIdx : restIdx;
+    var hp = (expIdx==null && actual) ? actual : (showIdx!=null ? hpCast(showIdx) : null);
+    var line;
+    if(!HP.chart) line='No chart cast yet, so this plays on the page&#8217;s sample chart. Cast yours in the Birth Gate above.';
+    else if(mineIdx==null) line='Your birth time is unknown, so every block here is exploration; your saved chart keeps its open hour.';
+    else if(expIdx!=null) line='An exploration only. Your saved birth and your reading stay exactly as cast.';
+    else line='Resting on your own cast hour. Pick any block to try another; nothing is saved.';
+    var pillHtml = hp
+      ? '<div class="hplay-pill">'+
+          stak(hp.stem.ko,hp.stem.rom,elClass(hp.stem.element))+stak(hp.branch.ko,hp.branch.rom,elClass(hp.branch.element))+
+          '<span class="hpv-han">'+hp.stem.char+hp.branch.char+'</span>'+
+          '<span class="hpv-el">'+hp.stem.element+' over '+hp.branch.element+'</span>'+
+        '</div>'
+      : '<div class="hplay-pill"><span class="hpv-el">hour open</span></div>';
+    var blocks='';
+    for(var i=0;i<12;i++){
+      var B=E.branchObj(i), rg=branchHours(i), on=(i===showIdx);
+      blocks+='<button type="button" class="hblock'+(mineIdx===i?' mine':'')+'" data-b="'+i+'" aria-pressed="'+(on?'true':'false')+'" aria-label="'+B.ko+'시 '+B.rom+'si, '+rg.s+' to '+rg.e+'">'+
+        '<span class="hb-r">'+B.rom+'si</span><span class="hb-ko">'+B.ko+'시</span><span class="hb-t">'+rg.s+'–'+rg.e+'</span></button>';
+    }
+    box.innerHTML='<p class="hplay-eyebrow">Try the hour · '+koTerm('시주','Siju')+'</p>'+
+      '<p class="hplay-intro">The hour pillar is your day stem set over one of twelve two-hour blocks. Pick a block and the Hour card below follows.</p>'+
+      '<div class="hplay-hero">'+pillHtml+
+        '<div class="hplay-side">'+
+          '<span class="hplay-tag"'+(expIdx!=null?'':' hidden')+'>exploring</span>'+
+          '<p class="hplay-line">'+line+'</p>'+
+          '<button class="hplay-reset" id="hpReset" type="button"'+(expIdx!=null?'':' hidden')+'>'+(mineIdx!=null?'Back to my hour':'Back to the resting hour')+'</button>'+
+        '</div>'+
+      '</div>'+
+      '<div class="hplay-grid" role="group" aria-label="The twelve branch hours">'+blocks+'</div>';
+    box.hidden=false;
+    hpHouse();
+  }
+  // mirror the exploration onto the teaching Hour card, display only, reversible
+  function hpHouse(){
+    var pils=document.querySelectorAll("#house .pillar"); var pil=pils && pils[3]; if(!pil) return;
+    var blocks=pil.querySelector(".blocks"); if(!blocks) return;
+    var tag=pil.querySelector(".hp-tag");
+    if(HP.exploring==null){
+      if(HP.houseHour!=null){ blocks.innerHTML=HP.houseHour; HP.houseHour=null; }
+      if(tag && tag.parentNode) tag.parentNode.removeChild(tag);
+      return;
+    }
+    var hp=hpCast(HP.exploring); if(!hp) return;
+    if(HP.houseHour==null) HP.houseHour=blocks.innerHTML;
+    blocks.innerHTML='<div class="blk stem" style="color:'+WX_COLORS[hp.stem.element]+'">'+rk(hp.stem.ko,hp.stem.rom)+'</div>'+
+      '<div class="blk branch" style="color:'+WX_COLORS[hp.branch.element]+'">'+rk(hp.branch.ko,hp.branch.rom)+'</div>';
+    pil.classList.add("raised");
+    if(!tag){ var t=document.createElement("span"); t.className="hp-tag"; t.textContent="exploring"; pil.appendChild(t); }
+  }
+  document.addEventListener("click", function(e){
+    var t=e.target;
+    while(t && t.nodeType===1){
+      if(t.id==="hpReset"){ HP.exploring=null; hpRender(); ZT(); return; }
+      if(t.classList && t.classList.contains("hblock")){
+        var b=parseInt(t.getAttribute("data-b"),10); if(isNaN(b)) return;
+        HP.exploring = (b===hpRestIdx()) ? null : b;
+        hpRender();
+        ZT(HP_TONES[Math.floor(b/2)]);   // pentatonic step, rising across the day
+        return;
+      }
+      t=t.parentNode;
+    }
+  });
+  hpRender(); // sample mode on load; every fresh cast re-feeds it via syncTeaching
+
   function grid(P,changed){
     changed = changed || [];
     var di = (P.day && P.day.stem) ? P.day.stem.index : null;
@@ -2182,13 +2356,20 @@
     var tip=String(GTIP[id]||"").replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
     return '<span class="gloss" tabindex="0" data-tip="'+tip+'">'+label+'</span>';
   }
+  // glossed koTerm: a bare-hangul glossary term becomes spelled (rom above) AND
+  // audible (click speaks, via the .kt delegate) while keeping its data-tip bubble.
+  function glk(id, ko, rom){
+    var tip=String(GTIP[id]||"").replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
+    return '<span class="gloss kt" role="button" tabindex="0" data-tip="'+tip+'" data-say="'+ko+'" aria-label="Hear '+ko+' in Korean">'+
+      '<span class="kt-r">'+rom+'</span><span class="kt-g">'+ko+'</span></span>';
+  }
   function rrChip(k,v){ return '<div class="rr-chip"><span class="rr-chip-k">'+k+'</span><span class="rr-chip-v">'+v+'</span></div>'; }
   function summaryChips(chart){
     var dm=chart.day_master, P=chart.pillars, out='';
-    out+=rrChip(gl('ilgan','Day Master · 일간'),'<span class="ko">'+esc(dm.ko)+'</span> '+esc(dm.rom)+' · '+(dm.yin?"yin":"yang")+' '+dm.element);
-    if(chart.strength && chart.strength.verdict) out+=rrChip(gl('eokbu','Strength · 억부'), esc(chart.strength.verdict.en)+' · <span class="ko">'+esc(chart.strength.verdict.ko)+'</span>');
+    out+=rrChip('Day Master · '+glk('ilgan','일간','ilgan'), koTerm(dm.ko, dm.rom)+' · '+(dm.yin?"yin":"yang")+' '+dm.element);
+    if(chart.strength && chart.strength.verdict) out+=rrChip('Strength · '+glk('eokbu','억부','eokbu'), esc(chart.strength.verdict.en)+' · '+koTerm(chart.strength.verdict.ko, VERDICT_ROM[chart.strength.verdict.ko]||''));
     else if(chart.climate && chart.climate.season) out+=rrChip('Season', esc(chart.climate.season.name));
-    if(P.hour && P.hour.branch){ var rg=branchHours(P.hour.branch.index); out+=rrChip('Hour · 시','<span class="ko">'+esc(P.hour.branch.ko)+'시</span> '+esc(P.hour.branch.rom)+' · '+rg.s+'–'+rg.e); }
+    if(P.hour && P.hour.branch){ var rg=branchHours(P.hour.branch.index); out+=rrChip('Hour · 시', koTerm(P.hour.branch.ko+'시', P.hour.branch.rom+'si')+' · '+rg.s+'–'+rg.e); }
     return '<div class="rr-chips">'+out+'</div>';
   }
   // Key Korean terms in card headings: hangul + Revised Romanization + a pronounce
@@ -2203,7 +2384,7 @@
   function cardHowTo(){
     return rrCard('cinnabar','How to read this · <span class="ko">읽는 법</span> <span class="rr-rom">ingneun beop</span>',
       '<p class="rr-p">Start at the Day pillar on the chart beside this. Its top character is your '+gl('ilgan','Day Master (<span class="ko">일간</span> Ilgan)')+': that one glyph stands for you, and the other seven are read against it, as support, drain, pressure, or fuel.</p>'+
-      '<p class="rr-p">Each pillar stacks a Heavenly Stem ('+gl('cheongan','천간')+' cheongan) over an Earthly Branch ('+gl('jiji','지지')+' jiji). Hover or tab to any pillar to open it: its role, its yin or yang element, and the stems hidden inside its branch.</p>'+
+      '<p class="rr-p">Each pillar stacks a Heavenly Stem ('+glk('cheongan','천간','cheongan')+') over an Earthly Branch ('+glk('jiji','지지','jiji')+'). Hover or tab to any pillar to open it: its role, its yin or yang element, and the stems hidden inside its branch.</p>'+
       '<p class="rr-p">The chart is the calculation; these cards are one way of reading it. Open "why this" under any line to see the evidence it stands on.</p>');
   }
   // The self card: the Day Master glyph large, its element, and the identity claims.
@@ -2227,13 +2408,13 @@
       '<div class="rr-stat drain"><b>'+num1(s.weakening_weight)+'</b><span>weight that drains</span></div>'+
       '<div class="rr-stat"><b>'+s.index+'</b><span>support index of 100</span></div></div>';
     var facts='<ul class="rr-facts">'+
-      '<li>'+(s.deukryeong?'Born in season':'Born out of season')+' · <span class="ko">득령</span> <span class="rr-krom">deukryeong</span></li>'+
-      '<li>'+(s.deukji?'Rooted at its own day branch':'No root at its own day branch')+' · <span class="ko">득지</span> <span class="rr-krom">deukji</span></li>'+
-      '<li>'+(s.deukse?'Allied overall':'Outnumbered overall')+' · <span class="ko">득세</span> <span class="rr-krom">deukse</span></li></ul>';
+      '<li>'+(s.deukryeong?'Born in season':'Born out of season')+' · '+koTerm('득령','deukryeong')+'</li>'+
+      '<li>'+(s.deukji?'Rooted at its own day branch':'No root at its own day branch')+' · '+koTerm('득지','deukji')+'</li>'+
+      '<li>'+(s.deukse?'Allied overall':'Outnumbered overall')+' · '+koTerm('득세','deukse')+'</li></ul>';
     return rrCard('earth', termEyebrow('Strength','억부','Eokbu'),
       '<p class="rr-verdict">'+esc(s.verdict.en)+' · <span class="ko">'+esc(s.verdict.ko)+'</span> <span class="rr-rom">'+rom+'</span> '+esc(s.verdict.han)+' '+sayBtn(s.verdict.ko)+'</p>'+
       stats+
-      '<p class="rr-p">By the '+gl('eokbu','억부')+' method, three classical inputs set the verdict:</p>'+facts+
+      '<p class="rr-p">By the '+glk('eokbu','억부','eokbu')+' method, three classical inputs set the verdict:</p>'+facts+
       '<p class="rr-note">One lens among several, not a grade. The Elements section further down shows the full meter and reasoning.</p>');
   }
   // Elements card: the visible tally as chunky colored chips, plus the steadying element.
@@ -2261,7 +2442,7 @@
     }).join('')+'</ul>':'';
     var claims=(by.Activation||[]).map(claimHtml).join("");
     return rrCard('metal', termEyebrow('Ten Gods','십신','Sipsin'),
-      '<p class="rr-p">The '+gl('sipsin','Ten Gods (<span class="ko">십신</span>)')+' are ten names for how each visible stem relates to your '+gl('ilgan','Day Master')+'. Relations to read, not verdicts about people in your life.</p>'+
+      '<p class="rr-p">The '+gl('sipsin','Ten Gods')+' ('+glk('sipsin','십신','sipsin')+') are ten names for how each visible stem relates to your '+gl('ilgan','Day Master')+'. Relations to read, not verdicts about people in your life.</p>'+
       rows+claims);
   }
   // Engine-backed depth for the future card: the decade you are inside right now, and
@@ -2281,13 +2462,13 @@
   }
   // The decade you are inside right now, and the one after it.
   function cardSeason(chart, by){
-    var body='<p class="rr-p">The '+gl('daeun','<span class="ko">대운</span>')+' lay ten-year seasons over the fixed chart, changing weather rather than fate.</p>';
+    var body='<p class="rr-p">The '+glk('daeun','대운','daeun')+' lay ten-year seasons over the fixed chart, changing weather rather than fate.</p>';
     body+=(by.Choice||[]).map(claimHtml).join("");
     if(chart.daeun || chart.daeun_both){
       body+=daeunNow(chart);
       body+='<p class="rr-note">The full timeline runs in the river card below.</p>';
     } else {
-      body+='<p class="rr-note">Your ten-year timeline ('+gl('daeun','<span class="ko">대운</span>')+' Daeun) was not cast, because no luck direction was chosen. Pick one under <a href="#start">Luck direction</a> in the birth form and cast again; everything else in this reading holds as it is.</p>';
+      body+='<p class="rr-note">Your ten-year timeline ('+glk('daeun','대운','daeun')+') was not cast, because no luck direction was chosen. Pick one under <a href="#start">Luck direction</a> in the birth form and cast again; everything else in this reading holds as it is.</p>';
     }
     return rrCard('water', termEyebrow('Current season of life','대운','Daeun'), body);
   }
@@ -2307,15 +2488,15 @@
       if(cl.temp.en!=="temperate") lean.push(cl.temp.en);
       if(cl.damp.en!=="balanced") lean.push(cl.damp.en);
       if(lean.length){
-        body+='<span class="rr-caution">The chart’s climate ('+gl('johu','조후')+') leans '+lean.join(" and ")+
+        body+='<span class="rr-caution">The chart’s climate ('+glk('johu','조후','johu')+') leans '+lean.join(" and ")+
           ' (heat '+cl.heat+', moisture '+cl.moisture+' on the engine’s scale, from a '+esc(cl.season.name)+' month branch)'+
           (cl.primary?'; a little more <b class="'+elClass(cl.primary)+'">'+esc(W.ko[cl.primary])+' '+esc(cl.primary)+'</b>'+(cl.primaryStem?', classically '+esc(cl.primaryStem):'')+', tends to steady the pacing':'')+'.</span>';
       } else {
-        body+='<span class="rr-caution">The climate ('+gl('johu','조후')+') reads close to temperate (heat '+cl.heat+', moisture '+cl.moisture+' on the engine’s scale); no strong lean asks for correcting.</span>';
+        body+='<span class="rr-caution">The climate ('+glk('johu','조후','johu')+') reads close to temperate (heat '+cl.heat+', moisture '+cl.moisture+' on the engine’s scale); no strong lean asks for correcting.</span>';
       }
     }
     if(chart.strength && chart.strength.extreme){
-      body+='<span class="rr-caution">The strength read sits at an extreme ('+chart.strength.index+' of 100), where the '+gl('eokbu','억부')+' method itself is least reliable; a chart this one-sided may follow the 종격 follow-pattern instead. Hold the verdict loosely.</span>';
+      body+='<span class="rr-caution">The strength read sits at an extreme ('+chart.strength.index+' of 100), where the '+glk('eokbu','억부','eokbu')+' method itself is least reliable; a chart this one-sided may follow the 종격 follow-pattern instead. Hold the verdict loosely.</span>';
     }
     var ws=chart.warnings||[];
     ws.forEach(function(w){ body+='<span class="rr-caution">'+esc(w.message)+'</span>'; });
@@ -2360,6 +2541,11 @@
 
   // result section mini-nav: smooth jump + scroll-spy active highlighting
   function wireResultNav(){
+    // the rail's quiet deep-dive link + each pillar tooltip's last line both walk
+    // to the four-pillars teaching section with the page's own smooth scroll
+    Array.prototype.forEach.call(document.querySelectorAll("#report .rr-deep, #report .rtip-more"), function(a){
+      a.addEventListener("click", function(e){ e.preventDefault(); goto("#four-pillars"); });
+    });
     var clickables=Array.prototype.slice.call(document.querySelectorAll(".rnav a, .rsec-next"));
     clickables.forEach(function(a){ a.addEventListener("click",function(e){ e.preventDefault(); ZT(); if(a.getAttribute("data-goto")==="birth-gate") expandGate(); var t=document.getElementById(a.getAttribute("data-goto")); if(t) t.scrollIntoView({behavior:reduce?"auto":"smooth", block:"start"}); }); });
     var navlinks=Array.prototype.slice.call(document.querySelectorAll(".rnav a"));
@@ -2416,20 +2602,28 @@
     Array.prototype.forEach.call(document.querySelectorAll("#report .rpill"), function(p,i){
       var tip=p.querySelector(".rtip");
       var o={ el:p, p:p, tip:tip, close:function(){
+        cancelClose();
         p.classList.remove("tip-open");
         if(tip){ tip.classList.remove("is-float"); tip.style.left=tip.style.top=tip.style.width=""; if(tip.parentNode && tip.parentNode!==p) p.appendChild(tip); }
         if(_tipOpen===o) _tipOpen=null;
         if(pop) pop.closed(o);
       } };
       function openTip(){
+        cancelClose();
         if(p.classList.contains("tip-open")) return;
         p.classList.add("tip-open");
         if(tip && document.body){ document.body.appendChild(tip); placeTip(p,tip); tip.classList.add("is-float"); _tipOpen=o; }
         if(pop) pop.open(o);
         ZT(PILLAR_FREQ[i%4]);
       }
+      // a short grace period bridges the gap between pillar and tooltip, so the
+      // "walk the whole pillar system" link inside the tip stays reachable by mouse
+      var closeTimer=null;
+      function cancelClose(){ if(closeTimer){ clearTimeout(closeTimer); closeTimer=null; } }
+      function scheduleClose(){ cancelClose(); closeTimer=setTimeout(function(){ o.close(); }, 260); }
       p.addEventListener("mouseenter", openTip);
-      p.addEventListener("mouseleave", function(){ o.close(); });
+      p.addEventListener("mouseleave", scheduleClose);
+      if(tip){ tip.addEventListener("mouseenter", cancelClose); tip.addEventListener("mouseleave", function(){ o.close(); }); }
       p.addEventListener("focusin", openTip);
       p.addEventListener("focusout", function(e){ if(!e.relatedTarget || !p.contains(e.relatedTarget)) o.close(); });
     });
@@ -2531,7 +2725,7 @@
     var sw=d.sewoon;
     // Hangul-first: 병오 leads, 丙午 is the classical companion; ten-god keeps the
     // page's English-frame order (Resource 인성) used by every other renderer here.
-    return 'Luck pillars run <b>'+d.direction+'</b>. The first pillar begins at age <b>'+d.daesu+'</b> ('+d.start_precise.years+'y '+d.start_precise.months+'m from birth to the bounding solar term ÷ 3). This year, <b>'+sw.year+' '+sw.stem.ko+sw.branch.ko+' <span class="hanja">'+sw.stem.char+sw.branch.char+'</span></b>, overlays as your '+gl('sewoon','세운')+' Sewoon, a <span class="tg">'+sw.ten_god.en+' '+sw.ten_god.ko+'</span> year.';
+    return 'Luck pillars run <b>'+d.direction+'</b>. The first pillar begins at age <b>'+d.daesu+'</b> ('+d.start_precise.years+'y '+d.start_precise.months+'m from birth to the bounding solar term ÷ 3). This year, <b>'+sw.year+' '+sw.stem.ko+sw.branch.ko+' <span class="hanja">'+sw.stem.char+sw.branch.char+'</span></b>, overlays as your '+glk('sewoon','세운','sewoon')+' Sewoon, a <span class="tg">'+sw.ten_god.en+' '+sw.ten_god.ko+'</span> year.';
   }
   function renderDaeun(i){
     if(!_dae) return;
@@ -2807,7 +3001,7 @@
     // wide cards (the river, the account banner) run full width between the rows.
     // The account banner sits at the very END of the flow, after What to watch and
     // the crossing card.
-    var cardsHtml = '<div class="rr-grid">'+
+    var cardsHtml = '<div class="rr-grid" id="rsec-reading">'+
       '<div class="rr-duo">'+
         '<div class="rr-stack">'+cardHowTo()+cardStrength(chart)+cardTenGods(chart, by)+'</div>'+
         '<div class="rr-stack">'+cardDayMaster(chart, by)+cardElements(chart, by)+cardSeason(chart, by)+'</div>'+
@@ -2831,7 +3025,7 @@
       '<span class="ko">절기</span> <span class="rr-rom">Jeolgi</span>'+sayBtn('절기'),
       'The cosmic clock',
       'The two solar-term instants that bound your chart. Open a row for the exact minute.',
-      dlxRow(b.ipchun,'This exact instant opens the Saju year. The year pillar counts from 입춘 Ipchun, not from January 1.')+
+      dlxRow(b.ipchun,'This exact instant opens the Saju year. The year pillar counts from '+koTerm('입춘','Ipchun')+', not from January 1.')+
       dlxRow(b.month_start,'This solar term opens your chart month. The month pillar follows the true season, not the calendar month.'));
 
     // compare block, only when the birth sits on a boundary
@@ -2852,7 +3046,7 @@
       rows += row("Hour", "unknown — three-pillar cast");
     }
     rows += row("Year boundary", "Ipchun (입춘), the exact solar-term instant");
-    rows += row("Day rollover", chart.rule_profile.dayBoundary==="zi2300" ? "zi 23:00 (조자시)" : "midnight ("+gl('yajasi','야자시')+"/조자시 available)");
+    rows += row("Day rollover", chart.rule_profile.dayBoundary==="zi2300" ? "zi 23:00 (조자시)" : "midnight ("+glk('yajasi','야자시','yajasi')+"/조자시 available)");
 
     var ws = chart.warnings || [];
     var flagHtml = ws.length ? '<p class="sub" style="margin-top:1.2rem">Boundary flags</p><div>'+ws.map(function(w){
@@ -2872,19 +3066,10 @@
       '<a data-goto="rsec-climate">Climate</a>'+
       '<a data-goto="rsec-calc">Calculation</a></nav>';
 
-    report.classList.add("report--cast"); // drop the panel box: the reading runs open
-    report.innerHTML = nav +
-      sec("rsec-chart",
-        shareCardHtml(chart, solarDate)+
-        '<div class="rr-cols">'+
-          '<div class="rr-left"><div class="rr-anchor">'+
-            chipsHtml+
-            '<p class="sub">Your Saju · '+(three?"three pillars, one to go":"four pillars")+'</p>'+
-            chartHtml+dmHtml+lunarLineHtml+solarChainHtml(chart)+balHtml+
-          '</div></div>'+
-          '<div class="rr-right" id="rsec-reading">'+cardsHtml+'</div>'+
-        '</div>',
-        "rsec-elements","Your elements") +
+    // Everything on the right (card grid, interactive modules, calculation, the end
+    // CTA inside the grid) lives INSIDE .rr-right, so the sticky rail's column runs
+    // the full height of the reading and accompanies it to the end.
+    var rightHtml = cardsHtml +
       sec("rsec-elements",
         modCard('cinnabar','<span class="ko">오행</span> <span class="rr-rom">Ohaeng</span>'+sayBtn('오행'),
           'The five elements at work',
@@ -2907,6 +3092,21 @@
         cmpHtml+flagHtml+
         '<p class="gate-note" style="margin-top:1.1rem">These pillars come from the deterministic engine (saju-engine 1.0.0), which passes its boundary test suite. Every step is in the audit trace; nothing here is invented.</p>'+
         '<button class="rsec-next" data-goto="birth-gate" style="margin-top:1.4rem">Cast another chart</button>',
+        null,null);
+
+    report.classList.add("report--cast"); // drop the panel box: the reading runs open
+    report.innerHTML = nav +
+      sec("rsec-chart",
+        shareCardHtml(chart, solarDate)+
+        '<div class="rr-cols">'+
+          '<div class="rr-left"><div class="rr-anchor">'+
+            chipsHtml+
+            '<p class="sub">Your Saju · '+(three?"three pillars, one to go":"four pillars")+'</p>'+
+            chartHtml+dmHtml+lunarLineHtml+solarChainHtml(chart)+balHtml+
+            '<a class="rr-deep" href="#four-pillars">How the four pillars work</a>'+
+          '</div></div>'+
+          '<div class="rr-right">'+rightHtml+'</div>'+
+        '</div>',
         null,null);
 
     wireWuxing(); wireStrength(); wireClimate(); wireDaeun(); wireCompare(); wireResultNav(); wireShareCard(); wirePillTips();
