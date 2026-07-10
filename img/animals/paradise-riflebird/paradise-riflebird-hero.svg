@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A male paradise riflebird on a bare display perch in dark rainforest canopy, wings raised and fanned above its head into an oval, its throat catching a narrow beam of light as an iridescent teal-green shield, the rest of its plumage reading as flat velvet black">
+  <defs>
+    <radialGradient id="pr-sky" cx="58%" cy="26%" r="95%">
+      <stop offset="0%" stop-color="#182420"/>
+      <stop offset="55%" stop-color="#111614"/>
+      <stop offset="100%" stop-color="#0a0d0b"/>
+    </radialGradient>
+    <linearGradient id="pr-feather" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c1512"/>
+      <stop offset="100%" stop-color="#0c0908"/>
+    </linearGradient>
+    <linearGradient id="pr-wing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#231a16"/>
+      <stop offset="60%" stop-color="#120e0c"/>
+      <stop offset="100%" stop-color="#080605"/>
+    </linearGradient>
+    <radialGradient id="pr-shield" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#8fe8d2"/>
+      <stop offset="35%" stop-color="#2f9083"/>
+      <stop offset="70%" stop-color="#1a5c56"/>
+      <stop offset="100%" stop-color="#0c1f1d"/>
+    </radialGradient>
+    <radialGradient id="pr-beam" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#79cbb8" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#2f9083" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#2f9083" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pr-branch" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a1f18"/>
+      <stop offset="100%" stop-color="#130e0a"/>
+    </linearGradient>
+    <filter id="pr-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="pr-soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#pr-sky)"/>
+
+  <!-- the one angled beam of light -->
+  <ellipse cx="470" cy="330" rx="260" ry="360" fill="url(#pr-beam)" filter="url(#pr-soft)" transform="rotate(-18 470 330)"/>
+
+  <!-- distant canopy, far layer -->
+  <path d="M0 470 C70 430 120 460 170 420 C230 372 290 430 350 400 C410 370 460 420 520 392 C580 364 640 410 700 380 C740 358 780 384 800 372 L800 800 L0 800 Z" fill="#0e1512" opacity="0.85"/>
+  <!-- canopy, near layer -->
+  <path d="M0 560 C60 520 110 555 165 520 C225 482 280 545 345 512 C410 478 465 540 530 505 C600 468 660 528 730 495 C765 478 790 505 800 498 L800 800 L0 800 Z" fill="#08100c"/>
+
+  <!-- the display branch / stump -->
+  <path d="M60 660 C220 636 360 654 430 640 C540 618 660 636 780 606 L780 632 C660 662 540 646 432 668 C360 682 220 664 60 690 Z" fill="url(#pr-branch)"/>
+  <path d="M150 648 l0 18 M300 642 l0 18 M470 636 l0 16" stroke="#0a0705" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- tail plumes, behind the body -->
+  <path d="M410 560 C440 630 452 690 438 742 C420 700 402 640 396 578 Z" fill="url(#pr-feather)" opacity="0.92"/>
+  <path d="M382 556 C398 626 400 690 380 738 C366 692 358 632 362 572 Z" fill="url(#pr-feather)" opacity="0.85"/>
+
+  <!-- bird group -->
+  <g>
+    <!-- body mass, perched -->
+    <path d="M352 660 C332 600 340 540 378 508 C412 480 452 486 476 518 C500 548 498 606 478 656 C458 686 380 690 352 660 Z" fill="url(#pr-feather)"/>
+
+    <!-- left wing, raised and swept up to form the oval -->
+    <path d="M368 540 C312 512 280 452 288 384 C294 330 328 288 372 268 C348 316 336 372 342 424 C348 470 358 508 380 538 Z" fill="url(#pr-wing)" filter="url(#pr-glow)"/>
+    <!-- right wing, mirrored, raised to meet above the head -->
+    <path d="M460 540 C518 512 552 452 546 384 C540 330 506 288 462 268 C486 316 498 372 492 424 C486 470 476 508 454 538 Z" fill="url(#pr-wing)" filter="url(#pr-glow)"/>
+
+    <!-- wing feather striations -->
+    <path d="M330 470 C324 430 328 392 344 358 M498 470 C504 430 500 392 484 358" stroke="#050403" stroke-width="3" fill="none" opacity="0.5"/>
+
+    <!-- head, nestled where the wings meet -->
+    <g>
+      <ellipse cx="416" cy="356" rx="42" ry="38" fill="url(#pr-feather)"/>
+      <!-- long decurved bill -->
+      <path d="M382 366 C356 372 336 386 322 406 C344 402 366 396 384 384 Z" fill="#0a0807"/>
+      <!-- eye -->
+      <circle cx="404" cy="346" r="4.5" fill="#efe6d4"/>
+      <circle cx="404" cy="346" r="2" fill="#0a0807"/>
+    </g>
+
+    <!-- the throat and crown shield, the one place color reads -->
+    <g filter="url(#pr-glow)">
+      <path d="M400 362 C398 340 406 322 424 314 C440 324 448 344 442 364 C436 382 414 386 400 362 Z" fill="url(#pr-shield)"/>
+      <ellipse cx="418" cy="342" rx="10" ry="6" fill="#c9f5e8" opacity="0.55"/>
+    </g>
+  </g>
+
+  <!-- a single drifting leaf, atmosphere -->
+  <path d="M638 220 C650 214 662 220 664 232 C652 236 640 230 638 220 Z" fill="#1c2a24" opacity="0.5"/>
+</svg>

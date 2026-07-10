@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A glossy black fork-tailed drongo perched on a thin savanna branch at dusk, red eye catching the last light, a silver burst of sound rising from its open beak, acacia silhouettes on the horizon">
+  <defs>
+    <radialGradient id="fd-sky" cx="58%" cy="72%" r="95%">
+      <stop offset="0%" stop-color="#3a2c1c"/>
+      <stop offset="35%" stop-color="#1c1712"/>
+      <stop offset="70%" stop-color="#0d0f13"/>
+      <stop offset="100%" stop-color="#07080b"/>
+    </radialGradient>
+    <linearGradient id="fd-feather" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#2c3542"/>
+      <stop offset="45%" stop-color="#12161d"/>
+      <stop offset="100%" stop-color="#050608"/>
+    </linearGradient>
+    <linearGradient id="fd-sheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5b7fa6" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#5b7fa6" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="fd-call" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e9edf1"/>
+      <stop offset="55%" stop-color="#a9b4bd" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#a9b4bd" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fd-horizon" cx="50%" cy="100%" r="80%">
+      <stop offset="0%" stop-color="#7a4a24" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#7a4a24" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="fd-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fd-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#fd-sky)"/>
+  <rect width="800" height="800" rx="24" fill="url(#fd-horizon)"/>
+
+  <!-- distant savanna ridge and acacia silhouettes -->
+  <path d="M0 585 L60 585 L60 540 L96 540 L96 500 L230 500 L230 540 L266 540 L266 585 L420 585 L420 555 L452 555 L452 520 L560 520 L560 555 L592 555 L592 585 L800 585 L800 800 L0 800 Z" fill="#0b0c10" opacity="0.92"/>
+  <path d="M0 635 L110 635 L110 605 L150 605 L150 635 L340 635 L340 600 L378 600 L378 635 L560 635 L560 610 L600 610 L600 635 L800 635 L800 800 L0 800 Z" fill="#08090c"/>
+
+  <!-- faint call-burst behind the bird -->
+  <g filter="url(#fd-glow)" opacity="0.8">
+    <circle cx="470" cy="330" r="150" fill="url(#fd-call)"/>
+  </g>
+
+  <!-- the perch branch -->
+  <path d="M120 560 C260 520 360 505 470 498 C560 493 660 500 760 470 L760 480 C660 512 562 505 472 510 C364 517 264 532 126 572 Z" fill="#1a130d"/>
+  <path d="M300 520 C320 505 340 498 360 494 L361 500 C342 504 322 511 302 526 Z" fill="#120d09" opacity="0.8"/>
+
+  <!-- the drongo -->
+  <g>
+    <!-- deeply forked tail, two long streaming blades -->
+    <path d="M420 470 C470 540 500 620 470 715 C450 660 432 600 420 540 Z" fill="url(#fd-feather)"/>
+    <path d="M420 470 C400 555 388 645 420 730 C438 665 432 590 428 530 Z" fill="url(#fd-feather)"/>
+    <path d="M420 470 C452 555 460 630 442 700" fill="none" stroke="#3d4c5c" stroke-width="2" opacity="0.4"/>
+
+    <!-- body mass, glossy black -->
+    <path d="M368 372 C346 410 340 460 358 500 C374 534 410 552 444 546 C486 540 512 500 508 452 C504 404 470 366 424 358 C404 354 384 358 368 372 Z" fill="url(#fd-feather)"/>
+    <!-- blue sheen across the back -->
+    <path d="M384 372 C420 358 470 366 498 400 C476 386 436 380 400 392 C390 396 382 388 384 372 Z" fill="url(#fd-sheen)"/>
+
+    <!-- wing, folded -->
+    <path d="M388 400 C378 440 384 486 414 512 C400 480 398 440 406 404 Z" fill="#080a0d" opacity="0.85"/>
+
+    <!-- feet gripping the branch -->
+    <path d="M400 540 l-10 22 M418 546 l-4 24 M436 542 l8 22" stroke="#0a0b0d" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- head -->
+    <g>
+      <ellipse cx="366" cy="342" rx="40" ry="36" fill="url(#fd-feather)"/>
+      <path d="M336 322 C350 312 372 310 388 320 C374 314 352 316 340 328 Z" fill="url(#fd-sheen)"/>
+      <!-- beak, robust and dark -->
+      <path d="M328 344 C312 344 298 348 288 354 C300 360 316 362 330 358 Z" fill="#050607"/>
+      <!-- the red eye -->
+      <g filter="url(#fd-soft)">
+        <circle cx="352" cy="336" r="7.5" fill="#b8321f"/>
+        <circle cx="354" cy="333" r="2.4" fill="#f0d9c8"/>
+      </g>
+    </g>
+  </g>
+
+</svg>

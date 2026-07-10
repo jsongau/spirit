@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A common swift banking hard against a dusk sky, sickle-shaped wings swept back, a full moon glowing above, a small dark cliff ledge with one lit crevice far below in the corner">
+  <defs>
+    <linearGradient id="sw-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141b28"/>
+      <stop offset="45%" stop-color="#1c2536"/>
+      <stop offset="78%" stop-color="#3a2e2a"/>
+      <stop offset="100%" stop-color="#4a3626"/>
+    </linearGradient>
+    <radialGradient id="sw-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbf3e0"/>
+      <stop offset="65%" stop-color="#eecf9c"/>
+      <stop offset="100%" stop-color="#c9a468"/>
+    </radialGradient>
+    <linearGradient id="sw-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#24211f"/>
+      <stop offset="55%" stop-color="#15130f"/>
+      <stop offset="100%" stop-color="#0a0908"/>
+    </linearGradient>
+    <linearGradient id="sw-body-far" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1714"/>
+      <stop offset="100%" stop-color="#0a0908"/>
+    </linearGradient>
+    <radialGradient id="sw-throat" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#f2e6c8"/>
+      <stop offset="100%" stop-color="#cbb488"/>
+    </radialGradient>
+    <linearGradient id="sw-rock" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#211a17"/>
+      <stop offset="100%" stop-color="#0a0807"/>
+    </linearGradient>
+    <filter id="sw-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="12" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="sw-glow-soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#sw-sky)"/>
+
+  <!-- full moon, the Swift's power phase -->
+  <g filter="url(#sw-glow)">
+    <circle cx="200" cy="168" r="86" fill="url(#sw-moon)"/>
+  </g>
+
+  <!-- faint wind / glide arcs trailing the bird -->
+  <path d="M40 552 C150 528 258 494 366 452" stroke="#f2e6c8" stroke-width="2" fill="none" opacity="0.16"/>
+  <path d="M20 592 C140 566 254 526 372 478" stroke="#f2e6c8" stroke-width="2" fill="none" opacity="0.11"/>
+  <path d="M64 500 C168 480 262 452 352 418" stroke="#f2e6c8" stroke-width="1.6" fill="none" opacity="0.14"/>
+
+  <!-- a second, more distant swift, hinting at the colony -->
+  <path d="M298 246 C314 235 336 229 358 232 C342 239 326 246 315 253 C327 250 338 253 346 261 C330 254 313 251 298 246 Z" fill="#0c0a08" opacity="0.6"/>
+
+  <!-- far wing, layered behind the body for depth -->
+  <path d="M160 472 C240 424 322 390 432 368 C400 380 360 398 320 420 C278 443 228 460 176 472 Z" fill="url(#sw-body-far)" opacity="0.55"/>
+
+  <!-- the swift, banked hard, climbing -->
+  <g>
+    <!-- forked tail -->
+    <path d="M398 447 C386 484 366 524 336 560 C352 524 368 488 380 454 Z" fill="url(#sw-body)"/>
+    <path d="M414 452 C410 490 398 534 378 572 C396 533 408 494 418 458 Z" fill="url(#sw-body)"/>
+
+    <!-- main body and sweeping wings, one continuous silhouette -->
+    <path d="M142 480 C222 420 302 380 432 360 C562 380 642 420 700 470 C660 460 600 448 540 442 C560 460 574 480 576 502 C540 470 500 448 458 438 C462 460 458 482 446 498 C420 470 405 448 398 428 C388 448 378 466 362 478 C358 456 358 436 364 418 C320 428 270 444 220 462 C192 470 164 476 142 480 Z" fill="url(#sw-body)"/>
+
+    <!-- head, angled into the climb -->
+    <ellipse cx="456" cy="352" rx="24" ry="17" fill="url(#sw-body)"/>
+
+    <!-- pale chin and throat, the one visible mark -->
+    <g filter="url(#sw-glow-soft)">
+      <ellipse cx="464" cy="362" rx="11" ry="6.5" fill="url(#sw-throat)"/>
+    </g>
+
+    <!-- eye -->
+    <circle cx="452" cy="345" r="2.6" fill="#0a0908"/>
+    <circle cx="453" cy="344" r="0.9" fill="#f2e6c8" opacity="0.8"/>
+
+    <!-- leading-edge rim light, wingtip catching moonlight -->
+    <path d="M540 400 C580 412 630 430 680 458 C636 438 592 424 548 414 Z" fill="#f2e6c8" opacity="0.12"/>
+  </g>
+
+  <!-- the one fixed crevice, far below and small against all this sky -->
+  <path d="M560 800 L578 706 L612 732 L640 664 L676 706 L712 648 L752 696 L780 654 L800 690 L800 800 Z" fill="url(#sw-rock)"/>
+  <path d="M598 800 L610 734 L640 754 L662 704 L692 738 L722 692 L754 726 L780 700 L800 720 L800 800 Z" fill="#0a0807"/>
+  <path d="M666 706 C660 688 662 668 674 656 C686 668 688 688 682 706 C676 712 670 712 666 706 Z" fill="#040404"/>
+  <circle cx="675" cy="686" r="3.4" fill="#e8c98a" opacity="0.55"/>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A close portrait of a golden lion tamarin among dark branches, its gold mane lit by a full moon above, long slender fingers gripping the bark">
+  <defs>
+    <linearGradient id="glto-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#16262a"/>
+      <stop offset="100%" stop-color="#081114"/>
+    </linearGradient>
+    <radialGradient id="glto-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fdf3da"/>
+      <stop offset="60%" stop-color="#f2ce8f"/>
+      <stop offset="100%" stop-color="#c9862f"/>
+    </radialGradient>
+    <linearGradient id="glto-mane" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2ce8f"/>
+      <stop offset="45%" stop-color="#d4881f"/>
+      <stop offset="100%" stop-color="#96591a"/>
+    </linearGradient>
+    <linearGradient id="glto-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b56a1e"/>
+      <stop offset="100%" stop-color="#5e3512"/>
+    </linearGradient>
+    <linearGradient id="glto-face" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a1f1a"/>
+      <stop offset="100%" stop-color="#120d0a"/>
+    </linearGradient>
+    <filter id="glto-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#glto-bg)"/>
+
+  <!-- full moon, upper corner -->
+  <g filter="url(#glto-glow)">
+    <circle cx="320" cy="82" r="38" fill="url(#glto-moon)"/>
+  </g>
+
+  <!-- branches crossing the frame -->
+  <path d="M0 158 C90 138 150 168 210 148 C260 132 330 156 400 136" stroke="#0e1a1c" stroke-width="8" fill="none" opacity="0.85"/>
+  <path d="M30 460 C90 420 96 360 150 330" stroke="#0e1a1c" stroke-width="6" fill="none" opacity="0.75"/>
+
+  <!-- tail curling in from below -->
+  <path d="M264 420 C300 440 316 476 296 500 L268 500 C270 468 258 442 236 420 Z" fill="url(#glto-body)"/>
+
+  <!-- body -->
+  <path d="M120 468 C96 410 108 350 160 320 C212 290 268 306 288 356 C304 396 288 440 250 462 C210 484 148 480 120 468 Z" fill="url(#glto-body)"/>
+
+  <!-- mane bloom around head and shoulders -->
+  <g filter="url(#glto-glow)">
+    <path d="M118 372 C96 320 116 268 168 246 C104 264 76 336 100 396 C106 388 112 380 118 372 Z" fill="url(#glto-mane)"/>
+    <path d="M244 372 C270 316 250 262 196 240 C262 254 296 322 272 384 C262 380 252 376 244 372 Z" fill="url(#glto-mane)"/>
+    <path d="M144 288 C148 236 190 202 190 202 C190 202 232 236 236 288 C228 326 152 326 144 288 Z" fill="url(#glto-mane)"/>
+  </g>
+
+  <!-- head, bare dark face -->
+  <ellipse cx="192" cy="252" rx="42" ry="40" fill="url(#glto-face)"/>
+  <circle cx="158" cy="228" r="13" fill="#1a120d"/>
+  <circle cx="226" cy="228" r="13" fill="#1a120d"/>
+  <path d="M176 268 C182 286 204 286 210 268 C204 258 182 258 176 268 Z" fill="#43302a" opacity="0.7"/>
+  <ellipse cx="193" cy="272" rx="6" ry="5" fill="#1a120d"/>
+  <circle cx="180" cy="246" r="4.2" fill="#f2ce8f"/>
+  <circle cx="206" cy="246" r="4.2" fill="#f2ce8f"/>
+
+  <!-- long slender fingers gripping bark, foreground -->
+  <path d="M96 424 C86 434 78 450 82 468 C92 460 100 444 104 428 Z" fill="url(#glto-body)"/>
+  <path d="M76 418 q-10 -6 -18 0 M86 428 q-10 -4 -18 2 M96 436 q-8 -6 -16 -2" stroke="#1c1310" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.85"/>
+</svg>

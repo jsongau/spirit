@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A spotted hyena standing on dry savanna ground at dusk, sloped shoulders raised and ears forward, a full moon rising over a distant acacia horizon">
+  <defs>
+    <radialGradient id="sh-sky" cx="60%" cy="26%" r="95%">
+      <stop offset="0%" stop-color="#2b1712"/>
+      <stop offset="45%" stop-color="#1c100c"/>
+      <stop offset="100%" stop-color="#100a08"/>
+    </radialGradient>
+    <radialGradient id="sh-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fdf3d8"/>
+      <stop offset="65%" stop-color="#e8c77e"/>
+      <stop offset="100%" stop-color="#c1913f"/>
+    </radialGradient>
+    <linearGradient id="sh-coat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a6236"/>
+      <stop offset="100%" stop-color="#3c2415"/>
+    </linearGradient>
+    <linearGradient id="sh-coatLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c99a4b"/>
+      <stop offset="100%" stop-color="#8a6236"/>
+    </linearGradient>
+    <linearGradient id="sh-ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#241408"/>
+      <stop offset="100%" stop-color="#0c0704"/>
+    </linearGradient>
+    <filter id="sh-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="sh-soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="b2"/>
+      <feMerge><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#sh-sky)"/>
+
+  <!-- full moon, rising -->
+  <g filter="url(#sh-glow)">
+    <circle cx="606" cy="176" r="72" fill="url(#sh-moon)"/>
+  </g>
+
+  <!-- distant acacia and horizon line -->
+  <path d="M0 520 C60 500 90 460 130 470 C150 440 155 400 160 480 C185 500 200 470 205 500 L205 540 L0 540 Z" fill="#160d07" opacity="0.85"/>
+  <path d="M560 470 C580 440 585 400 592 470 C610 450 625 470 630 460 L630 530 L555 530 Z" fill="#160d07" opacity="0.8"/>
+  <path d="M0 590 L90 555 L170 585 L260 545 L350 588 L440 550 L540 592 L630 552 L720 590 L800 558 L800 800 L0 800 Z" fill="url(#sh-ground)"/>
+  <path d="M0 650 L110 610 L210 645 L320 600 L420 648 L530 605 L640 650 L800 608 L800 800 L0 800 Z" fill="#0a0604"/>
+
+  <!-- the hyena, standing three-quarter, sloped back -->
+  <g filter="url(#sh-soft)">
+    <!-- tail, bushy, black-tipped -->
+    <path d="M258 588 C220 610 200 650 214 690 C232 686 252 656 258 620 Z" fill="url(#sh-coat)"/>
+    <path d="M214 690 C222 704 240 706 250 694 C240 682 222 682 214 690 Z" fill="#1a0f08"/>
+
+    <!-- hindquarters, lower than shoulders -->
+    <path d="M262 585 C250 630 260 680 300 706 C340 720 380 700 388 656 C392 616 366 580 320 572 C298 568 276 572 262 585 Z" fill="url(#sh-coat)"/>
+
+    <!-- back slope, rising to the shoulders -->
+    <path d="M320 572 C360 520 420 470 486 452 C520 442 552 448 560 468 C540 480 500 490 468 512 C420 546 388 584 388 656 Z" fill="url(#sh-coatLight)"/>
+
+    <!-- foreleg, taller, front-loaded stance -->
+    <path d="M486 706 C476 630 480 546 500 490 C526 500 538 550 534 618 C530 668 524 700 518 708 Z" fill="url(#sh-coat)"/>
+    <path d="M420 708 C412 650 416 588 432 546 C454 556 462 596 460 648 C458 682 452 704 448 710 Z" fill="#2c1a0f"/>
+
+    <!-- hind leg -->
+    <path d="M296 706 C288 670 292 638 306 612 C326 622 334 656 328 686 C324 700 312 708 296 706 Z" fill="#2c1a0f"/>
+
+    <!-- shoulder ruff / mane, raised -->
+    <path d="M470 460 C452 440 448 412 462 392 C486 400 502 424 500 452 C494 462 480 466 470 460 Z" fill="#4a2c1a" opacity="0.85"/>
+
+    <!-- neck and head, alert, ears forward -->
+    <g>
+      <path d="M486 452 C500 420 528 396 558 388 C566 414 560 442 540 460 C520 476 498 470 486 452 Z" fill="url(#sh-coatLight)"/>
+      <ellipse cx="560" cy="384" rx="42" ry="38" fill="url(#sh-coatLight)"/>
+      <!-- large rounded ears -->
+      <path d="M534 358 C528 336 536 316 552 310 C558 330 556 350 546 366 Z" fill="#5a3a20"/>
+      <path d="M580 356 C590 334 586 314 572 306 C562 326 562 348 570 364 Z" fill="#5a3a20"/>
+      <!-- muzzle -->
+      <path d="M584 392 C602 396 612 410 606 424 C594 428 580 420 578 406 Z" fill="#3c2415"/>
+      <circle cx="606" cy="418" r="4" fill="#0c0704"/>
+      <!-- eye, catching moonlight -->
+      <circle cx="566" cy="384" r="5" fill="#f3e6c4"/>
+      <circle cx="566" cy="384" r="2" fill="#241408"/>
+    </g>
+
+    <!-- spots, scattered across coat -->
+    <g fill="#1e1108" opacity="0.75">
+      <circle cx="340" cy="600" r="9"/>
+      <circle cx="372" cy="628" r="7"/>
+      <circle cx="310" cy="644" r="6"/>
+      <circle cx="410" cy="588" r="8"/>
+      <circle cx="440" cy="560" r="6"/>
+      <circle cx="470" cy="524" r="7"/>
+      <circle cx="500" cy="500" r="6"/>
+      <circle cx="330" cy="670" r="6"/>
+      <circle cx="360" cy="560" r="5"/>
+      <circle cx="290" cy="620" r="5"/>
+    </g>
+  </g>
+
+  <!-- foreground grass, dark silhouette -->
+  <path d="M0 780 C60 760 120 774 180 762 C260 748 340 766 420 754 C520 738 620 760 720 748 L800 744 L800 800 L0 800 Z" fill="#0a0604"/>
+</svg>

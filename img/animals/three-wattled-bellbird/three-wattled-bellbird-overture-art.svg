@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A three-wattled bellbird perched on a broken branch against a misty cloud forest canopy, its three black wattles hanging as it calls, a waxing gibbous moon above" >
+  <defs>
+    <linearGradient id="twbo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#271f11"/>
+      <stop offset="100%" stop-color="#0e0a05"/>
+    </linearGradient>
+    <radialGradient id="twbo-moon-lit" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f8f0da"/>
+      <stop offset="100%" stop-color="#c96a35"/>
+    </radialGradient>
+    <linearGradient id="twbo-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d98a4f"/>
+      <stop offset="55%" stop-color="#c1602f"/>
+      <stop offset="100%" stop-color="#7c3c1e"/>
+    </linearGradient>
+    <radialGradient id="twbo-head" cx="42%" cy="32%" r="68%">
+      <stop offset="0%" stop-color="#fdf8ec"/>
+      <stop offset="100%" stop-color="#e4d7b3"/>
+    </radialGradient>
+    <linearGradient id="twbo-branch" x1="0" y1="0" x2="1" y2="0.3">
+      <stop offset="0%" stop-color="#4a3520"/>
+      <stop offset="100%" stop-color="#241a10"/>
+    </linearGradient>
+    <linearGradient id="twbo-wattle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2c2015"/>
+      <stop offset="100%" stop-color="#0d0905"/>
+    </linearGradient>
+    <radialGradient id="twbo-gap" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8a13e" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#e8a13e" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="twbo-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#twbo-bg)"/>
+
+  <!-- waxing gibbous moon -->
+  <g filter="url(#twbo-glow)">
+    <circle cx="298" cy="100" r="32" fill="url(#twbo-moon-lit)"/>
+    <path d="M298 68 a32 32 0 0 0 0 64 a12 32 0 0 1 0 -64 Z" fill="#100b06"/>
+  </g>
+
+  <!-- canopy silhouette -->
+  <path d="M0 210 C40 196 76 208 112 196 C154 182 190 202 232 190 C274 178 308 198 350 186 C372 180 388 190 400 184 L400 500 L0 500 Z" fill="#1c1610" opacity="0.85"/>
+  <path d="M0 260 C50 246 96 262 140 248 C190 232 232 256 282 240 C324 226 360 248 400 234 L400 500 L0 500 Z" fill="#0e0a05"/>
+
+  <!-- light gap glow under the broken branch -->
+  <ellipse cx="266" cy="420" rx="80" ry="38" fill="url(#twbo-gap)"/>
+
+  <!-- broken branch -->
+  <path d="M40 470 C110 452 178 440 236 418 C270 404 296 390 316 368 L324 376 C302 400 270 418 232 432 C170 454 104 466 46 482 Z" fill="url(#twbo-branch)"/>
+  <path d="M316 368 L324 376 L338 352 L346 360 L330 348 Z" fill="#241a10"/>
+
+  <!-- the bird -->
+  <g>
+    <!-- tail -->
+    <path d="M182 430 C148 420 122 400 112 372 C138 384 164 396 192 410 C192 418 188 426 182 430 Z" fill="url(#twbo-body)" opacity="0.94"/>
+
+    <!-- legs gripping the branch -->
+    <path d="M226 418 C224 404 229 394 239 388 C242 398 240 410 234 420 Z" fill="#241a10"/>
+    <path d="M254 420 C252 406 258 394 270 386 C273 398 271 410 264 422 Z" fill="#1b130b"/>
+
+    <!-- folded wing -->
+    <path d="M198 332 C182 356 178 388 194 412 C214 402 230 378 232 350 C224 340 210 332 198 332 Z" fill="#8a4322" opacity="0.85"/>
+
+    <!-- torso -->
+    <path d="M198 280 C176 312 172 360 192 408 C208 428 246 428 264 410 C282 380 282 328 262 290 C246 268 216 264 198 280 Z" fill="url(#twbo-body)"/>
+
+    <!-- lower breast blend -->
+    <path d="M206 356 C204 378 210 400 228 412 C246 400 250 376 246 356 C230 364 218 364 206 356 Z" fill="#f3e6c9" opacity="0.28"/>
+
+    <!-- neck, chest and head -->
+    <path d="M184 268 C174 246 182 220 208 210 C232 200 254 212 260 236 C264 254 250 268 230 272 C210 276 190 280 184 268 Z" fill="url(#twbo-head)"/>
+
+    <path d="M206 216 C222 208 240 212 249 226 C238 232 217 232 206 224 Z" fill="#e4d7b3" opacity="0.6"/>
+
+    <ellipse cx="222" cy="230" rx="5.5" ry="6.2" fill="#150f09"/>
+    <circle cx="223.5" cy="228" r="1.8" fill="#f8f0da"/>
+
+    <!-- open beak -->
+    <path d="M251 234 C266 230 282 234 292 246 C280 252 266 252 254 248 Z" fill="#2c2015"/>
+    <path d="M251 240 C270 254 286 278 282 304 C270 288 258 264 250 244 Z" fill="#0d0905"/>
+
+    <!-- three wattles -->
+    <path d="M247 244 C240 268 236 296 243 320 C247 298 250 274 253 250 Z" fill="url(#twbo-wattle)"/>
+    <path d="M257 246 C254 274 254 304 262 328 C268 304 267 276 263 248 Z" fill="url(#twbo-wattle)"/>
+    <path d="M267 245 C270 270 274 296 285 316 C286 292 282 266 274 246 Z" fill="url(#twbo-wattle)"/>
+  </g>
+</svg>

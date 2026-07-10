@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Close view of a paradise riflebird's head and raised wings against dark rainforest canopy, its throat shield glowing iridescent teal-green where a narrow beam of light catches it, the surrounding feathers reading as flat black">
+  <defs>
+    <linearGradient id="pro-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141d19"/>
+      <stop offset="100%" stop-color="#080b09"/>
+    </linearGradient>
+    <linearGradient id="pro-feather" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c1512"/>
+      <stop offset="100%" stop-color="#0a0706"/>
+    </linearGradient>
+    <linearGradient id="pro-wing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#231a16"/>
+      <stop offset="60%" stop-color="#100c0a"/>
+      <stop offset="100%" stop-color="#070504"/>
+    </linearGradient>
+    <radialGradient id="pro-shield" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#8fe8d2"/>
+      <stop offset="35%" stop-color="#2f9083"/>
+      <stop offset="70%" stop-color="#1a5c56"/>
+      <stop offset="100%" stop-color="#0c1f1d"/>
+    </radialGradient>
+    <radialGradient id="pro-beam" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#79cbb8" stop-opacity="0.5"/>
+      <stop offset="60%" stop-color="#2f9083" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#2f9083" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="pro-glow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="pro-soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#pro-bg)"/>
+
+  <!-- the angled beam -->
+  <ellipse cx="240" cy="180" rx="150" ry="200" fill="url(#pro-beam)" filter="url(#pro-soft)" transform="rotate(-16 240 180)"/>
+
+  <!-- distant canopy -->
+  <path d="M0 260 C40 236 70 254 110 232 C155 208 190 244 230 226 C275 206 310 240 350 222 C375 210 392 226 400 220 L400 500 L0 500 Z" fill="#0a120e" opacity="0.85"/>
+  <path d="M0 320 C50 296 90 316 140 292 C190 268 230 306 280 282 C320 262 355 292 400 270 L400 500 L0 500 Z" fill="#060b08"/>
+
+  <!-- branch fragment lower frame -->
+  <path d="M0 452 C70 440 140 448 200 438 C270 428 330 440 400 424 L400 448 C330 462 270 452 200 460 C140 468 70 462 0 476 Z" fill="#1c140f"/>
+
+  <!-- wings raised, framing the head -->
+  <path d="M170 250 C126 226 100 178 108 126 C114 88 138 58 170 42 C150 80 142 122 148 162 C152 198 160 228 176 248 Z" fill="url(#pro-wing)" filter="url(#pro-glow)"/>
+  <path d="M232 250 C276 226 302 178 294 126 C288 88 264 58 232 42 C252 80 260 122 254 162 C250 198 242 228 226 248 Z" fill="url(#pro-wing)" filter="url(#pro-glow)"/>
+
+  <!-- head -->
+  <g>
+    <ellipse cx="202" cy="196" rx="46" ry="42" fill="url(#pro-feather)"/>
+    <path d="M164 208 C136 214 114 230 98 252 C122 248 146 240 166 226 Z" fill="#080605"/>
+    <circle cx="188" cy="184" r="5" fill="#efe6d4"/>
+    <circle cx="188" cy="184" r="2.2" fill="#080605"/>
+  </g>
+
+  <!-- the shield -->
+  <g filter="url(#pro-glow)">
+    <path d="M182 202 C179 176 189 154 210 144 C228 156 238 180 230 204 C222 226 198 230 182 202 Z" fill="url(#pro-shield)"/>
+    <ellipse cx="203" cy="178" rx="11" ry="7" fill="#c9f5e8" opacity="0.55"/>
+  </g>
+</svg>

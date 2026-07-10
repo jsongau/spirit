@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A close view of a common swift banking through a dusk sky, sickle-shaped wing sweeping past its pale throat patch, a full moon glowing in the upper corner">
+  <defs>
+    <linearGradient id="swo-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141b28"/>
+      <stop offset="45%" stop-color="#1c2536"/>
+      <stop offset="78%" stop-color="#3a2e2a"/>
+      <stop offset="100%" stop-color="#4a3626"/>
+    </linearGradient>
+    <radialGradient id="swo-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbf3e0"/>
+      <stop offset="65%" stop-color="#eecf9c"/>
+      <stop offset="100%" stop-color="#c9a468"/>
+    </radialGradient>
+    <linearGradient id="swo-body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#24211f"/>
+      <stop offset="55%" stop-color="#15130f"/>
+      <stop offset="100%" stop-color="#0a0908"/>
+    </linearGradient>
+    <linearGradient id="swo-body-far" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1714"/>
+      <stop offset="100%" stop-color="#0a0908"/>
+    </linearGradient>
+    <radialGradient id="swo-throat" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#f2e6c8"/>
+      <stop offset="100%" stop-color="#cbb488"/>
+    </radialGradient>
+    <linearGradient id="swo-rock" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#211a17"/>
+      <stop offset="100%" stop-color="#0a0807"/>
+    </linearGradient>
+    <filter id="swo-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="swo-glow-soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#swo-sky)"/>
+
+  <!-- full moon, upper corner -->
+  <g filter="url(#swo-glow)">
+    <circle cx="320" cy="92" r="48" fill="url(#swo-moon)"/>
+  </g>
+
+  <!-- faint glide arcs -->
+  <path d="M6 336 C88 316 168 292 250 260" stroke="#f2e6c8" stroke-width="1.6" fill="none" opacity="0.16"/>
+  <path d="M0 378 C84 354 164 324 252 290" stroke="#f2e6c8" stroke-width="1.4" fill="none" opacity="0.11"/>
+
+  <!-- far wing, layered behind for depth -->
+  <path d="M96 344 C168 302 240 272 322 252 C296 264 260 282 226 300 C192 316 146 332 104 340 Z" fill="url(#swo-body-far)" opacity="0.55"/>
+
+  <!-- the swift, head and near wing in close view -->
+  <g>
+    <!-- forked tail, trailing off the lower frame -->
+    <path d="M244 378 C234 410 218 446 194 476 C208 444 220 412 230 384 Z" fill="url(#swo-body)"/>
+    <path d="M262 382 C256 414 246 450 228 480 C240 448 250 414 256 386 Z" fill="url(#swo-body)"/>
+
+    <!-- near wing sweeping across the frame -->
+    <path d="M58 302 C136 258 214 226 328 204 C298 220 260 242 222 264 C184 286 138 302 96 310 Z" fill="url(#swo-body)"/>
+
+    <!-- head, angled into the bank -->
+    <ellipse cx="214" cy="232" rx="29" ry="20" fill="url(#swo-body)"/>
+
+    <!-- pale chin and throat -->
+    <g filter="url(#swo-glow-soft)">
+      <ellipse cx="224" cy="244" rx="13" ry="7.5" fill="url(#swo-throat)"/>
+    </g>
+
+    <!-- eye -->
+    <circle cx="206" cy="223" r="3" fill="#0a0908"/>
+    <circle cx="207" cy="221.5" r="1" fill="#f2e6c8" opacity="0.8"/>
+
+    <!-- leading-edge rim light, wingtip catching moonlight -->
+    <path d="M258 230 C292 238 330 252 366 272 C334 258 302 248 268 242 Z" fill="#f2e6c8" opacity="0.12"/>
+  </g>
+
+  <!-- hint of the crevice rock, far lower corner -->
+  <path d="M322 500 L332 458 L352 470 L366 440 L384 462 L400 446 L400 500 Z" fill="url(#swo-rock)"/>
+  <circle cx="358" cy="454" r="2.6" fill="#e8c98a" opacity="0.55"/>
+</svg>

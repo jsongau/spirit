@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A camouflaged octopus curled small against a dark rock, two of its rings glowing electric blue, the rest of its body left plain" >
+  <defs>
+    <linearGradient id="broo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#132325"/>
+      <stop offset="100%" stop-color="#070d0e"/>
+    </linearGradient>
+    <linearGradient id="broo-mantle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6b5540"/>
+      <stop offset="100%" stop-color="#261d15"/>
+    </linearGradient>
+    <linearGradient id="broo-arm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#59462f"/>
+      <stop offset="100%" stop-color="#211810"/>
+    </linearGradient>
+    <radialGradient id="broo-ring" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#e3faff"/>
+      <stop offset="45%" stop-color="#4fc6e0"/>
+      <stop offset="100%" stop-color="#12414d"/>
+    </radialGradient>
+    <filter id="broo-glow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#broo-bg)"/>
+
+  <!-- thin shaft of light from the surface, far above -->
+  <path d="M180 0 L230 0 L250 180 L165 180 Z" fill="#1c3336" opacity="0.3"/>
+
+  <!-- rock the animal is tucked against -->
+  <path d="M0 300 C60 260 130 268 170 305 C150 340 70 350 0 320 Z" fill="#0d1719"/>
+  <path d="M230 330 C280 295 350 300 400 330 C400 500 400 500 400 500 L0 500 L0 360 C90 400 170 380 230 330 Z" fill="#081113"/>
+
+  <!-- trailing arms curled around the stone -->
+  <g>
+    <path d="M198 300 C140 320 100 310 60 340 C40 356 30 378 26 404" stroke="url(#broo-arm)" stroke-width="16" fill="none" stroke-linecap="round" opacity="0.9"/>
+    <path d="M198 300 C230 335 236 370 214 404 C202 422 186 434 168 444" stroke="url(#broo-arm)" stroke-width="15" fill="none" stroke-linecap="round" opacity="0.9"/>
+    <path d="M210 296 C270 306 310 296 350 318 C368 328 378 342 384 360" stroke="url(#broo-arm)" stroke-width="16" fill="none" stroke-linecap="round" opacity="0.9"/>
+    <path d="M186 302 C160 340 150 368 168 400 C178 418 194 430 210 440" stroke="url(#broo-arm)" stroke-width="13" fill="none" stroke-linecap="round" opacity="0.82"/>
+  </g>
+
+  <!-- mantle, small and rounded -->
+  <path d="M158 232 C158 196 178 168 206 164 C238 160 264 188 267 222 C270 254 252 284 216 292 C182 298 158 266 158 232 Z" fill="url(#broo-mantle)"/>
+
+  <!-- eye -->
+  <ellipse cx="182" cy="212" rx="8" ry="9.5" fill="#0a0704"/>
+  <circle cx="180" cy="209" r="2.2" fill="#cfe9ee"/>
+
+  <!-- quiet, unflashed rings -->
+  <circle cx="90" cy="352" r="6" fill="#293a3c" opacity="0.6"/>
+  <circle cx="240" cy="380" r="5" fill="#293a3c" opacity="0.55"/>
+  <circle cx="326" cy="336" r="5" fill="#293a3c" opacity="0.5"/>
+
+  <!-- the two rings caught mid-flash -->
+  <g filter="url(#broo-glow)">
+    <circle cx="126" cy="330" r="8" fill="url(#broo-ring)"/>
+    <circle cx="196" cy="240" r="6" fill="url(#broo-ring)"/>
+  </g>
+</svg>

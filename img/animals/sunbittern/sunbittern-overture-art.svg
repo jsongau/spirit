@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A sunbittern standing still and barred at a dark stream edge, wings folded, one edge of chestnut and gold catching the light beneath the closed feathers">
+  <defs>
+    <linearGradient id="sbo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c170d"/>
+      <stop offset="100%" stop-color="#0a0806"/>
+    </linearGradient>
+    <linearGradient id="sbo-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#463b28"/>
+      <stop offset="55%" stop-color="#261f13"/>
+      <stop offset="100%" stop-color="#120e08"/>
+    </linearGradient>
+    <radialGradient id="sbo-glint" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#e8b559"/>
+      <stop offset="55%" stop-color="#b5452a"/>
+      <stop offset="100%" stop-color="#4a2012"/>
+    </radialGradient>
+    <filter id="sbo-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#sbo-bg)"/>
+
+  <!-- reeds, near and far -->
+  <path d="M0 300 C60 288 110 302 160 292 C210 282 270 300 340 286 L400 292 L400 500 L0 500 Z" fill="#141c10" opacity="0.85"/>
+  <path d="M0 340 C70 326 130 344 190 330 C250 318 310 338 400 322 L400 500 L0 500 Z" fill="#0c130a"/>
+  <path d="M40 210 L46 300 M90 190 L96 300 M320 200 L326 300 M360 216 L366 300" stroke="#1c2617" stroke-width="3" opacity="0.6"/>
+
+  <!-- still water -->
+  <rect x="0" y="360" width="400" height="140" fill="#0d130e"/>
+  <path d="M20 400 q50 -6 100 0 t100 0 t100 0 t100 0" stroke="#1a231a" stroke-width="1.6" fill="none" opacity="0.5"/>
+
+  <!-- the bird, standing at rest, wings folded -->
+  <g>
+    <!-- tail, folded low -->
+    <path d="M186 330 C176 372 180 412 200 436 C218 412 222 372 214 332 Z" fill="url(#sbo-body)"/>
+
+    <!-- body, barred and closed -->
+    <path d="M164 250 C152 278 150 314 162 344 C172 368 190 382 202 382 C214 382 230 368 238 344 C248 314 246 278 234 250 C216 234 182 234 164 250 Z" fill="url(#sbo-body)"/>
+    <path d="M170 274 q32 7 60 0 M166 298 q36 8 68 0 M164 322 q38 8 72 0" stroke="#0d0906" stroke-width="2" fill="none" opacity="0.55"/>
+
+    <!-- one folded wing edge, a sliver of the hidden color -->
+    <g filter="url(#sbo-glow)">
+      <path d="M236 268 C256 278 268 300 264 322 C250 314 238 296 234 274 Z" fill="url(#sbo-glint)" opacity="0.9"/>
+    </g>
+
+    <!-- neck -->
+    <path d="M180 250 C176 220 178 190 188 166 C198 190 200 220 196 250 Z" fill="url(#sbo-body)"/>
+
+    <!-- head -->
+    <g>
+      <ellipse cx="188" cy="152" rx="22" ry="19" fill="#120e08"/>
+      <path d="M170 138 q18 -15 36 0" stroke="#e9e2cf" stroke-width="4" fill="none" opacity="0.85"/>
+      <path d="M169 158 q19 12 38 0" stroke="#e9e2cf" stroke-width="3" fill="none" opacity="0.7"/>
+      <circle cx="188" cy="149" r="4" fill="#b5452a"/>
+      <path d="M202 152 C215 149 227 151 236 157 C227 160 215 160 204 157 Z" fill="#c9702f"/>
+    </g>
+
+    <!-- legs -->
+    <path d="M180 380 C177 404 174 426 172 446" stroke="#c9702f" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+    <path d="M204 380 C207 404 210 426 212 446" stroke="#c9702f" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

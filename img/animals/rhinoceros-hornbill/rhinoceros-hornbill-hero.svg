@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A rhinoceros hornbill perched beside a sealed tree cavity in dark rainforest canopy, its huge upcurved orange-red casque catching the light of a full moon, a thin mud-sealed slit glowing faintly on the trunk below">
+  <defs>
+    <radialGradient id="rh-sky" cx="66%" cy="26%" r="95%">
+      <stop offset="0%" stop-color="#201408"/>
+      <stop offset="55%" stop-color="#150e07"/>
+      <stop offset="100%" stop-color="#0c0906"/>
+    </radialGradient>
+    <radialGradient id="rh-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f6ecd8"/>
+      <stop offset="65%" stop-color="#e9d2ab"/>
+      <stop offset="100%" stop-color="#b89966"/>
+    </radialGradient>
+    <linearGradient id="rh-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#211c17"/>
+      <stop offset="100%" stop-color="#0a0806"/>
+    </linearGradient>
+    <linearGradient id="rh-casque" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7a2c14"/>
+      <stop offset="45%" stop-color="#cf5a2a"/>
+      <stop offset="100%" stop-color="#f0a25a"/>
+    </linearGradient>
+    <linearGradient id="rh-bill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e9d2ab"/>
+      <stop offset="100%" stop-color="#cf5a2a"/>
+    </linearGradient>
+    <linearGradient id="rh-trunk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a2015"/>
+      <stop offset="100%" stop-color="#150f0a"/>
+    </linearGradient>
+    <radialGradient id="rh-seal" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#8a6134"/>
+      <stop offset="100%" stop-color="#4f3b2c"/>
+    </radialGradient>
+    <filter id="rh-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="rh-glow-soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#rh-sky)"/>
+
+  <!-- full moon -->
+  <g filter="url(#rh-glow)">
+    <circle cx="606" cy="164" r="78" fill="url(#rh-moon)"/>
+  </g>
+
+  <!-- distant canopy ridgeline -->
+  <path d="M0 520 L60 470 L130 510 L190 450 L260 505 L330 445 L400 512 L470 460 L540 515 L610 458 L680 512 L750 465 L800 508 L800 800 L0 800 Z" fill="#170f08" opacity="0.9"/>
+  <path d="M0 590 L80 540 L150 585 L230 520 L310 585 L390 525 L470 588 L560 530 L640 588 L720 535 L800 585 L800 800 L0 800 Z" fill="#100a06"/>
+
+  <!-- tree trunk, right side, holding the sealed cavity -->
+  <path d="M560 800 L556 300 C556 260 590 235 630 235 C672 235 700 262 700 302 L706 800 Z" fill="url(#rh-trunk)"/>
+  <path d="M560 800 L556 300 C556 268 578 246 606 240 L606 800 Z" fill="#0e0a06" opacity="0.55"/>
+
+  <!-- the sealed nest cavity, mud and fruit pulp, with a narrow slit -->
+  <g>
+    <ellipse cx="636" cy="500" rx="58" ry="80" fill="url(#rh-seal)"/>
+    <ellipse cx="636" cy="500" rx="58" ry="80" fill="none" stroke="#2a1c10" stroke-width="4" opacity="0.5"/>
+    <g filter="url(#rh-glow-soft)">
+      <rect x="631" y="446" width="7" height="108" rx="3.5" fill="#f0a25a" opacity="0.85"/>
+    </g>
+  </g>
+
+  <!-- hornbill, perched at the mouth of the branch, three-quarter -->
+  <g>
+    <!-- tail, fanned, white with a black band -->
+    <path d="M470 560 C430 600 400 660 392 730 C420 720 452 700 470 670 C486 700 512 718 540 726 C528 656 502 596 470 560 Z" fill="#e9d2ab"/>
+    <path d="M420 660 C444 672 470 676 494 668 C486 686 468 700 448 706 C432 696 422 680 420 660 Z" fill="#150f0a"/>
+
+    <!-- body -->
+    <path d="M340 640 C300 580 306 480 372 440 C430 406 512 418 548 470 C580 516 572 590 528 630 C480 674 388 690 340 640 Z" fill="url(#rh-body)"/>
+
+    <!-- folded wing detail -->
+    <path d="M356 470 C338 520 340 574 366 616 C384 578 388 522 378 476 Z" fill="#050403" opacity="0.7"/>
+
+    <!-- legs, gripping the branch -->
+    <path d="M400 660 L396 706 M436 668 L432 712" stroke="#241a10" stroke-width="9" stroke-linecap="round"/>
+
+    <!-- head -->
+    <g>
+      <ellipse cx="366" cy="404" rx="58" ry="52" fill="url(#rh-body)"/>
+      <!-- eye -->
+      <circle cx="352" cy="398" r="6" fill="#e9d2ab"/>
+      <circle cx="352" cy="398" r="2.6" fill="#150f0a"/>
+    </g>
+
+    <!-- bill -->
+    <path d="M310 402 C260 396 210 388 170 380 C212 372 262 362 314 360 C332 372 336 392 310 402 Z" fill="url(#rh-bill)"/>
+
+    <!-- the great upcurved casque, the signature -->
+    <g filter="url(#rh-glow-soft)">
+      <path d="M300 366 C270 336 258 296 276 260 C296 222 344 208 372 232 C348 236 328 256 320 286 C312 316 314 346 330 368 C318 372 308 370 300 366 Z" fill="url(#rh-casque)"/>
+    </g>
+  </g>
+
+  <!-- foreground branch -->
+  <path d="M0 700 C160 668 320 706 460 672 C560 648 680 664 800 630" stroke="#0f0a06" stroke-width="14" fill="none" opacity="0.85"/>
+</svg>

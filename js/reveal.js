@@ -37,7 +37,7 @@ window.CINEMA = (function () {
     document.body.appendChild(root);
     cv = root.querySelector(".cv"); ctx = cv.getContext("2d");
     root.querySelector(".skip").addEventListener("click", finishNow);
-    root.querySelector(".cinema-cta").addEventListener("click", finishNow);
+    root.querySelector(".cinema-cta").addEventListener("click", seeFullReading);
     root.querySelector(".cinema-share").addEventListener("click", doShare);
     root.querySelector(".cinema-home").addEventListener("click", goHome);
     const st = root.querySelector(".sound-toggle");
@@ -84,31 +84,43 @@ window.CINEMA = (function () {
 
   /* ---- particles ---- */
   function burst(){
-    const cx=cv.width/2, cy=cv.height/2;
-    const cols=["#ffd98a","#ffb14a","#d63a28","#e8edff","#aab8ff","#f5ecd2"];
+    const W=cv.width, H=cv.height, cx=W/2, cy=H/2;
+    const cols=["#ffd98a","#ffb14a","#d63a28","#e8edff","#aab8ff","#f5ecd2","#8fce9b"];
+    const pick=()=>cols[(Math.random()*cols.length)|0];
     parts=[];
-    for(let i=0;i<170;i++){
-      const ang=Math.random()*Math.PI*2, sp=Math.random()*13+3;
-      parts.push({x:cx,y:cy,vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp,
-        r:Math.random()*3+1,life:1,c:cols[(Math.random()*cols.length)|0]});
-    }
+    // 1) radial pop from the center (the original burst)
+    for(let i=0;i<150;i++){ const ang=Math.random()*Math.PI*2, sp=Math.random()*13+3;
+      parts.push({t:"dot",x:cx,y:cy,vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp,r:Math.random()*3+1,life:1,dl:0.013,c:pick()}); }
+    // 2) confetti ribbons raining from above, swaying + tumbling
+    for(let i=0;i<140;i++){ parts.push({t:"rib",x:Math.random()*W,y:-20-Math.random()*H*0.5,
+      vx:(Math.random()-0.5)*1.8,vy:Math.random()*3+2.2,rot:Math.random()*6.28,vr:(Math.random()-0.5)*0.32,
+      w:Math.random()*5+4,h:Math.random()*9+6,life:1,dl:0.004,c:pick()}); }
+    // 3) sparkles: four-point stars twinkling around the name
+    for(let i=0;i<36;i++){ parts.push({t:"spk",x:cx+(Math.random()-0.5)*W*0.72,y:cy+(Math.random()-0.5)*H*0.5,
+      vy:-(Math.random()*0.4+0.1),ph:Math.random()*6.28,sp:Math.random()*0.16+0.06,sz:Math.random()*2+1.6,life:1,dl:0.006,c:"#fff8e6"}); }
     let ring=0;
     cancelAnimationFrame(raf);
     (function frame(){
-      ctx.clearRect(0,0,cv.width,cv.height);
-      // shockwave ring
-      if(ring<1){ ring+=0.035;
-        ctx.beginPath(); ctx.arc(cx,cy,ring*Math.max(cv.width,cv.height)*0.6,0,7);
+      ctx.clearRect(0,0,W,H);
+      if(ring<1){ ring+=0.03;
+        ctx.beginPath(); ctx.arc(cx,cy,ring*Math.max(W,H)*0.6,0,7);
         ctx.strokeStyle=`rgba(245,236,210,${0.6*(1-ring)})`; ctx.lineWidth=6*(1-ring)+1; ctx.stroke(); }
       let alive=false;
       for(const p of parts){
-        if(p.life<=0) continue; alive=true;
-        p.vy+=0.12; p.vx*=0.985; p.vy*=0.985; p.x+=p.vx; p.y+=p.vy; p.life-=0.012;
-        ctx.globalAlpha=Math.max(0,p.life); ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,7);
-        ctx.fillStyle=p.c; ctx.fill();
+        if(p.life<=0) continue; alive=true; p.life-=p.dl;
+        if(p.t==="dot"){ p.vy+=0.12; p.vx*=0.985; p.vy*=0.985; p.x+=p.vx; p.y+=p.vy;
+          ctx.globalAlpha=Math.max(0,p.life); ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,7); ctx.fillStyle=p.c; ctx.fill(); }
+        else if(p.t==="rib"){ p.x+=p.vx+Math.sin(p.y*0.02)*0.7; p.y+=p.vy; p.rot+=p.vr; if(p.y>H+30) p.life=0;
+          ctx.save(); ctx.globalAlpha=Math.max(0,Math.min(1,p.life*1.5)); ctx.translate(p.x,p.y); ctx.rotate(p.rot);
+          ctx.fillStyle=p.c; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore(); }
+        else { p.ph+=p.sp; p.y+=p.vy; const tw=(Math.sin(p.ph)+1)/2, s=p.sz*(0.55+0.9*tw);
+          ctx.globalAlpha=Math.max(0,p.life)*(0.25+0.75*tw); ctx.fillStyle=p.c; ctx.beginPath();
+          ctx.moveTo(p.x,p.y-s*2.2); ctx.lineTo(p.x+s*0.5,p.y-s*0.5); ctx.lineTo(p.x+s*2.2,p.y);
+          ctx.lineTo(p.x+s*0.5,p.y+s*0.5); ctx.lineTo(p.x,p.y+s*2.2); ctx.lineTo(p.x-s*0.5,p.y+s*0.5);
+          ctx.lineTo(p.x-s*2.2,p.y); ctx.lineTo(p.x-s*0.5,p.y-s*0.5); ctx.closePath(); ctx.fill(); }
       }
       ctx.globalAlpha=1;
-      if(alive||ring<1) raf=requestAnimationFrame(frame); else ctx.clearRect(0,0,cv.width,cv.height);
+      if(alive||ring<1) raf=requestAnimationFrame(frame); else ctx.clearRect(0,0,W,H);
     })();
   }
 
@@ -158,6 +170,16 @@ window.CINEMA = (function () {
     root.classList.remove("on"); document.body.style.overflow="";
     if(ctx) ctx.clearRect(0,0,cv.width,cv.height);
     if(doneCb){ const cb=doneCb; doneCb=null; cb(current); }
+  }
+
+  function slugify(s){ return String(s||"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,""); }
+  /* "See my full reading" now goes to the animal's own page (the full reading),
+     not back to the homepage observatory. Uses the passed slug, falling back to
+     a slug built from the animal name. */
+  function seeFullReading(){
+    const slug = (current && current.slug) ? current.slug : (current ? slugify(current.primal) : "");
+    if(slug){ clearTimers(); cancelAnimationFrame(raf); document.body.style.overflow=""; location.href = "/animals/" + slug + "/"; return; }
+    finishNow();
   }
 
   /* ---- share / home actions on the reveal end-state ---- */

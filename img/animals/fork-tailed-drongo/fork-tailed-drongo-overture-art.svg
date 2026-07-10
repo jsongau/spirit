@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A glossy black fork-tailed drongo perched close on a bare branch, red eye alert, its deeply forked tail hanging below in the dark" >
+  <defs>
+    <linearGradient id="fdo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#241a11"/>
+      <stop offset="45%" stop-color="#12100d"/>
+      <stop offset="100%" stop-color="#07080a"/>
+    </linearGradient>
+    <linearGradient id="fdo-feather" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#2c3542"/>
+      <stop offset="50%" stop-color="#12161d"/>
+      <stop offset="100%" stop-color="#050608"/>
+    </linearGradient>
+    <linearGradient id="fdo-sheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5b7fa6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#5b7fa6" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="fdo-call" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e9edf1" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#a9b4bd" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#a9b4bd" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="fdo-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fdo-soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#fdo-bg)"/>
+
+  <!-- faint call-burst -->
+  <g filter="url(#fdo-glow)" opacity="0.75">
+    <circle cx="150" cy="180" r="90" fill="url(#fdo-call)"/>
+  </g>
+
+  <!-- bare branch -->
+  <path d="M0 300 C70 286 130 292 200 278 C270 264 330 270 400 250" stroke="#1a130d" stroke-width="7" fill="none" opacity="0.85"/>
+  <path d="M110 278 C126 268 140 262 156 258" stroke="#120d09" stroke-width="4" fill="none" opacity="0.7"/>
+
+  <!-- the drongo, close and upright -->
+  <g>
+    <!-- forked tail hanging below the perch -->
+    <path d="M214 300 C244 360 258 430 236 484 C222 440 210 390 206 348 Z" fill="url(#fdo-feather)"/>
+    <path d="M214 300 C198 356 190 420 210 478 C224 430 220 370 222 336 Z" fill="url(#fdo-feather)"/>
+
+    <!-- body -->
+    <path d="M172 200 C154 232 150 274 166 308 C182 338 214 352 244 346 C280 340 302 306 298 264 C294 222 264 190 224 184 C206 181 188 186 172 200 Z" fill="url(#fdo-feather)"/>
+    <path d="M186 200 C216 188 258 195 282 224 C262 212 228 207 198 218 C190 221 184 214 186 200 Z" fill="url(#fdo-sheen)"/>
+
+    <!-- feet on branch -->
+    <path d="M198 302 l-8 18 M214 306 l-3 20 M230 302 l7 18" stroke="#0a0b0d" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- head -->
+    <g>
+      <ellipse cx="176" cy="176" rx="42" ry="38" fill="url(#fdo-feather)"/>
+      <path d="M144 154 C158 144 182 142 198 152 C182 146 160 148 148 160 Z" fill="url(#fdo-sheen)"/>
+      <path d="M136 178 C120 178 106 182 96 188 C108 194 124 196 138 192 Z" fill="#050607"/>
+      <g filter="url(#fdo-soft)">
+        <circle cx="160" cy="170" r="8" fill="#b8321f"/>
+        <circle cx="163" cy="167" r="2.6" fill="#f0d9c8"/>
+      </g>
+    </g>
+  </g>
+</svg>

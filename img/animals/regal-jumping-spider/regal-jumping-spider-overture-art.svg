@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A regal jumping spider perched on a palmetto frond at night, its large forward eyes and iridescent chelicerae catching the moonlight, a dragline trailing behind it">
+  <defs>
+    <linearGradient id="rjso-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141f1a"/>
+      <stop offset="100%" stop-color="#070b09"/>
+    </linearGradient>
+    <radialGradient id="rjso-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f7f4e4"/>
+      <stop offset="100%" stop-color="#b7ae87"/>
+    </radialGradient>
+    <linearGradient id="rjso-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a4030"/>
+      <stop offset="100%" stop-color="#1c170f"/>
+    </linearGradient>
+    <radialGradient id="rjso-chelicerae" cx="40%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#9df3df"/>
+      <stop offset="50%" stop-color="#2fa08c"/>
+      <stop offset="100%" stop-color="#123f38"/>
+    </radialGradient>
+    <filter id="rjso-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#rjso-bg)"/>
+
+  <!-- thin sliver of moon -->
+  <g filter="url(#rjso-glow)">
+    <circle cx="322" cy="90" r="30" fill="url(#rjso-moon)"/>
+  </g>
+
+  <!-- frond the spider is perched on -->
+  <path d="M0 380 C90 350 160 372 240 344 C300 322 350 340 400 316 L400 420 L0 420 Z" fill="#101a15" opacity="0.9"/>
+
+  <!-- dragline trailing off frame -->
+  <path d="M40 300 C90 320 140 330 178 320" stroke="#d9e4dc" stroke-width="2" fill="none" opacity="0.5" stroke-linecap="round"/>
+
+  <!-- spider, close, facing forward -->
+  <g>
+    <!-- legs -->
+    <path d="M150 330 C120 350 90 350 62 336" stroke="url(#rjso-body)" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M158 352 C128 380 96 392 66 388" stroke="url(#rjso-body)" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M232 330 C264 306 300 300 334 308" stroke="url(#rjso-body)" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M226 352 C260 336 296 336 328 350" stroke="url(#rjso-body)" stroke-width="9" fill="none" stroke-linecap="round"/>
+
+    <!-- abdomen -->
+    <path d="M200 336 C238 336 264 372 260 414 C256 452 226 478 190 472 C158 466 140 432 146 394 C150 360 172 336 200 336 Z" fill="url(#rjso-body)"/>
+    <path d="M164 388 L200 372 L236 388" stroke="#cfc7a6" stroke-width="3.5" fill="none" opacity="0.5" stroke-linecap="round"/>
+    <path d="M170 418 L200 404 L230 418" stroke="#cfc7a6" stroke-width="3.5" fill="none" opacity="0.4" stroke-linecap="round"/>
+
+    <!-- cephalothorax -->
+    <ellipse cx="200" cy="292" rx="50" ry="44" fill="url(#rjso-body)"/>
+
+    <!-- secondary eyes -->
+    <circle cx="162" cy="268" r="7" fill="#0c0f0b"/>
+    <circle cx="238" cy="268" r="7" fill="#0c0f0b"/>
+
+    <!-- principal eyes, large -->
+    <g filter="url(#rjso-glow)">
+      <circle cx="176" cy="276" r="18" fill="#0a0d0a"/>
+      <circle cx="224" cy="276" r="18" fill="#0a0d0a"/>
+      <circle cx="170" cy="269" r="5" fill="#eef2e6"/>
+      <circle cx="218" cy="269" r="5" fill="#eef2e6"/>
+    </g>
+
+    <!-- chelicerae -->
+    <g filter="url(#rjso-glow)">
+      <path d="M182 300 C178 318 186 332 200 334 C194 320 194 306 188 298 Z" fill="url(#rjso-chelicerae)"/>
+      <path d="M218 300 C222 318 214 332 200 334 C206 320 206 306 212 298 Z" fill="url(#rjso-chelicerae)"/>
+    </g>
+  </g>
+</svg>

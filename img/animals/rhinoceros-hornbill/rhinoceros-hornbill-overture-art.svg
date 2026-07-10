@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A rhinoceros hornbill's head and upcurved casque in profile against a dark canopy, beside a narrow glowing slit sealed into a tree trunk">
+  <defs>
+    <linearGradient id="rho-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1b120a"/>
+      <stop offset="100%" stop-color="#0a0705"/>
+    </linearGradient>
+    <linearGradient id="rho-casque" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7a2c14"/>
+      <stop offset="50%" stop-color="#cf5a2a"/>
+      <stop offset="100%" stop-color="#f0a25a"/>
+    </linearGradient>
+    <linearGradient id="rho-bill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e9d2ab"/>
+      <stop offset="100%" stop-color="#cf5a2a"/>
+    </linearGradient>
+    <radialGradient id="rho-seal" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#8a6134"/>
+      <stop offset="100%" stop-color="#4f3b2c"/>
+    </radialGradient>
+    <filter id="rho-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#rho-bg)"/>
+
+  <!-- distant canopy line -->
+  <path d="M0 330 C60 312 110 336 170 316 C220 300 280 322 340 306 C365 300 384 306 400 300 L400 500 L0 500 Z" fill="#120c07" opacity="0.9"/>
+
+  <!-- sealed cavity, lower left, with its slit -->
+  <g>
+    <ellipse cx="90" cy="392" rx="46" ry="62" fill="url(#rho-seal)"/>
+    <g filter="url(#rho-glow)">
+      <rect x="86" y="352" width="6" height="82" rx="3" fill="#f0a25a" opacity="0.85"/>
+    </g>
+  </g>
+
+  <!-- hornbill head and casque, upper right, in profile -->
+  <g>
+    <ellipse cx="252" cy="200" rx="66" ry="58" fill="#161009"/>
+    <circle cx="236" cy="192" r="7" fill="#e9d2ab"/>
+    <circle cx="236" cy="192" r="3" fill="#0a0705"/>
+
+    <!-- bill -->
+    <path d="M186 198 C124 190 66 178 18 168 C68 158 130 146 194 144 C216 158 222 182 186 198 Z" fill="url(#rho-bill)"/>
+
+    <!-- casque -->
+    <g filter="url(#rho-glow)">
+      <path d="M172 156 C136 122 122 74 144 32 C168 -10 226 -22 260 8 C230 12 206 36 196 72 C186 108 190 144 210 170 C196 176 182 168 172 156 Z" fill="url(#rho-casque)"/>
+    </g>
+  </g>
+
+  <!-- foreground branch -->
+  <path d="M0 456 C90 436 190 464 280 440 C320 430 360 438 400 424" stroke="#0d0906" stroke-width="10" fill="none" opacity="0.85"/>
+</svg>

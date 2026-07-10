@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A harpy eagle's head and pale barred chest close among dark branches, its crest raised, a full moon glowing faintly above the canopy">
+  <defs>
+    <linearGradient id="heo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#16211b"/>
+      <stop offset="100%" stop-color="#080d0a"/>
+    </linearGradient>
+    <radialGradient id="heo-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f2eede"/>
+      <stop offset="100%" stop-color="#b7b29c"/>
+    </radialGradient>
+    <linearGradient id="heo-mantle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5c666a"/>
+      <stop offset="100%" stop-color="#23282a"/>
+    </linearGradient>
+    <linearGradient id="heo-breast" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e4e6e0"/>
+      <stop offset="100%" stop-color="#aab0ac"/>
+    </linearGradient>
+    <filter id="heo-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#heo-bg)"/>
+
+  <!-- faint full moon behind canopy -->
+  <g filter="url(#heo-glow)" opacity="0.85">
+    <circle cx="300" cy="92" r="46" fill="url(#heo-moon)"/>
+  </g>
+
+  <!-- branches -->
+  <path d="M0 160 C80 140 140 168 200 150 C250 135 320 158 400 138" stroke="#1c241d" stroke-width="6" fill="none" opacity="0.7"/>
+  <path d="M40 480 C100 440 100 370 160 348" stroke="#1c241d" stroke-width="5" fill="none" opacity="0.6"/>
+
+  <!-- eagle, head and chest, close -->
+  <g>
+    <!-- shoulder / folded wing mass -->
+    <path d="M120 480 C90 420 100 340 160 300 C210 268 280 278 310 330 C336 378 322 440 288 478 Z" fill="url(#heo-mantle)"/>
+
+    <!-- pale barred chest -->
+    <path d="M150 340 C172 322 210 324 226 346 C242 372 240 424 226 460 C212 486 178 492 160 466 C142 440 136 372 150 340 Z" fill="url(#heo-breast)"/>
+    <path d="M156 366 L222 366 M152 392 L226 392 M154 418 L220 418 M160 444 L212 444" stroke="#7d8580" stroke-width="3.4" opacity="0.55"/>
+
+    <!-- head -->
+    <g>
+      <ellipse cx="196" cy="266" rx="50" ry="46" fill="url(#heo-mantle)"/>
+      <path d="M168 274 C176 298 218 298 226 274 C218 256 176 256 168 274 Z" fill="#c7cdc7" opacity="0.9"/>
+      <!-- double-pointed crest -->
+      <path d="M170 232 C165 204 170 182 184 168 C188 190 188 214 188 234 Z" fill="#14181a"/>
+      <path d="M206 232 C211 202 206 180 192 166 C188 190 189 214 189 234 Z" fill="#14181a"/>
+      <!-- beak -->
+      <path d="M188 276 C193 288 193 298 184 305 C179 296 179 283 188 276 Z" fill="#141414"/>
+      <!-- eye -->
+      <circle cx="178" cy="264" r="6" fill="#141212"/>
+      <circle cx="180" cy="261" r="1.8" fill="#e7e2cf"/>
+    </g>
+  </g>
+</svg>

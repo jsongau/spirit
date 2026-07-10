@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A sunbittern standing at a dark riverbank, its plain barred wings thrown open to reveal two enormous chestnut and gold eyespots">
+  <defs>
+    <radialGradient id="sb-sky" cx="50%" cy="34%" r="90%">
+      <stop offset="0%" stop-color="#2a2113"/>
+      <stop offset="55%" stop-color="#18140b"/>
+      <stop offset="100%" stop-color="#0d0b06"/>
+    </radialGradient>
+    <linearGradient id="sb-water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2318"/>
+      <stop offset="100%" stop-color="#0a0f09"/>
+    </linearGradient>
+    <linearGradient id="sb-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a3f2c"/>
+      <stop offset="55%" stop-color="#2c2416"/>
+      <stop offset="100%" stop-color="#15110a"/>
+    </linearGradient>
+    <linearGradient id="sb-wing" x1="0" y1="0" x2="1" y2="0.2">
+      <stop offset="0%" stop-color="#3a3122"/>
+      <stop offset="60%" stop-color="#241d13"/>
+      <stop offset="100%" stop-color="#120e08"/>
+    </linearGradient>
+    <radialGradient id="sb-eyespot" cx="50%" cy="50%" r="52%">
+      <stop offset="0%" stop-color="#f0c869"/>
+      <stop offset="35%" stop-color="#d9a441"/>
+      <stop offset="70%" stop-color="#b5452a"/>
+      <stop offset="100%" stop-color="#5c2414"/>
+    </radialGradient>
+    <radialGradient id="sb-eyespot-core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a1108"/>
+      <stop offset="70%" stop-color="#3a2411"/>
+      <stop offset="100%" stop-color="#5c2414"/>
+    </radialGradient>
+    <filter id="sb-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#sb-sky)"/>
+
+  <!-- far reed line -->
+  <path d="M0 470 L60 445 L110 462 L170 432 L230 458 L300 428 L370 460 L440 434 L510 462 L580 436 L650 464 L720 438 L800 460 L800 800 L0 800 Z" fill="#161f13" opacity="0.85"/>
+  <!-- near reed line -->
+  <path d="M0 520 L80 495 L150 515 L230 485 L310 518 L390 488 L470 520 L550 490 L630 522 L710 492 L800 518 L800 800 L0 800 Z" fill="#0e1710"/>
+
+  <!-- water -->
+  <rect x="0" y="560" width="800" height="240" fill="url(#sb-water)"/>
+  <path d="M40 610 q60 -8 120 0 t120 0 t120 0 t120 0 t120 0 t120 0" stroke="#26332a" stroke-width="2" fill="none" opacity="0.5"/>
+  <path d="M20 665 q70 -10 140 0 t140 0 t140 0 t140 0 t140 0" stroke="#1c2620" stroke-width="2" fill="none" opacity="0.45"/>
+
+  <!-- bird, wings fully spread in the sunburst display -->
+  <g>
+    <!-- left wing -->
+    <g filter="url(#sb-glow)">
+      <path d="M392 470 C300 430 190 420 120 470 C150 500 200 520 260 522 C220 540 175 560 150 590 C210 585 270 560 310 528 C300 555 285 585 275 615 C325 590 365 545 392 500 Z" fill="url(#sb-wing)"/>
+      <ellipse cx="225" cy="500" rx="66" ry="46" fill="url(#sb-eyespot)" transform="rotate(-18 225 500)"/>
+      <ellipse cx="225" cy="500" rx="30" ry="20" fill="url(#sb-eyespot-core)" transform="rotate(-18 225 500)"/>
+    </g>
+
+    <!-- right wing -->
+    <g filter="url(#sb-glow)">
+      <path d="M408 470 C500 430 610 420 680 470 C650 500 600 520 540 522 C580 540 625 560 650 590 C590 585 530 560 490 528 C500 555 515 585 525 615 C475 590 435 545 408 500 Z" fill="url(#sb-wing)"/>
+      <ellipse cx="575" cy="500" rx="66" ry="46" fill="url(#sb-eyespot)" transform="rotate(18 575 500)"/>
+      <ellipse cx="575" cy="500" rx="30" ry="20" fill="url(#sb-eyespot-core)" transform="rotate(18 575 500)"/>
+    </g>
+
+    <!-- tail, fanned behind the body -->
+    <path d="M355 560 C340 620 345 680 375 715 C400 685 412 630 405 575 C425 630 420 685 400 720 C430 690 448 630 440 575 Z" fill="url(#sb-body)"/>
+    <path d="M370 585 q30 60 4 130 M400 585 q22 62 0 132 M428 585 q6 60 -14 128" stroke="#0d0a05" stroke-width="3" fill="none" opacity="0.55"/>
+
+    <!-- body -->
+    <path d="M362 470 C348 500 344 545 356 585 C366 618 385 638 400 638 C415 638 434 618 444 585 C456 545 452 500 438 470 C420 452 380 452 362 470 Z" fill="url(#sb-body)"/>
+    <path d="M368 500 q32 8 64 0 M364 530 q36 9 72 0 M362 560 q38 9 76 0" stroke="#100c06" stroke-width="2.5" fill="none" opacity="0.55"/>
+
+    <!-- neck -->
+    <path d="M382 470 C378 430 380 390 392 358 C404 390 406 430 402 470 Z" fill="url(#sb-body)"/>
+
+    <!-- head -->
+    <g>
+      <ellipse cx="392" cy="340" rx="30" ry="26" fill="#141009"/>
+      <path d="M368 322 q24 -20 48 0" stroke="#e9e2cf" stroke-width="5" fill="none" opacity="0.9"/>
+      <path d="M366 348 q26 16 52 0" stroke="#e9e2cf" stroke-width="4" fill="none" opacity="0.75"/>
+      <circle cx="392" cy="336" r="5.5" fill="#b5452a"/>
+      <path d="M410 340 C428 336 444 338 456 346 C444 350 428 350 412 346 Z" fill="#c9702f"/>
+    </g>
+
+    <!-- legs -->
+    <path d="M382 636 C378 670 374 700 372 726" stroke="#c9702f" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M416 636 C420 670 424 700 426 726" stroke="#c9702f" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

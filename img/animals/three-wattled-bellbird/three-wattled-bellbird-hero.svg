@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A three-wattled bellbird perched on a broken branch in the cloud forest canopy, mouth open wide in mid-call, three long black wattles hanging past its throat, a waxing gibbous moon above the mist">
+  <defs>
+    <radialGradient id="twb-sky" cx="56%" cy="24%" r="95%">
+      <stop offset="0%" stop-color="#2a2313"/>
+      <stop offset="55%" stop-color="#1c150c"/>
+      <stop offset="100%" stop-color="#100b06"/>
+    </radialGradient>
+    <radialGradient id="twb-moon-lit" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f8f0da"/>
+      <stop offset="65%" stop-color="#f3e6c9"/>
+      <stop offset="100%" stop-color="#c96a35"/>
+    </radialGradient>
+    <linearGradient id="twb-canopy-far" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#26210f"/>
+      <stop offset="100%" stop-color="#140f08"/>
+    </linearGradient>
+    <linearGradient id="twb-canopy-near" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1b1610"/>
+      <stop offset="100%" stop-color="#0c0906"/>
+    </linearGradient>
+    <linearGradient id="twb-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d98a4f"/>
+      <stop offset="55%" stop-color="#c1602f"/>
+      <stop offset="100%" stop-color="#7c3c1e"/>
+    </linearGradient>
+    <radialGradient id="twb-head" cx="42%" cy="32%" r="68%">
+      <stop offset="0%" stop-color="#fdf8ec"/>
+      <stop offset="100%" stop-color="#e4d7b3"/>
+    </radialGradient>
+    <linearGradient id="twb-branch" x1="0" y1="0" x2="1" y2="0.3">
+      <stop offset="0%" stop-color="#4a3520"/>
+      <stop offset="100%" stop-color="#241a10"/>
+    </linearGradient>
+    <linearGradient id="twb-wattle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2c2015"/>
+      <stop offset="100%" stop-color="#0d0905"/>
+    </linearGradient>
+    <radialGradient id="twb-gap" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8a13e" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#e8a13e" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="twb-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#twb-sky)"/>
+
+  <!-- waxing gibbous moon: mostly lit, thin shadow crescent on the left -->
+  <g filter="url(#twb-glow)">
+    <circle cx="606" cy="146" r="62" fill="url(#twb-moon-lit)"/>
+    <path d="M606 84 a62 62 0 0 0 0 124 a23 62 0 0 1 0 -124 Z" fill="#140f08"/>
+  </g>
+
+  <!-- soft mist band across the mid-ground -->
+  <ellipse cx="400" cy="470" rx="440" ry="46" fill="#e4d7b3" opacity="0.05"/>
+  <ellipse cx="300" cy="500" rx="360" ry="36" fill="#e4d7b3" opacity="0.04"/>
+
+  <!-- far canopy ridge -->
+  <path d="M0 540 C60 512 110 528 160 508 C220 484 270 512 330 494 C390 476 440 500 500 484 C560 468 610 494 670 478 C720 464 760 480 800 468 L800 800 L0 800 Z" fill="url(#twb-canopy-far)" opacity="0.9"/>
+  <!-- near canopy ridge -->
+  <path d="M0 610 C70 584 130 606 190 584 C250 562 310 592 380 572 C450 552 510 584 580 566 C650 548 710 576 800 556 L800 800 L0 800 Z" fill="url(#twb-canopy-near)"/>
+
+  <!-- light gap glow beneath the broken end of the branch -->
+  <ellipse cx="560" cy="700" rx="150" ry="70" fill="url(#twb-gap)"/>
+
+  <!-- the claimed branch, broken at its far end -->
+  <path d="M120 776 C220 748 320 730 410 700 C470 680 520 660 556 626 L566 636 C534 674 486 700 430 720 C340 750 236 768 128 792 Z" fill="url(#twb-branch)"/>
+  <!-- broken stub at the branch's far end -->
+  <path d="M556 626 L566 636 L588 602 L600 616 L578 596 Z" fill="#241a10"/>
+  <!-- small twig stubs along the branch -->
+  <path d="M300 726 L292 700" stroke="#241a10" stroke-width="5" stroke-linecap="round"/>
+  <path d="M380 706 L376 682" stroke="#241a10" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- the bird, perched, calling -->
+  <g>
+    <!-- tail, trailing back and down over the branch -->
+    <path d="M320 720 C270 706 234 678 220 636 C258 652 296 670 336 690 C336 702 330 712 320 720 Z" fill="url(#twb-body)" opacity="0.94"/>
+
+    <!-- far leg gripping the branch -->
+    <path d="M400 700 C398 682 404 668 418 660 C422 674 420 690 412 704 Z" fill="#241a10"/>
+    <!-- near leg gripping the branch -->
+    <path d="M438 702 C436 682 444 666 460 656 C464 672 462 690 452 706 Z" fill="#1b130b"/>
+    <path d="M406 704 C412 698 420 698 426 702" stroke="#0d0905" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M444 706 C452 700 462 700 468 706" stroke="#0d0905" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+    <!-- folded wing along the body -->
+    <path d="M356 560 C334 592 330 636 350 668 C376 654 398 622 402 584 C392 570 374 560 356 560 Z" fill="#8a4322" opacity="0.85"/>
+
+    <!-- torso, leaning forward into the call -->
+    <path d="M356 486 C328 528 322 592 348 656 C368 682 420 684 444 660 C468 620 468 552 440 502 C420 472 380 466 356 486 Z" fill="url(#twb-body)"/>
+
+    <!-- pale lower breast where chestnut meets white -->
+    <path d="M368 588 C364 618 372 646 396 662 C420 646 426 616 420 588 C400 598 384 598 368 588 Z" fill="#f3e6c9" opacity="0.28"/>
+
+    <!-- white neck, chest and head, leaning forward and down -->
+    <path d="M338 470 C324 440 336 406 372 392 C404 380 434 396 442 428 C448 452 430 470 404 476 C378 482 350 486 338 470 Z" fill="url(#twb-head)"/>
+
+    <!-- crown shading -->
+    <path d="M370 396 C392 386 416 392 428 410 C412 418 384 418 368 408 C367 404 368 400 370 396 Z" fill="#e4d7b3" opacity="0.6"/>
+
+    <!-- eye -->
+    <ellipse cx="392" cy="418" rx="8" ry="9" fill="#150f09"/>
+    <circle cx="394" cy="415" r="2.6" fill="#f8f0da"/>
+
+    <!-- open beak, lower mandible dropped almost to the chest -->
+    <path d="M436 424 C458 418 480 424 494 440 C476 448 456 448 440 442 Z" fill="#2c2015"/>
+    <path d="M436 432 C464 452 486 486 480 522 C462 500 444 466 432 438 Z" fill="#0d0905"/>
+
+    <!-- the three wattles, hanging from the base of the bill past the throat -->
+    <path d="M430 434 C420 468 414 508 424 544 C430 512 434 476 438 442 Z" fill="url(#twb-wattle)"/>
+    <path d="M444 438 C440 478 440 522 452 558 C460 522 458 480 452 444 Z" fill="url(#twb-wattle)"/>
+    <path d="M458 436 C462 472 468 510 484 540 C486 504 480 466 468 440 Z" fill="url(#twb-wattle)"/>
+  </g>
+</svg>

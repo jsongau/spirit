@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A small camouflaged octopus resting in a dark tide pool crevice, its body the color of wet stone, a handful of its rings glowing electric blue in warning along the arms">
+  <defs>
+    <radialGradient id="bro-water" cx="50%" cy="28%" r="95%">
+      <stop offset="0%" stop-color="#16292c"/>
+      <stop offset="55%" stop-color="#0e1c1e"/>
+      <stop offset="100%" stop-color="#070f10"/>
+    </radialGradient>
+    <linearGradient id="bro-mantle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6b5540"/>
+      <stop offset="55%" stop-color="#4a3a2c"/>
+      <stop offset="100%" stop-color="#271e16"/>
+    </linearGradient>
+    <linearGradient id="bro-arm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5b4835"/>
+      <stop offset="100%" stop-color="#241b14"/>
+    </linearGradient>
+    <radialGradient id="bro-ring" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#d8f6ff"/>
+      <stop offset="45%" stop-color="#4fc6e0"/>
+      <stop offset="100%" stop-color="#12414d"/>
+    </radialGradient>
+    <radialGradient id="bro-caustic" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1f3a3d" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#1f3a3d" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="bro-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bro-softglow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="16" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#bro-water)"/>
+
+  <!-- faint surface light, far above -->
+  <g opacity="0.5" filter="url(#bro-softglow)">
+    <ellipse cx="420" cy="70" rx="260" ry="60" fill="url(#bro-caustic)"/>
+  </g>
+  <ellipse cx="200" cy="140" rx="180" ry="40" fill="url(#bro-caustic)" opacity="0.35"/>
+
+  <!-- rock pool ledges -->
+  <path d="M0 620 L90 560 L170 600 L250 540 L330 605 L420 545 L520 610 L620 555 L720 615 L800 565 L800 800 L0 800 Z" fill="#0a1315"/>
+  <path d="M0 690 L110 650 L210 685 L320 635 L430 690 L540 645 L650 692 L800 650 L800 800 L0 800 Z" fill="#060d0e"/>
+  <path d="M60 640 C90 610 150 605 175 630 C165 655 100 662 60 640 Z" fill="#0e1a1c" opacity="0.8"/>
+  <path d="M560 650 C605 615 675 618 700 650 C685 678 595 682 560 650 Z" fill="#0e1a1c" opacity="0.8"/>
+
+  <!-- crevice shadow the animal is tucked into -->
+  <ellipse cx="400" cy="600" rx="230" ry="90" fill="#050a0b" opacity="0.7"/>
+
+  <!-- trailing arms, laid loosely over the stone -->
+  <g>
+    <path d="M400 560 C300 585 210 560 130 610 C90 634 70 660 55 700" stroke="url(#bro-arm)" stroke-width="26" fill="none" stroke-linecap="round" opacity="0.92"/>
+    <path d="M400 560 C320 600 260 605 205 660 C175 690 165 715 158 748" stroke="url(#bro-arm)" stroke-width="24" fill="none" stroke-linecap="round" opacity="0.92"/>
+    <path d="M420 565 C470 605 490 630 470 680 C458 710 430 730 405 748" stroke="url(#bro-arm)" stroke-width="24" fill="none" stroke-linecap="round" opacity="0.92"/>
+    <path d="M430 560 C520 585 590 575 660 615 C696 636 715 660 728 696" stroke="url(#bro-arm)" stroke-width="26" fill="none" stroke-linecap="round" opacity="0.92"/>
+    <path d="M410 570 C440 620 445 660 420 705 C405 730 385 745 362 758" stroke="url(#bro-arm)" stroke-width="20" fill="none" stroke-linecap="round" opacity="0.85"/>
+    <path d="M395 570 C360 615 335 650 345 700 C352 726 368 744 385 758" stroke="url(#bro-arm)" stroke-width="20" fill="none" stroke-linecap="round" opacity="0.85"/>
+  </g>
+
+  <!-- mantle, low and rounded, held close to the rock -->
+  <path d="M330 470 C330 415 358 372 400 366 C446 360 486 400 490 452 C494 500 470 545 418 556 C368 566 330 524 330 470 Z" fill="url(#bro-mantle)"/>
+
+  <!-- eye, watching -->
+  <ellipse cx="360" cy="440" rx="13" ry="15" fill="#0a0704"/>
+  <circle cx="357" cy="435" r="3.4" fill="#cfe9ee"/>
+
+  <!-- faint mottling on the mantle, camouflage texture -->
+  <g opacity="0.35">
+    <ellipse cx="420" cy="410" rx="18" ry="10" fill="#241a10"/>
+    <ellipse cx="450" cy="460" rx="14" ry="9" fill="#241a10"/>
+    <ellipse cx="400" cy="500" rx="16" ry="9" fill="#1c130c"/>
+  </g>
+
+  <!-- the rings: mostly quiet, three at full flash -->
+  <g>
+    <circle cx="150" cy="632" r="9" fill="#2c3a3c" opacity="0.6"/>
+    <circle cx="270" cy="600" r="7" fill="#2c3a3c" opacity="0.55"/>
+    <circle cx="600" cy="638" r="8" fill="#2c3a3c" opacity="0.55"/>
+    <circle cx="440" cy="700" r="7" fill="#2c3a3c" opacity="0.5"/>
+  </g>
+  <g filter="url(#bro-glow)">
+    <circle cx="198" cy="662" r="12" fill="url(#bro-ring)"/>
+    <circle cx="514" cy="600" r="10" fill="url(#bro-ring)"/>
+    <circle cx="428" cy="470" r="9" fill="url(#bro-ring)"/>
+    <circle cx="384" cy="640" r="8" fill="url(#bro-ring)"/>
+    <circle cx="646" cy="666" r="9" fill="url(#bro-ring)"/>
+  </g>
+</svg>

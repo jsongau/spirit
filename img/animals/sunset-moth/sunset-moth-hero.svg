@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A Madagascan sunset moth spread in full daylight against a dusk-colored sky, its four wings banded in structural green, blue, violet and gold, hindwings tapering into long orange-red tails, a full moon glowing above a Madagascar rainforest canopy">
+  <defs>
+    <radialGradient id="sm-sky" cx="50%" cy="26%" r="95%">
+      <stop offset="0%" stop-color="#2c1522"/>
+      <stop offset="55%" stop-color="#1a0f16"/>
+      <stop offset="100%" stop-color="#0c070a"/>
+    </radialGradient>
+    <radialGradient id="sm-moon" cx="45%" cy="42%" r="55%">
+      <stop offset="0%" stop-color="#f7ecd2"/>
+      <stop offset="65%" stop-color="#e8a23c"/>
+      <stop offset="100%" stop-color="#96631f"/>
+    </radialGradient>
+    <linearGradient id="sm-fore" x1="0.05" y1="0.1" x2="0.95" y2="0.85">
+      <stop offset="0%" stop-color="#0c090b"/>
+      <stop offset="26%" stop-color="#1c4a3a"/>
+      <stop offset="50%" stop-color="#276b78"/>
+      <stop offset="72%" stop-color="#7a4488"/>
+      <stop offset="100%" stop-color="#e8a23c"/>
+    </linearGradient>
+    <linearGradient id="sm-hind" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0%" stop-color="#170f14"/>
+      <stop offset="40%" stop-color="#8a3a22"/>
+      <stop offset="75%" stop-color="#c1481c"/>
+      <stop offset="100%" stop-color="#e8823c"/>
+    </linearGradient>
+    <linearGradient id="sm-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2e2126"/>
+      <stop offset="100%" stop-color="#100a0d"/>
+    </linearGradient>
+    <radialGradient id="sm-sheen" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c23f6b" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#c23f6b" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sm-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="11" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="sm-soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#sm-sky)"/>
+
+  <!-- full moon, distant, glowing -->
+  <g filter="url(#sm-glow)">
+    <circle cx="602" cy="164" r="62" fill="url(#sm-moon)"/>
+  </g>
+
+  <!-- Madagascar canopy, layered ridgeline -->
+  <path d="M0 610 C60 560 100 600 150 570 C200 540 240 590 300 560 C360 530 400 580 460 555 C520 530 560 585 620 560 C680 535 730 575 800 555 L800 800 L0 800 Z" fill="#140b10" opacity="0.92"/>
+  <path d="M0 665 C70 630 130 660 190 630 C250 600 300 645 370 625 C440 605 480 655 550 630 C620 605 670 650 730 630 C765 618 785 640 800 660 L800 800 L0 800 Z" fill="#0a0508"/>
+
+  <!-- ambient iridescent sheen behind the moth -->
+  <ellipse cx="400" cy="420" rx="260" ry="220" fill="url(#sm-sheen)" filter="url(#sm-soft)"/>
+
+  <!-- the moth, wings fully spread, dorsal display -->
+  <g>
+    <!-- left hindwing with tail streamer -->
+    <path d="M384 448 C316 470 214 494 156 534 C114 574 84 616 68 668 C90 656 112 640 138 624 C182 612 236 580 288 548 C336 518 372 490 388 466 Z" fill="url(#sm-hind)"/>
+    <!-- right hindwing with tail streamer -->
+    <path d="M416 448 C484 470 586 494 644 534 C686 574 716 616 732 668 C710 656 688 640 662 624 C618 612 564 580 512 548 C464 518 428 490 412 466 Z" fill="url(#sm-hind)"/>
+
+    <!-- left forewing -->
+    <path d="M390 392 C322 356 202 326 122 306 C90 348 90 430 132 480 C192 490 302 480 372 468 C388 448 392 416 390 392 Z" fill="url(#sm-fore)"/>
+    <!-- right forewing -->
+    <path d="M410 392 C478 356 598 326 678 306 C710 348 710 430 668 480 C608 490 498 480 428 468 C412 448 408 416 410 392 Z" fill="url(#sm-fore)"/>
+
+    <!-- banding hints, forewing -->
+    <path d="M150 340 C220 355 300 380 372 410" stroke="#e8a23c" stroke-width="2.5" fill="none" opacity="0.35"/>
+    <path d="M170 380 C230 392 300 412 366 436" stroke="#f2c98c" stroke-width="2" fill="none" opacity="0.3"/>
+    <path d="M650 340 C580 355 500 380 428 410" stroke="#e8a23c" stroke-width="2.5" fill="none" opacity="0.35"/>
+    <path d="M630 380 C570 392 500 412 434 436" stroke="#f2c98c" stroke-width="2" fill="none" opacity="0.3"/>
+
+    <!-- banding hints, hindwing tails -->
+    <path d="M340 500 C280 530 210 560 150 596" stroke="#e8823c" stroke-width="2" fill="none" opacity="0.4"/>
+    <path d="M460 500 C520 530 590 560 650 596" stroke="#e8823c" stroke-width="2" fill="none" opacity="0.4"/>
+
+    <!-- luminous sheen over the color bands, the structural-color signature -->
+    <g filter="url(#sm-glow)" opacity="0.5">
+      <ellipse cx="270" cy="380" rx="70" ry="30" fill="#276b78" opacity="0.5"/>
+      <ellipse cx="530" cy="380" rx="70" ry="30" fill="#276b78" opacity="0.5"/>
+    </g>
+
+    <!-- body -->
+    <path d="M400 352 C384 352 376 376 378 418 C380 466 388 520 400 566 C412 520 420 466 422 418 C424 376 416 352 400 352 Z" fill="url(#sm-body)"/>
+    <!-- segment lines -->
+    <path d="M386 400 C392 402 408 402 414 400 M384 440 C392 443 408 443 416 440 M384 480 C392 483 408 483 416 480" stroke="#0a0608" stroke-width="2" opacity="0.5" fill="none"/>
+
+    <!-- head -->
+    <circle cx="400" cy="338" r="15" fill="url(#sm-body)"/>
+    <circle cx="394" cy="335" r="2.6" fill="#f2c98c"/>
+    <circle cx="406" cy="335" r="2.6" fill="#f2c98c"/>
+
+    <!-- feathered antennae -->
+    <path d="M390 330 C372 314 348 306 328 298" stroke="#c23f6b" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8"/>
+    <path d="M410 330 C428 314 452 306 472 298" stroke="#c23f6b" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8"/>
+    <circle cx="328" cy="298" r="4" fill="#e8a23c"/>
+    <circle cx="472" cy="298" r="4" fill="#e8a23c"/>
+  </g>
+
+</svg>

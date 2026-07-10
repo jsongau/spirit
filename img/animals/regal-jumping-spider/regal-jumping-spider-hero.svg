@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A regal jumping spider leaping through dark palmetto scrub under a full moon, its iridescent blue-green fangs catching the light, a silk dragline trailing back to the leaf it jumped from">
+  <defs>
+    <radialGradient id="rjs-sky" cx="68%" cy="24%" r="95%">
+      <stop offset="0%" stop-color="#182420"/>
+      <stop offset="55%" stop-color="#0e1614"/>
+      <stop offset="100%" stop-color="#070b0a"/>
+    </radialGradient>
+    <radialGradient id="rjs-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f7f4e4"/>
+      <stop offset="65%" stop-color="#e3ddc0"/>
+      <stop offset="100%" stop-color="#b7ae87"/>
+    </radialGradient>
+    <linearGradient id="rjs-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a4030"/>
+      <stop offset="100%" stop-color="#1c170f"/>
+    </linearGradient>
+    <radialGradient id="rjs-chelicerae" cx="40%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#9df3df"/>
+      <stop offset="45%" stop-color="#2fa08c"/>
+      <stop offset="100%" stop-color="#123f38"/>
+    </radialGradient>
+    <linearGradient id="rjs-frond" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#16241d"/>
+      <stop offset="100%" stop-color="#080c0a"/>
+    </linearGradient>
+    <filter id="rjs-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#rjs-sky)"/>
+
+  <!-- full moon -->
+  <g filter="url(#rjs-glow)">
+    <circle cx="588" cy="150" r="86" fill="url(#rjs-moon)"/>
+  </g>
+
+  <!-- distant palmetto fronds, ridge line -->
+  <path d="M-10 620 C40 560 80 600 130 555 C160 525 190 585 230 560 C270 535 300 590 340 565 C380 540 410 590 460 560 C500 535 540 585 590 555 C640 525 680 580 730 555 C760 540 780 570 810 555 L810 800 L-10 800 Z" fill="url(#rjs-frond)" opacity="0.92"/>
+  <path d="M-10 680 C60 640 110 690 170 650 C220 618 260 675 320 645 C370 618 420 672 480 645 C530 620 580 672 640 645 C690 620 740 665 810 640 L810 800 L-10 800 Z" fill="#0a0f0c"/>
+
+  <!-- the leaf the spider jumped from, and its dragline -->
+  <path d="M96 596 C60 560 58 500 100 470 C138 500 146 556 116 598 Z" fill="url(#rjs-frond)"/>
+  <path d="M112 560 C210 500 320 470 402 452" stroke="#d9e4dc" stroke-width="2" fill="none" opacity="0.55" stroke-linecap="round"/>
+
+  <!-- the spider, mid-leap -->
+  <g>
+    <!-- trailing legs, pushed off -->
+    <path d="M330 470 C280 500 230 500 176 480" stroke="url(#rjs-body)" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M340 500 C296 545 246 560 194 552" stroke="url(#rjs-body)" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <path d="M356 528 C320 578 270 606 214 610" stroke="url(#rjs-body)" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <path d="M372 552 C348 604 306 640 254 656" stroke="url(#rjs-body)" stroke-width="10" fill="none" stroke-linecap="round"/>
+
+    <!-- forward legs, reaching -->
+    <path d="M368 400 C400 356 452 336 506 336" stroke="url(#rjs-body)" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <path d="M382 418 C424 384 478 372 530 380" stroke="url(#rjs-body)" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M400 440 C446 418 500 416 548 434" stroke="url(#rjs-body)" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <path d="M416 462 C462 452 510 458 552 480" stroke="url(#rjs-body)" stroke-width="10" fill="none" stroke-linecap="round"/>
+
+    <!-- abdomen -->
+    <path d="M470 470 C512 470 546 512 542 566 C538 616 498 650 452 644 C412 638 388 596 396 546 C402 504 432 470 470 470 Z" fill="url(#rjs-body)"/>
+    <!-- abdomen chevron markings -->
+    <path d="M424 530 L470 512 L516 530" stroke="#cfc7a6" stroke-width="4" fill="none" opacity="0.5" stroke-linecap="round"/>
+    <path d="M430 566 L470 550 L510 566" stroke="#cfc7a6" stroke-width="4" fill="none" opacity="0.4" stroke-linecap="round"/>
+    <path d="M436 602 L470 588 L504 602" stroke="#cfc7a6" stroke-width="4" fill="none" opacity="0.32" stroke-linecap="round"/>
+
+    <!-- cephalothorax -->
+    <ellipse cx="392" cy="418" rx="58" ry="50" fill="url(#rjs-body)"/>
+
+    <!-- secondary eyes -->
+    <circle cx="348" cy="390" r="8" fill="#0c0f0b"/>
+    <circle cx="440" cy="390" r="8" fill="#0c0f0b"/>
+    <circle cx="356" cy="410" r="5" fill="#0c0f0b"/>
+    <circle cx="430" cy="410" r="5" fill="#0c0f0b"/>
+
+    <!-- principal eyes, large, forward-facing -->
+    <g filter="url(#rjs-glow)">
+      <circle cx="368" cy="398" r="19" fill="#0a0d0a"/>
+      <circle cx="418" cy="398" r="19" fill="#0a0d0a"/>
+      <circle cx="362" cy="391" r="5" fill="#eef2e6"/>
+      <circle cx="412" cy="391" r="5" fill="#eef2e6"/>
+    </g>
+
+    <!-- chelicerae, iridescent -->
+    <g filter="url(#rjs-glow)">
+      <path d="M374 424 C370 444 378 460 392 462 C386 446 386 430 380 420 Z" fill="url(#rjs-chelicerae)"/>
+      <path d="M410 424 C414 444 406 460 392 462 C398 446 398 430 404 420 Z" fill="url(#rjs-chelicerae)"/>
+    </g>
+  </g>
+</svg>

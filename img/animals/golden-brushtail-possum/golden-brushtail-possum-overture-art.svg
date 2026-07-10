@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A golden brushtail possum curled at the entrance of its tree hollow at night, tail wrapped around a branch, a full moon glowing above the rooftops beyond the forest edge">
+  <defs>
+    <linearGradient id="gbpo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#20160a"/>
+      <stop offset="100%" stop-color="#0b0704"/>
+    </linearGradient>
+    <radialGradient id="gbpo-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff6df"/>
+      <stop offset="60%" stop-color="#e8c878"/>
+      <stop offset="100%" stop-color="#b9873f"/>
+    </radialGradient>
+    <linearGradient id="gbpo-fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#caa15a"/>
+      <stop offset="55%" stop-color="#a97f3a"/>
+      <stop offset="100%" stop-color="#6f4f24"/>
+    </linearGradient>
+    <radialGradient id="gbpo-gland" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#d8763a"/>
+      <stop offset="100%" stop-color="#8a3d1a"/>
+    </radialGradient>
+    <linearGradient id="gbpo-hollow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#150e07"/>
+      <stop offset="100%" stop-color="#040302"/>
+    </linearGradient>
+    <filter id="gbpo-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#gbpo-bg)"/>
+
+  <!-- full moon -->
+  <g filter="url(#gbpo-glow)">
+    <circle cx="308" cy="92" r="42" fill="url(#gbpo-moon)"/>
+  </g>
+
+  <!-- faint rooftop silhouette against the glow -->
+  <path d="M210 150 L240 150 L240 134 L268 134 L268 150 L300 150 L300 138 L340 138 L340 150 L400 150 L400 220 L210 220 Z" fill="#0d0904" opacity="0.75"/>
+
+  <!-- branch -->
+  <path d="M0 210 C70 194 130 208 190 190 C230 178 280 192 340 172" stroke="#2a1c0c" stroke-width="8" fill="none" opacity="0.75"/>
+
+  <!-- the tree hollow -->
+  <path d="M40 500 C32 400 40 320 78 280 C100 256 126 258 132 286 C138 310 122 336 106 348 C128 340 146 354 146 382 C146 430 130 470 114 500 Z" fill="url(#gbpo-hollow)"/>
+  <ellipse cx="96" cy="298" rx="18" ry="26" fill="#020201"/>
+
+  <!-- possum, compact, curled near the hollow mouth -->
+  <g>
+    <!-- tail wrapped around the branch -->
+    <path d="M188 196 C224 186 246 210 240 244 C234 276 200 288 172 278 C196 274 214 256 212 234 C210 216 198 206 182 210 Z" fill="url(#gbpo-fur)"/>
+
+    <!-- body -->
+    <path d="M120 470 C90 430 94 366 130 336 C158 312 200 306 230 322 C266 340 278 380 270 418 C262 458 238 480 206 486 Z" fill="url(#gbpo-fur)"/>
+    <path d="M158 372 C148 404 152 440 174 464 C190 448 196 408 186 378 Z" fill="#e8c878" opacity="0.26"/>
+
+    <!-- foreleg on the branch -->
+    <path d="M182 336 C172 322 170 306 180 294 C196 306 200 324 194 338 Z" fill="#8a663a"/>
+
+    <!-- head -->
+    <ellipse cx="188" cy="304" rx="42" ry="38" fill="#caa15a"/>
+    <ellipse cx="160" cy="270" rx="16" ry="20" fill="#a97f3a"/>
+    <ellipse cx="216" cy="270" rx="16" ry="20" fill="#a97f3a"/>
+    <ellipse cx="160" cy="271" rx="8" ry="11" fill="#3a2a14"/>
+    <ellipse cx="216" cy="271" rx="8" ry="11" fill="#3a2a14"/>
+    <path d="M172 316 C176 334 196 334 202 318 C196 306 178 306 172 316 Z" fill="#8a663a" opacity="0.6"/>
+    <ellipse cx="188" cy="320" rx="5.5" ry="4" fill="#1c1409"/>
+    <circle cx="170" cy="298" r="4.6" fill="#160f07"/>
+    <circle cx="171.4" cy="296.4" r="1.6" fill="#f0d989"/>
+    <circle cx="206" cy="298" r="4.6" fill="#160f07"/>
+    <circle cx="207.4" cy="296.4" r="1.6" fill="#f0d989"/>
+
+    <!-- chest scent gland -->
+    <g filter="url(#gbpo-glow)">
+      <ellipse cx="188" cy="360" rx="13" ry="17" fill="url(#gbpo-gland)" opacity="0.9"/>
+    </g>
+  </g>
+</svg>

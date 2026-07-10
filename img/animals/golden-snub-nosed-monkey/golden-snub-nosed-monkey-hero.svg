@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A golden snub-nosed monkey with an upturned blue-grey face sits close against a smaller monkey in a gesture of grooming, gold fur catching a full moon over a cold mountain ridge, while a distant troop of dozens of small golden shapes fills the far treeline">
+  <defs>
+    <radialGradient id="gsm-sky" cx="66%" cy="24%" r="95%">
+      <stop offset="0%" stop-color="#243541"/>
+      <stop offset="48%" stop-color="#182530"/>
+      <stop offset="100%" stop-color="#0d151b"/>
+    </radialGradient>
+    <radialGradient id="gsm-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#faf1da"/>
+      <stop offset="62%" stop-color="#f2cf8e"/>
+      <stop offset="100%" stop-color="#c98a35"/>
+    </radialGradient>
+    <linearGradient id="gsm-fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e0a63f"/>
+      <stop offset="55%" stop-color="#c9812c"/>
+      <stop offset="100%" stop-color="#7a4a1c"/>
+    </linearGradient>
+    <linearGradient id="gsm-fur-2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d99a3a"/>
+      <stop offset="100%" stop-color="#8a5620"/>
+    </linearGradient>
+    <radialGradient id="gsm-face" cx="45%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#7d97a3"/>
+      <stop offset="65%" stop-color="#54707d"/>
+      <stop offset="100%" stop-color="#3a5460"/>
+    </radialGradient>
+    <linearGradient id="gsm-ridge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c2c37"/>
+      <stop offset="100%" stop-color="#0f1a20"/>
+    </linearGradient>
+    <filter id="gsm-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="gsm-soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#gsm-sky)"/>
+
+  <!-- full moon, low warm glow -->
+  <g filter="url(#gsm-glow)">
+    <circle cx="588" cy="164" r="86" fill="url(#gsm-moon)"/>
+  </g>
+
+  <!-- distant ridgeline, layered -->
+  <path d="M0 520 L60 470 L120 505 L190 440 L250 500 L320 435 L390 505 L460 450 L530 510 L600 460 L670 508 L740 455 L800 500 L800 800 L0 800 Z" fill="url(#gsm-ridge)" opacity="0.9"/>
+  <path d="M0 590 L80 540 L150 585 L230 520 L310 590 L390 530 L470 595 L550 540 L640 598 L720 545 L800 592 L800 800 L0 800 Z" fill="#0b141a"/>
+
+  <!-- distant conifers, snow-frosted -->
+  <g opacity="0.55" fill="#0d1a20">
+    <path d="M96 560 L112 500 L128 560 Z"/>
+    <path d="M150 566 L164 512 L178 566 Z"/>
+    <path d="M560 566 L576 508 L592 566 Z"/>
+    <path d="M622 572 L636 520 L650 572 Z"/>
+    <path d="M690 566 L704 514 L718 566 Z"/>
+  </g>
+  <g opacity="0.6" fill="#cdd9de">
+    <path d="M108 512 L112 500 L116 512 Z"/>
+    <path d="M160 524 L164 512 L168 524 Z"/>
+    <path d="M572 520 L576 508 L580 520 Z"/>
+  </g>
+
+  <!-- the distant troop: dozens of small golden shapes scattered along the far ridge -->
+  <g opacity="0.8">
+    <circle cx="70" cy="548" r="4.5" fill="#c9812c"/>
+    <circle cx="88" cy="552" r="3.6" fill="#b5701f"/>
+    <circle cx="205" cy="512" r="4.1" fill="#c9812c"/>
+    <circle cx="222" cy="518" r="3.2" fill="#a5651c"/>
+    <circle cx="340" cy="500" r="4.4" fill="#c9812c"/>
+    <circle cx="358" cy="508" r="3.4" fill="#b5701f"/>
+    <circle cx="480" cy="510" r="4.0" fill="#c9812c"/>
+    <circle cx="498" cy="516" r="3.1" fill="#a5651c"/>
+    <circle cx="640" cy="516" r="4.3" fill="#c9812c"/>
+    <circle cx="658" cy="522" r="3.3" fill="#b5701f"/>
+    <circle cx="735" cy="512" r="4.1" fill="#c9812c"/>
+    <circle cx="30" cy="590" r="3.5" fill="#a5651c"/>
+    <circle cx="270" cy="588" r="3.7" fill="#a5651c"/>
+    <circle cx="420" cy="592" r="3.6" fill="#a5651c"/>
+    <circle cx="600" cy="596" r="3.8" fill="#a5651c"/>
+    <circle cx="770" cy="590" r="3.5" fill="#a5651c"/>
+  </g>
+
+  <!-- foreground: the smaller, groomed monkey, seated close, partly behind the larger figure -->
+  <g>
+    <path d="M470 700 C440 660 442 596 480 566 C508 544 546 542 570 566 C594 590 596 636 578 672 C562 700 500 716 470 700 Z" fill="url(#gsm-fur-2)"/>
+    <ellipse cx="520" cy="548" rx="34" ry="32" fill="url(#gsm-face)"/>
+    <path d="M508 552 C512 566 528 566 532 552 C528 542 512 542 508 552 Z" fill="#2e4652" opacity="0.7"/>
+    <circle cx="510" cy="540" r="3.2" fill="#12181c"/>
+    <circle cx="530" cy="540" r="3.2" fill="#12181c"/>
+  </g>
+
+  <!-- foreground: the primary monkey, larger, gold coat catching the moon, one hand reaching to groom -->
+  <g>
+    <!-- body mass -->
+    <path d="M262 748 C216 690 218 592 268 542 C304 508 360 494 414 502 C486 512 528 566 534 636 C540 706 500 748 452 758 Z" fill="url(#gsm-fur)"/>
+    <!-- shoulder ruff -->
+    <path d="M282 566 C266 610 272 668 300 710 C316 664 320 606 314 570 Z" fill="#a5651c" opacity="0.6"/>
+    <!-- haunch -->
+    <path d="M420 754 C470 736 508 682 500 616 C452 636 420 698 418 754 Z" fill="#8a5620" opacity="0.85"/>
+    <!-- long tail curling away -->
+    <path d="M478 700 C540 690 596 654 626 596 C632 588 624 580 616 586 C588 634 536 664 480 676 Z" fill="#7a4a1c" opacity="0.8"/>
+
+    <!-- reaching arm, hand toward the smaller monkey -->
+    <path d="M420 610 C452 596 486 588 512 592 C520 594 522 604 514 608 C488 610 458 618 432 630 Z" fill="url(#gsm-fur-2)"/>
+    <circle cx="510" cy="598" r="8" fill="#7a4a1c"/>
+
+    <!-- head, upturned snub-nosed face -->
+    <g>
+      <ellipse cx="360" cy="480" rx="72" ry="66" fill="url(#gsm-fur)"/>
+      <!-- rounded ears -->
+      <circle cx="308" cy="436" r="24" fill="#8a5620"/>
+      <circle cx="412" cy="436" r="24" fill="#8a5620"/>
+      <circle cx="308" cy="436" r="12" fill="#5a3814"/>
+      <circle cx="412" cy="436" r="12" fill="#5a3814"/>
+      <!-- bare blue-grey face -->
+      <ellipse cx="360" cy="492" rx="46" ry="42" fill="url(#gsm-face)"/>
+      <!-- the flattened, upturned nose: two forward peaks almost meeting the forehead -->
+      <path d="M336 470 C332 448 344 432 360 430 C376 432 388 448 384 470 C378 458 368 452 360 452 C352 452 342 458 336 470 Z" fill="#3a5460"/>
+      <ellipse cx="346" cy="472" rx="7" ry="10" fill="#1c2c34"/>
+      <ellipse cx="374" cy="472" rx="7" ry="10" fill="#1c2c34"/>
+      <!-- eyes -->
+      <circle cx="336" cy="486" r="6" fill="#12181c"/>
+      <circle cx="384" cy="486" r="6" fill="#12181c"/>
+      <circle cx="338" cy="484" r="1.6" fill="#e8dfc9"/>
+      <circle cx="386" cy="484" r="1.6" fill="#e8dfc9"/>
+      <!-- mouth -->
+      <path d="M344 512 C352 518 368 518 376 512" stroke="#28343a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- soft golden rim-light along the coat, facing the moon -->
+  <g filter="url(#gsm-soft)" opacity="0.5">
+    <path d="M414 502 C486 512 528 566 534 636" stroke="#f2cf8e" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

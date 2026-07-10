@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A spotted hyena at rest on dry ground, ears forward and head raised, a full moon low over a dark acacia horizon">
+  <defs>
+    <linearGradient id="sho-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#251309"/>
+      <stop offset="100%" stop-color="#0c0704"/>
+    </linearGradient>
+    <radialGradient id="sho-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fdf3d8"/>
+      <stop offset="100%" stop-color="#c1913f"/>
+    </radialGradient>
+    <linearGradient id="sho-coat" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a97c42"/>
+      <stop offset="100%" stop-color="#3c2415"/>
+    </linearGradient>
+    <filter id="sho-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#sho-bg)"/>
+
+  <!-- full moon -->
+  <g filter="url(#sho-glow)">
+    <circle cx="310" cy="98" r="40" fill="url(#sho-moon)"/>
+  </g>
+
+  <!-- low acacia horizon -->
+  <path d="M0 200 C40 188 60 168 78 176 C86 158 90 140 94 178 C110 188 118 172 122 186 L122 210 L0 210 Z" fill="#160d07" opacity="0.85"/>
+  <path d="M0 260 C70 240 140 258 210 236 C280 216 340 250 400 232 L400 500 L0 500 Z" fill="#140b06"/>
+
+  <!-- hyena, seated, head raised -->
+  <g>
+    <!-- tail -->
+    <path d="M120 400 C96 414 84 440 92 464 C104 460 116 440 120 416 Z" fill="url(#sho-coat)"/>
+    <path d="M92 464 C98 472 110 474 116 466 C110 458 98 458 92 464 Z" fill="#170e07"/>
+
+    <!-- haunches, low -->
+    <path d="M124 396 C116 424 122 458 148 476 C176 490 204 476 210 446 C214 418 196 394 164 388 C148 386 132 388 124 396 Z" fill="url(#sho-coat)"/>
+
+    <!-- back rising to shoulders -->
+    <path d="M164 388 C192 350 232 316 276 304 C298 298 318 302 322 316 C308 324 282 332 260 348 C228 372 208 398 208 446 Z" fill="#8a6236"/>
+
+    <!-- foreleg -->
+    <path d="M276 478 C270 428 272 372 286 334 C304 342 312 378 310 424 C308 456 304 476 300 480 Z" fill="url(#sho-coat)"/>
+    <path d="M232 480 C226 440 230 396 242 366 C258 374 264 404 262 440 C260 462 256 478 252 482 Z" fill="#241408"/>
+
+    <!-- shoulder ruff -->
+    <path d="M266 314 C254 300 252 280 262 266 C280 272 292 290 290 310 C286 318 274 320 266 314 Z" fill="#4a2c1a" opacity="0.85"/>
+
+    <!-- head, ears forward -->
+    <ellipse cx="316" cy="266" rx="32" ry="29" fill="#8a6236"/>
+    <path d="M298 246 C294 230 300 216 312 210 C316 226 314 242 306 254 Z" fill="#5a3a20"/>
+    <path d="M330 244 C338 228 336 214 326 208 C318 224 318 240 324 252 Z" fill="#5a3a20"/>
+    <path d="M332 274 C344 278 350 288 346 298 C338 300 328 294 326 284 Z" fill="#3c2415"/>
+    <circle cx="346" cy="292" r="3" fill="#0c0704"/>
+    <circle cx="320" cy="264" r="3.6" fill="#f3e6c4"/>
+    <circle cx="320" cy="264" r="1.4" fill="#1a0f08"/>
+
+    <!-- spots -->
+    <g fill="#1a0f08" opacity="0.7">
+      <circle cx="180" cy="410" r="6"/>
+      <circle cx="200" cy="432" r="5"/>
+      <circle cx="160" cy="440" r="4"/>
+      <circle cx="228" cy="398" r="5"/>
+      <circle cx="248" cy="374" r="4"/>
+      <circle cx="270" cy="348" r="4.5"/>
+      <circle cx="190" cy="456" r="4"/>
+    </g>
+  </g>
+</svg>

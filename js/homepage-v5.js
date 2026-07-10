@@ -200,7 +200,7 @@
   function cinemaInput(p) {
     var el = p.el || (typeof p.year === "number" ? ELS[((p.year % 10) + 10) % 10] : "");
     return { cn: EAST_ZI[p.e] || "", animal: EAST[p.e] || "", element: el,
-             glyph: WEST_G[p.w] || "", sign: WEST[p.w] || "", primal: p.name };
+             glyph: WEST_G[p.w] || "", sign: WEST[p.w] || "", primal: p.name, slug: p.slug };
   }
 
   // After the cinematic (or on Skip / "See my full reading"): open the observatory

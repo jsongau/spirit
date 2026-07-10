@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A golden lion tamarin gripping a dark branch in the Atlantic Forest canopy, its reddish-gold mane catching light from a full moon rising behind the trees, a tree hollow visible in the dark beneath it">
+  <defs>
+    <radialGradient id="glt-sky" cx="60%" cy="26%" r="95%">
+      <stop offset="0%" stop-color="#1c2c30"/>
+      <stop offset="55%" stop-color="#101f22"/>
+      <stop offset="100%" stop-color="#081114"/>
+    </radialGradient>
+    <radialGradient id="glt-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fdf3da"/>
+      <stop offset="55%" stop-color="#f2ce8f"/>
+      <stop offset="100%" stop-color="#c9862f"/>
+    </radialGradient>
+    <linearGradient id="glt-mane" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2ce8f"/>
+      <stop offset="45%" stop-color="#d4881f"/>
+      <stop offset="100%" stop-color="#96591a"/>
+    </linearGradient>
+    <linearGradient id="glt-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b56a1e"/>
+      <stop offset="100%" stop-color="#5e3512"/>
+    </linearGradient>
+    <linearGradient id="glt-face" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a1f1a"/>
+      <stop offset="100%" stop-color="#120d0a"/>
+    </linearGradient>
+    <filter id="glt-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glt-soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#glt-sky)"/>
+
+  <!-- full moon, rising behind the canopy -->
+  <g filter="url(#glt-glow)">
+    <circle cx="606" cy="176" r="76" fill="url(#glt-moon)"/>
+  </g>
+
+  <!-- distant ridgeline of forest canopy -->
+  <path d="M0 540 L70 480 L130 520 L190 450 L250 515 L320 445 L390 520 L460 460 L530 525 L600 470 L680 530 L760 475 L800 520 L800 800 L0 800 Z" fill="#0e1d1f" opacity="0.9"/>
+  <path d="M0 610 L90 555 L170 600 L260 535 L350 605 L440 540 L530 610 L630 550 L720 610 L800 560 L800 800 L0 800 Z" fill="#081517"/>
+
+  <!-- tree hollow, dark, low and behind the branch -->
+  <ellipse cx="200" cy="650" rx="86" ry="112" fill="#050c0d"/>
+  <ellipse cx="200" cy="650" rx="60" ry="86" fill="#020608"/>
+
+  <!-- the branch the animal grips -->
+  <path d="M40 592 C220 560 420 600 780 552" stroke="#0c1618" stroke-width="20" fill="none" stroke-linecap="round"/>
+  <path d="M40 592 C220 560 420 600 780 552" stroke="#152528" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- the tamarin -->
+  <g>
+    <!-- long tail, curling below the branch -->
+    <path d="M470 612 C520 650 540 710 508 760 C486 720 470 660 450 615 Z" fill="url(#glt-body)"/>
+
+    <!-- haunch / far leg -->
+    <path d="M446 606 C486 596 520 620 522 668 C500 690 458 686 440 656 Z" fill="url(#glt-body)"/>
+
+    <!-- body mass -->
+    <path d="M330 640 C300 570 330 500 400 484 C466 470 520 508 528 570 C534 616 508 660 460 668 C400 678 352 664 330 640 Z" fill="url(#glt-body)"/>
+
+    <!-- shoulder / chest mane, the signature bloom -->
+    <g filter="url(#glt-glow)">
+      <path d="M330 560 C300 500 320 440 380 415 C300 440 268 520 300 590 C310 580 320 570 330 560 Z" fill="url(#glt-mane)"/>
+      <path d="M470 560 C505 495 486 432 424 408 C500 425 540 500 512 585 C500 578 484 568 470 560 Z" fill="url(#glt-mane)"/>
+      <path d="M352 470 C356 410 402 372 400 372 C398 372 444 410 448 470 C440 512 360 512 352 470 Z" fill="url(#glt-mane)"/>
+    </g>
+
+    <!-- near foreleg gripping the branch -->
+    <path d="M356 632 C338 604 336 592 344 588 C368 606 384 628 384 656 C376 656 364 646 356 632 Z" fill="url(#glt-body)"/>
+
+    <!-- long slender fingers on the branch -->
+    <path d="M330 596 q-10 -8 -18 -4 M340 602 q-8 -10 -16 -8 M352 606 q-6 -12 -14 -12" stroke="#1c1310" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.85"/>
+
+    <!-- head, bare dark face inside the mane -->
+    <ellipse cx="400" cy="430" rx="46" ry="44" fill="url(#glt-face)"/>
+    <!-- small rounded ears within the mane -->
+    <circle cx="362" cy="404" r="14" fill="#1a120d"/>
+    <circle cx="438" cy="404" r="14" fill="#1a120d"/>
+    <!-- muzzle -->
+    <path d="M382 448 C388 468 412 468 418 448 C412 438 388 438 382 448 Z" fill="#43302a" opacity="0.7"/>
+    <ellipse cx="400" cy="452" rx="6" ry="5" fill="#1a120d"/>
+    <!-- eyes catching moonlight -->
+    <circle cx="386" cy="424" r="4.5" fill="#f2ce8f"/>
+    <circle cx="414" cy="424" r="4.5" fill="#f2ce8f"/>
+  </g>
+
+</svg>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="A Madagascan sunset moth at rest with wings spread against a dusk sky, structural green, blue and gold bands catching the light, a small full moon glowing above a rainforest canopy edge">
+  <defs>
+    <linearGradient id="smo-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#271420"/>
+      <stop offset="55%" stop-color="#170f14"/>
+      <stop offset="100%" stop-color="#0a0508"/>
+    </linearGradient>
+    <radialGradient id="smo-moon" cx="45%" cy="42%" r="55%">
+      <stop offset="0%" stop-color="#f7ecd2"/>
+      <stop offset="70%" stop-color="#e8a23c"/>
+      <stop offset="100%" stop-color="#96631f"/>
+    </radialGradient>
+    <linearGradient id="smo-fore" x1="0.05" y1="0.1" x2="0.95" y2="0.85">
+      <stop offset="0%" stop-color="#0c090b"/>
+      <stop offset="26%" stop-color="#1c4a3a"/>
+      <stop offset="50%" stop-color="#276b78"/>
+      <stop offset="72%" stop-color="#7a4488"/>
+      <stop offset="100%" stop-color="#e8a23c"/>
+    </linearGradient>
+    <linearGradient id="smo-hind" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0%" stop-color="#170f14"/>
+      <stop offset="40%" stop-color="#8a3a22"/>
+      <stop offset="75%" stop-color="#c1481c"/>
+      <stop offset="100%" stop-color="#e8823c"/>
+    </linearGradient>
+    <linearGradient id="smo-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2e2126"/>
+      <stop offset="100%" stop-color="#100a0d"/>
+    </linearGradient>
+    <filter id="smo-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="500" rx="18" fill="url(#smo-bg)"/>
+
+  <!-- full moon -->
+  <g filter="url(#smo-glow)">
+    <circle cx="308" cy="82" r="34" fill="url(#smo-moon)"/>
+  </g>
+
+  <!-- canopy edge -->
+  <path d="M0 380 C40 360 70 380 100 366 C130 352 155 378 190 364 C225 350 250 380 290 366 C325 353 355 375 400 362 L400 500 L0 500 Z" fill="#0e070b" opacity="0.9"/>
+
+  <!-- moth, wings spread -->
+  <g>
+    <!-- hindwings with tails -->
+    <path d="M196 258 C158 270 100 284 68 308 C44 332 28 356 18 388 C32 380 46 370 62 360 C88 352 120 332 152 312 C180 294 200 276 208 262 Z" fill="url(#smo-hind)"/>
+    <path d="M204 258 C242 270 300 284 332 308 C356 332 372 356 382 388 C368 380 354 370 338 360 C312 352 280 332 248 312 C220 294 200 276 192 262 Z" fill="url(#smo-hind)"/>
+
+    <!-- forewings -->
+    <path d="M198 228 C158 206 92 188 46 176 C28 202 28 250 54 280 C92 286 154 280 194 272 C202 260 200 242 198 228 Z" fill="url(#smo-fore)"/>
+    <path d="M202 228 C242 206 308 188 354 176 C372 202 372 250 346 280 C308 286 246 280 206 272 C198 260 200 242 202 228 Z" fill="url(#smo-fore)"/>
+
+    <!-- band hints -->
+    <path d="M70 198 C110 208 150 222 194 240" stroke="#e8a23c" stroke-width="2" fill="none" opacity="0.35"/>
+    <path d="M330 198 C290 208 250 222 206 240" stroke="#e8a23c" stroke-width="2" fill="none" opacity="0.35"/>
+    <path d="M168 296 C132 312 96 328 62 348" stroke="#e8823c" stroke-width="1.6" fill="none" opacity="0.4"/>
+    <path d="M232 296 C268 312 304 328 338 348" stroke="#e8823c" stroke-width="1.6" fill="none" opacity="0.4"/>
+
+    <!-- iridescent sheen -->
+    <g filter="url(#smo-glow)" opacity="0.5">
+      <ellipse cx="130" cy="230" rx="34" ry="16" fill="#276b78" opacity="0.5"/>
+      <ellipse cx="270" cy="230" rx="34" ry="16" fill="#276b78" opacity="0.5"/>
+    </g>
+
+    <!-- body -->
+    <path d="M200 214 C190 214 184 230 186 258 C188 288 193 322 200 350 C207 322 212 288 214 258 C216 230 210 214 200 214 Z" fill="url(#smo-body)"/>
+    <path d="M190 244 C195 246 205 246 210 244 M188 268 C195 270 205 270 212 268" stroke="#0a0608" stroke-width="1.6" opacity="0.5" fill="none"/>
+
+    <!-- head -->
+    <circle cx="200" cy="206" r="10" fill="url(#smo-body)"/>
+    <circle cx="196" cy="204" r="1.8" fill="#f2c98c"/>
+    <circle cx="204" cy="204" r="1.8" fill="#f2c98c"/>
+
+    <!-- antennae -->
+    <path d="M193 200 C182 190 166 184 152 178" stroke="#c23f6b" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.8"/>
+    <path d="M207 200 C218 190 234 184 248 178" stroke="#c23f6b" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.8"/>
+    <circle cx="152" cy="178" r="2.6" fill="#e8a23c"/>
+    <circle cx="248" cy="178" r="2.6" fill="#e8a23c"/>
+  </g>
+</svg>
