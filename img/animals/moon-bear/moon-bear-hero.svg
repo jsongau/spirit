@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="A moon bear seated in dark mountain forest, a pale crescent moon glowing on its chest, a waning crescent moon hanging low behind the trees">
+  <defs>
+    <radialGradient id="mb-sky" cx="62%" cy="30%" r="90%">
+      <stop offset="0%" stop-color="#1c2418"/>
+      <stop offset="55%" stop-color="#141a10"/>
+      <stop offset="100%" stop-color="#0c0f09"/>
+    </radialGradient>
+    <radialGradient id="mb-moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#eef2e6"/>
+      <stop offset="70%" stop-color="#cdd7c2"/>
+      <stop offset="100%" stop-color="#9aa78c"/>
+    </radialGradient>
+    <radialGradient id="mb-crescent" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#f3efe1"/>
+      <stop offset="60%" stop-color="#e6ecdd"/>
+      <stop offset="100%" stop-color="#b9c3a6"/>
+    </radialGradient>
+    <linearGradient id="mb-fur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22271d"/>
+      <stop offset="100%" stop-color="#0e120b"/>
+    </linearGradient>
+    <filter id="mb-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="24" fill="url(#mb-sky)"/>
+
+  <!-- waning crescent moon -->
+  <g filter="url(#mb-glow)">
+    <circle cx="612" cy="182" r="70" fill="url(#mb-moon)"/>
+    <circle cx="586" cy="168" r="66" fill="url(#mb-sky)"/>
+  </g>
+
+  <!-- distant ridgeline of forest -->
+  <path d="M0 560 L70 500 L120 545 L180 470 L240 540 L300 465 L360 545 L430 480 L500 550 L560 495 L640 555 L720 500 L800 555 L800 800 L0 800 Z" fill="#10150c" opacity="0.9"/>
+  <path d="M0 620 L90 560 L160 610 L250 540 L340 610 L430 545 L520 615 L620 555 L720 615 L800 565 L800 800 L0 800 Z" fill="#0b0f08"/>
+
+  <!-- the bear, seated, three-quarter -->
+  <g>
+    <!-- body mass -->
+    <path d="M300 760 C250 700 250 590 300 540 C330 505 380 490 430 495 C500 500 545 545 552 610 C560 685 540 740 505 762 Z" fill="url(#mb-fur)"/>
+    <!-- shoulder mane ruff -->
+    <path d="M312 560 C300 600 305 660 330 705 C345 665 350 610 345 565 Z" fill="#191e14" opacity="0.8"/>
+    <!-- haunch -->
+    <path d="M470 760 C520 740 555 690 548 620 C500 640 470 700 468 760 Z" fill="#171c12"/>
+    <!-- foreleg -->
+    <path d="M360 762 C350 700 356 640 380 610 C405 640 408 705 402 762 Z" fill="#12160e"/>
+    <!-- curved claws -->
+    <path d="M356 760 q4 12 10 14 M372 760 q4 12 10 14 M388 760 q4 12 10 14" stroke="#cdd7c2" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.75"/>
+
+    <!-- head -->
+    <g>
+      <ellipse cx="392" cy="470" rx="66" ry="60" fill="url(#mb-fur)"/>
+      <!-- large rounded ears -->
+      <circle cx="348" cy="418" r="26" fill="#1c2117"/>
+      <circle cx="440" cy="418" r="26" fill="#1c2117"/>
+      <circle cx="348" cy="418" r="13" fill="#0e120b"/>
+      <circle cx="440" cy="418" r="13" fill="#0e120b"/>
+      <!-- muzzle -->
+      <path d="M366 486 C372 516 414 516 420 486 C414 470 372 470 366 486 Z" fill="#8f9a7d" opacity="0.55"/>
+      <ellipse cx="393" cy="492" rx="9" ry="6" fill="#e6ecdd"/>
+      <!-- eyes catching moonlight -->
+      <circle cx="372" cy="466" r="5" fill="#e6ecdd"/>
+      <circle cx="414" cy="466" r="5" fill="#e6ecdd"/>
+    </g>
+
+    <!-- the crescent on the chest, the signature -->
+    <g filter="url(#mb-glow)">
+      <path d="M392 556 a58 58 0 1 0 4 116 a44 46 0 1 1 -4 -116 Z" fill="url(#mb-crescent)"/>
+    </g>
+  </g>
+
+</svg>
