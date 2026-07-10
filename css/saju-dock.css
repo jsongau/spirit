@@ -139,8 +139,25 @@
 .scast-dk-tick.is-on b{ opacity:1; color:var(--dk-key-bright); text-shadow:0 0 8px var(--dk-key) }
 .scast-dk-tick:focus-visible{ outline:2px solid var(--dk-key); outline-offset:2px; border-radius:3px }
 
-.scast-dk-beam-cur{ flex:none; font-family:var(--mono); font-size:.76rem; color:var(--ivory); white-space:nowrap }
+.scast-dk-beam-cur{ flex:none; width:20ch; text-align:right; font-family:var(--mono); font-size:.76rem; color:var(--ivory); white-space:nowrap }
 .scast-dk-beam-cur b{ font-weight:400; color:var(--dk-key-bright) }
+.scast-dk-beam-cur.is-empty{ color:var(--faint) }
+
+/* ---- the beam row: the scrubber flanked by −/+ hour steps (a thin track is a mouse
+   instrument; the steps are how most phone readers move the hour). Mirrors the Purple Star dock. */
+.scast-dk-beamrow{ display:flex; align-items:center; gap:6px; flex:1; min-width:0; align-self:stretch }
+.scast-dk-beamrow .scast-dk-beam{ padding-top:0 }
+.scast-dk-step{ position:relative; flex:none; width:34px; height:34px; display:none; place-items:center; padding:0;
+  background:transparent; border:1px solid var(--line); border-radius:50%; color:var(--dk-key);
+  font-family:var(--mono); font-size:1.05rem; line-height:1; cursor:pointer;
+  transition:color .14s ease,border-color .14s ease,transform .08s }
+.scast-dk-step::after{ content:""; position:absolute; inset:-6px }   /* hit area */
+.scast-dk-step:hover{ color:var(--dk-key-bright); border-color:var(--dk-key-dim) }
+.scast-dk-step:active{ transform:scale(.92) }
+.scast-dk-step:focus-visible{ outline:2px solid var(--dk-key); outline-offset:2px }
+@media (pointer:coarse){ .scast-dk-step{ display:grid } }
+@media (max-width:900px){ .scast-dk-step{ display:grid } }
+@media (prefers-reduced-motion:reduce){ .scast-dk-step{ transition:none } }
 
 /* ---- the conversion line — the credibility centrepiece.
    20:10 GMT+9 → 19:38 true solar → 술시 19–21

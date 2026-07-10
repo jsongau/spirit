@@ -1,6 +1,46 @@
 {
   "redirects": [
     {
+      "source": "/elements/purple-star-astrology",
+      "destination": "/destiny/zi-wei-dou-shu",
+      "permanent": true
+    },
+    {
+      "source": "/elements/purple-star-astrology/:path*",
+      "destination": "/destiny/zi-wei-dou-shu/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/elements/zi-wei",
+      "destination": "/destiny/zi-wei-dou-shu",
+      "permanent": true
+    },
+    {
+      "source": "/elements/zi-wei/:path*",
+      "destination": "/destiny/zi-wei-dou-shu/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/bazi",
+      "destination": "/destiny/bazi-four-pillars",
+      "permanent": true
+    },
+    {
+      "source": "/bazi/:path*",
+      "destination": "/destiny/bazi-four-pillars/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/elements/saju",
+      "destination": "/destiny/korean-saju",
+      "permanent": true
+    },
+    {
+      "source": "/elements/saju/:path*",
+      "destination": "/destiny/korean-saju/:path*",
+      "permanent": true
+    },
+    {
       "source": "/animals/cape-buffalo",
       "destination": "/animals/sun-bear/",
       "permanent": true

@@ -70,6 +70,7 @@
     ];
 
     var BEAM_MAX = 23;   /* clock hours 0..23; the ONE number the thumb, notches and bloom derive from */
+    var BEAM_EMPTY = "--:-- · 시 미정";   /* the readout's placeholder — the plate is never empty, never resizes */
 
     function pad(n) { return (n < 10 ? "0" : "") + n; }
     function mod(n, m) { return ((n % m) + m) % m; }
@@ -148,15 +149,40 @@
       var dateEl = el("span", "scast-dk-date", "");
       idText.appendChild(dateEl);
       idBtn.appendChild(idText);
+      idBtn.setAttribute("aria-label", "Your Saju chart — edit the birth details in the form above");
       idBtn.addEventListener("click", function () {
-        var form = document.getElementById("pcast-form") || document.querySelector("form");
-        if (form && form.scrollIntoView) { try { form.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) { form.scrollIntoView(); } }
+        var field = document.getElementById("sMask") || document.getElementById("gateForm") || document.querySelector("form");
+        if (field && field.scrollIntoView) { try { field.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) { field.scrollIntoView(); } }
+        var mask = document.getElementById("sMask");
+        if (mask) { try { mask.focus({ preventScroll: true }); } catch (e) { try { mask.focus(); } catch (e2) {} } }
       });
       chart.appendChild(idBtn);
 
       /* the hour beam: a 24-hour clock scrubber, birthplace-local. Scrub (or tap an even-hour
-         tick) → SajuStudyChart.setHour(hour) → saju:studychart → the whole page re-casts.
-         The beam IS the hour control; there is no birth-hour <select>. */
+         tick, or the −/+ steps) → SajuStudyChart.setHour(hour) → saju:studychart → the page
+         re-casts. The beam IS the hour control; there is no birth-hour <select>. It is flanked
+         by −/+ step buttons — a thin track is a mouse instrument, and most phone readers will
+         only ever move the hour with the steps (mirrors the Purple Star dock). */
+      var beamRow = el("div", "scast-dk-beamrow");
+      function stepBtn(dir, glyph, label) {
+        var b = el("button", "scast-dk-step", glyph); b.type = "button";
+        b.setAttribute("aria-label", label);
+        b.addEventListener("click", function () {
+          if (!lastBirth) return;
+          var base = (lastBirth.hour == null) ? (+range.value) : lastBirth.hour;
+          var next = Math.min(BEAM_MAX, Math.max(0, base + dir));
+          if (next === base && lastBirth.hour != null) return;
+          var bi = branchOf(next);
+          range.value = String(next);
+          range.style.setProperty("--dk-pos", beamPos(next));
+          cur.innerHTML = clock12(next) + " · <b>" + branchLabel(bi) + "</b>";
+          cur.classList.remove("is-empty");
+          tone(BRANCH_FREQ[bi]);
+          SC.setHour(next);
+        });
+        return b;
+      }
+      beamRow.appendChild(stepBtn(-1, "−", "One hour earlier"));
       var beam = el("div", "scast-dk-beam");
       var range = document.createElement("input");
       range.type = "range"; range.className = "scast-dk-beam-range";
@@ -179,13 +205,17 @@
         })(ti);
       }
       beam.appendChild(ticksWrap);
-      chart.appendChild(beam);
+      beamRow.appendChild(beam);
+      beamRow.appendChild(stepBtn(1, "+", "One hour later"));
+      chart.appendChild(beamRow);
 
       /* live readout — an <output>, aria-live="off" on purpose: a live region would
-         machine-gun the screen reader on every step of a scrub. */
+         machine-gun the screen reader on every step of a scrub. Fixed width, never empty
+         (BEAM_EMPTY) so the instrument's geometry never lurches when an hour is chosen. */
       var cur = document.createElement("output");
-      cur.className = "scast-dk-beam-cur";
+      cur.className = "scast-dk-beam-cur is-empty";
       cur.setAttribute("aria-live", "off");
+      cur.textContent = BEAM_EMPTY;
       chart.appendChild(cur);
 
       /* right-edge tools: palette toggle, mute, minimize, close */
@@ -304,6 +334,7 @@
         range.style.setProperty("--dk-pos", beamPos(hr));
         var bi = branchOf(hr);
         cur.innerHTML = clock12(hr) + " · <b>" + branchLabel(bi) + "</b>";
+        cur.classList.remove("is-empty");
         if (bi !== lastScrubBranch) {
           lastScrubBranch = bi;
           var now = (window.performance && performance.now) ? performance.now() : Date.now();
@@ -340,7 +371,11 @@
     function buildConv(out) {
       if (!out || out.error || !out.pillars) return "";
       if (out.three_pillar_mode || !out.pillars.hour) {
-        return "시주 미정 · hour unknown — an honest three-pillar reading";  /* 시주 미정 */
+        /* no hour yet — invite the reader to find it on the beam, and remind them their
+           Zodi Animal (the year branch) is already set, so the reading isn't empty. */
+        var yba = out.pillars.year && out.pillars.year.branch;
+        var animal = yba && yba.animal ? yba.animal : "";
+        return "시주 미정 · slide to find your hour" + (animal ? " — your " + animal + " is already set" : "");
       }
       var hb = out.pillars.hour.branch;
       var hbLabel = "<b>" + branchLabel(hb.index) + "</b>";
@@ -410,11 +445,14 @@
         tk.setAttribute("aria-pressed", on ? "true" : "false");
       });
 
-      /* settled readout — CORRECTED branch (never the naive summary value) */
+      /* settled readout — CORRECTED branch (never the naive summary value). The plate always
+         prints: a known hour shows the corrected branch, an unknown one shows BEAM_EMPTY. */
       if (known && birth.hour != null) {
         els.cur.innerHTML = clock12(birth.hour) + " · <b>" + branchLabel(hb.index) + "</b>";
+        els.cur.classList.remove("is-empty");
       } else {
-        els.cur.textContent = "";
+        els.cur.textContent = BEAM_EMPTY;
+        els.cur.classList.add("is-empty");
       }
 
       /* conversion line */

@@ -135,7 +135,7 @@ PNAV.MAP = [
       ]},
       { title: "Live with it", mark: "⌂", items: [
         ["/feng-shui/",   "Feng shui"],
-        ["/bazi/",        "BaZi (Four Pillars)", "eight characters"],
+        ["/destiny/bazi-four-pillars/",        "BaZi (Four Pillars)", "eight characters"],
         ["/habitat/",     "The Habitat"],
         ["/stones.html",  "Keeper stones"],
         ["/directions/",  "Directions"],
@@ -284,18 +284,18 @@ PNAV.MAP = [
          Saju; it still lives in the bazi hub's "Read your own" dropdown and
          in PNAV.CRAWL_EXTRA, so no crawl reach was lost. */
       { title: "Four Pillars", mark: "四柱", items: [
-        ["/bazi/chart/",      "Cast your chart", "tool"],
-        ["/bazi/",            "BaZi", "八字 Bāzì · the Chinese reading"],
-        ["/elements/saju/",   "Saju Palja", "사주팔자 · the Korean reading"],
-        ["/bazi/day-master/", "Your Day Master", "日主 Rìzhǔ"],
-        ["/bazi/ten-gods/",   "The Ten Gods", "十神 Shíshén"]
+        ["/destiny/bazi-four-pillars/chart/",      "Cast your chart", "tool"],
+        ["/destiny/bazi-four-pillars/",            "BaZi", "八字 Bāzì · the Chinese reading"],
+        ["/destiny/korean-saju/",   "Saju Palja", "사주팔자 · the Korean reading"],
+        ["/destiny/bazi-four-pillars/day-master/", "Your Day Master", "日主 Rìzhǔ"],
+        ["/destiny/bazi-four-pillars/ten-gods/",   "The Ten Gods", "十神 Shíshén"]
       ]},
       { title: "Purple Star", mark: "紫微", items: [
-        ["/elements/purple-star-astrology/",             "Zi Wei Dou Shu", "紫微斗数 Zǐwēi Dǒushù"],
-        ["/elements/purple-star-astrology/chart/",       "Read a chart", "命盘 mìngpán · school"],
-        ["/elements/purple-star-astrology/stars/",       "The 14 Stars", "主星 zhǔxīng"],
-        ["/elements/purple-star-astrology/palaces/",     "The 12 Palaces", "十二宫 shí'èr gōng"],
-        ["/elements/purple-star-astrology/four-forces/", "The Four Forces", "四化 sìhuà"]
+        ["/destiny/zi-wei-dou-shu/",             "Zi Wei Dou Shu", "紫微斗数 Zǐwēi Dǒushù"],
+        ["/destiny/zi-wei-dou-shu/chart/",       "Read a chart", "命盘 mìngpán · school"],
+        ["/destiny/zi-wei-dou-shu/stars/",       "The 14 Stars", "主星 zhǔxīng"],
+        ["/destiny/zi-wei-dou-shu/palaces/",     "The 12 Palaces", "十二宫 shí'èr gōng"],
+        ["/destiny/zi-wei-dou-shu/four-forces/", "The Four Forces", "四化 sìhuà"]
       ]},
       { title: "Feng shui", mark: "風水", items: [
         ["/feng-shui/commanding-position/", "Commanding position", "live"],
@@ -369,16 +369,16 @@ PNAV.CRAWL_EXTRA = [
   ["/cosmology/",                    "Cosmology"],
   ["/cosmology/four-pillars/",       "The Four Pillars"],
   ["/elements/",                     "The five phases (Elements hub)"],
-  ["/bazi/",                         "BaZi, the Four Pillars of Destiny"],
+  ["/destiny/bazi-four-pillars/",                         "BaZi, the Four Pillars of Destiny"],
   /* demoted from the Sage Wisdom "Four Pillars" column when Saju took its
      seat; still reachable via the bazi hub's "Read your own" dropdown. */
-  ["/bazi/compatibility/",           "BaZi compatibility (合婚)"],
-  ["/elements/purple-star-astrology/",              "Purple Star Astrology (Zi Wei Dou Shu)"],
-  ["/elements/purple-star-astrology/chart/",        "Learn to read a Purple Star chart"],
-  ["/elements/purple-star-astrology/stars/",        "The 14 major stars"],
-  ["/elements/purple-star-astrology/palaces/",      "The 12 palaces"],
-  ["/elements/purple-star-astrology/four-forces/",  "The Four Forces (Si Hua)"],
-  ["/elements/purple-star-astrology/history/",      "Purple Star history & origins"],
+  ["/destiny/bazi-four-pillars/compatibility/",           "BaZi compatibility (合婚)"],
+  ["/destiny/zi-wei-dou-shu/",              "Purple Star Astrology (Zi Wei Dou Shu)"],
+  ["/destiny/zi-wei-dou-shu/chart/",        "Learn to read a Purple Star chart"],
+  ["/destiny/zi-wei-dou-shu/stars/",        "The 14 major stars"],
+  ["/destiny/zi-wei-dou-shu/palaces/",      "The 12 palaces"],
+  ["/destiny/zi-wei-dou-shu/four-forces/",  "The Four Forces (Si Hua)"],
+  ["/destiny/zi-wei-dou-shu/history/",      "Purple Star history & origins"],
   /* dropped when the standalone Menagerie group folded into Explore +
      Zodiac; keep it linked so no crawlable destination is lost. */
   ["/learn.html",                    "How it works"]
@@ -556,26 +556,26 @@ PNAV.HUBS = {
       ["/cosmology/luoshu/", "Luo Shu"]
     ]
   },
-  "bazi": {
-    label: "BaZi", root: "/bazi/",
+  "destiny/bazi-four-pillars": {
+    label: "BaZi", root: "/destiny/bazi-four-pillars/",
     items: [
-      ["/bazi/", "What is BaZi"],
-      ["/bazi/four-pillars/", "Learn the pieces", [
-        ["/bazi/four-pillars/", "1 · The four pillars"],
-        ["/bazi/heavenly-stems/", "2 · The ten stems"],
-        ["/bazi/earthly-branches/", "3 · The twelve branches"],
-        ["/bazi/hidden-stems/", "4 · Hidden stems"]
+      ["/destiny/bazi-four-pillars/", "What is BaZi"],
+      ["/destiny/bazi-four-pillars/four-pillars/", "Learn the pieces", [
+        ["/destiny/bazi-four-pillars/four-pillars/", "1 · The four pillars"],
+        ["/destiny/bazi-four-pillars/heavenly-stems/", "2 · The ten stems"],
+        ["/destiny/bazi-four-pillars/earthly-branches/", "3 · The twelve branches"],
+        ["/destiny/bazi-four-pillars/hidden-stems/", "4 · Hidden stems"]
       ]],
-      ["/bazi/day-master/", "Learn to read", [
-        ["/bazi/day-master/", "5 · Your Day Master"],
-        ["/bazi/ten-gods/", "6 · The Ten Gods"],
-        ["/bazi/interactions/", "7 · Combinations & clashes"],
-        ["/bazi/luck-pillars/", "8 · Luck & timing"]
+      ["/destiny/bazi-four-pillars/day-master/", "Learn to read", [
+        ["/destiny/bazi-four-pillars/day-master/", "5 · Your Day Master"],
+        ["/destiny/bazi-four-pillars/ten-gods/", "6 · The Ten Gods"],
+        ["/destiny/bazi-four-pillars/interactions/", "7 · Combinations & clashes"],
+        ["/destiny/bazi-four-pillars/luck-pillars/", "8 · Luck & timing"]
       ]],
-      ["/bazi/chart/", "Read your own", [
-        ["/bazi/chart/", "Cast your chart"],
-        ["/bazi/compatibility/", "You & them (合婚)"],
-        ["/bazi/#example", "A worked example"]
+      ["/destiny/bazi-four-pillars/chart/", "Read your own", [
+        ["/destiny/bazi-four-pillars/chart/", "Cast your chart"],
+        ["/destiny/bazi-four-pillars/compatibility/", "You & them (合婚)"],
+        ["/destiny/bazi-four-pillars/#example", "A worked example"]
       ]]
     ]
   },
@@ -686,31 +686,32 @@ PNAV.HUBS = {
   // Nested hub: Zi Wei Dou Shu (Purple Star Astrology) pages resolve here
   // (not to "elements") via the longest-prefix match in resolveHub. The hub
   // root is auto-dropped as a tab but still carries the crumb.
-  "elements/purple-star-astrology": {
-    label: "Purple Star (Zi Wei Dou Shu)", root: "/elements/purple-star-astrology/",
+  "destiny/zi-wei-dou-shu": {
+    label: "Purple Star (Zi Wei Dou Shu)", root: "/destiny/zi-wei-dou-shu/",
     items: [
-      ["/elements/purple-star-astrology/", "Overview"],
-      ["/elements/purple-star-astrology/history/", "History & origins 源流 Yuánliú"],
-      ["/elements/purple-star-astrology/palaces/", "The 12 Palaces 十二宫 Shí'èr Gōng"],
-      ["/elements/purple-star-astrology/stars/", "The 14 Stars 主星 Zhǔxīng", [
-        ["/elements/purple-star-astrology/stars/", "All 14 major stars 十四主星"],
-        ["/elements/purple-star-astrology/stars/zi-wei/", "紫微 Zǐwēi · The Emperor"],
-        ["/elements/purple-star-astrology/stars/tian-ji/", "天机 Tiānjī · The Strategist"],
-        ["/elements/purple-star-astrology/stars/tai-yang/", "太阳 Tàiyáng · The Sun"],
-        ["/elements/purple-star-astrology/stars/wu-qu/", "武曲 Wǔqū · The Finance General"],
-        ["/elements/purple-star-astrology/stars/tian-tong/", "天同 Tiāntóng · The Harmony Star"],
-        ["/elements/purple-star-astrology/stars/lian-zhen/", "廉贞 Liánzhēn · The Diplomat"],
-        ["/elements/purple-star-astrology/stars/tian-fu/", "天府 Tiānfǔ · The Treasury"],
-        ["/elements/purple-star-astrology/stars/tai-yin/", "太阴 Tàiyīn · The Moon Star"],
-        ["/elements/purple-star-astrology/stars/tan-lang/", "贪狼 Tānláng · The Desire Star"],
-        ["/elements/purple-star-astrology/stars/ju-men/", "巨门 Jùmén · The Dark Gate"],
-        ["/elements/purple-star-astrology/stars/tian-xiang/", "天相 Tiānxiàng · The Prime Minister"],
-        ["/elements/purple-star-astrology/stars/tian-liang/", "天梁 Tiānliáng · The Elder"],
-        ["/elements/purple-star-astrology/stars/qi-sha/", "七杀 Qīshā · The Warrior"],
-        ["/elements/purple-star-astrology/stars/po-jun/", "破军 Pòjūn · The Vanguard"]
+      ["/destiny/zi-wei-dou-shu/", "Overview"],
+      ["/destiny/zi-wei-dou-shu/background/", "The tradition (background)"],
+      ["/destiny/zi-wei-dou-shu/history/", "History & origins 源流 Yuánliú"],
+      ["/destiny/zi-wei-dou-shu/palaces/", "The 12 Palaces 十二宫 Shí'èr Gōng"],
+      ["/destiny/zi-wei-dou-shu/stars/", "The 14 Stars 主星 Zhǔxīng", [
+        ["/destiny/zi-wei-dou-shu/stars/", "All 14 major stars 十四主星"],
+        ["/destiny/zi-wei-dou-shu/stars/zi-wei/", "紫微 Zǐwēi · The Emperor"],
+        ["/destiny/zi-wei-dou-shu/stars/tian-ji/", "天机 Tiānjī · The Strategist"],
+        ["/destiny/zi-wei-dou-shu/stars/tai-yang/", "太阳 Tàiyáng · The Sun"],
+        ["/destiny/zi-wei-dou-shu/stars/wu-qu/", "武曲 Wǔqū · The Finance General"],
+        ["/destiny/zi-wei-dou-shu/stars/tian-tong/", "天同 Tiāntóng · The Harmony Star"],
+        ["/destiny/zi-wei-dou-shu/stars/lian-zhen/", "廉贞 Liánzhēn · The Diplomat"],
+        ["/destiny/zi-wei-dou-shu/stars/tian-fu/", "天府 Tiānfǔ · The Treasury"],
+        ["/destiny/zi-wei-dou-shu/stars/tai-yin/", "太阴 Tàiyīn · The Moon Star"],
+        ["/destiny/zi-wei-dou-shu/stars/tan-lang/", "贪狼 Tānláng · The Desire Star"],
+        ["/destiny/zi-wei-dou-shu/stars/ju-men/", "巨门 Jùmén · The Dark Gate"],
+        ["/destiny/zi-wei-dou-shu/stars/tian-xiang/", "天相 Tiānxiàng · The Prime Minister"],
+        ["/destiny/zi-wei-dou-shu/stars/tian-liang/", "天梁 Tiānliáng · The Elder"],
+        ["/destiny/zi-wei-dou-shu/stars/qi-sha/", "七杀 Qīshā · The Warrior"],
+        ["/destiny/zi-wei-dou-shu/stars/po-jun/", "破军 Pòjūn · The Vanguard"]
       ]],
-      ["/elements/purple-star-astrology/four-forces/", "The Four Forces 四化 Sìhuà"],
-      ["/elements/purple-star-astrology/chart/", "Read a chart 命盘 Mìngpán"]
+      ["/destiny/zi-wei-dou-shu/four-forces/", "The Four Forces 四化 Sìhuà"],
+      ["/destiny/zi-wei-dou-shu/chart/", "Read a chart 命盘 Mìngpán"]
     ]
   },
   // Nested hub: chakra + yoga pages resolve here (not to "elements") via the
@@ -759,25 +760,25 @@ PNAV.HUBS = {
   // docs/saju/BAZI-SAJU-RELATIONSHIP-AND-FRAMING.md: Saju is a sibling
   // tradition of BaZi, not "the Korean version," so it earns its own crumb.
   //
-  // items:[] TODAY: only /elements/saju/ exists on disk — one rich single
+  // items:[] TODAY: only /destiny/korean-saju/ exists on disk — one rich single
   // page. A grouped bazi-shape sub-nav cannot render yet: apply-nav's
-  // Overview filter drops any /elements/saju/#anchor top-level item (norm()
+  // Overview filter drops any /destiny/korean-saju/#anchor top-level item (norm()
   // strips the hash, so every anchor equals the hub root), and the
   // docs/saju-v2 spokes (chart/, four-pillars/, ten-gods/, korean-words/…)
   // are NOT built — listing them would 404 audit-links. When a real spoke
   // ships, upgrade to the grouped shape, e.g.:
   //   items: [
-  //     ["/elements/saju/chart/", "Cast your Saju", [
-  //       ["/elements/saju/chart/", "Cast your chart"],
-  //       ["/elements/saju/#report", "A worked example"]
+  //     ["/destiny/korean-saju/chart/", "Cast your Saju", [
+  //       ["/destiny/korean-saju/chart/", "Cast your chart"],
+  //       ["/destiny/korean-saju/#report", "A worked example"]
   //     ]],
-  //     ["/elements/saju/four-pillars/", "Learn the pieces", [ ... ]]
+  //     ["/destiny/korean-saju/four-pillars/", "Learn the pieces", [ ... ]]
   //   ]
   // For now the empty items[] emits only the breadcrumb + JSON-LD (enough to
   // un-orphan the page in the hierarchy); the human entry point is the Sage
   // Wisdom "Four Pillars" column row.
   "elements/saju": {
-    label: "Saju Palja", root: "/elements/saju/",
+    label: "Saju Palja", root: "/destiny/korean-saju/",
     items: []
   },
   "moon": {

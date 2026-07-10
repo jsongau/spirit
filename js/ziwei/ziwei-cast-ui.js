@@ -88,6 +88,10 @@
     var RING = { 5: [0, 0], 6: [0, 1], 7: [0, 2], 8: [0, 3], 4: [1, 0], 9: [1, 3], 3: [2, 0], 10: [2, 3], 2: [3, 0], 1: [3, 1], 0: [3, 2], 11: [3, 3] };
     var HOURS = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"];
     var HOUR_RANGE = ["23–01", "01–03", "03–05", "05–07", "07–09", "09–11", "11–13", "13–15", "15–17", "17–19", "19–21", "21–23"];
+    /* The hour we stand in when the reader has none. 12 falls in 午時 (11–13), the day's middle gate:
+       the guess that is fewest branches away from whatever the truth turns out to be. It is a display
+       assumption only — birth.hour stays null everywhere it is stored. */
+    var NOON_HOUR = 12;
     /* the dock beam's <input type=range> max. Hours are 0..23, so 23 — and the tick notches,
        the thumb bloom, and the range itself all derive their position from this one number.
        Hard-coding it in three places is how the notches drifted off the thumb. */
@@ -369,9 +373,11 @@
     trow.appendChild(clockBtn);
     row2.appendChild(trow);
 
-    var unkWrap = h("label", "pcast-check");
+    /* The "I don't know" checkbox is BUILT here, beside the control it governs, but it is MOUNTED
+       under the timezone (see row3). A reader without an hour still has a timezone, and the last
+       thing they touch before pressing Cast should be a field they can actually answer. */
+    var unkWrap = h("label", "pcast-check pcast-check-tz");
     var unk = input("pcast-unknown", "checkbox"); unkWrap.appendChild(unk); unkWrap.appendChild(h("span", null, "I don't know my birth time"));
-    row2.appendChild(unkWrap);
 
     var clock = h("div", "pcast-clock"); clock.hidden = true;
     clock.setAttribute("role", "dialog"); clock.setAttribute("aria-label", "Pick your birth time");
@@ -669,6 +675,7 @@
     tzc.appendChild(tzWrapF);
     var tzHint = h("p", "pcast-tzhint", "");
     tzc.appendChild(tzHint);
+    tzc.appendChild(unkWrap); /* built up in the time field, seated here — see the note there */
     row3.appendChild(tzc);
     (function preselectTz() { var off = -new Date().getTimezoneOffset() / 60; for (var i = 0; i < TZ.length; i++) { if (TZ[i][0] === String(off)) { tz.value = TZ[i][0]; break; } } })();
     /* "Eastern Time (UTC−5)" -> plate "UTC−5", hint "Eastern Time". "Auto (device)" has no
@@ -835,7 +842,7 @@
        the bar's geometry cannot be allowed to depend on whether an hour has been chosen. */
     var BEAM_EMPTY = "--:-- · no hour yet";
     function convLine(birth) {
-      if (birth.hour == null) return "Pick an hour to unlock the full court — try your best guesses.";
+      if (birth.hour == null) return "Cast at noon 午時 while your hour is unknown. Slide to your real hour and the court redraws.";
       if (birth.hour === 23) {
         var bi = branchOf(birth.hour);
         return HOURS[bi] + "時 · late 子時 — counts toward the next day in some schools; we read it as 子";
@@ -1226,20 +1233,37 @@
       head.appendChild(meta);
       result.appendChild(head);
 
-      if (out.needHour || !out.chart) {
+      /* NO HOUR IS NOT NO READING. A locked board taught the reader nothing and lost them at the
+         door. When the hour is unknown we cast at NOON_HOUR — 午時, the middle gate of the day,
+         the least-wrong guess there is — and we say so, loudly, above the board. The stored birth
+         still carries hour:null, so the dock keeps saying "no hour yet" and the moment a real hour
+         arrives the court redraws from truth. The assumption lives on screen, never in the data. */
+      var shown = out, assumed = false;
+      if ((out.needHour || !out.chart) && birth.hour == null) {
+        var probe = {}; for (var pk in birth) if (Object.prototype.hasOwnProperty.call(birth, pk)) probe[pk] = birth[pk];
+        probe.hour = NOON_HOUR; probe.minute = 0;
+        var pv = L.castFromBirth(probe);
+        if (pv && pv.chart) { shown = pv; assumed = true; }
+      }
+
+      if (!shown.chart) {
         result.appendChild(hourMissingPanel(yp));
         result.appendChild(boardEl(null));
       } else {
+        if (assumed) result.appendChild(noonPanel(yp));
         /* two columns: the board (what you see) left, the room-by-room reading
            (what it means) right — scrub the hour beam and watch both change.
            .pcast-bleed lets Worker B's CSS break the pair out to ~96vw. */
         var cols = h("div", "pcast-reading-cols pcast-bleed");
         var colBoard = h("div", "pcast-col-board");
         var colRooms = h("div", "pcast-col-rooms");
-        colBoard.appendChild(summaryChips(out.chart));
+        colBoard.appendChild(summaryChips(shown.chart));
         colBoard.appendChild(layoutToggle());
         colBoard.appendChild(h("p", "pcast-branch-note", "The small glyph in each room's corner is its Earthly Branch 地支 — one of twelve fixed seats of the court (子, 丑, 寅 …). Your stars move from chart to chart; the twelve seats never do. Beginner view pins your Life room top-left; Advanced view seats every room at its true branch seat."));
-        colBoard.appendChild(boardEl(out.chart));
+        var bd = boardEl(shown.chart);
+        if (assumed) bd.classList.add("is-assumed");
+        colBoard.appendChild(bd);
+        if (assumed) colBoard.appendChild(h("p", "pcast-assumed-cap", "Drawn at noon 午時. The stars are seated on an assumed hour, so read the rooms as a shape, not a verdict."));
         colBoard.appendChild(h("p", "pcast-court-hint", "Tap a room to light its triangle and mirror across your court."));
         var cap = h("p", "pcast-court-cap"); cap.id = "pcast-court-cap"; colBoard.appendChild(cap);
         /* what "triangle" and "mirror" even mean — rendered once, always visible under the cap */
@@ -1249,7 +1273,7 @@
         colBoard.appendChild(explain);
         colBoard.appendChild(legendEl());
         colBoard.appendChild(elemLegendEl());
-        colRooms.appendChild(readingEl(out.chart, yp));
+        colRooms.appendChild(readingEl(shown.chart, yp));
         cols.appendChild(colBoard);
         cols.appendChild(colRooms);
         result.appendChild(cols);
@@ -1320,10 +1344,7 @@
       return board;
     }
 
-    function hourMissingPanel(yp) {
-      var p = h("div", "pcast-missing");
-      p.appendChild(h("p", "pcast-missing-h", "Your birth hour is missing — and in Purple Star the hour places every star."));
-      p.appendChild(h("p", "pcast-missing-b", "Without it, the twelve rooms below can't be drawn. But your birth year alone already fixes which four stars are transformed this life:"));
+    function huaGrid(yp) {
       var t = HUA[yp.stem]; var grid = h("div", "pcast-hua-grid");
       ["lu", "quan", "ke", "ji"].forEach(function (f) {
         var c = h("div", "pcast-hua-cell pcast-hua-" + f);
@@ -1332,7 +1353,29 @@
         c.appendChild(h("span", "pcast-hua-name", HUA_EN[f]));
         grid.appendChild(c);
       });
-      p.appendChild(grid);
+      return grid;
+    }
+
+    /* Shown when the reader has no hour and we have cast at noon for them. It has to do two jobs at
+       once: hand over a full reading, and refuse to let the reader mistake an assumption for a fact.
+       The four transformations are the anchor — they come from the birth YEAR, so they are true
+       whatever hour turns out to be right, and saying so is what buys the rest of the page its
+       credibility. */
+    function noonPanel(yp) {
+      var p = h("div", "pcast-missing pcast-noon");
+      p.appendChild(h("p", "pcast-missing-h", "You didn't know your hour, so we cast you at noon."));
+      p.appendChild(h("p", "pcast-missing-b", "In Purple Star the hour seats every star, and noon 午時 is the middle gate of the day: the least-wrong place to stand while you find out. Your whole court is drawn below. Read it as a shape rather than a verdict. Four things on this chart don't depend on the hour at all, because your birth year alone fixes which four stars are transformed for the whole of this life:"));
+      p.appendChild(huaGrid(yp));
+      p.appendChild(h("p", "pcast-missing-cta", "Slide the hour beam below, or enter your birth time above and cast again. The rooms will move. These four will not."));
+      return p;
+    }
+
+    /* Last resort: no hour AND the caster could not be reached. Nothing to draw, so say the true thing. */
+    function hourMissingPanel(yp) {
+      var p = h("div", "pcast-missing");
+      p.appendChild(h("p", "pcast-missing-h", "Your birth hour is missing — and in Purple Star the hour places every star."));
+      p.appendChild(h("p", "pcast-missing-b", "Without it, the twelve rooms below can't be drawn. But your birth year alone already fixes which four stars are transformed this life:"));
+      p.appendChild(huaGrid(yp));
       p.appendChild(h("p", "pcast-missing-cta", "Enter your exact birth time above and cast again to draw all twelve rooms and your full reading."));
       return p;
     }

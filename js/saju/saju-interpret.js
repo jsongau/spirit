@@ -27,11 +27,32 @@
 
   // ---- ranged template vocabulary (a RANGE of expressions, never a fixed label) ----
   var DM_RANGE = {
-    Wood:  ["steady and principled", "inflexible when pushed"],
-    Fire:  ["warm and quick to connect", "prone to flare up or burn out"],
-    Earth: ["dependable and grounding", "slow to shift once settled"],
-    Metal: ["clear and principled", "rigid or over-cutting"],
-    Water: ["adaptable and deep", "restless or hard to pin down"]
+    Wood:  ["steady, principled, quietly growing", "rigid or unbending when pushed"],
+    Fire:  ["warm and quick to connect", "burning hot and then running out"],
+    Earth: ["grounded and dependable", "weighed down when it carries too much"],
+    Metal: ["clear and discerning", "sharp or over-cutting under pressure"],
+    Water: ["deep and adaptable", "withdrawn or hard to read"]
+  };
+
+  // ---- self-identity: a warm, hedged recognition of who the Day Master is at core.
+  // Synthesized from a panel of reader voices, then passed through safeWordingLint like
+  // every other statement. Named as a tendency to recognize, never a fixed verdict. ----
+  var IDENTITY = {
+    Wood:  "At your core you tend to reach upward, wanting your growth to mean something and to branch in your own direction. People can feel that quiet spine in you, and it often reads as principle more than stubbornness.",
+    Fire:  "You read as someone who warms a room without trying, drawn to say the thing others feel but cannot name. That brightness is a real gift, not too much, and people often gather near it.",
+    Earth: "At heart you tend to be the steady ground others stand on, the one who holds things together while people lean in close. Your care runs quiet and deep, and it is often felt more than it is spoken.",
+    Metal: "You tend to see straight to what matters and name it cleanly, setting the noise aside. That clarity is a form of honesty, and people often trust your read even when it stings a little.",
+    Water: "At your core you tend to move like water, finding the way around what blocks you rather than forcing through it. You often understand far more than you say, and that reads as depth, not overthinking."
+  };
+
+  // ---- carry-forward: a gentle, future-facing line to take away. Hedged, never a command,
+  // never an imperative opener; frames preparation as an invitation, not a verdict. ----
+  var CARRY = {
+    Wood:  "A season ahead may ask where you most want to grow, and it can be worth naming that early. Letting a little flex into your branches often keeps you standing where staying stiff would not.",
+    Fire:  "It can help to tend your own flame as gently as you tend everyone else's, since a fire fed well tends to last. A theme ahead may be learning where to spend your warmth and where to bank it.",
+    Earth: "There is worth in remembering that ground needs its own rest to stay fertile. A season ahead may invite you to let others hold you for a change, which can feel strange and still be good.",
+    Metal: "It may help to let your edge rest in its sheath at times, since not everything asks to be cut. A theme ahead can be choosing which truths to speak now and which to let ripen a while longer.",
+    Water: "There can be value in letting a few trusted people down into your depths, and in letting a little of what you notice reach the surface. A season ahead may reward trusting where your own current is heading."
   };
   var CLIMATE_RANGE = {
     cold: ["slow to warm up", "calm and deliberate once moving"],
@@ -121,7 +142,7 @@
     if (!chart || !chart.pillars) return { error: "no chart" };
     var dm = chart.day_master, s = chart.strength, cl = chart.climate, y = chart.yongsin, bal = chart.element_balance;
     var yin = dm.yin;
-    var sections = { Pattern: [], Activation: [], Range: [], Choice: [], Reflection: [], Escalation: [] };
+    var sections = { Pattern: [], Activation: [], Range: [], Choice: [], Carry: [], Reflection: [], Escalation: [] };
 
     // --- Pattern: lead synthesis ---
     sections.Pattern.push(claim({
@@ -143,6 +164,18 @@
       counter: "One stem is a starting point; the whole chart and the current season shade it.",
       glossary: ["일간"], lesson: { href: "#four-pillars", label: "The four pillars" }
     }));
+
+    // --- Pattern: who you are (self-identity, warm and hedged) ---
+    if (IDENTITY[dm.element]) {
+      sections.Pattern.push(claim({
+        id: "self-identity", section: "Pattern",
+        statement: IDENTITY[dm.element],
+        evidence: ["Day stem " + dm.char + " = " + (yin ? "yin" : "yang") + " " + dm.element + " Day Master"],
+        rules: ["DM-identity", "DM-temperament"], confidence: "likely", lineage: "practitioner",
+        counter: "This is a tendency to recognize yourself in, not a verdict; the whole chart and the season shade it.",
+        glossary: ["일간"], lesson: { href: "#four-pillars", label: "The four pillars" }
+      }));
+    }
 
     // --- Pattern: climate lean ---
     var tkey = cl.temp.en === "cold" ? "cold" : (cl.temp.en === "hot" ? "hot" : "temperate");
@@ -203,6 +236,18 @@
       }
     }
 
+    // --- Carry: a gentle thing to take forward (self-worth + preparation) ---
+    if (CARRY[dm.element]) {
+      sections.Carry.push(claim({
+        id: "carry-forward", section: "Carry",
+        statement: CARRY[dm.element],
+        evidence: ["Day Master element " + dm.element, "useful element (cross-check lead): " + leadEl],
+        rules: ["CARRY-forward"], confidence: "tentative", lineage: "product",
+        counter: "A gentle suggestion to sit with, not instruction; take what fits and leave the rest.",
+        glossary: ["용신"], lesson: null
+      }));
+    }
+
     // --- Reflection ---
     sections.Reflection.push(claim({
       id: "reflection", section: "Reflection",
@@ -227,6 +272,7 @@
       { key: "Activation", title: "What's loud in the chart" },
       { key: "Range", title: "Where it leans, and what steadies it" },
       { key: "Choice", title: "The season you're in" },
+      { key: "Carry", title: "To carry forward" },
       { key: "Reflection", title: "To sit with" },
       { key: "Escalation", title: "A note on limits" }
     ];
@@ -243,5 +289,10 @@
     return { version: VERSION, sections: out, dropped: dropped, claim_count: out.reduce(function (n, s) { return n + s.claims.length; }, 0) };
   }
 
-  return { VERSION: VERSION, interpret: interpret, safeWordingLint: safeWordingLint };
+  // Small reusable accessors so other surfaces (e.g. the share card) can reuse the exact
+  // vetted language without re-running a full interpret(). Both strings already pass the linter.
+  function identityFor(element) { return IDENTITY[element] || ""; }
+  function carryFor(element) { return CARRY[element] || ""; }
+
+  return { VERSION: VERSION, interpret: interpret, safeWordingLint: safeWordingLint, identityFor: identityFor, carryFor: carryFor };
 });
