@@ -471,23 +471,27 @@
     transform:translateX(-50%); border:6px solid transparent; border-top-color:var(--accent); z-index:260; }
   .gloss:focus{ outline:none; }
   .gloss:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; border-radius:2px; }
-  /* inside the scrollable rail the tip opens BELOW (above would clip at the rail's top edge) */
+  /* inside the sticky rail the tip opens BELOW (the rail sits near the viewport top) */
   .rr-anchor .gloss:hover::after,.rr-anchor .gloss:focus::after{ bottom:auto; top:calc(100% + 9px); }
   .rr-anchor .gloss:hover::before,.rr-anchor .gloss:focus::before{ bottom:auto; top:calc(100% + 3px); border-top-color:transparent; border-bottom-color:var(--accent); }
 
   /* --- structured pillar tooltips: the BaZi chart-cell pattern on the cast pillars.
          Opens BELOW the cell (the rail is sticky near the top, above would clip). --- */
   .rpill{ position:relative; cursor:pointer; }
-  .rpill.tip-open{ z-index:200; }
+  .rpill.tip-open{ z-index:520; }
   .rpill:focus{ outline:2px solid var(--accent); outline-offset:2px; }
   .rtip{ position:absolute; left:50%; top:calc(100% + 12px); transform:translateX(-50%); width:min(300px,86vw);
     background:linear-gradient(180deg,var(--ink-2),var(--ink)); border:1px solid var(--accent); border-radius:var(--r-2);
     padding:.85rem .95rem; text-align:left; opacity:0; visibility:hidden; pointer-events:none;
-    transition:opacity .16s var(--ease-out); z-index:250; box-shadow:0 20px 56px rgba(0,0,0,.72); }
+    transition:opacity .16s var(--ease-out); z-index:620; box-shadow:0 20px 56px rgba(0,0,0,.72); }
   .rtip::after{ content:""; position:absolute; left:50%; bottom:100%; transform:translateX(-50%);
     border:7px solid transparent; border-bottom-color:var(--accent); }
   /* opened by the exclusive-popover controller (one open at a time, Escape closes) */
   .rpill.tip-open .rtip{ opacity:1; visibility:visible; }
+  /* the open tooltip is portaled onto <body> and fixed to the pillar's live rect,
+     so no ancestor (sticky rail, columns, cards) can ever clip or trap it */
+  .rtip.is-float{ position:fixed; transform:none; margin:0; z-index:640; opacity:1; visibility:visible; }
+  .rtip.is-float::after{ left:var(--fax,50%); }
   .rchart .rpill:first-child .rtip{ left:0; transform:none; }
   .rchart .rpill:first-child .rtip::after{ left:14%; }
   .rchart .rpill:last-child .rtip{ left:auto; right:0; transform:none; }
@@ -504,9 +508,11 @@
   @media(prefers-reduced-motion:reduce){ .rtip{ transition:none; } }
 
   /* --- post-cast reading: a locked left rail (chips, chart, chain, tally) and a
-         colorful right-hand card grid. The rail sticks below the section tabs and
-         scrolls internally if it is ever taller than the viewport, so it can never
-         distort or jump. --- */
+         colorful right-hand card flow. The rail sticks below the section tabs at its
+         NATURAL height, never with an inner scrollbar; if a short viewport can't
+         hold it whole, JS drops the stick (.no-stick) so it scrolls with the page.
+         The cards run as two independent stacks, so mismatched card heights can
+         never leave a hole. --- */
   .rr-chips{ display:flex; flex-direction:column; gap:6px; margin:0 0 1rem; }
   .rr-chip{ display:flex; align-items:baseline; justify-content:space-between; gap:12px;
     background:var(--panel); border:1px solid var(--line-soft); border-radius:var(--r-1); padding:7px 12px; }
@@ -515,18 +521,30 @@
   .rr-chip-v .ko{ color:var(--accent-bright); }
   .rr-cols{ margin-top:.4rem; }
   @media(min-width:900px){
-    .rr-cols{ display:grid; grid-template-columns:minmax(320px,420px) minmax(0,1fr); gap:clamp(26px,3vw,48px); align-items:start; }
+    .rr-cols{ display:grid; grid-template-columns:minmax(330px,460px) minmax(0,1fr); gap:clamp(26px,3vw,48px); align-items:start; }
     .rr-left{ align-self:start; }
-    .rr-anchor{ position:sticky; top:var(--saju-stick,104px);
-      max-height:calc(100vh - var(--saju-stick,104px) - 16px); overflow-y:auto;
-      overscroll-behavior:contain; padding-bottom:4px; scrollbar-width:thin; }
+    .rr-anchor{ position:sticky; top:var(--saju-stick,104px); padding-bottom:4px; }
+    .rr-anchor.no-stick{ position:static; }
+    /* compact rail contents so the whole column usually fits a laptop viewport */
+    .rr-anchor .rr-chips{ gap:5px; margin-bottom:.75rem; }
+    .rr-anchor .rr-chip{ padding:5px 10px; }
+    .rr-anchor .rr-chip-v{ font-size:.84rem; }
+    .rr-anchor .rchart{ gap:.4rem; margin:.3rem 0 .7rem; }
+    .rr-anchor .rpill{ padding:.48rem .22rem; }
+    .rr-anchor .rgan-ko{ font-size:1.72rem; margin-top:.4rem; }
+    .rr-anchor .rhanja{ margin-top:.4rem; padding-top:.3rem; }
+    .rr-anchor .rsay{ margin-top:.22rem; }
+    .rr-anchor .elkeys{ gap:.55rem; }
   }
   @media(max-width:899px){ .rr-right{ margin-top:1.5rem; } }
   .rr-right{ scroll-margin-top:calc(var(--saju-stick,112px) + 6px); }
-  .rr-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr)); gap:14px; align-items:start; }
-  @media(max-width:1100px){ .rr-grid{ grid-template-columns:1fr; } }
+  /* the card flow: wide cards run full width; paired cards live in two independent
+     vertical stacks, each packing its own column, so there is never dead space */
+  .rr-grid{ display:flex; flex-direction:column; gap:14px; }
+  .rr-duo{ display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:start; }
+  .rr-stack{ display:flex; flex-direction:column; gap:14px; min-width:0; }
+  @media(max-width:1100px){ .rr-duo{ grid-template-columns:1fr; } }
   .rr-card{ background:var(--panel); border:1px solid var(--line-soft); border-top:2px solid var(--line); border-radius:var(--r-2); padding:16px 18px; min-width:0; }
-  .rr-card--wide, .rr-grid > .keep-cta{ grid-column:1 / -1; }
   /* card accents: the page's own five element colors, plus cinnabar */
   .rr-card--cinnabar{ border-top-color:var(--accent); }
   .rr-card--cinnabar .rr-eyebrow{ color:var(--accent-bright); }
@@ -575,6 +593,65 @@
   .rr-el-chip .k{ font-family:var(--korean); font-size:.85rem; color:currentColor; }
   .rr-el-chip span{ font-family:var(--mono); font-size:.56rem; letter-spacing:.08em; color:var(--ivory); }
 
+  /* per-glyph stacked romanization: each syllable's rom sits directly above ITS OWN
+     glyph (Gi over 기, Sa over 사), deterministic in every browser */
+  .stk{ display:inline-flex; flex-direction:column; align-items:center; line-height:1; vertical-align:bottom; }
+  .stk-r{ font-family:var(--mono); font-weight:500; font-size:.55rem; letter-spacing:.02em; color:var(--accent-bright); line-height:1.1; margin-bottom:.24em; }
+  .stk-g{ font-family:var(--korean); line-height:1; }
+  .rgan-ko .stk{ margin:0 .06em; }
+  .rtip-char{ display:inline-flex; gap:.22em; }
+  .rtip-char .stk-r{ font-size:.5rem; }
+  .rtip-char .stk-g{ font-size:1.4rem; color:var(--moon); }
+  .rdm .stk{ vertical-align:middle; }
+  .rdm .stk-g{ font-size:1.25rem; }
+
+  /* controlled editorial variety inside the cards: a serif lede on the opening line,
+     mono small-caps for romanized terms, a distinct voice for the reflective lines */
+  .rr-eyebrow + .rr-p{ font-family:var(--serif); font-size:1.07rem; color:var(--ivory); }
+  .rr-krom{ font-family:var(--mono); font-size:.64rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+  .rd-sec--reflection .rd-stmt{ font-size:1.05rem; line-height:1.6; padding-left:.8rem; border-left:2px solid var(--accent-dim); }
+  .rr-card:has(.rr-dmhero) .rr-eyebrow, .rr-card--wide .rr-eyebrow{ font-size:.72rem; letter-spacing:.18em; }
+
+  /* --- sectioned interactive modules (wheel, strength, climate, cosmic clock):
+         each one a contained card at a comfortable width, never a loose full-bleed row --- */
+  .rmod{ position:relative; max-width:1040px; background:var(--panel); border:1px solid var(--line-soft); border-top:2px solid var(--line);
+    border-radius:var(--r-2); padding:clamp(1.05rem,2.4vw,1.6rem) clamp(1.05rem,2.6vw,1.8rem); margin-top:1.15rem; }
+  .rmod--cinnabar{ border-top-color:var(--accent); }
+  .rmod--earth{ border-top-color:#e0ad52; }
+  .rmod--water{ border-top-color:#5a97d8; }
+  .rmod-head{ margin-bottom:.4rem; }
+  .rmod-eyebrow{ font-family:var(--mono); font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-bright); margin:0 0 .35rem; display:flex; align-items:center; gap:.45rem; }
+  .rmod-eyebrow .ko{ font-family:var(--korean); letter-spacing:.02em; }
+  .rmod-t{ font-family:var(--serif); font-size:clamp(1.2rem,2.4vw,1.5rem); color:var(--moon); margin:0 0 .3rem; }
+  .rmod-intro{ font-size:.9rem; color:var(--muted); line-height:1.55; margin:0; }
+
+  /* wheel: hover glow + a pulse on the hot lines when an element is chosen */
+  .wx-node:hover .wx-ring{ stroke-width:2.6; }
+  @media(prefers-reduced-motion:no-preference){ .wx-seg.pulse,.wx-ke.pulse{ animation:wxhot .8s var(--ease-out) 2; } }
+  @keyframes wxhot{ 50%{ stroke-width:3.2; opacity:1; } }
+  /* strength: the three classical input rows select, and flash their side of the meter */
+  .str-in{ cursor:pointer; transition:padding .15s var(--ease-out), box-shadow .15s var(--ease-out); }
+  .str-in:hover{ color:var(--ivory); }
+  .str-in:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  .str-in.on{ box-shadow:inset 2px 0 0 var(--accent); padding-left:.65rem; color:var(--ivory); }
+  @media(prefers-reduced-motion:no-preference){ .str-bar .pulse{ animation:strp .7s var(--ease-out) 2; } }
+  @keyframes strp{ 50%{ filter:brightness(1.8); } }
+  /* climate: the two lens chips are buttons; the chosen lens leads the caption */
+  .xchip{ cursor:pointer; font:inherit; color:inherit; transition:border-color .15s; }
+  .xchip:hover{ border-color:var(--accent); }
+  .xchip:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  .xcap{ font-size:.88rem; color:var(--ivory); line-height:1.55; margin:.15rem 0 .4rem; }
+  /* cosmic clock: each solar-term row expands to its exact instant + a plain note */
+  .dlx{ border-top:1px solid var(--line-soft); }
+  .dlx:first-of-type{ border-top:0; }
+  .dlx summary{ list-style:none; cursor:pointer; display:flex; gap:.9rem; align-items:baseline; flex-wrap:wrap; padding:.65rem 0; }
+  .dlx summary::-webkit-details-marker{ display:none; }
+  .dlx summary::after{ content:"+"; margin-left:auto; color:var(--accent-bright); font-weight:700; }
+  .dlx[open] summary::after{ content:"\2013"; }
+  .dlx summary:hover .dl-term{ color:var(--accent-bright); }
+  .dlx-body{ padding:.1rem 0 .8rem; }
+  .dlx-note{ font-size:.88rem; color:var(--body-text); line-height:1.55; margin:.35rem 0 0; max-width:64ch; }
+
   /* --- "Keep this chart" account card: one calm bordered block, reused at each deep point --- */
   .keep-cta{ background:var(--panel); border:1px solid var(--accent-soft); border-left:3px solid var(--accent); border-radius:var(--r-2); padding:clamp(1.15rem,2.6vw,1.6rem); text-align:left; }
   .keep-cta h3{ font-size:1.2rem; margin:0 0 .45rem; }
@@ -582,6 +659,16 @@
   .keep-cta p.keep-cta-fine{ font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; color:var(--faint); margin:.7rem 0 0; }
   .keep-cta--academy{ margin-top:1.6rem; }
   .keep-cta--band{ max-width:640px; margin:0 auto clamp(2.4rem,6vw,4rem); }
+  /* the in-reading placement: a wide banner at the very end of the card flow, the
+     reader's own four pillars ghosted behind the ask */
+  .keep-cta--banner{ position:relative; overflow:hidden;
+    background:linear-gradient(120deg, var(--panel), color-mix(in oklab, var(--accent) 7%, var(--panel))); }
+  .keep-cta--banner .keep-cta-in{ position:relative; z-index:1; max-width:62ch; }
+  .keep-cta--banner h3{ font-family:var(--serif); font-size:clamp(1.35rem,2.6vw,1.7rem); }
+  .keep-ghost{ position:absolute; inset:0; display:flex; align-items:center; justify-content:flex-end; gap:.4em;
+    padding-right:clamp(.6rem,4vw,2.4rem); font-family:var(--korean); font-size:clamp(2.6rem,7vw,4.6rem);
+    line-height:1; color:var(--accent-bright); opacity:.08; pointer-events:none; user-select:none; }
+  @media(max-width:720px){ .keep-ghost{ font-size:2.1rem; opacity:.06; } }
   .zodi-signed-in .keep-cta{ display:none; }
 
   /* --- "How it is read" floater: the BaZi [data-float] shape, cinnabar-skinned.
@@ -757,7 +844,7 @@
   .pcast-field-2 > div{ display:flex; flex-direction:column; justify-content:flex-end; min-width:0; }
   .pcast-field-2 .pcast-label{ min-width:0; white-space:nowrap; }
   .pcast-field-2 .pcast-tzplate, .pcast-field-2 .pcast-select{ height:44px; min-height:44px; width:100%; }
-  .pcast-field-2 .pcast-tzval{ font-size:.8rem; }
+  .pcast-field-2 .pcast-tzval{ font-size:.9rem; }
   @media (max-width:479px){ .pcast-field-2{ grid-template-columns:1fr; } }
   .pcast-label{ display:block; font-family:var(--sans); font-size:.82rem; color:var(--muted); margin:0 0 4px; }
   .pcast-opt{ color:var(--faint); font-size:.74rem; }
@@ -1121,7 +1208,7 @@
           <div>
             <label class="pcast-label" for="bplace">Birthplace <span class="pcast-opt">· true solar</span></label>
             <div class="pcast-tzplate">
-              <span class="pcast-tzval" id="bplaceVal">Seoul (127.0°E)</span>
+              <span class="pcast-tzval" id="bplaceVal">Seoul</span>
               <span class="pcast-tzcaret" aria-hidden="true">▾</span>
               <select class="pcast-tzsel" id="bplace" name="bplace" aria-label="Birthplace">
                 <optgroup label="Korea">
@@ -1196,9 +1283,9 @@
             <label class="pcast-label" for="sex">Luck direction <span class="pcast-opt">· 대운</span></label>
             <select class="pcast-select" id="sex" name="sex">
               <option value="">Skip it</option>
-              <option value="both">Show both directions</option>
-              <option value="male">Sex at birth: male (남)</option>
-              <option value="female">Sex at birth: female (여)</option>
+              <option value="both">Both</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
             </select>
           </div>
         </div>
@@ -1576,6 +1663,50 @@
   // Same signal nav-auth.js reads ("zodi_signed_in", written by js/zodi-auth.js).
   try{ if(localStorage.getItem("zodi_signed_in")==="1") document.documentElement.classList.add("zodi-signed-in"); }catch(e){}
 
+  // ---- lofi luxury chimes: the site's one soft UI tick, same implementation shape
+  // as the ZWDS page (ziwei-cast-ui.js). Lazy AudioContext built inside the first
+  // gesture that asks for it, gain peaking ~0.05, silent entirely in calm mode
+  // (prefers-reduced-motion). ZodiTick() plays the ~35ms 1400->900Hz sweep;
+  // ZodiTick(freq) a pitched percussive blip clamped to the 600-1400Hz band.
+  if(!window.ZodiTick){
+    window.ZodiTick=(function(){
+      var ctx=null;
+      return function(freq){
+        try{
+          if(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+          var AC=window.AudioContext||window.webkitAudioContext;
+          if(!AC) return;
+          if(!ctx) ctx=new AC();
+          if(ctx.state!=="running" && ctx.resume) ctx.resume();
+          var t=ctx.currentTime, osc=ctx.createOscillator(), g=ctx.createGain();
+          osc.type="triangle";
+          if(typeof freq==="number" && isFinite(freq)){
+            var f=Math.max(600,Math.min(1400,freq));
+            osc.frequency.setValueAtTime(f,t);
+            g.gain.setValueAtTime(0.0001,t);
+            g.gain.exponentialRampToValueAtTime(0.05,t+0.002);
+            g.gain.exponentialRampToValueAtTime(0.0001,t+0.07);
+            osc.connect(g); g.connect(ctx.destination);
+            osc.start(t); osc.stop(t+0.08);
+          } else {
+            osc.frequency.setValueAtTime(1400,t);
+            osc.frequency.exponentialRampToValueAtTime(900,t+0.035);
+            g.gain.setValueAtTime(0.0001,t);
+            g.gain.exponentialRampToValueAtTime(0.05,t+0.008);
+            g.gain.exponentialRampToValueAtTime(0.0001,t+0.035);
+            osc.connect(g); g.connect(ctx.destination);
+            osc.start(t); osc.stop(t+0.04);
+          }
+        }catch(err){}
+      };
+    })();
+  }
+  function ZT(f){ try{ window.ZodiTick(f); }catch(e){} }
+  // one pentatonic pitch per element, the dock's own 오음 mapping raised an octave so
+  // every note sits inside the blip's 600-1400Hz band: 木 mi, 火 sol, 土 do, 金 re, 水 la
+  var EL_FREQ={Wood:1318.51,Fire:783.99,Earth:1046.50,Metal:1174.66,Water:880.00};
+  var PILLAR_FREQ=[783.99,880.00,1046.50,1174.66]; // year -> hour, rising G5 A5 C6 D6
+
   // ---- Korean pronunciation (voice), preferring a female Korean voice ----
   var SPK='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M18.8 6.2a7 7 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>';
   function sayBtn(text){ return '<button class="say" type="button" data-say="'+text+'" aria-label="Hear '+text+' in Korean" title="Hear it in Korean">'+SPK+'</button>'; }
@@ -1604,6 +1735,12 @@
   if(window.speechSynthesis){ try{ speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged=function(){ speechSynthesis.getVoices(); }; }catch(e){} }
   // one delegated handler for every pronounce button on the page
   document.addEventListener("click", function(e){ var t=e.target; while(t && t.nodeType===1){ if(t.classList && t.classList.contains("say")){ sayKo(t.getAttribute("data-say"), t); return; } t=t.parentNode; } });
+
+  // gentle ticks on rewarding opens: the floater (only when it opens), and the
+  // "why this" / cosmic-clock disclosures. Clicks only, never hover; ZodiTick is
+  // itself silent in calm mode.
+  document.addEventListener("click", function(e){ var t=e.target; while(t && t.nodeType===1){ if(t.classList && t.classList.contains("sj-float-btn")){ if(t.getAttribute("aria-expanded")==="true") ZT(); return; } t=t.parentNode; } });
+  document.addEventListener("toggle", function(e){ var d=e.target; if(d && d.tagName==="DETAILS" && d.open && d.classList && (d.classList.contains("trace")||d.classList.contains("dlx"))) ZT(); }, true);
 
   // smooth scroll for data-scroll buttons + subnav
   function goto(sel){ var el=document.querySelector(sel); if(el) el.scrollIntoView({behavior: reduce?"auto":"smooth", block:"start"}); }
@@ -1724,6 +1861,8 @@
   var EL_ORDER=["Wood","Fire","Earth","Metal","Water"];
   function elClass(el){ return "el-"+String(el).toLowerCase(); }
   function rk(ch,rom,cls){ return '<ruby class="rk'+(cls?" "+cls:"")+'">'+ch+'<rp>(</rp><rt>'+rom+'</rt><rp>)</rp></ruby>'; }
+  // per-glyph stack: the romanization directly above ITS OWN glyph (Gi over 기, Sa over 사)
+  function stak(ch,rom,cls){ return '<span class="stk'+(cls?" "+cls:"")+'"><span class="stk-r">'+rom+'</span><span class="stk-g">'+ch+'</span></span>'; }
   // life-area lines mirror the teaching section's own copy (page doctrine, not new claims)
   var PILLAR_ROLE={
     "Year 년":  ["Year pillar · 년주 Nyeonju",  "It speaks to ancestry, early life, and the world you were born into."],
@@ -1750,7 +1889,7 @@
       }).join('')+'</div>';
     }
     return '<div class="rtip" role="tooltip">'+
-      '<div class="rtip-head"><span class="rtip-char">'+P.stem.ko+P.branch.ko+'</span><span class="rtip-role">'+role[0]+'</span></div>'+
+      '<div class="rtip-head"><span class="rtip-char">'+stak(P.stem.ko,P.stem.rom)+stak(P.branch.ko,P.branch.rom)+'</span><span class="rtip-role">'+role[0]+'</span></div>'+
       '<div class="rtip-sub">'+P.stem.char+P.branch.char+' · '+(P.stem.yin?'yin':'yang')+' '+P.stem.element+' over '+P.branch.element+' · '+P.branch.animal+'</div>'+
       '<p>'+meaning+'</p>'+hidHtml+'</div>';
   }
@@ -1760,7 +1899,7 @@
     var aria=key+' pillar, '+ko+' '+hanja+', '+P.stem.element+' over '+P.branch.element+(P.is_day_master?', your Day Master':'')+', open detail';
     return '<div class="rpill'+(P.is_day_master?" dm":"")+(changed?" changed":"")+'" tabindex="0" role="button" aria-label="'+esc(aria)+'">'+
       '<div class="rcap">'+key+'</div>'+
-      '<div class="rgan-ko">'+rk(P.stem.ko,P.stem.rom,elClass(P.stem.element))+rk(P.branch.ko,P.branch.rom,elClass(P.branch.element))+'</div>'+
+      '<div class="rgan-ko">'+stak(P.stem.ko,P.stem.rom,elClass(P.stem.element))+stak(P.branch.ko,P.branch.rom,elClass(P.branch.element))+'</div>'+
       '<div class="rhanja">'+hanja+'</div>'+
       '<div class="rel">'+P.stem.element+' · '+P.branch.animal+'</div>'+
       '<div class="rsay">'+sayBtn(ko)+'</div>'+
@@ -1811,29 +1950,37 @@
   function offStr(min){ var a=Math.abs(min),h=Math.floor(a/60),m=a%60; return (h?h+"h ":"")+m+"m "+(min<0?"before":"after"); }
   function gan(P,k){ return P[k]?P[k].stem.ko+P[k].branch.ko+' <span class="hanja">'+P[k].stem.char+P[k].branch.char+'</span>':"—"; }
   function pillarName(k){ return {year:"Year",month:"Month",day:"Day Master",hour:"Hour"}[k]; }
-  function dateline(t){
+  // cosmic-clock row: collapsed it names the term and how far from it you were born;
+  // open, it shows the exact instant (engine output) and one plain-English note.
+  function dlxRow(t, note){
     if(!t) return "";
     var parts=t.name.split(" ");
     var off=(Math.abs(t.offset_min)<1440)?'<span class="dl-off">born '+offStr(t.offset_min)+'</span>':'';
-    return '<div class="dateline"><span class="dl-term"><span class="dl-han">'+parts[0]+' '+parts[1]+'</span> '+parts[2]+'</span>'+
-      '<span class="dl-time">'+t.instant_kst+'</span>'+off+'</div>';
+    return '<details class="dlx"><summary><span class="dl-term"><span class="dl-han">'+parts[0]+' '+parts[1]+'</span> '+parts[2]+'</span>'+off+'</summary>'+
+      '<div class="dlx-body"><span class="dl-time">'+t.instant_kst+'</span><p class="dlx-note">'+note+'</p></div></details>';
+  }
+  // contained module card for the interactive sections (wheel, strength, climate, clock)
+  function modCard(mod, eyebrow, title, intro, body){
+    return '<div class="rmod rmod--'+mod+'"><div class="rmod-head"><p class="rmod-eyebrow">'+eyebrow+'</p><h3 class="rmod-t">'+title+'</h3>'+
+      (intro?'<p class="rmod-intro">'+intro+'</p>':'')+'</div>'+body+'</div>';
   }
 
   // ---- wu xing (오행) live cycle diagram ----
   var WX_COLORS={Wood:"#5cc48d",Fire:"#ec6a52",Earth:"#e0ad52",Metal:"#cdd6de",Water:"#5a97d8"};
-  var _wxDM=null;
+  var _wxDM=null, _wxBal=null;
   function wxPos(i){ var a=(-90+i*72)*Math.PI/180; return {x:120+80*Math.cos(a), y:118+80*Math.sin(a)}; }
   function wxName(W,x){ return W.ko[x]+" "+W.han[x]; }
+  function wxCount(el){ var n=(_wxBal&&_wxBal[el])||0; return n+(n===1?' time':' times'); }
   function wxCaption(el){
     var E=window.SajuEngine, W=E.WUXING, dm=_wxDM, r=E.elementRelations(el);
     if(el===dm){
-      return 'Your Day Master is <b>'+wxName(W,dm)+'</b>. It generates <b>'+wxName(W,r.generates)+'</b> (<span class="tg">Output 식상</span>), is fed by <b>'+wxName(W,r.generatedBy)+'</b> (<span class="tg">Resource 인성</span>), controls <b>'+wxName(W,r.controls)+'</b> (<span class="tg">Wealth 재성</span>), and is checked by <b>'+wxName(W,r.controlledBy)+'</b> (<span class="tg">Officer 관성</span>). Its own element is your <span class="tg">Companion 비겁</span>.';
+      return 'Your Day Master is <b>'+wxName(W,dm)+'</b>, counted '+wxCount(el)+' among your visible characters. It generates <b>'+wxName(W,r.generates)+'</b> (<span class="tg">Output 식상</span>), is fed by <b>'+wxName(W,r.generatedBy)+'</b> (<span class="tg">Resource 인성</span>), controls <b>'+wxName(W,r.controls)+'</b> (<span class="tg">Wealth 재성</span>), and is checked by <b>'+wxName(W,r.controlledBy)+'</b> (<span class="tg">Officer 관성</span>). Its own element is your <span class="tg">Companion 비겁</span>.';
     }
     var tg=E.tenGodByElement(dm,el);
-    return '<b>'+wxName(W,el)+'</b> is your <span class="tg">'+tg.en+' '+tg.ko+'</span>, seen from your '+wxName(W,dm)+' Day Master. In the cycle it generates '+wxName(W,r.generates)+', is fed by '+wxName(W,r.generatedBy)+', controls '+wxName(W,r.controls)+', and is checked by '+wxName(W,r.controlledBy)+'.';
+    return '<b>'+wxName(W,el)+'</b> shows '+wxCount(el)+' among your visible characters and is your <span class="tg">'+tg.en+' '+tg.ko+'</span>, seen from your '+wxName(W,dm)+' Day Master. In the cycle it generates '+wxName(W,r.generates)+', is fed by '+wxName(W,r.generatedBy)+', controls '+wxName(W,r.controls)+', and is checked by '+wxName(W,r.controlledBy)+'.';
   }
   function buildWuxing(balance, dmEl, needEl){
-    _wxDM=dmEl;
+    _wxDM=dmEl; _wxBal=balance;
     var W=window.SajuEngine.WUXING, order=W.order, pos={};
     order.forEach(function(el,i){ pos[el]=wxPos(i); });
     var segs="", poly=[], ke="", nodes="";
@@ -1857,7 +2004,7 @@
     });
     var svg='<svg viewBox="0 0 240 252" role="group" aria-label="Five-element cycle for your chart, focus a node to explore its relationships">'+ke+segs+'<polygon class="wx-flow" points="'+poly.join(" ")+'"/>'+nodes+'</svg>';
     var legend='<div class="wx-legend"><span><i class="lg-sheng"></i>상생 相生 generating</span><span><i class="lg-ke"></i>상극 相剋 controlling</span></div>';
-    return '<div class="wx"><p class="sub">The five elements at work · 오행</p><div class="wx-wrap"><div>'+svg+legend+'</div><div><p class="wx-cap" id="wxCap" aria-live="polite"></p></div></div></div>';
+    return '<div class="wx"><div class="wx-wrap"><div>'+svg+legend+'</div><div><p class="wx-cap" id="wxCap" aria-live="polite"></p></div></div></div>';
   }
   function wireWuxing(){
     var wrap=document.querySelector(".wx"); if(!wrap||!_wxDM||!window.SajuEngine) return;
@@ -1872,14 +2019,16 @@
       kes.forEach(function(s){ var f=s.getAttribute("data-from"),t=s.getAttribute("data-to"); s.classList.toggle("hot",(f===el&&t===r.controls)||(f===r.controlledBy&&t===el)); });
       if(cap) cap.innerHTML=wxCaption(el);
     }
+    // a chosen element pulses its generating/controlling lines once (calm mode: CSS mutes it)
+    function pulseHot(){ Array.prototype.forEach.call(wrap.querySelectorAll(".wx-seg.hot,.wx-ke.hot"),function(s){ s.classList.remove("pulse"); void s.getBoundingClientRect(); s.classList.add("pulse"); }); }
     function reset(){ nodes.forEach(function(n){ n.classList.remove("dim"); n.classList.toggle("on",n.getAttribute("data-el")===_wxDM); });
-      segs.forEach(function(s){ s.classList.remove("hot"); }); kes.forEach(function(s){ s.classList.remove("hot"); });
+      segs.forEach(function(s){ s.classList.remove("hot","pulse"); }); kes.forEach(function(s){ s.classList.remove("hot","pulse"); });
       if(cap) cap.innerHTML=wxCaption(_wxDM); }
     nodes.forEach(function(n){ var el=n.getAttribute("data-el");
       n.addEventListener("mouseenter",function(){ activate(el); });
       n.addEventListener("focus",function(){ activate(el); });
-      n.addEventListener("click",function(){ activate(el); });
-      n.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); activate(el); } });
+      n.addEventListener("click",function(){ activate(el); pulseHot(); ZT(EL_FREQ[el]); });
+      n.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); activate(el); pulseHot(); ZT(EL_FREQ[el]); } });
     });
     wrap.addEventListener("mouseleave",reset);
     reset();
@@ -1892,13 +2041,31 @@
     var meter='<div class="str-meter"><div class="str-bar" role="img" aria-label="Support '+pct+' out of 100 ('+s.verdict.en+')">'+
       '<div class="weak" style="width:'+weak+'%"></div><div class="supp" style="width:'+pct+'%"></div><div class="tick"></div></div>'+
       '<div class="str-scale"><span>신약 weak</span><span>중화 balance</span><span>신강 strong</span></div></div>';
-    var reasons='<ul class="str-reason">'+s.reasoning.map(function(r){ return '<li>'+esc(r)+'</li>'; }).join("")+'</ul>';
+    // the three classical inputs, each tagged with the side of the meter it feeds
+    // (straight from the engine's own booleans; selecting a row flashes that side)
+    var sides=[s.deukryeong?'supp':'weak', s.deukji?'supp':'weak', s.deukse?'supp':'weak'];
+    var reasons='<ul class="str-reason">'+s.reasoning.map(function(r,i){ return '<li class="str-in" tabindex="0" role="button" data-side="'+(sides[i]||'supp')+'">'+esc(r)+'</li>'; }).join("")+'</ul>';
     var grp=s.favorable.group.map(function(e){ return W.ko[e]+' '+e; }).join(", ");
     var pel=s.favorable.primary, ptg=s.favorable.primaryTenGod;
     var need='<p class="str-need">By the <b>억부</b> Eokbu method this chart leans on <b>'+W.ko[pel]+' '+pel+'</b>, its <span class="tg">'+ptg.en+' '+ptg.ko+'</span>. Favorable group: '+grp+'. The climate cross-check below decides what pulses on the wheel.</p>';
-    return '<div class="str"><p class="sub">Day Master strength · '+s.verdict.ko+' '+s.verdict.han+'</p>'+
+    return '<div class="str">'+
       '<div class="str-head">'+chip+'</div>'+meter+reasons+need+
       '<p class="str-caveat">'+esc(s.caveat)+' '+esc(s.method_note)+'</p></div>';
+  }
+  function wireStrength(){
+    var rows=document.querySelectorAll(".str-in"); if(!rows||!rows.length) return;
+    var FR=[783.99,880.00,1046.50];
+    Array.prototype.forEach.call(rows,function(li,i){
+      function go(){
+        Array.prototype.forEach.call(rows,function(x){ x.classList.toggle("on",x===li); });
+        var side=li.getAttribute("data-side")==="weak"?"weak":"supp";
+        var seg=document.querySelector(".str-bar ."+side);
+        if(seg){ seg.classList.remove("pulse"); void seg.offsetWidth; seg.classList.add("pulse"); }
+        ZT(FR[i]||880);
+      }
+      li.addEventListener("click",go);
+      li.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); go(); } });
+    });
   }
 
   function climPos(heat,moist){ var c=80,R=54; function cl(v){ return Math.max(-4,Math.min(4,v)); } return {x:c+cl(heat)/4*R, y:c+cl(moist)/4*R}; }
@@ -1916,25 +2083,49 @@
     var cap='<p class="clim-cap">'+climate.temp.en+' · '+climate.damp.en+' ('+climate.temp.ko+' · '+climate.damp.ko+')</p>';
     var reasons='<ul class="clim-reason">'+climate.reasoning.map(function(r){ return '<li>'+esc(r)+'</li>'; }).join("")+'</ul>';
     var x='';
+    _xlens=null;
     if(yongsin){
-      function chip(method,el,lead){ if(!el) return '<div class="xchip"><span class="xm">'+method+'</span><span class="xel">—</span></div>';
-        return '<div class="xchip'+(lead?" lead":"")+'"><span class="xm">'+method+'</span><span class="xel '+elClass(el)+'">'+W.ko[el]+' '+W.han[el]+'</span></div>'; }
+      function chip(method,el,lead,lens){ var inner = el
+          ? '<span class="xm">'+method+'</span><span class="xel '+elClass(el)+'">'+W.ko[el]+' '+W.han[el]+'</span>'
+          : '<span class="xm">'+method+'</span><span class="xel">none</span>';
+        return '<button type="button" class="xchip'+(lead?" lead":"")+'" data-lens="'+lens+'" aria-pressed="'+(lead?"true":"false")+'">'+inner+'</button>'; }
       var agree=yongsin.mode==="agree";
       var tone=agree?"agree":(yongsin.mode==="tension"?"tension":"neutral");
-      var conn=agree?'일치 · agree':(yongsin.mode==="tension"?'갈림 · diverge':'—');
-      x='<div class="xcheck xcheck--'+tone+'">'+
-        chip("억부", yongsin.eokbu, !agree && yongsin.leadElement===yongsin.eokbu)+
+      var conn=agree?'일치 · agree':(yongsin.mode==="tension"?'갈림 · diverge':'·');
+      // both lens captions come straight from the engine output, never invented:
+      // 억부 restates strength.favorable via yongsin.eokbu; 조후 is the engine's own
+      // climate-lean sentence (climate.reasoning[2], always present).
+      var eTxt = yongsin.eokbu ? ('억부 (strength) points to '+W.ko[yongsin.eokbu]+' '+yongsin.eokbu+' as the steadying element.') : '억부 names no single element for this chart.';
+      var jTxt = (climate.reasoning && climate.reasoning[2]) ? climate.reasoning[2] : '조후 reads this chart as temperate and names no element.';
+      var leadJ = yongsin.lead==="조후";
+      _xlens={ e:eTxt, j:jTxt, eEl:yongsin.eokbu||null, jEl:yongsin.johu||null };
+      x='<div class="xcheck xcheck--'+tone+'" id="xlens">'+
+        chip("억부", yongsin.eokbu, agree||!leadJ, "e")+
         '<div class="xconn">'+conn+'</div>'+
-        chip("조후", yongsin.johu, !agree && yongsin.leadElement===yongsin.johu)+
-      '</div><p class="xnote">'+esc(yongsin.note)+'</p>';
+        chip("조후", yongsin.johu, agree||leadJ, "j")+
+      '</div><p class="xcap" id="xcap" aria-live="polite">'+esc(leadJ?jTxt:eTxt)+'</p><p class="xnote">'+esc(yongsin.note)+'</p>';
     }
     var pulse='';
     if(yongsin && yongsin.leadElement){
       pulse='<p class="str-need">On the wheel, <b>'+W.ko[yongsin.leadElement]+' '+W.han[yongsin.leadElement]+'</b> pulses, where these lenses point'+
         (yongsin.mode==="agree"?" together":(yongsin.lead==="조후"?", with 조후 leading in this climatic extreme":""))+'.</p>';
     }
-    return '<div class="clim"><p class="sub">Climate cross-check · 조후 調候</p><div class="clim-wrap"><div>'+svg+cap+'</div>'+
+    return '<div class="clim"><div class="clim-wrap"><div>'+svg+cap+'</div>'+
       '<div>'+reasons+x+pulse+'<p class="clim-caveat">'+esc(climate.caveat)+' '+esc(climate.method_note)+'</p></div></div></div>';
+  }
+  var _xlens=null;
+  function wireClimate(){
+    var box=document.getElementById("xlens"), cap=document.getElementById("xcap");
+    if(!box||!cap||!_xlens) return;
+    var chips=Array.prototype.slice.call(box.querySelectorAll(".xchip"));
+    chips.forEach(function(b){
+      b.addEventListener("click",function(){
+        var lens=b.getAttribute("data-lens");
+        chips.forEach(function(xc){ var on=xc===b; xc.classList.toggle("lead",on); xc.setAttribute("aria-pressed",on?"true":"false"); });
+        cap.textContent = lens==="j" ? _xlens.j : _xlens.e;
+        ZT(EL_FREQ[lens==="j"?_xlens.jEl:_xlens.eEl]);
+      });
+    });
   }
 
   // ---- traceable reading ----
@@ -2031,9 +2222,9 @@
       '<div class="rr-stat drain"><b>'+num1(s.weakening_weight)+'</b><span>weight that drains</span></div>'+
       '<div class="rr-stat"><b>'+s.index+'</b><span>support index of 100</span></div></div>';
     var facts='<ul class="rr-facts">'+
-      '<li>'+(s.deukryeong?'Born in season':'Born out of season')+' · <span class="ko">득령</span> deukryeong</li>'+
-      '<li>'+(s.deukji?'Rooted at its own day branch':'No root at its own day branch')+' · <span class="ko">득지</span> deukji</li>'+
-      '<li>'+(s.deukse?'Allied overall':'Outnumbered overall')+' · <span class="ko">득세</span> deukse</li></ul>';
+      '<li>'+(s.deukryeong?'Born in season':'Born out of season')+' · <span class="ko">득령</span> <span class="rr-krom">deukryeong</span></li>'+
+      '<li>'+(s.deukji?'Rooted at its own day branch':'No root at its own day branch')+' · <span class="ko">득지</span> <span class="rr-krom">deukji</span></li>'+
+      '<li>'+(s.deukse?'Allied overall':'Outnumbered overall')+' · <span class="ko">득세</span> <span class="rr-krom">deukse</span></li></ul>';
     return rrCard('earth', termEyebrow('Strength','억부','Eokbu'),
       '<p class="rr-verdict">'+esc(s.verdict.en)+' · <span class="ko">'+esc(s.verdict.ko)+'</span> <span class="rr-rom">'+rom+'</span> '+esc(s.verdict.han)+' '+sayBtn(s.verdict.ko)+'</p>'+
       stats+
@@ -2113,7 +2304,7 @@
       if(lean.length){
         body+='<span class="rr-caution">The chart’s climate ('+gl('johu','조후')+') leans '+lean.join(" and ")+
           ' (heat '+cl.heat+', moisture '+cl.moisture+' on the engine’s scale, from a '+esc(cl.season.name)+' month branch)'+
-          (cl.primary?'; a little more '+esc(W.ko[cl.primary])+' '+esc(cl.primary)+(cl.primaryStem?', classically '+esc(cl.primaryStem):'')+', tends to steady the pacing':'')+'.</span>';
+          (cl.primary?'; a little more <b class="'+elClass(cl.primary)+'">'+esc(W.ko[cl.primary])+' '+esc(cl.primary)+'</b>'+(cl.primaryStem?', classically '+esc(cl.primaryStem):'')+', tends to steady the pacing':'')+'.</span>';
       } else {
         body+='<span class="rr-caution">The climate ('+gl('johu','조후')+') reads close to temperate (heat '+cl.heat+', moisture '+cl.moisture+' on the engine’s scale); no strong lean asks for correcting.</span>';
       }
@@ -2147,18 +2338,25 @@
   }
   // The account card, rendered once at the end of the reading stack. Same copy as the
   // two static placements (Academy, before the footer); hidden for signed-in readers.
-  function keepCtaHtml(){
-    return '<div class="keep-cta">'+
+  function keepCtaHtml(chart){
+    var ghost='';
+    try{
+      var P=chart&&chart.pillars;
+      if(P) ghost='<div class="keep-ghost" aria-hidden="true">'+["year","month","day","hour"].map(function(k){
+        return P[k]?'<span>'+P[k].stem.ko+P[k].branch.ko+'</span>':'';
+      }).join('')+'</div>';
+    }catch(e){}
+    return '<div class="keep-cta keep-cta--banner">'+ghost+'<div class="keep-cta-in">'+
       '<h3>Keep this chart</h3>'+
       '<p>A free account saves your birth record, so every reading on the site casts from it, and reads your Saju and your Zodi Animal as one self-portrait: the pillars for the pattern, the animal for the face it wears.</p>'+
       '<a class="btn btn-primary" href="/account.html">Create your free account</a>'+
-      '<p class="keep-cta-fine">Free. No card. Your birth details stay yours.</p></div>';
+      '<p class="keep-cta-fine">Free. No card. Your birth details stay yours.</p></div></div>';
   }
 
   // result section mini-nav: smooth jump + scroll-spy active highlighting
   function wireResultNav(){
     var clickables=Array.prototype.slice.call(document.querySelectorAll(".rnav a, .rsec-next"));
-    clickables.forEach(function(a){ a.addEventListener("click",function(e){ e.preventDefault(); if(a.getAttribute("data-goto")==="birth-gate") expandGate(); var t=document.getElementById(a.getAttribute("data-goto")); if(t) t.scrollIntoView({behavior:reduce?"auto":"smooth", block:"start"}); }); });
+    clickables.forEach(function(a){ a.addEventListener("click",function(e){ e.preventDefault(); ZT(); if(a.getAttribute("data-goto")==="birth-gate") expandGate(); var t=document.getElementById(a.getAttribute("data-goto")); if(t) t.scrollIntoView({behavior:reduce?"auto":"smooth", block:"start"}); }); });
     var navlinks=Array.prototype.slice.call(document.querySelectorAll(".rnav a"));
     var secs=["rsec-chart","rsec-reading","rsec-elements","rsec-climate","rsec-calc"].map(function(id){return document.getElementById(id);}).filter(Boolean);
     if("IntersectionObserver" in window && secs.length){
@@ -2179,6 +2377,12 @@
       var nh=(nav && nav.offsetHeight)?nav.offsetHeight:46;
       de.style.setProperty("--saju-nav-top", sh+"px");
       de.style.setProperty("--saju-stick", (sh+nh+14)+"px");
+      // the rail never scrolls inside itself: if it can't fit the viewport whole,
+      // drop the stick so it simply scrolls with the page
+      var anchor=document.querySelector(".rr-anchor");
+      if(anchor && window.innerHeight){
+        anchor.classList.toggle("no-stick", anchor.scrollHeight > (window.innerHeight - (sh+nh+14) - 18));
+      }
     }catch(e){}
   }
   window.addEventListener("resize", setStickyOffsets);
@@ -2186,11 +2390,39 @@
   // Exclusive pillar tooltips: each cast pillar registers with the page's one
   // popover controller (window.__sjPop), so opening any tooltip closes the previous
   // one, Escape closes, and a click outside closes. Never two open at once.
+  // The OPEN tooltip is portaled onto <body> as position:fixed (placed from the
+  // pillar's getBoundingClientRect), so no sticky rail or column can clip it.
+  var _tipOpen=null;
+  function placeTip(p,tip){
+    try{
+      var r=p.getBoundingClientRect(), w=Math.min(300, Math.round(window.innerWidth*0.86));
+      var x=Math.round(Math.min(Math.max(8, r.left+r.width/2-w/2), window.innerWidth-w-8));
+      tip.style.width=w+"px"; tip.style.left=x+"px"; tip.style.top=Math.round(r.bottom+12)+"px";
+      tip.style.setProperty("--fax", Math.round(r.left+r.width/2-x)+"px");
+    }catch(e){}
+  }
+  window.addEventListener("scroll", function(){ if(_tipOpen) placeTip(_tipOpen.p,_tipOpen.tip); }, true);
+  window.addEventListener("resize", function(){ if(_tipOpen) placeTip(_tipOpen.p,_tipOpen.tip); });
   function wirePillTips(){
     var pop=window.__sjPop;
-    Array.prototype.forEach.call(document.querySelectorAll("#report .rpill"), function(p){
-      var o={ el:p, close:function(){ p.classList.remove("tip-open"); if(pop) pop.closed(o); } };
-      function openTip(){ p.classList.add("tip-open"); if(pop) pop.open(o); }
+    _tipOpen=null;
+    // clear any tooltip a previous render left floating on <body>
+    Array.prototype.forEach.call(document.querySelectorAll("body > .rtip"), function(t){ if(t.parentNode) t.parentNode.removeChild(t); });
+    Array.prototype.forEach.call(document.querySelectorAll("#report .rpill"), function(p,i){
+      var tip=p.querySelector(".rtip");
+      var o={ el:p, p:p, tip:tip, close:function(){
+        p.classList.remove("tip-open");
+        if(tip){ tip.classList.remove("is-float"); tip.style.left=tip.style.top=tip.style.width=""; if(tip.parentNode && tip.parentNode!==p) p.appendChild(tip); }
+        if(_tipOpen===o) _tipOpen=null;
+        if(pop) pop.closed(o);
+      } };
+      function openTip(){
+        if(p.classList.contains("tip-open")) return;
+        p.classList.add("tip-open");
+        if(tip && document.body){ document.body.appendChild(tip); placeTip(p,tip); tip.classList.add("is-float"); _tipOpen=o; }
+        if(pop) pop.open(o);
+        ZT(PILLAR_FREQ[i%4]);
+      }
       p.addEventListener("mouseenter", openTip);
       p.addEventListener("mouseleave", function(){ o.close(); });
       p.addEventListener("focusin", openTip);
@@ -2470,7 +2702,7 @@
                         : "birthplace unknown — no solar correction";
       chain = esc(clockLabel)+' '+arrow+' <b class="'+elClass(hb.element)+'">'+esc(hourLabel)+'</b> <span class="dl-off">· '+why+'</span>';
     }
-    return '<p class="sub" style="margin-top:1rem">Clock to '+gl('truesolar','true solar time')+'</p><p class="rdm" style="line-height:1.75">'+chain+'</p>';
+    return '<p class="sub" style="margin-top:.7rem">Clock to '+gl('truesolar','true solar time')+'</p><p class="rdm" style="line-height:1.6;margin-bottom:.55rem">'+chain+'</p>';
   }
 
   // Turn a thrown SajuLunar error into a plain, kind, specific message.
@@ -2554,7 +2786,7 @@
     var lunarLineHtml = "";
     if(calVal==="lunar" || calVal==="lunar-leap"){
       var leapPfx = calVal==="lunar-leap" ? "윤" : "";
-      lunarLineHtml = '<p class="sub" style="margin-top:1rem">Lunar → solar</p><p class="rdm">음력 '+Yn+'년 '+leapPfx+Mn+'월 '+Dn+'일 <span class="dl-off">→</span> 양력 '+esc(solarDate)+'</p>';
+      lunarLineHtml = '<p class="sub" style="margin-top:.7rem">Lunar → solar</p><p class="rdm">음력 '+Yn+'년 '+leapPfx+Mn+'월 '+Dn+'일 <span class="dl-off">→</span> 양력 '+esc(solarDate)+'</p>';
     }
     _lastChart = chart; // feed the Academy chart-based drills
     syncTeaching(chart); // lock the four-pillars teaching section to the real chart
@@ -2562,21 +2794,25 @@
     var P = chart.pillars, three = chart.three_pillar_mode, dm = chart.day_master;
     var b = chart.boundaries || {}, vars = chart.variants || [];
     var chartHtml = grid(P);
-    var dmHtml = '<p class="rdm">Day Master · <b>'+rk(dm.ko,dm.rom)+'</b> '+sayBtn(dm.ko)+' · '+(dm.yin?"yin":"yang")+' '+dm.element+
+    var dmHtml = '<p class="rdm">Day Master · <b>'+stak(dm.ko,dm.rom)+'</b> '+sayBtn(dm.ko)+' · '+(dm.yin?"yin":"yang")+' '+dm.element+
       (three?'. Your hour pillar is still open, slide the time bar at the bottom to find it.':'.')+'</p>';
     var by = interpSections(chart);
     var chipsHtml = summaryChips(chart);
+    // two independent stacks per row, so mismatched card heights never leave a hole;
+    // wide cards (the river, the account banner) run full width between the rows.
+    // The account banner sits at the very END of the flow, after What to watch and
+    // the crossing card.
     var cardsHtml = '<div class="rr-grid">'+
-      cardHowTo()+
-      cardDayMaster(chart, by)+
-      cardStrength(chart)+
-      cardElements(chart, by)+
-      cardTenGods(chart, by)+
-      cardSeason(chart, by)+
+      '<div class="rr-duo">'+
+        '<div class="rr-stack">'+cardHowTo()+cardStrength(chart)+cardTenGods(chart, by)+'</div>'+
+        '<div class="rr-stack">'+cardDayMaster(chart, by)+cardElements(chart, by)+cardSeason(chart, by)+'</div>'+
+      '</div>'+
       cardRiver(chart, by)+
-      cardWatch(chart, by)+
-      crossingCard(chart, solarDate)+
-      keepCtaHtml()+
+      '<div class="rr-duo">'+
+        '<div class="rr-stack">'+cardWatch(chart, by)+'</div>'+
+        '<div class="rr-stack">'+crossingCard(chart, solarDate)+'</div>'+
+      '</div>'+
+      keepCtaHtml(chart)+
     '</div>';
     var balHtml = elbar(chart.element_balance);
     var needEl = (chart.yongsin && chart.yongsin.leadElement) ? chart.yongsin.leadElement
@@ -2585,9 +2821,13 @@
     var strHtml = buildStrength(chart.strength);
     var climHtml = buildClimate(chart.climate, chart.yongsin);
 
-    // editorial solar-term datelines (exact-minute)
-    var dlHtml = '<p class="sub" style="margin-top:1.2rem">The cosmic clock</p>'+
-      dateline(b.ipchun) + dateline(b.month_start);
+    // editorial solar-term rows (exact-minute), as a contained module of expandable rows
+    var dlHtml = modCard('cinnabar',
+      '<span class="ko">절기</span> <span class="rr-rom">Jeolgi</span>'+sayBtn('절기'),
+      'The cosmic clock',
+      'The two solar-term instants that bound your chart. Open a row for the exact minute.',
+      dlxRow(b.ipchun,'This exact instant opens the Saju year. The year pillar counts from 입춘 Ipchun, not from January 1.')+
+      dlxRow(b.month_start,'This solar term opens your chart month. The month pillar follows the true season, not the calendar month.'));
 
     // compare block, only when the birth sits on a boundary
     var cmpHtml = vars.length ? buildCompare(P, vars) : "";
@@ -2640,8 +2880,22 @@
           '<div class="rr-right" id="rsec-reading">'+cardsHtml+'</div>'+
         '</div>',
         "rsec-elements","Your elements") +
-      sec("rsec-elements", wxHtml+strHtml, "rsec-climate","Climate") +
-      sec("rsec-climate", climHtml, "rsec-calc","How it was cast") +
+      sec("rsec-elements",
+        modCard('cinnabar','<span class="ko">오행</span> <span class="rr-rom">Ohaeng</span>'+sayBtn('오행'),
+          'The five elements at work',
+          'Select an element to light its generating and controlling lines, its count, and how it stands to your Day Master.',
+          wxHtml)+
+        (strHtml?modCard('earth','<span class="ko">억부</span> <span class="rr-rom">Eokbu</span>'+sayBtn('억부'),
+          'Day Master strength',
+          'Three classical inputs set the verdict. Select a row to see which side of the meter it feeds.',
+          strHtml):''),
+        "rsec-climate","Climate") +
+      sec("rsec-climate",
+        (climHtml?modCard('water','<span class="ko">조후</span> <span class="rr-rom">Johu</span>'+sayBtn('조후'),
+          'Climate cross-check',
+          'Two lenses read the same chart. Choose 억부 or 조후 to see which element each one points to.',
+          climHtml):''),
+        "rsec-calc","How it was cast") +
       sec("rsec-calc",
         dlHtml+
         '<p class="sub" style="margin-top:1.2rem">How it was calculated</p><ul class="assump">'+rows+'</ul>'+
@@ -2650,7 +2904,7 @@
         '<button class="rsec-next" data-goto="birth-gate" style="margin-top:1.4rem">Cast another chart</button>',
         null,null);
 
-    wireWuxing(); wireDaeun(); wireCompare(); wireResultNav(); wireShareCard(); wirePillTips();
+    wireWuxing(); wireStrength(); wireClimate(); wireDaeun(); wireCompare(); wireResultNav(); wireShareCard(); wirePillTips();
     setStickyOffsets(); setTimeout(setStickyOffsets, 400); // re-measure once webfonts settle
     collapseGate(); // fold the form to the side rail so the reading takes the full width
     if(_pendingScroll){ _pendingScroll=false; var top=document.getElementById("rsec-chart"); if(top) top.scrollIntoView({behavior: reduce?"auto":"smooth", block:"nearest"}); }
@@ -2875,7 +3129,7 @@
     clock.addEventListener("keydown",function(e){ if(e.key==="Escape"||e.key==="Esc"){ e.stopPropagation(); closeClock(); try{ clockBtn.focus(); }catch(err){} } });
 
     /* ---------- birthplace plate ---------- */
-    function paintPlace(){ if(!bplace||!bplaceVal) return; var o=bplace.options[bplace.selectedIndex]; bplaceVal.textContent=o?o.textContent:""; }
+    function paintPlace(){ if(!bplace||!bplaceVal) return; var o=bplace.options[bplace.selectedIndex]; var t=o?o.textContent:""; if(o&&o.value==="unknown"){ t="Not sure"; } else { var cut=t.indexOf(" ("); if(cut>-1) t=t.slice(0,cut); } bplaceVal.textContent=t; }
     if(bplace){ bplace.addEventListener("change",paintPlace); }
 
     /* ---------- sync visible controls FROM the hidden fields (after prefill / restore) ---------- */
