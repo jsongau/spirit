@@ -840,11 +840,13 @@
   /* the two-up row is Birthplace + Luck direction: two equal columns, twin 44px controls.
      Inside this row the plate value drops to a tighter mono size so the longest city
      labels ("San Francisco (122.42°W)") still sit whole in the equal split. */
-  .pcast-field{ margin:0 0 12px; } .pcast-field-2{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .pcast-field{ margin:0 0 12px; } .pcast-field-2{ display:grid; grid-template-columns:1fr 1fr; gap:.5rem; }
   .pcast-field-2 > div{ display:flex; flex-direction:column; justify-content:flex-end; min-width:0; }
-  .pcast-field-2 .pcast-label{ min-width:0; white-space:nowrap; }
-  .pcast-field-2 .pcast-tzplate, .pcast-field-2 .pcast-select{ height:44px; min-height:44px; width:100%; }
-  .pcast-field-2 .pcast-tzval{ font-size:.9rem; }
+  .pcast-field-2 .pcast-label{ min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  /* box-sizing: the page has no global border-box reset, so width:100% + padding was
+     spilling the plate out of its grid cell and over the neighbour column. Never again. */
+  .pcast-field-2 .pcast-tzplate, .pcast-field-2 .pcast-select{ box-sizing:border-box; height:44px; min-height:44px; width:100%; max-width:100%; }
+  .pcast-field-2 .pcast-tzval{ font-size:.9rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   @media (max-width:479px){ .pcast-field-2{ grid-template-columns:1fr; } }
   .pcast-label{ display:block; font-family:var(--sans); font-size:.82rem; color:var(--muted); margin:0 0 4px; }
   .pcast-opt{ color:var(--faint); font-size:.74rem; }
@@ -901,8 +903,11 @@
   .pcast-cal-empty{ min-height:40px; }
 
   /* ---- calendar-type pills (Saju-specific: 양력/음력/윤달) shown compact ---- */
-  .pcast-caltype{ display:flex; gap:.4rem; flex-wrap:wrap; }
-  .pcast-caltype button{ position:relative; display:flex; flex-direction:column; align-items:center; gap:.05rem; flex:1 1 0; min-width:74px;
+  /* same two-column grid as the Birthplace + Luck row below, so Solar aligns over
+     Birthplace and Lunar over Luck direction, cell for cell */
+  .pcast-caltype{ display:grid; grid-template-columns:1fr 1fr; gap:.5rem; }
+  .pcast-caltype [data-cal="lunar-leap"]{ grid-column:1 / -1; }
+  .pcast-caltype button{ position:relative; display:flex; flex-direction:column; align-items:center; gap:.05rem; box-sizing:border-box; width:100%; min-width:0;
     padding:.34rem .4rem; background:var(--field); border:1px solid var(--line); border-radius:var(--r-1); cursor:pointer; transition:border-color .15s,box-shadow .15s; }
   .pcast-caltype .cal-ko{ font-family:var(--korean); font-size:.98rem; color:var(--accent-bright); }
   .pcast-caltype .cal-en{ font-family:var(--mono); font-size:.56rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
