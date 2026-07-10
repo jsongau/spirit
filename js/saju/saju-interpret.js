@@ -70,7 +70,8 @@
   var EL_QUALITY = { Wood: "growth", Fire: "warmth", Earth: "grounding", Metal: "clarity", Water: "flow" };
   var W = Engine.WUXING;
 
-  function elName(el) { return W.ko[el] + " " + W.han[el]; }
+  // hangul + English in prose (the chart and the wheel carry the hanja already)
+  function elName(el) { return W.ko[el] + " " + el; }
   function aan(w) { return /^[aeiou]/i.test(w) ? "an" : "a"; }
 
   // ---- safe-wording linter (deterministic guard; every statement must pass) ----
@@ -147,7 +148,7 @@
     // --- Pattern: lead synthesis ---
     sections.Pattern.push(claim({
       id: "lead-synthesis", section: "Pattern",
-      statement: "Your chart centers on a " + (yin ? "yin" : "yang") + " " + dm.element + " Day Master (" + dm.char + " " + dm.ko + "), born in the " + cl.season.name + " season, and by the 억부 method it reads " + s.verdict.en + ".",
+      statement: "Your chart centers on a " + (yin ? "yin" : "yang") + " " + dm.element + " Day Master (" + dm.ko + " " + (dm.rom || "") + "), born in the " + cl.season.name + " season, and by the 억부 method it reads " + s.verdict.en + ".",
       evidence: ["Day stem " + dm.char + " (" + dm.element + ", " + (yin ? "yin" : "yang") + ")", "Month branch season: " + cl.season.name, "Strength index " + s.index + "/100, " + s.verdict.ko + " " + s.verdict.han],
       rules: ["DM-identity", "EOKBU-strength"], confidence: "well-supported", lineage: "shared",
       counter: "This is the shape of the chart, not a fortune; strength thresholds vary between readers.",
@@ -182,7 +183,7 @@
     var crg = CLIMATE_RANGE[tkey];
     sections.Pattern.push(claim({
       id: "climate", section: "Pattern",
-      statement: "Born in the " + cl.season.branch + " month, the chart leans " + cl.temp.en + (cl.damp.en !== "balanced" ? " and " + cl.damp.en : "") + " (조후). That can read as " + crg[0] + " through to " + crg[1] + (cl.primary ? ". The balancing element here is " + elName(cl.primary) + ", worth favoring in how you pace things." : "."),
+      statement: "Born in a " + cl.season.name + " month, the chart leans " + cl.temp.en + (cl.damp.en !== "balanced" ? " and " + cl.damp.en : "") + " (조후). That can read as " + crg[0] + " through to " + crg[1] + (cl.primary ? ". The balancing element here is " + elName(cl.primary) + ", worth favoring in how you pace things." : "."),
       evidence: ["Month branch " + cl.season.branch, "heat " + cl.heat + ", moisture " + cl.moisture, "climate 용신: " + (cl.primary || "none")],
       rules: ["JOHU-climate"], confidence: "tentative", lineage: "practitioner",
       counter: "조후 here is a codeable simplification of a qualitative tradition; other methods can lead.",
