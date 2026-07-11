@@ -122,6 +122,44 @@
   }
   function cnyCdate(gy) { var m1 = buildCycle(gy).find(function (x) { return x.num === 1 && !x.leap; }); return m1 ? m1.start : null; }
 
+  /* JDN -> civil Gregorian { year, month, day }. Inverse of jdnOf (Fliegel–Van Flandern). */
+  function ymdFromJDN(J) {
+    var a = J + 32044, b = Math.floor((4 * a + 3) / 146097), c = a - Math.floor(146097 * b / 4);
+    var d = Math.floor((4 * c + 3) / 1461), e = c - Math.floor(1461 * d / 4), m = Math.floor((5 * e + 2) / 153);
+    return { day: e - Math.floor((153 * m + 2) / 5) + 1, month: m + 3 - 12 * Math.floor(m / 10), year: 100 * b + d - 4800 + Math.floor(m / 10) };
+  }
+
+  /* Merged, de-duped, start-sorted lunar-month list spanning lunar year `ly`. */
+  function monthsAround(ly) {
+    return buildCycle(ly - 1).concat(buildCycle(ly)).concat(buildCycle(ly + 1))
+      .filter(function (m, i, a) { return a.findIndex(function (x) { return x.start === m.start; }) === i; })
+      .sort(function (a, b) { return a.start - b.start; });
+  }
+
+  /* The leap-month number in lunar year `ly` (0 = the year has no leap month). */
+  function leapMonthOf(ly) {
+    var lo = cnyCdate(ly), hi = cnyCdate(ly + 1), M = monthsAround(ly);
+    for (var i = 0; i < M.length; i++) if (M[i].leap && M[i].start >= lo && M[i].start < hi) return M[i].num;
+    return 0;
+  }
+
+  /* Public: lunar { ly, lm, ld, leap } -> Gregorian { year, month, day }. Returns null when that
+     month (or that day within it) does not exist that lunar year — the UI turns null into a kind,
+     specific message rather than silently casting the wrong chart. */
+  function lunarToSolar(ly, lm, ld, leap) {
+    var lo = cnyCdate(ly), hi = cnyCdate(ly + 1), M = monthsAround(ly), mm = null, i;
+    for (i = 0; i < M.length; i++) {
+      var x = M[i];
+      if (x.start >= lo && x.start < hi && x.num === lm && !!x.leap === !!leap) { mm = x; break; }
+    }
+    if (!mm) return null;
+    var next = null;
+    for (i = 0; i < M.length; i++) if (M[i].start > mm.start) { next = M[i]; break; }
+    var len = next ? (next.start - mm.start) : 30;
+    if (ld < 1 || ld > len) return null;
+    return ymdFromJDN(mm.start + (ld - 1));
+  }
+
   /* Public: Gregorian -> lunar { lunarYear, lunarMonth, day, leap }. */
   function solarToLunar(y, mo, d) {
     var cd = jdnOf(y, mo, d);
@@ -153,9 +191,21 @@
   /* Bridge: birth data -> a cast chart via ZiweiData.caster. When hour is unknown, returns the
      hour-independent facts only (year pillar + the four transformation targets) plus needHour:true. */
   function castFromBirth(o) {
-    var lun = solarToLunar(o.year, o.month, o.day);
+    /* The calendar the reader entered. "solar" (default) is a Gregorian date we convert to lunar;
+       "lunar" / "lunar-leap" mean the date IS already lunar, so we cast from it directly and skip
+       the conversion. For a lunar date we still resolve the equivalent solar day (for the readout)
+       and use it to prove the month/day exists that year. */
+    var cal = o.calendar || "solar", leap = (cal === "lunar-leap"), lun, solar = null;
+    if (cal === "lunar" || cal === "lunar-leap") {
+      solar = lunarToSolar(o.year, o.month, o.day, leap);
+      if (!solar) return { error: "lunar-date-invalid", calendar: cal };
+      lun = { lunarYear: o.year, lunarMonth: o.month, leap: leap, day: o.day };
+    } else {
+      lun = solarToLunar(o.year, o.month, o.day);
+    }
     var yp = yearStemBranch(lun.lunarYear);
-    var base = { lunar: lun, yearPillar: yp };
+    var base = { lunar: lun, yearPillar: yp, calendar: cal };
+    if (solar) base.solar = solar;
     var hb = hourBranchIndex(o.hour);
     if (hb === null) {
       base.needHour = true;
@@ -172,6 +222,8 @@
 
   root.ZiweiData.lunar = {
     solarToLunar: solarToLunar,
+    lunarToSolar: lunarToSolar,
+    leapMonthOf: leapMonthOf,
     yearStemBranch: yearStemBranch,
     hourBranchIndex: hourBranchIndex,
     castFromBirth: castFromBirth,

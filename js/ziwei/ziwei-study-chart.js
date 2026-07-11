@@ -35,10 +35,11 @@
       hour: (b.hour === null || b.hour === undefined || b.hour === "") ? null : +b.hour,
       minute: (b.minute === null || b.minute === undefined || b.minute === "") ? null : +b.minute,
       tzOffset: tzo,
-      gender: b.gender || null
+      gender: b.gender || null,
+      calendar: (b.calendar === "lunar" || b.calendar === "lunar-leap") ? b.calendar : "solar"
     };
   }
-  function stamp(b) { return b ? [b.year, b.month, b.day, b.hour, b.minute, b.tzOffset, b.gender].join("|") : ""; }
+  function stamp(b) { return b ? [b.year, b.month, b.day, b.hour, b.minute, b.tzOffset, b.gender, b.calendar].join("|") : ""; }
 
   /* cache the last cast so hour-scrubbing stays cheap */
   var castCache = { stamp: null, out: null };

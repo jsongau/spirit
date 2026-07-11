@@ -279,6 +279,71 @@
     cal.addEventListener("click", function (e) { e.stopPropagation(); }); // keep inside-clicks from the outside-close handler
     form.appendChild(row1);
 
+    /* ---- calendar type: 陽曆 (solar / Gregorian) vs 農曆 (lunar), with a 閏月 (leap month) pill that
+       only appears once the entered lunar year actually carries a leap twin of that month. Solar is
+       the default — a Gregorian birth date is converted to lunar before casting. Lunar means the
+       date is ALREADY lunar, so the court is cast from it directly with no conversion. Same shape as
+       the Saju card, worn in the court's gold. ---- */
+    var calType = "solar";
+    var setCalType = function () {};
+    var refreshLeap = function () {};
+    (function buildCalType() {
+      var field = h("div", "pcast-field");
+      var lbl = h("label", "pcast-label", "Calendar"); lbl.id = "pcast-cal-lbl";
+      lbl.appendChild(h("span", "pcast-opt", " · a lunar date is cast without conversion"));
+      field.appendChild(lbl);
+      var pills = h("div", "pcast-caltype");
+      pills.setAttribute("role", "radiogroup");
+      pills.setAttribute("aria-labelledby", "pcast-cal-lbl");
+      var defs = [
+        { cal: "solar", hant: "陽曆", en: "Solar" },
+        { cal: "lunar", hant: "農曆", en: "Lunar" },
+        { cal: "lunar-leap", hant: "閏月", en: "Lunar leap" }
+      ];
+      var btns = {};
+      defs.forEach(function (d) {
+        var b = document.createElement("button");
+        b.type = "button"; b.setAttribute("role", "radio"); b.setAttribute("data-cal", d.cal);
+        b.setAttribute("aria-checked", d.cal === "solar" ? "true" : "false");
+        b.tabIndex = d.cal === "solar" ? 0 : -1;
+        var ko = h("span", "cal-ko", d.hant); ko.setAttribute("lang", "zh-Hant"); b.appendChild(ko);
+        b.appendChild(h("span", "cal-en", d.en));
+        if (d.cal === "lunar-leap") b.hidden = true;
+        b.addEventListener("click", function () { setCalType(d.cal); });
+        btns[d.cal] = b; pills.appendChild(b);
+      });
+      field.appendChild(pills);
+      form.appendChild(field);
+
+      setCalType = function (cal) {
+        if (btns[cal] && btns[cal].hidden) cal = "lunar"; /* leap requested while unavailable */
+        calType = cal;
+        Object.keys(btns).forEach(function (k) {
+          var on = k === cal;
+          btns[k].setAttribute("aria-checked", on ? "true" : "false");
+          btns[k].tabIndex = on ? 0 : -1;
+        });
+      };
+
+      pills.addEventListener("keydown", function (e) {
+        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+        var order = defs.map(function (d) { return d.cal; }).filter(function (c) { return !btns[c].hidden; });
+        var i = order.indexOf(calType), dir = e.key === "ArrowRight" ? 1 : -1;
+        var next = order[(i + dir + order.length) % order.length];
+        e.preventDefault(); setCalType(next); btns[next].focus();
+      });
+
+      /* 閏月 shows only when the entered year+month has a real leap twin (SC.leapMonthOf). */
+      refreshLeap = function () {
+        var p = parseDate(date.value), has = false;
+        if (p && L.leapMonthOf) { try { has = (L.leapMonthOf(p.year) === p.month); } catch (e) { has = false; } }
+        btns["lunar-leap"].hidden = !has;
+        if (!has && calType === "lunar-leap") setCalType("lunar");
+      };
+      date.addEventListener("input", refreshLeap);
+      refreshLeap();
+    })();
+
     var calState = { y: 1995, m: 0, sel: null };
     function fmtDigits(s) { var d = s.replace(/\D/g, "").slice(0, 8); var o = d.slice(0, 2); if (d.length > 2) o += "/" + d.slice(2, 4); if (d.length > 4) o += "/" + d.slice(4, 8); return o; }
     date.addEventListener("input", function () { date.value = fmtDigits(date.value); if (parseDate(date.value) && !cal.hidden) { syncCalToInput(); renderCal(); } });
@@ -728,6 +793,7 @@
       if (!unk.checked && tstate.h != null) { b.hour = tstate.h; b.minute = (tstate.m == null ? 0 : tstate.m); }
       else { b.hour = null; b.minute = null; }
       b.tzOffset = tz.value; /* "auto" is resolved to the device offset by ZiweiStudyChart.save */
+      b.calendar = calType;  /* "solar" | "lunar" | "lunar-leap" — how to read year/month/day above */
       return b;
     }
     var lastStamp = null;       /* loop guard: serialized stamp of the last rendered birth */
@@ -784,6 +850,8 @@
     function fillForm(b) {
       var want = pad(b.month) + "/" + pad(b.day) + "/" + b.year;
       if (date.value !== want) date.value = want;
+      refreshLeap();                          /* the entered date decides whether 閏月 is offered */
+      setCalType(b.calendar || "solar");      /* restore the calendar-type pill on revisit */
       if (b.hour == null) {
         tstate.h = null; tstate.m = null;
         if (!unk.checked) { unk.checked = true; setTimeDisabled(true); }
@@ -1220,6 +1288,16 @@
     function renderResult(out, birth) {
       result.innerHTML = "";
       courtCells = {}; courtRooms = {};
+      /* A lunar date that doesn't exist that year (wrong month/day, or 閏月 chosen for a year with
+         no leap twin) can't be cast — reading it as solar would draw the wrong court. Say so kindly
+         instead of throwing. */
+      if (!out || out.error === "lunar-date-invalid" || !out.lunar || !out.yearPillar) {
+        var warn = h("div", "pcast-res-head pcast-bleed");
+        warn.appendChild(h("h2", "pcast-res-title", "Check that date"));
+        warn.appendChild(h("p", "pcast-res-meta", "That lunar month and day don't exist in " + (birth ? birth.year : "that year") + ". Check the month and day — and whether it was a 閏月 (leap month) — or switch to 陽曆 and enter your standard calendar date."));
+        result.appendChild(warn);
+        return;
+      }
       var yp = out.yearPillar;
       /* pcast-bleed: the head must break out of .psa-cast-result's 1000px column exactly the way
          the reading below it does, or it floats inward and reads as centered over a full-bleed
@@ -1227,9 +1305,17 @@
       var head = h("div", "pcast-res-head pcast-bleed");
       head.appendChild(h("h2", "pcast-res-title", "Your reading"));
       var meta = h("p", "pcast-res-meta");
-      meta.textContent = birth.year + "-" + pad(birth.month) + "-" + pad(birth.day)
-        + "  ·  lunar " + out.lunar.lunarYear + "/" + (out.lunar.leap ? "leap " : "") + out.lunar.lunarMonth + "/" + out.lunar.day
-        + "  ·  " + yp.name + " " + yp.animal + " year";
+      var isLunarIn = (out.calendar === "lunar" || out.calendar === "lunar-leap");
+      if (isLunarIn && out.solar) {
+        /* the reader gave a lunar date — show the conversion, lunar → solar, then the year animal */
+        meta.textContent = "lunar " + out.lunar.lunarYear + "/" + (out.lunar.leap ? "leap " : "") + out.lunar.lunarMonth + "/" + out.lunar.day
+          + "  →  " + out.solar.year + "-" + pad(out.solar.month) + "-" + pad(out.solar.day)
+          + "  ·  " + yp.name + " " + yp.animal + " year";
+      } else {
+        meta.textContent = birth.year + "-" + pad(birth.month) + "-" + pad(birth.day)
+          + "  ·  lunar " + out.lunar.lunarYear + "/" + (out.lunar.leap ? "leap " : "") + out.lunar.lunarMonth + "/" + out.lunar.day
+          + "  ·  " + yp.name + " " + yp.animal + " year";
+      }
       head.appendChild(meta);
       result.appendChild(head);
 

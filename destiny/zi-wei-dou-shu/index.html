@@ -846,7 +846,14 @@
   }
   .psa-hero-form { background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--r-2); padding: 18px 18px 16px; }
   .pcast-form-eyebrow { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brass); margin: 0 0 12px; }
-  .pcast-field { margin: 0 0 12px; } .pcast-field-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .pcast-field { margin: 0 0 12px; }
+  /* The timezone + gender row shares the calendar-pill grid EXACTLY — same columns, same gap — so
+     the timezone box lands under 陽曆 (Solar) at the same width and gender under 農曆 (Lunar), cell
+     for cell. box-sizing + width:100% force the native gender <select> to fill its cell in Safari,
+     which otherwise leaves it narrower than the pill above it. */
+  .pcast-field-2 { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+  .pcast-field-2 > * { min-width: 0; }
+  .pcast-field-2 .pcast-tzplate, .pcast-field-2 #pcast-gender { width: 100%; box-sizing: border-box; }
   .pcast-label { display: block; font-size: 0.82rem; color: var(--muted); margin: 0 0 4px; }
   .pcast-opt { color: var(--faint); font-size: 0.74rem; }
   .pcast-input { width: 100%; background: var(--ink-2); border: 1px solid var(--line); border-radius: var(--r-1); color: var(--moon); font: inherit; font-size: 0.94rem; padding: 9px 10px; min-height: 42px; }
@@ -952,6 +959,21 @@
      popover shell, same bottom-sheet behaviour on a phone. A reader who has learned one of
      these two controls has learned both.
   ============================================================ */
+  /* ---- calendar-type pills: 陽曆 (solar) / 農曆 (lunar) / 閏月 (leap), in the court's gold. Same
+     two-column grid as the timezone + gender row below, so Solar sits over the timezone and Lunar
+     over Gender, cell for cell; the leap pill spans the full width when it appears. ---- */
+  .pcast-caltype { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+  .pcast-caltype [data-cal="lunar-leap"] { grid-column: 1 / -1; }
+  .pcast-caltype button { position: relative; display: flex; flex-direction: column; align-items: center; gap: .05rem;
+    box-sizing: border-box; width: 100%; min-width: 0; padding: .38rem .4rem; background: var(--ink-2);
+    border: 1px solid var(--line); border-radius: var(--r-1); cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+  .pcast-caltype .cal-ko { font-size: 1rem; color: var(--brass-bright); line-height: 1.15; }
+  .pcast-caltype .cal-en { font-family: var(--mono); font-size: .56rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .pcast-caltype button[aria-checked="true"] { border-color: var(--brass); box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--brass) 45%, transparent); }
+  .pcast-caltype button:hover { border-color: var(--brass); }
+  .pcast-caltype button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+  .pcast-caltype button[hidden] { display: none; }
+
   .pcast-time-field { position: relative; }
   .pcast-time-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
   .pcast-time-head .pcast-label { margin: 0; }
