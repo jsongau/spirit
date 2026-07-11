@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Emperor Penguin">
+<defs><radialGradient id="bg" cx="50%" cy="38%" r="78%"><stop offset="0" stop-color="#1a2036"/><stop offset="1" stop-color="#0a0d18"/></radialGradient></defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<rect x="1.5" y="1.5" width="1197" height="672" fill="none" stroke="#2f3a5c" stroke-width="2"/>
+<text text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="113" fill="#e8ecf7" letter-spacing="1"><tspan x="600" y="308">Emperor</tspan><tspan x="600" y="443">Penguin</tspan></text>
+<text x="600" y="653" text-anchor="middle" font-family="Georgia,serif" font-size="29" fill="#8b93b0" letter-spacing="3">ZODI ANIMAL · PLACEHOLDER</text>
+</svg>

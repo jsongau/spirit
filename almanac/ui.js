@@ -381,6 +381,7 @@
     { k: "zodi", cn: "夜", name: "Zodi Night" },
     { k: "bamboo", cn: "竹", name: "Bamboo Grove" },
     { k: "ink", cn: "墨", name: "Ink and Brass" },
+    { k: "emerald", cn: "翠", name: "Jade Night" },
     { k: "plum", cn: "梅", name: "Plum Rain" }
   ];
   var SKIN_MIGRATE = { jade: "bamboo", midnight: "ink", blossom: "plum" };
@@ -411,13 +412,8 @@
     saved = SKIN_MIGRATE[saved] || saved;
     if (saved && !SKINS.some(function (x) { return x.k === saved; })) saved = null;
     if (saved) { applySkin(saved); return; }
-    // first visit: open in the site's night colors, then the paper warms up
-    applySkin("zodi", { auto: true });
-    var reduce = false;
-    try { reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
-    setTimeout(function () {
-      if (!skinChosen) { document.documentElement.classList.add("alm-skinfade"); applySkin("paper", { auto: true }); }
-    }, reduce ? 0 : 1000);
+    // first visit: open in Ink and Brass, the house default
+    applySkin("ink", { auto: true });
   }
 
 
@@ -955,8 +951,46 @@
       btn.innerHTML = '<span lang="zh-Hant">生</span><b>Mark my days</b>';
     }
   }
+  function wireSubnavSpy() {
+    var nav = $("#almSubnav"); if (!nav) return;
+    var links = Array.prototype.slice.call(nav.querySelectorAll(".alm-sub-jump"));
+    if (!links.length) return;
+    var items = [];
+    links.forEach(function (a) {
+      var sec = document.getElementById(a.getAttribute("data-spy") || "");
+      if (sec) items.push({ a: a, sec: sec });
+    });
+    if (!items.length) return;
+    var current = null;
+    function setCurrent(a) {
+      if (a === current) return; current = a;
+      links.forEach(function (x) {
+        var on = x === a;
+        x.classList.toggle("is-current", on);
+        if (on) x.setAttribute("aria-current", "true"); else x.removeAttribute("aria-current");
+      });
+    }
+    var barH = 64;
+    try { barH = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--pn-bar-h"), 10) || 64; } catch (e) {}
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var line = barH + 72;
+      var chosen = items[0];
+      for (var i = 0; i < items.length; i++) {
+        if (items[i].sec.getBoundingClientRect().top <= line) chosen = items[i]; else break;
+      }
+      if ((window.innerHeight + window.scrollY) >= (document.body.scrollHeight - 4)) chosen = items[items.length - 1];
+      setCurrent(chosen.a);
+    }
+    function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    links.forEach(function (a) { a.addEventListener("click", function () { setCurrent(a); }); });
+    update();
+  }
   function init() {
-    renderSkins(); renderMotifs(); wireFloat(); floatBadge(); renderCard(); renderGrid(); renderNext3(); renderUpcoming(); renderProfile(); wireProfileForm(); wireLearnDeck(); returnLine();
+    renderSkins(); renderMotifs(); wireFloat(); floatBadge(); renderCard(); renderGrid(); renderNext3(); renderUpcoming(); renderProfile(); wireProfileForm(); wireLearnDeck(); wireSubnavSpy(); returnLine();
     setUrl(false);
     $("#almPrev").addEventListener("click", function () { stepMonth(-1); });
     $("#almNext").addEventListener("click", function () { stepMonth(1); });

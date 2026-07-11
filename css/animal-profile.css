@@ -17,6 +17,7 @@
   --sans:"Geist",system-ui,-apple-system,sans-serif;
   --mono:"Space Mono","SFMono-Regular",monospace;
   --han:"Ma Shan Zheng",serif;
+  --han-learn:"Kaiti SC","STKaiti","KaiTi","AR PL UKai CN","Noto Serif SC",serif; /* educational model script for the learning tiles */
   --measure:66ch;
   --measure-narrow:46ch;
   --rule:rgba(214,193,140,.16);

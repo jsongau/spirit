@@ -595,7 +595,7 @@ body.js-on .stone-panel:not(.is-active){display:none}
 
 /* =========== PROVERB =========== */
 .pf-proverb{background:radial-gradient(120% 100% at 50% 0%,var(--animal-surface),var(--a-deep));text-align:center}
-.pf-proverb .eyebrow{text-align:center}
+.pf-proverb .eyebrow{text-align:center;max-width:none}
 .pf-proverb__zh{font-family:var(--han);font-size:clamp(2.3rem,8vw,3.6rem);line-height:1;color:var(--a-snow);
   letter-spacing:.02em;margin:.2em 0 .7em;display:flex;align-items:flex-end;justify-content:center;gap:.3em;flex-wrap:wrap}
 /* pinyin sits on top of each character */
@@ -620,14 +620,15 @@ body.js-on .stone-panel:not(.is-active){display:none}
   transition:border-color .16s,background .16s}
 .pf-proverb__char:hover,.pf-proverb__char:focus-visible,.pf-proverb__char.is-speaking{border-color:var(--a-gold);background:rgba(214,193,140,.07);outline:none}
 .pf-proverb__char .p{order:1;font-family:var(--sans);font-size:.8rem;color:var(--a-gold);font-weight:500;line-height:1;white-space:nowrap}
-.pf-proverb__char .c{order:2;font-family:var(--han);font-size:2rem;line-height:1;color:var(--a-snow)}
+.pf-proverb__char .c{order:2;font-family:var(--han-learn);font-size:2.15rem;font-weight:500;line-height:1;color:var(--a-snow)}
 /* gloss may need more than one word ("great vessel"); let it wrap, and the
    tiles are all grown to the widest by JS so the row stays uniform */
 .pf-proverb__char .g{order:3;font-family:var(--mono);font-size:.52rem;letter-spacing:.05em;text-transform:uppercase;
   color:var(--a-mist);line-height:1.25;text-align:center;white-space:normal;max-width:11ch;margin-top:auto}
 .pf-proverb__char .say{order:4;display:inline-flex;color:var(--a-slate);transition:color .16s}
 .pf-proverb__char:hover .say,.pf-proverb__char.is-speaking .say{color:var(--a-gold)}
-.pf-proverb__hint{font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--a-slate);margin:0 0 2rem}
+.pf-proverb__hint{font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--a-slate);margin:0 0 2rem;text-align:center;max-width:none}
+.pf-proverb .pf-proverb__hint{max-width:none;text-align:center;margin-inline:auto}
 /* translation block: aligned label + text, left-read inside a centered column */
 .pf-proverb__lit,.pf-proverb__mean{display:grid;grid-template-columns:5.4rem 1fr;column-gap:1rem;align-items:baseline;
   max-width:46ch;margin:.5em auto;text-align:left;color:var(--a-mist);font-size:1rem;line-height:1.6}
