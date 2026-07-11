@@ -860,7 +860,7 @@
   .pcast-input:focus-visible { outline: 2px solid var(--brass); outline-offset: 1px; }
   .pcast-check { display: flex; align-items: center; gap: 7px; margin-top: 7px; font-size: 0.82rem; color: var(--muted); cursor: pointer; }
   /* seated under the timezone now, so it needs its own breathing room rather than the time field's */
-  .pcast-check-tz { margin-top: 10px; align-items: flex-start; line-height: 1.35; }
+  .pcast-check-tz { margin: 2px 0 12px; align-items: center; line-height: 1.35; white-space: nowrap; }
   .pcast-check-tz input { flex: none; margin-top: 1px; }
   .pcast-check input { width: 16px; height: 16px; accent-color: var(--cc); }
   /* the form's one loud element: two lines, a lit rim, and a press that answers */
@@ -973,6 +973,23 @@
   .pcast-caltype button:hover { border-color: var(--brass); }
   .pcast-caltype button:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
   .pcast-caltype button[hidden] { display: none; }
+  /* hover / focus tooltip on each calendar pill — a rich description without cluttering the card */
+  .pcast-caltype button .cal-tip {
+    position: absolute; bottom: calc(100% + 9px); left: 50%; transform: translateX(-50%) translateY(4px);
+    width: max-content; max-width: 250px; padding: 9px 11px; text-align: left;
+    background: var(--panel-2); border: 1px solid var(--brass-dim); border-radius: var(--r-1);
+    color: var(--moon); font-family: var(--serif); font-size: .76rem; line-height: 1.45; font-weight: 400;
+    text-transform: none; letter-spacing: normal;
+    box-shadow: 0 12px 34px rgba(0,0,0,.55); opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity .15s ease, transform .15s ease; z-index: 40;
+  }
+  .pcast-caltype button .cal-tip::after {
+    content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+    border: 6px solid transparent; border-top-color: var(--brass-dim);
+  }
+  .pcast-caltype button:hover .cal-tip,
+  .pcast-caltype button:focus-visible .cal-tip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+  @media (prefers-reduced-motion: reduce) { .pcast-caltype button .cal-tip { transition: none; } }
 
   .pcast-time-field { position: relative; }
   .pcast-time-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }

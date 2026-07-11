@@ -296,18 +296,25 @@
       pills.setAttribute("role", "radiogroup");
       pills.setAttribute("aria-labelledby", "pcast-cal-lbl");
       var defs = [
-        { cal: "solar", hant: "陽曆", en: "Solar" },
-        { cal: "lunar", hant: "農曆", en: "Lunar" },
-        { cal: "lunar-leap", hant: "閏月", en: "Lunar leap" }
+        { cal: "solar", hant: "陽曆", en: "Solar",
+          tip: "The standard Western (Gregorian) calendar — the date on your birth certificate or ID. Most people pick this." },
+        { cal: "lunar", hant: "農曆", en: "Lunar",
+          tip: "The traditional Chinese lunar calendar, still used on older family records and for festivals. Pick this only if your birthday was given to you in lunar months." },
+        { cal: "lunar-leap", hant: "閏月", en: "Lunar leap",
+          tip: "A rare 閏月 (intercalary “leap” month) inserted every few years. Only pick this if your record actually says 閏月." }
       ];
       var btns = {};
-      defs.forEach(function (d) {
+      defs.forEach(function (d, i) {
         var b = document.createElement("button");
         b.type = "button"; b.setAttribute("role", "radio"); b.setAttribute("data-cal", d.cal);
         b.setAttribute("aria-checked", d.cal === "solar" ? "true" : "false");
         b.tabIndex = d.cal === "solar" ? 0 : -1;
+        b.title = d.tip; /* native hover as a baseline; the styled tooltip below is the rich version */
         var ko = h("span", "cal-ko", d.hant); ko.setAttribute("lang", "zh-Hant"); b.appendChild(ko);
         b.appendChild(h("span", "cal-en", d.en));
+        var tip = h("span", "cal-tip", d.tip); tip.id = "pcast-caltip-" + d.cal;
+        tip.setAttribute("role", "tooltip"); b.appendChild(tip);
+        b.setAttribute("aria-describedby", tip.id);
         if (d.cal === "lunar-leap") b.hidden = true;
         b.addEventListener("click", function () { setCalType(d.cal); });
         btns[d.cal] = b; pills.appendChild(b);
@@ -403,7 +410,7 @@
        should never have to convert it in their head to satisfy a form. */
     function readClockPref() {
       try { var p = SC && SC.getPref("clock12"); if (p === true || p === false) return p; } catch (e) {}
-      try { return window.Intl && new Intl.DateTimeFormat().resolvedOptions().hour12 !== false; } catch (e) { return true; }
+      return true; /* default to AM · PM (12h) until the reader chooses otherwise */
     }
     var clockToggle = zgToggle({
       ariaLabel: "Clock format",
@@ -730,7 +737,7 @@
     var tzc = h("div", "pcast-tzcol");
     /* "read as birthplace-local" was a footnote under the button, three fields away from the control
        it describes. It belongs on the label of the field it governs. */
-    var tzl = labelFor("pcast-tz", "Birth timezone"); tzl.appendChild(h("span", "pcast-opt", " · birthplace-local"));
+    var tzl = labelFor("pcast-tz", "Birth timezone");
     tzc.appendChild(tzl);
     var tzWrapF = h("div", "pcast-tzplate");
     var tzValF = h("span", "pcast-tzval", "UTC+8"); tzValF.setAttribute("aria-hidden", "true");
@@ -738,9 +745,11 @@
     var tz = select("pcast-tz", TZ); tz.className = "pcast-tzsel";
     tzWrapF.appendChild(tzValF); tzWrapF.appendChild(tzCaret); tzWrapF.appendChild(tz);
     tzc.appendChild(tzWrapF);
+    /* tzHint kept for syncTzForm to write into, but NOT mounted in the column — a hint line under
+       one box and not the other is exactly what made this row uneven. The plate already shows the
+       offset (the only part that changes the chart). The "I don't know" checkbox now rides ABOVE
+       this row, so both columns are a clean label + box of equal height, fixed like the pills. */
     var tzHint = h("p", "pcast-tzhint", "");
-    tzc.appendChild(tzHint);
-    tzc.appendChild(unkWrap); /* built up in the time field, seated here — see the note there */
     row3.appendChild(tzc);
     (function preselectTz() { var off = -new Date().getTimezoneOffset() / 60; for (var i = 0; i < TZ.length; i++) { if (TZ[i][0] === String(off)) { tz.value = TZ[i][0]; break; } } })();
     /* "Eastern Time (UTC−5)" -> plate "UTC−5", hint "Eastern Time". "Auto (device)" has no
@@ -760,6 +769,7 @@
     }
     var gc = h("div"); gc.appendChild(labelFor("pcast-gender", "Gender"));
     var gender = select("pcast-gender", [["", "Prefer not to say"], ["female", "Female"], ["male", "Male"]]); gc.appendChild(gender); row3.appendChild(gc);
+    form.appendChild(unkWrap); /* "I don't know my birth time" sits ABOVE the timezone/gender row */
     form.appendChild(row3);
     /* The button now says what the press DOES, and the sub-line says what you get for it. The old
        label ("Cast My Court") only repeated the eyebrow directly above it, so the form's loudest
@@ -768,10 +778,6 @@
     go.appendChild(h("b", "pcast-go-lab", "Cast my court"));
     go.appendChild(h("small", "pcast-go-sub", "twelve rooms · fourteen stars · your hour"));
     form.appendChild(go);
-    /* The removed footnote said two things. "Read as birthplace-local time" now rides the timezone
-       label, where it is actionable. The privacy claim survives here in four words, because a form
-       that asks for a birth moment should not quietly stop promising where that moment goes. */
-    form.appendChild(h("p", "pcast-privacy", "Nothing leaves your browser."));
 
     paintTime();
     syncTzForm();

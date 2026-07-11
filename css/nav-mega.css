@@ -968,17 +968,23 @@
   text-transform: uppercase;
   color: var(--accent-bright);
 }
+/* The "new" marker is no longer a plain dot — it is a small celestial sparkle (a 4-point
+   north-star shine) masked from the accent so it inherits each panel's color, and it still
+   glows and breathes. Shared shape lives in --pn-spark so the homepage cue can reuse it. */
+:root { --pn-spark: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Cpath%20d='M12%201.2%20C12.85%206.6%2017.4%2011.15%2022.8%2012%20C17.4%2012.85%2012.85%2017.4%2012%2022.8%20C11.15%2017.4%206.6%2012.85%201.2%2012%20C6.6%2011.15%2011.15%206.6%2012%201.2%20Z'%20fill='black'/%3E%3C/svg%3E"); }
 .pn-card-pulse {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: var(--accent-bright);
-  box-shadow: 0 0 10px var(--accent);
+  width: 15px; height: 15px;
+  border-radius: 0;
+  background: linear-gradient(150deg, var(--accent-bright), var(--accent));
+  -webkit-mask: var(--pn-spark) center / contain no-repeat;
+          mask: var(--pn-spark) center / contain no-repeat;
+  filter: drop-shadow(0 0 4px var(--accent));
 }
 @media (prefers-reduced-motion: no-preference) {
-  .pn-card-pulse { animation: pnCardPulse 2.4s ease-in-out infinite; }
+  .pn-card-pulse { animation: pnCardPulse 2.8s ease-in-out infinite; }
   @keyframes pnCardPulse {
-    0%, 100% { box-shadow: 0 0 4px var(--accent); }
-    50% { box-shadow: 0 0 12px var(--accent); }
+    0%, 100% { filter: drop-shadow(0 0 2px var(--accent)); opacity: .92; }
+    50%      { filter: drop-shadow(0 0 7px var(--accent-bright)); opacity: 1; transform: scale(1.06) rotate(45deg); }
   }
 }
 .pn-card-title {

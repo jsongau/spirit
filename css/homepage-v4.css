@@ -42,13 +42,17 @@
 .ro-invite .roi-body b { color: var(--brass-bright, #efe2b4); font-weight: 600; }
 .ro-invite .roi-cue { display: flex; align-items: center; gap: 9px; margin: 6px 0 0; font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--brass, #d6c18c); }
 .ro-invite .roi-cue span[lang] { color: var(--brass-bright, #efe2b4); }
-.ro-invite .roi-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--brass, #d6c18c); flex: none; }
+/* the cue is the same celestial sparkle as the nav "new" marker, in gold */
+.ro-invite .roi-dot { width: 14px; height: 14px; flex: none; border-radius: 0;
+  background: linear-gradient(150deg, var(--brass-bright, #efe2b4), var(--brass, #d6c18c));
+  -webkit-mask: var(--pn-spark, none) center / contain no-repeat;
+          mask: var(--pn-spark, none) center / contain no-repeat;
+  filter: drop-shadow(0 0 4px rgba(214,193,140,.7)); }
 @media (prefers-reduced-motion: no-preference) {
-  .ro-invite .roi-dot { animation: v4-cue-pulse 1.9s ease-out infinite; }
+  .ro-invite .roi-dot { animation: v4-cue-pulse 2.2s ease-in-out infinite; }
   @keyframes v4-cue-pulse {
-    0% { box-shadow: 0 0 0 0 rgba(214,193,140,.5); }
-    70% { box-shadow: 0 0 0 12px rgba(214,193,140,0); }
-    100% { box-shadow: 0 0 0 0 rgba(214,193,140,0); }
+    0%, 100% { filter: drop-shadow(0 0 2px rgba(214,193,140,.5)); opacity: .9; }
+    50% { filter: drop-shadow(0 0 7px rgba(214,193,140,.85)); opacity: 1; transform: scale(1.06) rotate(45deg); }
   }
 }
 
