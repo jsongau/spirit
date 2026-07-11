@@ -341,3 +341,81 @@
   .bzhome-cell { font-size: 1.2rem; }
   .bzhome-plabel { font-size: .5rem; letter-spacing: .06em; }
 }
+
+/* ============================================================
+   HOMEPAGE MOBILE FIX — reveal (hongbao) input card
+   2026-07-11 (spirit-pm)
+   Fixes: (1) the MM/DD inputs were pinned to 56px by #mm/#dd ID
+   rules while YEAR filled its column, so the date row looked
+   lopsided/stretched; (2) the primary CTA read as a flat cream
+   slab. Scoped to the reveal card + small screens only; desktop
+   and other date forms are untouched.
+   ============================================================ */
+@media (max-width: 640px) {
+  /* Balanced, thumb-sized date row: three even cells, YEAR a touch
+     wider for the 4-digit field. Inputs fill their cell so the row
+     reads as one instrument, not three mismatched boxes. */
+  .v4-hongbao .datefields {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.3fr;
+    gap: 10px;
+    align-items: end;
+    justify-content: initial;
+    max-width: 340px;
+    margin-inline: auto;
+  }
+  .v4-hongbao .datefields label { flex: none; text-align: center; }
+  /* ID-strength override so #mm/#dd stop clinging to 56px and YEAR
+     stops holding 128px — every field fills its own column. */
+  .v4-hongbao .datefields input#mm,
+  .v4-hongbao .datefields input#dd,
+  .v4-hongbao .datefields input#yy {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .v4-hongbao .rv-slash { display: none; }
+
+  /* Primary CTA — give the gold plate depth and a modern radius so it
+     reads as a pressable button, not a flat bar. Kept full-width for
+     thumb reach but capped to the field group so it feels intentional. */
+  .v4-hongbao .btn-reveal {
+    display: flex;
+    width: 100%;
+    max-width: 340px;
+    margin: 18px auto 0;
+    min-height: 52px;
+    padding: 15px 26px;
+    border-radius: 16px;
+    font-size: 1.06rem;
+    font-weight: 700;
+    letter-spacing: .01em;
+    color: #1a1300;
+    background: linear-gradient(180deg, #f4e9bf 0%, #e2cf94 46%, #cca24a 78%, #b98a34 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.6),
+      inset 0 -1px 0 rgba(120,86,24,.35),
+      0 10px 26px rgba(138,106,43,.42),
+      0 2px 6px rgba(0,0,0,.3);
+  }
+  .v4-hongbao .btn-reveal:active { transform: translateY(1px); }
+}
+
+/* Very small phones: keep the three fields legible rather than crushed. */
+@media (max-width: 360px) {
+  .v4-hongbao .datefields { gap: 8px; max-width: 300px; }
+  .v4-hongbao .datefields input#mm,
+  .v4-hongbao .datefields input#dd,
+  .v4-hongbao .datefields input#yy { padding-left: 6px; padding-right: 6px; }
+  .v4-hongbao .btn-reveal { font-size: 1rem; }
+}
+
+/* Reveal-card copy line breaks on phones (2026-07-11, spirit-pm):
+   force the ceremonial eyebrow onto two lines
+   ("…CONNECTED" / "TO YOUR BIRTH DESTINY") and drop
+   "your Zodi Animal appears." onto its own unbroken line.
+   Desktop keeps the natural single-line / free-wrap flow. */
+@media (max-width: 640px) {
+  .v4-hongbao .rv-eyebrow .rv-seg { display: block; }
+  .v4-hongbao .rv-sub .rv-lastline { display: block; white-space: nowrap; }
+}

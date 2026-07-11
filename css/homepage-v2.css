@@ -71,7 +71,7 @@ body.hv2-body::before{
 .hv2 .say-btn svg{width:15px;height:15px}
 
 /* ============ HERO ============ */
-.hv2 .hero{position:relative;padding:clamp(24px,5vh,60px) 0 clamp(48px,8vh,88px)}
+.hv2 .hero{position:relative;padding:clamp(24px,5vh,60px) clamp(16px,4vw,32px) clamp(48px,8vh,88px)}
 .hv2 .hero-dateline{font-family:var(--mono);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--silver);
   display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:24px;max-width:none}
 .hv2 .hero-dateline .dot{color:var(--brass-dim)}
