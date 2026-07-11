@@ -129,42 +129,40 @@ PNAV.MAP = [
      Bonds carries the Climb (Zodi Karma). Every demoted link lives on in
      PNAV.CRAWL_EXTRA, so the crawl mirror loses nothing. */
   { key: "explore", h: "Explore", accent: "teal",
-    eyebrow: "Everything the wheel opens, one animal at the center",
+    eyebrow: "New here? Start with your animal — the rest of the wheel opens from there",
     foot: ["/menagerie.html", "See all 144 animals"],
     layout: "explore",
     cols: [
-      { title: "Begin", mark: "✦", items: [
-        ["/index.html",   "Find your animal"],
-        ["/daily.html",   "Today's reading", PNAV.DYN.todayLabel(), null, "date-today"],
-        ["/year.html",    "Year finder"],
-        ["/karmic-board.html", "The Karmic Board", "the ZK standings"],
-        ["/account.html", "Your account", "Zodi Karma ledger"]
+      { title: "Start here", mark: "✦", items: [
+        ["/index.html", "Find your animal", "your birth date, one animal"],
+        ["/learn.html", "What your animal means", "how to read yours"],
+        ["/daily.html", "Today's reading", PNAV.DYN.todayLabel(), null, "date-today"]
       ]},
-      { title: "Menagerie", mark: "◆", items: [
+      { title: "The menagerie", mark: "◆", items: [
         ["/menagerie.html",  "All 144 animals"],
-        ["/western-zodiac/", "Western wing"],
-        ["/chinese-zodiac/", "Eastern wing"],
-        ["/zodiac/",         "Zodiac crossings"],
-        ["/menagerie.html",  "Rare crossings"]
+        ["/western-zodiac/", "Western wing", "by your sun sign"],
+        ["/chinese-zodiac/", "Eastern wing", "by your birth year"],
+        ["/zodiac/",         "Zodiac crossings", "East meets West"]
       ]},
-      { title: "The Moon", mark: "☾", items: [
-        ["/moon.html",        "The Moon tonight", PNAV.DYN.moonPhaseName(), null, "moon-phase"],
-        ["/moon/phases/",     "The eight phases"],
-        ["/moon/in-your-sign/", "Moon in your sign"],
-        ["/best-days.html",   "Best days"],
-        ["/chinese-zodiac/fire-horse-2026/", "Fire Horse 2026", "begins Feb 17"]
+      { title: "The five elements", mark: "五行",
+        phases: [
+          ["/elements/phases/metal/", "金", "jīn",  "Metal"],
+          ["/elements/phases/wood/",  "木", "mù",   "Wood"],
+          ["/elements/phases/water/", "水", "shuǐ", "Water"],
+          ["/elements/phases/fire/",  "火", "huǒ",  "Fire"],
+          ["/elements/phases/earth/", "土", "tǔ",   "Earth"]
+        ],
+        items: [
+        ["/elements/",         "The five elements", "cycles and a quiz"],
+        ["/elements/chakras/", "The 7 chakras", "a yoga practice each"],
+        ["/elements/zodiac/",  "Elements & your animal"]
       ]},
       { title: "Live with it", mark: "⌂", items: [
-        ["/feng-shui/",   "Feng shui"],
-        ["/proverbs/",    "The Proverb Pond", "all 87"],
-        ["/proverbs/study/", "Study the proverbs"],
-        ["/habitat/",     "The Habitat"],
-        ["/stones.html",  "Keeper stones"],
-        ["/traditions/",  "Traditions", "moon, stones, heritage"]
-        /* BaZi moved to Destiny; /directions/ demoted to CRAWL_EXTRA when
-           the proverbs took their Explore seats (Sage Wisdom retired).
-           "The Soft Habitat" book: no page exists yet and apply-nav has
-           no `soon` slot, so it is omitted until the page ships. */
+        ["/feng-shui/",  "Feng shui"],
+        ["/proverbs/",   "The Proverb Pond", "all 87"],
+        ["/habitat/",    "The Habitat"],
+        ["/stones.html", "Keeper stones"],
+        ["/traditions/", "Traditions", "moon, stones, heritage"]
       ]}
     ],
     chips: [
@@ -195,55 +193,6 @@ PNAV.MAP = [
         ["/chinese-zodiac/rooster/", "鸡", "Rooster"],
         ["/chinese-zodiac/dog/",     "狗", "Dog"],
         ["/chinese-zodiac/pig/",     "猪", "Pig"]
-      ]}
-    ]
-  },
-  { key: "destiny", h: "Destiny", accent: "jade",
-    eyebrow: "Your chart, read three ways, moved by the five elements",
-    foot: ["/elements/", "Explore every system"],
-    layout: "destiny",
-    /* the launch card: the newest reading leads the panel. Swap this card
-       when the next system ships. Framing per
-       docs/saju/BAZI-SAJU-RELATIONSHIP-AND-FRAMING.md: Saju is a sibling
-       tradition of BaZi, never "the Korean version". */
-    launch: { eyebrow: "New this Fire Horse year", title: "Saju Palja",
-      kicker: "사주팔자 · the Korean reading",
-      body: "The same eight characters, heard in a Korean voice. The newest reading on the wheel, cast from your birth hour.",
-      href: "/destiny/korean-saju/", link: "Read Saju Palja", watermark: "사주" },
-    cols: [
-      { title: "Four Pillars", mark: "四柱", items: [
-        ["/destiny/bazi-four-pillars/chart/",      "Cast your chart", "the tool, free"],
-        ["/destiny/bazi-four-pillars/",            "BaZi", "八字 Bāzì · the Chinese reading"],
-        ["/destiny/korean-saju/",                  "Saju Palja", "사주팔자 · the Korean reading"],
-        ["/destiny/bazi-four-pillars/day-master/", "Your Day Master", "日主 Rìzhǔ"],
-        ["/destiny/bazi-four-pillars/ten-gods/",   "The Ten Gods", "十神 Shíshén"]
-      ]},
-      { title: "Purple Star", mark: "紫微", items: [
-        ["/destiny/zi-wei-dou-shu/",             "Zi Wei Dou Shu", "紫微斗数 Zǐwēi Dǒushù"],
-        ["/destiny/zi-wei-dou-shu/chart/",       "Read a chart", "命盘 mìngpán · school"],
-        ["/destiny/zi-wei-dou-shu/stars/",       "The 14 Stars", "主星 zhǔxīng"],
-        ["/destiny/zi-wei-dou-shu/palaces/",     "The 12 Palaces", "十二宫 shí'èr gōng"],
-        ["/destiny/zi-wei-dou-shu/four-forces/", "The Four Forces", "四化 sìhuà"]
-      ]},
-      { title: "The Elements", mark: "五行",
-        /* the five doors, in the spoken order 金木水火土, each a real
-           anchor to its phase hub */
-        phases: [
-          ["/elements/phases/metal/", "金", "jīn",  "Metal"],
-          ["/elements/phases/wood/",  "木", "mù",   "Wood"],
-          ["/elements/phases/water/", "水", "shuǐ", "Water"],
-          ["/elements/phases/fire/",  "火", "huǒ",  "Fire"],
-          ["/elements/phases/earth/", "土", "tǔ",   "Earth"]
-        ],
-        items: [
-        ["/elements/",         "The five elements", "the hub, cycles and quiz"],
-        ["/elements/chakras/", "The 7 chakras", "with a yoga practice each"],
-        ["/elements/zodiac/",  "Elements & your animal"]
-      ]},
-      { title: "Today", mark: "今日", items: [
-        ["/daily.html",        "Today's reading", PNAV.DYN.todayLabel(), null, "date-today"],
-        ["/horoscopes/daily/", "The daily readings", "one sign each day, archived"],
-        ["/almanac/",          "The calendar today", "lunar date, auspicious hours"]
       ]}
     ]
   },
@@ -331,17 +280,43 @@ PNAV.MAP = [
       ]}
     ]
   },
-  { key: "fengmoon", h: "Feng Shui & Moon", accent: "teal",
-    eyebrow: "風水 · the art of placing yourself well, indoors and under the sky",
+  { key: "destiny", h: "Destiny", accent: "jade",
+    eyebrow: "Your birth-hour chart, read across the great Eastern systems",
+    foot: ["/destiny/zi-wei-dou-shu/", "Explore Purple Star in full"],
+    layout: "destiny",
+    /* Saju is the featured launch card (left). Purple Star anchors the right as
+       the awaken-your-animal card + the daily-reading hook. Deep pages live in
+       the hubs + PNAV.CRAWL_EXTRA -- owner call Jul 2026. */
+    launch: { eyebrow: "New this Fire Horse year", title: "Saju Palja",
+      kicker: "사주팔자 · the Korean reading",
+      body: "The same eight characters, heard in a Korean voice. The newest reading on the wheel, cast from your birth hour.",
+      href: "/destiny/korean-saju/", link: "Read Saju Palja", watermark: "사주" },
+    cols: [
+      { title: "The three systems", mark: "命", items: [
+        ["/destiny/zi-wei-dou-shu/",    "Zi Wei Dou Shu", "紫微斗数 · Purple Star"],
+        ["/destiny/bazi-four-pillars/", "BaZi", "八字 · the four pillars"],
+        ["/destiny/korean-saju/",       "Saju Palja", "사주팔자 · the Korean reading"]
+      ]},
+      { title: "Cast a chart", mark: "盤", items: [
+        ["/destiny/bazi-four-pillars/chart/", "Cast your chart", "free, from your birth hour"],
+        ["/destiny/zi-wei-dou-shu/chart/",    "Read a Purple Star chart", "命盘 mìngpán"],
+        ["/destiny/bazi-four-pillars/",       "Learn how it works", "and more →"]
+      ]}
+    ],
+    anchor: { eyebrow: "紫微 · your deeper form", title: "Awaken your animal",
+      kicker: "Purple Star is the mirror it wakes into",
+      body: "Read your Purple Star chart once to meet the Awakened animal — then let the daily reading wake it, day by day.",
+      href: "/destiny/zi-wei-dou-shu/", link: "Read Purple Star", watermark: "紫微" },
+    anchorLink: { href: "/daily.html", title: "Today's reading", sub: "wake it, day by day", link: "Read it" }
+  },
+  { key: "fengshui", h: "Feng Shui", accent: "teal",
+    eyebrow: "風水 · the art of placing yourself well, room by room",
     foot: ["/feng-shui/", "Explore feng shui in full"],
     layout: "fengmoon",
-    /* the living cards: the almanac wears today's date, the moonmini wears
-       tonight's phase. Both re-computed client-side via data-dyn. */
     almanac: { eyebrow: "The calendar", title: "The Feng Shui calendar",
       kicker: "黄历 huánglì · today's almanac",
       body: "The lunar date, the day's officer, what today favors and what it punishes. New every midnight.",
       href: "/almanac/", link: "Open today's calendar" },
-    moonmini: { href: "/moon.html", title: "The Moon tonight", link: "Read it" },
     cols: [
       { title: "The bagua", mark: "八卦", items: [
         ["/feng-shui/bagua/",            "The bagua map", "八卦 bāguà"],
@@ -361,20 +336,42 @@ PNAV.MAP = [
       { title: "Your chart", mark: "命", items: [
         ["/feng-shui/kua-number/",    "Your Kua number", "命卦 mìngguà"],
         ["/feng-shui/your-animal/",   "Feng shui for your animal"],
-        ["/feng-shui/five-elements/", "The five phases", "五行 wǔxíng"],
-        ["/stones.html",              "Keeper stones"],
-        ["/traditions/birthstones-and-moonstone/", "Birthstones & moonstone"]
-      ]},
-      /* Keeper stones stay beside the Moon that charges them (owner call,
-         Jul 2026, carried over from the retired Moon group). */
-      { title: "The Moon's doors", mark: "☾", items: [
-        ["/moon.html",          "The Moon tonight", PNAV.DYN.moonPhaseName(), null, "moon-phase"],
-        ["/moon/phases/",       "The eight phases"],
-        ["/moon/in-your-sign/", "Moon in your sign"],
-        ["/best-days.html",     "Best days"],
-        ["/awakening.html",     "The Awakening", "from fear to strength"]
+        ["/feng-shui/five-elements/", "The five phases", "五行 wǔxíng"]
       ]}
     ]
+  },
+  { key: "moon", h: "Moon", accent: "silver",
+    eyebrow: "☾ · the sky's clock — when to begin, when to rest",
+    foot: ["/moon.html", "Read tonight's moon"],
+    layout: "fengmoon",
+    moonmini: { href: "/moon.html", title: "The Moon tonight", link: "Read it" },
+    cols: [
+      { title: "Tonight & the phases", mark: "☾", items: [
+        ["/moon.html",          "The Moon tonight", PNAV.DYN.moonPhaseName(), null, "moon-phase"],
+        ["/moon/phases/",       "The eight phases"],
+        ["/moon/in-your-sign/", "Moon in your sign"]
+      ]},
+      { title: "Time it right", mark: "時", items: [
+        ["/best-days.html", "Best days", "to begin and to rest"],
+        ["/awakening.html", "The Awakening", "from fear to strength"],
+        ["/chinese-zodiac/fire-horse-2026/", "Fire Horse 2026", "begins Feb 17"]
+      ]},
+      { title: "Moonlit stones", mark: "石", items: [
+        ["/stones.html",                          "Keeper stones"],
+        ["/traditions/birthstones-and-moonstone/", "Birthstones & moonstone"],
+        ["/traditions/stones-for-your-animal/",    "Stones for your animal"]
+      ]}
+    ],
+    chips: { label: "The eight phases", items: [
+      ["/moon/phases/new-moon/",        "🌑", "New Moon"],
+      ["/moon/phases/waxing-crescent/", "🌒", "Waxing Crescent"],
+      ["/moon/phases/first-quarter/",   "🌓", "First Quarter"],
+      ["/moon/phases/waxing-gibbous/",  "🌔", "Waxing Gibbous"],
+      ["/moon/phases/full-moon/",       "🌕", "Full Moon"],
+      ["/moon/phases/waning-gibbous/",  "🌖", "Waning Gibbous"],
+      ["/moon/phases/last-quarter/",    "🌗", "Last Quarter"],
+      ["/moon/phases/waning-crescent/", "🌘", "Waning Crescent"]
+    ]}
   },
   { key: "bonds", h: "Bonds", accent: "rose",
     eyebrow: "Two skies read together, and the climb you share",
@@ -393,13 +390,11 @@ PNAV.MAP = [
        sources in the intro match the earn map in js/zodi-karma.js. No
        exchange language anywhere: this is merit, not currency. */
     climb: { label: "The Climb · Zodi Karma",
-      intro: "Zodi Karma is the merit your animal gathers: the daily visit, the proverbs you study, the moons you check, the matches you test. It buys nothing. It only lifts you through the six stations.",
-      ladder: [
+      intro: "Zodi Karma is the merit your animal gathers: the daily visit, the proverbs studied, the moons checked, the matches tested. It buys nothing. It only lifts you, station by station, from Wanderer to Blessed.",
+      note: "Six stations in all — the full ladder lives on the Karmic Board.",
+      ladder: [  /* nav teaser: three of the six stations; full ladder = TIERS in js/zodi-auth.js */
         ["✦", "Blessed by the Gods of Zodi", "100,000"],
-        ["☯", "Karmic Sage", "60,000"],
-        ["☽", "Moonbound",   "30,000"],
         ["◉", "Awakened",    "10,000"],
-        ["○", "Seeker",      "2,000"],
         ["·", "Wanderer",    "0"]
       ],
       links: [
@@ -453,6 +448,9 @@ PNAV.CRAWL_EXTRA = [
   ["/destiny/zi-wei-dou-shu/history/",      "Purple Star history & origins"],
   /* dropped when the standalone Menagerie group folded into Explore +
      Zodiac; keep it linked so no crawlable destination is lost. */
+  ["/destiny/bazi-four-pillars/day-master/", "Your Day Master (日主)"],
+  ["/destiny/bazi-four-pillars/ten-gods/",   "The Ten Gods (十神)"],
+  ["/proverbs/study/",                       "Study the proverbs"],
   ["/learn.html",                    "How it works"]
 ];
 
