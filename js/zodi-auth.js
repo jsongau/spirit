@@ -89,6 +89,29 @@
     }).catch(function () {});
   }
 
+
+  /* Union the guest's browser-kept constellation into the account on sign-in,
+     then hydrate the browser from the account (cross-device). Validated
+     server-side against the 144; zero karma; replay-safe. (Catch-144 Phase 3.) */
+  function migrateConstellation() {
+    if (!_client || !_session) return Promise.resolve();
+    var slugs = [];
+    try { var gg = JSON.parse(localStorage.getItem("zodi_constellation") || "{}"); slugs = Object.keys(gg.kept || {}); } catch (e) {}
+    return _client.rpc("zodi_migrate_catches", { p_slugs: slugs })
+      .then(function () { return _client.from("zodi_catches").select("slug,kept_at"); })
+      .then(function (r) {
+        if (!r || !r.data) return;
+        try {
+          var o = JSON.parse(localStorage.getItem("zodi_constellation") || "{}"); if (!o.kept) o.kept = {};
+          for (var i = 0; i < r.data.length; i++) { var row = r.data[i]; if (!o.kept[row.slug]) o.kept[row.slug] = Date.parse(row.kept_at) || Date.now(); }
+          o.ret = true; o.synced = true;
+          localStorage.setItem("zodi_constellation", JSON.stringify(o));
+          try { window.dispatchEvent(new CustomEvent("zodi:constellation", { detail: { count: Object.keys(o.kept).length } })); } catch (e) {}
+        } catch (e) {}
+      })
+      .catch(function () {});
+  }
+
   var ready = (function init() {
     if (!CFG.url || !CFG.anonKey) return Promise.resolve(null);
     return loadScript(SB_SRC).then(function () {
@@ -97,14 +120,14 @@
         var hadSession = !!_session;
         _session = session || null;
         if (_session && !hadSession) {
-          claimWandering().then(refreshProfile);
+          claimWandering().then(migrateConstellation).then(refreshProfile);
         } else {
           refreshProfile();
         }
       });
       return _client.auth.getSession().then(function (r) {
         _session = (r.data && r.data.session) || null;
-        if (_session) return claimWandering().then(refreshProfile).then(function () { return _client; });
+        if (_session) return claimWandering().then(migrateConstellation).then(refreshProfile).then(function () { return _client; });
         notify();
         return _client;
       });

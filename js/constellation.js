@@ -335,6 +335,32 @@
     }
   }
 
+  /* ============================================================
+     ACCOUNT PAGE — a small mirror of the saved constellation.
+     zodi-auth.js migrates + hydrates localStorage on sign-in; we
+     read that (and re-read on the zodi:constellation event it fires).
+     ============================================================ */
+  function accountCard(tries) {
+    tries = tries || 0;
+    var signedIn = false;
+    try { signedIn = localStorage.getItem('zodi_signed_in') === '1'; } catch (e) {}
+    if (!signedIn) { if (tries < 6) setTimeout(function () { accountCard(tries + 1); }, 1500); return; }
+    var host = document.getElementById('zodi-dash-view');
+    if (!host || document.getElementById('cx-acct')) return;
+    injectCSS();
+    var card = document.createElement('div'); card.id = 'cx-acct'; card.className = 'cx-band';
+    function paint() {
+      var n = count(), pct = Math.round(n / TOTAL * 100);
+      card.innerHTML = '<h3><span>Your constellation</span></h3>' +
+        '<div class="cx-count"><b>' + n + '</b> / ' + TOTAL + ' stilled</div>' +
+        '<div class="cx-bar"><i style="width:' + pct + '%"></i></div>' +
+        '<p class="cx-lose">Saved to your account. It follows you to every device you sign in on. ' +
+        '<a href="/menagerie.html" style="color:var(--brass,#cbb279)">See the wheel</a></p>';
+    }
+    paint(); host.appendChild(card);
+    addEventListener('zodi:constellation', paint);
+  }
+
   /* ---------- boot ---------- */
   function boot() {
     var path = location.pathname;
@@ -344,6 +370,8 @@
       animalPage(m[1], h1 ? h1.textContent.trim() : m[1]);
     } else if (document.getElementById('grid') && /menagerie/.test(path)) {
       menagerie();
+    } else if (/account/.test(path) && document.getElementById('zodi-dash-view')) {
+      accountCard(0);
     }
   }
   window.CONSTELLATION = { boot: boot, read: read, count: count, _still: null };
