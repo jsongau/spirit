@@ -1,0 +1,154 @@
+/* ============================================================
+   Homepage v5 — birth-hour continuation (the two destiny doors)
+   Appears in the left column once the animal is revealed, so it
+   sits under the personalized "Your rings have aligned" invite and
+   visually balances the reveal card on the right. Dark-glow
+   language, tokens only. See js/homepage-v5-hour.js.
+   ============================================================ */
+
+.v5-hourgate { margin-top: 18px; }
+.v5-hourgate[hidden] { display: none; }
+
+.v5-hourgate {
+  position: relative;
+  border: 1px solid var(--line, rgba(214,193,140,.16));
+  border-radius: 16px;
+  padding: 20px 20px 22px;
+  background:
+    linear-gradient(180deg, rgba(26,28,48,.92), rgba(18,20,36,.92));
+  box-shadow: 0 18px 44px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.03);
+  overflow: hidden;
+}
+/* a hairline of brass at the crown, echoing the reveal ribbon on the right */
+.v5-hourgate::before {
+  content: ""; position: absolute; left: 20px; right: 20px; top: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(239,226,180,.5), transparent);
+}
+
+/* entrance — synced to the crossing landing */
+.v5-hourgate.hg-in { animation: hg-rise .5s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes hg-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .v5-hourgate.hg-in { animation: none; } }
+
+/* ---------- head ---------- */
+.hg-head { margin-bottom: 16px; }
+.hg-eyebrow {
+  margin: 0 0 6px; font-family: var(--mono, monospace);
+  font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: var(--accent-dim, #a8925c);
+}
+.hg-eyebrow .hg-star { color: var(--accent-bright, #efe2b4); }
+.hg-heading {
+  margin: 0 0 6px; font-family: var(--serif, Georgia, serif);
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem); line-height: 1.15; color: #f3ecd8; font-weight: 500;
+}
+.hg-desc { margin: 0; font-family: var(--sans, sans-serif); font-size: .9rem; line-height: 1.5; color: rgba(233,226,205,.72); }
+
+/* ---------- fields ---------- */
+.hg-form { display: block; }
+.hg-field { margin-bottom: 14px; }
+.hg-labelrow { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 7px; flex-wrap: wrap; }
+.hg-label { font-family: var(--mono, monospace); font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(233,226,205,.8); }
+.hg-opt { color: rgba(233,226,205,.42); text-transform: none; letter-spacing: .02em; }
+
+/* format toggle (24h / AM·PM) */
+.hg-fmt { display: inline-flex; border: 1px solid var(--line, rgba(214,193,140,.16)); border-radius: 999px; overflow: hidden; }
+.hg-fmt-btn {
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  font-family: var(--mono, monospace); font-size: .58rem; letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(233,226,205,.6); padding: 5px 11px; transition: background .18s, color .18s;
+}
+.hg-fmt-btn.is-on { background: rgba(214,193,140,.16); color: var(--accent-bright, #efe2b4); }
+.hg-fmt.is-off { opacity: .4; pointer-events: none; }
+
+/* time segments */
+.hg-timebox {
+  display: flex; align-items: center; gap: 8px;
+  border: 1px solid var(--line, rgba(214,193,140,.16)); border-radius: 12px;
+  background: rgba(9,10,20,.55); padding: 10px 12px;
+}
+.hg-seg {
+  width: 3ch; flex: 0 0 auto; text-align: center;
+  background: transparent; border: 0; color: #f3ecd8;
+  font-family: var(--mono, monospace); font-size: 1.35rem; letter-spacing: .04em;
+  padding: 2px 0; outline: none;
+}
+.hg-seg::placeholder { color: rgba(233,226,205,.3); }
+.hg-seg:focus { color: var(--accent-bright, #efe2b4); }
+.hg-seg:disabled { opacity: .4; }
+.hg-colon { color: rgba(233,226,205,.5); font-family: var(--mono, monospace); font-size: 1.2rem; }
+.hg-mer { display: inline-flex; margin-left: auto; border: 1px solid var(--line, rgba(214,193,140,.16)); border-radius: 999px; overflow: hidden; }
+.hg-mer[hidden] { display: none; }
+.hg-mer-btn {
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  font-family: var(--mono, monospace); font-size: .62rem; letter-spacing: .06em;
+  color: rgba(233,226,205,.6); padding: 6px 10px; transition: background .18s, color .18s;
+}
+.hg-mer-btn.is-on { background: rgba(214,193,140,.16); color: var(--accent-bright, #efe2b4); }
+.hg-mer.is-off { opacity: .4; pointer-events: none; }
+
+/* time zone select */
+.hg-tzwrap { position: relative; }
+.hg-select {
+  appearance: none; -webkit-appearance: none; width: 100%;
+  border: 1px solid var(--line, rgba(214,193,140,.16)); border-radius: 12px;
+  background: rgba(9,10,20,.55); color: #f3ecd8;
+  font-family: var(--sans, sans-serif); font-size: .92rem;
+  padding: 12px 38px 12px 14px; cursor: pointer; outline: none;
+}
+.hg-select:focus { border-color: rgba(214,193,140,.44); }
+.hg-tzcaret { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--accent-dim, #a8925c); pointer-events: none; font-size: .7rem; }
+
+/* unknown-time check */
+.hg-check { display: flex; align-items: center; gap: 8px; margin: 2px 0 4px; font-family: var(--sans, sans-serif); font-size: .82rem; color: rgba(233,226,205,.62); cursor: pointer; }
+.hg-check input { accent-color: var(--accent, #d6c18c); width: 15px; height: 15px; }
+
+/* ---------- the two doors ---------- */
+.hg-ctalabel { margin: 16px 0 10px; font-family: var(--mono, monospace); font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; color: var(--accent-dim, #a8925c); }
+.hg-ctas { display: grid; gap: 10px; }
+.hg-cta {
+  display: flex; align-items: center; gap: 14px; text-decoration: none;
+  border: 1px solid var(--line, rgba(214,193,140,.16)); border-radius: 14px;
+  padding: 13px 14px; background: linear-gradient(180deg, rgba(34,37,61,.7), rgba(22,24,42,.7));
+  transition: transform .18s ease, border-color .18s ease, box-shadow .22s ease, background .18s ease;
+}
+.hg-cta-zi {
+  flex: 0 0 46px; height: 46px; display: grid; place-items: center;
+  border-radius: 11px; border: 1px solid rgba(214,193,140,.24);
+  font-family: var(--serif, Georgia, serif); font-size: 1.15rem; color: #f3ecd8; line-height: 1;
+  background: rgba(9,10,20,.5);
+}
+.hg-cta-txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.hg-cta-t { font-family: var(--serif, Georgia, serif); font-size: 1.02rem; color: #f5efdd; }
+.hg-cta-s { font-family: var(--sans, sans-serif); font-size: .74rem; color: rgba(233,226,205,.56); }
+.hg-cta-go { margin-left: auto; color: var(--accent-dim, #a8925c); font-size: 1.1rem; transition: transform .18s ease, color .18s ease; }
+.hg-cta:hover, .hg-cta:focus-visible { transform: translateY(-2px); outline: none; }
+.hg-cta:hover .hg-cta-go, .hg-cta:focus-visible .hg-cta-go { transform: translateX(3px); }
+
+/* Zi Wei — amethyst / purple star */
+.hg-cta-ziwei:hover, .hg-cta-ziwei:focus-visible {
+  border-color: rgba(179,157,255,.55); box-shadow: 0 14px 30px rgba(120,95,224,.24);
+}
+.hg-cta-ziwei:hover .hg-cta-zi, .hg-cta-ziwei:focus-visible .hg-cta-zi { border-color: rgba(179,157,255,.6); color: #d9ccff; }
+.hg-cta-ziwei:hover .hg-cta-go, .hg-cta-ziwei:focus-visible .hg-cta-go { color: #c3a7ff; }
+
+/* Saju — jade / four pillars */
+.hg-cta-saju:hover, .hg-cta-saju:focus-visible {
+  border-color: rgba(111,183,173,.55); box-shadow: 0 14px 30px rgba(46,120,110,.24);
+}
+.hg-cta-saju:hover .hg-cta-zi, .hg-cta-saju:focus-visible .hg-cta-zi { border-color: rgba(111,183,173,.6); color: #bfe9e2; }
+.hg-cta-saju:hover .hg-cta-go, .hg-cta-saju:focus-visible .hg-cta-go { color: #6fb7ad; }
+
+/* when the reveal has landed, tighten the personalized invite so the column reads as one instrument */
+#state-first .v5-hourgate + * { margin-top: 0; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 920px) {
+  .v5-hourgate { margin-top: 16px; }
+}
+@media (max-width: 480px) {
+  .v5-hourgate { padding: 16px 15px 18px; border-radius: 14px; }
+  .hg-labelrow { align-items: flex-start; }
+  .hg-seg { font-size: 1.2rem; }
+  .hg-cta { padding: 12px; gap: 11px; }
+  .hg-cta-zi { flex-basis: 42px; height: 42px; }
+}

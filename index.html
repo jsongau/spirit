@@ -71,6 +71,7 @@
 <link rel="stylesheet" href="/css/homepage-v4.css">
 <link rel="stylesheet" href="/css/homepage-v5.css?v=20260707d">
 <link rel="stylesheet" href="/css/homepage-v5-awaken.css">
+<link rel="stylesheet" href="/css/homepage-v5-hour.css?v=20260712a">
 <link rel="stylesheet" href="/css/reveal.css">
 <style>
   /* v6: Molten Brass share card — rounded, site fonts, one dominant invite button with a slow shimmer. */
@@ -436,6 +437,63 @@
               <button class="btn v5-obs-toggle" type="button" id="obsToggle" aria-expanded="false" aria-controls="observatory">Open the observatory</button>
             </div>
           </div>
+        </div>
+
+        <!-- v5: birth-hour continuation — appears in the left column once the animal is revealed.
+             Two destiny doors (Zi Wei / Saju) that carry the birth date + hour + zone forward. -->
+        <div class="v5-hourgate" id="hourGate" hidden>
+          <div class="hg-head">
+            <p class="hg-eyebrow" id="hgEyebrow"><span class="hg-star" aria-hidden="true">&#10022;</span> The hour completes the chart</p>
+            <h3 class="hg-heading" id="hgHeading">Now set your birth hour</h3>
+            <p class="hg-desc" id="hgDesc">Your animal is named. The hour you were born under decides the deeper chart. Add the time and its zone, then choose the tradition you want to read.</p>
+          </div>
+          <form class="hg-form" id="hourForm" novalidate>
+            <div class="hg-field">
+              <div class="hg-labelrow">
+                <label class="hg-label" id="hgTimeLbl">Birth time <span class="hg-opt">· anchors the hour pillar</span></label>
+                <div class="hg-fmt" id="hgFmt" role="group" aria-label="Clock format">
+                  <button type="button" class="hg-fmt-btn is-on" data-fmt="24" aria-pressed="true">24h</button>
+                  <button type="button" class="hg-fmt-btn" data-fmt="ampm" aria-pressed="false">AM · PM</button>
+                </div>
+              </div>
+              <div class="hg-timebox" role="group" aria-labelledby="hgTimeLbl">
+                <input class="hg-seg" id="hgH" type="text" inputmode="numeric" autocomplete="off" maxlength="2" placeholder="--" aria-label="Hour">
+                <span class="hg-colon" aria-hidden="true">:</span>
+                <input class="hg-seg" id="hgM" type="text" inputmode="numeric" autocomplete="off" maxlength="2" placeholder="--" aria-label="Minute">
+                <div class="hg-mer" id="hgMer" hidden role="group" aria-label="Morning or afternoon">
+                  <button type="button" class="hg-mer-btn is-on" data-mer="AM" aria-pressed="true">AM</button>
+                  <button type="button" class="hg-mer-btn" data-mer="PM" aria-pressed="false">PM</button>
+                </div>
+              </div>
+            </div>
+            <div class="hg-field">
+              <label class="hg-label" for="hgTz">Time zone <span class="hg-opt">· where you were born</span></label>
+              <div class="hg-tzwrap">
+                <select class="hg-select" id="hgTz" aria-label="Birth time zone"></select>
+                <span class="hg-tzcaret" aria-hidden="true">&#9662;</span>
+              </div>
+            </div>
+            <label class="hg-check"><input type="checkbox" id="hgNoTime"><span>I don't know my birth time</span></label>
+            <p class="hg-ctalabel" id="hgCtaLabel">Open your chart in&hellip;</p>
+            <div class="hg-ctas">
+              <a class="hg-cta hg-cta-ziwei" id="hgZiwei" href="/destiny/zi-wei-dou-shu/">
+                <span class="hg-cta-zi" lang="zh" aria-hidden="true">紫微</span>
+                <span class="hg-cta-txt">
+                  <span class="hg-cta-t">Zi Wei Dou Shu</span>
+                  <span class="hg-cta-s">Purple Star &middot; your palace map</span>
+                </span>
+                <span class="hg-cta-go" aria-hidden="true">&rarr;</span>
+              </a>
+              <a class="hg-cta hg-cta-saju" id="hgSaju" href="/destiny/korean-saju/">
+                <span class="hg-cta-zi" lang="ko" aria-hidden="true">사주</span>
+                <span class="hg-cta-txt">
+                  <span class="hg-cta-t">Saju Palja</span>
+                  <span class="hg-cta-s">Korean Four Pillars &middot; your eight characters</span>
+                </span>
+                <span class="hg-cta-go" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </form>
         </div>
 
       </div>
@@ -1241,6 +1299,9 @@
 <script src="/js/homepage-v5-card.js" defer></script>
 <!-- v5: hero-only — collapse the dial into an Observatory disclosure + compact in-hero result. -->
 <script src="/js/homepage-v5.js" defer></script>
+<!-- birth-hour continuation: reveals the destiny doors (Zi Wei / Saju) after a reveal and hands the birth moment forward. Additive; never edits homepage-v2/v5.js. -->
+<script src="/js/zodi-birth.js" defer></script>
+<script src="/js/homepage-v5-hour.js" defer></script>
 <!-- v5: Proverb of the Day, keyed to the BaZi day animal (Pacific reset). -->
 <script src="/js/homepage-v5-proverb.js" defer></script>
 <!-- v5: BaZi showcase — today's Four Pillars, recast at Pacific midnight. -->

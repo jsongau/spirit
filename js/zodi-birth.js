@@ -119,7 +119,7 @@
           year: rec.year, month: rec.month, day: rec.day,
           hour: (typeof rec.hour === "number") ? rec.hour : null,
           minute: (typeof rec.minute === "number") ? rec.minute : null,
-          tzOffset: "auto", gender: null
+          tzOffset: (rec.tz !== undefined && rec.tz !== null && rec.tz !== "") ? rec.tz : "auto", gender: null
         });
       }
       return;
