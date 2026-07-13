@@ -78,9 +78,16 @@
     var d = digits(elH.value).slice(0, 2); elH.value = d;
     if (d.length === 2) { elH.value = clampH(d); if (elM) elM.focus(); }
   });
-  if (elH) elH.addEventListener("blur", function () { elH.value = clampH(digits(elH.value)); });
+  function pad2str(v) { return (v !== "" && v.length < 2) ? ("0" + v) : v; }
+  if (elH) elH.addEventListener("blur", function () {
+    var v = clampH(digits(elH.value));
+    if (fmt === "24") v = pad2str(v);            // 24h reads like a clock: 02, 09, 14
+    elH.value = v;
+    // once an hour is set, an empty minute reads as :00, the way time is written
+    if (v !== "" && elM && digits(elM.value) === "" && !(noTime && noTime.checked)) elM.value = "00";
+  });
   if (elM) elM.addEventListener("input", function () { elM.value = digits(elM.value).slice(0, 2); });
-  if (elM) elM.addEventListener("blur", function () { elM.value = clampM(digits(elM.value)); });
+  if (elM) elM.addEventListener("blur", function () { elM.value = pad2str(clampM(digits(elM.value))); });
 
   /* ---------- 24h / AM·PM toggle ---------- */
   function setFmt(next) {
@@ -177,10 +184,26 @@
   if (ctaZiwei) ctaZiwei.addEventListener("click", function () { handoff(ctaZiwei.getAttribute("href"), "ziwei"); });
   if (ctaSaju) ctaSaju.addEventListener("click", function () { handoff(ctaSaju.getAttribute("href"), "saju"); });
 
+  /* ---------- name the animal in the celebration, when we know it ---------- */
+  function animalName() {
+    try {
+      var p = JSON.parse(localStorage.getItem("zodi:home-v2:profile"));
+      if (p && p.name) return p.name;
+    } catch (e) {}
+    return null;
+  }
+  function celebrate() {
+    var name = animalName(); if (!name) return;
+    var h = $("#hgHeading"), d = $("#hgDesc");
+    if (h) h.textContent = "You've met the " + name;
+    if (d) d.textContent = "The " + name + " is yours — the one crossing, out of 144, that was always waiting for you. Most people go a whole life without ever meeting their animal. You just met yours. One last thing brings the full chart into the light: the hour you were born, the beat that turns the " + name + " into a living reading. Add the time and its zone, then step through whichever door calls you.";
+  }
+
   /* ---------- reveal the gate the moment the crossing lands ---------- */
   var shown = false;
   function showGate() {
     if (shown) return; shown = true;
+    celebrate();
     gate.hidden = false;
     gate.classList.add("hg-in");
     track("v5_hourgate_shown");
