@@ -1,0 +1,14 @@
+# Who the Chambered Nautilus grows with
+_Read across your model: San He trines and Liu He secret friend lift the bond; the Liu Chong clash is the one that teaches. Snake's trine is Ox and Rooster, its secret friend is the Monkey, its clash is the Pig._
+
+## Asian Elephant · trine (Ox) · Deep Recognition
+Two keepers of the past, meeting. You keep every room you have sealed; the elephant forgets nothing — not a face, not a grief, not the path to water in a drought year. Neither of you needs the other to explain why memory is sacred. What you give the elephant is the permission to let a room go quiet without losing it; what the elephant gives you is a body brave enough to carry its history in the open, where yours stays locked in the shell. In the wild you would never meet — deep sea and dry savanna — which is exactly why this is a bond of recognition, not habitat. You recognize each other by weight.
+
+## Emperor Penguin · trine (Rooster) · Strong
+Both of you were built for pressure and cold, and both of you endure by stillness, not speed. The penguin stands months in the dark holding a single egg on its feet; you wait in the deep without restlessness. Together you are almost unshakeable — but two creatures this patient can wait each other into silence. What the penguin teaches you is to huddle, to turn survival into something warm and shared rather than solitary. What you teach the penguin is that some things are meant to be sealed and carried alone, and that this is not coldness. A strong bond, if one of you learns to break the quiet first.
+
+## Dumbo Octopus · secret friend (Monkey) · Deep Recognition
+Your Liu He friend, and your closest kin in the deep. You are both soft intelligence living under crushing water — the octopus improvises where you archive, curious where you are cautious, but you speak the same low language of the dark. This is the easy one: no translation needed, the fit felt more than explained. The octopus draws you out of your sealed chamber to play; you give the octopus a still center to return to when its endless curiosity tires it out. Of everyone on the wheel, this is the friend who gets into the last room without knocking, because you left it open for them.
+
+## Capybara · clash to navigate (Pig) · Hard Teacher
+Your Liu Chong opposite — and the mirror that stings. The capybara is the most open-hearted creature on the wheel: it lets birds land on it, shares its bank with anyone, has no last room at all. You are the hermit; it is the host. Everything easy for the capybara — trust, openness, being touched — is what you seal away. This bond asks the most and can give the most: the capybara can teach you that an unlocked door is not the same as danger, and you can teach the capybara that a life with no closed room can be walked through by anyone. Move gently here. Sign nothing in irritation. The clash that two patient souls actually work becomes the most honest bond either ever builds.
