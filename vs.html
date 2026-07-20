@@ -354,7 +354,7 @@
   async function doShare(primal, url){
     const text = shareTextFor(primal, url);
     if (navigator.share) {
-      try { await navigator.share({ title: "The Primal Oracle", text: text, url: url }); return "shared"; }
+      try { await navigator.share({ title: "Zodi Animal", text: text, url: url }); return "shared"; }
       catch (err) { if (err && err.name === "AbortError") return "dismissed"; }
     }
     try { await navigator.clipboard.writeText(text); return "copied"; }

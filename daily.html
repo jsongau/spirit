@@ -473,7 +473,7 @@
     $("#shareBtn").addEventListener("click", async ()=>{
       const text = $("#shareLine").value;
       try{
-        if (navigator.share){ await navigator.share({title:"The Primal Oracle", text}); }
+        if (navigator.share){ await navigator.share({title:"Zodi Animal", text}); }
         else { await navigator.clipboard.writeText(text); toast("Copied to clipboard","share it with a friend"); }
       }catch(e){}
     });

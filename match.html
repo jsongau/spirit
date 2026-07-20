@@ -318,7 +318,7 @@
     const tierClass = "tier-" + m.tier.replace(/\s/g, "");
     const notes = m.notes.map(n => `<li>${n}</li>`).join("");
     const guidance = GUIDANCE[m.tier] || "";
-    const shareLine = `Our Primal match is ${m.tier}: the ${a.primal} and the ${b.primal}, scoring ${m.score} of 18. Test yours at The Primal Oracle.`;
+    const shareLine = `Our Primal match is ${m.tier}: the ${a.primal} and the ${b.primal}, scoring ${m.score} of 18. Test yours at Zodi Animal.`;
 
     out.innerHTML = `
       <div class="matchCard">
@@ -360,7 +360,7 @@
     const shareMsg = $("#shareMsg");
     $("#shareBtn").addEventListener("click", async () => {
       if (navigator.share){
-        try { await navigator.share({ title:"The Primal Oracle", text: shareLine, url: location.href }); }
+        try { await navigator.share({ title:"Zodi Animal", text: shareLine, url: location.href }); }
         catch (err) { /* user dismissed */ }
       } else {
         copyShare();
