@@ -125,8 +125,9 @@ PNAV.MAP = [
   /* v3 (Jul 2026, owner sign-off): Home deleted; six groups:
      Explore · Destiny · Zodiac · Horoscope · Feng Shui & Moon · Bonds.
      Destiny replaces Sage Wisdom (readings + elements + the daily seat),
-     Feng Shui & Moon merges the old feng shui column with the Moon group,
-     Bonds carries the Climb (Zodi Karma). Every demoted link lives on in
+     Feng Shui & Moon merges the old feng shui column with the Moon group
+     (Jul 2026: the Moon top group folded into Explore's "Live with it"),
+     Bonds carries the account CTA. Every demoted link lives on in
      PNAV.CRAWL_EXTRA, so the crawl mirror loses nothing. */
   { key: "explore", h: "Explore", accent: "teal",
     eyebrow: "New here? Start with your animal — the rest of the wheel opens from there",
@@ -158,6 +159,9 @@ PNAV.MAP = [
         ["/elements/zodiac/",  "Elements & your animal"]
       ]},
       { title: "Live with it", mark: "⌂", items: [
+        ["/moon.html",      "The Moon tonight", PNAV.DYN.moonPhaseName(), null, "moon-phase"],
+        ["/moon/phases/",   "Moon phases", "the eight phases"],
+        ["/moon/in-your-sign/", "Moon in your sign"],
         ["/feng-shui/",  "Feng shui"],
         ["/proverbs/",   "The Proverb Pond", "all 87"],
         ["/habitat/",    "The Habitat"],
@@ -340,39 +344,6 @@ PNAV.MAP = [
       ]}
     ]
   },
-  { key: "moon", h: "Moon", accent: "silver",
-    eyebrow: "☾ · the sky's clock — when to begin, when to rest",
-    foot: ["/moon.html", "Read tonight's moon"],
-    layout: "fengmoon",
-    moonmini: { href: "/moon.html", title: "The Moon tonight", link: "Read it" },
-    cols: [
-      { title: "Tonight & the phases", mark: "☾", items: [
-        ["/moon.html",          "The Moon tonight", PNAV.DYN.moonPhaseName(), null, "moon-phase"],
-        ["/moon/phases/",       "The eight phases"],
-        ["/moon/in-your-sign/", "Moon in your sign"]
-      ]},
-      { title: "Time it right", mark: "時", items: [
-        ["/best-days.html", "Best days", "to begin and to rest"],
-        ["/awakening.html", "The Awakening", "from fear to strength"],
-        ["/chinese-zodiac/fire-horse-2026/", "Fire Horse 2026", "begins Feb 17"]
-      ]},
-      { title: "Moonlit stones", mark: "石", items: [
-        ["/stones.html",                          "Keeper stones"],
-        ["/traditions/birthstones-and-moonstone/", "Birthstones & moonstone"],
-        ["/traditions/stones-for-your-animal/",    "Stones for your animal"]
-      ]}
-    ],
-    chips: { label: "The eight phases", items: [
-      ["/moon/phases/new-moon/",        "🌑", "New Moon"],
-      ["/moon/phases/waxing-crescent/", "🌒", "Waxing Crescent"],
-      ["/moon/phases/first-quarter/",   "🌓", "First Quarter"],
-      ["/moon/phases/waxing-gibbous/",  "🌔", "Waxing Gibbous"],
-      ["/moon/phases/full-moon/",       "🌕", "Full Moon"],
-      ["/moon/phases/waning-gibbous/",  "🌖", "Waning Gibbous"],
-      ["/moon/phases/last-quarter/",    "🌗", "Last Quarter"],
-      ["/moon/phases/waning-crescent/", "🌘", "Waning Crescent"]
-    ]}
-  },
   { key: "bonds", h: "Bonds", accent: "rose",
     eyebrow: "Two skies read together, and the climb you share",
     foot: ["/year.html", "Find a friend's animal by birth year"],
@@ -385,23 +356,12 @@ PNAV.MAP = [
       ["/circle.html", "Circle of three",
         "Compare two friends one to one, then read the whole group as a circle."]
     ],
-    /* the Climb: the whole game in the nav. Tier names + thresholds are
-       the TIERS ladder in js/zodi-auth.js; keep them in lockstep. Earn
-       sources in the intro match the earn map in js/zodi-karma.js. No
-       exchange language anywhere: this is merit, not currency. */
-    climb: { label: "The Climb · Zodi Karma",
-      intro: "Zodi Karma is the merit your animal gathers: the daily visit, the proverbs studied, the moons checked, the matches tested. It buys nothing. It only lifts you, station by station, from Wanderer to Blessed.",
-      note: "Six stations in all — the full ladder lives on the Karmic Board.",
-      ladder: [  /* nav teaser: three of the six stations; full ladder = TIERS in js/zodi-auth.js */
-        ["✦", "Blessed by the Gods of Zodi", "100,000"],
-        ["◉", "Awakened",    "10,000"],
-        ["·", "Wanderer",    "0"]
-      ],
-      links: [
-        ["/karmic-board.html", "The Karmic Board", "every soul ranked, overall and by zodiac year", "zodiac-day"],
-        ["/account.html",      "Your Book of Karma", "every deed remembered, every point accounted"],
-        ["/awakened.html",     "The Primal Mirror",  "the Awakened State, your animal's deeper form, kept for account holders"]
-      ] }
+    /* the account door: one clear CTA in place of the old Climb block */
+    cta: { tag: "Free account",
+      title: "Keep your animal",
+      body: "Create a free account to save your animal, keep your bonds, and open the Primal Mirror.",
+      href: "/account.html",
+      link: "Create your free account" }
   }
 ];
 
@@ -424,6 +384,15 @@ PNAV.CRAWL_EXTRA = [
   ["/moon/phases/last-quarter/",     "Last Quarter Moon"],
   ["/moon/phases/waning-crescent/",  "Waning Crescent Moon"],
   ["/traditions/stones-for-your-animal/", "Stones for your animal"],
+  /* Jul 2026: the Moon top group folded into Explore; Bonds swapped the
+     Climb block for the account CTA. These rows keep the demoted
+     destinations in the crawl mirror. */
+  ["/best-days.html",                     "Best days"],
+  ["/awakening.html",                     "The Awakening"],
+  ["/traditions/birthstones-and-moonstone/", "Birthstones and moonstone"],
+  ["/karmic-board.html",                  "The Karmic Board"],
+  ["/account.html",                       "Your account"],
+  ["/awakened.html",                      "The Primal Mirror"],
   ["/directions/",                   "The Directions"],
   ["/elements/chakras/yoga/",        "Chakra yoga"],
   ["/feng-shui/schools/",            "Feng shui schools"],

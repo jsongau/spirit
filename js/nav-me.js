@@ -11,7 +11,7 @@
 
    Three states:
      nothing revealed, signed out  ->  "Sign up · free"     -> /account.html
-     animal revealed,  signed out  ->  animal + "save it"   -> /account.html
+     animal revealed,  signed out  ->  animal only          -> opens the id modal
      animal revealed,  signed in   ->  animal + "my kingdom"-> /dashboard.html
      nothing revealed, signed in   ->  "My kingdom"         -> /dashboard.html
 
@@ -113,9 +113,14 @@ PNAV.features.me = function (ctx) {
       "/dashboard.html",
       full + ". Open your kingdom: your allies, your ledger, your climb.");
   } else {
-    fill(result.glyph || "✦", result.primal, "save it",
+    fill(result.glyph || "✦", result.primal, "",
       "/account.html",
-      full + ". Create a free account to save your animal and bank your Zodi Karma.");
+      full + ". Save it with a free account, or start over.");
+    slot.addEventListener("click", function (ev) {
+      if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey || ev.button === 1) return;
+      ev.preventDefault();
+      pnMeOpenModal(result.primal);
+    });
   }
 
   /* First time this animal appears lit (the page after a reveal), play a one-time
@@ -150,4 +155,128 @@ function injectLitStyle() {
     "@keyframes pnIdGlyph{0%{filter:none}30%{filter:drop-shadow(0 0 8px rgba(239,226,180,.9))}100%{filter:none}}" +
     "}";
   document.head.appendChild(st);
+}
+
+/* ============================================================
+   The identity modal. Opens from the chip once an animal is revealed
+   and the visitor is signed out. Two doors: go deeper (a free account
+   saves the animal and opens the Primal Mirror) or start over (clear
+   the saved animal and return to the birth-date entry). Built once,
+   appended to <body>, dismissible by X, click outside, and Esc.
+   ============================================================ */
+
+var PN_ME_CLEAR_KEYS = [
+  "zodi:home-v2:profile",  /* the homepage reveal (name + slug), homepage-v2.js */
+  "primal_oracle_v1",      /* legacy oracle store (birth + engine) */
+  "zodi:home-v2:chipLit",  /* the one-time chip glow marker */
+  "zodi_birth"             /* the saved birth date, zodi-birth.js */
+];
+
+function pnMeStartOver() {
+  try {
+    for (var i = 0; i < PN_ME_CLEAR_KEYS.length; i++) {
+      window.localStorage.removeItem(PN_ME_CLEAR_KEYS[i]);
+    }
+  } catch (e) {}
+  window.location.href = "/index.html";
+}
+
+function pnMeCloseModal() {
+  var m = document.getElementById("pn-me-modal");
+  if (m) m.hidden = true;
+  document.removeEventListener("keydown", pnMeOnKey);
+  var chip = document.querySelector("[data-id-chip]");
+  if (chip) { try { chip.focus(); } catch (e) {} }
+}
+
+function pnMeOnKey(ev) {
+  if (ev.key === "Escape") pnMeCloseModal();
+}
+
+function pnMeAct(el, title, sub) {
+  var t = document.createElement("span");
+  t.className = "pnme-act-t";
+  t.textContent = title;
+  var s = document.createElement("span");
+  s.className = "pnme-act-s";
+  s.textContent = sub;
+  el.appendChild(t);
+  el.appendChild(s);
+  return el;
+}
+
+function pnMeBuildModal() {
+  if (!document.getElementById("pn-me-modal-css")) {
+    var st = document.createElement("style");
+    st.id = "pn-me-modal-css";
+    st.textContent =
+      "#pn-me-modal{position:fixed;inset:0;z-index:6000;display:flex;align-items:center;justify-content:center;padding:20px}" +
+      "#pn-me-modal[hidden]{display:none}" +
+      ".pnme-veil{position:absolute;inset:0;background:rgba(8,8,14,.62)}" +
+      ".pnme-card{position:relative;width:100%;max-width:26rem;background:var(--panel,#232134);" +
+        "border:1px solid var(--line,rgba(214,193,140,.2));border-radius:14px;padding:26px 24px 22px;" +
+        "color:var(--ivory,#e9e4d8);box-shadow:0 24px 60px rgba(0,0,0,.5);outline:none}" +
+      ".pnme-x{position:absolute;top:10px;right:10px;background:none;border:0;padding:6px 9px;" +
+        "font-size:1.05rem;line-height:1;color:var(--muted,#9b97a8);cursor:pointer;border-radius:8px}" +
+      ".pnme-x:hover,.pnme-x:focus-visible{color:var(--moon,#f5ecd2)}" +
+      ".pnme-h{margin:0 0 14px;padding-right:26px;font:600 1.3rem/1.25 var(--serif,Georgia,serif);color:var(--moon,#f5ecd2)}" +
+      ".pnme-act{display:block;width:100%;text-align:left;box-sizing:border-box;background:var(--field,rgba(0,0,0,.25));" +
+        "border:1px solid var(--line,rgba(214,193,140,.2));border-radius:10px;padding:12px 14px;margin-top:10px;" +
+        "color:inherit;font:inherit;cursor:pointer}" +
+      ".pnme-act:hover,.pnme-act:focus-visible{border-color:var(--brass,#c9a961)}" +
+      "a.pnme-act{text-decoration:none}" +
+      ".pnme-act-t{display:block;font-weight:600;color:var(--brass-bright,#e8d5a4)}" +
+      ".pnme-act-s{display:block;margin-top:3px;font-size:.9rem;color:var(--muted,#9b97a8)}";
+    document.head.appendChild(st);
+  }
+  var m = document.createElement("div");
+  m.id = "pn-me-modal";
+  m.hidden = true;
+  var veil = document.createElement("div");
+  veil.className = "pnme-veil";
+  veil.addEventListener("click", pnMeCloseModal);
+  var card = document.createElement("div");
+  card.className = "pnme-card";
+  card.setAttribute("role", "dialog");
+  card.setAttribute("aria-modal", "true");
+  card.setAttribute("aria-labelledby", "pn-me-modal-h");
+  card.tabIndex = -1;
+  var x = document.createElement("button");
+  x.type = "button";
+  x.className = "pnme-x";
+  x.setAttribute("aria-label", "Close");
+  x.textContent = "✕";
+  x.addEventListener("click", pnMeCloseModal);
+  var h = document.createElement("h2");
+  h.className = "pnme-h";
+  h.id = "pn-me-modal-h";
+  var go = document.createElement("a");
+  go.className = "pnme-act";
+  go.href = "/account.html";
+  pnMeAct(go, "Go deeper",
+    "Create a free account to save your animal and open the Primal Mirror.");
+  var over = document.createElement("button");
+  over.type = "button";
+  over.className = "pnme-act";
+  over.addEventListener("click", pnMeStartOver);
+  pnMeAct(over, "Start over",
+    "Clear this animal and enter a new birth date.");
+  card.appendChild(x);
+  card.appendChild(h);
+  card.appendChild(go);
+  card.appendChild(over);
+  m.appendChild(veil);
+  m.appendChild(card);
+  document.body.appendChild(m);
+  return m;
+}
+
+function pnMeOpenModal(animal) {
+  var m = document.getElementById("pn-me-modal") || pnMeBuildModal();
+  var h = document.getElementById("pn-me-modal-h");
+  if (h) h.textContent = "You are the " + animal;
+  m.hidden = false;
+  document.addEventListener("keydown", pnMeOnKey);
+  var card = m.querySelector(".pnme-card");
+  if (card) { try { card.focus(); } catch (e) {} }
 }
