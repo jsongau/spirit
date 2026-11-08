@@ -37,3 +37,28 @@ All scripts are in `../tools/` (wave1-fold-crossings.py, wave1b-prune.py, wave2a
 4. Wave 2c: move repeated method boilerplate (about 1,100 words per page) to one /method/ page; add the Psychic Reading to the chapter rail.
 5. Wave 3 (needs Jay): author identity for about page and bylines; brand direction on "primal zodiac"; legal read on the trademark.
 6. Wave 4: human-edited rewrites, batches of 12 or fewer, 10+ days apart. 12 Chinese sign pages first, before Chinese New Year (Feb 6, 2027).
+
+## Later the same day: waves 3 and the reading pipeline
+| Commit | Change |
+|---|---|
+| 91181c433 | /about/ and /method/ (byline: the Zodi Animal team), footer links, Article author/dates, 22 head terms rebranded to Zodi Animal |
+| c7ca4f81b, 268d92b6e | Research-driven fact passes on 20 animal pages (about 160 corrections: wrong figures, misattributed studies, wrong citations, wrong header hanzi) |
+| c7ca4f81b | All 144: hidden FAQPage removed, Primal Zodiac scrubbed from structured data, Purple Star teaser labeled as our own reading, "oldest chart system" fixed, footer eyebrow |
+| 8107eed74, 0e7ec83a6 | Lunar boundary note only on Capricorn and Aquarius; Bond Test glyph 豬 |
+| ceba2d765 | docs/research: 20 dossiers, brief, Mojo and Igor reviews, fact-fix logs |
+| 3f72d6f9a | Batch 1: tabbed readings on 12 animal pages |
+
+### Reading pipeline (how to run the next batch)
+1. Research: agents follow data/research/BRIEF.md, one dossier per animal (json + md). Research is never published directly.
+2. Fact pass: apply each dossier's fact_audit to the live page and the template JSON, with backups and a BEFORE/AFTER log.
+3. Variety ledger + writer brief (data/readings/BATCH1-BRIEF.md): each animal gets its own opening image, rhythm, tabs, story, ending.
+4. Writers produce data/readings/<slug>.json. `python3 tools/build-readings.py ROOT <slugs> --check` is the quality gate (banned words, dashes, pinyin, unknown or missing sources, raw brackets, sentences shared across the batch). `--preview` writes tools/_preview/<slug>-reading-v1.html. Owner approves. `--apply` writes the page, the CSS and data/readings/<slug>.section.html.
+5. The template renderer (render-animal.mjs v1+v2) reads data/readings, so rebuilds keep the readings.
+Batch size 12 or fewer, roughly 10 days apart, owner approves every page.
+
+### Open decisions and next steps
+- Push (7 commits as of 3f72d6f9a).
+- Kea hero line "never once for hunger" (soften?), pronghorn Purple Star line (cut or keep labeled).
+- Template: add a pinyin slot for header/rail hanzi on all 144; renderer Purple Star wording.
+- Research and fact-pass the remaining 124 animals; batch 2 readings from the 8 researched animals not yet rewritten.
+- Search Console: confirm Manual actions and Security issues are empty; resubmit sitemap after push; GSC API report waiting on googleapis.com allowlist + service account.
