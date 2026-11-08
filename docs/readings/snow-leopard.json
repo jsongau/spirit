@@ -1,0 +1,53 @@
+{
+  "title": "What the Snow Leopard means",
+  "is_this_you": {
+    "pressure": "Hurt, you climb. You go up past the last trees and let the valley guess what happened.",
+    "love": "You can watch someone from the far ridge for a whole season. Then you walk beside them for a week, close enough to touch.",
+    "cost": "You keep so still up there that the people who love you start counting you as gone."
+  },
+  "opener": {
+    "moon": false,
+    "text": "A monk once painted Milarepa, the eleventh-century yogi, as a snow leopard leading his disciples [s8]. In Bhutan many tales say great lamas crossed between Tibet and Bhutan in that shape [s8]. The body changes. The mind stays. You know something about that."
+  },
+  "howto": "Three parts. Take your time.",
+  "tabs": [
+    {
+      "id": "height",
+      "label": "Above the line",
+      "intro": "Water and Earth, both facing inward.",
+      "rows": [
+        {"k": "Your temperament", "text": "Scorpio is fixed Water, a feminine sign [s1]. The Goat is yin Earth [s3]. The Chinese guides call the Goat gentle and private, with few close friends [s4] [s5]. Scorpio adds depth, and it is slow to forgive [s1] [s2]. So you live high, apart, and hard to move."},
+        {"k": "The snow leopard does it too", "text": "The snow leopard lives mostly on wild goats and sheep, the ibex, argali, blue sheep and markhor [s6]. A Goat-year animal that hunts goats. You know the gentle ones from the inside. That is why you read them before they speak."},
+        {"k": "Its other name", "text": "In Ladakh the cat is called jatpo, the one who stalks [s9]. Nobody hears you coming either. Most days you are only coming to sit nearby."}
+      ]
+    },
+    {
+      "id": "hunt",
+      "label": "The hunt you share",
+      "intro": "Long distance. Then a short, close season.",
+      "rows": [
+        {"k": "Your love", "text": "Wild snow leopard pairs travel together for one to eight days, mostly within ten meters of each other [s11]. That is your courtship. Mating pairs have even been recorded hunting together [s6]. Once you share the work of living with someone, you have already chosen."},
+        {"k": "Your work", "text": "Give yourself hard ground and a long hold. Audit and fieldwork pay for patience that proves itself later. In Bhutan villagers call the snow leopard a fence [s8]. You guard a small territory, and you guard it well."}
+      ]
+    },
+    {
+      "id": "finds",
+      "label": "Who finds you",
+      "intro": "Three who make the climb, one who pulls you down.",
+      "love_lead": "You do not go looking. The right ones climb up and sit down without asking for anything. The old Chinese pairings name three who can.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "green-sea-turtle", "chips": ["Secret friend", "Water like you"], "why": "The <b>Green Sea Turtle</b> (Cancer, Horse year) is your secret friend, since the Horse is the Goat's hidden ally, and Cancer shares Scorpio's Water [s3] [s1]."},
+      {"slug": "sea-otter", "chips": ["Same trine", "Water like you"], "why": "The <b>Sea Otter</b> (Cancer, Rabbit year) sits in your trine of Rabbit, Goat and Pig, and swims in the same Water [s3] [s1]."},
+      {"slug": "mountain-pygmy-possum", "chips": ["Same trine", "Another mountain"], "why": "The <b>Mountain Pygmy Possum</b> (Capricorn, Rabbit year) is trine kin from the high country, with Capricorn's Earth to bank your Water [s3]."}
+    ],
+    "hard": [
+      {"slug": "giant-clam", "chips": ["Year clash", "Opposite sign"], "why": "The hard one is the <b>Giant Clam</b>: the Ox clashes with the Goat, and Taurus sits opposite Scorpio [s3] [s1]."}
+    ]
+  },
+  "story": {"k": "A Ladakhi story", "text": "In Ladakh they tell of a yogi in a cave who fed a snow leopard. It was a deity in animal form. The next morning a fresh kill lay at the cave mouth, left as thanks [s9]."},
+  "closing": "You leave the gift and say nothing. The mountain keeps the rest."
+}

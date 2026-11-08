@@ -1,0 +1,52 @@
+{
+  "title": "What the Kea gets into",
+  "is_this_you": {
+    "pressure": "Pressure makes you funnier. You crack the joke first and fix the latch second, and by then half the hut is helping.",
+    "love": "You court with questions and keep poking until the other person pokes back. The ones who laugh get to stay.",
+    "cost": "Some days you take the blame for a mess you only flew over to look at."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Say the bird's name out loud and you are doing its call. Kea copies the sound it makes, keee aaa [s1] [s3]. The Waitaha people held it among their kaitiaki, the guardians of the people, beside the harrier and the morepork [s1]. Loud, nosy, and on the guard roster. That is you."
+  },
+  "howto": "Three parts. Poke at them in any order.",
+  "tabs": [
+    {
+      "id": "curious",
+      "label": "Curiosity",
+      "intro": "Air that asks. Metal that handles.",
+      "rows": [
+        {"k": "Your temperament", "text": "Gemini is mutable Air, ruled by Mercury, the planet of quick talk and new information [s7] [s8]. The Monkey is yang Metal, read as witty, mischievous and a fast learner [s9] [s10]. Put the two together and every question heads straight for your hands. You understand a thing best once it is in pieces on the table, and you narrate the teardown while you do it."},
+        {"k": "The kea does it too", "text": "The kea is the world's only mountain parrot, at home in New Zealand's Southern Alps [s3]. It investigates with its beak, its tongue and its claws [s2]. Car accessories and ski lodge gear come apart under that attention; researchers call it opportunistic exploration [s4]. Hut stories add stolen nails, hidden away sorted by size [s2]. Someone always has to check how the thing works. You volunteer."}
+      ]
+    },
+    {
+      "id": "flock",
+      "label": "Your flock",
+      "intro": "Three birds for your flock, and one to give room.",
+      "love_lead": "In love your laugh does the courting. Researchers played wild kea a recording of the play call, and the birds that heard it played more and for longer [s5]. The old Chinese pairings put three of them in your flock.",
+      "matches": true
+    },
+    {
+      "id": "trouble",
+      "label": "Trouble worth making",
+      "intro": "Get paid for the poking.",
+      "rows": [
+        {"k": "At work", "text": "Pick work where taking things apart is the job. Testing, repair and security research all pay someone to find the weak latch before anyone else does."},
+        {"k": "In a gang", "text": "Young kea travel together in flocks for two or three years before they settle [s4]. Their pecking order is not necessarily a straight line [s4]. You do best in a loose crew where the youngest can still win a round."}
+      ]
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "red-panda", "chips": ["Same trine", "Air like you"], "why": "The <b>Red Panda</b> (Libra, Rat year) shares your trine of Rat, Dragon and Monkey, and Libra is Air like you [s11] [s7]."},
+      {"slug": "mantis-shrimp", "chips": ["Same trine", "More Air"], "why": "The <b>Mantis Shrimp</b> (Aquarius, Dragon year) closes the same trine, and Aquarius brings more Air to keep the talk going [s11]."},
+      {"slug": "paradise-tanager", "chips": ["Secret friend", "Air on Air"], "why": "The <b>Paradise Tanager</b> (Libra, Snake year) is your secret friend, since Snake and Monkey make one of the six harmonies pairs [s11]."}
+    ],
+    "hard": [
+      {"slug": "lanner-falcon", "chips": ["Year clash", "Opposite sign"], "why": "The hard one is the <b>Lanner Falcon</b>: the Tiger clashes with the Monkey, and Sagittarius sits opposite Gemini [s11] [s7]."}
+    ]
+  },
+  "story": {"k": "Blamed, then crowned", "text": "When sheep farming reached the high country in the 1870s, farmers blamed the kea, a bounty followed, and an estimated 150,000 birds were shot before full protection came in 1986 [s2]. In 2017 New Zealand voted it Bird of the Year, with 7,311 votes [s6]. Same bird. Same cheek."},
+  "closing": "Keep poking. Sort the nails by size afterward, so they know it was you."
+}

@@ -1,0 +1,99 @@
+{
+  "title": "What the Star-nosed Mole means",
+  "is_this_you": {
+    "pressure": "You go under. You work the problem by feel, in the dark, then surface with one sentence nobody can argue with.",
+    "love": "You remember the story they told once, two years ago, and you bring it up on the day they need it.",
+    "cost": "You keep a careful file on the friend you forgave, and you add to it in silence."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In the first chapter of the Zhuangzi, a hermit turns down a throne with one line: 偃鼠飲河，不過滿腹 (yǎn shǔ yǐn hé, bùguò mǎn fù). The mole drinks from the river and takes only a bellyful [S18]. Most translators give the animal as a mole [S18]. You were born knowing that measure. Enough is a real amount to you."
+  },
+  "howto": "Three parts. Feel your way in.",
+  "tabs": [
+    {
+      "id": "dark",
+      "label": "How you read the dark",
+      "intro": "Touch first. Then decide.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Virgo is mutable Earth, ruled by Mercury [S8]. It checks everything and finds it hard to switch off [S8] [S10]. The Pig is yin Water, kind and calm under pressure [S11] [S12]. In you the sorter meets the feeler. You take in a lot and say little. Then you move fast."
+        },
+        {
+          "k": "The mole does it too",
+          "text": "The mole shifts its star so the two small rays by its mouth touch each thing first [S2]. Under water it blows bubbles and breathes them back in, eight to twelve a second, to smell [S1] [S5]. The biologist Kenneth Catania says the moles use the star the way we use our eyes [S7]. You read people like that, by the grain of a voice and by what shifted since last week."
+        }
+      ]
+    },
+    {
+      "id": "enough",
+      "label": "What enough means",
+      "intro": "One branch. One bellyful.",
+      "rows": [
+        {
+          "k": "Your appetite",
+          "text": "The Pig enjoys the good life [S11]. Virgo's old correspondences are the harvest and the granary [S9]. So you enjoy the meal and count the grain. Warm bread. A soft bed. Then you stop. Others keep reaching. You leave the river."
+        },
+        {
+          "k": "Your reserve",
+          "text": "In winter the mole's tail swells with stored fat [S1] [S6]. It carries its reserve close and small. Yours sits the same way, where nobody has to see it."
+        },
+        {
+          "k": "Your blind spot",
+          "text": "The Pig's known weak spot is trusting too easily [S11]. You can miss a motive while you study the details. Check the reason as closely as you check the facts."
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "label": "Who you let close",
+      "intro": "A small, warm burrow with space for two.",
+      "love_lead": "You love through attention, and it shows in the small things. When you are hurt, you withdraw and say nothing for a while. The old wheel gives you three easy burrows to share.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "koala",
+        "chips": [
+          "Same trine",
+          "Earth like you"
+        ],
+        "why": "The <b>Koala</b> (Taurus, Rabbit year) shares the Pig's trine of Rabbit, Goat and Pig, and Taurus is Earth like you [S14] [S10]."
+      },
+      {
+        "slug": "hercules-beetle",
+        "chips": [
+          "Closes the trine",
+          "Third Earth sign"
+        ],
+        "why": "The <b>Hercules Beetle</b> (Capricorn, Goat year) closes your trine, and Capricorn is the third Earth sign [S14] [S10]."
+      },
+      {
+        "slug": "moon-bear",
+        "chips": [
+          "Secret friend",
+          "Water for your Earth"
+        ],
+        "why": "The <b>Moon Bear</b> (Cancer, Tiger year) is your secret friend, since the Tiger is the Pig's Liu He partner, and Cancer's Water suits your Earth [S14] [S10]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "glass-frog",
+        "chips": [
+          "Year clash",
+          "Opposite sign"
+        ],
+        "why": "The hard one is the <b>Glass Frog</b>, because Snake clashes with Pig and Pisces sits opposite Virgo [S14] [S8]."
+      }
+    ]
+  },
+  "story": {
+    "k": "A Zuni carving",
+    "text": "Zuni carvers make stone mole fetishes for protection, credited with healing and hunting power, as the University of New Mexico's Tony Hillerman Portal records [S15]. In Pueblo thought the mole holds the downward direction, with the color black, the earth and the crops [S15]."
+  },
+  "closing": "The river runs on above you. You have had your bellyful."
+}

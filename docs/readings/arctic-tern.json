@@ -1,0 +1,103 @@
+{
+  "title": "What the Arctic Tern brings home",
+  "is_this_you": {
+    "pressure": "You think best in motion, somewhere between two airports. Then you land, and the Ox in you plants both feet.",
+    "love": "Slow to promise, then very hard to shake. The ones who love you learn to read a postcard as a vow.",
+    "cost": "You come home on your own schedule and expect the nest to be just as you left it."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Late on a night of travel, Du Fu asked what his drifting life was like, and answered himself with 天地一沙鸥 (tiāndì yī shā ōu), one sand gull between heaven and earth [dufu]. Your bird lives inside that same word, because the Chinese name for the Arctic tern, 北极燕鸥 (Běijí yàn'ōu), reads as Arctic swallow-gull [youdao]. So you came in as a small bird over a very wide map, and the map has never felt too big for you."
+  },
+  "howto": "Three parts, to fly in any order.",
+  "tabs": [
+    {
+      "id": "far",
+      "label": "The long way round",
+      "intro": "Fire for the range, Earth for the root.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Sagittarius is mutable Fire, ruled by Jupiter, the sign of belief and long-distance travel [wiki-sag] [cafe-sag]. The Ox is yin Earth, patient and dependable, a planner who wants the route before setting out [wiki-ox] [chl-ox]. Together they make a mind that ranges over half the world while it stays tied to a few real promises."
+        },
+        {
+          "k": "The tern does it too",
+          "text": "On its pole-to-pole route the tern feeds on the wing over schools of fish, and tracked birds rested almost a month at a stopover in the open North Atlantic [aab-food] [egevang-phys]. You travel the same way, picking up what you need along the road and stopping for as long as the stop takes."
+        },
+        {
+          "k": "A name of honor",
+          "text": "The Inuit community of Grise Fiord, Nunavut, gave the glaciologist Fritz Koerner, who studied ice from pole to pole for fifty years, the name Imiqutailaq, Arctic tern, as the American Polar Society records [apf-imiqutailaq]."
+        }
+      ]
+    },
+    {
+      "id": "land",
+      "label": "Where you land",
+      "intro": "One colony, one partner, and a lot of sky between.",
+      "rows": [
+        {
+          "k": "Coming home",
+          "text": "Arctic terns return to the same colony, and pairs often stay together for life [wiki-tern]. You keep one address and one person at the center of a very wide life, and the people who love you sometimes learn you were away only after you are back."
+        },
+        {
+          "k": "When someone reaches for it",
+          "text": "At about a hundred grams, a tern will strike the head of a fox, a polar bear or a person near its nest, and it can draw blood [wiki-tern] [adfg]. You look easygoing right up until someone reaches for what is yours. Then you are small and very hard to ignore."
+        },
+        {
+          "k": "At work",
+          "text": "You land well in field science, on a foreign desk or a flight deck, in any work that runs on leaving and coming back."
+        }
+      ]
+    },
+    {
+      "id": "waits",
+      "label": "Who waits for you",
+      "intro": "The ones who stop counting your departures.",
+      "love_lead": "You court through long walks and longer talks about what a life is for, and you need someone who does not read your time away as rejection. You owe them a plain word about when you will be back. The old wheel gives you three who can wait without keeping score.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "cassowary",
+        "chips": [
+          "Same trine",
+          "Fire like you"
+        ],
+        "why": "The <b>Cassowary</b> (Aries, Rooster year) sits in the Ox's trine of Ox, Snake and Rooster, and Aries shares your Fire [cny-compat] [wiki-sag]."
+      },
+      {
+        "slug": "sunset-moth",
+        "chips": [
+          "Closes the trine",
+          "Third Fire sign"
+        ],
+        "why": "The <b>Sunset Moth</b> (Leo, Rooster year) closes the trine through the Rooster, and Leo is the third Fire sign [cny-compat] [wiki-sag]."
+      },
+      {
+        "slug": "sandgrouse",
+        "chips": [
+          "Secret friend",
+          "Same sun sign"
+        ],
+        "why": "The <b>Sandgrouse</b> (Sagittarius, Rat year) shares your sun sign, and the Rat is the Ox's secret friend in the Six Harmonies [cny-compat]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "rock-wren",
+        "chips": [
+          "Year clash",
+          "Opposite sign"
+        ],
+        "why": "The hard one is the <b>Rock Wren</b>, because the Goat clashes with the Ox and Gemini sits straight across the wheel from Sagittarius [cny-compat] [wiki-sag]."
+      }
+    ]
+  },
+  "story": {
+    "k": "An old story",
+    "text": "In the Liezi, a man by the sea played each morning with hundreds of seabirds, and on the day he came meaning to catch one for his father, they circled high and would not come down [liezi]. The idiom 鷗鷺忘機 (ōu lù wàng jī) keeps the story: the birds land only beside a heart with no scheme in it [liezi]."
+  },
+  "closing": "Every summer you come back to the same shore, with nothing hidden in your hands."
+}

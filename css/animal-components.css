@@ -1377,3 +1377,42 @@ a.pf-awaken__card:hover{border-color:var(--animal-primary,var(--a-gold));backgro
 .pf-psychic .lede{letter-spacing:.06em}
 
 /* w2c-surface (2026-11-08): 37 animals carry a near-white --animal-surface; section backgrounds mix it 22% into --a-night so text stays readable. Original declaration kept first as the fallback. */
+
+/* w4-reading (2026-11-08): Zodi Animal reading section, Mary's v3 layout. Existing tokens only. */
+.kr-wrap{max-width:1040px}
+.kr-wrap > .eyebrow,.kr-wrap > h2{max-width:var(--measure)}
+.kr-open{display:flex;gap:1.2rem;align-items:flex-start;max-width:var(--measure);margin:0 0 2rem}
+.kr-moon{flex:0 0 auto;width:56px;height:56px;border-radius:50%;margin-top:.35rem;background:radial-gradient(circle at 38% 34%,var(--a-snow),var(--a-gold) 72%);box-shadow:inset -16px -4px 0 0 var(--a-night),0 0 36px 4px var(--animal-glow)}
+.kr-lede{font-family:var(--serif);font-size:clamp(1.12rem,2.2vw,1.3rem);line-height:1.6;color:var(--a-snow);margin:0}
+.kr-howto{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--a-mist);margin:0 0 .8rem}
+.kr-tabs button{display:inline-flex;align-items:center;gap:.55em}
+.kr-tabnum{display:inline-grid;place-items:center;width:1.5em;height:1.5em;border-radius:50%;border:1px solid currentColor;font-family:var(--mono);font-size:.7rem;line-height:1}
+body.js-on #meaning .rel-panel:not(.is-active){display:none}
+.kr-panel{scroll-margin-top:96px}
+.kr-panel--wide{max-width:none}
+.kr-panel .row p{max-width:62ch}
+.kr-intro{font-family:var(--serif);font-style:italic;font-size:clamp(1.25rem,2.4vw,1.55rem);line-height:1.35;color:var(--a-gold);margin:0 0 .6rem}
+.kr-love-lead{max-width:62ch;margin:0 0 .4rem}
+.kr-cards{padding-top:1rem}
+.kr-card::before{display:none}
+.kr-card .mplate__chips span{color:color-mix(in srgb,var(--mel) 70%,var(--a-snow))}
+.kr-card .mplate__why{color:var(--a-snow)}
+.kr-card .mplate__why b{font-weight:600;color:var(--a-snow)}
+.kr-hard-kicker{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a-mist);margin:2rem 0 .8rem}
+.kr-hard{max-width:26rem}
+.kr-card--hard{border-style:dashed}
+.kr-next{margin-top:1.6rem}
+.kr-coda{max-width:var(--measure);margin:3rem 0 0;border-top:1px solid var(--rule);padding-top:1.6rem}
+.kr-story{margin:0;color:var(--a-mist)}
+.kr-story .k{display:block;font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:var(--a-mist);margin:0 0 .4rem}
+.kr-close{margin:1.2rem 0 0}
+.kr-sources{margin:2.4rem 0 0}
+.kr-sources__list{font-size:.85rem;line-height:1.5;color:var(--a-mist);padding:0 1.2rem 1rem 2.4rem;margin:0}
+.kr-sources__list li{margin:0 0 .4rem}
+.kr-sources__list li:target{color:var(--a-snow)}
+.kr-sources__list a,.kr-ref a{text-decoration:none}
+.kr-ref a{color:var(--a-gold)}
+.kr-sources__list a{color:var(--a-mist)}
+@media (max-width:900px){.kr-cards{max-width:none;margin-inline:0}.kr-hard{max-width:none}}
+@media (max-width:600px){.kr-open{gap:.9rem}.kr-moon{width:40px;height:40px;box-shadow:inset -11px -3px 0 0 var(--a-night),0 0 28px 3px var(--animal-glow)}.kr-tabs{gap:.4rem}.kr-tabs button{padding:.45em .9em;font-size:.86rem}}
+@media (prefers-reduced-motion:reduce){.kr-card{transition:none}.kr-card:hover{transform:none}}

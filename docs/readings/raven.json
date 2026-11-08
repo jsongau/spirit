@@ -1,0 +1,106 @@
+{
+  "title": "What the Raven knows",
+  "is_this_you": {
+    "pressure": "You go quiet. Then you move your plans somewhere nobody watched you put them.",
+    "love": "A long, private test comes first. Pass it, and you get a partner for life who defends your corner with you.",
+    "cost": "You remember who cheated you long after they forget the trade. Being right about people gets lonely."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Odin kept two ravens. Huginn means thought. Muninn is usually read as memory [s6]. Each day they flew the world and came back to whisper what they saw [s6]. Odin feared for Thought, and more for Memory [s6]. You were born with both birds."
+  },
+  "howto": "Four parts, one bird. Start anywhere.",
+  "tabs": [
+    {
+      "id": "thought",
+      "label": "Thought",
+      "intro": "Huginn flies first.",
+      "rows": [
+        {
+          "k": "Your mind",
+          "text": "Aquarius is fixed Air, ruled by Uranus and, in the older books, by Saturn [s1]. The sign is inventive and at ease being different [s1]. The Monkey adds yang Metal [s2]. Witty and quick to learn [s3]. So you stand at the edge of the group and see how it fits. Then you do the clever thing nobody saw coming."
+        },
+        {
+          "k": "The raven does it too",
+          "text": "Ravens plan. In a 2017 study they chose a tool or a token and saved it for later use [s14]. Ravens also play, and Heinrich and Smolker reported them sliding down snowy roofs on their backs [s20]. Same bird. Same mind. You can plan ten moves out and still want the roof."
+        }
+      ]
+    },
+    {
+      "id": "memory",
+      "label": "Memory",
+      "intro": "Muninn comes home heavier.",
+      "rows": [
+        {
+          "k": "What you hide",
+          "text": "A raven that sees a rival watching will cache its food farther off, or wait [s17]. It also treats a rival who saw the hiding differently from one who missed it [s16]. You keep a second place for what matters. Few people know where it is."
+        },
+        {
+          "k": "What you file",
+          "text": "In a 2017 study, ravens still chose a fair trader over a cheat a month later [s22] [s23]. Your file on who played you is short. It is accurate. You open it far less often than they fear."
+        }
+      ]
+    },
+    {
+      "id": "trust",
+      "label": "Who you trust",
+      "intro": "The few you let watch you cache.",
+      "love_lead": "Love comes late, then stays. The Monkey is slow to settle and fully committed once it chooses [s3]. Ravens pair for life [s13]. You test someone for a long time and never call it a test. Pass, and you have them.",
+      "matches": true
+    },
+    {
+      "id": "earn",
+      "label": "Where your mind earns",
+      "intro": "Get paid for the long memory.",
+      "rows": [
+        {
+          "k": "At work",
+          "text": "Work that pays you to read many players at once suits you. Strategy and forecasting fit. So does fraud work, where a long memory is the job. Directing sits on the old Monkey career list too [s3]. Puzzle and game design count, if you like building the trap."
+        }
+      ]
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "meerkat",
+        "chips": [
+          "Same trine",
+          "Air like you"
+        ],
+        "why": "The <b>Meerkat</b> (Gemini, Rat year) shares the Monkey's trine of Rat, Dragon and Monkey, and Gemini is Air like you [s4] [s1]."
+      },
+      {
+        "slug": "giant-manta-ray",
+        "chips": [
+          "Closes the trine",
+          "Third Air sign"
+        ],
+        "why": "The <b>Giant Manta Ray</b> (Libra, Dragon year) closes your trine, and Libra makes the third Air sign beside you [s4] [s1]."
+      },
+      {
+        "slug": "cuttlefish",
+        "chips": [
+          "Secret friend",
+          "Air like you"
+        ],
+        "why": "The <b>Cuttlefish</b> (Gemini, Snake year) is your secret friend, since Snake and Monkey form a Six Harmonies pair [s4]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "harpy-eagle",
+        "chips": [
+          "Year clash",
+          "Opposite sign"
+        ],
+        "why": "The hard one is the <b>Harpy Eagle</b>, because Tiger clashes with Monkey and Leo stands opposite Aquarius [s4] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "An old story",
+    "text": "The Greeks said the raven was white until it told Apollo of Coronis's betrayal too fast [s9]. He turned it black for its chattering tongue [s9]."
+  },
+  "closing": "You still tell the truth. You just check who is watching first."
+}

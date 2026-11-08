@@ -1,0 +1,52 @@
+{
+  "title": "What the Capybara offers",
+  "is_this_you": {
+    "pressure": "When it gets loud, you sink until only your eyes and ears show. Still listening. Just not answering.",
+    "love": "You love by feeding. The second cup arrives before anyone thinks to ask for it.",
+    "cost": "People hand you their worst week the way they hand you a coat, and you take it without checking the pockets."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Your animal's scientific name, Hydrochoerus hydrochaeris, reads as water hog, then water and enjoyment [wiki-capybara]. You were born under Cancer, the first water sign, in the year of the Pig, whose element is Water as well [astro-podcast] [wiki-pig]. So the water runs through you twice, and the name adds that it is meant to be enjoyed. Think of a capybara in a Japanese hot bath in midwinter, eyes half closed, in no hurry at all [spoon-tamago]. That is how you look when life is going right."
+  },
+  "howto": "Three parts. Take them slowly, in any order.",
+  "tabs": [
+    {
+      "id": "calm",
+      "label": "Your calm",
+      "intro": "Water that holds, Water that shares.",
+      "rows": [
+        {"k": "Your temperament", "text": "Cancer is cardinal Water, ruled by the Moon, and the old books give it the chest and the stomach, the body's places for feeding and holding [astro-podcast]. The Pig is yin Water, read as generous, compassionate and calm under pressure [wiki-pig] [chinahighlights-pig]. In you the two make a slow, warm current. You start things, and then you stay with them long enough to make them comfortable."},
+        {"k": "The capybara does it too", "text": "A capybara's eyes, ears and nostrils sit high on its head, so it can lie almost under and still keep track of the bank [wiki-capybara]. When danger comes, the group heads for the water and waits there [wlt] [pbs]. You keep the same habit. Under strain you go under with your senses up, and you surface when the noise has passed."}
+      ]
+    },
+    {
+      "id": "table",
+      "label": "Your table",
+      "intro": "Feed people. Let someone pay you for it.",
+      "rows": [
+        {"k": "Plenty", "text": "Jupiter is exalted in Cancer, and the pig is an old symbol of wealth [astro-podcast] [pearlriver-pig]. Your kind of plenty gets shared at a long table. Keep one pot of money nobody else can ask for, because the Pig is said to trust so readily it can be fooled [wiki-pig] [chinahighlights-pig]."},
+        {"k": "At work", "text": "Hosting, nursing and early-years teaching all reward the warmth you would give away anyway. Take the job where that warmth has a title and a wage."}
+      ]
+    },
+    {
+      "id": "beside",
+      "label": "Who sits beside you",
+      "intro": "Three to share the warm water with, and one to watch from the bank.",
+      "love_lead": "In love you are slow to anger and slower to forget. Birds land on capybaras to pick at ticks, and turtles climb aboard [schunck2025] [inat-wisnik]. You let people settle on you in much the same way. The old Chinese pairings name three who give the warmth back.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "sea-otter", "chips": ["Same trine", "Cancer like you"], "why": "The <b>Sea Otter</b> (Cancer, Rabbit year) shares your trine of Rabbit, Goat and Pig, and your Cancer sun as well [brief]."},
+      {"slug": "moon-bear", "chips": ["Secret friend", "Cancer like you"], "why": "The <b>Moon Bear</b> (Cancer, Tiger year) is your secret friend, since the Tiger is the Pig's hidden ally [brief] [wiki-pig]."},
+      {"slug": "koala", "chips": ["Same trine", "Earth for your Water"], "why": "The <b>Koala</b> (Taurus, Rabbit year) is trine kin, and its Taurus Earth gives your Water a bank to rest against [brief]."}
+    ],
+    "hard": [
+      {"slug": "tuatara", "chips": ["Year clash", "Opposite sign"], "why": "The hard one is the <b>Tuatara</b>: the Snake clashes with the Pig, and Capricorn sits opposite Cancer [brief] [wiki-pig]."}
+    ]
+  },
+  "story": {"k": "The winter bath", "text": "In 1982 a keeper at Izu Shaboten Zoo saw the capybaras gathered in a warm puddle and filled a pool with hot water for them [spoon-tamago]. The winter bath became a national ritual, with yuzu and rose baths in rotation [spoon-tamago] [wiki-capybara]."},
+  "closing": "The bath is already warm. Come in, and keep a place free beside you."
+}

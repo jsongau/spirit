@@ -1,0 +1,52 @@
+{
+  "title": "What the Golden Pheasant wears",
+  "is_this_you": {
+    "pressure": "You leave on foot before the argument turns, then come back later with the verdict already sewn.",
+    "love": "You love by arrangement: the gift chosen weeks ahead, the evening laid out in order, and not one word about what it meant.",
+    "cost": "You wait to be invited into the light, and you keep count of every year nobody asked."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Under the Ming and Qing, a civil official of the second rank wore a golden pheasant, 錦雞 (jǐnjī), sewn on the chest and back of his robe [s8]. Only the crane ranked above it [s8]. The bird's name sounded like a word for ruling, and writers tied it to literary talent and military prowess [s8]. That badge fits you. You rule by learning, and you dress for the part."
+  },
+  "howto": "Three parts, in order of rank.",
+  "tabs": [
+    {
+      "id": "colours",
+      "label": "Your colours",
+      "intro": "Fire that wants the hall. Wood that keeps its counsel.",
+      "rows": [
+        {"k": "Your temperament", "text": "Leo is fixed Fire, ruled by the Sun [s1] [s3]. The Rabbit is yin Wood, elegant and alert, and slow to reveal its mind [s4] [s5]. In you the caution feeds the brilliance. You enter the hall in full colour and say very little. When you do speak, the court writes it down."},
+        {"k": "The brocade", "text": "The bird's Chinese name means brocade fowl [s20]. The Rabbit's old gifts are painting, calligraphy, tailoring and cooking [s5]. Your taste is a trade, and people trust it before you explain it."}
+      ]
+    },
+    {
+      "id": "court",
+      "label": "Your court",
+      "intro": "Influence by counsel. Love by ceremony.",
+      "rows": [
+        {"k": "Where you serve", "text": "The badge belonged to a civil official, not a general [s8]. You do your finest work as counsel beside the throne, as an editor or a chief of staff."},
+        {"k": "How you court", "text": "Leo takes great pride in the relationship [s2]. So you court with ceremony. The table is set before anyone arrives. Admiration given in private holds you longer than any public praise."}
+      ]
+    },
+    {
+      "id": "dress",
+      "label": "Who you dress for",
+      "intro": "Three worth the robe, and one who argues with it.",
+      "love_lead": "You dress for very few people. The old pairings say who has earned the full plumage.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "giant-otter", "chips": ["Secret friend", "Fire like you"], "why": "The <b>Giant Otter</b> (Aries, Dog year) is your secret friend, since Dog and Rabbit are a Six Harmonies pair, and Aries burns with Leo's Fire [s4] [s3]."},
+      {"slug": "bar-headed-goose", "chips": ["Same trine", "Fire like you"], "why": "The <b>Bar-headed Goose</b> (Sagittarius, Goat year) shares your trine of Rabbit, Goat and Pig, and Sagittarius is the third Fire sign [s4] [s3]."},
+      {"slug": "luna-moth", "chips": ["Same trine", "Air for your Fire"], "why": "The <b>Luna Moth</b> (Libra, Goat year) is trine kin as well, and Libra's Air feeds your Fire [s4] [s3]."}
+    ],
+    "hard": [
+      {"slug": "hoatzin", "chips": ["Year clash", "Opposite sign"], "why": "The hard one is the <b>Hoatzin</b>: the Rooster clashes with the Rabbit, and Aquarius sits opposite Leo [s4] [s3]."}
+    ]
+  },
+  "story": {"k": "An emperor's painting", "text": "Emperor Huizong painted a golden pheasant on a bending hibiscus branch [s9]. The scroll hangs in the Palace Museum, Beijing [s10]. His poem says the tall-crowned bird already holds all five virtues [s9]. The old list reads the crown as culture, 文 (wén), and the spurs as martial skill, 武 (wǔ) [s11]. Facing an enemy is courage, 勇 (yǒng) [s11]. Calling others to food is benevolence, 仁 (rén), and keeping the night watch on time is trust, 信 (xìn) [s11]. Benevolence is also the virtue of Wood, your element [s6]."},
+  "closing": "Wear the robe. The rank was yours before anyone sewed it on."
+}

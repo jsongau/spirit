@@ -1,0 +1,52 @@
+{
+  "title": "What the Harpy Eagle rules",
+  "is_this_you": {
+    "pressure": "Under strain your crest goes up before your voice does. The ones who know you read the feathers and step back.",
+    "love": "You can sit near someone a whole season without showing a thing. Then one afternoon you have chosen, and you rarely take it back.",
+    "cost": "You wait to be seen and refuse to ask. Whole seasons go by like that."
+  },
+  "opener": {
+    "moon": false,
+    "text": "The bird that carries your crossing was named for the harpies, the wind spirits of Greek myth who bore the dead away to Hades [s1]. It is a name for something that owns the air above the canopy. You were born to Leo, the one sign ruled by the Sun, in a year of the Tiger, whose element is yang Wood [s6] [s4]. We read that Wood as fuel laid under the Fire, so the quieter half of you is always keeping the brighter half alight."
+  },
+  "howto": "Three parts. Take them in order, from the top of the tree down.",
+  "tabs": [
+    {
+      "id": "height",
+      "label": "Your height",
+      "intro": "Fire that wants to be seen. Wood that waits to strike.",
+      "rows": [
+        {"k": "Your temperament", "text": "Leo is fixed Fire, read as warm, proud and generous, with a real need to be recognised [s6] [s7]. The Tiger is brave, confident and a natural leader, and its shadow is the sudden, impetuous move [s4] [s5]. In you they meet as a great presence held in reserve, carried at full weight and spent rarely, so that when you finally move, everything below the canopy feels it."},
+        {"k": "The harpy does it too", "text": "A harpy eagle can reportedly hold one perch for up to 23 hours while it scans the trees for sloths and monkeys [s2]. Its talons are the largest of any living eagle, the longest close to 12.5 centimetres [s1] [s2]. All of that strength sits still for most of the day. Yours does too, and the stillness is where you keep it."}
+      ]
+    },
+    {
+      "id": "throne",
+      "label": "Your throne tree",
+      "intro": "One tree, held for years.",
+      "rows": [
+        {"k": "Home", "text": "A harpy pair builds a nest about a metre and a half across and may use it over several years [s1] [s2]. They lay up to two eggs, raise one chick, and breed only every two or three years [s2]. In many South American cultures it is bad luck to cut down the kapok, a tree harpies favour for nesting [s1]. You build the same way, choosing one house or one venture and adding to it season after season, and you take any threat to it personally."},
+        {"k": "At work", "text": "Lead something small and own it outright. Surgery and flying both reward the long watch and the single exact move."}
+      ]
+    },
+    {
+      "id": "court",
+      "label": "Who rules beside you",
+      "intro": "Three who can share the canopy, and one who will contest it.",
+      "love_lead": "In love you protect and provide long before you talk. Harpy pairs hold a range of some 30 square kilometres and are believed to stay together for life [s2] [s1]. The old Chinese pairings name three who could rule beside you.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "albatross", "chips": ["Same trine", "Fire like you"], "why": "The <b>Albatross</b> (Sagittarius, Horse year) shares your trine of Tiger, Horse and Dog, and Sagittarius burns with Fire like yours [s4]."},
+      {"slug": "giant-otter", "chips": ["Same trine", "Aries Fire"], "why": "The <b>Giant Otter</b> (Aries, Dog year) closes the trine, and its Aries Fire is loud enough to call you down from the branch [s4]."},
+      {"slug": "roseate-spoonbill", "chips": ["Secret friend", "Air for your Fire"], "why": "The <b>Roseate Spoonbill</b> (Libra, Pig year) is your secret friend, since the Pig is the Tiger's hidden ally [s4]."}
+    ],
+    "hard": [
+      {"slug": "raven", "chips": ["Year clash", "Opposite sign"], "why": "The hard one is the <b>Raven</b>: the Monkey clashes with the Tiger, and Aquarius sits opposite Leo [s4] [s6]."}
+    ]
+  },
+  "story": {"k": "The picture pun", "text": "Chinese painters set the eagle, 鹰 (yīng), beside the bear, 熊 (xióng), so the pair would read as 英雄 (yīngxióng), hero [s8] [s9]. Painted alone in a pine, the eagle meant strength carried into old age [s8]."},
+  "closing": "Choose your tree. Then hold it, and let them see you hold it."
+}

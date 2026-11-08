@@ -1,0 +1,106 @@
+{
+  "title": "What the Slow Loris guards",
+  "is_this_you": {
+    "pressure": "Trouble comes and you go still. Watchers think you froze. You are choosing your words, and your moment.",
+    "love": "You let a person in one branch at a time. By the time they see the gate, they are behind it.",
+    "cost": "You test people in silence instead of asking. Most never learn they sat an exam, or that they failed it."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In Borneo, people told researchers that slow lorises kept the gate of heaven [S7]. Each person had a loris of their own, waiting there after death [S7]. Picture it. A small animal with enormous eyes. A threshold in the dark. No hurry at all. The rest of this reading is about what you guard."
+  },
+  "howto": "Four parts. Take them slowly.",
+  "tabs": [
+    {
+      "id": "still",
+      "label": "The quiet one",
+      "intro": "Deep water, low fire.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Scorpio is fixed Water, ruled by Mars in the old books and Pluto in the new [S1]. The Snake is yin Fire, calm and observant, a deep thinker [S3]. Both halves are yin. So your heat stays under the surface, and few people ever see it rise."
+        },
+        {
+          "k": "The loris does it too",
+          "text": "The slow loris moves slowly along the vines and does not leap [S11]. Researchers think it may mimic the spectacled cobra, its hunched arms working like a hood [S6]. A Snake-year animal in a snake's shape. You also carry more warning than your size suggests."
+        }
+      ]
+    },
+    {
+      "id": "reserve",
+      "label": "What you keep in reserve",
+      "intro": "What you hold back is the point.",
+      "rows": [
+        {
+          "k": "Your mending",
+          "text": "Hunters in Mondulkiri, Cambodia, said a loris that fell could heal its own broken bones at once [S7]. You keep that kind of reserve. You fall, you set the bone yourself, and others hear about it later, if at all."
+        },
+        {
+          "k": "Your shadow",
+          "text": "The Snake's old weaknesses are suspicion and possessiveness [S3]. Left alone, the guard stays on duty long after the danger has gone home."
+        }
+      ]
+    },
+    {
+      "id": "gate",
+      "label": "Who gets past the gate",
+      "intro": "Three may come in. One waits outside.",
+      "love_lead": "You watch a person for a long time from the far branch. You need someone who will not rush you or laugh at the shyness.",
+      "matches": true
+    },
+    {
+      "id": "craft",
+      "label": "Your craft",
+      "intro": "Work where patience is the skill.",
+      "rows": [
+        {
+          "k": "At work",
+          "text": "Choose work where depth beats speed. Fraud review and archive work both pay for the long, still look you were born with."
+        }
+      ]
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "asian-elephant",
+        "chips": [
+          "Same trine",
+          "Water like you"
+        ],
+        "why": "The <b>Asian Elephant</b> (Cancer, Ox year) shares your trine of Ox, Snake and Rooster, and Cancer is Water like you [S3] [S1]."
+      },
+      {
+        "slug": "mandarin-dragonet",
+        "chips": [
+          "Rooster in your trine",
+          "Third Water sign"
+        ],
+        "why": "The <b>Mandarin Dragonet</b> (Pisces, Rooster year) closes that trine, and Pisces is the third Water sign [S3] [S1]."
+      },
+      {
+        "slug": "snowy-owl",
+        "chips": [
+          "Secret friend",
+          "Monkey ally"
+        ],
+        "why": "The <b>Snowy Owl</b> (Capricorn, Monkey year) is your secret friend, since the Monkey is the Snake's hidden ally [S3]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "golden-snub-nosed-monkey",
+        "chips": [
+          "Year clash",
+          "Pride meets privacy"
+        ],
+        "why": "The hard one is the <b>Golden Snub-nosed Monkey</b> (Leo, Pig year), because the Pig clashes with the Snake [S3]."
+      }
+    ]
+  },
+  "story": {
+    "k": "Malu malu",
+    "text": "In Indonesia the slow loris is called malu malu, the shy one [S7]. All slow lorises are protected under CITES Appendix I, and the Javan slow loris is Critically Endangered [S11]."
+  },
+  "closing": "The ones you guard sleep through nights they never knew were dangerous."
+}

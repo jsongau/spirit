@@ -1,0 +1,51 @@
+{
+  "title": "What the Koala means",
+  "is_this_you": {
+    "pressure": "You go still and let the storm spend itself somewhere else. Pushed past that, the soft one bites, and nobody forgets it.",
+    "love": "You choose by taste, then stay in that one tree long after others would have wandered.",
+    "cost": "Some years you wait by the stump for the good thing to come back the way it came before."
+  },
+  "opener": {
+    "moon": true,
+    "text": "You were born under two signs that both look toward the Moon. Taurus is ruled by Venus, and the Moon is exalted there [s1]. The Rabbit of the Chinese zodiac lives on the Moon as the Jade Rabbit, keeping Chang'e company and pounding the elixir of long life [s6]. So you came in by soft light, and you have always done your best living slowly."
+  },
+  "howto": "Three short parts. Tap one, or read them in order.",
+  "tabs": [
+    {
+      "id": "nature",
+      "label": "How you're built",
+      "intro": "Earth that settles, Wood that keeps watch.",
+      "rows": [
+        {"k": "Your temperament", "text": "Taurus is fixed Earth, the sign that settles on the one good thing and stays [s1]. The Rabbit is yin Wood, gentle and alert, the animal that keeps watching while it rests [s3] [s4]. In you the two become a settled watcher. You can sit in one place all afternoon and still know which way you would leave."},
+        {"k": "The koala does it too", "text": "The koala lives the same way. Even among trees of one species, it feeds less on leaves heavy with a toxic compound called sideroxylonal, and it passes over the poorest trees [s14] [s15]. It chooses by taste. So do you, and once a tree has fed you, a whole forest of better offers has trouble moving you."}
+      ]
+    },
+    {
+      "id": "love",
+      "label": "Who you choose",
+      "intro": "Three trees that will feed you, and one that won't.",
+      "love_lead": "In love you open late and close slowly. You need someone who reads your stillness as care. The old Chinese pairings give you three easy matches.",
+      "matches": true
+    },
+    {
+      "id": "work",
+      "label": "Where you work",
+      "intro": "Your taste is the skill. Find work that pays for it.",
+      "rows": [
+        {"k": "At work", "text": "At work, give yourself one deep thing and no hurry. Tasting, curating and editing all reward a difference only you can taste."}
+      ]
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "clarks-nutcracker", "chips": ["Same trine", "Earth like you"], "why": "The <b>Clark's Nutcracker</b> (Virgo, Goat year) shares your trine of Rabbit, Goat and Pig, and Virgo is Earth like you [s3]."},
+      {"slug": "tibetan-blue-bear", "chips": ["Secret friend", "Earth like you"], "why": "The <b>Tibetan Blue Bear</b> (Capricorn, Dog year) is your secret friend, since the Dog is the Rabbit's hidden ally, and Capricorn is the third Earth sign [s3]."},
+      {"slug": "capybara", "chips": ["Same trine", "Water for your Earth"], "why": "The <b>Capybara</b> (Cancer, Pig year) is trine kin, with Cancer's Water to soften your Earth [s3] [s1]."}
+    ],
+    "hard": [
+      {"slug": "devils-flower-mantis", "chips": ["Year clash", "Opposite sign"], "why": "The hard one is the <b>Devil's Flower Mantis</b>: the Rooster clashes with the Rabbit, and Scorpio sits opposite Taurus [s3] [s1]."}
+    ]
+  },
+  "story": {"k": "An old story", "text": "The Gumbaynggirr tell of the Koala Brothers, who made a bridge home out of their own long insides [s8]."},
+  "closing": "You have always carried the way back inside you."
+}

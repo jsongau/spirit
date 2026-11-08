@@ -1,0 +1,95 @@
+{
+  "title": "What the Luna Moth means",
+  "is_this_you": {
+    "pressure": "You weigh both pans until the candle burns low. Then the dark gets lonely, and you fly at the nearest light.",
+    "love": "You catch one person's scent across a sleeping city, then ask a friend whether you imagined it.",
+    "cost": "You give the whole of yourself in one short season. Coarse hands bruise you for longer than the season lasted."
+  },
+  "opener": {
+    "moon": true,
+    "text": "In the Book of Songs, a poet praising a great beauty gave her a cicada's forehead and a moth's eyebrows, 螓首蛾眉 (qín shǒu é méi) [S11]. The moth's feathered antennae were the loveliest brow the poet knew [S11]. In Chinese, the moth begins as beauty. You were born under that brow, a Libra ruled by Venus [S5] in the gentle Goat year [S7]."
+  },
+  "howto": "Three parts, best read after dark.",
+  "tabs": [
+    {
+      "id": "shine",
+      "label": "How you shine",
+      "intro": "Venus Air above, soft Earth below.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Libra is cardinal Air, the sign of the scales [S5]. The Goat is yin Earth, gentle and artistic, and slow to change [S7] [S8]. In you the scales hang over a soft heart. Once the weighing is done, you settle and give."
+        },
+        {
+          "k": "The luna moth does it too",
+          "text": "A male luna moth can follow a female's scent from several miles away [S1]. As an adult it cannot feed, and it lives about a week [S1]. It has nothing to waste on the wrong signal. Neither does your taste, the brightest thing about you."
+        }
+      ]
+    },
+    {
+      "id": "flame",
+      "label": "The flame",
+      "intro": "The old warning, and the luck inside it.",
+      "rows": [
+        {
+          "k": "Your shadow",
+          "text": "Libra's old weakness is indecision [S5]. The Goat clings once it lands [S7]. So you hover at the edge of a choice for weeks. Then the waiting gets lonely and you dive at whatever glows closest."
+        },
+        {
+          "k": "When you quarrel",
+          "text": "Your fights happen at night. By day you smooth things over, and the argument grows in the dark. The scales still want a fair hearing [S5]. One calm talk, both sides weighed, puts the flame back in its lamp."
+        }
+      ]
+    },
+    {
+      "id": "moonlight",
+      "label": "Who you choose by moonlight",
+      "intro": "Three lamps worth flying to, one to pass by.",
+      "love_lead": "In love you fall through atmosphere: a voice, a scent, a table set with care. The nearest light is always there, and it is rarely the one. Three old pairings favor you.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "swift",
+        "chips": [
+          "Secret friend",
+          "Air like you"
+        ],
+        "why": "The <b>Swift</b> (Gemini, Horse year) is your secret friend, since the Horse and the Goat combine, and Gemini shares your Air [S8] [S5]."
+      },
+      {
+        "slug": "axolotl",
+        "chips": [
+          "Rabbit in your trine",
+          "Air to Air"
+        ],
+        "why": "The <b>Axolotl</b> (Aquarius, Rabbit year) sits in your trine of Rabbit, Goat and Pig, with Aquarius as the third Air sign [S8] [S5]."
+      },
+      {
+        "slug": "platypus",
+        "chips": [
+          "Closes the trine",
+          "Shared sky"
+        ],
+        "why": "The <b>Platypus</b> (Aquarius, Pig year) brings the Pig that closes your trine, and more Air for yours [S8] [S5]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "shoebill",
+        "chips": [
+          "Year clash",
+          "Closed doors"
+        ],
+        "why": "The hard one is the <b>Shoebill</b> (Capricorn, Ox year): the Ox clashes with the Goat, and the Goat's closed private life is said to frustrate the Ox [S8] [S9]."
+      }
+    ]
+  },
+  "story": {
+    "k": "The old warning",
+    "text": "Chinese keeps a four-character warning for the moth that throws itself into the fire, 飞蛾扑火 (fēi é pū huǒ). It means rushing toward your own ruin, and the novel Water Margin uses it [S12]."
+  },
+  "closing": "The pull that could take you into the flame is the same one that finds the right lamp across miles of dark."
+}

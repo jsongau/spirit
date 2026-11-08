@@ -1,0 +1,95 @@
+{
+  "title": "What the Pronghorn runs on",
+  "is_this_you": {
+    "pressure": "You say the true thing too early and too loud. By evening you forget it. They keep it for a week.",
+    "love": "You fall at full speed. The one who keeps you can run beside you and still get you to stop.",
+    "cost": "You start five fires and tend two. The other three burn on, and you hear about them later."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Mars rules Aries [wiki-aries]. In Chinese, Mars is 火星 (huǒxīng), the Fire Star [wochinese]. Its old name, 荧惑 (yínghuò), was read as an omen of disorder [wochinese]. Your year animal burns too. The Horse is yang Fire, the branch of noon [wiki-horse] [wiki-branches]. Fire on fire. No water between. You came in at a run."
+  },
+  "howto": "Three parts. Go fast.",
+  "tabs": [
+    {
+      "id": "speed",
+      "label": "Speed",
+      "intro": "First to move, last to tire.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Aries is cardinal Fire, the first sign, the pioneer [wiki-aries] [almanac-aries]. The Horse is lively and perceptive, and bad at hiding what it feels [tcg-horse]. One starts. The other keeps going. In you that makes a fast start and a long engine. Your face breaks the news first."
+        },
+        {
+          "k": "The rush",
+          "text": "The old books call Aries brave and forthright, and also rash and impatient [wiki-aries]. The Horse's listed flaw is impulse [tcg-horse]. So you leap first. Mostly you land well. When you don't, you left before the ground was clear."
+        }
+      ]
+    },
+    {
+      "id": "pace",
+      "label": "Who can keep pace",
+      "intro": "Three who run with you. One who trips you.",
+      "love_lead": "In love you fall fast and need space. You show care by doing things side by side at speed, and a road trip says it better than a card. Three old pairings run your way.",
+      "matches": true
+    },
+    {
+      "id": "run",
+      "label": "Where to run",
+      "intro": "Pick a long road. Then take it.",
+      "rows": [
+        {
+          "k": "At work",
+          "text": "Emergency calls and breaking news both pay for the first move. Travel China Guide lists adventure and tour work among the Horse's trades [tcg-horse]."
+        },
+        {
+          "k": "An old road",
+          "text": "Pronghorn have used one route between Grand Teton and the Upper Green River for at least 6,000 years [wcs-path]. In 2008 it became the first federally designated wildlife migration corridor in the US [wcs-path]. Speed is half your story. The other half is a road you keep coming back to."
+        }
+      ]
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "lanner-falcon",
+        "chips": [
+          "Same trine",
+          "Fire on fire"
+        ],
+        "why": "The <b>Lanner Falcon</b> (Sagittarius, Tiger year) runs on double harmony: Tiger and Horse share a trine, and Sagittarius trines Aries among the fire signs [wiki-zodiac] [wiki-aspect]."
+      },
+      {
+        "slug": "harpy-eagle",
+        "chips": [
+          "Tiger in your trine",
+          "Steady flame"
+        ],
+        "why": "The <b>Harpy Eagle</b> (Leo, Tiger year) shares the Tiger and Horse trine, and Leo trines Aries as a fellow fire sign [wiki-zodiac] [wiki-aspect]."
+      },
+      {
+        "slug": "bar-headed-goose",
+        "chips": [
+          "Secret friend",
+          "Long-haul flyer"
+        ],
+        "why": "The <b>Bar-headed Goose</b> (Sagittarius, Goat year) is your secret friend, since Horse and Goat form a Six Harmonies pair [wiki-zodiac]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "coconut-crab",
+        "chips": [
+          "Year clash",
+          "Water on fire"
+        ],
+        "why": "The hard one is the <b>Coconut Crab</b> (Cancer, Rat year): the Rat clashes with the Horse, and Cancer squares Aries [wiki-zodiac] [wiki-aspect]."
+      }
+    ]
+  },
+  "story": {
+    "k": "An Arapaho charm",
+    "text": "The Arapaho word for the pronghorn is nisíce [arapaho]. Children wore amulets of antelope horn so they would grow and walk quickly, and the same kind of charm was used to make horses run faster [arapaho]."
+  },
+  "closing": "Fire Star above, open ground ahead. Go."
+}
