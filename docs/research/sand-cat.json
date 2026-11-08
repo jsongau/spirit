@@ -1,0 +1,405 @@
+{
+  "slug": "sand-cat",
+  "name": "Sand Cat",
+  "sign": "Sagittarius",
+  "year": "Snake",
+  "element": "Fire (Snake fixed element Fire; Sagittarius also a Fire sign, so Fire is doubled)",
+  "sources": [
+    {
+      "id": "adw",
+      "title": "Animal Diversity Web: Felis margarita (cited on live page)",
+      "url": "https://animaldiversity.org/accounts/Felis_margarita/"
+    },
+    {
+      "id": "iucn",
+      "title": "IUCN Red List: Felis margarita (cited on live page)",
+      "url": "https://www.iucnredlist.org/species/8541/50651884"
+    },
+    {
+      "id": "wiki-sandcat",
+      "title": "Sand cat, Wikipedia (cites Huang et al. 2002; Sunquist & Sunquist 2002; Abbadi 1991; Loche 1858; Cole & Wilson 2015)",
+      "url": "https://en.wikipedia.org/wiki/Sand_cat"
+    },
+    {
+      "id": "nzoo",
+      "title": "Smithsonian's National Zoo: Can Sand Cats Survive Without Water? And Other Questions, Answered",
+      "url": "https://nationalzoo.si.edu/animals/news/can-sand-cats-survive-without-water-and-other-questions-answered"
+    },
+    {
+      "id": "wiki-bfcat",
+      "title": "Black-footed cat, Wikipedia (smaller wild cat of arid southern Africa)",
+      "url": "https://en.wikipedia.org/wiki/Black-footed_cat"
+    },
+    {
+      "id": "wiki-sag",
+      "title": "Sagittarius (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sagittarius_(astrology)"
+    },
+    {
+      "id": "cafe-sag",
+      "title": "Cafe Astrology: Sagittarius traits",
+      "url": "https://cafeastrology.com/zodiacsagittarius.html"
+    },
+    {
+      "id": "wiki-trip",
+      "title": "Triplicity (element groups of the signs), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Triplicity"
+    },
+    {
+      "id": "wiki-aspect",
+      "title": "Astrological aspect (opposition), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Astrological_aspect"
+    },
+    {
+      "id": "wiki-snake",
+      "title": "Snake (zodiac), Wikipedia (branch 巳 sì, Yin, Fire, trine, compatibility)",
+      "url": "https://en.wikipedia.org/wiki/Snake_(zodiac)"
+    },
+    {
+      "id": "tcg-snake",
+      "title": "Travel China Guide: Year of the Snake personality, love, career",
+      "url": "https://www.travelchinaguide.com/intro/social_customs/zodiac/snake.htm"
+    },
+    {
+      "id": "wiki-cz",
+      "title": "Chinese zodiac, Wikipedia (trines, six harmonies, clashes, harms; Great Race; Vietnamese Cat)",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "msc-penalty",
+      "title": "Master Sean Chan: BaZi 寅巳申 (Tiger, Snake, Monkey) penalty",
+      "url": "https://www.masterseanchan.com/bazi-yin-si-shen-penalty/"
+    },
+    {
+      "id": "ucl-cat",
+      "title": "UCL Digital Egypt: Cat in religion (Re as the great tom cat who kills the snake of evil by the persea tree in Heliopolis)",
+      "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/foodproduction/catre.html"
+    },
+    {
+      "id": "wiki-apep",
+      "title": "Apep, Wikipedia (Ra defeats Apophis in the form of a cat; cites Pinch 2004, pp. 107 to 108)",
+      "url": "https://en.wikipedia.org/wiki/Apep"
+    },
+    {
+      "id": "cma-maodie",
+      "title": "Cleveland Museum of Art: Min Zhen, Cat and Butterfly, 1788 (mao die 耄耋 pun, wish for long life)",
+      "url": "https://www.clevelandart.org/art/1985.71.5"
+    },
+    {
+      "id": "wiki-islam",
+      "title": "Cats in Islam, Wikipedia (cat ritually clean; Muezza sleeve story not in verified hadith)",
+      "url": "https://en.wikipedia.org/wiki/Cats_in_Islam"
+    },
+    {
+      "id": "wiki-bazi",
+      "title": "Four Pillars of Destiny, Wikipedia (Li Xuzhong, Tang; Xu Ziping, Song)",
+      "url": "https://en.wikipedia.org/wiki/Four_Pillars_of_Destiny"
+    },
+    {
+      "id": "wiki-zwds",
+      "title": "Zi wei dou shu, Wikipedia (attributed to Chen Tuan, unverifiable; codified Ming and Qing; cast from lunar date and hour)",
+      "url": "https://en.wikipedia.org/wiki/Zi_wei_dou_shu"
+    },
+    {
+      "id": "wiki-wuxing",
+      "title": "Wuxing (Chinese philosophy), Wikipedia (Fire: south, summer, red, propriety)",
+      "url": "https://en.wikipedia.org/wiki/Wuxing_(Chinese_philosophy)"
+    },
+    {
+      "id": "wiki-manipura",
+      "title": "Manipura, Wikipedia (bija RAM, fire, ram)",
+      "url": "https://en.wikipedia.org/wiki/Manipura"
+    },
+    {
+      "id": "cpod-xushi",
+      "title": "ChinesePod dictionary: 蓄势待发 xù shì dài fā",
+      "url": "https://www.chinesepod.com/dictionary/%E8%93%84%E5%8A%BF%E5%BE%85%E5%8F%91"
+    },
+    {
+      "id": "diqt-shamao",
+      "title": "Diqt dictionary entry: 沙猫 shā māo, sand cat (weak source; confirm with a printed zoological name list)",
+      "url": "https://www.diqt.net/en/words/2018696"
+    }
+  ],
+  "western": {
+    "temperament": "Upbeat, sociable, restless and frank to the point of bluntness. Needs space and dislikes routine or confinement; tends to withdraw or leave when things get heavy. Hot temper, short grudges. Shadow: blind optimism, weak follow-through, preachiness, excess. The archer is said never to miss its mark, an image tradition ties to prophecy and seers.",
+    "planet": "Jupiter (growth, expansion, optimism; downside overindulgence and overconfidence)",
+    "element": "Fire (with Aries and Leo)",
+    "modality": "Mutable (with Gemini, Virgo, Pisces)",
+    "source_ids": [
+      "wiki-sag",
+      "cafe-sag",
+      "wiki-trip"
+    ]
+  },
+  "chinese": {
+    "temperament": "Wise, intuitive, strategic, composed under pressure, quietly charming. Shadow: secretive, suspicious, slow to trust, can be jealous or possessive, overthinks until the moment passes. In love passionate but cautious, slow to fall and loyal once committed. Wikipedia's summary: intelligent, with a tendency to lack scruples.",
+    "yinyang": "Yin",
+    "element": "Fire (fixed element). Earthly branch 巳 sì.",
+    "trine": "Ox, Snake, Rooster",
+    "secret_friend": "Monkey (six harmonies). Note: Tiger, Snake and Monkey also form the classical 寅巳申 (yín sì shēn) penalty in BaZi, so the Snake and Monkey bond carries a known catch.",
+    "clash": "Pig. Harm relation: Tiger.",
+    "lucky": null,
+    "source_ids": [
+      "wiki-snake",
+      "tcg-snake",
+      "wiki-cz",
+      "msc-penalty"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Ancient Egypt",
+      "meaning": "The sun god Re takes the form of a great tom cat and kills the snake of evil beside the persea tree in Heliopolis, a scene painted in Book of the Dead vignettes. In one account Ra defeats Apophis, the chaos serpent, as a cat. For a desert cat that hunts vipers, born in a Snake year, this is the single strongest symbolic anchor: the cat that faces the serpent at night so the sun can rise.",
+      "source_ids": [
+        "ucl-cat",
+        "wiki-apep"
+      ]
+    },
+    {
+      "culture": "Chinese",
+      "meaning": "猫 māo (cat) sounds like 耄 mào, a word for old age. Paired with a butterfly (蝶 dié, like 耋 dié) it spells 耄耋 màodié, a wish to live into your eighties. Min Zhen painted a cat and butterfly in 1788 as a long-life wish for a friend. The cat stands for endurance and a long life.",
+      "source_ids": [
+        "cma-maodie"
+      ]
+    },
+    {
+      "culture": "Chinese and Vietnamese zodiac folk tale",
+      "meaning": "In the Great Race tale the Rat pushes the Cat into the river and the Cat misses its place on the wheel, which folk tellings use to explain why cats chase rats. Vietnam's zodiac puts the Cat where China has the Rabbit. The cat is the animal that stands just outside the circle, a fit for a solitary sign.",
+      "source_ids": [
+        "wiki-cz"
+      ]
+    },
+    {
+      "culture": "Islamic world (the sand cat's range: Sahara, Arabia, Central Asia)",
+      "meaning": "The cat is regarded as ritually clean and holds a special place among animals. The popular Muezza sleeve story is not in any verified hadith, so do not present it as scripture.",
+      "source_ids": [
+        "wiki-islam"
+      ]
+    },
+    {
+      "culture": "Sahara (Toubou herders)",
+      "meaning": "Toubou people have reported sand cats slipping into their camps at night to drink fresh camel milk. A small, true image of the wild one who visits the fire and leaves before morning. Anecdotal report, not a belief system.",
+      "source_ids": [
+        "wiki-sandcat"
+      ]
+    },
+    {
+      "culture": "Naming",
+      "meaning": "Felis margarita was described by Victor Loche in 1858 from the Algerian Sahara and named for General Jean Auguste Margueritte. Fact, usable as color, not as myth.",
+      "source_ids": [
+        "wiki-sandcat"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Claims that a cat saved the Prophet from a snake (or gave tabbies the M mark); any Bedouin or Tuareg spirit beliefs about the sand cat; spirit-animal website meanings for the sand cat. None found in a reliable source.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: Sagittarius brings range, candor and the need for open ground; the Snake brings patience, secrecy and a read on what is under the surface. Two Fires, one mutable and outward, one yin and banked. The result is a wanderer who says little about where it is going, travels light, and moves at night. Frank when it speaks, private about everything else.",
+    "gifts": "Our reading: hears the problem before it surfaces (Snake intuition plus the cat's underground hearing). Survives on thin resources for a long time. Calm around danger; takes the risky thing cleanly instead of avoiding it. The archer's aim joined to the Snake's timing: you tend to wait, then hit.",
+    "shadow": "Our reading: self-sufficiency that becomes unreachability. Sagittarius leaves when it gets heavy; the Snake hides what it needs. Together you can vanish before anyone knows you were struggling, then feel unseen. Snake suspicion can make offered help look like a trap. Doubled Fire runs hot under the quiet.",
+    "love": "Our reading: slow to commit (both traditions agree on this), loyal once in. Needs a partner who gives room and does not rearrange the den. Shows love by noticing and fixing things early, rarely by asking. Snake possessiveness can sit oddly beside Sagittarian freedom: you may want room for yourself and certainty about them.",
+    "money": "Our reading: the cat that gets its water from prey. You tend to keep a quiet reserve and live on less than people guess (Snake strategy, sourced career fit for finance). Jupiter pulls the other way: long thrifty stretches, then one large spend on freedom, travel or a single bold bet. Rule of thumb for the page: guard the reserve, pick the bet with Snake timing.",
+    "conflict": "Our reading: you do not fight for territory; you relocate. Silence, distance, handling it alone. When cornered the Sagittarius bluntness comes out in one sharp line, and the Snake remembers. Growth edge: say the hard thing in the room before leaving to deal with it alone."
+  },
+  "careers": [
+    {
+      "path": "Field researcher, wildlife or desert ecologist, remote-site scientist",
+      "why": "Wide range, long solitary stretches, reading signs others miss (Sagittarius range plus Snake research fit per Travel China Guide)."
+    },
+    {
+      "path": "Investigative journalist, intelligence or risk analyst",
+      "why": "Hears what is under the surface; patient until the story or threat is clear, then one clean strike."
+    },
+    {
+      "path": "Security, crisis or emergency work",
+      "why": "The snake hunter: calm with danger, precise timing. Travel China Guide lists crisis management for the Snake."
+    },
+    {
+      "path": "Independent consultant or specialist freelancer",
+      "why": "Light supervision, own hours, judged on results delivered rather than presence."
+    },
+    {
+      "path": "Expedition leader, travel writer, long-haul guide",
+      "why": "Sagittarius travel and Jupiter's reach, with the self-supply to work far from support."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Sunset Moth",
+      "slug": "sunset-moth",
+      "reason": "Leo x Rooster. Rooster shares the Snake's trine (Ox, Snake, Rooster); Leo is a fellow Fire sign. Trine plus element harmony, the strongest pull on the wheel for this cat."
+    },
+    {
+      "name": "Sun Bear",
+      "slug": "sun-bear",
+      "reason": "Aries x Ox. Ox is in the Snake's trine; Aries is Fire with Sagittarius. Already featured on the live page."
+    },
+    {
+      "name": "Satin Bowerbird",
+      "slug": "satin-bowerbird",
+      "reason": "Libra x Rooster. Trine on the Chinese side; Libra is Air, which feeds Sagittarius's Fire."
+    },
+    {
+      "name": "Regal Jumping Spider",
+      "slug": "regal-jumping-spider",
+      "reason": "Leo x Monkey. Monkey is the Snake's secret friend; Leo is Fire. Caveat: Snake and Monkey also sit in the 寅巳申 penalty, so a close bond with friction under it."
+    },
+    {
+      "name": "Vulturine Guineafowl",
+      "slug": "vulturine-guineafowl",
+      "reason": "Aquarius x Ox. Trine on the Chinese side; Aquarius is Air feeding Fire, and a fellow loner by sign temperament."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Cacomistle",
+      "slug": "cacomistle",
+      "reason": "Gemini x Pig. Pig is the Snake's clash, and Gemini is Sagittarius's opposite sign. Double opposition, East and West."
+    },
+    {
+      "name": "Blue Glaucus",
+      "slug": "blue-glaucus",
+      "reason": "Pisces x Pig. Snake and Pig clash; Pisces is Water, which checks Fire, and squares Sagittarius."
+    }
+  ],
+  "candidate_lines": [
+    "People tend to learn you had a hard month after it is over, and usually from someone else.",
+    "You can sit through a long silence in a meeting because you already heard the thing nobody has said yet.",
+    "You keep a reserve: some money, some energy, one plan nobody knows about. Handing any of it over feels like sand giving way under your feet.",
+    "There are nights when you are the best company in the room, and gone before anyone thinks to ask how you got home.",
+    "When someone offers help, you often hear a question about whether you can cope. Most of the time they were only offering water.",
+    "Your patience looks like doing nothing, right up until one clean move makes everyone wonder how long you had been watching."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Hero / rail hanzi: hero shows 蛇 (Snake); rail and serial card show 猫",
+      "verdict": "OK",
+      "note": "蛇 shé is correct for the Snake. 猫 māo means cat in general, so it is accurate but not specific. The sand cat's Chinese name is 沙猫 shā māo (sand cat). Consider 沙猫 with pinyin on the card if space allows.",
+      "source_ids": [
+        "diqt-shamao"
+      ]
+    },
+    {
+      "fact": "Heading: 'The desert's smallest cat'",
+      "verdict": "UNVERIFIABLE",
+      "note": "ADW calls it the smallest wild cat, which is wrong as a global claim (rusty-spotted and black-footed cats are smaller). The black-footed cat lives in arid southern Africa and is smaller, so 'desert's smallest' depends on how desert is defined. Safer and sourced: 'the only cat that lives only in deserts' (National Zoo).",
+      "source_ids": [
+        "adw",
+        "nzoo",
+        "wiki-bfcat"
+      ]
+    },
+    {
+      "fact": "Large ears sit low on the head and catch prey moving below the sand; hearing and smell are its sharpest senses, not sight",
+      "verdict": "OK",
+      "note": "Low-set 5 to 7 cm ears aid detection of prey moving underground; ear canal about twice a house cat's, about 8 dB more sensitive (Huang et al. 2002). ADW: hearing and smell most developed. 'Not sight' is a slight overreach; better 'hearing and smell lead'.",
+      "source_ids": [
+        "wiki-sandcat",
+        "adw"
+      ]
+    },
+    {
+      "fact": "Long, stiff black hairs cover the soles; run over loose sand without sinking; insulate pads from heat and cold",
+      "verdict": "OK",
+      "note": "ADW: pads covered in wiry black fur, helps traction. Wikipedia: long hair insulates pads. National Zoo: broad paws spread weight and footpad fur lets them walk on hot sand. 'Without sinking' is a fair paraphrase of weight-spreading.",
+      "source_ids": [
+        "adw",
+        "wiki-sandcat",
+        "nzoo"
+      ]
+    },
+    {
+      "fact": "Sandy to pale-grey fur hides it; soft woolly coat buffers heat and night cold",
+      "verdict": "OK",
+      "note": "Pale yellow to grey, thick medium-length fur (ADW); Central Asian winter coats very long, hairs up to 51 mm (Wikipedia).",
+      "source_ids": [
+        "adw",
+        "wiki-sandcat"
+      ]
+    },
+    {
+      "fact": "Can go weeks without drinking, getting nearly all moisture from prey",
+      "verdict": "OK",
+      "note": "National Zoo says months at a time; nearly all hydration from prey; drinks when water is available. 'Weeks' is conservative and safe.",
+      "source_ids": [
+        "nzoo",
+        "wiki-sandcat"
+      ]
+    },
+    {
+      "fact": "Takes snakes, including venomous vipers, 'timing the strike so the danger never lands'",
+      "verdict": "OK",
+      "note": "Venomous snakes and Cerastes vipers recorded as prey (Wikipedia, ADW 'fearless snake hunters'). The 'timing the strike' clause is our embellishment, no source; keep it in the reading, not in the Animal fact.",
+      "source_ids": [
+        "adw",
+        "wiki-sandcat"
+      ]
+    },
+    {
+      "fact": "Adults live alone across large home ranges, resting in underground dens by day and hunting at night",
+      "verdict": "OK",
+      "note": "Solitary except mating and kittens; ranges 13 to 35 km2 recorded; Israel cats averaged 5.4 km a night; burrows about 1.5 m deep; crepuscular in hot season and may sun in winter.",
+      "source_ids": [
+        "wiki-sandcat",
+        "adw"
+      ]
+    },
+    {
+      "fact": "Purple Star block: Zi Wei Dou Shu is 'the oldest and most detailed of the Chinese chart systems'",
+      "verdict": "WRONG",
+      "note": "'Oldest' is not supported. BaZi is traced to Li Xuzhong in the Tang (c. 761 to 813) and Xu Ziping in the Song; ZWDS is attributed to Chen Tuan (unverifiable) and was codified in the Ming and Qing. Suggest 'one of the most detailed'. No star is assigned to the Sand Cat on this page, so no sign-based star claim to flag; the page correctly says charts come from birth hour.",
+      "source_ids": [
+        "wiki-bazi",
+        "wiki-zwds"
+      ]
+    },
+    {
+      "fact": "Element: Fire from the Snake, doubled by Sagittarius; Fire = South, Summer, Red, Propriety",
+      "verdict": "OK",
+      "note": "Snake fixed element Fire; Sagittarius a Fire sign. Wu Xing correspondences match the standard table. 'Doubled Fire' is our interpretation.",
+      "source_ids": [
+        "wiki-snake",
+        "wiki-sag",
+        "wiki-wuxing"
+      ]
+    },
+    {
+      "fact": "Chakra bridge: Fire matches Manipura, bija RAM, guardian ram",
+      "verdict": "OK",
+      "note": "Manipura's element is fire, bija RAM, animal ram. Page already labels it an interpretive bridge.",
+      "source_ids": [
+        "wiki-manipura"
+      ]
+    },
+    {
+      "fact": "Proverb 蓄勢待發 xù shì dài fā, 'store force, wait to launch'",
+      "verdict": "OK",
+      "note": "Real four-character idiom (蓄势待发), meaning poised and ready to strike. Page correctly labels the Snake pairing as its own reading.",
+      "source_ids": [
+        "cpod-xushi"
+      ]
+    },
+    {
+      "fact": "Matches block: Sun Bear same trine; Cuttlefish same year; Regal Jumping Spider secret friend",
+      "verdict": "OK",
+      "note": "All three relations are correct. Not stated: Cuttlefish is Gemini, Sagittarius's opposite sign, and Snake and Monkey also share the 寅巳申 penalty. Consider adding one honest line each.",
+      "source_ids": [
+        "wiki-cz",
+        "wiki-aspect",
+        "msc-penalty"
+      ]
+    },
+    {
+      "fact": "'Recent Snake years: 2001, 2013, 2025'",
+      "verdict": "OK",
+      "note": "Correct Snake years. No lunar New Year caveat needed for Sagittarius (Nov 22 to Dec 21).",
+      "source_ids": [
+        "wiki-snake"
+      ]
+    }
+  ]
+}

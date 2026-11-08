@@ -1,0 +1,326 @@
+{
+  "slug": "star-nosed-mole",
+  "name": "Star-nosed Mole",
+  "sign": "Virgo",
+  "year": "Pig",
+  "element": "Water (Pig's fixed element); Virgo adds Earth, mutable",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Star-nosed mole (Wikipedia, cites Catania papers)",
+      "url": "https://en.wikipedia.org/wiki/Star-nosed_mole"
+    },
+    {
+      "id": "S2",
+      "title": "Catania, K. Evolution of brains and behavior for optimal foraging: a tale of two predators. In the Light of Evolution VI, National Academies Press, ch. 17",
+      "url": "https://www.nationalacademies.org/read/13462/chapter/17"
+    },
+    {
+      "id": "S3",
+      "title": "ScienceDaily (2005): Marsh-dwelling mole gives new meaning to 'fast food' (Vanderbilt release on Catania & Remple)",
+      "url": "https://www.sciencedaily.com/releases/2005/02/050205092829.htm"
+    },
+    {
+      "id": "S4",
+      "title": "Catania & Remple (2005) Asymptotic prey profitability drives star-nosed moles to the foraging speed limit. Nature 433:519-522 (PubMed 15690041)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15690041"
+    },
+    {
+      "id": "S5",
+      "title": "American Museum of Natural History: The star-nosed mole has the world's most sophisticated sniffer",
+      "url": "https://www.amnh.org/explore/news-blogs/news-posts/star-nosed-mole"
+    },
+    {
+      "id": "S6",
+      "title": "SUNY ESF Adirondack Ecological Center: Star-nosed Mole species account",
+      "url": "https://www.esf.edu/aec/adks/mammals/starnosed_mole.php"
+    },
+    {
+      "id": "S7",
+      "title": "Science Friday: The star-nosed mole takes adaptation to the extreme (Catania interview)",
+      "url": "https://www.sciencefriday.com/segments/the-star-nosed-mole-takes-adaptation-to-the-extreme/"
+    },
+    {
+      "id": "S8",
+      "title": "Virgo (astrology), Wikipedia via Wikiwand",
+      "url": "https://wikiwand.com/EN/Virgo_(astrology)"
+    },
+    {
+      "id": "S9",
+      "title": "Jessica Davidson: Traditional correspondences, Virgo",
+      "url": "https://jessicadavidson.co.uk/2014/11/24/traditional-correspondences-virgo/"
+    },
+    {
+      "id": "S10",
+      "title": "Centre of Excellence: Virgo zodiac sign",
+      "url": "https://www.centreofexcellence.com/Virgo-zodiac"
+    },
+    {
+      "id": "S11",
+      "title": "Pig (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pig_(zodiac)"
+    },
+    {
+      "id": "S12",
+      "title": "China Highlights: Year of the Pig",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/pig.htm"
+    },
+    {
+      "id": "S13",
+      "title": "Travel China Guide: Year of the Pig",
+      "url": "https://travelchinaguide.com/intro/social_customs/zodiac/pig.htm"
+    },
+    {
+      "id": "S14",
+      "title": "Chinese zodiac, Wikipedia (compatibility table: San He, Liu He, Liu Chong)",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "S15",
+      "title": "Tony Hillerman Portal, University of New Mexico: Mole (Pueblo and Zuni symbolism; cites Bennett 1993 and McManis 2004)",
+      "url": "https://ehillerman.unm.edu/node/1985"
+    },
+    {
+      "id": "S16",
+      "title": "The Medieval Bestiary: Mole (Talpa)",
+      "url": "https://bestiary.ca/beasts/beast216.htm"
+    },
+    {
+      "id": "S17",
+      "title": "Folklore Thursday: Animal Folklore, A Mole in the Hand",
+      "url": "https://folklorethursday.com/?p=3454"
+    },
+    {
+      "id": "S18",
+      "title": "Zhuangzi, chapter 1 'Enjoyment in Untroubled Ease' (Chinese Text Project). FETCH BLOCKED this session; passage quoted from the standard text, verify before publishing",
+      "url": "https://ctext.org/zhuangzi/enjoyment-in-untroubled-ease"
+    }
+  ],
+  "western": {
+    "temperament": "Practical, grounded, analytical, meticulous and loyal. Known shadow: over-critical (above all of the self), hard to switch off, overthinking and indecision. Traditional correspondences tie Virgo to the harvest season, grain, granaries, the 6th house and the nervous system and gut.",
+    "planet": "Mercury (domicile and exaltation)",
+    "element": "Earth",
+    "modality": "Mutable",
+    "extra": "Feminine/receptive polarity. Dates about Aug 23 to Sep 22 (150 to 180 degrees of the zodiac). Opposite sign Pisces (180 degrees away, by construction). Earth-sign rapport with Taurus and Capricorn; water signs Cancer and Scorpio complement.",
+    "source_ids": [
+      "S8",
+      "S9",
+      "S10"
+    ]
+  },
+  "chinese": {
+    "temperament": "Diligent, generous, kind, forgiving and calm under pressure; strong sense of responsibility; concentrates well; rarely asks for help. Shadow: too trusting and easy to fool, comfort-seeking, conflict-avoidant, can procrastinate. Associated with emotion and intuition, and with enjoying the good life.",
+    "yinyang": "Yin",
+    "element": "Water (fixed element); earthly branch 亥 (hài), 12th of 12, the hours 9 to 11 pm",
+    "trine": "Rabbit, Goat, Pig (San He)",
+    "secret_friend": "Tiger (Liu He)",
+    "clash": "Snake (Liu Chong)",
+    "lucky": "Sources disagree. China Highlights: colors yellow, gray, brown, gold; numbers 2, 5, 8; flowers hydrangea and daisy; avoid red, blue, green and 1, 7. Wikipedia: yellow, gray, brown; 2, 5, 6, 8. Travel China Guide: white, silver, blue; 1, 3, 4; avoids 2, 5, 7. Use only one set and name it, or skip lucky items.",
+    "source_ids": [
+      "S11",
+      "S12",
+      "S13",
+      "S14"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Chinese (Daoist): Zhuangzi ch. 1",
+      "meaning": "The hermit Xu You turns down the throne Yao offers him with the line 鷦鷯巢於深林，不過一枝；偃鼠飲河，不過滿腹 (jiāoliáo cháo yú shēn lín, bùguò yī zhī; yǎn shǔ yǐn hé, bùguò mǎn fù): the wren nests in a deep forest but uses one branch; the mole drinks from the river but takes only a bellyful. The idiom 偃鼠饮河 (yǎn shǔ yǐn hé) means knowing what is enough. Fits the Pig's contentment and the Mole's precise, small intake. Note: the character is often read as a burrowing rodent or mole; translators commonly give 'mole'.",
+      "source_ids": [
+        "S18"
+      ]
+    },
+    {
+      "culture": "Pueblo / Zuni (American Southwest)",
+      "meaning": "The mole is an important medicine animal. Zuni carve stone mole fetishes for protection, credited with healing and hunting power; the mole is linked to the downward direction, the color black, earth and agriculture, sickness and health.",
+      "source_ids": [
+        "S15"
+      ]
+    },
+    {
+      "culture": "Medieval European bestiary",
+      "meaning": "The mole (Talpa) lives in constant darkness and was held blind, digs and eats roots, and has hearing so acute it cannot be taken by surprise. It stands for the element Earth.",
+      "source_ids": [
+        "S16"
+      ]
+    },
+    {
+      "culture": "English and Italian folk magic",
+      "meaning": "Moles' feet and hands carried as charms against toothache, rheumatism and evil (still carried in the Fens in 1971); holding a mole until it died was said to give the hands healing power. A mole seen above ground by day was 'taking the air' or 'moonstruck'.",
+      "source_ids": [
+        "S17"
+      ]
+    },
+    {
+      "culture": "Modern science as folklore-in-the-making",
+      "meaning": "Catania: 'They use the star the way we use our eyes.' The star works like a retina made of touch. Usable as the page's central image: seeing without sight.",
+      "source_ids": [
+        "S7",
+        "S2"
+      ]
+    },
+    {
+      "culture": "Shakespeare, Hamlet 1.5 ('Well said, old mole!')",
+      "meaning": "Unsourced in this session (no URL fetched). The mole as the hidden worker underground. Do not use until a Folger or other text URL is added.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "(Our interpretation.) Mercury's sorting mind in an Earth sign meets the yin Water of the Pig, which feels before it thinks. The result reads people and places through small, close detail: tone, texture, what changed since last time. Quiet on the outside, very busy inside. The Pig gives warmth and appetite for life; Virgo gives the standard. This is someone who takes in a lot, says little, and then acts quickly once the picture holds.",
+    "gifts": "(Ours.) Noticing what others miss; fast, sure decisions once the facts are in; patience with messy, murky situations (mud, water, snow in the animal); a gift for care work that is practical rather than showy; knowing when enough is enough (Zhuangzi's bellyful).",
+    "shadow": "(Ours.) Sweeping again after the answer has arrived; Virgo self-criticism plus the Pig's habit of avoiding conflict can turn into silent resentment; trusting the wrong person because you were busy reading the details and missed the motive; withdrawing underground when overwhelmed.",
+    "love": "(Ours.) Loves through attention. Remembers the exact coffee order and the story told once two years ago. Needs a partner who does not mistake quiet for distance. Slow to commit, then loyal (Pig devotion, Virgo dependability). Wants a small, warm burrow more than a big public romance. Hurt shows as withdrawal rather than argument.",
+    "money": "(Ours.) Careful and sensible with a soft spot for comfort: good food, a good bed. Reads the fine print. Risk: generosity to friends and family (Pig) that Virgo later audits with regret. Does well with simple, automatic saving and one clear rule for lending.",
+    "conflict": "(Ours.) Avoids open fights (Pig) but keeps detailed notes (Virgo). Tends to go quiet, gather evidence, then say one precise, cutting sentence. Best practice: say the small thing early, before the file gets thick."
+  },
+  "careers": [
+    {
+      "path": "Diagnostic medicine, radiology, pathology, physical therapy",
+      "why": "(Ours.) Reading by close detail and touch; Virgo's traditional link to health and service; Pig's care for others."
+    },
+    {
+      "path": "Editing, fact-checking, translation, proofreading",
+      "why": "(Ours.) Mercury rules Virgo; finds the one wrong word fast."
+    },
+    {
+      "path": "Forensic accounting, audit, quality assurance",
+      "why": "(Ours.) Sweeps a whole surface for the anomaly; calm under pressure (Pig)."
+    },
+    {
+      "path": "Counseling, social work, hospice care",
+      "why": "Travel China Guide lists psychological counseling and charitable work for the Pig (S13); Virgo's service streak; reads what people do not say."
+    },
+    {
+      "path": "Field ecology, wetland or soil science, lab research",
+      "why": "(Ours.) Patience in murky conditions; comfort working alone and close to the ground."
+    },
+    {
+      "path": "Sound engineering, restoration, craft trades (luthier, conservator)",
+      "why": "(Ours.) High-resolution senses and pleasure in texture; quiet, dim, focused workspaces."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Koala",
+      "slug": "koala",
+      "reason": "Taurus x Rabbit. Rabbit is in the Pig's trine (San He); Taurus is a fellow Earth sign. Slow, comfort-loving, steady: the easiest burrow to share."
+    },
+    {
+      "name": "Hercules Beetle",
+      "slug": "hercules-beetle",
+      "reason": "Capricorn x Goat. Goat is in the Pig's trine; Capricorn is a fellow Earth sign. Shared work ethic and patience."
+    },
+    {
+      "name": "Moon Bear",
+      "slug": "moon-bear",
+      "reason": "Cancer x Tiger. Tiger is the Pig's secret friend (Liu He); Cancer's Water complements Virgo's Earth. Protective and tender."
+    },
+    {
+      "name": "Pallas's Cat",
+      "slug": "pallass-cat",
+      "reason": "Scorpio x Rabbit. Rabbit trine plus Scorpio Water feeding Virgo Earth. Two private people who read each other without talking."
+    },
+    {
+      "name": "Sable Antelope",
+      "slug": "sable-antelope",
+      "reason": "Taurus x Tiger. Secret friend (Tiger) plus Earth with Earth. The Tiger's courage pulls the Mole above ground."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Glass Frog",
+      "slug": "glass-frog",
+      "reason": "Pisces x Snake. Snake is the Pig's clash (Liu Chong) and Pisces is Virgo's opposite sign. Strong pull, constant misreading."
+    },
+    {
+      "name": "Sand Cat",
+      "slug": "sand-cat",
+      "reason": "Sagittarius x Snake. Snake clash, and Sagittarius (mutable Fire) is neither same element nor complementary to Virgo's Earth. Pace and privacy needs collide."
+    }
+  ],
+  "candidate_lines": [
+    "You tend to know a room by its small things: the cup nobody finished, the joke that landed half a beat late.",
+    "There are times when you have already decided, and the people around you think you are still thinking.",
+    "You often keep looking after you already know. The answer was there two sweeps ago.",
+    "You take a bellyful and leave the river. Enough is a real number to you, even when everyone else keeps reaching.",
+    "In love you tend to hear the change in someone's voice before they have noticed it themselves.",
+    "You often do your best work where it is quiet and a little dim, with one problem in front of you and no audience."
+  ],
+  "fact_audit": [
+    {
+      "fact": "22 pink fleshy appendages with about 25,000 Eimer's organs; the most sensitive touch organ of any known animal.",
+      "verdict": "OK",
+      "note": "22 rays and about 25,000 Eimer's organs confirmed, over 100,000 nerve fibers. 'Most sensitive of any known animal' is the usual popular claim; safer wording: 'thought to be the most sensitive touch organ of any mammal'.",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S5"
+      ]
+    },
+    {
+      "fact": "Identifies and swallows prey in about 25 milliseconds, the fastest eating in any mammal (Catania & Remple 2005, Nature).",
+      "verdict": "WRONG",
+      "note": "Catania & Remple 2005 report handling time as short as 120 ms, averaging about 227 to 230 ms. Guinness lists 120 ms as the fastest eating of any mammal. 25 ms appears only as an estimated neural decision threshold (Wikipedia, cortical 12 ms plus motor 5 ms); the Vanderbilt release puts the decision window near 8 ms. Fix: 'as fast as 120 milliseconds'. Also the page cites DOI 10.1038/nature03818; the paper is PubMed 15690041 and its Nature URL is articles/nature03250. Could not resolve what 03818 is (fetch blocked), but it does not match.",
+      "source_ids": [
+        "S1",
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "fact": "Severely reduced eyes, functionally near-blind; visual cortex largely repurposed for touch from the star.",
+      "verdict": "UNVERIFIABLE",
+      "note": "Small eyes and poor vision: OK (S6 says vision is poor; eyes larger than the hairy-tailed mole's). 'Visual cortex largely repurposed' is not supported by sources found. What is supported: about 52% of somatosensory cortex serves the nose, and the touch system is organized like a visual system (Catania). Rewrite that half.",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S6",
+        "S7"
+      ]
+    },
+    {
+      "fact": "Somatosensory cortex holds a topographic star map with outsized space for the central pair, the star fovea; mapped by Catania & Kaas (1995), J Comp Neurol.",
+      "verdict": "OK",
+      "note": "Star-shaped cortical map with an enlarged fovea representation confirmed. The fovea is the paired 11th rays, low center near the mouth. The 1995 citation and DOI 10.1002/cne.903510206 not resolved this session; Catania & Kaas 1997 J Comp Neurol 387 is also a valid citation.",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S7"
+      ]
+    },
+    {
+      "fact": "Hunts underwater and in wet soil, mud and snow; swims well; tail swells with fat in winter.",
+      "verdict": "OK",
+      "note": "Confirmed: swims (paddling dives of about 10 s), forages underwater, swims under ice, tunnels through snow, tail swells in winter as fat storage. 'Detects prey through snow' with the star is not sourced; say it tunnels through snow. Strong addition: it sniffs underwater by blowing and re-inhaling 8 to 12 bubbles a second, one of two mammals known to do this.",
+      "source_ids": [
+        "S1",
+        "S5",
+        "S6"
+      ]
+    },
+    {
+      "fact": "Touches potential prey with the central fovea before the swallow decision; this examination is where the 25 ms timing is measured.",
+      "verdict": "WRONG",
+      "note": "First half OK: the mole shifts the star so the 11th-ray fovea examines objects first. Second half wrong: no source ties a 25 ms measurement to the foveal check. Drop the timing clause. The dossier strap 'Decides in 25 milliseconds' needs the same fix.",
+      "source_ids": [
+        "S2",
+        "S1"
+      ]
+    }
+  ],
+  "unsourced_do_not_use": [
+    "Hamlet 'old mole' line (no URL fetched)",
+    "Any Native American story specific to the star-nosed mole (none found)",
+    "Lucky colors/numbers as a single set (sources conflict)"
+  ],
+  "blocked_urls": [
+    "https://www.nature.com/articles/nature03250",
+    "https://doi.org/10.1038/nature03818",
+    "https://animaldiversity.org/accounts/Condylura_cristata/",
+    "https://ctext.org/zhuangzi/enjoyment-in-untroubled-ease",
+    "https://www.britannica.com/topic/Virgo-astrology",
+    "https://en.wikipedia.org/wiki/Virgo_(astrology)"
+  ]
+}

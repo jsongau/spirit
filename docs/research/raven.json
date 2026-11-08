@@ -1,0 +1,389 @@
+{
+  "slug": "raven",
+  "name": "Raven",
+  "sign": "Aquarius",
+  "year": "Monkey",
+  "element": "Metal",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Farmers' Almanac: Aquarius zodiac sign (dates, element, modality, rulers, traits)",
+      "url": "https://www.farmersalmanac.com/aquarius-zodiac-sign"
+    },
+    {
+      "id": "s2",
+      "title": "Wikipedia: Monkey (zodiac) (branch Shen, yang, fixed Metal, hours, lucky colors and numbers)",
+      "url": "https://en.wikipedia.org/wiki/Monkey_(zodiac)"
+    },
+    {
+      "id": "s3",
+      "title": "China Highlights: Year of the Monkey (traits, lucky colors and numbers, careers, love)",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/monkey-chinese-zodiac-sign-symbolism.htm"
+    },
+    {
+      "id": "s4",
+      "title": "ChineseNewYear.net: Chinese zodiac compatibility (Three Harmonies, Six Harmonies, Six Conflicts, Six Damages)",
+      "url": "https://chinesenewyear.net/zodiac/compatibility"
+    },
+    {
+      "id": "s5",
+      "title": "StudyCLI: Year of the Monkey (traits, Sun Wukong, compatibility as folk tradition)",
+      "url": "https://studycli.org/chinese-zodiac/year-of-the-monkey/"
+    },
+    {
+      "id": "s6",
+      "title": "Norse-Mythology.org: Hugin and Munin (Grimnismal st. 20, Snorri)",
+      "url": "https://norse-mythology.org/gods-and-creatures/others/hugin-and-munin/"
+    },
+    {
+      "id": "s7",
+      "title": "World Mythology (CCCS Pressbooks): Raven Steals Light (Haida)",
+      "url": "https://pressbooks.ccconline.org/worldmythology-cccs/?p=103"
+    },
+    {
+      "id": "s8",
+      "title": "Mythopedia: The Morrigan",
+      "url": "https://mythopedia.com/topics/morrigan/"
+    },
+    {
+      "id": "s9",
+      "title": "Theoi Project: Koronis (Ovid Met. 2, Hesiod fr., Apollodorus, Hyginus)",
+      "url": "https://theoi.com/Heroine/Koronis.html"
+    },
+    {
+      "id": "s10",
+      "title": "Bible Hub topical: Ravens (Gen 8:7, 1 Kings 17:4-6, Luke 12:24, Job 38:41)",
+      "url": "https://mail.biblehub.com/topical/r/ravens.htm"
+    },
+    {
+      "id": "s11",
+      "title": "Historic UK: The Tower of London ravens",
+      "url": "https://historic-uk.com/historymagazine/destinationsuk/tower-ravens/"
+    },
+    {
+      "id": "s12",
+      "title": "Wikipedia: Three-legged crow (Chinese sun crow, Japan Yatagarasu, Korea Samjok-o)",
+      "url": "https://en.wikipedia.org/wiki/Three-legged_crow"
+    },
+    {
+      "id": "s13",
+      "title": "Audubon: 10 Fun Facts About the Common Raven (pair for life, range, play, myth)",
+      "url": "https://www.audubon.org/magazine/10-fun-facts-about-common-raven"
+    },
+    {
+      "id": "s14",
+      "title": "Kabadayi & Osvath 2017, Ravens parallel great apes in flexible planning for tool-use and bartering, Science (Lund record)",
+      "url": "https://lup.lub.lu.se/search/publication/f008a0f7-c3d5-4b99-9541-09863619803d"
+    },
+    {
+      "id": "s15",
+      "title": "ScienceDaily 2008: Great apes think ahead (Osvath & Osvath 2008, chimpanzees and orangutans)",
+      "url": "https://www.sciencedaily.com/releases/2008/06/080618114602.htm"
+    },
+    {
+      "id": "s16",
+      "title": "Bugnyar & Heinrich 2005, Ravens differentiate between knowledgeable and ignorant competitors, Proc. R. Soc. B (PMC)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1559847"
+    },
+    {
+      "id": "s17",
+      "title": "Heinrich & Pepper 1998, Influence of competitors on caching behaviour in the common raven, Animal Behaviour",
+      "url": "https://data.zhenzhi.com/details/1/884953043"
+    },
+    {
+      "id": "s18",
+      "title": "Scientific American: thieving scrub jays re-cache more (Emery & Clayton 2001)",
+      "url": "https://www.scientificamerican.com/article/research-finds-thieving-b/"
+    },
+    {
+      "id": "s19",
+      "title": "Clayton & Dickinson 1998, Episodic-like memory during cache recovery by scrub jays, Nature (DOI)",
+      "url": "https://www.doi.org/10.1038/26216"
+    },
+    {
+      "id": "s20",
+      "title": "Scientific American blog: Snowboarding crows, the plot thickens (quotes Heinrich & Smolker on ravens sliding down snowy roofs)",
+      "url": "https://www.scientificamerican.com/blog/thoughtful-animal/snowboarding-crows-the-plot-thickens"
+    },
+    {
+      "id": "s21",
+      "title": "North Cascades Institute: Through the eyes of a raven, part II (Heinrich on raven play)",
+      "url": "https://blog.ncascades.org/naturalist-notes/animal-natural-learning-tendencies-through-the-eyes-of-a-raven-part-ii/"
+    },
+    {
+      "id": "s22",
+      "title": "National Geographic 2017: Ravens hold grudges against cheaters (Mueller, Massen, Bugnyar et al.)",
+      "url": "https://www.nationalgeographic.com/animals/article/ravens-memory-unfair-trade"
+    },
+    {
+      "id": "s23",
+      "title": "Utrecht research portal: Ravens remember the nature of a single reciprocal interaction sequence over 2 days and even after a month (2017)",
+      "url": "https://research-portal.uu.nl/en/publications/ravens-remember-the-nature-of-a-single-reciprocal-interaction-seq/"
+    },
+    {
+      "id": "s24",
+      "title": "Enggist 1997, Dialects in ravens Corvus corax: new aspects of an old problem, Bioacoustics (abstract)",
+      "url": "https://bioacoustics.info/article/dialects-ravens-corvus-corax-new-aspects-old-problem-abstract"
+    },
+    {
+      "id": "s25",
+      "title": "Library catalog: Gifts of the Crow, full title (Marzluff & Angell 2012)",
+      "url": "https://catalog.sbplibrary.org/Record/154896"
+    }
+  ],
+  "western": {
+    "temperament": "Friendly, honest, loyal, inventive, independent, intellectual, humanitarian, comfortable being different. Shadow side in the same source: independence can turn into distance, and the sign can seem more at ease with ideas than with feelings.",
+    "planet": "Uranus (modern ruler) and Saturn (traditional ruler)",
+    "element": "Air",
+    "modality": "Fixed",
+    "dates": "January 20 to February 18",
+    "source_ids": [
+      "s1"
+    ]
+  },
+  "chinese": {
+    "temperament": "Witty, quick to learn, inventive, adaptable, magnetic, curious. Weak spots named in the sources: prankish humor that can sting, restlessness, impulsiveness, trouble taking criticism. Love: slow to settle, fully committed once they choose. Literary emblem: Sun Wukong, the Monkey King of Journey to the West.",
+    "yinyang": "Yang",
+    "element": "Metal (fixed)",
+    "branch": "申 (shēn), hours 3 to 5 pm",
+    "trine": "Rat, Dragon, Monkey (Three Harmonies)",
+    "secret_friend": "Snake (Six Harmonies)",
+    "clash": "Tiger (Six Conflicts). Also a softer 'harm' pairing with Pig (Six Damages).",
+    "lucky": "Colors: white, blue, gold (both sources agree); red is unlucky. Numbers: sources disagree. China Highlights gives 4 and 9; Wikipedia gives 1, 3, 4, 7, 8 and says avoid 9. Only 4 is safe to print. Flowers: chrysanthemum, crape myrtle (China Highlights only).",
+    "source_ids": [
+      "s2",
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Norse",
+      "meaning": "Odin's two ravens, Huginn (from hugr, 'thought') and Muninn (usually glossed 'memory', more exactly 'mind' or 'desire'), fly over the world each day and return to whisper what they saw. In Grimnismal Odin says he fears for Huginn, and fears more for Muninn. A ready image for a mind that sends itself out to gather the world and worries what it will lose.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Haida (Pacific Northwest)",
+      "meaning": "Raven Steals Light: Raven, a trickster and shape-shifter, turns into a pine needle, is born as a child in the house of the old man who hoards the light, coaxes the box open and flings the sun into the sky, scattering the stars. Cleverness and disguise used to bring light to everyone. Raven is both world-maker and trickster across many Northwest Coast nations.",
+      "source_ids": [
+        "s7",
+        "s13"
+      ]
+    },
+    {
+      "culture": "Irish / Celtic",
+      "meaning": "The Morrigan, goddess of war and prophecy, appears as a raven over battlefields and foretells outcomes. At Cu Chulainn's death his enemies only believed he had died when a raven landed on his shoulder. The raven as the one who sees how things will end.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "culture": "Greek / Roman",
+      "meaning": "Apollo's bird, once white, reported Coronis's unfaithfulness and was turned black for its 'chattering tongue' (Ovid, Metamorphoses 2). The cost of telling the truth too fast is built into the raven's very color.",
+      "source_ids": [
+        "s9",
+        "s13"
+      ]
+    },
+    {
+      "culture": "Hebrew Bible / Christian",
+      "meaning": "Noah's raven flew back and forth until the waters dried (Gen 8:7). Ravens fed the prophet Elijah bread and meat morning and evening (1 Kings 17:4-6). Jesus: 'Consider the ravens: they don't sow, they don't reap, they have no warehouse or barn, and God feeds them' (Luke 12:24). Our note: a lovely irony, since real ravens are expert hoarders.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "culture": "English legend",
+      "meaning": "If the ravens leave the Tower of London, the Tower and the kingdom will fall; at least six are kept (seven today, one spare). The Charles II origin story is legend, and nobody knows when ravens first came to the Tower. The raven as guardian whose staying power holds a house together.",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "culture": "Chinese / East Asian (corvid, not strictly raven)",
+      "meaning": "The sun crow, 金乌 (jīnwū, 'golden crow'), lives in the sun; ten sun crows once rose together and the archer Hou Yi shot down all but one. Japan's Yatagarasu, a raven or jungle crow, guided Emperor Jimmu. USE WITH CARE: Chinese folklore speaks of crows (乌鸦 wūyā), so frame it as 'the raven's cousin in the sun', not as a raven myth.",
+      "source_ids": [
+        "s12"
+      ]
+    },
+    {
+      "culture": "Modern spirit-animal / totem meanings (messenger, magic, shadow work)",
+      "meaning": "Unsourced, do not use. Only blogs and New Age sites found; nothing traceable to a living tradition.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "(Our reading.) Two fixed points meet here. Aquarius is fixed Air: it holds an idea of how people and systems should work and does not let go easily. The Monkey is yang Metal: quick, dexterous, sharp at the edges. Together they make the watcher who is also a player. You tend to stand a little apart, read the whole room, and then do something clever that nobody else saw coming. Saturn, the old ruler, gives the long memory; Uranus gives the sudden swerve.",
+    "gifts": "(Our reading.) Foresight that comes from paying attention, not from worry. A sense of humor that lives right next to the serious mind (the raven that slides down a snowy roof on its back). Loyalty to a small circle, honesty that does not flatter, and a knack for solving problems in ways that look obvious only afterward.",
+    "shadow": "(Our reading.) The Aquarius distance plus the Metal edge. You can keep people at the length of an arm while seeming warm. Records of who let you down are filed carefully and rarely reopened. Monkey restlessness can read the room so fast that you act on a half-finished picture. Like Apollo's raven, you can say the true thing at the wrong moment and pay for it.",
+    "love": "(Our reading, built on the Monkey's 'slow to settle, fully committed once chosen' and the raven's lifelong pair bond.) You often test a partner quietly for a long time. Once someone passes, you are unusually steady: private rituals, inside jokes, a pair that defends its corner of the world together. What you need back is honesty and room. What wounds you is being watched without being trusted.",
+    "money": "(Our reading, anchored by the cache.) You tend to keep reserves nobody knows about and to plan for a version of your life that has not arrived yet. Traditional Monkey career lists lean toward finance, trading and numbers, so the head for it is there. The risk is the clever bet made because it is clever.",
+    "conflict": "(Our reading.) You rarely fight in the open. You go quiet, rearrange things, and move your real plans somewhere the other person cannot see. Your Metal side can end an argument with one exact sentence. The work is to say what you saw out loud before you quietly move the cache."
+  },
+  "careers": [
+    {
+      "path": "Strategy, forecasting, intelligence or risk analysis",
+      "why": "Reading many players at once and predicting the next move is the raven's whole method; China Highlights lists stock trading and air traffic control for Monkeys."
+    },
+    {
+      "path": "Research science and engineering",
+      "why": "Aquarius inventiveness plus Monkey quick learning; science and engineering both appear on traditional Monkey career lists (s3)."
+    },
+    {
+      "path": "Finance, accounting, trading",
+      "why": "The cache mindset and the Monkey's traditional association with banking and accounting (s3)."
+    },
+    {
+      "path": "Film direction, game design, puzzle or escape-room design",
+      "why": "Play and planning on the same system; directing is on the Monkey list (s3). Building traps and tricks for an audience is a raven-shaped craft."
+    },
+    {
+      "path": "Investigative journalism or ethics and fraud work",
+      "why": "Long memory for who did what, honesty that does not flatter, and comfort standing outside the group (Aquarius)."
+    },
+    {
+      "path": "Community organizing, open-source and civic tech",
+      "why": "Aquarius humanitarian streak plus a Monkey's skill at moving among people; ravens are social birds that share news of food."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Meerkat",
+      "slug": "meerkat",
+      "reason": "Gemini x Rat. Rat is in the Monkey's trine (Three Harmonies), and Gemini shares Aquarius's Air element. Double harmony, East and West."
+    },
+    {
+      "name": "Giant Manta Ray",
+      "slug": "giant-manta-ray",
+      "reason": "Libra x Dragon. Dragon completes the Monkey's trine; Libra is the third Air sign. Two big-picture minds."
+    },
+    {
+      "name": "Cuttlefish",
+      "slug": "cuttlefish",
+      "reason": "Gemini x Snake. Snake is the Monkey's secret friend (Six Harmonies), and Gemini is Air like Aquarius. Two masters of disguise who enjoy each other's tricks."
+    },
+    {
+      "name": "Secretary Bird",
+      "slug": "secretary-bird",
+      "reason": "Aries x Dragon. Dragon trine on the Chinese side; Fire feeds Air on the Western side, the classic complementary pairing."
+    },
+    {
+      "name": "Sandgrouse",
+      "slug": "sandgrouse",
+      "reason": "Sagittarius x Rat. Rat trine; Sagittarius Fire and Aquarius Air are complementary. Freedom-loving on both counts."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Harpy Eagle",
+      "slug": "harpy-eagle",
+      "reason": "Leo x Tiger. Tiger is the Monkey's clash (Six Conflicts) and Leo is Aquarius's opposite sign. Strong attraction, steady friction: the crowd-pleaser and the outsider, both wanting the last word."
+    },
+    {
+      "name": "Sable Antelope",
+      "slug": "sable-antelope",
+      "reason": "Taurus x Tiger. Tiger clash again, and Taurus and Aquarius are both fixed signs that square each other (traditional tension aspect; our note, not in the brief's list). Two stubborn wills."
+    }
+  ],
+  "candidate_lines": [
+    "You tend to know what someone will do a few seconds before they do it, and you have usually made room for it already.",
+    "There are times when you keep your real plans in a second place, even from people you love, simply because someone once saw where you kept them.",
+    "You often sit a little apart from the group, and people mistake that for coldness. You were watching how the whole room fits together.",
+    "The same mind that plans ten moves ahead also wants to slide down the roof for no reason, and you are happiest when you let it.",
+    "You tend to remember exactly who let you down and how. The question worth asking is whether that person still exists.",
+    "Once you choose someone, you tend to stay. The long, quiet test before that is how you make sure the staying is safe."
+  ],
+  "fact_audit": [
+    {
+      "fact": "01 The cache: ravens show episodic-like memory for cache location, content and time elapsed, adjusting for perishability.",
+      "verdict": "WRONG",
+      "note": "The what-where-when, perishability result is from western scrub jays (Clayton & Dickinson 1998), not ravens. Ravens do cache and plan: Kabadayi & Osvath 2017 showed ravens choose and save tools and tokens for future use. Rewrite around that study.",
+      "source_ids": [
+        "s19",
+        "s14"
+      ]
+    },
+    {
+      "fact": "02 The re-cache: observed ravens move caches; ravens that never stole are less likely to re-cache (experience projection).",
+      "verdict": "WRONG",
+      "note": "The 'thieves re-cache more' finding is Emery & Clayton 2001 on scrub jays. For ravens, what is sourced: they cache farther away or wait when competitors watch (Heinrich & Pepper 1998) and they treat knowledgeable and ignorant competitors differently (Bugnyar & Heinrich 2005). Drop the pilfering-experience sentence.",
+      "source_ids": [
+        "s18",
+        "s17",
+        "s16"
+      ]
+    },
+    {
+      "fact": "03 The play: sliding down snow-covered roofs on their backs, stick play, aerial acrobatics, pranks.",
+      "verdict": "OK",
+      "note": "Heinrich & Smolker report ravens sliding down steep snow-covered roofs and snowy slopes, including on their backs holding sticks. Audubon confirms stick-drop games and aerial rolls. 'Pranks on other animals' is anecdotal; soften or drop. Note the famous roof-snowboarding video is a hooded crow, not a raven.",
+      "source_ids": [
+        "s20",
+        "s21",
+        "s13"
+      ]
+    },
+    {
+      "fact": "04 The pair bond: mate for life, mutual preening, grief after a partner's death.",
+      "verdict": "UNVERIFIABLE",
+      "note": "Lifelong pairing and mutual preening: OK (Audubon). Grief after a partner's death: no raven-specific source found; documented anecdotes are for crows. Remove the grief clause or label it anecdotal.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "fact": "05 The grudge: ravens recognize and hold negative bias toward humans who deceived them, avoid them, alert others, threaten them months later.",
+      "verdict": "WRONG",
+      "note": "Partly right. Ravens preferred a fair human trader over an unfair one after a month (Mueller, Massen, Bugnyar et al. 2017). 'Alerting others' and multi-month mobbing come from Marzluff's American crow mask studies; NatGeo notes observer ravens did not change their choices. Keep the one-month memory, cut the rest.",
+      "source_ids": [
+        "s22",
+        "s23"
+      ]
+    },
+    {
+      "fact": "06 The culture: regional vocal dialects and distinct behavioral repertoires that affect problem-solving.",
+      "verdict": "UNVERIFIABLE",
+      "note": "Regional call dialects are documented (Enggist 1997: 37 pairs split into two dialect regions). 'Behavioral repertoires that affect how they solve problems' found no source. Keep dialects, cut the problem-solving claim.",
+      "source_ids": [
+        "s24"
+      ]
+    },
+    {
+      "fact": "Reference list: 'Osvath & Osvath (2008), Great ape and raven future planning, Animal Cognition'.",
+      "verdict": "WRONG",
+      "note": "Osvath & Osvath 2008 studied chimpanzees and orangutans only. The raven planning paper is Kabadayi & Osvath 2017, Science.",
+      "source_ids": [
+        "s15",
+        "s14"
+      ]
+    },
+    {
+      "fact": "Reference list: 'Bugnyar & Heinrich (2005), Animal Cognition' linked to DOI 10.1007/s10071-004-0239-6.",
+      "verdict": "UNVERIFIABLE",
+      "note": "Bugnyar & Heinrich 2005 was published in Proceedings of the Royal Society B, not Animal Cognition. Could not open the linked Springer DOI to see what it actually is (fetch blocked). Relink to the PMC copy.",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "fact": "Reference list: Marzluff & Angell, 'Gifts of the Crow: How Perception, Emotion, and Thought Allow Ravens to Behave Like Humans'.",
+      "verdict": "WRONG",
+      "note": "Real subtitle ends 'Allow Smart Birds to Behave Like Humans'. The book is mostly about crows.",
+      "source_ids": [
+        "s25"
+      ]
+    },
+    {
+      "fact": "Page note: an Aquarius born in late January or early February can belong to the Goat year.",
+      "verdict": "OK",
+      "note": "Correct: Aquarius starts January 20 and lunar New Year falls late January to mid February, so early-Aquarius birthdays can fall in the previous animal year. Monkey years also include 1980 and 1968 if the page wants more.",
+      "source_ids": [
+        "s1",
+        "s3"
+      ]
+    }
+  ]
+}

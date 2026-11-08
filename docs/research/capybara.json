@@ -1,0 +1,330 @@
+{
+  "slug": "capybara",
+  "name": "Capybara",
+  "sign": "Cancer",
+  "year": "Pig",
+  "element": "Water",
+  "sources": [
+    {
+      "id": "wiki-capybara",
+      "title": "Capybara, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Capybara"
+    },
+    {
+      "id": "wlt",
+      "title": "Capybara species profile, World Land Trust",
+      "url": "https://www.worldlandtrust.org/species/capybara/"
+    },
+    {
+      "id": "pbs",
+      "title": "Rodents of Manu: capybara, PBS Living Edens",
+      "url": "https://www.pbs.org/edens/manu/rodents.htm"
+    },
+    {
+      "id": "schunck2025",
+      "title": "Schunck & Santos (2025), feeding associations of Purple Gallinule and Wattled Jacana with the capybara, Boletim do Museu Paraense Emilio Goeldi, Ciencias Naturais 20(2)",
+      "url": "https://boletimcn.museu-goeldi.br/bcnaturais/article/download/1030/682"
+    },
+    {
+      "id": "inat-wisnik",
+      "title": "The friendly capybara (field observations of tick-eating birds and a turtle on capybaras), iNaturalist journal, N. Wisnik",
+      "url": "https://www.biodiversity4all.org/journal/nelson_wisnik/21258-the-friendly-capybara"
+    },
+    {
+      "id": "herrera1993",
+      "title": "Herrera & Macdonald (1993), Aggression, dominance and mating success among capybara males, Behavioral Ecology",
+      "url": "https://doi.org/10.1093/beheco/4.2.114"
+    },
+    {
+      "id": "iucn",
+      "title": "IUCN Red List, Hydrochoerus hydrochaeris",
+      "url": "https://www.iucnredlist.org/species/10300/43440670"
+    },
+    {
+      "id": "mentalfloss-lent",
+      "title": "Why beavers, muskrats, and capybaras aren't considered meat during Lent, Mental Floss",
+      "url": "https://mentalfloss.com/posts/lent-beavers-muskrats-capybaras-fish"
+    },
+    {
+      "id": "delamazonas",
+      "title": "Capybara, Del Amazonas (fauna profile incl. Yanomami belief)",
+      "url": "https://delamazonas.com/en/fauna/capybara/"
+    },
+    {
+      "id": "spoon-tamago",
+      "title": "Capybara hot bath 40-year anniversary, Spoon & Tamago",
+      "url": "https://spoon-tamago.com/capybara-hot-bath-40-year-anniversary/"
+    },
+    {
+      "id": "astro-podcast",
+      "title": "Ep. 359: Cancer in Astrology, Meaning and Traits, The Astrology Podcast (Chris Brennan)",
+      "url": "https://theastrologypodcast.com/?p=11331"
+    },
+    {
+      "id": "wiki-pig",
+      "title": "Pig (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pig_(zodiac)"
+    },
+    {
+      "id": "chinahighlights-pig",
+      "title": "Year of the Pig, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/pig.htm"
+    },
+    {
+      "id": "pearlriver-pig",
+      "title": "The Year of the Pig: last but far from least, Pearl River Mart",
+      "url": "https://pearlriver.com/blogs/blog/the-year-of-the-pig-last-but-far-from-least"
+    },
+    {
+      "id": "brief",
+      "title": "Zodi Animal research brief (traditional trines, secret friends, clashes)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Nurturing, protective, memory-driven, home and family centered, intuitive and moody; shadow is defensiveness, clinging, withdrawal. Traditionally a feminine, nocturnal sign tied to the chest and stomach, the body's places of feeding and holding.",
+    "planet": "Moon (domicile). Jupiter exalted in Cancer, read as 'everyone at the table gets fed'. Saturn in detriment, Mars in fall.",
+    "element": "Water (the first water sign)",
+    "modality": "Cardinal (starts the summer season; initiates rather than finishes)",
+    "source_ids": [
+      "astro-podcast"
+    ]
+  },
+  "chinese": {
+    "temperament": "Diligent, compassionate, generous, calm under pressure, responsible, trusting to the point of being easy to fool. Tradition pictures the Pig at its best when resting and enjoying life; in the Great Race it stopped to feast, fell asleep, and came in last, but it still finished.",
+    "yinyang": "Yin",
+    "element": "Water (fixed element). Earthly branch hai, written with the character for the 12th branch (pinyin: hài). Hours 21:00 to 22:59, direction north-northwest.",
+    "trine": "Rabbit, Goat, Pig",
+    "secret_friend": "Tiger",
+    "clash": "Snake",
+    "lucky": {
+      "colors": [
+        "yellow",
+        "gray",
+        "brown",
+        "gold (China Highlights only)"
+      ],
+      "numbers": [
+        2,
+        5,
+        8,
+        "6 (Wikipedia only)"
+      ],
+      "avoid_numbers": [
+        3,
+        4,
+        9
+      ],
+      "avoid_colors": [
+        "red",
+        "blue"
+      ],
+      "flowers": [
+        "hydrangea",
+        "daisy"
+      ],
+      "note": "Wealth and prosperity symbolism of the pig per Pearl River Mart."
+    },
+    "source_ids": [
+      "wiki-pig",
+      "chinahighlights-pig",
+      "pearlriver-pig",
+      "brief"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Tupi (Brazil), the name itself",
+      "meaning": "'Capybara' comes from Tupi ka'apiuara, roughly 'one who eats slender leaves' or 'grass-eater'. The Greek-built scientific name Hydrochoerus hydrochaeris reads as 'water hog' plus 'water' and 'enjoyment'. Our reading: a creature named for enjoying the water, born under a water sign and a water year.",
+      "source_ids": [
+        "wiki-capybara"
+      ]
+    },
+    {
+      "culture": "Venezuela, Catholic Lent tradition",
+      "meaning": "Capybara meat is eaten during Lent and Holy Week when other meat is avoided. The often-told story says colonial clergy (16th to 18th century) asked the Vatican to treat it as fish because it lives in water. The letter itself is told as legend; no year or name is given. Our reading: the animal that slipped between categories, neither quite land nor quite water.",
+      "source_ids": [
+        "wiki-capybara",
+        "mentalfloss-lent"
+      ]
+    },
+    {
+      "culture": "Yanomami (Brazil and Venezuela)",
+      "meaning": "Reported belief that each person has a double that looks like a capybara or a tapir and supplies their life force. WEAK SOURCE (one popular fauna site, no ethnography cited). Verify against an ethnographic source before using.",
+      "source_ids": [
+        "delamazonas"
+      ]
+    },
+    {
+      "culture": "Japan, the onsen capybara",
+      "meaning": "In 1982 a keeper at Izu Shaboten Zoo saw capybaras gathering in a warm puddle and filled a pool with hot water. The winter bath became a national ritual, with yuzu and rose baths rotated in. Our reading: an animal people watch to learn how to rest.",
+      "source_ids": [
+        "spoon-tamago",
+        "wiki-capybara"
+      ]
+    },
+    {
+      "culture": "Internet culture (2020s) and Argentina",
+      "meaning": "Capybaras became a symbol of calm in global meme culture, described as Buddha-like. In 2021 capybaras reclaiming the Nordelta gated community in Argentina made them a joking symbol of the displaced returning home.",
+      "source_ids": [
+        "wiki-capybara"
+      ]
+    },
+    {
+      "culture": "Chinese zodiac, the Pig half",
+      "meaning": "The pig is a symbol of wealth and is believed to attract prosperity; it finished the Great Race last because it stopped to eat and nap.",
+      "source_ids": [
+        "pearlriver-pig",
+        "wiki-pig"
+      ]
+    },
+    {
+      "culture": "Any spirit-animal or totem meaning for capybara specifically",
+      "meaning": "Unsourced, do not use. Spirit-animal lists online are uncited modern content.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Ours: double Water (Cancer water, Pig water) and double yin-leaning (Cancer is a feminine/even sign; Pig is yin). The Moon's need to make a home meets the Pig's appetite for comfort and company. You tend to build the place everyone ends up sitting, then sit in it with them. Cardinal Cancer gives the start; the Pig gives the staying power and the snacks.",
+    "gifts": "Ours: you lower the temperature of a room. People tell you things they had not planned to say. You remember how someone takes their tea and what they were sad about last spring. You often host without calling it hosting.",
+    "shadow": "Ours: the Pig's trust plus the Crab's shell is an odd mix: you let people in easily, then retreat into the water when hurt instead of saying so. You can mistake being needed for being loved, and comfort can slide into avoidance. Watch for the Pig's 'stop for the feast' habit when a hard task is waiting.",
+    "love": "Ours: you love by feeding, remembering and making room. You want a partner who notices the warmth rather than assuming it is free. Slow to anger, slow to forget. You often know a relationship is ending months before you say it.",
+    "money": "Ours: Jupiter exalted in Cancer and the Pig's wealth symbolism both point at abundance shared at a table. You tend to spend on home, food and other people, and you are generous enough to be talked into lending. Your best money habit is a separate pot nobody else can ask for.",
+    "conflict": "Ours: you go to the water. Your first move under attack is to go quiet and unavailable, the way the capybara dives and waits. It works, but people read it as agreement. Saying 'I need a day, then we talk' saves you a lot."
+  },
+  "careers": [
+    {
+      "path": "Hospitality: cafe or guesthouse owner, chef, retreat host",
+      "why": "Ours: Cancer rules home and the stomach; the Pig is tied to feasting and comfort."
+    },
+    {
+      "path": "Nursing, midwifery, elder care, pediatric care",
+      "why": "Ours: the Moon's nurturing plus the Pig's patience and calm under pressure."
+    },
+    {
+      "path": "Counselling, social work, community organizing",
+      "why": "Ours: people tend to gather around you and relax; trust comes easily both ways."
+    },
+    {
+      "path": "Teaching early years, school pastoral roles",
+      "why": "Ours: memory for feelings, steady warmth, tolerance of noise."
+    },
+    {
+      "path": "Office or team manager, people-ops, the 'glue' role",
+      "why": "Ours: you keep the group's temperature even. Good fit only if the role is named and paid."
+    },
+    {
+      "path": "Spa, wellness, aquatic or hydrotherapy work",
+      "why": "Ours: double Water and the onsen capybara image."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Sea Otter",
+      "slug": "sea-otter",
+      "reason": "Cancer + Rabbit. Rabbit is in the Pig's trine (Rabbit, Goat, Pig) and it shares your Cancer sun: double harmony."
+    },
+    {
+      "name": "Moon Bear",
+      "slug": "moon-bear",
+      "reason": "Cancer + Tiger. Tiger is the Pig's secret friend, and the same Moon-ruled sign."
+    },
+    {
+      "name": "Moon Jellyfish",
+      "slug": "moon-jellyfish",
+      "reason": "Pisces + Rabbit. Pisces is a fellow water sign and Rabbit is in your trine."
+    },
+    {
+      "name": "Snow Leopard",
+      "slug": "snow-leopard",
+      "reason": "Scorpio + Goat. Scorpio is a fellow water sign and Goat is in your trine."
+    },
+    {
+      "name": "Koala",
+      "slug": "koala",
+      "reason": "Taurus + Rabbit. Earth sign that banks your Water (Western complement), with Rabbit in your trine."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Tuatara",
+      "slug": "tuatara",
+      "reason": "Capricorn + Snake. Snake is the Pig's clash, and Capricorn is Cancer's opposite sign. Strong pull, steep friction."
+    },
+    {
+      "name": "Loggerhead Shrike",
+      "slug": "loggerhead-shrike",
+      "reason": "Aries + Snake. Snake clash plus an Aries square (cardinal fire against cardinal water)."
+    }
+  ],
+  "candidate_lines": [
+    "You tend to be the person people sit next to when they don't know anyone else in the room.",
+    "There are times when you realize you've been holding the whole group together and nobody noticed, including you.",
+    "You often remember what someone was worried about long after they've forgotten telling you.",
+    "When it gets too loud, you go quiet and slip under the surface for a while. People mistake it for calm. Sometimes it is.",
+    "You tend to show love with food, a spare room, a blanket you hand over without asking.",
+    "You often trust first and check later, and most of the time the world rewards you for it."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Eyes, ears and nostrils sit at the top of the skull, allowing the body to submerge with senses above water; can stay submerged up to five minutes.",
+      "verdict": "OK",
+      "note": "Eyes and ears near top of head and up-to-five-minute breath hold confirmed; swimming with only eyes, ears, nostrils exposed confirmed.",
+      "source_ids": [
+        "wiki-capybara",
+        "wlt",
+        "delamazonas"
+      ]
+    },
+    {
+      "fact": "Groups of 10 to 100; other species (birds, monkeys, small predators) rest on and around them; 'described by biologists as among the most affiliative mammals observed in the wild'.",
+      "verdict": "UNVERIFIABLE",
+      "note": "Group size OK (usually 10 to 20, dry-season gatherings 50 to 100). Birds landing on capybaras is documented (cattle tyrant, caracaras, gallinule, jacana; also turtles). Monkeys and 'small predators' resting on them: no reliable source found, likely from zoo videos; cut or change to 'birds and even turtles'. The 'most affiliative' biologist quote: no source found; cut.",
+      "source_ids": [
+        "wiki-capybara",
+        "schunck2025",
+        "inat-wisnik"
+      ]
+    },
+    {
+      "fact": "Near-continuous acoustic contact through purrs, whistles, clicks and barks, each with social functions (alarm, contentment, contact).",
+      "verdict": "OK",
+      "note": "Repertoire confirmed (barks, chirps, whistles, huffs, purrs; alarm clicks/barks). 'Near-continuous' is an overstatement; suggest 'frequent'.",
+      "source_ids": [
+        "wiki-capybara",
+        "pbs",
+        "wlt"
+      ]
+    },
+    {
+      "fact": "Primary defense is immersion rather than combat or flight; groups enter water and stay submerged with only nostrils above the surface.",
+      "verdict": "OK",
+      "note": "Escape into water and hiding submerged confirmed. Small fixes: running to water is itself flight, so 'rather than flight' is loose; sources say eyes, ears and nostrils stay above water, not nostrils only.",
+      "source_ids": [
+        "wlt",
+        "pbs",
+        "delamazonas"
+      ]
+    },
+    {
+      "fact": "Male capybaras possess a morillo, a large hairless sebaceous gland on the nose, used to scent-mark and establish presence without confrontation.",
+      "verdict": "WRONG",
+      "note": "Both sexes have a morillo; males have a much larger one. The gland is tied to dominance status among males, and males also fight, so 'without confrontation' overreaches. Correction: 'Both sexes carry a morillo, a scent gland on the snout, much larger in dominant males, rubbed on plants to mark them.'",
+      "source_ids": [
+        "wiki-capybara",
+        "wlt",
+        "herrera1993"
+      ]
+    },
+    {
+      "fact": "World's largest rodent, up to 65 kg and 1.3 m; predators less likely to approach a visible, calm group; other species shelter near it.",
+      "verdict": "UNVERIFIABLE",
+      "note": "Largest rodent, about 65 kg and about 1.3 m: OK (typical 35 to 66 kg, wild records to 91 kg; length 106 to 134 cm). The claim that predators avoid calm visible groups and that species shelter in its proximity: no source found; cut or soften.",
+      "source_ids": [
+        "wiki-capybara",
+        "pbs",
+        "wlt"
+      ]
+    }
+  ]
+}

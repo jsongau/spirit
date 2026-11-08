@@ -1,0 +1,354 @@
+{
+ "slug": "sea-otter",
+ "name": "Sea Otter",
+ "sign": "Cancer",
+ "year": "Rabbit",
+ "element": "Wood (Rabbit's fixed element; Cancer adds Water, which feeds Wood in the generating cycle)",
+ "sources": [
+  {
+   "id": "wiki-otter",
+   "title": "Sea otter, Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Sea_otter"
+  },
+  {
+   "id": "adw",
+   "title": "Enhydra lutris, Animal Diversity Web (University of Michigan) (cited on live page)",
+   "url": "https://animaldiversity.org/accounts/Enhydra_lutris/"
+  },
+  {
+   "id": "mbay",
+   "title": "Sea otter, Monterey Bay Aquarium animal profile",
+   "url": "https://www.montereybayaquarium.org/animals/animals-a-to-z/sea-otter"
+  },
+  {
+   "id": "natgeo-tools",
+   "title": "Sea otters use tools, too. Now scientists look at their 'archaeology', National Geographic (2019)",
+   "url": "https://www.nationalgeographic.com/animals/article/sea-otters-archaeology-tool-use-california"
+  },
+  {
+   "id": "iucn",
+   "title": "IUCN Red List, Enhydra lutris (cited on live page)",
+   "url": "https://www.iucnredlist.org/species/7750/219377647"
+  },
+  {
+   "id": "arhnaq",
+   "title": "Arhnaq, sea otter: Alutiiq Word of the Week, Alutiiq Museum via Alaska Native News",
+   "url": "https://alaska-native-news.com/?p=50445"
+  },
+  {
+   "id": "kutune",
+   "title": "Kutune Shirka, Wikipedia (Ainu yukar epic, recorded by Kindaichi, published 1932)",
+   "url": "https://en.wikipedia.org/wiki/Kutune_Shirka"
+  },
+  {
+   "id": "knowbc-fur",
+   "title": "Chapter 4: The Fur Trade, Calm Harbour Turbulent Seas, KnowBC",
+   "url": "https://www.knowbc.com/limited/Books/Calm-Harbour-Turbulent-Seas/Chapter-4-The-Fur-Trade"
+  },
+  {
+   "id": "yushui",
+   "title": "Yushui (solar term), Wikipedia (pentad: otters make offerings of fish)",
+   "url": "https://en.wikipedia.org/wiki/Yushui_(solar_term)"
+  },
+  {
+   "id": "wikt-haita",
+   "title": "海獺 (sea otter), Wiktionary",
+   "url": "https://en.wiktionary.org/wiki/%E6%B5%B7%E7%8D%BA"
+  },
+  {
+   "id": "moon-rabbit",
+   "title": "Moon rabbit, Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Moon_rabbit"
+  },
+  {
+   "id": "wiki-cancer",
+   "title": "Cancer (astrology), Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Cancer_(astrology)"
+  },
+  {
+   "id": "astro-podcast",
+   "title": "Ep. 359: Cancer in Astrology, Meaning and Traits, The Astrology Podcast (Chris Brennan)",
+   "url": "https://theastrologypodcast.com/?p=11331"
+  },
+  {
+   "id": "wiki-cz",
+   "title": "Chinese zodiac (Rabbit row, compatibility), Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+  },
+  {
+   "id": "ch-rabbit",
+   "title": "Year of the Rabbit, China Highlights",
+   "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/rabbit.htm"
+  },
+  {
+   "id": "tcg-rabbit",
+   "title": "Year of the Rabbit, Travel China Guide",
+   "url": "https://www.travelchinaguide.com/intro/social_customs/zodiac/rabbit.htm"
+  },
+  {
+   "id": "cd-shouzhu",
+   "title": "Chinese idiom 守株待兔, China Daily (source Han Feizi, Wudu)",
+   "url": "https://language.chinadaily.com.cn/a/202405/27/WS66544e78a31082fc043c9626.html"
+  },
+  {
+   "id": "brief",
+   "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+   "url": "data/research/BRIEF.md"
+  }
+ ],
+ "western": {
+  "temperament": "Protective, nurturing, home and family centered, ruled by memory and mood; slow to trust, fiercely loyal once someone is inside. Shadow: defensiveness, clinging, retreating into the shell, sulking instead of saying it. Traditionally a feminine (yin-leaning) sign tied to the chest and stomach.",
+  "planet": "Moon (domicile). Jupiter exalted in Cancer.",
+  "element": "Water (water trigon with Scorpio and Pisces)",
+  "modality": "Cardinal (opens summer). Opposite sign Capricorn.",
+  "source_ids": [
+   "wiki-cancer",
+   "astro-podcast"
+  ]
+ },
+ "chinese": {
+  "temperament": "Gentle, quiet, elegant, alert, faithful to those around them, patient, kind, responsible; avoids open conflict. Shadow: keeps thoughts hidden, can escape from hard realities, indecisive.",
+  "yinyang": "Yin",
+  "element": "Wood (fixed element). Earthly branch 卯 (mǎo), the dawn hours 05:00 to 07:00. Note: China Highlights lists rotating year elements (1999 Earth, 2011 Metal, 2023 Water); the site uses only the fixed Wood.",
+  "trine": "Rabbit, Goat, Pig",
+  "secret_friend": "Dog",
+  "clash": "Rooster",
+  "lucky": null,
+  "source_ids": [
+   "wiki-cz",
+   "ch-rabbit",
+   "tcg-rabbit",
+   "brief"
+  ]
+ },
+ "symbolism": [
+  {
+   "culture": "Alutiiq (Sugpiaq), Kodiak and Gulf of Alaska",
+   "meaning": "Legend: the first sea otter was a man caught by the rising tide while gathering chitons; he wished to become an otter to survive, and all otters came from him. Because otters were once people, hunters treated them with care: they gave a killed otter a drink of fresh water and buried or sank its bones so the otters would return. Our reading: an animal born from a person who refused to be carried away by the tide.",
+   "source_ids": [
+    "arhnaq"
+   ]
+  },
+  {
+   "culture": "Aleut (Unangan), Aleutian Islands",
+   "meaning": "Versions of a widespread Aleut legend tell of lovers or despairing women who plunge into the sea and become otters. Our reading: the otter as what love turns into when it cannot let go. SECONDARY ONLY (Wikipedia, citing Golder 1905 'Aleutian Stories' and Gedney 1983); check the primary text before quoting detail.",
+   "source_ids": [
+    "wiki-otter"
+   ]
+  },
+  {
+   "culture": "Ainu, Hokkaido",
+   "meaning": "The sacred epic Kutune Shirka turns on a golden sea otter: whoever catches it wins a bride and a dowry; the hero does, and the jealousy it stirs drives the whole poem. Wikipedia also says some Ainu folk tales cast the sea otter as an occasional messenger between humans and the creator (single secondary source, citing Chamberlain 1888; treat the messenger claim as weak).",
+   "source_ids": [
+    "kutune",
+    "wiki-otter"
+   ]
+  },
+  {
+   "culture": "Pacific Northwest Coast (Nuu-chah-nulth, Haida and others)",
+   "meaning": "Sea otter pelts were used as chiefs' regalia and given away at potlatches. Our reading: the otter's warmth worn as rank, care as a form of wealth.",
+   "source_ids": [
+    "wiki-otter"
+   ]
+  },
+  {
+   "culture": "Qing China, the maritime fur trade (1785 to 1810)",
+   "meaning": "Sea otter fur was a status symbol for wealthy mandarins; pelts from the North Pacific were traded in China for tea, silk and porcelain, and around 225,000 were taken in 25 years. Our reading: the bridge to the Chinese half. The coat the otter lives by was the coat the empire coveted.",
+   "source_ids": [
+    "knowbc-fur",
+    "wiki-otter"
+   ]
+  },
+  {
+   "culture": "Chinese calendar (otters in general, river otter)",
+   "meaning": "The first pentad of the Yushui (Rain Water) solar term is 獭祭鱼 (tǎ jì yú), 'otters make offerings of fish': otters lay out their catch, read as an offering to heaven. This is the river otter, not the sea otter specifically. Our reading: in Chinese tradition the otter is an animal that sets out what it has gathered before it eats.",
+   "source_ids": [
+    "yushui"
+   ]
+  },
+  {
+   "culture": "Spirit-animal or totem meanings for the sea otter",
+   "meaning": "Unsourced, do not use. Online spirit-animal lists are uncited modern content.",
+   "source_ids": []
+  }
+ ],
+ "fusion": {
+  "temperament": "Ours: a double-yin crossing. Cancer is the Moon's sign; the Rabbit is the animal Chinese tradition puts on the Moon (the Jade Rabbit pounding the elixir for Chang'e, attested in the Han-era Chu Ci; sourced: moon-rabbit). So this is the zodiac's Moon twice over: one Moon from the West, one from the East. Cancer Water feeds Rabbit Wood. You tend to feel first and act gently, and your care is practical: food, warmth, the thing fixed before anyone asked. Cardinal Cancer starts the caring; the Rabbit makes it quiet and graceful.",
+  "gifts": "Ours: you notice who is cold before they do. You solve tangled problems with a light touch instead of force, the way the otter opens a shell with a stone rather than its teeth. People feel safe near you and tell you things. You remember birthdays, allergies, and what someone was afraid of two winters ago.",
+  "shadow": "Ours: the Crab's grip and the Rabbit's conflict-avoidance make a quiet kind of clinging. You hold on and say nothing. You check in instead of asking the real question, and you can mistake keeping someone close for keeping them. When hurt you go under, like the Rabbit escaping into its burrow and the Crab into its shell, and people read the silence as calm.",
+  "love": "Ours: you love by staying in reach. Proximity is your love language: the shared couch, the call on the drive home, the hand on the arm. You want someone who comes back on their own, and the work is letting them float out a little so they can. Slow to commit, very slow to leave. You often stay one season longer than the relationship does.",
+  "money": "Ours: Jupiter exalted in Cancer leans toward a full table, and the Rabbit leans toward caution. You tend to save for the household and spend on comfort and on other people. You keep things that work for years (one good coat, one good knife), and you are better at keeping money than at asking for more of it. Your weak spot is lending to family and never mentioning it again.",
+  "conflict": "Ours: you avoid the fight, then remember it for years. Your first move is to soothe; your second is to go quiet. The Rabbit's gift is that you rarely make things worse. The cost is that the real issue sits under the surface. Try saying it while it is still small: 'I need a minute, then I want to talk about this.'"
+ },
+ "careers": [
+  {
+   "path": "Nursing, midwifery, pediatrics, elder care",
+   "why": "Ours: Cancer's tending plus the Rabbit's patience. China Highlights lists health care and medicine among Rabbit fields (ch-rabbit)."
+  },
+  {
+   "path": "Teaching, especially early years and special education",
+   "why": "Ours: steady warmth and a memory for feelings. Education is a traditional Rabbit field (ch-rabbit)."
+  },
+  {
+   "path": "Chef, baker, guesthouse or cafe owner",
+   "why": "Ours: Cancer rules home and the stomach; China Highlights notes a Rabbit talent for cooking (ch-rabbit)."
+  },
+  {
+   "path": "Counselor, family therapist, social worker",
+   "why": "Ours: people open up to you; your light touch keeps hard talks from turning into fights."
+  },
+  {
+   "path": "Marine conservation, aquarium or wildlife rehab work",
+   "why": "Ours: water sign, keystone animal. Work that keeps a fragile system intact suits you."
+  },
+  {
+   "path": "Craft and repair: tailoring, restoration, instrument making",
+   "why": "Ours: the kept tool. China Highlights lists tailoring among Rabbit talents (ch-rabbit)."
+  }
+ ],
+ "best_matches": [
+  {
+   "name": "Beluga",
+   "slug": "beluga",
+   "reason": "Pisces + Dog. The Dog is the Rabbit's secret friend, and Pisces shares Cancer's water trigon. Two quiet allies on both wheels."
+  },
+  {
+   "name": "Snow Leopard",
+   "slug": "snow-leopard",
+   "reason": "Scorpio + Goat. The Goat sits in the Rabbit's trine (Rabbit, Goat, Pig) and Scorpio is a fellow water sign."
+  },
+  {
+   "name": "Blue Glaucus",
+   "slug": "blue-glaucus",
+   "reason": "Pisces + Pig. The Pig is in the Rabbit's trine and Pisces is a fellow water sign."
+  },
+  {
+   "name": "Ribbon Seal",
+   "slug": "ribbon-seal",
+   "reason": "Cancer + Dog. Secret friends on the Chinese wheel and the same Moon-ruled sun sign."
+  },
+  {
+   "name": "Bongo",
+   "slug": "bongo",
+   "reason": "Taurus + Pig. The Pig is in the Rabbit's trine, and Taurus is Earth, the classic complement that holds Cancer's Water. Taurus also hosts the Moon's exaltation."
+  }
+ ],
+ "hard_matches": [
+  {
+   "name": "Andean Condor",
+   "slug": "andean-condor",
+   "reason": "Capricorn + Rooster. The Rooster is the Rabbit's clash, and Capricorn is Cancer's opposite sign. Strong pull, steady friction."
+  },
+  {
+   "name": "Cassowary",
+   "slug": "cassowary",
+   "reason": "Aries + Rooster. Rooster clash plus a square on the Western wheel (cardinal Fire against cardinal Water)."
+  }
+ ],
+ "candidate_lines": [
+  "You tend to notice who is cold before they do, and you often have the blanket out before anyone says a word.",
+  "There are times when you check in one more time than you need to, and you know it while you are typing.",
+  "You often keep the same thing for years, a mug, a friend, a route home, because it already proved itself and that matters to you more than something new.",
+  "You tend to go quiet when you are hurt, and people read the quiet as calm. It is not calm. You are waiting to see if they will swim back.",
+  "You are a Moon child twice over: Cancer is ruled by the Moon, and in Chinese legend the Rabbit lives there. You tend to feel the tides in people before they feel them themselves.",
+  "There are times when the bravest thing you do all week is let someone you love drift a little, and trust them to come back on their own."
+ ],
+ "fact_audit": [
+  {
+   "fact": "Header hanzi 獭 (shown in hero rail and dossier)",
+   "verdict": "OK",
+   "note": "獭 (tǎ) means otter in general. The specific word for sea otter is 海獭 (hǎitǎ), traditional 海獺. Acceptable as is; 海獭 (hǎitǎ) would be more precise if the layout allows two characters. Page shows the hanzi without pinyin in the hero; add tǎ per the writing rules.",
+   "source_ids": [
+    "wikt-haita"
+   ]
+  },
+  {
+   "fact": "Sea otters rest in single-sex groups called rafts",
+   "verdict": "OK",
+   "note": "Wikipedia: rest together in single-sex groups called rafts, typically 10 to 100 animals; largest seen over 2000.",
+   "source_ids": [
+    "wiki-otter",
+    "adw"
+   ]
+  },
+  {
+   "fact": "Animals resting side by side link paws or wrap themselves in kelp so the group does not drift apart",
+   "verdict": "UNVERIFIABLE (in part)",
+   "note": "Kelp wrapping while resting is well documented (ADW, Wikipedia). Paw-holding during rest is mostly anecdotal and rests largely on captive footage (Vancouver Aquarium, 2007); no reliable source documents it as routine raft behavior in the wild. Keep the kelp, soften the paws ('sometimes seen holding paws').",
+   "source_ids": [
+    "adw",
+    "wiki-otter"
+   ]
+  },
+  {
+   "fact": "Many sea otters keep a single favorite rock in a skin pouch under one forearm and reuse it for years",
+   "verdict": "WRONG (overstated)",
+   "note": "The pouch is real (loose skin under the forearms that stores food and usually a rock). ADW says 'the same rock is kept for many dives', not years. 'Reusing it for years' and 'favorite rock' come from pop-science articles with no study behind them. Also tool use varies a lot by population; California otters use tools more than northern ones. Correct to: carries a rock in a skin pouch and reuses it across many dives.",
+   "source_ids": [
+    "adw",
+    "wiki-otter",
+    "natgeo-tools"
+   ]
+  },
+  {
+   "fact": "No blubber; densest fur of any mammal, close to a million hairs per square inch; fast metabolism",
+   "verdict": "OK",
+   "note": "Wikipedia: no blubber, up to 150,000 hairs per cm2 (970,000 per sq in). Monterey Bay Aquarium: more than a million per sq in at its thickest. ADW gives about 100,000 per cm2, so 'up to about a million' is the safe phrasing.",
+   "source_ids": [
+    "wiki-otter",
+    "mbay",
+    "adw"
+   ]
+  },
+  {
+   "fact": "A sea otter spends several hours a day grooming; fouled fur loses insulating air and can be fatal",
+   "verdict": "OK",
+   "note": "Monterey Bay Aquarium: many hours a day cleaning and grooming to keep the coat waterproof. Fur is the only insulation (no fat), so fouling, as in oil spills, is lethal.",
+   "source_ids": [
+    "mbay",
+    "adw"
+   ]
+  },
+  {
+   "fact": "A newborn pup's coat traps so much air it cannot dive or sink; a foraging mother wraps her pup in kelp",
+   "verdict": "OK",
+   "note": "Wikipedia: the pup floats like a cork and cannot dive; sometimes wrapped in kelp while mother forages. ADW confirms both.",
+   "source_ids": [
+    "wiki-otter",
+    "adw"
+   ]
+  },
+  {
+   "fact": "Eats roughly a quarter of its body weight daily; otters keep urchins low so kelp forests grow; without otters urchins can reduce a forest to bare rock within years",
+   "verdict": "OK",
+   "note": "Food: 20 to 25% (ADW), about a quarter (Monterey), 25 to 38% (Wikipedia). Keystone and urchin barrens confirmed (Wikipedia, ADW). 'Within years' is reasonable but no source here gives a timescale; safer as 'can turn into urchin barrens'.",
+   "source_ids": [
+    "adw",
+    "mbay",
+    "wiki-otter"
+   ]
+  },
+  {
+   "fact": "Awakened gate: 'the way the old proverb has it, a hand held loosely keeps someone longer than a hand gripped in fear'",
+   "verdict": "UNVERIFIABLE",
+   "note": "No source found for this as a proverb. Either cut 'the old proverb' or reword as our own line.",
+   "source_ids": []
+  },
+  {
+   "fact": "Purple Star sections: 'maps the Sea Otter you are becoming' and 'the reading here is the outline your Cancer Rabbit shares'",
+   "verdict": "UNVERIFIABLE (no traditional basis)",
+   "note": "No specific star is paired with the Sea Otter, good. But the copy implies Zi Wei Dou Shu reads the Cancer x Rabbit animal. A Zi Wei chart is cast from the lunar birth date and hour; the Western sun sign plays no part. Reword so Purple Star is presented as a separate, deeper chart, not a map of this animal.",
+   "source_ids": [
+    "brief"
+   ]
+  },
+  {
+   "fact": "Proverb 守株待兔 (shǒu zhū dài tù), guard the stump and wait for the rabbit",
+   "verdict": "OK",
+   "note": "Real idiom from the Han Feizi (Wudu chapter). The page already labels the tie to the Rabbit year as its own reading.",
+   "source_ids": [
+    "cd-shouzhu"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,380 @@
+{
+  "slug": "maned-wolf",
+  "name": "Maned Wolf",
+  "sign": "Aquarius",
+  "year": "Tiger",
+  "element": "Wood (from the Tiger), with Aquarius's Air as the second note",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Maned wolf (Smithsonian's National Zoo & Conservation Biology Institute)",
+      "url": "https://nationalzoo.si.edu/animals/maned-wolf"
+    },
+    {
+      "id": "s2",
+      "title": "Maned wolf (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Maned_wolf"
+    },
+    {
+      "id": "s3",
+      "title": "Chrysocyon brachyurus, Animal Diversity Web (University of Michigan)",
+      "url": "https://animaldiversity.org/accounts/Chrysocyon_brachyurus/"
+    },
+    {
+      "id": "s4",
+      "title": "Lobo-guará (Instituto Pró-Carnívoros, Brazil)",
+      "url": "https://procarnivoros.org.br/animais/lobo-guara/"
+    },
+    {
+      "id": "s5",
+      "title": "Doctoral thesis on Solanum lycocarpum (lobeira) genetics and seed dispersal, Universidade de São Paulo",
+      "url": "https://teses.usp.br/teses/disponiveis/11/11137/tde-11122006-155029/en.php"
+    },
+    {
+      "id": "s6",
+      "title": "Maned wolves in the Ecological Station of Itirapina: long-distance vocalization recordings (bioRxiv, 2023)",
+      "url": "https://www.biorxiv.org/content/10.1101/2023.03.03.530946.full.pdf"
+    },
+    {
+      "id": "s7",
+      "title": "The maned wolf: the long-legged star of Planet Earth III (BBC Science Focus)",
+      "url": "https://www.sciencefocus.com/nature/maned-wolf"
+    },
+    {
+      "id": "s8",
+      "title": "鬃狼 zōngláng (Chinese Wikipedia)",
+      "url": "https://zh.wikipedia.org/wiki/鬃狼"
+    },
+    {
+      "id": "s9",
+      "title": "一山不容二虎 yī shān bù róng èr hǔ (MDBG Chinese dictionary)",
+      "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=0&wdqb=一山不容二虎"
+    },
+    {
+      "id": "s10",
+      "title": "12 Chinese idioms related to the tiger (Ethnic China)",
+      "url": "https://ethnic-china.com/?p=4961"
+    },
+    {
+      "id": "s11",
+      "title": "Breaking the Mold: Wolf in East Asian literature, introduction (Animals Crossing in East Asian Literature and Media exhibit)",
+      "url": "https://animalscrossingeastasia.omeka.net/exhibits/show/breaking-the-mold--wolf-repres/introduction--wolf-in-east-asi"
+    },
+    {
+      "id": "s12",
+      "title": "12 de outubro, Dia do Lobo-Guará (São Paulo State Environment Secretariat, SEMIL)",
+      "url": "https://semil.sp.gov.br/educacaoambiental/2025/10/12-de-outubro-dia-do-lobo-guara/"
+    },
+    {
+      "id": "s13",
+      "title": "Lobo-guará (National Geographic Brasil)",
+      "url": "https://www.nationalgeographicbrasil.com/animais/mamiferos/lobo-guara"
+    },
+    {
+      "id": "s14",
+      "title": "Aquarius (astrology) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Aquarius_(astrology)"
+    },
+    {
+      "id": "s15",
+      "title": "Aquarius sign (Kerykeion astrology reference)",
+      "url": "https://kerykeion.net/content/learn-astrology/signs-aquarius"
+    },
+    {
+      "id": "s16",
+      "title": "Tiger (zodiac) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Tiger_(zodiac)"
+    },
+    {
+      "id": "s17",
+      "title": "Year of the Tiger (China Highlights)",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/tiger.htm"
+    },
+    {
+      "id": "s18",
+      "title": "Live page: zodianimal.com/animals/maned-wolf/ (site/animals/maned-wolf/index.html)",
+      "url": "https://www.zodianimal.com/animals/maned-wolf/"
+    },
+    {
+      "id": "s19",
+      "title": "鬃狼 / 鬃 / 狼 (MDBG Chinese dictionary)",
+      "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=0&wdqb=鬃狼"
+    }
+  ],
+  "western": {
+    "temperament": "Aquarius is read as the independent, original thinker of the zodiac: innovation, a wide social or humanitarian view, and loyalty that holds once given. Relationships tend to start as friendship and respect for each other's freedom. The traditional shadow is reflexive contrariness, keeping feelings at arm's length by analyzing them, building an identity around being the outsider, and becoming rigid about its own unusual views.",
+    "planet": "Saturn (traditional ruler, shared with Capricorn); Uranus (modern ruler)",
+    "element": "Air",
+    "modality": "Fixed (the fixed Air sign); opposite sign Leo",
+    "source_ids": [
+      "s14",
+      "s15"
+    ]
+  },
+  "chinese": {
+    "temperament": "Tiger people are traditionally called brave, confident, competitive and unpredictable, charming and capable of leading, with a shadow of being impetuous, irritable, stubborn, overindulgent and at times domineering. China Highlights adds that Tigers can find it hard to show deep affection and that careers often settle after the thirties.",
+    "yinyang": "Yang",
+    "element": "Wood (fixed element); earthly branch 寅 yín",
+    "trine": "Tiger, Horse, Dog",
+    "secret_friend": "Pig",
+    "clash": "Monkey (Wikipedia and China Highlights also list Snake as a poor match)",
+    "lucky": null,
+    "source_ids": [
+      "s16",
+      "s17"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Brazil, Tupi and Guarani names",
+      "meaning": "The Brazilian name guará comes from Tupi and is glossed as 'red', for the coat. The Guarani name aguara guasu means 'large fox'. Neither name calls it a wolf: the people who lived beside it named its color and its size.",
+      "source_ids": [
+        "s12",
+        "s2",
+        "s8"
+      ]
+    },
+    {
+      "culture": "Brazil, folk belief",
+      "meaning": "In a few parts of Brazil maned wolves were hunted for body parts, above all the eyes, which were believed to be good-luck charms. Other parts were thought to treat bronchitis, kidney disease and snakebite. The Smithsonian notes some are still killed for parts believed to be magical; Brazilian conservationists call these beliefs unfounded and a cause of decline.",
+      "source_ids": [
+        "s2",
+        "s1",
+        "s4",
+        "s12"
+      ]
+    },
+    {
+      "culture": "Bolivia, folk belief",
+      "meaning": "Riding on a saddle made of maned wolf leather was believed to protect the rider from bad luck.",
+      "source_ids": [
+        "s2"
+      ]
+    },
+    {
+      "culture": "Brazil, national emblem",
+      "meaning": "Known as the symbol of the Cerrado. Chosen for the R$200 banknote, released by Brazil's Central Bank in 2020: the animal now rides on the country's highest note.",
+      "source_ids": [
+        "s2",
+        "s13",
+        "s12"
+      ]
+    },
+    {
+      "culture": "Chinese, the tiger's mountain",
+      "meaning": "一山不容二虎 yī shān bù róng èr hǔ, 'one mountain cannot hold two tigers': two rivals cannot share one place. A second real idiom, 调虎离山 diào hǔ lí shān, 'lure the tiger off its mountain', means drawing an opponent out of its stronghold to beat it. Both fit an animal defined by its own held ground.",
+      "source_ids": [
+        "s9",
+        "s10"
+      ]
+    },
+    {
+      "culture": "Chinese, the wolf character",
+      "meaning": "The wolf 狼 láng is a mostly pejorative figure in classical Chinese writing, standing for harm, greed and cruelty (狼狈为奸 láng bèi wéi jiān, 'wolf and bei plotting together'; 豺狼虎豹 chái láng hǔ bào, 'jackals, wolves, tigers and leopards' for vicious people). This matters for the page header, which uses 狼 alone.",
+      "source_ids": [
+        "s11",
+        "s10"
+      ]
+    },
+    {
+      "culture": "Online 'maned wolf spirit animal / totem' meanings",
+      "meaning": "Unsourced, do not use. Only generic spirit-animal blogs with no tradition or citation behind them were found.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: Aquarius is fixed Air, the sign that thinks its own way and keeps thinking it; the Tiger is yang Wood, brave, territorial and happy alone. The Maned Wolf person holds ground that nobody else would have thought to claim, and holds it calmly. People rarely know what to call them, the way the animal is neither wolf nor fox, and they long ago stopped needing a label. They read the field from height before they move.",
+    "gifts": "Our reading: original sight that comes from standing a little apart; a steadiness under pressure that does not depend on anyone agreeing; appetite for the overlooked thing (the fruit a predator is not supposed to want); and a habit of leaving places richer than they found them.",
+    "shadow": "Our reading: Aquarius detachment plus Tiger pride. When misnamed or misread, this person withdraws to height rather than explain, and the distance can harden into a fixed position. The Tiger's impetuous streak shows up as a sudden, loud refusal after a long silence. Their weak spot is the old trick of 调虎离山 diào hǔ lí shān: pull them off their own ground (a fight about labels, a role that is not theirs) and they lose what made them strong.",
+    "love": "Our reading: a partnership of two territories. Maned wolf mates share and defend one range but travel and rest apart for most of the year [s3] [s4]. This person loves the same way: loyal for the long haul, but needing whole stretches of their own path. They court with attention, not display. The right partner hears the evening call and answers it, and does not read separate days as a cooling.",
+    "money": "Our reading: earns best from a niche nobody else has mapped. Tends to back unusual bets that look odd to others and pay off slowly. Risk: Aquarius contrariness and Tiger impulse can mean refusing good, ordinary advice simply because it is ordinary.",
+    "conflict": "Our reading: first move is retreat to altitude, out of reach, to decide what is true. Then one clear statement, like the single bark after dusk. Rarely shouts, rarely repeats. Most conflicts end with them quietly leaving the mountain rather than sharing it, which looks peaceful and can be costly."
+  },
+  "careers": [
+    {
+      "path": "Field research, ecology, conservation",
+      "why": "Long solo stretches in open country and patient reading of a landscape suit fixed Air's independent mind and the Tiger's comfort alone."
+    },
+    {
+      "path": "Independent strategy or consulting",
+      "why": "Paid to see the whole field from above and say it once, without joining the group they advise."
+    },
+    {
+      "path": "Urban or landscape planning, design of public spaces",
+      "why": "Shaping ground that other people will use for decades, a working version of the seed-disperser habit. Aquarius's wide social view meets Wood's growth."
+    },
+    {
+      "path": "Investigative journalism or long-form writing",
+      "why": "Tiger nerve plus Aquarian contrarian instinct: following the story nobody else picked up, and publishing one call that carries."
+    },
+    {
+      "path": "Founding a small, unusual business",
+      "why": "A niche of one, like a genus of one. Works when they own the territory outright; struggles under rules with no clear purpose (Kerykeion notes Aquarius strains where conformity is prized) [s15]."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Cacomistle",
+      "slug": "cacomistle",
+      "reason": "Gemini born in a Pig year. The Pig is the Tiger's secret friend, and Pig Water feeds Tiger Wood. Gemini is Air like Aquarius, so the two think in the same weather."
+    },
+    {
+      "name": "Flamingo",
+      "slug": "flamingo",
+      "reason": "Libra born in a Horse year. Horse shares the Tiger's trine (Tiger, Horse, Dog), and Tiger Wood feeds Horse Fire. Libra is the third Air sign."
+    },
+    {
+      "name": "African Grey Parrot",
+      "slug": "african-grey-parrot",
+      "reason": "Gemini born in a Dog year. Dog completes the Tiger trine; Gemini's Air matches Aquarius. In Wu Xing, Tiger Wood restrains Dog Earth, so the Maned Wolf tends to set the direction."
+    },
+    {
+      "name": "Albatross",
+      "slug": "albatross",
+      "reason": "Sagittarius born in a Horse year. Trine kin, and Sagittarius Fire with Aquarius Air is the classic complementary pairing. Two far-rangers who do not need daily contact."
+    },
+    {
+      "name": "Caracara",
+      "slug": "caracara",
+      "reason": "Sagittarius born in a Dog year. Trine kin (Dog), and Fire with Air. A loyal, practical partner for a solitary thinker."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Regal Jumping Spider",
+      "slug": "regal-jumping-spider",
+      "reason": "Leo born in a Monkey year. Monkey is the Tiger's clash, and Leo sits opposite Aquarius on the Western wheel. Double friction: magnetic at first, a fight over who holds the mountain later."
+    },
+    {
+      "name": "Raven",
+      "slug": "raven",
+      "reason": "Aquarius born in a Monkey year. Same sky, clashing years: they understand each other's minds at once, and the Tiger-Monkey clash tends to turn that into rivalry."
+    }
+  ],
+  "candidate_lines": [
+    "People keep guessing your appetite wrong. What feeds you is usually the thing everyone else walked past.",
+    "Strangers file you under the wrong animal all the time. You stopped correcting them years ago, which is its own kind of answer.",
+    "You can share a whole life with someone and still walk most days on separate paths. The right one hears your call at dusk and answers it.",
+    "Weeks can pass without a word from you. Then one call comes through, and nobody within earshot wonders where you stand.",
+    "Some mountains only hold one tiger. You tend to leave quietly before anyone notices there were two.",
+    "The surest way to beat you is to pull you off your own ground, and there are times when being called by the wrong name is all it takes."
+  ],
+  "fact_audit": [
+    {
+      "fact": "The maned wolf has the longest legs relative to body size of any canid, an adaptation for visibility over tall grass, not for pursuit speed.",
+      "verdict": "UNVERIFIABLE",
+      "note": "No source found for 'longest legs relative to body size of any canid'. Wikipedia says 'exceptionally long legs' and 'the tallest of the wild canids'; use that. The visibility function is a hypothesis (ADW: legs 'may serve' to see above tall grass), so 'not for pursuit speed' is stated too firmly.",
+      "source_ids": [
+        "s2",
+        "s3",
+        "s1"
+      ]
+    },
+    {
+      "fact": "Roughly 50% of the diet is plant material; primary food is the lobeira (Solanum lycocarpum), sometimes called the wolf apple.",
+      "verdict": "OK",
+      "note": "Smithsonian gives about 50 percent fruit and vegetables. Wikipedia puts wolf apple at 40 to 90 percent of the diet depending on place and season.",
+      "source_ids": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "fact": "Sole living species in the genus Chrysocyon, belonging to no broader canid group within its subfamily.",
+      "verdict": "WRONG",
+      "note": "First half OK. Second half wrong: molecular studies consistently place its closest living relative as the bush dog (Speothos), with a split about 3 million years ago. Correct line: the only species in its genus, with the bush dog as its nearest kin. 'Largest canid in South America' (Meet section) is OK.",
+      "source_ids": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "fact": "Strictly solitary; adults maintain overlapping home ranges of 25 to 30 square kilometers but actively avoid contact with conspecifics outside a brief breeding period.",
+      "verdict": "WRONG",
+      "note": "Maned wolves live as monogamous pairs that share and defend one territory; mates hunt, travel and rest apart and rarely meet outside the breeding season. Boundaries between neighboring pairs are strictly observed, so ranges of different pairs do not overlap much. Size varies a lot: about 27 square km average in Dietz's study (ADW), 26 square km (Smithsonian), average 44 and range 5 to 105 square km (Pró-Carnívoros). Suggested fix: 'Mated pairs share a territory of roughly 25 to 45 square kilometers yet spend most of the year walking it separately.'",
+      "source_ids": [
+        "s3",
+        "s1",
+        "s4"
+      ]
+    },
+    {
+      "fact": "Primary territorial call is a deep roar-bark, audible several kilometers away, lower and more powerful than calls of related canids.",
+      "verdict": "UNVERIFIABLE",
+      "note": "The roar-bark as a long-range call used to locate the mate and keep other wolves away is OK. No source found giving a distance in kilometers, and none comparing its pitch or power with other canids. Say 'one of its only long-range calls' instead.",
+      "source_ids": [
+        "s1",
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Maned wolves spread lobeira seeds ... making them key dispersal agents for plants that rely on no other animal for this function.",
+      "verdict": "WRONG",
+      "note": "A USP thesis on lobeira names five main seed dispersers: maned wolf, bush dog, crab-eating fox, tapir and the saúva leafcutter ant. The wolf is an excellent disperser (Wikipedia), not the only one. Cut 'rely on no other animal'.",
+      "source_ids": [
+        "s5",
+        "s2"
+      ]
+    },
+    {
+      "fact": "Header hanzi on the hero and the share card: 狼.",
+      "verdict": "WRONG",
+      "note": "狼 láng means wolf (genus Canis). The maned wolf is not a wolf, and the page itself says so. Its Chinese name is 鬃狼 zōngláng, 'maned wolf' (鬃 zōng = mane). 狼 alone also carries greed and cruelty in classical Chinese. The hero shows no pinyin either. Use 鬃狼 zōngláng with pinyin.",
+      "source_ids": [
+        "s8",
+        "s19",
+        "s11",
+        "s2"
+      ]
+    },
+    {
+      "fact": "Proverb of your year: 虎行千山 hǔ xíng qiān shān, 'the tiger walks a thousand mountains without losing its tiger nature'.",
+      "verdict": "UNVERIFIABLE",
+      "note": "Not found as a proverb or chengyu in any source checked; it may be invented. The page says only the pairing is ours, which implies the proverb is traditional. Replace with a sourced idiom such as 一山不容二虎 yī shān bù róng èr hǔ ('one mountain cannot hold two tigers').",
+      "source_ids": [
+        "s9",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Element note: 'Aquarius carries Air, which in Wu Xing maps to Metal. Metal checks Wood.'",
+      "verdict": "UNVERIFIABLE",
+      "note": "No traditional mapping exists between the four Western elements and the five Chinese phases. This is a house convention and should be labeled as our reading, the way the chakra bridge already is.",
+      "source_ids": []
+    },
+    {
+      "fact": "Crossing note: 'Recent Tiger years: 1998, 2010, 2022' plus 'a birthday in those weeks can belong to the Ox'.",
+      "verdict": "WRONG",
+      "note": "Incomplete in a way that misplaces readers. Tiger years run 28 Jan 1998 to 15 Feb 1999, 14 Feb 2010 to 2 Feb 2011, 1 Feb 2022 to 21 Jan 2023. So Aquarians born 20 Jan to 15 Feb 1999, 20 Jan to 2 Feb 2011 and 20 to 21 Jan 2023 are Maned Wolves, which the page never says. And most 2010 Aquarians (20 Jan to 13 Feb) are Ox, not Tiger. Older windows: 5 to 18 Feb 1962 and 20 to 24 Jan 1963; 23 Jan to 18 Feb 1974 and 20 Jan to 10 Feb 1975; 9 to 18 Feb 1986 and 20 to 28 Jan 1987. Aquarius start and end shift a day by year.",
+      "source_ids": [
+        "s16",
+        "s14"
+      ]
+    },
+    {
+      "fact": "Crepuscular to nocturnal; calls at dusk.",
+      "verdict": "OK",
+      "note": "Smithsonian: crepuscular to nocturnal. ADW: a deep-throated bark often heard after dusk.",
+      "source_ids": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "fact": "Love section: 'the maned wolf pair shares territory but avoids each other for most of the year'.",
+      "verdict": "OK",
+      "note": "Matches ADW and Pró-Carnívoros. Note that this contradicts the 'strictly solitary' Animal fact on the same page.",
+      "source_ids": [
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "fact": "Purple Star block: 'Zi Wei Dou Shu is the oldest and most detailed of the Chinese chart systems'.",
+      "verdict": "UNVERIFIABLE",
+      "note": "No star is assigned to the Maned Wolf, which is good. But 'oldest' is doubtful (BaZi has an equal or older claim) and was not sourced. Drop 'oldest'.",
+      "source_ids": []
+    }
+  ]
+}

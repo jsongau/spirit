@@ -1,0 +1,391 @@
+{
+  "slug": "golden-pheasant",
+  "name": "Golden Pheasant",
+  "sign": "Leo",
+  "year": "Rabbit",
+  "element": "Wood (fixed element of the Rabbit); Leo adds Fire, fixed modality. Wood feeds Fire in the generating cycle.",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Leo (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Leo_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Leo traits and personality, TODAY",
+      "url": "https://www.today.com/life/astrology/leo-traits-personality-rcna39027"
+    },
+    {
+      "id": "s3",
+      "title": "Astrological sign (polarity, modality, oppositions), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Astrological_sign"
+    },
+    {
+      "id": "s4",
+      "title": "Chinese zodiac (Rabbit row, compatibility grid), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s5",
+      "title": "Year of the Rabbit, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/rabbit.htm"
+    },
+    {
+      "id": "s6",
+      "title": "Wuxing (Chinese philosophy), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Wuxing_(Chinese_philosophy)"
+    },
+    {
+      "id": "s7",
+      "title": "The many faces of the rabbit in Chinese history and culture, The World of Chinese (2023)",
+      "url": "https://www.theworldofchinese.com/2023/01/the-many-faces-of-the-rabbit-in-chinese-history-and-culture/"
+    },
+    {
+      "id": "s8",
+      "title": "Golden pheasant badge (second civil rank, 19th century), Nelson-Atkins Museum of Art",
+      "url": "https://art.nelson-atkins.org/objects/3743/golden-pheasant-badge"
+    },
+    {
+      "id": "s9",
+      "title": "Hibiscus and Golden Pheasant: Huizong painting, inscribed poem, and Peng Minsheng et al. hybrid finding in Ibis, Storm Media (Chinese)",
+      "url": "https://www.storm.mg/article/93851"
+    },
+    {
+      "id": "s10",
+      "title": "Hibiscus and Golden Pheasant attributed to Emperor Huizong, Palace Museum Beijing, Global Times (2021)",
+      "url": "https://globaltimes.cn/page/202111/1238628.shtml"
+    },
+    {
+      "id": "s11",
+      "title": "五德 wǔdé, the five virtues of the chicken (Han Shi Wai Zhuan quote), Zdic dictionary",
+      "url": "https://www.zdic.net/hans/%E4%BA%94%E5%BE%B7"
+    },
+    {
+      "id": "s12",
+      "title": "Fenghuang, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fenghuang"
+    },
+    {
+      "id": "s13",
+      "title": "Twelve Ornaments (華蟲 huáchóng, the flowery fowl), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Twelve_Ornaments"
+    },
+    {
+      "id": "s14",
+      "title": "Momotarō, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Momotar%C5%8D"
+    },
+    {
+      "id": "s15",
+      "title": "Golden pheasant, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Golden_pheasant"
+    },
+    {
+      "id": "s16",
+      "title": "Golden Pheasant, Perth Zoo",
+      "url": "https://perthzoo.wa.gov.au/animal/golden-pheasant-(1)"
+    },
+    {
+      "id": "s17",
+      "title": "Golden Pheasant species account, eBird (Cornell Lab)",
+      "url": "https://ebird.org/species/golphe"
+    },
+    {
+      "id": "s18",
+      "title": "Liu, He, Ge, Wan and Fang 2021, Cape feather coloration signals different genotypes of the most polymorphic MHC locus in male golden pheasants, Animals 11(2):276",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7912351/"
+    },
+    {
+      "id": "s19",
+      "title": "雉 zhì, MDBG Chinese dictionary",
+      "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=0&wdqb=%E9%9B%89"
+    },
+    {
+      "id": "s20",
+      "title": "锦鸡 jǐnjī, MDBG Chinese dictionary",
+      "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=0&wdqb=%E9%94%A6%E9%B8%A1"
+    },
+    {
+      "id": "s21",
+      "title": "Anahata, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Anahata"
+    }
+  ],
+  "western": {
+    "temperament": "Warm, generous, loyal, big-hearted, bold, theatrical and funny; a natural leader who takes the lead on projects and presentations. Shadow: attention-seeking, proud, vain, bossy, jealous, touchy. In love takes great pride in the relationship.",
+    "planet": "The Sun",
+    "element": "Fire (with Aries and Sagittarius)",
+    "modality": "Fixed (with Taurus, Scorpio, Aquarius); positive / yang polarity; opposite sign Aquarius",
+    "source_ids": [
+      "s1",
+      "s2",
+      "s3"
+    ]
+  },
+  "chinese": {
+    "temperament": "Gentle, quiet, elegant and alert; quick, skillful, kind, patient, very responsible, faithful to the people around them. Described as intellectual and scholarly, with a gift for calligraphy, painting, tailoring and cooking. Shadow: reluctant to reveal their mind, tends to escape hard realities.",
+    "yinyang": "Yin",
+    "element": "Wood (fixed); earthly branch 卯 mǎo",
+    "trine": "Rabbit, Goat, Pig",
+    "secret_friend": "Dog (Six Harmonies, liù hé)",
+    "clash": "Rooster (Six Clashes). Wikipedia also lists Dragon as a harm pair and Rat as a punishment pair.",
+    "lucky": null,
+    "source_ids": [
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Chinese, Ming and Qing court",
+      "meaning": "The golden pheasant (锦鸡 jǐnjī) was the badge of a second-rank civil official, one step below the crane, sewn on the chest and back of the official's robe. The Nelson-Atkins notes the bird's name sounds like a word for ruling or governing, and that writers tied it to literary talent and military prowess. For a Leo-Rabbit this is the strongest symbol on file: brilliance worn by a scholar, a ruler who rules by learning rather than force.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "culture": "Chinese, Song dynasty painting",
+      "meaning": "Emperor Huizong's Hibiscus and Golden Pheasant (芙蓉锦鸡图 fúróng jǐnjī tú, Palace Museum, Beijing) shows the bird on a bending hibiscus branch with the inscription 秋劲拒霜盛，峨冠锦羽鸡。已知全五德，安逸胜凫鹥 (roughly: autumn is hard and the frost-defying hibiscus thrives; the tall-crowned, brocade-feathered bird already holds all five virtues, and its ease surpasses the wild ducks and gulls). A Kunming Institute of Zoology team led by Peng Minsheng later argued in Ibis that the painted bird is a hybrid of the golden and Lady Amherst's pheasant.",
+      "source_ids": [
+        "s9",
+        "s10"
+      ]
+    },
+    {
+      "culture": "Chinese, classical virtue lore",
+      "meaning": "The five virtues in Huizong's poem come from the Han Shi Wai Zhuan's list for the chicken family: the crown is culture (文 wén), the spurs are martial skill (武 wǔ), facing an enemy is courage (勇 yǒng), calling others to food is benevolence (仁 rén), keeping the night watch on time is trustworthiness (信 xìn). Benevolence is also Wood's virtue in Wu Xing, which ties the bird to this animal's element.",
+      "source_ids": [
+        "s11",
+        "s6"
+      ]
+    },
+    {
+      "culture": "Chinese, imperial regalia and myth",
+      "meaning": "The 華蟲 huáchóng, the flowery fowl or pheasant, is one of the Twelve Ornaments on the emperor's robe, described as a symbol of peace and refinement and linked to the fenghuang. Modern descriptions often give the fenghuang the head of a golden pheasant, but Wikipedia flags this as a modern composite, not an ancient source, so present it as 'often pictured with'.",
+      "source_ids": [
+        "s13",
+        "s12"
+      ]
+    },
+    {
+      "culture": "Chinese, Rabbit half",
+      "meaning": "The Jade Rabbit lives on the Moon with Chang'e and pounds the elixir; 狡兔三窟 jiǎo tù sān kū, the cunning rabbit keeps three burrows (Strategies of the Warring States); 兔子急了还咬人 tù zi jí le hái yǎo rén, even a cornered rabbit bites.",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "culture": "Japanese (related bird, not the golden pheasant)",
+      "meaning": "In Momotarō the pheasant joins the dog and the monkey and helps the hero in return for a share of his millet dumplings. This is the green pheasant, a different species, so use only as 'the pheasant in folklore', never as golden pheasant lore.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Generic 'pheasant spirit animal' meanings (fertility, sexuality, 'showing your true colors') found on totem blogs and Celtic or Native American attributions for pheasants. No traditional source located. The golden pheasant is native only to China, so any non-Asian Indigenous meaning would refer to other birds.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Fire (Leo, ruled by the Sun) meets yin Wood (Rabbit). Leo wants to be seen and to lead; the Rabbit is elegant, alert and slow to show its mind. Wood feeds Fire, so the caution feeds the brilliance. The court badge gives the image: the official who rules by learning and taste, splendid in robes but quiet in the hall. A sovereign who would rather be consulted than applauded.",
+    "gifts": "Our reading: taste and craft that other people trust without being told why; a read on rooms and people that is usually right the first time; warmth that is chosen, so it lands; loyalty (both halves are described as faithful); the scholar-official's mix of beauty and judgment.",
+    "shadow": "Our reading: Leo pride plus the Rabbit's reluctance to reveal its mind makes a person who waits to be invited into the light and resents not being asked. The Rabbit's 'escape reality' tendency can turn into perfectionism used as a hiding place. Leo's touchiness can make one careless remark feel like a public verdict. 守株待兔 (waiting by the stump) fits: holding a position because it once paid off.",
+    "love": "Our reading: Sun-ruled and yin. Loves through attention and beautiful arrangements: the right gift, the evening planned to the detail. Needs admiration that is private and steady more than public. Slow to show the full self and proud about it; the partner who keeps showing up gently is the one who sees the plumage. Fears being looked at before choosing to be seen.",
+    "money": "Our reading: Leo spends on beauty and generosity; the Rabbit is careful and keeps backups (three burrows). Likely pattern: frugal on daily things, lavish on one fine object or one shared experience. Risk: spending to keep up an image, or undercharging because asking out loud feels like showing off.",
+    "conflict": "Our reading: runs before it flies, like the bird (s15, s17). Leaves the argument early, processes alone, returns with a finished verdict. Rarely fights in public; when pride is truly hurt, the cornered rabbit bites (s7) and the Leo memory holds it. Practice: say the hurt while it is still small, to the person who caused it."
+  },
+  "careers": [
+    {
+      "path": "Creative director, curator or gallery lead",
+      "why": "Leo leadership (s2) plus the Rabbit's gift for painting and culture (s5); judgment is the product and the display is chosen."
+    },
+    {
+      "path": "Editor, publisher, critic",
+      "why": "The second-rank badge tied the bird to literary talent (s8); private accuracy that shapes a public result."
+    },
+    {
+      "path": "Fashion, textile or costume designer, tailor",
+      "why": "China Highlights lists tailoring as a Rabbit gift (s5); the bird is the most richly dressed in the forest, and 锦 jǐn literally means brocade."
+    },
+    {
+      "path": "Senior advisor, diplomat, chief of staff, policy counsel",
+      "why": "The badge belonged to a civil official (s8); China Highlights names politics and judiciary for the Rabbit (s5). Influence through counsel suits the hidden sovereign."
+    },
+    {
+      "path": "Doctor, therapist, healer",
+      "why": "Medicine and health care are listed Rabbit fields (s5); Leo warmth plus Rabbit perception reads people precisely."
+    },
+    {
+      "path": "Chef or host of a small, exacting table",
+      "why": "Cooking is a listed Rabbit gift (s5); Leo hospitality makes the evening an act of love."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Bar-headed Goose",
+      "slug": "bar-headed-goose",
+      "reason": "Sagittarius x Goat. Goat is in the Rabbit's trine (Rabbit, Goat, Pig) and Sagittarius shares Leo's Fire. Element note: Goat is Earth, which Wood controls, so the Golden Pheasant leads here."
+    },
+    {
+      "name": "Honey Badger",
+      "slug": "honey-badger",
+      "reason": "Aries x Pig. Pig is in the Rabbit's trine, Aries shares Leo's Fire, and the Pig's Water feeds the Rabbit's Wood."
+    },
+    {
+      "name": "Luna Moth",
+      "slug": "luna-moth",
+      "reason": "Libra x Goat. Trine partner, and Libra's Air feeds Leo's Fire. Both are beauty-first animals that hide in plain sight."
+    },
+    {
+      "name": "Giant Otter",
+      "slug": "giant-otter",
+      "reason": "Aries x Dog. The Dog is the Rabbit's secret friend (Six Harmonies), and Aries is a fellow Fire sign."
+    },
+    {
+      "name": "Sunbittern",
+      "slug": "sunbittern",
+      "reason": "Leo x Dog. Same Sun sign plus the Rabbit and Dog secret-friend pair; another bird that keeps its brilliant pattern folded until it chooses to open it."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Hoatzin",
+      "slug": "hoatzin",
+      "reason": "Aquarius x Rooster. The Rabbit and Rooster are one of the Six Clashes, and Aquarius is Leo's opposite sign. Rooster Metal also cuts Rabbit Wood. Double friction, which can make a sharp mirror."
+    },
+    {
+      "name": "Sunset Moth",
+      "slug": "sunset-moth",
+      "reason": "Leo x Rooster. Same Sun sign but clashing year branches (Rabbit and Rooster) and Metal over Wood. You recognize each other's light and argue about how to show it."
+    }
+  ],
+  "candidate_lines": [
+    "You can spend a whole evening at the edge of the room and still be the person everyone describes on the way home.",
+    "Your best idea of the week usually gets said once, quietly, to one person in a hallway, and then you get to watch someone else say it louder.",
+    "When you finally wear the bright thing, people ask why they have never seen it before. The honest answer is that you were waiting to see if they deserved it.",
+    "In a new place you find the exits and the best seat before you find the host.",
+    "There are times when love, for you, is an evening arranged down to the candles, and you never say out loud what the evening was meant to say.",
+    "Some part of you still roosts high. You need one room at the end of the day where nobody can ask you to be anything."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header character 雉 (hero and closing card) as the name of this animal",
+      "verdict": "WRONG",
+      "note": "雉 zhì means pheasant in general, and MDBG glosses it as the ringed (common) pheasant. The golden pheasant is 锦鸡 jǐnjī (brocade fowl), formally 红腹锦鸡 hóngfù jǐnjī, red-bellied brocade fowl. Use 锦鸡 jǐnjī. The page also shows 雉 without pinyin.",
+      "source_ids": [
+        "s19",
+        "s20",
+        "s9"
+      ]
+    },
+    {
+      "fact": "Source line credits 'Zhang et al. · Cape feather coloration and MHC genotype in male golden pheasants'",
+      "verdict": "WRONG",
+      "note": "The linked paper (PMC7912351) is by Liu, He, Ge, Wan and Fang (2021), Animals 11(2):276. No Zhang among the authors. Fix the citation.",
+      "source_ids": [
+        "s18"
+      ]
+    },
+    {
+      "fact": "In courtship the male raises the cape and rotates it forward until it screens his face, fanning the tail and circling the hen; the cape stays folded otherwise",
+      "verdict": "OK",
+      "note": "Perth Zoo: the orange ruff 'spreads dramatically like a neck cape' and 'covers their face, all but their eyes'. Wikipedia: the cape 'can be spread in display'. Circling the hen is the common description of the lateral display but none of the sources fetched state it; soften to 'displays to the hen' or find a primary source.",
+      "source_ids": [
+        "s16",
+        "s15"
+      ]
+    },
+    {
+      "fact": "Endemic to the forested mountains of central China; secretive to the point of near-invisibility, rarely seen even where common",
+      "verdict": "OK",
+      "note": "Endemic to China per Liu et al. 2021; Wikipedia says mountain forests of western China, Perth Zoo says central and southern China. eBird: 'shy and surprisingly difficult to find'. 'Near-invisibility' and 'even where common' overstate it; use 'shy and hard to find'. Feral populations exist in Britain and Hawaii.",
+      "source_ids": [
+        "s18",
+        "s15",
+        "s16",
+        "s17"
+      ]
+    },
+    {
+      "fact": "Adult male is 90 to 105 cm long, roughly two thirds of that tail",
+      "verdict": "OK",
+      "note": "Wikipedia and Perth Zoo give about 100 cm with the tail about two thirds of total length. The 90 to 105 range is consistent.",
+      "source_ids": [
+        "s15",
+        "s16"
+      ]
+    },
+    {
+      "fact": "The female wears mottled brown, cryptic against leaf litter",
+      "verdict": "OK",
+      "note": "Wikipedia: much less showy, duller mottled brown. Liu et al. confirm strong sexual dichromatism.",
+      "source_ids": [
+        "s15",
+        "s18"
+      ]
+    },
+    {
+      "fact": "Clumsy fliers that run from disturbance rather than take off; feed on the ground by day",
+      "verdict": "OK",
+      "note": "Wikipedia: fly clumsily in short bursts, prefer to run, spend most time on the ground. eBird: 'runs quickly from detected disturbance'.",
+      "source_ids": [
+        "s15",
+        "s17"
+      ]
+    },
+    {
+      "fact": "Forages on the forest floor by day and climbs into the canopy to roost at night",
+      "verdict": "OK",
+      "note": "Wikipedia and Perth Zoo: roost in trees at night. 'Canopy' and 'above everything that walks' are page embellishment; 'roosts in trees' is the safe wording.",
+      "source_ids": [
+        "s15",
+        "s16"
+      ]
+    },
+    {
+      "fact": "Wood: direction East, season Spring, virtue Benevolence, color Green; Water feeds Wood, Wood feeds Fire, Metal cuts Wood, Wood opens Earth",
+      "verdict": "OK",
+      "note": "Wikipedia Wuxing confirms all. Note its primary Wood color is blue/cyan (青 qīng) with green intermediary; 'green' is fine.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "fact": "Heart chakra Anahata: bija YAM, element air, guardian a black antelope; Wood paired with Anahata",
+      "verdict": "OK",
+      "note": "Wikipedia: bija yam, air, antelope as the chakra's animal. 'Black' is not in the source; drop or cite. The Wood to Anahata pairing is the site's own and is already labeled an interpretive bridge.",
+      "source_ids": [
+        "s21"
+      ]
+    },
+    {
+      "fact": "Leo born in 1987 falls in a Rabbit year that began 29 January 1987 (FAQ JSON-LD)",
+      "verdict": "OK",
+      "note": "Lunar New Year 1987 was 29 January. The January/February caveat never affects Leo birthdays (July/August), so the example is true but adds nothing; drop it in the rewrite.",
+      "source_ids": [
+        "s4"
+      ]
+    },
+    {
+      "fact": "Proverb 守株待兔 shǒu zhū dài tù tied to the Rabbit year",
+      "verdict": "OK",
+      "note": "Real idiom about a rabbit (Han Feizi); the page already labels the pairing as its own reading.",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "fact": "Purple Star (Zi Wei Dou Shu) claims",
+      "verdict": "OK",
+      "note": "No star is assigned from the sign and year on this page. It only links to chart casting and says the chart comes from the exact birth hour, which is correct. The 'awakened Golden Pheasant' framing is the site's own.",
+      "source_ids": []
+    },
+    {
+      "fact": "'Primal Zodiac' wording in JSON-LD alternateName, keywords, FAQ and footer",
+      "verdict": "WRONG",
+      "note": "Not a factual error about the animal but breaks the 2026-11-08 owner ruling flagged sitewide in REVIEW-mojo.md. Present 5 times on this page.",
+      "source_ids": []
+    }
+  ]
+}

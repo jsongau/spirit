@@ -1,0 +1,348 @@
+{
+  "slug": "arctic-tern",
+  "name": "Arctic Tern",
+  "sign": "Sagittarius",
+  "year": "Ox",
+  "element": "Earth",
+  "sources": [
+    {
+      "id": "egevang-phys",
+      "title": "Arctic terns confirmed to have the longest animal migration in the world (Phys.org, Jan 2010, on Egevang et al. PNAS)",
+      "url": "https://phys.org/news/2010-01-arctic-terns-longest-animal-migration.html"
+    },
+    {
+      "id": "egevang-nora",
+      "title": "Egevang et al. 2010, Tracking of Arctic terns Sterna paradisaea reveals longest animal migration, PNAS (NERC Open Research Archive record and abstract)",
+      "url": "https://nora.nerc.ac.uk/id/eprint/14091/"
+    },
+    {
+      "id": "egevang-doi",
+      "title": "Egevang et al. 2010, PNAS 107(5) (DOI, cited on live page)",
+      "url": "https://doi.org/10.1073/pnas.0909493107"
+    },
+    {
+      "id": "ncl-2016",
+      "title": "Newcastle University press release, June 2016: Farne Islands Arctic tern flies 96,000 km",
+      "url": "https://www.ncl.ac.uk/press/articles/archive/2016/06/arcticterns"
+    },
+    {
+      "id": "aab-food",
+      "title": "Cornell Lab, All About Birds: Arctic Tern life history (food and behavior)",
+      "url": "https://www.allaboutbirds.org/guide/Arctic_Tern/food"
+    },
+    {
+      "id": "adfg",
+      "title": "Alaska Department of Fish and Game, Wildlife Notebook: Terns (PDF)",
+      "url": "https://adfg.alaska.gov/static/education/wns/terns.pdf"
+    },
+    {
+      "id": "wiki-tern",
+      "title": "Arctic tern (Wikipedia, via Wikiwand)",
+      "url": "https://www.wikiwand.com/en/articles/Arctic_tern"
+    },
+    {
+      "id": "wt-tern",
+      "title": "The Wildlife Trusts: Arctic tern",
+      "url": "https://wildlifetrusts.org/node/193"
+    },
+    {
+      "id": "wiki-sag",
+      "title": "Sagittarius (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sagittarius_(astrology)"
+    },
+    {
+      "id": "cafe-sag",
+      "title": "Cafe Astrology: Sagittarius symbols and associations",
+      "url": "https://cafeastrology.com/sagittarius-symbols.html"
+    },
+    {
+      "id": "tcg-ox",
+      "title": "Travel China Guide: Year of the Ox",
+      "url": "https://www.travelchinaguide.com/intro/social_customs/zodiac/ox.htm"
+    },
+    {
+      "id": "chl-ox",
+      "title": "China Highlights: Year of the Ox, five elements and destiny",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/five-lements-character-destiny-analysis-ox.htm"
+    },
+    {
+      "id": "wiki-ox",
+      "title": "Ox (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ox_(zodiac)"
+    },
+    {
+      "id": "wiki-branches",
+      "title": "Earthly Branches, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Earthly_Branches"
+    },
+    {
+      "id": "cny-compat",
+      "title": "ChineseNewYear.net: Chinese zodiac compatibility (three harmonies, six harmonies, six conflicts)",
+      "url": "https://chinesenewyear.net/zodiac/compatibility"
+    },
+    {
+      "id": "dufu",
+      "title": "Tang Poetry (Substack): Du Fu is a lonely seagull, on 旅夜书怀",
+      "url": "https://tangpoetry.substack.com/p/du-fu-is-a-lonely-seagull"
+    },
+    {
+      "id": "liezi",
+      "title": "Silk Qin: 鷗鷺忘機 Oulu Wang Ji, the Liezi seabird story",
+      "url": "https://www.silkqin.com/02qnpu/sz03olwj.htm"
+    },
+    {
+      "id": "youdao",
+      "title": "Youdao Dictionary: Arctic tern = 北极燕鸥",
+      "url": "https://dict.youdao.com/w/Arctic tern"
+    },
+    {
+      "id": "apf-imiqutailaq",
+      "title": "American Polar Society: Imiqutailaq, Path of the Arctic Tern",
+      "url": "https://americanpolar.org/imitiqutailq-path-of-the-arctic-tern/"
+    },
+    {
+      "id": "dsl-tarrock",
+      "title": "Dictionaries of the Scots Language: tarrock / tirrick",
+      "url": "https://dsl.ac.uk/entry/snd/tarrock"
+    },
+    {
+      "id": "brief",
+      "title": "Zodi Animal research brief, system section (internal: trines, secret friends, clashes, Western element pairs)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Frank, honest, generous and restless. Needs freedom to thrive. Far-sighted and enterprising, sometimes tactless but rarely ill-meant. Ninth-house sign of belief, philosophy, higher learning and long-distance travel. The archer image has long been tied to prophecy and seers.",
+    "planet": "Jupiter",
+    "element": "Fire (with Aries and Leo)",
+    "modality": "Mutable (with Gemini, Virgo, Pisces)",
+    "source_ids": [
+      "wiki-sag",
+      "cafe-sag"
+    ]
+  },
+  "chinese": {
+    "temperament": "Hardworking, responsible, patient, dependable and determined. Plans carefully before acting. Shadow: stubborn, socially reserved, slow to accept change.",
+    "yinyang": "Yin",
+    "element": "Earth (fixed element). Earthly branch 丑 chǒu, double-hour 1 to 3 a.m.",
+    "trine": "Ox, Snake, Rooster",
+    "secret_friend": "Rat",
+    "clash": "Goat",
+    "lucky": "Sources disagree. Travel China Guide: colors red, blue, purple; numbers 1 and 9. China Highlights: colors white, yellow, green; numbers 1 and 4. Wikipedia: colors green, red, purple; numbers 8 and 3. Only 1 appears twice. Recommend printing no lucky numbers, or one with 'one tradition holds'.",
+    "source_ids": [
+      "tcg-ox",
+      "chl-ox",
+      "wiki-ox",
+      "wiki-branches",
+      "cny-compat"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Chinese (Tang poetry)",
+      "meaning": "Du Fu ends 旅夜书怀 (Lǚ yè shū huái, 'Writing my feelings on a night of travel') with 飘飘何所似，天地一沙鸥 (piāopiāo hé suǒ sì, tiāndì yī shā ōu): drifting, what am I like? One sand gull between heaven and earth. The gull is the classic Chinese image of the lone traveler. Bridge: the tern's Chinese name 北极燕鸥 (Běijí yàn'ōu) literally means 'Arctic swallow-gull', so the tern sits inside the same 鸥 ōu family of images.",
+      "source_ids": [
+        "dufu",
+        "youdao"
+      ]
+    },
+    {
+      "culture": "Chinese (Daoist, Liezi)",
+      "meaning": "鷗鷺忘機 (ōu lù wàng jī), 'seabirds and a heart with no scheme': a man by the sea played with hundreds of seabirds each morning; the day he came intending to catch one for his father, they circled high and would not land. The seabird reads intent and comes only to an honest heart. A strong fit for the Ox's sincerity and Sagittarius's frankness.",
+      "source_ids": [
+        "liezi"
+      ]
+    },
+    {
+      "culture": "Inuit (Grise Fiord, Nunavut)",
+      "meaning": "The community of Grise Fiord gave glaciologist Fritz Koerner, who spent 50 years studying ice from pole to pole, the name Imiqutailaq, 'Arctic Tern'. The bird's name became an honor name for a person who goes to both ends of the earth and keeps coming back. We found no sourced Inuit myth about the tern itself; do not invent one.",
+      "source_ids": [
+        "apf-imiqutailaq"
+      ]
+    },
+    {
+      "culture": "Scots and Norse (Orkney, Shetland)",
+      "meaning": "Island names tirrick, tarrock, rittoch, from the same root as Old Norse þerna. Walter Scott's The Pirate (1821) writes of the tarrack's 'querulous cry'; an 1898 Shetland dialect poem has tirricks diving beside young coalfish. The tern is a voice of the northern summer shore. Name lore only, no sourced omen meaning.",
+      "source_ids": [
+        "dsl-tarrock"
+      ]
+    },
+    {
+      "culture": "Sailors' and common English names",
+      "meaning": "Terns are nicknamed 'sea swallows', a name that frames them as the swallow of the ocean: a seasonal returner.",
+      "source_ids": [
+        "adfg"
+      ]
+    },
+    {
+      "culture": "Northern nations, modern",
+      "meaning": "The Arctic tern appears on postage stamps of Åland, Alderney, the Faroe Islands, Canada, Finland, Iceland and Cuba. Use only as color, not as symbolism.",
+      "source_ids": [
+        "wiki-tern"
+      ]
+    },
+    {
+      "culture": "New-age 'tern spirit animal' meanings (endurance, vision, freedom)",
+      "meaning": "Unsourced, do not use. Found only on generic spirit-animal blogs with no tradition behind them.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "(Our reading) Jupiter's Fire wants the widest frame; yin Earth wants one fixed point. The Tern holds both: a wide-ranging mind attached to a very small number of real commitments. You read as easygoing and outward, yet the inner life runs on loyalty and patience. In five-phase terms Fire feeds Earth, so the range keeps feeding the root.",
+    "gifts": "(Our reading) Orientation far from home. Staying power on long, slow goals that most mutable signs drop. Honest speech that people trust because you have nothing to sell. Courage out of proportion to your size when something you guard is threatened.",
+    "shadow": "(Our reading) The departure that was purposeful becomes the departure that is preferred. Stubbornness dressed up as freedom: you will not be moved, and you will not stay. Bluntness that lands harder than you meant. A habit of returning on your own schedule and expecting the nest to be unchanged.",
+    "love": "(Our reading) Slow to promise, then very hard to shake. You court through shared adventures and long talks about what life is for. You need a partner who does not take your time away as rejection, and you owe them a clear word about when you will be back. The Liezi image fits: you come close to people who want nothing from you.",
+    "money": "(Our reading) Two habits pull against each other: Sagittarian generosity and Ox caution. At your best you spend freely on experience and learning and are quietly careful with everything else. Risk: a big trip or a big idea swallowing the reserve the Ox side built.",
+    "conflict": "(Our reading) First reflex is to move, take a walk, take a flight, think it over in motion. Then the Ox digs in. You rarely fight over small things, but over a boundary you guard you can be fierce, direct and slow to forgive. Repair comes through a plain, honest conversation, not a grand gesture."
+  },
+  "careers": [
+    {
+      "path": "Field science and expedition work (polar, marine, ecology)",
+      "why": "Ninth-house range plus Ox patience for long seasons of careful, repetitive work far from home."
+    },
+    {
+      "path": "Foreign correspondent, travel or long-form writing",
+      "why": "Sagittarius's frankness and love of distance; the Ox's steady output under deadline."
+    },
+    {
+      "path": "International operations, logistics, supply chain",
+      "why": "You hold the whole route in your head and stay calm when the plan bends. Ox is traditionally suited to stable technical and administrative work."
+    },
+    {
+      "path": "Pilot, flight crew, maritime officer",
+      "why": "Built-in rhythm of leaving and returning, with strict procedure that the Ox side respects."
+    },
+    {
+      "path": "University teaching, law, or medicine abroad",
+      "why": "Sources list law, medicine and teaching for the Ox and higher education and philosophy for Sagittarius; the Tern version teaches or practices across borders."
+    },
+    {
+      "path": "Humanitarian or development field roles",
+      "why": "Courage in hard places, loyalty to a cause, and comfort with long rotations away."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Cassowary",
+      "slug": "cassowary",
+      "reason": "Aries x Rooster. Rooster is in the Ox trine (Ox, Snake, Rooster), and Aries shares Sagittarius's Fire element. Two fierce defenders who respect each other's ground."
+    },
+    {
+      "name": "Sunset Moth",
+      "slug": "sunset-moth",
+      "reason": "Leo x Rooster. Ox trine through the Rooster, and Leo is the third Fire sign, so the Western half harmonizes too."
+    },
+    {
+      "name": "Paradise Tanager",
+      "slug": "paradise-tanager",
+      "reason": "Libra x Snake. Snake completes the Ox trine; Libra is Air, which feeds Sagittarius's Fire."
+    },
+    {
+      "name": "Red Panda",
+      "slug": "red-panda",
+      "reason": "Libra x Rat. Rat is the Ox's secret friend (six harmonies pair); Libra's Air complements Fire."
+    },
+    {
+      "name": "Sandgrouse",
+      "slug": "sandgrouse",
+      "reason": "Sagittarius x Rat. Same sun sign, and Rat is the Ox's secret friend: a fellow long-distance traveler who also goes back to one place to care for the young."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Rock Wren",
+      "slug": "rock-wren",
+      "reason": "Gemini x Goat. Ox and Goat are one of the six clashes, and Gemini sits directly opposite Sagittarius on the wheel. Strong pull, constant friction."
+    },
+    {
+      "name": "Clark's Nutcracker",
+      "slug": "clarks-nutcracker",
+      "reason": "Virgo x Goat. Ox-Goat clash, plus Virgo and Sagittarius are both mutable signs of Earth and Fire elements that sit in square to each other."
+    }
+  ],
+  "candidate_lines": [
+    "You tend to make your best decisions somewhere between two places, on a night train or at an airport gate long after midnight.",
+    "There are times when the people you love find out you were gone only after you are already back.",
+    "You often keep one address and one friendship that nobody else realizes are holding your whole life up.",
+    "You tend to look easygoing right up until someone reaches for what is yours. Then you are small and very hard to ignore.",
+    "There are times when leaving feels so much like progress that you forget to check whether anyone asked you to stay.",
+    "You often come home with more stories than luggage, and you still remember exactly which chair is yours."
+  ],
+  "fact_audit": [
+    {
+      "fact": "GPS tracking confirmed the migration forms a global figure-eight, curving with prevailing winds.",
+      "verdict": "WRONG",
+      "note": "The 2010 study used light-level geolocators (1.4 g), not GPS. The paper describes a sigmoidal, S-shaped northbound route across the Atlantic. The wind-use part is correct. Suggested fix: 'Tracking showed the route bends into a giant S across the Atlantic, riding the prevailing winds.'",
+      "source_ids": [
+        "egevang-phys",
+        "egevang-nora"
+      ]
+    },
+    {
+      "fact": "Longest known animal migration; 70,000 to 90,000 km round trip, some individuals nearly 96,000 km by GPS logger.",
+      "verdict": "OK",
+      "note": "Distances hold: Iceland and Greenland birds averaged about 70,900 km (max 81,600); a Farne Islands bird logged about 96,000 km in 2015 to 2016. Change 'GPS logger' to 'geolocator'.",
+      "source_ids": [
+        "egevang-nora",
+        "ncl-2016",
+        "wiki-tern"
+      ]
+    },
+    {
+      "fact": "Breeding adults return to the same colony and often the exact nest site year after year.",
+      "verdict": "UNVERIFIABLE",
+      "note": "Return to the same colony is supported, with pairs often mating for life. 'Often the exact nest site' was not confirmed in any source reached. Drop that clause or find a primary study.",
+      "source_ids": [
+        "wiki-tern"
+      ]
+    },
+    {
+      "fact": "Experiences more daylight than any other organism, two polar summers a year.",
+      "verdict": "OK",
+      "note": "Stated by Alaska Fish and Game and Wikipedia. Usually phrased 'any other creature'; keep that wording.",
+      "source_ids": [
+        "adfg",
+        "wiki-tern"
+      ]
+    },
+    {
+      "fact": "Dive-bombs and strikes intruders including polar bears, arctic foxes and humans, drawing blood, at 90 to 120 grams.",
+      "verdict": "OK",
+      "note": "Strikes the head, can draw blood, repels polar bears, foxes, cats and raptors. Weight range in sources: 86 to 127 g, about 100 g typical (Wildlife Trusts: 95 to 120 g).",
+      "source_ids": [
+        "wiki-tern",
+        "adfg",
+        "aab-food",
+        "wt-tern"
+      ]
+    },
+    {
+      "fact": "Does not pause the migration to feed; sustains the whole crossing without a fixed feeding ground.",
+      "verdict": "WRONG",
+      "note": "The 2010 study found an oceanic stopover in the central North Atlantic where birds paused for almost a month; the Farne bird staged in the Indian Ocean (7 to 31 Oct) and off Antarctica. Terns do feed on the move, often in mixed flocks over fish schools. Suggested fix: 'They feed on the wing as they travel and refuel at a few open-ocean stopovers.' The reading ('you find what you need on the way') still works.",
+      "source_ids": [
+        "egevang-phys",
+        "egevang-nora",
+        "ncl-2016",
+        "aab-food"
+      ]
+    },
+    {
+      "fact": "Intro: lifespan may span thirty years.",
+      "verdict": "OK",
+      "note": "Record about 31 years; some birds live into their early 30s.",
+      "source_ids": [
+        "wiki-tern",
+        "adfg"
+      ]
+    },
+    {
+      "fact": "Page header uses the character 鷗 for the Arctic Tern (no pinyin shown).",
+      "verdict": "WRONG",
+      "note": "鷗 ōu alone means gull. Tern is 燕鷗 (yàn'ōu), Arctic tern 北极燕鸥 (Běijí yàn'ōu). Use 燕鷗 with pinyin per the writing rules.",
+      "source_ids": [
+        "youdao"
+      ]
+    }
+  ]
+}
