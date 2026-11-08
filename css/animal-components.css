@@ -428,7 +428,7 @@ body.js-on .pf-palette .palette-panel:not(.is-active){display:none}
   border:1px solid rgba(214,193,140,.35);box-shadow:-9px 10px 28px rgba(0,0,0,.4),inset 2px 0 0 rgba(0,0,0,.35);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;padding:1rem;overflow:hidden}
 .pf-ebook__book::before{content:"";position:absolute;left:9px;top:0;bottom:0;width:2px;background:rgba(0,0,0,.4)}
-.pf-ebook__glyph{font-family:var(--han);font-size:2.5rem;line-height:1;color:var(--animal-primary,var(--a-gold))}
+.pf-ebook__glyph{font-family:var(--han);font-size:2.5rem;line-height:1;color:var(--a-gold);color:color-mix(in srgb,var(--animal-primary,var(--a-gold)) 45%,var(--a-snow))}
 .pf-ebook__coverlabel{font-family:var(--serif);font-size:.72rem;line-height:1.35;text-align:center;color:var(--a-mist);letter-spacing:.02em}
 .pf-habitat__cta .cta-kicker{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a-gold);margin:0 0 .5rem}
 .pf-habitat__cta h3{font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.75rem);color:var(--a-snow);margin:0 0 .5rem}
@@ -1284,14 +1284,14 @@ body.js-on .stone-panel:not(.is-active){display:none}
 .pf-awaken__glow{position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(60% 55% at 82% 12%,var(--animal-glow),transparent 70%)}
 .pf-awaken .wrap{position:relative}
-.pf-awaken__star{color:var(--animal-primary,var(--a-gold))}
+.pf-awaken__star{color:var(--a-gold);color:color-mix(in srgb,var(--animal-primary,var(--a-gold)) 45%,var(--a-snow))}
 .pf-awaken__lead{font-size:1.12rem;max-width:60ch;color:var(--a-mist);margin:0 0 2rem}
 .pf-awaken__cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:0 0 2rem}
 .pf-awaken__card{display:flex;flex-direction:column;gap:.5rem;padding:1.5rem 1.4rem;border:1px solid var(--rule);
   border-radius:14px;background:rgba(214,193,140,.03);transition:border-color .2s,background .2s,transform .18s}
 a.pf-awaken__card:hover{border-color:var(--animal-primary,var(--a-gold));background:rgba(214,193,140,.07);transform:translateY(-2px)}
 .pf-awaken__card--karma{border-style:dashed}
-.pf-awaken__ic{font-family:var(--han);font-size:1.5rem;line-height:1;color:var(--animal-primary,var(--a-gold))}
+.pf-awaken__ic{font-family:var(--han);font-size:1.5rem;line-height:1;color:var(--a-gold);color:color-mix(in srgb,var(--animal-primary,var(--a-gold)) 45%,var(--a-snow))}
 .pf-awaken__card h3{font-size:1.08rem;margin:.2rem 0 0}
 .pf-awaken__card p{font-size:.92rem;color:var(--a-mist);margin:0}
 .pf-awaken__cta{display:flex;flex-direction:column;align-items:flex-start;gap:.7rem}
@@ -1313,7 +1313,7 @@ a.pf-awaken__card:hover{border-color:var(--animal-primary,var(--a-gold));backgro
 .pf-love__gate{position:absolute;inset:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:.6rem;
   padding:clamp(1.5rem,3vw,2.2rem);background:radial-gradient(120% 100% at 50% 50%,rgba(13,14,24,.72),rgba(13,14,24,.9))}
 .pf-love__lock{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.56rem;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--animal-primary,var(--a-gold));
+  letter-spacing:.12em;text-transform:uppercase;color:var(--a-gold);color:color-mix(in srgb,var(--animal-primary,var(--a-gold)) 45%,var(--a-snow));
   border:1px solid var(--rule);border-radius:999px;padding:.35em .8em}
 .pf-love__gate h3{font-family:var(--serif);font-size:clamp(1.2rem,2.4vw,1.5rem);margin:.2rem 0 0;color:var(--a-snow)}
 .pf-love__gate>p{color:var(--a-mist);font-size:.96rem;margin:0 0 .5rem;max-width:46ch}
@@ -1328,7 +1328,7 @@ a.pf-awaken__card:hover{border-color:var(--animal-primary,var(--a-gold));backgro
 .pf-ziwei{margin:1.5rem 0 2.5rem;border:1px solid var(--rule);border-radius:16px;
   padding:1.7rem clamp(1.2rem,3vw,2rem);background:linear-gradient(180deg,rgba(150,120,200,.06),rgba(214,193,140,.02))}
 .pf-ziwei__kicker{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--animal-primary,var(--a-gold));margin:0 0 1.3rem}
+  color:var(--a-gold);color:color-mix(in srgb,var(--animal-primary,var(--a-gold)) 45%,var(--a-snow));margin:0 0 1.3rem}
 .pf-ziwei__stars{display:grid;gap:1.5rem}
 .pf-ziwei__star{min-width:0}
 .pf-ziwei__head{display:flex;align-items:flex-end;gap:.7rem;margin:0 0 .5rem;flex-wrap:wrap}
@@ -1369,3 +1369,9 @@ a.pf-awaken__card:hover{border-color:var(--animal-primary,var(--a-gold));backgro
 .pf-hero--noart .pf-hero__inner{max-width:46rem;margin:0 auto;text-align:center}
 .pf-hero--noart .pf-hero__cross{justify-content:center}
 @media(max-width:900px){.pf-hero:not(.pf-hero--noart){padding-bottom:1.2rem}.pf-hero:not(.pf-hero--noart) .pf-hero__art img{max-height:30vh;width:auto;margin:0 auto;display:block}}
+
+/* w2b-contrast (2026-11-08): animal accent used as text is mixed 55% toward --a-snow; worst case 4.98:1 on --a-night across all 144. */
+
+/* w2b-psychic (2026-11-08): restored Psychic Reading reads as one column of prose */
+.pf-psychic__body{grid-template-columns:1fr;max-width:68ch}
+.pf-psychic .lede{letter-spacing:.06em}

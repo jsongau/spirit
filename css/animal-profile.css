@@ -120,7 +120,7 @@ img,svg{max-width:100%}
 @media (max-width:1179px){#rail{display:none} .pf-shell{display:block}}
 /* simple, compact identity: just the animal name with a small mark */
 .rail__id{display:flex;align-items:center;gap:.55rem;padding:0 .3rem 1rem;margin-bottom:.9rem;border-bottom:1px solid var(--rule)}
-.rail__han{flex:0 0 auto;font-family:var(--han);font-size:1.35rem;line-height:1;color:var(--animal-primary,var(--a-gold))}
+.rail__han{flex:0 0 auto;font-family:var(--han);font-size:1.35rem;line-height:1;color:var(--a-gold);color:color-mix(in srgb,var(--animal-primary,var(--a-gold)) 45%,var(--a-snow))}
 .rail__name{font-family:var(--serif);font-size:1.1rem;color:var(--a-snow);line-height:1.12}
 .rail__nav{display:flex;flex-direction:column;position:relative;padding-left:.5rem}
 .rail__nav::before{content:"";position:absolute;left:.5rem;top:1rem;bottom:1rem;width:1px;background:var(--rule)}
@@ -136,7 +136,7 @@ img,svg{max-width:100%}
 .rail__label{flex:1}
 .rail-chapter:hover{color:var(--a-snow);background:rgba(214,193,140,.05)}
 .rail-chapter:hover::before{border-color:var(--a-gold)}
-.rail-chapter[aria-current="true"]{color:var(--animal-primary,var(--a-gold))}
+.rail-chapter[aria-current="true"]{color:var(--a-gold);color:color-mix(in srgb,var(--animal-primary,var(--a-gold)) 45%,var(--a-snow))}
 .rail-chapter[aria-current="true"]::before{background:var(--animal-primary,var(--a-gold));border-color:var(--animal-primary,var(--a-gold));
   box-shadow:0 0 0 3px rgba(214,193,140,.22)}
 .rail-chapter.is-visited::before{background:var(--a-slate);border-color:var(--a-slate)}
@@ -144,7 +144,7 @@ img,svg{max-width:100%}
 .rail__meter{height:3px;border-radius:3px;background:rgba(214,193,140,.12);overflow:hidden;margin-bottom:.5rem}
 .rail__meter-fill{display:block;height:100%;width:0;border-radius:3px;background:var(--animal-primary,var(--a-gold));transition:width .45s ease}
 #rail-progress{font-family:var(--mono);font-size:.6rem;letter-spacing:.07em;color:var(--a-mist);margin:0}
-#rail-progress b{color:var(--animal-primary,var(--a-gold));font-size:1.02rem}
+#rail-progress b{color:var(--a-gold);color:color-mix(in srgb,var(--animal-primary,var(--a-gold)) 45%,var(--a-snow));font-size:1.02rem}
 .rail__actions{display:flex;gap:.5rem;margin-top:.9rem}
 .rail__act{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-height:34px;
   border:1px solid var(--rule);border-radius:9px;background:transparent;color:var(--a-mist);cursor:pointer;
@@ -185,3 +185,5 @@ body.js-on #rail-bottom .rail__mobile-list[hidden]{display:none}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+/* w2b-contrast (2026-11-08): animal accent used as text is mixed 55% toward --a-snow; worst case 4.98:1 on --a-night across all 144. */
