@@ -761,16 +761,6 @@
       "permanent": true
     },
     {
-      "source": "/animals/star-nosed-mole",
-      "destination": "/animals/vampire-squid/",
-      "permanent": true
-    },
-    {
-      "source": "/animals/star-nosed-mole/",
-      "destination": "/animals/vampire-squid/",
-      "permanent": true
-    },
-    {
       "source": "/animals/dugong",
       "destination": "/animals/narwhal/",
       "permanent": true
