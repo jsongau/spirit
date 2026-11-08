@@ -159,9 +159,31 @@ function calendar(ctx) {
   /* live "N days from today" countdown to the power moon */
   const cd = document.querySelector('[data-moon-countdown]');
   if (cd && btn.dataset.date) {
-    const d = btn.dataset.date;
-    const target = new Date(+d.slice(0, 4), +d.slice(4, 6) - 1, +d.slice(6, 8));
+    let d = btn.dataset.date;
+    let target = new Date(+d.slice(0, 4), +d.slice(4, 6) - 1, +d.slice(6, 8));
     const today = new Date(); today.setHours(0, 0, 0, 0);
+    /* w2-moon: the build baked one phase date; roll it forward by whole
+       synodic months (29.530589 d) so the page never shows a past moon. */
+    if (target < today) {
+      const SYN = 29.530589 * 86400000;
+      const n = Math.ceil((today - target) / SYN);
+      target = new Date(target.getTime() + n * SYN);
+      target.setHours(0, 0, 0, 0);
+      const p = v => String(v).padStart(2, '0');
+      d = `${target.getFullYear()}${p(target.getMonth() + 1)}${p(target.getDate())}`;
+      btn.dataset.date = d;
+      const dateEl = document.querySelector('.moon-next__date');
+      if (dateEl) dateEl.textContent = target.toLocaleDateString('en-US',
+        { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+      document.querySelectorAll('.pf-power__days li').forEach((li, i, all) => {
+        const el = li.querySelector('.pf-power__date');
+        if (!el) return;
+        const peak = [...all].findIndex(x => x.classList.contains('is-peak'));
+        const day = new Date(target.getTime() + (i - (peak < 0 ? 1 : peak)) * 86400000);
+        const tail = el.textContent.includes('·') ? ' ·' + el.textContent.split('·').slice(1).join('·') : '';
+        el.textContent = day.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }) + tail;
+      });
+    }
     const days = Math.round((target - today) / 86400000);
     cd.innerHTML = days > 1 ? `<b>${days} days</b> from today.`
       : days === 1 ? `<b>Tomorrow.</b>`

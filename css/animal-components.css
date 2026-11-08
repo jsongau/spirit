@@ -1358,3 +1358,14 @@ a.pf-awaken__card:hover{border-color:var(--animal-primary,var(--a-gold));backgro
 @media (max-width:560px){
   .pf-ziwei__name ruby{font-size:1.35rem}
 }
+
+/* w2-first (2026-11-08): first-screen recognition block + art-less hero */
+.pf-recognition--you .pf-recognition__lines{margin-bottom:1.6rem}
+.pf-recognition__jump{font-size:.95rem;color:var(--a-mist);margin:0 0 1.6rem}
+.pf-recognition__jump a{color:var(--a-gold);text-decoration:none}
+.pf-recognition--you .pf-hero__actions{margin:0 0 1rem}
+.pf-recognition--you .pf-hero__serial{margin:0}
+.pf-hero--noart{grid-template-columns:1fr}
+.pf-hero--noart .pf-hero__inner{max-width:46rem;margin:0 auto;text-align:center}
+.pf-hero--noart .pf-hero__cross{justify-content:center}
+@media(max-width:900px){.pf-hero:not(.pf-hero--noart){padding-bottom:1.2rem}.pf-hero:not(.pf-hero--noart) .pf-hero__art img{max-height:30vh;width:auto;margin:0 auto;display:block}}
