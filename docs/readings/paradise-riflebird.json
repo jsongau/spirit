@@ -1,0 +1,107 @@
+{
+  "title": "What the Paradise Riflebird wears",
+  "is_this_you": {
+    "pressure": "Under fire you stand straighter. The coat stays buttoned, and nobody sees what it costs to keep it that way.",
+    "love": "You court in one burst, wings up, head back. Then you need your own branch again.",
+    "cost": "You show up brilliantly for the courtship. The long work of the nest can end up in someone else's hands."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Somebody looked at this bird and saw a soldier. The name riflebird is said to come from the male's black velvet plumage, which recalled the dark uniform of the British Army's Rifle Brigade [s5] [s7]. The Australian Museum adds an honest “allegedly” [s7]. You were born a Leo in a Horse year. You came dressed for parade."
+  },
+  "howto": "Three drills. Fall in anywhere.",
+  "tabs": [
+    {
+      "id": "uniform",
+      "label": "Your uniform",
+      "intro": "Fire on Fire, buttoned into black.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Leo is fixed Fire, ruled by the Sun, a sign that woos with extravagance and holds its ground [s1] [s2]. The Horse is yang Fire, lively and frank, and it dislikes taking orders [s3] [s4]. That is the same element twice. You carry a great deal of heat under a severe coat."
+        },
+        {
+          "k": "The sheen",
+          "text": "The male's black feathers soak up almost all the light that hits them [s9]. Across his crown, throat and belly runs a green and blue sheen that shimmers as the sun moves [s6] [s8]. Most days people see the soldier. Catch you at the right moment and the metal shows."
+        },
+        {
+          "k": "Two altitudes",
+          "text": "Riflebirds live above 500 metres in summer and come down below 200 in winter [s5] [s7]. The Horse in you needs that kind of range. Keep a high post and a low one, and move between them when the season turns."
+        }
+      ]
+    },
+    {
+      "id": "display",
+      "label": "The display",
+      "intro": "One branch. One burst. Then the ridge.",
+      "rows": [
+        {
+          "k": "The perch",
+          "text": "He shows off from a traditional perch, usually a thick bare branch high in the canopy [s7] [s8]. Both wings go up and curve over his head [s6]. You also have one place you perform from. Anywhere else, you are just passing through."
+        },
+        {
+          "k": "The wrist",
+          "text": "To make that circle of wings, riflebirds bend the wrist back far beyond any other known bird [s10] [s11]. The bird that was filmed was a Victoria's riflebird, a close cousin [s11]. Your big moments look easy. They cost more than anyone on the ground can see."
+        },
+        {
+          "k": "The call",
+          "text": "The call is one loud, explosive hiss, a “yaassss” about two seconds long [s6] [s5]. Leo has a dramatic streak [s2]. You say it once, at full volume, and then the matter is closed."
+        },
+        {
+          "k": "At work",
+          "text": "China Highlights lists performer and tour operator among Horse careers [s4]. Add Leo's stage and you fit product launches, live events and field guiding. Give yourself one big reveal a season, then the next ridge."
+        }
+      ]
+    },
+    {
+      "id": "wings",
+      "label": "Who you open your wings for",
+      "intro": "Three who hold the line with you. One who breaks rank.",
+      "love_lead": "In love you court in one dazzling move, the way Leo is said to [s2]. The Horse prizes honesty and loyalty [s4]. You need someone who keeps a branch of their own and does not ask you to stand still. Three of the old pairings march beside you.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "lanner-falcon",
+        "chips": [
+          "Same trine",
+          "Fire like you"
+        ],
+        "why": "The <b>Lanner Falcon</b> (Sagittarius, Tiger year) shares your trine of Tiger, Horse and Dog, and Sagittarius is Fire like you [s3] [s1]."
+      },
+      {
+        "slug": "giant-otter",
+        "chips": [
+          "Same trine",
+          "Aries Fire"
+        ],
+        "why": "The <b>Giant Otter</b> (Aries, Dog year) completes that trine, and Aries makes the third Fire sign [s3] [s1]."
+      },
+      {
+        "slug": "rock-wren",
+        "chips": [
+          "Secret friend",
+          "Goat and Horse"
+        ],
+        "why": "The <b>Rock Wren</b> (Gemini, Goat year) is your secret friend, since the Goat is the Horse's Six Harmonies partner [s3]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "sonoran-desert-toad",
+        "chips": [
+          "Year clash",
+          "Opposite sign"
+        ],
+        "why": "The one who breaks rank is the <b>Sonoran Desert Toad</b> (Aquarius, Rat year): the Rat clashes with the Horse, and Aquarius sits opposite Leo [s3] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "Her nest",
+    "text": "He does none of the nesting. Only the female builds the nest and tends it [s7]. She drapes cast-off snake skins over the rim, and nobody knows why, though one guess is that they scare off nest robbers [s8]."
+  },
+  "closing": "Let them salute the coat. Save the snake skins for the nest, where your people sleep."
+}

@@ -1,0 +1,54 @@
+{
+  "title": "What the Satin Bowerbird chooses",
+  "is_this_you": {
+    "pressure": "When someone wrecks your work, you rebuild it overnight and say nothing about who did it.",
+    "love": "You court with a made thing, then wait for them to come back and look twice.",
+    "cost": "One thing out of place and you stop hearing the compliment about the rest."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Darwin called the bower-birds the best evidence that birds have a taste for the beautiful [s13]. He wrote that the satin bower-bird gathers gaily coloured things, blue parrakeet feathers among them, and keeps rearranging them [s13]. In one bower Gould found a neatly worked stone tomahawk and a slip of blue cotton [s13]. You were born a Libra in a Rooster year. Your proof of taste has always been the arrangement."
+  },
+  "howto": "Three parts, set out in order. Move them around if you like.",
+  "tabs": [
+    {
+      "id": "bower",
+      "label": "Your bower",
+      "intro": "Air for the eye. Metal for the finish.",
+      "rows": [
+        {"k": "Your temperament", "text": "Libra is cardinal Air, ruled by Venus, with an eye for fairness and proportion [s1] [s2]. The Rooster is yin Metal, hardworking and very observant, and it keeps its promises [s3] [s4]. Venus picks the pieces. The Rooster polishes them every morning. What you make holds up under close inspection."},
+        {"k": "The bowerbird does it too", "text": "The male builds two parallel walls of sticks on the ground, an avenue for courtship and never a nest [s6] [s13]. He chews plant matter with saliva, sometimes charcoal, and paints the inner walls [s6] [s8]. When researchers removed the paint, females came back less often [s11]. You paint the inside wall too. Visitors rarely name it. They feel it."},
+        {"k": "The plain years", "text": "Young males wear olive-green like the females, and the full blue-black takes about seven years [s6] [s8]. You put in your plain years before anyone saw the colour, and you spent them on the building."}
+      ]
+    },
+    {
+      "id": "blue",
+      "label": "Blue",
+      "intro": "Mostly blue. One exception, chosen.",
+      "rows": [
+        {"k": "The palette", "text": "Mature males use more blue than any other colour, though yellow and shiny things and snail shells turn up too [s5] [s6]. That is your rule. A strict palette, with room for the one piece that earns its place. You can tell an exception from a mistake at a glance."},
+        {"k": "Rivals", "text": "Males raid each other's bowers, wreck them and steal the decorations [s5] [s12]. Each keeps his own bower up all year round [s6]. You guard finished work. You also keep a careful count of what went missing."},
+        {"k": "At work", "text": "Exhibition design and conservation both pay for an eye that spots the one wrong piece."}
+      ]
+    },
+    {
+      "id": "build",
+      "label": "Who you build for",
+      "intro": "Three who look twice. One who keeps correcting your steps.",
+      "love_lead": "In love you court with something you made. Most females visit several bowers before they mate with one male [s12], and they come back more than once to look [s11]. You read the second visit as the real yes. The old pairings name three who return.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "secretary-bird", "chips": ["Secret friend", "Opposite sign"], "why": "The <b>Secretary Bird</b> (Aries, Dragon year) is your secret friend, since the Dragon is the Rooster's six-harmony partner, and Aries sits opposite Libra [s3] [s1]."},
+      {"slug": "superb-lyrebird", "chips": ["Secret friend", "Air like you"], "why": "The <b>Superb Lyrebird</b> (Gemini, Dragon year) carries the same Dragon bond, and Gemini is Air like you [s3] [s1]."},
+      {"slug": "vulturine-guineafowl", "chips": ["Ox trine", "Air like you"], "why": "The <b>Vulturine Guineafowl</b> (Aquarius, Ox year) stands in your trine of Ox, Snake and Rooster, and Aquarius is the third Air sign [s3] [s1]."}
+    ],
+    "hard": [
+      {"slug": "crowned-crane", "chips": ["Rabbit clash", "Same sign"], "why": "The hard one is the <b>Crowned Crane</b> (Libra, Rabbit year): same sign, same taste, but the Rabbit clashes with the Rooster [s3] [s1]."}
+    ]
+  },
+  "story": {"k": "Bower-bird, the slang", "text": "In Australian slang a bower-bird is a scavenger of trifles, first cited in 1941, and by 1943 a petty thief as well [s14]. The insult misses the point. The real bird keeps only what fits."},
+  "closing": "Set the last blue feather at the entrance. Whoever sees why it goes there is worth the wait."
+}

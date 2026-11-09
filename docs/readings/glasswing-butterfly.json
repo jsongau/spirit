@@ -1,0 +1,54 @@
+{
+  "title": "What the Glasswing shows",
+  "is_this_you": {
+    "pressure": "Under strain you go clear and still, hoping trouble looks straight through you. Corner you, and the bitter part shows.",
+    "love": "You get ready instead of giving chase. Then you wait in the shade and let what you made do the courting.",
+    "cost": "People see through you so easily that some stop looking for you at all."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In Spanish the glasswing is called espejitos, little mirrors [s5]. Most of each wing is clear [s5]. Tiny pillars stand on it, and they let the light pass and send back only a little [s6]. You were born a Cancer in a Goat year. People look at you and see their own face first."
+  },
+  "howto": "Three parts. Hold each one up to the light.",
+  "tabs": [
+    {
+      "id": "clear",
+      "label": "Clear wings",
+      "intro": "Water with a shell. Earth with a needle in it.",
+      "rows": [
+        {"k": "Your temperament", "text": "Cancer is cardinal Water, ruled by the Moon, protective and loyal for life once you are inside [s1] [s2]. The Goat is yin Earth, gentle and shy, soft outside and tough inside [s3] [s4]. The Chinese call that 綿裡藏針 (mián lǐ cáng zhēn), a needle hidden in silk floss [s15]. Anyone can see into you. The needle stays where it is."},
+        {"k": "One plant", "text": "The glasswing caterpillar feeds almost only on Cestrum, and larvae moved to other plants often die young [s5]. Care works on you the same way. A kind substitute, however well meant, will not feed you."},
+        {"k": "At work", "text": "Translation and editing suit you, where meaning passes through clean. Nursing and home care suit the Cancer half. Glass, optics and fine design suit the Goat's patience."}
+      ]
+    },
+    {
+      "id": "through",
+      "label": "What you let through",
+      "intro": "The light passes. You stay.",
+      "rows": [
+        {"k": "Seen less", "text": "In tests with related clearwing butterflies, the more transparent species were spotted later and less often [s7]. Being easy to see through can hide you. Say your limit out loud, and stop counting on being overlooked."},
+        {"k": "The silk pad", "text": "Before it changes, the caterpillar spins a small silk pad and hooks in [s5]. That hold is at least 50 times stronger than the chrysalis needs [s8]. You anchor first too. Only then do you let the old skin split."},
+        {"k": "The lek", "text": "Glasswing males gather in shaded leks and court with a scent they build from plant chemistry [s5]. You court the same way. You make something good, then you wait."}
+      ]
+    },
+    {
+      "id": "seen",
+      "label": "Who sees through you",
+      "intro": "Three who stop and look. One who pulls the other way.",
+      "love_lead": "In love you prepare more than you pursue. You need someone who notices what you made before you say a word. The old Chinese pairings give you three.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "capybara", "chips": ["Pig trine", "Same sign"], "why": "The <b>Capybara</b> (Cancer, Pig year) stands in your Goat, Rabbit and Pig trine and shares your sign [s3] [s1]."},
+      {"slug": "green-sea-turtle", "chips": ["Secret friend", "Same sign"], "why": "The <b>Green Sea Turtle</b> (Cancer, Horse year) is your secret friend, since the Horse and the Goat are a six-harmony pair [s3]."},
+      {"slug": "moon-jellyfish", "chips": ["Rabbit trine", "Water like you"], "why": "The <b>Moon Jellyfish</b> (Pisces, Rabbit year) closes your trine, and Pisces is Water like Cancer [s3] [s1]."}
+    ],
+    "hard": [
+      {"slug": "shoebill", "chips": ["Ox clash", "Opposite sign"], "why": "The hard one is the <b>Shoebill</b> (Capricorn, Ox year): the Ox clashes with the Goat, and Capricorn sits opposite Cancer [s3] [s1]."}
+    ]
+  },
+  "story": {"k": "Zhuangzi's dream", "text": "Zhuang Zhou dreamed he was a butterfly and forgot he was Zhou [s10]. He woke and could not tell whether he had dreamed the butterfly or the butterfly was dreaming him [s10]. The chapter calls it 物化 (wù huà), the changing of things [s10]. It is told of butterflies in general, and it suits the clearest of them."},
+  "closing": "Leave the wings clear. The ones worth keeping will look at you, not past you."
+}

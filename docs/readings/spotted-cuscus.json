@@ -1,0 +1,53 @@
+{
+  "title": "What the Spotted Cuscus keeps",
+  "is_this_you": {
+    "pressure": "Pushed, you go still and hold the branch. Cross into your tree twice and you stand up and bark.",
+    "love": "You let one person onto your platform. After that you know what they need before they ask.",
+    "cost": "You keep a reserve high up for a storm that keeps not coming, and you go without in the meantime."
+  },
+  "opener": {
+    "moon": true,
+    "text": "Travellers have looked up at the spotted cuscus and taken it for a sloth or another possum, and sometimes for a monkey [s5]. You were born in the Monkey's year, so that mistake lands close to the truth. The cleverness is real. It simply moves slowly, and mostly after dark [s5]. Cancer is ruled by the Moon [s1]. So the people who finally see you clearly tend to see you by night, from a branch or two away."
+  },
+  "howto": "Three parts. Take them slowly, one branch at a time.",
+  "tabs": [
+    {
+      "id": "slow",
+      "label": "Slow",
+      "intro": "Water that keeps. Metal that thinks.",
+      "rows": [
+        {"k": "Your temperament", "text": "Cancer is cardinal Water, protective and hospitable, loyal over the long run [s1] [s2]. It also withdraws when hurt and holds on to old wounds [s2]. The Monkey is yang Metal, quick and inventive [s3] [s4]. In you the quick mind works for the keeping side. You think fast and move slowly, and only the people closest to you notice the gap."},
+        {"k": "The cuscus does it too", "text": "The spotted cuscus moves slowly through the trees, gripping with a long tail that is bare and rough underneath [s5] [s6]. It has also been seen walking between trees, and it can gallop [s6]. So the slowness is a choice. You test a branch twice, and then you hold it with everything you have."}
+      ]
+    },
+    {
+      "id": "mistaken",
+      "label": "Mistaken",
+      "intro": "Plain from far off. Marked up close.",
+      "rows": [
+        {"k": "Your spots", "text": "Only the male is spotted, with marks from red-brown to grey on a pale coat [s5] [s6]. Females are usually plain white or grey [s5] [s6]. Your detail stays private until someone climbs close. Mostly you like it that way."},
+        {"k": "Your bark", "text": "A male cuscus marks his trees with musk and saliva [s5]. When another male comes in, he barks and hisses and stands upright to defend the ground [s5]. People read your softness as an easy yes. The bark surprises them every time."},
+        {"k": "Your work", "text": "Use the Monkey mind for checking and the Cancer heart for keeping. Night care suits you, and so do archives, museum collections and audit work. So would a small guesthouse, with you still awake after the guests have gone to bed."}
+      ]
+    },
+    {
+      "id": "spots",
+      "label": "Who sees your spots",
+      "intro": "Three who climb close enough. One who shakes the tree.",
+      "love_lead": "Cancer guards the people it loves for years [s2]. The Monkey needs play, or it gets bored [s3] [s4]. So your partner has to be patient with your nights and funny in your mornings. The old pairings name three.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "slow-loris", "chips": ["Secret friend", "Water like you"], "why": "The <b>Slow Loris</b> (Scorpio, Snake year) is your secret friend, since the Snake is the Monkey's hidden ally, and Scorpio is Water like you [s3] [s1]."},
+      {"slug": "humpback-whale", "chips": ["Same trine", "Your own sign"], "why": "The <b>Humpback Whale</b> (Cancer, Dragon year) shares your trine of Rat, Dragon and Monkey, and was born under your sign [s3]."},
+      {"slug": "vampire-squid", "chips": ["Same trine", "Pisces Water"], "why": "The <b>Vampire Squid</b> (Pisces, Rat year) is trine kin through the Rat, and Pisces is the third Water sign [s3] [s1]."}
+    ],
+    "hard": [
+      {"slug": "stellers-sea-eagle", "chips": ["Tiger and Monkey clash", "Capricorn opposite"], "why": "The <b>Steller's Sea Eagle</b> (Capricorn, Tiger year) pulls against you twice: the Tiger clashes with the Monkey, and Capricorn sits opposite Cancer [s3] [s1]."}
+    ]
+  },
+  "story": {"k": "Across the sea", "text": "The spotted cuscus on Selayar, off Sulawesi, is the most isolated population of its kind [s7]. Heinsohn thinks Austronesian boats probably carried it there in the late Holocene [s7]. Somebody made room for it on board."},
+  "closing": "Let someone carry you across the water. You will make a home wherever the boat comes ashore."
+}

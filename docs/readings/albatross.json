@@ -1,0 +1,99 @@
+{
+  "title": "What the Albatross returns to",
+  "is_this_you": {
+    "pressure": "When the air goes dead, you sit on the swell and wait for a real wind.",
+    "love": "A whole season apart, then you land on the same tussock and pick up the dance where you left it.",
+    "cost": "Someone asked where you went for three months. You had an answer. They wanted a postcard."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In Coleridge's poem the albatross comes gliding out of the fog, and the sailors hail it as if it had been a Christian soul [gutenberg]. Then the mariner shoots it, and the dead bird is hung about his neck in place of the cross [gutenberg]. You were born a Sagittarius in the year of the Horse, and you have felt both halves of that poem, the welcome when you sail in from nowhere and the weight people hang on you afterward."
+  },
+  "howto": "Three parts. Take the long way through them.",
+  "tabs": [
+    {
+      "id": "ocean",
+      "label": "The open ocean",
+      "intro": "Two Fires, burning slow over cold water.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Sagittarius is mutable Fire under Jupiter, the sign that always wants the far side of the horizon [wiki-sag] [mbg-sag]. The Horse is yang Fire, quick and independent and hungry for new ground [wiki-horse] [tcg-horse]. Two Fires with no Earth to hold them could burn out in a week, yet in you they settle into one long glide that crosses enormous water while hardly seeming to try."
+        },
+        {
+          "k": "The albatross does it too",
+          "text": "With a tail wind or a side wind, a wandering albatross flies fast while spending little more energy than a bird resting on land [weim2000]. Some birds circle the whole Southern Ocean three times in a single year [wiki-wand]. On calm days it sits on the sea and waits for the wind to come back [wiki-alb]. Whoever calls you idle on a still day has never watched you once the weather turns."
+        }
+      ]
+    },
+    {
+      "id": "weight",
+      "label": "What hangs on you",
+      "intro": "The bond weighs nothing until someone breaks it.",
+      "rows": [
+        {
+          "k": "The shadow",
+          "text": "The Horse can give up halfway, and Sagittarius struggles with follow-through [tcg-horse] [mbg-sag]. Together they can leave you circling for years and calling the motion freedom. Silence on a long crossing reads as absence to the people on shore, so give them a return date before you go quiet."
+        },
+        {
+          "k": "Around the neck",
+          "text": "Coleridge hung the dead bird on the man who shot it, and nowhere else [gutenberg]. Your loyalty works the same way, light as air while it is kept and heavy on whoever breaks it, which is why the people who know you handle it with care."
+        },
+        {
+          "k": "At work",
+          "text": "Long-haul flying and months on a remote field station both pay for range, and both build the return trip into the contract."
+        }
+      ]
+    },
+    {
+      "id": "wind",
+      "label": "Who rides the wind with you",
+      "intro": "Three who share your wind, and one who wants a different road.",
+      "love_lead": "In love you court slowly, then choose for life, and the choice holds across long gaps. Albatross pairs meet again with a dance of matched calls and movements, and divorce is rare [wiki-alb]. You need someone who counts the returns instead of the days apart. The old pairings give you three who ride the same wind.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "wolverine",
+        "chips": [
+          "Tiger trine",
+          "Fire like you"
+        ],
+        "why": "The <b>Wolverine</b> (Aries, Tiger year) carries the Tiger of your trine of Tiger, Horse and Dog, and Aries burns with the same Fire [wiki-cz] [wiki-sag]."
+      },
+      {
+        "slug": "sunbittern",
+        "chips": [
+          "Dog trine",
+          "Leo's Fire"
+        ],
+        "why": "The <b>Sunbittern</b> (Leo, Dog year) closes your trine, and Leo completes the Fire signs with Sagittarius and Aries [wiki-cz] [wiki-sag]."
+      },
+      {
+        "slug": "rock-wren",
+        "chips": [
+          "Secret friend",
+          "Opposite sign"
+        ],
+        "why": "The <b>Rock Wren</b> (Gemini, Goat year) is your secret friend, since the Goat is the Horse's six-harmony partner, and Gemini sits opposite Sagittarius [wiki-cz] [wiki-sag]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "sandgrouse",
+        "chips": [
+          "Rat clash",
+          "Same sign"
+        ],
+        "why": "The hard one is the <b>Sandgrouse</b>: it shares your Sagittarius sun, but the Rat clashes with the Horse, so two travellers want different things from the same road [wiki-cz] [wiki-sag]."
+      }
+    ]
+  },
+  "story": {
+    "k": "The Raukura",
+    "text": "Taranaki Whānui tell that at Parihaka an albatross landed in a courtyard and dropped a single feather [pnbst]. That feather became the Raukura, the white plume that stands for Parihaka's peaceful resistance under Te Whiti o Rongomai and Tohu Kākahi [pnbst]."
+  },
+  "closing": "Fold the long wings. You are back on the island, the wind has dropped, and for one whole season there is nothing left to cross."
+}

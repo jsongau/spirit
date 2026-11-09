@@ -1,0 +1,54 @@
+{
+  "title": "What the Leopard Seal means",
+  "is_this_you": {
+    "pressure": "Hurt, you go under the ice and stay down. When you surface, it is all at once, right in front of them.",
+    "love": "You love by bringing things, long after they said they could hunt alone.",
+    "cost": "On the floe you look slow. Few people ever see you in the water."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In the breeding season, a male leopard seal can sing under the ice for hours, sometimes 13 hours straight [s10]. He builds his song from five sounds [s10]. In 2025 researchers found these songs about as predictable as nursery rhymes [s10]. You were born a Pisces in a Tiger year. You know what it is to hum one low tune until someone learns it."
+  },
+  "howto": "Three parts. Let each one sink in before the next.",
+  "tabs": [
+    {
+      "id": "song",
+      "label": "Your song",
+      "intro": "Water that drifts. Wood that hunts.",
+      "rows": [
+        {"k": "Your temperament", "text": "Pisces is mutable Water, ruled by Jupiter and in modern astrology by Neptune [s1]. Its two fish swim in opposite directions [s1]. The Tiger is yang Wood, brave and charming, and slow to trust [s3] [s4]. So you drift with the current and still hold the top of it."},
+        {"k": "The same five sounds", "text": "You say what you mean more than once. You say it the same way each time, low and patient. The one who finally learns the pattern has learned you."},
+        {"k": "At work", "text": "Diving and polar work suit Pisces water and Tiger nerve. Music and sound design suit a voice that can carry one pattern for hours."}
+      ]
+    },
+    {
+      "id": "ice",
+      "label": "Under the ice",
+      "intro": "Slow on the floe. Fast below it.",
+      "rows": [
+        {"k": "Reading from below", "text": "On Shackleton's Endurance expedition, a leopard seal chased Thomas Orde-Lees across the ice [s15]. It dropped into the water, tracked his shadow from below and surfaced in front of him [s15]. You watch people the same way. You read them from under the surface for a long time before you rise."},
+        {"k": "The penguins", "text": "Over four days, one female leopard seal kept bringing photographer Paul Nicklen penguins, live and then dead [s9]. He took it as an attempt to feed a predator too hopeless to hunt [s9]. You have done this to someone you love. Ask once what they want before you bring the next one."},
+        {"k": "A grip and a sieve", "text": "Its back teeth interlock into a sieve, so it is equipped to strain krill, and it still takes penguins and seal pups [s7] [s6]. The risk is a bold Tiger move, then a Pisces month of not opening the bank letters."}
+      ]
+    },
+    {
+      "id": "surface",
+      "label": "Who you surface for",
+      "intro": "Three who stay in the water with you. One who pulls you onto the ice.",
+      "love_lead": "In love you circle slowly, then give your whole attention. You need someone who will stay in the water with you and never ask you to live on the floe. Three of the old Chinese pairings stay down there with you.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "orca", "chips": ["Horse trine", "Respect the edge"], "why": "The <b>Orca</b> (Scorpio, Horse year) shares your Tiger, Horse and Dog trine and your Water, though the Australian Antarctic Division names it the leopard seal's one natural predator [s3] [s1] [s6]."},
+      {"slug": "green-sea-turtle", "chips": ["Horse trine", "Cancer Water"], "why": "The <b>Green Sea Turtle</b> (Cancer, Horse year) stands in the same trine, and Cancer's Water moves at your pace [s3] [s1]."},
+      {"slug": "capybara", "chips": ["Secret friend", "Cancer Water"], "why": "The <b>Capybara</b> (Cancer, Pig year) is your secret friend, since the Pig and the Tiger are a six-harmony pair, and Cancer is Water too [s3] [s1]."}
+    ],
+    "hard": [
+      {"slug": "new-caledonian-crow", "chips": ["Monkey clash", "Opposite sign"], "why": "The hard one is the <b>New Caledonian Crow</b> (Virgo, Monkey year): the Monkey clashes with the Tiger, and Virgo sits opposite Pisces [s3] [s1]."}
+    ]
+  },
+  "story": {"k": "Owha", "text": "In 2016, Ngāti Whātua Ōrākei named a female leopard seal living in Auckland's Waitematā Harbour He owha na oku tupuna, \"treasured gift from our ancestors\" [s14]. People shortened it to Owha [s14]. Her sightings helped New Zealand's Department of Conservation reclassify leopard seals as resident there in 2019 [s14]."},
+  "closing": "Haul out on the strange shore. Someone there is already choosing your name, and it means gift."
+}

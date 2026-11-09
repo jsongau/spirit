@@ -1,0 +1,53 @@
+{
+  "title": "What the Anglerfish holds",
+  "is_this_you": {
+    "pressure": "When the pressure climbs, you stop moving and hold your depth. Whatever needs you will swim toward the light.",
+    "love": "Once you let someone close, you take down your defences on purpose and leave them down.",
+    "cost": "You would rather sink a little deeper than ask for help, so the ones who love you find out late."
+  },
+  "opener": {
+    "moon": false,
+    "text": "For about a century, every deep-sea anglerfish anyone hauled up was female [s11]. In 1922 the Icelandic biologist Bjarni Saemundsson found two small fish fixed to a female's belly and took them for her young [s11]. By 1925 C. Tate Regan had cut one open and shown it was her mate [s12]. He had been with her the whole time. You were born a Scorpio in a Pig year. Your people find you that way too: late, close, and already part of you."
+  },
+  "howto": "Three parts. Go down slowly.",
+  "tabs": [
+    {
+      "id": "lure",
+      "label": "The lure",
+      "intro": "Two kinds of water, one small light.",
+      "rows": [
+        {"k": "Your temperament", "text": "Scorpio is fixed Water, ruled by Mars and in modern astrology by Pluto [s1]. It is loyal, private and slow to forget [s1] [s2]. The Pig is yin Water, generous, calm in trouble and quick to trust [s3] [s4]. So you carry two waters. One tests everybody. The other has already forgiven them."},
+        {"k": "Still, then sudden", "text": "The anglerfish hunts by waiting. It hangs almost motionless and wiggles its lure so the light looks like a small prey animal [s13] [s14]. You work the same way. You hold one steady light and let the right ones come close enough to see it."},
+        {"k": "At work", "text": "You are good in places others avoid. Hospice, crisis lines, forensic accounts and the deep archive all pay for your kind of patience."}
+      ]
+    },
+    {
+      "id": "dark",
+      "label": "In the dark",
+      "intro": "Far below the sunlight, where pressure does the talking.",
+      "rows": [
+        {"k": "Your depth", "text": "Most deep-sea anglerfish live about 200 to 2,000 meters down, some deeper still, where sunlight does not reach [s14]. Water like that would crush a surface fish. You keep your head in it, the way the Pig stays calm in trouble [s4]."},
+        {"k": "When it goes wrong", "text": "Two waters can pool and go stale. Scorpio keeps secrets [s1], and the Pig rarely asks for help [s4]. Put together, you can hurt for a long time before anyone hears. Send one signal up early. Somebody near the surface is waiting for it."}
+      ]
+    },
+    {
+      "id": "hold",
+      "label": "Who you hold for life",
+      "intro": "Three you can let all the way in. One who pulls against you.",
+      "love_lead": "In love you keep the light low for a long time. Then you choose, and the choosing goes all the way down. In the anglerfish species where the male fuses for good, the female has lost key immune genes that would reject him [s7]. You lower your guard like that, on purpose. Three old pairings are safe to let that close.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "moon-bear", "chips": ["Secret friend", "Cancer Water"], "why": "The <b>Moon Bear</b> (Cancer, Tiger year) is your secret friend, since the Tiger and the Pig are a six-harmony pair, and Cancer is the third Water sign [s5] [s1]."},
+      {"slug": "ghost-pipefish", "chips": ["Same trine", "Water like you"], "why": "The <b>Ghost Pipefish</b> (Pisces, Goat year) shares your trine of Rabbit, Goat and Pig, and Pisces is Water like Scorpio [s5] [s1]."},
+      {"slug": "sea-otter", "chips": ["Rabbit trine", "Cancer Water"], "why": "The <b>Sea Otter</b> (Cancer, Rabbit year) completes the trine through the Rabbit, with Cancer Water to match your own [s5] [s1]."}
+    ],
+    "hard": [
+      {"slug": "pangolin", "chips": ["Snake clash", "Opposite sign"], "why": "The hard one is the <b>Pangolin</b> (Taurus, Snake year): the Snake clashes with the Pig, and Taurus sits opposite Scorpio [s5] [s1]."}
+    ]
+  },
+  "story": {"k": "Where the light comes from", "text": "The glow is borrowed from the deep. It comes from bacteria called Candidatus Enterovibrio escacola, which the fish picks up from the seawater around it [s6]. She grows her lure only as she nears adulthood and sinks to the deep water, and that is when the light moves in [s6]."},
+  "closing": "Keep the light steady. Whoever crosses that much dark to find you is staying."
+}

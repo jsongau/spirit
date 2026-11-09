@@ -1,0 +1,53 @@
+{
+  "title": "What the Sandgrouse carries",
+  "is_this_you": {
+    "pressure": "Under pressure you go and fetch something. By the time anyone asks what is wrong, you are back with the fix.",
+    "love": "You show love by bringing the actual thing, carried a long way, still cool from the source.",
+    "cost": "Half of what you carry dries off on the way home. You rarely stop to drink yourself."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In 1896 E. G. B. Meade-Waldo reported that sandgrouse chicks drink from their father's soaked belly feathers [s9]. Nobody believed him [s9]. In 1967 Cade and Maclean confirmed it [s7] [s9]. Seventy-one years is a long wait to be right. You were born a Sagittarius in a Rat year, and you would have kept carrying the water the whole time."
+  },
+  "howto": "Three parts. Short ones. Read them at dawn if you can.",
+  "tabs": [
+    {
+      "id": "carry",
+      "label": "The carry",
+      "intro": "Fire that wants the horizon. Water that brings something back.",
+      "rows": [
+        {"k": "Your temperament", "text": "Sagittarius is mutable Fire, ruled by Jupiter, honest and restless [s1] [s2]. The Rat is yang Water, quick and thrifty, good at spotting what others miss [s3] [s4]. Water checks Fire, so the restless half gets a job. You travel far, and you come home loaded."},
+        {"k": "The sandgrouse does it too", "text": "In 15 of the 16 living sandgrouse species the male carries water in his belly feathers [s5]. They are the only birds known to do it [s7]. The inner barbules coil in a spiral and unwind when wet, holding about 25 millilitres, roughly 15 percent of his weight [s7] [s8]. You carry more than you look built for."}
+      ]
+    },
+    {
+      "id": "flight",
+      "label": "The long flight",
+      "intro": "Out at dawn. Home before the heat.",
+      "rows": [
+        {"k": "The distance", "text": "A Namaqua sandgrouse nest can sit about 30 kilometres from water, around half an hour's flight [s9]. On the way home, about half the water evaporates [s7]. You still go. The trouble is that you count the half that arrives and forget the half you lost."},
+        {"k": "Your flock", "text": "Hundreds or thousands of sandgrouse can time their arrival at one waterhole together [s5]. You fly out alone and drink with the crowd. Then you leave before the talking starts."},
+        {"k": "Your work", "text": "The Rat finds the resource in a dry year [s4]. Jupiter's sign loves distance [s1]. Aid logistics suits you, and so do water projects, freight and field guiding. Look for work where the job is to bring the real thing to the people waiting for it."}
+      ]
+    },
+    {
+      "id": "water",
+      "label": "Who you bring water to",
+      "intro": "Three worth the flight. One who drinks at another hole.",
+      "love_lead": "The Rat is slow to deepen a bond and quick to end one [s3] [s4]. Sagittarius runs from routine [s2]. So love asks you to stay at the waterhole long enough to talk. The old pairings give you three easy matches.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "arctic-tern", "chips": ["Secret friend", "Your own sign"], "why": "The <b>Arctic Tern</b> (Sagittarius, Ox year) is your secret friend, since the Ox is the Rat's hidden ally, and it flies under your sign too [s3]."},
+      {"slug": "regal-jumping-spider", "chips": ["Same trine", "Leo Fire"], "why": "The <b>Regal Jumping Spider</b> (Leo, Monkey year) shares your trine of Rat, Dragon and Monkey, and Leo is Fire like you [s3] [s1]."},
+      {"slug": "secretary-bird", "chips": ["Same trine", "Aries Fire"], "why": "The <b>Secretary Bird</b> (Aries, Dragon year) is trine kin through the Dragon, and Aries makes the third Fire sign [s3] [s1]."}
+    ],
+    "hard": [
+      {"slug": "swift", "chips": ["Rat and Horse clash", "Gemini across the sky"], "why": "The <b>Swift</b> (Gemini, Horse year) is the hard one: the Horse clashes with the Rat, and Gemini sits opposite Sagittarius [s3] [s1]."}
+    ]
+  },
+  "story": {"k": "A Jazan saying", "text": "In Jazan, in Saudi Arabia, people say that if you see a sandgrouse, water is near [s11]. For desert travellers the bird was a guide to water [s11]."},
+  "closing": "Go at first light and bring the water home. Then, this once, drink some yourself."
+}

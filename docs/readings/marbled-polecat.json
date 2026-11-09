@@ -1,0 +1,53 @@
+{
+  "title": "What the Marbled Polecat warns",
+  "is_this_you": {
+    "pressure": "You puff up first and bite last. Most trouble reads the stripes at your door and goes to dig somewhere else.",
+    "love": "You move into someone's life slowly, then guard every metre of it. Whoever stays gets to see you without the stripes.",
+    "cost": "Some people only ever meet the warning. They leave thinking that was all of you."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In Chinese the marbled polecat is 虎鼬 (hǔyòu), the tiger weasel, named for a yellow coat spotted brown and red like a tiger's [s8]. You were born a Capricorn in a Rat year. So you are a rat in a tiger's coat. That is a bold thing to wear, and you wear it on purpose."
+  },
+  "howto": "Three parts. Read the coat first.",
+  "tabs": [
+    {
+      "id": "coat",
+      "label": "The warning coat",
+      "intro": "Earth that holds the bank. Water that finds the gap.",
+      "rows": [
+        {"k": "Your temperament", "text": "Capricorn is cardinal Earth, ruled by Saturn, the planet of time, structure and consequence [s1]. The Rat is yang Water, quick, thrifty and first to spot an opening [s2] [s3]. Earth dams Water. The Rat in you sees the gap. The sea-goat in you asks whether you can keep what lies on the other side."},
+        {"k": "Stripes before teeth", "text": "Cornered, a marbled polecat arches its back, raises its tail, puffs its fur and hisses with its teeth bared [s4] [s5]. Behind the show sits a foul spray from its anal glands [s5] [s6]. Researchers think the bold face masks of mid-sized carnivores like it work as warnings that an attack will cost more than it looks [s11]. Your hiss does the same job. Most of your fights end at the doorway."}
+      ]
+    },
+    {
+      "id": "close",
+      "label": "Up close",
+      "intro": "The steppe at grey light. A burrow somebody else dug.",
+      "rows": [
+        {"k": "Borrowed ground", "text": "The polecat digs its own dens but often moves into burrows dug by ground squirrels and great gerbils [s4] [s5]. Then it holds a home range of about half a square kilometre and defends it hard against other polecats [s4] [s5]. You take over what others started and keep it better than they did."},
+        {"k": "The long yes", "text": "A female can delay implantation for months, so gestation in the wild runs 243 to 327 days [s5] [s6]. Your yes keeps the same clock. It can sit in the ground all winter and come up when the conditions are right."},
+        {"k": "At work", "text": "It hunts mostly in the mornings and evenings [s4]. Early shifts, late shifts, security and procurement suit you."}
+      ]
+    },
+    {
+      "id": "anyway",
+      "label": "Who gets close anyway",
+      "intro": "Three who walk past the hiss. One who sets it off.",
+      "love_lead": "In love you test a partner the way a polecat tests a burrow, by how it holds when the ground shakes. The Rat drops friendships easily, so the ones you keep were chosen [s3]. You need someone who hears the hiss and stays for dinner. The old pairings name three.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "beaver", "chips": ["Secret friend", "Earth like you"], "why": "The <b>Beaver</b> (Virgo, Ox year) is your secret friend, since the Ox is the Rat's six-harmony partner, and Virgo is Earth like you [s2] [s1]."},
+      {"slug": "shoebill", "chips": ["Same sign", "Ox ally"], "why": "The <b>Shoebill</b> (Capricorn, Ox year) shares your sign and carries the Ox, the Rat's hidden ally [s2] [s1]."},
+      {"slug": "whale-shark", "chips": ["Same trine", "Water like your Rat"], "why": "The <b>Whale Shark</b> (Pisces, Dragon year) sits in your trine of Rat, Dragon and Monkey, and its Water matches the Rat's own [s2]."}
+    ],
+    "hard": [
+      {"slug": "green-sea-turtle", "chips": ["Year clash", "Opposite sign"], "why": "The hard one is the <b>Green Sea Turtle</b> (Cancer, Horse year): the Horse clashes with the Rat, and Cancer sits opposite Capricorn [s2] [s1]."}
+    ]
+  },
+  "story": {"k": "Two of the five", "text": "In northern Chinese folk religion, the Five Great Immortals are the fox, the hedgehog, the snake, the weasel 黃仙 (Huáng Xiān) and the rat 灰仙 (Huī Xiān), all honoured as small gods of wealth [s9]. That weasel is the yellow weasel, a cousin of the polecat and a different animal [s9]. Your crossing still holds two of the five. A Beijing account says a weasel that walks into your house should be left alone [s10]."},
+  "closing": "Stand in the doorway in your tiger coat. Let them decide whether they still want in."
+}

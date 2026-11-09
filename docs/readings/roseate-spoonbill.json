@@ -1,0 +1,54 @@
+{
+  "title": "What the Roseate Spoonbill means",
+  "is_this_you": {
+    "pressure": "When things turn murky you keep sweeping, side to side, and you close on the answer as soon as it brushes you.",
+    "love": "You let love show on you. Anyone who knows you well can tell whose company you have been keeping.",
+    "cost": "Others follow you through the shallows and eat what your sweeping turns up. You mostly let them."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In Nahuatl the spoonbill is tlauhquechol [s11]. Molina's dictionary of 1571 gives the same word a second meaning, rich vermilion feather [s11]. Karttunen reads the quechol part as the sweep of the bird's neck, more than its colour [s11]. You were born a Libra in a Pig year. People have always prized how you move as much as how you look."
+  },
+  "howto": "Three parts. Wade in anywhere, and sweep across.",
+  "tabs": [
+    {
+      "id": "sweep",
+      "label": "The sweep",
+      "intro": "Air that weighs, Water that gives.",
+      "rows": [
+        {"k": "Your temperament", "text": "Libra is cardinal Air, ruled by Venus, the sign of the scales [s1]. It sees every side and would rather skip the fight [s1] [s2]. The Pig is yin Water, diligent and generous, calm when trouble comes [s3] [s4]. In you the scales lean toward giving. You weigh both sides, then hand over the larger share anyway."},
+        {"k": "How the spoonbill feeds", "text": "The spoonbill swings its bill from side to side through shallow water [s6]. It finds prey mostly by touch, and the bill snaps shut when something brushes it [s6] [s9]. When things get muddy, you stop straining to see the bottom and trust what you feel."}
+      ]
+    },
+    {
+      "id": "colour",
+      "label": "Colour",
+      "intro": "What you take in, you wear.",
+      "rows": [
+        {"k": "Where the pink comes from", "text": "The spoonbill takes its pink from pigments in the crustaceans and other prey it eats [s5] [s10]. How deep the colour runs changes with age, breeding condition and region [s5] [s10]. Your colour is honest too. It shows what you have been living on."},
+        {"k": "Named for a lute", "text": "Chinese calls spoonbills 琵鷺 (pílù), because the bill looks like the pipa, the pear-shaped lute [s13] [s14]. This bird is 粉紅琵鷺 (fěnhóng pílù), the pink spoonbill [s15]."},
+        {"k": "Your company", "text": "Spoonbills nest in colonies with egrets, ibises and herons [s6]. Egrets follow them to catch the prey their sweeping stirs up [s5]. The Pig gives freely and trusts easily [s4]. Let them follow, but keep count."},
+        {"k": "At work", "text": "Repair suits you, from wetland restoration to rebuilding a program others gave up on. So does hosting, where taste and generosity both get paid."}
+      ]
+    },
+    {
+      "id": "wade",
+      "label": "Who wades with you",
+      "intro": "Three who share the shallows. One who stirs up mud.",
+      "love_lead": "In love you want someone who brings something to the shallows too. Libra hates to name an imbalance, so choose someone who will name it gently first. Three old pairings wade easily beside you.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "fennec-fox", "chips": ["Same trine", "Air like you"], "why": "The <b>Fennec Fox</b> (Gemini, Rabbit year) shares your trine of Rabbit, Goat and Pig, and Gemini is Air like Libra [s3] [s1]."},
+      {"slug": "rock-wren", "chips": ["Same trine", "Air like you"], "why": "The <b>Rock Wren</b> (Gemini, Goat year) brings the Goat of your trine, with Gemini's Air beside yours [s3] [s1]."},
+      {"slug": "lanner-falcon", "chips": ["Secret friend", "Air feeds Fire"], "why": "The <b>Lanner Falcon</b> (Sagittarius, Tiger year) is your secret friend, since the Tiger and the Pig make a Six Harmonies pair [s3]."}
+    ],
+    "hard": [
+      {"slug": "loggerhead-shrike", "chips": ["Year clash", "Opposite sign"], "why": "The hard one is the <b>Loggerhead Shrike</b> (Aries, Snake year): the Snake clashes with the Pig, and Aries sits opposite Libra [s3] [s1]."}
+    ]
+  },
+  "story": {"k": "Two dozen pairs", "text": "Plume hunters tore apart the wader colonies spoonbills nested in, and by the late 1800s the bird was nearly gone from the United States [s9] [s5]. Around 1920 about two dozen breeding pairs were left on the whole Gulf Coast [s8]. From 1966 to 2019 the Breeding Bird Survey counted growth of about 6.5% a year [s6]."},
+  "closing": "Two dozen pairs were enough to bring back a whole coast. Wade in, and keep sweeping."
+}

@@ -1,0 +1,54 @@
+{
+  "title": "What the Tasmanian Devil bites",
+  "is_this_you": {
+    "pressure": "Push you and you scream first. The noise is the warning. Most people never meet the bite.",
+    "love": "You let one or two into the den. After that you would chew through bone for them.",
+    "cost": "The bite that keeps you alive is the same one that hurts you. You still lead with it."
+  },
+  "opener": {
+    "moon": false,
+    "text": "A man was buried at Lake Nitchie about 6,820 years ago [wentworth]. Around his neck hung 178 pierced devil teeth [wentworth]. That is teeth from about 49 animals [wiki-td]. Somebody hunted devils for those teeth [wiki-td]. Somebody wore it into the ground. You were born a Scorpio in a Dog year. You know what it is to wear your teeth where people can see them."
+  },
+  "howto": "Three parts. Go in loud.",
+  "tabs": [
+    {
+      "id": "scream",
+      "label": "The scream",
+      "intro": "Water behind a stone wall. Loud at the gate.",
+      "rows": [
+        {"k": "Your temperament", "text": "Scorpio is fixed Water [wiki-sco]. Deep, determined, loyal once trust is earned [mbg-sco]. The Dog is yang Earth [wiki-dog]. Candid, upright, wary of strangers [tcg-dog]. Earth holds Water. So your feelings have walls. Your ground is small, and every inch of it is defended."},
+        {"k": "The devil does it too", "text": "Settlers heard screams, coughs and growls in the night bush [nre-faq]. At a carcass those sounds are mostly bluff, a ritual that keeps real fighting down [nre-about]. Your yelling works the same way. It settles who gets what. Then everybody eats."},
+        {"k": "The bite", "text": "No living mammal carnivore bites harder for its size [wiki-td]. Of a small carcass a devil can leave nothing, bones and fur included [wiki-td]. You eat the whole job. Nobody comes back to tidy up after you."}
+      ]
+    },
+    {
+      "id": "grip",
+      "label": "What you will not let go",
+      "intro": "The grip is the gift. It is also the wound.",
+      "rows": [
+        {"k": "The cost", "text": "Devil facial tumour disease passes mostly through bites [wiki-dftd]. Devil numbers fell about 80 percent in two decades [wiki-dftd]. The thing the devil does best is how it gets hurt. You know that shape."},
+        {"k": "The grudge", "text": "Scorpio holds grudges [mbg-sco]. The Dog bottles up stress [tcg-dog]. Put them together and an old hurt can sit in your jaw for years. Spit it out while it is still small."},
+        {"k": "At work", "text": "Emergency wards and salvage yards both need someone who stays until nothing is left undone. Send yourself where other people flinch."}
+      ]
+    },
+    {
+      "id": "bite",
+      "label": "Who can take your bite",
+      "intro": "Three who hear the snarl and stay. One who bites back.",
+      "love_lead": "In love you are slow to open the den, then all in. Scorpio feels more than it says, and the Dog values loyalty over romance [mbg-sco] [tcg-dog]. Pick someone who hears your scream as bluff and keeps eating beside you. The old pairings give you three.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "pallass-cat", "chips": ["Secret friend", "Scorpio like you"], "why": "The <b>Pallas's Cat</b> (Scorpio, Rabbit year) is your secret friend, since the Rabbit is the Dog's hidden ally, and it shares your Scorpio sun [wiki-cz] [wiki-sco]."},
+      {"slug": "orca", "chips": ["Horse trine", "Scorpio like you"], "why": "The <b>Orca</b> (Scorpio, Horse year) stands in your trine of Tiger, Horse and Dog, under the same sign [wiki-cz] [wiki-sco]."},
+      {"slug": "moon-bear", "chips": ["Tiger trine", "Water like you"], "why": "The <b>Moon Bear</b> (Cancer, Tiger year) carries the Tiger of your trine, and Cancer is Water like you [wiki-cz] [wiki-sco]."}
+    ],
+    "hard": [
+      {"slug": "gila-monster", "chips": ["Dragon clash", "Same sign"], "why": "The hard one is the <b>Gila Monster</b> (Scorpio, Dragon year): the Dragon clashes with the Dog, so two Scorpio jaws lock onto each other [wiki-cz] [wiki-sco]."}
+    ]
+  },
+  "story": {"k": "The name before devil", "text": "The palawa kani name is purinina [wiki-td]. Older records give tarrabah and poirinnah [wiki-td]. Then settlers heard the screams in the dark, and some thought of hellhounds [nre-faq]. The name devil stuck [nre-faq]."},
+  "closing": "Keep your teeth. Somebody once thought them worth wearing into the grave."
+}

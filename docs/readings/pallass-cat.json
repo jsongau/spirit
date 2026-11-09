@@ -1,0 +1,107 @@
+{
+  "title": "What the Pallas's Cat sees",
+  "is_this_you": {
+    "pressure": "When trouble crosses the sky, you press flat and go still. The face says bored. Behind it you are counting.",
+    "love": "You would rather move into a love that has already lasted a winter than dig a new one from nothing.",
+    "cost": "People read your resting face as a verdict, and some never come close enough to hear the real one."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Say its Chinese name, 兔猻 (tùsūn), and the Rabbit comes first [p3] [p4]. Nobody agrees how it got there [p5]. One account has herders shouting a Turkic word for “stop” [p5]. Another reads 兔 (tù) as “rabbit-sized” [p5]. Our China Story says flatly that the cat has nothing to do with rabbits [p6]. You were born a Scorpio in a Rabbit year. The name fits you anyway, and you would not explain it either."
+  },
+  "howto": "Three parts. No hurry.",
+  "tabs": [
+    {
+      "id": "face",
+      "label": "The cold face",
+      "intro": "Water underneath. Wood on top. A face that gives nothing.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Scorpio is fixed Water, ruled by Mars of old and Pluto now, private and loyal for the long haul [p7] [p8]. The Rabbit is yin Wood, patient and kind, and keeps its thoughts to itself [p9] [p10]. Two guarded signs, stacked. You give away very little and miss almost nothing."
+        },
+        {
+          "k": "The ears",
+          "text": "The manul's ears sit low on the sides of its head [p1]. It can look over a rock while showing very little of itself [p1]. You do the same in conversation. Half your face stays behind the stone."
+        },
+        {
+          "k": "The look",
+          "text": "Those low ears and round eyes give it a famously grumpy face [p1] [p2]. Jan Janecka told Mongabay the expression is “almost like a meme” [p2]. A 2008 Russian meme made it famous, and Moscow Zoo took it as a mascot in 2012 [p1]. Your face has been misread for longer than that."
+        }
+      ]
+    },
+    {
+      "id": "patience",
+      "label": "Patience",
+      "intro": "Wait at the den mouth. Move once.",
+      "rows": [
+        {
+          "k": "Flat against the stone",
+          "text": "When danger passes overhead, the manul flattens itself and holds still [p2]. It hunts by ambush, at dawn and dusk in summer and often by day in autumn [p1] [p2]. You can outwait almost anything. The risk is staying flat long after the hawk has gone."
+        },
+        {
+          "k": "Borrowed shelter",
+          "text": "It sleeps in old fox dens, marmot burrows and rock crevices [p2]. You trust a shelter that has already proved itself. You are rarely wrong about which ones have."
+        },
+        {
+          "k": "Wide ground",
+          "text": "Collared males in central Mongolia ranged over as much as 207 square kilometres [p1]. Each cat lived alone outside the mating season [p1]. Your people are spread wide and seen rarely. They are still yours."
+        },
+        {
+          "k": "At work",
+          "text": "Researchers mostly meet the manul by accident, on cameras set for snow leopards [p2]. China Highlights lists medicine among Rabbit careers [p10]. Fieldwork, audit and investigation suit you too, any job where being unseen is the skill."
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "label": "Who gets close",
+      "intro": "Three who can tell a still face from a shut heart. One who cannot.",
+      "love_lead": "Scorpio opens slowly and then commits for years [p7] [p8]. The Rabbit is loyal to the few close to it [p10]. You need someone who can sit on the rock beside you and say nothing. The old pairings name three.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "capybara",
+        "chips": [
+          "Same trine",
+          "Water like you"
+        ],
+        "why": "The <b>Capybara</b> (Cancer, Pig year) shares your trine of Rabbit, Goat and Pig, and Cancer is Water like you [p11] [p7]."
+      },
+      {
+        "slug": "ghost-pipefish",
+        "chips": [
+          "Same trine",
+          "Pisces Water"
+        ],
+        "why": "The <b>Ghost Pipefish</b> (Pisces, Goat year) is trine kin too, and Pisces makes the third Water sign [p11] [p7]."
+      },
+      {
+        "slug": "ribbon-seal",
+        "chips": [
+          "Secret friend",
+          "Water like you"
+        ],
+        "why": "The <b>Ribbon Seal</b> (Cancer, Dog year) is your secret friend, since the Dog is the Rabbit's Six Harmonies partner [p11]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "superb-bird-of-paradise",
+        "chips": [
+          "Rooster clash",
+          "Opposite sign"
+        ],
+        "why": "The <b>Superb Bird of Paradise</b> (Taurus, Rooster year) is all display to your all cover: the Rooster clashes with the Rabbit, and Taurus sits opposite Scorpio [p11] [p7]."
+      }
+    ]
+  },
+  "story": {
+    "k": "The Cat's seat",
+    "text": "In the Vietnamese zodiac, the Cat sits where the Rabbit would [p9]. The Gurung zodiac makes the same swap [p9]. In those calendars, your year was a cat's year all along."
+  },
+  "closing": "Let them call the face grumpy. You had the whole steppe in view while they were deciding."
+}

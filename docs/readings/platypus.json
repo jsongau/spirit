@@ -1,0 +1,53 @@
+{
+  "title": "What the Platypus belongs to",
+  "is_this_you": {
+    "pressure": "Cornered, you stay under for as long as your breath holds. Then the spur, quick, and you are gone downstream.",
+    "love": "You want someone who believes what you felt before you could prove it.",
+    "cost": "Three different crowds each think you are mostly theirs. You let them, and it wears you out."
+  },
+  "opener": {
+    "moon": false,
+    "text": "On the upper Darling River, people tell how the Ancestor Spirits set the totems, and the birds, the marsupials and the fish each asked the platypus to join [s5]. After talking with the echidna it turned all three down, because it shared something with each and wanted to stay friends with every one [s5]. The source does not name the nation who tells it, and WWF-Australia's writer calls the choice an act of diplomacy [s5]. You were born under Aquarius in a Pig year. Your refusals can look like indecision. Usually you decided long before anyone asked."
+  },
+  "howto": "Three parts, in no fixed order. Nothing about you came in order either.",
+  "tabs": [
+    {
+      "id": "notone",
+      "label": "Not one thing",
+      "intro": "Air that will not be filed. Water that goes in with its eyes shut.",
+      "rows": [
+        {"k": "Your temperament", "text": "Aquarius is fixed Air, original and loyal, and hard to read from outside [s1] [s2]. The Pig is yin Water, generous and calm in trouble, and very focused once it picks a goal [s3] [s4]. On paper you look odd. In practice you work. You can sit with three different crowds in one week and mean it with each."},
+        {"k": "The platypus does it too", "text": "The platypus is one of five living monotremes, the mammals that lay eggs [s8] [s19]. It has fur and a bill, and the mother has no nipples, so her milk seeps through her skin onto the fur [s8] [s12]. Every part seems borrowed from a different list, and the animal gets on with its life."}
+      ]
+    },
+    {
+      "id": "under",
+      "label": "Under the water",
+      "intro": "Eyes shut, ears shut, and still you find it.",
+      "rows": [
+        {"k": "How you sense", "text": "When it dives, the platypus closes its eyes, ears and nostrils tight [s10]. It hunts with its bill, which carries about 40,000 electroreceptors and about 60,000 touch receptors [s10]. You read people through channels nobody else counts. Explaining it afterward tires you more than the finding did."},
+        {"k": "Your burrow", "text": "A nesting burrow can run up to 30 metres [s12]. Along the tunnel the platypus packs plugs of soil, anywhere from two to nine of them [s13]. Your private life has plugs too. The people allowed past every one would fit at one small table."},
+        {"k": "Your work", "text": "The Pig keeps digging once the target is set [s4]. Add the bill and you suit work that catches a faint signal: diagnostics, sensor design, audit, investigation."}
+      ]
+    },
+    {
+      "id": "asyou",
+      "label": "Who takes you as you are",
+      "intro": "Three who will not ask you to pick one. One who pulls hard the other way.",
+      "love_lead": "Aquarius in love asks for freedom and chooses by personality, come as you are [s2]. The Pig trusts with its whole heart, sometimes too easily [s3] [s4]. The old pairings point to three easy matches.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "luna-moth", "chips": ["Same trine", "Air like you"], "why": "The <b>Luna Moth</b> (Libra, Goat year) shares your trine of Rabbit, Goat and Pig, and Libra is the third Air sign [s3] [s1]."},
+      {"slug": "fennec-fox", "chips": ["Same trine", "Gemini Air"], "why": "The <b>Fennec Fox</b> (Gemini, Rabbit year) is trine kin through the Rabbit, and Gemini breathes the same Air as you [s3] [s1]."},
+      {"slug": "maned-wolf", "chips": ["Secret friend", "Your own sign"], "why": "The <b>Maned Wolf</b> (Aquarius, Tiger year) is your secret friend, since the Tiger is the Pig's hidden ally, and it shares your sign [s3]."}
+    ],
+    "hard": [
+      {"slug": "blue-ringed-octopus", "chips": ["Snake and Pig clash", "Leo across the sky"], "why": "The <b>Blue-ringed Octopus</b> (Leo, Snake year) is the hard one: the Snake clashes with the Pig, and Leo sits opposite Aquarius [s3] [s1]."}
+    ]
+  },
+  "story": {"k": "London, 1799", "text": "In 1799 the first platypus pelt reached George Shaw at the British Museum, and he doubted it was real [s8]. The suspicion was a duck's bill sewn onto a beaver-like body [s8]. History Today says Shaw went at it with scissors, trying to cut the beak off [s9]. The beak stayed on."},
+  "closing": "Let the birds, the fish and the furred ones all keep a seat for you. You still go home to your own bank."
+}

@@ -1,0 +1,54 @@
+{
+  "title": "What the Mantis Shrimp sees",
+  "is_this_you": {
+    "pressure": "You wave the claw before you swing it. Even soft and half-healed, you can bluff a stranger off your doorstep.",
+    "love": "Your love shows up in a colour most people swim past. The one who stops to read it gets you for good.",
+    "cost": "You strike first and explain later, if at all. Some people never come back for the explanation."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In the novel 西遊記 (Xīyóu Jì), the Dragon King of the Eastern Sea comes out to meet Sun Wukong with his sons, his grandsons and his 蝦兵蟹將 (xiā bīng xiè jiàng), the shrimp soldiers and crab generals [s14]. The phrase later came to mean useless underlings [s14]. It names shrimp in general. You were born an Aquarius in a Dragon year, the one shrimp in the Dragon's army nobody should have laughed at."
+  },
+  "howto": "Three parts. Strike one.",
+  "tabs": [
+    {
+      "id": "strike",
+      "label": "The strike",
+      "intro": "Air that stands apart. Earth that hits.",
+      "rows": [
+        {"k": "Your temperament", "text": "Aquarius is fixed Air, ruled by Uranus and, in the older books, Saturn [s1]. It is inventive, honest and independent [s1]. The Dragon is yang Earth, brave and confident, willing to take risks and quick to get into fights [s2] [s3]. Put them together and you get an odd thinker with a heavy hand."},
+        {"k": "Two hits", "text": "The smashing claw of the peacock mantis shrimp moves at up to 23 metres a second [s4] [s5]. The blow tears bubbles open in the water, and their collapse lands a second hit less than half a millisecond later [s7]. People brace for your first point. Your second one is what they repeat at dinner."},
+        {"k": "Soft days", "text": "Right after a molt it cannot strike without hurting itself, so it spreads its claws in a threat display instead [s13]. The bluff often works [s13]. You know how to look armed on the days you are not."}
+      ]
+    },
+    {
+      "id": "colours",
+      "label": "Colours no one sees",
+      "intro": "A dozen kinds of colour cell. No patience for shades.",
+      "rows": [
+        {"k": "The eye", "text": "Mantis shrimp carry 12 to 16 kinds of photoreceptor, and you carry three [s4] [s10]. Tests show they are poor at telling close shades apart [s9]. They probably name each colour fast instead [s9]. You make clean calls quickly. Once in a while the shade between two of them gets past you."},
+        {"k": "A private channel", "text": "In some species, males reflect circularly polarized light from the body parts they show off, and mantis shrimp eyes can see it [s12]. Nobody yet knows exactly what the signal says [s12]. Some of what you send is for your own kind only."},
+        {"k": "At work", "text": "Triage, imaging, materials testing and fight coaching all pay for a fast eye and a hard hand."}
+      ]
+    },
+    {
+      "id": "seen",
+      "label": "Who sees your colours",
+      "intro": "Three who read your signal. One who barks at it.",
+      "love_lead": "In love you guard the burrow mouth for a long time. Then you open it once. You need someone patient enough to learn your channel. The old pairings name three.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "raven", "chips": ["Same sign", "Same trine"], "why": "The <b>Raven</b> (Aquarius, Monkey year) shares your sign, and the Monkey completes your trine of Rat, Dragon and Monkey [s2] [s1]."},
+      {"slug": "kea", "chips": ["Monkey trine", "Air like you"], "why": "The <b>Kea</b> (Gemini, Monkey year) is trine kin, and Gemini is Air like you [s2] [s1]."},
+      {"slug": "fork-tailed-drongo", "chips": ["Secret friend", "Fellow bluffer"], "why": "The <b>Fork-tailed Drongo</b> (Gemini, Rooster year) is your secret friend, since the Rooster is the Dragon's hidden ally [s3]."}
+    ],
+    "hard": [
+      {"slug": "banded-mongoose", "chips": ["Year clash", "Two fixed signs"], "why": "The hard one is the <b>Banded Mongoose</b> (Taurus, Dog year): the Dog clashes with the Dragon, and a fixed Earth sign will not budge for your fixed Air [s2] [s1]."}
+    ]
+  },
+  "story": {"k": "Twenty years", "text": "Plenty of mantis shrimp live alone. In the monogamous species, a pair can stay together up to 20 years [s4]. The reef changes above them the whole time."},
+  "closing": "Keep the one address. Keep the one partner. Let the reef rearrange itself overhead."
+}

@@ -1,0 +1,103 @@
+{
+  "title": "What the Mountain Pygmy Possum saves",
+  "is_this_you": {
+    "pressure": "Cornered, you move house before you argue. Two boulders over, the cold is steadier, and nobody saw you go.",
+    "love": "You will cross a road built to keep you out if the one you want lives on the other side.",
+    "cost": "You stock the den in autumn, then barely touch it. Saving becomes the point, and the winter gets thin."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In August 1966, skiers on Mt Hotham found a strange-looking rat in their hut [s11]. Norman Wakefield studied it [s11]. Science had known the species only from a fossil jaw in a small block of limestone, described in the 1890s and written off as extinct [s11] [s6]. The skiers' find was alive, and it got a name: George [s11]. You were born a Capricorn in a Rabbit year. You have been counted out early before, and you were tucked in somewhere, breathing."
+  },
+  "howto": "Three parts. Small ones. Open any crack first.",
+  "tabs": [
+    {
+      "id": "stone",
+      "label": "Back from stone",
+      "intro": "Saturn's long count. The Rabbit's soft caution.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Capricorn is cardinal Earth, ruled by Saturn, patient and good with money [s1] [s2]. The Rabbit is yin Wood, gentle and alert, and slow to show its mind [s3] [s4]. In you the two make a careful planner with something soft kept under the rock."
+        },
+        {
+          "k": "A small world",
+          "text": "The possum weighs about 45 grams [s6] [s7]. It is the only Australian mammal restricted to alpine and subalpine habitat, and it lives mainly in boulderfields [s6] [s10]. Your own world is small on purpose. You know every crack in it, and which ones hold."
+        }
+      ]
+    },
+    {
+      "id": "sleep",
+      "label": "The long sleep",
+      "intro": "Five to seven months under the snow.",
+      "rows": [
+        {
+          "k": "Going under early",
+          "text": "Mountain pygmy possums start hibernating around April, months before the snow, and wake when it melts [s8] [s9]. In torpor their bodies drop to about 2°C [s8]. Your body reads the turn of a season before the mountain admits it. You shut the door early and sleep well."
+        },
+        {
+          "k": "Twelve burrows",
+          "text": "In winter they walk out for up to five days at a stretch, and they change dens up to 12 times a season [s8]. The Chinese say 狡兔三窟 (jiǎo tù sān kū), the crafty rabbit keeps three burrows, from Feng Xuan's advice in the Zhanguo Ce [s5]. You keep twelve. From outside it looks like worry. You call it checking."
+        },
+        {
+          "k": "The cache",
+          "text": "According to Menkhorst (1995), it is the only marsupial known to cache non-perishable food [s7]. You stock early and store where nobody else would look. Those stores were meant to be eaten."
+        },
+        {
+          "k": "At work",
+          "text": "Supply planning, actuarial work and seed banks all pay for foresight. Name the problem out loud before you move dens."
+        }
+      ]
+    },
+    {
+      "id": "road",
+      "label": "Who crosses the road for you",
+      "intro": "Three who winter the way you do. One from the open sky.",
+      "love_lead": "In love you commit slowly, and the Rabbit stays faithful once it does [s2] [s4]. You need someone who does not take a long winter silence personally. Three of the old Chinese pairings fit.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "clarks-nutcracker",
+        "chips": [
+          "Goat trine",
+          "Earth like you"
+        ],
+        "why": "The <b>Clark's Nutcracker</b> (Virgo, Goat year) sits in your Rabbit, Goat and Pig trine, on the same Earth footing [s3] [s1]."
+      },
+      {
+        "slug": "snow-leopard",
+        "chips": [
+          "Same trine",
+          "Scorpio Water"
+        ],
+        "why": "The <b>Snow Leopard</b> (Scorpio, Goat year) is trine kin from high boulder country, and Scorpio's Water softens Capricorn's ground [s3] [s1]."
+      },
+      {
+        "slug": "tibetan-blue-bear",
+        "chips": [
+          "Secret friend",
+          "Same sign"
+        ],
+        "why": "The <b>Tibetan Blue Bear</b> (Capricorn, Dog year) shares your sign, and the Dog is the Rabbit's secret friend [s3]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "emperor-penguin",
+        "chips": [
+          "Rooster clash",
+          "Opposite sign"
+        ],
+        "why": "The hard one is the <b>Emperor Penguin</b> (Cancer, Rooster year): the Rooster is the Rabbit's clash, and Cancer faces Capricorn across the zodiac [s3] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "The tunnel of love",
+    "text": "Under the Great Alpine Road near Mt Hotham runs a rock-filled corridor, first built in the 1980s, so males can reach the females higher up [s12] [s6]. Genetic work had found the road was a major barrier to breeding [s12]. People call it the tunnel of love [s12]."
+  },
+  "closing": "Let them write you off. One day someone opens the hut door and finds you breathing."
+}

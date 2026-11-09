@@ -1,0 +1,54 @@
+{
+  "title": "What the Rhinoceros Hornbill carries",
+  "is_this_you": {
+    "pressure": "You get louder when it matters. When the real danger arrives, you go completely silent and start building.",
+    "love": "You choose out loud, in a duet half the forest hears. After that you stop calling anywhere else.",
+    "cost": "The colour everyone knows you by takes work. You put it back on every morning, where nobody is watching."
+  },
+  "opener": {
+    "moon": false,
+    "text": "When the Iban of Sarawak held Gawai Kenyalang, a carved and painted hornbill was raised high on a pole at the festival's climax [s7]. Hornbills carried word between the god Singalang Burong and the people below [s7]. You were born a Leo in a Dragon year. You were made to be lifted up and heard."
+  },
+  "howto": "Three parts. Raise one up.",
+  "tabs": [
+    {
+      "id": "messenger",
+      "label": "The messenger",
+      "intro": "Fire that announces. Earth that holds.",
+      "rows": [
+        {"k": "Your temperament", "text": "Leo is fixed Fire, ruled by the Sun, warm, generous, proud and theatrical [s1] [s2]. The Dragon is yang Earth, brave and confident and happy to take a risk [s3] [s4]. Fire feeds Earth. Your voice fills the forest, and the ground under you takes the weight."},
+        {"k": "The casque", "text": "The hornbill's casque is hollow, and researchers think it may help its calls carry, like a resonating chamber [s5]. The bill starts pale. The bird stains it orange and red with oil from its own preen gland [s5] [s6]. Your shine is real. You also keep it up by hand."},
+        {"k": "Chief of birds", "text": "Some Ibanic Dayak call the rhinoceros hornbill chief of the worldly birds, and its statue welcomes Sengalang Burong to their feasts [s6]. People put you at the head of the table without asking why."}
+      ]
+    },
+    {
+      "id": "walled",
+      "label": "Walled in",
+      "intro": "Mud at the door. One slit left open.",
+      "rows": [
+        {"k": "The sealed nest", "text": "The female goes into a tree hollow and seals it with mud, droppings and fruit, the male helping from outside [s5] [s6]. She leaves a slit [s5]. He alone feeds her, up to thirteen times a day [s5]. Love from you runs like that supply line. You call it the plan."},
+        {"k": "Chipping it away", "text": "Once the chicks are feathered, the parents chip the dried mud away [s6]. That is your hard day. Pride built the wall, and pride has to take it down."},
+        {"k": "At work", "text": "Broadcast, events, protection work and supply chains all reward a big voice and a delivery route you never miss."}
+      ]
+    },
+    {
+      "id": "fed",
+      "label": "Who brings you food",
+      "intro": "Three who keep the slit open. One who pulls you two ways.",
+      "love_lead": "In love you court in public. Hornbill pairs duet and hold a head-raised display, and they likely keep one mate for life [s5]. Once committed, a Leo rarely leaves unless bored or disrespected [s2]. You need someone who reads a delivery as romance. The old pairings name three.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "fossa", "chips": ["Same trine", "Fire like you"], "why": "The <b>Fossa</b> (Aries, Rat year) sits in your trine of Rat, Dragon and Monkey, and Aries is Fire like you [s3] [s1]."},
+      {"slug": "coati", "chips": ["Monkey trine", "Third Fire sign"], "why": "The <b>Coati</b> (Sagittarius, Monkey year) closes the trine, and Sagittarius completes the Fire signs with you [s3] [s1]."},
+      {"slug": "roadrunner", "chips": ["Secret friend", "Fire like you"], "why": "The <b>Roadrunner</b> (Sagittarius, Rooster year) is your secret friend, since the Rooster is the Dragon's six-harmony partner, and it burns with your Fire [s3] [s4]."}
+    ],
+    "hard": [
+      {"slug": "vampire-bat", "chips": ["Year clash", "Opposite sign"], "why": "The hard one is the <b>Vampire Bat</b> (Aquarius, Dog year): the Dog clashes with the Dragon, and Aquarius sits opposite Leo [s3] [s1]."}
+    ]
+  },
+  "story": {"k": "Sent away", "text": "The Penn Museum records that Gawai Kenyalang was held in prosperous times [s8]. The great hornbill on its pole was sent off to fly away, carrying the forces of misfortune with it [s8]. Households also carved small anak, or child, figures [s8]."},
+  "closing": "Let them raise you high. Whatever was hurting this house leaves on your wings."
+}

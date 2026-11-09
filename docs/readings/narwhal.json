@@ -1,0 +1,99 @@
+{
+  "title": "What the Narwhal tastes",
+  "is_this_you": {
+    "pressure": "Pushed, you dive, and stay down past the point anyone thinks is safe. You surface with the answer already finished.",
+    "love": "One slow touch from you settles more than an hour of talk. You would rather rub an old argument clean than win it.",
+    "cost": "People praise the spiral and never ask what it feels. Some winters that costs you."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Inuit in Greenland and on Baffin Island tell how the first narwhal came to be [s10]. A cruel mother starved her blind son [s10]. When his sight came back, he tied her to the harpoon line on a white whale [s10]. Dragged under, she twisted her hair into a horn and became the narwhal [s10]. Knud Rasmussen heard it at Cape York, and in the version Franz Boas heard on Baffin Island she is a stepmother [s10]. That story belongs to the people who tell it. Yours starts farther out, under the pack ice, with a Pisces born in a year of the Ox."
+  },
+  "howto": "Three parts. Go down into whichever one pulls.",
+  "tabs": [
+    {
+      "id": "tusk",
+      "label": "The tusk",
+      "intro": "Earth on the sea floor. Water over everything.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Pisces is mutable Water, the twelfth sign, ruled by Jupiter and in modern astrology by Neptune [s1]. It is tender and selective, and slow to change a feeling once it settles [s1] [s2]. The Ox is yin Earth, patient and stubborn, happier alone than in a crowd [s3] [s4]. In you the Ox gives the Pisces flood its banks."
+        },
+        {
+          "k": "What the tooth knows",
+          "text": "The tusk is a left upper canine that spirals as it grows, and it can reach three metres [s5] [s6]. It carries millions of nerve connections [s5] [s8]. In a 2014 field test, a narwhal's heart rate changed when salt water of a different strength washed over it [s7]. Strangers see a lance. Your sharpest feature is the one doing the listening."
+        }
+      ]
+    },
+    {
+      "id": "ice",
+      "label": "The ice",
+      "intro": "Long dives. Few breathing holes.",
+      "rows": [
+        {
+          "k": "The long dive",
+          "text": "Narwhals routinely dive past 800 metres, and many winter dives reach about 1,500 [s5] [s9]. Your best thinking happens at that depth. The Ox in you sees no reason to come up and report until the work is done."
+        },
+        {
+          "k": "Savssat",
+          "text": "Greenlanders have a word, savssat, for Arctic animals crowding at the last holes in freezing sea ice [s5]. After entrapments in 1914 and 1915, about 1,000 dead narwhals were found, mostly in Disko Bay [s5]. Hold a true word too long and the hole freezes. Bring up the half-finished thought while there is still open water."
+        },
+        {
+          "k": "At work",
+          "text": "Polar science, sonar and sound design all reward a sense that works in the dark. Watch the loyalty that keeps you in an underpaid post."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "label": "Who surfaces with you",
+      "intro": "Three who rise on your schedule. A fourth who swims against you.",
+      "love_lead": "In love you are slow, then fixed, and the Ox dislikes churn [s4]. You need someone who reads a long silence as presence. Three old Chinese pairings answer you.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "chambered-nautilus",
+        "chips": [
+          "Same trine",
+          "Water like you"
+        ],
+        "why": "The <b>Chambered Nautilus</b> (Cancer, Snake year) stands in your trine of Ox, Snake and Rooster, and Cancer is Water like you [s3] [s1]."
+      },
+      {
+        "slug": "slow-loris",
+        "chips": [
+          "Snake trine",
+          "Third Water sign"
+        ],
+        "why": "The <b>Slow Loris</b> (Scorpio, Snake year) is trine kin too, and Scorpio completes the three Water signs [s3] [s1]."
+      },
+      {
+        "slug": "coconut-crab",
+        "chips": [
+          "Secret friend",
+          "Cancer Water"
+        ],
+        "why": "The <b>Coconut Crab</b> (Cancer, Rat year) is your secret friend, since the Rat is the Ox's hidden ally, and it swims in your element [s3] [s1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "ghost-pipefish",
+        "chips": [
+          "Goat clash",
+          "Same sign"
+        ],
+        "why": "The hard one is the <b>Ghost Pipefish</b> (Pisces, Goat year): alike in the water, but the Goat is the Ox's clash [s3]."
+      }
+    ]
+  },
+  "story": {
+    "k": "The unicorn throne",
+    "text": "Between 1662 and 1671 Bendix Grodtschilling built Denmark's coronation chair from narwhal tusk, said to be unicorn horn [s11]. It was modelled on Solomon's throne, and kings were anointed on it from 1671 to 1840 [s11]."
+  },
+  "closing": "Kings sat on what you carry and called it magic. Keep the crown. It was always for listening."
+}

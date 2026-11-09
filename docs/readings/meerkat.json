@@ -1,0 +1,103 @@
+{
+  "title": "What the Meerkat calls out",
+  "is_this_you": {
+    "pressure": "When trouble shows, you name it out loud. Then you have the whole family in a ring before anyone panics.",
+    "love": "You love by keeping watch and passing food. You talk the whole time, and you catch every word that comes back.",
+    "cost": "You give a bark for every shadow on the sand, and some days the mob stops looking up."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In 1999 Clutton-Brock and his colleagues gave the Kalahari's famous guards an unflattering title: “selfish sentinels” [m8]. A meerkat takes the lookout on a mound or branch only once it has eaten its fill [m2]. Britannica puts it plainly: sentinels are “not really the altruists they were once thought to be” [m2]. You were born a Gemini in a Rat year. You laughed at that, then went to check the horizon."
+  },
+  "howto": "Three parts. Jump between them.",
+  "tabs": [
+    {
+      "id": "lookout",
+      "label": "The lookout",
+      "intro": "Air on top. Water below. A mound in the middle.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Gemini is mutable Air, ruled by Mercury, curious and talkative [m11] [m12]. The Rat is yang Water, quick-witted and observant, with a nose for the next opening [m13] [m14]. You chatter and you watch at the same time. Most people manage one."
+        },
+        {
+          "k": "The guard's patter",
+          "text": "A sentinel on duty gives soft calls that tell the diggers below someone is on watch [m8]. You keep up the same running commentary. Your friends stop hearing it as noise and start hearing it as cover."
+        },
+        {
+          "k": "A word for each danger",
+          "text": "Meerkat alarm calls change with the predator and with how urgent it is [m1] [m3]. An aerial alarm sends the group into a crouch, and a ground alarm makes them scan and move [m1]. A separate call gathers everyone to face a snake [m1]. You have a word for every kind of trouble, and your people learn them all."
+        },
+        {
+          "k": "The Rat's nerve",
+          "text": "Old Rat lore says it lacks courage [m14]. The mob disagrees. When a snake comes close, meerkats often close in and mob it together [m3] [m1]. Alone you dive for a hole. With your people you advance."
+        }
+      ]
+    },
+    {
+      "id": "lessons",
+      "label": "Lessons",
+      "intro": "Feed the young. Keep a cool tunnel ready.",
+      "rows": [
+        {
+          "k": "The babysitter",
+          "text": "Every day at least one helper stays at the den with the pups and fasts while it guards them [m2]. Helpers feed pups for three to six months [m2]. You feed people who are not yours by blood, and you stopped keeping score long ago."
+        },
+        {
+          "k": "At work",
+          "text": "China Highlights lists broadcaster, writer and researcher among Rat careers [m14]. Add Mercury's speed and you fit teaching, dispatch and safety work. You earn most where an early warning is worth paying for."
+        }
+      ]
+    },
+    {
+      "id": "back",
+      "label": "Who has your back",
+      "intro": "Three who take a shift on the mound. One who never lands.",
+      "love_lead": "The Rat makes friends easily [m14]. Gemini bores easily [m12]. A shared burrow worth digging keeps your love busy enough to last. The old pairings name three who will take their turn on watch.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "kea",
+        "chips": [
+          "Same trine",
+          "Gemini too"
+        ],
+        "why": "The <b>Kea</b> (Gemini, Monkey year) shares your trine of Rat, Dragon and Monkey, and your sign as well [m15] [m11]."
+      },
+      {
+        "slug": "superb-lyrebird",
+        "chips": [
+          "Same trine",
+          "A mimic for a caller"
+        ],
+        "why": "The <b>Superb Lyrebird</b> (Gemini, Dragon year) is trine kin and another Gemini, a mimic to answer every call you make [m15] [m11]."
+      },
+      {
+        "slug": "vulturine-guineafowl",
+        "chips": [
+          "Secret friend",
+          "Air like you"
+        ],
+        "why": "The <b>Vulturine Guineafowl</b> (Aquarius, Ox year) is your secret friend, since the Ox is the Rat's Six Harmonies partner, and Aquarius is Air like you [m15] [m11]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "albatross",
+        "chips": [
+          "Year clash",
+          "Opposite sign"
+        ],
+        "why": "The one who never lands is the <b>Albatross</b> (Sagittarius, Horse year): the Horse clashes with the Rat, and Sagittarius sits opposite Gemini [m15] [m11]."
+      }
+    ]
+  },
+  "story": {
+    "k": "The first scorpion",
+    "text": "Kalahari helpers teach. For the youngest pups they kill or disable prey, pulling the sting from a scorpion before they hand it over [m5]. As the pups grow, the helpers bring live prey and nudge it back if a pup hesitates [m5]. Thornton and McAuliffe reported it in Science in 2006 as teaching in a wild mammal [m5]."
+  },
+  "closing": "Eat your fill. Then climb the mound, and let the family dig in peace."
+}

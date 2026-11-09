@@ -1,0 +1,54 @@
+{
+  "title": "What the Rock Wren knows",
+  "is_this_you": {
+    "pressure": "Pressed hard, you say something quick and bright, and by the reply you are behind the next boulder.",
+    "love": "Anyone gets your conversation. Your door takes longer, and the path up to it goes down stone by stone.",
+    "cost": "Some years you keep paving so long that the visitor gives up before the last stone."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In a Hopi story told by Tangákhoyoma and written down by H. R. Voth at Oraibi in 1905, Wren slips out of his skin, dresses a stone in it, and sings from under a rock while Coyote Woman breaks her teeth on the stone [s8]. Voth wrote only \"wren\", so the bird may be this one or the canyon wren [s8]. You were born a Gemini in a Goat year."
+  },
+  "howto": "Three parts. Hop between them in any order.",
+  "tabs": [
+    {
+      "id": "stones",
+      "label": "Stones",
+      "intro": "Air that carries, Earth that piles up.",
+      "rows": [
+        {"k": "Your temperament", "text": "Gemini is mutable Air, ruled by Mercury [s1]. It is curious and talkative, and it moves between groups as the go-between [s1] [s2]. The Goat is yin Earth, gentle and persevering, private and slow to make friends [s3] [s4]. Your talk goes everywhere. Your trust stays put."},
+        {"k": "Where you live", "text": "The rock wren lives on rocky, thinly vegetated ground, from below sea level up to the alpine zone [s5] [s6]. It will nest in quarries and old mines too [s6] [s7]. You can make a home out of what others call rubble."},
+        {"k": "At the edge", "text": "A male carries 69 to 119 song syllables and sings each one a few times before moving on [s5]. Bigger repertoires seem to deter rivals better [s5]. You hold your ground the same way, with a fresh line at the edge."}
+      ]
+    },
+    {
+      "id": "branch",
+      "label": "One branch",
+      "intro": "Want little. Hold it well.",
+      "rows": [
+        {"k": "Enough", "text": "In the Zhuangzi the hermit Xu You refuses a throne: 鷦鷯巢於深林，不過一枝 (jiāoliáo cháo yú shēn lín, bùguò yì zhī), the wren nests in the deep forest yet needs only one branch [s10] [s11]. That is the wren in general, not this species [s12]. Offer you the mountain and you will ask for one good ledge."},
+        {"k": "Leaving and staying", "text": "Rock wrens from the north migrate south for winter, often to low rocky ground [s5] [s7]. Southern birds stay all year [s5] [s7]. Gemini is the sign of the twins [s1]. Half of you leaves with the cold. Half never moves off the rock."},
+        {"k": "Your work", "text": "Stonework and trail building pay for your patience with small pieces. Radio and translation pay for the talk. Security design suits the part of you that decides who reaches the door."}
+      ]
+    },
+    {
+      "id": "ledge",
+      "label": "Who shares your ledge",
+      "intro": "Three who make it up the path. One who will not climb.",
+      "love_lead": "In love you court out loud and open the door slowly. The right person enjoys the talk and does not ask for a key on the first day. The old pairings name three.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "crowned-crane", "chips": ["Same trine", "Air like you"], "why": "The <b>Crowned Crane</b> (Libra, Rabbit year) shares your trine of Rabbit, Goat and Pig, and Libra is Air like Gemini [s3] [s1]."},
+      {"slug": "roseate-spoonbill", "chips": ["Same trine", "Air like you"], "why": "The <b>Roseate Spoonbill</b> (Libra, Pig year) brings the Pig of your trine and a second dose of Air [s3] [s1]."},
+      {"slug": "paradise-riflebird", "chips": ["Secret friend", "Air feeds Fire"], "why": "The <b>Paradise Riflebird</b> (Leo, Horse year) is your secret friend, since the Horse and the Goat make a Six Harmonies pair [s3]."}
+    ],
+    "hard": [
+      {"slug": "arctic-tern", "chips": ["Year clash", "Opposite sign"], "why": "The hard one is the <b>Arctic Tern</b> (Sagittarius, Ox year): the Ox clashes with the Goat, and Sagittarius sits opposite Gemini [s3] [s1]."}
+    ]
+  },
+  "story": {"k": "About 230 stones", "text": "The rock wren nests in a crevice and paves the way in with small flat stones, sometimes lining the entrance too [s6] [s7]. In one study the nests averaged about 230 stones [s5]. One small grey bird carried every one of them."},
+  "closing": "Pick up the next small stone. That is how the whole path got built."
+}

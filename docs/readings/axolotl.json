@@ -1,0 +1,53 @@
+{
+  "title": "What the Axolotl keeps",
+  "is_this_you": {
+    "pressure": "Corner you and you do not fight. You change shape, slip off into the water, and surface later looking unbothered.",
+    "love": "You show up soft, gills out, and you stay with whoever never asks you to grow up on schedule.",
+    "cost": "Everyone keeps waiting for you to change. Some years you wonder too whether you are staying or hiding."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In the Florentine Codex, the Fifth Sun would not move until the gods gave up their lives to push it [s7]. Xolotl said no [s7] [s8]. He ran, and he changed shape three times to hide: a maize plant with two stalks, a doubled maguey, and last of all an axolotl in the water [s7] [s8]. You were born an Aquarius in a Rabbit year. You have turned down an ending or two yourself."
+  },
+  "howto": "Three parts. Swim through them in any order.",
+  "tabs": [
+    {
+      "id": "young",
+      "label": "Staying young",
+      "intro": "Fixed Air, yin Wood, and a body that never bothered to finish.",
+      "rows": [
+        {"k": "Your temperament", "text": "Aquarius is fixed Air, ruled by Saturn and in modern astrology by Uranus [s1]. It is independent and unconventional, and it keeps to its own course [s1] [s2]. The Rabbit is yin Wood, faithful, patient and kind [s3] [s4]. It also slips out of reality when reality gets loud [s4]. In you the two make a sweet, odd stubbornness. You will not change for anyone, and you will be very nice about it."},
+        {"k": "Grown up, gills and all", "text": "The axolotl reaches adulthood and breeds while keeping its larval body, feathery gills included [s6]. Scientists call this neoteny [s6]. It also has lungs and gulps air at the surface [s6]. You kept the young shape too, the open face and the odd questions. It works fine for a grown-up life."},
+        {"k": "At work", "text": "Rehab, lab research, wetland restoration and strange original design all suit you. Pick work where starting over is part of the job."}
+      ]
+    },
+    {
+      "id": "regrow",
+      "label": "What grows back",
+      "intro": "Lose a piece. Grow a working one.",
+      "rows": [
+        {"k": "The regrowth", "text": "An axolotl can regrow a lost limb, and parts of its heart, brain and spinal cord, without a scar [s6]. The gift fades with age but never fully goes [s6] [s13]. Your losses heal like that. Months later something new fills the gap, and it works."},
+        {"k": "When it gets hard", "text": "Aquarius can turn cool and far away [s1]. The Rabbit runs from what hurts [s4]. Together you can sit calmly at the bottom of the canal while the lake drains around you. Look up now and then. Check the water level."}
+      ]
+    },
+    {
+      "id": "keep",
+      "label": "Who keeps you as you are",
+      "intro": "Three who like your shape. One who wants it changed.",
+      "love_lead": "In love you arrive soft and exposed. You need someone who will not ask for a new form. Once settled, the Rabbit is faithful [s3]. Three old pairings leave you as you came.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "luna-moth", "chips": ["Same trine", "Air like you"], "why": "The <b>Luna Moth</b> (Libra, Goat year) shares your trine of Rabbit, Goat and Pig, and Libra is Air like Aquarius [s5] [s1]."},
+      {"slug": "cacomistle", "chips": ["Pig trine", "Water feeds Wood"], "why": "The <b>Cacomistle</b> (Gemini, Pig year) completes the trine, Gemini is Air, and the Pig's Water feeds your Rabbit's Wood [s5] [s1]."},
+      {"slug": "duetting-frog", "chips": ["Secret friend", "Fellow amphibian"], "why": "The <b>Duetting Frog</b> (Libra, Dog year) is your secret friend, since the Dog is the Rabbit's six-harmony partner, and Libra is Air too [s5] [s1]."}
+    ],
+    "hard": [
+      {"slug": "sunset-moth", "chips": ["Rooster clash", "Opposite sign"], "why": "The hard one is the <b>Sunset Moth</b> (Leo, Rooster year): the Rooster clashes with the Rabbit, and Leo sits opposite Aquarius [s5] [s1]."}
+    ]
+  },
+  "story": {"k": "Money in the canal", "text": "Mexico's 50-peso note, issued in 2021, shows an axolotl swimming in the Xochimilco canals [s11]. In April 2022 the International Bank Note Society named it Bank Note of the Year [s11]. A god's last hiding place is now pocket money."},
+  "closing": "Lose what you must. Grow it back your way, gills and all."
+}
