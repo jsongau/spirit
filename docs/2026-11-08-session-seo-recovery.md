@@ -62,3 +62,27 @@ Batch size 12 or fewer, roughly 10 days apart, owner approves every page.
 - Template: add a pinyin slot for header/rail hanzi on all 144; renderer Purple Star wording.
 - Research and fact-pass the remaining 124 animals; batch 2 readings from the 8 researched animals not yet rewritten.
 - Search Console: confirm Manual actions and Security issues are empty; resubmit sitemap after push; GSC API report waiting on googleapis.com allowlist + service account.
+
+## Evening: sharing, referral credit, batches 2 and 3
+
+**Shipped to git (not yet pushed):**
+- Reading share hooks on the 12 batch 1 pages (331768028). Each match card has "Ask a friend if they are your X" (hard: "Dare a friend") that opens the share sheet with a challenge link to /vs.html?with=<slug>. The coda has "Share this reading" and "Save as a story image" (1080x1920 canvas, with hero art for the 79 animals that have real art, moon otherwise). Mary and Ross reviewed v2; their fixes are in v3.
+- Wave 5a, referral credit (c4f8d7408). zodi-referrals.js caches the signed-in user's real code as zodi:myref with zodi:myref:real=1. Share links only carry a real code. Animal pages and vs.html put an incoming ?ref into zodi_pending_ref, which signup reads.
+- Fact pass round 3 on 10 pages, 102 fixes (6176effd3). Logs: docs/research/FACTFIX-R3-A.md and -B.md.
+- Wave 5c, Purple Star wording on all 144 pages plus pinyin for 紫微斗数 (3c279cb40). The renderers are patched too.
+- Batch 2 (8) and batch 3 (10) reading data saved in docs/readings (36e2c4c26). Not on pages yet.
+
+**Schedule (owner rule: 12 or fewer pages per batch, about 10 days apart):** batch 1 goes live with the push. Batch 2 apply around Nov 18, batch 3 around Nov 28. Apply with: python3 tools/build-readings.py ROOT <slugs> --apply, then commit.
+
+**Traps:**
+- Animal pages have no GA4, only vs.html does. Share presses are not counted; landings are, via UTM tags. Adding GA4 is an owner decision because metrics.js promises nothing is sent by default.
+- Preview HTML uses <base href> to the live site, so canvas art drawn from a file:// preview taints the canvas. The story card retries without art. On the live site this is same-origin and works.
+- --preview overwrites <slug>-reading-v1.html. Rename share previews to -vN.
+- The shoebill opener ("abu markub") rests on one blog. Find a better source before batch 3 applies.
+- 65 animals have placeholder hero art, so their story cards fall back to the moon.
+
+**Next:**
+1. Jay pushes (13 commits). Verify live, test sharing on the real site, resubmit the sitemap.
+2. Pair image on vs.html (Ross #2), after plan approval.
+3. Template pinyin slot for header and rail hanzi.
+4. Research batch 4 (next 10 by inbound match links).
