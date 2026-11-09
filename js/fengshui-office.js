@@ -525,7 +525,7 @@
         out.push({ tone: "bad", text: "Your back is squarely to an open door while the desk sits in its line, the office echo of the position tradition warns against most. Slide to the far diagonal so your back is to a wall and the door is in view." });
       }
       if (ev.beam) {
-        out.push({ tone: "bad", text: "The desk sits under the exposed beam, 橫樑壓頂, said to press down. Move the desk clear of the beam; where it cannot move, drape or plane over it, with the classic pair of bamboo flutes on a red ribbon named as tradition." });
+        out.push({ tone: "bad", text: "The desk sits under the exposed beam, 橫梁壓頂, said to press down. Move the desk clear of the beam; where it cannot move, drape or plane over it, with the classic pair of bamboo flutes on a red ribbon named as tradition." });
       }
       if (ev.mirror) {
         out.push({ tone: "warn", text: "A mirror looks onto your seat, read as too restless for focused work. Move it, angle it, or cover it so it no longer catches where you sit." });

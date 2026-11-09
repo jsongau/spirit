@@ -219,7 +219,7 @@ function calendar(ctx) {
    character tiles (.pf-proverb__char) read one hanzi each. Pinyin is shown
    once, on the tiles — never doubled on the ruby above the verse.
    Voice pick prefers a proper, natural Mandarin voice over the OS default:
-   Google 普通话 and Microsoft Neural (Xiaoxiao/Yunxi/Xiaoyi) first, then
+   Google 普通話 and Microsoft Neural (Xiaoxiao/Yunxi/Xiaoyi) first, then
    Apple's Ting-Ting/Meijia, then any zh/cmn voice. getVoices() populates
    asynchronously, so we resolve the voice at click time and also listen
    for voiceschanged. */
@@ -239,7 +239,7 @@ function speech() {
 
   /* preference-ranked Mandarin voice, highest quality first */
   const RANK = [
-    v => /google/i.test(v.name) && /^(zh|cmn)/i.test(v.lang),          // Google 普通话 (Chrome)
+    v => /google/i.test(v.name) && /^(zh|cmn)/i.test(v.lang),          // Google 普通話 (Chrome)
     v => /(xiaoxiao|yunxi|xiaoyi|yunyang|neural).*?/i.test(v.name) && /^zh/i.test(v.lang), // MS Neural
     v => /(ting-?ting|tingting|meijia|sinji|li-?mu|yu-?shu)/i.test(v.name), // Apple
     v => /^zh-CN|^cmn/i.test(v.lang),                                   // any Mandarin, mainland

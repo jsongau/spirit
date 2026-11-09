@@ -26,11 +26,11 @@
     var best = null, bs = -1;
     for (var i = 0; i < vs.length; i++) {
       var v = vs[i], nm = (v.name || "").toLowerCase(), lg = (v.lang || "").toLowerCase();
-      if (!(/^zh\b|zh[-_]/.test(lg) || /chinese|中文|普通话|国语|國語|mandarin/i.test(v.name || ""))) continue;
+      if (!(/^zh\b|zh[-_]/.test(lg) || /chinese|中文|普通話|國語|國語|mandarin/i.test(v.name || ""))) continue;
       var sc = 0;
       if (/tingting|ting-ting|meijia|mei-jia|sinji|li-mu|yu-shu|han-?yu/.test(nm)) sc += 100; // Apple premium (Safari/macOS)
       if (/google/.test(nm)) sc += 60;                                                        // Google network voice (Chrome)
-      if (/普通话|mandarin|zh-cn|zh_cn|cmn/.test(nm + lg)) sc += 25;                            // Mandarin over Cantonese/Taiwan
+      if (/普通話|mandarin|zh-cn|zh_cn|cmn/.test(nm + lg)) sc += 25;                            // Mandarin over Cantonese/Taiwan
       if (v.localService === false) sc += 12;                                                 // network voices are usually clearer
       if (/female|woman/.test(nm)) sc += 4;
       if (sc > bs) { bs = sc; best = v; }

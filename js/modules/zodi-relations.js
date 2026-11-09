@@ -9,7 +9,7 @@ export const WEST_DATES = { Aries:[3,21,4,19], Taurus:[4,20,5,20], Gemini:[5,21,
 export const WEST_EL = { Aries:'Fire', Leo:'Fire', Sagittarius:'Fire', Taurus:'Earth', Virgo:'Earth', Capricorn:'Earth',
   Gemini:'Air', Libra:'Air', Aquarius:'Air', Cancer:'Water', Scorpio:'Water', Pisces:'Water' };
 export const GLYPH = { Aries:'♈',Taurus:'♉',Gemini:'♊',Cancer:'♋',Leo:'♌',Virgo:'♍',Libra:'♎',Scorpio:'♏',Sagittarius:'♐',Capricorn:'♑',Aquarius:'♒',Pisces:'♓' };
-export const HANZI = { Rat:'鼠',Ox:'牛',Tiger:'虎',Rabbit:'兔',Dragon:'龙',Snake:'蛇',Horse:'马',Goat:'羊',Monkey:'猴',Rooster:'鸡',Dog:'狗',Pig:'猪' };
+export const HANZI = { Rat:'鼠',Ox:'牛',Tiger:'虎',Rabbit:'兔',Dragon:'龍',Snake:'蛇',Horse:'馬',Goat:'羊',Monkey:'猴',Rooster:'雞',Dog:'狗',Pig:'豬' };
 export const EAST_REL = { Rat:{trine:['Dragon','Monkey'],secret:'Ox',clash:'Horse',harm:'Goat'},
   Ox:{trine:['Snake','Rooster'],secret:'Rat',clash:'Goat',harm:'Horse'},
   Tiger:{trine:['Horse','Dog'],secret:'Pig',clash:'Monkey',harm:'Snake'},

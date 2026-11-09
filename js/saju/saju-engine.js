@@ -212,8 +212,8 @@
     if (index < 20) { verdict = { ko: "극신약", han: "極身弱", en: "very weak" }; extreme = true; }
     else if (index < 40) { verdict = { ko: "신약", han: "身弱", en: "weak" }; }
     else if (index <= 60) { verdict = { ko: "중화", han: "中和", en: "balanced" }; }
-    else if (index <= 80) { verdict = { ko: "신강", han: "身强", en: "strong" }; }
-    else { verdict = { ko: "극신강", han: "極身强", en: "very strong" }; extreme = true; }
+    else if (index <= 80) { verdict = { ko: "신강", han: "身強", en: "strong" }; }
+    else { verdict = { ko: "극신강", han: "極身強", en: "very strong" }; extreme = true; }
 
     var W = WUXING;
     var resourceEl = generatedByOf(dmEl), companionEl = dmEl, outputEl = W.generates[dmEl], wealthEl = W.controls[dmEl], officerEl = controlledByOf(dmEl);

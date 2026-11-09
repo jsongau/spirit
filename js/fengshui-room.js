@@ -396,7 +396,7 @@
       out.push({ tone: "bad", text: "The feet point straight out the open door while the bed sits in its line. Tradition calls this the coffin, or dead man's, position, the placement it warns against most. Slide the bed to the far diagonal so the feet no longer aim through the doorway." });
     }
     if (ev.beam) {
-      out.push({ tone: "bad", text: "The bed sits directly under the exposed beam, 橫樑壓頂, said to press down on rest. Move the bed clear of the beam, or drape it. A traditional cure hangs two bamboo flutes on a red ribbon." });
+      out.push({ tone: "bad", text: "The bed sits directly under the exposed beam, 橫梁壓頂, said to press down on rest. Move the bed clear of the beam, or drape it. A traditional cure hangs two bamboo flutes on a red ribbon." });
     }
     if (ev.mirrorFacesBed) {
       out.push({ tone: "warn", text: "A mirror faces the bed. Mirrors are read as too active for a place of rest, said to disturb sleep. Move it, cover it at night, or turn it so it no longer looks upon the bed." });

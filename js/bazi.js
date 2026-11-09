@@ -188,7 +188,7 @@
       var pos = mod(solarMin + 60, 120); var nearHr = Math.min(pos, 120 - pos) < 20;
       out.solar = { applied: applied, offset: offset, clock: fmtHM(clockMin), solar: fmtHM(solarMin),
         hourBranch: BRANCHES[hBr], crossed: hBr !== clockBr, near: nearHr };
-      if (nearHr) out.notes.push("Your true solar time is close to an hour (时辰) boundary, so the hour pillar could go either way. If you can, confirm the exact minute.");
+      if (nearHr) out.notes.push("Your true solar time is close to an hour (時辰) boundary, so the hour pillar could go either way. If you can, confirm the exact minute.");
     }
     if (!t.precise) {
       out.notes.push("The precise season boundaries need the astronomy helper, which did not load, so the month and year pillars fall back to a date table and could be a day off right at a season change.");
@@ -248,7 +248,7 @@
     root.appendChild(panel);
   }
   function renderBranch(panel, b) {
-    var roleName = { primary: "Primary (本气)", middle: "Middle (中气)", residual: "Residual (余气)" };
+    var roleName = { primary: "Primary (本氣)", middle: "Middle (中氣)", residual: "Residual (餘氣)" };
     var pills = b.hidden.map(function (h) {
       return '<div class="bz-hidrow"><span class="bz-role">' + (roleName[h.role] || h.role) + "</span>" +
         elPill(h.phase, h.stem + " " + h.phase, "/elements/phases/" + slug(h.phase) + "/") + "</div>";
@@ -907,7 +907,7 @@
     /* ---- birthplace (true solar time) + sex (luck direction) ---- */
     var fRow = el("div", "bzc-two");
     var plc = el("div", "bzc-field");
-    var pLab = el("label", "bzc-label", 'Birthplace <span class="bzc-opt">· true solar time 真太阳时</span>');
+    var pLab = el("label", "bzc-label", 'Birthplace <span class="bzc-opt">· true solar time 真太陽時</span>');
     pLab.setAttribute("for", "bzc-place"); plc.appendChild(pLab);
     var placeSel = document.createElement("select");
     placeSel.id = "bzc-place"; placeSel.className = "bzc-input bzc-sel";
@@ -919,7 +919,7 @@
     placeSel.addEventListener("change", function () { adv.hidden = placeSel.value !== "other"; });
     fRow.appendChild(plc);
     var sx = el("div", "bzc-field");
-    var sLab = el("label", "bzc-label", 'Sex <span class="bzc-opt">· sets the luck direction 大运</span>');
+    var sLab = el("label", "bzc-label", 'Sex <span class="bzc-opt">· sets the luck direction 大運</span>');
     sLab.setAttribute("for", "bzc-sex"); sx.appendChild(sLab);
     var sexSel = document.createElement("select");
     sexSel.id = "bzc-sex"; sexSel.className = "bzc-input bzc-sel";
@@ -1009,7 +1009,7 @@
       var solar = "";
       if (c.solar && c.solar.applied) {
         var hAnimal = branchByChar[c.pillars[3].branch].animal;
-        solar = '<div class="bz-solar"><span class="bz-k">' + glossI("True solar time", "真太阳时 zhēn tài yáng shí. BaZi runs on the sun at your birthplace, so your longitude and the date shift the real hour.") + '</span><p>' + c.solar.clock + ' clock time' + (opt.placeName ? ' near ' + opt.placeName : '') + ' becomes <b>' + c.solar.solar + '</b> true solar time, putting your birth in the <b>' + hAnimal + '</b> hour (' + c.pillars[3].branch + ').' + (c.solar.crossed ? ' Your longitude shifts this to a different hour than the clock alone.' : '') + '</p></div>';
+        solar = '<div class="bz-solar"><span class="bz-k">' + glossI("True solar time", "真太陽時 zhēn tài yáng shí. BaZi runs on the sun at your birthplace, so your longitude and the date shift the real hour.") + '</span><p>' + c.solar.clock + ' clock time' + (opt.placeName ? ' near ' + opt.placeName : '') + ' becomes <b>' + c.solar.solar + '</b> true solar time, putting your birth in the <b>' + hAnimal + '</b> hour (' + c.pillars[3].branch + ').' + (c.solar.crossed ? ' Your longitude shifts this to a different hour than the clock alone.' : '') + '</p></div>';
       }
 
       // --- strength + useful element ---
@@ -1022,7 +1022,7 @@
         var clim = uf.climate === "hot" ? " Born in high summer it also runs warm, so a note of Water tends to cool it." : (uf.climate === "cold" ? " Born in deep winter it also runs cold, so a note of Fire tends to warm it." : "");
         ufLine = "This chart leans on " + joinNames(uf.useful) + ". " + why + clim;
       }
-      var strengthBlock = '<div class="bz-read-sec"><span class="bz-k">' + glossI("Strength", "身强 shēn qiáng or 身弱 shēn ruò, whether the Day Master is strong or weak. Neither is better; the aim is balance.") + ' &amp; what it leans on</span><p><b>' + cap(st.verdict) + ' chart.</b> ' + STR[st.verdict] + '</p><p>' + ufLine + '</p><div class="bz-chipline">' + uf.useful.map(elChip).join(" ") + '</div></div>';
+      var strengthBlock = '<div class="bz-read-sec"><span class="bz-k">' + glossI("Strength", "身強 shēn qiáng or 身弱 shēn ruò, whether the Day Master is strong or weak. Neither is better; the aim is balance.") + ' &amp; what it leans on</span><p><b>' + cap(st.verdict) + ' chart.</b> ' + STR[st.verdict] + '</p><p>' + ufLine + '</p><div class="bz-chipline">' + uf.useful.map(elChip).join(" ") + '</div></div>';
 
       // --- per-pillar reading ---
       var AREA = { Year: "roots, early life, and the family you come from", Month: "your upbringing and the ground your working life grows from, and the season that sets your strength", Hour: "your later years, what you produce, and what you leave" };
@@ -1045,14 +1045,14 @@
       if (tg.power < 0.25) lines.push("No Officer or Authority star appears, a self-made signature: this chart leans on its own initiative rather than a set ladder to climb.");
       var domG = Object.keys(tg).reduce(function (a, b) { return tg[b] > tg[a] ? b : a; });
       if (tg[domG] >= 3) { var DL = { output: "Output runs strong, a maker's chart: it tends to think by producing and does best with something to build or express.", resource: "Resource runs strong, a learner's and nurturer's chart: it gathers knowledge, backing, and care, and gives the same.", wealth: "Wealth runs strong, a practical, results-facing chart drawn to tangible work and real resources.", power: "Authority runs strong, a chart shaped early by structure, duty, and responsibility.", companion: "Companions run strong, a chart of drive, independence, and peers, for camaraderie and rivalry alike." }[domG]; if (DL) lines.push(DL); }
-      if (tg.companion >= 3 && tg.wealth < 1) lines.push("Peers crowd the chart while Wealth is thin, the classical 比劫争财, rivals dividing a small pot: this self does best setting clear boundaries around what is its own.");
-      if (st.verdict === "weak" && tg.wealth >= 2) lines.push("Wealth is present but the self is light (财多身弱): plenty to handle, and a chart that fares best building support before it reaches.");
+      if (tg.companion >= 3 && tg.wealth < 1) lines.push("Peers crowd the chart while Wealth is thin, the classical 比劫爭財, rivals dividing a small pot: this self does best setting clear boundaries around what is its own.");
+      if (st.verdict === "weak" && tg.wealth >= 2) lines.push("Wealth is present but the self is light (財多身弱): plenty to handle, and a chart that fares best building support before it reaches.");
       var presList = Object.keys(pres).map(function (ch) { var g = pres[ch]; return '<span class="bz-godtag2" data-god="' + ch + '" tabindex="0" role="button">' + ch + " <i>" + g.en + "</i> <em>" + (g.revealed ? "主星" : "副星") + "</em></span>"; }).join("");
       var godsBlock = '<div class="bz-read-sec"><span class="bz-k">Your Ten Gods (' + glossI("主星 / 副星", "主星 zhǔ xīng are the gods on your visible stems; 副星 fù xīng are the gods of the hidden stems. Tap any to learn it.") + ')</span><div class="bz-godtags">' + presList + '</div>' + (lines.length ? "<p>" + lines.join(" ") + "</p>" : "") + "</div>";
 
       // --- luck pillars ---
       var luckArc = "", luckBlock, firstGood = null;
-      if (!opt.sex) luckBlock = '<div class="bz-read-sec"><span class="bz-k">Your luck decades (大运)</span><p class="bz-note-inline">Choose your sex in the form above (it sets the direction of the luck pillars) to see your ten-year decades.</p></div>';
+      if (!opt.sex) luckBlock = '<div class="bz-read-sec"><span class="bz-k">Your luck decades (大運)</span><p class="bz-note-inline">Choose your sex in the form above (it sets the direction of the luck pillars) to see your ten-year decades.</p></div>';
       else {
         var yPol = stemByChar[c.pillars[0].stem].polarity;
         var fwd = (opt.sex === "male" && yPol === "yang") || (opt.sex === "female" && yPol === "yin");
@@ -1074,7 +1074,7 @@
         }
         var avg = good.length ? good.reduce(function (a, b) { return a + b; }, 0) / good.length : 0;
         luckArc = !good.length ? "moves through an even mix of supportive and demanding seasons" : (avg < sa + 25 ? "opens with supportive seasons early, favouring a strong start" : (avg < sa + 50 ? "gathers its most supportive seasons in the middle years, coming into its own with time" : "saves its most supportive seasons for later, a long game that rewards patience"));
-        luckBlock = '<div class="bz-read-sec"><span class="bz-k">Your luck decades (' + glossI("大运", "大运 dà yùn, the ten-year luck pillars: moving seasons of life laid over the fixed chart. Tendencies, never a schedule.") + '), from about age ' + sa + '</span><p><b>Green</b> is a supportive decade for your chart; <b>amber</b> is more demanding, its elements working against what you lean on. Dimmed blocks are behind you, the ringed one is where you are now, and the rest lie ahead. Tap any for the god it brings.</p><div class="bz-luckrow">' + cells + '</div></div>';
+        luckBlock = '<div class="bz-read-sec"><span class="bz-k">Your luck decades (' + glossI("大運", "大運 dà yùn, the ten-year luck pillars: moving seasons of life laid over the fixed chart. Tendencies, never a schedule.") + '), from about age ' + sa + '</span><p><b>Green</b> is a supportive decade for your chart; <b>amber</b> is more demanding, its elements working against what you lean on. Dimmed blocks are behind you, the ringed one is where you are now, and the rest lie ahead. Tap any for the god it brings.</p><div class="bz-luckrow">' + cells + '</div></div>';
       }
 
       // --- synthesis ---
@@ -1090,17 +1090,17 @@
       function pcard(kk, tt) { return '<div class="bz-power-card"><span class="bz-k">' + kk + '</span><p>' + tt + '</p></div>'; }
       var hasWealthP = tg.wealth >= 0.5;
       var WORKT = {
-        output: "This chart carries a maker's mark. Output is its strongest current" + (domName ? ", led by the " + domName + (domEntry ? " (" + domEntry.char + ")" : "") : "") + ": it tends to think by producing, and its best work is something made, said, or built." + (hasWealthP ? " Wealth sits in the chart for that output to feed (食神生财, the craft that feeds the fortune), so the making itself can become the living." : " Give it something to produce and the rest of the chart falls in line."),
-        wealth: "This chart faces its work head-on. Wealth is its strongest current" + (domName ? ", led by the " + domName : "") + ": tangible results, real resources, things handled and grown. It tends to be happiest when effort lands somewhere countable." + (st.verdict === "weak" ? " One caution from the classics (财多身弱): the self runs light for all it carries, so build backing before reaching further." : ""),
+        output: "This chart carries a maker's mark. Output is its strongest current" + (domName ? ", led by the " + domName + (domEntry ? " (" + domEntry.char + ")" : "") : "") + ": it tends to think by producing, and its best work is something made, said, or built." + (hasWealthP ? " Wealth sits in the chart for that output to feed (食神生財, the craft that feeds the fortune), so the making itself can become the living." : " Give it something to produce and the rest of the chart falls in line."),
+        wealth: "This chart faces its work head-on. Wealth is its strongest current" + (domName ? ", led by the " + domName : "") + ": tangible results, real resources, things handled and grown. It tends to be happiest when effort lands somewhere countable." + (st.verdict === "weak" ? " One caution from the classics (財多身弱): the self runs light for all it carries, so build backing before reaching further." : ""),
         resource: "Learning is the engine of this chart. Resource runs strongest" + (domName ? ", led by the " + domName : "") + ": it gathers knowledge, backing, and care, and does its best work where study, teaching, or protection sit near the center. The one risk of plenty is knowledge that never converts; it wants an outlet to pour into.",
         power: "Structure found this chart early. Authority is its strongest current" + (domName ? ", led by the " + domName : "") + ": duty, responsibility, and the weight of being answerable. Carried well, that pressure reads as command, and this self tends to be handed real things to hold.",
-        companion: "This chart stands on its own feet. Companions run strongest" + (domName ? ", led by the " + domName : "") + ": independence, self-identity, peers and rivals in equal measure." + (tg.wealth < 1 ? " With Wealth thin, the classical warning 比劫争财 applies: mark clearly what is yours, and give the drive its own arena." : " The drive does best with an arena of its own.")
+        companion: "This chart stands on its own feet. Companions run strongest" + (domName ? ", led by the " + domName : "") + ": independence, self-identity, peers and rivals in equal measure." + (tg.wealth < 1 ? " With Wealth thin, the classical warning 比劫爭財 applies: mark clearly what is yours, and give the drive its own arena." : " The drive does best with an arena of its own.")
       };
       var workTxt = (WORKT[domG] || WORKT.companion) + (domLean ? " Fields that fit: " + domLean : "");
-      var offP = pres["正官"], shaP = pres["七杀"], authTxt;
+      var offP = pres["正官"], shaP = pres["七殺"], authTxt;
       if (tg.power < 0.25) authTxt = "No Officer star appears at birth: no boss placed above you, and no ready-made ladder. The structure you answer to tends to be one you build yourself. The freedom is real, and so is the flip side: position and recognition here are earned and made, not inherited.";
       else if (offP && offP.revealed) authTxt = "A revealed Direct Officer (正官) stands in the chart: authority through proper channels. This self tends to rise inside structures, by duties met and rules honored, and to be trusted with responsibility early. The name matters here; guard it.";
-      else if (shaP && shaP.revealed) authTxt = "Seven Killings (七杀) stands revealed: raw, unbuffered authority. Pressure is a feature of this chart, not a fault, and handled well it forges command, the kind of leadership earned in hard seasons rather than granted in calm ones.";
+      else if (shaP && shaP.revealed) authTxt = "Seven Killings (七殺) stands revealed: raw, unbuffered authority. Pressure is a feature of this chart, not a fault, and handled well it forges command, the kind of leadership earned in hard seasons rather than granted in calm ones.";
       else authTxt = "Authority sits hidden in the branches rather than revealed on the stems: a quiet claim to structure and duty that tends to surface later in life, or when a season of pressure calls it up. Until then it reads as conscientiousness rather than rank.";
       var pyTxt;
       if (!opt.sex) pyTxt = "The luck decades run forward or backward depending on birth sex. Choose yours in the form above and this card names the decade to prepare for, with its year and the god it carries.";
@@ -1149,7 +1149,7 @@
         var HR = ["11pm to 1am", "1 to 3am", "3 to 5am", "5 to 7am", "7 to 9am", "9 to 11am", "11am to 1pm", "1 to 3pm", "3 to 5pm", "5 to 7pm", "7 to 9pm", "9 to 11pm"];
         var ho = '<option value="">Unknown (general reading)</option>';
         for (var hi = 0; hi < 12; hi++) { var ba = B.branches[hi]; ho += '<option value="' + hi + '"' + (hasHour && c.pillars[3].branch === ba.char ? " selected" : "") + ">" + HR[hi] + " · " + ba.animal + " " + ba.char + "</option>"; }
-        hourSel = '<div class="bz-read-sec bz-hoursel"><span class="bz-k">Your birth hour ' + glossI("(时辰)", "时辰 shí chen, the two-hour block of your birth. It sets the fourth pillar: later life, children, and what you make. Swap it to see the reading change.") + ' — swap to see how it changes</span><select class="bz-select" data-hoursel>' + ho + '</select></div>';
+        hourSel = '<div class="bz-read-sec bz-hoursel"><span class="bz-k">Your birth hour ' + glossI("(時辰)", "時辰 shí chen, the two-hour block of your birth. It sets the fourth pillar: later life, children, and what you make. Swap it to see the reading change.") + ' — swap to see how it changes</span><select class="bz-select" data-hoursel>' + ho + '</select></div>';
       }
       var castlead = '<p class="bz-castlead">Your Day Master is <b>' + dm.char + " " + dm.pinyin + "</b>, " + dm.polarity + " " + dm.phase + ". " + cap(dm.imagery) + ". This is you, the character every other part of the chart is read against.</p>";
       var pieces = [castlead, grid, hourSel, solar, shareCard, strengthBlock, pillarBlock, godsBlock, powerBlock, luckBlock, yearBlock, synth, generalNote, (notes ? '<div class="bz-note-inline">' + notes + "</div>" : ""), links, '<p class="bz-note-inline">A reading of tendencies from a classical system, a mirror and a grain to work with, not a verdict and not a prediction. What you do with it is yours.</p>'].filter(Boolean);

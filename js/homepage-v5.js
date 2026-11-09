@@ -17,7 +17,7 @@
   var WEST = ["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"];
   var WEST_G = ["♈","♉","♊","♋","♌","♍","♎","♏","♐","♑","♒","♓"];
   var EAST = ["Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse","Goat","Monkey","Rooster","Dog","Pig"];
-  var EAST_ZI = ["鼠","牛","虎","兔","龙","蛇","马","羊","猴","鸡","狗","猪"];
+  var EAST_ZI = ["鼠","牛","虎","兔","龍","蛇","馬","羊","猴","雞","狗","豬"];
   var ELS  = ["Metal","Metal","Water","Water","Wood","Wood","Fire","Fire","Earth","Earth"];
 
   /* ---------- light ENGINE shim ----------

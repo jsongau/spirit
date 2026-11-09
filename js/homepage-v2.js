@@ -29,10 +29,10 @@ var WEST = [
 var EAST = [
   { n:"Rat", z:"鼠", p:"shǔ" }, { n:"Ox", z:"牛", p:"niú" },
   { n:"Tiger", z:"虎", p:"hǔ" }, { n:"Rabbit", z:"兔", p:"tù" },
-  { n:"Dragon", z:"龙", p:"lóng" }, { n:"Snake", z:"蛇", p:"shé" },
-  { n:"Horse", z:"马", p:"mǎ" }, { n:"Goat", z:"羊", p:"yáng" },
-  { n:"Monkey", z:"猴", p:"hóu" }, { n:"Rooster", z:"鸡", p:"jī" },
-  { n:"Dog", z:"狗", p:"gǒu" }, { n:"Pig", z:"猪", p:"zhū" }];
+  { n:"Dragon", z:"龍", p:"lóng" }, { n:"Snake", z:"蛇", p:"shé" },
+  { n:"Horse", z:"馬", p:"mǎ" }, { n:"Goat", z:"羊", p:"yáng" },
+  { n:"Monkey", z:"猴", p:"hóu" }, { n:"Rooster", z:"雞", p:"jī" },
+  { n:"Dog", z:"狗", p:"gǒu" }, { n:"Pig", z:"豬", p:"zhū" }];
 var BRANCH = ["子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"];
 var ELS = ["Metal","Metal","Water","Water","Wood","Wood","Fire","Fire","Earth","Earth"];
 var ELEM_ZI = { Wood:"木", Fire:"火", Earth:"土", Metal:"金", Water:"水" };
@@ -709,10 +709,10 @@ $$("[role=tablist]").forEach(function (list) {
   var P = [
     ["千里之行，始於足下","qiān lǐ zhī xíng, shǐ yú zú xià","A road of a thousand li begins under your own feet.","Whatever the season is asking of you, it begins with the step you can take tonight."],
     ["水滴石穿","shuǐ dī shí chuān","Dripping water bores through stone.","Small returns, repeated under the moon, outwear any single push."],
-    ["塞翁失马","sài wēng shī mǎ","The old man at the frontier lost his horse.","What looks like loss may be the door. Withhold the verdict a while."],
-    ["磨刀不误砍柴工","mó dāo bú wù kǎn chái gōng","Sharpening the axe does not delay the woodcutting.","Preparation is not procrastination. The wheel already knows this."],
-    ["良药苦口","liáng yào kǔ kǒu","Good medicine tastes bitter.","The advice you flinched from this week is probably the true one."],
-    ["画龙点睛","huà lóng diǎn jīng","Paint the dragon, then dot its eyes.","The work is nearly alive. One honest finishing touch, not ten more coats."]
+    ["塞翁失馬","sài wēng shī mǎ","The old man at the frontier lost his horse.","What looks like loss may be the door. Withhold the verdict a while."],
+    ["磨刀不誤砍柴工","mó dāo bú wù kǎn chái gōng","Sharpening the axe does not delay the woodcutting.","Preparation is not procrastination. The wheel already knows this."],
+    ["良藥苦口","liáng yào kǔ kǒu","Good medicine tastes bitter.","The advice you flinched from this week is probably the true one."],
+    ["畫龍點睛","huà lóng diǎn jīng","Paint the dragon, then dot its eyes.","The work is nearly alive. One honest finishing touch, not ten more coats."]
   ];
   var start = new Date(NOW.getFullYear(), 0, 0);
   var doy = Math.floor((NOW - start) / 86400000);

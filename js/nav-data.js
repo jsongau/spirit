@@ -17,7 +17,7 @@ window.PNAV = window.PNAV || { features: {} };
               When absent, `items` is treated as one implicit column.
      chips    optional strip OR ARRAY of strips { label, items: [[href, glyph,
               title], ...] } — round chip rows under the columns (the canvas
-              "wing" strips: ♈…♓, 鼠…猪)
+              "wing" strips: ♈…♓, 鼠…豬)
      items    item = [href, name, sub?, glyph?, dyn?]
                 href   real destination (always a literal <a href> in served HTML)
                 name   serif row name
@@ -189,14 +189,14 @@ PNAV.MAP = [
         ["/chinese-zodiac/ox/",      "牛", "Ox"],
         ["/chinese-zodiac/tiger/",   "虎", "Tiger"],
         ["/chinese-zodiac/rabbit/",  "兔", "Rabbit"],
-        ["/chinese-zodiac/dragon/",  "龙", "Dragon"],
+        ["/chinese-zodiac/dragon/",  "龍", "Dragon"],
         ["/chinese-zodiac/snake/",   "蛇", "Snake"],
-        ["/chinese-zodiac/horse/",   "马", "Horse"],
+        ["/chinese-zodiac/horse/",   "馬", "Horse"],
         ["/chinese-zodiac/goat/",    "羊", "Goat"],
         ["/chinese-zodiac/monkey/",  "猴", "Monkey"],
-        ["/chinese-zodiac/rooster/", "鸡", "Rooster"],
+        ["/chinese-zodiac/rooster/", "雞", "Rooster"],
         ["/chinese-zodiac/dog/",     "狗", "Dog"],
-        ["/chinese-zodiac/pig/",     "猪", "Pig"]
+        ["/chinese-zodiac/pig/",     "豬", "Pig"]
       ]}
     ]
   },
@@ -213,18 +213,18 @@ PNAV.MAP = [
       title: "Year of the Fire Horse", sub: "2026, once in sixty years", link: "Read the year" },
     cols: [
       { items: [
-        ["/chinese-zodiac/horse/",   "Horse",   "2026 · Fire Horse",   "horse",   null,          "马", { featured: true }],
+        ["/chinese-zodiac/horse/",   "Horse",   "2026 · Fire Horse",   "horse",   null,          "馬", { featured: true }],
         ["/chinese-zodiac/rat/",     "Rat",     PNAV.DYN.yearBand(0),  "rat",     "cn-years-0",  "鼠"],
         ["/chinese-zodiac/ox/",      "Ox",      PNAV.DYN.yearBand(1),  "ox",      "cn-years-1",  "牛"],
         ["/chinese-zodiac/tiger/",   "Tiger",   PNAV.DYN.yearBand(2),  "tiger",   "cn-years-2",  "虎"],
         ["/chinese-zodiac/rabbit/",  "Rabbit",  PNAV.DYN.yearBand(3),  "rabbit",  "cn-years-3",  "兔"],
-        ["/chinese-zodiac/dragon/",  "Dragon",  PNAV.DYN.yearBand(4),  "dragon",  "cn-years-4",  "龙"],
+        ["/chinese-zodiac/dragon/",  "Dragon",  PNAV.DYN.yearBand(4),  "dragon",  "cn-years-4",  "龍"],
         ["/chinese-zodiac/snake/",   "Snake",   PNAV.DYN.yearBand(5),  "snake",   "cn-years-5",  "蛇"],
         ["/chinese-zodiac/goat/",    "Goat",    PNAV.DYN.yearBand(7),  "goat",    "cn-years-7",  "羊"],
         ["/chinese-zodiac/monkey/",  "Monkey",  PNAV.DYN.yearBand(8),  "monkey",  "cn-years-8",  "猴"],
-        ["/chinese-zodiac/rooster/", "Rooster", PNAV.DYN.yearBand(9),  "rooster", "cn-years-9",  "鸡"],
+        ["/chinese-zodiac/rooster/", "Rooster", PNAV.DYN.yearBand(9),  "rooster", "cn-years-9",  "雞"],
         ["/chinese-zodiac/dog/",     "Dog",     PNAV.DYN.yearBand(10), "dog",     "cn-years-10", "狗"],
-        ["/chinese-zodiac/pig/",     "Pig",     PNAV.DYN.yearBand(11), "pig",     "cn-years-11", "猪"]
+        ["/chinese-zodiac/pig/",     "Pig",     PNAV.DYN.yearBand(11), "pig",     "cn-years-11", "豬"]
       ]}
     ],
     chips: [
@@ -233,14 +233,14 @@ PNAV.MAP = [
         ["/chinese-zodiac/ox/",      "牛", "Ox"],
         ["/chinese-zodiac/tiger/",   "虎", "Tiger"],
         ["/chinese-zodiac/rabbit/",  "兔", "Rabbit"],
-        ["/chinese-zodiac/dragon/",  "龙", "Dragon"],
+        ["/chinese-zodiac/dragon/",  "龍", "Dragon"],
         ["/chinese-zodiac/snake/",   "蛇", "Snake"],
-        ["/chinese-zodiac/horse/",   "马", "Horse"],
+        ["/chinese-zodiac/horse/",   "馬", "Horse"],
         ["/chinese-zodiac/goat/",    "羊", "Goat"],
         ["/chinese-zodiac/monkey/",  "猴", "Monkey"],
-        ["/chinese-zodiac/rooster/", "鸡", "Rooster"],
+        ["/chinese-zodiac/rooster/", "雞", "Rooster"],
         ["/chinese-zodiac/dog/",     "狗", "Dog"],
-        ["/chinese-zodiac/pig/",     "猪", "Pig"]
+        ["/chinese-zodiac/pig/",     "豬", "Pig"]
       ]}
     ]
   },
@@ -297,13 +297,13 @@ PNAV.MAP = [
       href: "/destiny/korean-saju/", link: "Read Saju Palja", watermark: "사주" },
     cols: [
       { title: "The three systems", mark: "命", items: [
-        ["/destiny/zi-wei-dou-shu/",    "Zi Wei Dou Shu", "紫微斗数 · Purple Star"],
+        ["/destiny/zi-wei-dou-shu/",    "Zi Wei Dou Shu", "紫微斗數 · Purple Star"],
         ["/destiny/bazi-four-pillars/", "BaZi", "八字 · the four pillars"],
         ["/destiny/korean-saju/",       "Saju Palja", "사주팔자 · the Korean reading"]
       ]},
       { title: "Cast a chart", mark: "盤", items: [
         ["/destiny/bazi-four-pillars/chart/", "Cast your chart", "free, from your birth hour"],
-        ["/destiny/zi-wei-dou-shu/chart/",    "Read a Purple Star chart", "命盘 mìngpán"],
+        ["/destiny/zi-wei-dou-shu/chart/",    "Read a Purple Star chart", "命盤 mìngpán"],
         ["/destiny/bazi-four-pillars/",       "Learn how it works", "and more →"]
       ]}
     ],
@@ -318,7 +318,7 @@ PNAV.MAP = [
     foot: ["/feng-shui/", "Explore feng shui in full"],
     layout: "fengmoon",
     almanac: { eyebrow: "The calendar", title: "The Feng Shui calendar",
-      kicker: "黄历 huánglì · today's almanac",
+      kicker: "黃曆 huánglì · today's almanac",
       body: "The lunar date, the day's officer, what today favors and what it punishes. New every midnight.",
       href: "/almanac/", link: "Open today's calendar" },
     cols: [
@@ -327,7 +327,7 @@ PNAV.MAP = [
         ["/feng-shui/eight-directions/", "Eight directions"],
         ["/feng-shui/compass/",          "The compass"],
         ["/feng-shui/flying-stars/",     "Flying stars"],
-        ["/feng-shui/yin-yang/",         "Yin and yang", "阴阳 yīnyáng"]
+        ["/feng-shui/yin-yang/",         "Yin and yang", "陰陽 yīnyáng"]
       ]},
       { title: "In the home", mark: "家", items: [
         ["/feng-shui/commanding-position/", "Commanding position", "live tool"],
@@ -732,26 +732,26 @@ PNAV.HUBS = {
       ["/destiny/zi-wei-dou-shu/", "Overview"],
       ["/destiny/zi-wei-dou-shu/background/", "The tradition (background)"],
       ["/destiny/zi-wei-dou-shu/history/", "History & origins 源流 Yuánliú"],
-      ["/destiny/zi-wei-dou-shu/palaces/", "The 12 Palaces 十二宫 Shí'èr Gōng"],
+      ["/destiny/zi-wei-dou-shu/palaces/", "The 12 Palaces 十二宮 Shí'èr Gōng"],
       ["/destiny/zi-wei-dou-shu/stars/", "The 14 Stars 主星 Zhǔxīng", [
         ["/destiny/zi-wei-dou-shu/stars/", "All 14 major stars 十四主星"],
         ["/destiny/zi-wei-dou-shu/stars/zi-wei/", "紫微 Zǐwēi · The Emperor"],
-        ["/destiny/zi-wei-dou-shu/stars/tian-ji/", "天机 Tiānjī · The Strategist"],
-        ["/destiny/zi-wei-dou-shu/stars/tai-yang/", "太阳 Tàiyáng · The Sun"],
+        ["/destiny/zi-wei-dou-shu/stars/tian-ji/", "天機 Tiānjī · The Strategist"],
+        ["/destiny/zi-wei-dou-shu/stars/tai-yang/", "太陽 Tàiyáng · The Sun"],
         ["/destiny/zi-wei-dou-shu/stars/wu-qu/", "武曲 Wǔqū · The Finance General"],
         ["/destiny/zi-wei-dou-shu/stars/tian-tong/", "天同 Tiāntóng · The Harmony Star"],
-        ["/destiny/zi-wei-dou-shu/stars/lian-zhen/", "廉贞 Liánzhēn · The Diplomat"],
+        ["/destiny/zi-wei-dou-shu/stars/lian-zhen/", "廉貞 Liánzhēn · The Diplomat"],
         ["/destiny/zi-wei-dou-shu/stars/tian-fu/", "天府 Tiānfǔ · The Treasury"],
-        ["/destiny/zi-wei-dou-shu/stars/tai-yin/", "太阴 Tàiyīn · The Moon Star"],
-        ["/destiny/zi-wei-dou-shu/stars/tan-lang/", "贪狼 Tānláng · The Desire Star"],
-        ["/destiny/zi-wei-dou-shu/stars/ju-men/", "巨门 Jùmén · The Dark Gate"],
+        ["/destiny/zi-wei-dou-shu/stars/tai-yin/", "太陰 Tàiyīn · The Moon Star"],
+        ["/destiny/zi-wei-dou-shu/stars/tan-lang/", "貪狼 Tānláng · The Desire Star"],
+        ["/destiny/zi-wei-dou-shu/stars/ju-men/", "巨門 Jùmén · The Dark Gate"],
         ["/destiny/zi-wei-dou-shu/stars/tian-xiang/", "天相 Tiānxiàng · The Prime Minister"],
         ["/destiny/zi-wei-dou-shu/stars/tian-liang/", "天梁 Tiānliáng · The Elder"],
-        ["/destiny/zi-wei-dou-shu/stars/qi-sha/", "七杀 Qīshā · The Warrior"],
-        ["/destiny/zi-wei-dou-shu/stars/po-jun/", "破军 Pòjūn · The Vanguard"]
+        ["/destiny/zi-wei-dou-shu/stars/qi-sha/", "七殺 Qīshā · The Warrior"],
+        ["/destiny/zi-wei-dou-shu/stars/po-jun/", "破軍 Pòjūn · The Vanguard"]
       ]],
       ["/destiny/zi-wei-dou-shu/four-forces/", "The Four Forces 四化 Sìhuà"],
-      ["/destiny/zi-wei-dou-shu/chart/", "Read a chart 命盘 Mìngpán"]
+      ["/destiny/zi-wei-dou-shu/chart/", "Read a chart 命盤 Mìngpán"]
     ]
   },
   // Nested hub: chakra + yoga pages resolve here (not to "elements") via the

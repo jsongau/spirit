@@ -18,7 +18,7 @@
 
   var WEST = ["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"];
   var EAST = ["Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse","Goat","Monkey","Rooster","Dog","Pig"];
-  var EAST_ZI = ["鼠","牛","虎","兔","龙","蛇","马","羊","猴","鸡","狗","猪"];
+  var EAST_ZI = ["鼠","牛","虎","兔","龍","蛇","馬","羊","猴","雞","狗","豬"];
 
   function loadProfile() {
     try { var raw = get("profile"); if (!raw) return null; var p = JSON.parse(raw);
@@ -157,10 +157,10 @@
     upd();
   }
 
-  /* ---------- 24 solar terms ring (二十四节气), today's term lit ---------- */
+  /* ---------- 24 solar terms ring (二十四節氣), today's term lit ---------- */
   function solarTermsRing() {
     var dial = $(".dial"); if (!dial || document.getElementById("v4-solar-terms")) return;
-    var TERMS = ["立春","雨水","惊蛰","春分","清明","谷雨","立夏","小满","芒种","夏至","小暑","大暑","立秋","处暑","白露","秋分","寒露","霜降","立冬","小雪","大雪","冬至","小寒","大寒"];
+    var TERMS = ["立春","雨水","驚蟄","春分","清明","穀雨","立夏","小滿","芒種","夏至","小暑","大暑","立秋","處暑","白露","秋分","寒露","霜降","立冬","小雪","大雪","冬至","小寒","大寒"];
     var STARTS = [[2,4],[2,19],[3,6],[3,21],[4,5],[4,20],[5,6],[5,21],[6,6],[6,21],[7,7],[7,23],[8,8],[8,23],[9,8],[9,23],[10,8],[10,23],[11,7],[11,22],[12,7],[12,21],[1,6],[1,20]];
     var d = new Date(), key = (d.getMonth() + 1) * 100 + d.getDate(), cur = 23, i;
     for (i = 0; i < STARTS.length; i++) { if (key >= STARTS[i][0] * 100 + STARTS[i][1]) cur = i; }

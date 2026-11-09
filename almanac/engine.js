@@ -266,7 +266,7 @@
       var mo = months[i];
       if (jdn >= mo.start && jdn < mo.end) {
         return { monthNum: mo.num, leap: mo.leap, day: jdn - mo.start + 1,
-          monthCn: (mo.leap ? "闰" : "") + LUNAR_MON[mo.num - 1], dayCn: LUNAR_DAY[jdn - mo.start], daysInMonth: mo.days };
+          monthCn: (mo.leap ? "閏" : "") + LUNAR_MON[mo.num - 1], dayCn: LUNAR_DAY[jdn - mo.start], daysInMonth: mo.days };
       }
     }
     return null;
@@ -393,7 +393,7 @@
   }
   function personalRelation(dayBranch, userBranch) {
     if (userBranch == null) return null;
-    if (CLASH(userBranch) === dayBranch) return { key: "clash", label: "Clash day (冲)", text: "This day's animal clashes with yours. Keep plans light. Not the day to sign, launch, or move." };
+    if (CLASH(userBranch) === dayBranch) return { key: "clash", label: "Clash day (沖)", text: "This day's animal clashes with yours. Keep plans light. Not the day to sign, launch, or move." };
     if (HARMONY[userBranch] === dayBranch) return { key: "harmony", label: "Harmony day (六合)", text: "This day's animal pairs with yours in quiet harmony. Favors partnerships, asks, and mending fences." };
     if (sameTrine(userBranch, dayBranch)) return { key: "trine", label: "Trine day (三合)", text: "This day's animal sits in your trine. Momentum comes easier. Good for pushing work forward." };
     if (userBranch === dayBranch) return { key: "own", label: "Own-sign day", text: "The day wears your animal. Strong for self-directed work, but do not overcommit." };

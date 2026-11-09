@@ -442,7 +442,7 @@
   }
 }
 
-/* faint outer ring of the 24 solar terms (二十四节气); today's term lit */
+/* faint outer ring of the 24 solar terms (二十四節氣); today's term lit */
 #v4-solar-terms { pointer-events: none; }
 #v4-solar-terms .v4-term {
   font-family: "Songti SC", "Noto Serif SC", var(--serif, serif);

@@ -28,7 +28,7 @@ PNAV.features.dock = function (ctx) {
               "Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"];
   var EAST = ["Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse",
               "Goat","Monkey","Rooster","Dog","Pig"];
-  var EAST_Z = ["鼠","牛","虎","兔","龙","蛇","马","羊","猴","鸡","狗","猪"];
+  var EAST_Z = ["鼠","牛","虎","兔","龍","蛇","馬","羊","猴","雞","狗","豬"];
 
   function esc(s) {
     return String(s == null ? "" : s)

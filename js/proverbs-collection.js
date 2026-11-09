@@ -22,7 +22,7 @@
   function pickVoice() {
     if (!window.speechSynthesis) return;
     var vs = speechSynthesis.getVoices() || [];
-    zhVoice = vs.filter(function (v) { return /^zh\b|zh[-_]/i.test(v.lang) || /Chinese|中文|普通话|國語/i.test(v.name); })[0] || null;
+    zhVoice = vs.filter(function (v) { return /^zh\b|zh[-_]/i.test(v.lang) || /Chinese|中文|普通話|國語/i.test(v.name); })[0] || null;
   }
   if (window.speechSynthesis) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
   function speak(text, btn) {
