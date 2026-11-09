@@ -1,0 +1,362 @@
+{
+  "slug": "vampire-squid",
+  "name": "Vampire Squid",
+  "sign": "Pisces",
+  "year": "Rat",
+  "element": "Water (from the Rat); Pisces adds Water, mutable. Double Water.",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Pisces (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pisces_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Pisces zodiac sign: personality traits, TODAY",
+      "url": "https://www.today.com/today/amp/rcna72001"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (trines, six harmonies, six clashes), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Rat (zodiac), Wikipedia (branch, yang, Water, hour)",
+      "url": "https://en.wikipedia.org/wiki/Rat_(zodiac)"
+    },
+    {
+      "id": "s5",
+      "title": "Year of the Rat, Travel China Guide",
+      "url": "https://www.travelchinaguide.com/intro/social_customs/zodiac/rat.htm"
+    },
+    {
+      "id": "s6",
+      "title": "Vampire squid species profile, MBARI",
+      "url": "https://www.mbari.org/animal/vampire-squid/"
+    },
+    {
+      "id": "s7",
+      "title": "Hoving and Robison 2012, Vampire squid: detritivores in the oxygen minimum zone, Proc. R. Soc. B 279:4559-4567 (PMC3479720)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3479720"
+    },
+    {
+      "id": "s8",
+      "title": "Robison, Reisenbichler, Hunt and Haddock 2003, Light production by the arm tips of the deep-sea cephalopod Vampyroteuthis infernalis, Biol. Bull. 205:102-109 (BioStor record)",
+      "url": "https://biostor.org/reference/11184"
+    },
+    {
+      "id": "s9",
+      "title": "Robison et al. 2003 full text PDF (archive.org)",
+      "url": "https://archive.org/download/biostor-11184/biostor-11184.pdf"
+    },
+    {
+      "id": "s10",
+      "title": "Vampire squid, Aquarium of the Pacific",
+      "url": "https://www.aquariumofpacific.org/onlinelearningcenter/species/vampire_squid"
+    },
+    {
+      "id": "s11",
+      "title": "The Jurassic world of the vampire squid, Cosmos (Vampyronassa, 164 million years)",
+      "url": "https://cosmosmagazine.com/history/palaeontology/jurassic-vampire-squid"
+    },
+    {
+      "id": "s12",
+      "title": "Vampires in the deep: an ancient link between octopuses and squids, University of Vienna (Yoshida, Toth et al. 2025, iScience)",
+      "url": "https://www.univie.ac.at/en/news/detail/vampires-in-the-deep-an-ancient-link-between-octopuses-and-squids"
+    },
+    {
+      "id": "s13",
+      "title": "Vampire squid, Wikipedia (Chun 1903, name, Taibbi usage, pineapple posture)",
+      "url": "https://en.wikipedia.org/wiki/Vampire_squid"
+    },
+    {
+      "id": "s14",
+      "title": "Vampyroteuthis Infernalis by Vilem Flusser and Louis Bec, University of Minnesota Press 2012, City Lights listing",
+      "url": "https://citylights.com/philosophy/vampyroteuthis-infernalis-vampire-squid/"
+    },
+    {
+      "id": "s15",
+      "title": "Matt Taibbi on vampire squid, The Week",
+      "url": "https://theweek.com/articles/447734/matt-taibbi-vampire-squid-journalistic-outrage-obamas-flaccid-approach-financial-crime"
+    },
+    {
+      "id": "s16",
+      "title": "Tao Te Ching ch. 8, Legge translation, taopage.org",
+      "url": "https://www.taopage.org/tao_te_8.html"
+    },
+    {
+      "id": "s17",
+      "title": "Chinese Wikipedia mirror, 吸血乌贼 article (names 幽灵蛸 etc.)",
+      "url": "https://zhwiki.oracleblog.org/wiki/%E5%B9%BD%E9%9D%88%E8%9B%B8"
+    },
+    {
+      "id": "s18",
+      "title": "The vampire squid is a garbage eater, National Geographic (Ed Yong, 2012)",
+      "url": "https://www.nationalgeographic.com/science/article/the-vampire-squid-is-a-garbage-eater-that-collects-raining-rubbish-with-living-fishing-lines"
+    },
+    {
+      "id": "s19",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Compassionate, imaginative, adaptable, tender, intuitive, spiritual. Shadow: indecisive, moody, gullible, can slide into manipulation or escape.",
+    "planet": "Jupiter (traditional), Neptune (modern); Venus exalted",
+    "element": "Water (with Cancer and Scorpio)",
+    "modality": "Mutable; twelfth sign; symbol two fish tied by a cord swimming opposite ways (Aphrodite and Eros escaping Typhon); opposite sign Virgo",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Quick-witted, adaptable, observant, diligent, socially skilled. Shadow: overly cautious, overthinks, short-sighted, suspicious, can be stingy or picky; insecure in love.",
+    "yinyang": "Yang",
+    "element": "Water (fixed); earthly branch 子 zǐ; Rat hour 23:00 to 01:00, centred on midnight",
+    "trine": "Rat, Dragon, Monkey",
+    "secret_friend": "Ox",
+    "clash": "Horse",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Scientific naming (Carl Chun, Valdivia Expedition, 1903)",
+      "meaning": "Chun named it Vampyroteuthis infernalis, roughly 'vampire squid from hell'. Wikipedia notes the name comes from its dark colour and cloak of webbing, not its diet: it eats falling detritus, not blood. The scary name over a gentle life is a usable tension.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "culture": "European philosophy (Vilem Flusser and Louis Bec)",
+      "meaning": "Vampyroteuthis Infernalis, a 'treatise, spoof and fable' (English edition University of Minnesota Press 2012), uses the animal as humanity's counterpart: both banished from most of life's domain, the squid into the abyss, humans onto the surface of the continents. The best non-commodity cultural item for this page.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "culture": "Modern English idiom (Matt Taibbi, Rolling Stone, 2009)",
+      "meaning": "Taibbi called Goldman Sachs 'a great vampire squid wrapped around the face of humanity', and 'vampire squid' became shorthand for predatory finance. Ironic against the biology: the real animal takes only what others let fall. Use as a light aside, if at all.",
+      "source_ids": [
+        "s15",
+        "s13"
+      ]
+    },
+    {
+      "culture": "Daoist (Dao De Jing ch. 8, the page's own proverb)",
+      "meaning": "上善若水 shàng shàn ruò shuǐ, the highest good is like water: it benefits all things and takes 'the low place which all men dislike' (Legge). Verified; the page correctly labels the tie to this crossing as its own pairing.",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "culture": "Chinese (Rat half, hour)",
+      "meaning": "The Rat's double hour is 子 zǐ, 23:00 to 01:00, centred on midnight. Our reading: the darkest hour of the clock matches an animal that lives where sunlight never reaches. The hour is sourced; the link is ours.",
+      "source_ids": [
+        "s4"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "No folk, Indigenous or spirit-animal tradition exists for this species (described in 1903, lives at 600 to 1200 m). Any 'vampire squid spirit animal' meaning online is invented.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: double Water, both halves pointing down. Pisces dissolves and receives; the Rat counts and stores. The Vampire Squid is a receiver with a ledger: it does not chase, yet it knows exactly what has fallen to it and what each piece is worth. Mutable Pisces lets it drift; yang Rat keeps the filament out.",
+    "gifts": "Our reading: patience that pays, finding value in what others discarded, low need for the crowd, a calm that reads as depth, memory for small things people dropped.",
+    "shadow": "Our reading: hoarding without giving back, living so far down that nobody can reach you, the Rat's suspicion wearing Pisces' fog so people cannot tell what you think. A defence that hands people a glow instead of an answer.",
+    "love": "Our reading: Jupiter-ruled generosity with a Rat's insecurity underneath. Keeps every detail of the beloved, needs a steady partner (the Ox is the Rat's secret friend), and struggles to say directly what it needs.",
+    "money": "Our reading: a natural saver who makes value from leftovers: secondhand, salvage, back catalogues, unclaimed work. Risk: sitting on resources long past the point they could have helped anyone.",
+    "conflict": "Our reading: drops below the noise rather than fighting at the surface. Under real threat, throws off a distraction and leaves. Needs to learn to surface once, early, with one plain sentence."
+  },
+  "careers": [
+    {
+      "path": "Archives, libraries, conservation of collections, restoration",
+      "why": "Our reading: marine snow as a trade; keeping what others let fall and making it usable again."
+    },
+    {
+      "path": "Salvage, recycling, secondhand and vintage resale, upcycling",
+      "why": "Our reading: the detritivore's economy, with the Rat's eye for what a scrap is worth (Rat careers lean to finance and trade, s5)."
+    },
+    {
+      "path": "Research in remote or night settings: deep-sea, observatory, lab night shift",
+      "why": "Our reading: comfort in low light and long waits; Pisces' imagination with the Rat's diligence."
+    },
+    {
+      "path": "Editing, translation, ghostwriting",
+      "why": "Our reading: shapes material others produced, works out of sight, leaves a glow nobody can quite trace."
+    },
+    {
+      "path": "Counselling, hospice, chaplaincy",
+      "why": "Our reading: Pisces compassion; receives what people need to set down without needing to fix it."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Humpback Whale",
+      "slug": "humpback-whale",
+      "reason": "Cancer x Dragon. Dragon is in the Rat trine (Rat, Dragon, Monkey) and Cancer is a fellow Water sign: two deep-water animals, one that sings and one that keeps silent."
+    },
+    {
+      "name": "Elephantnose Fish",
+      "slug": "elephantnose-fish",
+      "reason": "Scorpio x Monkey. Monkey is in the Rat trine; Scorpio is Water. Both sense their way through dark water."
+    },
+    {
+      "name": "Dumbo Octopus",
+      "slug": "dumbo-octopus",
+      "reason": "Pisces x Monkey. Same sign, and Monkey sits in the Rat trine. Its deep-sea cephalopod neighbour."
+    },
+    {
+      "name": "Asian Elephant",
+      "slug": "asian-elephant",
+      "reason": "Cancer x Ox. Ox is the Rat's secret friend (six harmonies) and Cancer shares the Water element; the one who remembers meets the one who keeps."
+    },
+    {
+      "name": "Giant Clam",
+      "slug": "giant-clam",
+      "reason": "Taurus x Ox. Ox secret friend; Taurus Earth is the classic complement to Water, giving shape to the depth."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Avocet",
+      "slug": "avocet",
+      "reason": "Virgo x Horse. Rat-Horse is the six-clash pair, and Virgo is Pisces' opposite sign: pulled together, then pulled apart."
+    },
+    {
+      "name": "Albatross",
+      "slug": "albatross",
+      "reason": "Sagittarius x Horse. Rat-Horse clash, and a Fire sign that lives on wind and open sky against a Water sign that lives below light."
+    }
+  ],
+  "candidate_lines": [
+    "Somewhere near nine hundred meters down in you is a shelf of things other people dropped years ago, and you still know which of them could feed someone.",
+    "You can let a line out eight times your own length into the dark and wait without fidgeting, which is why the good thing so often settles on you and not on whoever chased it.",
+    "When something comes hunting, you leave a cloud of blue light where you were and drift lower while it snaps at the glow.",
+    "Water thin enough to stop most living things is where your breathing finally slows down.",
+    "Your Rat half counts every flake that falls past you; your Pisces half forgives whoever let it go.",
+    "People who make it down to your depth find you kept the small thing they said three winters ago, rolled up and saved like a parcel of snow."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 淵 (rail__han and serial-han), shown with pinyin yuān.",
+      "verdict": "WRONG (not the animal's name)",
+      "note": "淵 yuān means abyss or deep pool, a habitat word. The animal's Chinese name is 吸血烏賊 xīxuè wūzéi (simplified 吸血乌贼, the Chinese Wikipedia headword); alternative 幽靈蛸 yōulíng shāo (simplified 幽灵蛸), also 吸血章魚 xīxuè zhāngyú. Recommend 幽靈蛸 if one short name is wanted (蛸 marks it as octopus-kin, which is accurate), or keep 淵 but label it as 'abyss', not the animal.",
+      "source_ids": [
+        "s17"
+      ]
+    },
+    {
+      "fact": "Hero line: 'The only cephalopod that does not hunt.'",
+      "verdict": "WRONG (absolute)",
+      "note": "Hoving and Robison call it 'primarily a detritivore' with feeding 'unlike any other cephalopod', and say the filaments may 'perhaps' detect small live prey. MBARI says it also eats small zooplankton. Safer: 'the only cephalopod known to live mainly on falling debris rather than hunting'.",
+      "source_ids": [
+        "s7",
+        "s6",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Lives in the oxygen minimum zone between 600 and 900 m, where almost nothing else, predator or prey, can survive.",
+      "verdict": "OK (depth) / WRONG (overstated exclusivity)",
+      "note": "600 to 900 m is the Monterey Bay range (Robison 2003; Hoving and Robison 2012); globally 600 to 1200 m (Robison 2003; Aquarium of the Pacific). 'Almost nothing else can survive' is overstated: other animals live in OMZs; the sourced claim is that it thrives there, oxygen around 0.4 ml per litre.",
+      "source_ids": [
+        "s7",
+        "s9",
+        "s10",
+        "s6"
+      ]
+    },
+    {
+      "fact": "It is the only cephalopod known to thrive in the OMZ, built specifically for it.",
+      "verdict": "UNVERIFIABLE (from opened sources)",
+      "note": "Wikipedia says 'the only cephalopod able to live its entire life cycle in the minimum zone', citing Seibel's work, which I could not open. Hoving and Robison describe it as adapted to exploit the OMZ. Rephrase to Wikipedia's narrower wording and cite Seibel only after a human checks it.",
+      "source_ids": [
+        "s13",
+        "s7"
+      ]
+    },
+    {
+      "fact": "The only cephalopod known to be a detritivore, feeding exclusively on marine snow: dead matter, bacteria, fecal pellets and dissolved particles.",
+      "verdict": "WRONG (exclusively; dissolved)",
+      "note": "'Only cephalopod detritivore' is supported (Aquarium of the Pacific; Hoving and Robison 'unlike any other cephalopod'). 'Exclusively' is wrong: the paper says 'primarily', MBARI adds small zooplankton. 'Dissolved particles' is a contradiction and not in the paper; contents were copepod parts, faecal pellets, diatoms, radiolarians, fish scales, bound in mucus.",
+      "source_ids": [
+        "s7",
+        "s6",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Pineapple posture: inverts its eight arms over its body, forming a cloak covered in sharp spines.",
+      "verdict": "WRONG (sharp spines)",
+      "note": "The posture name is real (Aquarium of the Pacific; Wikipedia 'pumpkin or pineapple posture'). The 'spines' are cirri: MBARI calls them 'soft, finger-like cirri'; Hoving and Robison 'fleshy projections'. They are not sharp. Robison 2003 says the animal's body is 'very soft, with watery tissues'. Rewrite as 'fleshy, spine-like cirri'.",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s10",
+        "s9"
+      ]
+    },
+    {
+      "fact": "No ink sac; when disturbed it releases a cloud of bioluminescent mucus, a glowing blue mist.",
+      "verdict": "OK",
+      "note": "MBARI: does not have ink; can release bioluminescent fluid. Robison 2003: the cloud comes from the arm tips, cloud glow lasted 2 to 3 minutes, single particles up to 9 minutes. Aquarium of the Pacific says up to 10 minutes. Good quotable line: 'glowing particles lasted up to nine minutes (Robison et al. 2003)'.",
+      "source_ids": [
+        "s6",
+        "s9",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Sole member of the order Vampyromorphida; form not changed meaningfully in about 300 million years.",
+      "verdict": "WRONG (300 million years)",
+      "note": "'Last surviving member of an ancient group' is OK (MBARI; Wikipedia). The 300 million figure is the split between the two coleoid lineages (squids and cuttlefish vs octopuses and vampire squid), per the 2025 genome study, not the age of the vampire squid body plan. The oldest vampyromorph fossil cited is Vampyronassa rhodanica, about 164 million years (Jurassic). Fix: 'its relatives were already swimming in the Jurassic, about 164 million years ago'.",
+      "source_ids": [
+        "s6",
+        "s11",
+        "s12",
+        "s13"
+      ]
+    },
+    {
+      "fact": "Keeps two retractile filaments that it extends slowly into the dark water to gather particles and draws back.",
+      "verdict": "OK",
+      "note": "Hoving and Robison: filaments extend up to eight times total body length, usually one at a time. MBARI: 'two long, thin, sticky filaments'. The eight-times figure is a strong verified number to add.",
+      "source_ids": [
+        "s7",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Source line: 'Robison et al. (2003) · Behaviour of the vampire squid, Journal of the Marine Biological Association of the UK'.",
+      "verdict": "WRONG (citation)",
+      "note": "The Robison et al. 2003 paper is 'Light production by the arm tips of the deep-sea cephalopod Vampyroteuthis infernalis', Biological Bulletin 205:102-109, doi 10.2307/1543231. I found no paper with the cited title in JMBA. The Hoving and Robison 2012 line is right except the title says 'detritivores' (plural).",
+      "source_ids": [
+        "s8",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Dao De Jing ch. 8 proverb 上善若水 shàng shàn ruò shuǐ: water benefits all things, does not contend, goes to low places others avoid.",
+      "verdict": "OK",
+      "note": "Matches Legge: 'occupying, without striving, the low place which all men dislike'. The page labels the tie as its own pairing, which is honest.",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "fact": "Purple Star (Zi Wei Dou Shu) content.",
+      "verdict": "OK",
+      "note": "No star is assigned from the sign pair on this page; it says a chart is cast from lunar birth date and hour. No false ZWDS claim found.",
+      "source_ids": []
+    }
+  ]
+}
