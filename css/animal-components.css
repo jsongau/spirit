@@ -1425,3 +1425,9 @@ body.js-on #meaning .rel-panel:not(.is-active){display:none}
 .kr-share .btn--ghost{background:transparent;border:1px solid var(--rule);color:var(--a-snow)}
 .kr-share{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.8rem 0 0}
 @media (max-width:600px){.kr-share .btn{flex:1 1 100%;justify-content:center}}
+
+/* w6b-han (2026-11-08): pinyin + pronounce for the page's own character. Existing tokens only. */
+.rail__py{display:block;margin-top:.2rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;color:var(--a-mist)}
+.rail__say{width:28px;height:28px;margin-left:-.2rem}
+.keepsake-han{position:relative;display:flex;align-items:center;gap:.55rem;margin:1rem 0 0;font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:var(--a-mist)}
+.keepsake-han .h{font-family:var(--han);font-size:1.25rem;letter-spacing:0;color:var(--a-gold)}
