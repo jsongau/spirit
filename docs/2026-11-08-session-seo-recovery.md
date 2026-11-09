@@ -108,3 +108,29 @@ Batch size 12 or fewer, roughly 10 days apart, owner approves every page.
 2. Fact-pass-only rounds for the remaining 54 pages.
 3. Pair image on vs.html is built but uncommitted, waiting on owner approval.
 4. Hero art for the 65 animals with placeholder SVGs (share cards fall back to the moon).
+
+## Part 3: fact passes complete, traditional script, brush font (late 2026-11-08)
+
+### What changed
+- Fact passes R11 to R14 (commits 565bb1cb8, 0d4ab2a7e): the last 44 animal pages. All 144 animal pages are now audited against sourced dossiers in docs/research/. Logs: FACTFIX-R11-A through FACTFIX-R14-C.
+- Wave 7 (179d0c77b): every page converted to traditional Chinese (Taiwan forms). Owner chose "traditional everywhere". Script: tools/wave7-traditional.py (OpenCC s2tw plus rules). 1,815 files, identical line counts in every file.
+- Wave 7b/7c (6b1dbe56e): Ma Shan Zheng replaced by LXGW WenKai TC (tools/wave7b-han-font.py), and HTML-entity glyphs &#鸡猪龙马 converted (tools/wave7c-entities.py).
+
+### Decisions
+- Traditional is the site standard. LXGW WenKai TC is the display font for big hanzi. Rejected: Iansui (missing 螲, 鸌), Noto Serif TC (too plain for display).
+- vs.html and css/nav-mega.css carry uncommitted work (pair image, a July 12 nav polish block). Only the conversion was staged for them, applied to the HEAD version. Their working copies already hold the conversion too.
+
+### Traps
+- OpenCC traps: 丑 becomes 醜, 干 becomes 幹 in 天干, 斗 becomes 鬥 in 紫微斗數, and names 陸游 岳飛 咸陽 郁離子 季布 get mangled. The pip package opencc-python-reimplemented converts character by character and is worse. Use the official opencc package.
+- Ma Shan Zheng covers only simplified characters. Any traditional glyph silently falls back to serif.
+- Some pages spell hanzi as numeric entities; a literal-character scan misses them.
+- On the device shell, bulk git commands fail with "Too many open files" and "cannot hash". git add in chunks of 150 works, and the cached numstat works.
+- Stale JS in the cloud uploads folder can fake a bug in renders. Re-stage the modules before trusting a render.
+- tools/test-bazi-cast.js hard-codes output strings. It now expects 食神生財. test-saju-reading.js already had one failure before this session (cta count), and almanac test-ui.js already crashed.
+
+### Next steps
+1. Owner push (29 commits ahead of origin 3e8cd5e23), then verify live: one animal page, the nav, a proverb page, the font load.
+2. Owner decisions on three pages whose theme is false: sable antelope (Kneeling Sovereign), penduline tit (decoy door), swan (constant paddling).
+3. Approve or drop the vs.html pair image. Decide the nav-mega.css July 12 block.
+4. Leftovers from the fact-pass logs: hyena and tamarin v2 templates are empty stubs; the tarsier moon claim may be backwards; citations still to check (Olberg, Schulze-Hagen, PMC6300579); old em dashes in reading copy.
+5. Readings for batch 8 onward, then start the 10-day apply clock.
