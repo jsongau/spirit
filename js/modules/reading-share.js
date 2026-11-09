@@ -13,11 +13,8 @@ const sec = document.getElementById('meaning');
 if (sec && sec.dataset.slug) init(sec);
 
 function myRef() {
-  try {
-    let m = localStorage.getItem('zodi:myref');
-    if (!m) { m = Math.random().toString(36).slice(2, 10); localStorage.setItem('zodi:myref', m); }
-    return m;
-  } catch { return ''; }
+  try { return localStorage.getItem('zodi:myref:real') === '1' ? (localStorage.getItem('zodi:myref') || '') : ''; }
+  catch { return ''; }
 }
 function tagged(path, campaign, slug) {
   const u = new URL(path, 'https://www.zodianimal.com');

@@ -339,7 +339,9 @@
   /* ---------- build a share link + text (birth date never included) ---------- */
   function shareURLFor(slug){
     const base = location.origin + location.pathname; // .../vs.html
-    return base + "?with=" + encodeURIComponent(slug);
+    let ref = "";
+    try { if (localStorage.getItem("zodi:myref:real") === "1") ref = localStorage.getItem("zodi:myref") || ""; } catch (e) {}
+    return base + "?with=" + encodeURIComponent(slug) + (ref ? "&ref=" + encodeURIComponent(ref) : "");
   }
   function shareTextFor(primal, url){
     return "I'm the " + primal + ". What are you? See how we match: " + url;
@@ -709,5 +711,6 @@
 })();
 </script>
 <!--om-footer:end-->
+<script src="/js/zodi-referrals.js" defer></script>
 </body>
 </html>

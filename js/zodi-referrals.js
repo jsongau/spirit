@@ -68,7 +68,7 @@
   }
 
   if (window.Zodi) {
-    window.Zodi.onAuth(function (session) { if (session) attemptClaim(); });
+    window.Zodi.onAuth(function (session) { if (session) { attemptClaim(); state(); } });
   }
 
   /* ---- 3. Kingdom state for logged-in pages ---- */
@@ -82,6 +82,9 @@
       return client.rpc("zodi_referral_state").then(function (r) {
         if (r.error || !r.data || r.data.status !== "ok") return null;
         _state = r.data;
+        /* Share links on animal and challenge pages read this, so a signed-in
+           sharer's links carry their real account code (wave 5a, 2026-11-08). */
+        if (_state.referral_code) { lsSet("zodi:myref", _state.referral_code); lsSet("zodi:myref:real", "1"); }
         return _state;
       });
     });

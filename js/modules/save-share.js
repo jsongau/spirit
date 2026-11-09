@@ -16,10 +16,10 @@ import { openShare } from './share-modal.js';
    animal page. ------------------------------------------------------------- */
 const LS = { get: k => { try { return localStorage.getItem(k); } catch { return null; } },
              set: (k, v) => { try { localStorage.setItem(k, v); } catch {} } };
+/* Only a real account code (cached by zodi-referrals.js after sign-in) can be
+   credited; a made-up browser code would fail the claim, so send none instead. */
 function myRef() {
-  let m = LS.get('zodi:myref');
-  if (!m) { m = Math.random().toString(36).slice(2, 10); LS.set('zodi:myref', m); }
-  return m;
+  return LS.get('zodi:myref:real') === '1' ? LS.get('zodi:myref') : '';
 }
 function captureIncomingRef() {
   try {
@@ -27,6 +27,8 @@ function captureIncomingRef() {
     const ref = u.searchParams.get('ref');
     if (ref) {
       LS.set('zodi:referredby', ref);
+      const code = String(ref).toUpperCase().replace(/[^A-Z0-9-]/g, '');
+      if (/^[A-Z0-9-]{4,40}$/.test(code) && !LS.get('zodi_pending_ref')) { LS.set('zodi_pending_ref', code); try { localStorage.removeItem('zodi_ref_settled'); } catch {} }
       u.searchParams.delete('ref');
       history.replaceState(null, '', u.pathname + (u.searchParams.toString() ? '?' + u.searchParams : '') + u.hash);
     }
