@@ -74,7 +74,7 @@
 .v5-observatory #roElem .v5-elem-link:hover,
 .v5-observatory #roElem .v5-elem-link:focus-visible { color: var(--brass-bright, #efe2b4); outline: none; }
 .v5-observatory #roElem .v5-elem-zi {
-  font-family: "Ma Shan Zheng", var(--serif, serif);
+  font-family: "LXGW WenKai TC", var(--serif, serif);
   font-size: 1.15rem; line-height: 1; color: var(--brass, #d6c18c);
   transition: color .25s ease;
 }
@@ -164,7 +164,7 @@
 .v5-proverb-h { margin: 0 0 6px; font-family: var(--serif); font-weight: 560; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.1; color: var(--ivory, #ece7d8); }
 #proverb-slot { transition: opacity .32s ease; }
 .pf-proverb { margin: 22px 0; padding: 24px 26px; border-left: 3px solid var(--brass, #d6c18c); background: linear-gradient(90deg, rgba(214,193,140,.08), transparent); border-radius: 0 14px 14px 0; }
-.pf-proverb-zh { font-family: "Ma Shan Zheng", "Noto Serif SC", var(--serif, serif); font-size: clamp(2.4rem, 8vw, 3.4rem); line-height: 1.8; color: var(--moon, #f5ecd2); margin: 0 0 14px; letter-spacing: .04em; }
+.pf-proverb-zh { font-family: "LXGW WenKai TC", "Noto Serif SC", var(--serif, serif); font-size: clamp(2.4rem, 8vw, 3.4rem); line-height: 1.8; color: var(--moon, #f5ecd2); margin: 0 0 14px; letter-spacing: .04em; }
 .pf-proverb-zh ruby { margin: 0 3px; }
 .pf-proverb-zh rt { font-family: var(--sans, "Inter", system-ui, sans-serif); font-size: .62rem; color: var(--brass-bright, #efe2b4); font-weight: 500; letter-spacing: .02em; }
 .pf-proverb-zh .cx-punct { font-size: .7em; opacity: .55; }
@@ -207,13 +207,13 @@
 .bzhome-link:hover { color: #f5ecd2; }
 .bzhome-note { margin: 18px 0 0; font: 400 .8rem/1.5 var(--sans, system-ui, sans-serif); color: #8f897b; }
 .bzhome-figure { position: relative; display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 8px; }
-.bzhome-glyph { font-family: "Ma Shan Zheng", "Noto Serif SC", var(--serif, serif); font-weight: 500; font-size: clamp(2.8rem, 7vw, 4rem); line-height: 1; color: #f5ecd2; letter-spacing: .08em; text-shadow: 0 0 34px rgba(214,164,76,.35); text-align: center; }
+.bzhome-glyph { font-family: "LXGW WenKai TC", "Noto Serif SC", var(--serif, serif); font-weight: 500; font-size: clamp(2.8rem, 7vw, 4rem); line-height: 1; color: #f5ecd2; letter-spacing: .08em; text-shadow: 0 0 34px rgba(214,164,76,.35); text-align: center; }
 .bzhome-glyph small { display: block; margin-top: 8px; font: 600 .58rem/1.4 var(--mono, "Space Mono", monospace); letter-spacing: .26em; text-transform: uppercase; color: #d6a44c; text-shadow: none; }
 .bzhome-pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 11px; width: 100%; max-width: 352px; }
 .bzhome-pillar { display: flex; flex-direction: column; align-items: center; gap: 8px; }
 .bzhome-cell { display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 1/1; border-radius: 10px;
   border: 1px solid rgba(214,164,76,.24); background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.01));
-  font-family: "Ma Shan Zheng", "Noto Serif SC", var(--serif, serif); font-weight: 500; font-size: 1.7rem; line-height: 1; }
+  font-family: "LXGW WenKai TC", "Noto Serif SC", var(--serif, serif); font-weight: 500; font-size: 1.7rem; line-height: 1; }
 .bzhome-pillar.is-self .bzhome-cell { border-color: rgba(214,164,76,.66); box-shadow: 0 0 0 1px rgba(214,164,76,.25) inset, 0 8px 22px rgba(214,164,76,.18); }
 .bzhome-plabel { font: 600 .58rem/1 var(--mono, "Space Mono", monospace); letter-spacing: .12em; text-transform: uppercase; color: #9a9482; }
 .bzhome-pillar.is-self .bzhome-plabel { color: #d6a44c; }
@@ -262,7 +262,7 @@
 .v5r-chip { width: 40px; height: 40px; border-radius: 9px; display: flex; align-items: center; justify-content: center; }
 .v5r-chip-sun { background: rgba(169,155,214,.16); border: 1px solid rgba(169,155,214,.4); color: #c9bdf0; font-size: 20px; }
 .v5r-chip-year { background: rgba(214,193,140,.14); border: 1px solid rgba(214,193,140,.4); }
-.v5r-chip-year span { font-family: "Ma Shan Zheng", var(--serif, serif); font-size: 22px; color: #efe2b4; line-height: 1; }
+.v5r-chip-year span { font-family: "LXGW WenKai TC", var(--serif, serif); font-size: 22px; color: #efe2b4; line-height: 1; }
 .v5r-x { font-family: var(--mono); font-size: .66rem; letter-spacing: .04em; color: var(--faint, #7f8096); padding-bottom: 10px; }
 .v5r-name {
   margin: 8px 0 4px; font-family: var(--serif, Georgia, serif); font-weight: 600; font-size: clamp(1.6rem, 4.5vw, 2rem); line-height: 1.08;

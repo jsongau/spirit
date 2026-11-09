@@ -41,7 +41,7 @@
     var name = $("#identity-name"); if (name) name.textContent = named ? ("The " + PROFILE.name) : "Not yet named";
     var sigil = $("#identity-sigil");
     if (sigil) sigil.innerHTML = named
-      ? '<span style="font-family:\'Ma Shan Zheng\',serif;font-size:2.1rem;line-height:1">' + (EAST_ZI[PROFILE.e] || "獸") + '</span>'
+      ? '<span style="font-family:\'LXGW WenKai TC\',serif;font-size:2.1rem;line-height:1">' + (EAST_ZI[PROFILE.e] || "獸") + '</span>'
       : '<span class="identity-sigil-wait">✦</span>';
     var pair = $(".identity-pairing");
     if (pair) { if (named) { pair.textContent = WEST[PROFILE.w] + " × " + EAST[PROFILE.e] + (PROFILE.el ? " · " + PROFILE.el : ""); pair.hidden = false; } else { pair.hidden = true; } }

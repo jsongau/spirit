@@ -21,7 +21,7 @@
 .pc-eyebrow{font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.22em;font-size:.7rem;color:var(--brass-bright,#efe2b4);margin:0 0 10px}
 .pc-hero h1{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.05;margin:0 0 14px;color:var(--moon,#f5ecd2)}
 .pc-hero p{color:var(--body,#c8c9de);font-size:1.05rem;line-height:1.6;margin:0}
-.pc-hero .pc-zhbrand{font-family:"Ma Shan Zheng","Noto Serif SC",serif;color:var(--brass,#d6c18c)}
+.pc-hero .pc-zhbrand{font-family:"LXGW WenKai TC","Noto Serif SC",serif;color:var(--brass,#d6c18c)}
 
 /* ---- streak banner ---- */
 .pc-streak{position:relative;overflow:hidden;margin:24px 0 8px;padding:22px 24px;border-radius:20px;
@@ -49,7 +49,7 @@
   background:linear-gradient(180deg,rgba(20,22,40,.55),rgba(12,14,26,.55));border:1px solid rgba(214,193,140,.16);
   transition:transform .25s,border-color .25s,box-shadow .25s}
 .pc-card:hover{transform:translateY(-3px);border-color:rgba(214,193,140,.4);box-shadow:0 24px 50px -30px rgba(0,0,0,.9)}
-.pc-card-zh{font-family:"Ma Shan Zheng","Noto Serif SC",serif;font-size:clamp(2rem,6vw,2.6rem);line-height:1.5;color:var(--moon,#f5ecd2);margin:0 0 8px;letter-spacing:.04em;display:flex;align-items:center;gap:.22em;flex-wrap:wrap}
+.pc-card-zh{font-family:"LXGW WenKai TC","Noto Serif SC",serif;font-size:clamp(2rem,6vw,2.6rem);line-height:1.5;color:var(--moon,#f5ecd2);margin:0 0 8px;letter-spacing:.04em;display:flex;align-items:center;gap:.22em;flex-wrap:wrap}
 .pc-card-zh .pc-zh-text{flex:0 1 auto}
 .pc-pinyin{font-family:"Space Mono",ui-monospace,monospace;color:var(--brass-bright,#efe2b4);letter-spacing:.05em;font-size:.8rem;margin:0 0 8px}
 .pc-mean{color:var(--body,#c8c9de);margin:0 0 12px;font-size:.96rem;line-height:1.5}
@@ -124,7 +124,7 @@
 .pc-zodiac-chip{font-size:.86rem;letter-spacing:.02em;color:var(--brass-bright,#efe2b4);background:rgba(214,193,140,.08);
   border:1px solid rgba(214,193,140,.28);border-radius:999px;padding:8px 15px;text-decoration:none;transition:background .2s,border-color .2s,transform .2s}
 .pc-zodiac-chip:hover{background:rgba(214,193,140,.2);border-color:var(--brass,#d6c18c);transform:translateY(-1px)}
-.pc-zodiac-chip .pc-zh-small{font-family:"Ma Shan Zheng","Noto Serif SC",serif;margin-right:.35em}
+.pc-zodiac-chip .pc-zh-small{font-family:"LXGW WenKai TC","Noto Serif SC",serif;margin-right:.35em}
 
 /* ---- footer ---- */
 .pc-foot{margin-top:44px}

@@ -16,7 +16,7 @@
 .ps-eyebrow{font-family:"Space Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.22em;font-size:.7rem;color:var(--brass-bright,#efe2b4);margin:0 0 10px}
 .ps-hero h1{font-family:var(--font-display,"Fraunces",serif);font-weight:560;font-size:clamp(2.1rem,6vw,3.4rem);line-height:1.05;margin:0 0 14px;color:var(--moon,#f5ecd2)}
 .ps-hero p{color:var(--body,#c8c9de);font-size:1.05rem;line-height:1.6;margin:0 0 8px}
-.ps-hero .ps-zhbrand{font-family:"Ma Shan Zheng","Noto Serif SC",serif;color:var(--brass,#d6c18c)}
+.ps-hero .ps-zhbrand{font-family:"LXGW WenKai TC","Noto Serif SC",serif;color:var(--brass,#d6c18c)}
 .ps-hero-link{margin:6px 0 0;font-size:.9rem}
 .ps-hero-link a{color:var(--brass-bright,#efe2b4);text-decoration:none}
 .ps-hero-link a:hover{text-decoration:underline}
@@ -55,7 +55,7 @@
 @keyframes ps-pulse{0%{box-shadow:0 0 0 0 rgba(214,193,140,.45)}70%{box-shadow:0 0 0 10px rgba(214,193,140,0)}100%{box-shadow:0 0 0 0 rgba(214,193,140,0)}}
 
 /* ---- shared calligraphy line ---- */
-.ps-card-zh,.ps-med-zh,.ps-quiz-zh{font-family:"Ma Shan Zheng","Noto Serif SC",serif;color:var(--moon,#f5ecd2);
+.ps-card-zh,.ps-med-zh,.ps-quiz-zh{font-family:"LXGW WenKai TC","Noto Serif SC",serif;color:var(--moon,#f5ecd2);
   letter-spacing:.05em;display:flex;justify-content:center;align-items:center;gap:.12em;flex-wrap:wrap;margin:0}
 .ps-card-zh ruby rt,.ps-med-zh ruby rt,.ps-quiz-zh ruby rt{font-family:"Inter",system-ui,sans-serif;font-size:.3em;color:var(--brass-bright,#efe2b4);font-weight:500}
 .ps-card-zh .cx-punct,.ps-med-zh .cx-punct,.ps-quiz-zh .cx-punct{opacity:.5}

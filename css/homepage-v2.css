@@ -23,7 +23,7 @@ body.hv2-body::before{
 }
 
 .hv2{
-  --han:"Ma Shan Zheng",var(--serif);
+  --han:"LXGW WenKai TC",var(--serif);
   --wood:#6fae74; --fire:#d98a86; --earth:#c9a86a; --metal:#c3c8d0; --water:#78b3c6;
   --accent:var(--brass); --accent-soft:rgba(214,193,140,.14);
   position:relative; z-index:1;

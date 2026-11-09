@@ -56,7 +56,7 @@
       ".pv-sh-card{text-align:center;padding:6px 6px 4px}" +
       ".pv-sh-eyebrow{font-family:\"Space Mono\",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.16em;" +
         "font-size:.58rem;color:var(--brass-bright,#efe2b4);opacity:.9;margin:0 0 14px}" +
-      ".pv-sh-zh{font-family:\"Ma Shan Zheng\",\"Noto Serif SC\",serif;color:#f5ecd2;line-height:1.12;" +
+      ".pv-sh-zh{font-family:\"LXGW WenKai TC\",\"Noto Serif SC\",serif;color:#f5ecd2;line-height:1.12;" +
         "font-size:clamp(2.6rem,10vw,3.6rem);letter-spacing:.04em;margin:0;text-shadow:0 0 26px rgba(214,193,140,.24)}" +
       ".pv-sh-py{font-family:\"Space Mono\",ui-monospace,monospace;color:rgba(239,226,180,.92);font-size:.86rem;" +
         "letter-spacing:.04em;margin:12px 0 0}" +
@@ -169,7 +169,7 @@
   }
 
   /* ---------- share card (offscreen canvas -> PNG), mirrors proverbs-hub.js ---------- */
-  var CALLIG_FONT = '"Ma Shan Zheng", "Noto Serif SC", serif';
+  var CALLIG_FONT = '"LXGW WenKai TC", "Noto Serif SC", serif';
   function callig(size) {
     var loaded = true;
     try { loaded = document.fonts ? document.fonts.check(size + "px " + CALLIG_FONT) : true; } catch (e) { loaded = true; }
