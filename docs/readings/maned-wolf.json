@@ -1,0 +1,95 @@
+{
+  "title": "What the Maned Wolf answers to",
+  "is_this_you": {
+    "pressure": "Pushed, you rise on those long legs and look over the grass. Then you say one thing, once, and leave it.",
+    "love": "You can love someone for years and still walk most of the day on your own path. Dusk is when you call.",
+    "cost": "People keep naming you after animals you are not. Correcting them would mean joining the argument."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Guará. In Tupi the word means red [s12]. That was the whole name, a color, given by the people who lived beside it [s12]. The Guarani looked at its size instead and said aguara guasu, the large fox [s2] [s8]. Neither name calls it a wolf [s12]. Strangers have handed you the wrong name for years. The people who live near you just say what they see."
+  },
+  "howto": "Three parts, any order. Long legs, short reads.",
+  "tabs": [
+    {
+      "id": "odd",
+      "label": "The odd one",
+      "intro": "Too tall for a fox. Too fond of fruit for a wolf.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Aquarius is fixed Air, the original thinker who keeps thinking it [s14]. Its old shadow is contrariness, and an identity built on being the outsider [s14] [s15]. The Tiger is yang Wood, brave, competitive and unpredictable [s16] [s17]. Set both on stilts and you stand above the grass with the whole field in view. You hold ground nobody else thought to claim, and you hold it calmly."
+        },
+        {
+          "k": "A genus of one",
+          "text": "The maned wolf is the tallest of the wild canids and the only species in its genus [s2]. Its nearest living relative is the bush dog [s2]. Wolf is a guess made from a distance. You gave up explaining your family tree years ago."
+        }
+      ]
+    },
+    {
+      "id": "apart",
+      "label": "Two of you, apart",
+      "intro": "One territory, walked by two.",
+      "matches": true,
+      "love_lead": "Maned wolf mates share and defend one territory, then hunt, travel and rest apart for most of the year [s3] [s4]. A deep bark, often heard after dusk, is how a pair keeps track of each other [s3] [s6]. You love like that, loyal for years and gone most afternoons. The right one takes a silent afternoon as just an afternoon. Three old pairings know how to answer your call."
+    },
+    {
+      "id": "ground",
+      "label": "Your ground",
+      "intro": "Hold the mountain. Do not get lured off it.",
+      "rows": [
+        {
+          "k": "At work",
+          "text": "Your best work sits in a niche nobody has mapped. Field research, solo strategy and odd small businesses all suit you. Turning down good advice because it is ordinary is Tiger pride talking."
+        },
+        {
+          "k": "The old trick",
+          "text": "Chinese strategy names the way rivals beat a tiger: 调虎离山 (diào hǔ lí shān), lure the tiger off its mountain [s10]. It means pulling someone out of their stronghold before the fight [s10]. Your bait is usually an argument about what to call you. Stay on your ground and that argument has nowhere to happen."
+        }
+      ]
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "cacomistle",
+        "chips": [
+          "Secret friend",
+          "Air like you"
+        ],
+        "why": "The <b>Cacomistle</b> (Gemini, Pig year) is your secret friend, since the Pig is the Tiger's hidden ally, and Gemini is Air like you [s16] [s17]."
+      },
+      {
+        "slug": "flamingo",
+        "chips": [
+          "Same trine",
+          "Third Air sign"
+        ],
+        "why": "The <b>Flamingo</b> (Libra, Horse year) shares your trine of Tiger, Horse and Dog, and Libra is the third Air sign [s16] [s14]."
+      },
+      {
+        "slug": "albatross",
+        "chips": [
+          "Same trine",
+          "Fire for your Air"
+        ],
+        "why": "The <b>Albatross</b> (Sagittarius, Horse year) is trine kin, and Sagittarius Fire with Aquarius Air is the old complementary pairing [s16] [s14]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "regal-jumping-spider",
+        "chips": [
+          "Monkey clash",
+          "Leo across the wheel"
+        ],
+        "why": "The hard one is the <b>Regal Jumping Spider</b> (Leo, Monkey year): the Monkey clashes with the Tiger, and Leo sits opposite Aquarius [s16] [s14]."
+      }
+    ]
+  },
+  "story": {
+    "k": "On the money",
+    "text": "Brazil put the maned wolf on its R$200 note in 2020, the highest note the country issues [s2] [s13]. People carry it folded in their wallets, which is about as close to a luck charm as a banknote gets. Chinese has a proverb the animal seems to live by: 一山不容二虎 (yī shān bù róng èr hǔ), one mountain cannot hold two tigers [s9]."
+  },
+  "closing": "You never needed the right name. You needed your own ground, and someone who answers at dusk."
+}

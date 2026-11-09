@@ -1,0 +1,54 @@
+{
+  "title": "What the New Caledonian Crow works out",
+  "is_this_you": {
+    "pressure": "Under strain you go silent and start sorting. What sinks goes in. What floats gets set aside.",
+    "love": "You say it with something you made or fixed, then watch to see whether they use it.",
+    "cost": "You keep trimming the tool until it is perfect. By then the grub has crawled deeper."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Aesop told of a thirsty crow and a pitcher with the water too low to reach [s8]. It dropped in pebbles, one at a time, until the water rose [s8]. In 2014 scientists set that same puzzle for New Caledonian crows [s16]. The crows picked sinking objects over floating ones 88 percent of the time [s16]. You were born a Virgo in a Monkey year. This is how you work too. Step one, then step two, until the water comes up."
+  },
+  "howto": "Three parts. Take them in order, the way you would.",
+  "tabs": [
+    {
+      "id": "think",
+      "label": "How you think",
+      "intro": "Earth that checks, Metal that reaches.",
+      "rows": [
+        {"k": "Your temperament", "text": "Virgo is mutable Earth, ruled by Mercury [s1]. It is analytical and practical, and it improves things by mastering a craft [s1] [s2]. The Monkey is yang Metal [s3]. It is witty, curious and quick to learn [s4] [s5]. So one half of you wants to understand the mechanism. The other half already has its hands in it."},
+        {"k": "The crow does it too", "text": "A New Caledonian crow carves hooks into twigs and tears barbed strips from pandanus leaves [s10] [s11]. It uses both to pull insects out of crevices [s10]. Between uses it keeps a good tool under its foot or tucked into a hole [s14]. In a trained task, crows chose the right tool for a problem they would meet 10 minutes later [s15]. You pack your bag that way, for the problem only you can see coming."},
+        {"k": "Where the map ends", "text": "Jelbert's crows did not pass every test [s16]. They failed a version built from two linked tubes [s16]. The authors called their grasp sophisticated, but incomplete [s16]. That suits you. You know your own map has edges, and you mark them in pencil."}
+      ]
+    },
+    {
+      "id": "taught",
+      "label": "What you were taught",
+      "intro": "Nothing clever comes from nowhere.",
+      "rows": [
+        {"k": "The long childhood", "text": "Young crows can stay with their parents for up to three years [s19]. Learning to make tools takes about a year [s19]. Parents went on feeding some young for up to 10 months after they left the nest [s18]. So when you solve something in a second, that second took years. Somebody stood beside you while you got it wrong."},
+        {"k": "Passed down", "text": "Pandanus tools come in wide, narrow and stepped designs, and the designs differ by region [s12]. Hunt and Gray studied about 5,550 tools from 21 sites [s12]. The designs are thought to pass on socially [s12]. Your way of doing things has a home region too. You can name the people you got it from."},
+        {"k": "At work", "text": "Engineering, design and toolmaking fit you, and the Monkey's career lists name science and engineering [s5]. Teaching a craft may suit you best, because you remember how long it took."}
+      ]
+    },
+    {
+      "id": "make",
+      "label": "Who you make things with",
+      "intro": "Three to share the bench with, and one who knocks it over.",
+      "love_lead": "In love you fix things before you say things. You want someone who sees the shelf you built and knows what it means. Three of the old Chinese pairings work well beside you.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "archerfish", "chips": ["Same trine", "Your own sign"], "why": "The <b>Archerfish</b> (Virgo, Dragon year) sits in your trine of Rat, Dragon and Monkey, and shares your sign [s3]."},
+      {"slug": "pangolin", "chips": ["Secret friend", "Taurus Earth"], "why": "The <b>Pangolin</b> (Taurus, Snake year) is your secret friend, because the Snake and the Monkey make a Six Harmonies pair, and Taurus is Earth like Virgo [s3] [s1]."},
+      {"slug": "bearded-vulture", "chips": ["Same trine", "Capricorn Earth"], "why": "The <b>Bearded Vulture</b> (Capricorn, Dragon year) brings the Dragon of your trine, with Capricorn as the third Earth sign [s3] [s1]."}
+    ],
+    "hard": [
+      {"slug": "leopard-seal", "chips": ["Year clash", "Opposite sign"], "why": "The hard one is the <b>Leopard Seal</b> (Pisces, Tiger year), because the Tiger clashes with the Monkey and Pisces sits opposite Virgo [s3] [s1]."}
+    ]
+  },
+  "story": {"k": "The crow's private feeling", "text": "Chinese has a phrase for the crow that feeds its parent in old age: 烏鳥私情 (wū niǎo sīqíng), the crow's private feeling [s7]. It stands for a grown child's devotion to the one who raised it [s7]."},
+  "closing": "Make the good hook. Then carry the first grub home to whoever taught you how."
+}

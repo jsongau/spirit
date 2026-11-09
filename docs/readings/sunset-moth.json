@@ -1,0 +1,107 @@
+{
+  "title": "What the Sunset Moth lights",
+  "is_this_you": {
+    "pressure": "The leaf that raised you was poison. You kept every drop, and nothing tries you twice.",
+    "love": "You want to be seen in full sun and named right. Get your colour exact and you will cross an island for them.",
+    "cost": "You cross the whole island for the one thing that feeds you, and forget to ask whether it still does."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In Malagasy, one word, lolo, means both butterfly and ghost, the spirit of someone who has died [s7] [s6]. Malagasy belief holds that the souls of ancestors can come back as moths or butterflies, so harming one harms the ancestors [s6]. The sunset moth lives nowhere but Madagascar [s6]. You were born a Leo in a Rooster year. People have always felt you arrived from somewhere. They look twice when you land."
+  },
+  "howto": "Three parts, each in its own light.",
+  "tabs": [
+    {
+      "id": "light",
+      "label": "First light",
+      "intro": "Fire ruled by the Sun. Metal that answers it.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Leo is fixed Fire, ruled by the Sun, warm, generous, bold and theatrical [s1] [s2]. The Rooster is yin Metal, observant, honest and true to its promises [s3] [s4]. Both halves of you face the sun. You turn up early, fully lit, and you keep your word about it."
+        },
+        {
+          "k": "A moth of noon",
+          "text": "Unlike most moths, the sunset moth flies by day [s6]. The colour on its wings comes from no pigment; tiny structures in the scales bend the light, so the colour shifts with the angle you see it from [s6]. Most of your relatives keep to the dark. You came out at noon, and you look different to everyone watching."
+        },
+        {
+          "k": "The noble name",
+          "text": "Recorded local names for this moth, adriandolo and lolonandriana, join lolo with andriana, noble [s6]. A noble spirit. A king butterfly. The Leo in you heard that and was not surprised."
+        }
+      ]
+    },
+    {
+      "id": "draw",
+      "label": "What draws you",
+      "intro": "One food, the whole island.",
+      "rows": [
+        {
+          "k": "The one plant",
+          "text": "The caterpillar eats only Omphalea, a toxic plant, and keeps the poison through the pupa into the adult [s6]. You kept what was hard about your beginning too. It is part of why nothing troubles you for long."
+        },
+        {
+          "k": "Crossing over",
+          "text": "When the plants change, thousands of adults migrate between scattered stands of Omphalea across Madagascar [s6]. You will travel that far for what feeds you. Loyal to the one source, never to one patch of forest."
+        },
+        {
+          "k": "Borrowed shine",
+          "text": "In Victorian Europe its wings were set into jewellery, and it is still collected for the butterfly trade [s6]. People will try to wear your shine. Let them admire it from where they stand."
+        },
+        {
+          "k": "At work",
+          "text": "Work where daylight finds you. Broadcasting, presenting and public relations suit the Rooster [s4], and Leo takes a stage gladly [s2]."
+        }
+      ]
+    },
+    {
+      "id": "glow",
+      "label": "Who you glow for",
+      "intro": "Three who see your true colour. One who sees the wrong one.",
+      "love_lead": "In love you are generous, you show it [s2], and you keep every promise [s4]. You need someone who names your exact colour. The old pairings light up three.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "sand-cat",
+        "chips": [
+          "Same trine",
+          "Fire like you"
+        ],
+        "why": "The <b>Sand Cat</b> (Sagittarius, Snake year) shares your trine of Ox, Snake and Rooster, and Sagittarius is Fire like you [s5] [s1]."
+      },
+      {
+        "slug": "arctic-tern",
+        "chips": [
+          "Same trine",
+          "Fellow Fire"
+        ],
+        "why": "The <b>Arctic Tern</b> (Sagittarius, Ox year) completes that trine and burns with the same Fire [s5] [s1]."
+      },
+      {
+        "slug": "frigatebird",
+        "chips": [
+          "Secret friend",
+          "Dragon ally"
+        ],
+        "why": "The <b>Frigatebird</b> (Sagittarius, Dragon year) is your secret friend, since the Dragon is the Rooster's hidden ally [s5]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "axolotl",
+        "chips": [
+          "Rabbit clash",
+          "Opposite sign"
+        ],
+        "why": "The <b>Axolotl</b> (Aquarius, Rabbit year) keeps seeing the wrong colour: the Rabbit clashes with the Rooster, and Aquarius sits opposite Leo [s5] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "The heavenly rooster",
+    "text": "An old Chinese book, the Xuanzhongji, 玄中記 (Xuánzhōngjì), tells of a giant peach tree called Taodu, 桃都 (táo dū), with a heavenly rooster, 天雞 (tiān jī), in its branches [s10]. When the first sun strikes the tree, the heavenly rooster crows, and every rooster under heaven answers [s10]."
+  },
+  "closing": "First sun on the forest. Open your wings, and let the whole island answer."
+}

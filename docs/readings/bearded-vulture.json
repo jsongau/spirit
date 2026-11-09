@@ -1,0 +1,54 @@
+{
+  "title": "What the Bearded Vulture means",
+  "is_this_you": {
+    "pressure": "Push you and you get slower and harder to read, which is when the people pushing should start to worry.",
+    "love": "You take years to choose. Then you build more than one home with them, and keep every one in repair.",
+    "cost": "You let people keep a wrong idea of you for years, because explaining feels like begging."
+  },
+  "opener": {
+    "moon": false,
+    "text": "The Persians told of the Huma, a bird of luck [s9]. If its shadow passed over you, you would rise to be king [s9]. The Huma is attributed to the bearded vulture, and Homa is one of its common names [s1]. So the bird that crowns is a bone-eater of the high cliffs. Its gift arrives slowly, and it arrives whole. Yours does too."
+  },
+  "howto": "Three parts. Each one takes a while. That is the point.",
+  "tabs": [
+    {
+      "id": "climb",
+      "label": "The long climb",
+      "intro": "Earth beneath Earth. Nothing in you is in a hurry.",
+      "rows": [
+        {"k": "Your temperament", "text": "Capricorn is cardinal Earth, ruled by Saturn, the planet of discipline [s4]. The Dragon is yang, courageous and confident, a taker of large risks [s8]. Its branch 辰 (chén) belongs to Earth [s6]. So the ground is doubled under you. The Dragon wants the summit, and Capricorn agrees to walk the whole way up."},
+        {"k": "The bearded vulture does it too", "text": "It lives most often above 2,000 metres [s2]. Bone makes up 70 to 90 percent of what it eats [s1]. It waits at the cliff edge until the other scavengers have finished [s2]. The hardest food, at the greatest height, taken last. That has always been your order of things."},
+        {"k": "Your timing", "text": "In the wild it first breeds at about eight years old [s3]. You come into your own late as well. What arrives late in you tends to stay."}
+      ]
+    },
+    {
+      "id": "breakopen",
+      "label": "What you break open",
+      "intro": "The bone others leave, and the marrow inside it.",
+      "rows": [
+        {"k": "An old omen", "text": "The Greeks called it ossifragus, the bone-breaker [s1]. Their soothsayers counted it among the few birds whose omens were valid [s1]. In Hebrew it is peres, the breaker [s1]. Three peoples looked at the same bird and named the same work."},
+        {"k": "Your work", "text": "It carries bones 50 to 150 metres into the air and drops them on stone until they split [s1] [s2]. That is how you take on a hard problem. The Dragon guides list engineer and architect [s8]. Restoration, audit and salvage reward the same patience."},
+        {"k": "Your money", "text": "Saturn keeps you saving. The Dragon wants one proud purchase. You make your money where others saw scraps, in the unfashionable skill or the old building with good bones."}
+      ]
+    },
+    {
+      "id": "build",
+      "label": "Who you build with",
+      "intro": "Three who can share a cliff. One who argues over it.",
+      "love_lead": "A pair holds several nests in one territory and moves between them from year to year [s2]. Love runs that way for you. You build slowly, and you build more than once. The old pairings name three who can build beside you.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "andean-condor", "chips": ["Secret friend", "Your own sign"], "why": "The <b>Andean Condor</b> (Capricorn, Rooster year) is your secret friend, since the Rooster is the Dragon's hidden ally, and it flies under your own sign [s6]."},
+      {"slug": "new-caledonian-crow", "chips": ["Same trine", "Earth like you"], "why": "The <b>New Caledonian Crow</b> (Virgo, Monkey year) sits in your trine of Rat, Dragon and Monkey, and Virgo is Earth like Capricorn [s6] [s4]."},
+      {"slug": "superb-bird-of-paradise", "chips": ["Secret friend", "Taurus Earth"], "why": "The <b>Superb Bird of Paradise</b> (Taurus, Rooster year) brings the Rooster's friendship again, with Taurus to complete your Earth [s6] [s4]."}
+    ],
+    "hard": [
+      {"slug": "giant-otter", "chips": ["Year clash", "Loud and fast"], "why": "The <b>Giant Otter</b> (Aries, Dog year) is the hard one, because the Dog clashes with the Dragon on the wheel [s6]."}
+    ]
+  },
+  "story": {"k": "The nest", "text": "A bearded vulture nest can be used for centuries, by one generation after another [s1]."},
+  "closing": "Build it to last. Someone you will never meet is going to raise their young in it."
+}

@@ -1,0 +1,103 @@
+{
+  "title": "What the Superb Bird of Paradise shows",
+  "is_this_you": {
+    "pressure": "When it matters, you go dark around the one thing worth seeing, so nobody can look anywhere else.",
+    "love": "You sweep the log for weeks before you dance. When the cape opens, it opens for one person, up close.",
+    "cost": "You would rather keep rehearsing than show the dance half learned, and some seasons the visitor stops waiting."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Beat one: the lights go down. The male's display feathers are a black so deep they reflect as little as 0.05 percent of the light hitting them head-on [s8] [s9]. McCoy and colleagues called it “an evolved optical illusion, which makes adjacent colours appear even brighter” [s8]. Beat two: the blue-green breast shield comes up beside it [s11]. You were born a Taurus in a Rooster year. You have always known how to set a stage."
+  },
+  "howto": "Three acts. Sit anywhere.",
+  "tabs": [
+    {
+      "id": "stage",
+      "label": "Your stage",
+      "intro": "Earth that waits. Metal that shines.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Taurus is fixed Earth, ruled by Venus, the sign of the senses and slow work toward a clear reward [s1] [s2]. The Rooster is yin Metal, confident and frank, the bird that keeps time [s3] [s4] [s5]. Your patience is the ore. The Rooster in you polishes it, and then wants it seen."
+        },
+        {
+          "k": "The log",
+          "text": "The male dances on a fallen log in the understory, and he tosses the leaves off it first [s10] [s12]. Scientists still cannot say whether the sweeping is cleaning or part of the show [s10]. You could tell them. The getting ready is the show."
+        },
+        {
+          "k": "The steps",
+          "text": "At the peak, the cape opens into a flat black oval with the blue shield set forward, likened to a bouncing smiling face [s10]. He bounces around the female in quick, shuffling hops [s10] [s11]. From outside, it looks like joy. From inside, you are counting every step."
+        }
+      ]
+    },
+    {
+      "id": "dark",
+      "label": "The dark around you",
+      "intro": "The black serves the bright thing.",
+      "rows": [
+        {
+          "k": "The plain feathers",
+          "text": "The bird's ordinary back feathers are a normal black, more reflective than the display plumage [s9]. Most of the year you wear the ordinary black too. People who think they know you have never seen the cape."
+        },
+        {
+          "k": "The long rehearsal",
+          "text": "Taurus can be stubborn and slow to change, and the Rooster likes to be listened to [s1] [s5]. Together they can keep a rehearsal running for years. Show it before it is perfect. Someone has already come to the log."
+        },
+        {
+          "k": "At work",
+          "text": "Lighting, exhibition design, colour grading and tailoring all pay for one bright thing set against careful dark."
+        }
+      ]
+    },
+    {
+      "id": "dance",
+      "label": "Who you dance for",
+      "intro": "Three who stay for the whole act. One who walks out.",
+      "love_lead": "In love you show almost nothing for months, then everything, face to face. Venus rules your sign [s1], and the Rooster is loyal once it chooses [s5]. You need someone who comes back to the log more than once. Three of the old pairings stay to the end.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "galapagos-tortoise",
+        "chips": [
+          "Secret friend",
+          "Same sign"
+        ],
+        "why": "The <b>Galápagos Tortoise</b> (Taurus, Dragon year) is your secret friend, the Dragon being the Rooster's hidden ally, and it shares your sign [s3]."
+      },
+      {
+        "slug": "shoebill",
+        "chips": [
+          "Same trine",
+          "Earth like you"
+        ],
+        "why": "The <b>Shoebill</b> (Capricorn, Ox year) shares your trine of Ox, Snake and Rooster, and Capricorn is Earth like you [s3] [s1]."
+      },
+      {
+        "slug": "narwhal",
+        "chips": [
+          "Same trine",
+          "Water for your Earth"
+        ],
+        "why": "The <b>Narwhal</b> (Pisces, Ox year) is trine kin as well, bringing Pisces Water to soften your Earth [s3]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "pallass-cat",
+        "chips": [
+          "Rabbit clash",
+          "Opposite sign"
+        ],
+        "why": "The one who walks out is the <b>Pallas's Cat</b> (Scorpio, Rabbit year): the Rabbit clashes with the Rooster, and Scorpio sits opposite Taurus [s3] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "Plumes as wealth",
+    "text": "In the New Guinea Highlands, bird-of-paradise plumes were wealth, though the sources do not name the superb species [s13] [s14]. Gimi men gave them in bridal and funeral payments [s14]. In the Wahgi Valley, Marie Reay recorded feathers as central to bride-price [s15]. There, a display could help pay for a marriage."
+  },
+  "closing": "Open the cape. Hold it one beat longer than feels safe. That hush is the forest, about to clap."
+}

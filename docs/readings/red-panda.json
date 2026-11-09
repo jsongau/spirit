@@ -1,0 +1,54 @@
+{
+  "title": "What the Red Panda means",
+  "is_this_you": {
+    "pressure": "Under strain you smile at both sides and pick neither. Then, alone after midnight, you decide, and by breakfast it is settled.",
+    "love": "You court so beautifully that some seasons you cannot tell whether you love the person or the courting.",
+    "cost": "You leave a cracked thing alone for years, because mending it might chip the vase beside it."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In Bumthang and Sengor, in Bhutan, Buddhist villagers told researchers that the red panda is a monk reborn, and its red coat is his robe [s7]. To see one is a good omen [s7]. People are glad when they glimpse you. Few of them ever see you close."
+  },
+  "howto": "Three parts on one branch. Read them in order, or out of it.",
+  "tabs": [
+    {
+      "id": "balance",
+      "label": "The balance",
+      "intro": "Air on one side, Water on the other.",
+      "rows": [
+        {"k": "Your temperament", "text": "Libra is cardinal Air, ruled by Venus [s1]. The Rat is yang Water, first of the twelve [s3]. Libra opens at the September equinox, when day and night stand level [s1]. The Rat rules the midnight hour, when one day hands over to the next [s3]. Both your signs stand on a hinge. By day you keep the scales level, and by night you weigh what was on them."},
+        {"k": "The red panda does it too", "text": "The red panda is most active at dusk and at dawn [s10]. It keeps the hours between. So do you. Your best thinking comes while the house sleeps, and your best charm comes once it wakes."},
+        {"k": "Under the charm", "text": "Libra is gracious and fair, and slow to press its own case [s2]. The Rat is quick and resourceful, with a nose for an opening [s4]. Outside you are all courtesy. Inside you have already run the numbers."}
+      ]
+    },
+    {
+      "id": "branch",
+      "label": "Your branch",
+      "intro": "What you keep, and what you spend.",
+      "rows": [
+        {"k": "Your work", "text": "The Libra guides list judge and mediator [s2]. The Rat guides list researcher and writer [s4]. Pick work where both sides must trust you, or work you build alone and show finished. Mediation suits one half of you. Curating suits the other."},
+        {"k": "Your money", "text": "In Japan, rats belong to Daikokuten, the god of wealth, and the Days of the Rat are sacred to him [s15]. The Rat is tied to thrift [s4]. Libra is drawn to fine things [s2]. Keep one fund that nobody sees. Buy one object that everybody notices."},
+        {"k": "Your shadow", "text": "The Rat makes friends easily and seldom deepens them [s4]. Libra can turn cool and detached [s2]. Together that makes a lovely branch with no way up to it."}
+      ]
+    },
+    {
+      "id": "kin",
+      "label": "Who shares your branch",
+      "intro": "Three who climb up easily. One who shakes the tree.",
+      "love_lead": "In love you want grace on the outside and patience underneath. The one who wins you keeps knocking, gently, until you open. The old pairings name three who will.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "raven", "chips": ["Same trine", "Air like you"], "why": "The <b>Raven</b> (Aquarius, Monkey year) shares your trine of Rat, Dragon and Monkey, and Aquarius is Air like Libra [s5] [s1]."},
+      {"slug": "three-wattled-bellbird", "chips": ["Secret friend", "Rode the Ox"], "why": "The <b>Three-wattled Bellbird</b> (Gemini, Ox year) is your secret friend, since the Ox is the Rat's hidden ally and carried it through the Great Race [s5] [s3]."},
+      {"slug": "superb-lyrebird", "chips": ["Same trine", "Two aesthetes"], "why": "The <b>Superb Lyrebird</b> (Gemini, Dragon year) closes the trine, and Gemini brings the third Air sign to your table [s5] [s1]."}
+    ],
+    "hard": [
+      {"slug": "green-sea-turtle", "chips": ["Year clash", "Water on Air"], "why": "The <b>Green Sea Turtle</b> (Cancer, Horse year) is the hard one, because the Horse clashes with the Rat across the wheel [s5]."}
+    ]
+  },
+  "story": {"k": "Its other names", "text": "In Chinese the red panda is 小熊猫 (xiǎo xióngmāo), the little bear-cat [s11]. It is also 火狐 (huǒhú), the fire fox [s11] [s8]. And it is 九节狼 (jiǔjié láng), the nine-section wolf, for the rings along its tail [s11] [s6]."},
+  "closing": "May the ones who glimpse you call it luck. May the one who climbs up to you stay."
+}

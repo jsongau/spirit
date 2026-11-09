@@ -1,0 +1,103 @@
+{
+  "title": "What the Moon Bear keeps",
+  "is_this_you": {
+    "pressure": "When the ground turns loud, you climb first and decide later. From up there you can wait out almost anything.",
+    "love": "You let one or two people up into your branches. Everyone else gets the warmth on your chest and no address.",
+    "cost": "You hold the hard winter alone, then come down in spring as if nothing happened."
+  },
+  "opener": {
+    "moon": true,
+    "text": "Hunters in the mountains of Niigata said the mountain god gave this bear an amulet wrapped in silk, and the white crescent is where it lay [s5]. Your own sign is ruled by the Moon [s1]. So the moon you were born under was pressed onto you as a gift. You carry it slowly, and with care."
+  },
+  "howto": "Three parts. Go slowly. They will wait for you.",
+  "tabs": [
+    {
+      "id": "crescent",
+      "label": "The crescent",
+      "intro": "Water underneath. Wood standing up out of it.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Cancer is cardinal Water, ruled by the Moon, a soft core kept inside a shell [s1] [s2]. The Tiger is yang Wood, brave, and slow to keep close friends [s3] [s4]. In you the Water keeps the Wood alive. You are gentle first, and fierce only on behalf of something gentle."
+        },
+        {
+          "k": "The unmarked one",
+          "text": "The same hunters held that a bear with no crescent, minaguro, all black, was the most sacred [s5]. A hunter who killed one by mistake offered it to the god and gave up hunting [s5]. Part of you wishes you could go unread like that. The other part knows the mark is how the right people find you."
+        }
+      ]
+    },
+    {
+      "id": "cave",
+      "label": "The cave",
+      "intro": "Up into the branches, then down into the dark.",
+      "rows": [
+        {
+          "k": "Where you go",
+          "text": "A moon bear breaks branches into a feeding platform high in a tree, and rests on it [s11]. When threatened, it climbs [s11]. So do you. Before you argue, you get height, and you watch until the ground goes still."
+        },
+        {
+          "k": "Your winter",
+          "text": "In the colder north of its range the bear dens through winter in a hollow tree or a cave [s11] [s10]. Some winters you need the dark for months too. You come out thinner and surer."
+        },
+        {
+          "k": "The harder choice",
+          "text": "Mencius liked fish and bear's paw, and if he could not have both he would let the fish go [s7]. The saying is 魚與熊掌 (yú yǔ xióngzhǎng), and he meant choosing what is right over his own life [s7]. Offered safe or loyal, you take loyal and pay for it in private."
+        },
+        {
+          "k": "At work",
+          "text": "Your gift is guarding something soft without a show. Rescue work, child protection and keeping a small inn all fit. Watch the Tiger pride that turns down help."
+        }
+      ]
+    },
+    {
+      "id": "letin",
+      "label": "Who you let in",
+      "intro": "Three who can share the den. One who wants your branch.",
+      "love_lead": "In love you shield first and talk later. You need someone who does not follow you up the tree, and who knows a retreat is not a verdict. The old pairings name three.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "orca",
+        "chips": [
+          "Same trine",
+          "Water like you"
+        ],
+        "why": "The <b>Orca</b> (Scorpio, Horse year) shares your trine of Tiger, Horse and Dog, and Scorpio is Water like you [s3] [s1]."
+      },
+      {
+        "slug": "beluga",
+        "chips": [
+          "Same trine",
+          "Third Water sign"
+        ],
+        "why": "The <b>Beluga</b> (Pisces, Dog year) closes the Tiger's trine, and Pisces makes the third Water sign [s3] [s1]."
+      },
+      {
+        "slug": "deep-sea-anglerfish",
+        "chips": [
+          "Secret friend",
+          "Deep water"
+        ],
+        "why": "The <b>Deep Sea Anglerfish</b> (Scorpio, Pig year) is your secret friend, since the Pig is the Tiger's hidden ally, and Scorpio is Water too [s3] [s1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "snowy-owl",
+        "chips": [
+          "Monkey clash",
+          "Capricorn opposite"
+        ],
+        "why": "The hard one is the <b>Snowy Owl</b> (Capricorn, Monkey year): the Monkey clashes with the Tiger, and Capricorn sits across the sky from Cancer [s3] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "In the Korean story",
+    "text": "In Korea's founding myth a bear and a tiger were sent into a cave with mugwort and garlic, to become human [s6]. The tiger grew restless and walked out [s6]. The bear stayed, became a woman, and bore Tangun, the founder of Korea [s6]. You were born with both animals in one body."
+  },
+  "closing": "Let the tiger pace. Stay in the cave until spring, and come out as yourself."
+}

@@ -1,0 +1,53 @@
+{
+  "title": "What the Regal Jumping Spider measures",
+  "is_this_you": {
+    "pressure": "Pressed, you freeze for one second, run the numbers, and land where you said you would.",
+    "love": "You court in plain view, all colour and nerve, then stop at arm's length and let them decide.",
+    "cost": "You check a gap you crossed twice already. Missing in public would hurt more than losing the prize."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In Chinese the jumping spider is 蠅虎 (yínghǔ), the fly tiger [s12]. Hong Kong children once kept fighting jumping spiders in matchboxes and called them golden cat and leopard tiger [s13]. Your sign is the lion. Somebody fit the whole cat into a body under an inch long [s2]. It still struts."
+  },
+  "howto": "Three parts. Pick one and jump.",
+  "tabs": [
+    {
+      "id": "leap",
+      "label": "The leap",
+      "intro": "Fire on Metal. Nerve, with the sums done first.",
+      "rows": [
+        {"k": "Your temperament", "text": "Leo is fixed Fire, ruled by the Sun, and loves a stage [s7] [s8]. The Monkey is yang Metal, quick, inventive and fond of a challenge [s9] [s10]. In the old cycle Fire works on Metal. So your boldness has been through the furnace. From outside it looks reckless. Inside, it was measured."},
+        {"k": "The spider does it too", "text": "Researchers in Manchester trained one regal jumping spider, nicknamed Kim, to jump on cue [s4]. Over fifteen jumping tasks it took short gaps low and fast, and long gaps on a steeper arc that cost less energy [s3] [s4]. You switch styles like that. The crowd only ever sees the landing."}
+      ]
+    },
+    {
+      "id": "measure",
+      "label": "What you measure",
+      "intro": "Every gap gets a number. Some get two.",
+      "rows": [
+        {"k": "Out of sight", "text": "Among spiders, only Portia is known to see better than Phidippus [s1]. When prey slips out of view, Phidippus spiders have been seen going the long way round to the spot where it was last seen [s1]. The goal stays in your head after it leaves your eyes. You circle. You arrive."},
+        {"k": "At work", "text": "The Monkey guides list trading, accounting and film directing [s10]. Engineers studied this species to design jumping robots [s4]. Choose work with a real risk and somebody watching."},
+        {"k": "Your blind spot", "text": "Pride hates a miss in public. So you measure a gap you have already solved, one more time, and the fly leaves."}
+      ]
+    },
+    {
+      "id": "eye",
+      "label": "Who catches your eye",
+      "intro": "Bright ones, close range, good timing.",
+      "love_lead": "A courting male lifts his front legs and comes in on a zig-zag [s1]. The female holds still while he closes the distance [s1]. Leo loves grandly [s7], and the Monkey takes time to settle before it commits [s9]. So you put on the whole show, then wait at close range for an answer. Three old pairings say yes.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "rhinoceros-hornbill", "chips": ["Same trine", "Your own sign"], "why": "The <b>Rhinoceros Hornbill</b> (Leo, Dragon year) sits in your trine of Monkey, Rat and Dragon, and flies under your own sign [s11] [s7]."},
+      {"slug": "red-panda", "chips": ["Same trine", "Air for your Fire"], "why": "The <b>Red Panda</b> (Libra, Rat year) is trine kin, with Libra's Air to keep your Fire burning [s11] [s7]."},
+      {"slug": "sand-cat", "chips": ["Secret friend", "Fire like you"], "why": "The <b>Sand Cat</b> (Sagittarius, Snake year) is your secret friend, since the Snake is the Monkey's hidden ally, and Sagittarius is Fire like you [s11] [s7]."}
+    ],
+    "hard": [
+      {"slug": "maned-wolf", "chips": ["Tiger clash", "Opposite sign"], "why": "The hard one is the <b>Maned Wolf</b> (Aquarius, Tiger year): the Tiger clashes with the Monkey, and Aquarius sits opposite Leo [s11] [s7]."}
+    ]
+  },
+  "story": {"k": "Joy on a thread", "text": "Old China called spiders 喜子 (xǐzi), a pun on 喜 (xǐ), joy [s15] [s16]. A spider dropping on its thread meant 喜从天降 (xǐ cóng tiān jiàng), joy falling from the sky [s15]. The omen was about spiders in general. Yours just arrives faster."},
+  "closing": "Count once. Then jump, and let them watch you land."
+}

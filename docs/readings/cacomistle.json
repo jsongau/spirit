@@ -1,0 +1,103 @@
+{
+  "title": "What the Cacomistle calls out",
+  "is_this_you": {
+    "pressure": "When things get tense you talk more, and from one branch higher. Somehow it still counts as staying.",
+    "love": "You can keep someone close for months by voice alone. Meeting in daylight feels like the big step.",
+    "cost": "Plenty of people know your voice. Very few could pick your face out of the canopy."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Tlahcomiztli. In Nahuatl it means half-puma, from tlahco-, half, and miztli, the cougar [s7] [s8]. The English word cacomistle comes from it [s7]. Somebody saw the face and eyes up in the trees at night and called it half a big cat. The animal is a raccoon relative [s6]. It never bothered to correct the fraction. Neither do you."
+  },
+  "howto": "Three parts. Read them after dark, if you can.",
+  "tabs": [
+    {
+      "id": "half",
+      "label": "Half puma",
+      "intro": "Air on top, Water underneath. Neither one fully in charge.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Gemini is mutable Air, ruled by Mercury, quick, curious and fond of talk [s1] [s2]. The Pig is yin Water, generous, calm under pressure, and slow to ask for help [s3] [s4]. The Chinese five phases have no Air, so the Pig's Water is your one true element [s3]. You talk like a fast stream and decide like a deep one."
+        },
+        {
+          "k": "Up in the canopy",
+          "text": "The cacomistle lives in forest canopy from sea level to 2,000 metres, and almost never comes down to the ground [s5]. It is out at night, and alone outside the mating season [s5] [s6]. You keep the same hours, one level up."
+        },
+        {
+          "k": "Seldom seen",
+          "text": "It is listed as Least Concern, yet it is nowhere common and seldom seen even where it lives [s5] [s6]. You are fine too. You are just rarely where people are looking."
+        }
+      ]
+    },
+    {
+      "id": "night",
+      "label": "Night talk",
+      "intro": "Alone is one thing. Quiet is another.",
+      "rows": [
+        {
+          "k": "The calls",
+          "text": "Cacomistle territories do not overlap, and each can run up to about 136 hectares [s5]. Neighbours trade loud calls across that ground, sometimes for hours [s5]. That is how you keep people. You stay on your own ground and keep the conversation going long past midnight."
+        },
+        {
+          "k": "The twins",
+          "text": "Gemini's twins are Castor and Pollux [s1]. When Castor died, Pollux asked Zeus to share his immortality, and the two were set in the sky together [s1]. You love like Pollux. Once someone matters, you split what you have with them and never ask for it back."
+        },
+        {
+          "k": "At work",
+          "text": "You do well where the voice does the work and the face is optional. Radio, interpreting and remote teams all suit you. The Pig is said to be poor at managing money [s3] [s4]. Keep one dull account that your side projects cannot reach."
+        }
+      ]
+    },
+    {
+      "id": "answers",
+      "label": "Who answers you",
+      "intro": "Three who call back. One who lets the line go dead.",
+      "love_lead": "You can court someone for a long time by voice. The right partner keeps talking across the dark and never treats the distance as a test. The old pairings name three.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "maned-wolf",
+        "chips": [
+          "Hidden ally",
+          "Shared Air"
+        ],
+        "why": "The <b>Maned Wolf</b> (Aquarius, Tiger year) is your secret friend, since the Tiger is the Pig's hidden ally, and Aquarius is an Air sign like yours [s3] [s1]."
+      },
+      {
+        "slug": "crowned-crane",
+        "chips": [
+          "Same trine",
+          "Libra's Air"
+        ],
+        "why": "The <b>Crowned Crane</b> (Libra, Rabbit year) sits in your trine of Pig, Rabbit and Goat, and Libra shares your Air [s3] [s1]."
+      },
+      {
+        "slug": "kakapo",
+        "chips": [
+          "Same trine",
+          "Aquarius Air"
+        ],
+        "why": "The <b>Kakapo</b> (Aquarius, Goat year) closes that trine, and Aquarius makes the third Air sign [s3] [s1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "sand-cat",
+        "chips": [
+          "Snake clash",
+          "Sagittarius opposite"
+        ],
+        "why": "The hard one is the <b>Sand Cat</b> (Sagittarius, Snake year): the Snake clashes with the Pig, and Sagittarius faces Gemini from the far side of the wheel [s3] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "No old story",
+    "text": "The old stories left the cacomistle out. UNAM experts quoted in Chilango say it does not appear in prehispanic mythology, though people lived beside it [s9]. So it has no legend to live up to. What it has is the calls, traded with a neighbour for hours in the dark [s5]."
+  },
+  "closing": "Keep calling. Out there in the dark, someone has been answering all along."
+}

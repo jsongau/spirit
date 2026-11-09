@@ -1,0 +1,53 @@
+{
+  "title": "What the Paradise Tanager shows",
+  "is_this_you": {
+    "pressure": "When the flock gets tense, you keep everyone talking and make your own call on the side.",
+    "love": "You let one bird close enough to see the black under the blue. It takes them a while to earn it.",
+    "cost": "You belong to so many groups that none of them has all of you. Some nights that includes you."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Siete colores. In Spanish that is its name, seven colours [s2]. Light green at the head, sky blue below, black across the back, red at the rump [s1]. Nobody could pick one colour to call it, so they counted. You know the feeling. Ask friends from different parts of your life to describe you and it sounds like several people."
+  },
+  "howto": "Three parts. Hop between them, the way the flock does.",
+  "tabs": [
+    {
+      "id": "colours",
+      "label": "Seven colours",
+      "intro": "Air feeding Fire. Company is what lights you.",
+      "rows": [
+        {"k": "Your temperament", "text": "Libra is cardinal Air, ruled by Venus, the sign that sees both sides and keeps the peace [s14] [s15]. The Snake is yin Fire, careful with words and private about its thinking [s16] [s17]. Air feeds Fire. So people warm you up, and you still keep one door shut."},
+        {"k": "The tanager does it too", "text": "A 2025 study of Tangara tanagers found layers of black feathers hidden under the blue, making it more saturated [s6]. The bright part depends on the dark part. Yours does too. The charm people love sits on a layer they never see, and the Snake in you likes it that way."}
+      ]
+    },
+    {
+      "id": "crowd",
+      "label": "Your crowd",
+      "intro": "Many kinds of bird. One loud, moving canopy.",
+      "rows": [
+        {"k": "The mixed flock", "text": "Paradise tanagers forage in pairs or family groups, often inside a mixed flock of other species [s4]. In Peru, canopy flocks led by tanagers of this genus can hold 30 species or more [s7]. You do well in company like that. You find a branch and two allies before the flock moves on."},
+        {"k": "Who calls the alarm", "text": "In those flocks another bird keeps watch. The white-winged shrike-tanager calls the predator alarms, and the flock, tanagers included, moves when it hears them [s8]. Munn's 1986 study found the sentinels sometimes cry wolf to snatch an insect [s8]. Trust the crowd. Keep one ear on who is calling."},
+        {"k": "At work", "text": "Mediation and client work suit your easy voice in mixed company. The Snake guides add jeweller and painter [s17]. Anywhere people and taste meet will pay you."}
+      ]
+    },
+    {
+      "id": "shine",
+      "label": "Who you shine beside",
+      "intro": "Bright company, and a few who stay close.",
+      "love_lead": "Venus rules Libra, so you are built for partnership [s14]. The Snake keeps its own counsel [s16]. In love you court with polish and good company, then test slowly whether it is safe to show the dark layer. The old pairings name three who will wait for that.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "satin-bowerbird", "chips": ["Same trine", "Your own sign"], "why": "The <b>Satin Bowerbird</b> (Libra, Rooster year) shares your trine of Snake, Ox and Rooster, under your own Venus-ruled sign [s18] [s14]."},
+      {"slug": "three-wattled-bellbird", "chips": ["Same trine", "Air like you"], "why": "The <b>Three-wattled Bellbird</b> (Gemini, Ox year) is trine kin, and Gemini is Air like you [s18] [s14]."},
+      {"slug": "regal-jumping-spider", "chips": ["Secret friend", "Fire you can feed"], "why": "The <b>Regal Jumping Spider</b> (Leo, Monkey year) is your secret friend, since the Monkey is the Snake's hidden ally, and your Air feeds Leo's Fire [s18] [s14]."}
+    ],
+    "hard": [
+      {"slug": "honey-badger", "chips": ["Pig clash", "Opposite sign"], "why": "The hard one is the <b>Honey Badger</b> (Aries, Pig year): the Pig clashes with the Snake, and Aries sits opposite Libra [s18] [s14]."}
+    ]
+  },
+  "story": {"k": "In the crowns", "text": "In ancient Peru, featherworkers set the feathers of small bright birds in mosaic on crowns and headbands, and the Met names the paradise tanager among them [s9]. Feathers dressed people of high rank [s9]. The Inka laid feathered cloth for royal weddings [s9]."},
+  "closing": "Join the flock. The bright ones were saving you a branch."
+}

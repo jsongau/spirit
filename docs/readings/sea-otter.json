@@ -1,0 +1,103 @@
+{
+  "title": "What the Sea Otter holds",
+  "is_this_you": {
+    "pressure": "When the water turns rough, you find one thing to hold and wrap yourself in it until the swell goes by.",
+    "love": "You love by staying in reach. You call on the drive home, then once more after you get there.",
+    "cost": "When hurt, you go under and wait to see who swims back. Some never knew they were meant to."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Among the Alutiiq of Kodiak, the Alutiiq Museum tells of a man gathering chitons who was caught by the rising tide, wished to become an otter, and lived [arhnaq]. In that telling, every sea otter came from him [arhnaq]. You were born a Cancer in a Rabbit year. The tide comes in for you as well. It comes in, and it goes out, and you have learned to float."
+  },
+  "howto": "Three parts. Drift through them in any order.",
+  "tabs": [
+    {
+      "id": "hold",
+      "label": "Holding on",
+      "intro": "Water that feeds, Wood that bends.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Cancer is cardinal Water, ruled by the Moon, the sign of home, memory and mood [wiki-cancer] [astro-podcast]. The Rabbit is yin Wood, gentle, alert and faithful to the people around it [wiki-cz] [ch-rabbit]. In you the water feeds the wood. You feel first. Then you act, gently, and the care comes out practical."
+        },
+        {
+          "k": "The sea otter does it too",
+          "text": "A sea otter has no blubber [wiki-otter] [mbay]. Its only coat against the cold is fur, up to about a million hairs to the square inch, and it spends hours every day grooming it [wiki-otter] [mbay]. You keep your people the same way. Small tending, every day, because the tending is the warmth."
+        },
+        {
+          "k": "When it hurts",
+          "text": "The Rabbit steers clear of open conflict and keeps its thoughts hidden [ch-rabbit] [tcg-rabbit]. Cancer pulls back into its shell [wiki-cancer] [astro-podcast]. So when you are hurt, you go under, and the surface looks calm. Say the small thing while it is still small."
+        }
+      ]
+    },
+    {
+      "id": "raft",
+      "label": "Your raft",
+      "intro": "Rest close. Drift less.",
+      "rows": [
+        {
+          "k": "The raft",
+          "text": "Sea otters rest together in single-sex groups called rafts [wiki-otter] [adw]. They wrap themselves in kelp while they rest [adw] [wiki-otter]. Your raft is small, and it is old. You keep the same friends the way an otter keeps its kelp, wound round you, holding you in place."
+        },
+        {
+          "k": "The pup",
+          "text": "A newborn pup floats like a cork and cannot dive [wiki-otter] [adw]. When its mother goes down to forage, she sometimes wraps it in kelp first [wiki-otter] [adw]. You know that move. Before you leave anyone, you make sure they are anchored."
+        },
+        {
+          "k": "At work",
+          "text": "Health care, teaching and cooking sit among the Rabbit's traditional fields [ch-rabbit]. Look for work that keeps something fragile in one piece."
+        }
+      ]
+    },
+    {
+      "id": "float",
+      "label": "Who floats beside you",
+      "intro": "Three to rest beside, and one who pulls the other way.",
+      "love_lead": "In love you want someone within arm's length. Let them float out a little. The ones worth keeping swim back on their own. Three of the old Chinese pairings float well with you.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "beluga",
+        "chips": [
+          "Secret friend",
+          "Water like you"
+        ],
+        "why": "The <b>Beluga</b> (Pisces, Dog year) is your secret friend, since the Dog is the Rabbit's hidden ally, and Pisces shares your Water [brief] [wiki-cz] [wiki-cancer]."
+      },
+      {
+        "slug": "snow-leopard",
+        "chips": [
+          "Same trine",
+          "Scorpio's Water"
+        ],
+        "why": "The <b>Snow Leopard</b> (Scorpio, Goat year) sits in your trine of Rabbit, Goat and Pig, with Scorpio's Water close to your own [brief] [wiki-cancer]."
+      },
+      {
+        "slug": "blue-glaucus",
+        "chips": [
+          "Same trine",
+          "Pisces' Water"
+        ],
+        "why": "The <b>Blue Glaucus</b> (Pisces, Pig year) closes the trine, a fellow Water sign [brief] [wiki-cancer]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "andean-condor",
+        "chips": [
+          "Year clash",
+          "Opposite sign"
+        ],
+        "why": "The current runs against you with the <b>Andean Condor</b>: the Rooster clashes with the Rabbit, and Capricorn sits opposite Cancer [brief] [wiki-cz] [wiki-cancer]."
+      }
+    ]
+  },
+  "story": {
+    "k": "Returning the bones",
+    "text": "Alutiiq hunters treated sea otters with care, because otters had once been people [arhnaq]. They gave a killed otter a drink of fresh water and buried or sank its bones, so the otters would come back [arhnaq]."
+  },
+  "closing": "The tide comes in. The tide goes out. You are still here, wrapped in what you chose to keep."
+}

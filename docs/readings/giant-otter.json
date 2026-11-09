@@ -1,0 +1,99 @@
+{
+  "title": "What the Giant Otter calls out",
+  "is_this_you": {
+    "pressure": "Something moves in the reeds and your voice is out before your reasons. By the time you check, the family is at your shoulder.",
+    "love": "You love out loud. Whoever answers your call without asking why keeps you.",
+    "cost": "You guard so hard that some of the ones you love swim off to a calmer pool, and never tell you why."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Around 100 CE the Shuowen Jiezi, the oldest Chinese dictionary, defined the otter, 獭 (tǎ), as 如小狗也 (rú xiǎo gǒu yě), “like a small dog,” a creature that lives in water and eats fish [s17]. The character still carries the dog radical on its left side [s17]. You were born an Aries in a Dog year. The Dog was in your animal's name all along. It just went for a swim."
+  },
+  "howto": "Three loud parts. Start anywhere.",
+  "tabs": [
+    {
+      "id": "watch",
+      "label": "The watch",
+      "intro": "Fire that starts it. Earth that holds the bank.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Aries is cardinal Fire, ruled by Mars, the first sign [s1] [s2]. The Dog is yang Earth, loyal, honest and protective [s3] [s4] [s5]. Your Fire goes straight into the Dog's watch. You notice first, and you say it for everyone."
+        },
+        {
+          "k": "The giant otter does it too",
+          "text": "Giant otters live in family groups, and the adults use 22 kinds of call, each tied to its own main job [s7] [s10]. When a predator comes near, several call at once in a chorus [s8]. Researchers could tell family groups apart by the sound of that chorus [s8]. Your family has a sound too. You would know it across a whole river, and hear who is missing from it."
+        }
+      ]
+    },
+    {
+      "id": "pack",
+      "label": "Your pack",
+      "intro": "Three who answer your call. One who argues back.",
+      "love_lead": "Love, for you, is a call and an answer. Aries falls hard and fast [s1] [s2], and the Dog stays once it trusts. You need someone who answers your whistle without asking why, and who can show you that a still evening is safe. The old pairings send three.",
+      "matches": true
+    },
+    {
+      "id": "fight",
+      "label": "Who you would fight for",
+      "intro": "Alone you are careful. With a pup behind you, less so.",
+      "rows": [
+        {
+          "k": "The caiman",
+          "text": "In one recorded encounter, four adult giant otters drove off a black caiman about 4.5 metres long [s12]. BBC Wildlife filmed a family with six cubs fighting a black caiman for nearly an hour, and the otters won [s13]. You rarely start a fight for yourself. Over your own people, you never walk away from one."
+        },
+        {
+          "k": "The warning",
+          "text": "Mencius wrote that the one who drives the fish into the deep pool is the otter: 为渊驱鱼者，獭也 (wèi yuān qū yú zhě, tǎ yě) [s17]. He meant harsh rulers who push their people toward a kinder lord [s17]. Guard too loudly and the ones you love look for calmer water. Wait a day before you call everyone in."
+        },
+        {
+          "k": "At work",
+          "text": "Emergency medicine, search and rescue and lifeguarding all reward the one who sees trouble first and shouts."
+        }
+      ]
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "golden-pheasant",
+        "chips": [
+          "Secret friend",
+          "Fire like you"
+        ],
+        "why": "The <b>Golden Pheasant</b> (Leo, Rabbit year) is your secret friend, since the Rabbit is the Dog's hidden ally, and Leo is Fire like you [s3] [s1]."
+      },
+      {
+        "slug": "lanner-falcon",
+        "chips": [
+          "Same trine",
+          "Fellow Fire"
+        ],
+        "why": "The <b>Lanner Falcon</b> (Sagittarius, Tiger year) shares your trine of Tiger, Horse and Dog, and Sagittarius burns with the same Fire [s3] [s1]."
+      },
+      {
+        "slug": "paradise-riflebird",
+        "chips": [
+          "Same trine",
+          "Fire feeds Earth"
+        ],
+        "why": "The <b>Paradise Riflebird</b> (Leo, Horse year) closes the trine, and the Horse's Fire warms your Dog's Earth [s3] [s4]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "giant-manta-ray",
+        "chips": [
+          "Dragon clash",
+          "Opposite sign"
+        ],
+        "why": "The one who argues back is the <b>Giant Manta Ray</b> (Libra, Dragon year): the Dragon clashes with the Dog, and Libra sits opposite Aries [s3] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "Water dog",
+    "text": "In Irish, the otter's everyday names are dog names: madra uisce, “water dog,” and dobharchú, “water hound” [s19]. They belong to the Eurasian otter of Irish rivers [s18]. Two languages half a world apart looked at an otter and saw a dog."
+  },
+  "closing": "Call once, as loud as you like. They will come, because you always came for them."
+}

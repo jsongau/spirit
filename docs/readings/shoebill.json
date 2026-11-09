@@ -1,0 +1,53 @@
+{
+  "title": "What the Shoebill waits for",
+  "is_this_you": {
+    "pressure": "Under pressure you go still. Whoever is pushing runs out of things to say first.",
+    "love": "You greet the one you chose with a sound that would scare off anyone else.",
+    "cost": "You can wait so well that the waiting becomes the plan, and the moment goes by while you check it."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Abu markub. In Arabic it means father of the shoe [s10]. Someone looked at that bill and gave up on dignity. Science went the other way and named it Balaeniceps rex, the whale-headed king [s10] [s7]. Both names stuck. You have been called plain and you have been called royal. You did not move for either."
+  },
+  "howto": "Three parts. Take them slowly. Nothing here is going anywhere.",
+  "tabs": [
+    {
+      "id": "still",
+      "label": "Stillness",
+      "intro": "Earth on Earth. Nothing inside you pushes back.",
+      "rows": [
+        {"k": "Your temperament", "text": "Capricorn is cardinal Earth, ruled by Saturn [s1]. The Ox is yin Earth, very patient and careful with a plan [s3] [s4]. The same element, twice. Nothing in you hurries you. Nothing talks you out of a decision once it is made."},
+        {"k": "The shoebill does it too", "text": "It hunts by standing over shallow water until a lungfish or catfish comes up [s8] [s7]. It favours water poor in oxygen, where fish have to surface more often [s8] [s7]. Then it waits. You pick your ground like that. You stand where the thing you want will run short of air."}
+      ]
+    },
+    {
+      "id": "wait",
+      "label": "The long wait",
+      "intro": "One strike. Then you find your feet again.",
+      "rows": [
+        {"k": "Your one move", "text": "When it strikes, it throws head and neck forward so hard it loses its balance [s8]. It cannot strike again straight away [s8]. So it does not strike at shadows. Neither do you. You get one good move a season, and you spend it on a sure thing."},
+        {"k": "At work", "text": "The Ox guides list engineering, real estate and agriculture [s4]. Long builds suit you. An old oath ritual gave Chinese the phrase 执牛耳 (zhí niú ěr), to hold the ox's ear, which now means to lead [s6]. You get that grip by staying longest."},
+        {"k": "Your money", "text": "You buy ground and keep it. The risk is holding on after it stopped paying."}
+      ]
+    },
+    {
+      "id": "marsh",
+      "label": "Who shares your marsh",
+      "intro": "Few get this close. These three can.",
+      "love_lead": "At the nest, mates greet each other by clattering their bills [s8] [s7]. To a stranger it sounds like a threat. To the one you chose it has meant hello since the first season. Capricorn opens slowly [s2], and the Ox values friendships that last [s4]. The old pairings name three who can stand that near.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "weaverbird", "chips": ["Same trine", "Earth like you"], "why": "The <b>Weaverbird</b> (Virgo, Rooster year) shares your trine of Ox, Snake and Rooster, and Virgo is Earth like you [s5] [s1]."},
+      {"slug": "aardwolf", "chips": ["Secret friend", "Taurus Earth"], "why": "The <b>Aardwolf</b> (Taurus, Rat year) is your secret friend, since the Rat is the Ox's hidden ally, and Taurus is the third Earth sign [s5] [s1]."},
+      {"slug": "slow-loris", "chips": ["Same trine", "Water for your Earth"], "why": "The <b>Slow Loris</b> (Scorpio, Snake year) is trine kin, with Scorpio's Water to soak into your dry ground [s5] [s1]."}
+    ],
+    "hard": [
+      {"slug": "glasswing-butterfly", "chips": ["Year clash", "Opposite sign"], "why": "The hard one is the <b>Glasswing Butterfly</b> (Cancer, Goat year): the Goat clashes with the Ox, and Cancer sits opposite Capricorn [s5] [s1]."}
+    ]
+  },
+  "story": {"k": "By the water", "text": "Yu the Great was said to throw iron oxen into rivers and lakes to hold back the floods [s6]. The custom became iron ox statues set beside the water as guardians [s6]. An iron ox has one job. It stands at the edge and lets the water try."},
+  "closing": "Hold still. What you waited for is coming up for air, right in front of you."
+}

@@ -1,0 +1,103 @@
+{
+  "title": "What the Aardwolf hears",
+  "is_this_you": {
+    "pressure": "Your mane goes up and you look bigger than you feel. By the time anyone calls the bluff, you have doubled back and gone home.",
+    "love": "You love by provision: the plate kept warm, the bill paid before it arrived. Thanks make you shy.",
+    "cost": "Someone else made the mess, and somehow the blame found its way to your door."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Settlers in southern Africa looked at your animal and called it aardwolf, the earth-wolf [s6]. Chinese gives it the same name, 土狼 (tǔláng), earth wolf [s12]. Two languages, far apart, landed on one picture: something wolf-shaped that lives in the ground. Both missed the gentle part. You were born a Taurus in a Rat year, and people have been getting your name half right ever since."
+  },
+  "howto": "Three parts. Read them after dark, if you like.",
+  "tabs": [
+    {
+      "id": "night",
+      "label": "Night work",
+      "intro": "Earth that banks, Water that runs unseen.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Taurus is fixed Earth, ruled by Venus, patient and loyal [s1] [s2]. The Rat is yang Water, quick, resourceful and thrifty [s3] [s4]. Picture a bank of earth slowing a fast stream. The Taurus in you takes the Rat's darting current and makes it something that can run all night."
+        },
+        {
+          "k": "The aardwolf does it too",
+          "text": "An aardwolf can lap up as many as 300,000 termites in a single night [s6] [s7]. It finds them by sound, and by the scent the soldier termites give off [s6]. You work the same way, by listening, after the busy hours. The total only shows when someone finally counts."
+        },
+        {
+          "k": "Money",
+          "text": "One aardwolf can eat up to 105 million termites in a year, one lick at a time [s7]. The Rat is linked with thrift and wealth, and Taurus wants security [s4] [s1]. So you build slowly and keep more in reserve than anyone guesses."
+        }
+      ]
+    },
+    {
+      "id": "misread",
+      "label": "The misread one",
+      "intro": "Named for a wolf. Built for termites.",
+      "rows": [
+        {
+          "k": "The bluff",
+          "text": "Old colonists called it the maanhaar jackal, the mane-hair jackal, for the mane it raises when cornered [s8]. Confronted, it puts the mane up, doubles back on its own trail, and keeps its foul scent for a last resort [s6] [s7]. You know the move. You look harder than you mean to act, and leave before it turns real."
+        },
+        {
+          "k": "The cost",
+          "text": "The bluff works, so people believe it. Then they treat you as the hard one, and explaining feels like more trouble than it is worth. Say the boundary once, out loud, before you double back."
+        },
+        {
+          "k": "At work",
+          "text": "Finance sits among the Rat's traditional fields [s5]. Archives, research, night shifts and the books of a small firm suit you too."
+        }
+      ]
+    },
+    {
+      "id": "seen",
+      "label": "Who sees you",
+      "intro": "Three who read the bluff kindly, and one who calls it.",
+      "love_lead": "In love you share ground and keep your own nights. An aardwolf pair holds one territory together and still forages apart [s6] [s7]. Choose someone who reads your retreat as rest. The old Chinese pairings name three.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "galapagos-tortoise",
+        "chips": [
+          "Same trine",
+          "Taurus like you"
+        ],
+        "why": "The <b>Galápagos Tortoise</b> (Taurus, Dragon year) sits in your trine of Rat, Dragon and Monkey and shares your sun [s3] [s14]."
+      },
+      {
+        "slug": "shoebill",
+        "chips": [
+          "Secret friend",
+          "Earth like you"
+        ],
+        "why": "The <b>Shoebill</b> (Capricorn, Ox year) is your secret friend, since the Ox carried the Rat across the river, and Capricorn is Earth like you [s3] [s4] [s1]."
+      },
+      {
+        "slug": "new-caledonian-crow",
+        "chips": [
+          "Same trine",
+          "Virgo's Earth"
+        ],
+        "why": "The <b>New Caledonian Crow</b> (Virgo, Monkey year) closes the trine, and Virgo keeps the same Earth under its feet [s3] [s1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "orca",
+        "chips": [
+          "Year clash",
+          "Opposite sign"
+        ],
+        "why": "Go carefully with the <b>Orca</b>: the Horse clashes with the Rat, and Scorpio sits opposite Taurus [s3] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "The wrong suspect",
+    "text": "Some southern African farmers once persecuted the aardwolf, sure it was killing their livestock [s9]. Gut and dung studies found nothing of the kind, and the reports came from mixing it up with hyenas and jackals [s9]. Attitudes have since turned largely positive [s9]."
+  },
+  "closing": "Someone checked, in the end. All they found was termites, and a good night's work."
+}

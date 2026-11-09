@@ -1,0 +1,99 @@
+{
+  "title": "What the Honey Badger brings",
+  "is_this_you": {
+    "pressure": "Trouble shows up and you walk straight at it. Your hands start shaking an hour later, after everyone has gone home.",
+    "love": "You fall in a weekend and stay for years. A partner's bad day gets more of your nerve than your own ever does.",
+    "cost": "You are back on your feet so fast that nobody thinks to bring the soup."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In Chinese, the word for badger, 獾 (huān), sounds exactly like 欢 (huān), joy [chinasage]. Two badgers, 双獾 (shuānghuān), read as a married couple's shared joy [chinasage] [woolley]. That is a lot of happiness to hang on the animal Guinness once named the most fearless in the world [sanbi]. It fits anyway. You were born an Aries in the year of the Pig, and you fight like you are having the best day of your life."
+  },
+  "howto": "Three parts. Hit one. Hit them all.",
+  "tabs": [
+    {
+      "id": "nerve",
+      "label": "Fearless",
+      "intro": "Fire that charges, Water that stays.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Aries is cardinal Fire, ruled by Mars, the first sign of the year and the first one through the door [wiki-aries] [tap-aries]. The Pig is yin Water, calm under pressure and highly focused [wiki-pig] [chinahighlights-pig]. Water controls Fire, so the Pig sits on the Ram like a lid on a pot [wiki-pig] [wiki-aries]. You start the fight fast. Then you do what most Aries never manage. You stay for the end of it."
+        },
+        {
+          "k": "The honey badger does it too",
+          "text": "A honey badger's skin is thick and loose around the neck [adw] [wiki-hb]. A predator that grabs it gets a mouthful of coat, while the badger twists round inside and bites [adw]. Get hold of you and you twist too. It works far more often than it should."
+        },
+        {
+          "k": "The catch",
+          "text": "The Pig rarely asks for help [chinahighlights-pig]. So you get up before anyone saw you fall. The Pig is also easy to fool, because it rarely suspects a con [chinahighlights-pig]. Watch whoever praises how tough you are. They usually have something heavy for you to carry."
+        }
+      ]
+    },
+    {
+      "id": "joy",
+      "label": "Your joy",
+      "intro": "Win loud. Eat slowly afterward.",
+      "rows": [
+        {
+          "k": "Joy",
+          "text": "In Chinese paintings the badger usually sits under a magpie, 喜鹊 (xǐquè), the bird of joy [chinasage]. A magpie flying over a badger means happiness in heaven and on earth [chinasage]. Your happiness lives lower and louder. A fight won, then a long dinner with the people you would bleed for."
+        },
+        {
+          "k": "At work",
+          "text": "Alibaba named its chip company 平头哥 (píngtóugē), flat-head brother, after the honey badger, for its spirit of forging ahead against the odds [labbrand]. Send yourself where others back out. Emergency rooms, fire crews and failing companies all need someone who walks in."
+        }
+      ]
+    },
+    {
+      "id": "allies",
+      "label": "Who stands with you",
+      "intro": "Three who fight on your side, and one who argues first.",
+      "love_lead": "In love you show up with your sleeves rolled. You fall at Aries speed and then stay put. Pick someone who can tell a fast recovery from a wound that never happened. The old Chinese pairings give you three allies.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "wolverine",
+        "chips": [
+          "Secret friend",
+          "Aries like you"
+        ],
+        "why": "The <b>Wolverine</b> (Aries, Tiger year) is your secret friend, since the Tiger is the Pig's hidden ally, and it shares your Aries sun [brief]."
+      },
+      {
+        "slug": "flying-fish",
+        "chips": [
+          "Same trine",
+          "Fire like you"
+        ],
+        "why": "The <b>Flying Fish</b> (Sagittarius, Rabbit year) sits in your trine of Rabbit, Goat and Pig, and Sagittarius burns with the same Fire [brief] [wiki-aries]."
+      },
+      {
+        "slug": "golden-brushtail-possum",
+        "chips": [
+          "Same trine",
+          "Leo's Fire"
+        ],
+        "why": "The <b>Golden Brushtail Possum</b> (Leo, Goat year) closes the trine, and Leo is a fellow Fire sign [brief] [wiki-aries]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "paradise-tanager",
+        "chips": [
+          "Year clash",
+          "Opposite sign"
+        ],
+        "why": "Expect sparks with the <b>Paradise Tanager</b>: the Snake clashes with the Pig, and Libra sits opposite Aries, so you want to move while it wants to weigh [brief] [wiki-aries]."
+      }
+    ]
+  },
+  "story": {
+    "k": "The pig's shield",
+    "text": "In 2015 researchers showed that honey badgers, hedgehogs and pigs each evolved the same change in the nerve receptor that snake venom attacks [drabeck2015]. The animal of your birth year carries the same shield. Of course it does."
+  },
+  "closing": "Somewhere a snake is having second thoughts about you. Grin, and finish your lunch."
+}

@@ -1,0 +1,54 @@
+{
+  "title": "What the Andean Condor shares",
+  "is_this_you": {
+    "pressure": "You climb before you answer. From up there the problem gets small, and you come down decided.",
+    "love": "Your face colours before you say a word, and you wait for the one who learns to read it.",
+    "cost": "You get there late, after the smaller birds. They forget you were the one who opened it."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In the old Andes the condor belonged to the sun [s7]. People believed it ruled the upper world [s7]. In Inca thought it stood for the heavens, one of the three levels of existence [s8]. You were born a Capricorn in a Rooster year, and that height is yours. You reach it slowly. Then you stay up there a long time."
+  },
+  "howto": "Three parts. Circle them in whatever order the air allows.",
+  "tabs": [
+    {
+      "id": "air",
+      "label": "The high air",
+      "intro": "Earth that climbs, Metal that keeps time.",
+      "rows": [
+        {"k": "Your temperament", "text": "Capricorn is cardinal Earth, ruled by Saturn, the planet of time [s1]. It works toward the long goal and does not mind the wait [s1] [s2]. The Rooster is yin Metal [s3]. It keeps strict track of time and wins by care with detail [s4]. So you carry both the patience and the clock. You wait for the right hour, and you know when it has come."},
+        {"k": "The condor does it too", "text": "An Andean condor flaps for about one percent of its flying time [s10]. One bird covered more than 170 kilometres in five hours without a single wingbeat [s10]. It waits for the air to rise, then lets the air carry it. People who flap all day call that lazy. You call it knowing where the lift is."},
+        {"k": "What your face says", "text": "A condor can change the colour of the bare skin on its face and neck with its mood [s8]. It has no syrinx, so it speaks in clicks and hisses [s8]. You were made the same way. Your speeches are short. The colour says the rest."},
+        {"k": "When it gets hard", "text": "Capricorn can cut people off when it is overwhelmed [s2]. The Rooster speaks bluntly [s4]. So under strain you rise out of sight, then land with the verdict already written. Tell someone you are circling before you go."}
+      ]
+    },
+    {
+      "id": "share",
+      "label": "What you share",
+      "intro": "Last to arrive, first to get it open.",
+      "rows": [
+        {"k": "At the carcass", "text": "Condors search by sight, while smaller vultures find food by smell [s8]. So the condor usually arrives last [s8]. Then it uses its strength to open the carcass [s8]. Everyone at that kill eats better because the big bird came. You arrive late to plenty of things. You are also the one who gets the lid off."},
+        {"k": "At work", "text": "Work that pays off after years suits you. Planning, infrastructure and land management all fit. So does turnaround work, where you come in late and open what others could not. The Rooster's care with detail makes audit and editing natural too [s4]."}
+      ]
+    },
+    {
+      "id": "level",
+      "label": "Who flies level with you",
+      "intro": "Three who can share your thermal. One who pulls you down to the water.",
+      "love_lead": "Condors are believed to mate for life [s7] [s8]. You choose slowly, and then you are done choosing. You want someone who reads the colour in your face before you have to explain it. The old Chinese pairings name three who fly at your height.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "galapagos-tortoise", "chips": ["Secret friend", "Earth like you"], "why": "The <b>Galápagos Tortoise</b> (Taurus, Dragon year) is your secret friend, because the Dragon and the Rooster make a Six Harmonies pair, and Taurus is Earth like Capricorn [s3] [s1]."},
+      {"slug": "shoebill", "chips": ["Same trine", "Your own sign"], "why": "The <b>Shoebill</b> (Capricorn, Ox year) shares your trine of Ox, Snake and Rooster, and it was born under your sign [s3]."},
+      {"slug": "pangolin", "chips": ["Same trine", "Taurus Earth"], "why": "The <b>Pangolin</b> (Taurus, Snake year) closes that trine, with Taurus Earth to stand beside yours [s3] [s1]."}
+    ],
+    "hard": [
+      {"slug": "sea-otter", "chips": ["Year clash", "Opposite sign"], "why": "The hard one is the <b>Sea Otter</b> (Cancer, Rabbit year): the Rabbit clashes with the Rooster, and Cancer sits opposite Capricorn [s3] [s1]."}
+    ]
+  },
+  "story": {"k": "The five virtues", "text": "Han Ying's Hanshi Waizhuan, a Han dynasty book, gives the rooster five virtues [s6]. One of them is benevolence, 仁 (rén), because when the rooster finds food, it calls the others to come and eat [s6]."},
+  "closing": "Wait for the lift. When you find the feast, call the others in."
+}

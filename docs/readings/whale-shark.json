@@ -1,0 +1,99 @@
+{
+  "title": "What the Whale Shark carries",
+  "is_this_you": {
+    "pressure": "When the water turns rough, you slow down and go deeper. People up top think you left. You were only below the weather.",
+    "love": "You come back to the same person the way a season comes back. Sometimes late. Never by accident.",
+    "cost": "Everyone near you eats well. Some years you notice you fed the whole reef and skipped your own meal."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In the old Chinese story, carp swim against the current to a waterfall called the Dragon Gate, and the one that leaps it becomes a dragon [longmen]. People still say 鯉魚跳龍門 (lǐyú tiào lóngmén) for a sudden rise that long effort paid for [longmen]. Pisces is the sign of two fish [wiki-pisces]. The Dragon rules the seas and the rain [cn-dragon]. You were born at the foot of that waterfall, half fish and half dragon, and you have never been in a hurry to jump."
+  },
+  "howto": "Three parts. Take them at your own depth.",
+  "tabs": [
+    {
+      "id": "size",
+      "label": "Your size",
+      "intro": "Big and slow, and easy about both.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Pisces is mutable Water, pictured as two fish swimming opposite ways and read as a double nature with a pull toward drift [wiki-pisces]. The Dragon is yang Earth, courageous and tenacious, willing to take a risk [branches] [chl-dragon]. In the Five Phases, Earth contains Water the way banks hold a river [wuxing]. Your Dragon gives your feelings a course. People sense you before you speak, and something in them settles."
+        },
+        {
+          "k": "Stars on its back",
+          "text": "Coastal peoples who never met each other looked at its spots and saw a night sky. In Madagascar it is marokintana, many stars, and in East Java it is geger lintang, star-backed [wiki-ws]. You carry a lot of light and rarely show it off."
+        }
+      ]
+    },
+    {
+      "id": "intake",
+      "label": "What you take in",
+      "intro": "A whole sea passes through. You keep what feeds you.",
+      "rows": [
+        {
+          "k": "The filter",
+          "text": "A 6 meter whale shark feeding at the surface was estimated to strain about 600 cubic meters of water an hour [motta2010] [sharksorg]. Your version is people. A season of other people's moods moves through you, and you hold on to the small good things in it."
+        },
+        {
+          "k": "The return",
+          "text": "Whale sharks gather at Ningaloo from March to August, after the coral spawns just over a week past the full moon [wa-spawning]. Some have come back to that reef for 19 years [ningaloo-fidelity]. You keep appointments like that. Nobody wrote them down, and you still arrive in season."
+        },
+        {
+          "k": "At work",
+          "text": "Patient work suits you: counselling, long research, or a calm organization you lead without raising your voice."
+        }
+      ]
+    },
+    {
+      "id": "near",
+      "label": "Who swims near you",
+      "intro": "Three who swim with you. One who stirs the water.",
+      "matches": true,
+      "love_lead": "In love you return, steadily and a little late. You need someone who reads a slow reply as care. Venus is exalted in Pisces [wiki-pisces], so you give freely and forgive fast. Three old pairings keep close."
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "superb-bird-of-paradise",
+        "chips": [
+          "Secret friend",
+          "Earth for your Water"
+        ],
+        "why": "The <b>Superb Bird of Paradise</b> (Taurus, Rooster year) is your secret friend, the Rooster being the Dragon's six-harmony partner [cny-compat]."
+      },
+      {
+        "slug": "spotted-cuscus",
+        "chips": [
+          "Same trine",
+          "Water like you"
+        ],
+        "why": "The <b>Spotted Cuscus</b> (Cancer, Monkey year) shares your trine of Rat, Dragon and Monkey, and Cancer is a Water sign like Pisces [cny-compat] [wiki-dragon]."
+      },
+      {
+        "slug": "vampire-squid",
+        "chips": [
+          "Same trine",
+          "Same sign"
+        ],
+        "why": "The <b>Vampire Squid</b> (Pisces, Rat year) completes the trine through the Rat and swims under your own sign [cny-compat] [chl-dragon]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "african-grey-parrot",
+        "chips": [
+          "Dog clash",
+          "Gemini square"
+        ],
+        "why": "The hard one is the <b>African Grey Parrot</b> (Gemini, Dog year): the Dog clashes with the Dragon, and quick Gemini squares slow Pisces [cny-compat] [chl-dragon]."
+      }
+    ]
+  },
+  "story": {
+    "k": "The Ebisu shark",
+    "text": "Japanese fishermen called it the Ebisu-shark, after the god of fishermen and luck, because it brought masses of fish and was believed to protect them [ebisu] [whale-worship]. On Kenya's Diani coast it is papa shillingi, the shark covered in shillings, and legend says God had angels drop the coins there to honor its beauty [natgeo-kenya]."
+  },
+  "closing": "Swim on, slow and wide. Whoever keeps close to you eats well."
+}

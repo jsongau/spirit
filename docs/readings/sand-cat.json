@@ -1,0 +1,54 @@
+{
+  "title": "What the Sand Cat knows",
+  "is_this_you": {
+    "pressure": "Cornered, you say one plain sentence and then go somewhere far. You remember that sentence for years.",
+    "love": "You want open ground for yourself and a fixed address for them. You have noticed the unfairness. You keep both.",
+    "cost": "Friends hear about your worst month from someone else, after the sand has already covered it."
+  },
+  "opener": {
+    "moon": false,
+    "text": "At Heliopolis, by the persea tree, the sun god Re took the shape of a great tomcat and killed the snake of evil [ucl-cat]. Book of the Dead vignettes paint the scene [ucl-cat]. In one account the serpent is Apophis, chaos itself, and Ra beats it as a cat [wiki-apep]. You were born in the Snake's year and carry a cat's name. You know both sides of that night."
+  },
+  "howto": "Three parts. Take them at your own pace.",
+  "tabs": [
+    {
+      "id": "wander",
+      "label": "The wanderer",
+      "intro": "Two fires. One burns in the open. One burns under sand.",
+      "rows": [
+        {"k": "Your temperament", "text": "Sagittarius is mutable Fire, ruled by Jupiter [wiki-sag]. It is frank, restless, and hates a fence [cafe-sag]. The Snake is yin Fire, composed and strategic, slow to trust [wiki-snake] [tcg-snake]. So the fire is doubled. One half wants the horizon. The other half would rather nobody knew which one."},
+        {"k": "The sand cat does it too", "text": "The sand cat is the only cat that lives only in deserts [nzoo]. It rests in a burrow by day and hunts at night [wiki-sandcat]. Recorded home ranges run from 13 to 35 square kilometres [wiki-sandcat]. Big ground. One cat. You know how that feels."}
+      ]
+    },
+    {
+      "id": "hunt",
+      "label": "What you hunt",
+      "intro": "Small game, long patience, one clean move.",
+      "rows": [
+        {"k": "What you hear", "text": "Its ears sit low and catch prey moving under the sand [wiki-sandcat]. Its ear canal is about twice the size of a house cat's [wiki-sandcat]. You hear the trouble before it surfaces. Then you say nothing until you are sure."},
+        {"k": "How you strike", "text": "The sand cat takes venomous snakes, horned vipers among them [wiki-sandcat] [adw]. The archer of Sagittarius is said never to miss [wiki-sag]. The Snake waits for its moment [tcg-snake]. You are calm around danger. You wait, and then you move once."},
+        {"k": "Your water", "text": "The sand cat gets nearly all its water from what it catches, and can go months without drinking [nzoo]. You live on less than people guess. Keep the reserve. Spend it once, on freedom."},
+        {"k": "Your work", "text": "The Snake guides list crisis management [tcg-snake]. Add the archer's range and fieldwork fits, along with investigation and remote postings. You do best judged on what you bring back, never on how often you were seen."}
+      ]
+    },
+    {
+      "id": "dunes",
+      "label": "Who crosses the dunes with you",
+      "intro": "Three who keep pace at night. One who will not.",
+      "love_lead": "The Snake is slow to fall and loyal once it has [tcg-snake]. You need someone who gives you range and leaves the burrow the way you dug it. The old pairings name three.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "sunset-moth", "chips": ["Same trine", "Fire like you"], "why": "The <b>Sunset Moth</b> (Leo, Rooster year) shares your trine of Ox, Snake and Rooster, and Leo is Fire like you [wiki-cz] [wiki-trip]."},
+      {"slug": "sun-bear", "chips": ["Same trine", "Aries Fire"], "why": "The <b>Sun Bear</b> (Aries, Ox year) is trine kin, and Aries makes the third Fire sign [wiki-cz] [wiki-trip]."},
+      {"slug": "regal-jumping-spider", "chips": ["Secret friend", "A catch inside"], "why": "The <b>Regal Jumping Spider</b> (Leo, Monkey year) is your secret friend, though Snake and Monkey also share the 寅巳申 (yín sì shēn) penalty, so expect friction under the warmth [wiki-cz] [msc-penalty]."}
+    ],
+    "hard": [
+      {"slug": "cacomistle", "chips": ["Year clash", "Opposite sign"], "why": "The <b>Cacomistle</b> (Gemini, Pig year) is opposed to you twice, since the Pig clashes with your Snake and Gemini faces Sagittarius across the sky [wiki-cz] [wiki-aspect]."}
+    ]
+  },
+  "story": {"k": "A long-life wish", "text": "In Chinese, 猫 (māo), cat, sounds like 耄 (mào), old age [cma-maodie]. Paint a cat beside a butterfly and the picture says 耄耋 (màodié), a wish to live into your eighties [cma-maodie]. In 1788 Min Zhen painted one for a friend [cma-maodie]."},
+  "closing": "Carry your own water. The horizon will still be there at dawn."
+}
