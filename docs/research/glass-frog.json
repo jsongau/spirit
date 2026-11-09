@@ -1,0 +1,360 @@
+{
+  "slug": "glass-frog",
+  "name": "Glass Frog",
+  "sign": "Pisces",
+  "year": "Snake",
+  "element": "Fire (from the Snake, yin); Pisces adds Water, mutable",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Pisces (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pisces_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "The Personality of a Pisces, Explained (Allure, via AOL)",
+      "url": "https://www.aol.com/lifestyle/personality-pisces-explained-000532272.html"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (Snake row, compatibility table), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Snake, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/snake.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Glass frog, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Glass_frog"
+    },
+    {
+      "id": "s6",
+      "title": "These see-through frogs are full of surprises, National Geographic",
+      "url": "https://www.nationalgeographic.com/magazine/article/these-see-through-frogs-are-full-of-surprises-feature"
+    },
+    {
+      "id": "s7",
+      "title": "Bristol scientists see through glass frogs' translucent camouflage (on Barnett et al. 2020, PNAS, Imperfect transparency and camouflage in glass frogs), University of Bristol",
+      "url": "https://bristol.ac.uk/news/2020/may/glass-frogs.html"
+    },
+    {
+      "id": "s8",
+      "title": "Glass frogs turn transparent when they sleep by hiding almost all their blood (on Taboada et al. 2022, Science, doi 10.1126/science.abl6620), ScienceAlert",
+      "url": "https://www.sciencealert.com/glass-frogs-turn-transparent-when-they-sleep-by-hiding-almost-all-their-blood"
+    },
+    {
+      "id": "s9",
+      "title": "The astonishing vanishing act of the glassfrog, revealed, NPR (2022)",
+      "url": "https://www.npr.org/2022/12/26/1145523973/glassfrog-hides-its-blood-glass-frogs"
+    },
+    {
+      "id": "s10",
+      "title": "See-through frog embryos know when Dad's not watching (on Delia et al. 2014, Proc. R. Soc. B), Live Science",
+      "url": "https://www.livescience.com/45232-glass-frog-embryos-watch-dad.html"
+    },
+    {
+      "id": "s11",
+      "title": "Video shows how glass frog expels wasps off its egg clutch, Reptiles Magazine (NatGeoWild clip; no study cited)",
+      "url": "https://reptilesmagazine.com/video-shows-how-glass-frog-expels-wasps-off-its-egg-clutch/"
+    },
+    {
+      "id": "s12",
+      "title": "Hyalinobatrachium valerioi, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hyalinobatrachium_valerioi"
+    },
+    {
+      "id": "s13",
+      "title": "Centrolenidae, Chinese Wikipedia (玻璃蛙 / 瞻星蛙科)",
+      "url": "https://zh.wikipedia.org/wiki/Centrolenidae"
+    },
+    {
+      "id": "s14",
+      "title": "Vlemincq Mendieta 2015, Anura in Moche Iconography, SAA abstract, tDAR",
+      "url": "https://core.tdar.org/document/398264/anura-in-moche-iconography"
+    },
+    {
+      "id": "s15",
+      "title": "Baquedano 2019, Symbolism of Frogs and Toads in Postclassic Mesoamerica, SAA abstract, tDAR",
+      "url": "https://core.tdar.org/document/451656/symbolism-of-frogs-and-toads-in-postclassic-mesoamerica"
+    },
+    {
+      "id": "s16",
+      "title": "Zhuangzi, Autumn Floods (秋水), Chinese Text Project, Legge translation",
+      "url": "https://ctext.org/zhuangzi/floods-of-autumn"
+    },
+    {
+      "id": "s17",
+      "title": "Amitabha Sutra 佛說阿彌陀經, Kumārajīva translation (Buddhist eLibrary PDF)",
+      "url": "https://mail.buddhistelibrary.org/zh/albums/central/ch/Dhamma/AmitabhaSutra.pdf"
+    },
+    {
+      "id": "s18",
+      "title": "Dautel et al. 2011, Advertisement and combat calls of the glass frog Centrolene lynchi, Phyllomedusa 10(1) (CORE)",
+      "url": "https://core.ac.uk/download/268334521.pdf"
+    },
+    {
+      "id": "s19",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Empathetic, intuitive, imaginative and artistic; absorbs other people's moods. Shadow: escapism, avoidance, mood swings, rose-colored glasses. The symbol is two fish swimming in opposite directions, read as a dual nature.",
+    "planet": "Jupiter (traditional), Neptune (modern); Venus exalted in Pisces",
+    "element": "Water",
+    "modality": "Mutable; opposite sign Virgo (classic opposition)",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Intuitive, wise, articulate but sparing with words, determined, hates to fail. Shadow: private to the point of secrecy, acts on own judgment, wants the best of everything, bores easily.",
+    "yinyang": "Yin",
+    "element": "Fire (fixed); earthly branch 巳 sì",
+    "trine": "Snake, Ox, Rooster",
+    "secret_friend": "Monkey",
+    "clash": "Pig (Wikipedia also lists Tiger as the harm pair)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Moche (north coast of Peru)",
+      "meaning": "Frogs and toads in Moche iconography are tied to rain, water, plant growth and farming fertility (the 'sapo botánico' images). Applies to anurans in general, not glass frogs specifically; glass frogs do range down the Andes.",
+      "source_ids": [
+        "s14",
+        "s5"
+      ]
+    },
+    {
+      "culture": "Postclassic Mesoamerica (Aztec world)",
+      "meaning": "Frogs and toads were linked to Tlaloc, to the Earth and to the rainy season, and their metamorphosis was read as a seasonal turning. Again general frog lore; glass frogs live from southern Mexico south.",
+      "source_ids": [
+        "s15",
+        "s5"
+      ]
+    },
+    {
+      "culture": "Chinese name",
+      "meaning": "The common name is 玻璃蛙 bōli wā, 'glass frog'. The family name in Chinese is 瞻星蛙科 zhānxīng wā kē, literally 'star-gazing frog family'. The literal meaning is plain from the characters; why the name was chosen is unsourced, so do not explain it.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "culture": "Latin American Spanish",
+      "meaning": "Ranas de cristal. Ecuadorian herpetologist Juan Manuel Guayasamin told National Geographic the name 'conjures fragility and beauty in one'.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Chinese classical (shadow image, frogs in general)",
+      "meaning": "Zhuangzi, Autumn Floods: 井蛙不可以語於海 jǐng wā bù kěyǐ yǔ yú hǎi, 'a frog in a well cannot be talked with about the sea' (Legge). The frog as a narrow, local view. Usable only as a shadow note, clearly about frogs in general.",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "culture": "Buddhist (wordplay only, our note)",
+      "meaning": "In Kumārajīva's Amitabha Sutra the Pure Land is adorned with seven treasures: 金 jīn gold, 銀 yín silver, 琉璃 liúlí lapis, 玻璃 bōli, 硨磲 chēqú giant clam shell, 赤珠 chìzhū red pearl, 瑪瑙 mǎnǎo agate. The glass frog's 玻璃 and the giant clam's 硨磲 sit side by side in that list, and the two animals are mutual best matches. This is a coincidence of words, not frog lore; label it as ours.",
+      "source_ids": [
+        "s17"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "'Glass frog spirit animal means transparency/vulnerability' claims on totem blogs. No traditional source found.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: yin Fire (Snake) inside mutable Water (Pisces). The Snake keeps a private ledger; Pisces lets the light pass straight through. The Glass Frog shows its heart to anyone underneath and still keeps one thing folded away, the way the real frog hides almost all its red blood in its liver while it sleeps by day (s8).",
+    "gifts": "Our reading: emotional legibility that puts others at ease, a calm watcher's patience, intuition that reads a stream before it rises, and a fierce, quiet protectiveness over whatever it has made.",
+    "shadow": "Our reading: hiding in plain sight. Showing so much surface that nobody asks about the part held back; Snake secrecy plus Pisces escapism; a frog in a well (井蛙 jǐng wā) when it stays on one leaf too long.",
+    "love": "Our reading: night-shift devotion. Gives care by staying close and keeping things moist and alive, like the brooding males that sit on their clutch (s6, s10). Needs a partner who looks up from below and is not frightened by what can be seen.",
+    "money": "Our reading: Snake wants the best and Pisces lets things slip through. Spends on beauty and on the people it guards; does best with money that is visible to it, simple accounts it can see through.",
+    "conflict": "Our reading: freezes, waits, then if something it made is threatened, kicks (s11). Rarely starts the fight. Prone to leaving a conflict by going invisible instead of saying the thing."
+  },
+  "careers": [
+    {
+      "path": "Neonatal, pediatric or hospice nursing; night-shift care",
+      "why": "Our reading: the brooding father on the night shift (s6, s10) and Pisces empathy."
+    },
+    {
+      "path": "Medical imaging, radiography, ultrasound",
+      "why": "Our reading: a life spent seeing the heart through the skin; Snake precision with a Pisces bedside manner."
+    },
+    {
+      "path": "Therapy, counselling, spiritual direction",
+      "why": "Our reading: being transparent enough that others feel safe to be seen; Snake discretion keeps the confidences."
+    },
+    {
+      "path": "Film, photography, glass or watercolor art",
+      "why": "Our reading: Pisces imagination and an animal made of transmitted light."
+    },
+    {
+      "path": "Field ecology, stream or cloud-forest conservation",
+      "why": "Our reading: the habitat itself; work at the edge between leaf and water."
+    },
+    {
+      "path": "Audit, compliance, investigative research",
+      "why": "Our reading: Snake's sharp judgment applied to making hidden things visible."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Giant Clam",
+      "slug": "giant-clam",
+      "reason": "Taurus x Ox. Ox is in the Snake's trine (Snake, Ox, Rooster); Taurus Earth holds Pisces Water. Reciprocal: the Giant Clam dossier lists the Glass Frog back. Both treasures sit in the same Amitabha Sutra line (our note)."
+    },
+    {
+      "name": "Asian Elephant",
+      "slug": "asian-elephant",
+      "reason": "Cancer x Ox. Snake trine; Cancer is a fellow Water sign."
+    },
+    {
+      "name": "Devil's Flower Mantis",
+      "slug": "devils-flower-mantis",
+      "reason": "Scorpio x Rooster. Rooster completes the Snake trine; Scorpio is a fellow Water sign."
+    },
+    {
+      "name": "Elephantnose Fish",
+      "slug": "elephantnose-fish",
+      "reason": "Scorpio x Monkey. Monkey is the Snake's secret friend (six harmonies); shared Water."
+    },
+    {
+      "name": "Shoebill",
+      "slug": "shoebill",
+      "reason": "Capricorn x Ox. Snake trine; Capricorn Earth complements Pisces Water."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Blue Glaucus",
+      "slug": "blue-glaucus",
+      "reason": "Pisces x Pig. Same sign, but Snake and Pig are a six-clash pair: easy recognition, friction underneath."
+    },
+    {
+      "name": "Cacomistle",
+      "slug": "cacomistle",
+      "reason": "Gemini x Pig. Snake-Pig clash, and Gemini (mutable Air) squares Pisces (mutable Water); neither system eases the pair."
+    }
+  ],
+  "candidate_lines": [
+    "By day you fold the red away, the way a glass frog sends nearly all its blood into its liver to sleep unseen on a leaf. After dark it runs again, and only the ones awake with you get to watch.",
+    "Your heart shows to anyone standing in the stream below you. You picked that leaf knowing exactly who passes underneath.",
+    "The Snake year gave you a private ledger and Pisces gave you skin the light walks through, so you can be seen in full and still keep the one line you never wrote down.",
+    "Love, for you, is the night shift: sitting over what you made, keeping it wet with water you carried from the leaves, while the forest assumes you are asleep.",
+    "Something soft and green on a leaf turns out to have strong back legs the moment a wasp lands on what is yours.",
+    "Letting go comes to you as a drop from the leaf into the current. You raise a thing until it is ready, then trust the stream with the rest."
+  ],
+  "fact_audit": [
+    {
+      "fact": "In most glass frog species the ventral skin is translucent, showing the green liver, white fat bodies and in many species the beating heart; the dorsal skin is opaque and green.",
+      "verdict": "OK (with softening)",
+      "note": "Belly transparency with heart, liver and gut visible is supported (s5); the heartbeat is visible (s5, s6). 'Green liver' and 'white fat bodies' are UNVERIFIABLE from what I opened. 'Dorsal skin is opaque' is UNVERIFIABLE and probably overstated: the Bristol study describes a green body that brightens and darkens with the background and legs that are more translucent than the body (s7). Suggest 'the back is green and less see-through than the belly'.",
+      "source_ids": [
+        "s5",
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Research shows transparency works as background-matching camouflage: light passes through, matching the leaf's transmitted light, reducing edge contrast.",
+      "verdict": "OK (mechanism needs precision)",
+      "note": "Barnett et al. 2020 (PNAS) found two things: overall brightness shifts toward the leaf (background matching) and translucent legs soften the outline (they named this 'edge diffusion'). The page blends them; say both. See the citation error below.",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "fact": "Male glass frogs provide extensive paternal care: guard clutches up to three weeks, defend against wasps, rehydrate eggs with water from their own bodies, sometimes fight off multiple predator attacks in a single night.",
+      "verdict": "WRONG (overgeneralized) + UNVERIFIABLE parts",
+      "note": "Care is not a family-wide male trait: males of at least 24 of about 156 species care for eggs; in many species females brood only the first night, some species give no care, and in the Magdalena giant glass frog mothers care (s5, s6). Brood length: Hyalinobatrachium fleischmanni fathers brood about 3 to 19 days (s10), so 'up to three weeks' is fine for that species only. Rehydration is supported (sitting on the clutch; water moved via bladder or belly skin, mechanism unknown) (s6). Kicking wasps off eggs is shown in a NatGeoWild clip (s11), weak source. 'Multiple predator attacks in a single night' UNVERIFIABLE. Rewrite as 'In some species, fathers...'.",
+      "source_ids": [
+        "s5",
+        "s6",
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Eggs are laid on leaves directly above streams; hatching tadpoles drop into the water below.",
+      "verdict": "OK",
+      "note": "Eggs usually on leaves over running water; tadpoles fall into the water (s5, s6). Some species lay elsewhere, so 'usually' is safer.",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Glass frogs cling to the underside of leaves with adhesive toe pads, below the visible surface of the canopy.",
+      "verdict": "UNVERIFIABLE as a general rule (overstated)",
+      "note": "Toe tips are expanded for climbing (s5). Calling males perch 'either on the underside or top of a leaf' (s5), and the Bristol camouflage work concerns frogs seen against the leaf, so 'live on the underside' is not a rule. Soften to 'often rest on leaves'.",
+      "source_ids": [
+        "s5",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Males aggressively defend clutches: fighting off multiple wasp attacks in a night, grappling with and ejecting mud wasps, sustaining injuries; 'will fight a wasp for three weeks running'.",
+      "verdict": "UNVERIFIABLE (mostly) and inflated",
+      "note": "Only kicking wasps off the eggs is reported, in a video write-up with no study (s11). 'Mud wasps', grappling, injuries and multiple attacks per night were not found in any source I opened. 'Three weeks running' stretches brood length into constant combat. Cut to one sentence on kicking, or drop.",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "fact": "Citation: 'Delia, J.R.J., et al. (2022). Glass frog camouflage: background matching via transparency in Centrolenidae. PNAS.'",
+      "verdict": "WRONG",
+      "note": "No such paper found. The camouflage paper is Barnett, J.B. et al. 2020, 'Imperfect transparency and camouflage in glass frogs', PNAS (s7). The 2022 paper with Delia as a co-author is Taboada et al. 2022, 'Glassfrogs conceal blood in their liver to maintain transparency', Science (s8, s9). Real authors, wrong paper: the exact pattern MOJO warned about.",
+      "source_ids": [
+        "s7",
+        "s8",
+        "s9"
+      ]
+    },
+    {
+      "fact": "Glass frogs (Centrolenidae) are a family of over 150 species found in the cloud forests of Central and South America.",
+      "verdict": "OK (with softening)",
+      "note": "About 156 species (s6). Most diverse in montane cloud forest, but some live in Amazonian and Chocó lowland rainforest; range runs from southern Mexico to Bolivia (s5). Say 'mostly in cloud forests'.",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Proverb of your year: 心地透明，無懼人言 xīn dì tòu míng, wú jù rén yán, 'A transparent heart fears no one's words'.",
+      "verdict": "UNVERIFIABLE",
+      "note": "No attestation found as a proverb in any source. The page says the Snake pairing is its own reading, but presents the line itself as 'the proverb of your year'. Unless a source is found, label it as our own line or replace it.",
+      "source_ids": []
+    },
+    {
+      "fact": "Header hanzi (rail__han and serial-han): 玻璃蛙 with pinyin bōlí wā.",
+      "verdict": "OK",
+      "note": "玻璃蛙 is the Chinese common name for glass frogs; Chinese Wikipedia opens '玻璃蛙是瞻星蛙科(Centrolenidae)的青蛙' (s13). Traditional and simplified forms are identical. Minor: mainland standard reads 玻璃 as bōli (neutral tone); bōlí is the Taiwan reading. Either is defensible.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "fact": "Purple Star section",
+      "verdict": "OK",
+      "note": "The glass frog page states ZWDS is cast from lunar birth date and hour and calls its text 'our outline'; it names no star for the crossing. No false tradition claim found.",
+      "source_ids": []
+    }
+  ],
+  "other_issues": [
+    "Bonus fact for the rewrite, well sourced: sleeping Hyalinobatrachium fleischmanni pull up to 89% of circulating red blood cells into the liver and become 34 to 61% more transparent (Taboada et al. 2022, Science) (s8). It is the honest biology bridge for a reading about showing and hiding.",
+    "Bonus: some bachelor males guard abandoned clutches and attract females, recorded first in one Brazilian species (s6). Use carefully.",
+    "Centrolene lynchi clutches take 23 to 29 days to hatch, and some fathers leave 1 to 3 days early with no harm (s18): care length varies a lot by species."
+  ]
+}

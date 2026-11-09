@@ -1,0 +1,355 @@
+{
+  "slug": "hoatzin",
+  "name": "Hoatzin",
+  "sign": "Aquarius",
+  "year": "Rooster",
+  "element": "Metal (from the Rooster); Aquarius adds Air, fixed",
+  "header_hanzi": {
+    "live": "麝雉",
+    "verdict": "CORRECT. 麝雉 shè zhì ('musk pheasant') is the standard Chinese name for Opisthocomus hoazin (zh.wikipedia article title). The live header shows no pinyin; add shè zhì.",
+    "source_ids": [
+      "h14"
+    ]
+  },
+  "sources": [
+    {
+      "id": "h1",
+      "title": "Aquarius (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aquarius_(astrology)"
+    },
+    {
+      "id": "h2",
+      "title": "Aquarius zodiac sign, Farmers' Almanac",
+      "url": "https://www.farmersalmanac.com/aquarius-zodiac-sign"
+    },
+    {
+      "id": "h3",
+      "title": "Chinese zodiac (Rooster row: yin, Metal, trine, six harmonies, clash), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "h4",
+      "title": "Rooster (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rooster_(zodiac)"
+    },
+    {
+      "id": "h5",
+      "title": "Year of the Rooster, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/rooster.htm"
+    },
+    {
+      "id": "h6",
+      "title": "Hoatzin, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hoatzin"
+    },
+    {
+      "id": "h7",
+      "title": "Opisthocomus hoazin, Animal Diversity Web (University of Michigan)",
+      "url": "https://animaldiversity.org/accounts/Opisthocomus_hoazin/"
+    },
+    {
+      "id": "h8",
+      "title": "Godoy-Vitorino et al. 2008, Bacterial community in the crop of the hoatzin, Applied and Environmental Microbiology 74(19):5905-5912 (cites Grajal et al. 1989, Science 245:1236-1238)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2565963"
+    },
+    {
+      "id": "h9",
+      "title": "Peculiarities of an airborne leafeater, Alaska Science Forum (Geophysical Institute, UAF)",
+      "url": "https://gi.alaska.edu/alaska-science-forum/peculiarities-airborne-leafeater"
+    },
+    {
+      "id": "h10",
+      "title": "Abourachid et al. 2019, Hoatzin nestling locomotion: acquisition of quadrupedal limb coordination in birds, Science Advances 5(5):eaat0787",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6530998"
+    },
+    {
+      "id": "h11",
+      "title": "Coat of arms of Guyana, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Guyana"
+    },
+    {
+      "id": "h12",
+      "title": "hoatzin, American Heritage Dictionary (etymology)",
+      "url": "https://www.ahdictionary.com/word/search.html?q=hoatzin"
+    },
+    {
+      "id": "h13",
+      "title": "Science Frontiers 66, summary of Grajal et al. 1989 (Science 245:1236)",
+      "url": "https://science-frontiers.com/sf066/sf066b06.htm"
+    },
+    {
+      "id": "h14",
+      "title": "麝雉 (hoatzin), Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/%E9%BA%9D%E9%9B%89"
+    },
+    {
+      "id": "h15",
+      "title": "Hoatzin, Rainforest Expeditions (Peru)",
+      "url": "https://www.rainforestexpeditions.com/wildlife/hoatzin/"
+    },
+    {
+      "id": "h16",
+      "title": "Yan Fu, Wikipedia (via Wikiwand): Tianyan lun 天演論, 1896-1898",
+      "url": "https://www.wikiwand.com/en/articles/Yan_Fu"
+    },
+    {
+      "id": "h17",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Friendly, honest, loyal, inventive, original, independent, intellectual, humanitarian. Shadow: emotionally distant, more at ease with ideas than feelings; independence slides into detachment; fixed steadiness tips into stubbornness.",
+    "planet": "Saturn (traditional), Uranus (modern)",
+    "element": "Air (with Gemini and Libra)",
+    "modality": "Fixed; opposite sign Leo; dates about 20 January to 18 February",
+    "source_ids": [
+      "h1",
+      "h2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Hardworking, resourceful, courageous, observant, frank, honest, loyal, keeps promises. Shadow: wants to be heard and the centre of attention, can brag about accomplishments.",
+    "yinyang": "Yin",
+    "element": "Metal (fixed); earthly branch 酉 yǒu",
+    "trine": "Ox, Snake, Rooster",
+    "secret_friend": "Dragon",
+    "clash": "Rabbit",
+    "lucky": null,
+    "source_ids": [
+      "h3",
+      "h4",
+      "h5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Guyana (national symbol)",
+      "meaning": "The hoatzin is Guyana's national bird, known locally as the Canje pheasant. It sits at the foot of the shield on Guyana's coat of arms (arms granted 8 December 1954), where it stands for the country's rich fauna. Motto: One People, One Nation, One Destiny.",
+      "source_ids": [
+        "h6",
+        "h11"
+      ]
+    },
+    {
+      "culture": "Amazon and Orinoco basin common name",
+      "meaning": "Local people call it the stinkbird, for a smell of fermenting leaves likened to fresh cow manure. The smell is the outward sign of the gut that lets it live on leaves.",
+      "source_ids": [
+        "h6",
+        "h9",
+        "h15"
+      ]
+    },
+    {
+      "culture": "Science as myth-maker: the 'prehistoric bird'",
+      "meaning": "People once took the hoatzin for a prehistoric survivor because chicks have wing claws. Abourachid et al. (2019) found chick claw and finger proportions 'strikingly similar to those of Archaeopteryx' and proposed the chick as a living analog for how early birds may have climbed, without claiming the claws are inherited unchanged. A clean story of a young form that looks ancient and is in fact its own thing.",
+      "source_ids": [
+        "h10",
+        "h15"
+      ]
+    },
+    {
+      "culture": "Nahuatl and colonial Spanish naming",
+      "meaning": "The name hoatzin comes from Nahuatl huāctzin, which first named the laughing falcon, a loud Mexican bird; 18th-century European naturalists moved the name to this South American bird. The suffix -tzin is honorific. Use only as a footnote (the brief bans name trivia as a hook).",
+      "source_ids": [
+        "h12"
+      ]
+    },
+    {
+      "culture": "Chinese name",
+      "meaning": "麝雉 shè zhì, 'musk pheasant', names the bird by its smell. The header glyph on the live page is this name and is correct.",
+      "source_ids": [
+        "h14"
+      ]
+    },
+    {
+      "culture": "Indigenous Amazonian myth or spirit-animal meaning",
+      "meaning": "Unsourced, do not use. No named-nation story about the hoatzin was found in any source I could open; blog 'hoatzin spirit animal' pages are not traditional.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Air meets yin Metal. Aquarius designs from first principles and does not mind being the odd bird; the Rooster keeps the hour, speaks plainly and finishes what it starts. The Hoatzin is the oddity that runs on schedule: a bird that eats what no flying bird should and does it with a cow's patience. Its family tree has no close branches, which suits an Aquarian.",
+    "gifts": "Our reading: living on material others cannot process (the leaf diet); a frank, unbothered presence that filters out casual interest (the smell); loyalty to a home stretch of river and to the colony that helps raise the young; a young self that was fully equipped for its stage (the wing claws).",
+    "shadow": "Our reading: Rooster pride plus Aquarian detachment can harden into 'take me as I smell or leave'. The other risk is timing: the Rooster wants to keep the form that works, Aquarius wants to move on early, so the claw gets dropped either too soon or held too long.",
+    "love": "Our reading: slow to warm, stays put. Hoatzin young often stay on as helpers at the parents' nest for a couple of years (ADW), so this crossing reads love as staying and pitching in. Needs a partner who is not put off by the long digestion period before a feeling becomes words.",
+    "money": "Our reading: a frugal, low-energy budget; the hoatzin lives on a food with little energy by spending little. Good with slow, compounding returns; weak spot is pride in doing it the hard way when an easier source exists.",
+    "conflict": "Our reading: avoids open fights, makes itself not worth the trouble. Under real threat the colony gets loud together (adults fly noisily to divert a hawk, per Wikipedia) and the young drop into the water. Says the blunt Rooster thing, then leaves the branch."
+  },
+  "careers": [
+    {
+      "path": "Waste, compost, fermentation, brewing, soil science, biotech",
+      "why": "Our reading: the gut that turns leaves into a living is the whole animal; tied to the crop-fermentation fact."
+    },
+    {
+      "path": "Systems redesign, research, policy, long-cycle engineering",
+      "why": "Our reading: Aquarian first-principles thinking with the Rooster's punctuality; good where the payoff takes years."
+    },
+    {
+      "path": "Wetland, river or mangrove conservation; field biology; eco-guiding",
+      "why": "Our reading: the bird's whole life is one stretch of riverbank in the Amazon and Orinoco basins."
+    },
+    {
+      "path": "Editing, auditing, quality control, plain-spoken critique",
+      "why": "Our reading: the Rooster's frankness and Metal's cut; repels flattery the way the smell repels casual interest."
+    },
+    {
+      "path": "Family, community or cooperative roles (co-ops, mutual aid, family business)",
+      "why": "Our reading: helper young who stay to raise the next brood (ADW)."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Three-wattled Bellbird",
+      "slug": "three-wattled-bellbird",
+      "reason": "Gemini x Ox. Ox is in the Rooster trine (Ox, Snake, Rooster) and Gemini shares Aquarius's Air. Double harmony."
+    },
+    {
+      "name": "Swan",
+      "slug": "swan",
+      "reason": "Libra x Ox. Ox trine plus the third Air sign."
+    },
+    {
+      "name": "Paradise Tanager",
+      "slug": "paradise-tanager",
+      "reason": "Libra x Snake. Snake trine plus Air."
+    },
+    {
+      "name": "Superb Lyrebird",
+      "slug": "superb-lyrebird",
+      "reason": "Gemini x Dragon. Dragon is the Rooster's secret friend (six harmonies) and Gemini is Air."
+    },
+    {
+      "name": "Sand Cat",
+      "slug": "sand-cat",
+      "reason": "Sagittarius x Snake. Snake trine; Sagittarius Fire is the classic complement to Air."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Golden Pheasant",
+      "slug": "golden-pheasant",
+      "reason": "Leo x Rabbit. Rooster-Rabbit is the traditional six-clash pair and Leo is Aquarius's opposite sign; both systems pull apart."
+    },
+    {
+      "name": "Axolotl",
+      "slug": "axolotl",
+      "reason": "Aquarius x Rabbit. Same Western sign, but the Rooster-Rabbit clash underneath: easy to talk to, hard to live with."
+    }
+  ],
+  "candidate_lines": [
+    "Leaves nobody else can stomach are your daily bread, and you have stopped apologizing for how long you take to digest them.",
+    "As a chick you dropped into brown river water to escape, swam, and climbed back up with the claws on your wings. Part of you still plans the drop before the hawk arrives.",
+    "The Rooster in you keeps the hour and says the plain thing out loud. The Aquarian in you says it from a branch no other bird would pick.",
+    "Older birds stayed at the nest to feed you, and you repay it without being asked, perched over the same slow river year after year.",
+    "You carry the smell of the work going on inside you, and the casual ones keep their distance. Whoever stays on your stretch of riverbank has earned it.",
+    "Your wing claws stop mattering once you can fly. The hard part, for a Rooster who likes things on time, is waiting until you actually can."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 麝雉 (rail__han and serial-han)",
+      "verdict": "OK",
+      "note": "麝雉 shè zhì is the Chinese name of the hoatzin (zh.wikipedia title). Add pinyin shè zhì; the page shows none.",
+      "source_ids": [
+        "h14"
+      ]
+    },
+    {
+      "fact": "Meet intro: 'lives only on the banks of slow Amazonian rivers ... a colony of the same species within calling distance'",
+      "verdict": "WRONG (range)",
+      "note": "Range is swamps, riparian forest and mangroves of the Amazon AND Orinoco basins (Wikipedia; zh.wikipedia). 'Small colonies' is supported; 'within calling distance' is unsourced. Rewrite: 'lives in the swamps and river forests of the Amazon and Orinoco basins, nesting in small colonies'.",
+      "source_ids": [
+        "h6",
+        "h14"
+      ]
+    },
+    {
+      "fact": "Chicks hatch with functional claws on the first and second wing digits, used to grip branches and climb back after falling into water; claws reabsorbed during development and absent in adults",
+      "verdict": "OK (soften 'reabsorbed')",
+      "note": "First and second fingers, lost in adulthood (ADW; Alaska Science Forum). Chicks jump into water and swim back (Abourachid 2019). 'Reabsorbed' is not in any source I opened; say 'lost by adulthood'. Note Wikipedia: wing claws are not unique to hoatzins (chickens have them); what is unusual is using them to climb.",
+      "source_ids": [
+        "h7",
+        "h9",
+        "h10",
+        "h6"
+      ]
+    },
+    {
+      "fact": "Only bird known to use foregut fermentation; bacterial colonies in an enlarged crop break down cellulose",
+      "verdict": "OK",
+      "note": "'The only known example of an animal with crop fermentation in the class Aves' (Godoy-Vitorino 2008, citing Grajal 1989). Wikipedia adds it is the smallest known animal with foregut fermentation.",
+      "source_ids": [
+        "h8",
+        "h13",
+        "h6"
+      ]
+    },
+    {
+      "fact": "Fermentation produces volatile fatty acids that give a manure-like odor; local name 'stinkbird'; most predators avoid it; rarely hunted",
+      "verdict": "WRONG (predators); UNVERIFIABLE (cause, hunting)",
+      "note": "Smell like fresh cow manure and the name stinkbird are OK (Alaska Science Forum; Wikipedia). Volatile fatty acids are present at rumen-like levels (Godoy-Vitorino 2008), but no source I opened ties the smell to VFAs; Wikipedia credits aromatic compounds in the leaves plus fermentation. 'Most predators avoid it' is WRONG: ADW lists monkeys, hawks and snakes as predators and Wikipedia describes great black hawks attacking colonies. Hunting by people: sources conflict (ADW 'frequently hunted'; Wikipedia 'only in times of dire need', eggs collected in Brazil). Cut the predator and hunting claims.",
+      "source_ids": [
+        "h9",
+        "h6",
+        "h8",
+        "h7"
+      ]
+    },
+    {
+      "fact": "Cooperative breeders: non-breeding helpers assist the breeding pair in feeding and guarding chicks",
+      "verdict": "OK",
+      "note": "ADW: young stay in the parents' territory for a couple of years and act as helpers with the new brood.",
+      "source_ids": [
+        "h7"
+      ]
+    },
+    {
+      "fact": "Lineage diverged from all other modern birds about 64 million years ago; no close living relatives",
+      "verdict": "OK (contested date)",
+      "note": "Wikipedia cites a 2015 genetic study for 64 million years and a 2024 study suggesting about 70 million years (Late Cretaceous). Placement is unresolved (cranes and plovers in 2014; sister to Phaethoquornithes in 2024). Say 'an ancient lineage with no close living relatives; one 2015 study puts the split at about 64 million years ago'.",
+      "source_ids": [
+        "h6"
+      ]
+    },
+    {
+      "fact": "Leaves make up nearly 100% of the diet",
+      "verdict": "WRONG",
+      "note": "A Venezuelan study found 82% leaves, 10% flowers, 8% fruit (Wikipedia). Rewrite to 'about four fifths leaves'. The low-energy-food point is OK (Alaska Science Forum).",
+      "source_ids": [
+        "h6",
+        "h9"
+      ]
+    },
+    {
+      "fact": "Proverb 物競天擇，適者生存 (wù jìng tiān zé, shì zhě shēng cún) tied to the Rooster",
+      "verdict": "OK as labeled, but say what it is",
+      "note": "The page honestly labels the pairing as its own. The phrase is a modern one from the Chinese reception of Darwin through Yan Fu's Tianyan lun 天演論 (1896-1898), not an old proverb; Yan Fu's rendering of natural selection as 天擇 tiān zé is confirmed. The exact first use of the eight-character phrase was not verified. Its link to the Rooster is ours only.",
+      "source_ids": [
+        "h16"
+      ]
+    },
+    {
+      "fact": "Lunar New Year note: an Aquarius born in late January or early February can belong to the Monkey",
+      "verdict": "OK",
+      "note": "Applies to Aquarius (dates about 20 January to 18 February); the year before the Rooster is the Monkey.",
+      "source_ids": [
+        "h1",
+        "h3"
+      ]
+    },
+    {
+      "fact": "Purple Star section",
+      "verdict": "OK",
+      "note": "No star is assigned from the sign pair; the page says a chart is cast from lunar birth date and hour. No overreach found.",
+      "source_ids": []
+    },
+    {
+      "fact": "Element section: 'Air ... sits nearest to Metal in quality'",
+      "verdict": "UNVERIFIABLE (our framework)",
+      "note": "Wu Xing has no Air phase; the Air-to-Metal mapping is Zodi Animal's own and should be labeled 'our reading'.",
+      "source_ids": [
+        "h17"
+      ]
+    }
+  ]
+}

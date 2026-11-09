@@ -1,0 +1,321 @@
+{
+  "slug": "frigatebird",
+  "name": "Frigatebird",
+  "sign": "Sagittarius",
+  "year": "Dragon",
+  "element": "Earth (fixed element of the Dragon); Sagittarius adds Fire, mutable",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Sagittarius (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sagittarius_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Sagittarius zodiac sign, Cafe Astrology",
+      "url": "https://cafeastrology.com/zodiacsagittarius.html"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (Dragon row: yin/yang, element, branch, trine, six harmonies, clash), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Dragon, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/dragon.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Frigatebird, Wikipedia (morphology, flight, diet, breeding, human use; cites Orta 2020 HBW, Lewis 1994 We, the Navigators, Weimerskirch et al. 2016)",
+      "url": "https://en.wikipedia.org/wiki/Frigatebird"
+    },
+    {
+      "id": "s6",
+      "title": "Flag of Kiribati, Wikipedia (cites Whitney Smith, Encyclopaedia Britannica)",
+      "url": "https://en.wikipedia.org/wiki/Flag_of_Kiribati"
+    },
+    {
+      "id": "s7",
+      "title": "Pukui and Elbert, Hawaiian Dictionary (1986), entry 'iwa, via Wehewehe Wikiwiki",
+      "url": "https://wehe.hilo.hawaii.edu/?q=iwa&l"
+    },
+    {
+      "id": "s8",
+      "title": "I Ching (Book of Changes), hexagram 1 Qian, Chinese text and Legge translation, Chinese Text Project",
+      "url": "https://ctext.org/book-of-changes/qian"
+    },
+    {
+      "id": "s9",
+      "title": "Frigate birds: never touching down, CNRS press release on Weimerskirch et al. 2016, Science 353:74-78",
+      "url": "https://www.cnrs.fr/en/press/frigate-birds-never-touching-down"
+    },
+    {
+      "id": "s10",
+      "title": "Fregata magnificens account, Animal Diversity Web (University of Michigan)",
+      "url": "https://animaldiversity.org/accounts/Fregata_magnificens"
+    },
+    {
+      "id": "s11",
+      "title": "Genus Fregata 軍艦鳥屬, Taiwan Biodiversity Network",
+      "url": "https://www.tbn.org.tw/taxa/526038c5-a3ff-4528-98d3-74fee8ed2cbc"
+    },
+    {
+      "id": "s12",
+      "title": "小軍艦鳥 (great frigatebird) entry, Jyut Dictionary",
+      "url": "https://jyutdictionary.com/dictionary/entry/%E5%B0%8F%E8%BB%8D%E8%89%A6%E9%B3%A5"
+    },
+    {
+      "id": "s13",
+      "title": "Szekely and Osorno 2004, Sexual conflict and parental care in magnificent frigatebirds, Animal Behaviour 68:337-342 (record, University of Bath)",
+      "url": "https://researchportal.bath.ac.uk/en/publications/sexual-conflict-and-parental-care-in-magnificent-frigatebirds-ful/"
+    },
+    {
+      "id": "s14",
+      "title": "Nelson, Seabirds: Their Biology and Ecology, Hamlyn, London (bookseller record giving 1980)",
+      "url": "https://www.biblio.com/book/seabirds-biology-ecology-nelson-bryan/d/1082043570"
+    },
+    {
+      "id": "s15",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Optimistic, honest and direct, curious, visionary, adaptable, forgiving. Shadow: strong need to escape, weak follow-through, blind faith, quick temper, blunt or preachy, disorganized. Archer imagery: said never to fail in hitting the mark; the sign is linked to seers and prophecy.",
+    "planet": "Jupiter",
+    "element": "Fire (with Aries and Leo)",
+    "modality": "Mutable; opposite sign Gemini",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Brave, persistent, clever, enthusiastic and self-assured; welcomes challenge and risk. Earth Dragons read as ambitious and hard-working. Shadow named by the source: can easily get into conflicts and should think before deciding.",
+    "yinyang": "Yang",
+    "element": "Earth (fixed); earthly branch 辰 chén",
+    "trine": "Rat, Dragon, Monkey",
+    "secret_friend": "Rooster",
+    "clash": "Dog",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Gilbertese (Kiribati)",
+      "meaning": "The frigatebird sits on the flag of Kiribati, from Arthur Grimble's Gilbert and Ellice Islands badge (arms granted 1937). It is read as command over the sea, power, poise and freedom; to Gilbertese people it signals sovereignty and kingly birth. A strong, sourced echo of the page's 'Aerial Sovereign' archetype.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Micronesia and Polynesia (Gilbert Islands, Tuvalu)",
+      "meaning": "Tame frigatebirds were kept as messengers: a bird carried away from its home island could be trusted to fly back to it, so it relayed messages (Lewis, We, the Navigators, 1994, cited in s5). Genetic work also shows frigatebirds keep fidelity to the site where they hatched. Range across an ocean, one fixed home.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "Hawaiian",
+      "meaning": "ʻIwa, the frigatebird, is also the word for a thief, 'so called because it steals food by forcing other birds to disgorge', and, figuratively, a handsome person who draws the eye. Saying: Kīkaha ka ʻiwa, he lā makani, glossed in the dictionary as the ʻiwa poised aloft on a windy day, said of someone who draws every eye (Pukui and Elbert 1986).",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "culture": "Chinese (Dragon half), I Ching hexagram 1 Qian",
+      "meaning": "Fifth line 飛龍在天 (fēi lóng zài tiān), 'the dragon on the wing in the sky', the line of the great man. Top line 亢龍有悔 (kàng lóng yǒu huǐ), 'the dragon exceeding the proper limits; there will be occasion for repentance'. Gift and shadow of a sky-born dragon in two lines of primary text. Note: this is Dragon symbolism, true for all 12 Dragon animals; use it here only because the bird literally lives in the sky.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "culture": "Rapa Nui (Easter Island)",
+      "meaning": "The great frigatebird was venerated by the Rapa Nui; carvings of the birdman Tangata manu show its hooked beak and throat pouch (Kjellgren et al., Splendid Isolation, 2001, and Fischer, Rongorongo, both cited in s5). Keep to the carvings; s5 does not support any further claim about the birdman ceremony.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "European mariners",
+      "meaning": "French sailors named it la frégate, the fast warship, for its speed (du Tertre 1667); English sailors in the Caribbean called it the man-of-war bird (Dampier 1697). Maritime folklore held it a good omen because it meant land was near.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Blog and tattoo-site claims that the frigatebird 'spirit animal' means freedom, patience, or that the ʻiwa tattoo is a guardian of sailors. No traditional source located beyond s6 and s7.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: mutable Fire (Sagittarius, the far-shooting archer) meets yang Earth (the Dragon). Fire wants range, the next horizon; Earth wants a throne. The frigatebird has both: it rides cloud updrafts for weeks over open ocean and still keeps to the island it hatched on. Fire feeds Earth in the generating cycle, so the restlessness here builds something rather than burning out.",
+    "gifts": "Our reading: reads conditions before others feel them (the bird climbs under cumulus and glides down from cloud base); presence that commands without effort; the archer's aim, a single clean strike from height; loyalty to one home ground across a wide life.",
+    "shadow": "Our reading: 亢龍有悔. The dragon that climbs past its limit. Height becomes a way to avoid touching anything that could soak the feathers. Pride in never needing help; taking from others' effort when the honest work was available (the real bird pirates only a small share of its food, so the theft is a habit, not a need). Sagittarian bluntness plus Dragon certainty can turn into lecturing from altitude.",
+    "love": "Our reading: easier to admire than to reach at first. Courts in full display, all colour and certainty, then needs a partner who does not try to bring them down to the water. Once chosen, the home island is chosen. Sagittarius fears a cage; the Dragon fears being ordinary. Both are soothed by a partner who brings a horizon, not a fence.",
+    "money": "Our reading: big swings, high altitude. Good at reading the wind of a market and riding it; bad at routine budgets. The ʻiwa shadow: income from someone else's catch (commissions, brokering) comes easily and can replace building a skill of one's own.",
+    "conflict": "Our reading: goes up before engaging, sees the whole field, then strikes once and fast. Can wound with Sagittarian candour delivered from Dragon height. Repair comes when it lands: shows up in person, at ground level."
+  },
+  "careers": [
+    {
+      "path": "Aviation, meteorology, sailing, long-haul logistics",
+      "why": "Our reading: a life built on reading invisible air; the bird's flight is cloud-reading (s9)."
+    },
+    {
+      "path": "Founder, expedition leader, head of a field operation far from base",
+      "why": "Our reading: Dragon command plus Sagittarian range; the Kiribati sovereignty symbol (s6)."
+    },
+    {
+      "path": "Brokerage, trading, deal-making, talent agency",
+      "why": "Our reading: the ʻiwa takes the catch in flight; a gift for timing and interception, with the shadow named above."
+    },
+    {
+      "path": "Foreign correspondent, documentary filmmaker, travel writer",
+      "why": "Our reading: the messenger bird that always returns home with news (s5)."
+    },
+    {
+      "path": "Performer or public speaker",
+      "why": "Our reading: the red pouch display and the Hawaiian 'handsome one' who draws every eye (s7)."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Sandgrouse",
+      "slug": "sandgrouse",
+      "reason": "Sagittarius x Rat. Same sign, and the Rat sits in the Dragon trine. Two long-range Fire birds that both fly far for what matters and come back."
+    },
+    {
+      "name": "Kea",
+      "slug": "kea",
+      "reason": "Gemini x Monkey. Monkey is in the Dragon trine; Gemini Air feeds Sagittarius Fire, and they are the classic opposite pair on the Western wheel."
+    },
+    {
+      "name": "Regal Jumping Spider",
+      "slug": "regal-jumping-spider",
+      "reason": "Leo x Monkey. Dragon trine, and Leo shares Sagittarius's Fire element."
+    },
+    {
+      "name": "Sunset Moth",
+      "slug": "sunset-moth",
+      "reason": "Leo x Rooster. Rooster is the Dragon's secret friend (six harmonies); Leo is Fire. Dragon Earth also generates Rooster Metal."
+    },
+    {
+      "name": "Satin Bowerbird",
+      "slug": "satin-bowerbird",
+      "reason": "Libra x Rooster. Secret-friend pair, and Libra Air feeds Fire. Two display birds who understand a courtship show."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "African Grey Parrot",
+      "slug": "african-grey-parrot",
+      "reason": "Gemini x Dog. Dragon and Dog are a six-clash pair, and Gemini is Sagittarius's opposite sign. Both systems pull here: strong attraction, constant friction."
+    },
+    {
+      "name": "Caracara",
+      "slug": "caracara",
+      "reason": "Sagittarius x Dog. Same sign, but the Dragon-Dog clash. Also two pirates of other birds' food in one nest."
+    }
+  ],
+  "candidate_lines": [
+    "Two months on the wing over the Indian Ocean, and the frigatebird still keeps faith with the island it hatched on. Your range runs wide, and the map in your chest has one marked spot.",
+    "Your feathers were never made for the sea you hunt over. So you take from the surface and climb again, and few watching understand how much rides on staying dry.",
+    "Hawaiians use one word for the ʻiwa, the thief and the beauty. Both follow you: the charm gets you close, and your timing takes the prize.",
+    "The I Ching warns of the dragon that climbs past its limit, 亢龍有悔 (kàng lóng yǒu huǐ). Your hardest skill is the cloud base: gliding down before the climb turns to ice.",
+    "Gilbertese elders saw kingly birth in this bird's outline. People feel that height in you before you speak, and a few keep their distance because of it.",
+    "In love you circle a long time on warm air before you settle. When you finally come down, it is on the island you would have chosen from the start."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 軍艦鳥 (rail__han and serial-han).",
+      "verdict": "OK",
+      "note": "軍艦鳥 jūnjiàn niǎo, 'warship bird', is the standard Chinese name; Taiwan Biodiversity Network lists genus Fregata as 軍艦鳥屬, and 小軍艦鳥 xiǎo jūnjiàn niǎo is the great frigatebird. The page shows the hanzi with no pinyin in the rail; add jūnjiàn niǎo.",
+      "source_ids": [
+        "s11",
+        "s12"
+      ]
+    },
+    {
+      "fact": "Highest wingspan-to-body-weight ratio of any bird; up to 2.3 m wingspan on a body as little as 1.5 kg; Weimerskirch et al. 2016 tracked them riding thermals for weeks without flapping.",
+      "verdict": "WRONG (partly)",
+      "note": "Wingspan up to 2.3 m is OK, but the record is the largest wing AREA to body mass ratio (s5), not wingspan ratio. Magnificent frigatebird mass is 1.36 to 1.8 kg (s10), so 'as little as 1.5 kg' is muddled; smaller species weigh far less. Weimerskirch et al. found birds minimise wingbeats, climbing under cumulus clouds and gliding down; juveniles stayed aloft over two months (s9). 'Without flapping' for weeks overstates it.",
+      "source_ids": [
+        "s5",
+        "s9",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Feathers not waterproof; if it lands on water it cannot take off and will drown; documented across all five species.",
+      "verdict": "OK (soften)",
+      "note": "Five species is right. Frigatebirds do not settle on the sea; the preen gland makes little oil so plumage would soak, and they cannot swim or take off easily from water (s5). 'Will drown' as an absolute is stronger than the source; say 'cannot easily take off again'.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "fact": "Kleptoparasitism is a primary feeding strategy, not an emergency behaviour, documented by Osorno (1999) in Animal Behaviour.",
+      "verdict": "WRONG",
+      "note": "Wikipedia (citing HBW): kleptoparasitism 'is not thought to play a significant part of the diet of any species'; great frigatebirds robbing masked boobies got on average about 5% of their food this way, at most 40% (s5). The citation is also broken: the page's own reference list gives Osorno 1999 as 'Offspring desertion in the magnificent frigatebird' in Journal of Avian Biology, a paper about parental desertion, not piracy, and not in Animal Behaviour. The Osorno paper in Animal Behaviour is Szekely and Osorno 2004, also about desertion (s13). I could not open the 1999 paper itself.",
+      "source_ids": [
+        "s5",
+        "s13"
+      ]
+    },
+    {
+      "fact": "Males inflate a bright red gular pouch for hours, bills skyward, vibrating wings; Nelson (1975), Seabirds: Their Biology and Ecology.",
+      "verdict": "OK display / WRONG citation / UNVERIFIABLE duration",
+      "note": "Display description matches s5 and s10. 'For hours' has no figure in either source; the pouch deflates only slowly (s5). Nelson's Seabirds: Their Biology and Ecology was published by Hamlyn in 1980, not 1975 (s14).",
+      "source_ids": [
+        "s5",
+        "s10",
+        "s14"
+      ]
+    },
+    {
+      "fact": "GPS tracking by Weimerskirch et al. 2016 showed thermal columns rising from the ocean surface navigated with millimetre-level precision, for hours without flapping, across thousands of kilometres.",
+      "verdict": "WRONG",
+      "note": "No source says 'millimetre-level precision'; GPS cannot resolve that and the CNRS summary makes no precision claim. The birds climb in updrafts under cumulus clouds (to cloud base at 600 to 700 m, sometimes inside clouds to 3,000 to 4,000 m) and glide down; they follow the edge of the doldrums. Thousands of kilometres is OK. Rewrite to cloud-riding.",
+      "source_ids": [
+        "s9",
+        "s5"
+      ]
+    },
+    {
+      "fact": "Return to the same colonial nesting sites annually, sometimes the same nest tree; males return to the same display site each season.",
+      "verdict": "UNVERIFIABLE (partly WRONG risk)",
+      "note": "s5 supports natal site fidelity from genetic evidence. Annual return to the same nest tree and same male display site is not in any source I could open; ADW notes they rarely keep the same mate, and females breed about every other year (s10), so 'annually' is wrong for females. Cut the nest-tree and display-site clauses.",
+      "source_ids": [
+        "s5",
+        "s10"
+      ]
+    },
+    {
+      "fact": "References list: Weimerskirch 2016 Science 353(6294) 74-78.",
+      "verdict": "OK",
+      "note": "Title and journal match the CNRS release (s9).",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "fact": "Purple Star / Zi Wei Dou Shu claims.",
+      "verdict": "OK",
+      "note": "The page says a ZWDS chart is cast from lunar birth date and hour and assigns no star from the sign pair. No 'Purple Star already suspects' block found.",
+      "source_ids": []
+    },
+    {
+      "fact": "Rooster is the Dragon's secret friend; Earth feeds Metal.",
+      "verdict": "OK",
+      "note": "Six-harmony pair and generating cycle both correct (s3). No January/February lunar note appears, correctly, for a Sagittarius.",
+      "source_ids": [
+        "s3"
+      ]
+    }
+  ]
+}

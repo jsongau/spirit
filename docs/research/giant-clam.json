@@ -1,0 +1,337 @@
+{
+  "slug": "giant-clam",
+  "name": "Giant Clam",
+  "sign": "Taurus",
+  "year": "Ox",
+  "element": "Earth (from the Ox, yin); Taurus adds Earth, fixed: a doubled Earth crossing",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Taurus (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Taurus_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Chinese zodiac (Ox row, compatibility table), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s3",
+      "title": "Year of the Ox, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/ox.htm"
+    },
+    {
+      "id": "s4",
+      "title": "Tridacna gigas, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tridacna_gigas"
+    },
+    {
+      "id": "s5",
+      "title": "Giant clam, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Giant_clam"
+    },
+    {
+      "id": "s6",
+      "title": "Tridacna gigas, Animal Diversity Web",
+      "url": "https://animaldiversity.org/accounts/Tridacna_gigas/"
+    },
+    {
+      "id": "s7",
+      "title": "Yonge 1981, Functional morphology and evolution in the Tridacnidae, Records of the Australian Museum 33(17)",
+      "url": "https://journals.australian.museum/yonge-1981-rec-aust-mus-3317-735777/"
+    },
+    {
+      "id": "s8",
+      "title": "Sayco, Cabaitan and Kurihara 2023, Bleaching reduces reproduction in the giant clam Tridacna gigas, Marine Ecology Progress Series 706:47-56",
+      "url": "https://int-res.com/abstracts/meps/v706/p47-56"
+    },
+    {
+      "id": "s9",
+      "title": "Li et al. 2022, Study on the Individual Coloring Mechanism of Iridescent Cells in the Mantle of the Boring Giant Clam, Tridacna crocea, Frontiers in Marine Science",
+      "url": "https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2022.883678/full"
+    },
+    {
+      "id": "s10",
+      "title": "砗磲亚科 Tridacninae, Chinese Wikipedia (name origin 車渠, Buddhist sacred object)",
+      "url": "https://zh.wikipedia.org/wiki/%E7%A1%A8%E7%A3%B2"
+    },
+    {
+      "id": "s11",
+      "title": "Amitabha Sutra 佛說阿彌陀經, Kumārajīva translation (Buddhist eLibrary PDF)",
+      "url": "https://mail.buddhistelibrary.org/zh/albums/central/ch/Dhamma/AmitabhaSutra.pdf"
+    },
+    {
+      "id": "s12",
+      "title": "Jisho dictionary entry 硨磲 (giant clam shell, one of the seven treasures)",
+      "url": "https://jisho.org/word/%E7%A1%A8%E7%A3%B2"
+    },
+    {
+      "id": "s13",
+      "title": "Church of Saint-Sulpice, Paris, Wikipedia (giant clam holy water fonts)",
+      "url": "https://en.wikipedia.org/wiki/Church_of_Saint-Sulpice,_Paris"
+    },
+    {
+      "id": "s14",
+      "title": "Adze-head of Tridacna clam shell, Caroline Islands, Horniman Museum object 4.129",
+      "url": "https://www.horniman.ac.uk/object/4.129"
+    },
+    {
+      "id": "s15",
+      "title": "Adze blade of Tridacna shell, Palau, Penn Museum object 2013-18-40",
+      "url": "https://collections.penn.museum/collections/object/463637"
+    },
+    {
+      "id": "s16",
+      "title": "Dao De Jing ch. 41, Chinese Text Project, Legge translation",
+      "url": "https://ctext.org/dao-de-jing/ens"
+    },
+    {
+      "id": "s17",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Grounded, steadfast, sensual and patient; stabilizes and continues what Aries starts; associated with growth and full bloom. Shadow: obstinate, slow to change, possessive.",
+    "planet": "Venus (the Moon is exalted in Taurus)",
+    "element": "Earth (with Virgo and Capricorn)",
+    "modality": "Fixed; opposite sign Scorpio",
+    "source_ids": [
+      "s1"
+    ]
+  },
+  "chinese": {
+    "temperament": "Honest, diligent, dependable, patient; plans carefully and follows through; loyal. Shadow: stubborn, reserved, poor at saying what it feels, overworks.",
+    "yinyang": "Yin",
+    "element": "Earth (fixed); earthly branch 丑 chǒu",
+    "trine": "Ox, Snake, Rooster",
+    "secret_friend": "Rat",
+    "clash": "Goat (Wikipedia also lists Horse as the harm pair)",
+    "lucky": null,
+    "source_ids": [
+      "s2",
+      "s3"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Chinese Buddhist",
+      "meaning": "硨磲 chēqú, giant clam shell, is one of the seven treasures. In Kumārajīva's Amitabha Sutra the pavilions of the Pure Land are adorned 'with gold, silver, lapis, crystal, 硨磲 chēqú, red pearls and agate' (亦以金銀琉璃玻璃硨磲赤珠瑪瑙而嚴飾之). Japanese dictionaries gloss 硨磲 as 'giant clam shell (one of the seven treasures)'. Chinese Wikipedia calls it a rare organic gem, white as jade, and a Buddhist sacred object.",
+      "source_ids": [
+        "s11",
+        "s12",
+        "s10"
+      ]
+    },
+    {
+      "culture": "Chinese naming (Han dynasty)",
+      "meaning": "The name dates to the Han: the shell's radiating ridges looked like cart ruts, so it was called 車渠 chēqú, 'cart channel'; the stone radical was added later because the shell is as hard as stone, giving 硨磲.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "culture": "France (Catholic)",
+      "meaning": "At Saint-Sulpice in Paris the two halves of one Tridacna gigas shell, a gift from the Venetian Republic to King Francis I, serve as holy water fonts on rock bases sculpted by Jean-Baptiste Pigalle.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "culture": "Micronesia (Caroline Islands, Palau)",
+      "meaning": "On coral islands with little stone, people cut adze blades from the thick hinge of the giant clam shell and ground them for canoe and woodwork. The clam's shell was the islands' stone.",
+      "source_ids": [
+        "s14",
+        "s15"
+      ]
+    },
+    {
+      "culture": "Polynesian and Maori tales; modern Western 'killer clam'",
+      "meaning": "Folk tales cast the clam as aggressive (a Polynesian tale of a monkey's hand bitten off; a Maori story of an attack on a canoe), and versions of the U.S. Navy Diving Manual told divers how to cut free. The clam closes too slowly to trap a person and no authentic drowning case exists.",
+      "source_ids": [
+        "s5",
+        "s4",
+        "s6"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Philippine 'taklobo' legends and 'giant clam spirit animal' meanings on totem sites. Not located in a source I could open.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: Earth on Earth. Taurus wants the one good place; the Ox wants the long, steady work. The Giant Clam chooses once, then turns sunlight into body for a century. Adult Tridacna gigas are not glued down at all: they lose their byssal threads and stay put by sheer weight (s7). That is this crossing: nothing holds you there but what you have grown.",
+    "gifts": "Our reading: self-sufficiency, patience measured in decades, a quiet storehouse that keeps the people nearby fed, an outer reputation that guards a soft interior.",
+    "shadow": "Our reading: staying in water that has turned too warm. The clam cannot swim away; under heat it expels its algae and goes pale (s8). Ox stubbornness plus fixed Earth can confuse endurance with wisdom.",
+    "love": "Our reading: Venus-ruled and slow. Shelters a partner inside its own life the way the clam houses its algae in its mantle (s4, s6): gives room and steady warmth, takes back very little. Needs someone patient enough to see the color under the size.",
+    "money": "Our reading: the Ox plans and the Taurus keeps. A grower, not a trader: compound interest, land, owned tools. The risk is never moving money that has stopped growing.",
+    "conflict": "Our reading: closes slowly and stays closed. Rarely strikes; the rumor of danger does more work than any action. Can sulk in the shell long after the shadow has passed."
+  },
+  "careers": [
+    {
+      "path": "Farming, aquaculture, orchard or vineyard ownership",
+      "why": "Our reading: a life that grows its own food from light; Ox labor and Taurus land."
+    },
+    {
+      "path": "Long-horizon finance: trusts, endowments, pensions",
+      "why": "Our reading: decades-scale patience and a storehouse instinct."
+    },
+    {
+      "path": "Architecture, masonry, structural engineering",
+      "why": "Our reading: doubled Earth; things built to stay put by their own weight."
+    },
+    {
+      "path": "Heritage conservation, museum and archive work",
+      "why": "Our reading: tending what lasts a century, like a shell that becomes a church font."
+    },
+    {
+      "path": "Jewelry, stone and shell craft",
+      "why": "Our reading: 硨磲 chēqú is itself counted a gem (s10, s11); Venus rules beautiful things."
+    },
+    {
+      "path": "Reef science or marine protected-area management",
+      "why": "Our reading: the habitat and its fragility under heat."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Glass Frog",
+      "slug": "glass-frog",
+      "reason": "Pisces x Snake. Snake is in the Ox trine; Pisces Water complements Taurus Earth. Reciprocal with the Glass Frog dossier, and 玻璃 bōli and 硨磲 chēqú sit side by side in the Amitabha Sutra's treasure list (our note)."
+    },
+    {
+      "name": "Weaverbird",
+      "slug": "weaverbird",
+      "reason": "Virgo x Rooster. Rooster completes the Ox trine; Virgo shares Taurus's Earth. Double harmony."
+    },
+    {
+      "name": "Andean Condor",
+      "slug": "andean-condor",
+      "reason": "Capricorn x Rooster. Ox trine; Capricorn is the third Earth sign."
+    },
+    {
+      "name": "Leafcutter Ant",
+      "slug": "leafcutter-ant",
+      "reason": "Virgo x Rat. Rat is the Ox's secret friend (six harmonies); Virgo is Earth. Both farm their own food (our note: the ant farms fungus, the clam farms algae)."
+    },
+    {
+      "name": "Pangolin",
+      "slug": "pangolin",
+      "reason": "Taurus x Snake. Same sign and the Snake is in the Ox trine."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Snow Petrel",
+      "slug": "snow-petrel",
+      "reason": "Taurus x Goat. Same sign but Ox and Goat are a six-clash pair: easy on the surface, opposed underneath."
+    },
+    {
+      "name": "Snow Leopard",
+      "slug": "snow-leopard",
+      "reason": "Scorpio x Goat. Ox-Goat clash, and Scorpio is Taurus's opposite sign: both systems pull apart."
+    }
+  ],
+  "candidate_lines": [
+    "You chose your stretch of reef young, and every year since you have made more out of the same sunlight than anything else living on it.",
+    "A shadow crosses the hundreds of small eyes along your edge and the shell is already easing shut before you have words for why.",
+    "Nothing glues you to your place. You simply grew too heavy with what you built to be carried off, and the Ox in you calls that a good day's work.",
+    "You keep the ones you love the way the clam keeps its algae: housed in your own body, warmed by your steadiness, and what they make in the light comes back to feed you both.",
+    "When the water warms past bearing you do not leave. You go pale, live on what you stored, and wait to learn whether the reef comes back.",
+    "The tale going round the lagoon says you could take a diver's hand. The truth is that you close so slowly no one has ever been caught, and you let the story stand guard."
+  ],
+  "fact_audit": [
+    {
+      "fact": "A Giant Clam drifts as a larva for one to two weeks, then settles, cements itself in place and fuses to that exact spot for the rest of a life that can run past a century.",
+      "verdict": "WRONG (attachment) + OK (timing, lifespan)",
+      "note": "Giant clams do not cement or fuse. Small clams attach with byssal threads; in Tridacna gigas the byssal apparatus atrophies with size and adults lie unattached, held 'solely by their great weight' (Yonge 1981, s7). Juveniles also change location frequently in their first weeks (s4). Settlement at about one week is supported (s4). 'More than 100 years' average wild lifespan is stated by Wikipedia (s4), weakly sourced; keep as 'can live a century'.",
+      "source_ids": [
+        "s7",
+        "s4"
+      ]
+    },
+    {
+      "fact": "Algae in the mantle supply up to 90 percent of the clam's nutrition, letting it grow to hundreds of kilograms largely on sunlight.",
+      "verdict": "OK",
+      "note": "ADW: symbionts can provide 90% of carbon metabolized in some individuals and the clam dies in the dark (s6). Wikipedia gives a typical 65 to 70% (s4, s5); 'up to 90' is accurate as a ceiling. Weight over 200 kg; heaviest record 333 kg dead (s4).",
+      "source_ids": [
+        "s6",
+        "s4",
+        "s5"
+      ]
+    },
+    {
+      "fact": "Iridocytes scatter light in a color pattern unique to each individual clam, no two alike, like a fingerprint.",
+      "verdict": "UNVERIFIABLE (and a species/source mismatch)",
+      "note": "No source I opened says each clam's pattern is unique. The Frontiers work on iridocytes concerns Tridacna crocea and describes color strains that keep their characteristics, not individual fingerprints (s9). ADW describes the T. gigas mantle as golden brown, yellow or green with iridescent spots, larger ones often solid blue or purple (s6). Cut 'no two alike'.",
+      "source_ids": [
+        "s9",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Hundreds of simple pinhole eyes line the mantle rim, sensitive only to light and shadow; the clam can retract and draw its valves shut within seconds.",
+      "verdict": "OK (with correction)",
+      "note": "Several hundred to several thousand pinhole eyespots, each with 100 or more photoreceptors; they let the clam partly close when light dims or something moves (s4). 'Only light and shadow' understates them: receptors cover three light ranges, including ultraviolet (s4). Adults cannot fully shut (see below), so 'partly close' is more accurate than 'shut'.",
+      "source_ids": [
+        "s4"
+      ]
+    },
+    {
+      "fact": "The 'killer clam' myth appears in a U.S. Navy dive manual; closing takes several seconds, too slow to trap a limb; no authenticated human death; a fully grown clam cannot close its shell all the way.",
+      "verdict": "OK",
+      "note": "Navy manual versions and slow adductor contraction (s4); no authentic cases of people trapped and drowned (s6); adult T. gigas are the only giant clams unable to close completely (s4, s6).",
+      "source_ids": [
+        "s4",
+        "s6"
+      ]
+    },
+    {
+      "fact": "In overly warm water the clam expels its algae, the same bleaching seen in corals, and with no way to move it survives on stored reserves until the water recovers.",
+      "verdict": "OK (last clause UNVERIFIABLE)",
+      "note": "Rising seawater temperatures cause T. gigas to expel Symbiodiniaceae and bleaching lowers reproduction in survivors (Sayco et al. 2023, s8). Adults are sessile (s4). 'Survives on stored reserves' was not found in a source; soften to 'waits, weakened'.",
+      "source_ids": [
+        "s8",
+        "s4"
+      ]
+    },
+    {
+      "fact": "Purple Star reading: Wu Qu 武曲 Wǔ Qū (General) and Tian Fu 天府 Tiān Fǔ (Treasury); for a Taurus born in an Ox year Wu Qu 'tends to sit close to the Life palace 命宮 mìnggōng'.",
+      "verdict": "WRONG (no traditional basis)",
+      "note": "Zi Wei Dou Shu places stars from the lunar birth date and hour; the Western sun sign plays no part. The page itself says the pairing is 'Zodi Animal's own reading', yet states the star 'tends to sit close to the Life palace' for this crossing, which is a false claim about the tradition. Cut or relabel plainly as metaphor. Also 命宮 appears without pinyin on the page.",
+      "source_ids": []
+    },
+    {
+      "fact": "Proverb: 大器晚成 dà qì wǎn chéng, 'great vessel forms late', tied to the Year of the Ox as our own pairing.",
+      "verdict": "OK",
+      "note": "Real; from Dao De Jing ch. 41, Legge: 'A vessel great, it is the slowest made' (s16). The pairing is honestly labeled.",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "fact": "Header hanzi (rail__han and serial-han): 蛤 gé.",
+      "verdict": "WRONG (too generic)",
+      "note": "蛤 gé means clam or bivalve in general (and reads há in 蛤蟆 háma, toad). The giant clam is 硨磲 chēqú (simplified 砗磲); Tridacna gigas is 大硨磲 dà chēqú (s10, s11). Recommend 硨磲 chēqú on the rail and keepsake.",
+      "source_ids": [
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Page sources list: IUCN Red List Tridacna gigas; ADW Tridacna gigas; Frontiers in Marine Science, Iridocytes Mediate Photonic Cooperation Between Giant Clams and Their Photosynthetic Symbionts.",
+      "verdict": "OK (but does not support the 'unique pattern' claim)",
+      "note": "The ADW account is real and supports several facts (s6). The Frontiers title concerns light channeling by iridocytes, which Wikipedia describes as modelled (s4); I could not open that paper and nothing I found supports per-individual uniqueness.",
+      "source_ids": [
+        "s6",
+        "s4"
+      ]
+    }
+  ],
+  "other_issues": [
+    "No January/February lunar New Year note on this Taurus page (good).",
+    "Strong honest bridge for the rewrite: adults are held in place only by their own weight (Yonge 1981, s7). It replaces the wrong 'cements and fuses' claim with a better metaphor.",
+    "Could not open: French Wikipedia Tridacna (blocked), so the French common name 'bénitier' and its holy-water etymology are unsourced here; use only the Saint-Sulpice fact."
+  ]
+}

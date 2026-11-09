@@ -1,0 +1,307 @@
+{
+  "slug": "golden-brushtail-possum",
+  "name": "Golden Brushtail Possum",
+  "sign": "Leo",
+  "year": "Goat",
+  "element": "Earth (from the Goat); Leo adds Fire, fixed. Fire feeds Earth in the five-phase cycle, so the Leo half supplies the Goat half.",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Leo (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Leo_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Leo traits and personality, TODAY",
+      "url": "https://www.today.com/life/astrology/leo-traits-personality-rcna39027"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (Goat row, compatibility grid), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Goat, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/goat.htm"
+    },
+    {
+      "id": "s5",
+      "title": "The timeless and living art of possum skin cloaks, Museums Victoria",
+      "url": "https://museumsvictoria.com.au/article/the-timeless-and-living-art-of-possum-skin-cloaks/"
+    },
+    {
+      "id": "s6",
+      "title": "Common brushtail possum, Wikipedia (chest gland both sexes, four colour forms, vocalisations, NZ introduction and pest status, Indigenous food and WA names)",
+      "url": "https://en.wikipedia.org/wiki/Common_brushtail_possum"
+    },
+    {
+      "id": "s7",
+      "title": "What gives golden possums their colour?, Australian Geographic (2017)",
+      "url": "https://www.australiangeographic.com.au/biodiversity/2017/08/what-gives-golden-possums-their-colour/"
+    },
+    {
+      "id": "s8",
+      "title": "Trichosurus vulpecula, Animal Diversity Web (cited on live page)",
+      "url": "https://animaldiversity.org/accounts/Trichosurus_vulpecula/"
+    },
+    {
+      "id": "s9",
+      "title": "Bond, Veale, Alexander, Hore 2024, Coat colour in marsupials: genetic variants at the ASIP locus determine grey and black fur of the brushtail possum, Royal Society Open Science 11(7):240806 (cited on live page)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11288674/"
+    },
+    {
+      "id": "s10",
+      "title": "帚尾袋貂屬 Trichosurus, Chinese Wikipedia (species names; family 袋貂科)",
+      "url": "https://zh.wikipedia.org/wiki/%E5%B8%9A%E5%B0%BE%E8%A2%8B%E8%B2%82%E5%B1%9E"
+    },
+    {
+      "id": "s11",
+      "title": "貂 diāo, Zdic dictionary (definition: marten genus)",
+      "url": "https://www.zdic.net/hant/貂"
+    },
+    {
+      "id": "s12",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Generous, loyal, honest, warm, big-hearted, bold, funny and theatrical; a leader who champions others and pushes for fair treatment. Fixed signs hew close to their foundation, such as family and values. Shadow: craves attention, dramatic, bossy, vain, jealous, competitive, touchy, hot-tempered.",
+    "planet": "The Sun",
+    "element": "Fire (with Aries and Sagittarius)",
+    "modality": "Fixed; opposite sign Aquarius (classic opposition)",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Gentle, mild-mannered, shy, stable, sympathetic and amicable, with a strong sense of kindness and justice; delicate thoughts, strong creativity and perseverance; works hard for the people it loves. Shadow: quietly insists on its own opinions under a gentle surface, private, few close friends; likes groups but does not want to be the center of attention.",
+    "yinyang": "Yin",
+    "element": "Earth (fixed); earthly branch 未 wèi",
+    "trine": "Goat, Rabbit, Pig",
+    "secret_friend": "Horse (Six Harmonies, liù hé 六合)",
+    "clash": "Ox (Six Clashes, liù chōng 六沖)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "First Peoples of south-eastern Australia (Gunditjmara and Yorta Yorta cloaks held at Melbourne Museum)",
+      "meaning": "Possum-skin cloaks were made for a person from infancy, with pelts added as they grew; designs cut into the skin side with a bone awl or shell and coloured with ochre recorded the wearer's Country, family and totem, and people were traditionally buried in their cloaks. Curator Kimberley Moulton calls the markings \"iconography of Country, of totem and of place.\" The 1872 Lake Condah cloak was made by six Gunditjmara men, one of them Vicki Couzens's great-grandfather; cloak making has since been revived. The brushtail is the animal that carried a person's identity and home on their back. Tell this as theirs, attributed, never as a \"you\" reading.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "Aboriginal Australia, food and names",
+      "meaning": "The brushtail is a traditional food for some Indigenous groups. Western Australian names include nunguin (Kimberley), walambari (Pilbara), wayurta (desert) and bilda (Nullarbor). Use only as attributed names; no meanings are given in the source.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Aotearoa New Zealand (introduced animal)",
+      "meaning": "Brought to New Zealand in the 1850s to start a fur trade, the brushtail became a major agricultural and conservation pest, peaking at an estimated 60 to 70 million in the 1980s and now about 30 million. A real shadow story for this crossing: an animal so good at making any place home that it took over one. Te Ara could not be reached for a Māori view, so do not claim one.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "The golden form itself",
+      "meaning": "Golden is one of four colour forms of the common brushtail (silver-grey, brown, black, gold). Australian Geographic says golden brushtails are rare in the wild, found mostly in small pockets around Tasmania, coloured by a mutation that lowers melanin, and easy for predators to spot, which helps explain the rarity. Gold that costs safety is the honest Leo bridge.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "culture": "Chinese naming",
+      "meaning": "Chinese places possums in 袋貂科 dàidiāo kē, literally the \"pouched marten\" family; the common brushtail is 帚尾袋貂 zhǒuwěi dàidiāo, broom-tailed pouched marten. There is no traditional Chinese lore for this Australian animal; the Goat half carries the Chinese material (the page's 亡羊補牢 wáng yáng bǔ láo, mend the pen after losing the sheep).",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "\"Playing possum\" and opossum trickster lore belong to the American Virginia opossum, a different animal (order Didelphimorphia), not the Australian brushtail. Generic \"possum spirit animal\" meanings from totem blogs. No source for any golden-possum folklore.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Fire (Leo, ruled by the Sun) meets yin Earth (Goat). Fire feeds Earth, so the Leo confidence goes into building a home rather than a stage. The Goat is gentle on top and immovable underneath (s4); the Leo hews close to its foundation (s2). The animal gives the shape: a solitary night forager whose range overlaps its neighbors' without much fighting, and who goes back to a hollow by day.",
+    "gifts": "Our reading: makes any place livable, from a forest hollow to a roof cavity; keeps order with very little aggression (s8); creative and persevering (s4); warm to the few let in; loyal to people and to places.",
+    "shadow": "Our reading: the Goat insists on its own opinion under a soft surface (s4) and the Leo is proud and touchy (s2), so this crossing can treat one address, one routine, one way of doing things as non-negotiable. The New Zealand story is the other shadow: adapting so well that it crowds out what was there before (s6). Gold also has a cost: the golden form is rare partly because it is easy to see (s7).",
+    "love": "Our reading: Sun-ruled and yin. Generous and showy in public, private at home; few close friends (s4). Lets a partner into its territory long before it lets them into the hollow. Needs someone who respects the den and does not push the door.",
+    "money": "Our reading: spends on the home and on beautiful things (Goat taste, Leo flair). Good at making do with what any place offers. Risk: paying too much to stay put, or turning down a better move out of attachment to the current one.",
+    "conflict": "Our reading: avoids a fight with an equal by stepping aside, the way co-dominant possums of the same sex avoid each other (s8). When pressed it warns once, low and guttural. Holds its view quietly long after the argument ends (s4)."
+  },
+  "careers": [
+    {
+      "path": "Interior designer, stylist, set dresser",
+      "why": "Interior design is a listed Goat career (s4); the animal that turns a roof space into a den."
+    },
+    {
+      "path": "Actor, musician, performer",
+      "why": "Actor and musician are listed Goat careers (s4); Leo is theatrical (s2). Night is when this animal comes out."
+    },
+    {
+      "path": "Property, housing, hotel or guesthouse owner",
+      "why": "Our reading: territory and shelter as a living; makes any building homely."
+    },
+    {
+      "path": "Editor, illustrator, florist",
+      "why": "Listed Goat careers (s4); quiet, exacting work done in one's own space."
+    },
+    {
+      "path": "Night-shift or late-hours professional (hospital, broadcast, hospitality)",
+      "why": "Our reading: the nocturnal forager who knows its circuit after dark."
+    },
+    {
+      "path": "Wildlife carer, park ranger, urban ecologist",
+      "why": "Our reading: Goat kindness and justice (s4) with a feel for animals that live between bush and suburb."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Golden Snub-nosed Monkey",
+      "slug": "golden-snub-nosed-monkey",
+      "reason": "Leo x Pig. Pig is in the Goat trine (Goat, Rabbit, Pig) and shares the Leo sun. The one-hollow keeper and the band-holder: same gold, opposite social habits."
+    },
+    {
+      "name": "Golden Pheasant",
+      "slug": "golden-pheasant",
+      "reason": "Leo x Rabbit. Rabbit trine and the same sun sign; two golden animals that keep their brilliance for chosen moments."
+    },
+    {
+      "name": "Paradise Riflebird",
+      "slug": "paradise-riflebird",
+      "reason": "Leo x Horse. Horse is the Goat's Six Harmonies partner, and the same sun sign. Horse Fire also feeds Goat Earth."
+    },
+    {
+      "name": "Albatross",
+      "slug": "albatross",
+      "reason": "Sagittarius x Horse. Six Harmonies partner and a fellow Fire sign; the wide ranger who always returns to one nest site."
+    },
+    {
+      "name": "Fennec Fox",
+      "slug": "fennec-fox",
+      "reason": "Gemini x Rabbit. Rabbit trine, and Gemini Air feeds Leo Fire; another night animal with a den."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Vulturine Guineafowl",
+      "slug": "vulturine-guineafowl",
+      "reason": "Aquarius x Ox. Goat and Ox are one of the Six Clashes, and Aquarius is Leo's opposite sign. Friction in both systems."
+    },
+    {
+      "name": "Spotted Hyena",
+      "slug": "spotted-hyena",
+      "reason": "Leo x Ox. Same sun sign, but the Goat and Ox clash: both Earth year animals, both territorial, and neither yields its ground."
+    }
+  ],
+  "candidate_lines": [
+    "Your night circuit can cover a dozen trees, and before dawn you are back in the exact hollow you left, as if the dark were a loop you drew yourself.",
+    "Your ground overlaps your neighbors' and you almost never fight about it. You just arrange to be on a different branch when they pass.",
+    "Gold is rare in your kind, and it makes you easy to spot after dark. You learned early that being seen has a price, and you pay it anyway.",
+    "Your mark sits on the branch at chest height, in a scent only the ones who live here can read.",
+    "A roof cavity in the suburbs will do, or a hollow log in wet forest. What matters is that you chose it, and that it stays chosen.",
+    "You warn once, low in the throat, and the second warning almost never has to come."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 貂 (rail__han and serial-han), pinyin diāo.",
+      "verdict": "WRONG",
+      "note": "貂 diāo means marten or sable (genus Martes), a different animal. The possum family is 袋貂 dàidiāo, pouched marten; the common brushtail possum is 帚尾袋貂 zhǒuwěi dàidiāo (same in traditional and simplified). If one glyph is required, 袋貂 dàidiāo is the shortest correct form.",
+      "source_ids": [
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Both sexes carry a chest scent gland and rub it on surfaces; in breeding males the secretion often stains the fur a visible reddish-brown.",
+      "verdict": "OK (narrow)",
+      "note": "Wikipedia: \"The chest of both sexes has a scent gland that emits a reddish secretion which stains the fur around it.\" ADW: used to mark territories. The staining is not limited to breeding males in either source; drop \"in breeding males\".",
+      "source_ids": [
+        "s6",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Nocturnal and largely solitary; rests by day in a hollow log, tree cavity or, in built-up areas, a roof space.",
+      "verdict": "OK",
+      "note": "ADW: nocturnal, typically solitary, rests in hollow logs or trees, in urban areas \"in peoples' attics\".",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "fact": "Home ranges overlap with several neighbors; clear dominance hierarchies form; direct aggression is rare; co-dominants of the same sex avoid each other.",
+      "verdict": "OK",
+      "note": "ADW, nearly word for word. \"Several neighbors\" is a paraphrase of \"many individuals' home ranges overlap\".",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "fact": "Deep, guttural vocalizations signal territory location and, in the breeding season, attract mates (trait titled \"The hiss that ends the argument\").",
+      "verdict": "OK",
+      "note": "ADW, close to verbatim. Wikipedia lists hisses among its calls (clicks, grunts, hisses, alarm chatters, guttural coughs, screeching), so the title is fair.",
+      "source_ids": [
+        "s8",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Widest distribution of any Australian mammal; wet eucalypt forest to mangrove to suburban ceilings; eats garden fruit and eucalyptus leaves too toxic for most other mammals.",
+      "verdict": "UNVERIFIABLE (soften)",
+      "note": "ADW does say \"the widest distribution of any Australian mammal\", but Wikipedia says only \"one of the most widespread marsupials of Australia\", and introduced mammals and the dingo make the superlative shaky. Say \"one of Australia's most widespread marsupials\". Mangrove not found in either source. ADW mentions \"highly toxic flowers and leaves\" in the diet; \"too toxic for most other mammals\" is not in any source opened. Eucalyptus leaves are a major food (Wikipedia).",
+      "source_ids": [
+        "s8",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Grey and black base coats trace to variation at a single gene; rarer individuals in isolated populations carry an additional pale gold variant, a colour morph within the same species.",
+      "verdict": "WRONG (second half)",
+      "note": "First half OK: Bond et al. 2024 show an ASIP missense variant (p.Arg115Cys) makes homozygous possums black. Second half misreads the cited paper: it does not identify a gold variant at that gene and says red fur is \"largely independent of the variation at ASIP\". Australian Geographic attributes the golden form to a melanin-lowering mutation, found mostly in small pockets around Tasmania; no gene named. \"Same species, not a separate one\" is correct. Fix: \"Golden possums are a rare colour form of the same species, found mostly in small pockets of Tasmania.\"",
+      "source_ids": [
+        "s9",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Intro: gray or black through most of its range and, in a few rare populations, gold; dens in a hollow tree or a stranger's roof.",
+      "verdict": "OK (minor)",
+      "note": "Four colour forms exist (silver-grey, brown, black, gold), so \"gray or black\" leaves out brown. Black predominates in Tasmania (Bond et al.).",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s9"
+      ]
+    },
+    {
+      "fact": "Element shown as Earth.",
+      "verdict": "OK",
+      "note": "Goat fixed element is Earth.",
+      "source_ids": [
+        "s3"
+      ]
+    }
+  ],
+  "other_issues": [
+    "No Purple Star star-assignment block, no January/February note and no \"Primal Zodiac\" string found on this page.",
+    "Proverb 亡羊補牢 (wáng yáng bǔ láo) is a well-known chengyu; not re-sourced this round.",
+    "The page name \"Golden Brushtail Possum\" is a colour form of Trichosurus vulpecula, not a species; the page says so, which is correct. Keep that honesty in the rewrite."
+  ],
+  "could_not_reach": [
+    "Te Ara possum entry (fetch failed), so no Māori perspective is recorded.",
+    "Chinese Wikipedia species page 帚尾袋貂 failed; the name comes from the genus page.",
+    "No source for the cause of the golden morph at gene level."
+  ]
+}
