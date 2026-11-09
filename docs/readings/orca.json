@@ -1,0 +1,103 @@
+{
+  "title": "What the Orca remembers",
+  "is_this_you": {
+    "pressure": "When the water goes thin, the pod watches which way you face. You remember where the fish were the last bad year.",
+    "love": "You range a whole coast and still come back to the same few voices.",
+    "cost": "Grief rides on your back for weeks. You let it sink only when you are ready."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In Chinese the orca is 虎鯨 (hǔjīng), the tiger whale [s19]. You were born in a Horse year, and the Tiger stands in the Horse's own trine of Tiger, Horse and Dog [s3]. Read that way, your animal's name carries your strongest ally inside it. You came into the water already wearing a tiger's name."
+  },
+  "howto": "Three parts. Swim them in any order.",
+  "tabs": [
+    {
+      "id": "pod",
+      "label": "The pod",
+      "intro": "Deep Water underneath, and a running Fire on top.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Scorpio is fixed Water, passionate and fiercely loyal once trust is given, able to focus deeply on one thing [s1] [s2]. The Horse is yang Fire, energetic and independent, hungry for new ground [s4] [s6]. The Horse in you wants to swim the whole coast tonight, while the Scorpio has already picked the one inlet worth the trip. You live in the pull between them."
+        },
+        {
+          "k": "Family voices",
+          "text": "Fish-eating resident orcas live in families led by the eldest female, and sons and daughters stay with their mothers for life [s7]. Each population keeps its own dialect of calls [s7]. Your people have a dialect too. Strangers hear the sound and miss the meaning, and you like it that way."
+        },
+        {
+          "k": "Carrying",
+          "text": "In 2018 an orca named Tahlequah carried her dead calf for 17 days and about 1,000 miles [s12]. You do not set a loss down on anyone else's schedule. Your pod has learned to slow down and stay close."
+        }
+      ]
+    },
+    {
+      "id": "elders",
+      "label": "What the elders know",
+      "intro": "The oldest one remembers where the salmon went.",
+      "rows": [
+        {
+          "k": "The grandmother",
+          "text": "Orca females stop breeding and can live for decades after their last calf [s8] [s9]. A 2019 study found that a grandmother's presence raised her grandcalves' survival, most of all in years when salmon were scarce [s8]. In lean years the older females often lead the group to food [s9]. You keep the map of hard years for everyone."
+        },
+        {
+          "k": "Taught on the beach",
+          "text": "At the Crozet Islands, young orcas first practise stranding on the beach at about four or five, and still need an adult female's help at five or six [s13]. You teach like that, slowly and over years. You stay close enough to pull your student back off the sand when the wave turns."
+        },
+        {
+          "k": "At work",
+          "text": "Expedition work, coaching, search and rescue and family firms all need someone who remembers the last bad season."
+        }
+      ]
+    },
+    {
+      "id": "wake",
+      "label": "Who swims in your wake",
+      "intro": "Three who swim in your line. One whose current runs against yours.",
+      "matches": true,
+      "love_lead": "In love you choose a pod and stay in it. The passion runs under a calm surface, and you still need room to range. Whoever loves you takes both the long silences and the sudden long swims. The old pairings name three."
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "moon-bear",
+        "chips": [
+          "Tiger trine",
+          "Water like you"
+        ],
+        "why": "The <b>Moon Bear</b> (Cancer, Tiger year) carries the Tiger of your trine, and Cancer is Water like you [s3] [s1]."
+      },
+      {
+        "slug": "beluga",
+        "chips": [
+          "Dog trine",
+          "Water like you"
+        ],
+        "why": "The <b>Beluga</b> (Pisces, Dog year) closes your trine of Tiger, Horse and Dog, and Pisces makes the third Water sign [s3] [s1]."
+      },
+      {
+        "slug": "snow-leopard",
+        "chips": [
+          "Same sign",
+          "Secret friend"
+        ],
+        "why": "The <b>Snow Leopard</b> (Scorpio, Goat year) shares your sign, and the Goat is the Horse's six-harmony partner [s3] [s1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "aardwolf",
+        "chips": [
+          "Rat clash",
+          "Opposite sign"
+        ],
+        "why": "The hard one is the <b>Aardwolf</b> (Taurus, Rat year): the Rat clashes with the Horse, and Taurus sits opposite Scorpio [s3] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "The god of the offshore sea",
+    "text": "The Ainu of Hokkaido tell of Repun Kamuy, the god of the offshore sea, who is sometimes shown as an orca [s16]. In one story he harpoons a whale and throws it ashore as a gift for a pious village, so that famine stays away [s16]."
+  },
+  "closing": "Throw the big catch up onto the shore. Your people will eat well this winter, and they will know whose gift it was."
+}

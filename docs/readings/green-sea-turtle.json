@@ -1,0 +1,99 @@
+{
+  "title": "What the Green Sea Turtle remembers",
+  "is_this_you": {
+    "pressure": "When it gets hard, you swim out past calling distance and settle it alone. You come back with the matter closed.",
+    "love": "You can go a season without a word and still expect the bond to be where you left it.",
+    "cost": "Some years you stay out too long, and the shore you come back to has moved on."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In Chinese, people who study or work abroad and then come home are called 海歸 (hǎiguī), \"returned from overseas\" [t12]. The word sounds the same as 海龜 (hǎiguī), sea turtle, and the pun has stuck [t12] [t13]. You were born a Cancer in a Horse year, and the language already had a name for you. You leave for the open sea. Then you come back."
+  },
+  "howto": "Three parts. Swim off between them if you need to.",
+  "tabs": [
+    {
+      "id": "home",
+      "label": "The way home",
+      "intro": "Water that calls you back, Fire that sends you out.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Cancer is cardinal Water, ruled by the Moon, tender toward memory and protective of its people [t1] [t2]. The Horse is yang Fire, lively and honest, fond of adventure and bad at taking orders [t3] [t4]. In you the most homeward sign meets the most restless animal. You take them in order. First the open current, then a straight line back."
+        },
+        {
+          "k": "The beach you hatched on",
+          "text": "Green turtles often return to nest on the beach where they hatched, sometimes decades on [t8]. Studies of loggerheads suggest sea turtles find that beach by its magnetic signature, learned as hatchlings [t7]. You carry an address like that. Years go by, and you could still walk to it in the dark."
+        }
+      ]
+    },
+    {
+      "id": "lost",
+      "label": "The lost years",
+      "intro": "Gone from sight. Never gone for good.",
+      "rows": [
+        {
+          "k": "Out past the shelf",
+          "text": "Young green turtles spend about three to five years in an oceanic stage, out where they are hard to follow [t5]. Scientists call that stretch the lost years [t5] [t6]. Your old friends know your version. A long silence, then you surface beside them as if no time had passed."
+        },
+        {
+          "k": "Two diets, one turtle",
+          "text": "In open water the young turtles eat animals [t5]. Adults live almost only on seagrass, seaweed and algae [t8]. You have been two different people in one life. The ones at home still know you on sight."
+        },
+        {
+          "k": "At work",
+          "text": "Field science and foreign postings suit you. Each gives you distance and one base to guard."
+        }
+      ]
+    },
+    {
+      "id": "back",
+      "label": "Who you come back to",
+      "intro": "Three shores that keep your shape. One that pulls the tide wrong.",
+      "love_lead": "In love you need someone who reads a long silence as trust. You come back all the way, and you hope to find things as you left them. Three old Chinese pairings hold the shore for you.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "leopard-seal",
+        "chips": [
+          "Same trine",
+          "Water like you"
+        ],
+        "why": "The <b>Leopard Seal</b> (Pisces, Tiger year) shares your fire trine of Tiger, Horse and Dog, and Pisces is Water like Cancer [t3] [t1]."
+      },
+      {
+        "slug": "glasswing-butterfly",
+        "chips": [
+          "Secret friend",
+          "Same sign"
+        ],
+        "why": "The <b>Glasswing Butterfly</b> (Cancer, Goat year) is your secret friend, since the Goat is the Horse's hidden ally, and it shares your Moon-ruled sign [t3] [t1]."
+      },
+      {
+        "slug": "tasmanian-devil",
+        "chips": [
+          "Same trine",
+          "Scorpio's Water"
+        ],
+        "why": "The <b>Tasmanian Devil</b> (Scorpio, Dog year) closes the Tiger, Horse and Dog trine from the third Water sign [t3] [t1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "marbled-polecat",
+        "chips": [
+          "Year clash",
+          "Opposite sign"
+        ],
+        "why": "The tide runs wrong with the <b>Marbled Polecat</b>: the Rat clashes with the Horse, and Capricorn sits opposite Cancer [t3] [t1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "Urashima Tarō",
+    "text": "In the Japanese tale, a fisherman named Urashima Tarō saves a sea turtle, and it carries him down to the Dragon Palace under the sea [t16]. When he goes home, his parents and his village are gone, because his days below were three hundred years above [t16]. He opens the box he was told to keep shut and grows old at once [t16]."
+  },
+  "closing": "Swim as far as you need to. The sand you hatched on still knows your weight."
+}

@@ -1,0 +1,55 @@
+{
+  "title": "What the Three-wattled Bellbird sings",
+  "is_this_you": {
+    "pressure": "You say one thing, loud and close, and expect the other side to leave the branch.",
+    "love": "You call from far off first. Up close, you want proof that lasts for years.",
+    "cost": "Everyone hears you. Hardly anyone knows where you are perched."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In rural Honduras one name for this bird is pájaro cafetero, the coffee bird [s6]. In one village its call tells farmers the coffee is ripening [s6]. In another the same call says the allspice is ready, so there it is the allspice bird [s6]. You were born a Gemini in an Ox year. Somebody down the slope has been keeping time by your voice for years."
+  },
+  "howto": "Three parts. Call one up, and listen for the answer.",
+  "tabs": [
+    {
+      "id": "call",
+      "label": "Your call",
+      "intro": "Air that speaks fast, Earth that keeps its word.",
+      "rows": [
+        {"k": "Your temperament", "text": "Gemini is mutable Air, ruled by Mercury, the messenger [s1]. It is quick, sociable and two-sided [s1] [s2]. The Ox is yin Earth, patient and hardworking, and not good at talking with others [s3] [s4]. So the voice is fast and the promise under it is slow. You say it in a second. You stand behind it for years."},
+        {"k": "How far it carries", "text": "The male's call ranks among the loudest of any bird and carries up to half a mile through cloud forest [s12] [s13] [s16]. Most people learn a bellbird is near only by its call [s12]. People hear about you before they see you. Some never see you at all."},
+        {"k": "Up close", "text": "When a rival lands on his perch, the resident male drives him toward the edge, and the intruder is often knocked off the branch [s12]. You keep arguments short. One clear sentence, said at close range. Save it for rivals. It lands too hard on friends."}
+      ]
+    },
+    {
+      "id": "song",
+      "label": "The song that changes",
+      "intro": "Learned by ear, and never quite finished.",
+      "rows": [
+        {"k": "Six years of practice", "text": "Bellbirds learn their song by ear [s9] [s10]. Young males spend about six years in subadult plumage working on it [s10]. You practised for years where nobody was listening. You would not sing it out until it could cross the valley."},
+        {"k": "The drift", "text": "Donald Kroodsma has followed bellbird dialects since the 1970s [s9]. In one, a whistle slid from about 5,500 Hz to about 3,700 Hz by 2001 [s9]. He says the birds are relearning their songs probably all the time [s9]. Everyone thinks your piece is done. You are still revising it, a little lower each year."},
+        {"k": "Two dialects", "text": "Bellbirds at Monteverde are often bilingual, singing both the Monteverde and Talamanca dialects [s10] [s11]. Gemini has always been the sign of the twins [s1]. You keep a second way of speaking for whoever listens closely."},
+        {"k": "At work", "text": "Voice work, broadcasting and translation suit you. So does a craft with a long apprenticeship, such as building or tuning instruments. In Honduras one of this bird's names is bell tuner [s6]."}
+      ]
+    },
+    {
+      "id": "hears",
+      "label": "Who hears you",
+      "intro": "Three who answer. One who hears something else.",
+      "love_lead": "In love you call from a distance first, then want loyalty up close. You fall for whoever catches the softer dialect under the public call. The old pairings name three who answer.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "fork-tailed-drongo", "chips": ["Same trine", "Your own sign"], "why": "The <b>Fork-tailed Drongo</b> (Gemini, Rooster year) shares your trine of Ox, Snake and Rooster and was born under your sign [s3]."},
+      {"slug": "satin-bowerbird", "chips": ["Same trine", "Air like you"], "why": "The <b>Satin Bowerbird</b> (Libra, Rooster year) brings the Rooster of your trine, and Libra is Air like Gemini [s3] [s1]."},
+      {"slug": "meerkat", "chips": ["Secret friend", "Your own sign"], "why": "The <b>Meerkat</b> (Gemini, Rat year) is your secret friend, since the Rat is the Ox's hidden ally, and it shares your sign [s3]."}
+    ],
+    "hard": [
+      {"slug": "bar-headed-goose", "chips": ["Year clash", "Opposite sign"], "why": "The hard one is the <b>Bar-headed Goose</b> (Sagittarius, Goat year): the Goat clashes with the Ox, and Sagittarius sits opposite Gemini [s3] [s1]."}
+    ]
+  },
+  "story": {"k": "A corridor for one voice", "text": "In 1992 Costa Rica began the Bellbird Biological Corridor to protect this one species [s7]. It follows the bird's seasonal path, from cloud forest at Monteverde down to the mangroves of the Gulf of Nicoya [s7]. In 2021, for 200 years of independence, the country created the Bicentennial Pájaro Campana Biological Reserve, with this bird as its main conservation target [s8]. A whole landscape was drawn around one call."},
+  "closing": "Call once from the broken branch. Down the slope, someone is already calling back."
+}

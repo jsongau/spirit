@@ -1,0 +1,103 @@
+{
+  "title": "What the Beluga sings",
+  "is_this_you": {
+    "pressure": "You pick up the voices around you so fast that, under strain, your own goes missing. Someone has to ask for it back.",
+    "love": "You learn your person's language and save it for the hours when the two of you are alone.",
+    "cost": "The complaint stays inside the pod for a whole season. When it finally surfaces, the entire bay hears it."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In May 1984 a Navy diver in San Diego came up asking, \"Who told me to get out?\" [s10]. The voice belonged to NOC, a white whale who had started making speech-like sounds untrained [s10]. He did it only alone or near his handlers, never with the other whales, and stopped after about four years [s10]. You were born a Pisces in a Dog year. You know that story from the inside."
+  },
+  "howto": "Three parts. Listen to them in any order.",
+  "tabs": [
+    {
+      "id": "voice",
+      "label": "Your voice",
+      "intro": "Water that hears everything. Earth that picks the pod.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Pisces is mutable Water, the last sign, ruled by Jupiter and in modern astrology by Neptune [s1]. It feels deeply and takes the shape of whatever surrounds it [s1] [s2]. The Dog is yang Earth, loyal and quick to defend its own [s3] [s4]. So you hear every voice in the estuary and answer only a few."
+        },
+        {
+          "k": "The sea canary",
+          "text": "Sailors called the beluga the canary of the sea for its chirps, whistles and clicks [s8] [s9]. In one study a beluga copied human speech and computer sounds on cue [s13]. You do this with people. Ten minutes in, you are already using their words."
+        },
+        {
+          "k": "When it gets hard",
+          "text": "The Dog bottles up worry [s4]. Pisces can slip away from what hurts [s1]. Under strain you go silent, the way NOC did in the end. Then a line gets crossed for someone you love, and the Dog says the blunt thing. Say one plain sentence early, before the ice closes over."
+        }
+      ]
+    },
+    {
+      "id": "whitening",
+      "label": "The slow whitening",
+      "intro": "Dark at birth. White by about ten.",
+      "rows": [
+        {
+          "k": "Your colour came late",
+          "text": "A beluga calf is born dark grey, and it usually turns white by about eight to ten years [s8] [s9]. Your real shade took years to surface too. The ones who stayed watched it happen."
+        },
+        {
+          "k": "The long swim back",
+          "text": "Some belugas travel more than 1,500 miles, from the Bering Sea to the Mackenzie estuary [s9]. Distance does not loosen the Dog's loyalty. You come back from a long season to the same friends."
+        },
+        {
+          "k": "At work",
+          "text": "Interpreting, speech therapy and sound work suit an ear like yours. Advocacy suits the Dog's sense of justice [s4]. Watch for the day you only echo the client."
+        }
+      ]
+    },
+    {
+      "id": "singback",
+      "label": "Who sings back",
+      "intro": "Three voices that answer yours. One that drowns it out.",
+      "love_lead": "In love you learn the other person's sound first. You need someone who asks to hear yours. The old Chinese pairings name three who will sing back.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "orca",
+        "chips": [
+          "Same trine",
+          "Water like you"
+        ],
+        "why": "The <b>Orca</b> (Scorpio, Horse year) stands in your Tiger, Horse and Dog trine, and its Scorpio Water runs with your Pisces [s3] [s1]."
+      },
+      {
+        "slug": "moon-bear",
+        "chips": [
+          "Tiger trine",
+          "Cancer Water"
+        ],
+        "why": "The <b>Moon Bear</b> (Cancer, Tiger year) completes that trine, and Cancer makes the third Water sign [s3] [s1]."
+      },
+      {
+        "slug": "pallass-cat",
+        "chips": [
+          "Secret friend",
+          "Scorpio Water"
+        ],
+        "why": "The <b>Pallas's Cat</b> (Scorpio, Rabbit year) is your secret friend, since the Rabbit is the Dog's hidden ally, and Scorpio is Water too [s3] [s1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "archerfish",
+        "chips": [
+          "Dragon clash",
+          "Opposite sign"
+        ],
+        "why": "The hard one is the <b>Archerfish</b> (Virgo, Dragon year): the Dragon clashes with the Dog, and Virgo sits opposite Pisces [s3] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "The Inuvialuit name",
+    "text": "The Inuvialuit of the Mackenzie Delta tell of a young man who threw his hated stepmother into the sea, where she became a beluga [s6]. The sound of her complaining gave belugas their Inuvialuktun name, qilalukkat [s6]. The Canadian Museum of Nature told it in Qilalukkat!, an exhibition curated by Myrna Pokiak [s6]."
+  },
+  "closing": "Sing it in your own voice. Somewhere across the bay, someone has been learning the tune."
+}

@@ -1,0 +1,99 @@
+{
+  "title": "What the Snowy Owl counts",
+  "is_this_you": {
+    "pressure": "Trouble comes and you sit very still on one hummock, counting. You move once, when the count is right.",
+    "love": "In a thin year you keep your heart to yourself. In a good year you give so much at once that it looks reckless.",
+    "cost": "Some years you wait so long for the right count that the good season passes you by."
+  },
+  "opener": {
+    "moon": false,
+    "text": "About 1200 BC, the Shang queen and general Fu Hao was buried at Yinxu with a pair of bronze wine vessels shaped like owls [s5]. The owl was a major emblem of the Shang, and only under the Zhou did it turn into a bad omen [s5]. Those bronzes show owls in general, and your snowy one is never named. Still, your line is the bird a warrior queen chose to keep beside her in the ground."
+  },
+  "howto": "Three parts, laid out on white. Take them one at a time.",
+  "tabs": [
+    {
+      "id": "field",
+      "label": "The white field",
+      "intro": "Saturn's cold patience. A Monkey's quick eye.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Capricorn is cardinal Earth, ruled by Saturn [s1]. It is level-headed and patient, with a dry, deadpan humour [s1] [s2]. The Monkey is yang Metal, quick-witted and inventive [s3] [s4]. In you, Saturn's patience becomes the ground the Monkey's mind stands on. You can sit on one hummock for an hour and see three ways the lemming could run."
+        },
+        {
+          "k": "Daylight",
+          "text": "Unlike most owls, the snowy owl hunts by daylight [s11]. Through the endless Arctic summer it works in full light while its cousins sleep. You keep whatever hours the place asks for. Owls that keep only to the dark find you a little strange."
+        }
+      ]
+    },
+    {
+      "id": "boom",
+      "label": "The boom years",
+      "intro": "Lean years you wait. Rich years you commit.",
+      "rows": [
+        {
+          "k": "The count",
+          "text": "One snowy owl may eat more than 1,600 lemmings in a year [s11]. When lemmings are scarce it may skip breeding altogether [s11]. When they boom, a clutch of usually 3 to 11 eggs can reach 16 [s11]. You hold back through a thin season. Once the count is real, you lay everything down at once."
+        },
+        {
+          "k": "Why you leave",
+          "text": "Every four years or so, snowy owls move far south of the tundra [s11]. You move like that too. Then one winter you are gone, and you land on a frozen shore nobody expected you to find."
+        },
+        {
+          "k": "At work",
+          "text": "Work that runs on cycles fits you: risk analysis, commodities, field research in remote country, the night shift. Your trap is checking the count again after the season has already turned."
+        }
+      ]
+    },
+    {
+      "id": "watch",
+      "label": "Who keeps watch with you",
+      "intro": "Three who can share the tundra. One who wants the same ground.",
+      "matches": true,
+      "love_lead": "In love you assess first and settle late, and both your signs agree on that [s2] [s4]. You need someone who reads the waiting as care and laughs at the dry jokes. Once you commit, you feed the whole nest. The old pairings name three."
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "bearded-vulture",
+        "chips": [
+          "Same sign",
+          "Dragon trine"
+        ],
+        "why": "The <b>Bearded Vulture</b> (Capricorn, Dragon year) shares your Saturn sign, and the Dragon sits in your trine of Rat, Dragon and Monkey [s3] [s1]."
+      },
+      {
+        "slug": "pangolin",
+        "chips": [
+          "Secret friend",
+          "Earth like you"
+        ],
+        "why": "The <b>Pangolin</b> (Taurus, Snake year) is your secret friend, since the Snake is the Monkey's six-harmony partner, and Taurus is Earth like you [s3] [s1]."
+      },
+      {
+        "slug": "galapagos-tortoise",
+        "chips": [
+          "Dragon trine",
+          "Earth like you"
+        ],
+        "why": "The <b>Galápagos Tortoise</b> (Taurus, Dragon year) is trine kin through the Dragon, with Taurus Earth to match your own [s3] [s1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "moon-bear",
+        "chips": [
+          "Tiger clash",
+          "Opposite sign"
+        ],
+        "why": "The hard one is the <b>Moon Bear</b> (Cancer, Tiger year): the Tiger clashes with the Monkey, and Cancer sits opposite Capricorn [s3] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "The owl that stood for Canada",
+    "text": "In the 1960s at the Fort Chimo co-operative, now Kuujjuaq, the Inuit artist Jeannie Snowball sewed sealskin owls, by her granddaughter's account to honour an owl that once kept her family from starving [s8]. Her owl, Ookpik, stood for Canada at a 1963 trade show in Philadelphia, though the account never says which kind of owl it was [s8]."
+  },
+  "closing": "The snow has stopped. Nothing on the tundra moves, and you can wait as long as it takes."
+}

@@ -1,0 +1,103 @@
+{
+  "title": "What the Giant Manta Ray means",
+  "is_this_you": {
+    "pressure": "When voices rise, you swing wide and keep moving. Nobody sees you leave the fight. You simply stop being in it.",
+    "love": "You love at full wingspan, then hold still for the one person who gets to tend you.",
+    "cost": "Everyone watches you skim the surface. Few ask what you went down for, and you rarely say."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In Hawaiian the manta is hāhālua, and Roxanne Kapuaimohalaikalani Stewart of Kai Palaoa says the name can be read as \"two breaths\" [m10]. She places mantas in the second wā of the Kumulipo creation chant, among the deep divers who go where people cannot [m10]. You were born a Libra in a Dragon year. You take the second breath before you answer anyone, and you have always gone deeper than you show."
+  },
+  "howto": "Three parts, wide and slow. Start anywhere.",
+  "tabs": [
+    {
+      "id": "breaths",
+      "label": "Two breaths",
+      "intro": "Air that weighs, Earth that rules.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Libra is cardinal Air, ruled by Venus, warm on first meeting and set on fairness [m1] [m2]. The Dragon is yang Earth, brave and persistent, at ease with risk [m3] [m4]. In you the scales ride on a very big body. You can weigh every side and still take up the whole sea."
+        },
+        {
+          "k": "Never quite still",
+          "text": "A giant manta has to keep swimming so that water passes over its gills [m5]. You rest the same way. A slow glide calms you more than stopping does."
+        },
+        {
+          "k": "The cleaning station",
+          "text": "At a reef cleaning station it holds a near-stationary position for several minutes [m5]. That is the one stop you allow yourself. You choose the place with care and keep going back."
+        }
+      ]
+    },
+    {
+      "id": "deep",
+      "label": "The deep",
+      "intro": "People see the surface. What feeds you lives lower.",
+      "rows": [
+        {
+          "k": "Fed from below",
+          "text": "A 2016 study of mantas off Ecuador estimated that most of their diet comes from the mesopelagic zone, roughly 200 to 1,000 meters down [m6]. A co-author put the split at about 73 percent deep food to 27 percent surface [m7]. You run on depth the same way, and surface watchers guess you wrong."
+        },
+        {
+          "k": "The mirror question",
+          "text": "Its brain can weigh up to 200 grams, the largest of any fish [m5]. One small 2016 study suggested two captive mantas might recognize themselves in a mirror, and other researchers read the same behavior as ordinary social display [m8] [m9]. You care how you come across, and you are honest enough to doubt your own reflection."
+        },
+        {
+          "k": "At work",
+          "text": "Mediation and dive guiding both suit you. Each asks for a wide view and a calm way of moving people through deep water."
+        }
+      ]
+    },
+    {
+      "id": "glide",
+      "label": "Who glides with you",
+      "intro": "Three who share your current, and one who cuts across it.",
+      "love_lead": "In love you court with the whole future. Then you need one fixed place where you can stop and be looked after. Three old Chinese pairings give you that place.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "red-panda",
+        "chips": [
+          "Same trine",
+          "Same sign"
+        ],
+        "why": "The <b>Red Panda</b> (Libra, Rat year) completes your trine of Rat, Dragon and Monkey and shares your sign [m3] [m16]."
+      },
+      {
+        "slug": "raven",
+        "chips": [
+          "Same trine",
+          "Air like you"
+        ],
+        "why": "The <b>Raven</b> (Aquarius, Monkey year) joins your trine through the Monkey, and Aquarius is Air like Libra [m3] [m1]."
+      },
+      {
+        "slug": "sunset-moth",
+        "chips": [
+          "Secret friend",
+          "Fire for your Air"
+        ],
+        "why": "The <b>Sunset Moth</b> (Leo, Rooster year) is your secret friend, the Rooster being the Dragon's six-harmony partner, with Leo's Fire to warm your Air [m16]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "duetting-frog",
+        "chips": [
+          "Dog clash",
+          "Same sign"
+        ],
+        "why": "The one who cuts across you is the <b>Duetting Frog</b> (Libra, Dog year): your own sign on top, the Dragon and Dog clash underneath [m3] [m16]."
+      }
+    ]
+  },
+  "story": {
+    "k": "Its Chinese names",
+    "text": "Mandarin calls the manta 蝠鱝 (fúfèn), the bat ray [m13]. In Taiwan it is 鬼蝠魟 (guǐfúhóng), the ghost bat ray [m11]. Picture that wide shadow sliding under a fishing boat, and both names make sense. The ghost feeds on plankton and small prey, funnelled in by the fins on its head [m5]."
+  },
+  "closing": "Keep your glide wide and slow. Nothing that moves that gently has to fight for its water."
+}

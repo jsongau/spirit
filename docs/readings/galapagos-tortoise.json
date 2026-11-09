@@ -1,0 +1,55 @@
+{
+  "title": "What the Galápagos Tortoise outlasts",
+  "is_this_you": {
+    "pressure": "When it gets loud, you draw in and wait. You have outlasted worse than this, and you remember it.",
+    "love": "You love by being in the same place every morning. You trust anyone who notices.",
+    "cost": "You hold up other people's monuments so steadily that they forget anyone is underneath."
+  },
+  "opener": {
+    "moon": false,
+    "text": "The Book of Rites names four sacred creatures, 麟鳳龜龍 (lín fèng guī lóng): the lin, the feng, the tortoise and the dragon [s7]. It calls them the four numinous ones [s7]. The tortoise and the dragon sit side by side in that list. You were born a Taurus in a Dragon year. The old book put your two halves together long before you arrived. It took its time. So will you."
+  },
+  "howto": "Three parts. There is no hurry.",
+  "tabs": [
+    {
+      "id": "long",
+      "label": "The long view",
+      "intro": "Earth on Earth, and plenty of time.",
+      "rows": [
+        {"k": "Your temperament", "text": "Taurus is fixed Earth, ruled by Venus, the sign that stays with a goal and follows through [s1] [s2]. The Dragon is yang Earth, brave and willing to take risks [s3] [s4]. So you are Earth twice over. The Taurus in you wants one good hillside. The Dragon in you wants that hillside to mean something."},
+        {"k": "Late, then for good", "text": "A Galápagos tortoise reaches maturity at around 40 years in the wild [s5]. Wild tortoises are thought to live past 100 [s5]. Each morning it basks for an hour or two after dawn before it goes to feed [s5]. You start late and warm up slowly. Whatever you build after that has a century in it."},
+        {"k": "Rank without a race", "text": "Males settle rank by how high they can raise their necks [s5]. Nobody runs. Nobody bites first. You win the same way, by rising to your full height and waiting for the other one to understand."},
+        {"k": "When the shell closes", "text": "Taurus is stubborn, with a fierce temper once roused [s1] [s2]. Dragons can easily get into conflicts [s4]. So you pull in first and stand your ground completely after. Name the hurt before the shell shuts."}
+      ]
+    },
+    {
+      "id": "carry",
+      "label": "What you carry",
+      "intro": "Stored water, old paths, a heavy stone.",
+      "rows": [
+        {"k": "The stored year", "text": "A Galápagos tortoise can last up to a year without food or water [s5]. It drinks deeply and stores the water in its bladder [s5]. You get through dry stretches on what you put away when nobody was looking. When the rain returns, you hardly mention it."},
+        {"k": "The old paths", "text": "Big adults walk up to about 10 kilometres uphill as the dry season starts, then back down when the rains green the lowlands [s6]. They travel along paths their kind has used for generations [s5] [s6]. You keep to the old routes too. You time them by the weather, never the calendar."},
+        {"k": "At work", "text": "Land, property and conservation suit you. So do archives, heritage work and anything made of stone. The Dragon's career lists name engineer and architect [s4], and Taurus gives you the patience for buildings that take years."}
+      ]
+    },
+    {
+      "id": "walk",
+      "label": "Who walks with you",
+      "intro": "Three who keep your pace. One who wants to hurry you.",
+      "love_lead": "In love you show up in the same spot every morning and call that a promise. You need someone who can wait out a cool dawn beside you without asking what is wrong. The old pairings name three.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {"slug": "andean-condor", "chips": ["Secret friend", "Capricorn Earth"], "why": "The <b>Andean Condor</b> (Capricorn, Rooster year) is your secret friend, since the Rooster and the Dragon make a Six Harmonies pair, and Capricorn is the third Earth sign [s3] [s1]."},
+      {"slug": "aardwolf", "chips": ["Same trine", "Your own sign"], "why": "The <b>Aardwolf</b> (Taurus, Rat year) shares your trine of Rat, Dragon and Monkey and was born under your sign [s3]."},
+      {"slug": "new-caledonian-crow", "chips": ["Same trine", "Virgo Earth"], "why": "The <b>New Caledonian Crow</b> (Virgo, Monkey year) closes that trine, with Virgo's Earth beside yours [s3] [s1]."}
+    ],
+    "hard": [
+      {"slug": "tasmanian-devil", "chips": ["Year clash", "Opposite sign"], "why": "The hard one is the <b>Tasmanian Devil</b> (Scorpio, Dog year): the Dog clashes with the Dragon, and Scorpio sits opposite Taurus [s3] [s1]."}
+    ]
+  },
+  "story": {"k": "The dragon's son", "text": "One of the dragon's sons, 贔屭 (bìxì), wears a tortoise's shell [s8]. Since at least the late Han, stone carvings of him have carried memorial steles on their backs [s8]. Dictionaries gloss his name as strong, able to bear great weight [s8]. He holds up the record and never asks to be read."},
+  "closing": "Hold the stone steady. Long after the carvers are gone, someone will still be reading it."
+}

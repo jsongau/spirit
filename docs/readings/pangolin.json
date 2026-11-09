@@ -1,0 +1,103 @@
+{
+  "title": "What the Pangolin guards",
+  "is_this_you": {
+    "pressure": "Loud trouble comes and you curl around the soft part. You wait inside until the footsteps lose interest.",
+    "love": "You plug the burrow from inside at night. Some nights you forget to leave a gap for the one you love.",
+    "cost": "Your trust is so rare that people speak of it as luck. Some wait years and never get it."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Among the Lele of the Kasai, in what is now the DR Congo, the Pangolin cult was the most senior cult in the village [s11]. The anthropologist Mary Douglas read the pangolin there as an odd but lucky animal that crosses the lines between kinds, a go-between [s11] [s12]. People bring you the things that need carrying across."
+  },
+  "howto": "Three parts. Unroll them slowly.",
+  "tabs": [
+    {
+      "id": "armour",
+      "label": "The armour",
+      "intro": "Earth outside. A small fire kept under the scales.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Taurus is fixed Earth, ruled by Venus, gentle and patient and hard to move [s1] [s2]. The Snake is yin Fire, intuitive and strategic, a good communicator who says little [s4] [s5]. Your Fire sits inside the Earth like a coal in a banked hearth. People see the calm. Few get close enough to feel the heat."
+        },
+        {
+          "k": "Made of fingernail",
+          "text": "A pangolin's scales are keratin, the same protein as a fingernail [s6] [s7]. When threatened it rolls into a ball most predators cannot open, though big cats still take some [s7] [s8]. Your calm is built the same way. It holds most days."
+        },
+        {
+          "k": "By smell",
+          "text": "Its eyesight is weak, so it finds buried ant and termite nests by smell [s6] [s7]. You find the buried thing in people the same way. You rarely explain how you knew where to dig."
+        }
+      ]
+    },
+    {
+      "id": "between",
+      "label": "The go-between",
+      "intro": "Shy creatures still carry messages.",
+      "rows": [
+        {
+          "k": "Sent by the ancestors",
+          "text": "The anthropologist Martin Walsh records that the Sangu of southwest Tanzania believed pangolins fell from the sky, sent by the ancestors [s10]. If one shed tears during the dance held for it, good rains were coming [s10]. You end up carrying word between people who stopped talking."
+        },
+        {
+          "k": "The plain truth",
+          "text": "Pangolins are described as the most trafficked mammals in the world, and all eight species are on CITES Appendix I [s6]. Old Chinese medicine books prescribed the scales, but there is no scientific evidence any of it works, and China dropped pangolin from its 2020 Pharmacopoeia [s6] [s13]. The armour was never medicine. It belongs on the animal."
+        },
+        {
+          "k": "At work",
+          "text": "Archives, audits, conservation and anti-trafficking work all reward a good nose and a closed mouth."
+        }
+      ]
+    },
+    {
+      "id": "uncurl",
+      "label": "Who you uncurl for",
+      "intro": "Three you open for. One who pulls at the scales.",
+      "matches": true,
+      "love_lead": "In love you open slowly and stay. Venus rules your sign, so touch and beauty say more to you than speeches [s1]. You need someone who never pulls at the scales and lets you unroll in your own time. The old pairings name three."
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "andean-condor",
+        "chips": [
+          "Same trine",
+          "Earth like you"
+        ],
+        "why": "The <b>Andean Condor</b> (Capricorn, Rooster year) shares your trine of Snake, Ox and Rooster, the Rooster being the Snake's best match, and Capricorn is Earth like you [s3] [s4]."
+      },
+      {
+        "slug": "new-caledonian-crow",
+        "chips": [
+          "Secret friend",
+          "Earth like you"
+        ],
+        "why": "The <b>New Caledonian Crow</b> (Virgo, Monkey year) is your secret friend, since the Monkey is the Snake's six-harmony partner, and Virgo is the third Earth sign [s3] [s1]."
+      },
+      {
+        "slug": "asian-elephant",
+        "chips": [
+          "Ox trine",
+          "Water for your Earth"
+        ],
+        "why": "The <b>Asian Elephant</b> (Cancer, Ox year) is trine kin through the Ox, with Cancer's Water to soften your Earth [s3] [s1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "deep-sea-anglerfish",
+        "chips": [
+          "Pig clash",
+          "Opposite sign"
+        ],
+        "why": "The hard one is the <b>Deep Sea Anglerfish</b> (Scorpio, Pig year): the Pig clashes with the Snake, and Scorpio sits opposite Taurus [s3] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "Count the steps",
+    "text": "Among the Jindwi of Zimunya communal land in Zimbabwe, whoever found a pangolin carried it to the chief, who let it go into the forest, as Christopher Zimunya told Mongabay [s9]. The steps it took before it vanished were said to count the good years the finder would live [s9]."
+  },
+  "closing": "When you finally uncurl for someone, let them count your steps. Each one is a good year."
+}

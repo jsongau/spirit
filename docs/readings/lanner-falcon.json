@@ -1,0 +1,103 @@
+{
+  "title": "What the Lanner Falcon aims at",
+  "is_this_you": {
+    "pressure": "You stay low and keep moving. By the time anyone sees you commit, the chase is already half over.",
+    "love": "You want one partner and a clear split of jobs. Who flushes, who strikes, settled before you leave the cliff.",
+    "cost": "You range so far that the one waiting at the ledge starts to wonder whether you are coming back."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In the Book of Changes, hexagram 40 is about release from difficulty [s9]. Its top line reads 公用射隼于高墉之上 (gōng yòng shè sǔn yú gāo yōng zhī shàng): a prince shoots at a falcon on a high wall, and hits it [s9]. The line calls that advantageous in every way [s9]. You are a Sagittarius, the archer, born in a Tiger year [s1]. So both halves of that line belong to you. You are the bow. You are also the bird on the wall."
+  },
+  "howto": "Three parts. Aim at one.",
+  "tabs": [
+    {
+      "id": "aim",
+      "label": "The aim",
+      "intro": "Fire that ranges, Wood that commits.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Sagittarius is mutable Fire, ruled by Jupiter [s1]. Its archer was said never to miss the mark [s1]. The Tiger is yang Wood, brave and confident [s3] [s4]. In you the Tiger's nerve feeds the archer's range. You pick the line fast. Then you go."
+        },
+        {
+          "k": "The low chase",
+          "text": "The lanner usually hunts by horizontal pursuit, low and fast over open ground or along a slope [s5] [s6]. Other falcons are famous for the dive from height. This one stays level and keeps after the bird it chose. So do you. You skip the show and stay on one target across the whole field."
+        },
+        {
+          "k": "When it misses",
+          "text": "Sagittarius can be blunt and restless [s1] [s2]. The Tiger can be impetuous, and slow to show tenderness [s4]. Under strain you fly off to cool down and forget to say you will be back. Say it. Name the ledge and the hour."
+        }
+      ]
+    },
+    {
+      "id": "country",
+      "label": "Open country",
+      "intro": "Wide ground, one cliff, one partner.",
+      "rows": [
+        {
+          "k": "Two jobs",
+          "text": "On hard prey a lanner pair hunts together [s5] [s6]. One bird flushes the quarry and the other grabs it [s6]. In jackdaw hunts the male usually attacks first, and the female usually makes the catch [s5]. You do your best work with one other person and a clean split. Both of you know who goes first."
+        },
+        {
+          "k": "The same cliff",
+          "text": "Lanners may use the same nest sites year after year, especially on cliffs [s7]. Pairs often switch ledges on that one cliff [s7]. Pairs that had bred before did better than new pairs [s7]. You cover a lot of country. You still come home to the same rock, maybe one ledge over."
+        },
+        {
+          "k": "At work",
+          "text": "Field guiding, expedition work and search and rescue suit you. So does any two-person practice, like a founding pair or a surgeon with one trusted assistant. Sagittarius is also the teacher's sign [s2]."
+        }
+      ]
+    },
+    {
+      "id": "hunt",
+      "label": "Who hunts beside you",
+      "intro": "Three who share the chase, and one who flies the opposite line.",
+      "love_lead": "Lanner pairs court in the air, soaring and diving together before they breed [s5]. You court the same way, in motion and short on speeches. You need someone with a skill of their own, who does not take your wide circuits personally. The old pairings name three.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "pronghorn",
+        "chips": [
+          "Same trine",
+          "Fire like you"
+        ],
+        "why": "The <b>Pronghorn</b> (Aries, Horse year) shares your trine of Tiger, Horse and Dog, and Aries is Fire like Sagittarius [s3] [s1]."
+      },
+      {
+        "slug": "albatross",
+        "chips": [
+          "Same trine",
+          "Your own sign"
+        ],
+        "why": "The <b>Albatross</b> (Sagittarius, Horse year) brings the Horse of your trine and was born under your sign [s3]."
+      },
+      {
+        "slug": "honey-badger",
+        "chips": [
+          "Secret friend",
+          "Aries Fire"
+        ],
+        "why": "The <b>Honey Badger</b> (Aries, Pig year) is your secret friend, since the Pig is the Tiger's hidden ally, and Aries shares your Fire [s3] [s1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "kea",
+        "chips": [
+          "Year clash",
+          "Opposite sign"
+        ],
+        "why": "The hard one is the <b>Kea</b> (Gemini, Monkey year): the Monkey clashes with the Tiger, and Gemini sits opposite Sagittarius [s3] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "The falcon in the ode",
+    "text": "A war ode in the Book of Songs, 采芑 (Cǎi Qǐ), watches a falcon in flight [s10]. Its line is 鴥彼飛隼 (yù bǐ fēi sǔn), 其飛戾天 (qí fēi lì tiān), 亦集爰止 (yì jí yuán zhǐ) [s10]. Rapid is the hawk's flight, soaring to the heavens, then coming down and settling in its place [s10]. The ode lets the bird go all the way up. Then it brings it home."
+  },
+  "closing": "Fly as high as the day allows. Then come down to your own ledge and fold your wings."
+}
