@@ -1,0 +1,315 @@
+{
+  "slug": "bongo",
+  "name": "Bongo",
+  "sign": "Taurus",
+  "year": "Pig",
+  "element": "Water (from the Pig); Taurus adds Earth, fixed. Earth controls Water in the control cycle.",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Taurus (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Taurus_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Chinese zodiac (Pig row, compatibility, Liu He, Liu Chong, Liu Hai), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s3",
+      "title": "Year of the Pig, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/pig.htm"
+    },
+    {
+      "id": "s4",
+      "title": "Bongo (antelope), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bongo_(antelope)"
+    },
+    {
+      "id": "s5",
+      "title": "Tragelaphus eurycerus, Animal Diversity Web",
+      "url": "https://animaldiversity.org/accounts/Tragelaphus_eurycerus/"
+    },
+    {
+      "id": "s6",
+      "title": "Bongo fact sheet, Ultimate Ungulate",
+      "url": "https://ultimateungulate.com/Artiodactyla/Tragelaphus_eurycerus.html"
+    },
+    {
+      "id": "s7",
+      "title": "Bongo antelope facts, SeaWorld",
+      "url": "https://seaworld.org/animals/facts/mammals/bongo-antelope/"
+    },
+    {
+      "id": "s8",
+      "title": "Gibbon et al. 2015, Factors affecting the identification of individual mountain bongo antelope, PeerJ 3:e1303",
+      "url": "https://peerj.com/articles/1303"
+    },
+    {
+      "id": "s9",
+      "title": "Sheppard, Stark, Muturi and Munene 2024, Benefits of traditional and local ecological knowledge for species recovery when scientific inference is limited, Frontiers in Conservation Science",
+      "url": "https://frontiersin.org/journals/conservation-science/articles/10.3389/fcosc.2024.1383611/pdf"
+    },
+    {
+      "id": "s10",
+      "title": "The bongo, Africa Geographic",
+      "url": "https://africageographic.com/stories/the-bongo/"
+    },
+    {
+      "id": "s11",
+      "title": "Mountain bongo antelope fly from Florida to Kenya to help save a species, Mongabay (Feb 2025)",
+      "url": "https://news.mongabay.com/short-article/2025/02/mountain-bongo-antelope-fly-from-florida-to-kenya-to-help-save-a-species/"
+    },
+    {
+      "id": "s12",
+      "title": "Rare Kenyan bongo antelope return home, VOA News",
+      "url": "https://www.voanews.com/amp/a-13-a-2004-02-02-1-rare-67339127/382279.html"
+    },
+    {
+      "id": "s13",
+      "title": "紫羚 (bongo), Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/紫羚"
+    },
+    {
+      "id": "s14",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Steady, patient, sensual, loyal and dependable; slow to change, can turn stubborn or possessive. Stabilizes what Aries starts; a sign of growth and steadfastness.",
+    "planet": "Venus (the Moon is exalted in Taurus)",
+    "element": "Earth (with Virgo and Capricorn)",
+    "modality": "Fixed; opposite sign Scorpio",
+    "source_ids": [
+      "s1"
+    ]
+  },
+  "chinese": {
+    "temperament": "Diligent, compassionate, generous, calm under pressure, takes responsibility seriously, helps readily. Shadow: trusting to the point of being fooled, rarely asks for help, can run short on patience.",
+    "yinyang": "Yin",
+    "element": "Water (fixed); earthly branch 亥 hài",
+    "trine": "Rabbit, Goat, Pig",
+    "secret_friend": "Tiger",
+    "clash": "Snake (harm pair: Monkey)",
+    "lucky": null,
+    "source_ids": [
+      "s2",
+      "s3"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Ogiek (Mau Forest and Kenyan highlands)",
+      "meaning": "In a 2024 study gathering hunters' and forest-dwellers' knowledge of mountain bongo, an Ogiek informant said Ogiek tradition tabooed hunting bongo for meat, that the animal 'was considered lucky for colonizing traditional beehives', and that its strong skin made ropes for hanging hives. Single informant; present it as one recorded account, credit the Ogiek by name, and do not lay a 'you' reading over it.",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "culture": "Forest peoples of the bongo's range (unnamed in sources)",
+      "meaning": "Wikipedia and SeaWorld record a belief that eating or touching a bongo brings spasms like epileptic seizures, which helped protect the animal; Wikipedia says the taboo is reportedly no longer widely held. Africa Geographic adds that in Gabon the bongo is held to carry sasa, a dangerous power tied to witchcraft, and that hunters who kill one risk seizures and madness. Africa Geographic gives no primary citation and names no nation; use the general taboo with care, and the sasa detail only if a stronger source turns up.",
+      "source_ids": [
+        "s4",
+        "s7",
+        "s10"
+      ]
+    },
+    {
+      "culture": "Kele (Gabon), the name",
+      "meaning": "Wikipedia says the English name bongo probably comes from the Kele language of Gabon. Bridge only, not a hook.",
+      "source_ids": [
+        "s4"
+      ]
+    },
+    {
+      "culture": "Kenya, the homecoming",
+      "meaning": "Mountain bongos bred in US zoos have been flown back to Kenya: a 2004 group to the Mount Kenya area (VOA reports 18; KWS, quoted by Mongabay, says 25 in the first group), and 17 more from Florida's Rare Species Conservatory Foundation in February 2025. KWS put the wild population at roughly 100, down from about 700 in the 1960s and 1970s. A modern story, not folklore, but a real one.",
+      "source_ids": [
+        "s11",
+        "s12"
+      ]
+    },
+    {
+      "culture": "Greek scientific name",
+      "meaning": "Tragelaphus eurycerus: tragos 'he-goat' plus elaphos 'deer', eurus 'broad', keras 'horn'. The goat-deer with broad horns. Bridge only.",
+      "source_ids": [
+        "s6",
+        "s5"
+      ]
+    },
+    {
+      "culture": "Generic 'bongo spirit animal' meanings",
+      "meaning": "Unsourced, do not use. Nothing with a traditional source found.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Earth (Taurus) holding yin Water (Pig). Earth banks Water, so the Pig's warmth and appetite are kept inside firm walls. Taurus and Pig both love comfort, food and good things; doubled, they make an animal that lives in the richest cover it can find and rarely needs to leave. The vivid coat says Venus; the hiding says yin.",
+    "gifts": "Our reading: steadiness, generosity to the few let close, a deep reserve of patience, beauty carried without performance, a gift for knowing exactly where safety is.",
+    "shadow": "Our reading: the Pig trusts too easily and the Taurus holds on too long, so this crossing can stay in cover past the point where cover helps. Withholding reads as warmth to friends and as absence to partners. The Ogiek hive story is the mirror: good fortune arrives where you settle, which can tempt you never to move.",
+    "love": "Our reading: Venus and yin Water make a slow, sensual, loyal lover who shows itself in pieces. Needs a patient partner who is content with glimpses at first and earns the full view. Hates being chased into the open.",
+    "money": "Our reading: a natural keeper. Taurus saves; the Pig spends generously on the people it loves. Comfortable, steady, a little private about it. Risk: lending to the wrong person because the Pig rarely suspects a trick.",
+    "conflict": "Our reading: turns away first and watches in glances, the way a startled bongo faces its hindquarters toward the noise. Rarely attacks; ends things by being gone. Taurus memory means the retreat can be permanent."
+  },
+  "careers": [
+    {
+      "path": "Beekeeping, forestry, agroforestry, native-plant nurseries",
+      "why": "Our reading: the Ogiek tie between bongo and hives; Earth and Water feeding growing things."
+    },
+    {
+      "path": "Conservation, captive breeding, wildlife veterinary work",
+      "why": "Our reading: the zoo-to-forest homecoming of the mountain bongo; patient, long-horizon care."
+    },
+    {
+      "path": "Craft and luxury trades: textiles, leather, woodwork, interior design",
+      "why": "Our reading: Venus-ruled taste and the richest coat in the forest; beauty made by hand, out of view."
+    },
+    {
+      "path": "Camera-trap research, wildlife photography, archival or identification work",
+      "why": "Our reading: the flank stripes that let researchers tell one shy animal from another; patience for the unseen."
+    },
+    {
+      "path": "Hospitality behind the scenes: chef, sommelier, private host",
+      "why": "Our reading: Taurus and Pig share a love of good food and comfort; generous to guests while staying out of the spotlight."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Koala",
+      "slug": "koala",
+      "reason": "Taurus x Rabbit. Rabbit is in the Pig trine and the sun sign is shared. The koala dossier also lists the bongo, so the pairing runs both ways."
+    },
+    {
+      "name": "Sable Antelope",
+      "slug": "sable-antelope",
+      "reason": "Taurus x Tiger. Tiger is the Pig's secret friend (Liu He) and the sun sign is shared. A second African antelope, one that stands its ground where the bongo slips away."
+    },
+    {
+      "name": "Clark's Nutcracker",
+      "slug": "clarks-nutcracker",
+      "reason": "Virgo x Goat. Goat is in the Pig trine; Virgo shares Taurus's Earth element. Double harmony, and two keepers of stores."
+    },
+    {
+      "name": "Mountain Pygmy Possum",
+      "slug": "mountain-pygmy-possum",
+      "reason": "Capricorn x Rabbit. Rabbit trine; Capricorn is the third Earth sign. Both are rare mountain forest dwellers."
+    },
+    {
+      "name": "Dragonfly",
+      "slug": "dragonfly",
+      "reason": "Virgo x Tiger. Tiger is the Pig's secret friend; Virgo Earth matches Taurus Earth."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Slow Loris",
+      "slug": "slow-loris",
+      "reason": "Scorpio x Snake. Pig and Snake are a traditional six-clash pair (Liu Chong), and Scorpio is Taurus's opposite sign."
+    },
+    {
+      "name": "Pangolin",
+      "slug": "pangolin",
+      "reason": "Taurus x Snake. Same sun sign and a shared taste for hiding, but the Pig-Snake clash sits underneath."
+    }
+  ],
+  "candidate_lines": [
+    "You wear the brightest coat in the forest and you live where light comes through in scraps. Most people who meet you only ever see one stripe.",
+    "Count your stripes on one side and then the other and the numbers rarely agree. People who think they have your full picture usually have half of it.",
+    "When you run, the horns go flat along your back so the vines cannot catch them. The thing people admire most is the first thing you fold away.",
+    "Taurus and Pig both love a full table. Your table is set deep in the bamboo, and the guest list is short.",
+    "A big red animal painted with white, and still the forest swallows you in a few strides. Nobody who wants you gone has ever seen where you went.",
+    "A sudden noise gets your hindquarters and a glance over the shoulder. By the time anyone decides what you meant, you are already in the green."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 羚 (rail__han and serial-han)",
+      "verdict": "WRONG",
+      "note": "羚 líng is the generic word element for antelope or gazelle, not the bongo. The Chinese name of the bongo is 紫羚 zǐlíng ('purple antelope', same in traditional), also 斑哥羚羊 bāngē língyáng. Use 紫羚 with pinyin.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "fact": "10 to 15 vertical white stripes; count and layout rarely match side to side; researchers use flank pattern, facial markings and horn shape to identify wild bongos from camera-trap photos.",
+      "verdict": "WRONG",
+      "note": "Stripes 10 to 15 and side-to-side difference: OK (Wikipedia, ADW, Ultimate Ungulate). Camera-trap ID by flank pattern: OK (Gibbon et al. 2015, PeerJ, which used camera-trap and captive photos). But that study tested flank stripes and the full side profile only; horns appear only as something zookeepers say they use, and facial markings were not tested. Cut 'alongside facial markings and horn shape' or say 'mainly the flank stripes'.",
+      "source_ids": [
+        "s4",
+        "s5",
+        "s6",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Chestnut-to-mahogany coat broken by white stripes works as disruptive camouflage under a closed canopy.",
+      "verdict": "OK",
+      "note": "Wikipedia says the stripes help camouflage; coat colors per ADW (chestnut red, males darkening to nearly black-brown). The specific term 'disruptive camouflage' and the vines detail are interpretation; soften to 'the stripes are thought to help it blend in'.",
+      "source_ids": [
+        "s4",
+        "s5"
+      ]
+    },
+    {
+      "fact": "Startled at full speed, the bongo runs through dense tangles with its spiral horns laid back along its spine.",
+      "verdict": "OK",
+      "note": "Wikipedia, SeaWorld (chin up, horns flat against the back) and Ultimate Ungulate (horns held against the back of the neck; old animals show bare patches where they rest).",
+      "source_ids": [
+        "s4",
+        "s7",
+        "s6"
+      ]
+    },
+    {
+      "fact": "As a bongo matures, horn tips lose pigment and pale to ivory, a visible mark of age.",
+      "verdict": "UNVERIFIABLE",
+      "note": "Ultimate Ungulate describes the horns as yellow-tipped. I found no source that ties pale tips to age. Say 'the horns end in pale, yellowish tips' and drop the age claim.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "fact": "Among the hardest African antelope to observe; once alarmed it retreats into cover, angles its hindquarters toward the disturbance, and checks in glances.",
+      "verdict": "OK",
+      "note": "Wikipedia: flees, then stands hidden facing away, hindquarters less conspicuous, ready to flee. PeerJ: predominantly nocturnal and extremely shy. ADW: behavior hard to study. 'Checks in glances' is interpretation.",
+      "source_ids": [
+        "s4",
+        "s8",
+        "s5"
+      ]
+    },
+    {
+      "fact": "Eastern mountain bongo Critically Endangered, about 100 to under 150 left in fragmented Kenyan forests; more in captivity than in the wild.",
+      "verdict": "OK",
+      "note": "PeerJ: 100 to 150 in seven populations, more than 700 in captivity. Wikipedia: fewer in the wild than in captivity; estimates 100 to 140. KWS (Mongabay 2025): roughly 100. Consider adding that zoo-bred bongos have been flown back to Kenya (2004 and 2025).",
+      "source_ids": [
+        "s8",
+        "s4",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Purple Star section: a Taurus born in the Pig year 'tends to seat' 太陰 Tài Yīn, the Moon star.",
+      "verdict": "WRONG",
+      "note": "No traditional basis. Zi Wei Dou Shu charts come from the lunar birth date and hour, not sun sign plus year animal. Relabel as our own image or cut.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "fact": "Page implies the bongo moves at night ('the same hour the Bongo actually moves').",
+      "verdict": "OK",
+      "note": "Wikipedia: mostly nocturnal, sometimes crepuscular or diurnal. ADW says both diurnal and nocturnal, so avoid 'only at night'.",
+      "source_ids": [
+        "s4",
+        "s5"
+      ]
+    },
+    {
+      "fact": "Proverb 人不可貌相，海水不可斗量 rén bù kě mào xiàng, hǎishuǐ bù kě dǒu liáng tied to the Pig year",
+      "verdict": "OK",
+      "note": "Labelled on the page as our own pairing, with pinyin. Honest as written.",
+      "source_ids": []
+    }
+  ]
+}

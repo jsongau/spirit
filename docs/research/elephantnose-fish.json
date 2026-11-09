@@ -1,0 +1,321 @@
+{
+  "slug": "elephantnose-fish",
+  "name": "Elephantnose Fish",
+  "sign": "Scorpio",
+  "year": "Monkey",
+  "element": "Metal (from the Monkey); Scorpio adds Water, fixed",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Scorpio (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Scorpio_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Scorpio sun sign: personality traits, TODAY",
+      "url": "https://www.today.com/today/amp/rcna53084"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (Monkey row, compatibility table), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Monkey, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/monkey.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Peters' elephantnose fish, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Peters%27_elephantnose_fish"
+    },
+    {
+      "id": "s6",
+      "title": "Most energetic animal brain (Nilsson 1996), Guinness World Records",
+      "url": "https://www.guinnessworldrecords.com/world-records/83113-most-energetic-animal-brain"
+    },
+    {
+      "id": "s7",
+      "title": "Brain-body mass ratio, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Brain%E2%80%93body_mass_ratio"
+    },
+    {
+      "id": "s8",
+      "title": "von der Emde and Ringer 1992, Electrolocation of capacitive objects in 4 species of pulse-type weakly electric fish, Ethology 91(4):326-338 (Regensburg record)",
+      "url": "https://pred.uni-regensburg.de/id/eprint/54439/"
+    },
+    {
+      "id": "s9",
+      "title": "Grant, von der Emde, Gomez Sena and Mohr 1999, Neural command of electromotor output in mormyrids, J Exp Biol 202:1399-1407",
+      "url": "https://cob.silverchair.com/jeb/article-pdf/3107643/jexbio_202_10_1399.pdf"
+    },
+    {
+      "id": "s10",
+      "title": "Kreysing et al. 2012, Photonic crystal light collectors in fish retina improve vision in turbid water, Science 336:1700-1703, doi 10.1126/science.1218072 (FAU record)",
+      "url": "https://cris.fau.de/publications/241422042"
+    },
+    {
+      "id": "s11",
+      "title": "Medjed (fish), the Oxyrhynchus fish, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Medjed_(fish)"
+    },
+    {
+      "id": "s12",
+      "title": "Oxyrhynchus fish votive, Michael C. Carlos Museum, Emory University",
+      "url": "https://collections.carlos.emory.edu/objects/22441/oxyrhynchus-fish-votive"
+    },
+    {
+      "id": "s13",
+      "title": "Gnathonemus petersii common names, FishBase",
+      "url": "https://www.fishbase.se/ComNames/CommonNamesList.php?GenusName=Gnathonemus&SpeciesName=petersii"
+    },
+    {
+      "id": "s14",
+      "title": "靈犀 líng xī entry, Zdic (source line by Li Shangyin, 無題)",
+      "url": "https://www.zdic.net/hant/%E9%9D%88%E7%8A%80"
+    },
+    {
+      "id": "s15",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Intense, private and emotionally deep under a controlled surface; devoted and loyal once trust is given; driven, frank and brave. Shadow: fixation, suspicion, moodiness, closed off with strangers.",
+    "planet": "Mars (traditional), Pluto (modern)",
+    "element": "Water (with Cancer and Pisces)",
+    "modality": "Fixed; opposite sign Taurus",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Clever, quick-witted, versatile, a fast learner who enjoys challenges and adapts to any setting. Shadow: mischief that can hurt, restlessness, slyness that makes others wary; slow to settle in love, then fully committed.",
+    "yinyang": "Yang",
+    "element": "Metal (fixed); earthly branch 申 shēn; Monkey hour 15:00 to 16:59",
+    "trine": "Rat, Dragon, Monkey",
+    "secret_friend": "Snake",
+    "clash": "Tiger (Wikipedia also lists Pig as a harm pair)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Ancient Egypt (relative, not this species)",
+      "meaning": "The Oxyrhynchus fish, a downturned-snout elephantfish of the genus Mormyrus in the same family as the elephantnose, was sacred at Per-Medjed, which the Greeks named Oxyrhynchus, 'sharp-nosed'. In the Osiris myth it ate the one part of Osiris that Isis never recovered. It was linked to Hathor and shown wearing her horned sun-disc crown; bronze figures with rings were worn as amulets. Use only if the page says plainly that this is a cousin fish, not Gnathonemus.",
+      "source_ids": [
+        "s11",
+        "s12"
+      ]
+    },
+    {
+      "culture": "Chinese name",
+      "meaning": "FishBase lists the Mandarin names 彼氏錐頜象鼻魚 (bǐ shì zhuī hé xiàng bí yú, 'Peters' awl-jaw elephant-nose fish') and 鸛嘴長頜魚 (guàn zuǐ cháng hé yú, 'stork-beak long-jaw fish'). The short everyday form is 象鼻魚 xiàng bí yú, 'elephant-nose fish'. Note the Chinese name, like the English, also mistakes the chin for a nose.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "culture": "Chinese (the page's own proverb)",
+      "meaning": "心有靈犀一點通 xīn yǒu líng xī yì diǎn tōng is a line from Li Shangyin's Tang poem 無題 (Untitled), not a folk proverb. 靈犀 líng xī is the rhinoceros horn said to carry a white thread linking its two ends, later a figure for wordless mutual understanding. A fitting image for a fish that reads others through an unseen channel; the pairing stays labeled as ours.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "culture": "Science as image (bridge, not folklore)",
+      "meaning": "The fish does not rely on electricity alone: its cones sit in reflective photonic-crystal cups that help it see in muddy, dim water (Kreysing et al. 2012, Science). Two senses tuned for the murk.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "No West or Central African folklore, totem or spirit-animal tradition for the elephantnose fish was found in any source I could open. Spirit-animal meanings on totem blogs are unsourced.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Water (Scorpio) meets yang Metal (Monkey). In the five-phase cycle Metal generates Water, so the Monkey's quick, inventive mind feeds Scorpio's depth instead of fighting it. Scorpio wants the full picture before moving; the Monkey wants to adjust while moving. The Elephantnose Fish reads in real time and keeps most of the reading to itself.",
+    "gifts": "Our reading: catching what is under a conversation, quick improvisation once the read is in, sharp memory for who is made of what, a talent for low-visibility conditions where others freeze.",
+    "shadow": "Our reading: the mormyrid that is gentle with everyone else and fierce about its own patch. Territorial with close rivals, slow to share what it perceived, and quick to assume its read is the truth.",
+    "love": "Our reading: Scorpio devotion with Monkey play. Slow to settle, then fully in. Shows care by knowing before being told; needs a partner whose signal is steady, and needs to say the reading out loud more often.",
+    "money": "Our reading: a researcher with money. Watches patterns, likes information edges, can over-trade on a hunch (Monkey) or hold a private position too long (fixed Water).",
+    "conflict": "Our reading: maps the fight before it starts and arrives with a conclusion. With people too close to its own space it can bristle fast. Practice: offer the read as a question."
+  },
+  "careers": [
+    {
+      "path": "Investigative work: forensic accounting, fraud analysis, auditing, intelligence analysis",
+      "why": "Our reading: Scorpio's appetite for what is hidden plus the Monkey's head for numbers (China Highlights lists accounting and banking for the Monkey)."
+    },
+    {
+      "path": "Sound, signal and sensor work: audio engineering, radar or sonar, diagnostics, electrophysiology",
+      "why": "Our reading: the electric sense as a craft; reading a field nobody else can see."
+    },
+    {
+      "path": "Therapy, mediation, crisis negotiation",
+      "why": "Our reading: hears the conversation under the conversation; the Monkey half keeps it light enough to work."
+    },
+    {
+      "path": "Film editing, directing, documentary research",
+      "why": "Our reading: the Monkey's directing instinct (listed by China Highlights) with Scorpio's taste for what is left unsaid."
+    },
+    {
+      "path": "Night or low-visibility operations: air traffic control, emergency dispatch, deep-sea or cave diving support",
+      "why": "Our reading: built for murk; China Highlights also lists air traffic control for the Monkey."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Coconut Crab",
+      "slug": "coconut-crab",
+      "reason": "Cancer x Rat. Rat sits in the Monkey trine and Cancer shares Scorpio's Water. Monkey Metal feeds the Rat's Water."
+    },
+    {
+      "name": "Whale Shark",
+      "slug": "whale-shark",
+      "reason": "Pisces x Dragon. Dragon completes the Monkey trine; Pisces is Scorpio's fellow Water sign. Dragon Earth feeds Monkey Metal."
+    },
+    {
+      "name": "Glass Frog",
+      "slug": "glass-frog",
+      "reason": "Pisces x Snake. Snake is the Monkey's secret friend (six harmonies); Pisces is Water like Scorpio."
+    },
+    {
+      "name": "Archerfish",
+      "slug": "archerfish",
+      "reason": "Virgo x Dragon. Dragon trine; Virgo Earth is the classic complement to Scorpio Water. Two fish that read the surface from below."
+    },
+    {
+      "name": "Tarsier",
+      "slug": "tarsier",
+      "reason": "Scorpio x Rat. Same sign and the Rat trine. Two night readers."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Sable Antelope",
+      "slug": "sable-antelope",
+      "reason": "Taurus x Tiger. Monkey and Tiger are a six-clash pair, and Taurus is Scorpio's opposite sign. Pulled two ways at once."
+    },
+    {
+      "name": "Giant Centipede",
+      "slug": "giant-centipede",
+      "reason": "Scorpio x Tiger. Same sign, so the depth is shared, but the Monkey-Tiger clash puts the two at odds over pace and control."
+    }
+  ],
+  "candidate_lines": [
+    "In muddy water you still feel the shape of every log before you reach it, and you have learned to swim past the people who never ask how you knew.",
+    "Your mind keeps firing faster when the current gets confusing. From the outside you look as calm as a fish resting under a root.",
+    "You are gentle with almost every creature in the river and fierce with the one who swims too close to your hollow.",
+    "You can tell what someone is made of from one brush of contact, and you usually keep that reading in the dark with you.",
+    "Clear water makes you restless. Give you a cloudy pool, a puzzle and a little night, and you start to play.",
+    "You speak in pulses nobody else hears, so the friend who finally answers on your frequency gets more of you than anyone."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 电 (rail__han and serial-han), shown with pinyin diàn",
+      "verdict": "WRONG",
+      "note": "电 diàn (traditional 電) means electricity, not this animal. The species' Mandarin name per FishBase is 彼氏錐頜象鼻魚 bǐ shì zhuī hé xiàng bí yú; the everyday traditional form is 象鼻魚 xiàng bí yú, 'elephant-nose fish'. Use 象鼻魚 xiàngbíyú.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "fact": "Intro: navigates 'through an organ in the elongated lower jaw that is often mistaken for a nose'",
+      "verdict": "WRONG",
+      "note": "The electric organ that makes the field is in the tail. The chin extension (Schnauzenorgan) is a receptor covered in electroreceptors, not the generating organ. Fact card 01 gets this right; the intro sentence does not.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "fact": "Fact 01: generates a weak field with an electric organ, reads distortions; the 'trunk' (chin) is the primary receptor; navigates, finds prey and communicates 'entirely' through this medium",
+      "verdict": "WRONG (one word)",
+      "note": "Field, receptor and uses are OK per Wikipedia. 'Entirely' is wrong: the fish also sees, with retinal photonic-crystal cups that improve vision in turbid water (Kreysing et al. 2012). Drop 'entirely'.",
+      "source_ids": [
+        "s5",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Fact 02: highest brain-to-body-weight ratio of any non-human vertebrate, about 3.1% vs about 2% in humans; cerebellum dedicated almost entirely to electric signals",
+      "verdict": "WRONG",
+      "note": "3.1% is right (Nilsson 1996, via Guinness). The superlative is wrong: tree shrews and small birds have higher brain-to-body ratios (Wikipedia). The real record is energy: the brain uses over half the body's oxygen (Guinness; about 0.6 per Wikipedia). 'Almost entirely' electric for the cerebellum is UNVERIFIABLE. Rewrite as the oxygen record.",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s5"
+      ]
+    },
+    {
+      "fact": "Fact 03: distinguishes objects by shape and electrical conductivity simultaneously, a dual-channel integration no other known animal performs",
+      "verdict": "WRONG",
+      "note": "Telling resistive from capacitive objects is real, but von der Emde and Ringer 1992 found all four mormyrid species tested could do it. Drop 'no other known animal'. Shape recognition is likely real (von der Emde and Fetz 2007) but I could not open that paper.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "fact": "Fact 04: discharge rate varies from about 1 per second to more than 80 per second, firing faster when the field is more complex",
+      "verdict": "OK (soften)",
+      "note": "Grant et al. 1999 give a mormyrid range from under 1 Hz to over 100 Hz, and mention novelty responses. The range is understated, not wrong. 'Fires faster when more ambiguous' is a simplification; say 'speeds up when something new appears'.",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "fact": "Fact 05: Gnathonemus petersii is non-aggressive",
+      "verdict": "WRONG",
+      "note": "Wikipedia: unless kept in a very large tank it is aggressively territorial toward its own species; keepers are told to keep only one. It is not a danger to other species, which is the true part.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "fact": "Fact 06: turbid rivers and lakes of West and Central Africa; visibility in centimeters; sight effectively useless",
+      "verdict": "WRONG (last clause)",
+      "note": "Range OK (lower Niger, Ogun, upper Chari; muddy slow rivers per Wikipedia). 'Sight is effectively useless' is contradicted by Kreysing et al. 2012, which shows a retina built for turbid water. Intro also says 'West Africa' only; use 'West and Central Africa'.",
+      "source_ids": [
+        "s5",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Cited source: Szabo, T. et al. (2004), The mormyrid cerebellum: Functional anatomy and electrosensory processing, J Comp Physiol A",
+      "verdict": "UNVERIFIABLE",
+      "note": "No paper with this title found. Likely a fabricated citation; remove unless a human locates it.",
+      "source_ids": []
+    },
+    {
+      "fact": "Cited source: Amey-Özel, M. et al. (2015), More neurons but not larger brains..., Frontiers in Neuroanatomy",
+      "verdict": "UNVERIFIABLE",
+      "note": "No paper with this title found. Amey-Özel did publish on the Schnauzenorgan, but not under this title as far as I could find. Likely fabricated; remove.",
+      "source_ids": []
+    },
+    {
+      "fact": "Cited source: von der Emde and Fetz (2007), Distance, shape and more, J Exp Biol",
+      "verdict": "UNVERIFIABLE",
+      "note": "Plausibly real (J Exp Biol 2007) but I could not open it; full title is longer than shown. Check before keeping.",
+      "source_ids": []
+    },
+    {
+      "fact": "Proverb card: 心有灵犀一点通 labeled 'The proverb of your year', gloss of 犀 as rhinoceros horn said to respond to spirit",
+      "verdict": "OK (relabel)",
+      "note": "Gloss matches Zdic. It is a line of Li Shangyin's Tang poem 無題, not a folk proverb; credit the poet. The page already says the Monkey pairing is ours.",
+      "source_ids": [
+        "s14"
+      ]
+    }
+  ],
+  "other_page_issues": [
+    "Match II card for Coconut Crab says 'Your Metal feeds their Water: you are the warmth in it'. 'Warmth' is Fire template wording pasted onto a Metal-to-Water pair.",
+    "Purple Star block correctly says charts are cast from lunar birth date and hour; no star claimed from the sign pair. OK.",
+    "No January lunar-new-year note on this page, which is right for Scorpio."
+  ]
+}

@@ -1,0 +1,331 @@
+{
+  "slug": "sea-angel",
+  "name": "Sea Angel",
+  "sign": "Pisces",
+  "year": "Horse",
+  "element": "Fire (from the Horse); Pisces adds Water, mutable",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Pisces (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pisces_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "The Personality of a Pisces, Explained, AOL Lifestyle",
+      "url": "https://www.aol.com/lifestyle/personality-pisces-explained-000532272.html"
+    },
+    {
+      "id": "s3",
+      "title": "Horse (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Horse_(zodiac)"
+    },
+    {
+      "id": "s4",
+      "title": "Chinese zodiac (compatibility table, Horse row), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s5",
+      "title": "Year of the Horse, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/horse.htm"
+    },
+    {
+      "id": "s6",
+      "title": "Clione limacina, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Clione_limacina"
+    },
+    {
+      "id": "s7",
+      "title": "Naked Sea Butterfly Clione limacina, Sea Slug World",
+      "url": "https://en.seaslug.world/species/clione_limacina"
+    },
+    {
+      "id": "s8",
+      "title": "Sea angel, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sea_angel"
+    },
+    {
+      "id": "s9",
+      "title": "Clione limacina, Common Clione, SeaLifeBase",
+      "url": "https://www.sealifebase.ca/summary/Clione-limacina"
+    },
+    {
+      "id": "s10",
+      "title": "裸海蝶, Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/zh-tw/裸海蝶"
+    },
+    {
+      "id": "s11",
+      "title": "Zatsuneta: クリオネ (流氷の天使)",
+      "url": "https://zatsuneta.com/archives/006774.html"
+    },
+    {
+      "id": "s12",
+      "title": "OnTrip JAL, Okhotsk Ryuhyo Museum feature (sponsored, 2022-12-08)",
+      "url": "https://ontrip.jal.co.jp/hokkaido/17587207"
+    },
+    {
+      "id": "s13",
+      "title": "Orbis Pictus: Clione (kurione), exhibited at the Okhotsk Ryuhyo Museum, Abashiri",
+      "url": "https://orbis-pictus.jp/en/articles/kurione.php"
+    },
+    {
+      "id": "s14",
+      "title": "Böer, Graeve and Kattner 2007, Exceptional long-term starvation ability and sites of lipid storage of the Arctic pteropod Clione limacina, Polar Biology 30:571-580 (AWI ePIC record)",
+      "url": "https://epic2-clone.awi.de/id/eprint/15374"
+    },
+    {
+      "id": "s15",
+      "title": "Bednaršek et al. 2012, Extensive dissolution of live pteropods in the Southern Ocean, Nature Geoscience 5:881-885 (UEA repository)",
+      "url": "https://ueaeprints.uea.ac.uk/id/eprint/40212/"
+    },
+    {
+      "id": "s16",
+      "title": "Clione limacina, Walla Walla University Invertebrates",
+      "url": "https://inverts.wallawalla.edu/Mollusca/Gastropoda/Opisthobranchia/Order_Gymnosomata/Clione_limacina.html"
+    },
+    {
+      "id": "s17",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Intuitive, empathetic, compassionate, artistic, adaptable; shadow side easily overwhelmed by others' feelings, drawn to escapism and avoidance, mood swings. The two fish swimming opposite ways stand for a dual nature.",
+    "planet": "Jupiter (traditional), Neptune (modern); Venus exalted in Pisces",
+    "element": "Water (with Cancer and Scorpio)",
+    "modality": "Mutable; opposite sign Virgo",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Sociable, friendly, good communicators, value honesty and loyalty; dislike taking orders and lean toward risk. Fire Horse: charismatic, lively, enthusiastic, stubborn.",
+    "yinyang": "Yang",
+    "element": "Fire (fixed); earthly branch 午 wǔ; direction South, season Summer",
+    "trine": "Tiger, Horse, Dog",
+    "secret_friend": "Goat",
+    "clash": "Rat (China Highlights also lists Ox and Snake as poor matches)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Japan, Hokkaido drift ice",
+      "meaning": "クリオネ kurione is called 流氷の天使 ryūhyō no tenshi, angel of the drift ice, or 氷の妖精 kōri no yōsei, ice fairy; it arrives with the Okhotsk drift ice, a symbol of the Hokkaido winter, and its wild feeding has also earned it a devil-like reputation. It is a star exhibit at the Okhotsk Ryuhyo Museum in Abashiri. Species caveat: the Okhotsk animal is now assigned to Clione elegantissima, not C. limacina, so frame this as the sea angel of Japan, not this exact species.",
+      "source_ids": [
+        "s11",
+        "s12",
+        "s13",
+        "s7"
+      ]
+    },
+    {
+      "culture": "Greek (scientific name)",
+      "meaning": "The genus Clione is named for Cleio (Clio), a sea nymph in Greek myth; limacina is Latin for slug-like. The group name Gymnosomata means naked body, for the lost shell.",
+      "source_ids": [
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "culture": "Chinese (names)",
+      "meaning": "The species is 裸海蝶 luǒ hǎi dié, naked sea butterfly; 海天使 hǎi tiānshǐ, sea angel, is the wider descriptive term used for it.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "culture": "Modern Japanese pop culture",
+      "meaning": "The Pokémon Manaphy and Phione are based on the clione; Wikipedia calls the animal extremely well-known in Japanese culture. Use lightly, as a share hook, not as tradition.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Biology bridge (visible heart of the hunt)",
+      "meaning": "The body is transparent and the red-orange glowing part people see in the middle is the digestive organ; it is also a simultaneous hermaphrodite. A clean, true image for 'what you carry shows through'.",
+      "source_ids": [
+        "s12",
+        "s8"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Spirit-animal or totem meanings for sea angels (purity, grace, guardian angel) appear only on blogs. No Indigenous Arctic (Inuit, Sámi) tradition about Clione was found.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: mutable Water meets yang Fire. In Wu Xing Water controls Fire, and in the Western pairing Water and Fire do not mix, so this crossing lives with a real tension: a soft, drifting Pisces surface carrying a Horse's single-minded chase. The sea angel is that tension made visible: a glassy drifter that hunts one prey and seizes it in a fraction of a second.",
+    "gifts": "Our reading: patience that can outlast scarcity (a year without food in the lab), precise focus on the one thing that matters, a gentleness people trust, and the speed to act when the moment comes.",
+    "shadow": "Our reading: specialization without a backup; being so clear and gentle on the surface that people are shocked by the edge; the Pisces drift used as cover for avoiding a decision the Horse has already made.",
+    "love": "Our reading: devoted to one person with unusual specificity; transparent about feeling; needs a partner who can hold both the softness and the intensity. The hermaphrodite sea angel suggests a love that does not sort roles by script.",
+    "money": "Our reading: lives off reserves well (lipid stores, the long fast); a saver in lean times who spends fast and all at once on the one thing wanted.",
+    "conflict": "Our reading: drifts, says little, then acts all at once. Practice: show the cones a little earlier, so people are not blindsided."
+  },
+  "careers": [
+    {
+      "path": "Investigative journalism, research, forensic analysis",
+      "why": "Our reading: one target, long patience, then a fast precise strike."
+    },
+    {
+      "path": "Polar or marine science, conservation",
+      "why": "Our reading: the sea angel's own world; Pisces affinity for water."
+    },
+    {
+      "path": "Therapy, nursing, hospice",
+      "why": "Our reading: Pisces empathy and a calm, see-through presence, with the Horse's stamina."
+    },
+    {
+      "path": "Film scoring, sound design, visual art",
+      "why": "Our reading: Neptune and Venus in Pisces favor art; the drift-and-strike rhythm suits editing and composition."
+    },
+    {
+      "path": "Negotiation, procurement, specialist sales",
+      "why": "Our reading: looks soft, knows exactly what it wants."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Moon Bear",
+      "slug": "moon-bear",
+      "reason": "Cancer x Tiger. Tiger shares the Horse trine and Cancer is a fellow Water sign."
+    },
+    {
+      "name": "Snow Leopard",
+      "slug": "snow-leopard",
+      "reason": "Scorpio x Goat. Goat is the Horse's secret friend; Scorpio is Water."
+    },
+    {
+      "name": "Tasmanian Devil",
+      "slug": "tasmanian-devil",
+      "reason": "Scorpio x Dog. Dog is in the Horse trine; Water with Water."
+    },
+    {
+      "name": "Glasswing Butterfly",
+      "slug": "glasswing-butterfly",
+      "reason": "Cancer x Goat. Secret friend plus shared Water, and another transparent animal (already on the live page)."
+    },
+    {
+      "name": "Steller's Sea Eagle",
+      "slug": "stellers-sea-eagle",
+      "reason": "Capricorn x Tiger. Tiger trine, and Capricorn Earth is the classic complement to Pisces Water."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Leafcutter Ant",
+      "slug": "leafcutter-ant",
+      "reason": "Virgo x Rat. Rat-Horse is the six-clash pair and Virgo is Pisces's opposite sign."
+    },
+    {
+      "name": "Vampire Squid",
+      "slug": "vampire-squid",
+      "reason": "Pisces x Rat. Same sign, but the Rat-Horse clash. Note the live page lists Vampire Squid under 'Animals your instincts trust on sight'; traditionally it is the clash."
+    }
+  ],
+  "candidate_lines": [
+    "You drift under the Okhotsk ice like a scrap of glass, and the Horse in you is already measuring the distance to the one shell you came for.",
+    "Anyone who looks can see the orange core through your clear body. Pisces made you see-through; the Horse made sure what shows is a fire.",
+    "A year of nothing in the water and you would still be here, living on what you stored, waiting for the right sea butterfly.",
+    "In Hokkaido they call you the angel of the drift ice. Watch you eat once and a second name arrives, and you answer to both without blinking.",
+    "You dropped your first shell a few days into life and never went looking for another. A mutable Pisces, you made the open water your armor.",
+    "Three pairs of cones stay folded inside you until the moment they are needed, and then the gentlest thing under the ice holds on with everything it has."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 海天使 (rail__han and serial-han), pinyin hǎitiānshǐ.",
+      "verdict": "OK (general term)",
+      "note": "海天使 hǎi tiānshǐ, sea angel, is used in Chinese for this animal and has pinyin on the page. The species name is 裸海蝶 luǒ hǎi dié, naked sea butterfly; consider it as a secondary label. Traditional and simplified forms are identical. Minor: the page writes 马 (simplified) in 'Horse year' but 馬 in the proverb.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "fact": "Lede: Clione limacina swims through Arctic and Antarctic waters.",
+      "verdict": "WRONG",
+      "note": "C. limacina lives in the Arctic Ocean and North Atlantic (south to at least the Sargasso Sea). Antarctic sea angels are a separate species, C. antarctica, and North Pacific and Okhotsk animals are now C. elegantissima.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Fact 1: a sea slug, shell-less gastropod; wing-like appendages are modified foot tissue; 'sea angel' is common usage.",
+      "verdict": "OK",
+      "note": "Parapodia are the modified foot; sea angels are the gymnosome clade. 'Sea slug' is informal but acceptable.",
+      "source_ids": [
+        "s8",
+        "s9"
+      ]
+    },
+    {
+      "fact": "Fact 2: feeds with buccal cones, six hook-bearing tentacle-like structures, everted only during predation.",
+      "verdict": "WRONG (detail)",
+      "note": "Six buccal cones (three pairs), adhesive, everted to seize the prey's shell: right. The hooks are separate: chitinous hooks everted from hook sacs pull the body out of the shell. Rewrite: 'six adhesive buccal cones grab the shell, then chitinous hooks pull the snail out'.",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s9"
+      ]
+    },
+    {
+      "fact": "Fact 3: feeds almost exclusively on Limacina sea butterflies; one hunting only the other.",
+      "verdict": "OK (soften)",
+      "note": "Adults feed almost exclusively on Limacina helicina and L. retroversa; when adult Limacina are scarce, stomachs held amphipods and calanoids, so 'only' is too strong.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Fact 4: sea angels produce bioluminescent light, a faint blue-violet glow.",
+      "verdict": "UNVERIFIABLE (likely wrong; cut)",
+      "note": "No source found that Clione limacina is bioluminescent; Wikipedia, SeaLifeBase, Sea Slug World and Walla Walla describe it without any light organ. The likely origin is the red-orange gut that seems to glow through the clear body. The Wu Xing card ('the bioluminescent glow in the dark column') repeats the claim and should go too.",
+      "source_ids": [
+        "s6",
+        "s9",
+        "s12"
+      ]
+    },
+    {
+      "fact": "Fact 5: veliger larvae briefly bear a shell; the shell is absorbed as the animal develops.",
+      "verdict": "WRONG (detail)",
+      "note": "The shelled veliger loses its shell at metamorphosis into a polytroch larva; Wikipedia says larvae discard their embryonic shells a few days after hatching. Shed, not absorbed.",
+      "source_ids": [
+        "s8",
+        "s9"
+      ]
+    },
+    {
+      "fact": "Fact 6: as temperatures rise, Limacina populations are declining due to acidification dissolving shells; sea angels face direct starvation risk.",
+      "verdict": "UNVERIFIABLE (overstated)",
+      "note": "Live Limacina shells are dissolving where water is undersaturated in aragonite (Bednaršek et al. 2012, Southern Ocean, L. helicina antarctica), so the threat is real. A measured population decline I could not source, and warming and acidification are conflated. 'Direct starvation' ignores that C. limacina survived 356 days without food in the lab (Böer et al. 2007). Rewrite as a risk, not a fact.",
+      "source_ids": [
+        "s15",
+        "s14"
+      ]
+    },
+    {
+      "fact": "Sources block: 'IUCN Red List, Clione limacina'.",
+      "verdict": "UNVERIFIABLE",
+      "note": "SeaLifeBase points to an IUCN entry but shows no category; CITES and CMS list it as not evaluated. Do not imply a conservation status. Lalli and Gilmer 1989, Pelagic Snails, is a real reference.",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "fact": "Purple Star sections.",
+      "verdict": "OK",
+      "note": "No star assigned from the sign pair; chart described as cast from lunar birth date and hour.",
+      "source_ids": []
+    }
+  ]
+}

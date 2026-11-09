@@ -1,0 +1,337 @@
+{
+ "slug": "tarsier",
+ "name": "Tarsier",
+ "sign": "Scorpio",
+ "year": "Rat",
+ "element": "Water (from the Rat); Scorpio adds Water, fixed. A double-Water crossing.",
+ "sources": [
+  {
+   "id": "t1",
+   "title": "Scorpio (astrology), Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Scorpio_(astrology)"
+  },
+  {
+   "id": "t2",
+   "title": "Scorpio sign traits, Cafe Astrology (tradition reference only, wording not reused)",
+   "url": "https://cafeastrology.com/scorpio.html"
+  },
+  {
+   "id": "t3",
+   "title": "Rat (zodiac), Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Rat_(zodiac)"
+  },
+  {
+   "id": "t4",
+   "title": "Year of the Rat, China Highlights",
+   "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/rat-chinese-zodiac-sign-symbolism.htm"
+  },
+  {
+   "id": "t5",
+   "title": "Chinese zodiac (compatibility: trines, six harmonies, six clashes), Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+  },
+  {
+   "id": "t6",
+   "title": "Earthly Branches (double hours), Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Earthly_Branches"
+  },
+  {
+   "id": "t7",
+   "title": "Tarsier, Wikipedia (eye size, head rotation, carnivory, captivity)",
+   "url": "https://en.wikipedia.org/wiki/Tarsier"
+  },
+  {
+   "id": "t8",
+   "title": "Philippine tarsier, Wikipedia (local names, 3 m leap, eye-to-body ratio, Sarangani bad-luck belief, captivity)",
+   "url": "https://en.wikipedia.org/wiki/Philippine_tarsier"
+  },
+  {
+   "id": "t9",
+   "title": "World's highest-pitched primate calls out like a bat, Live Science, 2012 (on Ramsier et al. 2012, Biology Letters)",
+   "url": "https://www.livescience.com/18359-embargoed-world-highest-pitched-primate-calls-bat.html"
+  },
+  {
+   "id": "t10",
+   "title": "Tiny primate ultrasound, Phys.org, 8 Feb 2012",
+   "url": "https://phys.org/news/2012-02-tiny-primate-ultrasound.pdf"
+  },
+  {
+   "id": "t11",
+   "title": "AMNH: each Philippine tarsier eye is about the size of its brain",
+   "url": "https://tumblr.amnh.org/post/187859074444/did-you-know-that-each-of-the-philippine-tarsiers/amp"
+  },
+  {
+   "id": "t12",
+   "title": "Tarsius syrichta, Animal Diversity Web (University of Michigan)",
+   "url": "https://animaldiversity.org/accounts/Tarsius_syrichta/"
+  },
+  {
+   "id": "t13",
+   "title": "Tarsiers: characteristics, Facts and Details (secondary; captive lifespan, Borneo lore)",
+   "url": "https://factsanddetails.com/asian/cat68/sub430/item2478.html"
+  },
+  {
+   "id": "t14",
+   "title": "Tarsier essay, borneohistory.net (after Niemitz, 'Puzzle about Tarsius', Sarawak Museum Journal 1972): Malay kera hantu, Iban Ingkat",
+   "url": "https://borneohistory.net/tarsier/"
+  },
+  {
+   "id": "t15",
+   "title": "Tarsier: The Littlest Alien, New Zealand Geographic (documentary summary; balete fig spirits)",
+   "url": "https://www.nzgeo.com/?p=93895"
+  },
+  {
+   "id": "t16",
+   "title": "眼鏡猴科 Tarsiidae, Chinese Wikipedia (names 眼鏡猴, 跗猴)",
+   "url": "https://zh.wikipedia.org/zh-tw/%E7%9C%BC%E9%8F%A1%E7%8C%B4"
+  },
+  {
+   "id": "t17",
+   "title": "Zodi Animal system facts: BRIEF.md and site/js/modules/zodi-map.js GRID (internal)",
+   "url": "file:data/research/BRIEF.md"
+  }
+ ],
+ "western": {
+  "temperament": "Traditionally read as perceptive, determined, private and strategic, patient until the right moment, loyal and protective once committed. Shadow: suspicion, possessiveness, jealousy, grudges, withdrawal.",
+  "planet": "Mars (traditional), Pluto (modern); Ketu in Vedic astrology",
+  "element": "Water",
+  "modality": "Fixed; negative/feminine polarity; opposite sign Taurus",
+  "source_ids": [
+   "t1",
+   "t2"
+  ]
+ },
+ "chinese": {
+  "temperament": "First of the twelve. Quick-witted, resourceful, observant, good at spotting and using opportunity, with keen intelligence. Shadow: said to lack courage. Great Race: the Rat rode the Ox and jumped ahead to finish first.",
+  "yinyang": "Yang",
+  "element": "Water (fixed); earthly branch 子 zǐ; Rat double hour 23:00 to 01:00, the midnight hour",
+  "trine": "Rat, Dragon, Monkey",
+  "secret_friend": "Ox",
+  "clash": "Horse (China Highlights also lists Rabbit and Rooster among worst matches)",
+  "lucky": null,
+  "source_ids": [
+   "t3",
+   "t4",
+   "t5",
+   "t6"
+  ]
+ },
+ "symbolism": [
+  {
+   "culture": "Malay and Iban (Borneo)",
+   "meaning": "In Malay the tarsier is called kera hantu, 'ghost monkey'; the Iban name is Ingkat. Source is a Borneo history essay based on Carsten Niemitz's 1972 Sarawak Museum Journal piece. The name fits the animal's silent, sudden presence at night. Use as a naming fact, not as a belief system.",
+   "source_ids": [
+    "t14"
+   ]
+  },
+  {
+   "culture": "Philippines (community not named in source)",
+   "meaning": "Tarsiers are said to be pets of spirits living in balete (strangler fig) trees; anyone who harms one must apologize to the forest spirits or face sickness or hardship. Source is a documentary summary that does not name the community, so attribute it as 'a belief reported in the Philippines'.",
+   "source_ids": [
+    "t15"
+   ]
+  },
+  {
+   "culture": "Philippines (Sarangani, Mindanao)",
+   "meaning": "Some Indigenous groups leave tarsiers alone in the wild for fear they bring bad luck, which Wikipedia says has helped the species survive there. Local Visayan names include mawumag and mamag; Waray magô.",
+   "source_ids": [
+    "t8"
+   ]
+  },
+  {
+   "culture": "Chinese naming",
+   "meaning": "Chinese calls the tarsier 眼鏡猴 yǎnjìnghóu, 'spectacled monkey', for its huge eyes; the alternate name 跗猴 fùhóu, 'tarsus monkey', mirrors the Latin Tarsius (named for the long ankle bones).",
+   "source_ids": [
+    "t16",
+    "t7"
+   ]
+  },
+  {
+   "culture": "Iban (Borneo), secondary only",
+   "meaning": "Facts and Details says the Iban once treated the tarsier as a head-hunting omen, a full head turn warning that a head would be lost, and that Dayak call tarsiers hantu (spirits). No primary ethnography located. Weak: do not use without a better source.",
+   "source_ids": [
+    "t13"
+   ]
+  },
+  {
+   "culture": "Generic 'tarsier spirit animal' meanings (intuition, seeing the unseen)",
+   "meaning": "Unsourced, do not use. Only totem blogs found.",
+   "source_ids": []
+  }
+ ],
+ "fusion": {
+  "temperament": "Our reading: water on water. Fixed Water (Scorpio) is the deep still pool; yang Water (Rat) is the moving midnight river. Both halves are night creatures: Scorpio works under the surface and the Rat owns the 23:00 to 01:00 double hour, which is exactly when a tarsier is awake and hunting. The Tarsier is the watcher who stores every detail (Rat) and holds it until the moment is right (Scorpio).",
+  "gifts": "Our reading: extreme attention, the way an eye the size of a brain takes in more than it says; timing; a private signal channel for the few who are tuned in (the 70 kHz call); total commitment once something is chosen (the only fully carnivorous primate).",
+  "shadow": "Our reading: Scorpio suspicion plus the Rat's caution can freeze into watching forever. Because the eyes cannot move, every look costs a whole-body turn, so this crossing may avoid looking at what it fears. Stress in the wrong habitat is real: tarsiers do badly in captivity and under flash and handling (t7, t8). Read as: the wrong environment drains you fast.",
+  "love": "Our reading: two Water signs make love deep, slow to show and hard to fake. Chooses one person and turns fully toward them. Needs a partner who can hear the quiet frequency and does not demand loud proof. Jealousy is the risk.",
+  "money": "Our reading: the Rat saves and spots the angle; Scorpio keeps it private. A careful, research-led investor who stores reserves no one knows about. Risk: hoarding information or money past the point of use.",
+  "conflict": "Our reading: goes still, reads the whole branch, then leaps once and lands. Rarely argues in public. Holds grudges (Scorpio) and remembers every detail (Rat), so repair has to be explicit."
+ },
+ "careers": [
+  {
+   "path": "Investigation, intelligence analysis, forensic accounting",
+   "why": "Our reading: Rat resourcefulness plus Scorpio's eye for what lies under the surface; night-vision work."
+  },
+  {
+   "path": "Research and lab science, especially sensory or acoustic research",
+   "why": "Our reading: the ultrasonic call and the giant eyes; China Highlights lists researcher among Rat careers (t4)."
+  },
+  {
+   "path": "Therapy, psychiatry, grief or crisis counselling",
+   "why": "Our reading: double Water depth and a listener tuned to what is not said aloud."
+  },
+  {
+   "path": "Night-shift professions: emergency medicine, astronomy, security",
+   "why": "Our reading: a creature of the Rat hour."
+  },
+  {
+   "path": "Photography, cinematography, sound design",
+   "why": "Our reading: whole-body attention to one frame; the eye and the ear are this animal's gifts."
+  }
+ ],
+ "best_matches": [
+  {
+   "name": "Asian Elephant",
+   "slug": "asian-elephant",
+   "reason": "Cancer x Ox. Ox is the Rat's secret friend (six harmonies) and Cancer is a fellow Water sign. Double harmony."
+  },
+  {
+   "name": "Whale Shark",
+   "slug": "whale-shark",
+   "reason": "Pisces x Dragon. Dragon is in the Rat trine and Pisces is a fellow Water sign."
+  },
+  {
+   "name": "New Caledonian Crow",
+   "slug": "new-caledonian-crow",
+   "reason": "Virgo x Monkey. Monkey is in the Rat trine; Virgo's Earth is the classic complement to Water."
+  },
+  {
+   "name": "Snowy Owl",
+   "slug": "snowy-owl",
+   "reason": "Capricorn x Monkey. Monkey trine; Capricorn Earth complements Scorpio Water. Another night-eyed hunter."
+  },
+  {
+   "name": "Gila Monster",
+   "slug": "gila-monster",
+   "reason": "Scorpio x Dragon. Same sign, and Dragon sits in the Rat trine."
+  }
+ ],
+ "hard_matches": [
+  {
+   "name": "Moose",
+   "slug": "moose",
+   "reason": "Taurus x Horse. Rat-Horse is the traditional six-clash pair and Taurus is Scorpio's opposite sign. Both systems pull apart."
+  },
+  {
+   "name": "Orca",
+   "slug": "orca",
+   "reason": "Scorpio x Horse. Same sign, so the surface feels familiar, but the Rat-Horse clash sits underneath."
+  }
+ ],
+ "candidate_lines": [
+  "At the Rat hour, when the fig forest goes black, your eyes are already open, and each one holds about as much as your mind does.",
+  "Your truest messages go out at seventy kilohertz: pitched for the one on the next branch who is tuned to you, silent to everyone else.",
+  "Your gaze cannot slide sideways. To look at someone you swing your whole head around, and the person at the end of that turn feels chosen.",
+  "Malay speakers named your animal kera hantu, the ghost monkey, and you have a ghost's habit of being on the next trunk before anyone hears the leap.",
+  "In love you take only what is alive and real; a borrowed feeling or a half-meant promise leaves you hungry on the branch, and you would rather wait for the next moth.",
+  "Two waters run in you, the Scorpion's still pool and the Rat's midnight river, so a feeling travels a long way under the forest floor before it reaches a word."
+ ],
+ "fact_audit": [
+  {
+   "fact": "Header hanzi (rail__han and serial-han) 眼 yǎn",
+   "verdict": "WRONG",
+   "note": "眼 means 'eye', not tarsier. The Chinese name is 眼鏡猴 yǎnjìnghóu (simplified 眼镜猴), 'spectacled monkey'; alternate 跗猴 fùhóu. Use 眼鏡猴 with pinyin, or drop the glyph.",
+   "source_ids": [
+    "t16"
+   ]
+  },
+  {
+   "fact": "Eyes fixed in their sockets; head rotates up to 180 degrees each way, roughly 360 degrees of coverage",
+   "verdict": "OK",
+   "note": "Wikipedia (citing Gron 2010 factsheet): heads move 180 degrees in either direction, nearly 360 degree view. ADW: heads rotate 180 degrees.",
+   "source_ids": [
+    "t7",
+    "t12"
+   ]
+  },
+  {
+   "fact": "Each eye of a Philippine tarsier is roughly as large as its brain, giving the highest eye-to-brain-volume ratio among all mammals",
+   "verdict": "WRONG (superlative)",
+   "note": "Eye about brain size is OK (AMNH; Wikipedia: 'as large as, or in some cases larger than, its entire brain'). The record sources give is the largest eye-to-BODY weight ratio of all mammals, not eye-to-brain. Rewrite the second half.",
+   "source_ids": [
+    "t11",
+    "t7",
+    "t8"
+   ]
+  },
+  {
+   "fact": "Vocalizations above 20 kHz; first recorded in Philippine tarsiers by Ramsier et al. 2012, Biology Letters",
+   "verdict": "OK (could be sharper)",
+   "note": "Ramsier et al. 2012 recorded pure ultrasound near 70 kHz (67 to 79 kHz) from 8 of 35 wild tarsiers; hearing to about 91 kHz. Ramsier: first primate shown to use vocalization only in the ultrasound. Better: 'about 70 kHz'. Not all tarsier calls are ultrasonic. Live-page DOI 10.1098/rsbl.2011.1149 not opened (doi.org blocked).",
+   "source_ids": [
+    "t9",
+    "t10"
+   ]
+  },
+  {
+   "fact": "Leaps up to forty times its own body length, rotating mid-air to land feet first",
+   "verdict": "UNVERIFIABLE",
+   "note": "Sources disagree: Wikipedia gives at least 3 m for the Philippine tarsier (head-body 85 to 160 mm per ADW, so about 20 to 35 body lengths); ADW gives 4 to 6 ft and up to 20 ft; the 40x figure appears only in a secondary page for the western tarsier. Mid-air rotation unsourced. Say 'leaps about 3 m' instead.",
+   "source_ids": [
+    "t8",
+    "t12",
+    "t13"
+   ]
+  },
+  {
+   "fact": "Tarsiers are the only entirely carnivorous primates; no plant matter",
+   "verdict": "OK",
+   "note": "Wikipedia: 'the only entirely carnivorous extant primates', mainly insects, also lizards, small birds, spiders.",
+   "source_ids": [
+    "t7",
+    "t12"
+   ]
+  },
+  {
+   "fact": "Tarsiers in captivity frequently die within days or weeks; Niemitz (1984) documented stress-induced death from loss of roosting structure and darkness",
+   "verdict": "WRONG (overstated) / citation UNVERIFIABLE",
+   "note": "Captive tarsiers have lived 13.5 years (ADW) and over 17 years (secondary). What is supported: captivity shortens life, breeding colonies have never succeeded, and stress (flash, handling) can lead to fatal head-banging (Wikipedia, press-sourced). Niemitz 1984 'Biology of Tarsiers' is a real book but the specific claim could not be checked.",
+   "source_ids": [
+    "t7",
+    "t8",
+    "t12",
+    "t13"
+   ]
+  },
+  {
+   "fact": "Intro: 'cannot be kept alive in captivity for any sustained period'",
+   "verdict": "WRONG",
+   "note": "Same as above: multi-year captive survival is recorded.",
+   "source_ids": [
+    "t12"
+   ]
+  },
+  {
+   "fact": "Intro: 'the eye that cannot move but can rotate a hundred and eighty degrees'",
+   "verdict": "WRONG (garbled)",
+   "note": "It is the head, not the eye, that rotates 180 degrees.",
+   "source_ids": [
+    "t7"
+   ]
+  },
+  {
+   "fact": "Range: Philippines, Borneo, Sulawesi",
+   "verdict": "OK",
+   "note": "Tarsiers live on islands of Southeast Asia incl. these (Wikipedia Tarsier).",
+   "source_ids": [
+    "t7"
+   ]
+  },
+  {
+   "fact": "Purple Star (ZWDS) claim",
+   "verdict": "OK (none present)",
+   "note": "No 'Purple Star already suspects' section on this page; Purple Star appears only in nav.",
+   "source_ids": []
+  }
+ ]
+}

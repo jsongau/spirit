@@ -1,0 +1,294 @@
+{
+  "slug": "golden-lion-tamarin",
+  "name": "Golden Lion Tamarin",
+  "sign": "Leo",
+  "year": "Rat",
+  "element": "Water (from the Rat, yang); Leo adds Fire, fixed",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Leo (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Leo_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Leo zodiac sign personality traits, Bustle",
+      "url": "https://www.bustle.com/life/leo-zodiac-signs-personality-traits-love-compatibility-astrology"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (Rat row, compatibility grid), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Rat, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/rat.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Leontopithecus rosalia, Animal Diversity Web (University of Michigan)",
+      "url": "https://animaldiversity.org/accounts/Leontopithecus_rosalia/"
+    },
+    {
+      "id": "s6",
+      "title": "Golden lion tamarin, Wikipedia (sleeping sites, calls, census, yellow fever, fur pigment)",
+      "url": "https://en.wikipedia.org/wiki/Golden_lion_tamarin"
+    },
+    {
+      "id": "s7",
+      "title": "Brazilian real (banknote families), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Brazilian_real"
+    },
+    {
+      "id": "s8",
+      "title": "20 Brazilian Reais banknote, Leftover Currency",
+      "url": "https://www.leftovercurrency.com/exchange/brazilian-reais/withdrawn-brazilian-real-banknotes/20-brazilian-reais-banknote/"
+    },
+    {
+      "id": "s9",
+      "title": "金獅面狨, Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/金獅面狨"
+    },
+    {
+      "id": "s10",
+      "title": "獅面狨屬 (genus page), Chinese Wikipedia mirror on IPFS",
+      "url": "https://zh.wikipedia-on-ipfs.org/wiki/%E7%8D%85%E9%9D%A2%E7%8B%A8%E5%B1%AC"
+    },
+    {
+      "id": "s11",
+      "title": "Chinese guardian lions, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_guardian_lions"
+    },
+    {
+      "id": "s12",
+      "title": "Golden Lion Tamarin Sleeping Site Use (abstract), University of St Thomas research repository",
+      "url": "https://researchonline.stthomas.edu/esploro/outputs/journalArticle/Golden-Lion-Tamarin-Sleeping-Site-Use/991015132208203691"
+    },
+    {
+      "id": "s13",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Confident, warm, generous, creative, loyal, playful and optimistic; makes others feel special and leads well. Shadow: can read as vain or arrogant, hides insecurity behind superiority, big emotional highs and lows, controlling at work.",
+    "planet": "Sun",
+    "element": "Fire",
+    "modality": "Fixed; opposite sign Aquarius",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Quick-witted, resourceful, sharp-eyed for opportunity, adaptable, charming and ambitious; makes friends easily. Shadow: can lack courage, starts and ends relationships easily. Wikipedia ties the Rat, first of the twelve, to new starts.",
+    "yinyang": "Yang",
+    "element": "Water (fixed); earthly branch 子 zǐ",
+    "trine": "Rat, Dragon, Monkey",
+    "secret_friend": "Ox",
+    "clash": "Horse (Wikipedia grid also lists Goat as a harm pair)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Brazil (national money)",
+      "meaning": "The golden lion tamarin is the animal on Brazil's R$20 note, introduced in 2002 in the first real series and kept in the second series (2012) [s7] [s8]. Every Brazilian has carried it in a wallet. A Leo animal printed on money is a clean, checkable bridge.",
+      "source_ids": [
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "culture": "Conservation story (Atlantic Forest, Rio de Janeiro state)",
+      "meaning": "Estimates in the 1960s and 1970s put survivors at only 100 to 600; 146 captive-born and 7 confiscated animals were released between 1984 and 2000; yellow fever in 2016 to 2019 killed around 30 percent of the wild population; the 2022/2023 census counted about 4,800 [s6]. A real near-vanishing and return, and a fit for the Rat as the sign of new starts.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Chinese (the animal's own name)",
+      "meaning": "Chinese names: 金獅面狨 jīn shīmiànróng, 'golden lion-faced marmoset', also 金狨 jīnróng; the genus is 獅面狨屬 shīmiànróng shǔ [s9] [s10]. The 獅 shī in the name is the lion of Chinese guardian-lion pairs, set at palace, temple and house gates to keep harm out; the female restrains a cub, standing for nurture [s11]. Bridge (ours): a tiny lion that guards a gate and raises its young as a pair.",
+      "source_ids": [
+        "s9",
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "culture": "Biology as image",
+      "meaning": "The bright orange coat contains no carotenoids, the pigments behind most orange in nature [s6]. Usable as a quiet 'the gold is not borrowed' line; keep the claim exactly this narrow.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "A Tupi name (sauí) and any Indigenous Brazilian story about this species: not found in an opened source. Generic 'tamarin spirit animal' meanings on totem blogs: no traditional source.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Fire (Leo, ruled by the Sun) over yang Water (Rat, first of the twelve). Water checks Fire in the five-phase cycle, so the blaze is kept on a short, watchful leash. Bright enough to be seen across the canopy, careful enough to keep many hiding places and change them.",
+    "gifts": "Our reading: warmth that holds a family together, a voice that marks the edge of its ground, generosity with the young, quick resourcefulness when the forest changes.",
+    "shadow": "Our reading: an alarm that rarely stands down; Leo pride meeting Rat caution can turn into display on the outside and suspicion inside. The comeback story cuts both ways: survival can harden into counting threats long after the danger is over.",
+    "love": "Our reading: cooperative and family-first. Twins are common and the whole group raises them; love here means sharing the carrying. Needs to be admired, and needs to be trusted with the home's secrets.",
+    "money": "Our reading: Rat resourcefulness with Leo taste. Keeps more than one stash, the way groups keep dozens of sleeping sites, and spends visibly on the people inside the territory.",
+    "conflict": "Our reading: calls before it fights. Long calls handle disputes with neighbors at a distance; contact with outsiders is the last step. Practice: tell your people which alarms are drills."
+  },
+  "careers": [
+    {
+      "path": "Security, safety officer, risk and compliance",
+      "why": "Our reading: the Rat's sharp watch plus Leo's willingness to say it out loud; calls used for alarms and vigilance (ADW)."
+    },
+    {
+      "path": "Broadcasting, voice, music, public speaking",
+      "why": "Our reading: Sun-ruled presence and a repertoire of 15 to 21 calls (Wikipedia, citing Ruiz-Miranda and Kleiman)."
+    },
+    {
+      "path": "Conservation, NGO leadership, fundraising",
+      "why": "Our reading: the species itself is the flagship comeback of the Atlantic Forest; Leo leads, the Rat finds the resources."
+    },
+    {
+      "path": "Brand, design, styling",
+      "why": "Our reading: a coat that is its own signature, color that carries across a forest."
+    },
+    {
+      "path": "Family business, hospitality, running a household-scale team",
+      "why": "Our reading: cooperative breeding; the group raises the young together."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Kookaburra",
+      "slug": "kookaburra",
+      "reason": "Aries x Monkey. Monkey sits in the Rat trine (Rat, Dragon, Monkey); Aries is a fellow Fire sign. Trine plus same element."
+    },
+    {
+      "name": "Coati",
+      "slug": "coati",
+      "reason": "Sagittarius x Monkey. Monkey trine; Sagittarius is the third Fire sign. Another troop animal."
+    },
+    {
+      "name": "Frigatebird",
+      "slug": "frigatebird",
+      "reason": "Sagittarius x Dragon. Dragon trine; Sagittarius Fire with Leo Fire."
+    },
+    {
+      "name": "Three-wattled Bellbird",
+      "slug": "three-wattled-bellbird",
+      "reason": "Gemini x Ox. Ox is the Rat's secret friend (six harmonies); Gemini Air feeds Leo Fire."
+    },
+    {
+      "name": "Superb Lyrebird",
+      "slug": "superb-lyrebird",
+      "reason": "Gemini x Dragon. Dragon trine; Gemini Air complements Leo Fire. A voice animal to match a voice animal."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Sailfish",
+      "slug": "sailfish",
+      "reason": "Aquarius x Horse. Rat and Horse are a six-clash pair, and Aquarius is Leo's opposite sign. Both systems pull apart."
+    },
+    {
+      "name": "Paradise Riflebird",
+      "slug": "paradise-riflebird",
+      "reason": "Leo x Horse. Same sign, so the display instincts match, but the Rat-Horse clash sits underneath."
+    }
+  ],
+  "candidate_lines": [
+    "Your gold carries across the whole canopy, and still the hollow you pick for the night fits only the four or five you trust.",
+    "You keep more than one place to sleep, and only your troop learns which tree it is tonight.",
+    "When two things arrive at once, two jobs, two children, two cities, you hand one to the family to carry and feel no shame about it.",
+    "Your long call goes out over the forest edge at first light, and it sounds like a song, and it works like a fence.",
+    "Somewhere behind you is a forest that nearly ran out of your kind, and you still count your people twice before you sleep.",
+    "The young ones pull fruit straight out of your hands, and you let them, and call it play, and it is."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Mane of long silky hair, pale gold to reddish-gold, on crown, cheeks, throat, ears and shoulders, framing a bare dark face; gives the species its name and does not dim in shade.",
+      "verdict": "OK (cut the last clause)",
+      "note": "ADW: 'thick golden mane on the crown, cheeks, throat, ears and shoulders', pale gold to reddish-gold. Wikipedia: dark hairless face. 'Does not dim in shade' has no source; cut. Optional true add: the orange has no carotenoids (Wikipedia).",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Claw-like nails instead of flat fingernails on most digits, for gripping trunks and bark.",
+      "verdict": "OK",
+      "note": "ADW: 'these tamarins have claws, not flattened fingernails'. (Callitrichids keep a flat nail on the big toe, so 'most digits' is correct.)",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "fact": "Long slender fingers probe bark crevices and bromeliads for insects and small prey, called micromanipulation.",
+      "verdict": "OK",
+      "note": "ADW uses 'micromanipulation' for probing crevices with long slender digits.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "fact": "Sleeps in tree holes on a strict dusk-to-sunrise schedule, often with a midday nap, returning to the closed canopy 10 to 30 m up. Elsewhere on the page (intro, Element, Ideal Habitat, feng shui bedroom): 'sleeps in the same tree hollow every night of its life'.",
+      "verdict": "WRONG",
+      "note": "The dusk-to-sunrise schedule, midday nap and 10 to 30 m range are in ADW (the height is general range use, not sleeping height). But 'the same tree hollow every night' is false: some groups used more than 40 sleeping sites over a multi-year study; same site on consecutive nights only about 50 percent of the time at Poço das Antas (20 and 38 percent at União); tree holes on 63.6 percent of nights, with bamboo, vine tangles and bromeliads the rest (Wikipedia; s12 also says groups spread nights over several sites). Fix all four or five places the page repeats it.",
+      "source_ids": [
+        "s5",
+        "s6",
+        "s12"
+      ]
+    },
+    {
+      "fact": "Twins after a gestation of about 130 to 135 days; the whole family helps carry and raise them, with the father usually doing the largest share.",
+      "verdict": "OK (soften father clause)",
+      "note": "ADW: twins after 130 to 135 days; rearing shared by the group, father doing most (though ADW's own table lists the female as main pre-weaning provisioner). Wikipedia says infants depend entirely on the mother for nursing and carrying for the first four weeks. Suggest 'the father and older siblings take on much of the carrying'.",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Fiercely territorial, scent marking and loud vocal threats; roughly 17 distinct calls, including long song-like calls for group vigilance.",
+      "verdict": "OK (soften number)",
+      "note": "ADW: territorial with scent marks and vocal threats; 'about 17 specific calls'; long song-like calls for vigilance. Wikipedia (Ruiz-Miranda and Kleiman) gives a repertoire of 15 to 21 calls in six categories, with long calls used for intergroup spacing. 'About 17' is fine; '15 to 21' is better.",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Cited source: 'Food-offering calls in wild golden lion tamarins (Leontopithecus rosalia)', PMC6300579.",
+      "verdict": "UNVERIFIABLE",
+      "note": "PMC and Europe PMC blocked or rate-limited the fetch, so the title-to-ID match was not confirmed. No fact in the six cards depends on it. A person should open the link.",
+      "source_ids": []
+    },
+    {
+      "fact": "Header hanzi 猴 (rail__han and serial-han).",
+      "verdict": "WRONG",
+      "note": "猴 hóu means monkey and is the glyph of the Monkey zodiac sign, which is confusing on a Leo x Rat page (the hero shows 鼠 for the Rat). It is not the animal's name. Correct traditional name: 金獅面狨 jīn shīmiànróng (simplified 金狮面狨), short form 金狨 jīnróng. If one glyph is needed, 狨 róng (marmoset/tamarin) is the accurate single character.",
+      "source_ids": [
+        "s9",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Purple Star (Zi Wei Dou Shu) mentions.",
+      "verdict": "OK",
+      "note": "Only chart-casting promos that correctly say charts come from lunar birth date and hour; no star assigned to Leo x Rat.",
+      "source_ids": []
+    },
+    {
+      "fact": "Lunar New Year January/February note.",
+      "verdict": "OK",
+      "note": "Absent, which is right for Leo.",
+      "source_ids": []
+    }
+  ]
+}

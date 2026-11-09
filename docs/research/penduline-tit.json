@@ -1,0 +1,375 @@
+{
+  "slug": "penduline-tit",
+  "name": "Penduline Tit",
+  "sign": "Virgo",
+  "year": "Rabbit",
+  "element": "Wood (from the Rabbit); Virgo adds Earth, mutable",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Virgo (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Virgo_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Virgo personality traits, VICE",
+      "url": "https://www.vice.com/en/article/virgo-personality-traits-everything-you-need-to-know"
+    },
+    {
+      "id": "s3",
+      "title": "Rabbit (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rabbit_(zodiac)"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Rabbit, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/rabbit.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Chinese zodiac (compatibility grid), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s6",
+      "title": "Eurasian penduline tit, Wikipedia (nest, builders, care, slippers; citing Cramp and Perrins 1993, Harrap and Quinn 1996)",
+      "url": "https://en.wikipedia.org/wiki/Eurasian_penduline_tit"
+    },
+    {
+      "id": "s7",
+      "title": "Cape penduline tit, Wikipedia (false entrance and chamber)",
+      "url": "https://en.wikipedia.org/wiki/Cape_penduline_tit"
+    },
+    {
+      "id": "s8",
+      "title": "Remizidae (penduline tits), Wikipedia (name 'penduline' = hanging; Anthoscopus false entrance)",
+      "url": "https://en.wikipedia.org/wiki/Remizidae"
+    },
+    {
+      "id": "s9",
+      "title": "Remiz (genus), Wikipedia (Remiz is the Polish word for the bird; Jarocki 1819)",
+      "url": "https://en.wikipedia.org/wiki/Remiz"
+    },
+    {
+      "id": "s10",
+      "title": "Pogány, Szentirmai, Komdeur and Székely 2008, Sexual conflict and consistency of offspring desertion in Eurasian penduline tit, BMC Evolutionary Biology 8:242",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2535784"
+    },
+    {
+      "id": "s11",
+      "title": "Parents seeking sex abandon 1 in 3 offspring (University of Bath release on Szentirmai et al. 2007, J Evol Biol), EurekAlert",
+      "url": "https://www.eurekalert.org/news-releases/466455"
+    },
+    {
+      "id": "s12",
+      "title": "Birds abandon eggs (penduline tit desertion), Live Science 2007",
+      "url": "https://www.livescience.com/animals/070730_birds_abandon.html"
+    },
+    {
+      "id": "s13",
+      "title": "Szentirmai, Komdeur and Székely 2005, What makes a nest-building male successful?, Behavioral Ecology 16(6):994-1000 (IDEAS record)",
+      "url": "https://ideas.repec.org/a/oup/beheco/v16y2005i6p994-1000.html"
+    },
+    {
+      "id": "s14",
+      "title": "Pogány and Székely 2007, Female choice in the penduline tit: the effects of nest size and male mask size, Behaviour 144:411-427 (Bath research portal)",
+      "url": "https://researchportal.bath.ac.uk/en/publications/female-choice-in-the-penduline-tit-remiz-pendulinus-the-effects-o/"
+    },
+    {
+      "id": "s15",
+      "title": "Eurasian Penduline Tit, Oiseaux.net (size, weight, voice, hanging upside down, nest building)",
+      "url": "https://oiseaux.net/birds/eurasian.penduline.tit.html"
+    },
+    {
+      "id": "s16",
+      "title": "Penduline tit, BirdSpot (size, weight about 10 g, nest entrance at top)",
+      "url": "https://www.birdspot.co.uk/uk-rare-birds/penduline-tit"
+    },
+    {
+      "id": "s17",
+      "title": "Chinese Penduline Tit Remiz consobrinus 中華攀雀, Hong Kong Bird Watching Society avifauna",
+      "url": "https://avifauna.hkbws.org.hk/species/0270/035000"
+    },
+    {
+      "id": "s18",
+      "title": "攀雀科 Remizidae, Chinese Wikipedia mirror (genus 攀雀屬 Remiz)",
+      "url": "https://zhwiki.oracleblog.org/zh-tw/%E6%94%80%E9%9B%80%E7%A7%91"
+    },
+    {
+      "id": "s19",
+      "title": "MDBG Chinese dictionary: 攀 pān, 雀 què",
+      "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=1&wdqb=%E6%94%80"
+    },
+    {
+      "id": "s20",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Analytical, detail-focused, organized and useful; skilled with the hands, edits and sorts well, reads people quickly; dedicated to daily practice. Shadow: overly critical, perfectionism as an obstacle, hides sensitivity, swings between open and withdrawn, slow to open in love.",
+    "planet": "Mercury (Ceres in some modern systems)",
+    "element": "Earth (with Taurus and Capricorn)",
+    "modality": "Mutable; opposite sign Pisces",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Gentle, quiet, elegant, kind and patient; quick, skilful and alert; responsible and loyal. Shadow: reluctant to share thoughts, may avoid hard realities.",
+    "yinyang": "Yin",
+    "element": "Wood (fixed); earthly branch 卯 mǎo",
+    "trine": "Rabbit, Goat, Pig",
+    "secret_friend": "Dog",
+    "clash": "Rooster (China Highlights also lists Rat as a poor match)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "The names (Latin, Polish, Chinese)",
+      "meaning": "'Penduline' means hanging, from the bag nests hung from trees, usually over water (Remizidae). The genus name Remiz is simply the Polish word for this bird (Jarocki, 1819). The Chinese family name 攀雀 pānquè is 攀 pān 'to climb by pulling oneself up' plus 雀 què 'small bird': the climbing bird. Three languages name it for what it does: hang, and climb.",
+      "source_ids": [
+        "s8",
+        "s9",
+        "s18",
+        "s19"
+      ]
+    },
+    {
+      "culture": "Central Europe, household use",
+      "meaning": "The felted nests were formerly used in Central Europe as children's slippers (Wikipedia, citing Harrap and Quinn 1996). A real, homely image: the bird's work warm enough to wear. Keep it to one sentence; I found no further folklore source.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Science as story: the open marriage of the reed beds",
+      "meaning": "Eurasian penduline tits are one of the best-studied cases of sexual conflict over parental care. Only one parent raises a clutch; about one in three clutches is abandoned by both parents (28 to 40 percent across Sweden, Germany, Austria and Hungary); each bird may have up to seven partners a season; some females hide eggs so they can leave first (Székely's group, Bath). This is the honest, strange core of the animal and a strong shadow theme.",
+      "source_ids": [
+        "s10",
+        "s11",
+        "s12"
+      ]
+    },
+    {
+      "culture": "The male's nest as his reputation",
+      "meaning": "The male chooses the site and starts the nest, calling for a female; if none joins, he abandons it and starts again (Oiseaux.net). Males that spend more time building and build larger nests have higher success, and females are more likely to stay and care for their young (Szentirmai et al. 2005). An experiment found females chose males by mask width, not nest size (Pogány and Székely 2007). Use: the work matters, but it is not the only thing she reads.",
+      "source_ids": [
+        "s15",
+        "s13",
+        "s14"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Any 'penduline tit spirit animal' meaning; any Chinese folklore for 攀雀 pānquè (none found); the false-entrance 'trickster nest' lore, which belongs to the African Cape penduline tit (Anthoscopus), not this bird.",
+      "source_ids": [
+        "s7"
+      ]
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: mutable Earth (Virgo, Mercury) meets yin Wood (Rabbit). Virgo is the craftsman; the Rabbit is gentle, alert and slow to show its thoughts. The Penduline Tit is the quiet builder who works with its hands, hangs at odd angles to reach things, and keeps its own counsel about who gets to stay. Wood controls Earth, so the Rabbit's caution keeps checking Virgo's need to finish.",
+    "gifts": "Our reading: patient, skilled making; a sense for which materials (and people) will hold; adaptability, since both halves bend rather than break; gentleness that lets others relax.",
+    "shadow": "Our reading: the conflict the biology names. Two careful creatures each waiting to see who will commit first, and sometimes both leaving. Virgo's perfectionism plus the Rabbit's avoidance can mean a fine nest that nobody moves into, or a quiet exit before the other person knows there was a choice.",
+    "love": "Our reading: shows love through made things and practical care. Shy about saying it (Rabbit reluctance to share thoughts; Virgo slow to open). Needs a partner who will state commitment out loud, early, so neither has to guess. Rabbit and Dog's six harmony suggests a steady, loyal partner suits.",
+    "money": "Our reading: frugal, handy, prefers to repair and reuse; good at building something slowly that holds value. Risk: over-investing time in one project and walking away from it before it pays.",
+    "conflict": "Our reading: avoids open fights (Rabbit) and keeps a quiet list of flaws (Virgo). The risk is leaving instead of saying. Practice: name the small thing while you are still in the nest."
+  },
+  "careers": [
+    {
+      "path": "Textile work, weaving, felting, upholstery, tailoring",
+      "why": "Our reading: the nest is felted from plant down and wool; Virgo hands and Rabbit patience."
+    },
+    {
+      "path": "Restoration, conservation of objects, bookbinding",
+      "why": "Our reading: careful, close work on things meant to last; Mercury's craft side."
+    },
+    {
+      "path": "Wetland and reedbed management, ecological survey",
+      "why": "Our reading: the bird's own habitat, willows and reeds over water."
+    },
+    {
+      "path": "UX research, product design, architecture of small spaces",
+      "why": "Our reading: building something people will live inside, and noticing how they actually use it."
+    },
+    {
+      "path": "Family law mediation, couples counselling",
+      "why": "Our reading: the bird studied for sexual conflict over care; a calm Rabbit temperament that can hold both sides."
+    },
+    {
+      "path": "Editing, copy-editing, indexing",
+      "why": "Our reading: Virgo's sorting and editing strength, done quietly and well."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Clark's Nutcracker",
+      "slug": "clarks-nutcracker",
+      "reason": "Virgo x Goat. The Goat sits in the Rabbit trine, and both are Virgo. Two hoarders of careful work who understand each other's pace."
+    },
+    {
+      "name": "Snow Petrel",
+      "slug": "snow-petrel",
+      "reason": "Taurus x Goat. Goat trine plus a fellow Earth sign."
+    },
+    {
+      "name": "Capybara",
+      "slug": "capybara",
+      "reason": "Cancer x Pig. Pig trine; Cancer Water complements Virgo Earth, and Water feeds the Rabbit's Wood."
+    },
+    {
+      "name": "Banded Mongoose",
+      "slug": "banded-mongoose",
+      "reason": "Taurus x Dog. The Dog is the Rabbit's six-harmony partner (secret friend); Taurus is a fellow Earth sign."
+    },
+    {
+      "name": "Tibetan Blue Bear",
+      "slug": "tibetan-blue-bear",
+      "reason": "Capricorn x Dog. Secret friend plus Earth with Earth."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Weaverbird",
+      "slug": "weaverbird",
+      "reason": "Virgo x Rooster. Same sign and both master nest builders, but Rabbit and Rooster are a six-clash pair: shared craft, opposite temperaments."
+    },
+    {
+      "name": "Mandarin Dragonet",
+      "slug": "mandarin-dragonet",
+      "reason": "Pisces x Rooster. The Rabbit-Rooster clash plus Pisces, Virgo's opposite sign."
+    }
+  ],
+  "candidate_lines": [
+    "Out over the water you hang a whole home from one thin willow twig and trust it to hold. People who meet you never guess how much quiet engineering sits behind that calm.",
+    "In Central Europe children once wore these nests as slippers. That is the kind of thing you make: so well felted that someone else ends up living in your work.",
+    "You will hang upside down from a reed to reach the seed everyone else gave up on. The odd angle looks like fuss from the bank. It is how you eat.",
+    "Your Rabbit year keeps its thoughts behind the felt, and your Virgo sun is still checking the stitching. So the person waiting outside may not know the door was ever open.",
+    "In the reed beds, one clutch in three is left by both parents, each waiting for the other to commit first. The bravest thing you can do in love is say 'I am staying' before you are sure they will.",
+    "Your animal's very name in Chinese, 攀雀 pānquè, means the climbing bird. You get up most things the same way: grip, pull, and say nothing until you are on top."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 攀雀 (rail__han and serial-han), glossed pānquè",
+      "verdict": "OK",
+      "note": "攀雀 pānquè is the Chinese genus and family name (攀雀屬 Remiz, 攀雀科 Remizidae); the East Asian species is 中華攀雀 Zhōnghuá pānquè, the Chinese Penduline Tit. 攀 pān 'climb', 雀 què 'small bird'. Same form in traditional and simplified. Correct for this animal.",
+      "source_ids": [
+        "s18",
+        "s17",
+        "s19"
+      ]
+    },
+    {
+      "fact": "The nest has a false entrance tube at the base and a functional entrance at the top; predators investigate the false entry (Trait 01 and the whole intro, hero line and archetype)",
+      "verdict": "WRONG",
+      "note": "Wrong species. The false entrance and false chamber belong to the African Cape penduline tit (Anthoscopus minutus) and its genus, not Remiz pendulinus. The Eurasian nest has one entrance tube near the top. This is the page's central conceit; the hero line, intro, dial text and Mirror copy all depend on it and must be rebuilt.",
+      "source_ids": [
+        "s7",
+        "s8",
+        "s6",
+        "s16",
+        "s15"
+      ]
+    },
+    {
+      "fact": "The male builds the outer shell before the female arrives; the female assesses nest quality before lining it, and construction quality is the selection criterion",
+      "verdict": "WRONG (overstated)",
+      "note": "The male starts the nest and calls for a female (Oiseaux.net); both sexes then help build (Wikipedia, BirdSpot). Nest size and building time predict male success and female care (Szentirmai et al. 2005), but in a mate-choice experiment females preferred wider masks and showed no preference for large nests (Pogány and Székely 2007). Say: 'the male starts the nest and advertises from it; bigger builders tend to do better'.",
+      "source_ids": [
+        "s15",
+        "s6",
+        "s16",
+        "s13",
+        "s14"
+      ]
+    },
+    {
+      "fact": "Nest woven from willow and poplar catkins, plant fibers and spider silk over two to three weeks; male selects materials for structural and thermal properties, not appearance",
+      "verdict": "WRONG (in part)",
+      "note": "Sources give plant down, seed fluff, plant fibres, grass, hair and wool; about 20 days (Wikipedia) or 12 to 14 days (Oiseaux.net). Spider silk is the Cape penduline tit's material (Stegodyphus webs), not documented here. The 'selects for thermal properties, not appearance' clause is UNVERIFIABLE. Say 'felted from plant down, fibres and animal hair over about two to three weeks'.",
+      "source_ids": [
+        "s6",
+        "s15",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Either parent may abandon the clutch if the other deserts first; each parent waits to confirm the other's commitment before fully committing (game-theory problem)",
+      "verdict": "WRONG (framing)",
+      "note": "The research shows the reverse: each parent tends to try to desert first. Care is by one parent only; about 28 to 40 percent of clutches are deserted by both; females may hide eggs so they can leave first; birds may have up to seven mates a season. Rewrite as sexual conflict, not mutual confirmation.",
+      "source_ids": [
+        "s10",
+        "s11",
+        "s12"
+      ]
+    },
+    {
+      "fact": "About ten grams; forages hanging inverted from reeds and thin branches, reaching food unavailable to larger or less agile birds",
+      "verdict": "OK (soften)",
+      "note": "About 10 g (BirdSpot), 9.3 g (Oiseaux.net); strong legs let it grip stems and hang upside down (Oiseaux.net); one foot clings to the reed while the other pulls seed from the head (Wikipedia). 'Unavailable to larger birds' is UNVERIFIABLE; cut.",
+      "source_ids": [
+        "s16",
+        "s15",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Vocalisation is a thin, descending whistle used as a close-range contact call",
+      "verdict": "OK (soften)",
+      "note": "Oiseaux.net: a drawn-out, high, sharp 'tsiiiiih', very characteristic. 'Descending' and 'used within its group' not confirmed in what I opened. Say 'a long, thin, high call'.",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "fact": "Citation: Barta Z, Székely T, 'The optimal escape path of a parent deserting its clutch', Behavioral Ecology 1997",
+      "verdict": "UNVERIFIABLE",
+      "note": "Could not find this paper; title looks invented. Replace with Pogány et al. 2008 (BMC Evol Biol 8:242) or Szentirmai et al. 2007 (J Evol Biol).",
+      "source_ids": [
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Citation: Schulze-Hagen K et al. 1996, 'Nest architecture and nest materials in the European Penduline Tit', Journal für Ornithologie",
+      "verdict": "UNVERIFIABLE",
+      "note": "Search did not surface this record. A person should confirm it or remove it.",
+      "source_ids": []
+    },
+    {
+      "fact": "Citation: BirdLife International, Remiz pendulinus, IUCN Red List 2018",
+      "verdict": "UNVERIFIABLE",
+      "note": "Not opened this session (likely real; Least Concern). Check before keeping.",
+      "source_ids": []
+    },
+    {
+      "fact": "Proverb 精益求精 (jīng yì qiú jīng), labeled 'our own reading, not tradition'",
+      "verdict": "OK",
+      "note": "Honest label; pinyin present. A common idiom.",
+      "source_ids": []
+    },
+    {
+      "fact": "Matches on page: Bongo (same trine), Sea Otter (same year), Cleaner Wrasse (secret friend)",
+      "verdict": "OK",
+      "note": "Pig is in the Rabbit trine; Dog is the Rabbit's six harmony (Wikipedia grid). Same-year is the site's own rule.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "fact": "Range: Europe and Central Asia, nest over water",
+      "verdict": "OK",
+      "note": "Remizidae: bag nests hanging from trees, usually over water.",
+      "source_ids": [
+        "s8"
+      ]
+    }
+  ]
+}

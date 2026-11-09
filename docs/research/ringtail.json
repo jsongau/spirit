@@ -1,0 +1,328 @@
+{
+  "slug": "ringtail",
+  "name": "Ringtail",
+  "sign": "Taurus",
+  "year": "Monkey",
+  "element": "Metal (from the Monkey); Taurus adds Earth, fixed. Earth feeds Metal in the generating cycle.",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Taurus (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Taurus_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Chinese zodiac (Monkey row, compatibility, Liu He, Liu Chong, Liu Hai), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s3",
+      "title": "Year of the Monkey, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/monkey.htm"
+    },
+    {
+      "id": "s4",
+      "title": "Bassariscus astutus, Animal Diversity Web (University of Michigan)",
+      "url": "https://animaldiversity.org/accounts/Bassariscus_astutus/"
+    },
+    {
+      "id": "s5",
+      "title": "Ringtail, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ringtail"
+    },
+    {
+      "id": "s6",
+      "title": "Ringtail fact sheet, Arizona-Sonora Desert Museum",
+      "url": "https://desertmuseum.org/kids/oz/long-fact-sheets/Ringtail.php"
+    },
+    {
+      "id": "s7",
+      "title": "Ringtails, University of Arizona Cooperative Extension",
+      "url": "https://extension.arizona.edu/sites/extension.arizona.edu/files/attachment/Ringtails.pdf"
+    },
+    {
+      "id": "s8",
+      "title": "The ringtail is Texas's nighttime ninja, Texas Monthly",
+      "url": "https://www.texasmonthly.com/travel/the-ringtail-is-texass-nighttime-ninja/"
+    },
+    {
+      "id": "s9",
+      "title": "Cacomistle, Dictionary.com (etymology: Nahuatl tlahcomiztli)",
+      "url": "https://www.dictionary.com/browse/cacomistle"
+    },
+    {
+      "id": "s10",
+      "title": "miztli, Online Nahuatl Dictionary (Wired Humanities, Univ. of Oregon): Molina 1571, Sahagun, Karttunen",
+      "url": "https://nahuatl.wired-humanities.org/node/177199"
+    },
+    {
+      "id": "s11",
+      "title": "Liu, Zack, Lucas, Allen and Fisher 2016, Hind limb myology of the ringtail and the myology of hind foot reversal, Journal of Mammalogy 97(1):211-233 (University of Arizona record)",
+      "url": "https://experts.arizona.edu/en/publications/hind-limb-myology-of-the-ringtail-bassariscus-astutus-and-the-myo/"
+    },
+    {
+      "id": "s12",
+      "title": "Barja and List 2006, Faecal marking behaviour in ringtails during the non-breeding period, Chemoecology 16:219-222",
+      "url": "https://link.springer.com/doi/10.1007/s00049-006-0352-x"
+    },
+    {
+      "id": "s13",
+      "title": "New driver license ringtail needs a name, Arizona Department of Transportation",
+      "url": "https://azdot.gov/news/new-driver-license-ringtail-needs-name"
+    },
+    {
+      "id": "s14",
+      "title": "Ringtail Chinese name 蓬尾浣熊, also 环尾猫, NetEase (163.com) article",
+      "url": "https://m.163.com/dy/article/EDD1TNK30518PLFJ.html"
+    },
+    {
+      "id": "s15",
+      "title": "狸 / 貍 lí, Dong Chinese dictionary",
+      "url": "https://www.dong-chinese.com/wiki/狸"
+    },
+    {
+      "id": "s16",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Steady, patient, sensual, loyal and dependable; slow to change, can turn stubborn or possessive. Stabilizes what Aries starts; a sign of growth and steadfastness.",
+    "planet": "Venus (the Moon is exalted in Taurus)",
+    "element": "Earth (with Virgo and Capricorn)",
+    "modality": "Fixed; opposite sign Scorpio",
+    "source_ids": [
+      "s1"
+    ]
+  },
+  "chinese": {
+    "temperament": "Clever, quick-witted, versatile, inventive, sociable, fast learner, takes on challenges. Shadow: restless, mischievous, bores easily, pranks can sting, others may distrust a sly streak.",
+    "yinyang": "Yang",
+    "element": "Metal (fixed); earthly branch 申 shēn",
+    "trine": "Rat, Dragon, Monkey",
+    "secret_friend": "Snake",
+    "clash": "Tiger (harm pair: Pig)",
+    "lucky": null,
+    "source_ids": [
+      "s2",
+      "s3"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Nahuatl (central Mexico)",
+      "meaning": "In Mexico the ringtail is called cacomixtle, from Nahuatl tlahcomiztli: tlahco 'half' plus miztli 'cougar, wild cat', so roughly 'half mountain lion'. Miztli is attested in Molina's 1571 dictionary and in Sahagun. Dictionary.com applies the word to Bassariscus astutus. Note: cacomistle is also the name of B. sumichrasti, which has its own Zodi page (Gemini Pig); keep the two pages from sharing this item word for word.",
+      "source_ids": [
+        "s9",
+        "s10",
+        "s8",
+        "s4"
+      ]
+    },
+    {
+      "culture": "Mexico, popular name",
+      "meaning": "Texas Monthly reports the ringtail is sometimes called mico de noche, 'night monkey', in Mexico. A real folk name that ties the animal to the Monkey half of this crossing. One secondary source only; attribute it.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "culture": "American Southwest mining camps (1800s)",
+      "meaning": "Settlers and prospectors kept ringtails around cabins and camps as companions and mousers, which gave the name miner's cat. The Desert Museum notes the name is a misnomer: the ringtail is a raccoon relative, not a cat.",
+      "source_ids": [
+        "s4",
+        "s6",
+        "s8"
+      ]
+    },
+    {
+      "culture": "Arizona (state symbol)",
+      "meaning": "The ringtail has been Arizona's official state mammal since 1986 (Desert Museum: August 1986). ADOT later worked it into the background of the Arizona driver license as a security feature and ran a contest to nickname it.",
+      "source_ids": [
+        "s6",
+        "s13"
+      ]
+    },
+    {
+      "culture": "Greek scientific name",
+      "meaning": "Bassariscus astutus breaks down as bassar 'fox', isc 'little', astut 'cunning': the cunning little fox. ADW also notes the genus is sometimes called a living fossil because living species are hard to tell from Neogene forms. Use only as a bridge line, never as the hook.",
+      "source_ids": [
+        "s4"
+      ]
+    },
+    {
+      "culture": "Indigenous North American traditions",
+      "meaning": "Unsourced, do not use. Searches found no ringtail story or totem meaning from a named nation with a traceable source. Do not invent one.",
+      "source_ids": []
+    },
+    {
+      "culture": "Generic 'ringtail spirit animal' meanings",
+      "meaning": "Unsourced, do not use. Only blog and generated-encyclopedia content found.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Earth (Taurus) under yang Metal (Monkey). Earth feeds Metal, so the Taurus steadiness becomes the ground the Monkey's cleverness stands on. The result is a quick mind that likes a home base: a canyon animal that keeps one den range for years and still solves every ledge fresh. Taurus wants to stay; the Monkey wants the next problem. The ringtail does both by living in rock that is all problem.",
+    "gifts": "Our reading: grace under pressure in tight, vertical places; a knack for turning a fall into a controlled descent; practical cleverness that earns its keep (the miner's cat hunting the camp's mice); self-sufficiency in lean seasons; a sense of humor that stays mostly private.",
+    "shadow": "Our reading: the half-something problem the Nahuatl name hints at. Half cougar, half cat, never fully either; hard to pin down, slow to belong. Taurus stubbornness plus Monkey restlessness can make someone who will not leave and will not fully settle. Monkey slyness can read as untrustworthy to people who only meet the night shift.",
+    "love": "Our reading: Venus rules Taurus, so this crossing is tactile and loyal once it chooses; the Monkey keeps it playful and a little elusive. Shows care through useful acts at odd hours rather than speeches. Needs a partner who lets it keep its own den and does not read solitude as rejection.",
+    "money": "Our reading: lean-season thinking. The Taurus half saves; the Monkey half spots the clever angle. Good at living on little and making resources stretch, the way a desert ringtail gets much of its water from food. Risk: under-asking for pay because getting by feels normal.",
+    "conflict": "Our reading: avoids the head-on fight and changes the angle instead. Will hold ground on its own territory (Taurus) and outmaneuver rather than overpower (Monkey). When cornered it leaves a sharp signal, then disappears."
+  },
+  "careers": [
+    {
+      "path": "Rope access, rock climbing instruction, canyon or cave guiding, search and rescue",
+      "why": "Our reading: the headfirst descent and chimney-stemming skills of the animal; Taurus nerve on bad footing."
+    },
+    {
+      "path": "Night-shift and on-call work: emergency medicine, overnight operations, security, astronomy",
+      "why": "Our reading: a nocturnal animal that does its best work unseen; Monkey quick thinking when nobody else is awake."
+    },
+    {
+      "path": "Pest control, field biology, wildlife tracking, camera-trap research",
+      "why": "Our reading: the miner's cat earned its place by hunting what plagued the camp; latrine reading is a tracker's craft."
+    },
+    {
+      "path": "Repair, troubleshooting, IT and systems recovery",
+      "why": "Our reading: Monkey problem solving on a Taurus base; finds the two surfaces to push against in a jammed system."
+    },
+    {
+      "path": "Desert land management, water planning, arid-zone horticulture",
+      "why": "Our reading: the animal's lean water economy; Earth sign at home in rock and scrub."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Pangolin",
+      "slug": "pangolin",
+      "reason": "Taurus x Snake. Snake is the Monkey's secret friend (Liu He), and the shared Taurus sun gives the same Earth pace. Two night foragers who respect a closed door."
+    },
+    {
+      "name": "Leafcutter Ant",
+      "slug": "leafcutter-ant",
+      "reason": "Virgo x Rat. Rat sits in the Monkey trine; Virgo shares Taurus's Earth element. Double harmony."
+    },
+    {
+      "name": "Bearded Vulture",
+      "slug": "bearded-vulture",
+      "reason": "Capricorn x Dragon. Dragon is in the Monkey trine; Capricorn is the third Earth sign. Both are cliff animals."
+    },
+    {
+      "name": "Trapdoor Spider",
+      "slug": "trapdoor-spider",
+      "reason": "Virgo x Snake. Snake is the Monkey's secret friend; Virgo Earth matches Taurus Earth."
+    },
+    {
+      "name": "Humpback Whale",
+      "slug": "humpback-whale",
+      "reason": "Cancer x Dragon. Dragon trine; Cancer Water is the classic complement to Taurus Earth."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Giant Centipede",
+      "slug": "giant-centipede",
+      "reason": "Scorpio x Tiger. Monkey and Tiger are a traditional six-clash pair (Liu Chong), and Scorpio is Taurus's opposite sign. Both systems pull apart."
+    },
+    {
+      "name": "Sable Antelope",
+      "slug": "sable-antelope",
+      "reason": "Taurus x Tiger. Same sun sign, so it feels familiar, but the Monkey-Tiger clash runs underneath."
+    }
+  ],
+  "candidate_lines": [
+    "Somewhere in your history is a drop that should have ended badly, and you came down it headfirst, hind feet turned all the way round, gripping rock the whole way.",
+    "Half the canyon is closed to anything without your feet. You live in that half, between two rock walls, back pressed to one and paws to the other, climbing where there is no step.",
+    "In Mexico some call you the night monkey. The cleverest version of you wakes after the canyon goes dark and the clever ideas arrive with it.",
+    "A Taurus wants one den for life. A Monkey wants a new ledge every night. You chose a cliff, which gives you both.",
+    "The miners let you stay because you cleared their mice. You still prefer to be welcome for what you do rather than for what you are.",
+    "You leave your messages where the right reader will pass: a high stone, the edge of a trail. Whoever needs to know you were here will know."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 貍 (rail__han and serial-han)",
+      "verdict": "WRONG",
+      "note": "貍 lí is a variant of 狸, glossed 'fox; raccoon dog; fox-like animal'. It does not name the ringtail, which is a raccoon relative. The Chinese name is 蓬尾浣熊 péngwěi huànxióng ('bushy-tailed raccoon'; same in traditional), also 環尾貓 huánwěi māo ('ring-tailed cat'). Suggest 蓬尾浣熊 with pinyin, or drop the glyph. Also check the cacomistle page, which may use the same glyph.",
+      "source_ids": [
+        "s14",
+        "s15"
+      ]
+    },
+    {
+      "fact": "The hind ankle can rotate more than 180 degrees, keeping pads and claws on the surface in a headfirst descent.",
+      "verdict": "WRONG",
+      "note": "Overstated. ADW, the Desert Museum, University of Arizona Extension and Texas Monthly all say the hind foot rotates 180 degrees. Only Wikipedia says 'over 180'. Say 'can turn its hind feet around 180 degrees'. The cited Liu et al. 2016 paper gives no degree figure in its abstract and concluded that no special muscles are needed for foot reversal.",
+      "source_ids": [
+        "s4",
+        "s6",
+        "s7",
+        "s8",
+        "s5",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Tail ringed in fourteen to sixteen bands, about body length, a counterbalance; can reverse direction by cartwheeling on a slim foothold.",
+      "verdict": "OK",
+      "note": "14 to 16 rings: UA Extension and Wikipedia. Tail about body length: ADW gives head-body 305 to 420 mm and tail 310 to 441 mm. The cartwheel turn appears only in Wikipedia; treat as secondary and keep it soft or cut it.",
+      "source_ids": [
+        "s7",
+        "s5",
+        "s4"
+      ]
+    },
+    {
+      "fact": "Ringtails stem up narrow crevices by pressing their feet against opposite walls, or ricochet between walls in wider gaps.",
+      "verdict": "WRONG",
+      "note": "Mechanism wrong. Chimney stemming as described by the Desert Museum and Wikipedia is all four feet on one wall and the back against the other, not feet on opposite walls. Ricocheting between walls is correct (ADW, Desert Museum).",
+      "source_ids": [
+        "s6",
+        "s5",
+        "s4"
+      ]
+    },
+    {
+      "fact": "In the 19th-century mining boom, ringtails moved into cabins and mine shafts to hunt rodents; miners sometimes left them a warm box near the stove, hence miner's cat; never domesticated.",
+      "verdict": "UNVERIFIABLE",
+      "note": "Core is OK: settlers and prospectors kept ringtails as companions and mousers, hence miner's cat (ADW, Texas Monthly, Desert Museum). The warm box near the stove detail was not found in any source I opened; cut it. Sources say miners kept them, which is closer to pets than to animals that 'moved in'.",
+      "source_ids": [
+        "s4",
+        "s8",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Arid-habitat ringtails can survive largely on water from food, aided by urine more concentrated than almost any other mammal studied.",
+      "verdict": "UNVERIFIABLE",
+      "note": "Only Wikipedia states it ('more concentrated than any other mammal studied') and I could not open a primary study. UA Extension only says prickly pear and other fruit 'may reduce its need for water'. Soften to that, or cut until a primary source is found.",
+      "source_ids": [
+        "s5",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Strictly nocturnal, largely solitary outside the spring breeding season; communicates through scent marks at shared latrine sites.",
+      "verdict": "WRONG",
+      "note": "'Strictly' is wrong: ADW says activity is mostly at night and occasionally at dusk; ADOT says almost entirely nocturnal. Solitary except when mating: OK (ADW). Latrines: OK, Barja and List 2006 found ringtails reuse latrines of 2 to 19 faeces, placed non-randomly on raised objects and road margins (Mexico City study). 'Shared' latrines is not stated in the abstract; say 'reused'.",
+      "source_ids": [
+        "s4",
+        "s13",
+        "s12"
+      ]
+    },
+    {
+      "fact": "Purple Star section: the Taurus Monkey crossing 'keeps landing' on 天府 Tiān Fǔ in the Life palace.",
+      "verdict": "WRONG",
+      "note": "No traditional basis. Zi Wei Dou Shu charts are cast from the lunar birth date and hour, not from Western sun sign plus year animal. Relabel plainly as our own image or cut (see REVIEW-mojo section 0.3).",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "fact": "Proverb 山高皇帝遠 shān gāo huángdì yuǎn tied to the Monkey year",
+      "verdict": "OK",
+      "note": "Labelled on the page as our own pairing, not tradition. Honest as written. Traditional characters carry pinyin.",
+      "source_ids": []
+    }
+  ]
+}

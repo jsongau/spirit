@@ -1,0 +1,299 @@
+{
+  "slug": "snow-petrel",
+  "name": "Snow Petrel",
+  "sign": "Taurus",
+  "year": "Goat",
+  "element": "Earth (from the Goat); Taurus also Earth, fixed: a doubled Earth crossing",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Taurus (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Taurus_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Taurus traits and personality, TODAY",
+      "url": "https://www.today.com/life/astrology/taurus-traits-personality-rcna24594"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (signs table, compatibility), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Goat, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/goat.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Snow petrel, Wikipedia (taxonomy, Forster 1777, breeding, pair bond)",
+      "url": "https://en.wikipedia.org/wiki/Snow_petrel"
+    },
+    {
+      "id": "s6",
+      "title": "Snow petrel, New Zealand Birds Online",
+      "url": "https://www.nzbirdsonline.org.nz/species/snow-petrel"
+    },
+    {
+      "id": "s7",
+      "title": "Steele and Hiller 1997, Radiocarbon dates of snow petrel (Pagodroma nivea) nest sites in central Dronning Maud Land, Antarctica, Polar Record 33(184)",
+      "url": "https://www.cambridge.org/core/journals/polar-record/article/radiocarbon-dates-of-snow-petrel-pagodroma-nivea-nest-sites-in-central-dronning-maud-land-antarctica/51CAEEB3653DABB5FEB9648FE7A8D6D7"
+    },
+    {
+      "id": "s8",
+      "title": "Great Expectorations: Snow Petrel Nests Stand the Test of Time, All About Birds (Cornell Lab of Ornithology)",
+      "url": "https://www.allaboutbirds.org/news/?p=14223"
+    },
+    {
+      "id": "s9",
+      "title": "Petrel, Wikipedia (etymology, sailor lore)",
+      "url": "https://en.wikipedia.org/wiki/Petrel"
+    },
+    {
+      "id": "s10",
+      "title": "Is 2015 the Year of the Ram, Sheep or Goat?, eChineseLearning (羊 and 祥)",
+      "url": "https://www.echineselearning.com/?p=8001802"
+    },
+    {
+      "id": "s11",
+      "title": "ifeng.com on 羊有跪乳之恩，鸦有反哺之义, attributed to 增广贤文",
+      "url": "https://news.ifeng.com/c/7fdRMBwl48E"
+    },
+    {
+      "id": "s12",
+      "title": "雪鹱 (Pagodroma nivea), Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/Pagodroma_nivea"
+    },
+    {
+      "id": "s13",
+      "title": "The fossilised spit of this Antarctic sea bird is helping scientists unlock its past, ABC News (Fiona Blackwood), via inkl",
+      "url": "https://www.inkl.com/news/the-fossilised-spit-of-this-antarctic-sea-bird-is-helping-scientists-unlock-its-past"
+    },
+    {
+      "id": "s14",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Grounded, patient, steady and dependable; loves beauty, good food and comfort; digs in, resists change, can be possessive or overindulgent. As a fixed sign it continues and stabilizes what Aries starts.",
+    "planet": "Venus",
+    "element": "Earth (with Virgo and Capricorn)",
+    "modality": "Fixed; opposite sign Scorpio",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Gentle, kind, sympathetic and creative, with a strong sense of justice, perseverance and inner resilience. Shadow: shy, reserved, private, slow to open up, stubborn about their own opinions.",
+    "yinyang": "Yin",
+    "element": "Earth (fixed); earthly branch 未 wèi; Goat hour 13:00 to 14:59",
+    "trine": "Rabbit, Goat, Pig",
+    "secret_friend": "Horse",
+    "clash": "Ox (China Highlights also lists Tiger and Dog as poor matches)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "European exploration (Cook's second voyage)",
+      "meaning": "Georg Forster, sailing with James Cook, described the bird in 1777 and called the white petrel that kept appearing near icy masses 'a sure fore-runner of ice': a sign, read by sailors, that ice was close. The scientific name says the same thing: Pagodroma from Greek pagos, frost or sea-ice, and dromos, runner; nivea from Latin niveus, snow-white.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "Antarctic science (the mumiyo record)",
+      "meaning": "The stomach oil snow petrels spit at intruders hardens into a waxy deposit called mumiyo that builds up around nests, sometimes more than a foot thick (s8). Steele and Hiller (1997) dated mumiyo from 15 nest sites in Dronning Maud Land: one Svarthamaren sample is about 34,000 years old, most are Holocene (8,500 years or younger), and some nests show occupation periods as long as 6,000 years (s7). A bird whose defensive spit became a 34,000-year archive is the strongest symbolic item on this page and it is real.",
+      "source_ids": [
+        "s7",
+        "s8",
+        "s13"
+      ]
+    },
+    {
+      "culture": "Seafarers' lore (petrels generally, not snow petrels specifically)",
+      "meaning": "Petrels were held to be 'soul birds' representing drowned sailors, unlucky to touch; storm petrels warned of storms. The name petrel may come from St Peter walking on water (Dampier), though Wikipedia marks that link as later speculation. Use only as lore about petrels as a family, named honestly.",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "culture": "Chinese (Goat half)",
+      "meaning": "羊 yáng and 祥 xiáng (auspicious) were once written the same, so 大吉羊 dà jí yáng reads as 大吉祥 dà jí xiáng, great good fortune (s10). The saying 羊有跪乳之恩 yáng yǒu guì rǔ zhī ēn, 'the lamb kneels to drink, in gratitude to its mother', paired with the crow that feeds its parents, comes from the 增廣賢文 Zēngguǎng Xiánwén (s11; s10 attributes it to the Three Character Classic, which looks wrong). Fits a bird that returns to the crevice of the generations before it.",
+      "source_ids": [
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "'Snow petrel spirit animal' meanings (purity, resilience) on totem and spiritual blogs; no Indigenous or traditional source exists, since Antarctica has no Indigenous human culture. Also no sourced Chinese folklore for the bird itself.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: double Earth, fixed Taurus over yin Goat. Taurus wants to keep one place; the Goat goes where the footing is hardest. Together they choose the remotest ground and then never leave it. The Snow Petrel is devotion with distance built in: completely loyal, very hard to reach.",
+    "gifts": "Our reading: endurance on long, empty crossings for the ones waiting at home (s6: both parents share incubation and chick care); loyalty that lasts decades (s5); a defense that repels without wounding; an instinct for ground that has already proven itself (s7).",
+    "shadow": "Our reading: the crevice becomes a fortress. Goat shyness and Taurus stubbornness add up to someone who loves people best from four hundred kilometres away. The oil meant for skuas sometimes lands on friends: NZ Birds notes they spray other snow petrels too (s6).",
+    "love": "Our reading: Venus-ruled and yin. Slow to pair, then faithful for something like twenty years (s5). Shows love by the long flight and the full crop, not by words. Needs a partner who does not mistake distance for coldness.",
+    "money": "Our reading: Earth doubled is a hoarder of stores, like oil kept for a single chick. Prudent and frugal, strongest when saving toward one named person or goal; the risk is never spending on comfort.",
+    "conflict": "Our reading: makes the air unpleasant and waits for the intruder to leave; almost never strikes. Practice: say what the spray means before you spray."
+  },
+  "careers": [
+    {
+      "path": "Polar, remote or field science; long-haul logistics",
+      "why": "Our reading: chooses the far ground and makes it work; the crossing with nothing on the way."
+    },
+    {
+      "path": "Archivist, conservator, librarian, records keeper",
+      "why": "Our reading: the mumiyo record (s7, s8) as a calling; keeping what accumulates layer by layer."
+    },
+    {
+      "path": "Nursing in remote or rural posts; midwifery",
+      "why": "Our reading: Goat gentleness and the single-chick provisioning; care delivered over distance."
+    },
+    {
+      "path": "Craft work done alone (pottery, glassblowing, gardening on hard ground)",
+      "why": "Our reading: Taurus Venus taste with the Goat's ledge nobody else wants."
+    },
+    {
+      "path": "Meteorology or ice forecasting",
+      "why": "Our reading: Forster's 'sure fore-runner of ice' (s5); reading weather before others see it."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Koala",
+      "slug": "koala",
+      "reason": "Taurus x Rabbit. Rabbit is in the Goat trine and the sign is shared. Reciprocal: the koala dossier already lists the Snow Petrel."
+    },
+    {
+      "name": "Star-nosed Mole",
+      "slug": "star-nosed-mole",
+      "reason": "Virgo x Pig. Pig completes the Goat trine; Virgo is a fellow Earth sign. Two creatures who work a hidden world alone."
+    },
+    {
+      "name": "Mountain Pygmy Possum",
+      "slug": "mountain-pygmy-possum",
+      "reason": "Capricorn x Rabbit. Goat trine plus Earth; another animal that survives cold high ground by holding still."
+    },
+    {
+      "name": "Avocet",
+      "slug": "avocet",
+      "reason": "Virgo x Horse. Horse is the Goat's secret friend (six harmonies) and Virgo shares Earth. Double harmony."
+    },
+    {
+      "name": "Green Sea Turtle",
+      "slug": "green-sea-turtle",
+      "reason": "Cancer x Horse. Secret friend, and Cancer's Water complements Earth. Another returner to the same nesting ground across long distances."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Giant Salamander",
+      "slug": "giant-salamander",
+      "reason": "Scorpio x Ox. Goat and Ox are a traditional six-clash pair, and Scorpio is Taurus's opposite sign. Both systems pull apart."
+    },
+    {
+      "name": "Giant Clam",
+      "slug": "giant-clam",
+      "reason": "Taurus x Ox. Same sign, so it feels like kin, but the Goat-Ox clash sits underneath: two who will not move, wanting different ground."
+    }
+  ],
+  "candidate_lines": [
+    "You nest where the map goes white, hundreds of kilometres from open sea, and you call it home without any sense of irony.",
+    "When something gets too close to your crevice you do not strike. You make the air around you unbearable and let the skua decide to leave.",
+    "The flight out crosses bare ice with nothing to eat on the way, and you fly it back with a full crop and report only that the weather held.",
+    "The rock you came back to is layered with the oil of birds before you, and some part of you still checks, each season, that it is yours.",
+    "You picked one mate and one crack in one mountain, and twenty years on you still land on the same ledge.",
+    "White against white, you are easy to lose in the glare. The one who finds you twice was looking on purpose, and you know it."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Nests on nunataks, single egg in a sheltered crevice; most extreme colonies more than 400 km inland in the southern Prince Charles Mountains.",
+      "verdict": "OK (with note)",
+      "note": "Wikipedia: some colonies more than 400 km from the open sea; single white egg; deep rock crevices (s5). NZ Birds names the Theron Mountains, up to 440 km inland at up to 2,400 m (s6). The Prince Charles Mountains attribution rests on a Wikipedia reference only; safer to say 'more than 400 km inland' without naming the range, or name the Theron Mountains.",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Interior nesters cross bare ice with no open water or food along the way to bring a meal to a single chick.",
+      "verdict": "OK (inference)",
+      "note": "Follows from inland colonies 400+ km from the sea (s5, s6) and sea or sea-ice foraging (s8). Both parents share chick care (s6), so 'a single waiting chick' is right but the parent is not alone in the job.",
+      "source_ids": [
+        "s5",
+        "s6",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Stores energy-rich stomach oil and sprays it from the mouth at a predator, usually a skua, matting its feathers rather than wounding it.",
+      "verdict": "OK",
+      "note": "Sprays stomach oil at predators, principally skuas (s5); NZ Birds adds it is sprayed at other snow petrels and humans too (s6). The matting effect is consistent with oil-stained birds cleaning in snow (s6).",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Pairs commonly cited as faithful for life, spanning two decades or more, returning to the same crevice.",
+      "verdict": "OK (soften number)",
+      "note": "Wikipedia: 'faithful for life (around 20 years)' (s5); NZ Birds: long-lasting pair bonds (s6). Say 'around 20 years', not 'two decades or more'.",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Radiocarbon dating shows some Dronning Maud Land nest sites used continuously for tens of thousands of years, one generation returning to the last generation's exact crevice.",
+      "verdict": "WRONG",
+      "note": "Steele and Hiller (1997): oldest sample about 34,000 years BP at one site (Svarthamaren); all others but one are Holocene, 8,500 years or younger; individual nests show occupation periods 'as long as 6000 years', others only short bursts (s7). All About Birds: many sites used more or less continuously for over 6,000 years, oldest used about 34,000 years ago (s8). Correct to: 'some nest sites have been used for more than 6,000 years, and the oldest deposit is about 34,000 years old'.",
+      "source_ids": [
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Almost entirely white plumage with black bill and dark eyes gives near-total camouflage; one of the purest-white birds recorded.",
+      "verdict": "OK / UNVERIFIABLE (superlative)",
+      "note": "Pure white, coal-black eyes, small black bill (s5); white plumage gives good camouflage (s6). 'One of the purest-white birds recorded' has no source; cut. Note juveniles have black barring above (s6).",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Hero: one of only three bird species ever recorded at the geographic South Pole.",
+      "verdict": "OK",
+      "note": "With the Antarctic petrel and south polar skua (s5); NZ Birds agrees (s6).",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Header hanzi 雪 (rail__han and serial-han).",
+      "verdict": "WRONG",
+      "note": "雪 xuě means snow, not the bird. The species name is 雪鸌 (traditional; simplified 雪鹱) xuě hù, 'snow shearwater-petrel' (s12). 鸌 hù is the character for the shearwater and fulmarine petrel group. Use 雪鸌 xuě hù.",
+      "source_ids": [
+        "s12"
+      ]
+    },
+    {
+      "fact": "Purple Star section: Tian Fu (天府 Tiān Fǔ, the Storehouse star) and Tian Tong (天同 Tiān Tóng, the Contentment star) assigned, Tian Fu said to sit near the Life palace (命宮 mìng gōng) to the Taurus Goat crossing.",
+      "verdict": "WRONG (no traditional basis)",
+      "note": "Zi Wei Dou Shu charts are cast from lunar birth date and hour, not the Western sun sign; no traditional source assigns stars by sun sign plus year animal. Relabel as our own symbolic pairing or cut.",
+      "source_ids": [
+        "s14"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,338 @@
+{
+  "slug": "spotted-hyena",
+  "name": "Spotted Hyena",
+  "sign": "Leo",
+  "year": "Ox",
+  "element": "Earth (from the Ox); Leo adds Fire, fixed",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Leo (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Leo_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Confident, generous and bold: What to know about the Leo personality, AOL",
+      "url": "https://www.aol.com/leo-sun-sign-personality-traits-185421276.html"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (Ox row, compatibility), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Ox, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/ox.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Cultural depictions of spotted hyenas, Wikipedia (cites Roberts on the Tabwa, Gray on the Mbugwe, and others)",
+      "url": "https://en.wikipedia.org/wiki/Cultural_depictions_of_spotted_hyenas"
+    },
+    {
+      "id": "s6",
+      "title": "At home with the hyenas of Harar, Notre Dame Magazine (on Marcus Baynes-Rock's fieldwork)",
+      "url": "https://magazine.nd.edu/news/63340"
+    },
+    {
+      "id": "s7",
+      "title": "Spotted hyenas in Harar, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Spotted_hyenas_in_Harar"
+    },
+    {
+      "id": "s8",
+      "title": "Mathevon et al. 2010, What the hyena's laugh tells: sex, age, dominance and individual signature in the giggling call of Crocuta crocuta, BMC Ecology 10:9",
+      "url": "https://bmcecol.biomedcentral.com/articles/10.1186/1472-6785-10-9"
+    },
+    {
+      "id": "s9",
+      "title": "Spotted hyena fact sheet, behavior and ecology, San Diego Zoo Wildlife Alliance Library",
+      "url": "https://ielc.libguides.com/sdzg/factsheets/spottedhyena/behavior-ecology"
+    },
+    {
+      "id": "s10",
+      "title": "Rank inheritance, Hyena Project (Leibniz-IZW, East and Hofer)",
+      "url": "https://hyena-project.com/research-topics/rank-inheritance/"
+    },
+    {
+      "id": "s11",
+      "title": "Spotted Hyena: Diet and Foraging, IUCN SSC Hyaenidae Specialist Group",
+      "url": "https://www.hyaenidae.org/the-hyaenidae/spotted-hyena-crocuta-crocuta/crocuta-diet-and-foraging/"
+    },
+    {
+      "id": "s12",
+      "title": "Who's laughing now?, Smithsonian Magazine (Holekamp interviews)",
+      "url": "https://www.smithsonianmag.com/science-nature/whos-laughing-now-38529396/"
+    },
+    {
+      "id": "s13",
+      "title": "Cognition, Holekamp Lab (Engh et al. 2004 on third-party relationships)",
+      "url": "https://www.holekamplab.org/cognition.html"
+    },
+    {
+      "id": "s14",
+      "title": "Bite force quotient, Wikipedia (Wroe et al. 2005 values)",
+      "url": "https://en.wikipedia.org/wiki/Bite_force_quotient"
+    },
+    {
+      "id": "s15",
+      "title": "斑鬣狗 (bān liègǒu), Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/斑鬣狗"
+    },
+    {
+      "id": "s16",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Confident, warm, generous, loyal, bold and theatrical; shadow is attention-seeking, bossy, vain, competitive and touchy.",
+    "planet": "The Sun",
+    "element": "Fire (with Aries and Sagittarius)",
+    "modality": "Fixed; opposite sign Aquarius",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Diligent, dependable, patient, determined and honest; goals reached by steady effort; holds to its own ideas. Shadow: stubborn, overworks, less communicative, reserved in affection.",
+    "yinyang": "Yin",
+    "element": "Earth (fixed); earthly branch 丑 chǒu; Ox hour 1:00 to 3:00",
+    "trine": "Ox, Snake, Rooster",
+    "secret_friend": "Rat",
+    "clash": "Goat",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Tabwa (Lake Tanganyika region, DR Congo and Zambia)",
+      "meaning": "The hyena is a solar animal: it first brought the sun to warm the cold earth. Strongest bridge on this page, since Leo is ruled by the Sun. Cited in Wikipedia to Allen F. Roberts' Tabwa ethnography; open the original before quoting.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "Harari (Harar, Ethiopia)",
+      "meaning": "Hyenas are fed porridge at Ashura; if they eat more than half, the new year will be prosperous. Hararis call the hyena waraba, 'newsman', a carrier of messages from the saints, and say hyenas see and eat jinn, drawing them out with a whoop. Hyenas recorded in Harar for at least 500 years; regular feeding since the 1960s.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "culture": "Mbugwe (Tanzania)",
+      "meaning": "Witches own hyenas as 'night cattle', milk them for hyena butter and ride them to bewitch victims. A shadow image: the hyena as the animal that serves a hidden owner. Tell it as their belief, never as a trait of the reader.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "Gogo, Meru, Madi and Nuer (East Africa)",
+      "meaning": "Origin-of-death stories: the hyena stops the message of rebirth (Meru) or cuts the rope linking people to the Creator in the sky (Madi, Nuer). The hyena as the one blamed for a loss everyone shares.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "Greek and medieval European (Aristotle, Pliny, Physiologus, bestiaries)",
+      "meaning": "The belief that hyenas change sex grew from the female's masculinised genitalia; Aristotle rejected it, the Physiologus revived it and compared the hyena to 'double-minded men'. Bestiary hyenas have no spots: the artists never saw one. A sourced picture of how far reputation drifts from the real animal, which is the page's own theme.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "Pedi (South Africa)",
+      "meaning": "Some groups hold the hyena as a sacred totem; its skin for chiefs' robes, its bones for divining. One line in a tertiary source; use only if the original is checked.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Generic 'hyena spirit animal means humor, cunning, community' claims on totem blogs; no tradition located.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Fire (Leo) feeds yin Earth (Ox); in the five-phase cycle Fire generates Earth. Leo wants to be seen at the top; the Ox will out-wait anyone to get there honestly. The hyena makes that literal: rank shaped by the mother's support, then held for years by daily presence at the kill.",
+    "gifts": "Our reading: reads hierarchy fast and accurately; endurance (the commute of 40 to 50 trips a year); finishes what others abandon; loyal to one clan and one ground; a call that carries far when it is finally used.",
+    "shadow": "Our reading: re-testing settled bonds; pride that cannot stand being mistaken for a scavenger; holding a grudge as 'information'; the Physiologus 'double-minded' charge turned inward, unsure whether to show the crown or the patience.",
+    "love": "Our reading: Sun-ruled warmth meets Ox reserve in affection. Slow to grant a partner full standing, fierce once granted. Needs a partner who does not ask them to shrink their call, and who notices the work before the arrival.",
+    "money": "Our reading: Ox thrift and Leo generosity. Builds steadily, spends openly on the clan, resents anyone who eats at the table without having hunted.",
+    "conflict": "Our reading: digs in over rank, rarely over small things. Under pressure the nervous giggle shows (in the real animal it is a submissive, frustrated call at close range). Better path: the whoop, a plain statement of where they stand."
+  },
+  "careers": [
+    {
+      "path": "Operations lead, chief of staff, union or guild organiser",
+      "why": "Our reading: reads real power faster than the org chart; Ox patience for the long build."
+    },
+    {
+      "path": "Field researcher, wildlife ranger, long-haul logistics",
+      "why": "Our reading: the commute; repeated long trips that feed people back home."
+    },
+    {
+      "path": "Restoration, salvage, turnaround work, editing other people's abandoned drafts",
+      "why": "Our reading: the bone-cracking jaw; value in what others called finished."
+    },
+    {
+      "path": "Broadcasting, public speaking, choir or brass",
+      "why": "Our reading: Leo stage plus the whoop that carries over 5 km."
+    },
+    {
+      "path": "Family business heir who has to earn it anyway",
+      "why": "Our reading: inherited standing made real by years of daily proof."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Sand Cat",
+      "slug": "sand-cat",
+      "reason": "Sagittarius x Snake. Snake sits in the Ox trine; Sagittarius shares Leo's Fire."
+    },
+    {
+      "name": "Cassowary",
+      "slug": "cassowary",
+      "reason": "Aries x Rooster. Rooster sits in the Ox trine; Aries is Fire. Double harmony."
+    },
+    {
+      "name": "Meerkat",
+      "slug": "meerkat",
+      "reason": "Gemini x Rat. Rat is the Ox's secret friend; Gemini is Air, which feeds Fire."
+    },
+    {
+      "name": "Golden Lion Tamarin",
+      "slug": "golden-lion-tamarin",
+      "reason": "Leo x Rat. Same Western sign, and Rat is the Ox's secret friend."
+    },
+    {
+      "name": "Satin Bowerbird",
+      "slug": "satin-bowerbird",
+      "reason": "Libra x Rooster. Rooster trine; Libra Air complements Leo Fire."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Kakapo",
+      "slug": "kakapo",
+      "reason": "Aquarius x Goat. Ox-Goat is the traditional clash and Aquarius is Leo's opposite sign; both systems pull apart."
+    },
+    {
+      "name": "Golden Brushtail Possum",
+      "slug": "golden-brushtail-possum",
+      "reason": "Leo x Goat. Same sign on the surface, Ox-Goat clash underneath."
+    }
+  ],
+  "candidate_lines": [
+    "Your mother's place at the kill shaped yours long before you could hold it yourself, and every year since you have been making that borrowed standing fit your own shoulders.",
+    "That giggle people hear from you comes at the crowded edge of the carcass, when what you want is close and someone bigger still blocks the way. Your real voice is the whoop, low and rising, meant for the ones out past the grass.",
+    "Forty trips a season out to the herds and back to the den. Your loyalty runs like that commute: long, repeated, and almost never seen by anyone outside the clan.",
+    "You walked into a new clan once and took the very back of the queue. You still remember which of them made room, and how many seasons it took.",
+    "When the lions walk away from a carcass and call it finished, you are the one still at the bones, getting to what they could not reach.",
+    "A mate who settled into your clan years ago still gets one more slow circle from you some nights, a check on standing that was already won."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 鬣 (rail__han and serial-han)",
+      "verdict": "WRONG",
+      "note": "鬣 liè alone means mane or bristles, not hyena. Hyena is 鬣狗 liègǒu; the spotted hyena is 斑鬣狗 bān liègǒu (also 斑點鬣狗 bāndiǎn liègǒu). Use 鬣狗 liègǒu in the header, with pinyin.",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "fact": "Clans are matrilineal; a cub's rank is inherited from its mother, stays stable, daughters settle just below her.",
+      "verdict": "OK",
+      "note": "Hyena Project: offspring usually acquire a rank just below the mother, driven by her postnatal support. Nuance: the youngest litter outranks older siblings.",
+      "source_ids": [
+        "s10",
+        "s9"
+      ]
+    },
+    {
+      "fact": "All adult females outrank all immigrant males; an immigrant male enters a queue at the bottom and rises by tenure.",
+      "verdict": "OK",
+      "note": "SDZWA: male rank follows queuing conventions, clan tenure sets the place in the queue. Smithsonian: immigrant males face about two years of probation.",
+      "source_ids": [
+        "s9",
+        "s12"
+      ]
+    },
+    {
+      "fact": "Jaws and teeth are proportionally among the strongest of any living mammal, built for cracking bones.",
+      "verdict": "WRONG",
+      "note": "Bone cracking is right (Smithsonian, Holekamp). 'Proportionally' fails: bite force quotient for the spotted hyena is 124, below lion 128, wolf 136, tiger 139 and Tasmanian devil 181. Say 'a skull and jaw built to crack bone' and drop the superlative.",
+      "source_ids": [
+        "s14",
+        "s12"
+      ]
+    },
+    {
+      "fact": "The giggle is produced mainly around competitive feeding and encodes the caller's age, sex and dominance rank, not amusement (cited as 'East & Turner et al.').",
+      "verdict": "WRONG",
+      "note": "The paper is Mathevon, Koralek, Weldele, Glickman and Theunissen 2010, BMC Ecology, not East and Turner. It found age (pitch falls with age) and individual identity; dominance only indirectly; NO reliable sex signal. Fix the citation and drop 'sex'. Context is right: close-range competition at a carcass, a submissive or frustrated call.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "fact": "Clans travel to migrating herds; a lactating female may make 40 to 50 such trips and cover thousands of kilometres a year.",
+      "verdict": "OK",
+      "note": "Hyaenidae Specialist Group: lactating females commute 40 to 50 times a year, at least 2,880 to 3,680 km. This is the Serengeti commuting system (Hofer and East), not all clans; say so.",
+      "source_ids": [
+        "s11",
+        "s9"
+      ]
+    },
+    {
+      "fact": "Hyenas recognise third-party relationships and rank between other animals, rare outside primates.",
+      "verdict": "OK",
+      "note": "Holekamp Lab: in coalition formation hyenas clearly recognise third-party relationships (Engh et al. 2004); earlier results showed limits in other contexts, so keep it to coalitions.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "fact": "Psychic reading: the hyena kills between sixty and ninety-five percent of its own prey.",
+      "verdict": "OK",
+      "note": "Hyaenidae SG and Smithsonian give 'as much as 95%'; the share varies by population. Phrase as 'up to 95 percent of what it eats', which is food, not prey.",
+      "source_ids": [
+        "s11",
+        "s12"
+      ]
+    },
+    {
+      "fact": "Psychic reading: the whoop travels five kilometres.",
+      "verdict": "OK",
+      "note": "SDZWA: audible to humans at more than 5 km.",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "fact": "Psychic reading: rank passes from mother to cub before the cub is a week old; a high-born cub outranks adults three times its size from its first morning.",
+      "verdict": "WRONG",
+      "note": "Rank is learned through maternal support and acquired during the juvenile period into adolescence, not in the first week. Cut the week and first-morning claims.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "fact": "Profile 'Power phase: Full Moon' vs Psychic reading 'The first quarter belongs to you'.",
+      "verdict": "UNVERIFIABLE",
+      "note": "Internal inconsistency, and neither is a tradition; both are our invention. Pick one or cut.",
+      "source_ids": []
+    },
+    {
+      "fact": "Sources list: 'IUCN Red List · Crocuta crocuta', 'Animal Diversity Web'",
+      "verdict": "UNVERIFIABLE",
+      "note": "Generic listings, not tied to any claim; I did not open them. Replace with the sources above.",
+      "source_ids": []
+    }
+  ]
+}

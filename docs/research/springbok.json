@@ -1,0 +1,276 @@
+{
+  "slug": "springbok",
+  "name": "Springbok",
+  "sign": "Aries",
+  "year": "Rabbit",
+  "element": "Wood (fixed element of the Rabbit); Aries adds Fire, cardinal. Wood feeds Fire in the generating cycle.",
+  "sources": [
+    {
+      "id": "wiki-aries",
+      "title": "Aries (astrology), Wikipedia (Mars, Fire, cardinal, Sun exalted, opposite Libra)",
+      "url": "https://en.wikipedia.org/wiki/Aries_(astrology)"
+    },
+    {
+      "id": "almanac-aries",
+      "title": "Aries Zodiac Sign, The Old Farmer's Almanac (strengths and weaknesses)",
+      "url": "https://almanac.com/content/aries-zodiac-sign"
+    },
+    {
+      "id": "zodiac-man",
+      "title": "Zodiac Man, Wikipedia (Aries: head)",
+      "url": "https://en.wikipedia.org/wiki/Zodiac_Man"
+    },
+    {
+      "id": "wiki-zodiac",
+      "title": "Chinese zodiac, Wikipedia (compatibility table: trines, six harmonies, conflict)",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "brief",
+      "title": "Internal: data/research/BRIEF.md and site/js/modules/zodi-map.js GRID",
+      "url": "internal:site/js/modules/zodi-map.js"
+    },
+    {
+      "id": "tcg-rabbit",
+      "title": "Year of the Rabbit, Travel China Guide (traits)",
+      "url": "https://www.travelchinaguide.com/intro/social_customs/zodiac/rabbit.htm"
+    },
+    {
+      "id": "wiki-springbok",
+      "title": "Springbok, Wikipedia (dorsal fold, pronking, 88 km/h, water, treks, horns, national animal, Krugerrand)",
+      "url": "https://en.wikipedia.org/wiki/Springbok"
+    },
+    {
+      "id": "wiki-antelope",
+      "title": "Antelope, Wikipedia (horns in both sexes in most species; springbok fast-twitch fibres)",
+      "url": "https://en.wikipedia.org/wiki/Antelope"
+    },
+    {
+      "id": "skotnes",
+      "title": "Pippa Skotnes, People Were Once Springboks, Tswalu Kalahari (2022), drawing on the Bleek and Lloyd |xam archive",
+      "url": "https://tswalu.com/people-were-once-springboks/"
+    },
+    {
+      "id": "fw-trek",
+      "title": "Forgotten springbok migrations of the Great Karoo, Farmer's Weekly",
+      "url": "https://www.farmersweekly.co.za/animals/game-and-wildlife/forgotten-springbok-migrations-of-the-great-karoo/"
+    },
+    {
+      "id": "history-1995",
+      "title": "Nelson Mandela and the 1995 Rugby World Cup, History.com (Farrell Evans)",
+      "url": "https://www.history.com/articles/nelson-mandela-1995-rugby-world-cup-south-african-unity"
+    },
+    {
+      "id": "zhwiki-tiaoling",
+      "title": "跳羚 tiàolíng, Chinese Wikipedia (springbok)",
+      "url": "https://zh.wikipedia.org/wiki/跳羚"
+    }
+  ],
+  "western": {
+    "temperament": "Self-reliant, pioneering, energetic, brave, frank and competitive. Shadow: rash, impatient, quick to anger, rigid, restless. Medieval Zodiac Man diagrams give Aries the head.",
+    "planet": "Mars (Sun exalted)",
+    "element": "Fire (with Leo and Sagittarius)",
+    "modality": "Cardinal; opposite sign Libra",
+    "source_ids": [
+      "wiki-aries",
+      "almanac-aries",
+      "zodiac-man"
+    ]
+  },
+  "chinese": {
+    "temperament": "Gentle, considerate, kind, quick-witted, observant, cautious and responsible. Shadow: indecisive and over-cautious, content with what it has, sensitive to how others see it.",
+    "yinyang": "Yin",
+    "element": "Wood (fixed); earthly branch 卯 mǎo",
+    "trine": "Rabbit, Goat, Pig",
+    "secret_friend": "Dog",
+    "clash": "Rooster (table also lists Dragon as harmful, Rat as punishment)",
+    "lucky": null,
+    "source_ids": [
+      "wiki-zodiac",
+      "tcg-rabbit"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "|xam San (Northern Cape), Bleek and Lloyd archive, 1870s",
+      "meaning": "The |xam said people were once springboks: the Mantis shot them, they cried, and the Mantis told them to become people. They felt approaching springbok as a bodily tapping called |kum̅m̅, 'in our heads where the springbok horns are'. ǁkabbo said springbok came back with the rains because they could smell rain far off. Retold by Pippa Skotnes, who directs the digitising of the Bleek and Lloyd archive. Tell it as theirs, attributed, never as a 'you' reading.",
+      "source_ids": [
+        "skotnes"
+      ]
+    },
+    {
+      "culture": "South Africa, the trekbokke (to the 1890s)",
+      "meaning": "Drought-driven mass treks of springbok, herds hundreds of kilometres long and reported in the millions, crossed the Karoo until the 1890s; hunting, the 1896/97 rinderpest and barbed-wire sheep farms ended them. A sourced image of the herd that moves toward the rain.",
+      "source_ids": [
+        "wiki-springbok",
+        "fw-trek"
+      ]
+    },
+    {
+      "culture": "South Africa, national emblem",
+      "meaning": "The springbok is South Africa's national animal, sits on the reverse of the Krugerrand, and names the national rugby team. The emblem was so tied to Afrikaner minority rule that after 1994 every other national team switched to the protea; Mandela kept it for rugby and wore the Springbok green at the 1995 World Cup final as an act of reconciliation. A symbol that survived by being re-read.",
+      "source_ids": [
+        "wiki-springbok",
+        "history-1995"
+      ]
+    },
+    {
+      "culture": "Chinese name",
+      "meaning": "In Chinese the springbok is 跳羚 tiàolíng, literally 'leaping antelope'. The name is the behavior.",
+      "source_ids": [
+        "zhwiki-tiaoling"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "'Springbok spirit animal' meanings (agility, optimism, etc.) on totem blogs; no traditional source located.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading. Cardinal Fire meets yin Wood, and Wood feeds Fire: the Rabbit's watchfulness is the fuel the Aries burst burns. The Springbok scans the open veld longer than any Aries should, then spends everything in one display. Aries is the sign of the head in the old Zodiac Man, and the |xam located their springbok sense in the head too; we note the echo, we do not merge the traditions.",
+    "gifts": "Our reading. Reads danger early; makes a threat lose interest by being seen clearly; lives lean through dry stretches without complaint; moves well with a large herd.",
+    "shadow": "Our reading. Performing readiness for threats that are not there. The pronk is costly; repeated for every rustle it burns the reserves the dry season needs. The Rabbit half would rather not fight at all, so the show stands in for the conversation.",
+    "love": "Our reading. Shows a hurt instead of naming it; needs a partner who answers the leap by asking plainly what happened. Loyal to a herd once chosen; the Rabbit wants safety, the Aries wants to be the one who provides it.",
+    "money": "Our reading. Lean by habit, able to run on little for long periods, then spends in a burst. Wise to keep the burst for real opportunities, the way the trek followed real rain.",
+    "conflict": "Our reading. First move is display, not attack: makes its strength visible and hopes that ends it. If that fails, it runs fast and far. Rarely circles back for revenge."
+  },
+  "careers": [
+    {
+      "path": "Emergency response, lifeguarding, search and rescue",
+      "why": "Our reading. Early threat detection plus a short, total burst of effort, then rest."
+    },
+    {
+      "path": "Field guiding, wildlife monitoring, rangeland work",
+      "why": "Our reading. Open-ground scanning and a feel for where the rain has fallen."
+    },
+    {
+      "path": "Live performance, sport, stunt and movement work",
+      "why": "Our reading. The pronk is a display meant to be seen; Mars-ruled Fire wants a stage that is real."
+    },
+    {
+      "path": "Logistics, event and festival operations",
+      "why": "Our reading. Moving with a very large herd, travelling light, timing the move to conditions."
+    },
+    {
+      "path": "Security assessment, risk and safety audit",
+      "why": "Our reading. Telling a real threat from an audience is this crossing's whole lesson; paid work can train it."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Golden Brushtail Possum",
+      "slug": "golden-brushtail-possum",
+      "reason": "Leo x Goat. Goat sits in the Rabbit trine (Rabbit, Goat, Pig); Leo is Fire like Aries."
+    },
+    {
+      "name": "Tree Kangaroo",
+      "slug": "tree-kangaroo",
+      "reason": "Sagittarius x Pig. Pig completes the Rabbit trine; Sagittarius is the third Fire sign."
+    },
+    {
+      "name": "Sunbittern",
+      "slug": "sunbittern",
+      "reason": "Leo x Dog. Dog is the Rabbit's secret friend (six harmonies); Leo shares Aries's Fire. Both open a hidden display when it counts."
+    },
+    {
+      "name": "Kakapo",
+      "slug": "kakapo",
+      "reason": "Aquarius x Goat. Goat trine; Aquarius is Air, which feeds Fire."
+    },
+    {
+      "name": "Cacomistle",
+      "slug": "cacomistle",
+      "reason": "Gemini x Pig. Pig trine; Gemini Air with Aries Fire."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Satin Bowerbird",
+      "slug": "satin-bowerbird",
+      "reason": "Libra x Rooster. Rabbit and Rooster are a traditional six-clash pair, and Libra is the sign opposite Aries. Both systems pull apart; two display animals competing for the same audience."
+    },
+    {
+      "name": "Cassowary",
+      "slug": "cassowary",
+      "reason": "Aries x Rooster. Same sign, but the Rabbit-Rooster clash: easy recognition, friction underneath."
+    }
+  ],
+  "candidate_lines": [
+    "Danger on the open veld does not send you into the grass. It sends you straight up, back bowed, white fan raised, so whatever is watching knows exactly what it would be chasing.",
+    "Most of your strength stays folded along your spine like the springbok's pocket of white hair, and someone has to see you leap to learn it was there at all.",
+    "You can cross a whole dry season on what the leaves give you, and the herd grazing beside you rarely guesses how long it has been since you last drank.",
+    "In love you would sooner pronk than speak: three stiff leaps to prove a hurt did not land, when one plain sentence about it would have ended the chase.",
+    "Part of you still waits for the great trek, a herd so wide it fills the Karoo, and keeps your load light in case the rain falls somewhere else tomorrow.",
+    "Wood feeds your Fire, so the Rabbit's caution is the fuel. You read the grass for danger longer than an Aries should, then spend all of it in a single bound."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 羚 (rail__han / serial-han), shown with pinyin líng",
+      "verdict": "WRONG (imprecise)",
+      "note": "羚 líng means antelope or gazelle in general (as in 羚羊 língyáng). The springbok's Chinese name is 跳羚 tiàolíng, 'leaping antelope' (same in traditional and simplified). Use 跳羚 tiàolíng; it also matches the page's pronk theme.",
+      "source_ids": [
+        "zhwiki-tiaoling"
+      ]
+    },
+    {
+      "fact": "A skin fold from mid-back to rump opens along the spine and lifts long white hairs when the animal pronks; the fold gives the species name marsupialis, Latin for pocket.",
+      "verdict": "OK",
+      "note": "Wikipedia: dorsal fold conceals white hair; marsupialis from Latin, for the pocket-like flap along the midline of the back.",
+      "source_ids": [
+        "wiki-springbok"
+      ]
+    },
+    {
+      "fact": "In a pronk the springbok leaps stiff-legged, all four feet off the ground, head down, back arched, and repeats the bound several times.",
+      "verdict": "OK",
+      "note": "Wikipedia: multiple leaps in a stiff-legged posture, back bowed, white flap lifted; leaps up to 2 m. 'Head down' is not in the source; harmless but could be cut.",
+      "source_ids": [
+        "wiki-springbok"
+      ]
+    },
+    {
+      "fact": "Reaches about 88 km/h in a sprint and holds near 50 km/h over about six kilometres, powered by fast-burning muscle fuel.",
+      "verdict": "PARTLY UNVERIFIABLE",
+      "note": "88 km/h is in Wikipedia. The 50 km/h over about 6 km figure has no source we could find; cut it. Fast-twitch support exists: springbok muscle is about 58% type IIx fibres (Wikipedia, Antelope). Suggest: 'clocked at 88 km/h, on muscle rich in fast-twitch fibres'.",
+      "source_ids": [
+        "wiki-springbok",
+        "wiki-antelope"
+      ]
+    },
+    {
+      "fact": "Can go extended periods without drinking, getting moisture from leaves, shoots and succulents, even through drought.",
+      "verdict": "OK",
+      "note": "Wikipedia: survive without drinking through the dry season; in extreme cases never drink in their lives.",
+      "source_ids": [
+        "wiki-springbok"
+      ]
+    },
+    {
+      "fact": "Before fencing and farmland in the late 1800s, trekbokken numbering in the millions took days to pass a single point, moving toward rain.",
+      "verdict": "OK with one UNVERIFIABLE clause",
+      "note": "Millions, herds hundreds of km long, drought-driven (Wikipedia); last major treks in the 1890s, ended by hunting, 1896/97 rinderpest, fencing and sheep farming (Farmer's Weekly). 'Days to pass a single point' is unsourced; the one eyewitness account in Farmer's Weekly (Van der Merwe, early 1880s) says about an hour. Also add hunting and rinderpest, not only fencing.",
+      "source_ids": [
+        "wiki-springbok",
+        "fw-trek"
+      ]
+    },
+    {
+      "fact": "Both sexes grow ringed, black, lyre-shaped horns 35 to 50 cm long, unusual among African antelope, where horns are more often carried by males alone.",
+      "verdict": "WRONG (second clause)",
+      "note": "35 to 50 cm in both sexes is right (Wikipedia; female horns about 60 to 70% of male length in the nominate subspecies). But 'unusual among African antelope' is false: in most antelope species both sexes have horns (Wikipedia, Antelope). Cut the comparison.",
+      "source_ids": [
+        "wiki-springbok",
+        "wiki-antelope"
+      ]
+    },
+    {
+      "fact": "Purple Star section: for an Aries Rabbit the Sun star (太陽 Tài Yáng) 'tends to sit high and bright'; reading 'keeps landing on' Tài Yáng and Seven Killings (七殺 Qī Shā).",
+      "verdict": "WRONG (no traditional basis)",
+      "note": "Zi Wei Dou Shu charts are cast from lunar birth date and hour, not Western sun sign plus year animal. The page's small disclaimer admits this, but the body text still states it as what the chart 'tends' to do. Relabel fully as Zodi Animal's reading or cut.",
+      "source_ids": [
+        "brief"
+      ]
+    }
+  ]
+}

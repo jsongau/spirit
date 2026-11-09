@@ -1,0 +1,103 @@
+# Bat-eared Fox dossier: Gemini x Year of the Tiger
+
+Slug `bat-eared-fox`. Element: Wood (from the Tiger, yang); Gemini adds Air, mutable. Research date 2026-11-08. Everything marked 'Our reading' is interpretation, not tradition. Lucky colors and numbers left out per the brief.
+
+## Western half: Gemini
+- Temperament: Curious, versatile, quick to adapt and connect with all kinds of people, lively in conversation. Shadow: noncommittal, easily bored before going deep, sweeps conflict under the rug. Symbol: the twins Castor and Pollux.
+- Planet: Mercury
+- Element: Air
+- Modality: Mutable; opposite sign Sagittarius
+- Sources: [s1] [s2]
+
+## Chinese half: Tiger
+- Temperament: Brave, confident, charming, a natural and hardworking leader with strong self-assurance. Shadow: rash, quick-tempered, stubborn, domineering; mistrust and overconfidence make close friendship hard.
+- Yinyang: Yang
+- Element: Wood (fixed); earthly branch 寅 yín
+- Trine: Tiger, Horse, Dog
+- Secret friend: Pig
+- Clash: Monkey (Wikipedia grid also lists Snake as a harm pair)
+- Lucky: not included (sources disagree; brief rule)
+- Sources: [s3] [s4]
+
+## The Bat-eared Fox as a symbol
+- **Chinese (the animal's own name).** The Chinese names are 大耳狐 dà'ěrhú (big-eared fox), 蝠耳狐 fú'ěrhú (bat-eared fox) and 好望狐 hǎowànghú (Cape of Good Hope fox) [s11]. The bat 蝠 fú is a classic Chinese luck pun on 福 fú, blessing; five bats stand for the five blessings [s12] [s13]. So the animal's Chinese name literally wears a blessing on its ears. The pun is about bats in general and is our bridge, not a tradition about this fox. [s11] [s12] [s13]
+- **Afrikaans (South Africa).** Two Afrikaans names: bakoorjakkals (bowl-ear jackal, for the ears) and draaijakkals, the turning jackal, tied to how it scatters 'twisting and turning as they run' with flicks of the tail when disturbed [s8] [s9]. SANBI notes its skill at doubling back on its tracks [s14]. The literal gloss of draai as turn is ordinary Afrikaans; UFS links the name to the evasive running. Strong Gemini (mutable, twin-minded) bridge. [s8] [s9] [s14]
+- **Khoekhoe, N|uu and |xam (Khoe-San languages).** The UCT San and Khoen Digital Archive records the animal's names: ǁāb in Khoekhoe/Nama, ǁ'aa (plural ka ǁ'aa) in N|uu, and //ko:a or //k"wa in |xam [s9]. A Bleek dictionary slip glosses a |xam word as 'proteles (loffelhund)', with '(bat-eared fox?)' marked uncertain [s10]. These are names only: no story or belief about the fox was found. Use as a respectful naming note, never as a spirit meaning. [s9] [s10]
+- **Greek scientific naming.** Otocyon megalotis means roughly 'ear-dog, big-ear'; the English name probably borrows from the Egyptian slit-faced bat, which shares the range and the ear shape [s7]. [s7]
+- **Unsourced, do not use.** Chinese fox-spirit (狐狸精 húli jīng) lore is about foxes in general (red fox in practice), not this African canid; using it here would be a borrowed-species claim. Generic 'bat-eared fox spirit animal' meanings on totem blogs had no traditional source. (no source)
+
+## The fusion (our reading)
+- **Temperament.** Our reading: mutable Air (Gemini) over yang Wood (Tiger). Air feeds Wood in the classic image of wind through a forest, and here it turns into hearing: a mind that takes in the whole grassland, held by a Tiger's narrow, fierce claim on one burrow and one partner. Wide intake, tiny circle.
+- **Gifts.** Our reading: picks up the faint signal under the surface (the larva gnawing out of the dung ball), reads a group fast, evades pressure by turning rather than fighting, and cares hands-on for the people it has claimed.
+- **Shadow.** Our reading: the turning jackal's habit of doubling back can become a life of slipping every corner (SANBI notes the same doubling back makes it easy for dogs to catch). Gemini's noncommittal streak plus Tiger mistrust can keep what it hears private for too long.
+- **Love.** Our reading: pair-bonded and physical in its care. Builds love out of shared nights, shared feeding and taking the heavier share of the home work, as the male fox does with the kits. Needs a partner who talks; resents one who tries to pin it down.
+- **Money.** Our reading: an insect-eater's economy of many small, steady finds over one big kill. Good at spotting small overlooked income; risk is scattering across too many patches.
+- **Conflict.** Our reading: first move is to twist away, not to bite. Pushed into a corner where its people are threatened, it turns on the predator together with its group (s16 notes family members harass a predator that has caught one of them). Practice: say the thing you heard before you run.
+
+## Careers (our reading)
+- **Audio, acoustics, sound engineering, field recording.** Our reading: the ears tuned to prey moving underground (ADW, Smithsonian).
+- **Investigative research, fact-checking, intelligence analysis.** Our reading: Mercury's information appetite with a Tiger's focus on one target; hears what is under the surface.
+- **Early-years teaching, paediatric nursing, stay-at-home parenting.** Our reading: the male fox carries most early care for the kits (Smithsonian, Wikipedia).
+- **Translation, interpreting, linguistics.** Our reading: Gemini twins plus a mind that moves between registers; the animal itself carries names in Afrikaans, Khoekhoe, N|uu and |xam.
+- **Field ecology, pest and soil science.** Our reading: a life built on termites and dung beetles, the small workers others overlook.
+
+## Best matches
+- **Duetting Frog** (`duetting-frog`): Libra x Dog. Dog sits in the Tiger trine (Tiger, Horse, Dog); Libra is a fellow Air sign. Trine plus same element.
+- **Vampire Bat** (`vampire-bat`): Aquarius x Dog. Dog trine, and Aquarius is Air with Gemini. Also the only other bat-named page in the grid.
+- **Roseate Spoonbill** (`roseate-spoonbill`): Libra x Pig. Pig is the Tiger's secret friend (six harmonies), Libra shares Air. Pig's Water also feeds Tiger's Wood.
+- **Pronghorn** (`pronghorn`): Aries x Horse. Horse is in the Tiger trine; Aries is Fire, the classic complement to Air.
+- **Paradise Riflebird** (`paradise-riflebird`): Leo x Horse. Horse trine; Leo Fire complements Gemini Air.
+
+## Hard pairings
+- **Coati** (`coati`): Sagittarius x Monkey. Tiger and Monkey are a six-clash pair, and Sagittarius is Gemini's opposite sign. Both systems pull apart.
+- **Kea** (`kea`): Gemini x Monkey. Same sign, so the talk is easy, but the Tiger-Monkey clash sits underneath.
+
+Basis: trines, six harmonies and six clashes [s3]; Western element pairs and oppositions per the brief and GRID (internal).
+
+## Candidate lines
+1. You hear the larva chewing its way out of the buried dung ball long before it surfaces, and you carry that knowledge a whole night before you say a word.
+2. Chased across open grass, you twist and turn again, and whoever is after you runs out of breath long before you run out of angles.
+3. Your ears take in half the veld, yet the burrow you would fight for holds two bodies and a litter of kits.
+4. In your den you are the one who stays with the young while your partner goes out to eat, and you never once filed it under sacrifice.
+5. When the harvester termites pour up after rain, you could feed alone in the dark; you bring your people to the patch instead.
+6. A Tiger's claim sits under a Gemini's chatter in you: plenty of talk at the termite patch, and one burrow nobody else is told about.
+
+## Fact audit of the live page
+- **OK**: Ears roughly 11 to 13 cm long, among the largest relative to body size in the dog family; sensitive enough to register a beetle larva working out of a buried dung ball.
+  ADW gives 114 to 135 mm; Wikipedia 11 to 13 cm. ADW: the foxes listen for beetle larvae gnawing out of dung balls. 'Among the largest' is safe (the fennec usually holds the top spot); do not upgrade to 'largest'. [s5] [s7]
+- **UNVERIFIABLE**: Each ear rotates independently to track a sound to its exact source.
+  No opened source says the ears rotate independently. Smithsonian only mentions rotating ears as body language, and Wikipedia describes foraging with 'ears tilted forward'. Cut 'independently' and 'exact source' or cut the fact. [s6] [s7]
+- **WRONG (overstated)**: Unlike any other member of the dog family it eats almost entirely insects; harvester termites and dung beetles make up most of the diet, located by ear rather than by scent or sight.
+  The diet claims are OK: Wikipedia calls it 'the only truly insectivorous canid' (Klare et al. 2011); termites and dung beetles up to 80 percent (ADW), insects 90 to 95 percent (Smithsonian). But 'rather than by scent' is wrong: it forages 'walking slowly, nose close to the ground and ears tilted forward' (Wikipedia). Say it finds prey mainly by hearing, helped by smell. [s5] [s6] [s7]
+- **OK (soften detail)**: Largely monogamous, sleeping in the same den, foraging together, grooming each other along the ears and shoulders through the night.
+  Usually monogamous, pairs often for life (ADW, Smithsonian); polygynous groups occur in East Africa (Wikipedia). Families groom each other (Smithsonian). The 'ears and shoulders through the night' detail has no source; drop it. [s5] [s6] [s7]
+- **OK**: Males often provide the greater share of early parental care, guarding, grooming and playing with kits, while the female forages to keep her milk supply up.
+  Smithsonian: males 'provide most of the early parental care', letting the female focus on eating enough to produce milk. Wikipedia calls it a reversal of parental roles. ADW is more cautious ('as much as or even more than the mother'), so 'often' is right. [s5] [s6] [s7]
+- **WRONG**: When a family finds a termite mound, one fox breaks it open and the whole group feeds together on the insects that pour out.
+  No source describes a fox breaking open a mound. The main prey, harvester termites (Hodotermes, Microhodotermes), are taken as they forage at the surface; foxes feed in groups at rich patches, with aggregations of up to 15 animals from different families (Wikipedia, UFS). Wikipedia says they use mounds opened by aardvarks. Rewrite as: where harvester termites are thick on the ground, several families gather and feed side by side. [s7] [s8]
+- **UNVERIFIABLE (comparative)**: Intro: 'a father who takes on more of the early parenting than almost any other wild dog'.
+  The role reversal is sourced (s6, s7); the comparison with 'almost any other wild dog' is not. Say 'more of the early parenting than the mother'. [s6] [s7]
+- **OK but generic**: Header hanzi 狐 (rail__han and serial-han).
+  狐 hú means fox, so it is not wrong, but it is the generic glyph and shows no pinyin. The species' own name is 大耳狐 dà'ěrhú (same in traditional and simplified), also 蝠耳狐 fú'ěrhú. Recommend 大耳狐 dà'ěrhú, or keep 狐 and add hú. [s11]
+- **OK**: Purple Star (Zi Wei Dou Shu) mentions.
+  This page only promotes casting a chart and correctly says a chart comes from lunar birth date and hour. It assigns no star to the Gemini x Tiger crossing. 
+- **OK**: Lunar New Year January/February note.
+  Absent, which is right for Gemini. 
+
+## Sources
+- [s1] Gemini (astrology), Wikipedia: https://en.wikipedia.org/wiki/Gemini_(astrology)
+- [s2] The Zodiac's Goldilocks: Gemini traits, Anna Kaufman, USA TODAY (via Yahoo News): https://www.yahoo.com/news/zodiacs-goldilocks-meet-gemini-sign-101545902.html
+- [s3] Chinese zodiac (Tiger row, compatibility grid), Wikipedia: https://en.wikipedia.org/wiki/Chinese_zodiac
+- [s4] Year of the Tiger, China Highlights: https://www.chinahighlights.com/travelguide/chinese-zodiac/tiger.htm
+- [s5] Otocyon megalotis, Animal Diversity Web (University of Michigan): https://animaldiversity.org/accounts/Otocyon_megalotis/
+- [s6] Bat-eared fox, Smithsonian's National Zoo: https://nationalzoo.si.edu/animals/bat-eared-fox
+- [s7] Bat-eared fox, Wikipedia (diet, Klare et al. 2011 citation, parental role reversal, etymology): https://en.wikipedia.org/wiki/Bat-eared_fox
+- [s8] Bat-eared fox, ALPRU predator species page, University of the Free State: https://www.ufs.ac.za/natagri/departments-and-divisions/animal-wildlife-and-grassland-sciences-home/alpru/alpru-home/unlisted-pages/predator-species/bat-eared-fox
+- [s9] Long-Eared Fox / Bat-Eared Fox record (Khoekhoe, N|uu, |xam names), San and Khoen Digital Archive, UCT ibali: https://ibali.uct.ac.za/s/san-khoen-digital-archive/item/17920
+- [s10] Bleek dictionary slip 2102, proteles (loffelhund) (bat-eared fox?), The Digital Bleek and Lloyd, UCT: https://digitalbleeklloyd.uct.ac.za/metadata/dictionaries/Xam/dental/2102/index.html
+- [s11] 大耳狐, Chinese Wikipedia: https://zh.wikipedia.org/wiki/大耳狐
+- [s12] Why Chinese Art Is Swarming with Colonies of Tiny Bats, Claire Voon, Hyperallergic, 2017-10-24: https://hyperallergic.com/406164/why-chinese-art-is-swarming-with-colonies-of-tiny-bats/
+- [s13] Woman's ceremonial robe (bat and fu note), The Metropolitan Museum of Art: https://metmuseum.org/art/collection/search/53715
+- [s14] Bat-eared fox, Hantam National Botanical Garden, SANBI: https://www.sanbi.org/gardens/hantam/wildlife-and-biodiversity-2/hantam-bat-eared-fox/
+- [s15] Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal): data/research/BRIEF.md
+- [s16] Bat-eared fox, Namibian.org (family members harass a predator that has caught one of them): https://namibian.org/nature-wildlife-old/mammals/carnivores/bat-eared-fox

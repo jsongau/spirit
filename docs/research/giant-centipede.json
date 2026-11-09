@@ -1,0 +1,396 @@
+{
+ "slug": "giant-centipede",
+ "name": "Giant Centipede",
+ "sign": "Scorpio",
+ "year": "Tiger",
+ "element": "Wood (from the Tiger); Scorpio adds Water, fixed. Water feeds Wood in the generating cycle.",
+ "sources": [
+  {
+   "id": "c1",
+   "title": "Scorpio (astrology), Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Scorpio_(astrology)"
+  },
+  {
+   "id": "c2",
+   "title": "Scorpio sign traits, Cafe Astrology (tradition reference only, wording not reused)",
+   "url": "https://cafeastrology.com/scorpio.html"
+  },
+  {
+   "id": "c3",
+   "title": "Tiger (zodiac), Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Tiger_(zodiac)"
+  },
+  {
+   "id": "c4",
+   "title": "Year of the Tiger, China Highlights",
+   "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/tiger.htm"
+  },
+  {
+   "id": "c5",
+   "title": "Chinese zodiac (compatibility: trines, six harmonies, six clashes), Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+  },
+  {
+   "id": "c6",
+   "title": "Earthly Branches (double hours), Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Earthly_Branches"
+  },
+  {
+   "id": "c7",
+   "title": "Molinari et al. 2005, Predation by giant centipedes, Scolopendra gigantea, on three species of bats in a Venezuelan cave, Caribbean Journal of Science 41(2):340-346 (Academia.edu record)",
+   "url": "https://www.academia.edu/32674121"
+  },
+  {
+   "id": "c8",
+   "title": "Scolopendra gigantea, Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Scolopendra_gigantea"
+  },
+  {
+   "id": "c9",
+   "title": "Scolopendromorpha, Wikipedia (leg-pair counts)",
+   "url": "https://en.wikipedia.org/wiki/Scolopendromorpha"
+  },
+  {
+   "id": "c10",
+   "title": "Edgecombe and Giribet 2007, Evolutionary biology of centipedes, Annu Rev Entomol 52:151-170 (Giribet lab page)",
+   "url": "https://giribetgroup.oeb.harvard.edu/publications/evolutionary-biology-centipedes-myriapoda-chilopoda"
+  },
+  {
+   "id": "c11",
+   "title": "Annual Reviews landing page, DOI 10.1146/annurev.ento.52.110405.091326 (centipede review abstract)",
+   "url": "https://www.annualreviews.org/doi/10.1146/annurev.ento.52.110405.091326"
+  },
+  {
+   "id": "c12",
+   "title": "Tohoku University press release on centipede walking and swimming control (Scolopendra subspinipes mutilans)",
+   "url": "https://www.tohoku.ac.jp/en/press/navigating_land_and_water.html"
+  },
+  {
+   "id": "c13",
+   "title": "Panel with the Five Poisonous Creatures, Ming dynasty silk, The Met (1987.7)",
+   "url": "https://www.metmuseum.org/art/collection/search/44109"
+  },
+  {
+   "id": "c14",
+   "title": "Ferocity and the Five Poisons: Symbolism on Qing Dynasty Children's Clothing, University of Alberta Museums, 9 Feb 2022",
+   "url": "https://www.ualberta.ca/museums/news/2022/february/ferocity-and-the-five-poisons.html"
+  },
+  {
+   "id": "c15",
+   "title": "Chinese Creepy Crawlies: Keeping the Pests of May at Bay, Sixth Tone, June 2023",
+   "url": "https://www.sixthtone.com/news/1013163"
+  },
+  {
+   "id": "c16",
+   "title": "The Five Poisons, Primaltrek (Chinese charms reference)",
+   "url": "https://primaltrek.com/fivepoisons.html"
+  },
+  {
+   "id": "c17",
+   "title": "Ōmukade, Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/%C5%8Cmukade"
+  },
+  {
+   "id": "c18",
+   "title": "Ōmukade, yokai.jp (Hidesato, Mount Mikami, Bishamonten messenger, merchant crests)",
+   "url": "https://yokai.jp/en/yokai/oomukade"
+  },
+  {
+   "id": "c19",
+   "title": "Mukade no Emakan, Fukuoji Bishamondo, Miyagi (Japan tourism multilingual database)",
+   "url": "https://multi.andtrip.jp/LUC2AITRIP/cdata/luc2aitrip_296_jaen.html"
+  },
+  {
+   "id": "c20",
+   "title": "祕魯巨人蜈蚣, Chinese Wikipedia",
+   "url": "https://zh.wikipedia.org/wiki/秘魯巨人蜈蚣"
+  },
+  {
+   "id": "c21",
+   "title": "百足之蟲 entry, Wiktionary mirror (glossed as millipede)",
+   "url": "https://kaweah.freedombox.rocks/kiwix/wiktionary_en_all_maxi_2023-04/%E7%99%BE%E8%B6%B3%E4%B9%8B%E8%9F%B2%EF%BC%8C%E8%87%B3%E6%96%B7%E4%B8%8D%E8%B9%B6"
+  },
+  {
+   "id": "c22",
+   "title": "Zodi Animal system facts: BRIEF.md and site/js/modules/zodi-map.js GRID (internal)",
+   "url": "file:data/research/BRIEF.md"
+  }
+ ],
+ "western": {
+  "temperament": "Traditionally read as perceptive, determined, private and strategic, patient until the right moment, loyal and protective once committed. Shadow: suspicion, possessiveness, jealousy, grudges, control.",
+  "planet": "Mars (traditional), Pluto (modern); Ketu in Vedic astrology",
+  "element": "Water",
+  "modality": "Fixed; negative/feminine polarity; opposite sign Taurus",
+  "source_ids": [
+   "c1",
+   "c2"
+  ]
+ },
+ "chinese": {
+  "temperament": "Brave, competitive, confident, unpredictable and charming; a natural leader. Shadow: impetuous, irritable, overindulgent, stubborn, can seem domineering. Love: adventurous, said to show deep affection with difficulty.",
+  "yinyang": "Yang",
+  "element": "Wood (fixed); earthly branch 寅 yín; Tiger double hour 03:00 to 05:00",
+  "trine": "Tiger, Horse, Dog",
+  "secret_friend": "Pig",
+  "clash": "Monkey (Wikipedia also lists Snake as no match; China Highlights adds Ox and Goat)",
+  "lucky": null,
+  "source_ids": [
+   "c3",
+   "c4",
+   "c5",
+   "c6"
+  ]
+ },
+ "symbolism": [
+  {
+   "culture": "Chinese: the Five Poisons 五毒 wǔdú",
+   "meaning": "The centipede 蜈蚣 wúgōng is one of the Five Poisons (with snake, scorpion, toad, and lizard or spider), shown on charms and clothing around the Duanwu (Dragon Boat) Festival, the fifth day of the fifth lunar month, to turn harm away. A Ming silk panel at The Met shows the set.",
+   "source_ids": [
+    "c13",
+    "c15",
+    "c16"
+   ]
+  },
+  {
+   "culture": "Chinese: tiger and centipede on the same garment",
+   "meaning": "Qing children's tiger bibs carried a centipede and the other poisons; the tiger scared demons off, and 獨 dú 'solitary' puns on 毒 dú 'poison', so the tiger sometimes joins the set. This is the one tradition where Scorpio's creature and the Tiger literally share a cloth. Strongest crossing-specific item.",
+   "source_ids": [
+    "c14",
+    "c16"
+   ]
+  },
+  {
+   "culture": "Japan: Ōmukade 大百足 ōmukade",
+   "meaning": "In the Tawara Tōda legend, Fujiwara no Hidesato shoots a giant centipede living on Mount Mikami 三上山 that preyed on the dragon clan of Lake Biwa; two arrows bounce off, the third, wet with his saliva, kills it.",
+   "source_ids": [
+    "c17",
+    "c18"
+   ]
+  },
+  {
+   "culture": "Japan: messenger of Bishamonten 毘沙門天 Bishamonten",
+   "meaning": "The centipede is held to be the messenger of the guardian deity Bishamonten. Merchants used it in crests and shop names: many legs for 'many customers' feet' and strength for 'never losing to other shops'; in war it was tied to archery and victory.",
+   "source_ids": [
+    "c18",
+    "c19"
+   ]
+  },
+  {
+   "culture": "Japan: silk farmers of Miyagi",
+   "meaning": "At Fukuoji Bishamondo (Kakuda and Marumori area), farmers offered centipede ema plaques to protect silkworms, because the centipede was the rat's natural enemy; about 300 are displayed and over 23,000 stored, listed as Important Tangible Folk Cultural Properties.",
+   "source_ids": [
+    "c19"
+   ]
+  },
+  {
+   "culture": "Chinese proverb 百足之蟲，死而不僵 bǎi zú zhī chóng, sǐ ér bù jiāng",
+   "meaning": "Do not use for this animal: 百足之蟲 is glossed as millipede, not centipede. Borrowed-species risk.",
+   "source_ids": [
+    "c21"
+   ]
+  },
+  {
+   "culture": "Generic 'centipede spirit animal' meanings; Indigenous South American lore for S. gigantea",
+   "meaning": "Unsourced, do not use. No reliable source found.",
+   "source_ids": []
+  }
+ ],
+ "fusion": {
+  "temperament": "Our reading: fixed Water (Scorpio) feeds yang Wood (Tiger). Scorpio gathers and waits; the Tiger commits and takes ground. The Giant Centipede is the patient ambusher on the cave ceiling: anchored, unseen, then holding prey nearly double its own weight. The Duanwu tradition already put tiger and centipede on one child's bib as guards against harm, so this crossing reads as the protector who is feared.",
+  "gifts": "Our reading: courage backed by preparation; the grip to hold what others cannot (anchored rear legs, seven or eight front pairs on the prey, c7); fierce protection of its own (the guardian on the bib, the silkworm guard); stamina in the dark hours.",
+  "shadow": "Our reading: Scorpio control plus Tiger domineering; intensity that frightens people before they know you; the Five Poisons side: words that sting longer than intended; Tiger impetuousness breaking Scorpio's patience at the wrong moment, like the centipede that falls from the ceiling still gripping the bat (c7).",
+  "love": "Our reading: slow to let anyone near, then a hold that does not loosen. Scorpio possessiveness meets the Tiger's need for adventure, so the partner must be both loyal and lively. Protective to the point of guarding.",
+  "money": "Our reading: Japanese merchant lore made the centipede a sign of many customers and never losing to the shop next door (c18). Ambitious and competitive with money, plays to win, can overreach when the Tiger's confidence outruns Scorpio's research.",
+  "conflict": "Our reading: does not posture. Stays still, chooses the ground, then strikes once and hard. Forgives slowly. Needs to watch the sting: the Five Poisons were feared for a reason."
+ },
+ "careers": [
+  {
+   "path": "Security, risk, threat analysis, cybersecurity red teams",
+   "why": "Our reading: the guardian side (Bishamonten's messenger, the silkworm protector) plus Scorpio's eye for hidden threats."
+  },
+  {
+   "path": "Emergency surgery, toxicology, venom or pharmacology research",
+   "why": "Our reading: the Five Poisons used to fight harm; Scorpio depth and Tiger nerve under pressure."
+  },
+  {
+   "path": "Competitive business: sales leadership, founding a company, trading",
+   "why": "Our reading: merchant crests of the centipede, many feet and never losing; China Highlights notes Tigers as natural leaders (c4)."
+  },
+  {
+   "path": "Caving, field biology, wildlife or night-time field work",
+   "why": "Our reading: at home in the dark, patient in place, then decisive."
+  },
+  {
+   "path": "Investigative journalism or litigation",
+   "why": "Our reading: holds a subject far larger than itself until it gives way."
+  }
+ ],
+ "best_matches": [
+  {
+   "name": "Blue Glaucus",
+   "slug": "blue-glaucus",
+   "reason": "Pisces x Pig. Pig is the Tiger's secret friend (six harmonies) and Pisces is a fellow Water sign. Also a venom-carrier: like recognizes like."
+  },
+  {
+   "name": "Capybara",
+   "slug": "capybara",
+   "reason": "Cancer x Pig. Secret friend plus shared Water; Pig's Water also feeds Tiger's Wood."
+  },
+  {
+   "name": "Beluga",
+   "slug": "beluga",
+   "reason": "Pisces x Dog. Dog is in the Tiger trine; Pisces is a fellow Water sign."
+  },
+  {
+   "name": "Avocet",
+   "slug": "avocet",
+   "reason": "Virgo x Horse. Horse is in the Tiger trine; Virgo's Earth complements Scorpio's Water."
+  },
+  {
+   "name": "Tasmanian Devil",
+   "slug": "tasmanian-devil",
+   "reason": "Scorpio x Dog. Same sign, and Dog sits in the Tiger trine."
+  }
+ ],
+ "hard_matches": [
+  {
+   "name": "Ringtail",
+   "slug": "ringtail",
+   "reason": "Taurus x Monkey. Tiger-Monkey is the traditional six-clash pair and Taurus is Scorpio's opposite sign."
+  },
+  {
+   "name": "Elephantnose Fish",
+   "slug": "elephantnose-fish",
+   "reason": "Scorpio x Monkey. Same sign, but the Tiger-Monkey clash runs underneath."
+  }
+ ],
+ "candidate_lines": [
+  "Hanging belly-up from a cave roof, you anchor with your back legs and take something nearly twice your weight with the front ones. That is how you love as well: anchored first, then completely.",
+  "The Tiger hour runs from three to five in the morning, and that is when the cave is yours; your biggest decisions get made while the colony sleeps.",
+  "Old Duanwu bibs stitched the tiger and the centipede onto the same cloth to keep a child safe. You carry both, the guard and the creature everyone steps around.",
+  "Japanese merchants put centipedes on their crests for the many feet that bring customers and a strength that never loses to the shop next door. Your ambition moves on twenty-one pairs, quietly.",
+  "Scorpio's deep water feeds the Tiger's wood in you, so the longer you hold still on the ceiling, the harder the strike lands.",
+  "Silk farmers in Miyagi hung centipede plaques to keep the rats away from their silkworms. Somebody close to you sleeps better because you are on watch."
+ ],
+ "fact_audit": [
+  {
+   "fact": "Header hanzi (rail__han and serial-han) 蜈 wú",
+   "verdict": "WRONG (incomplete)",
+   "note": "蜈 is only the first syllable of 蜈蚣 wúgōng, centipede; it does not stand alone as the animal's name. Use 蜈蚣 wúgōng. The species is 祕魯巨人蜈蚣 mìlǔ jùrén wúgōng (Chinese Wikipedia).",
+   "source_ids": [
+    "c20",
+    "c15"
+   ]
+  },
+  {
+   "fact": "Up to 30 cm long",
+   "verdict": "OK",
+   "note": "Wikipedia: largest centipede, length exceeding 30 cm; Chinese Wikipedia: average 30 cm, some to 38 cm.",
+   "source_ids": [
+    "c8",
+    "c20"
+   ]
+  },
+  {
+   "fact": "Moves through Venezuelan cave systems and rain forest floors",
+   "verdict": "WRONG (narrowed)",
+   "note": "Range is northern South America and the southern Caribbean (Aruba, Curaçao, Colombia, Venezuela, Trinidad, Brazil) in rainforest and dry forest. The cave record is one cave: Cueva del Guano, Paraguaná Peninsula, Venezuela.",
+   "source_ids": [
+    "c8",
+    "c7"
+   ]
+  },
+  {
+   "fact": "Catches bats in mid-air by hanging from cave ceilings; 'documented anchoring its rear legs to cave ceilings to intercept bats in mid-flight'",
+   "verdict": "WRONG (overstated)",
+   "note": "Molinari et al. 2005 observed centipedes on the ceiling feeding on bats, holding them with the first 7 or 8 leg pairs and anchoring with rear legs. Catching bats in mid-air was one of three proposed hypotheses, not observed. They may also have taken roosting bats. Say: 'seen on a cave ceiling, anchored by its back legs, eating bats'.",
+   "source_ids": [
+    "c7",
+    "c8"
+   ]
+  },
+  {
+   "fact": "Ceiling method 'unique among centipede species'",
+   "verdict": "UNVERIFIABLE",
+   "note": "Wikipedia says 'unique strategies' but no source compares all centipedes. Cut.",
+   "source_ids": [
+    "c8"
+   ]
+  },
+  {
+   "fact": "Detects prey through substrate vibration via mechanoreceptors on all 21 pairs of legs, before visual confirmation",
+   "verdict": "UNVERIFIABLE",
+   "note": "21 pairs is OK for Scolopendridae. No source found for leg mechanoreceptors as the prey-detection channel in S. gigantea. Scolopendrids have four ocelli per side (weak vision), so the general idea is plausible, but the specific claim is unsourced.",
+   "source_ids": [
+    "c9"
+   ]
+  },
+  {
+   "fact": "Preys on animals significantly larger than itself: bats, lizards, mice, frogs, small birds; venom via forcipules (modified front legs)",
+   "verdict": "OK",
+   "note": "Diet list matches Wikipedia; venom from a modified leg pair under the head. Molinari et al.: prey in two cases nearly doubled the predator's mass.",
+   "source_ids": [
+    "c8",
+    "c7"
+   ]
+  },
+  {
+   "fact": "42 to 46 legs",
+   "verdict": "WRONG (contradicts the page's own fact 1)",
+   "note": "Scolopendridae have 21 leg pairs (42 legs); 23 pairs belong to other scolopendromorph families. Wikipedia's S. gigantea page mentions '21 or 23 segments', which may be the origin, but the page says 21 pairs elsewhere. Use 42.",
+   "source_ids": [
+    "c9",
+    "c8"
+   ]
+  },
+  {
+   "fact": "Legs coordinate through a distributed motor system without requiring central processing, each segment semi-autonomous",
+   "verdict": "WRONG (overstated)",
+   "note": "Tohoku University model (in Scolopendra subspinipes mutilans, a different species): the brain generates the walking command, sent down distributed networks, and leg sensory signals can override it locally. Central processing is involved.",
+   "source_ids": [
+    "c12"
+   ]
+  },
+  {
+   "fact": "Enters complete apparent immobility before striking, a phase of maximum sensory processing",
+   "verdict": "UNVERIFIABLE",
+   "note": "Molinari et al. list waiting motionless as one possible hunting method; 'maximum sensory processing' has no source.",
+   "source_ids": [
+    "c7"
+   ]
+  },
+  {
+   "fact": "Can survive for weeks without feeding and strikes only when success is likely",
+   "verdict": "UNVERIFIABLE",
+   "note": "Only keeper forums and content-farm pages found. Cut.",
+   "source_ids": []
+  },
+  {
+   "fact": "Cited source: Edgecombe and Giribet 2007 linked to DOI 10.1146/annurev.ento.52.110405.091134",
+   "verdict": "WRONG (likely)",
+   "note": "The centipede review abstract sits at 10.1146/annurev.ento.52.110405.091326 (Annu Rev Entomol 52:151-170). The page's DOI could not be opened. Check before republishing.",
+   "source_ids": [
+    "c10",
+    "c11"
+   ]
+  },
+  {
+   "fact": "Cited link https://doi.org/10.1093/jmammal/gyx001 (in markup)",
+   "verdict": "UNVERIFIABLE",
+   "note": "Journal of Mammalogy DOI; doi.org blocked so not opened, and it does not match the visible Molinari 2005 Caribbean Journal of Science citation. Likely a wrong link.",
+   "source_ids": []
+  },
+  {
+   "fact": "Cited 'IUCN Red List · Scolopendra gigantea' (iucnredlist.org/species/197471)",
+   "verdict": "UNVERIFIABLE",
+   "note": "Page did not load; no evidence found that S. gigantea has an IUCN Red List assessment. Verify or remove.",
+   "source_ids": []
+  },
+  {
+   "fact": "Purple Star (ZWDS) claim",
+   "verdict": "OK (none present)",
+   "note": "No 'Purple Star already suspects' section; Purple Star appears only in nav.",
+   "source_ids": []
+  }
+ ]
+}

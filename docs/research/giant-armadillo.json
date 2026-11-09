@@ -1,0 +1,320 @@
+{
+  "slug": "giant-armadillo",
+  "name": "Giant Armadillo",
+  "sign": "Capricorn",
+  "year": "Pig",
+  "element": "Water (from the Pig); Capricorn adds Earth, cardinal",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Capricorn (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Capricorn_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "The 6 Fundamental Capricorn Traits, Explained, PrepScholar",
+      "url": "https://blog.prepscholar.com/capricorn-traits-personality"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (Pig row, compatibility), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Pig, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/pig.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Priodontes maximus, Animal Diversity Web (cited on live page)",
+      "url": "https://animaldiversity.org/accounts/Priodontes_maximus/"
+    },
+    {
+      "id": "s6",
+      "title": "Giant armadillo, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Giant_armadillo"
+    },
+    {
+      "id": "s7",
+      "title": "Desbiez, Massocato and Kluyber 2020, Insights into giant armadillo reproduction, Mammalia (doi 10.1515/mammalia-2019-0018), De Gruyter blog summary",
+      "url": "https://blog.degruyter.com/giant-armadillos-dedicated-mothers/"
+    },
+    {
+      "id": "s8",
+      "title": "Armored giant turns out to be vital ecosystem engineer, Mongabay 2013 (on Desbiez and Kluyber, Biotropica)",
+      "url": "https://news.mongabay.com/2013/10/armored-giant-turns-out-to-be-vital-ecosystem-engineer/"
+    },
+    {
+      "id": "s9",
+      "title": "Three-banded armadillo, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Three-banded_armadillo"
+    },
+    {
+      "id": "s10",
+      "title": "Armadillo, Wikipedia (etymology, charango)",
+      "url": "https://en.wikipedia.org/wiki/Armadillo"
+    },
+    {
+      "id": "s11",
+      "title": "Kipling, Just So Stories (1902), The Beginning of the Armadillos, Project Gutenberg",
+      "url": "https://www.gutenberg.org/files/2781/2781-h/2781-h.htm"
+    },
+    {
+      "id": "s12",
+      "title": "Volpi 2019, Storia di armadillo, storia di Lince: a Kichwa ritual of the Peruvian Upper Amazon, University of Bologna (doi 10.6092/issn.2039-2281/10101)",
+      "url": "https://openpolar.no/Record/ftdoajarticles:oai:doaj.org%2Farticle:85ec29b24d5b41a78250db979ec5390d"
+    },
+    {
+      "id": "s13",
+      "title": "MDBG Chinese dictionary entry for 犰",
+      "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=0&wdqb=%E7%8A%B0"
+    },
+    {
+      "id": "s14",
+      "title": "大犰狳 (Priodontes maximus), Chinese Wikipedia via Wikiwand",
+      "url": "https://wikiwand.com/zh-cn/%E5%B7%A8%E7%8A%B0%E7%8B%B3"
+    },
+    {
+      "id": "s15",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Hardworking, ambitious, responsible, patient with long goals; shadow side pessimistic, workaholic, stubborn. The sea-goat: a goat that climbs with a fish tail that reaches into deep water.",
+    "planet": "Saturn (Mars exalted in Capricorn)",
+    "element": "Earth (with Taurus and Virgo)",
+    "modality": "Cardinal; opposite sign Cancer",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Diligent, compassionate, generous, focused, calm under pressure, takes responsibility seriously. Shadow: trusting to a fault and easily fooled, less patient than others, not strong at managing money.",
+    "yinyang": "Yin",
+    "element": "Water (fixed); earthly branch 亥 hài",
+    "trine": "Pig, Rabbit, Goat",
+    "secret_friend": "Tiger",
+    "clash": "Snake",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Nahuatl (Aztec)",
+      "meaning": "The Aztec name for the armadillo was āyōtōchtli, 'turtle-rabbit': an animal read as two creatures in one shell. Applies to armadillos generally, not the giant species specifically.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "culture": "Andean (Quechua and Aymara regions)",
+      "meaning": "Armadillo shells were traditionally used to make the back of the charango, the small Andean lute. The armor became a sound box. Armadillos generally; the giant armadillo is a lowland species and is not the usual charango animal.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "culture": "Wayku Kichwa, Lamas, Peruvian Upper Amazon",
+      "meaning": "In the Carachupeada dance (carachupa is the regional word for armadillo), children dressed in plantain leaves play the armadillo prey yet are also linked with the hunter; anthropologist Laura Volpi reads it through Amerindian dualism as a 'fluid' identity. Tell it as theirs, attributed, with no 'you' reading laid over it.",
+      "source_ids": [
+        "s12"
+      ]
+    },
+    {
+      "culture": "English literature (Kipling, 1902)",
+      "meaning": "The Beginning of the Armadillos: on the banks of the Amazon, Stickly-Prickly Hedgehog learns to swim and Slow-Solid Tortoise learns to curl, until each is 'a little bit of both' and Mother Jaguar can only call them Armadillo. A primary text: the armadillo as the creature that became itself by learning another's skill.",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "culture": "Tupi and Brazilian Portuguese",
+      "meaning": "Tatu comes from Tupi roots for bark or armor plus dense; the giant species is tatu-canastra in Brazil (canastra is a large basket). Etymology only, not a belief; use as texture, not as the hook.",
+      "source_ids": [
+        "s6",
+        "s10"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "'Armadillo spirit animal means boundaries / protection' meanings found only on totem blogs; no traditional source located. Searches for Brazilian Indigenous lore about the tatu-canastra specifically turned up nothing citable.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: cardinal Earth (Capricorn) meets yin Water (Pig). Capricorn starts projects and builds them properly; the Pig brings appetite, generosity and a calm that does not need an audience. Earth controls Water in the five-phase cycle, so Saturn's structure gives the Pig's warmth a channel to run in. The Giant Armadillo is the night builder: one claw, one mound finished completely, a new burrow most nights (s8), and the old one left for others.",
+    "gifts": "Our reading: thoroughness that finishes the whole job, generosity that does not keep score (the burrows feed two dozen other species, s8), steady output under pressure, a talent for heavy unglamorous work.",
+    "shadow": "Our reading: workaholism (Capricorn) plus trust that is too easy (Pig, s4). Gives the shelter away and forgets to keep one; vanishes before credit can land; shell that looks protective but does not close (s5, s6), so retreats underground instead of saying what hurts.",
+    "love": "Our reading: slow, solitary and serious. Comes close rarely, but what it raises it raises for a long time: giant armadillo young nurse to 6 to 8 months, wean at 11 to 12 months and lean on the mother's burrows until about 18 months (s7). Love shown by doing, not saying.",
+    "money": "Our reading: Capricorn saves and plans; the Pig is generous and, per China Highlights, not a natural money manager (s4). Result: builds real assets, then lends them out. Needs one account nobody else can dig into.",
+    "conflict": "Our reading: does not curl up and does not swing first; goes down and away, fast (escape by digging, s6). Under real threat the claw comes out. Practice: say the problem before tunneling out of it."
+  },
+  "careers": [
+    {
+      "path": "Civil engineering, construction, infrastructure maintenance",
+      "why": "Our reading: cardinal Earth plus the species' role as a physical ecosystem engineer (s8); builds what others use for decades."
+    },
+    {
+      "path": "Night-shift and behind-the-scenes operations (logistics, data centers, hospital nights)",
+      "why": "Our reading: a solitary nocturnal forager (s5) and a Capricorn who finishes whether or not anyone is watching."
+    },
+    {
+      "path": "Conservation field work, soil science, archaeology",
+      "why": "Our reading: digging as a vocation; patience with slow results; Pig generosity toward what lives in the ground."
+    },
+    {
+      "path": "Social housing, shelter work, community land trusts",
+      "why": "Our reading: the burrow left for others (s8) as a career; Pig compassion with Capricorn structure."
+    },
+    {
+      "path": "Food and hospitality supply (catering is a China Highlights Pig fit)",
+      "why": "Our reading: the Pig's appetite and generosity (s4) run on Capricorn discipline."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Penduline Tit",
+      "slug": "penduline-tit",
+      "reason": "Virgo x Rabbit. Rabbit is in the Pig trine (Pig, Rabbit, Goat); Virgo shares Capricorn's Earth. Two careful builders, one of a hanging nest, one of a tunnel."
+    },
+    {
+      "name": "Snow Petrel",
+      "slug": "snow-petrel",
+      "reason": "Taurus x Goat. Goat is in the Pig trine; Taurus is the third Earth sign. Double harmony."
+    },
+    {
+      "name": "Dragonfly",
+      "slug": "dragonfly",
+      "reason": "Virgo x Tiger. Tiger is the Pig's six-harmony partner (secret friend); Virgo is Earth like Capricorn."
+    },
+    {
+      "name": "Moon Jellyfish",
+      "slug": "moon-jellyfish",
+      "reason": "Pisces x Rabbit. Rabbit trine; Pisces is Water, the classic complement to Earth, and matches the Pig's own Water."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Chambered Nautilus",
+      "slug": "chambered-nautilus",
+      "reason": "Cancer x Snake. Snake is the Pig's six-clash partner and Cancer is Capricorn's opposite sign: friction in both systems."
+    },
+    {
+      "name": "Pangolin",
+      "slug": "pangolin",
+      "reason": "Taurus x Snake. Shared Earth and a shared armored, ant-eating life make it feel familiar, but Pig and Snake clash underneath. (The Portuguese Man o' War, Aquarius x Snake, is also a Pig-Snake clash.)"
+    }
+  ],
+  "candidate_lines": [
+    "Most nights you dig a fresh burrow and walk away from the last one, and by morning something else has moved into the shelter you already forgot you made.",
+    "Your armor was never built to close all the way, so you learned the other answer: go down, go fast, and let the earth do the job a shell could not.",
+    "One curved claw does your real work, and you would rather open a single termite mound to the bottom than scratch the surface of ten.",
+    "Saturn handed you the long shift and the Pig handed you the appetite, which is how you can work through a whole Pantanal night and still finish the mound before dawn.",
+    "Your kind of love is a mother moving her pup to a new burrow every two weeks for a year and a half and never once mentioning it.",
+    "Capricorn wants the tunnel built right; the Pig in you lets anyone who needs it sleep there without asking what they owe."
+  ],
+  "fact_audit": [
+    {
+      "fact": "One greatly enlarged central digging claw, comparable to the giant anteater's, used to tear open termite and ant mounds and dig burrows.",
+      "verdict": "OK",
+      "note": "ADW: 'enlarged central claw, much like that of giant anteaters'. Wikipedia adds the sickle-shaped third claw reaches 22 cm, proportionately the largest of any living mammal.",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Unlike most other armadillo species, the giant armadillo cannot fully enclose its body within its carapace.",
+      "verdict": "WRONG",
+      "note": "Backwards. Most armadillos cannot roll up; only the three-banded armadillos (Tolypeutes) can, and other species 'cannot roll up because they have too many plates'. ADW's own phrasing 'unlike other armadillos' is the likely source of the error. Rewrite: 'Like most armadillos, it cannot roll into a ball; it escapes by digging.'",
+      "source_ids": [
+        "s9",
+        "s10",
+        "s6",
+        "s5"
+      ]
+    },
+    {
+      "fact": "Solitary and largely nocturnal, meeting others almost only to mate.",
+      "verdict": "OK",
+      "note": "ADW: 'largely nocturnal and terrestrial... forage alone, only associating with others to mate'.",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "After emptying a mound it may bury itself beneath the remains for up to 24 hours; its burrows are used by other species; researchers call it a keystone species for this reason.",
+      "verdict": "OK (soften)",
+      "note": "The 24-hour claim matches ADW verbatim. ADW says 'somewhat of a keystone species'; the burrow-sharing research (Desbiez and Kluyber 2013, Biotropica) calls it a physical ecosystem engineer, with over two dozen species recorded using burrows. Say 'ecosystem engineer' and cite that study.",
+      "source_ids": [
+        "s5",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Eyesight is poor; smell is the strongest sense.",
+      "verdict": "UNVERIFIABLE (half)",
+      "note": "ADW says olfaction is the strongest sense of armadillos in general. No source I could open discusses giant armadillo eyesight. Keep the smell clause, cut 'eyesight is poor' or source it.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "fact": "Single offspring, occasionally two, after roughly a four-month gestation; young stay only with the mother and are independent at around six months.",
+      "verdict": "WRONG (independence)",
+      "note": "Single young: OK. Gestation: ADW 122 days, Wikipedia about five months; say 'four to five months'. Independence at six months is wrong: field data (Desbiez et al. 2020, Mammalia) show nursing to 6 to 8 months, weaning at 11 to 12 months and dependence on the mother's burrows to about 18 months. ADW's older 'weaned at 4 to 6 weeks' is also superseded.",
+      "source_ids": [
+        "s5",
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Intro: can weigh over 30 kg and reach close to a meter of body length; the largest living armadillo.",
+      "verdict": "OK",
+      "note": "Wikipedia: 18.7 to 32.5 kg typical, length 75 to 100 cm plus about 50 cm of tail; ADW 26 kg plus.",
+      "source_ids": [
+        "s6",
+        "s5"
+      ]
+    },
+    {
+      "fact": "Intro: keeps a home range for years without ever building the same shelter in it twice.",
+      "verdict": "UNVERIFIABLE",
+      "note": "It digs a new burrow every other day on average and older burrows become less attractive (s8), but 'never the same shelter twice' is an absolute no source supports. Say 'digs a new burrow every other night on average'.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "fact": "Header hanzi (rail__han and serial-han): 犰, pinyin qiú.",
+      "verdict": "WRONG (incomplete)",
+      "note": "犰 qiú has no meaning on its own; dictionaries list it only as part of 犰狳 qiúyú, armadillo (s13). The species is 大犰狳 dà qiúyú, also 巨犰狳 jù qiúyú (s14). Traditional and simplified are the same characters. Use 犰狳 qiúyú, or 大犰狳 dà qiúyú for the giant armadillo.",
+      "source_ids": [
+        "s13",
+        "s14"
+      ]
+    },
+    {
+      "fact": "Purple Star section",
+      "verdict": "OK",
+      "note": "This page says a Zi Wei Dou Shu chart is cast from lunar birth date and hour and assigns no star to the crossing. No false claim.",
+      "source_ids": []
+    },
+    {
+      "fact": "Lunar New Year note (January/early February may belong to the Dog)",
+      "verdict": "OK",
+      "note": "Applies: Capricorn runs about 22 December to 20 January.",
+      "source_ids": [
+        "s1"
+      ]
+    }
+  ]
+}
