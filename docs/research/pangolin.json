@@ -1,0 +1,349 @@
+{
+  "slug": "pangolin",
+  "name": "Pangolin",
+  "sign": "Taurus",
+  "year": "Snake",
+  "element": "Fire (from the Snake); Taurus adds Earth, fixed. Fire generates Earth.",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Taurus (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Taurus_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Taurus traits and personality, TODAY",
+      "url": "https://www.today.com/life/astrology/taurus-traits-personality-rcna24594"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (compatibility table: Six Harmonies, Six Clashes), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Snake (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Snake_(zodiac)"
+    },
+    {
+      "id": "s5",
+      "title": "Year of the Snake, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/snake.htm"
+    },
+    {
+      "id": "s6",
+      "title": "Pangolin, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pangolin"
+    },
+    {
+      "id": "s7",
+      "title": "Manidae, Animal Diversity Web (University of Michigan)",
+      "url": "https://animaldiversity.org/accounts/Manidae/"
+    },
+    {
+      "id": "s8",
+      "title": "Pholidota (Pangolins), Grzimek's Animal Life Encyclopedia via Encyclopedia.com",
+      "url": "https://encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/pholidota-pangolins"
+    },
+    {
+      "id": "s9",
+      "title": "Zimbabwe's chiefs revive tradition to save the country's last pangolins, Mongabay (2018)",
+      "url": "https://news.mongabay.com/2018/07/zimbabwes-chiefs-revive-tradition-to-save-the-countrys-last-pangolins/"
+    },
+    {
+      "id": "s10",
+      "title": "Can the power of cultural mythology help give pangolins a ghost of a chance?, Environmental Investigation Agency (cites anthropologist Martin Walsh on the Sangu and Allen Roberts)",
+      "url": "https://eia-international.org/blog/can-power-cultural-mythology-help-give-pangolins-ghost-chance/"
+    },
+    {
+      "id": "s11",
+      "title": "The Lele of the Kasai (Mary Douglas, 1963), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/The_Lele_of_the_Kasai"
+    },
+    {
+      "id": "s12",
+      "title": "Perri 6, Elementary forms and their dynamics: revisiting Mary Douglas, Anthropological Forum (2014), CORE",
+      "url": "https://core.ac.uk/download/77039479.pdf"
+    },
+    {
+      "id": "s13",
+      "title": "Pangolin scales removed from official list of medical products, China Development Brief (June 2020)",
+      "url": "https://chinadevelopmentbrief.org/reports/pangolins-scales-removed-from-official-list-of-medical-products/"
+    },
+    {
+      "id": "s14",
+      "title": "穿山甲 chuānshānjiǎ, iCIBA dictionary",
+      "url": "https://www.iciba.com/%E7%A9%BF%E5%B1%B1%E7%94%B2"
+    },
+    {
+      "id": "s15",
+      "title": "穿山甲, Wiktionary",
+      "url": "https://en.wiktionary.org/wiki/穿山甲"
+    },
+    {
+      "id": "s16",
+      "title": "甲 jiǎ, Wiktionary",
+      "url": "https://en.wiktionary.org/wiki/甲"
+    },
+    {
+      "id": "s17",
+      "title": "Da Xue (The Great Learning), Chinese Text Project, Legge translation",
+      "url": "https://ctext.org/liji/da-xue"
+    },
+    {
+      "id": "s18",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Grounded, sensual, gentle, dependable, patient; continues and stabilizes what Aries starts. Shadow: obstinate, averse to change, controlling, overindulgent, money-focused.",
+    "planet": "Venus",
+    "element": "Earth (with Virgo and Capricorn)",
+    "modality": "Fixed; opposite sign Scorpio",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Intuitive, wise, strategic, intelligent; a good communicator who says little; determined and hates to fail. Shadow: private to the point of secrecy, materialistic, and (per Wikipedia) a tendency to lack scruples.",
+    "yinyang": "Yin",
+    "element": "Fire (fixed); earthly branch 巳 sì; Snake hour 9:00 to 11:00, when snakes are said to leave their holes as the sun warms the ground",
+    "trine": "Snake, Ox, Rooster (Wikipedia names the Rooster as the best match)",
+    "secret_friend": "Monkey",
+    "clash": "Pig",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Lele (Kasai, DR Congo), recorded by Mary Douglas",
+      "meaning": "The Pangolin cult was the most senior Lele village cult, open only to men who had fathered both a son and a daughter with the same wife. Douglas read the pangolin as an anomalous but auspicious animal that crosses Lele categories, a mediator figure. Well-known anthropology; cite Douglas by name and keep to these two points.",
+      "source_ids": [
+        "s11",
+        "s12"
+      ]
+    },
+    {
+      "culture": "Jindwi people, Zimunya communal land, Zimbabwe",
+      "meaning": "Sacred and taboo to kill. A person who found a pangolin had to hand it to the chief, who released it into the forest. Finding one brings luck, and the steps it takes before it disappears are said to count the good years the finder will live. The dialect name harakabvuka is also used to mean something very rare (Christopher Zimunya, to Mongabay).",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "culture": "Sangu, southwest Tanzania (anthropologist Martin Walsh, via EIA)",
+      "meaning": "Pangolins were believed to fall from the sky, sent by the ancestors. A pangolin that followed a person home made that person like the parent of newborn twins, with confinement and ritual dancing. If the pangolin shed tears during the dance it foretold good rains; dry eyes foretold drought.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "culture": "Malay",
+      "meaning": "The English word pangolin comes from Malay pengguling, 'one who rolls up'.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "culture": "Chinese",
+      "meaning": "The common name 穿山甲 chuānshānjiǎ reads literally as 'pierce-mountain armor' (our literal gloss of the three characters; the dictionaries give the meaning 'pangolin' without etymology). The scales were prescribed in old materia medica (the Ben Cao Jinji Zhu, c. 500 CE, for ant bites; later texts for lactation and to expel evil spirits). Present these only as history: there is no scientific evidence for any of it, China dropped pangolin from the 2020 Pharmacopoeia and raised all species to first-level protection on 5 June 2020.",
+      "source_ids": [
+        "s6",
+        "s13",
+        "s14",
+        "s15"
+      ]
+    },
+    {
+      "culture": "Sober context, all regions",
+      "meaning": "Pangolins are described as the most trafficked mammals in the world; all eight species are on CITES Appendix I. If the page uses the 'armor is the treasure' idea, say plainly that the medicinal claims are false and the trade is illegal.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Generic 'pangolin spirit animal = protection, boundaries, healing' claims on totem blogs; the East African nickname 'bwana mganga' (doctor) appears in Grzimek (s8) but frames the animal as medicine, so avoid it.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Earth (Taurus, Venus) meets yin Fire (Snake). Taurus holds ground and keeps what it loves; the Snake watches, says little, and withdraws rather than negotiates. The Pangolin is the guarded keeper: steady, private, slow to open, with real warmth kept inside the curl. Fire feeds Earth, so the Snake's inner heat is what keeps Taurus's steadiness from going inert.",
+    "gifts": "Our reading: total discretion, a nose for what is true before it is visible (the forager that finds nests by smell), patience under pressure, and a loyalty that is rare enough to feel like luck when it is given.",
+    "shadow": "Our reading: closing for care the same way as for threat; plugging the burrow from the inside and calling it peace; a Taurus grip on comfort plus a Snake taste for secrecy can harden into hoarding of feeling or money.",
+    "love": "Our reading: Venus-ruled and yin. Sensual and devoted once settled, but the trust has to be earned slowly and the partner must not pull at the scales. Loves through constancy more than words.",
+    "money": "Our reading: Taurus security plus Snake strategy gives a careful, private saver who prefers assets nobody else can see or count. Risk: holding too long out of fear of exposure.",
+    "conflict": "Our reading: does not fight and does not run; curls and waits. Effective against a storm, costly in a relationship where the other person needs a reply. Practice: name the curl out loud before it closes."
+  },
+  "careers": [
+    {
+      "path": "Archivist, conservator, collections or vault work",
+      "why": "Our reading: Taurus value-keeping plus the Snake's discretion; guarding what matters out of sight."
+    },
+    {
+      "path": "Forensic, audit or investigative analysis",
+      "why": "Our reading: finds what is buried by following faint signals, the way the pangolin forages by smell."
+    },
+    {
+      "path": "Wildlife protection, anti-trafficking, customs and enforcement",
+      "why": "Our reading: the animal's own story turned into a vocation; also fits the Snake's strategic patience."
+    },
+    {
+      "path": "Private wealth, trust or estate management",
+      "why": "Our reading: discreet, steady, protective of assets other people cannot see."
+    },
+    {
+      "path": "Craft work with hard natural materials (ceramics, leather, stone, jewelry)",
+      "why": "Our reading: Venus rules beauty; the overlapping scale as a design instinct."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Andean Condor",
+      "slug": "andean-condor",
+      "reason": "Capricorn x Rooster. Rooster is in the Snake trine and Wikipedia names it the Snake's best match; Capricorn shares Taurus's Earth."
+    },
+    {
+      "name": "Giant Clam",
+      "slug": "giant-clam",
+      "reason": "Taurus x Ox. Same sign and the Ox sits in the Snake trine. Another animal that closes its shell; the live page already lists it."
+    },
+    {
+      "name": "New Caledonian Crow",
+      "slug": "new-caledonian-crow",
+      "reason": "Virgo x Monkey. Monkey is the Snake's Six Harmonies partner (secret friend); Virgo is Earth like Taurus."
+    },
+    {
+      "name": "Shoebill",
+      "slug": "shoebill",
+      "reason": "Capricorn x Ox. Ox trine plus Earth element: double harmony, and another patient, still-waiting animal."
+    },
+    {
+      "name": "Asian Elephant",
+      "slug": "asian-elephant",
+      "reason": "Cancer x Ox. Ox trine; Cancer is Water, the classic complement to Taurus's Earth."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Deep Sea Anglerfish",
+      "slug": "deep-sea-anglerfish",
+      "reason": "Scorpio x Pig. Snake and Pig are a Six Clash pair, and Scorpio is Taurus's opposite sign. Friction in both systems."
+    },
+    {
+      "name": "Bongo",
+      "slug": "bongo",
+      "reason": "Taurus x Pig. Same Western sign but the Snake-Pig clash: easy surface, opposed instincts underneath."
+    }
+  ],
+  "candidate_lines": [
+    "Your back is plated in the same stuff as a fingernail, ordinary material laid so tightly that a leopard gives up, and that is how your calm is built.",
+    "A hand comes toward you and the ball has already closed before the Taurus in you has finished deciding whether the hand was kind.",
+    "You plug the burrow with loose soil from the inside, and some nights you forget to leave a gap for the one who brought you ants.",
+    "The Snake in you can lie motionless until danger loses interest; the Venus in you is still listening, under the scales, for footsteps worth uncurling for.",
+    "What feeds you is rooted deep, the way a pangolin's tongue reaches back toward its hips, so quick praise never quite fills you.",
+    "Your nose finds the buried nest long before anyone sees a mound, and you rarely explain how you knew where to dig."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Back, tail and outer limbs covered in overlapping keratin scales, same protein as hair and nails; the only mammal group with this kind of armor.",
+      "verdict": "OK (uniqueness unverified)",
+      "note": "Keratin, fingernail material, sharp overlapping scales: confirmed (s6, s7). 'Only mammal group' is widely repeated but no opened source states it; WWF page could not be opened. Safer: 'the only mammals covered in true scales' only once a source is opened, or cut the superlative.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Rolls into a tight ball, scales outward; a defense effective even against lions, tigers and leopards.",
+      "verdict": "OVERSTATED",
+      "note": "The curl is real (s6, s7, s8), but ADW and Grzimek list lions, tigers and leopards as pangolin predators, so the curl does not reliably beat them. Rewrite: 'a ball that most predators cannot open, though big cats still take some'. Also missing: pangolins spray a foul musky secretion (s7, s8).",
+      "source_ids": [
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Belly, face and inner limbs carry only sparse hair and no scales.",
+      "verdict": "OK",
+      "note": "Soft unscaled underparts that the curl and tail protect: s8. Hair detail not separately checked.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "fact": "No teeth; tongue over 40 cm in larger species, anchored deep near the pelvis and last ribs.",
+      "verdict": "PARTLY WRONG",
+      "note": "No teeth and 40 cm (giant pangolin up to about 70 cm) confirmed (s6, s8). Anchorage: tongue muscles attach to the xiphisternum, an extension of the breastbone, and the tongue sheath runs back toward the pelvis (s8); Wikipedia puts the tongue root in the thorax (s6). 'Last ribs' is unsupported. Rewrite: 'anchored to a long extension of the breastbone that runs back toward the pelvis'.",
+      "source_ids": [
+        "s6",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Most trafficked wild mammal; scales used in some traditional medicine, same keratin as a fingernail, no proven medicinal effect.",
+      "verdict": "OK",
+      "note": "Confirmed (s6): no scientific evidence for efficacy. Add the 2020 facts: removed from the Chinese Pharmacopoeia, all species upgraded to first-level protection (5 June 2020, s13); all species CITES Appendix I (s6).",
+      "source_ids": [
+        "s6",
+        "s13"
+      ]
+    },
+    {
+      "fact": "Weak eyesight and hearing; finds nests almost entirely by smell; digs its own burrows; solitary and nocturnal.",
+      "verdict": "OK (with caveats)",
+      "note": "Poor vision, smell-led foraging, solitary, mostly nocturnal: s6, s7. Wikipedia says they rely on smell AND hearing, so 'weak hearing' is contested (ADW says poor). Tree pangolins use hollow trees and do not dig; the long-tailed pangolin is active by day (s6). Say 'ground pangolins dig'.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Purple Star section: 'Animal fact: the Pangolin digs burrows it returns to for months at a time, entering alone and sealing itself inside.'",
+      "verdict": "OK (ground species)",
+      "note": "Burrows used for several months (s7); burrows are closed off with dirt when occupied, notably Indian and Chinese pangolins (s8).",
+      "source_ids": [
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Purple Star section: 'Purple Star places the vault star, Tian Fu, near the Life Palace for people who share your crossing', plus Tian Tong as the second star.",
+      "verdict": "WRONG (no traditional basis)",
+      "note": "Zi Wei Dou Shu charts are cast from lunar birth date and hour, not sun sign plus year animal. The page's own footnote admits the pairing is Zodi Animal's invention, but the body sentence states it as what Purple Star does. Cut or relabel the sentence.",
+      "source_ids": [
+        "s18"
+      ]
+    },
+    {
+      "fact": "Header and rail hanzi 甲.",
+      "verdict": "WRONG (not the animal's name)",
+      "note": "甲 jiǎ means shell, carapace, armor, fingernail, and is also the first heavenly stem (s16); it does not mean pangolin. The pangolin is 穿山甲 chuānshānjiǎ (s14, s15). On a Fire page 甲 can also be misread as the Yang Wood stem. Use 穿山甲 with pinyin.",
+      "source_ids": [
+        "s14",
+        "s15",
+        "s16"
+      ]
+    },
+    {
+      "fact": "Proverb 知止而後有定 tied to the Year of the Snake.",
+      "verdict": "OK (attribution missing)",
+      "note": "The line is from the Great Learning (大學 Dà Xué), section 1; Legge: 'The point where to rest being known, the object of pursuit is then determined' (s17). The page labels the Snake pairing as its own, which is honest, but should name the Great Learning. Page bug: the gloss says 'The proverb's lake is your ball', and there is no lake in this proverb (template copy from another page).",
+      "source_ids": [
+        "s17"
+      ]
+    }
+  ],
+  "page_bugs": [
+    "Proverb gloss refers to a 'lake' that is not in 知止而後有定; leftover template copy.",
+    "Purple Star body text contradicts its own footnote (see fact_audit).",
+    "Live page has 2 em dash characters in source; check visible copy."
+  ]
+}

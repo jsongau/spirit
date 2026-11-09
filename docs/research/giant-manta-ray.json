@@ -1,0 +1,318 @@
+{
+  "slug": "giant-manta-ray",
+  "name": "Giant Manta Ray",
+  "sign": "Libra",
+  "year": "Dragon",
+  "element": "Earth (from the Dragon); Libra adds Air, cardinal",
+  "sources": [
+    {
+      "id": "m1",
+      "title": "Libra (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Libra_(astrology)"
+    },
+    {
+      "id": "m2",
+      "title": "Libra zodiac sign: personality traits, love, compatibility, Bustle",
+      "url": "https://www.bustle.com/life/libra-zodiac-signs-personality-traits-love-compatibility-astrology"
+    },
+    {
+      "id": "m3",
+      "title": "Chinese zodiac (Dragon row, compatibility tables), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "m4",
+      "title": "Year of the Dragon, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/dragon.htm"
+    },
+    {
+      "id": "m5",
+      "title": "Giant oceanic manta ray, Wikipedia (cited on the live page)",
+      "url": "https://en.wikipedia.org/wiki/Giant_oceanic_manta_ray"
+    },
+    {
+      "id": "m6",
+      "title": "Burgess et al. 2016, Manta birostris, predator of the deep? Royal Society Open Science 3(11), doi 10.1098/rsos.160717 (Archimer record)",
+      "url": "https://archimer.ifremer.fr/doc/00363/47463"
+    },
+    {
+      "id": "m7",
+      "title": "University of Queensland news: Giant rays shown to be predators of the deep (27% surface, 73% mesopelagic)",
+      "url": "https://biomedical-sciences.uq.edu.au/node/3812"
+    },
+    {
+      "id": "m8",
+      "title": "Oceanbites: The manta in the mirror (on Ari and D'Agostino 2016, Journal of Ethology)",
+      "url": "https://oceanbites.org/the-manta-in-the-mirror-are-manta-rays-self-aware/"
+    },
+    {
+      "id": "m9",
+      "title": "Manta Trust: Stewart et al. 2016, Are mantas self aware or simply social? A response to Ari and D'Agostino",
+      "url": "https://research.mantatrust.org/stewart-et-al-2016-3"
+    },
+    {
+      "id": "m10",
+      "title": "HAWAI'I Magazine 2015, The cultural significance of the manta ray in Hawaii (Roxanne Kapuaimohalaikalani Stewart, Kai Palaoa)",
+      "url": "https://www.hawaiimagazine.com/?p=19511"
+    },
+    {
+      "id": "m11",
+      "title": "Greenpeace Taiwan: 9 facts about 鬼蝠魟 (manta names and species)",
+      "url": "https://www.greenpeace.org/taiwan/?p=32961"
+    },
+    {
+      "id": "m12",
+      "title": "MDBG dictionary: 鰩 yáo",
+      "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=1&wdqb=%E9%B0%A9"
+    },
+    {
+      "id": "m13",
+      "title": "MDBG dictionary: 蝠鱝 fú fèn",
+      "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=1&wdqb=%E8%9D%A0%E9%B2%BC"
+    },
+    {
+      "id": "m14",
+      "title": "Zhang Sengyou, Wikipedia (画龙点睛, from Zhang Yanyuan's Lidai Minghua Ji)",
+      "url": "https://en.wikipedia.org/wiki/Zhang_Sengyou"
+    },
+    {
+      "id": "m15",
+      "title": "Manta Ray Advocates, Manta ray myths and legends (self-described as unverified; used only to flag what not to use)",
+      "url": "https://mantarayadvocates.com/?p=1224805"
+    },
+    {
+      "id": "m16",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Charming, warm on first meeting, a natural peacemaker who sees several sides and cares about fairness; tied to justice and balance through the scales of Themis. Shadow: slow, much-weighed decisions read as indecision, can seem to play both sides, gives too much to please.",
+    "planet": "Venus (Saturn exalted)",
+    "element": "Air",
+    "modality": "Cardinal (the cardinal Air sign); opposite sign Aries",
+    "source_ids": [
+      "m1",
+      "m2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Brave, persistent, clever, confident; comfortable with risk, breaks from convention, born to lead. Emblem of the emperor; in myth dragons rule wind and rain and move through rivers and seas. Shadow: risks that backfire, friction with others, a craving for recognition.",
+    "yinyang": "Yang",
+    "element": "Earth (fixed); earthly branch 辰 chén, 7:00 to 8:59, when 'dragons hover in the sky to give rain'",
+    "trine": "Rat, Dragon, Monkey",
+    "secret_friend": "Rooster (per the brief's six harmonies; the Wikipedia table cell is garbled)",
+    "clash": "Dog",
+    "lucky": null,
+    "source_ids": [
+      "m3",
+      "m4",
+      "m16"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Hawaiian (Roxanne Kapuaimohalaikalani Stewart, Kai Palaoa, 2015)",
+      "meaning": "The manta is hāhālua, which Stewart says can be read as 'two breaths' (hā breath, lua two). Mantas appear in the second wā of the Kumulipo creation chant and ranked among the higher sea forms, 'the deep divers who go where we cannot go'. Seeing one can let a person huli i ke au hou, begin anew in a new time.",
+      "source_ids": [
+        "m10"
+      ]
+    },
+    {
+      "culture": "Chinese names",
+      "meaning": "Mandarin calls mantas 蝠鱝 fú fèn, 'bat ray' (m13). Taiwan uses 鬼蝠魟 guǐ fú hóng, 'ghost bat ray', and the folk name 魔鬼魚 mógǔ yú, 'devil fish'; the oceanic manta is 雙吻前口蝠鱝 shuāng wěn qián kǒu fú fèn (m11). Our reading: a Dragon-year animal that Chinese speakers already name a ghost and a devil of the sea.",
+      "source_ids": [
+        "m11",
+        "m13"
+      ]
+    },
+    {
+      "culture": "Chinese, Dragon year proverb (already on the page)",
+      "meaning": "画龙点睛 huà lóng diǎn jīng: Zhang Sengyao painted four dragons at Anle Temple without eyes; when made to dot two, they flew off in thunder. Recorded in Zhang Yanyuan's Tang dynasty Lidai Minghua Ji. Year-hub folklore, not manta lore.",
+      "source_ids": [
+        "m14"
+      ]
+    },
+    {
+      "culture": "Science as symbol (Burgess et al. 2016)",
+      "meaning": "Stable isotopes from Ecuador mantas showed most of the diet comes from mesopelagic depths, roughly 200 to 1,000 m, not surface plankton. The animal everyone watches skimming the surface is living mostly on what it finds in the dark.",
+      "source_ids": [
+        "m6",
+        "m7"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Manta as Hawaiian 'aumakua, Caroline Islands manta goddess, Yap manta dances, Indonesian souls-of-the-drowned, Polynesian protective tattoos, Moche fear of anchor-dragging mantas, 'angels of the sea'. The only page collecting these says itself they come from blogs and social media and are unverified (m15). The Moche museum objects I found show stingrays, not mantas.",
+      "source_ids": [
+        "m15"
+      ]
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: cardinal Air ruled by Venus meets yang Earth with imperial scale. Libra wants proportion; the Dragon wants the whole sea. The Manta resolves it in motion: an enormous body that glides, never thrashes, and never quite stops. Air over Earth in this system is wind over open water, so vision gets reach before it gets weight.",
+    "gifts": "Our reading: makes very large plans feel graceful and joinable; fair-minded in a crowd; keeps the peace by moving, not by standing guard; feeds on depth others never see.",
+    "shadow": "Our reading: the eyes left undotted. Circling the big idea, weighing it one more time, and never landing the small finishing stroke. Libra's need to please plus the Dragon's need for recognition can make the pitch more polished than the work.",
+    "love": "Our reading: Venus-ruled and generous at scale. Courts with the whole future, then forgets Tuesday. Needs one partner who is its cleaning station: a fixed, trusted place where the glider finally holds still and lets itself be tended.",
+    "money": "Our reading: thinks in large flows, filters at volume. Good at seeing where money pools; less good at the small leak. Needs a partner or system for the line items.",
+    "conflict": "Our reading: glides off and comes back around at a wider arc. Rarely strikes. Under pressure Libra stalls and the Dragon pulls rank; practice naming the one decision needed today."
+  },
+  "careers": [
+    {
+      "path": "Diplomacy, mediation, international law",
+      "why": "Our reading: Libra's scales and fairness with the Dragon's authority."
+    },
+    {
+      "path": "Ocean science, diving instruction, marine conservation and ecotourism",
+      "why": "Our reading: the hāhālua encounter as a vocation; carrying people into deep water gracefully."
+    },
+    {
+      "path": "Architecture, urban and landscape design",
+      "why": "Our reading: Earth's scale with Venus's eye for proportion."
+    },
+    {
+      "path": "Founder, creative director, brand or platform strategy",
+      "why": "Our reading: names a scale nobody else proposed and makes it inviting; pair with an operator who dots the eyes."
+    },
+    {
+      "path": "Deep research, intelligence analysis, investigative journalism",
+      "why": "Our reading: the mesopelagic diet: lives on what is below the surface."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Raven",
+      "slug": "raven",
+      "reason": "Aquarius x Monkey. Monkey sits in the Dragon's water trine; Aquarius shares Libra's Air."
+    },
+    {
+      "name": "Kea",
+      "slug": "kea",
+      "reason": "Gemini x Monkey. Same trine plus Air with Air. Already on the live page."
+    },
+    {
+      "name": "Red Panda",
+      "slug": "red-panda",
+      "reason": "Libra x Rat. Same sign, and the Rat completes the Rat-Dragon-Monkey trine."
+    },
+    {
+      "name": "Sunset Moth",
+      "slug": "sunset-moth",
+      "reason": "Leo x Rooster. Rooster is the Dragon's secret friend; Leo's Fire and Libra's Air feed each other."
+    },
+    {
+      "name": "Roadrunner",
+      "slug": "roadrunner",
+      "reason": "Sagittarius x Rooster. Secret friend plus Fire with Air."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Giant Otter",
+      "slug": "giant-otter",
+      "reason": "Aries x Dog. Dragon-Dog is one of the six clashes and Aries is Libra's opposite sign."
+    },
+    {
+      "name": "Duetting Frog",
+      "slug": "duetting-frog",
+      "reason": "Libra x Dog. Same sign, but the Dragon-Dog clash underneath."
+    }
+  ],
+  "candidate_lines": [
+    "Hāhālua, two breaths, is the Hawaiian name for your animal. You take the second one before you answer anybody.",
+    "From the boat it looks like you live on surface plankton. Most of what keeps you going comes from far below, where no diver follows.",
+    "Seven meters of wing, and you still slow down at the reef so the small cleaner fish can work.",
+    "Stopping has never felt like rest to you. You rest the way a manta breathes, by keeping water moving over you at a slow, even glide.",
+    "Libra weighs, the Dragon wants the whole sea. You swing the arc wide, and the small fish riding your shadow get carried along for free.",
+    "Your love comes in at full wingspan. The person who wins you is the one quiet station on the reef where you finally let yourself hover."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Disc can reach roughly seven meters (23 ft) across; largest ray alive.",
+      "verdict": "OK",
+      "note": "Wikipedia: 'a disc size of 7 m (23 ft) across' (m5). The IUCN page cited on the live page was not opened.",
+      "source_ids": [
+        "m5"
+      ]
+    },
+    {
+      "fact": "Cephalic fins unroll from a spiral into paddles that funnel plankton and small prey into the mouth while it keeps moving.",
+      "verdict": "OK",
+      "note": "Wikipedia: rolled in a spiral for swimming, flared to channel water into the mouth when feeding (m5).",
+      "source_ids": [
+        "m5"
+      ]
+    },
+    {
+      "fact": "A 2016 study found about 73 percent of the diet comes from deep mesopelagic water, not surface plankton.",
+      "verdict": "OK (name the study)",
+      "note": "Burgess et al. 2016, Royal Society Open Science, stable isotopes, Ecuador: 'the majority of dietary intake is of mesopelagic origin' (m6). The 73/27 split is from co-author Anthony Richardson in the UQ release (m7). Say it is an estimate from one population.",
+      "source_ids": [
+        "m6",
+        "m7"
+      ]
+    },
+    {
+      "fact": "Cannot stop swimming; relies on forward motion to pass water over the gills.",
+      "verdict": "OK",
+      "note": "Wikipedia: 'needs to swim continuously to channel water over its gills for respiration' (m5).",
+      "source_ids": [
+        "m5"
+      ]
+    },
+    {
+      "fact": "Largest brain of any fish; may show mirror self-recognition. Intro also says it 'appears to recognize its own reflection'.",
+      "verdict": "OK for brain; mirror needs a caveat",
+      "note": "Brain: Wikipedia, up to 200 g, the largest of any fish (m5). Mirror: one study, Ari and D'Agostino 2016, two captive giant mantas at Atlantis, Bahamas, mirror test only, no mark test (m8); Stewart et al. 2016 argue the behaviours are ordinary social behaviour (m9). 'May' in the fact block is fine; the intro's 'appears to recognize' overstates. Name the study and the dispute, or cut.",
+      "source_ids": [
+        "m5",
+        "m8",
+        "m9"
+      ]
+    },
+    {
+      "fact": "Holds a near-stationary position for several minutes at a reef cleaning station.",
+      "verdict": "OK",
+      "note": "Wikipedia: 'adopts a near-stationary position for several minutes' at cleaning stations (m5). Only an encyclopedia source; a primary study would be better.",
+      "source_ids": [
+        "m5"
+      ]
+    },
+    {
+      "fact": "Header hanzi 鰩 in the rail and serial mark.",
+      "verdict": "WRONG (imprecise)",
+      "note": "鰩 yáo means ray in general, including skates (m12); it is not the manta name. Use 蝠鱝 fú fèn, manta ray (m13); Taiwan writes 鬼蝠魟 guǐ fú hóng (m11). Page also shows no pinyin for the glyph.",
+      "source_ids": [
+        "m11",
+        "m12",
+        "m13"
+      ]
+    },
+    {
+      "fact": "Source list: only Wikipedia and IUCN for all six facts.",
+      "verdict": "Weak",
+      "note": "Swap in Burgess et al. 2016 (m6) and Ari and D'Agostino 2016 with the Stewart response (m8, m9).",
+      "source_ids": [
+        "m6",
+        "m8",
+        "m9"
+      ]
+    },
+    {
+      "fact": "Proverb 画龙点睛 huà lóng diǎn jīng.",
+      "verdict": "OK",
+      "note": "Zhang Sengyao story from the Lidai Minghua Ji (m14). Pairing is correctly labelled as the page's own.",
+      "source_ids": [
+        "m14"
+      ]
+    },
+    {
+      "fact": "Live 'matches' block: Cassowary (Aries x Rooster) as top match.",
+      "verdict": "Note",
+      "note": "Rooster is the Dragon's secret friend, but Aries is Libra's opposite sign. Defensible, but call the tension out.",
+      "source_ids": [
+        "m16"
+      ]
+    }
+  ]
+}

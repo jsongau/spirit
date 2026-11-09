@@ -1,0 +1,340 @@
+{
+  "slug": "orca",
+  "name": "Orca",
+  "sign": "Scorpio",
+  "year": "Horse",
+  "element": "Fire (from the Horse); Scorpio adds Water, fixed. Water controls Fire.",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Scorpio (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Scorpio_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Scorpio, mindbodygreen",
+      "url": "https://www.mindbodygreen.com/articles/scorpio"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (compatibility table: Six Harmonies, Six Clashes), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Horse (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Horse_(zodiac)"
+    },
+    {
+      "id": "s5",
+      "title": "Year of the Horse, Travel China Guide",
+      "url": "https://www.travelchinaguide.com/intro/social_customs/zodiac/horse.htm"
+    },
+    {
+      "id": "s6",
+      "title": "Year of the Horse, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/horse.htm"
+    },
+    {
+      "id": "s7",
+      "title": "Killer whale, Wikipedia (ecotypes, culture, etymology, longevity)",
+      "url": "https://en.wikipedia.org/wiki/Killer_whale"
+    },
+    {
+      "id": "s8",
+      "title": "Nattrass et al. 2019, Postreproductive killer whale grandmothers improve the survival of their grandoffspring, PNAS (ScienceDaily summary)",
+      "url": "https://www.sciencedaily.com/releases/2019/12/191209161339.htm"
+    },
+    {
+      "id": "s9",
+      "title": "Brent et al. 2015, Ecological knowledge, leadership, and the evolution of menopause in killer whales, Current Biology (ScienceDaily summary)",
+      "url": "https://www.sciencedaily.com/releases/2015/03/150305125359.htm"
+    },
+    {
+      "id": "s10",
+      "title": "Foster et al. 2012, Adaptive prolonged postreproductive life span in killer whales, Science 337:1313 (ScienceDaily summary)",
+      "url": "https://www.sciencedaily.com/releases/2012/09/120913141415.htm"
+    },
+    {
+      "id": "s11",
+      "title": "Orca groups with radically different cultures are actually separate species (Morin et al. 2024, Royal Society Open Science), Scientific American",
+      "url": "https://www.scientificamerican.com/article/orca-groups-with-radically-different-cultures-are-actually-separate-species"
+    },
+    {
+      "id": "s12",
+      "title": "Tahlequah (orca), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tahlequah_(orca)"
+    },
+    {
+      "id": "s13",
+      "title": "Guinet and Bouvier 1995, Development of intentional stranding hunting techniques in killer whale calves at Crozet Archipelago, Canadian Journal of Zoology (abstract)",
+      "url": "https://openpolar.no/Record/crcansciencepubl:10.1139%2Fz95-004/Description"
+    },
+    {
+      "id": "s14",
+      "title": "Jorgensen et al. 2019, Killer whales redistribute white shark foraging pressure on seals, Scientific Reports (ScienceDaily summary)",
+      "url": "https://www.sciencedaily.com/releases/2019/04/190416085525.htm"
+    },
+    {
+      "id": "s15",
+      "title": "Lusseau and Newman 2004, Identifying the role that animals play in their social networks (arXiv abstract): a bottlenose dolphin study",
+      "url": "https://arxiv.org/abs/q-bio/0403029"
+    },
+    {
+      "id": "s16",
+      "title": "Rep-un-kamuy, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rep-un-kamuy"
+    },
+    {
+      "id": "s17",
+      "title": "Killerwhale amulet (Keet), Huna Heritage Foundation digital archive",
+      "url": "https://archives.hunaheritage.org/digital-heritage/charmamulet-5"
+    },
+    {
+      "id": "s18",
+      "title": "Tlingit mortuary and memorial totem poles, Smarthistory",
+      "url": "https://smarthistory.org/?p=61346"
+    },
+    {
+      "id": "s19",
+      "title": "killer whale, Youdao dictionary (虎鲸, 逆戟鲸, 杀人鲸)",
+      "url": "https://youdao.com/w/killer_whale"
+    },
+    {
+      "id": "s20",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Passionate, determined, fiercely loyal once trust is given, discreet, able to focus deeply on one thing. Shadow: obsessive tunnel vision, grudges, secrecy and revenge, a cool surface over deep feeling.",
+    "planet": "Mars (traditional), Pluto (modern)",
+    "element": "Water",
+    "modality": "Fixed; opposite sign Taurus",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Energetic, sociable, sincere, independent, confident, quick to act and to adapt; loves freedom and new ground. Shadow: impatient and impulsive, gives up halfway, blunt, stubborn, an impulsive spender.",
+    "yinyang": "Yang",
+    "element": "Fire (fixed); earthly branch 午 wǔ (pinyin ours; Wikipedia gives the character only)",
+    "trine": "Horse, Tiger, Dog",
+    "secret_friend": "Goat",
+    "clash": "Rat (Travel China Guide also lists Ox, Horse and Rooster as poor matches)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5",
+      "s6"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Ainu (Hokkaido)",
+      "meaning": "Repun Kamuy, the deity of the offshore sea, is sometimes shown as an orca. In one story he harpoons a whale and throws it ashore as a gift to a pious village, promising the sea's bounty will keep famine away. Ainu held funerals for stranded orcas, as for bears (Rebun Island).",
+      "source_ids": [
+        "s16",
+        "s7"
+      ]
+    },
+    {
+      "culture": "Tlingit",
+      "meaning": "Keet, the killer whale, is an Eagle-moiety crest of a few northern Tlingit clans. Huna tradition tells that the hunter and carver Naatsilanei made a pact with the Killerwhale people that they would not harm humans and would help people on the water. Killer whale crests appear on memorial poles.",
+      "source_ids": [
+        "s17",
+        "s18"
+      ]
+    },
+    {
+      "culture": "Haida, Kwakwaka'wakw, Nuu-chah-nulth",
+      "meaning": "Haida regarded orcas as the most powerful animals of the ocean; people who drowned were said to go and live with them. Kwakwaka'wakw saw orcas as rulers of the undersea world, and with the Nuu-chah-nulth believed orcas may hold the souls of dead chiefs. Wikipedia-level sourcing; find a nation-led source before quoting.",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "culture": "Chinese",
+      "meaning": "The usual name is 虎鲸 hǔjīng, 'tiger whale'; also 逆戟鲸 nìjǐjīng, literally 'reverse-halberd whale' (our gloss of the characters), and 杀人鲸 shārénjīng, 'killer whale'. Our reading: the Tiger is in the Horse's own trine, so the Chinese name quietly ties this crossing's animal to its strongest ally.",
+      "source_ids": [
+        "s19",
+        "s3"
+      ]
+    },
+    {
+      "culture": "Latin and European",
+      "meaning": "Orcinus is linked by some sources to Orcus, 'of the kingdom of the dead', but the ICZN derives orca from a Latin word for a large-bellied pot. 'Killer whale' came from sailors watching orcas hunt larger whales. Use the Orcus link only with that caveat.",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Generic 'orca spirit animal = family, harmony, psychic communication' claims on totem blogs; no traditional source found.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Water (Scorpio) meets yang Fire (Horse). Scorpio reads depth and holds what it knows; the Horse wants open water and motion. The Orca is the deep traveler: long memory, long range, a small loyal pod. Water controls Fire, so Scorpio's depth checks the Horse's rush, and the tension is the whole story: know enough, then move.",
+    "gifts": "Our reading: memory that keeps a group alive in lean years, loyalty that lasts a lifetime, teaching by showing, and a presence strong enough that trouble often leaves before it starts.",
+    "shadow": "Our reading: Scorpio grudge plus Horse stubbornness; an in-group so tight that outsiders never get the dialect; carrying a loss far past the point it helps anyone; holding the map too long, then bolting.",
+    "love": "Our reading: chooses a pod and stays. Mars-and-Fire passion under a quiet surface; wants freedom of range but returns to the same few. Partners must accept both the long silences and the sudden long swims.",
+    "money": "Our reading: Scorpio strategy steadies the Horse's impulse spending. Best with long-horizon plans that let knowledge compound; risk is a sudden all-in move after a long, private build-up.",
+    "conflict": "Our reading: rarely needs to fight; when it does, it is fast, coordinated and decisive. The harder pattern is the cold shoulder toward anyone outside the pod. Practice: say the read early, before the season turns."
+  },
+  "careers": [
+    {
+      "path": "Expedition, maritime, field science or search-and-rescue leadership",
+      "why": "Our reading: Horse range plus the matriarch's route knowledge; leads by having been here before."
+    },
+    {
+      "path": "Teaching, coaching, apprenticeship trades",
+      "why": "Our reading: orcas teach hunting by demonstration over years (s13); patient, hands-on transmission."
+    },
+    {
+      "path": "Strategy, intelligence, investigation",
+      "why": "Our reading: Scorpio depth and secrecy with Horse speed of execution."
+    },
+    {
+      "path": "Family business, institutional memory roles, archives with a mission",
+      "why": "Our reading: the grandmother effect as a vocation; knowledge kept for the group's lean years."
+    },
+    {
+      "path": "Emergency medicine or crisis response",
+      "why": "Our reading: a fixed-sign calm with a Fire-sign readiness to move fast when it counts."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Beluga",
+      "slug": "beluga",
+      "reason": "Pisces x Dog. Dog is in the Horse trine; Pisces shares Scorpio's Water. Another cold-water whale that lives by sound and pod."
+    },
+    {
+      "name": "Moon Bear",
+      "slug": "moon-bear",
+      "reason": "Cancer x Tiger. Tiger is in the Horse trine; Cancer is Water like Scorpio. Double harmony."
+    },
+    {
+      "name": "Snow Leopard",
+      "slug": "snow-leopard",
+      "reason": "Scorpio x Goat. Same sign, and the Goat is the Horse's Six Harmonies partner (secret friend)."
+    },
+    {
+      "name": "Ghost Pipefish",
+      "slug": "ghost-pipefish",
+      "reason": "Pisces x Goat. Secret friend plus shared Water element."
+    },
+    {
+      "name": "Tibetan Blue Bear",
+      "slug": "tibetan-blue-bear",
+      "reason": "Capricorn x Dog. Dog trine; Capricorn's Earth is the classic complement to Scorpio's Water."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Aardwolf",
+      "slug": "aardwolf",
+      "reason": "Taurus x Rat. Horse and Rat are a Six Clash pair, and Taurus is Scorpio's opposite sign. Pull in both systems."
+    },
+    {
+      "name": "Tarsier",
+      "slug": "tarsier",
+      "reason": "Scorpio x Rat. Same sign, but the Horse-Rat clash: shared depth, opposite tempo."
+    }
+  ],
+  "candidate_lines": [
+    "Your memory holds the salmon runs of years nobody else remembers, and in a lean season the whole pod turns to follow the way you face.",
+    "The Horse in you wants to swim the whole coast tonight; the Scorpio in you has already chosen the one inlet worth the trip.",
+    "Grief rides on your back for days before you let it sink, and the ones who swim beside you have learned not to hurry you.",
+    "Your pod speaks a dialect strangers cannot learn, and you like it that way more than you would ever say out loud.",
+    "When you arrive, the great whites leave the island for the season, so you rarely have to show a tooth.",
+    "You teach the way an orca mother teaches beaching: slowly, over years, ready to pull your student back off the sand when the wave turns."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Females undergo menopause and can live forty or more years after their last calf; a 2019 Current Biology study found grandmother presence raises grandchild survival, especially when salmon were scarce; the mechanism is knowledge.",
+      "verdict": "WRONG (citation) and OVERSTATED (mechanism)",
+      "note": "The 2019 grandmother study is Nattrass et al., PNAS, not Current Biology (s8). The Current Biology paper is Brent et al. 2015, on post-reproductive females leading the group to salmon in lean years (s9); the page's source list also misdates Brent as 2019. Effect strongest when salmon were scarce: OK (s8). Mechanism: proposed causes include knowledge and leadership and also time freed from their own calves (s8), so 'the mechanism is knowledge' should be 'researchers think knowledge is part of it'. Lifespan: females stop breeding in their 30s to 40s and can live beyond 90 (s8, s9); 'decades' is safer than 'forty or more'.",
+      "source_ids": [
+        "s8",
+        "s9"
+      ]
+    },
+    {
+      "fact": "Pods are led by the oldest female; males stay with their mothers for life; adult sons are far more likely to die after their mother's death.",
+      "verdict": "OK (resident populations)",
+      "note": "Resident matrilines are led by the eldest female and both sexes stay with the mother for life (s7). Sons over 30 had a 14-fold higher chance of dying within a year of the mother's death (Foster et al. 2012, Science, s10). Qualify as 'in fish-eating resident orcas'; Bigg's (transient) groups differ.",
+      "source_ids": [
+        "s7",
+        "s9",
+        "s10"
+      ]
+    },
+    {
+      "fact": "At least three ecotypes in the North Pacific (residents eat fish with complex dialects; transients hunt mammals in near silence; offshores take sharks and large fish); they do not interbreed; differences are cultural rather than genetic.",
+      "verdict": "WRONG (genetics)",
+      "note": "Residents (96% salmon, 7 to 17 call types) and quiet mammal-hunting transients: OK (s7). But Morin et al. 2024 found residents and Bigg's split 200,000 to 300,000 years ago with no gene flow and anatomical differences, and proposed separate species Orcinus ater and O. rectipinnus (s11); the Society for Marine Mammalogy provisionally treats them as subspecies (s7). 'Cultural rather than genetic' must go. Offshore diet (sharks) was not confirmed in the sources I opened: UNVERIFIABLE as written.",
+      "source_ids": [
+        "s7",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Orcas carry dead calves for extended periods, sometimes days.",
+      "verdict": "OK (understated)",
+      "note": "Tahlequah (J35), Southern Resident J pod, carried her dead calf 17 days and about 1,000 miles in 2018, and another dead calf for over 11 days in January 2025 (s12). A named, dated example is stronger than 'sometimes days'.",
+      "source_ids": [
+        "s12"
+      ]
+    },
+    {
+      "fact": "Hunting taught by demonstration and guided practice; young orcas guided through beaching technique over many months.",
+      "verdict": "WRONG (timescale)",
+      "note": "Teaching is real: at Crozet, juveniles first practiced stranding alone at about 4 to 5 years and still needed an adult female's help at 5 to 6 (Guinet and Bouvier 1995, s13); Wikipedia says mastery can take years (s7). Change 'many months' to 'years'.",
+      "source_ids": [
+        "s13",
+        "s7"
+      ]
+    },
+    {
+      "fact": "No predation from any animal in any ocean; great whites (up to 5 m, 1,100 kg) vacate regions for months after orcas appear; the only animal with this position in every marine environment.",
+      "verdict": "OK, with one UNVERIFIABLE superlative",
+      "note": "Apex predator with no natural predators: s7. Farallon Islands white sharks left within minutes of orcas arriving and did not return for up to a year (Jorgensen et al. 2019, s14). Size figure is low (some exceed 5.5 m, s14) but not false. 'The only animal that has earned this position in every marine environment' has no source: cut.",
+      "source_ids": [
+        "s7",
+        "s14"
+      ]
+    },
+    {
+      "fact": "Source list cites Lusseau and Newman (2004), Proceedings of the Royal Society B.",
+      "verdict": "WRONG (borrowed species)",
+      "note": "That paper studies bottlenose dolphins in Doubtful Sound, New Zealand (s15), not orcas. Remove it from the orca page.",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "fact": "Header and rail hanzi 鲸.",
+      "verdict": "WRONG (too generic)",
+      "note": "鲸 jīng means whale in general. The orca is 虎鲸 hǔjīng (also 逆戟鲸 nìjǐjīng) (s19). Use 虎鲸 with pinyin.",
+      "source_ids": [
+        "s19"
+      ]
+    },
+    {
+      "fact": "Proverb 前人栽树，后人乘凉 tied to the Year of the Horse.",
+      "verdict": "OK",
+      "note": "Common saying, honestly labelled as the page's own pairing. No change needed beyond style.",
+      "source_ids": []
+    }
+  ],
+  "page_bugs": [
+    "Power phase is 'Full Moon' in the Dossier, but the Psychic Reading's lucky window is the new moon. Pick one.",
+    "About 105 em dash characters in the page source; the house style bans them.",
+    "Purple Star block here makes no star claim (good); it only links to casting a real chart.",
+    "Hero text says pods 'stay together for the entirety of each member's life', which is true of residents only."
+  ]
+}
