@@ -1,0 +1,350 @@
+{
+  "slug": "regal-jumping-spider",
+  "name": "Regal Jumping Spider",
+  "sign": "Leo",
+  "year": "Monkey",
+  "element": "Metal (from the Monkey); Leo adds Fire, fixed",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Phidippus (jumping spiders), Animal Diversity Web (cited on live page)",
+      "url": "https://animaldiversity.org/accounts/Phidippus/"
+    },
+    {
+      "id": "s2",
+      "title": "Phidippus regius, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Phidippus_regius"
+    },
+    {
+      "id": "s3",
+      "title": "Nabawy et al. 2018, Energy and time optimal trajectories in exploratory jumps of the spider Phidippus regius, Scientific Reports (DOAJ abstract)",
+      "url": "https://doaj.org/article/e27cd7e3c6af4f5fbbdb7612bb465e9c"
+    },
+    {
+      "id": "s4",
+      "title": "Scientists train spider to jump on demand (University of Manchester, via Phys.org, 2018)",
+      "url": "https://phys.org/news/2018-05-scientists-spider-demand-secrets-animal.html"
+    },
+    {
+      "id": "s5",
+      "title": "Jumping spider uses fuzzy eyesight to judge distance (Phys.org on Nagata et al. 2012, Science; species Hasarius adansoni)",
+      "url": "https://phys.org/news246862006.html"
+    },
+    {
+      "id": "s6",
+      "title": "How do jumping spiders make a perfect landing? (The Conversation, on Chen et al. 2013, J R Soc Interface; species Hasarius adansoni)",
+      "url": "https://theconversation.com/how-do-jumping-spiders-make-a-perfect-landing-watch-and-learn-16798"
+    },
+    {
+      "id": "s7",
+      "title": "Leo (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Leo_(astrology)"
+    },
+    {
+      "id": "s8",
+      "title": "Leo traits and personality, TODAY",
+      "url": "https://www.today.com/life/astrology/leo-traits-personality-rcna39027"
+    },
+    {
+      "id": "s9",
+      "title": "Monkey (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Monkey_(zodiac)"
+    },
+    {
+      "id": "s10",
+      "title": "Year of the Monkey, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/monkey.htm"
+    },
+    {
+      "id": "s11",
+      "title": "Chinese zodiac (compatibility table), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s12",
+      "title": "蝇虎 yínghǔ, jumping spider, ChinesePod dictionary",
+      "url": "https://www.chinesepod.com/dictionary/蝇虎"
+    },
+    {
+      "id": "s13",
+      "title": "The Golden Cat: Fighting Spider, Green Power Hong Kong (Hong Kong's Wild Stars)",
+      "url": "https://greenpower.org.hk/eng-hong-kongs-wild-stars/the-golden-cat-fighting-spider"
+    },
+    {
+      "id": "s14",
+      "title": "Arachnophilia: Spiders in Art and Folklore, Sotheby's",
+      "url": "https://www.sothebys.com/en/articles/arachnophilia-spiders-in-art-and-folklore"
+    },
+    {
+      "id": "s15",
+      "title": "Sohu article on spiders as 喜子 xǐzi omens (cites 陆玑 Lù Jī, 诗疏, and 荆楚岁时记)",
+      "url": "https://m.sohu.com/n/417949173/"
+    },
+    {
+      "id": "s16",
+      "title": "蟢 xǐ, WriteChinese dictionary entry (蟢子 xǐzi, joy omen)",
+      "url": "https://www.writechinese.com/en/hanzi/蟢"
+    },
+    {
+      "id": "s17",
+      "title": "Spider fighting, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Spider_fighting"
+    },
+    {
+      "id": "s18",
+      "title": "Zhuangzi, 齊物論 Qí Wù Lùn, section 6 (朝三暮四), ctext.org with Legge translation",
+      "url": "https://ctext.org/zhuangzi/adjustment-of-controversies"
+    },
+    {
+      "id": "s19",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Warm, generous, loyal, bold, theatrical and big-hearted; shadow is attention-seeking, proud, bossy, touchy and competitive. Loves grandly and stays.",
+    "planet": "The Sun (Leo's sign ruler)",
+    "element": "Fire (with Aries and Sagittarius)",
+    "modality": "Fixed; opposite sign Aquarius",
+    "source_ids": [
+      "s7",
+      "s8"
+    ]
+  },
+  "chinese": {
+    "temperament": "Witty, quick to learn, inventive, adaptable, sociable, loves a challenge. Shadow: restless, easily bored, pranks that sting, can read as sly; slow to settle in love but commits fully once sure.",
+    "yinyang": "Yang",
+    "element": "Metal (fixed); earthly branch 申 shēn; Monkey hour 15:00 to 17:00",
+    "trine": "Monkey, Rat, Dragon",
+    "secret_friend": "Snake",
+    "clash": "Tiger (Wikipedia also lists Pig as a harm pair)",
+    "lucky": null,
+    "source_ids": [
+      "s9",
+      "s10",
+      "s11"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Chinese (name of the animal itself)",
+      "meaning": "The ordinary Chinese word for a jumping spider is 蝇虎 yínghǔ (traditional 蠅虎), literally 'fly tiger'. In Hong Kong, the fighting jumping spiders children kept in matchboxes in the 1960s to 1980s were called 'golden cat' and 'leopard tiger' (Green Power gives the English only). A tiny animal named after big cats is a natural bridge to Leo the lion.",
+      "source_ids": [
+        "s12",
+        "s13"
+      ]
+    },
+    {
+      "culture": "Chinese folk omen (spiders in general)",
+      "meaning": "Spiders were 喜子 xǐzi (also written 蟢子), a pun on 喜 xǐ, joy. A spider dropping on a thread meant 喜从天降 xǐ cóng tiān jiàng, joy falling from the sky. Lù Jī's commentary on the Shijing says that when the insect lands on your clothes, a dear guest is coming. At 七夕 Qīxī, girls read skill from whether a spider spun on the fruit plate overnight (Jingchu Suishi Ji). Sotheby's dates the good-omen idea to the Han. Applies to spiders broadly, not jumping spiders.",
+      "source_ids": [
+        "s14",
+        "s15",
+        "s16"
+      ]
+    },
+    {
+      "culture": "Asante (Ghana), Akan diaspora",
+      "meaning": "Anansi the spider wins the Sky-God Nyame's stories by wit, and later became a figure of resistance for enslaved peoples. A clever small hero who beats the powerful: the Monkey's trickster streak in spider form.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "culture": "Singapore and Malaysia; Hong Kong",
+      "meaning": "Spider fighting with male jumping spiders (Thiania bhamoensis and relatives), at its peak in the 1960s and 1970s; the loser flees. The jumping spider as a pocket-sized champion with a fighter's pride. Different genus from Phidippus, so use as 'jumping spiders' only.",
+      "source_ids": [
+        "s17",
+        "s13"
+      ]
+    },
+    {
+      "culture": "Modern North American pop culture",
+      "meaning": "Phidippus regius is the species behind the pet-trade boom after 2017, helped by the animated short series Lucas the Spider. A rare case of a spider people find charming on sight: Leo's stage presence.",
+      "source_ids": [
+        "s2"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Generic 'jumping spider spirit animal means taking the leap of faith' lines found on totem blogs. No traditional source located. Japanese 'Honchi Asobi' jumping-spider contests rest on one unsourced amateur page; do not use.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Fire (Leo) meets yang Metal (Monkey). Leo wants to be seen making the big move; the Monkey wants to be clever about it. In this animal the boldness is real but calculated: a showy hunter that measures every gap. Fire controls Metal in the five-phase cycle, so Leo's heat keeps testing the Monkey's sharp edge, and the result is nerve with a plan.",
+    "gifts": "Our reading: accurate judgment of distance and risk, theatrical confidence that is earned, inventive routes around obstacles, the ability to keep a goal in mind after it drops out of sight, warmth toward the people it chooses.",
+    "shadow": "Our reading: measuring a solved gap one more time; pride that hates to be seen missing; the Monkey's restlessness turning into showing off or stinging jokes; keeping a private tally of who noticed the leap. 朝三暮四 zhāo sān mù sì: getting stuck on how the total was offered instead of what it is.",
+    "love": "Our reading: courts openly, with display and charm (Leo), then lets the other person decide at close range. Slow to settle (Monkey) but loyal once in (Leo). Needs a partner who enjoys the show and is not frightened by how closely they are being read.",
+    "money": "Our reading: Monkey's head for numbers plus Leo's taste for the grand gesture. Good at calculated bets with a safety line attached; the risk is spending for applause. Keeps a fallback, like the dragline.",
+    "conflict": "Our reading: goes still, works out the angle, then strikes once with a precise point. Pride makes backing down hard; the Monkey's wit can wound. Better tactic: say the measured view early, before it hardens into a verdict."
+  },
+  "careers": [
+    {
+      "path": "Stunt work, climbing, aerial or acrobatic performance, rigging",
+      "why": "Our reading: the leap with a line attached; Leo's stage plus a real safety system (dragline, s1)."
+    },
+    {
+      "path": "Trading, risk analysis, actuarial or insurance work",
+      "why": "Our reading: China Highlights lists trading and accounting for the Monkey (s10); the take-off angle matched to the gap (s3) is risk sizing."
+    },
+    {
+      "path": "Film directing, photography, visual design",
+      "why": "Our reading: a sight hunter (s1) with Leo's showmanship; China Highlights lists film directing for the Monkey (s10)."
+    },
+    {
+      "path": "Engineering, robotics, biomechanics",
+      "why": "Our reading: the Manchester team studied this species to design jumping robots (s4); Monkey inventiveness."
+    },
+    {
+      "path": "Courtroom law, negotiation, pitching",
+      "why": "Our reading: one well-measured strike in front of an audience; the zig-zag approach and the close-range verdict (s1)."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Rhinoceros Hornbill",
+      "slug": "rhinoceros-hornbill",
+      "reason": "Leo x Dragon. Same sign, and the Dragon sits in the Monkey trine. Dragon's Earth feeds the Monkey's Metal."
+    },
+    {
+      "name": "Sandgrouse",
+      "slug": "sandgrouse",
+      "reason": "Sagittarius x Rat. Rat is in the Monkey trine; Sagittarius shares Leo's Fire. Metal feeds the Rat's Water."
+    },
+    {
+      "name": "Sand Cat",
+      "slug": "sand-cat",
+      "reason": "Sagittarius x Snake. Snake is the Monkey's secret friend; Fire sign with Fire sign. Two small cats-in-spirit (fly tiger and sand cat)."
+    },
+    {
+      "name": "Paradise Tanager",
+      "slug": "paradise-tanager",
+      "reason": "Libra x Snake. Secret friend pair, and Libra's Air feeds Leo's Fire. Both are colorful displayers. The tanager's page already links back here, so the pair is reciprocal."
+    },
+    {
+      "name": "Red Panda",
+      "slug": "red-panda",
+      "reason": "Libra x Rat. Rat trine; Air with Fire."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Maned Wolf",
+      "slug": "maned-wolf",
+      "reason": "Aquarius x Tiger. Monkey-Tiger is the six-clash pair and Aquarius is Leo's opposite sign: pulled against in both systems."
+    },
+    {
+      "name": "Harpy Eagle",
+      "slug": "harpy-eagle",
+      "reason": "Leo x Tiger. Same Western sign, but the Monkey-Tiger clash underneath: two showy hunters with opposite clocks."
+    }
+  ],
+  "candidate_lines": [
+    "Before a big move you pay out a thread behind you, a quiet backup, and then you jump as if the thread were not there.",
+    "Your eyes do the hunting long before your feet move. By the time you pounce on an idea, you have checked the angle and the landing twice.",
+    "Short gaps you take fast and flat, long ones high and slow, and the people watching rarely see the math behind the change of style.",
+    "Like the Monkey you enjoy a clever route, so you will let a goal slip out of sight, circle round through the leaves, and turn up exactly where it was.",
+    "In love you court with a show, front legs raised and colors catching the sun, and then you wait to learn whether you may come closer.",
+    "The flashy part of you is the part that bites down and finishes the job, and anyone who only noticed the shine is surprised by the grip."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Hanzi in the page header/rail: 蛛.",
+      "verdict": "OK (generic)",
+      "note": "蛛 zhū means spider (as in 蜘蛛 zhīzhū). Jumping spider is 跳蛛 tiàozhū or, in everyday Chinese, 蝇虎 yínghǔ, 'fly tiger' (s12). 蝇虎 is the stronger choice and ties straight to Leo. Hero line also shows 猴 with no pinyin (style rule).",
+      "source_ids": [
+        "s12"
+      ]
+    },
+    {
+      "fact": "Range southeastern US and Caribbean, palmetto scrub and open woodland; one of the largest jumping spiders in North America; hunts by sight, no web.",
+      "verdict": "OK",
+      "note": "Wikipedia: SE US (most abundant in Florida), Bahamas, Bermuda, Greater Antilles; introduced to Easter Island; open fields and light woodland; largest jumping spider in eastern North America (s2). ADW: adults prefer palmettos; vision-based hunters (s1).",
+      "source_ids": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "fact": "Before every leap the spider anchors silk and jumps trailing the line; rear legs carry serrated claws built to grip that safety line mid-air, so a misjudged jump becomes a swing.",
+      "verdict": "OK (soften)",
+      "note": "ADW confirms rear-leg claws that can cling to a silk safety line during a leap (s1). 'Every leap' and 'serrated' are UNVERIFIABLE. The dragline also steadies the body in the air for a clean landing (Chen et al. 2013, but in Hasarius adansoni, s6). Suggest: 'usually trails a silk line when it leaps'.",
+      "source_ids": [
+        "s1",
+        "s6"
+      ]
+    },
+    {
+      "fact": "High-speed filming of a regal jumping spider across fifteen jump distances: low fast trajectory for short jumps, steeper efficient arc for long ones.",
+      "verdict": "OK (minor fix)",
+      "note": "Nabawy et al. 2018: one P. regius (nicknamed Kim), 15 jumping tasks across horizontal and vertical gaps, so distances and heights, not fifteen distances. Shallow angles on short jumps cut flight time; steeper angles on long jumps near the energy-minimizing angle (s3, s4).",
+      "source_ids": [
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "fact": "Principal eyes hold a four-layered retina; two layers get green light with different blur; the animal uses that mismatch, not stereo vision, to judge distance.",
+      "verdict": "WRONG (borrowed species)",
+      "note": "The study (Nagata et al. 2012, Science; the page's own citation) used Adanson's jumping spider, Hasarius adansoni, not Phidippus regius (s5). The finding has not been shown in this species. Fix: 'In another jumping spider, Hasarius adansoni, researchers found...' or cut.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "fact": "Observed taking indirect routes to prey that has gone out of sight, pausing to reorient to its last known position.",
+      "verdict": "OK (genus level)",
+      "note": "ADW's Phidippus account says this nearly word for word (s1). It is a genus statement, not a P. regius study; say 'Phidippus spiders'.",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "fact": "Courting male raises legs, flashes color, approaches in a zig-zag; female stays still and lets him close the distance, or attacks him.",
+      "verdict": "OK (part unverifiable)",
+      "note": "ADW: males raise forelegs and approach in a zig-zag, also drum the abdomen, and approach until legs touch (s1). 'Or attacks him' not in the sources I opened; UNVERIFIABLE for this genus as written.",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "fact": "Adult females reach about 22 mm, among the largest jumping spiders on the continent; chelicerae carry an iridescent blue-green sheen found across most of the genus.",
+      "verdict": "OK (soften)",
+      "note": "Females 7 to 22 mm (s2); ADW gives 22 mm as the genus maximum, in P. regius females (s1). Wikipedia says largest in eastern North America, not the continent. Iridescent chelicerae are a Phidippus trait with exceptions (s1); in P. regius males green-blue-violet, females green or red-violet (s2).",
+      "source_ids": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "fact": "'Some of the sharpest eyesight of any invertebrate.'",
+      "verdict": "OK",
+      "note": "ADW: eyesight second only to the genus Portia in sensitivity (s1).",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "fact": "Proverb 朝三暮四: keeper fed his monkeys three chestnuts at dawn and four at dusk.",
+      "verdict": "WRONG (minor)",
+      "note": "Zhuangzi 齊物論 Qí Wù Lùn: 狙公賦芧 jūgōng fù xù; 芧 is rendered 'acorns' by Legge (s18). Change chestnuts to acorns. Page labels the pairing as its own, which is honest.",
+      "source_ids": [
+        "s18"
+      ]
+    },
+    {
+      "fact": "Purple Star blocks: 'Purple Star maps the Regal Jumping Spider you are becoming'; 'the outline your Leo Monkey shares'.",
+      "verdict": "UNVERIFIABLE (no traditional basis)",
+      "note": "No specific star is assigned, which is better than other pages, but ZWDS charts come from lunar birth date and hour and know nothing of Zodi Animals or sun signs. Reword so it does not imply ZWDS maps this animal.",
+      "source_ids": [
+        "s19"
+      ]
+    }
+  ],
+  "page_bugs": [
+    "Match III (Blue-ringed Octopus, Leo x Snake) is labelled 'Fire nature' as a plus; under the page's own five-phase logic Fire controls Metal. The secret-friend reason is valid; the element line should say it tests rather than feeds.",
+    "Match II text says 'Your Metal feeds their Water: you are the warmth in it'. Metal is not warmth; template phrase reused from Fire pages.",
+    "No January/February lunar-new-year note seen (correct for Leo)."
+  ]
+}

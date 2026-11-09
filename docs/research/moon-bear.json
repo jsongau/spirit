@@ -1,0 +1,331 @@
+{
+  "slug": "moon-bear",
+  "name": "Moon Bear",
+  "sign": "Cancer",
+  "year": "Tiger",
+  "element": "Wood (from the Tiger, yang); Cancer adds Water, cardinal. Water feeds Wood in the generating cycle.",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Cancer (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cancer_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Cancer zodiac sign personality traits, Bustle",
+      "url": "https://www.bustle.com/life/cancer-zodiac-signs-personality-traits-love-compatibility-astrology"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (Tiger row, compatibility table), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Tiger, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/tiger.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Catherine Knight, The Moon Bear as a Symbol of Yama: Its Significance in the Folklore of Upland Hunting in Japan, Asian Ethnology 67(1), 2008, pp. 79-101",
+      "url": "https://asianethnology.org/article/2087/download"
+    },
+    {
+      "id": "s6",
+      "title": "Tangun (Dangun) myth, Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/Tangun"
+    },
+    {
+      "id": "s7",
+      "title": "Mengzi, Gaozi I (魚我所欲也), Chinese Text Project, Legge translation",
+      "url": "https://ctext.org/mengzi/gaozi-i"
+    },
+    {
+      "id": "s8",
+      "title": "Editorial on Formosan black bear poaching (taboo in 10 Indigenous communities incl. Atayal, Taroko, Bunun), Taipei Times 2023-04-14",
+      "url": "https://www.taipeitimes.com/News/editorials/archives/2023/04/14/2003797897"
+    },
+    {
+      "id": "s9",
+      "title": "亞洲黑熊 (Asian black bear), Chinese Wikipedia (alternate names 月熊, 月牙熊, 黑瞎子)",
+      "url": "https://zh.wikipedia.org/wiki/亞洲黑熊"
+    },
+    {
+      "id": "s10",
+      "title": "Ursus thibetanus, Animal Diversity Web",
+      "url": "https://animaldiversity.org/accounts/Ursus_thibetanus/"
+    },
+    {
+      "id": "s11",
+      "title": "Asian black bear, Wikipedia (nests: Servheen et al. 1999; climbing and dens: Brown; claws: CITES/IBA)",
+      "url": "https://en.wikipedia.org/wiki/Asian_black_bear"
+    },
+    {
+      "id": "s12",
+      "title": "Ursus thibetanus, IUCN SSC Bear Specialist Group / International Association for Bear Research and Management",
+      "url": "https://www.bearbiology.org/the-eight-bear-species/ursus-thibetanus-asiatic-black-bear/"
+    },
+    {
+      "id": "s13",
+      "title": "Asiatic black bear, Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/animal/Asiatic-black-bear"
+    },
+    {
+      "id": "s14",
+      "title": "Mystery lure of woodland lords (tsukinowaguma markings differ between individuals), Japan Times 2009-11-29",
+      "url": "https://www.japantimes.co.jp/life/2009/11/29/environment/mystery-lure-of-woodland-lords-2"
+    },
+    {
+      "id": "s15",
+      "title": "一山不容二虎, Wiktionary",
+      "url": "https://www.wiktionary.com/wiki/%E4%B8%80%E5%B1%B1%E4%B8%8D%E5%AE%B9%E4%BA%8C%E8%99%8E"
+    },
+    {
+      "id": "s16",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Tender-hearted, empathic, perceptive and protective; builds a shell when exposed, feelings hurt easily, moody, can lose itself in other people's problems. The crab retreats into its shell to guard a soft core.",
+    "planet": "Moon",
+    "element": "Water (with Scorpio and Pisces)",
+    "modality": "Cardinal; opposite sign Capricorn",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Brave, competitive, confident, charming, a natural leader with fortitude. Shadow: impetuous, irritable, stubborn, can turn domineering; suspicious, knows many people but keeps few close friends. Tiger is the king of beasts and a symbol of strength and driving off evil.",
+    "yinyang": "Yang",
+    "element": "Wood (fixed); earthly branch 寅 yín",
+    "trine": "Tiger, Horse, Dog",
+    "secret_friend": "Pig",
+    "clash": "Monkey (Wikipedia also lists Snake as a harm pair)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Japan, matagi hunters of Tohoku and upland Niigata, Akita, Nagano",
+      "meaning": "The moon bear (tsukinowaguma) was a messenger (otsukai) of the mountain deity, yama no kami. Niigata folklore says the white crescent was left by a silk-wrapped amulet the mountain god gave the bear. Bears with no mark (minaguro, 'all black') were the most sacred; a hunter who shot one by accident offered it to the god and stopped hunting. After a kill, hunters prayed for the bear's soul (kebokai) so its spirit would rest.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "Korea, Tangun (Dangun) founding myth",
+      "meaning": "A bear and a tiger asked to become human and were sent into a cave on mugwort and garlic, out of the sun. The tiger grew impatient and left; the bear stayed and became a woman, mother of Tangun, founder of Korea. A bear and a tiger in one story is a direct mirror of this crossing (a Tiger year inside a patient, cave-keeping Cancer). Britannica says 'bear'; it does not name the species, so do not claim it is the moon bear.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "China, Mencius",
+      "meaning": "魚與熊掌 yú yǔ xióngzhǎng: 'I like fish, and I also like bear's paw; if I cannot have both I let the fish go.' Mencius uses it to say he would give up life for righteousness (舍生取義 shě shēng qǔ yì). The bear's paw stands for the harder, higher choice.",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "culture": "China, folk names",
+      "meaning": "The animal is called 月熊 yuè xióng and 月牙熊 yuèyá xióng (moon bear, crescent-moon bear) for the chest mark, and colloquially 黑瞎子 hēixiāzi, 'the black blind one'.",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "culture": "Taiwan, Atayal, Taroko, Bunun and others",
+      "meaning": "Hunting the Formosan black bear (a subspecies of the moon bear) is taboo in 10 Indigenous communities. The source gives the taboo only, not its story; do not add a reason.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "culture": "China, proverb (Tiger half)",
+      "meaning": "一山不容二虎 yī shān bù róng èr hǔ, one mountain cannot hold two tigers: two strong people cannot share one place. Already on the live page.",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Ainu iyomante bear ceremony (concerns the brown bear in Hokkaido, not the moon bear). Shijing 斯干 Si Gan dream line 維熊維羆 (bear dream as omen of a son): source page would not open, so not verified here. Generic 'moon bear spirit animal' blog meanings: none found with a traditional source.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: cardinal Water (Cancer) feeding yang Wood (Tiger). Cancer guards a soft core; the Tiger guards ground. The Moon Bear is the guardian who climbs: brave enough to face a threat, but its first move is upward, into a nest of bent branches with a view. The Moon rules Cancer and the moon is printed on this bear's chest, so the sign's planet is literally worn on the body. Water feeds Wood, so feeling is the fuel for the courage.",
+    "gifts": "Our reading: protection that does not ask to be thanked; nerve in a crisis; long memory for kindness; a readable warmth (the crescent) that makes strangers trust fast; patience in the dark season (the bear who stayed in the cave).",
+    "shadow": "Our reading: the Tiger's suspicion plus the crab's shell. Retreating from care the same way it retreats from danger; keeping its own den off-limits (one mountain, two tigers); carrying everything alone until it has to den for a whole winter. The Tangun story names the split: the tiger half wants to walk out of the cave.",
+    "love": "Our reading: devoted and provider-minded; loves by shielding. Opens slowly, then is a keeper for life. Needs a partner who does not chase it up the tree and does not read the retreat as rejection.",
+    "money": "Our reading: Cancer stores for winter, the Tiger takes bold swings. Tends to build a deep reserve (fat for the den), then make one brave, large move for the people it protects. Risk: overspending on others while hiding its own needs.",
+    "conflict": "Our reading: climbs first, stands tall if cornered (the mane), rarely fights for nothing. Goes quiet and distant, then can flare in Tiger temper. Helpful habit: name the retreat out loud so it is not read as a verdict."
+  },
+  "careers": [
+    {
+      "path": "Emergency medicine, firefighting, search and rescue in mountains",
+      "why": "Our reading: Tiger nerve plus Cancer's urge to shelter; the bear that climbs to see the whole slope."
+    },
+    {
+      "path": "Child protection, family law, social work",
+      "why": "Our reading: guarding the soft thing is the whole crossing; the Moon is the sign of home and family."
+    },
+    {
+      "path": "Wildlife ranger, forest guard, conservation enforcement",
+      "why": "Our reading: Tiger holds territory, Wood is the forest; echoes the Taiwanese taboo on harming the bear."
+    },
+    {
+      "path": "Security, risk and safety leadership",
+      "why": "Our reading: reads threat early, builds high vantage points, plans for winter."
+    },
+    {
+      "path": "Hospitality with a private base: innkeeper, chef-owner, retreat host",
+      "why": "Our reading: Cancer's home instinct with a den to retreat to between guests."
+    },
+    {
+      "path": "Ethics, compliance, ombudsman roles",
+      "why": "Our reading: Mencius's bear's paw, the harder right choice, held with Tiger stubbornness."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Orca",
+      "slug": "orca",
+      "reason": "Scorpio x Horse. Horse is in the Tiger trine; Scorpio shares Cancer's Water. Double harmony."
+    },
+    {
+      "name": "Beluga",
+      "slug": "beluga",
+      "reason": "Pisces x Dog. Dog is in the Tiger trine; Pisces is the third Water sign. Double harmony."
+    },
+    {
+      "name": "Deep Sea Anglerfish",
+      "slug": "deep-sea-anglerfish",
+      "reason": "Scorpio x Pig. Pig is the Tiger's secret friend (six harmonies); Scorpio shares Water. Pig's Water also feeds the Tiger's Wood."
+    },
+    {
+      "name": "Ribbon Seal",
+      "slug": "ribbon-seal",
+      "reason": "Cancer x Dog. Same Western sign and the Dog sits in the Tiger trine."
+    },
+    {
+      "name": "Bongo",
+      "slug": "bongo",
+      "reason": "Taurus x Pig. Secret friend, and Taurus Earth is the classic complement to Cancer Water. Already on the live page; keep it."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Snowy Owl",
+      "slug": "snowy-owl",
+      "reason": "Capricorn x Monkey. Tiger-Monkey is the six-clash pair and Capricorn is Cancer's opposite sign. Both systems pull apart."
+    },
+    {
+      "name": "Spotted Cuscus",
+      "slug": "spotted-cuscus",
+      "reason": "Cancer x Monkey. Same sign, easy recognition, but the Tiger-Monkey clash underneath: two tree-dwellers who want the same branch."
+    }
+  ],
+  "candidate_lines": [
+    "Somewhere in the canopy there is a platform of bent branches that only you have seen, and you are on it the minute a voice below changes pitch.",
+    "Your crescent shows before you say a word. Strangers trust it on sight, and you spend the next year deciding whether they were right to.",
+    "In the Korean story the bear stayed in the dark cave on mugwort and garlic while the tiger walked out. You carry both of them, and in a hard winter the bear usually wins.",
+    "The Tohoku hunters said the bear with no moon on its chest belonged to the mountain god. Part of you wants to be that unmarked bear, unreadable, and part of you knows the moon is why anyone climbs up to find you.",
+    "One mountain, two tigers: you will share almost anything except the den, and whoever earns a place in it gets a keeper for life.",
+    "Mencius let the fish go and took the bear's paw. Offer you a choice between safe and loyal and you take loyal, then climb a tree to recover from it."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Hero/rail glyph 熊 (shown with no pinyin).",
+      "verdict": "OK (add pinyin)",
+      "note": "熊 xióng means bear; correct but generic. Add pinyin. A more specific option is 月熊 yuè xióng (moon bear), a recorded Chinese name for this species.",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "fact": "Pale cream or yellow-white chest patch, crescent or V shaped, source of the name moon bear, varies bear to bear.",
+      "verdict": "OK",
+      "note": "Cream/white crescent or V (BSG, ADW, Britannica); markings differ between individuals and are used for ID (Japan Times). Chinese and Japanese names (月熊, tsukinowaguma) also come from it.",
+      "source_ids": [
+        "s10",
+        "s12",
+        "s13",
+        "s14",
+        "s9"
+      ]
+    },
+    {
+      "fact": "Ears large in proportion to the head, larger relative to the skull than in most other bears.",
+      "verdict": "OK",
+      "note": "BSG: 'large in proportion to the head in comparison to most other bear species.' ADW: large and set farther apart than American black bear.",
+      "source_ids": [
+        "s12",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Skilled climber that bends and breaks branches into raised day-nests where it feeds and rests, and retreats up trees when threatened.",
+      "verdict": "OK (soften)",
+      "note": "Breaks branches to sit on while feeding, leaving nest-like structures (Servheen et al. 1999, via Wikipedia); rests briefly in tree nests; climbs to elude enemies and flees up trees from tigers. 'Day-nests' is a fair gloss but they are feeding platforms first; say 'feeding platforms it also rests on'.",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "fact": "Ruff of long hair, sometimes 15 cm, frames neck and shoulders in much of the range; standing, the mane makes it read larger.",
+      "verdict": "OK (with note); last clause UNVERIFIABLE",
+      "note": "BSG: mane of long hair about 15 cm, absent in parts of the range (BSG places it around the face); Britannica: neck and shoulder hair forms a modified mane. No source found that the mane serves to look larger; cut or label as our reading.",
+      "source_ids": [
+        "s12",
+        "s13"
+      ]
+    },
+    {
+      "fact": "In the colder north of the range the Moon Bear dens through winter in a hollow tree or cave for months.",
+      "verdict": "OK (add nuance)",
+      "note": "Many do not hibernate over most of the range; northern populations may, others move downhill. Dens include hollow trees, caves, holes, logs (Wikipedia, citing Brown; ADW). Statement as written is accurate because it says 'in the colder north'.",
+      "source_ids": [
+        "s11",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Strong curved claws up to five centimetres, built for gripping bark and tearing into logs more than running prey down.",
+      "verdict": "OK",
+      "note": "BSG: strong curved claws up to 5 cm, aid climbing. ADW: about 5.08 cm. Wikipedia gives forefoot claws 30 to 45 mm. Diet is mostly plants and insects, so 'not for running prey down' is fair.",
+      "source_ids": [
+        "s12",
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Intro: 'a listener that reads danger by sound'.",
+      "verdict": "UNVERIFIABLE (contested)",
+      "note": "ADW calls hearing exceptional; Wikipedia calls it moderate (upper limit 30 kHz) and cites old hunters' accounts of poor hearing. Do not build a trait on it.",
+      "source_ids": [
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Purple Star block: Zi Wei Dou Shu 'maps the Moon Bear you are becoming'.",
+      "verdict": "WRONG (no basis)",
+      "note": "ZWDS charts come from the lunar birth date and hour and contain no Zodi Animals. No star is assigned here, but the sentence implies ZWDS knows this animal. Reword as a plain link to the chart tool.",
+      "source_ids": [
+        "s16"
+      ]
+    }
+  ],
+  "page_bugs": [
+    "Match III Dragonfly (Virgo x Tiger) is only 'same year'; it is the weakest pick. Virgo Earth does complement Cancer Water, so the reason could say that instead.",
+    "Opening hooks and many lines are set in 'a room' ('the moment a room turns'); brief asks to keep lines inside the animal's world.",
+    "No January/February lunar new year note on the page: correct for Cancer."
+  ]
+}

@@ -1,0 +1,322 @@
+{
+  "slug": "shoebill",
+  "name": "Shoebill",
+  "sign": "Capricorn",
+  "year": "Ox",
+  "element": "Earth (from the Ox); Capricorn adds Earth, cardinal. Earth doubled.",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Capricorn (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Capricorn_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "The 6 fundamental Capricorn traits, PrepScholar",
+      "url": "https://blog.prepscholar.com/capricorn-traits-personality"
+    },
+    {
+      "id": "s3",
+      "title": "Ox (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ox_(zodiac)"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Ox, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/ox.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Chinese zodiac (compatibility table), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s6",
+      "title": "The Ox in myth and history, The World of Chinese (2021)",
+      "url": "https://www.theworldofchinese.com/2021/02/the-ox-in-myth-and-history/"
+    },
+    {
+      "id": "s7",
+      "title": "Shoebill, Wikipedia (cites Hancock et al. 1992; Elliot 1992; Houlihan 1988; Acacio et al. 2021)",
+      "url": "https://en.wikipedia.org/wiki/Shoebill"
+    },
+    {
+      "id": "s8",
+      "title": "Balaeniceps rex, Animal Diversity Web (cited on live page)",
+      "url": "https://animaldiversity.org/accounts/Balaeniceps_rex/"
+    },
+    {
+      "id": "s9",
+      "title": "Gillian Nantume, Efforts to conserve Shoebill stepped up, Daily Monitor / Nation.Africa (undated)",
+      "url": "https://www.monitor.co.ug/uganda/lifestyle/reviews-profiles/efforts-to-conserve-shoebill-stepped-up-1645206"
+    },
+    {
+      "id": "s10",
+      "title": "Karl Shuker, Scrutinizing the shoebill (2020 blog; abu markub, whale-headed king)",
+      "url": "https://karlshuker.blogspot.com/2020/08/scrutinizing-shoebill-bird-worlds-whale.html"
+    },
+    {
+      "id": "s11",
+      "title": "鲸头鹳 (Shoebill), Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/鲸头鹳"
+    },
+    {
+      "id": "s12",
+      "title": "35 useful Chinese proverbs (磨刀不误砍柴工), Hanbridge Mandarin",
+      "url": "https://www.hanbridgemandarin.com/article/daily-chinese-learning-tips/chinese-proverbs"
+    },
+    {
+      "id": "s13",
+      "title": "Zodi Animal brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Hardworking, ambitious, responsible, persistent, disciplined; owns mistakes. Shadow: pessimistic, workaholic, stubborn, very high standards, slow to change view. In love devoted and loyal but reserved and slow to open. Symbol is the sea-goat, a creature of land and water.",
+    "planet": "Saturn",
+    "element": "Earth (with Taurus and Virgo)",
+    "modality": "Cardinal; polarity negative; opposite sign Cancer",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Hardworking, reliable, strong, determined, very patient; plans carefully and succeeds by steady effort; sincere, values long friendships. Shadow: stubborn to the point of overwork, poor communicator, prefers solitude.",
+    "yinyang": "Yin",
+    "element": "Earth (fixed); earthly branch 丑 chǒu; Ox hour 1:00 to 3:00",
+    "trine": "Ox, Snake, Rooster",
+    "secret_friend": "Rat",
+    "clash": "Goat (China Highlights also lists Tiger, Horse, Monkey as poor matches)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Uganda (Lake Victoria fishing communities)",
+      "meaning": "A Uganda Wildlife Authority officer reports that fishermen believe meeting a shoebill while setting nets means a very small catch that night, and some kill the birds for it. The stillness read as a bad omen. Handle with care on the page: it is a conservation threat, not a charm.",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "culture": "Arabic / Sudan",
+      "meaning": "Abu markub, 'father of the shoe'. The scientific name Balaeniceps rex reads as 'whale-headed king'. A king's name for the Capricorn (authority) animal. Note: name trivia must not be the hook line.",
+      "source_ids": [
+        "s10",
+        "s7"
+      ]
+    },
+    {
+      "culture": "Chinese name",
+      "meaning": "鲸头鹳 jīngtóuguàn, 'whale-head stork'. Chinese Wikipedia notes it now sits in its own family (鲸头鹳科) and is closer to pelicans than to storks; captive birds are nicknamed the 'husky of birds'. Zambian name Mapumambao glossed as 'the one who knocks on wood' (single source, zh Wikipedia; treat as unconfirmed).",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "culture": "Chinese (Ox half)",
+      "meaning": "Yu the Great was said to throw iron oxen (buffalo) into rivers and lakes to hold back floods; the custom became setting iron ox statues beside water as guardians. An Ox standing guard at the water's edge is the closest Chinese image to the shoebill in its swamp.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Chinese (Ox half)",
+      "meaning": "孺子牛 rú zǐ niú, the willing ox that serves children (Lu Xun's self-description): quiet service. 执牛耳 zhí niú ěr, 'hold the ox's ear', from an oath ritual: to hold leadership. Service and authority together, very Capricorn.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Ancient Egypt",
+      "meaning": "Wikipedia says the shoebill 'may have been known' to the ancient Egyptians (Houlihan 1988). Too weak to build on; mention only as 'may'.",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "'Shoebill spirit animal' meanings and the claim that zoo shoebills bow to keepers as a greeting. Neither Wikipedia nor ADW mentions bowing; I found no source I could open.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: cardinal Earth (Capricorn, Saturn) meets yin Earth (Ox). Same element twice, so nothing feeds or checks it from inside. Capricorn is the sea-goat, half land half water; the shoebill is a land bird that lives standing in water. The Ox guards the water like Yu's iron oxen. The result is the guardian who waits at the edge of the swamp: Saturn's patience plus the Ox's endurance.",
+    "gifts": "Our reading: stillness that is work (磨刀不误砍柴工), one decisive act after long preparation, loyalty to one territory and one partner, the ability to thrive in conditions others avoid.",
+    "shadow": "Our reading: Capricorn pessimism plus Ox stubbornness. Waiting becomes the whole plan; distance gets called loyalty; poor communication (Ox, s4) means others read the stare as threat or absence, as the fishermen read the bird as bad luck.",
+    "love": "Our reading: Capricorn is devoted but slow to open (s2); the Ox values long relationships (s4). Courtship is proximity held for a long time. The bill-clatter greeting sounds like a warning to outsiders and like hello to the mate.",
+    "money": "Our reading: the most conservative money in the wheel. Long holds, real estate and land (both in the Ox career list, s4), no speculation. Risk: holding a position after it stopped paying.",
+    "conflict": "Our reading: no threat display, a held stare (ADW, s8). Silent first, then one blunt statement. Afterward needs time to find its footing, like the bird after the collapse."
+  },
+  "careers": [
+    {
+      "path": "Research, long builds, engineering",
+      "why": "Our reading: long wind-ups reward the stand-and-wait hunter; engineering and mechanics are in the Ox list (s4)."
+    },
+    {
+      "path": "Real estate, land, agriculture",
+      "why": "Our reading: Earth doubled; China Highlights lists real estate and agriculture for the Ox (s4)."
+    },
+    {
+      "path": "Wetland conservation, fisheries, water management",
+      "why": "Our reading: Yu's iron ox by the water (s6) and the bird's own habitat."
+    },
+    {
+      "path": "Negotiation, law, audit",
+      "why": "Our reading: the held stare and one decisive move; Capricorn discipline (s2)."
+    },
+    {
+      "path": "Leadership in slow institutions",
+      "why": "Our reading: 执牛耳 zhí niú ěr (s6) and Saturn rule; authority earned by staying."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Pangolin",
+      "slug": "pangolin",
+      "reason": "Taurus x Snake. Snake is in the Ox trine; Taurus is a fellow Earth sign. (Already on the live page.)"
+    },
+    {
+      "name": "Weaverbird",
+      "slug": "weaverbird",
+      "reason": "Virgo x Rooster. Rooster is in the Ox trine; Virgo is Earth."
+    },
+    {
+      "name": "Aardwolf",
+      "slug": "aardwolf",
+      "reason": "Taurus x Rat. Rat is the Ox's secret friend; Taurus is Earth. (Live page uses Leafcutter Ant, Virgo x Rat, equally valid.)"
+    },
+    {
+      "name": "Slow Loris",
+      "slug": "slow-loris",
+      "reason": "Scorpio x Snake. Trine partner; Scorpio's Water is the classic complement to Capricorn's Earth."
+    },
+    {
+      "name": "Tuatara",
+      "slug": "tuatara",
+      "reason": "Capricorn x Snake. Same sign and Ox-Snake trine."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Glasswing Butterfly",
+      "slug": "glasswing-butterfly",
+      "reason": "Cancer x Goat. Ox-Goat is the traditional clash and Cancer is Capricorn's opposite sign."
+    },
+    {
+      "name": "Hercules Beetle",
+      "slug": "hercules-beetle",
+      "reason": "Capricorn x Goat. Same sign on the surface, the Ox-Goat clash underneath."
+    }
+  ],
+  "candidate_lines": [
+    "You can stand in the papyrus long enough for the lungfish to forget you, and you count that hour as work done, not time lost.",
+    "You get one strike, then you have to find your feet again in the mud. That is why you will not move for anything short of certain.",
+    "When someone walks up to what you are guarding, you neither hiss nor leave. You hold their eyes until they decide the visit is over.",
+    "The water you pick is the water other hunters skip, thin on air and slow. Sooner or later what you want has to come up there to breathe.",
+    "Some fishermen on the lake call you bad luck for the nets. Stillness this complete unsettles anyone who came for a quick haul.",
+    "At the nest your hello is a clatter of bill on bill. To outsiders it sounds like a warning. The one you chose heard it as a greeting from the first season."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Hunts mainly by standing motionless over shallow water, waiting for lungfish, catfish or other prey to surface.",
+      "verdict": "OK",
+      "note": "ADW: two methods, 'stand and wait' and 'wade and walk slowly'. Wikipedia: often motionless; prey includes lungfish, catfish, bichir, tilapia. 'Primarily' is fair but ADW gives both methods.",
+      "source_ids": [
+        "s8",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Strike is a forward-and-down lunge so committed the bird overbalances and cannot immediately repeat it.",
+      "verdict": "OK",
+      "note": "ADW: the 'collapse', head and neck stretch forward causing the bird to over-balance; cannot immediately perform a second collapse.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "fact": "Researchers approaching nesting shoebills report no threat display and no retreat; it stares back for as long as the approach continues.",
+      "verdict": "OK (overstated)",
+      "note": "ADW: docile, researchers within 6 feet of a bird on its nest, it 'will not threaten humans, but will only stare right back'. 'Does not retreat' and 'for as long as the approach continues' go beyond the source, and Wikipedia says the species is very sensitive to disturbance and may abandon the nest if flushed. Cut those two clauses.",
+      "source_ids": [
+        "s8",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Favors poorly oxygenated water where fish surface more often.",
+      "verdict": "OK",
+      "note": "ADW and Wikipedia (Acacio et al. 2021) both state it.",
+      "source_ids": [
+        "s8",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Usually lays two eggs; typically one chick fledges, most often due to sibling competition, predation, or food scarcity.",
+      "verdict": "OK (cause list partly unsourced)",
+      "note": "ADW: one to three, normally two eggs; usually one chick remains 'due to predation or food availability'. Wikipedia (Hancock 1992): younger chicks usually die or act as backups. 'Sibling competition' is not in either source; drop it or source it.",
+      "source_ids": [
+        "s8",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Rapid bill-clattering at the nest between mated adults and from chicks toward parents, as greeting and communication rather than threat.",
+      "verdict": "OK",
+      "note": "ADW: adults clatter when greeting each other at the nest; young also clatter. Wikipedia (Elliot 1992): adults and nestlings clatter as communication; adults add moos and whines.",
+      "source_ids": [
+        "s8",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Header character 鹳 (hero and rail) for the Shoebill.",
+      "verdict": "WRONG",
+      "note": "鹳 guàn means stork, and the shoebill is not a true stork (own family Balaenicipitidae, nearer pelicans). Correct Chinese name is 鲸头鹳 jīngtóuguàn, 'whale-head stork'. Use the full name with pinyin.",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "fact": "Proverb tied to Ox year: 磨刀不误砍柴工 mó dāo bù wù kǎn chái gōng, preparing is part of the work.",
+      "verdict": "OK",
+      "note": "Hanbridge lists it with the gloss 'a beard well lathered is half shaved'. Page already labels the Ox pairing as its own reading. Tone sandhi: 不 before 误 is read bú.",
+      "source_ids": [
+        "s12"
+      ]
+    },
+    {
+      "fact": "Lunar New Year note: a January or early February birthday can belong to the Rat.",
+      "verdict": "OK",
+      "note": "Correct for Capricorn; the year before Ox is Rat.",
+      "source_ids": [
+        "s3",
+        "s13"
+      ]
+    },
+    {
+      "fact": "Purple Star mention: 'The reading here is the outline your Capricorn Ox shares.'",
+      "verdict": "UNVERIFIABLE (no traditional basis)",
+      "note": "No star assigned, but implying a Capricorn + Ox outline in Zi Wei Dou Shu has no basis; charts are cast from lunar birth date and hour. Reword.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "fact": "Match II: Emperor Penguin (Cancer x Rooster), 'same trine'.",
+      "verdict": "OK (but mixed)",
+      "note": "Rooster is in the Ox trine, but Cancer is Capricorn's opposite sign. Valid by the Chinese rule; a Weaverbird or Andean Condor swap would agree on both systems.",
+      "source_ids": [
+        "s5",
+        "s1"
+      ]
+    }
+  ]
+}
