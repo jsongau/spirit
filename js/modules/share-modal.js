@@ -86,6 +86,8 @@ export function openShare(next) {
     copyLine();
     return;
   }
+  const h = modal.querySelector('#share-modal-title');
+  if (h) h.textContent = next.heading || 'Share your crossing';
   const preview = modal.querySelector('[data-share-preview]');
   if (preview) preview.textContent = payload.text;
   const urlEl = modal.querySelector('[data-share-url]');

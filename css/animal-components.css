@@ -1416,3 +1416,12 @@ body.js-on #meaning .rel-panel:not(.is-active){display:none}
 @media (max-width:900px){.kr-cards{max-width:none;margin-inline:0}.kr-hard{max-width:none}}
 @media (max-width:600px){.kr-open{gap:.9rem}.kr-moon{width:40px;height:40px;box-shadow:inset -11px -3px 0 0 var(--a-night),0 0 28px 3px var(--animal-glow)}.kr-tabs{gap:.4rem}.kr-tabs button{padding:.45em .9em;font-size:.86rem}}
 @media (prefers-reduced-motion:reduce){.kr-card{transition:none}.kr-card:hover{transform:none}}
+
+/* w4-share (2026-11-08): reading share hooks. Existing tokens only. */
+.kr-send{display:inline-flex;align-items:center;min-height:44px;margin-top:.4rem;padding:0;border:0;background:transparent;color:var(--a-mist);font:inherit;font-size:.88rem;cursor:pointer;text-align:left}
+.kr-send:hover,.kr-send:focus-visible{color:var(--a-snow)}
+.kr-card--hard .kr-send{padding:0 1.1em;margin-top:.9rem;border:1px solid var(--a-mist);border-radius:999px;color:var(--a-snow)}
+.kr-card--hard .kr-send:hover,.kr-card--hard .kr-send:focus-visible{border-color:var(--a-snow)}
+.kr-share .btn--ghost{background:transparent;border:1px solid var(--rule);color:var(--a-snow)}
+.kr-share{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.8rem 0 0}
+@media (max-width:600px){.kr-share .btn{flex:1 1 100%;justify-content:center}}
