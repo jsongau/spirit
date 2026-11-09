@@ -1,0 +1,357 @@
+{
+  "slug": "coconut-crab",
+  "name": "Coconut Crab",
+  "sign": "Cancer",
+  "year": "Rat",
+  "element": "Water (from the Rat); Cancer adds Water, cardinal. A double-Water crossing.",
+  "sources": [
+    {
+      "id": "c1",
+      "title": "Cancer (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cancer_(astrology)"
+    },
+    {
+      "id": "c2",
+      "title": "Calling all softies: the Cancer zodiac sign's key traits, USA TODAY (Anna Kaufman), via Yahoo",
+      "url": "https://www.yahoo.com/news/hard-shell-soft-interior-meet-102054883.html"
+    },
+    {
+      "id": "c3",
+      "title": "Chinese zodiac (Rat row, compatibility table), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "c4",
+      "title": "Year of the Rat, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/rat.htm"
+    },
+    {
+      "id": "c5",
+      "title": "Coconut crab, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Coconut_crab"
+    },
+    {
+      "id": "c6",
+      "title": "Oka et al. 2016, The Mighty Pinch of the Coconut Crab, PLoS ONE 11(11): e0166108",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0166108"
+    },
+    {
+      "id": "c7",
+      "title": "Birgus latro, Animal Diversity Web (University of Michigan)",
+      "url": "https://animaldiversity.org/accounts/Birgus_latro/"
+    },
+    {
+      "id": "c8",
+      "title": "Coconut Crab, Tetiaroa Society (French Polynesia)",
+      "url": "https://www.tetiaroasociety.org/island/invertebrates/coconut-crab"
+    },
+    {
+      "id": "c9",
+      "title": "Harzsch and Hansson 2008, Brain architecture in the terrestrial hermit crab Coenobita clypeatus, BMC Neuroscience 9:58",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2459186"
+    },
+    {
+      "id": "c10",
+      "title": "Stensmyr et al. 2005, Insect-like olfactory adaptations in the terrestrial giant robber crab, Current Biology (Lund University record)",
+      "url": "https://lup.lub.lu.se/record/146852"
+    },
+    {
+      "id": "c11",
+      "title": "Robber crab, Christmas Island National Park (Parks Australia)",
+      "url": "https://christmasislandnationalpark.gov.au/discover/nature/animals/crabs/robber-crab/"
+    },
+    {
+      "id": "c12",
+      "title": "FAO, Assessment of the Status of the Coconut Crab (Birgus latro) on Niue Island",
+      "url": "https://www.fao.org/4/ac281e/AC281E13.htm"
+    },
+    {
+      "id": "c13",
+      "title": "Uga or coconut crab hunting in Niue, RNZ",
+      "url": "https://www.rnz.co.nz/news/ourchangingworld/546503/uga-or-coconut-crab-hunting-in-niue"
+    },
+    {
+      "id": "c14",
+      "title": "China News Service 2026-06-11, exam-luck objects incl. 二甲传胪 (crab and reed)",
+      "url": "https://www.chinanews.com.cn/cul/2026/06-11/10638160.shtml"
+    },
+    {
+      "id": "c15",
+      "title": "Taiwan Biodiversity Network, 椰子蟹 Birgus latro",
+      "url": "https://www.tbn.org.tw/taxa/d69c97d7-6cc4-44e7-b6a0-475ee7fd429d"
+    },
+    {
+      "id": "c16",
+      "title": "巨蟹座, Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/巨蟹座"
+    },
+    {
+      "id": "c17",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Water sign led by feeling: protective, tenacious, self-aware, ambitious under a soft surface. Shadow: emotions can blind judgment, clings to projects and people, withdraws for fear of being hurt.",
+    "planet": "Moon",
+    "element": "Water (with Scorpio and Pisces)",
+    "modality": "Cardinal; opposite sign Capricorn. Mythic image: Karkinos, the crab Hera sent against Heracles, crushed and placed in the sky.",
+    "source_ids": [
+      "c1",
+      "c2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Quick-witted, resourceful, observant, imaginative, caring toward family. Shadow: timid, impatient, can break off relationships easily.",
+    "yinyang": "Yang",
+    "element": "Water (fixed)",
+    "trine": "Rat, Dragon, Monkey",
+    "secret_friend": "Ox",
+    "clash": "Horse (Wikipedia also lists Goat as harm and Rabbit as punishment)",
+    "lucky": null,
+    "source_ids": [
+      "c3",
+      "c4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Greek and Western astrology",
+      "meaning": "Cancer's own emblem is a crab: Karkinos, crushed under Heracles' foot and set in the sky by Hera. In Chinese the sign is 巨蟹座 jùxiè zuò, 'the giant crab constellation', and the coconut crab is the largest crab on land. This is the rare crossing where the animal is the sign's own picture.",
+      "source_ids": [
+        "c1",
+        "c16",
+        "c5"
+      ]
+    },
+    {
+      "culture": "Niue (uga)",
+      "meaning": "FAO's Niue assessment says uga are 'firmly enmeshed in Niuean culture' and are traditionally eaten at ear-piercings, hair-cuttings, weddings and other social events. Niue has since banned uga exports; RNZ quotes a local view that Niueans naturally limit their take and now hunt mostly for special occasions. The crab as the food of coming-of-age and family thresholds.",
+      "source_ids": [
+        "c12",
+        "c13"
+      ]
+    },
+    {
+      "culture": "Christmas Island and the robber crab name",
+      "meaning": "Parks Australia says the robber crab is named for carrying off foreign items it finds and is 'particularly fond of shiny objects such as pots and silverware'. Young robbers carry seashells or even coconut shells for protection. A hoarder that drags useful things home fits the Rat's forager half.",
+      "source_ids": [
+        "c11"
+      ]
+    },
+    {
+      "culture": "Chinese crab emblem",
+      "meaning": "In Chinese good-luck imagery a crab with reeds reads 二甲传胪 èr jiǎ chuán lú: the crab's shell 甲 jiǎ puns on first-rank exam grades, reed 芦 lú on 胪 lú, the announcement of results. The armored shell as a promise of rank earned by effort.",
+      "source_ids": [
+        "c14"
+      ]
+    },
+    {
+      "culture": "French Polynesia (Tahiti)",
+      "meaning": "Tetiaroa Society notes coconut crabs, called 'aveu or kaveu, 'used to be seen as emanations of local gods'. One line only, no detail; use as a light mention or not at all.",
+      "source_ids": [
+        "c8"
+      ]
+    },
+    {
+      "culture": "Chamorro (Guam) and Nicobar Islands",
+      "meaning": "Wikipedia says the Chamorro call it ayuyu and link it to taotaomo'na ancestral spirits, and that on Kamorta (Nicobar) eating it is thought to bring bad luck. I could open no source beyond Wikipedia; the Taotao Mona article does not mention crabs. Unsourced beyond Wikipedia, do not use.",
+      "source_ids": [
+        "c5"
+      ]
+    },
+    {
+      "culture": "Aphrodisiac claim",
+      "meaning": "Wikipedia says some islands regard it as an aphrodisiac. Weak and sensational; do not use.",
+      "source_ids": [
+        "c5"
+      ]
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: double Water, cardinal and yang. Cancer wants a shelter; the Rat wants it stocked. The Coconut Crab is the night forager who builds its own armor and then fills the burrow. Cardinal Cancer starts things; the yang Rat moves fast and alone. Water on Water gives depth and memory, and a risk of sealing in.",
+    "gifts": "Our reading: self-made security, a nose for resources others walk past, patient force on hard problems (the coconut), long loyalty to the few let inside, and a keeper's memory for where everything is.",
+    "shadow": "Our reading: armor that never comes off; hoarding things, feelings or favors like the robber crab with its pots; Rat impatience and Cancer withdrawal combining into 'I will do it alone'. The shadow image is the crab that drowns if kept in the water too long: some old places can no longer hold you.",
+    "love": "Our reading: provides first, asks last. Slow to show the burrow, then fiercely protective. Needs a partner who treats being let in as an honor and does not try to pry the shell. Moon-ruled moods meet a quick Rat temper; small repairs matter more than grand ones.",
+    "money": "Our reading: a natural stockpiler. Saves in hidden places, likes tangible assets, hates owing. Risk: keeping things because they might be useful someday, and missing the trade that needs open claws.",
+    "conflict": "Our reading: retreats into the shell, then, if cornered, pinches hard and does not let go easily. Rarely starts the fight. Best practice: say the need while still at the burrow mouth, before the claw comes out."
+  },
+  "careers": [
+    {
+      "path": "Logistics, supply, procurement, inventory",
+      "why": "Our reading: the Rat's forager instinct plus a burrow that is always stocked."
+    },
+    {
+      "path": "Property, building, restoration, home design",
+      "why": "Our reading: Cancer's home instinct and a crab that grows its own shell."
+    },
+    {
+      "path": "Archivist, collector, conservator, antiques",
+      "why": "Our reading: the robber crab's shiny-things habit, turned into curation (c11)."
+    },
+    {
+      "path": "Family business owner or household financial planner",
+      "why": "Our reading: provisioning for a small inner circle over decades."
+    },
+    {
+      "path": "Engineer or repair specialist for hard, stuck problems",
+      "why": "Our reading: the measured pinch force (c6) as patient, exact pressure."
+    },
+    {
+      "path": "Chef or food producer working with island or coastal food",
+      "why": "Our reading: Niue's uga feasts at family thresholds (c12); feeding people as care."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Asian Elephant",
+      "slug": "asian-elephant",
+      "reason": "Cancer x Ox. The Ox is the Rat's secret friend (six harmonies), and both share Cancer. Two keepers of family memory. (The live page already uses this one.)"
+    },
+    {
+      "name": "Galápagos Tortoise",
+      "slug": "galapagos-tortoise",
+      "reason": "Taurus x Dragon. Dragon is in the Rat trine; Taurus Earth is the classic complement to Cancer Water. Two slow-growing, shelled, long-lived animals."
+    },
+    {
+      "name": "Giant Salamander",
+      "slug": "giant-salamander",
+      "reason": "Scorpio x Ox. Ox is the Rat's secret friend; Scorpio shares Cancer's Water element."
+    },
+    {
+      "name": "Whale Shark",
+      "slug": "whale-shark",
+      "reason": "Pisces x Dragon. Dragon trine; Pisces is a fellow Water sign. The open-ocean giant the crab's larvae drift beside."
+    },
+    {
+      "name": "Elephantnose Fish",
+      "slug": "elephantnose-fish",
+      "reason": "Scorpio x Monkey. Monkey is in the Rat trine; Scorpio Water matches Cancer. Two animals that find the world by a sense others lack."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Green Sea Turtle",
+      "slug": "green-sea-turtle",
+      "reason": "Cancer x Horse. Same sign, but Rat and Horse are the traditional six-clash pair: familiar shell, opposite rhythm."
+    },
+    {
+      "name": "Siberian Crane",
+      "slug": "siberian-crane",
+      "reason": "Capricorn x Horse. Rat-Horse clash, and Capricorn is Cancer's opposite sign. Both systems pull apart."
+    }
+  ],
+  "candidate_lines": [
+    "The first home you had was borrowed and almost fit. You dropped it the season your own armor came in, and a small pride still rises when someone asks who built your walls.",
+    "Your grip is the quiet kind. You sit with the hard husk of a problem through the night, and by first light it has given.",
+    "Under the pandanus you keep a burrow few are shown. Getting invited in takes years, and the ones who are rarely know how rare that is.",
+    "Once in a while the tide still calls. You walk down to the surf for the ones you made, let them go into the dark water, and climb back up the sand alone.",
+    "Like the robber crab dragging a stray pot home, you keep what might be useful someday, and you can say exactly where each piece sits.",
+    "You catch the smell of a ripe chance on the night air long before you reach it, and you would rather crack it open yourself than wait to be handed the meat."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 蟹 (rail__han and serial-han)",
+      "verdict": "OK (generic)",
+      "note": "蟹 xiè means crab in general, not this species. The species name is 椰子蟹 yēzi xiè (same in traditional characters), literally 'coconut crab'. 蟹 is acceptable as a one-glyph mark but must carry pinyin xiè; the page shows it without pinyin. If space allows, use 椰子蟹 yēzi xiè.",
+      "source_ids": [
+        "c15"
+      ]
+    },
+    {
+      "fact": "Largest land arthropod alive",
+      "verdict": "OK",
+      "note": "Wikipedia and Parks Australia describe it as the largest terrestrial arthropod / land crab.",
+      "source_ids": [
+        "c5",
+        "c11"
+      ]
+    },
+    {
+      "fact": "Juvenile carries a gastropod shell; at two to three years old, still under two centimetres, it abandons the shell for good and hardens its abdomen",
+      "verdict": "WRONG (age) / OK (process)",
+      "note": "Using shells then hardening the abdomen is right (c5, c7). The age is not supported: Tetiaroa Society says shells are abandoned 'at around 12 months old', with the juvenile stage starting near 1 year at about 10 mm thoracic length (c8). ADW gives size only: some crabs up to 11.3 mm carapace still use shells, some at 8.4 mm do not (c7). Say 'about a year old, around a centimetre long'. No source I opened gives two to three years.",
+      "source_ids": [
+        "c5",
+        "c7",
+        "c8"
+      ]
+    },
+    {
+      "fact": "Strongest pinch measured in a crustacean, up to 1,765 newtons, projected past 3,300 newtons in the largest; enough to crack coconut",
+      "verdict": "OK (minor wording)",
+      "note": "Oka et al. 2016: measured 29.4 to 1765.2 N across 29 crabs; 3300 N is an estimate for a 4 kg crab from an allometric equation, and that estimate is what 'greatly exceeds' all other reported crustaceans. Say 'estimated at about 3,300 N', not 'past 3,300'. The paper also says the estimate exceeds the bite force of most land predators except alligators, a usable line.",
+      "source_ids": [
+        "c6"
+      ]
+    },
+    {
+      "fact": "Branchiostegal lung; drowns if kept submerged for more than about an hour",
+      "verdict": "OK (weakly sourced)",
+      "note": "Wikipedia: branchiostegal lungs, and 'they drown if left in water for more than an hour'. Tetiaroa Society: adults 'will actually drown if submerged'. The one-hour figure traces only to Wikipedia; 'drowns if held under water' is the safe version. 'Gill-and-lung hybrid' is loose; the lungs are modified gill-chamber tissue, gills are vestigial.",
+      "source_ids": [
+        "c5",
+        "c8"
+      ]
+    },
+    {
+      "fact": "Antennae carry insect-like sensory structures called aesthetes; airborne smell sensitive enough to detect fruit or carrion at a distance",
+      "verdict": "WRONG (term)",
+      "note": "The structures are aesthetascs, not aesthetes (aesthetes are chiton shell organs). They sit on the first antennae (antennules); ADW says the crab perceives odor 'with their antennules'. Stensmyr et al. 2005 showed an olfactory system with a high degree of resemblance to insects (c10); Harzsch and Hansson 2008 describe terrestrial hermit crabs as 'very effective in detecting food from a distance' (c9). Fix the word and the organ; the distance claim is fine in general terms, no figure.",
+      "source_ids": [
+        "c7",
+        "c9",
+        "c10",
+        "c5"
+      ]
+    },
+    {
+      "fact": "Does not reach full size until forty to sixty years old, one of the longest maturation periods of any invertebrate",
+      "verdict": "OK (size) / WRONG (maturation)",
+      "note": "40 to 60 years to maximum size is in ADW and Wikipedia (Wikipedia also mentions up to 120 years). But sexual maturity comes at about 5 years (c5; Tetiaroa says 5 to 10 years, c8). 'Maturation period' conflates the two. Cut the superlative 'one of the longest of any invertebrate', which I could not source.",
+      "source_ids": [
+        "c5",
+        "c7",
+        "c8"
+      ]
+    },
+    {
+      "fact": "Females return to the shoreline to release eggs into the surf; larvae drift in the open ocean for about a month",
+      "verdict": "OK (wording)",
+      "note": "Wikipedia: eggs are carried and at hatching the female goes to the shore and releases the larvae into the ocean; larvae float 3 to 4 weeks (25 to 33 days). ADW: zoeal stages about 17 to 28 days. 'Release larvae' is more precise than 'release eggs', since eggs hatch on release.",
+      "source_ids": [
+        "c5",
+        "c7"
+      ]
+    },
+    {
+      "fact": "Digs and defends a burrow it returns to for decades (hero line and Ideal Habitat)",
+      "verdict": "UNVERIFIABLE",
+      "note": "Wikipedia: they live alone in burrows and crevices and dig their own. ADW: molting burrows up to 1 m. Nothing I opened says one burrow is kept or defended for decades. Drop 'for decades'.",
+      "source_ids": [
+        "c5",
+        "c7"
+      ]
+    },
+    {
+      "fact": "Proverb 天下之至柔，馳騁天下之至堅 (tiān xià zhī zhì róu, chí chěng tiān xià zhī zhì jiān)",
+      "verdict": "UNVERIFIABLE this session",
+      "note": "This is Daodejing chapter 43, but ctext and Wikisource did not load, so the attribution is unconfirmed here. The page labels it a proverb and says the pairing is its own, which is honest; add the source name if kept.",
+      "source_ids": []
+    },
+    {
+      "fact": "Purple Star star claim",
+      "verdict": "OK (none)",
+      "note": "No 'What Purple Star already suspects' block on this page; Purple Star appears only in nav.",
+      "source_ids": []
+    },
+    {
+      "fact": "Love pairing: Asian Elephant, 'The Ox is the Rat's secret friend'",
+      "verdict": "OK",
+      "note": "Rat-Ox is one of the six harmonies.",
+      "source_ids": [
+        "c3"
+      ]
+    }
+  ]
+}

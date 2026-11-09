@@ -1,0 +1,362 @@
+{
+  "slug": "moon-jellyfish",
+  "name": "Moon Jellyfish",
+  "sign": "Pisces",
+  "year": "Rabbit",
+  "element": "Wood (from the Rabbit); Pisces adds Water, mutable. Water generates Wood.",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Pisces (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pisces_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Pisces personality traits, LoveToKnow",
+      "url": "https://www.lovetoknow.com/life/astrology/pisces-personality-traits"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (Rabbit row, compatibility table), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Rabbit, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/rabbit.htm"
+    },
+    {
+      "id": "s5",
+      "title": "The many faces of the rabbit in Chinese history and culture, The World of Chinese (2023), cited for the Jade Rabbit as in koala.json",
+      "url": "https://www.theworldofchinese.com/2023/01/the-many-faces-of-the-rabbit-in-chinese-history-and-culture/"
+    },
+    {
+      "id": "s6",
+      "title": "水母目虾 entry, Handian zdic.net (cites Guo Pu, Jiang Fu, and Nan Yue Zhi via Li Shan's commentary in the Wen Xuan)",
+      "url": "https://www.zdic.net/hans/%E6%B0%B4%E6%AF%8D%E7%9B%AE%E8%99%BE"
+    },
+    {
+      "id": "s7",
+      "title": "Studies on the Kojiki, Chapter 1, Kokugakuin University",
+      "url": "https://kojiki.kokugakuin.ac.jp/wp-content/uploads/2025/03/01-Studies-on-the-Kojiki-Chapter-1-Heaven-and-Earth-First-Become-Active.pdf"
+    },
+    {
+      "id": "s8",
+      "title": "The Jelly Fish and the Monkey, in Yei Theodora Ozaki, Japanese Fairy Tales (1908), Lit2Go, University of South Florida",
+      "url": "https://etc.usf.edu/lit2go/72/japanese-fairy-tales/4842/the-jelly-fish-and-the-monkey/"
+    },
+    {
+      "id": "s9",
+      "title": "海洋科普: 荧荧如月 海月水母, The Paper (thepaper.cn)",
+      "url": "https://m.thepaper.cn/newsDetail_forward_31321075"
+    },
+    {
+      "id": "s10",
+      "title": "Aurelia aurita, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aurelia_aurita"
+    },
+    {
+      "id": "s11",
+      "title": "Pallasdies et al. 2019, From single neurons to behavior in the jellyfish Aurelia aurita, eLife 8:e50084",
+      "url": "https://elifesciences.org/articles/50084"
+    },
+    {
+      "id": "s12",
+      "title": "Rhopalium, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rhopalia"
+    },
+    {
+      "id": "s13",
+      "title": "Xu and Dabiri 2020, Low-power microelectronics embedded in live jellyfish enhance propulsion, Science Advances 6(5)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6989144"
+    },
+    {
+      "id": "s14",
+      "title": "Moon jellyfish, Houston Zoo",
+      "url": "https://map.houstonzoo.org/places/1457-moon-jellyfish"
+    },
+    {
+      "id": "s15",
+      "title": "He et al. 2015, Life Cycle Reversal in Aurelia sp.1 (Cnidaria, Scyphozoa), PLoS ONE",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4687044"
+    },
+    {
+      "id": "s16",
+      "title": "Jellyfish invasion shuts down nuclear plant (Oskarshamn, 2013), National Geographic",
+      "url": "https://www.nationalgeographic.com/environment/article/jellyfish-invasion-shuts-down-nuclear-plant"
+    },
+    {
+      "id": "s17",
+      "title": "Aurelia aurita, The Cephalopod Page, Marine Invertebrate Zoology",
+      "url": "https://thecephalopodpage.org/MarineInvertebrateZoology/Aureliaaurita.html"
+    },
+    {
+      "id": "s18",
+      "title": "Royal Ontario Museum: oldest known swimming jellyfish, Burgessomedusa phasmiformis, 505 million years (Proc. R. Soc. B, 2023)",
+      "url": "https://www.rom.on.ca/news-releases/royal-ontario-museum-researchers-identify-oldest-known-species-swimming-jellyfish"
+    },
+    {
+      "id": "s19",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Empathetic, intuitive, imaginative, compassionate, generous, adaptable, chameleon-like. Shadow: impractical, easily swayed, moody, escapes hard realities by withdrawing; in love idealistic and prone to co-dependence. Myth: Aphrodite and Eros turned into fish to escape Typhon.",
+    "planet": "Jupiter (traditional), Neptune (modern)",
+    "element": "Water (with Cancer and Scorpio)",
+    "modality": "Mutable; opposite sign Virgo",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Gentle, kind, patient, alert, responsible, loyal to the people close. Shadow: reluctant to share thoughts, tends to withdraw from reality. Skilled hands (calligraphy, painting, tailoring, cooking per China Highlights).",
+    "yinyang": "Yin",
+    "element": "Wood (fixed); earthly branch 卯 mǎo",
+    "trine": "Rabbit, Goat, Pig",
+    "secret_friend": "Dog",
+    "clash": "Rooster",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Chinese classical (Guo Pu, Jiang Fu, 4th century; Nan Yue Zhi)",
+      "meaning": "璅蛣腹蟹，水母目蝦 (suǒ jié fù xiè, shuǐmǔ mù xiā): 'the pea crab lives in the clam's belly, the jellyfish uses a shrimp for eyes'. The Nan Yue Zhi, quoted in Li Shan's commentary, says the jellyfish has no ears or eyes, so shrimp ride with it; when the shrimp is startled and dives, the jellyfish sinks too. The idiom 水母目蝦 came to mean a person with no view of their own who follows others. Strong, primary-text hook for the Pisces and Rabbit shadow (drift, following).",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Chinese naming",
+      "meaning": "The species' Chinese name is 海月水母 hǎiyuè shuǐmǔ, literally 'sea-moon water-mother'; The Paper titles its piece 荧荧如月 yíngyíng rú yuè, 'glowing like the moon'. With the Rabbit half, the Jade Rabbit who lives on the Moon (s5), this crossing is a moon in the sea under a rabbit in the sky. The pairing is our image; the name and the Jade Rabbit are sourced.",
+      "source_ids": [
+        "s9",
+        "s5"
+      ]
+    },
+    {
+      "culture": "Japanese creation myth (Kojiki, 712)",
+      "meaning": "At the beginning, 'when the land was still young, like floating fat, and drifting about like a jellyfish', the first deity sprouted 'like a reed shoot'. The jellyfish is the image of the world before it had a shape. Kokugakuin University translation.",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "culture": "Japanese folktale (Ozaki, Japanese Fairy Tales, 1908)",
+      "meaning": "The Jelly Fish and the Monkey: the Dragon King of the Sea sends the jellyfish to fetch a live monkey's liver for his sick queen. Halfway across the water the jellyfish lets slip the plan; the monkey says he left his liver in a tree, gets carried back and escapes. As punishment the King has the jellyfish's bones pulled out, 'and his descendants have all been soft and boneless'. A story about a soft heart that cannot keep a secret.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "culture": "Western (Pisces myth)",
+      "meaning": "Aphrodite and Eros became fish to flee the monster Typhon and were placed in the sky. A sign born from escaping by dissolving into water.",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "'Jellyfish spirit animal' meanings (go with the flow, transparency, resilience) appear only on totem and dream blogs. No Indigenous or traditional source located. Note that the ancient Chinese and Japanese texts speak of jellyfish in general, not Aurelia specifically.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: mutable Water (Pisces) feeds yin Wood (Rabbit), a generating pair in the five phases. Pisces dissolves into the current; the Rabbit avoids collisions. The Moon Jellyfish has no brain, only nerve nets with eight small sensory and pacemaker clusters around the rim (s11). It reads the water through its whole edge. Gift and risk come from one fact: it mostly drifts with the current, even while swimming (s10).",
+    "gifts": "Our reading: sensing the mood of water before it changes, gentleness that lowers friction, beauty without effort (aquariums worldwide keep it as a star exhibit, s9), and a talent for going back to an earlier form when a life stops working. Aurelia medusae under stress can settle and turn back into polyps (s15).",
+    "shadow": "Our reading: 水母目蝦. Borrowing someone else's eyes, then sinking when they sink. The Rabbit's dislike of confrontation plus Pisces' permeability can make a life that goes wherever the shrimp goes. Also the folktale's leak: a soft heart that tells the plan halfway across.",
+    "love": "Our reading: Neptune and yin Wood. Loves by attunement, feels a partner's weather in its own body, gives generously. Needs one person who will name a direction aloud and not take advantage of the drift. Fears hard edges, sudden noise and being asked to choose fast.",
+    "money": "Our reading: money follows the current here, and that can work well in good seasons (a bloom) and badly in lean ones. Best with automatic structures that keep a pulse going without daily decisions: standing transfers, a steady salary, one trusted adviser.",
+    "conflict": "Our reading: avoids it, moves around it, and stings only when touched, and mildly (the sting is weak to humans, s10). Stays too long in bad water. Practice: say which way you want to go before the tide decides."
+  },
+  "careers": [
+    {
+      "path": "Care and healing work (nursing, therapy, hospice, social work)",
+      "why": "Our reading: Pisces compassion (s2) and the Rabbit's fit for health care and medicine (s4); reads the whole edge of a person."
+    },
+    {
+      "path": "Aquarium, marine science, water quality",
+      "why": "Our reading: literal habitat; also patience for slow cycles like polyp, ephyra, medusa."
+    },
+    {
+      "path": "Music, ambient sound, dance, lighting design",
+      "why": "Our reading: a body that is all rhythm; Pisces creative fields (s2)."
+    },
+    {
+      "path": "Textile, tailoring, ceramics, calligraphy",
+      "why": "Our reading: the Rabbit's hand skills per China Highlights (s4), with Pisces fluidity in form."
+    },
+    {
+      "path": "Translation, interpreting, mediation",
+      "why": "Our reading: moves between currents without forcing them; Rabbit diplomacy."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Capybara",
+      "slug": "capybara",
+      "reason": "Cancer x Pig. Pig is in the Rabbit trine; Cancer shares Pisces' Water. Two gentle beings at home in water."
+    },
+    {
+      "name": "Deep Sea Anglerfish",
+      "slug": "deep-sea-anglerfish",
+      "reason": "Scorpio x Pig. Rabbit trine plus shared Water. The anglerfish brings its own light, which a drifter lacks."
+    },
+    {
+      "name": "Ribbon Seal",
+      "slug": "ribbon-seal",
+      "reason": "Cancer x Dog. Dog is the Rabbit's secret friend (six harmonies); Cancer is Water."
+    },
+    {
+      "name": "Bongo",
+      "slug": "bongo",
+      "reason": "Taurus x Pig. Rabbit trine; Taurus Earth gives Pisces Water a shore (classic Earth with Water complement)."
+    },
+    {
+      "name": "Clark's Nutcracker",
+      "slug": "clarks-nutcracker",
+      "reason": "Virgo x Goat. Goat is in the Rabbit trine; Virgo is Pisces' opposite sign, the classic polarity of order and flow."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Mandarin Dragonet",
+      "slug": "mandarin-dragonet",
+      "reason": "Pisces x Rooster. Same sign, but Rabbit-Rooster is the traditional six-clash pair: familiar water, friction underneath."
+    },
+    {
+      "name": "Roadrunner",
+      "slug": "roadrunner",
+      "reason": "Sagittarius x Rooster. Rabbit-Rooster clash, and Sagittarius Fire sits square to Pisces Water. A sprinter with a fixed target meets a drifter."
+    }
+  ],
+  "candidate_lines": [
+    "Somewhere in the Chinese classics a jellyfish borrows a shrimp's eyes and sinks whenever the shrimp dives. Half of your growing up was learning whose eyes you were using.",
+    "Your whole edge listens. A change in someone's voice reaches you the way a change in temperature reaches open water.",
+    "Every few seconds, one slow pulse. That is your pace, and anyone who tries to make it faster gets a lovely jellyfish and no answer.",
+    "In Japanese myth the young world drifted like a jellyfish before it took shape. Some of your best years look like that from outside, and turn out to have been the start of everything.",
+    "When a life stops fitting, you can settle to the seabed and start again from the small form. Rabbits have three burrows; you have this.",
+    "A sea moon under the Rabbit's moon: you shine most where the light is borrowed and soft, and you are wise to know it."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 月水母 (rail__han and serial-han), pinyin yuè shuǐmǔ.",
+      "verdict": "WRONG (truncated name)",
+      "note": "The Chinese name is 海月水母 hǎiyuè shuǐmǔ ('sea-moon jellyfish'); 月水母 drops the 海 and is not the standard name. Traditional and simplified forms are identical for these four characters. Use 海月水母 hǎiyuè shuǐmǔ, or 水母 shuǐmǔ alone for 'jellyfish'.",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "fact": "Intro: Aurelia aurita is 'found in oceans worldwide'.",
+      "verdict": "WRONG (outdated)",
+      "note": "The old cosmopolitan A. aurita has been split into at least 28 species; A. aurita in the strict sense is now placed in the North Atlantic and Argentina. Say 'moon jellyfish (genus Aurelia) live in coastal seas worldwide'.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "fact": "Intro: four visible gonads in a four-leaf-clover shape.",
+      "verdict": "OK",
+      "note": "Wikipedia: four horseshoe-shaped gonads visible through the bell. 'Four-leaf clover' is a common description; fine.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "fact": "Hero: 'No brain. No heart. No eyes.'",
+      "verdict": "PARTLY WRONG",
+      "note": "No brain and no heart: OK (s14, s11). 'No eyes' is wrong as stated: each of its eight rhopalia carries ocelli, including a pigment-cup ocellus that is primarily photosensory; removing them abolished positive phototaxis. Houston Zoo says 'no eyes', so say 'no eyes like ours' or 'only simple light-sensing eyespots'.",
+      "source_ids": [
+        "s12",
+        "s11",
+        "s14"
+      ]
+    },
+    {
+      "fact": "Hero and dossier: 'doing this for 500 million years' / 'half a billion years' / 'since before fish existed'.",
+      "verdict": "UNVERIFIABLE as worded",
+      "note": "Swimming medusozoan jellyfish are known from 505 million years ago (Burgessomedusa, Burgess Shale). That is jellyfish in general, not this species. 'Before fish existed' is not supported: early fish-like vertebrates are of similar Cambrian age; cut it. Safer: 'jellyfish have swum the seas for more than 500 million years'.",
+      "source_ids": [
+        "s18"
+      ]
+    },
+    {
+      "fact": "No brain; a nerve net, decisions processed locally, no single site where decisions are made.",
+      "verdict": "OK (with nuance)",
+      "note": "Aurelia has two nerve nets (motor and diffuse) and no central brain; but swimming pulses are started by pacemakers in each of the eight rhopalia, which are the concentrations of neurons. 'No single control site' is fine; 'processed locally and distributed' slightly oversimplifies.",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "fact": "Pulse rate approximately one contraction per second.",
+      "verdict": "WRONG",
+      "note": "Xu and Dabiri 2020 measured natural free swimming in Aurelia aurita at 0.24 plus or minus 0.11 Hz, about one pulse every four seconds (constrained animals 0.16 Hz). The muscle's physiological limit is about 1.4 Hz. Say 'a slow pulse every few seconds'.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "fact": "Body approximately 95% water; mesoglea is mostly water in a collagen matrix.",
+      "verdict": "OK",
+      "note": "Houston Zoo: 95% water. eLife describes the mesoglea as fluid with elastic fibers.",
+      "source_ids": [
+        "s14",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Turritopsis dohrnii, 'a close relative', reverts to its polyp stage, theoretically without limit; the moon jellyfish 'can reabsorb into a cyst-like form under stress and restart development'.",
+      "verdict": "WRONG (relationship and mechanism)",
+      "note": "Turritopsis is a hydrozoan; moon jellyfish are scyphozoans, a different class, so 'close relative' is wrong. The Aurelia claim is garbled: He et al. 2015 showed that Aurelia sp.1 medusae, including sexually mature ones, can turn back into polyps after starvation, hypoxia or injury, the first such record for a scyphozoan medusa. Cysts (podocysts) are made by polyps, not by reverting medusae. Rewrite around He et al. and drop the Turritopsis detour.",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "fact": "Blooms of millions to billions of individuals under favorable conditions.",
+      "verdict": "OK for 'huge blooms' / UNVERIFIABLE for 'billions'",
+      "note": "Moon jellyfish blooms are real and large enough to shut reactor 3 at Oskarshamn, Sweden, in 2013; no source located with a billions count. Say 'blooms big enough to shut a nuclear plant'.",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "fact": "Maintains a permeable but selective membrane; oral arms filter particles rather than absorbing everything.",
+      "verdict": "UNVERIFIABLE / misleading",
+      "note": "'Selective membrane' is not a described feature. Moon jellies capture prey with stinging cells and mucus on tentacles and oral arms, then move it along grooves to the mouth; jetting vortices move water past the feeding parts. That is predation by mucus and nematocysts, not 'filtering'. Rewrite or cut.",
+      "source_ids": [
+        "s17"
+      ]
+    },
+    {
+      "fact": "Hero: 'pulses toward light'.",
+      "verdict": "OK (lightly)",
+      "note": "Wikipedia's rhopalium article reports positive phototaxis that depends on the pigment-cup ocelli. Fine as an image; it contradicts the same sentence's 'No eyes'.",
+      "source_ids": [
+        "s12"
+      ]
+    },
+    {
+      "fact": "Purple Star.",
+      "verdict": "OK (no star claim)",
+      "note": "The page only links to the Purple Star chart and says it is cast from exact birth hour. No sign-based star assignment found.",
+      "source_ids": [
+        "s19"
+      ]
+    }
+  ],
+  "page_bugs": [
+    "107 em dashes in visible copy; the heaviest of any page audited so far.",
+    "Header 月水母 is a truncated name (see audit).",
+    "Lunar New Year note: correctly absent. Every Rabbit-year New Year (1951, 1963, 1975, 1987, 1999, 2011, 2023) falls before 19 February, so no Pisces edge case for this crossing.",
+    "The page uses 'not X, it is Y' constructions repeatedly ('The pulse is not the preparation for the thing. The pulse is the thing.'), banned by the writing rules."
+  ]
+}

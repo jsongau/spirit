@@ -1,0 +1,334 @@
+{
+  "slug": "vulturine-guineafowl",
+  "name": "Vulturine Guineafowl",
+  "sign": "Aquarius",
+  "year": "Ox",
+  "element": "Earth (from the Ox); Aquarius adds Air, fixed. Two fixed natures: fixed Air on yin Earth.",
+  "sources": [
+    {
+      "id": "v1",
+      "title": "Aquarius (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aquarius_(astrology)"
+    },
+    {
+      "id": "v2",
+      "title": "Unconventional, optimistic and fun: the Aquarius personality, TODAY (Lisa Stardust), via Yahoo",
+      "url": "https://www.yahoo.com/lifestyle/articles/unconventional-optimistic-fun-know-aquarius-143052022.html"
+    },
+    {
+      "id": "v3",
+      "title": "Chinese zodiac (Ox row, compatibility table), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "v4",
+      "title": "Year of the Ox, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/ox.htm"
+    },
+    {
+      "id": "v5",
+      "title": "Vulturine guineafowl, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Vulturine_guineafowl"
+    },
+    {
+      "id": "v6",
+      "title": "ScienceDaily 2019-11-04, on Papageorgiou et al. 2019, The multilevel society of a small-brained bird, Current Biology 29(21): R1120",
+      "url": "https://sciencedaily.com/releases/2019/11/191104112811.htm"
+    },
+    {
+      "id": "v7",
+      "title": "Vulturine Guineafowl Found to Live in Multilevel Societies, Sci.News",
+      "url": "https://www.sci.news/biology/vulturine-guineafowl-societies-07771.html"
+    },
+    {
+      "id": "v8",
+      "title": "Tucker 2020, Social Behaviour: Finding the right size for a group, eLife insight",
+      "url": "https://elifesciences.org/articles/63871"
+    },
+    {
+      "id": "v9",
+      "title": "ScienceDaily 2020-11-10, on Papageorgiou and Farine 2020, Group size and composition influence collective movement in a highly social terrestrial bird, eLife 9 (doi 10.7554/eLife.59902)",
+      "url": "https://www.sciencedaily.com/releases/2020/11/201110133143.htm"
+    },
+    {
+      "id": "v10",
+      "title": "鹫珠鸡 / 鷲珠雞 Acryllium vulturinum, Chinese Wikipedia (mirror)",
+      "url": "https://www.zhwikip.workers.dev/wiki/Acryllium_vulturinum"
+    },
+    {
+      "id": "v11",
+      "title": "Meleagrids, Wikipedia (citing Antoninus Liberalis, Metamorphoses)",
+      "url": "https://en.wikipedia.org/wiki/Meleagrids"
+    },
+    {
+      "id": "v12",
+      "title": "Swahili Proverbs: Kangas, University of Illinois Center for African Studies",
+      "url": "https://swahiliproverbs.afrst.illinois.edu/kangas.htm"
+    },
+    {
+      "id": "v13",
+      "title": "Kanga (garment), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kanga_(garment)"
+    },
+    {
+      "id": "v14",
+      "title": "How the Guinea Fowl Got Her Spots: A Swahili Tale of Friendship, retold by Barbara Knutson (Carolrhoda), library record, Texas A&M",
+      "url": "https://libcat.library.tamu.edu/Record/in00001409030"
+    },
+    {
+      "id": "v15",
+      "title": "Book review of Knutson, How the Guinea Fowl Got Her Spots (plot summary), Caterpickles",
+      "url": "https://caterpickles.com/2012/03/08/book-review-how-the-guinea-fowl-got-her-spots/"
+    },
+    {
+      "id": "v16",
+      "title": "物以類聚 人以群分, Our China Story (origin in Zhouyi Xici I)",
+      "url": "https://www.ourchinastory.com/zh/2894/%E7%89%A9%E4%BB%A5%E9%A1%9E%E8%81%9A%20%E4%BA%BA%E4%BB%A5%E7%BE%A4%E5%88%86"
+    },
+    {
+      "id": "v17",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Air sign: independent, unconventional, intelligent, community-minded, loyal team player, humanitarian. Shadow: aloof and detached, hard to read, slow to share feelings, can turn rigid.",
+    "planet": "Saturn (traditional) and Uranus (modern)",
+    "element": "Air (with Gemini and Libra)",
+    "modality": "Fixed; opposite sign Leo",
+    "source_ids": [
+      "v1",
+      "v2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Diligent, dependable, strong, determined, patient, sincere and loyal in friendship. Shadow: stubborn, overworks, not good at communicating, prefers being alone.",
+    "yinyang": "Yin",
+    "element": "Earth (fixed)",
+    "trine": "Ox, Snake, Rooster",
+    "secret_friend": "Rat",
+    "clash": "Goat (Wikipedia also lists Horse as harm)",
+    "lucky": null,
+    "source_ids": [
+      "v3",
+      "v4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Swahili (East African coast)",
+      "meaning": "The kanga, the printed cloth worn across East Africa, takes its name from kanga, Swahili for guinea fowl. The Illinois Swahili Proverbs project says early black-and-white spotted designs were called KANGA 'after the noisy, sociable guinea-fowl'. Wikipedia notes a competing verb etymology tagged citation needed. The bird the spots point to is the helmeted guineafowl, not this species; frame it as guinea fowl in general.",
+      "source_ids": [
+        "v12",
+        "v13"
+      ]
+    },
+    {
+      "culture": "Swahili folktale",
+      "meaning": "How the Guinea Fowl Got Her Spots, a Swahili tale retold by Barbara Knutson: Guinea Fowl twice saves her friend Cow from Lion, and Cow repays her with spotted camouflage 'just the thing for hiding in the shadows and grass'. A small bird and a big cattle friend: an unusually neat echo of the Ox year. Credit as Knutson's retelling of a Swahili story.",
+      "source_ids": [
+        "v14",
+        "v15"
+      ]
+    },
+    {
+      "culture": "Ancient Greek",
+      "meaning": "The Meleagrids, sisters of the hero Meleager, wept so long at his death that Artemis turned them into guinea fowl and moved them to Leros, where the birds were kept at her shrine and not eaten (Antoninus Liberalis). The genus of the helmeted guineafowl, Numida meleagris, carries the name. Grief kept in company, a flock of sisters.",
+      "source_ids": [
+        "v11"
+      ]
+    },
+    {
+      "culture": "Chinese naming",
+      "meaning": "Guinea fowl are 珠雞 zhūjī, 'pearl fowl', for their spots; this species is 鷲珠雞 jiù zhūjī (simplified 鹫珠鸡), 'vulture pearl fowl', and Chinese Wikipedia calls it the largest of the guineafowl family 珠雞科 zhūjī kē.",
+      "source_ids": [
+        "v10"
+      ]
+    },
+    {
+      "culture": "Science as story (Kenya)",
+      "meaning": "Papageorgiou et al. 2019 tracked over 400 birds in 18 stable groups of 13 to 65; groups meet into crowds of hundreds and then split 'perfectly into completely stable groups every single day'. Until then multilevel societies were known in large-brained mammals (humans, primates, elephants, giraffes, dolphins). Senior author Farine called the system 'more comparable to a primate than to other birds'.",
+      "source_ids": [
+        "v6",
+        "v7"
+      ]
+    },
+    {
+      "culture": "Vulturine-specific folklore",
+      "meaning": "No traditional story specific to the vulturine guineafowl found in the searches run for this dossier (general guinea fowl and Swahili searches only; Samburu or Borana sources not checked). Unsourced, do not invent one.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Air on yin Earth. Aquarius thinks in systems and communities; the Ox does the steady daily work of holding them. The Vulturine Guineafowl is the architect who walks the route every morning: unusual to look at, plain in habit, loyal to its own group inside a much larger crowd.",
+    "gifts": "Our reading: sees the structure inside a crowd; holds a group together without fuss; patient, reliable, original; good at the dull daily upkeep that keeps a community alive; a loud, clear alarm when it matters.",
+    "shadow": "Our reading: Aquarian detachment plus Ox stubbornness. Can care for the group and stay distant from any one person. Treats the plan as more real than the people. Two fixed signs: once the route is set, very hard to change.",
+    "love": "Our reading: loves by belonging. Wants a partner who is also part of the wider flock, friends and family woven in. Slow to say feelings, fast to show up. Needs room to be odd and someone who reads the daily walk together as devotion.",
+    "money": "Our reading: Ox thrift and Saturn caution. Steady, long-term, pooled resources; likes shared funds, co-ops, group buys. Risk: funding everyone's needs before its own.",
+    "conflict": "Our reading: stays calm and keeps walking; raises the alarm only for a real threat. Does not do territorial fights (the species shows no signature intergroup aggression, v7). The danger is going cold and silent instead of saying what is wrong."
+  },
+  "careers": [
+    {
+      "path": "Community organizer, cooperative or nonprofit operations",
+      "why": "Our reading: Aquarius community instinct plus Ox endurance; holding groups together."
+    },
+    {
+      "path": "Systems, network or urban planning",
+      "why": "Our reading: the multilevel society as a model of nested structure."
+    },
+    {
+      "path": "Field researcher, ecologist, data scientist",
+      "why": "Our reading: patient long-term observation, the way the guineafowl team tracked 18 groups daily."
+    },
+    {
+      "path": "Safety, logistics or operations lead",
+      "why": "Our reading: the loud alarm caller who keeps the group moving together."
+    },
+    {
+      "path": "Textile, pattern or fashion design",
+      "why": "Our reading: striking plumage and the kanga cloth named for guinea fowl (v12)."
+    },
+    {
+      "path": "HR, people operations, team design",
+      "why": "Our reading: knows who belongs in which group and why."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Sonoran Desert Toad",
+      "slug": "sonoran-desert-toad",
+      "reason": "Aquarius x Rat. The Rat is the Ox's secret friend (six harmonies), and both share Aquarius."
+    },
+    {
+      "name": "Fork-tailed Drongo",
+      "slug": "fork-tailed-drongo",
+      "reason": "Gemini x Rooster. Rooster is in the Ox trine; Gemini shares Aquarius's Air. (Live page already uses it.)"
+    },
+    {
+      "name": "Paradise Tanager",
+      "slug": "paradise-tanager",
+      "reason": "Libra x Snake. Snake is in the Ox trine; Libra is a fellow Air sign. Two vividly colored birds that live in mixed flocks."
+    },
+    {
+      "name": "Cassowary",
+      "slug": "cassowary",
+      "reason": "Aries x Rooster. Rooster trine; Aries Fire is the classic complement to Aquarius Air. Two big ground birds with bare blue heads."
+    },
+    {
+      "name": "Sand Cat",
+      "slug": "sand-cat",
+      "reason": "Sagittarius x Snake. Snake trine; Sagittarius Fire feeds Aquarius Air. Both live in dry country."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Kakapo",
+      "slug": "kakapo",
+      "reason": "Aquarius x Goat. Same sign, but Ox and Goat are the traditional six-clash pair: shared ideals, opposite pace."
+    },
+    {
+      "name": "Golden Brushtail Possum",
+      "slug": "golden-brushtail-possum",
+      "reason": "Leo x Goat. Ox-Goat clash, and Leo is Aquarius's opposite sign. Pulled apart in both systems."
+    }
+  ],
+  "candidate_lines": [
+    "At the morning roost there are hundreds of birds around you, and you still walk out into the scrub with exactly your own people at your side.",
+    "Your cobalt and striped cape gets noticed first in any crowd, yet the work you are proudest of is keeping the flock moving the same way across dry country.",
+    "When dust rises and a lion is near, yours is the first loud call, plain and repeated, so the slower ones get a head start.",
+    "Like the guinea fowl in the Swahili story who kept rescuing her friend Cow, your truest allies are big, steady and slow to speak, and you would run at a lion for them.",
+    "Some days your group gets folded into a larger crowd and the lines blur. You stay calm, because by dusk everyone sorts back into place, and you counted on that.",
+    "Your head is bare, your plan is out in the open, and you will walk it again tomorrow at the same pace whether anyone praises it or not."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 珠 (rail__han and serial-han)",
+      "verdict": "WRONG",
+      "note": "珠 zhū means pearl, not guineafowl. Guineafowl is 珠雞 zhūjī ('pearl fowl'); this species is 鷲珠雞 jiù zhūjī (traditional; simplified 鹫珠鸡). If one glyph is needed, 珠 alone reads as 'pearl'; use 珠雞 zhūjī at minimum, with pinyin.",
+      "source_ids": [
+        "v10"
+      ]
+    },
+    {
+      "fact": "Research published in 2021 found stable groups that persist when merged; the first non-primate species documented with this multilevel structure",
+      "verdict": "WRONG",
+      "note": "The paper is Papageorgiou et al. 2019, Current Biology, not 2021. It is described as the first multilevel society in a bird ('first time ... described for birds'); multilevel societies were already known in non-primate mammals (elephants, giraffes, dolphins). The page's citation link (Science Advances, doi 10.1126/sciadv.abf8803) would not open; it is not the 2019 paper, so the citation should be replaced. The stability-when-merged finding itself is correct.",
+      "source_ids": [
+        "v6",
+        "v7"
+      ]
+    },
+    {
+      "fact": "Bare blue-grey head, red eye, black-and-white hackles, cobalt-blue breast make individuals distinguishable, functioning as identification rather than display",
+      "verdict": "OK (colors) / UNVERIFIABLE (function)",
+      "note": "Wikipedia: bare blue face, long glossy blue and white hackles, cobalt-blue breast. Hackles are blue and white, not black and white. The red eye is not in any source I opened. No source says the plumage serves individual identification; that is invented. The proverb panel repeats it ('the cobalt calls to the cobalt'). Cut the function claim.",
+      "source_ids": [
+        "v5"
+      ]
+    },
+    {
+      "fact": "Strong walkers that cover 20 to 40 kilometres per day",
+      "verdict": "UNVERIFIABLE (likely inflated)",
+      "note": "Papageorgiou and Farine 2020 (eLife) measured daily travel distance by GPS, but the paper and PDF did not load; the eLife insight and ScienceDaily give no number. Wikipedia says it runs rather than flies. Do not print any km figure until someone reads the paper.",
+      "source_ids": [
+        "v8",
+        "v9",
+        "v5"
+      ]
+    },
+    {
+      "fact": "Three-tier hierarchy: supergroups of 20 to 60 birds containing stable subgroups of 10 to 15",
+      "verdict": "WRONG",
+      "note": "The stable social groups are 13 to 65 birds (18 groups, over 400 adults). When groups merge, 'the number of birds moving together can reach into the hundreds' and they split back into the original groups. The page puts the 13-to-65 range on the supergroup and invents a 10-to-15 subgroup. Wikipedia separately gives non-breeding flocks of about 25.",
+      "source_ids": [
+        "v6",
+        "v7",
+        "v5"
+      ]
+    },
+    {
+      "fact": "Loud, multi-call vocal repertoire used to coordinate movement, signal alarm and keep contact across the supergroup",
+      "verdict": "OK (loud) / UNVERIFIABLE (functions)",
+      "note": "Wikipedia: 'loud chink-chink-chink-chink-chink calls'. No source I opened describes a repertoire or its uses. Keep 'loud chinking calls'.",
+      "source_ids": [
+        "v5"
+      ]
+    },
+    {
+      "fact": "Broad omnivore: seeds, tubers, insects, small reptiles; persists in arid conditions",
+      "verdict": "OK",
+      "note": "Wikipedia: seeds, roots, tubers, grubs, rodents, small reptiles and insects; dry open habitat.",
+      "source_ids": [
+        "v5"
+      ]
+    },
+    {
+      "fact": "Lunar New Year note: born January or early February may belong to the Rat",
+      "verdict": "OK",
+      "note": "Aquarius runs about 20 January to 18 February, so a birthday before lunar New Year falls in the previous year, which before an Ox year is the Rat. Correctly applied.",
+      "source_ids": [
+        "v1"
+      ]
+    },
+    {
+      "fact": "Proverb 物以類聚 (wù yǐ lèi jù)",
+      "verdict": "OK (with note)",
+      "note": "Traces to the Zhouyi Xici I line 方以類聚，物以群分 (fāng yǐ lèi jù, wù yǐ qún fēn); the popular form is 物以類聚，人以群分. Page labels the pairing as its own, which is honest.",
+      "source_ids": [
+        "v16"
+      ]
+    },
+    {
+      "fact": "Purple Star star claim",
+      "verdict": "OK (none)",
+      "note": "No 'What Purple Star already suspects' block; Purple Star appears only in nav.",
+      "source_ids": []
+    },
+    {
+      "fact": "Style: em dashes in hero and fact copy",
+      "verdict": "STYLE",
+      "note": "The page uses em dashes repeatedly (hero lines, facts). Remove in the rewrite.",
+      "source_ids": []
+    }
+  ]
+}

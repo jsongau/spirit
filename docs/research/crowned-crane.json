@@ -1,0 +1,307 @@
+{
+  "slug": "crowned-crane",
+  "name": "Crowned Crane",
+  "sign": "Libra",
+  "year": "Rabbit",
+  "element": "Wood (from the Rabbit); Libra adds Air, cardinal",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Libra (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Libra_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Libra personality traits, VICE",
+      "url": "https://www.vice.com/en/article/libra-personality-traits-everything-you-need-to-know"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (Rabbit row, trines, Six Harmonies, Six Clashes), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Rabbit, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/rabbit.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Grey crowned crane, Wikipedia (cited on live page)",
+      "url": "https://en.wikipedia.org/wiki/Grey_crowned_crane"
+    },
+    {
+      "id": "s6",
+      "title": "Crowned crane fact sheet, San Francisco Zoo docents",
+      "url": "https://www.sfzoodocents.org/notebook/FactSheets/BIRDS/CraneCrowned.pdf"
+    },
+    {
+      "id": "s7",
+      "title": "East African crowned crane, San Diego Zoo Wildlife Explorers",
+      "url": "https://sdzwildlifeexplorers.org/animals/east-african-crowned-crane"
+    },
+    {
+      "id": "s8",
+      "title": "Crane Conservation Strategy: Grey Crowned Crane, International Crane Foundation",
+      "url": "https://savingcranes.org/wp-content/uploads/2024/10/crane_conservation_strategy_grey_crowned_crane.pdf"
+    },
+    {
+      "id": "s9",
+      "title": "Flag of Uganda, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Flag_of_Uganda"
+    },
+    {
+      "id": "s10",
+      "title": "Rwanda and crested cranes: a fatal attraction, KT Press (2020)",
+      "url": "https://www.ktpress.rw/2020/07/rwanda-and-crested-cranes-a-fatal-attraction/"
+    },
+    {
+      "id": "s11",
+      "title": "How the Crowned Crane Got its Golden Crown of Feathers (based on 'Arap Sang and the Cranes'), International Crane Foundation education activity",
+      "url": "https://savingcranes.org/wp-content/uploads/2026/08/Level_1_Arap_2026.pdf"
+    },
+    {
+      "id": "s12",
+      "title": "灰頸冠鶴 Balearica regulorum, Kaohsiung City Shoushan Zoo (government)",
+      "url": "https://zoo.kcg.gov.tw/zh-tw/animal/40/"
+    },
+    {
+      "id": "s13",
+      "title": "冠鹤属 (Balearica), Chinese Wikipedia via Wikiwand",
+      "url": "https://wikiwand.com/zh/%E5%86%A0%E9%B9%A4%E5%B1%9E"
+    },
+    {
+      "id": "s14",
+      "title": "site/js/modules/zodi-map.js GRID (internal)",
+      "url": "site/js/modules/zodi-map.js"
+    }
+  ],
+  "western": {
+    "temperament": "Charming, considerate, fair-minded, diplomatic, sociable and attentive to beauty and style; weighs every side. Shadow: indecision, conflict avoidance, overcommitting socially, image-consciousness, sharpness when forced to keep the peace.",
+    "planet": "Venus (Saturn exalted in Libra)",
+    "element": "Air",
+    "modality": "Cardinal; opposite sign Aries (classical opposition, not stated on the Wikipedia page)",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Gentle, polite, quick-minded, skillful, kind, patient and responsible; loyal to those around them and persistent. Shadow: reluctant to share their thoughts, may withdraw from hard realities.",
+    "yinyang": "Yin",
+    "element": "Wood (fixed); earthly branch 卯 mǎo",
+    "trine": "Rabbit, Goat, Pig",
+    "secret_friend": "Dog (Six Harmonies, 六合 liù hé)",
+    "clash": "Rooster (Six Clashes, 六沖 liù chōng)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Baganda (Uganda) and the Ugandan state",
+      "meaning": "The grey crowned crane is Uganda's national bird and stands on its flag (adopted 9 October 1962) and coat of arms. Among the Baganda it is a symbol of good fortune, longevity and wealth. The British had first chosen it for the colonial badge to avoid favoring one region.",
+      "source_ids": [
+        "s9",
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "culture": "Rwanda (Banyiginya and other clans)",
+      "meaning": "A totem of some of Rwanda's largest clans, associated with peace and long life; for the Banyiginya clan, harming one was a serious offense. The same prestige drove a habit of keeping clipped cranes at home, which harmed wild numbers. Tell it with the conservation note.",
+      "source_ids": [
+        "s10",
+        "s8"
+      ]
+    },
+    {
+      "culture": "East African folktale ('Arap Sang and the Cranes')",
+      "meaning": "Cranes carry a lost king home across the land; he rewards them with golden crowns; people hunt them for the gold, so the king turns the gold into the straw-like feathers they wear today. The ICF does not name the people of origin, so do not assign it to a nation.",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "culture": "African farmers (as reported by Kaohsiung Zoo)",
+      "meaning": "The bird calls softly at dawn, noon and midnight, and farmers are said to have used the calls as a clock. Single source, a government zoo; use with attribution or not at all.",
+      "source_ids": [
+        "s12"
+      ]
+    },
+    {
+      "culture": "Nigeria",
+      "meaning": "The black crowned crane, the other Balearica species, is Nigeria's national bird. Genus-level item; name the species honestly.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Unsourced or conflated, do not use",
+      "meaning": "Chinese 鶴 hè longevity symbolism (仙鶴 xiān hè, cranes with immortals) belongs to the red-crowned crane 丹頂鶴 dāndǐng hè of East Asia, not this African bird; using it here would be a species borrow. Generic 'crane spirit animal' meanings come only from blogs. Zulu and Xhosa crane lore found online mostly concerns the blue crane.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: cardinal Air (Libra) initiates and arranges; yin Wood (the Rabbit) keeps it gentle and avoids the hard edge. The Crowned Crane makes ceremony out of ordinary days and keeps the peace with style. Both halves dislike conflict, so the work of this crossing is saying the plain thing.",
+    "gifts": "Our reading: grace that makes others feel considered, reading a group before it speaks, loyalty to one partner and one place, taste, a calm that holds a flock together.",
+    "shadow": "Our reading: the dance as a cover. Libra's people-pleasing and the Rabbit's retreat from hard realities can leave the true sentence unsaid for years. Image management can outrun honesty.",
+    "love": "Our reading: Venus-ruled, courteous, romantic in gesture; shows love by making moments beautiful. Monogamous by temperament, chooses once and builds around it. Needs a partner who asks for the plain version too.",
+    "money": "Our reading: spends on beauty and hosting, and on keeping the peace. Wood's growth and Rabbit caution help it save once the reason is clear. Risk: paying to avoid an awkward conversation.",
+    "conflict": "Our reading: smooths before it breaks; would rather redecorate than argue. Growth is the deep boom: one clear statement, then the dance."
+  },
+  "careers": [
+    {
+      "path": "Event, wedding and ceremony design; hospitality",
+      "why": "Libra's taste and sociability; the crane dances year-round as social bonding."
+    },
+    {
+      "path": "Diplomacy, protocol, public relations",
+      "why": "Libra diplomacy and Rabbit politeness; reading a group from a distance."
+    },
+    {
+      "path": "Teaching, health care, culture and arts administration",
+      "why": "China Highlights lists education, health care and culture for the Rabbit; Libra adds the people sense."
+    },
+    {
+      "path": "Dance, choreography, fashion and visual styling",
+      "why": "Our reading, tied to the courtship dance and the gold crown; skillful hands are a listed Rabbit trait."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Duetting Frog",
+      "slug": "duetting-frog",
+      "reason": "Libra Dog. The Dog is the Rabbit's Six Harmonies partner (secret friend), and both are Libra Air."
+    },
+    {
+      "name": "Luna Moth",
+      "slug": "luna-moth",
+      "reason": "Libra Goat. Goat shares the Rabbit's trine; same Air sign."
+    },
+    {
+      "name": "Rock Wren",
+      "slug": "rock-wren",
+      "reason": "Gemini Goat. Same trine; Gemini is fellow Air."
+    },
+    {
+      "name": "Platypus",
+      "slug": "platypus",
+      "reason": "Aquarius Pig. Pig shares the Rabbit's trine; Aquarius is fellow Air, and Pig Water feeds Rabbit Wood."
+    },
+    {
+      "name": "Golden Snub-nosed Monkey",
+      "slug": "golden-snub-nosed-monkey",
+      "reason": "Leo Pig. Same trine; Leo Fire pairs with Libra Air."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Cassowary",
+      "slug": "cassowary",
+      "reason": "Aries Rooster. Rooster is the Rabbit's clash and Aries is Libra's opposite sign: a double opposition."
+    },
+    {
+      "name": "Satin Bowerbird",
+      "slug": "satin-bowerbird",
+      "reason": "Libra Rooster. Same sign and the same love of display, but Rabbit and Rooster are one of the six clashes."
+    }
+  ],
+  "candidate_lines": [
+    "You dance even when no season asks for it, because to you the bow is how a bond stays alive.",
+    "The gold on your head reaches the far side of the grassland before you do, and people decide about you from a long way off.",
+    "At dusk you take the high branch the other cranes cannot grip, the one place the ceremony finally sets down.",
+    "Libra's scales and the Rabbit's soft step make you the one who smooths the marsh after every squabble; the cost is the boom you keep in your throat.",
+    "Your rarer sound is the deep one from the red pouch at your neck, and the wetland listens when you finally use it.",
+    "You choose one mate and one patch of marsh and defend both politely, with a fierceness that surprises the flock."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 鶴 (rail__han and serial-han), pinyin shown as hè",
+      "verdict": "OK (generic)",
+      "note": "鶴 hè means crane in general, and in Chinese culture strongly evokes the red-crowned crane. The specific name is 冠鶴 guàn hè (genus, 'crowned crane'); grey crowned crane is 灰冠鶴 huī guàn hè (Chinese Wikipedia table) or 灰頸冠鶴 huī jǐng guàn hè (Kaohsiung Zoo). Suggest 冠鶴 guàn hè.",
+      "source_ids": [
+        "s13",
+        "s12"
+      ]
+    },
+    {
+      "fact": "Intro: a tall grey bird of East and Southern Africa's wetlands and savanna",
+      "verdict": "OK",
+      "note": "Range: eastern DRC, Uganda and Kenya to eastern South Africa; nominate subspecies Angola to South Africa; dry savannah near wetlands.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "fact": "01: a ring of stiff gold feathers, unique to the genus Balearica, visible across open grassland long before the bird can be identified any other way",
+      "verdict": "OK with caveat",
+      "note": "Stiff golden crown confirmed; crowns are unique to Balearica among cranes. The 'visible long before any other identification' clause is unsourced embellishment; cut it.",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "02: courtship of bowing, leaping, wing-flapping and calling by both birds, repeated outside the breeding season as social bonding",
+      "verdict": "OK",
+      "note": "Wikipedia: both sexes dance; dancing may be done at any time of year. SF Zoo docents: dances seen throughout the year, juveniles dance too.",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "03: a bright red inflatable gular sac produces a booming call that carries across wetland, keeping pairs and family groups in contact",
+      "verdict": "OK",
+      "note": "Booming call involves inflating the red gular sac (Wikipedia); calls carry for several miles and help keep a flock together (SF Zoo docents). The page's 'Our reading' for this trait is empty: a template bug.",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "04: crowned cranes are, along with the black crowned crane, the only cranes able to roost in trees, using an elongated hind toe",
+      "verdict": "OK (wording muddled)",
+      "note": "Correct fact: the grey and black crowned cranes are the only cranes that roost in trees, thanks to a long hind toe. The sentence says 'crowned cranes, along with the black crowned crane', which reads as if the black crowned crane were not a crowned crane. Should say 'Grey crowned cranes, along with black crowned cranes'.",
+      "source_ids": [
+        "s5",
+        "s12"
+      ]
+    },
+    {
+      "fact": "05: monogamous pair bonds that hold for years, foraging, preening and raising chicks together in a defended territory",
+      "verdict": "OK with caveat",
+      "note": "Monogamous, and pairs defend a territory (SF Zoo docents). 'Hold for years' was not confirmed in any source opened; San Diego Zoo says only that the family group stays together for almost a year. Drop 'for years' or source it.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "06: bare white and red facial patches, individual in exact pattern, let cranes identify one another and read mood at a distance before any sound",
+      "verdict": "UNVERIFIABLE",
+      "note": "The white cheek and red bare skin are real (Wikipedia notes subspecies differ in the red area). No source found that the pattern is individual or used for recognition or mood. Cut the function claim.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "fact": "Purple Star (Zi Wei Dou Shu) star claim",
+      "verdict": "OK (none present)",
+      "note": "Purple Star appears only as a chart call-to-action; no star is assigned from the sign and year.",
+      "source_ids": []
+    },
+    {
+      "fact": "Status implied by IUCN citation",
+      "verdict": "Note",
+      "note": "Grey crowned crane is Endangered on the IUCN Red List (uplisted 2012). The page never says so; worth one line given Rwanda and trade threats.",
+      "source_ids": [
+        "s5",
+        "s8"
+      ]
+    }
+  ]
+}

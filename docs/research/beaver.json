@@ -1,0 +1,349 @@
+{
+  "slug": "beaver",
+  "name": "Beaver",
+  "sign": "Virgo",
+  "year": "Ox",
+  "element": "Earth (from the Ox); Virgo adds Earth, mutable. Earth doubled, no second phase",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Virgo (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Virgo_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "All About Virgo, the Zodiac's Precise Perfectionist, Laura Leclercq, Cosmopolitan via Yahoo Life (2020)",
+      "url": "https://www.yahoo.com/lifestyle/virgo-zodiacs-precise-perfectionist-153000671.html"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (Ox row, compatibility table), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Ox, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/ox.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Origin of the Beaver Bundle, Piikani Nation education page",
+      "url": "https://piikani.ca/?p=2407"
+    },
+    {
+      "id": "s6",
+      "title": "Growing Their Own (Blackfoot tobacco planting and the beaver bundle), Canada's History",
+      "url": "https://www.canadashistory.ca/explore/environment/growing-their-own"
+    },
+    {
+      "id": "s7",
+      "title": "Aberdeen Bestiary, MS 24, folio 11r, De castore (University of Aberdeen)",
+      "url": "https://www.abdn.ac.uk/bestiary/ms24/f11r"
+    },
+    {
+      "id": "s8",
+      "title": "Beaver, Wikipedia (incisors, tail, lodges, Haida Beaver-Woman, Aesop, Canada 1975)",
+      "url": "https://en.wikipedia.org/wiki/Beaver"
+    },
+    {
+      "id": "s9",
+      "title": "North American beaver, Wikipedia (monogamy, food cache, Canada symbol)",
+      "url": "https://en.wikipedia.org/wiki/North_American_beaver"
+    },
+    {
+      "id": "s10",
+      "title": "Castor canadensis, Animal Diversity Web (University of Michigan)",
+      "url": "https://animaldiversity.org/site/accounts/information/Castor_canadensis.html"
+    },
+    {
+      "id": "s11",
+      "title": "Beaver Family Life, Gates of the Arctic National Park, US National Park Service",
+      "url": "https://www.nps.gov/gaar/learn/nature/beaver-family-life.htm"
+    },
+    {
+      "id": "s12",
+      "title": "Making teeth tough: beavers show way to improve our enamel, Northwestern University (on Gordon et al. 2015, Science)",
+      "url": "https://mccormick.northwestern.edu/news/articles/2015/02/making-teeth-tough-beavers-show-way-to-improve-our-enamel.html"
+    },
+    {
+      "id": "s13",
+      "title": "Hunt et al. 2023, Microstructurally driven self-sharpening mechanism in beaver incisor enamel, Acta Biomaterialia 158:412-422 (ORNL record)",
+      "url": "https://impact.ornl.gov/en/publications/microstructurally-driven-self-sharpening-mechanism-in-beaver-inci/"
+    },
+    {
+      "id": "s14",
+      "title": "Beaver pond / Beaver dam, Wikipedia 2016 snapshot (IPFS mirror) where the straight/curved dam line appears, sourced only to a fan site",
+      "url": "https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.4everland.io/wiki/Beaver_pond.html"
+    },
+    {
+      "id": "s15",
+      "title": "Beaver dam, Wikipedia (current; no dam-shape claim)",
+      "url": "https://en.wikipedia.org/wiki/Beaver_dam"
+    },
+    {
+      "id": "s16",
+      "title": "Nature's engineer: the beaver builds from solid blueprints, Dennis Austin (retired Utah DWR biologist), Herald Journal",
+      "url": "https://www.hjnews.com/allaccess/outdoors-nature-s-engineer-the-beaver-builds-from-solid-blueprints/article_0dcc4e3a-8750-11e2-aa11-0019bb2963f4.html"
+    },
+    {
+      "id": "s17",
+      "title": "任劳任怨, Handian (zdic.net) dictionary entry with classical sources",
+      "url": "https://zdic.net/hans/任劳任怨"
+    },
+    {
+      "id": "s19",
+      "title": "河狸属 (Castor), Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/河狸"
+    },
+    {
+      "id": "s18",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Detail-minded, service-oriented, helpful, studious, candid; shadow is the critic: nitpicky, always improving things and people, guarded about home and energy.",
+    "planet": "Mercury (Ceres named as a modern ruler by some astrologers)",
+    "element": "Earth (with Taurus and Capricorn)",
+    "modality": "Mutable; opposite sign Pisces (classic opposition)",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Diligent, dependable, strong, determined and patient; honest with a strong sense of responsibility. Shadow: poor at communicating, prefers solitude, stubborn to the point of overwork.",
+    "yinyang": "Yin",
+    "element": "Earth (fixed); earthly branch 丑 chǒu",
+    "trine": "Ox, Snake, Rooster",
+    "secret_friend": "Rat",
+    "clash": "Goat",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Blackfoot (Siksikaitsitapi), Piikani Nation source",
+      "meaning": "The Beaver Bundle: long ago, in a ceremony, wetland creatures shared their power with the Blackfoot; the gifts are kept in the sacred Beaver Bundle, reopened each spring with ritual and song as the wetlands come back to life. Tell it as theirs, attributed; no 'this is you' overlay.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "Blackfoot tobacco societies",
+      "meaning": "The beaver bundle held every sacred object needed for the tobacco-planting rituals; its keepers, the 'beaver men', held a four-day dance and feast at planting, and the owner's wife cared for the bundle day to day. Bundles were opened only for the most compelling reasons. A beaver as keeper of a planting cycle is a strong, non-commodity bridge to the Ox (the farm animal of the zodiac) and Virgo (the harvest maiden). Bridge is our reading.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Haida (Pacific Northwest)",
+      "meaning": "Haida tradition holds that beavers descend from the Beaver-Woman. Only a one-line mention in Wikipedia; find a Haida or museum source before using.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "culture": "European bestiary (Aberdeen Bestiary, MS 24) and Aesop",
+      "meaning": "The hunted beaver bites off its testicles (prized for castoreum), throws them at the hunter and escapes; the moral is to cut away one's vices so the devil finds nothing to take. Pre-modern writers wrongly thought castoreum came from the testicles. Useful only as the shadow image of giving up a piece of yourself to stay safe; handle with taste.",
+      "source_ids": [
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "culture": "Canada",
+      "meaning": "The beaver was declared Canada's national animal in 1975 and is one of the country's national symbols. True but commodity trivia; low value.",
+      "source_ids": [
+        "s8",
+        "s9"
+      ]
+    },
+    {
+      "culture": "Chinese (Ox half)",
+      "meaning": "No traditional Chinese beaver lore located; the beaver is not a figure in classical Chinese texts. Do not invent one.",
+      "source_ids": []
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "'Beaver spirit animal means building your dreams / teamwork' claims on totem blogs; 'eager beaver' and 'busy as a beaver' origins not checked against a dictionary.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: earth on earth. Virgo's mutable Earth wants the thing improved; the Ox's fixed, yin Earth wants it finished and held. The Beaver is the one who keeps working the same structure for years: never quite done, never abandoned. The ADW and NPS picture of a lodge repaired and enlarged over years, with up to three generations inside, is the honest biological anchor.",
+    "gifts": "Our reading: patience that outlasts the current, standards that hold when nobody is checking, the knack of seeing where the pressure is coming from and placing material against it, a long memory for what the family will need in winter.",
+    "shadow": "Our reading: Virgo's critic plus Ox stubbornness. Redoing other people's work, refusing to let the structure be finished or be shared, overwork the Ox is warned about (s4). The bestiary beaver who gives up part of itself to escape is the darker image: buying safety at your own expense.",
+    "love": "Our reading: Mercury plus yin Earth. Shows love by providing and maintaining, not by saying. Slow trust, then long loyalty; beavers mate for life (s9, s11) and the Ox opens only over time. Needs a partner who notices the work without demanding a speech about it.",
+    "money": "Our reading: the winter cache. Saves early, stores in the deepest water, dislikes debt and borrowing. Risk is hoarding effort and capital in one structure long after the stream has moved.",
+    "conflict": "Our reading: goes back to the dam. Answers a disagreement by fixing something. Rarely slaps the water, so when it does the whole family dives. Practice: name the leak while it is still small."
+  },
+  "careers": [
+    {
+      "path": "Water, civil or structural engineering; hydrology",
+      "why": "Our reading: the literal beaver trade, and Virgo precision with Ox endurance."
+    },
+    {
+      "path": "Watershed restoration, wetland ecology, land stewardship",
+      "why": "Our reading: Earth doubled; the Blackfoot bundle ties beaver to wetlands renewed each spring (s5)."
+    },
+    {
+      "path": "Fine carpentry, joinery, restoration of old buildings",
+      "why": "Our reading: the self-sharpening incisor (s13) as a craftsperson's tool kept in working order; repair over replace."
+    },
+    {
+      "path": "Operations and maintenance management, facilities, infrastructure",
+      "why": "Our reading: the work that keeps a structure standing for years and is noticed only when it fails."
+    },
+    {
+      "path": "Editing, quality assurance, archives and records",
+      "why": "Our reading: Mercury and Virgo's detail sense; a private standard that holds unwatched."
+    },
+    {
+      "path": "Family business or farm succession",
+      "why": "Our reading: the Ox is the farm animal; yearlings learn the dam by working on it (s10, s11)."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Pangolin",
+      "slug": "pangolin",
+      "reason": "Taurus x Snake. Snake is in the Ox trine; Taurus is a fellow Earth sign. Two armored, private builders."
+    },
+    {
+      "name": "Weaverbird",
+      "slug": "weaverbird",
+      "reason": "Virgo x Rooster. Same sign, and Rooster sits in the Ox trine. Fellow nest engineer; Ox Earth feeds Rooster Metal."
+    },
+    {
+      "name": "Leafcutter Ant",
+      "slug": "leafcutter-ant",
+      "reason": "Virgo x Rat. Same sign, and Rat is the Ox's secret friend (six harmonies). Colony workers who farm."
+    },
+    {
+      "name": "Andean Condor",
+      "slug": "andean-condor",
+      "reason": "Capricorn x Rooster. Rooster trine plus the third Earth sign. Patience matched to patience."
+    },
+    {
+      "name": "Chambered Nautilus",
+      "slug": "chambered-nautilus",
+      "reason": "Cancer x Snake. Snake trine; Cancer Water is Earth's classic complement. A builder of added chambers meets a builder of added rooms."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Ghost Pipefish",
+      "slug": "ghost-pipefish",
+      "reason": "Pisces x Goat. Ox and Goat are the six-clash pair, and Pisces is Virgo's opposite sign. Both systems pull apart: drift and disguise against structure."
+    },
+    {
+      "name": "Clark's Nutcracker",
+      "slug": "clarks-nutcracker",
+      "reason": "Virgo x Goat. Same sign, so the habits look familiar (both cache for winter), but the Ox-Goat clash puts friction under it."
+    }
+  ],
+  "candidate_lines": [
+    "Someone mentions the leak in passing, and by nightfall your hands are already packing mud against it, before anyone has agreed there is a leak.",
+    "Half the creatures swimming in your pond think it was always there. You remember where every stick went.",
+    "Your way in is underwater on purpose. The ones who reach the dry room have earned it, and there are fewer of them than people guess.",
+    "You stock the winter cache in September while the rest of the pond is still basking, and you would rather go hungry under the ice than ask for a branch in January.",
+    "When you slap the water, the whole family dives. You almost never do it, which is exactly why they listen.",
+    "Letting a yearling patch the dam their own crooked way costs you a night of sleep, and it may be the best thing you build this year."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi (rail__han and serial-han): 河狸 with pinyin hélí.",
+      "verdict": "OK",
+      "note": "河狸 hélí is the standard Chinese name for the beaver (genus Castor; family 河狸科). Traditional and simplified forms are identical. Pinyin is shown. No change needed. Chinese Wikipedia uses 河狸 for both living species (美洲河狸 Měizhōu hélí, North American; 歐亞河狸 Ōu-Yà hélí, Eurasian), genus 河狸属 hélí shǔ; it also gives the nickname 自然界水壩工程師 zìránjiè shuǐbà gōngchéngshī, 'nature's dam engineer'.",
+      "source_ids": [
+        "s19"
+      ]
+    },
+    {
+      "fact": "Four front incisors coated in iron-fortified orange enamel, growing continuously, wearing at an angle that keeps them permanently sharp enough to fell a tree.",
+      "verdict": "OK",
+      "note": "Orange or reddish-brown enamel coloured by iron compounds; incisors grow throughout life (s8, s10). Iron-rich pigmented layer is 10 to 20 micrometres and harder and more acid-resistant (Gordon et al. 2015, Science; s12). Self-sharpening confirmed by Hunt et al. 2023, Acta Biomaterialia (s13), which attributes it to two enamel microstructures, not just the wear angle. Small fix: the pigmented enamel is on the front face only.",
+      "source_ids": [
+        "s8",
+        "s10",
+        "s12",
+        "s13"
+      ]
+    },
+    {
+      "fact": "Beavers build dams straight in slow water and curved against fast water, adjusting the shape to the exact force of the current.",
+      "verdict": "UNVERIFIABLE",
+      "note": "The line appeared in a 2016 Wikipedia version of Beaver dam, cited only to a fan site (fohn.net), and has since been removed (s14, s15). No peer-reviewed or agency source found. A retired Utah wildlife biologist describes site choice by stream gradient and sticks wedged tilted upstream against the current, not a straight/curved rule (s16). 'Exact force' is an inflation. Cut, or replace with the site-selection point from s16.",
+      "source_ids": [
+        "s14",
+        "s15",
+        "s16"
+      ]
+    },
+    {
+      "fact": "Lodge is a dome of sticks and mud with a dry chamber above the waterline and an entrance reachable only underwater; a colony keeps expanding the same lodge across several generations.",
+      "verdict": "OK (soften)",
+      "note": "Underwater entrances and an above-water living chamber (s8, s10). ADW: lodges are repaired and expanded over the years (s10). NPS: often three generations in the lodge at once (s11). 'Across several generations' of occupancy is not stated; say 'repaired and enlarged for years, often with three generations inside'.",
+      "source_ids": [
+        "s8",
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "fact": "The flat scaled tail serves as rudder and paddle, a fat reserve for lean months, and an alarm slapped on the surface.",
+      "verdict": "OK (drop 'paddle')",
+      "note": "Rudder, winter fat store and alarm slap all confirmed (s8, s9, s10). 'Paddle' is not supported by the sources reached; beavers swim with their webbed hind feet. Say 'rudder' only.",
+      "source_ids": [
+        "s8",
+        "s9",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Pairs largely monogamous; kits stay about two years; older yearlings help raise the newest litter and repair the dam before dispersing.",
+      "verdict": "OK",
+      "note": "Monogamous, mate for life (s9, s11). Young stay up to 2 years (s9, s10) or two to three years (s11), helping with infant care, food collection and dam building (s10) and work on dam and lodge (s11).",
+      "source_ids": [
+        "s9",
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Before winter a colony submerges a pile of branches near the lodge entrance, reachable from underwater once the pond freezes.",
+      "verdict": "OK",
+      "note": "Food cache built where ponds freeze (s9); logs and twigs stored underwater for winter feeding (s10); underwater feed pile next to the lodge (s11).",
+      "source_ids": [
+        "s9",
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Hero/intro: 'a stocky, near-sighted rodent' that works 'at dusk and through the night'.",
+      "verdict": "Nocturnal OK; near-sighted UNVERIFIABLE",
+      "note": "ADW: primarily nocturnal, most often seen near dusk (s10). No source reached for near-sightedness; cut 'near-sighted' or source it.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "fact": "Proverb 任劳任怨 rèn láo rèn yuàn glossed 'work hard and endure hardship without complaint, an idiom traditionally said of the ox'; reading built on 'the complaint you withhold'.",
+      "verdict": "WRONG (gloss) / UNVERIFIABLE (ox)",
+      "note": "Handian defines it as working without shrinking from toil and without fearing others' blame (不怕他人埋怨 bù pà tārén mányuàn); 怨 yuàn is the resentment others aim at you, which you bear, not your own complaint. Classical roots: Yan Tie Lun 盐铁论 Yán Tiě Lùn (Huan Kuan, Han) and Han Shu. Handian does not tie it to the ox. The page's reading 'it's the complaint you withhold' inverts the meaning. Fix the gloss to 'take on the work and take the blame' and drop 'traditionally said of the ox' unless a source is found. The pairing is already labelled our own, which is honest.",
+      "source_ids": [
+        "s17"
+      ]
+    }
+  ],
+  "page_bugs": [
+    "No Purple Star star claim found on this page (only generic 'cast your chart' links). No lunar New Year note (correct, Virgo is August to September). Ox years listed (1997, 2009, 2021) are correct.",
+    "Your People block (Pangolin, Emperor Penguin, Leafcutter Ant) uses real trine and secret-friend logic and resolves to GRID animals; Emperor Penguin is Cancer x Rooster (Water complements Earth), fine."
+  ],
+  "could_not_source": "Could not source: dam straight/curved rule (traced to a removed fan-site line), beaver near-sightedness, 'tail as paddle', any Chinese beaver lore, Haida Beaver-Woman beyond a one-line Wikipedia mention. Smithsonian National Zoo page failed to load."
+}

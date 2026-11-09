@@ -1,0 +1,306 @@
+{
+  "slug": "sunbittern",
+  "name": "Sunbittern",
+  "sign": "Leo",
+  "year": "Dog",
+  "element": "Earth (from the Dog); Leo adds Fire, fixed. Fire feeds Earth in the generating cycle.",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Leo traits and personality, TODAY",
+      "url": "https://www.today.com/life/astrology/leo-traits-personality-rcna39027"
+    },
+    {
+      "id": "s2",
+      "title": "Leo (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Leo_(astrology)"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (trines, six harmonies, six clashes), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Dog (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dog_(zodiac)"
+    },
+    {
+      "id": "s5",
+      "title": "Year of the Dog, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/dog.htm"
+    },
+    {
+      "id": "s6",
+      "title": "Sunbittern, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sunbittern"
+    },
+    {
+      "id": "s7",
+      "title": "Sunbitterns (Eurypygidae), Grzimek's Animal Life Encyclopedia (Pamela D. Lewis), via Encyclopedia.com",
+      "url": "https://encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/sunbitterns-eurypygidae"
+    },
+    {
+      "id": "s8",
+      "title": "Sunbittern species card, Oiseaux-Birds (cites HBW vol. 3, 1996; Hilty and Brown; Howell and Webb)",
+      "url": "https://www.oiseaux-birds.com/card-sunbittern.html"
+    },
+    {
+      "id": "s9",
+      "title": "Eurypyga helias, Spanish Wikipedia (common names)",
+      "url": "https://es.wikipedia.org/wiki/Eurypyga_helias"
+    },
+    {
+      "id": "s10",
+      "title": "日鳽 (Eurypyga helias), Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/日鳽"
+    },
+    {
+      "id": "s11",
+      "title": "鳽, Handian dictionary (zdic.net)",
+      "url": "https://www.zdic.net/hans/%E9%B3%BD"
+    },
+    {
+      "id": "s12",
+      "title": "Eurypyga, Wiktionary (Kiwix mirror, 2023-04)",
+      "url": "https://kaweah.freedombox.rocks/kiwix/wiktionary_en_all_maxi_2023-04/Eurypyga"
+    },
+    {
+      "id": "s13",
+      "title": "犬馬之勞 quǎn mǎ zhī láo, Hanbook Chinese dictionary",
+      "url": "https://www.hanbook.com/chinese-dictionary/words/quan3-ma3-zhi1-lao2-serve-like-a-dog-or-a-horse"
+    },
+    {
+      "id": "s14",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Generous, warm, loyal, bold and theatrical; built to be seen. Shadow: attention-seeking, domineering, vain, touchy. Fixed: steady and slow to change its mind.",
+    "planet": "Sun",
+    "element": "Fire (with Aries and Sagittarius)",
+    "modality": "Fixed; opposite sign Aquarius",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Loyal, honest, kind, cautious and protective; goes to great lengths for its inner circle. Shadow: reserved, stays in the background, guarded at first, can read as stubborn because it struggles to voice its thoughts. Slow to fall in love, then very faithful.",
+    "yinyang": "Yang",
+    "element": "Earth (fixed); earthly branch 戌 xū; Dog hours 19:00 to 20:59",
+    "trine": "Tiger, Horse, Dog",
+    "secret_friend": "Rabbit",
+    "clash": "Dragon",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Spanish-speaking Latin America (common names)",
+      "meaning": "Among its Spanish names are ave sol (sun bird) and garza del sol (sun heron), plus tigana and pavito de agua. The English 'sunbittern' likewise comes from the sunburst wing pattern (Grzimek). Every naming tradition we found reads the hidden wing as a sun, which lines up with Leo's ruler, the Sun.",
+      "source_ids": [
+        "s9",
+        "s7"
+      ]
+    },
+    {
+      "culture": "Rural Neotropics (recorded practice)",
+      "meaning": "Grzimek records that local people sometimes take young sunbitterns from the nest and tame them for their skill at catching flies and spiders. A rare case of the bird living as a quiet, useful household guardian, which suits the Dog's service instinct. Present as recorded practice, not as advice.",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "culture": "Scientific name (Greek)",
+      "meaning": "Eurypyga is Greek eurys (wide) plus pyge (rump, tail), a name for the fanned display. Wiktionary mirror only; the meaning of 'helias' (often read as Greek helios, sun) is NOT sourced, do not state it.",
+      "source_ids": [
+        "s12"
+      ]
+    },
+    {
+      "culture": "Chinese naming",
+      "meaning": "Its Chinese name is 日鳽 rì jiān, literally 'sun heron'. 鳽 jiān on its own is a general word for small herons and pond herons (Handian). Chinese also files it as 南美擬鷺 nán měi nǐ lù, 'South American false heron'.",
+      "source_ids": [
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "culture": "Evolutionary lineage (science, usable as story)",
+      "meaning": "The sunbittern is the only member of its family; molecular studies make the kagu of New Caledonia its closest living relative, a small Gondwanan lineage split across an ocean.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "No Indigenous Amazonian, Mesoamerican or other folklore about the sunbittern could be found in any source I could open. Spirit-animal meanings online are blog inventions. Do not write a 'sunbittern totem' meaning.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Fire (Leo) held inside yang Earth (Dog). Leo is ruled by the Sun; the bird's every name calls its hidden wing a sun. The Dog keeps it folded at its post. The result is a showpiece that guards before it shines: brilliant on demand, ordinary by choice. Fire feeds Earth, so the brightness becomes steadiness instead of burning off.",
+    "gifts": "Our reading: timing; the defensive display that ends a threat in one move; loyalty that needs no audience; patience that makes the strike exact; willingness to look foolish to protect someone (the broken-wing act).",
+    "shadow": "Our reading: the sun that never opens. Leo's need to be seen meets the Dog's habit of staying in the background, and the compromise can harden into waiting forever for a bank worthy of the display. Also pride: Leo's touchiness plus the Dog's slow trust can make one slight last for years.",
+    "love": "Our reading: Dog-slow to commit, Leo-generous once committed. Shows love by guarding and noticing. Needs a partner who values the folded version and is patient for the full one. Fears being taken for granted more than being rejected.",
+    "money": "Our reading: Dog caution with a Leo streak for one beautiful, visible purchase. Saves quietly, spends rarely, spends big. Keeps resources for the people under its wing.",
+    "conflict": "Our reading: freezes and reads first. If pushed, opens all at once in a way the other side does not forget. Rarely starts the fight; the frontal display is defense, not attack. Risk: going straight from silence to full display with nothing in between."
+  },
+  "careers": [
+    {
+      "path": "Security, safety and protective roles (wildlife ranger, safeguarding officer, risk lead)",
+      "why": "Our reading: the Dog's protective loyalty and the nest-defense display; calm watch with a decisive response."
+    },
+    {
+      "path": "Performance that arrives late in the evening: stage, keynote, closing argument",
+      "why": "Our reading: Leo's Sun-ruled presence, used rarely and at the right moment, like the wing display."
+    },
+    {
+      "path": "Field biology, birding guide, river and wetland conservation",
+      "why": "Our reading: patience on one stretch of water; the slow stalk and exact strike (s7, s8)."
+    },
+    {
+      "path": "Judge, auditor, investigator",
+      "why": "Our reading: China Highlights lists judge and police among Dog careers (s5); the sunbittern watches long and strikes once."
+    },
+    {
+      "path": "Design and visual craft where the reveal matters (exhibition, lighting, packaging)",
+      "why": "Our reading: a body built around one hidden, startling pattern."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Pronghorn",
+      "slug": "pronghorn",
+      "reason": "Aries x Horse. Horse shares the Dog's trine (Tiger, Horse, Dog) and Aries is Fire like Leo. Double harmony. (The live page already pairs these.)"
+    },
+    {
+      "name": "Lanner Falcon",
+      "slug": "lanner-falcon",
+      "reason": "Sagittarius x Tiger. Tiger is in the Dog's trine and Sagittarius completes the Fire trio with Leo. Tiger's Wood is the one element that checks Earth, so this pair keeps the sunbittern from going too still."
+    },
+    {
+      "name": "Harpy Eagle",
+      "slug": "harpy-eagle",
+      "reason": "Leo x Tiger. Same sign, and Tiger sits in the Dog's trine. A fellow Leo who shows its power openly."
+    },
+    {
+      "name": "Fennec Fox",
+      "slug": "fennec-fox",
+      "reason": "Gemini x Rabbit. Rabbit is the Dog's secret friend (six harmonies); Gemini Air feeds Leo Fire. (Already on the live page.)"
+    },
+    {
+      "name": "Crowned Crane",
+      "slug": "crowned-crane",
+      "reason": "Libra x Rabbit. Rabbit secret friend; Libra Air with Leo Fire. Another bird that dances its display, so they read each other."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Mantis Shrimp",
+      "slug": "mantis-shrimp",
+      "reason": "Aquarius x Dragon. Dragon-Dog is the traditional six-clash pair and Aquarius is Leo's opposite sign. Both systems pull apart."
+    },
+    {
+      "name": "Rhinoceros Hornbill",
+      "slug": "rhinoceros-hornbill",
+      "reason": "Leo x Dragon. Same Western sign, but the Dragon-Dog clash: two Leos competing for the same light, one of them unwilling to wait."
+    }
+  ],
+  "candidate_lines": [
+    "On your own stretch of stream you can stand still long enough that the herons stop noticing you, and then one opening of the wings shows two suns you were carrying the whole time.",
+    "Leo handed you a sun to show and the Dog handed you a post to keep, so you hold the sun folded at the post until something threatens the nest.",
+    "Someone close to you has seen your full display exactly once, and years later they still describe it by its colors.",
+    "When danger comes near the people you shelter, you would rather drag one wing through the mud and look foolish than let it find them.",
+    "You walk the shallows one step at a time with your neck drawn back, and the strike lands so late that onlookers call it luck.",
+    "Your nearest kin lives across an ocean on one island, and the people who truly read you have rarely lived close by."
+  ],
+  "fact_audit": [
+    {
+      "fact": "At rest the Sunbittern is a close, fine barring of black, brown and grey, and the bird is often overlooked even where it is common, standing quietly along a stream or swamp edge.",
+      "verdict": "OK (soften)",
+      "note": "Plumage: 'fine linear patterns of black, grey and brown' (s6); 'cryptic... perfectly camouflaged... in dappled sunlight' (s7). 'Often overlooked even where it is common' was not found in any source I opened; UNVERIFIABLE as worded. Suggest 'its fine black, grey and brown barring blends into dappled stream light'.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "When alarmed, it spreads both wings and its tail into a wide, flat display of chestnut and gold false eyespots, invisible when folded.",
+      "verdict": "OK",
+      "note": "Wings and tail are fanned toward an intruder; two large chestnut patches edged black and white on a yellowish, grey area (s8). Wikipedia gives eyespots of red, yellow and black, used in threat, courtship and to startle predators (s6). Grzimek calls it the frontal display, a defensive response once mistaken for courtship (s7).",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Hunts by walking a stream edge in slow, deliberate steps and striking suddenly with its long neck and spear-shaped bill to take fish, amphibians, crustaceans and insects.",
+      "verdict": "OK",
+      "note": "'Stalks prey deliberately, with neck retracted... spears prey with quick jabs' (s7); walks slowly, heron-like jab (s8). Diet: insects are an important part, plus crabs, shrimps, fish, tadpoles, frogs, eels, lizards (s6). Consider putting insects first.",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Typically found singly or in pairs, holding a stretch of stream or forest water rather than gathering in flocks.",
+      "verdict": "OK",
+      "note": "Grzimek: typically seen alone or in pairs (s7). 'Holding a stretch' (territoriality) is not stated in sources opened; sedentary per s8. Keep 'singly or in pairs', drop 'holding a stretch' or soften.",
+      "source_ids": [
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "fact": "If a nest is approached, a parent will often perform a broken-wing display, feigning injury to draw a predator away before flying off unharmed.",
+      "verdict": "OK (minor embellishment)",
+      "note": "Grzimek: one wing is dragged along the ground to distract predators from the nest (s7); s8 describes ruffled back and open wing dragged with hisses. 'Often' and 'flying off unharmed' are not in the sources; cut those words.",
+      "source_ids": [
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Sole member of its family, Eurypygidae; genetic study places its nearest living relative as the kagu, a flightless bird found only in New Caledonia.",
+      "verdict": "OK (one word)",
+      "note": "Sole member of Eurypygidae; molecular studies indicate kagu and sunbittern are each other's closest living relatives, a minor Gondwanan lineage (s6, s7, s10). The kagu is usually called 'nearly flightless'; prefer that.",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Header hanzi 鳽 (rail__han and serial-han), pinyin jiān.",
+      "verdict": "WRONG (incomplete)",
+      "note": "鳽 jiān alone is a generic word for small herons and pond herons (Handian, s11), so on its own it names a heron, not this bird. The sunbittern's Chinese name is 日鳽 rì jiān, 'sun heron' (s10). Use 日鳽 rì jiān; the sun character also carries the Leo link.",
+      "source_ids": [
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Proverb 犬馬之勞 quǎn mǎ zhī láo: modest offer of devoted service.",
+      "verdict": "OK",
+      "note": "Dictionary gloss: to serve like a dog or a horse, humble service (s13). Labelled on the page as our own pairing, which is honest.",
+      "source_ids": [
+        "s13"
+      ]
+    }
+  ],
+  "page_bugs": [
+    "Moon section prints a fixed date: 'Your next full moon, Wednesday, July 29, 2026, 19 days from today' (also Jul 28 to 30 day cards). Today is 2026-11-08, so this static text is stale unless JavaScript overwrites it. Same block appears on the Steller's Sea Eagle page.",
+    "No Purple Star star assignment on this page and no 'Primal Zodiac' string (checked). The Purple Star section correctly says charts come from lunar birth date and hour.",
+    "No January/February lunar New Year note, correct for Leo."
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "slug": "kissing-gourami",
+  "name": "Kissing Gourami",
+  "sign": "Libra",
+  "year": "Monkey",
+  "element": "Metal (from the Monkey); Libra adds Air, cardinal.",
+  "sources": [
+    {
+      "id": "g1",
+      "title": "Libra (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Libra_(astrology)"
+    },
+    {
+      "id": "g2",
+      "title": "Libra zodiac sign, Astrotheme",
+      "url": "https://www.astrotheme.com/libra-zodiac-sign.php"
+    },
+    {
+      "id": "g3",
+      "title": "Monkey (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Monkey_(zodiac)"
+    },
+    {
+      "id": "g4",
+      "title": "Year of the Monkey, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/monkey.htm"
+    },
+    {
+      "id": "g5",
+      "title": "Chinese zodiac (trines, Six Harmonies, Six Clashes, harms), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "g6",
+      "title": "Helostoma temminkii (green kisser), Animal Diversity Web (cited on live page)",
+      "url": "https://animaldiversity.org/accounts/Helostoma_temminkii/"
+    },
+    {
+      "id": "g7",
+      "title": "Kissing gourami, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kissing_gourami"
+    },
+    {
+      "id": "g8",
+      "title": "Helostoma temminckii species record, tropicals.cn (Chinese name 接吻鱼; aliases 吻鲈, 桃花鱼, 接吻鲈)",
+      "url": "https://tropicals.cn/en/species/compare/bunocephalus-knerii/helostoma-temminckii"
+    },
+    {
+      "id": "g9",
+      "title": "桃花 táohuā and 桃花运 táohuāyùn, Chinese Notes dictionary",
+      "url": "https://chinesenotes.com/words/16129.html"
+    },
+    {
+      "id": "g10",
+      "title": "相濡以沫 不如相忘於江湖, Our China Story (Zhuangzi, 大宗師)",
+      "url": "https://www.ourchinastory.com/zh/2651"
+    },
+    {
+      "id": "g11",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Charming, sociable, refined and fair; dislikes violence; a unifier who keeps the peace, often by not insisting on its own view. Romantic and idealistic, can confuse the pleasure of courtship with love; can turn suddenly cold when disappointed. Shadow: indecision, self-indulgence, mood swings.",
+    "planet": "Venus (Saturn exalted in Libra)",
+    "element": "Air",
+    "modality": "Cardinal; symbol the scales of Themis; opposite sign Aries",
+    "source_ids": [
+      "g1",
+      "g2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Clever, quick-witted, versatile; fast learners and crafty opportunists who enjoy challenges. Shadow: mischievous, restless, pranks that hurt, can read as sly. In love: sociable, bored quickly, commits fully once the right partner is found.",
+    "yinyang": "Yang",
+    "element": "Metal (fixed); earthly branch 申 shēn; Monkey hours 15:00 to 17:00",
+    "trine": "Rat, Dragon, Monkey",
+    "secret_friend": "Snake (Six Harmonies)",
+    "clash": "Tiger (Six Clashes); harm pair Pig",
+    "lucky": null,
+    "source_ids": [
+      "g3",
+      "g4",
+      "g5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Chinese, Zhuangzi (大宗師 Dà Zōngshī)",
+      "meaning": "泉涸，魚相與處於陸，相呴以濕，相濡以沫，不如相忘於江湖 (quán hé, yú xiāng yǔ chǔ yú lù, xiāng xǔ yǐ shī, xiāng rú yǐ mò, bùrú xiāng wàng yú jiāng hú). When the spring dries, the fish lie together on land, wetting each other with breath and spittle; better to forget each other in the rivers and lakes. 相濡以沫 became the idiom for loyalty in hardship. A mouth-to-mouth fish image from a 4th century BCE text, and it pairs honestly with a fish that survives poor water by gulping air. Do not claim Zhuangzi meant this species.",
+      "source_ids": [
+        "g10"
+      ]
+    },
+    {
+      "culture": "Chinese common names",
+      "meaning": "Chinese aquarium names: 接吻魚 jiēwěnyú, 'kissing fish' (simplified 接吻鱼), with aliases 吻鱸 wěnlú and 桃花魚 táohuāyú, 'peach blossom fish' (likely for the pink morph; that reason is our inference). 桃花 táohuā in Chinese fortune-telling is romantic attraction, and 桃花運 táohuāyùn is luck in love. A love-luck name stuck to a fish whose 'kiss' is a contest.",
+      "source_ids": [
+        "g8",
+        "g9"
+      ]
+    },
+    {
+      "culture": "Southeast Asia, food and livelihood",
+      "meaning": "An important food fish in Southeast Asia and sometimes farmed; most of the world knows it as an aquarium pet. The working fish behind the pink one.",
+      "source_ids": [
+        "g6",
+        "g7"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "No myth, totem or spirit-animal tradition for this species was found in any ethnographic or classical source. Thai and Indonesian local names (pla mo tan, tambakan) appear only on hobby sites; not verified. 'Kissing fish brings romance' feng shui claims: none found in a real source.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: Libra's scales and the Monkey's wit, in a fish whose famous kiss is a measured shove. Libra wants things balanced; the Monkey wants to know exactly where it stands. Yang Metal gives the press its edge, cardinal Air starts the contact. The result settles questions by closeness rather than distance, with charm on the surface and a contest underneath.",
+    "gifts": "Our reading: reads standing and balance fast; makes a real contest look like play (Monkey); keeps the peace by settling things rather than avoiding them; adapts when the water goes bad (air-breathing). Rare fluency in both diplomacy and challenge.",
+    "shadow": "Our reading: testing closeness that never needed a test. The Monkey's prank that stings meets Libra's sudden coldness when disappointed. And the bred pink: performing the agreeable version others expect while the grey-green animal underneath gets no say.",
+    "love": "Our reading: Venus-ruled, romantic, a little addicted to the courtship itself (Astrotheme's Libra note) and easily bored (Monkey). Needs a partner who can meet the press without taking it as an attack. Once the right one is found, the Monkey commits fully. The Zhuangzi line is its lesson: sometimes love is letting each other swim free.",
+    "money": "Our reading: Libra's fortune runs through partnerships; the Monkey is a trader and opportunist (China Highlights lists accounting, banking, stock trading). Good at deals made face to face; risk of buying beauty or comfort on impulse.",
+    "conflict": "Our reading: moves in, mouth first, and keeps it ritual rather than bloody. Settles it and leaves; no nest-guarding afterward. The risk is starting a contest just to feel where the edges are."
+  },
+  "careers": [
+    {
+      "path": "Mediation, negotiation, labour or diplomatic work",
+      "why": "Our reading: Libra as mediator and judge (Astrotheme), plus a Monkey's nerve to press the real point."
+    },
+    {
+      "path": "Trial law, debate, sales",
+      "why": "Our reading: a ritual contest that ends without a wound; Monkey careers list sales (China Highlights)."
+    },
+    {
+      "path": "Trading, deal-making, banking",
+      "why": "Our reading: Monkey opportunism and Libra's partnership luck; quick reading of where each side stands."
+    },
+    {
+      "path": "Fashion, styling, design, aesthetics",
+      "why": "Our reading: Libra's aesthetic fields; and the pink-versus-wild theme, knowing the difference between the bred look and the real one."
+    },
+    {
+      "path": "Aquaculture, water quality, freshwater conservation",
+      "why": "Our reading: the animal's own world; a working food fish in slow, low-oxygen water."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Meerkat",
+      "slug": "meerkat",
+      "reason": "Gemini x Rat. Rat sits in the Monkey trine (Rat, Dragon, Monkey) and Gemini shares Libra's Air."
+    },
+    {
+      "name": "Superb Lyrebird",
+      "slug": "superb-lyrebird",
+      "reason": "Gemini x Dragon. Dragon trine plus Air with Air: two performers who know a show from the real thing."
+    },
+    {
+      "name": "Paradise Tanager",
+      "slug": "paradise-tanager",
+      "reason": "Libra x Snake. Snake is the Monkey's secret friend (Six Harmonies), and the same sun sign."
+    },
+    {
+      "name": "Golden Lion Tamarin",
+      "slug": "golden-lion-tamarin",
+      "reason": "Leo x Rat. Rat trine, and Leo Fire is fed by Libra Air."
+    },
+    {
+      "name": "Mantis Shrimp",
+      "slug": "mantis-shrimp",
+      "reason": "Aquarius x Dragon. Dragon trine plus Air with Air."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Arabian Oryx",
+      "slug": "arabian-oryx",
+      "reason": "Libra x Tiger. Same sun sign, but Tiger-Monkey is a Six Clash pair: easy rapport on top, a standing contest below."
+    },
+    {
+      "name": "Wolverine",
+      "slug": "wolverine",
+      "reason": "Aries x Tiger. Tiger-Monkey clash plus Aries, Libra's opposite sign. Pressure from both systems."
+    }
+  ],
+  "candidate_lines": [
+    "In a slow brown river you swim straight at the fish everyone else is circling, lips out, and the whole pond thinks it is watching a kiss. It is a question, and you will have the answer in seconds.",
+    "Your mouth is lined for scraping stone clean. That is how you love: close contact, small rasping passes, until the surface underneath finally shows.",
+    "When the pond goes stale you rise and take a gulp of plain air while everyone else waits for the water to improve. It looks rude to them. It is how you stay alive.",
+    "The pink version of you is the one the world bred for the glass tank. Out in the flooded forest you are grey-green with one dark bar near the tail, and far more capable.",
+    "Once the eggs are laid and drifting, you leave them to the current. You settled what needed settling. Circling back would feel like doubting your own verdict.",
+    "Zhuangzi's fish kept each other alive with wet breath on dry land, then said it would be better to forget each other in the open river. Some loves you keep by holding on. Some you keep by letting them swim."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 吻 (rail__han and serial-han), shown with pinyin wěn.",
+      "verdict": "WRONG (as a name)",
+      "note": "吻 wěn means kiss or lips; it is not the fish's name. The Chinese name is 接吻魚 jiēwěnyú (traditional; simplified 接吻鱼), with alias 吻鱸 wěnlú. If one glyph must stay, 吻 works only as a labelled pun ('the kiss'), not as the animal's name. Pinyin wěn is correct.",
+      "source_ids": [
+        "g8"
+      ]
+    },
+    {
+      "fact": "Two kissing gourami press thick, extendable mouths together in a prolonged, forceful lock, most often between rivals of the same sex; a ritualized test of strength, not affection.",
+      "verdict": "OK (soften)",
+      "note": "ADW: kissing occurs often during feeding and sometimes in courtship or combat; most accepted explanation is ritualized aggression. Wikipedia: mouth fighting, pressing for a few seconds; males challenge rivals. 'Prolonged' and 'most often same-sex' go beyond the sources; say 'a few seconds' and drop the same-sex claim.",
+      "source_ids": [
+        "g6",
+        "g7"
+      ]
+    },
+    {
+      "fact": "Mouth lined with hundreds of small, rust-colored, mucous-membrane teeth used to rasp algae.",
+      "verdict": "OK",
+      "note": "ADW: no jaw or palate teeth; hundreds of small rust-colored teeth in the mucous membrane, covered with enamel. Wikipedia calls them horny teeth on the lips, used to scrape algae.",
+      "source_ids": [
+        "g6",
+        "g7"
+      ]
+    },
+    {
+      "fact": "Labyrinth organ lets them gulp air at the surface and survive in water too oxygen-poor for most fish.",
+      "verdict": "OK",
+      "note": "ADW: labyrinth apparatus in paired chambers; gulps and holds air; survives oxygen-poor water.",
+      "source_ids": [
+        "g6"
+      ]
+    },
+    {
+      "fact": "At the start of the rainy season they migrate from slower water into shallow flooded rivers and lakes to spawn, moving toward open, exposed conditions rather than cover.",
+      "verdict": "OK (fix wording)",
+      "note": "ADW and Wikipedia: spawn once a year at the start of the rainy season (May to October in Thailand); adults move through rivers to shallow lakes, lagoons and flooded forests. 'Open, exposed conditions rather than cover' is our gloss and contradicts 'flooded forest'; drop it.",
+      "source_ids": [
+        "g6",
+        "g7"
+      ]
+    },
+    {
+      "fact": "After spawning they invest nothing further in eggs or fry; no nest-guarding or parental care, unlike many closely related fish.",
+      "verdict": "OK",
+      "note": "ADW: unlike closely related species, they do not build nests or care for their young. Wikipedia agrees.",
+      "source_ids": [
+        "g6",
+        "g7"
+      ]
+    },
+    {
+      "fact": "Wild fish are grey to olive-green with a dark bar near the tail; the pale pink aquarium color is an artificially bred morph.",
+      "verdict": "OK",
+      "note": "ADW: wild forms grey to green with a dark bar along the base of the caudal fin; pink fish usually farmed. Wikipedia: pink is a leucistic form achieved by selective breeding in captivity.",
+      "source_ids": [
+        "g6",
+        "g7"
+      ]
+    },
+    {
+      "fact": "Tagline: 'settles every question mouth to mouth, and never once breaks the skin.'",
+      "verdict": "UNVERIFIABLE",
+      "note": "No source says the lip-lock never injures. Cut 'never once breaks the skin' or label it as image.",
+      "source_ids": []
+    },
+    {
+      "fact": "Purple Star (Zi Wei Dou Shu) star claim.",
+      "verdict": "OK (none present)",
+      "note": "No Purple Star star assignment found on this page.",
+      "source_ids": [
+        "g11"
+      ]
+    }
+  ]
+}

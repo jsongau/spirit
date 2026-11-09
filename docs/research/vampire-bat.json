@@ -1,0 +1,339 @@
+{
+  "slug": "vampire-bat",
+  "name": "Vampire Bat",
+  "sign": "Aquarius",
+  "year": "Dog",
+  "element": "Earth (from the Dog); Aquarius adds Air, fixed",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Aquarius (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aquarius_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Unconventional, optimistic and fun: What to know about the Aquarius personality, Lisa Stardust, TODAY via Yahoo Life (2023)",
+      "url": "https://www.yahoo.com/lifestyle/articles/unconventional-optimistic-fun-know-aquarius-143052022.html"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (Dog row, compatibility table), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Dog, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/dog.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Camazotz, Wikipedia (Popol Vuh, House of Bats)",
+      "url": "https://en.wikipedia.org/wiki/Camazotz"
+    },
+    {
+      "id": "s6",
+      "title": "Bats in Chinese language and culture, Victor Mair, Language Log (University of Pennsylvania)",
+      "url": "https://languagelog.ldc.upenn.edu/nll/?p=46910"
+    },
+    {
+      "id": "s7",
+      "title": "Living Vampires, Johan Eklöf and Jens Rydell, Royal Ontario Museum magazine",
+      "url": "https://www.rom.on.ca/magazine/living-vampires"
+    },
+    {
+      "id": "s8",
+      "title": "投桃报李 explainer, Handian (zdic.net), citing Shijing, Da Ya, 抑 Yì",
+      "url": "https://www.zdic.net/ts/han/2018/09/542.html"
+    },
+    {
+      "id": "s9",
+      "title": "Desmodus rotundus, Animal Diversity Web (University of Michigan)",
+      "url": "https://animaldiversity.org/accounts/Desmodus_rotundus/"
+    },
+    {
+      "id": "s10",
+      "title": "Wilkinson 1984, Reciprocal food sharing in the vampire bat, Nature (USF Digital Commons record; withdrawn duplicate points to kip_articles/5110)",
+      "url": "https://digitalcommons.usf.edu/kip_articles/4539"
+    },
+    {
+      "id": "s11",
+      "title": "Vampire bat, Wikipedia (survival about two days; reciprocity vs relatedness)",
+      "url": "https://en.wikipedia.org/wiki/Vampire_bat"
+    },
+    {
+      "id": "s12",
+      "title": "Common vampire bat, Wikipedia (kin bias, mutual grooming, draculin)",
+      "url": "https://en.wikipedia.org/wiki/Common_vampire_bat"
+    },
+    {
+      "id": "s13",
+      "title": "Vampire bats form friendships through grooming before sharing blood, ScienceDaily 2020 (on Carter et al. 2020, Current Biology)",
+      "url": "https://www.sciencedaily.com/releases/2020/03/200319110351.htm"
+    },
+    {
+      "id": "s14",
+      "title": "Carter et al. 2012, Adult vampire bats produce contact calls when isolated, PLoS ONE (PMC3375292)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3375292"
+    },
+    {
+      "id": "s15",
+      "title": "The Curious, Bloody Lives of Vampire Bats, Bill Schutt, Natural History magazine",
+      "url": "https://nhmag.com/features/31700/the-curious-bloody-lives-of-vampire-bats?page=2"
+    },
+    {
+      "id": "s16",
+      "title": "吸血蝠属 (Desmodus), Chinese Wikipedia mirror, caption 吸血蝠 (D. rotundus)",
+      "url": "https://zhwiki.oracleblog.org/wiki/%E5%90%B8%E8%A1%80%E8%9D%A0%E5%B1%AC"
+    },
+    {
+      "id": "s17",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Community-minded, humanitarian, independent, inventive, loyal and optimistic; shadow is aloof, detached, hard to get to know, rigid.",
+    "planet": "Saturn (traditional, shared with Capricorn); Uranus (modern)",
+    "element": "Air (with Gemini and Libra)",
+    "modality": "Fixed; opposite sign Leo",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Loyal, honest, kind and protective of the people they love; guarded at first, warm once trust is built. Shadow: keeps a low profile, struggles to say what they think, can read as stubborn.",
+    "yinyang": "Yang",
+    "element": "Earth (fixed); earthly branch 戌 xū",
+    "trine": "Tiger, Horse, Dog",
+    "secret_friend": "Rabbit",
+    "clash": "Dragon",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Shijing 詩經 Shījīng, Da Ya, poem 抑 Yì",
+      "meaning": "投我以桃，報之以李 tóu wǒ yǐ táo, bào zhī yǐ lǐ: 'throw me a peach and I return a plum', source of the idiom 投桃報李 tóu táo bào lǐ, reciprocity of kindness. The live page already uses this idiom; it is the single best-fitting sourced item for an animal whose real science is reciprocal food sharing. Credit the Shijing poem by name.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "culture": "Chinese (bats in general)",
+      "meaning": "The second syllable of 蝙蝠 biānfú, bat, is a homophone of 福 fú, good fortune, so bats are lucky motifs; Qing embroidery hides five bats for the five blessings. Applies to bats generally, not vampire bats (absent from China). The header 吸血蝠 xīxuè fú itself contains 蝠, which is a fair, honest bridge.",
+      "source_ids": [
+        "s6",
+        "s9"
+      ]
+    },
+    {
+      "culture": "K'iche' Maya (Popol Vuh)",
+      "meaning": "Camazotz, 'death bat' in K'iche', a bat spirit the Hero Twins meet in the House of Bats in Xibalba; it snatches off Hunahpu's head. Mesoamerican bats tied to night, death and sacrifice. Not tied to vampire bats specifically, and scholars (Brady and Coltman) dispute reading much Maya bat imagery as Camazotz. Use as 'a bat of the same lands', carefully.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "European naming history",
+      "meaning": "Vampire bats were unknown in the Old World until Spanish conquistadors described them; Linnaeus gave several bat species the name 'vampire'; bats and vampires did not merge in popular imagination until the 19th century. The legend named the bat, not the other way round. Draculin, the saliva anticoagulant, is named after Count Dracula.",
+      "source_ids": [
+        "s7",
+        "s12"
+      ]
+    },
+    {
+      "culture": "Persian and Chinese (per ADW)",
+      "meaning": "ADW: the bat is a symbol of longevity and happiness in traditional stories, while Europeans associated bats with the devil. Secondary source, one line; prefer s6.",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "'Vampire bat spirit animal means rebirth / initiation' claims on totem blogs; no traditional source located.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Air (Aquarius, Saturn's sign) meets yang Earth (Dog). Aquarius thinks in systems and community; the Dog brings loyalty to specific faces. The crossing is the colony accountant with a warm heart: generosity that is real and also remembered. The sourced bridge is strong and unusual: Wilkinson's 1984 Nature paper found sharing depended on both relatedness and past association, and later work found reciprocity predicted sharing better than kinship among familiar bats (s10, s11).",
+    "gifts": "Our reading: notices who came home empty, gives before being asked, keeps the group alive through small regular exchanges, builds trust slowly through contact first (grooming escalates before sharing begins, s13), long memory for kindness.",
+    "shadow": "Our reading: Saturn's ledger. The tally kept in the dark until it is large; withdrawing from someone who did not reciprocate without telling them why; Aquarian detachment (s2) passing for coldness. The Dog's difficulty saying what it thinks (s4) makes the ledger silent.",
+    "love": "Our reading: slow approach, small tests, then deep loyalty. Wants a partner who closes the loop and receives help without embarrassment. Close quarters matter more than grand gestures.",
+    "money": "Our reading: mutual insurance more than private hoard. Comfortable pooling, lending and splitting; risks resentment when the pool is uneven. Good with cooperatives and shared funds if the rules are written down.",
+    "conflict": "Our reading: goes quiet, pulls back its offers, then names the imbalance all at once. The 投桃報李 ideal says return the plum; the fix is to say the peach was noticed early."
+  },
+  "careers": [
+    {
+      "path": "Mutual aid, cooperatives, credit unions, community organizing",
+      "why": "Our reading: Aquarius community instinct plus sharing as survival insurance (s10, s13)."
+    },
+    {
+      "path": "Actuarial science, insurance, risk pooling",
+      "why": "Our reading: the sharing system works because any bat can go hungry on a given night (s11, s15); pooled risk is the job."
+    },
+    {
+      "path": "Blood services, transfusion medicine, night-shift nursing",
+      "why": "Our reading: literal and night-active; giving blood so another survives."
+    },
+    {
+      "path": "Network science, social research, behavioural economics",
+      "why": "Our reading: reciprocity and partner choice as a field of study; Saturn's patience for long data."
+    },
+    {
+      "path": "HR, mediation, partnership and alliance management",
+      "why": "Our reading: tracking who carried the load and making the exchange fair."
+    },
+    {
+      "path": "Bat conservation and rabies or public-health fieldwork",
+      "why": "Our reading: Dog's protectiveness pointed at the colony itself; flagged as a fit, not a sourced claim."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Maned Wolf",
+      "slug": "maned-wolf",
+      "reason": "Aquarius x Tiger. Same sign, and Tiger is in the Dog trine. Two loners who are loyal to a few."
+    },
+    {
+      "name": "Pronghorn",
+      "slug": "pronghorn",
+      "reason": "Aries x Horse. Horse is in the Dog trine; Aries Fire pairs with Aquarius Air. Horse Fire also feeds Dog Earth."
+    },
+    {
+      "name": "Fennec Fox",
+      "slug": "fennec-fox",
+      "reason": "Gemini x Rabbit. Rabbit is the Dog's secret friend (six harmonies); Gemini is a fellow Air sign. Night animals with big ears."
+    },
+    {
+      "name": "Arabian Oryx",
+      "slug": "arabian-oryx",
+      "reason": "Libra x Tiger. Tiger trine plus a fellow Air sign: double harmony."
+    },
+    {
+      "name": "Crowned Crane",
+      "slug": "crowned-crane",
+      "reason": "Libra x Rabbit. Secret friend plus Air with Air; Libra's sense of fair exchange meets the ledger."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Rhinoceros Hornbill",
+      "slug": "rhinoceros-hornbill",
+      "reason": "Leo x Dragon. Dog and Dragon are the six-clash pair, and Leo is Aquarius's opposite sign. Both systems pull apart."
+    },
+    {
+      "name": "Mantis Shrimp",
+      "slug": "mantis-shrimp",
+      "reason": "Aquarius x Dragon. Same sign, so the minds click, but the Dog-Dragon clash runs underneath."
+    }
+  ],
+  "candidate_lines": [
+    "In the dark of the roost you can tell, from a voice alone, which friend came back hungry tonight.",
+    "Three years on, you still know who fed you the night you came home empty, and you have quietly paid it back twice.",
+    "Grooming first, then the share. Someone has to sit close to you for a long while before you open the real reserve.",
+    "Your colony is small on purpose: a few dozen voices you know in one warm crevice beats a whole cave of strangers.",
+    "The night you finally say the tally out loud, it lands harder than you meant, because you kept it in the dark so long.",
+    "Someone throws you a peach and gets a plum back, and may never guess you had been counting the whole season."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi (rail__han and serial-han): 吸血蝠 with pinyin xīxuè fú.",
+      "verdict": "OK",
+      "note": "Chinese Wikipedia (genus 吸血蝠属 xīxuè fú shǔ, Desmodus) captions D. rotundus as 吸血蝠 (s16). Traditional form is identical. Colloquial 吸血蝙蝠 xīxuè biānfú also exists. Pinyin shown. No change needed.",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "fact": "Common vampire bats regurgitate blood for hungry roostmates and preferentially share with individuals who shared with them before: non-kin reciprocal altruism.",
+      "verdict": "OK",
+      "note": "Wilkinson 1984 (Nature): sharing depends equally and independently on relatedness and association; unrelated bats reciprocally exchange blood in captivity (s10). Among equally familiar bats reciprocity predicted sharing better than relatedness (s11). Wikipedia also notes field sharing outside mothers is kin-biased (s12), so say 'kin and non-kin', not purely non-kin.",
+      "source_ids": [
+        "s10",
+        "s11",
+        "s12"
+      ]
+    },
+    {
+      "fact": "Heading 'The 60-hour window'; 'a vampire bat that misses two consecutive nights of feeding will starve to death'.",
+      "verdict": "OK (soften)",
+      "note": "Sources range: about two days (s11), less than three days (Schutt, s15), 'three nights in a row there is a high chance they'll die' (Carter, s13). 'Will starve' after exactly two nights is too absolute; say 'can starve within two to three nights'. The 60-hour figure circulates (a CSULB teaching page) but I found no primary source for it.",
+      "source_ids": [
+        "s11",
+        "s13",
+        "s15"
+      ]
+    },
+    {
+      "fact": "Vampire bats recognize individual roostmates by voice and track sharing histories over periods of months.",
+      "verdict": "UNVERIFIABLE (overstated)",
+      "note": "Carter et al. 2012 found isolation contact calls vary by individual and carry enough information for vocal discrimination, but did not test recognition in Desmodus directly; the evidence cited was from Diaemus youngi and anecdote (s14). No source reached shows bats 'tracking sharing histories over months'. Females do keep long-term roosting associations up to 12 years (s14). Rewrite as 'calls differ by individual, and roostmates keep bonds for years'.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "fact": "Blood sharing is typically preceded by social grooming; bonding before exchange.",
+      "verdict": "OK (soften 'typically')",
+      "note": "Wilkinson 1986 (via ADW): social grooming has more to do with food sharing than parasite removal; the groomed female then regurgitates for the groomer (s9). Carter et al. 2020: strangers groomed more over time and in some cases this led to sharing (s13). Supported for building relationships; 'typically preceded' on each share is not shown.",
+      "source_ids": [
+        "s9",
+        "s13"
+      ]
+    },
+    {
+      "fact": "Saliva contains draculin and other anticoagulants that keep the wound from clotting.",
+      "verdict": "OK",
+      "note": "Draculin isolated from vampire bat saliva (s9, s12).",
+      "source_ids": [
+        "s9",
+        "s12"
+      ]
+    },
+    {
+      "fact": "Vampire bats typically roost in groups of hundreds of individuals, often in tight contact.",
+      "verdict": "WRONG",
+      "note": "ADW: colonies usually 20 to 100 individuals, with up to 5,000 reported (s9). Change 'hundreds' to 'usually twenty to a hundred'.",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "fact": "Hero line: 'It refuses to share with those who didn't.'",
+      "verdict": "WRONG (overstated)",
+      "note": "Studies show sharing is predicted by past sharing and by kinship (s10, s11); they do not show strict refusal toward non-sharers. Say 'shares most with those who shared with it'.",
+      "source_ids": [
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Element panel: Aquarius Air 'operates as a Metal-adjacent sharpening' giving a 'Metal-over-Earth nature'.",
+      "verdict": "NO TRADITIONAL BASIS",
+      "note": "Wu Xing has no Air phase and no rule mapping Western Air to Metal; the page half-admits this. It is our invention presented in tradition's language. Relabel plainly as our reading or cut 'Metal-over-Earth' (it also appears in the profile intro).",
+      "source_ids": [
+        "s3"
+      ]
+    },
+    {
+      "fact": "Proverb 投桃報李 tóu táo bào lǐ, 'return a plum for a peach'.",
+      "verdict": "OK",
+      "note": "From Shijing, Da Ya, 抑 Yì: 投我以桃，報之以李 (s8). Gloss correct. Page could name the Shijing source; it currently only says the Dog pairing is our own reading, which is honest.",
+      "source_ids": [
+        "s8"
+      ]
+    }
+  ],
+  "page_bugs": [
+    "Lunar New Year note ('a birthday in those weeks can belong to the Rooster') is correct for Aquarius, which runs about 20 January to 18 February. Dog years 1994, 2006, 2018 correct.",
+    "No Purple Star star claim on this page.",
+    "Copy uses many em dashes and repeated 'is not X, it is Y' constructions in the hero and fact readings ('This is not generosity, it is reciprocity...'); banned by the writing rules.",
+    "Your People: Sunbittern (Leo x Dog) is offered as a best match on 'same year'; Leo is Aquarius's opposite sign. Fire and Air do pair, so it is defensible, but it is weaker than a trine or secret-friend pick.",
+    "'Virtue: Integrity' for Earth here vs 'Fidelity' on the beaver page: same element, two English words. Pick one sitewide."
+  ],
+  "could_not_source": "Could not source: the exact '60-hour' figure, individual vocal recognition tested in Desmodus, 'tracking sharing histories over months', any Indigenous belief specific to vampire bats (Camazotz is a bat spirit, not demonstrably a vampire bat), any spirit-animal meaning."
+}
