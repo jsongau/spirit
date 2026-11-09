@@ -1,0 +1,379 @@
+{
+  "slug": "cassowary",
+  "name": "Cassowary",
+  "sign": "Aries",
+  "year": "Rooster",
+  "element": "Metal (from the Rooster); Aries adds Fire, cardinal",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Aries (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aries_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "What does it mean to be an Aries? (Lisa Stardust quoted), Yahoo Lifestyle",
+      "url": "https://www.yahoo.com/lifestyle/does-mean-aries-everything-know-221049193.html"
+    },
+    {
+      "id": "s3",
+      "title": "Rooster (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rooster_(zodiac)"
+    },
+    {
+      "id": "s4",
+      "title": "Chinese zodiac (compatibility table: trines, six harmonies, six clashes), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s5",
+      "title": "Year of the Rooster, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/rooster.htm"
+    },
+    {
+      "id": "s6",
+      "title": "Cassowary, Wikipedia (claw 125 mm, 50 km/h, 1.5 m jump, casque, Kofron attack data, incubation 50 to 52 days, Ryparosa germination, Kalam, Maring)",
+      "url": "https://en.wikipedia.org/wiki/Cassowary"
+    },
+    {
+      "id": "s7",
+      "title": "Southern cassowary, Queensland Government (Endangered; claw up to 120 mm; casque spongy inside; males incubate about 50 days; First Nations names)",
+      "url": "https://www.qld.gov.au/environment/plants-animals/animals/cassowaries"
+    },
+    {
+      "id": "s8",
+      "title": "Mack and Jones 2003, Low-frequency vocalizations by cassowaries (Casuarius spp.), The Auk 120(4):1062, abstract via CZAW",
+      "url": "https://czaw.org/resources/low-frequency-vocalizations-by-cassowaries/"
+    },
+    {
+      "id": "s9",
+      "title": "Cassowary behavior fact sheet, San Diego Zoo Wildlife Alliance Library",
+      "url": "https://ielc.libguides.com/sdzg/factsheets/cassowary/behavior"
+    },
+    {
+      "id": "s10",
+      "title": "Campbell et al. 2023, The southern cassowary remains an important disperser, Austral Ecology 48(4):787-802",
+      "url": "https://ris.cdu.edu.au/ws/portalfiles/portal/74090234/Austral_Ecology_2023_Campbell_The_southern_cassowary_Casuarius_casuarius_johnsonii_remains_an_important_disperser.pdf"
+    },
+    {
+      "id": "s11",
+      "title": "Cultural Significance (Girringun Aboriginal Corporation member voices), Rainforest Rescue",
+      "url": "https://www.rainforestrescue.org.au/save-the-cassowary/cultural-significance/"
+    },
+    {
+      "id": "s12",
+      "title": "The Cassowary's Daughter, Alice Bulmer (on Ralph Bulmer 1967, 'Why is the cassowary not a bird?', Kalam)",
+      "url": "https://www.alicebulmer.com/the-cassowarys-daughter/"
+    },
+    {
+      "id": "s13",
+      "title": "World's most dangerous bird raised by humans 18,000 years ago (Douglass et al., PNAS 2021), KRDO/CNN",
+      "url": "https://krdo.com/news/2021/09/27/worlds-most-dangerous-bird-raised-by-humans-18000-years-ago-study-suggests/"
+    },
+    {
+      "id": "s14",
+      "title": "Cassowary (鶴鴕 hètuó, also 食火雞), Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/%E9%B9%A4%E9%B8%B5"
+    },
+    {
+      "id": "s15",
+      "title": "Jyut Dictionary: 食火雞 shí huǒ jī, cassowary (archaic: ostrich)",
+      "url": "https://jyutdictionary.com/dictionary/entry/%E9%A3%9F%E7%81%AB%E9%9B%9E"
+    },
+    {
+      "id": "s16",
+      "title": "MDBG dictionary: 鴕 tuó, ostrich",
+      "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=1&wdqb=%E9%B8%B5"
+    },
+    {
+      "id": "s17",
+      "title": "Zi wei dou shu, Wikipedia (chart needs Chinese-calendar birth year, month, day and hour)",
+      "url": "https://en.wikipedia.org/wiki/Zi_wei_dou_shu"
+    },
+    {
+      "id": "s18",
+      "title": "Leonard Andy and the untold stories of Djiru people and Gunduy, SBS",
+      "url": "https://www.sbs.com.au/language/english/audio/leonard-andy-and-the-untold-stories-of-djiru-people-and-gunduy"
+    },
+    {
+      "id": "s19",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Impulsive, passionate, determined, strategic and direct; driven and competitive; temper can run hot (astrologer Lisa Stardust in s2). Sign colour red (s1).",
+    "planet": "Mars (Sun exalted in Aries)",
+    "element": "Fire (with Leo and Sagittarius)",
+    "modality": "Cardinal; opposite sign Libra; Sun in Aries about 21 March to 20 April",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Hardworking, resourceful, courageous, talented, self-assured, observant, disciplined; loyal friends who keep their word. Shadow: brags, gets agitated when not listened to; a soft heart that can cost them (China Highlights).",
+    "yinyang": "Yin",
+    "element": "Metal (fixed); earthly branch 酉 yǒu",
+    "trine": "Ox, Snake, Rooster",
+    "secret_friend": "Dragon",
+    "clash": "Rabbit (Wikipedia also lists Dog as six-harm and Horse as punishment)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Chinese name",
+      "meaning": "The cassowary is 鶴鴕 hètuó, 'crane-ostrich', and is also called 食火雞 shíhuǒjī, 'fire-eating fowl'. The second name ends in 雞 jī, the same character as the Rooster of the zodiac: this crossing's year animal is written into the bird's Chinese name, and 'fire-eating' sits well with Aries fire. The page header uses 鴕 tuó alone, which means ostrich.",
+      "source_ids": [
+        "s14",
+        "s15",
+        "s16"
+      ]
+    },
+    {
+      "culture": "Kalam (Papua New Guinea Highlands)",
+      "meaning": "The Kalam regard cassowaries as kin, cousins to humans, and do not classify the cassowary as a bird; Ralph Bulmer's 1967 paper 'Why is the cassowary not a bird?' is the classic study. Wikipedia adds that Kalam use a special Pandanus register of speech when eating cassowary.",
+      "source_ids": [
+        "s12",
+        "s6"
+      ]
+    },
+    {
+      "culture": "New Guinea, deep time",
+      "meaning": "Douglass et al. (PNAS 2021) studied over 1,000 eggshell fragments 18,000 to 6,000 years old from two New Guinea rock shelters; most came from late-stage eggs, suggesting people hatched and raised chicks, which imprint easily, possibly thousands of years before chickens were domesticated. Some Highlands societies still raise chicks for ceremonial gift exchange (Wikipedia).",
+      "source_ids": [
+        "s13",
+        "s6"
+      ]
+    },
+    {
+      "culture": "Girramay and Djiru (Wet Tropics, Queensland)",
+      "meaning": "Girringun Aboriginal Corporation members describe the cassowary in stories, ceremonies and dances: Girramay Elder Uncle Claude Beeron tells of Goondoye, a man who became the solitary rainforest bird; Bryan Tobane describes the Gunduy dance, 'which describes how the cassowary moves and acts in the scrub'; Djiru woman Whitney Rassip: 'Every time I see a Gunduy I know that my culture is still alive.' Djiru artist Leonard Andy carries the story of Gunduy in his art (SBS). Tell as theirs, attributed, with no 'you' reading laid over it.",
+      "source_ids": [
+        "s11",
+        "s18"
+      ]
+    },
+    {
+      "culture": "First Nations names",
+      "meaning": "Queensland Government lists names including goondoi (Djiru Country), gumbugan (Mamu), kutini (Kuuku Ya'u) and wadthuuny (Gudang Yadhaykenu). Spellings differ between sources (Rainforest Rescue gives Gunduy, Gumbulgan, Kutani); use one source's spelling and credit it.",
+      "source_ids": [
+        "s7",
+        "s11"
+      ]
+    },
+    {
+      "culture": "Maring (Papua New Guinea)",
+      "meaning": "The Maring sacrificed dwarf cassowaries in certain rituals (Wikipedia only). Weak; context only.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Bunyip",
+      "meaning": "Unsourced, do not use as fact: the idea that cassowary encounters inspired the bunyip is one writer's hypothesis (Karl Brandt, per Wikipedia).",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Spirit-animal blogs",
+      "meaning": "Unsourced, do not use: generic 'cassowary totem means protection and boundaries' claims. No traditional source located.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: cardinal Fire (Aries, Mars, first to move) meets yin Metal (Rooster, standards, discipline, pride). Fire controls Metal, so the Aries heat keeps the Rooster's edge honed. The cassowary is that edge held in reserve: a quiet forager most of the year, with the fastest, hardest answer in the forest when the line is crossed.",
+    "gifts": "Our reading: real capability with no need to prove it, the discipline to do unglamorous daily work (the forest round), an honest temper that clears fast, and a reach that carries far with little noise.",
+    "shadow": "Our reading: being known only as the threat. Rooster pride plus Aries reflex can make every approach feel like a cornering. Fed birds grow bold: flattery and easy rewards make this crossing more reckless than danger does.",
+    "love": "Our reading: solitary outside the season that matters, then all in, and willing to do the long, unseen part alone (the father sits fifty days on the eggs). Needs a partner who respects territory and does not crowd.",
+    "money": "Our reading: Rooster thrift and standards with Aries impatience. Earns by work others overlook; invests in long, slow payoffs (seeds that germinate years later). Risk: impulse spending when provoked.",
+    "conflict": "Our reading: goes quiet and measures distance first, then one decisive move. Rarely sulks after. Practice: say where the line is before anyone reaches it."
+  },
+  "careers": [
+    {
+      "path": "Ecological restoration, forestry, land management",
+      "why": "Our reading: the seed carrier; work whose results show up years later under someone else's name."
+    },
+    {
+      "path": "Security, protective services, emergency response",
+      "why": "Our reading: force held in reserve, used once and decisively; Aries courage plus Rooster discipline."
+    },
+    {
+      "path": "Quality assurance, audit, inspection",
+      "why": "Our reading: the Rooster's sharp eye for standards with Aries directness in reporting."
+    },
+    {
+      "path": "Sound design, acoustics, broadcasting",
+      "why": "Our reading: the low boom that carries through the forest (Mack and Jones 2003)."
+    },
+    {
+      "path": "Single-founder businesses and solo practices",
+      "why": "Our reading: a solitary animal that holds its own home range and raises what it starts alone."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Rhinoceros Hornbill",
+      "slug": "rhinoceros-hornbill",
+      "reason": "Leo x Dragon. Dragon is the Rooster's secret friend (six harmonies); Leo is a fellow Fire sign. Another casqued rainforest seed-carrier."
+    },
+    {
+      "name": "Sand Cat",
+      "slug": "sand-cat",
+      "reason": "Sagittarius x Snake. Snake shares the Rooster's trine; Sagittarius is Fire. Both solitary and self-sufficient."
+    },
+    {
+      "name": "Three-wattled Bellbird",
+      "slug": "three-wattled-bellbird",
+      "reason": "Gemini x Ox. Ox completes the trine; Gemini Air feeds Aries Fire. A loud caller to match a deep one."
+    },
+    {
+      "name": "Secretary Bird",
+      "slug": "secretary-bird",
+      "reason": "Aries x Dragon. Same sign plus the six-harmony pair; a fellow kicker that strikes once."
+    },
+    {
+      "name": "Arctic Tern",
+      "slug": "arctic-tern",
+      "reason": "Sagittarius x Ox. Ox trine plus Fire harmony."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Crowned Crane",
+      "slug": "crowned-crane",
+      "reason": "Libra x Rabbit. Rooster and Rabbit are a six-clash pair, and Libra is Aries's opposite sign; both systems pull against each other."
+    },
+    {
+      "name": "Springbok",
+      "slug": "springbok",
+      "reason": "Aries x Rabbit. Same sun sign, so the pace feels familiar, but the Rooster-Rabbit clash sits underneath."
+    }
+  ],
+  "candidate_lines": [
+    "You walk your stretch of forest every day, dropping seeds nobody sees you plant, and years later the trees come up with no one's name on them but yours.",
+    "Your strongest signal sits below hearing. People three ridges away feel your mood in their chest before you have said a word.",
+    "The claw stays folded through whole years. When it does come out, it comes out once, and the argument ends in the undergrowth where it started.",
+    "You will sit on what you started for fifty days with nobody bringing you food, and you would rather do that than hand the clutch to someone careless.",
+    "Your Aries temper burns off in a minute. The Rooster's standards do not, and you remember exactly who trampled the trail to the fig tree.",
+    "Be careful who feeds you. Easy rewards make you bolder and less careful than danger ever has."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi (rail__han and serial-han): 鴕",
+      "verdict": "WRONG",
+      "note": "鴕 tuó means ostrich (鴕鳥 tuóniǎo). The cassowary is 鶴鴕 hètuó (simplified 鹤鸵), also 食火雞 shíhuǒjī. Recommend 鶴鴕 hètuó, or 食火雞 shíhuǒjī for the Rooster link.",
+      "source_ids": [
+        "s14",
+        "s15",
+        "s16"
+      ]
+    },
+    {
+      "fact": "Hero crossing glyph 鸡 (Rooster) shown in simplified form with no pinyin.",
+      "verdict": "UNVERIFIABLE",
+      "note": "Style flag: 鸡 jī is correct for Rooster but is simplified while the rail uses traditional; site rule needs pinyin. Traditional is 雞.",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "fact": "Inner toe claw can grow to roughly 12 cm; kick can cause severe injury; used almost exclusively in defence; documented attacks overwhelmingly provoked, most often tied to a bird associating a person with food.",
+      "verdict": "OK",
+      "note": "Claw up to 125 mm (Wikipedia) or 120 mm (Qld Gov). Kofron (1999): of 150 attacks on humans, 75% involved birds that had been fed and food was involved in 73%. Note the 'severe injury' wording is fine: one death in that dataset (1926) plus a 2019 Florida death.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Casque is a tall, hollow structure of keratin; purpose debated: age or dominance signal, helmet, low-frequency receiver, and per a 2019 thermal-imaging study a heat vent.",
+      "verdict": "OK",
+      "note": "Keratinous, skin-covered, hollow interior spanned by fine fibres (Wikipedia); Qld Gov says spongy inside rather than bony. 2019 thermal study and the other hypotheses are listed in Wikipedia. Suggest 'keratin-sheathed, spongy inside' instead of 'hollow'.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Call can drop to roughly 32 hertz, near the bottom edge of human hearing, among the lowest-frequency vocalizations recorded in any bird, likely suited to solitary birds in dense rainforest.",
+      "verdict": "OK",
+      "note": "Mack and Jones 2003: southern cassowary 32 Hz (one wild recording), dwarf cassowary 23 Hz; low frequencies likely suit dispersed solitary birds in dense forest. The page could cite the paper by name. Caveat: 32 Hz rests on a single recording.",
+      "source_ids": [
+        "s8",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Largely solitary outside breeding and defends an individual home range; males alone build the nest, incubate about fifty days and raise the chicks with no help from the female.",
+      "verdict": "OK",
+      "note": "Solitary except courtship and around abundant food; male incubates 50 to 52 days, chicks stay about 9 months. Note ranges overlap and same-sex adults avoid each other (SDZWA), so 'defends an individual home range' is a slight simplification.",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s9"
+      ]
+    },
+    {
+      "fact": "Section title 'The forty-mile run'; body: can run up to roughly 50 km/h and clear obstacles with a near-vertical jump.",
+      "verdict": "WRONG",
+      "note": "50 km/h is about 30 mph, not forty miles per hour; the title contradicts the body. Jump height up to 1.5 m is sourced; 'near-vertical' is UNVERIFIABLE. Retitle, for example 'The thirty-mile run'.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "fact": "Swallows large fruits whole and passes seeds intact, sometimes kilometres away; keystone species; the only long-distance disperser for a number of large-seeded rainforest plants.",
+      "verdict": "OK",
+      "note": "Dispersal beyond a kilometre and keystone status (Wikipedia, SDZWA). Campbell et al. 2023: 'the only large-bodied seed disperser in the Australian rainforest' (stated from prior work). Fine if scoped to Australia.",
+      "source_ids": [
+        "s6",
+        "s9",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Some plants depend on passing through a cassowary to germinate at all.",
+      "verdict": "WRONG",
+      "note": "Overstated. The best-known case, Ryparosa, germinated 92% after gut passage versus 4% without: a huge boost, not absolute dependence. SDZWA: gut passage 'may aid germination'. Rewrite: 'some seeds germinate far better after passing through a cassowary'.",
+      "source_ids": [
+        "s6",
+        "s9"
+      ]
+    },
+    {
+      "fact": "Hero: 'a flightless giant of New Guinea and northeastern Australia's rainforest'.",
+      "verdict": "OK",
+      "note": "Range correct; southern cassowary is Endangered in Queensland and up to 2 m tall.",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "fact": "Purple Star section: 'For an Aries born in the Rooster year, Purple Star often places the steward star (天府 Tiān Fǔ) near the Life Palace' and 七殺 Qī Shā 'where Purple Star finds it near an Aries Rooster crossing'.",
+      "verdict": "WRONG",
+      "note": "ZWDS charts come from Chinese-calendar birth year, month, day and hour; the Western sign plays no role. The disclaimer admits it is the site's own pairing, but the copy claims what the tradition 'often places'. Relabel or cut.",
+      "source_ids": [
+        "s17"
+      ]
+    },
+    {
+      "fact": "'The one weapon in the animal kingdom most feared and least used' (Purple Star copy) and 'one of the most feared claws in the animal kingdom' (intro).",
+      "verdict": "UNVERIFIABLE",
+      "note": "Rhetorical superlatives with no source. Keep only as clearly flavoured copy or cut.",
+      "source_ids": []
+    }
+  ],
+  "other_notes": [
+    "Keeper Stones (hematite, black tourmaline, sunstone, black onyx) have no traditional basis tied to this animal or crossing; label as the site's own pairing.",
+    "Crossing years 1993, 2005, 2017 are correct Rooster years for an Aries; no January/February note needed and none is present.",
+    "'Documented attacks are overwhelmingly provoked' would be stronger with the Kofron numbers stated plainly and dated."
+  ],
+  "could_not_reach": "BioOne full text of Mack and Jones 2003 (bot wall; abstract read via CZAW); poets.org (permission timeout). Bulmer 1967 read only via Alice Bulmer's essay and Wikipedia, not the original paper. The Douglass PNAS paper was read via a news report, not the paper itself."
+}

@@ -1,0 +1,316 @@
+{
+  "slug": "blue-glaucus",
+  "name": "Blue Glaucus",
+  "sign": "Pisces",
+  "year": "Pig",
+  "element": "Water (from the Pig); Pisces adds Water, mutable. Water doubled.",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Pisces (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pisces_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Creative and imaginative, meet Pisces (USA TODAY, Anna Kaufman, via Yahoo News)",
+      "url": "https://www.yahoo.com/news/pisces-bring-creativity-zodiac-signs-102104394.html"
+    },
+    {
+      "id": "s3",
+      "title": "Pig (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pig_(zodiac)"
+    },
+    {
+      "id": "s4",
+      "title": "Chinese zodiac (compatibility table), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s5",
+      "title": "Year of the Pig, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/pig.htm"
+    },
+    {
+      "id": "s6",
+      "title": "Glaucus atlanticus, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Glaucus_atlanticus"
+    },
+    {
+      "id": "s7",
+      "title": "Rudman, W.B. 1998, Glaucus atlanticus, Sea Slug Forum (Australian Museum)",
+      "url": "https://www.seaslugforum.net/glauatla.htm"
+    },
+    {
+      "id": "s8",
+      "title": "Sea Swallow Glaucus atlanticus, Sea Slugs of the World",
+      "url": "https://en.seaslug.world/species/glaucus_atlanticus"
+    },
+    {
+      "id": "s9",
+      "title": "Inside Nature featured creature: blue dragon, PBS Nature",
+      "url": "https://www.pbs.org/wnet/nature/blog/inside-nature-featured-creature-blue-dragon"
+    },
+    {
+      "id": "s10",
+      "title": "Thompson and Bennett 1969, Physalia nematocysts: utilized by mollusks for defense, Science 166:1532-1533, doi 10.1126/science.166.3912.1532 (Scilit record)",
+      "url": "https://scilit.com/publications/523ef155da9560a0d406cd4e996e3805"
+    },
+    {
+      "id": "s11",
+      "title": "Cerata, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cerata"
+    },
+    {
+      "id": "s12",
+      "title": "Glaucus (Greek sea god), Wikipedia (cites Ovid, Metamorphoses 8 and 13; Athenaeus; Euripides)",
+      "url": "https://en.wikipedia.org/wiki/Glaucus"
+    },
+    {
+      "id": "s13",
+      "title": "大西洋海神海蛞蝓 (Dàxīyáng hǎishén hǎikuòyú), Chinese Wikipedia mirror, aliases list",
+      "url": "https://zhwiki.oracleblog.org/wiki/%E5%A4%A7%E8%A5%BF%E6%B4%8B%E6%B5%B7%E7%A5%9E%E6%B5%B7%E8%9B%9E%E8%9D%93"
+    },
+    {
+      "id": "s14",
+      "title": "TaiEOL (Taiwan Encyclopedia of Life), Glaucus atlanticus Chinese names",
+      "url": "https://taieol.tw/pages/215708/external"
+    },
+    {
+      "id": "s15",
+      "title": "National Museum of Natural Science, Taiwan, Science Photography 09030",
+      "url": "https://www.nmns.edu.tw/ch/learn/museum-education/naturalist/scienceimages/detail/SciencePhotography-09030/"
+    },
+    {
+      "id": "s16",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Imaginative, artistic, empathetic and intuitive; called the gentlest sign. Shadow: sensitive to criticism, people-pleasing, self-deprecating, underestimates its own worth. Symbol: two fish bound by a cord, swimming in opposite directions, read as duality.",
+    "planet": "Jupiter (traditional), Neptune (modern); Venus exalted in Pisces",
+    "element": "Water (with Cancer and Scorpio)",
+    "modality": "Mutable; opposite sign Virgo",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Diligent, compassionate, generous; devotes all its energy once a goal is set; calm and responsible in trouble. Shadow: trusting to a fault and easily fooled, less patient, weak at managing money, rarely asks for help. Wikipedia ties the Pig to emotion and intuition.",
+    "yinyang": "Yin (per Wikipedia, Pig (zodiac))",
+    "element": "Water (fixed); earthly branch 亥 hài; Pig hour 21:00 to 22:59",
+    "trine": "Pig, Rabbit, Goat",
+    "secret_friend": "Tiger",
+    "clash": "Snake (harm pair: Monkey)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Greek myth (the genus name)",
+      "meaning": "Glaucus was a mortal fisherman of Anthedon who saw a herb revive the fish he had caught, ate it, and became an immortal, fish-tailed, prophetic sea god who helps sailors in storms (Ovid, Metamorphoses 8 and 13). The slug that eats a dangerous thing and comes out more powerful shares the name of the man who ate something strange and was changed by it. glaukos is glossed 'shining, gleaming'. Whether Forster named the slug for the god specifically is not stated in sources reached; say 'shares the name', not 'named after'.",
+      "source_ids": [
+        "s12",
+        "s6"
+      ]
+    },
+    {
+      "culture": "Chinese common names",
+      "meaning": "The standard Chinese name is 大西洋海神海蛞蝓 (Dàxīyáng hǎishén hǎikuòyú), 'Atlantic sea-god sea slug', so the sea god survives in the Chinese name too. Listed aliases include 藍龍 (lánlóng, blue dragon), 藍天使 (lán tiānshǐ, blue angel) and 藍海燕 (lán hǎiyàn, blue sea swallow). TaiEOL gives 大西洋海神鰓海蛞蝓 (Dàxīyáng hǎishén sāi hǎikuòyú) as primary.",
+      "source_ids": [
+        "s13",
+        "s14",
+        "s15"
+      ]
+    },
+    {
+      "culture": "English folk names",
+      "meaning": "Blue dragon, sea swallow, blue angel, dragon slug. 'Blue dragon' is shared with other slugs (Pteraeolidia, Glaucus marginatus), so do not use it as if unique.",
+      "source_ids": [
+        "s6",
+        "s8"
+      ]
+    },
+    {
+      "culture": "Pisces myth (sign half)",
+      "meaning": "Aphrodite and Eros became fish to escape the monster Typhon and were set among the stars; the two fish are tied and swim in opposite directions. Our reading: a sign drawn as two bodies facing two ways meets an animal camouflaged toward two directions at once.",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "culture": "Science as symbol (kleptocnidy)",
+      "meaning": "Thompson and Bennett (1969, Science) reported that Glaucus stores the stinging cells of the Portuguese man o' war for its own defense. Rudman (Sea Slug Forum) adds that it 'appears' to select the most venomous ones. The honest hook: a borrowed weapon, kept and sorted.",
+      "source_ids": [
+        "s10",
+        "s7"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Any 'blue dragon spirit animal' or totem meaning found on blogs; no traditional or Indigenous folklore for Glaucus atlanticus was found in any source reached.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: Water doubled, yin twice over. Pisces is the mutable sign that takes the shape of the current; the Pig gives everything to what is in front of it. Together: an animal that lives entirely on what the wind brings and turns the hardest of it into armor. Pisces' two opposite-facing fish meet a body hidden from above and from below at once.",
+    "gifts": "Our reading: taking in difficult people, moods and seasons without being poisoned by them; sorting what is worth keeping from what to let drift; soft surface, real defenses; a generosity that does not ask for a map first.",
+    "shadow": "Our reading: drift mistaken for trust; the Pig's trust-to-a-fault plus Pisces' porous edges means swallowing things that should have been refused. Self-underestimation (Pisces) plus not asking for help (Pig): the person who carries a lot and lets everyone think it is nothing.",
+    "love": "Our reading: all in, with no bargaining. Wants a partner who can read both sides, the bright one shown to the sky and the silver one shown to the deep. Hurts when someone reaches for the pretty thing on the tideline without asking what it has been through.",
+    "money": "Our reading: the Pig's traditional weak spot with wealth (China Highlights) plus Pisces' drift. Money arrives with the current and leaves with it. Works best with one simple fixed structure (an automatic saving rule) so the drift has a floor.",
+    "conflict": "Our reading: does not start fights and does not chase. Defenses sit at the edges and only fire on contact. The risk is the delayed sting: tolerating for months, then one contact too many."
+  },
+  "careers": [
+    {
+      "path": "Emergency medicine, toxicology, crisis lines, harm reduction",
+      "why": "Our reading: works calmly with what would hurt others; the kleptocnidy bridge, kept literal."
+    },
+    {
+      "path": "Marine science, lifeguarding, coastal and ocean work",
+      "why": "Our reading: Water doubled, and the animal's own world."
+    },
+    {
+      "path": "Translation, editing, sampling and remix music, anthology work",
+      "why": "Our reading: taking material from elsewhere, keeping the strongest part, making it your own."
+    },
+    {
+      "path": "Therapy, chaplaincy, hospice",
+      "why": "Our reading: Pisces empathy plus Pig steadiness in trouble."
+    },
+    {
+      "path": "Freelance or contract work that follows demand",
+      "why": "Our reading: living on what the current brings; needs one fixed anchor (a retainer, a base client)."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Pallas's Cat",
+      "slug": "pallass-cat",
+      "reason": "Scorpio x Rabbit. Rabbit sits in the Pig's trine (Pig, Rabbit, Goat) and Scorpio is a fellow Water sign."
+    },
+    {
+      "name": "Snow Leopard",
+      "slug": "snow-leopard",
+      "reason": "Scorpio x Goat. Goat completes the Pig trine; Water meets Water."
+    },
+    {
+      "name": "Moon Bear",
+      "slug": "moon-bear",
+      "reason": "Cancer x Tiger. Tiger is the Pig's secret friend (six harmonies); Cancer is Water. Also Water feeds the Tiger's Wood."
+    },
+    {
+      "name": "Koala",
+      "slug": "koala",
+      "reason": "Taurus x Rabbit. Rabbit trine, and Taurus Earth is the classic complement to Pisces Water. The Koala dossier already lists Pig-year matches, so this one is reciprocal in spirit."
+    },
+    {
+      "name": "Leopard Seal",
+      "slug": "leopard-seal",
+      "reason": "Pisces x Tiger. Same sign, and the Tiger is the Pig's secret friend."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Glass Frog",
+      "slug": "glass-frog",
+      "reason": "Pisces x Snake. Same Western sign, but Pig and Snake are a traditional six-clash pair: easy recognition, friction underneath."
+    },
+    {
+      "name": "Sand Cat",
+      "slug": "sand-cat",
+      "reason": "Sagittarius x Snake. The Pig-Snake clash plus Fire against doubled Water; the desert animal and the ocean drifter."
+    }
+  ],
+  "candidate_lines": [
+    "Whatever the swell delivers, you eat the part that could have hurt you and keep the sharpest bit for later.",
+    "From a gull's height you look like open sea, and from a fish's depth you look like sky, and very few people have seen both of your sides in the same week.",
+    "You float with your belly to the sun, which looks backwards to anyone watching from a boat and has kept you alive for years.",
+    "Your generosity is the Pig's, wide open, and your defenses sit at your fingertips, the last place anyone thinks to check.",
+    "The wind picks your direction more often than you admit, and it has a strange habit of carrying you straight to the fleet of bluebottles you were hungry for.",
+    "Someone picks you up on the tideline because you look like a jewel, and learns a moment too late what you took in from the storms."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 藍龍海蛞蝓 (lánlóng hǎikuòyú) as the animal's Chinese name.",
+      "verdict": "WRONG (not a recognized name)",
+      "note": "A coined blend of the alias 藍龍 (lánlóng, blue dragon) and 海蛞蝓 (hǎikuòyú, sea slug). The standard name is 大西洋海神海蛞蝓 (Dàxīyáng hǎishén hǎikuòyú), used by Chinese Wikipedia and Taiwan's National Museum of Natural Science; TaiEOL lists 大西洋海神鰓海蛞蝓 (Dàxīyáng hǎishén sāi hǎikuòyú). If a short glyph is needed for the rail, 藍龍 (lánlóng) alone is a listed alias. Pinyin as shown is correct for the characters used.",
+      "source_ids": [
+        "s13",
+        "s14",
+        "s15"
+      ]
+    },
+    {
+      "fact": "Floats inverted at the surface, held by surface tension; swallows an air bubble for buoyancy; keeps the ventral, brighter blue surface facing up.",
+      "verdict": "OK",
+      "note": "Gas bubble in the stomach and surface-tension floating (Wikipedia); foot (ventral) is uppermost (Rudman; Sea Slugs of the World 'ventral side up').",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Countershading: the blue dorsal surface (facing up) hides it from birds; the silver ventral surface (facing down) hides it from fish.",
+      "verdict": "WRONG (anatomy reversed)",
+      "note": "Because it floats upside down, the blue side facing up is the foot, the true ventral side; the silvery grey surface facing down is the true dorsal side (Rudman: 'their foot is always dorsal' in position; silvery grey true dorsal surface hides it from fish below). The page also contradicts its own fact 1. Fix: 'the blue underside, turned up to the sky, hides it from birds; the silvery back, turned down, hides it from fish'.",
+      "source_ids": [
+        "s7",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Feeds on Portuguese man o' war, stores unfired nematocysts in the cerata tips, selects and concentrates the most potent, delivering a sting more dangerous than the man o' war itself.",
+      "verdict": "OK (soften)",
+      "note": "Storage of Physalia nematocysts for defense: Thompson and Bennett 1969, Science. Selection of the most venomous: Rudman says it 'appears' to select them and calls them 'much more deadly' through concentration; Wikipedia's selection claim is cited only to a CNN article. Write 'appears to keep the most venomous ones' and 'can sting harder than a man o' war' rather than a flat claim. Also eats Velella and other floating cnidarians (Sea Slugs of the World).",
+      "source_ids": [
+        "s10",
+        "s7",
+        "s6",
+        "s8"
+      ]
+    },
+    {
+      "fact": "No means of self-propulsion; entirely dependent on wind and current.",
+      "verdict": "WRONG (overstated)",
+      "note": "Wikipedia: it can make slow swimming movements with its cerata to reach prey or mates; Sea Slugs of the World: it 'rarely swims actively'. Fix: 'mostly drifts with wind and current, swimming only slowly when it must'.",
+      "source_ids": [
+        "s6",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Adult reaches a maximum of three centimeters; sting can cause significant pain and systemic symptoms in humans.",
+      "verdict": "WRONG (size); OK (sting)",
+      "note": "Three centimeters is typical, not the maximum: Wikipedia 'usually around 3 cm ... larger specimens have been found'; PBS 'rarely grows larger than three centimeters'; Rudman's photo shows a 4 cm animal; Sea Slugs of the World gives about 50 mm. Sting symptoms (pain, nausea, vomiting, dermatitis) are listed on Wikipedia. Fix: 'usually about 3 cm long'.",
+      "source_ids": [
+        "s6",
+        "s9",
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Cerata serve gas exchange (the animal has no gills), camouflage through pattern, and nematocyst storage.",
+      "verdict": "PARTLY UNVERIFIABLE",
+      "note": "Cerata aid respiration (Wikipedia, Cerata) and hold cnidosacs at their tips (Rudman). 'Has no gills' and 'camouflage through pattern' were not found in any source reached; cut both clauses.",
+      "source_ids": [
+        "s11",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Lunar New Year note (Pisces is one of the three signs where it applies).",
+      "verdict": "MISSING",
+      "note": "Not a factual error, but Pisces runs from about 18 to 20 February, and Lunar New Year can fall as late as about 20 February, so a Pisces born on the first day or two can belong to the previous year animal. The page has no note; consider adding one.",
+      "source_ids": [
+        "s1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+# Giant Salamander dossier: Scorpio x Year of the Ox
+
+Slug `giant-salamander`. Element: Earth (from the Ox); Scorpio adds Water, fixed. Research date 2026-11-08. Everything marked 'Our reading' is interpretation, not tradition. Lucky numbers and colors deliberately omitted (brief).
+
+## Western half: Scorpio
+- Temperament: Passionate, determined, loyal, protective, intuitive, magnetic. Shadow: secretive, suspicious, jealous, possessive, resentful, stubborn.
+- Planet: Mars (traditional), Pluto (modern)
+- Element: Water (with Cancer and Pisces)
+- Modality: Fixed; negative/feminine polarity; opposite sign Taurus
+- Sources: [s1] [s2]
+
+## Chinese half: Ox
+- Temperament: Diligent, dependable, strong, determined, patient; plans before acting; sincere, long-term friendships; serious and responsible at work. Shadow: stubborn, poor at communicating, prefers solitude, overworks, emotionally reserved and cautious in affection.
+- Yin/yang: Yin
+- Element: Earth (fixed); earthly branch 丑 chǒu
+- Trine: Ox, Snake, Rooster
+- Secret friend: Rat
+- Clash: Goat
+- Lucky: not used (sources disagree)
+- Sources: [s3] [s4] [s5]
+
+## The Giant Salamander as a symbol
+- **Chinese (classical text).** The Shanhaijing 山海經 Shānhǎi Jīng, Beishan Jing chapter, describes a 人魚 rényú: 'four legs, its voice like an infant' (四足，其音如嬰兒 sì zú, qí yīn rú yīng'ér). China News Service reads this 'human fish' as the giant salamander, and CC-CEDICT glosses 人魚 as giant salamander among other meanings. Present it as a reading of the text, not a settled identification. The same 2016 article ties the Dahuang Xijing 魚婦 yúfù, which revives after death, to the salamander's dormancy. [s14] [s15]
+- **Chinese (folk name).** 娃娃魚 wáwayú, 'baby fish', named for a call said to sound like a crying infant. Chinese Wikipedia notes some scholars doubt the cry, since the animal has no vocal cords and the sound may come from swallowing or bubbles. A good, honest hook: the name outlived the question of whether the voice was real. [s6] [s7]
+- **Japanese (Yubara, Maniwa, Okayama).** Local name hanzaki, 'torn in half', from the belief that it survives even when cut in two. Folktale: a ten-metre hanzaki ate livestock and people; a man named Hikoshirō killed it from inside after being swallowed, his household was then haunted and his family died, and villagers built a shrine, Hanzaki Daimyōjin, to calm the vengeful spirit. The Hanzaki Festival is held every 8 August, with salamander floats. [s10] [s11] [s12]
+- **Japanese (state).** The Japanese giant salamander is a Special Natural Monument, Japan's highest protection for an animal (designated 1951 or 1952; sources differ). The kappa link is flagged on Wikipedia as needing a source: do not use. [s11]
+- **European (natural history).** In 1726 Johann Jakob Scheuchzer published a Miocene fossil from Öhningen as Homo diluvii testis, 'man, witness of the Flood', a human drowned in Noah's deluge. Cuvier showed in 1809 to 1811 that it was a giant salamander. The giant salamander lineage spent a century being read as a human sinner. (Species: Andrias scheuchzeri, an extinct relative.) [s13]
+- **Unsourced, do not use.** Claims that the taijitu (yin-yang symbol) was modeled on two giant salamanders; 'giant salamander spirit animal' meanings; 200-year-old individuals (Wikipedia calls these unreliable). Also not checked: the Shiji line about 人魚膏 rényú gāo candles in Qin Shi Huang's tomb; Chinese Notes lists a Shiji usage but the passage was not opened. [s6]
+
+## The fusion (our reading)
+- **Temperament.** Our reading: fixed Water (Scorpio) meets yin Earth (Ox). Both halves are fixed, slow and loyal, and both are inward: Scorpio by secrecy, the Ox by reserve. The Giant Salamander is what happens when the Ox's plowed field is moved to the bottom of a cold mountain stream. Earth holds Water in place, like a boulder holding a pool; the result is a nature that stays, guards and endures, and changes very little on the outside while a great deal moves through it.
+- **Gifts.** Our reading: endurance on almost nothing (a fasting animal); a steady, protective presence that others build around; perception through pressure and vibration rather than show; fidelity to a place, a craft or a person; the patience to guard something fragile for months.
+- **Shadow.** Our reading: refusing to leave the den when the water has turned bad; Ox stubbornness doubled by Scorpio's grudge memory (the hanzaki's vengeful spirit is the folk image of it); silence so complete that people stop knowing you are there; swallowing pressure until it surfaces all at once.
+- **Love.** Our reading: courtship is slow and the commitment is long. Love shows up as guarding and tending: the den master fanning the eggs with his tail and clearing debris (recorded in the Japanese species, s11), the Chinese male guarding the nest until the eggs hatch after 50 to 60 days (s6). Needs a partner who values constancy over display and does not force the salamander to the surface to prove feeling.
+- **Money.** Our reading: a conservative holder with a very low burn rate. Strong at saving and at outlasting lean years; weak at noticing when an old asset, job or home has stopped paying its way.
+- **Conflict.** Our reading: goes still and absorbs, often for a long time, then answers with weight. Rarely the first to strike, slow to forgive. Practice: say the small thing while the water is still clear.
+
+## Careers (our reading)
+- **Archivist, records keeper, museum conservator.** Our reading: guarding fragile things for decades; the Ox's diligence with Scorpio's discretion.
+- **Hydrology, water quality, river and watershed science.** Our reading: an animal that breathes through its skin lives or dies by clean water; this crossing notices contamination early.
+- **Hospice, long-term care, guardianship.** Our reading: the den master's tending: steady, months-long, unglamorous care.
+- **Security, compliance, risk.** Our reading: reads small vibrations along the sides; holds a perimeter without drama.
+- **Traditional crafts and restoration (stone, wood, instruments).** Our reading: Earth and patience; work measured in years, done in one place.
+- **Deep research or specialist practice.** Our reading: decades in one niche, the Ox's plow in Scorpio's depth.
+
+## Best matches
+- **Coconut Crab** (`coconut-crab`): Cancer x Rat. Rat is the Ox's secret friend (six harmonies) and Cancer shares Scorpio's Water. Two den-keepers who hoard and guard.
+- **Trapdoor Spider** (`trapdoor-spider`): Virgo x Snake. Snake sits in the Ox trine (Ox, Snake, Rooster); Virgo's Earth is the classic complement to Scorpio's Water. Another animal that waits in a hidden den and reads vibration.
+- **Chambered Nautilus** (`chambered-nautilus`): Cancer x Snake. Ox trine plus a fellow Water sign: two ancient lineages that changed little and live by depth.
+- **Mandarin Dragonet** (`mandarin-dragonet`): Pisces x Rooster. Rooster completes the Ox trine and Pisces is Water: the quiet guard with the bright, shy one.
+- **Slow Loris** (`slow-loris`): Scorpio x Snake. Same sun sign and a trine year: slow, guarded, and more dangerous than it looks.
+
+## Hard pairings
+- **Snow Petrel** (`snow-petrel`): Taurus x Goat. Ox-Goat is the traditional six-clash pair, and Taurus is Scorpio's opposite sign. Friction from both directions.
+- **Snow Leopard** (`snow-leopard`): Scorpio x Goat. Same sun sign, but the Ox-Goat clash: the same depth pointed toward roaming the heights instead of guarding the pool.
+
+## Candidate lines
+1. You breathe through the whole surface of your skin, so a cold, fast, clean current matters more to you than any amount of praise.
+2. Under your boulder in the dark pool you can go astonishingly long without eating, and still be first to move the moment the water changes.
+3. When the eggs are in your den you fan the current over them with your tail for weeks and let nothing near. For you, love looks a lot like guard duty.
+4. Your eyes were never the point. You read the stream by the pressure along your sides, and you feel a stranger's step on the bank before it reaches the water.
+5. The Ox in you plows the same field for decades; the Scorpio in you hides that field at the bottom of a mountain stream where nobody thinks to look.
+6. A village in Japan still holds a festival every August to calm the spirit of a hanzaki that was wronged. Some of what you carry is that old, and that carefully fed.
+
+## Fact audit of the live page
+
+| Claim | Verdict | Note | Sources |
+|---|---|---|---|
+| Header hanzi 守 (shǒu) in rail__han and serial-han | **WRONG** | 守 shǒu means guard/keep, a theme word, not the animal. The Chinese name is 大鯢 dàní (genus; the species is 中國大鯢 Zhōngguó dàní), common name 娃娃魚 wáwayú, 'baby fish'. Use 大鯢 dàní, or 鯢 ní if one glyph is required. | [s6] [s7] |
+| Hero: 'has held the same den for sixty years' and Fact 01: males return to and defend the same den 'for decades' | **UNVERIFIABLE** | Sources confirm both sexes hold territories and large males become 'den masters' who guard a nest den and eggs (s6, s9, s10, s11). No opened source documents fidelity to one den for decades or sixty years. Rewrite as nest-den guarding in breeding season. | [s6] [s9] [s10] [s11] |
+| Fact 02: 'breathes entirely through its skin... no functional lungs as an adult' | **WRONG** | Adults have lungs and use them; they surface periodically to breathe (San Diego Zoo, s8; Animal Diversity Web, s9). Skin folds rich in capillaries carry much of the gas exchange (s9 says primarily skin; s8 says primarily lungs, so do not rank them). Correct: breathes through its folded skin as well as its lungs. | [s8] [s9] |
+| Fact 03: nearly blind; detects prey through a lateral line reading pressure and vibration | **OK** | Small lidless eyes, poorly developed vision; lateral line detects water disturbance; sensory cells on head and mouth aid prey capture (s8; Wikipedia s6 describes sensory nodes head to tail). | [s6] [s8] |
+| Fact 04: extremely low metabolic rate; can survive several months without food | **OK** | Understated: Wikipedia states the species can fast for several years, with the liver regulating proteins by fast length. 'Several months' is safe; 'years' needs the cited study opened before printing. | [s6] |
+| Fact 05: up to 1.8 m and 50 kg, 'the world's largest living amphibian by significant margin' | **WRONG** | Size is right (max about 1.8 m and 50 kg; recent individuals of 59 and 52 kg; s6, s8 gives 60 kg for males). But wild 'Chinese giant salamanders' are now split into several species, and Wikipedia's body text names the South China giant salamander (Andrias sligoi) as slightly larger. 'By significant margin' has no source. Say: the Chinese and South China giant salamanders are the largest amphibians alive. | [s6] [s8] |
+| Fact 06: 'essentially identical form for over thirty million years, having survived multiple mass extinction events' | **WRONG** | Internally impossible: there has been no mass extinction in the last thirty million years (the last was the end-Cretaceous, 66 million years ago). The family Cryptobranchidae dates to about 170 million years (s6) or 165 million (s7); 'essentially identical' is unsourced. The live species' lineages split only 4.7 to 10.3 million years ago (s6). | [s6] [s7] |
+| Intro: 'can live sixty to eighty years' | **UNVERIFIABLE** | Captives have reached at least 60 years; maximum age unknown (s6). Eighty is unsourced for this species (the Japanese species is put at 70 or more by MLIT, s10). Say 'at least sixty years in captivity'. | [s6] [s10] |
+| Range: fast-flowing mountain streams in central and southern China, under boulders | **OK** | Consistent with s6 and s8 (cold, clean, fast water; shelters under rocks). | [s6] [s8] |
+| Proverb 靜水流深 jìng shuǐ liú shēn as 'the proverb of your year' | **UNVERIFIABLE** | Pinyin is present and the year pairing is labeled as our reading. But the phrase appears to be the Chinese rendering of the English proverb 'still waters run deep' (Latin origin in Curtius Rufus), not a traditional Chinese saying (s16). If kept, do not present it as Chinese folk wisdom; or swap for a sourced classical line. | [s16] |
+| Matches block: Snake and Rooster share the Ox trine; Rat is the Ox's secret friend | **OK** | Traditional (s5). All three live picks (Pangolin, Emperor Penguin, Leafcutter Ant) are valid. | [s5] |
+| Reference list: Browne et al. 2014 (Amphibian & Reptile Conservation), Zhang et al. 2016 (Oryx), Thorn 1968 | **UNVERIFIABLE** | Not opened this round; no live claim is tied to a specific one of them. Check each title, year and journal before keeping. | (no source) |
+
+## Sources
+- [s1] Scorpio (astrology), Wikipedia: https://en.wikipedia.org/wiki/Scorpio_(astrology)
+- [s2] Scorpio zodiac sign, The Old Farmer's Almanac: https://www.almanac.com/content/scorpio-zodiac-sign
+- [s3] Ox (zodiac), Wikipedia: https://en.wikipedia.org/wiki/Ox_(zodiac)
+- [s4] Year of the Ox, China Highlights: https://www.chinahighlights.com/travelguide/chinese-zodiac/ox.htm
+- [s5] Chinese zodiac (table; trines, six harmonies, six clashes), Wikipedia: https://en.wikipedia.org/wiki/Chinese_zodiac
+- [s6] Chinese giant salamander, Wikipedia (size, species split, fasting, lifespan, names, IUCN): https://en.wikipedia.org/wiki/Chinese_giant_salamander
+- [s7] 中國大鯢, Chinese Wikipedia (names, 娃娃魚 etymology and doubts, 1.65億年 fossil record): https://zh.wikipedia.org/wiki/中國大鯢
+- [s8] Chinese giant salamander fact sheet: Characteristics, San Diego Zoo Wildlife Alliance Library: https://ielc.libguides.com/sdzg/factsheets/chinesegiantsalamanders/characteristics
+- [s9] Cryptobranchidae, Animal Diversity Web (University of Michigan): https://animaldiversity.org/accounts/Cryptobranchidae/
+- [s10] Encounter a Rare Species: The Japanese Giant Salamander, Japan Tourism Agency multilingual text database (MLIT): https://www.mlit.go.jp/tagengo-db/R2-00808.html
+- [s11] Japanese giant salamander, Wikipedia (hanzaki, Special Natural Monument, den masters, Siebold): https://en.wikipedia.org/wiki/Japanese_giant_salamander
+- [s12] Hanzaki Festival, Maniwa City tourism: https://www.maniwa.or.jp/en/concierge/hanzakifestival.html
+- [s13] Andrias scheuchzeri, Wikipedia (Homo diluvii testis, Scheuchzer 1726, Cuvier 1809/1811): https://en.wikipedia.org/wiki/Andrias_scheuchzeri
+- [s14] 山海经里的“人鱼”其实是娃娃鱼, China News Service (2016), quoting 北山经: https://www.chinanews.com.cn/m/cul/2016/02-19/7764902.shtml
+- [s15] 人魚 rényú, Chinese Notes dictionary (CC-CEDICT gloss includes giant salamander; Shiji usage): https://chinesenotes.com/words/71421.html
+- [s16] Still waters run deep / 靜水流深, Cybertranslator blog (cites Concise Oxford Dictionary of Proverbs; Curtius Rufus): https://blog.cybertranslator.idv.tw/archives/10509
+- [s17] Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal): data/research/BRIEF.md

@@ -1,0 +1,329 @@
+{
+  "slug": "flamingo",
+  "name": "Flamingo",
+  "sign": "Libra",
+  "year": "Horse",
+  "element": "Fire (from the Horse); Libra adds Air, cardinal",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Libra (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Libra_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Libra zodiac sign, The Old Farmer's Almanac",
+      "url": "https://www.almanac.com/libra-zodiac-sign"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (compatibility: trines, six harmonies, six clashes), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Horse (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Horse_(zodiac)"
+    },
+    {
+      "id": "s5",
+      "title": "Year of the Horse, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/horse.htm"
+    },
+    {
+      "id": "s6",
+      "title": "Flamingo, Wikipedia (etymology, Set in the Book of the Faiyum, Roman tongue delicacy, one-leg studies, crop milk, Moche art)",
+      "url": "https://en.wikipedia.org/wiki/Flamingo"
+    },
+    {
+      "id": "s7",
+      "title": "Las medias de los flamencos (Horacio Quiroga, Cuentos de la selva, 1918), Wikipedia (es)",
+      "url": "https://es.wikipedia.org/wiki/Las_medias_de_los_flamencos"
+    },
+    {
+      "id": "s8",
+      "title": "Egyptian dsr: flamingo; to be red; red with fury (Wiktionary data via Kaikki), written d:S-r-G27",
+      "url": "https://kaikki.org/dictionary/Egyptian/meaning/d/d%C5%A1/d%C5%A1r.html"
+    },
+    {
+      "id": "s9",
+      "title": "Thot Sign List, Gardiner G27: a greater flamingo (Phoenicopterus roseus)",
+      "url": "https://thotsignlist.org/mysign?id=3473"
+    },
+    {
+      "id": "s10",
+      "title": "MDBG Chinese dictionary: flamingo = 火烈鳥 huǒ liè niǎo; 大紅鸛 dà hóng guàn; 烈 liè = ardent, intense, fierce",
+      "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=1&wdqb=flamingo"
+    },
+    {
+      "id": "s11",
+      "title": "American flamingo fact sheet, Behavior (named group displays; take-off run), San Diego Zoo Wildlife Alliance Library",
+      "url": "https://ielc.libguides.com/sdzg/factsheets/americanflamingo/behavior"
+    },
+    {
+      "id": "s12",
+      "title": "Why are flamingos pink? BBC Wildlife (discoverwildlife.com)",
+      "url": "https://www.discoverwildlife.com/animal-facts/birds/why-are-flamingos-pink"
+    },
+    {
+      "id": "s13",
+      "title": "Lamellae filter food of different sizes (flamingo feeding), AskNature / Biomimicry Institute",
+      "url": "https://asknature.org/strategy/lamellae-filter-food-of-different-sizes/"
+    },
+    {
+      "id": "s14",
+      "title": "Family Phoenicopteridae (habitat, grey down at hatching, take-off run), Oiseaux-Birds",
+      "url": "https://www.oiseaux-birds.com/page-family-phoenicopteridae.html"
+    },
+    {
+      "id": "s15",
+      "title": "MDBG Chinese dictionary: 烈 liè",
+      "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=1&wdqb=%E7%83%88"
+    },
+    {
+      "id": "s16",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Diplomatic, sociable, fair-minded, artistic and tactful; a sign of balance and judgment (Manilius tied it to Roman judges). Shadow: indecisive, people-pleasing, conflict-avoidant, at times superficial.",
+    "planet": "Venus (shared with Taurus; Eris is sometimes named as a modern ruler)",
+    "element": "Air (with Gemini and Aquarius)",
+    "modality": "Cardinal; opposite sign Aries",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Energetic, sociable, friendly, a good talker; values honesty and loyalty; loves adventure and new ground. Shadow: risk-taking; Fire Horses can run stubborn.",
+    "yinyang": "Yang",
+    "element": "Fire (fixed); earthly branch 午 wǔ",
+    "trine": "Tiger, Horse, Dog",
+    "secret_friend": "Goat",
+    "clash": "Rat",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Ancient Egypt (language)",
+      "meaning": "The Egyptian word dsr (dšr) meant both 'flamingo' and 'to be red', and also 'to be red with fury', used of gods, faces and hearts. It was written with the flamingo sign, Gardiner G27, a greater flamingo. The bird was the word for the color, and the color carried anger as well as beauty. A strong bridge to Fire.",
+      "source_ids": [
+        "s8",
+        "s9"
+      ]
+    },
+    {
+      "culture": "Ancient Egypt (religion)",
+      "meaning": "Set, the red god of storms and the desert, is shown with a flamingo head in the Book of the Faiyum. Use carefully: one depiction in one text, not a general flamingo cult.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Uruguay and Argentina (literature, not folklore)",
+      "meaning": "Horacio Quiroga's 'Las medias de los flamencos' (Cuentos de la selva, 1918): the flamingos want to look their best at the coral snakes' dance, wear stockings an owl made from coral-snake skin, are found out mid-dance, and the snakes bite their legs. They run into the water to cool the burn, their legs stay red, and they still stand in the water waiting for it to fade. A just-so story about vanity, a party and borrowed beauty, made for a Libra page. Credit Quiroga by name; it is an authored story.",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "culture": "Names (Latin and Greek; Chinese)",
+      "meaning": "English flamingo comes from Portuguese or Spanish flamengo, 'flame-colored', ultimately from flama, flame; the genus Phoenicopterus is Greek for crimson-winged. In Chinese the bird is 火烈鳥 huǒ liè niǎo, literally the fire-blazing bird. Three languages name it after fire, and this Zodi Animal's element is Fire.",
+      "source_ids": [
+        "s6",
+        "s10"
+      ]
+    },
+    {
+      "culture": "Ancient Rome",
+      "meaning": "Pliny called the flamingo's tongue the most exquisite of flavors, and Suetonius lists flamingo tongues at Vitellius's banquet. Beauty admired, then eaten: a shadow image for a bird that is valued for how it looks.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Moche (Peru)",
+      "meaning": "Moche art often depicted flamingos. Wikipedia gives no meaning for them; mention only as a depiction, never as a symbol.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "'Flamingo spirit animal means balance, emotional healing, community' and similar totem-blog meanings; no traditional source located. Also no Chinese folklore found for the flamingo itself (it is not native to most of China's literary heartland).",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: cardinal Air (Libra) meets yang Fire (Horse). Libra wants the arrangement to look fair and fine; the Horse wants open ground and company to run with. The Flamingo is the one who makes balance look easy in front of a crowd, standing in water nobody else can live in. Air feeds Fire in the Western pairing, so the Libra social sense keeps the Horse's heat burning instead of scattering it.",
+    "gifts": "Our reading: grace under exposure, a social ear that falls into a group's rhythm without being told, the knack of straining the good from a muddy situation, and warmth that is visible from across the lake.",
+    "shadow": "Our reading: Quiroga's flamingos. Wanting to arrive looking right so badly that you wear borrowed stockings to the snakes' party. Libra people-pleasing plus Horse restlessness: keeping the pose to keep the room, then bolting when the room finally asks for the truth. In Egyptian, the same word meant red and red with fury; the pink can turn.",
+    "love": "Our reading: Venus-ruled and yang. Courtship is a group dance first, a pair second; needs a partner who enjoys the crowd and the colony as much as the two of them. Falls for someone who sees the tucked leg and does not mind.",
+    "money": "Our reading: spends on how things look and on shared pleasure, earns well where presentation counts. The Horse's risk appetite meets Libra's indecision: long wavering, then a sudden leap. Fix: decide the budget before the party, not at it.",
+    "conflict": "Our reading: smooths it over in public, keeps the stance, and lets the heat out later and alone. If pushed too far the Fire shows, briefly and red. Best move: name the cost while still standing in front of the person."
+  },
+  "careers": [
+    {
+      "path": "Event, hospitality and nightlife work",
+      "why": "Our reading: Libra's social balance plus the Horse's stamina; the flamingo's synchronized colony displays (s11)."
+    },
+    {
+      "path": "Choreography, dance, synchronized sport",
+      "why": "Our reading: group displays that switch direction together (s11); Venus rules the arts."
+    },
+    {
+      "path": "Fashion, color, styling, cosmetics",
+      "why": "Our reading: the color you eat (s12); a name that means flame-colored (s6)."
+    },
+    {
+      "path": "Mediation, HR, diplomacy",
+      "why": "Our reading: Libra's fairness, and the filter feeder's knack for straining the useful from the mud (s13)."
+    },
+    {
+      "path": "Work in hard environments: field science, saline or desert sites, crisis response",
+      "why": "Our reading: flamingos live in saline and alkaline lakes with little competition (s14); you thrive where others will not stand."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Rock Wren",
+      "slug": "rock-wren",
+      "reason": "Gemini x Goat. Goat is the Horse's secret friend (six harmonies), and Gemini is a fellow Air sign. Double harmony. (Also on the live page.)"
+    },
+    {
+      "name": "Maned Wolf",
+      "slug": "maned-wolf",
+      "reason": "Aquarius x Tiger. Tiger is in the Horse's trine and Aquarius is the third Air sign. Two long-legged walkers of open ground."
+    },
+    {
+      "name": "Lanner Falcon",
+      "slug": "lanner-falcon",
+      "reason": "Sagittarius x Tiger. Tiger trine; Sagittarius is Fire, which Air feeds in the Western pairing. Element doubles: Fire year, Fire sign."
+    },
+    {
+      "name": "Caracara",
+      "slug": "caracara",
+      "reason": "Sagittarius x Dog. Dog completes the Horse trine; Sagittarius Fire with Libra Air."
+    },
+    {
+      "name": "Golden Brushtail Possum",
+      "slug": "golden-brushtail-possum",
+      "reason": "Leo x Goat. Goat secret friend; Leo Fire with Libra Air. (The live page's Wolverine, Aries x Tiger, trine plus opposite sign, and Sunbittern, Leo x Dog, are also valid.)"
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Red Panda",
+      "slug": "red-panda",
+      "reason": "Libra x Rat. Same Western sign, but Horse and Rat are the traditional six-clash pair: easy manners, opposite instincts underneath."
+    },
+    {
+      "name": "Tarsier",
+      "slug": "tarsier",
+      "reason": "Scorpio x Rat. Horse-Rat clash, and Scorpio's private Water has no classic harmony with Libra's open Air. A night animal against a bird that lives in full view."
+    }
+  ],
+  "candidate_lines": [
+    "Somewhere out on the brine there is a version of you that has stood on one leg since lunch, and the colony thinks you are resting.",
+    "Your pink was paid for. Every shade of it came out of mud you strained with your head upside down while the others watched the sky.",
+    "In Quiroga's jungle the flamingos wore borrowed stockings to the snakes' dance. You know that feeling: dressed exactly right for a party you half suspect will turn on you.",
+    "When the colony starts to march, your head swings with theirs before you have agreed to anything, and somehow you end up at the front.",
+    "Raising someone has cost you color before. You came out of that season paler, and the lake gave it back to you slowly.",
+    "Leaving takes you a run-up: a few splashing strides into the wind, all of them in plain view, before the sky lets you go."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 烈 (rail__han and serial-han)",
+      "verdict": "WRONG",
+      "note": "烈 liè means ardent, intense, fierce (s15). It is only the middle character of the flamingo's name and does not mean flamingo on its own. Correct name: 火烈鳥 huǒ liè niǎo (traditional; simplified 火烈鸟), literally fire-blazing bird. 紅鸛 hóng guàn is the family-level bird name (大紅鸛 dà hóng guàn, greater flamingo). No pinyin is shown next to the glyph either. If one character is required, 鸛 guàn alone means stork, so keep the full name.",
+      "source_ids": [
+        "s10",
+        "s15"
+      ]
+    },
+    {
+      "fact": "Flamingos stand on one leg for long periods, widely thought to reduce heat loss and to cost little muscular effort, in hot and cold climates.",
+      "verdict": "OK (minor clause unverified)",
+      "note": "Wikipedia gives both explanations, heat conservation and reduced muscular effort, and a cadaver study showing the pose can be held without muscle activity (s6). The 'in both hot and cold climates' clause I could not source; cut it or keep 'widely thought'.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "fact": "Feeds with the bill upside down, pumping water and mud through comb-like lamellae to filter shrimp, algae and small prey.",
+      "verdict": "OK",
+      "note": "Head held upside down, rows of lamellae, tongue movements pump material and push out mud and saltwater; prey small crustacea, algae, single-celled organisms (s13).",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "fact": "Synchronized pre-breeding group displays: head-flagging, wing-salutes, twist-preens, marching formations that switch direction together, timed to synchronize colony breeding.",
+      "verdict": "OK",
+      "note": "San Diego Zoo fact sheet names wing salute, twist-preening, head flagging, marching and others, 'done in groups to synchronize breeding in a colony' (s11). 'Switch direction all at once' is fair description of marching but not in the source text; soften if quoting.",
+      "source_ids": [
+        "s11",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Pink comes from carotenoids in algae and crustaceans; chicks hatch grey; parents visibly pale while producing crop milk.",
+      "verdict": "OK (soften 'grey')",
+      "note": "Carotenoids from algae and crustaceans, and parents of both sexes lose pink by the end of breeding as carotenoids go into eggs and crop milk (s12). Chicks hatch covered in grey down per Oiseaux-Birds (s14); Wikipedia says greyish-red, BBC Wildlife says pale. 'Hatch with pale grey down' is safest.",
+      "source_ids": [
+        "s12",
+        "s14",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Often feed and breed in lagoons and lakes too salty or alkaline for most other animals.",
+      "verdict": "OK (soften)",
+      "note": "Large shallow saline or alkaline lakes and lagoons, with 'little competition from other species' (s14). 'Too salty for most other animals' is a stronger wording than the source; use 'little competition'. Not all flamingos use such water.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "fact": "To take off, runs several paces into the wind; cannot simply rise from stillness.",
+      "verdict": "OK first half; second half overstated",
+      "note": "'Take-off requires a short run, facing wind with wings flapping' (s11). Oiseaux-Birds says the run is needed 'if the wind is not sufficiently strong' (s14), so 'cannot simply rise from stillness' is too absolute. Cut that clause.",
+      "source_ids": [
+        "s11",
+        "s14"
+      ]
+    },
+    {
+      "fact": "Purple Star mentions (Zi Wei Dou Shu chart from lunar birth date and hour)",
+      "verdict": "OK",
+      "note": "This page does not assign a Purple Star star from the sign pair; it says a chart is cast from lunar birth date and hour, which is correct. No ZWDS overreach found.",
+      "source_ids": []
+    },
+    {
+      "fact": "Proverb of the year: 塞翁失馬 sài wēng shī mǎ, the old man at the frontier loses his horse",
+      "verdict": "NOT AUDITED",
+      "note": "Labeled on the page as our own pairing. I did not open a primary source (traditionally Huainanzi) this session; a human should check before reuse. Note the live tiles show only partial pinyin in the text extract.",
+      "source_ids": []
+    },
+    {
+      "fact": "Recent Horse years 2002, 2014, 2026; element Fire",
+      "verdict": "OK",
+      "note": "Horse is yang Fire, branch 午 wǔ; years in 12-year steps (s4).",
+      "source_ids": [
+        "s4"
+      ]
+    }
+  ],
+  "notes": [
+    "Strongest new material: Egyptian dsr (flamingo = red = red with fury) and Quiroga's coral-snake stockings story. Both are specific to this bird and both fit Libra (beauty, the party) and Fire (red, heat).",
+    "Live page match Wolverine is Aries, Libra's opposite sign; valid by the brief's 'classic oppositions', but say so plainly in the reason.",
+    "Blocked: San Diego Zoo library fact-sheet tabs for habitat, reproduction and diet (permission not answered); facts covered from other sources."
+  ]
+}

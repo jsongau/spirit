@@ -1,0 +1,316 @@
+{
+  "slug": "tree-kangaroo",
+  "name": "Tree Kangaroo",
+  "sign": "Sagittarius",
+  "year": "Pig",
+  "element": "Water (from the Pig); Sagittarius adds Fire, mutable",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Sagittarius (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sagittarius_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Everything you need to know about Sagittarius, mindbodygreen",
+      "url": "https://www.mindbodygreen.com/articles/sagittarius"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (Pig row: branch, yin, Water, trine, six harmonies, six clashes), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Pig, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/pig.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Tree-kangaroo, Wikipedia (ancestry, hind feet, tail, pouch life 246 to 275 days)",
+      "url": "https://en.wikipedia.org/wiki/Tree-kangaroo"
+    },
+    {
+      "id": "s6",
+      "title": "Tree kangaroo fact sheet, Australian Wildlife Society (18 m drops, 9 m leaps, hind feet, pouch about nine months)",
+      "url": "https://www.aws.org.au/wp-content/uploads/2019/04/Tree_kangaroo.pdf"
+    },
+    {
+      "id": "s7",
+      "title": "Dendrolagus lumholtzi, Animal Diversity Web (home ranges, no female overlap, 90% inactive, independent limb movement, pouch about a year)",
+      "url": "https://animaldiversity.org/accounts/Dendrolagus_lumholtzi"
+    },
+    {
+      "id": "s8",
+      "title": "Tree kangaroo info sheet, Rainforest CRC, James Cook University (female ranges exclusive; highly territorial)",
+      "url": "https://rainforest-crc.jcu.edu.au/infosheets/tree_kangaroo.pdf"
+    },
+    {
+      "id": "s9",
+      "title": "Matschie's tree-kangaroo, Wikipedia (territorial, marks boundaries; sleeps and rests 14 to 15 hours a day; YUS)",
+      "url": "https://en.wikipedia.org/wiki/Matschie%27s_tree-kangaroo"
+    },
+    {
+      "id": "s10",
+      "title": "Dingiso, Wikipedia (mbaiso, 'the forbidden animal' in Moni; ancestor that must never be harmed)",
+      "url": "https://en.wikipedia.org/wiki/Dingiso"
+    },
+    {
+      "id": "s11",
+      "title": "Mabi forest, Wikipedia (Mabi is the Dyirbal and Yidiny name for Lumholtz's tree-kangaroo)",
+      "url": "https://en.wikipedia.org/wiki/Mabi_forest"
+    },
+    {
+      "id": "s12",
+      "title": "YUS Conservation Area, Wikipedia (PNG's first conservation area, 2009; 35 villages)",
+      "url": "https://en.wikipedia.org/wiki/YUS_Conservation_Area"
+    },
+    {
+      "id": "s13",
+      "title": "Why people and forests need tree kangaroos, BirdLife International (Tenkile Conservation Alliance, 1999 hunting pledge)",
+      "url": "https://www.birdlife.org/news/2020/03/20/why-people-and-forests-need-tree-kangaroos/"
+    },
+    {
+      "id": "s14",
+      "title": "Bennett's tree-kangaroo, Wikipedia (9 m leaps, 18 m drops)",
+      "url": "https://en.wikipedia.org/wiki/Bennett%27s_tree-kangaroo"
+    },
+    {
+      "id": "s15",
+      "title": "灰樹袋鼠 (Dendrolagus inustus), Chinese Wikipedia mirror (genus 樹袋鼠屬)",
+      "url": "https://zhwiki.oracleblog.org/wiki/%E7%81%B0%E6%A8%B9%E8%A2%8B%E9%BC%A0"
+    },
+    {
+      "id": "s16",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Adventurous, flexible, daring, inquisitive, big-picture and forward-thinking; restless with routine. The archer 'never fails to hit the mark', tying the sign to prophecy. Shadow: inconsistent, drops plans for the next adventure, blunt to a hurtful fault, restless in commitment.",
+    "planet": "Jupiter",
+    "element": "Fire (with Aries and Leo)",
+    "modality": "Mutable; opposite sign Gemini (conventional; not stated on the two pages cited)",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Diligent and devoted once a goal is set, compassionate, generous, calm and responsible. Shadow: trusting to the point of being easy to fool, impatient, not good with money.",
+    "yinyang": "Yin",
+    "element": "Water (fixed); earthly branch 亥 hài",
+    "trine": "Rabbit, Goat, Pig",
+    "secret_friend": "Tiger",
+    "clash": "Snake",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s16"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Moni people, Western New Guinea (Dingiso, Dendrolagus mbaiso)",
+      "meaning": "When Tim Flannery's team described this mostly ground-living tree kangaroo in 1995 they named it mbaiso, which means 'the forbidden animal' in Moni. Many Moni hold it to be an ancestor that must never be harmed, and the species stays common in the west because of that protection. Tell this as the Moni's belief, about that one species, and keep it out of the 'you' voice.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "culture": "Dyirbal and Yidiny (Wet Tropics, Queensland)",
+      "meaning": "Mabi is the Dyirbal and Yidiny name for Lumholtz's tree-kangaroo, and Mabi forest, a rare Atherton Tableland rainforest type, carries that name.",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "culture": "Yopno, Uruwa and Som communities, Huon Peninsula, Papua New Guinea",
+      "meaning": "In 2009 the YUS Conservation Area, named for three rivers, became Papua New Guinea's first conservation area; people from 35 villages pledged land on which hunting, logging and mining are banned, largely for the Matschie's tree-kangaroo.",
+      "source_ids": [
+        "s12",
+        "s9"
+      ]
+    },
+    {
+      "culture": "Torricelli Mountains, Papua New Guinea",
+      "meaning": "From 1999 the Tenkile Conservation Alliance persuaded 13 villages to stop hunting the Tenkile (Dendrolagus scottae), an animal that had been a common source of meat; the alliance is named after it.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "culture": "Greek-Latin scientific name",
+      "meaning": "Dendrolagus means 'tree hare'. Chinese calls it 樹袋鼠 shù dàishǔ, literally 'tree pouch-rat', since 袋鼠 dàishǔ (kangaroo) is 'pouch rat'. Gloss of the characters is ours.",
+      "source_ids": [
+        "s7",
+        "s15"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "No general 'tree kangaroo spirit animal' meaning and no Pig-year folklore link were found in a reliable source. No PNG clan story beyond the Moni dingiso belief was sourced.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: mutable Fire (Sagittarius) meets yin Water (Pig). Water checks Fire, so the explorer's urge is cooled by the Pig's appetite for comfort and home. The Tree Kangaroo is a ground animal's lineage that went back up into the canopy: a far-ranging spirit that chose one high, leafy home and settled into it. Jupiter's wide horizon plus the Pig's love of rest gives a seeker who travels for meaning, then sleeps long in the branches it found.",
+    "gifts": "Our reading: courage to reverse a path when the reasoning says so; generosity and warmth; a talent for surviving falls and climbing back; a big view from a quiet perch.",
+    "shadow": "Our reading: the Pig's trust plus Sagittarian optimism can mean leaping before checking the branch. Long rest can slide into hiding, the way a shy tree kangaroo crashes away through the leaves rather than be seen. Restlessness can make it leave a good tree too soon.",
+    "love": "Our reading: generous, affectionate, loyal once settled; needs real freedom and a partner who does not read a solo wander as rejection. Not a sharer of personal space: these animals keep their own home range, so love works best with a clear 'my tree, your tree' and lots of visiting.",
+    "money": "Our reading: the Pig is traditionally loose with money and Jupiter likes to expand, so spending on travel, food and learning comes easily. Strength: generosity that builds goodwill. Risk: no reserve for the drop.",
+    "conflict": "Our reading: blunt at first (Sagittarius), then soft and forgiving (Pig). Rarely holds a grudge, but will hold a boundary around its own patch."
+  },
+  "careers": [
+    {
+      "path": "Teaching, publishing, philosophy, religious or cross-cultural work",
+      "why": "Our reading: Jupiter's sign of higher learning, with Pig warmth toward students."
+    },
+    {
+      "path": "Conservation and community programs, especially land partnerships",
+      "why": "Our reading: the real-world YUS and Tenkile stories are partnerships with landholders (s12, s13)."
+    },
+    {
+      "path": "Hospitality, food, travel and retreat businesses",
+      "why": "Our reading: Pig generosity and love of comfort combined with Sagittarian travel."
+    },
+    {
+      "path": "Arborist, canopy research, rope-access forestry",
+      "why": "Our reading: the literal canopy; a body built for climbing and for surviving the drop."
+    },
+    {
+      "path": "Career changers and returners: second careers, mature students",
+      "why": "Our reading: the lineage that went to the ground and came back up."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Golden Brushtail Possum",
+      "slug": "golden-brushtail-possum",
+      "reason": "Leo x Goat. Goat is in the Pig trine; Leo shares Sagittarius's Fire. A fellow tree-dwelling marsupial."
+    },
+    {
+      "name": "Springbok",
+      "slug": "springbok",
+      "reason": "Aries x Rabbit. Rabbit is in the Pig trine; Aries is a fellow Fire sign. Two famous leapers."
+    },
+    {
+      "name": "Harpy Eagle",
+      "slug": "harpy-eagle",
+      "reason": "Leo x Tiger. Tiger is the Pig's secret friend (six harmonies), and Leo is Fire. Both rule the rainforest canopy."
+    },
+    {
+      "name": "Wallcreeper",
+      "slug": "wallcreeper",
+      "reason": "Aries x Goat. Goat trine plus shared Fire. Both chose a vertical life."
+    },
+    {
+      "name": "Crowned Crane",
+      "slug": "crowned-crane",
+      "reason": "Libra x Rabbit. Rabbit trine, and Libra Air fans Sagittarius Fire."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Cuttlefish",
+      "slug": "cuttlefish",
+      "reason": "Gemini x Snake. Pig and Snake are a traditional six-clash pair, and Gemini is opposite Sagittarius. Pull on both wheels."
+    },
+    {
+      "name": "Sand Cat",
+      "slug": "sand-cat",
+      "reason": "Sagittarius x Snake. Same sign, but the Pig-Snake clash sits underneath: easy to start, hard to keep."
+    }
+  ],
+  "candidate_lines": [
+    "Your family line came down out of the trees, and somewhere along the way you climbed straight back up, as if the ground had only been a long visit.",
+    "You can fall eighteen metres through the canopy, land, shake the leaves off and start up the trunk again before anyone has finished gasping.",
+    "Most of your day is spent curled on a high branch, and the hours of stillness are what pay for the climbing.",
+    "You keep your own tree and you are glad of the company that passes through, as long as everyone remembers whose branch this is.",
+    "Ask you to stay on the forest floor and you hop along, a little clumsy and plainly polite. Show you a trunk and the whole body makes sense.",
+    "You will give away the best fruit in your canopy without thinking twice, then wonder later why the branch feels bare."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Descended from arboreal possum-like ancestors that came to the ground, then returned to the trees, developing grip pads, longer forelegs and rotating ankles.",
+      "verdict": "OK (with one UNVERIFIABLE detail)",
+      "note": "Ancestry and return: Wikipedia (rainforest-floor ancestor descended from an arboreal, possum-like animal) and AWS ('macropods used to dwell in trees ... came down'). Grip pads: ADW. 'Rotating ankles' is UNVERIFIABLE; the sourced trait is that, unlike other kangaroos, they can move paired hindlimbs independently in trees (ADW). Swap it in.",
+      "source_ids": [
+        "s5",
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Re-evolved shorter hind feet, longer forelegs and padded soles, less efficient on the ground than their relatives.",
+      "verdict": "WRONG (hind feet, as worded)",
+      "note": "Wikipedia and the Australian Wildlife Society both say tree-kangaroos have LONGER and broader hind feet with long curved nails compared with ground kangaroos. ADW says the hindlimbs are smaller relative to body size and the forelimbs and tail proportionally larger. Safe wording: 'broad hind feet with long curved claws, smaller hind legs, stronger forelimbs and spongy gripping soles'. Clumsier on the ground is fair (ADW: on the ground they only hop).",
+      "source_ids": [
+        "s5",
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Can drop sixty feet (eighteen metres) to the ground without apparent injury, using the tail for balance during descent.",
+      "verdict": "OK (tail clause UNVERIFIABLE)",
+      "note": "AWS and Bennett's tree-kangaroo article: drops of about 18 m without injury; Bennett's can also leap 9 m down to another branch. Wikipedia marks the 18 m line as needing a citation, so attribute it to AWS. The long tail helps balance in the trees (Wikipedia); its use 'during descent' is not stated anywhere I found. Cut that clause.",
+      "source_ids": [
+        "s6",
+        "s14",
+        "s5"
+      ]
+    },
+    {
+      "fact": "Young are born extremely underdeveloped and complete development in the pouch over several months.",
+      "verdict": "OK (understated)",
+      "note": "Pouch life is long: 246 to 275 days (Wikipedia), about nine months (AWS), about a year in Lumholtz's (ADW). 'Several months' undersells it; say 'about nine months to a year'. One joey a year (Wikipedia).",
+      "source_ids": [
+        "s5",
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Large home ranges that overlap significantly between individuals, particularly among females; not territorial in the fighting sense.",
+      "verdict": "WRONG",
+      "note": "Reversed. In Lumholtz's tree-kangaroo, female ranges do not overlap with other females (ADW: about 2 ha; JCU Rainforest CRC: 'exclusive and nonoverlapping ranges of around 0.7 ha'); it is MALE ranges that overlap several females and males. JCU calls them 'highly territorial', and Matschie's tree-kangaroos defend and mark territory boundaries (Wikipedia). ADW does say Lumholtz's do not appear to defend territories, so sources split on fighting, but the female-overlap claim is wrong in every source.",
+      "source_ids": [
+        "s7",
+        "s8",
+        "s9"
+      ]
+    },
+    {
+      "fact": "Sleep up to fifteen hours a day in the canopy.",
+      "verdict": "OK (species-specific)",
+      "note": "Wikipedia on Matschie's tree-kangaroo: 14 to 15 hours a day sleeping and resting. ADW on Lumholtz's: inactive (resting or alert) about 90% of the time, over 99% of time in trees. Say 'sleep and rest' and name the species, or use the ADW figure.",
+      "source_ids": [
+        "s9",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Header hanzi (rail__han and serial-han): 樹袋鼠, with pinyin shùdàishǔ on the serial.",
+      "verdict": "OK",
+      "note": "樹袋鼠 shù dàishǔ (simplified 树袋鼠) is the standard Chinese name; the genus is 樹袋鼠屬. Minor: the page mixes traditional 樹袋鼠 with simplified 猪 in the hero; pick one script per page. Pinyin should be spaced shù dàishǔ.",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "fact": "Purple Star section.",
+      "verdict": "OK",
+      "note": "This page names no star; it says a full chart is cast from lunar birth date and hour. No overreach.",
+      "source_ids": [
+        "s16"
+      ]
+    }
+  ],
+  "page_bugs": [
+    "Live page copy uses em dashes heavily (hero, Meet the Animal, crossing text) and the banned word 'seamless' ('Going back is not seamless'). Fix in the rewrite.",
+    "The page cites Flannery, Martin and Szalay (1996) 'Tree Kangaroos: A Curious Natural History' and Dawson (1995), but I could not open either book to check page-level claims; nothing in the audit relies on them.",
+    "No January/February lunar New Year warning appears, which is correct for Sagittarius."
+  ]
+}

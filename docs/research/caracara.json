@@ -1,0 +1,334 @@
+{
+  "slug": "caracara",
+  "name": "Caracara",
+  "sign": "Sagittarius",
+  "year": "Dog",
+  "element": "Earth (from the Dog); Sagittarius adds Fire, mutable",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Sagittarius (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sagittarius_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Sagittarius sign traits, Cafe Astrology",
+      "url": "https://cafeastrology.com/zodiacsagittarius.html"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (Dog row, compatibility), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Dog, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/dog.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Crested caracara, Wikipedia (English)",
+      "url": "https://en.wikipedia.org/wiki/Crested_caracara"
+    },
+    {
+      "id": "s6",
+      "title": "Caracara plancus, Wikipedia (Spanish): names, Andean Aqchi, Rioplatense sayings",
+      "url": "https://es.wikipedia.org/wiki/Caracara_plancus"
+    },
+    {
+      "id": "s7",
+      "title": "Darwin, The Voyage of the Beagle (1839), Project Gutenberg text, ch. 3 on the Carrancha",
+      "url": "https://www.gutenberg.org/files/944/944-0.txt"
+    },
+    {
+      "id": "s8",
+      "title": "Carancho (2010 film), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Carancho"
+    },
+    {
+      "id": "s9",
+      "title": "Lautaro, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Lautaro"
+    },
+    {
+      "id": "s10",
+      "title": "Crested Caracara life history, All About Birds (Cornell Lab)",
+      "url": "https://www.allaboutbirds.org/guide/Crested_Caracara/lifehistory"
+    },
+    {
+      "id": "s11",
+      "title": "Crested Caracara raptor ID fact sheet, HawkWatch International",
+      "url": "https://hawkwatch.org/raptor-id/raptor-id-fact-sheets/crested-caracara/"
+    },
+    {
+      "id": "s12",
+      "title": "Caracara plancus field guide, Florida Natural Areas Inventory (PDF)",
+      "url": "https://www.fnai.org/PDFs/FieldGuides/Caracara_plancus.pdf"
+    },
+    {
+      "id": "s13",
+      "title": "The Amazing Caracara, Sierra Club Houston (2022)",
+      "url": "https://sierraclub.org/texas/houston/blog/2022/01/amazing-caracara"
+    },
+    {
+      "id": "s14",
+      "title": "Strong urge to explore in falcons (striated caracara puzzle study, Harrington et al. 2023, Current Biology), Vetmeduni Vienna press release",
+      "url": "https://www.vetmeduni.ac.at/en/universitaet/infoservice/presseinformationen/presseinformationen-2023/strong-urge-to-explore-in-falcons"
+    },
+    {
+      "id": "s15",
+      "title": "卡拉卡拉鷹屬 (Caracara genus), Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/%E5%8D%A1%E6%8B%89%E5%8D%A1%E6%8B%89%E9%B7%B9%E5%B1%AC"
+    },
+    {
+      "id": "s16",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Optimistic, adventurous, curious, independent, honest and direct, idealistic; shadow is restlessness, blunt speech, excess, impatience and poor follow-through.",
+    "planet": "Jupiter",
+    "element": "Fire (with Aries and Leo)",
+    "modality": "Mutable; opposite sign Gemini",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Loyal, honest, protective, kind, reliable and steadfast; shadow is caution, reserve, poor communication, stubbornness and emotional swings in love.",
+    "yinyang": "Yang",
+    "element": "Earth (fixed); earthly branch 戌 xū",
+    "trine": "Tiger, Horse, Dog",
+    "secret_friend": "Rabbit",
+    "clash": "Dragon",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Rioplatense Spanish (Argentina, Uruguay)",
+      "meaning": "Carancho is everyday slang for an opportunist, usually a predatory lawyer or union boss; in Argentina an ambulance-chasing lawyer is called a carancho, the premise of Pablo Trapero's film Carancho (2010, Cannes Un Certain Regard). Sayings: 'carancho que comió, voló' (the carancho that has eaten flies off: someone who loses interest once fed); 'cada carancho en su rancho' (every carancho in its own hut); 'desordenado como nido de carancho' (messy as a carancho nest). The opportunist shadow of this crossing comes straight from folk speech.",
+      "source_ids": [
+        "s6",
+        "s8"
+      ]
+    },
+    {
+      "culture": "Andean (Quechua-speaking Peru, Bolivia, Ecuador)",
+      "meaning": "Called Aqchi and held sacred: in founding myths it travels with Wiraqocha (Viracocha) as he travels to bring order to the world, black-bodied, golden-beaked, with magical knowledge of kunan pacha, the present time. Only source is Spanish Wikipedia with no primary citation opened; treat as 'recorded in', verify before use.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Mapuche (Chile)",
+      "meaning": "The Mapudungun name for the bird is traru. The war leader Lautaro (Lef-Traru, c. 1534 to 1557), who beat Pedro de Valdivia at Tucapel in 1553, carried it in his name; English Wikipedia glosses Lef-Traru as 'swift hawk', Spanish Wikipedia ties traru to the caracara. Name the man and the nation, keep it factual.",
+      "source_ids": [
+        "s6",
+        "s9"
+      ]
+    },
+    {
+      "culture": "Guarani and Tupi (South America)",
+      "meaning": "The name caracara is onomatopoeic, from Old Tupi karakará; Félix de Azara recorded that the Guarani called it Caracará because the bird keeps calling it. The Carcarañá river's name is said to mean 'devil carancho' in Guarani.",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "culture": "Darwin, Voyage of the Beagle (1839)",
+      "meaning": "Darwin's 'Carrancha' on the La Plata savannahs: it 'runs (in contradistinction to hopping)', waits while 'the Gallinazo commences the feast', pursues the vulture 'till that bird is compelled to vomit up the carrion', is 'said to be very crafty', and calls with its head thrown back until 'the crown almost touches the lower part of the back'. Darwin also called it 'inactive, tame, and cowardly', which cuts against a heroic reading.",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "culture": "Mexico (Aztec eagle debate)",
+      "meaning": "Ornithologist Rafael Martín del Campo proposed that the sacred 'eagle' of the Aztec codices was the caracara; the golden eagle is Mexico's national bird and the one on the flag. Use only as a scholarly proposal, never as fact.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Caracara 'spirit animal' or totem meanings (resourcefulness, rebirth, etc.) appear only on totem blogs; no traditional source found.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: mutable Fire (Sagittarius) wants the whole open field; yang Earth Dog wants one territory and one loyalty. The caracara holds both: a bird that keeps a year-round home range with its mate and still walks the roadside every morning to see what the night left. Fire feeds Earth in the five-phase cycle, so the ranging half keeps the loyal half fed.",
+    "gifts": "Our reading: reads ground others overfly; eats from any channel without pride; loyalty that shows as presence at the right carcass, not speeches; a face that cannot hide real engagement.",
+    "shadow": "Our reading: the carancho of the pampas sayings. Arriving where someone else did the work, then flying off once fed ('carancho que comió, voló'). Sagittarian bluntness plus Dog stubbornness can make the harsh call land harder than meant.",
+    "love": "Our reading: slow to pair (Dog caution), then a long, territorial bond; preens and is preened. Needs a partner who lets it range by day and trusts it home by night. Fear: being fenced into a single field.",
+    "money": "Our reading: a scavenger's economy. Good at salvage, second markets and finding value others discard; risk is living permanently on leftovers instead of building one thing of its own.",
+    "conflict": "Our reading: assesses on foot, then pushes in hard and takes the carcass, the way caracaras dominate vultures. Rarely starts the fight, rarely loses it. Watch the head-thrown-back loudness once committed."
+  },
+  "careers": [
+    {
+      "path": "Field investigation: insurance claims, journalism on foot, fact-checking, forensic accounting",
+      "why": "Our reading: the walking forager that flips the stone; Sagittarian truth-telling with Dog loyalty to the client."
+    },
+    {
+      "path": "Salvage, resale, recycling, logistics of second-hand goods",
+      "why": "Our reading: a scavenger diet turned into a business; value from what others leave."
+    },
+    {
+      "path": "Ranch, land and wildlife management, ecology fieldwork",
+      "why": "Our reading: open grassland is its ground; Earth element plus Sagittarian range."
+    },
+    {
+      "path": "Emergency response, roadside rescue, crisis logistics",
+      "why": "Our reading: shows up where accidents happen, the honest version of the carancho."
+    },
+    {
+      "path": "Small-business founding in crowded markets",
+      "why": "Our reading: opportunist intelligence; the work is to initiate rather than arrive after."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Lanner Falcon",
+      "slug": "lanner-falcon",
+      "reason": "Sagittarius x Tiger. Same sign, and the Tiger sits in the Dog's trine. Two falcons of open country."
+    },
+    {
+      "name": "Flying Fish",
+      "slug": "flying-fish",
+      "reason": "Sagittarius x Rabbit. Same sign, and the Rabbit is the Dog's secret friend (six harmonies)."
+    },
+    {
+      "name": "Pronghorn",
+      "slug": "pronghorn",
+      "reason": "Aries x Horse. Horse is in the Dog trine; Aries shares Sagittarius's Fire. Both read open grassland on foot."
+    },
+    {
+      "name": "Harpy Eagle",
+      "slug": "harpy-eagle",
+      "reason": "Leo x Tiger. Tiger trine; Leo completes the Fire trigon with Sagittarius."
+    },
+    {
+      "name": "Fennec Fox",
+      "slug": "fennec-fox",
+      "reason": "Gemini x Rabbit. Rabbit is the Dog's secret friend; Gemini is Sagittarius's opposite sign and Air feeds Fire."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Frigatebird",
+      "slug": "frigatebird",
+      "reason": "Sagittarius x Dragon. Same sign, but Dragon and Dog are the traditional six-clash pair; also two food thieves at one carcass."
+    },
+    {
+      "name": "Whale Shark",
+      "slug": "whale-shark",
+      "reason": "Pisces x Dragon. Dragon-Dog clash, and Pisces squares Sagittarius (both mutable, Water against Fire)."
+    }
+  ],
+  "candidate_lines": [
+    "On open ground you walk where others circle, and the find is usually under the stone they flew straight past.",
+    "Your face changes color before your mouth opens; the people who love you have learned to read it like weather coming over the pampas.",
+    "Some mornings you wait for the vulture to open the carcass first, and you are honest enough to call that patience.",
+    "When you finally believe in something you throw your head back and say it, harsh and loud, and nobody on the plain can claim they missed it.",
+    "You keep one territory and one mate for years, and still walk the whole roadside at dawn to see what the night left.",
+    "The pampas has a saying for the bird that eats and flies off. Your Dog half spends years proving it was never about you."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 卡拉卡拉鷹 (kǎlākǎlā yīng) on rail and serial",
+      "verdict": "OK (imprecise)",
+      "note": "卡拉卡拉鷹屬 is the Chinese Wikipedia name for the genus Caracara, a phonetic loan plus 鷹 yīng (hawk/eagle). Acceptable. The species on the page, the crested caracara, is 鳳頭巨隼 fèngtóu jùsǔn ('crested giant falcon'), also seen as 鳳頭卡拉鷹 fèngtóu kǎlākǎlā yīng. 鳳頭巨隼 is more precise and avoids calling a falcon a hawk; pinyin on page is correct.",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "fact": "Intro: 'a large, falcon-shaped hawk of the Americas, technically a falcon'",
+      "verdict": "WRONG",
+      "note": "Backwards. It is a falcon (family Falconidae) that looks like a long-legged hawk. Rewrite: 'a falcon built like a long-legged hawk'.",
+      "source_ids": [
+        "s10",
+        "s11",
+        "s5"
+      ]
+    },
+    {
+      "fact": "Regularly walks and runs on the ground to investigate terrain and chase prey, 'spending more time on foot than most falcons spend in a lifetime'",
+      "verdict": "OK (cut the hyperbole)",
+      "note": "HawkWatch: 'it walks as much as it flies'; Wikipedia: often seen on foot searching for food; Darwin 1839: 'It runs (in contradistinction to hopping)'. The lifetime comparison is unsourced; cut it.",
+      "source_ids": [
+        "s11",
+        "s5",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Eats live prey, carrion, eggs, insects and plant material; one of the most generalist diets in the falcon family",
+      "verdict": "OK (superlative unverifiable)",
+      "note": "All About Birds and Wikipedia list insects, small vertebrates, fish, crabs, eggs, carrion and fruit. 'One of the most generalist in the falcon family' has no source found; soften or cut. Same for the Mirror line 'No other raptor maintains this range simultaneously' (UNVERIFIABLE, cut).",
+      "source_ids": [
+        "s10",
+        "s5"
+      ]
+    },
+    {
+      "fact": "Associates with vultures at carcasses and can displace them, using the vulture's detection ability to locate food",
+      "verdict": "OK (mechanism unverifiable)",
+      "note": "Dominance over black and turkey vultures is documented (Wikipedia; Darwin saw it chase a vulture until it vomited its meal). Sierra Club notes caracaras wait for vultures to open a carcass. That caracaras use vultures' detection to find food was not found in any source opened; reword to 'feeds beside vultures and often drives them off'.",
+      "source_ids": [
+        "s5",
+        "s7",
+        "s13"
+      ]
+    },
+    {
+      "fact": "Bare orange-red face 'flushes deeper red during arousal, excitement, or alarm'",
+      "verdict": "WRONG (direction)",
+      "note": "Color change with mood is real (Wikipedia; FNAI ties it to blood flow), but HawkWatch says adult facial skin is orange-red 'becoming yellowish when excited', and Sierra Club also says it goes to yellow when excited. Rewrite: 'the bare face shifts color with mood, from orange-red toward yellow when excited, by most accounts'.",
+      "source_ids": [
+        "s11",
+        "s13",
+        "s5",
+        "s12"
+      ]
+    },
+    {
+      "fact": "Some populations observed using sticks and other objects to dig out prey or move obstacles",
+      "verdict": "UNVERIFIABLE (likely borrowed)",
+      "note": "No record of crested caracara stick tool use found. The caracara cognition result that exists is the striated caracara (Phalcoboenus australis), a different species, solving puzzle boxes on the Falklands without tools (Harrington et al. 2023). Cut the trait, or swap to a sourced crested caracara behavior.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "fact": "Forms loose, flexible groups of two to ten birds that gather at food and disperse",
+      "verdict": "UNVERIFIABLE (framing misleading)",
+      "note": "HawkWatch: 'often occurs in small groups concentrating around carrion'; Wikipedia: 'typically solitary', several may gather at a big food source; FNAI: adult pairs hold territory year-round, often for years. No source gives 'two to ten'. Rewrite around territorial pairs that tolerate gatherings at carrion.",
+      "source_ids": [
+        "s11",
+        "s5",
+        "s12"
+      ]
+    },
+    {
+      "fact": "Source list cites Caracara cheriway (Morrison 1996) and IUCN 'Caracara plancus (Southern Crested Caracara)'",
+      "verdict": "OK (taxonomy dated)",
+      "note": "Northern and southern forms are now one species, Caracara plancus, with subspecies cheriway and plancus. Update the label.",
+      "source_ids": [
+        "s5",
+        "s15"
+      ]
+    },
+    {
+      "fact": "Proverb 隨機應變 (suí jī yìng biàn), labeled as Zodi Animal's own pairing with the Dog year",
+      "verdict": "OK",
+      "note": "Real idiom, honestly labeled. Pinyin present on tiles.",
+      "source_ids": []
+    }
+  ]
+}

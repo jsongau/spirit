@@ -1,0 +1,361 @@
+{
+  "slug": "banded-mongoose",
+  "name": "Banded Mongoose",
+  "sign": "Taurus",
+  "year": "Dog",
+  "element": "Earth (from the Dog); Taurus adds Earth, fixed. Earth doubled.",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Taurus (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Taurus_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Taurus traits and personality, TODAY",
+      "url": "https://www.today.com/life/astrology/taurus-traits-personality-rcna24594"
+    },
+    {
+      "id": "s3",
+      "title": "Dog (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dog_(zodiac)"
+    },
+    {
+      "id": "s4",
+      "title": "Chinese zodiac (compatibility table), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s5",
+      "title": "Year of the Dog, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/dog.htm"
+    },
+    {
+      "id": "s6",
+      "title": "Hodge, Bell and Cant 2011, Reproductive competition and the evolution of extreme birth synchrony in a cooperative mammal, Biology Letters 7:54-56 (PDF on Banded Mongoose Research Project site)",
+      "url": "https://mongooseproject.pages.dev/images/8vBRQofbIehzh2svdGUhJA1fpAc.pdf"
+    },
+    {
+      "id": "s7",
+      "title": "Mongoose mother mystery solved, Royal Society news, 4 Aug 2010",
+      "url": "https://royalsociety.org/news/2010/mongoose-mother"
+    },
+    {
+      "id": "s8",
+      "title": "Cant, Nichols, Johnstone and Hodge 2013, Policing of reproduction by hidden threats in a cooperative mammal, PNAS (EurekAlert release)",
+      "url": "https://www.eurekalert.org/news-releases/873310"
+    },
+    {
+      "id": "s9",
+      "title": "University of Exeter news archive, Dec 2013, on Cant et al. PNAS",
+      "url": "https://news-archive.exeter.ac.uk/2013/december/title_348254_en.html"
+    },
+    {
+      "id": "s10",
+      "title": "Gilchrist 2004, Pup escorting in the communal breeding banded mongoose: behavior, benefits, and maintenance, Behavioral Ecology 15(6):952-960 (IDEAS/RePEc abstract)",
+      "url": "https://ideas.repec.org/a/oup/beheco/v15y2004i6p952-960.html"
+    },
+    {
+      "id": "s11",
+      "title": "Gilchrist, Otali and Mwanguhya 2008, Caregivers recognize and bias response towards individual young, Journal of Zoology 275:41-46 (PDF)",
+      "url": "https://mongooseproject.pages.dev/images/vQK7Lb1L90BUoFRnJ2bV2n2eQA.pdf"
+    },
+    {
+      "id": "s12",
+      "title": "Banded mongooses pass on traditions (Müller and Cant 2010), University of Exeter news, 16 June 2010",
+      "url": "https://news-archive.exeter.ac.uk/2010/june/title_85089_en.html"
+    },
+    {
+      "id": "s13",
+      "title": "Banded mongoose, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Banded_mongoose"
+    },
+    {
+      "id": "s14",
+      "title": "Mungos mungo, Animal Diversity Web",
+      "url": "https://animaldiversity.org/accounts/Mungos_mungo/"
+    },
+    {
+      "id": "s15",
+      "title": "Banded mongoose, Smithsonian's National Zoo",
+      "url": "https://nationalzoo.si.edu/animals/banded-mongoose"
+    },
+    {
+      "id": "s16",
+      "title": "The Brahmin and the Mongoose, Wikipedia (Panchatantra, Hitopadesha; Gelert variant)",
+      "url": "https://en.wikipedia.org/wiki/The_Brahmin_and_the_Mongoose"
+    },
+    {
+      "id": "s17",
+      "title": "Jambhala, Western Tibet, 13th century, National Museum of Asian Art (Smithsonian) S1996.39",
+      "url": "https://asia.si.edu/object/S1996.39"
+    },
+    {
+      "id": "s18",
+      "title": "Ashvamedhika Parva, Wikipedia (Mahabharata, the gold-sided mongoose)",
+      "url": "https://en.wikipedia.org/wiki/Ashvamedhika_Parva"
+    },
+    {
+      "id": "s19",
+      "title": "Vitikainen, Thompson, Marshall and Cant 2019, Live long and prosper (Phil Trans B), via Africa Geographic",
+      "url": "https://africageographic.com/stories/silver-spoon-effect-lifelong-benefits-banded-mongooses/"
+    },
+    {
+      "id": "s20",
+      "title": "缟獴属 (Mungos), Chinese Wikipedia via Wikiwand",
+      "url": "https://wikiwand.com/zh-hant/articles/%E7%BC%9F%E7%8D%B4%E5%B1%9E"
+    },
+    {
+      "id": "s21",
+      "title": "MDBG Chinese dictionary, 獴",
+      "url": "https://www.mdbg.net/chinese/dictionary?page=worddict&wdrst=1&wdqb=%E7%8D%B4"
+    },
+    {
+      "id": "s22",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Sensual, artistic, calm and easygoing, 'a lover, not a fighter'; dependable, generous, persistent. Shadow: notoriously stubborn, resistant to change, possessive, self-indulgent. Holds and steadies what Aries begins.",
+    "planet": "Venus (the Moon is exalted in Taurus)",
+    "element": "Earth (with Virgo and Capricorn)",
+    "modality": "Fixed; opposite sign Scorpio",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Loyal, honest, amiable, kind, cautious and prudent; protects the people it cares about. Shadow: not good at communication, so read as stubborn; reserved, avoids the spotlight; emotions in love can swing.",
+    "yinyang": "Yang",
+    "element": "Earth (fixed); earthly branch 戌 xū; Dog hour 19:00 to 20:59",
+    "trine": "Dog, Tiger, Horse",
+    "secret_friend": "Rabbit",
+    "clash": "Dragon (harm pair: Rooster)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "India, Panchatantra (and Hitopadesha, Kathasaritsagara)",
+      "meaning": "The Brahmin and the Mongoose: a family's pet mongoose kills a snake at the baby's cradle; the mother sees its bloody mouth, assumes the worst and kills it, then finds the child safe. As the tale travelled west through Kalila wa Dimna into Europe, the mongoose was often replaced by a dog, becoming the Welsh legend of Gelert. A mongoose story that literally turned into a Dog story is a rare honest bridge for a Dog-year mongoose. Species in the tale is the Indian mongoose, not Mungos mungo; say 'the mongoose of the old Indian fable'.",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "culture": "Tibetan Buddhist art",
+      "meaning": "Jambhala, deity of riches, holds Nakula, a mongoose that spews jewels from its mouth, 'receptacle of all treasures' (13th-century Western Tibetan bronze, Smithsonian). Our reading for a Taurus (Venus, comfort, good things): the guardian who is also the treasury.",
+      "source_ids": [
+        "s17"
+      ]
+    },
+    {
+      "culture": "India, Mahabharata (Ashvamedhika Parva)",
+      "meaning": "A blue-eyed mongoose, gold on one side, interrupts Yudhishthira's grand horse sacrifice to say it is worth less than a starving family's gift of barley to a guest. A mongoose as the judge of real generosity over display. Again a South Asian mongoose, not the African banded species.",
+      "source_ids": [
+        "s18"
+      ]
+    },
+    {
+      "culture": "Science as symbol (banded mongoose itself)",
+      "meaning": "Escorts pass on traditions: pups copied their escort's way of handling food (biting or smashing an egg), and the habit held a year later (Müller and Cant 2010). Escorted pups were more likely to survive (Gilchrist 2004), with lifelong benefits (Vitikainen et al. 2019). The pup, not the adult, keeps the bond going.",
+      "source_ids": [
+        "s12",
+        "s10",
+        "s19"
+      ]
+    },
+    {
+      "culture": "Science as symbol (birth synchrony)",
+      "meaning": "Females give birth on the same night, which confuses who mothered which pup, so an infanticidal female risks killing her own (Cant et al. 2013, PNAS). The strongest 'this is me' hook on the page and it is accurately sourced.",
+      "source_ids": [
+        "s8",
+        "s9"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "No African folklore specific to the banded mongoose was found in any source reached; 'mongoose spirit animal' meanings online are blog material.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: Earth doubled, fixed Taurus over a yang Earth Dog. Taurus wants to hold one thing close; the Dog guards the pack. The banded mongoose shows the result: a life lived in a warm heap of bodies, where the group is home and the den is only an address.",
+    "gifts": "Our reading: steady, loyal protection that does not run out; closing ranks fast when the group is threatened; patient teaching by example (the escort's habits stick for life); generosity without display.",
+    "shadow": "Our reading: Taurus possessiveness hidden inside Dog fairness; the communal litter as cover, where no one can be accused of a favorite and no favorite can be taken. The Dog's poor communication (China Highlights) plus Taurus stubbornness: grudges held quietly inside the group. The Panchatantra's warning sits here too: quick judgment of a bloody mouth.",
+    "love": "Our reading: Venus-ruled devotion carried out through acts of guarding. Picks one person the way an escort pup picks its adult, then stays. The partner may need to hear, out loud, that they are not just one of the pack.",
+    "money": "Our reading: Taurus saver, Dog prudence; shares resources with the group easily. Risk: carrying everyone's costs because it feels unfair not to.",
+    "conflict": "Our reading: avoids fights within the circle, fierce against outsiders (intergroup relations in this species are 'highly aggressive', per Wikipedia). Slow to forgive a betrayal of the group."
+  },
+  "careers": [
+    {
+      "path": "Teaching, mentoring, coaching juniors, apprenticeship trades",
+      "why": "Our reading: the escort bridge; habits passed one-to-one last a lifetime (Müller and Cant 2010)."
+    },
+    {
+      "path": "Nursing, paediatrics, early-years care, foster care",
+      "why": "Our reading: guarding young that are not your own; Taurus steadiness."
+    },
+    {
+      "path": "Security, firefighting, search and rescue, any crew-based work",
+      "why": "Our reading: Dog loyalty plus a pack that moves as one body under threat."
+    },
+    {
+      "path": "Cooperative, community or union organizing; HR and team operations",
+      "why": "Our reading: fairness across a whole group, Earth that feeds everyone."
+    },
+    {
+      "path": "Hospitality and food (Taurus), especially family or collective kitchens",
+      "why": "Our reading: Venus comfort shared out to a crowd."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Moose",
+      "slug": "moose",
+      "reason": "Taurus x Horse. Same sign, and the Horse is in the Dog's trine (Tiger, Horse, Dog)."
+    },
+    {
+      "name": "Koala",
+      "slug": "koala",
+      "reason": "Taurus x Rabbit. Same sign, and the Rabbit is the Dog's secret friend (six harmonies). Reciprocal: the Koala dossier lists a Dog-year match (Tibetan Blue Bear)."
+    },
+    {
+      "name": "Siberian Crane",
+      "slug": "siberian-crane",
+      "reason": "Capricorn x Horse. Fellow Earth sign and a Dog-trine year."
+    },
+    {
+      "name": "Dragonfly",
+      "slug": "dragonfly",
+      "reason": "Virgo x Tiger. Fellow Earth sign; the Tiger completes the Dog trine."
+    },
+    {
+      "name": "Moon Bear",
+      "slug": "moon-bear",
+      "reason": "Cancer x Tiger. Tiger trine, and Cancer Water is the classic complement to Taurus Earth."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Gila Monster",
+      "slug": "gila-monster",
+      "reason": "Scorpio x Dragon. Dog and Dragon are the traditional six-clash pair, and Scorpio is Taurus's opposite sign: both systems pull apart."
+    },
+    {
+      "name": "Galápagos Tortoise",
+      "slug": "galapagos-tortoise",
+      "reason": "Taurus x Dragon. Same Western sign, so the habits match, but the Dog-Dragon clash runs underneath."
+    }
+  ],
+  "candidate_lines": [
+    "In a termite-mound den you sleep in a heap of warm backs, and the rare morning you wake alone, you feel the cold before you feel anything else.",
+    "Somewhere back in your story one grown-up walked beside you through a single season, and you still crack open your days the way they did.",
+    "When a hawk's shadow crosses the grass, your first move is to close ranks until the whole group looks like one large animal with forty eyes.",
+    "You can change dens every few nights without grief, because home was always the pile of bodies and never the hole in the ground.",
+    "Taurus in you wants to say 'mine', and the Dog in you guards a litter where every pup could be anyone's, so naming one favorite out loud feels like breaking the pact.",
+    "You are the mongoose of the old fable at the cradle, blood on your mouth from the snake you stopped, waiting for someone to check on the baby before they judge you."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 獴 (měng) as the animal's Chinese name.",
+      "verdict": "OK (generic)",
+      "note": "獴 měng means mongoose (MDBG), and the page shows pinyin. It names the family, not this species. The species name is 縞獴 (gǎoměng, banded mongoose; simplified 缟獴), genus 縞獴屬. Optional upgrade to 縞獴 gǎoměng.",
+      "source_ids": [
+        "s21",
+        "s20"
+      ]
+    },
+    {
+      "fact": "In roughly two-thirds of breeding attempts, most or all of a group's pregnant females give birth on exactly the same night, producing one joint litter nursed and guarded together.",
+      "verdict": "OK (tighten)",
+      "note": "Hodge, Bell and Cant 2011 (Biology Letters): in 64% of breeding attempts females gave birth on exactly the same night. 'About 64%' is more accurate than 'roughly two-thirds'. Communal nursing by any lactating female: ADW, National Zoo.",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s14",
+        "s15"
+      ]
+    },
+    {
+      "fact": "Dominant females kill a litter born before the rest of the group's, but spare the communal litter when many mothers gave birth the same night, because the timing makes it too difficult to tell whose pups are whose.",
+      "verdict": "OK (two studies merged; cite both)",
+      "note": "Hodge et al. 2011: offspring face more infanticide if their mother gives birth before other females, and killers were mostly females that had not given birth. Cant et al. 2013 (PNAS): older dominant females kill litters they did not contribute to; synchrony 'confuses maternity' so a killer might kill her own. The page cites only the Biology Letters paper; the 'whose pups are whose' mechanism comes from the PNAS paper.",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s8",
+        "s9"
+      ]
+    },
+    {
+      "fact": "Certain adults, often unrelated to a given pup and frequently male, form a one-to-one bond with a pup not their own, carrying, feeding, grooming and defending it for roughly two months.",
+      "verdict": "WRONG (relatedness); UNVERIFIABLE (sex)",
+      "note": "One-to-one escort bonds and care: OK (Gilchrist 2004; 2008). Duration: the dependence period is about 30 to 90 days of age (Gilchrist 2008 citing 2004), so 'about two months' is fair. 'Often unrelated' is not supported: Gilchrist 2008 notes the likely high relatedness within groups; the finding is that escorts do not pick by kinship. 'Frequently male' was not found in any source reached (Gilchrist 2008 found no sex effect on responsiveness). Also: the pup, not the escort, maintains the bond (Gilchrist 2004).",
+      "source_ids": [
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "fact": "When threatened, the pack bunches into a single writhing mass and charges together, screeching, driving off predators many times the size of one mongoose.",
+      "verdict": "PARTLY UNVERIFIABLE",
+      "note": "Bunching and moving as a group 'creating the appearance of a single large animal', with front animals lunging: National Zoo; ADW: bunching with young at the centre; warning chitters. 'Charges', 'screeching' and 'predators many times the size' were not found in a reliable source reached. Rewrite around the National Zoo wording.",
+      "source_ids": [
+        "s15",
+        "s14",
+        "s13"
+      ]
+    },
+    {
+      "fact": "Sleeps together in an underground den, often an abandoned termite mound, and moves to a new one every two to three days rather than defending one fixed burrow.",
+      "verdict": "OK (soften)",
+      "note": "Wikipedia (citing Cant 2000): dens are often termite mounds, changed 'every 2-3 days'. National Zoo and ADW say a few days to a week or weeks, and they often return to favorite dens. Add 'often returning to favorites'.",
+      "source_ids": [
+        "s13",
+        "s15",
+        "s14"
+      ]
+    },
+    {
+      "fact": "Dark transverse bands cross the lower back and rump against a grizzled brown coat, giving the species its name.",
+      "verdict": "OK",
+      "note": "Dark bands across the back between mid-back and base of tail (ADW, National Zoo). Coat colour ranges whitish to reddish-brown (ADW).",
+      "source_ids": [
+        "s14",
+        "s15"
+      ]
+    },
+    {
+      "fact": "Packs that can number in the dozens.",
+      "verdict": "OK",
+      "note": "Groups of 5 to 75, averaging about 20 (Wikipedia); usually 10 to 20, up to 40 (National Zoo).",
+      "source_ids": [
+        "s13",
+        "s15"
+      ]
+    },
+    {
+      "fact": "Purple Star section: 'read for the Taurus Dog crossing it keeps landing on' 天府 Tiān Fǔ and 天同 Tiān Tóng, near the siblings palace 兄弟宮 (xiōngdì gōng).",
+      "verdict": "WRONG (no traditional basis)",
+      "note": "Zi Wei Dou Shu charts are cast from lunar birth date and hour; a Western sun sign plus year animal does not place stars in palaces. Relabel as Zodi Animal's own reading or cut. The same page's sidebar correctly says charts come from the exact birth hour, which contradicts this section. 兄弟宮 also appears without pinyin.",
+      "source_ids": [
+        "s22"
+      ]
+    },
+    {
+      "fact": "'The Dog brings a fair-minded loyalty that refuses to protect one person more than another.'",
+      "verdict": "NOT TRADITIONAL (label as ours)",
+      "note": "Traditional Dog descriptions are loyal, honest and protective of the people it cares about (China Highlights); 'refuses to protect one person more than another' is the page's invention to fit the archetype. Fine as interpretation, not as 'what the Dog brings'.",
+      "source_ids": [
+        "s5"
+      ]
+    }
+  ]
+}

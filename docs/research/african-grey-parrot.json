@@ -1,0 +1,333 @@
+{
+  "slug": "african-grey-parrot",
+  "name": "African Grey Parrot",
+  "sign": "Gemini",
+  "year": "Dog",
+  "element": "Earth (from the Dog); Gemini adds Air, mutable",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Gemini (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Gemini_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "The Zodiac's 'Goldilocks': what to know about Gemini, USA TODAY (via Yahoo News)",
+      "url": "https://www.yahoo.com/news/zodiacs-goldilocks-meet-gemini-sign-101545902.html"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (compatibility: trines, harmonies, clashes), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Dog (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dog_(zodiac)"
+    },
+    {
+      "id": "s5",
+      "title": "Year of the Dog, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/dog.htm"
+    },
+    {
+      "id": "s6",
+      "title": "Psittacus erithacus, Animal Diversity Web (University of Michigan)",
+      "url": "https://animaldiversity.org/accounts/Psittacus_erithacus/"
+    },
+    {
+      "id": "s7",
+      "title": "Grey parrot, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Grey_parrot"
+    },
+    {
+      "id": "s8",
+      "title": "African gray parrot, Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/animal/African-gray-parrot"
+    },
+    {
+      "id": "s9",
+      "title": "Alex (parrot), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Alex_(parrot)"
+    },
+    {
+      "id": "s10",
+      "title": "Liji, Qu Li I (禮記·曲禮上), Chinese Text Project",
+      "url": "https://ctext.org/liji/qu-li-i"
+    },
+    {
+      "id": "s11",
+      "title": "From the Imagination to the Reality: Rewriting Six Dynasties Buddhist Avadana Stories, Religions 14(4):545 (MDPI, 2023)",
+      "url": "https://mdpi.com/2077-1444/14/4/545"
+    },
+    {
+      "id": "s12",
+      "title": "鸚鵡學舌, Wiktionary (mirror)",
+      "url": "https://kaweah.freedombox.rocks/kiwix/wiktionary_en_all_maxi_2023-04/%E9%B8%9A%E9%B5%A1%E5%AD%B8%E8%88%8C"
+    },
+    {
+      "id": "s13",
+      "title": "Red List 2016 reveals a mixed outlook for the world's birds, BirdGuides",
+      "url": "https://www.birdguides.com/news/red-list-2016-reveals-a-mixed-outlook-for-the-worlds-birds/"
+    },
+    {
+      "id": "s14",
+      "title": "CITES CoP17: African grey parrot moved to Appendix I, WCS Newsroom (2 Oct 2016)",
+      "url": "https://newsroom.wcs.org/News-Releases/articleType/ArticleView/articleId/9316/CITES-CoP17-WCS-Congratulates-CITES-Parties-for-Extending-Protections-to-the-African-Grey-Parrot.aspx"
+    },
+    {
+      "id": "s15",
+      "title": "非洲灰鸚鵡屬 (Chinese Wikipedia mirror)",
+      "url": "https://zhwiki.oracleblog.org/zh/%E9%9D%9E%E6%B4%B2%E7%81%B0%E9%B8%9A%E9%B5%A1%E5%B1%AC"
+    },
+    {
+      "id": "s16",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Curious, quick, adaptable, connects easily with very different people, a natural generalist. Shadow: struggles to commit, bores fast, avoids conflict and hides problems, may not fight fair. The twins: a search for a second self.",
+    "planet": "Mercury",
+    "element": "Air (with Libra and Aquarius)",
+    "modality": "Mutable; opposite sign Sagittarius",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Loyal, honest, kind, cautious and protective of the people it values; warm once trust is built. Shadow: reserved, struggles to say what it thinks, can read as stubborn.",
+    "yinyang": "Yang",
+    "element": "Earth (fixed); earthly branch 戌 xū; Dog hour 19:00 to 20:59",
+    "trine": "Tiger, Horse, Dog",
+    "secret_friend": "Rabbit",
+    "clash": "Dragon",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Yoruba (Nigeria)",
+      "meaning": "Britannica: the grey parrot is important to the Yoruba; its tail feathers and image appear on Gelede festival masks, its red tail is linked to menstrual blood and palm oil, and Yoruba folklore casts it as a spy and sentinel. Tell this as Yoruba tradition, attributed, and keep it apart from the 'this is you' voice. The Yoruba name odíderé and use of red feathers in Ifa/Orisa initiation turned up only on blogs and podcasts; do not use those details without a scholarly source.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "culture": "Classical Chinese (Book of Rites)",
+      "meaning": "禮記·曲禮上 Lǐjì, Qū Lǐ shàng: 鸚鵡能言，不離飛鳥 yīngwǔ néng yán, bù lí fēi niǎo, 'the parrot can speak, yet it is still only a bird.' The passage goes on: a person who can speak but lacks propriety has a beast's heart. Speech alone is not the measure; how it is used is. A rare primary-text line for a talking bird. Parrots generally, not this species.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "culture": "Chinese Buddhist avadana (Six Dynasties)",
+      "meaning": "The parrot who fights a mountain fire with water carried on its wings because it cannot bear to see its companions burn. The gods mock it, then are moved and put the fire out with rain (Za piyu jing; Liu Yiqing's Xuanyan ji), per Religions 2023. Loyalty to one's own flock against hopeless odds: a strong Dog-year echo. Parrots generally, not the grey.",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "culture": "Chinese idiom",
+      "meaning": "鸚鵡學舌 yīngwǔ xuéshé, 'the parrot learns the tongue': to repeat words without understanding. The grey's real research record (Alex) argues the opposite, which gives the page an honest tension to play with.",
+      "source_ids": [
+        "s12",
+        "s9"
+      ]
+    },
+    {
+      "culture": "Greek and Roman; European art",
+      "meaning": "The epithet erithacus comes from an Ancient Greek word for a bird said to mimic human sounds; Greeks and Romans kept grey parrots in cages (Wikipedia). Rubens, Jan Davidsz de Heem and Jan Steen painted them (Britannica). The 'Egyptian hieroglyphs, 2000 BC' claim is marked citation needed on Wikipedia: do not use.",
+      "source_ids": [
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "culture": "Conservation (modern)",
+      "meaning": "Uplisted to Endangered by IUCN in 2016 and moved to CITES Appendix I on 2 October 2016, banning international commercial trade. Ghana roost counts fell 90 to 99% since 1992, largely from the pet trade. The loved voice is the reason it was taken. Present as fact, beside any reading.",
+      "source_ids": [
+        "s13",
+        "s14",
+        "s7"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Generic 'African grey spirit animal' meanings (communication, mimicry, 'speak your truth') from totem blogs; Yoruba odíderé initiation details from blogs and podcasts only.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: mutable Air (Gemini) meets yang Earth (Dog). Gemini collects voices; the Dog guards a few people. The grey is a mind with a two-hundred-call repertoire (wild birds recorded in DRC, s7) that a wild flock keeps for its own kind and its own roost. Air sits outside the Wu Xing cycle, so the two halves run side by side rather than feeding each other.",
+    "gifts": "Our reading: learns any room's language fast; words used exactly once they are owned; loyal to the roost; watchful on behalf of the whole group, the way the flock lands in waves so some are always above.",
+    "shadow": "Our reading: the Book of Rites line in reverse: able to say anything, choosing to say little, and calling that safety. Gemini's conflict avoidance plus the Dog's reserve means hard things stay unsaid. The mimic can also hide inside other people's words.",
+    "love": "Our reading: careful choice, long courtship, then a closed question. Shows care by feeding and small sounds more than speeches (male greys feed their mates; both sing soft notes, ADW). Needs a partner who is patient with the testing period and does not demand performance.",
+    "money": "Our reading: the Dog is cautious; Gemini is curious and easily bored. Likely to research many options and commit to few. Risk: trusting only the known and missing a good new branch.",
+    "conflict": "Our reading: goes quiet first, watches, then speaks once and precisely. Gemini may bring up an old grievance sideways. Practice: say the plain sentence while the flock is still in the tree."
+  },
+  "careers": [
+    {
+      "path": "Translation, interpreting, linguistics, language teaching",
+      "why": "Our reading: Gemini's quick ear and the grey's research record with labels and categories."
+    },
+    {
+      "path": "Security, intelligence analysis, risk and compliance",
+      "why": "Our reading: the Dog's watchfulness; the Yoruba sentinel image belongs to the Yoruba, but vigilance is in the bird's own field record (s6)."
+    },
+    {
+      "path": "Speech therapy, audiology, voice coaching",
+      "why": "Our reading: a mind built around sound and its exact use."
+    },
+    {
+      "path": "Cognitive science and animal behaviour research",
+      "why": "Our reading: the grey is one of the most studied minds in that field (Alex, s9)."
+    },
+    {
+      "path": "Conservation enforcement and wildlife-trade work",
+      "why": "Our reading: Dog loyalty aimed at its own kind, after the 2016 Appendix I listing (s14)."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Arabian Oryx",
+      "slug": "arabian-oryx",
+      "reason": "Libra x Tiger. Tiger is in the Dog trine; Libra shares Gemini's Air element."
+    },
+    {
+      "name": "Sailfish",
+      "slug": "sailfish",
+      "reason": "Aquarius x Horse. Horse is in the Dog trine; Aquarius is the third Air sign."
+    },
+    {
+      "name": "Crowned Crane",
+      "slug": "crowned-crane",
+      "reason": "Libra x Rabbit. Rabbit is the Dog's secret friend (six harmonies); Libra is Air like Gemini. Also an African bird."
+    },
+    {
+      "name": "Axolotl",
+      "slug": "axolotl",
+      "reason": "Aquarius x Rabbit. Rabbit secret friend; shared Air element."
+    },
+    {
+      "name": "Pronghorn",
+      "slug": "pronghorn",
+      "reason": "Aries x Horse. Horse trine; Aries Fire is the classic complement to Gemini's Air."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Frigatebird",
+      "slug": "frigatebird",
+      "reason": "Sagittarius x Dragon. Dog and Dragon are a six-clash pair, and Sagittarius is Gemini's opposite sign."
+    },
+    {
+      "name": "Archerfish",
+      "slug": "archerfish",
+      "reason": "Virgo x Dragon. The Dog-Dragon clash, plus Virgo squares Gemini (both mutable, both Mercury-ruled, Earth against Air)."
+    }
+  ],
+  "candidate_lines": [
+    "Your flock fills the bare tree first and drops to the ground in waves, never all at once. You open up the same way: one true thing, then a pause on the branch to see who startles.",
+    "Wild greys have been recorded with more than two hundred calls, a bat's among them. You carry a repertoire like that and give a strange branch almost none of it.",
+    "However far the day's foraging carried you, dusk finds you on the same river island. The Gemini in you wanders all day. The Dog in you keeps the roost.",
+    "The red only shows when you fly. People catch your color as you leave and wonder how they missed it while you sat beside them.",
+    "You choose a mate the slow way, seasons of soft notes in the canopy, food carried beak to beak. After that the question is closed for you.",
+    "The Dog in you barks at the real shadow; the Gemini in you could copy every bark in the valley. So you wait in the leaves until you know which one this is."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi (rail__han / serial-han) is 鹦.",
+      "verdict": "PARTLY RIGHT",
+      "note": "鹦 yīng is the simplified first half of 鹦鹉 yīngwǔ, 'parrot'; on its own it is a bound syllable, and it is shown without pinyin. Use traditional 鸚鵡 yīngwǔ (parrot), or for the species 非洲灰鸚鵡 fēizhōu huī yīngwǔ (Chinese Wikipedia mirror). Always with pinyin.",
+      "source_ids": [
+        "s12",
+        "s15"
+      ]
+    },
+    {
+      "fact": "Alex, studied for more than two decades, used English words functionally, labeling 50 objects, 7 colors and 5 shapes, combining labels to identify, request, refuse and quantify roughly 100 different items.",
+      "verdict": "OK (tighten)",
+      "note": "Numbers match ADW and Wikipedia (also quantities up to six; vocabulary over 100 words). The study ran about thirty years, ending with Alex's death on 6 September 2007, so 'more than two decades' undersells it; say 'about thirty years'. ADW's '100 objects' is about items, not words; keep the distinction.",
+      "source_ids": [
+        "s6",
+        "s9"
+      ]
+    },
+    {
+      "fact": "In the wild, notably shy and rarely allow humans to approach.",
+      "verdict": "OK",
+      "note": "ADW: 'very shy and rarely allow humans to approach them.' Wikipedia adds that wild behaviour is little studied because they are secretive.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Roost communally in large vocal flocks, often on river islands, split into smaller groups by day to forage long distances, return to the same roost at dusk, silent from sunset to dawn.",
+      "verdict": "OK (soften)",
+      "note": "All in ADW, but ADW says they are 'said to prefer' river islands and the flock is 'usually' quiet from sunset to dawn, after a period of calling on return at dusk. Keep the hedges.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "fact": "Select mates carefully, lifelong monogamous bond beginning at three to five years; courtship includes mutual feeding and soft duetted calls.",
+      "verdict": "WRONG (detail)",
+      "note": "Lifelong bond and maturity at three to five are in ADW. But ADW says males feed their mates (courtship feeding, one way, not mutual) and both sing 'soft monotonous notes'; 'duetted' overstates it. Wikipedia: the male feeds the incubating hen.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Scarlet-red tail, the only part of the bird that is not some shade of grey.",
+      "verdict": "WRONG",
+      "note": "The tail is red, but the bird also has a black bill, bare white facial skin and pale yellow eyes in adults (ADW, Wikipedia, Britannica). Say 'a red tail against grey plumage'.",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Foraging groups gather in a tree until packed with hundreds of birds, then descend in waves, never all on the ground at once, reacting instantly to movement or sound.",
+      "verdict": "OK",
+      "note": "Closely matches ADW ('make their way down to the ground in waves', 'the entire group never being on the ground at the same time', 'extremely vigilant'). The page's wording sits very close to ADW's; rephrase rather than paraphrase line by line.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "fact": "Range: lowland rainforests of West and Central Africa.",
+      "verdict": "OK (note split)",
+      "note": "ADW: forest belt of central and West Africa. Since the 2007 split the Timneh parrot of the far west (Guinea-Bissau to Ivory Coast) is a separate species; Psittacus erithacus runs from eastern Ivory Coast east to Kenya and Tanzania (Britannica, Wikipedia).",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Proverb 一犬吠影，百犬吠聲 yī quǎn fèi yǐng, bǎi quǎn fèi shēng tied to the Dog year.",
+      "verdict": "OK",
+      "note": "Real saying; the page labels the tie as its own reading. Not checked further.",
+      "source_ids": []
+    },
+    {
+      "fact": "Conservation status (not stated on page; cites IUCN).",
+      "verdict": "NOTE",
+      "note": "Endangered (IUCN 2016) and CITES Appendix I (2016). ADW still says Near Threatened and Appendix II, which is out of date; do not copy ADW's status.",
+      "source_ids": [
+        "s13",
+        "s14",
+        "s7"
+      ]
+    }
+  ]
+}

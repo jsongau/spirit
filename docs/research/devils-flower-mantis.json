@@ -1,0 +1,337 @@
+{
+  "slug": "devils-flower-mantis",
+  "name": "Devil's Flower Mantis",
+  "sign": "Scorpio",
+  "year": "Rooster",
+  "element": "Metal (from the Rooster); Scorpio adds Water, fixed",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Scorpio (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Scorpio_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Everything you need to know about Scorpios, mindbodygreen",
+      "url": "https://www.mindbodygreen.com/articles/scorpio"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (compatibility grid: trines, six harmonies, six clashes, six harms), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Rooster (zodiac), Wikipedia (yin, Metal, branch 酉 yǒu)",
+      "url": "https://en.wikipedia.org/wiki/Rooster_(zodiac)"
+    },
+    {
+      "id": "s5",
+      "title": "Year of the Rooster, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/rooster.htm"
+    },
+    {
+      "id": "s6",
+      "title": "Idolomantis diabolica, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Idolomantis_diabolica"
+    },
+    {
+      "id": "s7",
+      "title": "Piotr Naskrecki, Empusids, The Smaller Majority (2013)",
+      "url": "https://thesmallermajority.com/2013/08/25/empusids/"
+    },
+    {
+      "id": "s8",
+      "title": "Mantis (vision, cannibalism, culture), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mantis"
+    },
+    {
+      "id": "s9",
+      "title": "Newcastle University press release on Nityananda et al. 2016, Insect stereopsis demonstrated using a 3D insect cinema, Scientific Reports 6:18718",
+      "url": "https://www.ncl.ac.uk/press/articles/archive/2016/01/3dglassesformantises"
+    },
+    {
+      "id": "s10",
+      "title": "Praying mantises wearing 3D glasses, ScienceAlert (states mantises are the only invertebrates with stereopsis)",
+      "url": "https://www.sciencealert.com/praying-mantises-3d-glasses-unique-stereo-vision"
+    },
+    {
+      "id": "s11",
+      "title": "High-speed video of a mantis strike, Live Science (Rossoni and Niven 2020, Biology Letters)",
+      "url": "https://livescience.com/mantis-strikes-deadly-precision-video.html"
+    },
+    {
+      "id": "s12",
+      "title": "ǀKaggen, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/%C7%80Kaggen"
+    },
+    {
+      "id": "s13",
+      "title": "螳臂當車, Zdic (source: Zhuangzi, 人間世)",
+      "url": "https://www.zdic.net/hant/%E8%9E%B3%E8%87%82%E7%95%B6%E8%BB%8A"
+    },
+    {
+      "id": "s14",
+      "title": "笑里藏刀, Zdic (source: Old Book of Tang, biography of Li Yifu)",
+      "url": "https://www.zdic.net/hans/%E7%AC%91%E9%87%8C%E8%97%8F%E5%88%80"
+    },
+    {
+      "id": "s15",
+      "title": "魔花螳螂, Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/%E9%AD%94%E8%8A%B1%E8%9E%B3%E8%9E%82"
+    },
+    {
+      "id": "s16",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Fearless, bold (Mars), passionate, creative and fiercely loyal; deep rather than wide. Shadow: tunnel vision, obsessive thinking, grudges. In love prefers long-term bonds and feels more than it says. Career fits named: therapist, guide, financial adviser; loyal to one field.",
+    "planet": "Mars (traditional), Pluto (modern)",
+    "element": "Water (with Cancer and Pisces)",
+    "modality": "Fixed; opposite sign Taurus. Myth: the scorpion that stung Orion, which is why Orion sets as Scorpius rises",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Observant, hardworking, resourceful, courageous, talented and self-confident; honest, frank, loyal, keeps promises. Shadow: impatient when not given attention, talks about own achievements. Career fits listed: sales, public relations, journalism, teaching, broadcasting, policing.",
+    "yinyang": "Yin",
+    "element": "Metal (fixed); earthly branch 酉 yǒu",
+    "trine": "Ox, Snake, Rooster",
+    "secret_friend": "Dragon",
+    "clash": "Rabbit (Wikipedia also lists Dog as a six-harm pair; China Highlights adds Rat as a poor match)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "San (southern Africa)",
+      "meaning": "ǀKaggen, the San trickster and creator, is most often represented as a praying mantis; he made the first animals, the eland his favourite, and can take other forms (eland, louse, snake, caterpillar). The mantis was revered by Khoi and San. Southern African, not East African like Idolomantis, and about mantises in general: credit the San and keep it as their story.",
+      "source_ids": [
+        "s12",
+        "s8"
+      ]
+    },
+    {
+      "culture": "Ancient Greek",
+      "meaning": "Mantis means 'prophet' or seer in Ancient Greek; Greeks believed the mantis could show lost travellers the way home, and silver coins of Metapontum (5th century BC) show a mantis in threat posture. The Suda records the proverb arouraia mantis, mocking the slow who are still treated as wise.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "culture": "Chinese (classical)",
+      "meaning": "螳臂當車 táng bì dāng chē, from Zhuangzi 人間世: the mantis raises its arms in anger to stop a carriage wheel, not knowing it cannot win. Meaning: overrating one's strength. A fitting shadow image for a proud Scorpio-Rooster. The Erya ties the mantis to courage and fearlessness. Two kung fu styles, Northern and Southern Praying Mantis, copy its strike.",
+      "source_ids": [
+        "s13",
+        "s8"
+      ]
+    },
+    {
+      "culture": "Chinese (proverb already on the page)",
+      "meaning": "笑里藏刀 xiào lǐ cáng dāo (traditional 笑裡藏刀), 'a blade hidden in a smile', from the Old Book of Tang on the minister Li Yifu, who always smiled while ruining rivals. Verified. Tying it to the Rooster year is our choice and the page says so.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "culture": "Ancient Egypt, Assyria, Ozarks",
+      "meaning": "A 'bird-fly' minor god in the Book of the Dead leads souls to the underworld; a 9th-century BC Assyrian list calls the mantis 'necromancer' and 'soothsayer'; early-1900s Ozark people called it the 'Devil's horse'. Mantis generally.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "The Wikipedia line 'according to local beliefs in Africa, this insect brings good luck' names no people or place; do not use. Totem-blog 'mantis spirit animal = stillness, mindfulness' meanings have no traditional source. The 螳螂捕蟬，黃雀在後 proverb could not be opened at a source this round.",
+      "source_ids": [
+        "s8"
+      ]
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Water (Scorpio) meets yin Metal (Rooster). Metal generates Water, so the Rooster's polish and precision feed Scorpio's depth. The Rooster displays; Scorpio waits. The devil's flower mantis does both at once: a bright, petal-red signal on the very arms that strike.",
+    "gifts": "Our reading: patience that can hold a pose for as long as it takes; presentation that is deliberate, never accidental; sharp judgment of distance and timing (the mantis's stereo vision as metaphor); honesty and loyalty once committed (Rooster).",
+    "shadow": "Our reading: 螳臂當車. Pride that raises its arms at a carriage. Rooster self-display and Scorpio grudge can turn a slight into a standoff. The smile with the blade (笑裡藏刀) is the warning: charm used as cover until no one trusts the bloom.",
+    "love": "Our reading: Scorpio wants depth and permanence; the Rooster wants to be seen and admired. Attracts easily, commits slowly, then loyal. Needs a partner who notices the effort behind the display and can handle intensity without flinching.",
+    "money": "Our reading: the ambush budget. Waits for the right opportunity rather than chasing many; Rooster diligence keeps records tidy, Scorpio holds reserves quietly. Risk: spending on appearances.",
+    "conflict": "Our reading: rears up and shows every colour at once (the deimatic display), meant to end the fight before it starts. If that fails, Scorpio remembers. Practice: say the hurt plainly before the display is needed."
+  },
+  "careers": [
+    {
+      "path": "Design, styling, fashion, brand and visual identity",
+      "why": "Our reading: the Rooster's attention to surface plus the mantis's petal-coloured forelegs; presentation as craft."
+    },
+    {
+      "path": "Investigation, journalism, intelligence, audit",
+      "why": "Our reading: Scorpio's depth and patience with Rooster observation; China Highlights lists journalism for the Rooster."
+    },
+    {
+      "path": "Therapy, coaching, negotiation",
+      "why": "Our reading: reading people from a distance before engaging; mindbodygreen lists therapist for Scorpio."
+    },
+    {
+      "path": "Performance, public relations, broadcasting",
+      "why": "Our reading: the display that holds attention; China Highlights lists PR and broadcasting."
+    },
+    {
+      "path": "Martial arts, precision sport, surgery",
+      "why": "Our reading: the strike that comes from stillness; Praying Mantis kung fu as the cultural echo."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Giant Salamander",
+      "slug": "giant-salamander",
+      "reason": "Scorpio x Ox. Ox is in the Rooster trine (Ox, Snake, Rooster); same sign. Two patient ambushers."
+    },
+    {
+      "name": "Gila Monster",
+      "slug": "gila-monster",
+      "reason": "Scorpio x Dragon. Dragon is the Rooster's secret friend (six harmonies); same sign."
+    },
+    {
+      "name": "Asian Elephant",
+      "slug": "asian-elephant",
+      "reason": "Cancer x Ox. Ox trine; Cancer is Water like Scorpio. (Already on the live page.)"
+    },
+    {
+      "name": "Glass Frog",
+      "slug": "glass-frog",
+      "reason": "Pisces x Snake. Snake trine; Pisces is Water. The see-through frog facing the masked mantis: a pair that tests honesty."
+    },
+    {
+      "name": "Humpback Whale",
+      "slug": "humpback-whale",
+      "reason": "Cancer x Dragon. Dragon secret friend; Cancer Water."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Koala",
+      "slug": "koala",
+      "reason": "Taurus x Rabbit. Rabbit-Rooster is a six-clash pair and Taurus is Scorpio's opposite sign. Reciprocal with the koala dossier, which lists this mantis as its hard match."
+    },
+    {
+      "name": "Pallas's Cat",
+      "slug": "pallass-cat",
+      "reason": "Scorpio x Rabbit. Same sign, so instant recognition, but the Rabbit-Rooster clash underneath."
+    }
+  ],
+  "candidate_lines": [
+    "Your brightest colours live on the inside of your arms. Most people only see them in the second before you close the distance.",
+    "Slow talkers and crawlers barely register with you. Something fast and winged has to cross your sightline before your whole body wakes.",
+    "Rooster pride, Scorpio patience: you will hold one pose on one stem through a whole savanna afternoon if it means the right one lands within reach.",
+    "When someone pushes, you rear up and show every colour at once, a display you have had ready for years and rarely need to use.",
+    "In love you judge distance with both eyes fixed on one point, and you know how far away someone truly is before they take a step.",
+    "Your smile is part of the bloom. The people who matter learn what is folded behind it, and they stay."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 花 huā (rail__han and serial-han)",
+      "verdict": "WRONG",
+      "note": "花 means 'flower', not the mantis. The Chinese name is 魔花螳螂 mó huā táng láng ('devil flower mantis', same in traditional and simplified; also nicknamed 螳螂之王 táng láng zhī wáng, 'king of mantises'). Use 魔花螳螂, or 螳螂 táng láng if space is tight.",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "fact": "Intro: 'native to East African rainforests'",
+      "verdict": "WRONG",
+      "note": "Range is Ethiopia, Kenya, Malawi, Somalia, Tanzania, South Sudan, Uganda (Wikipedia). Entomologist Piotr Naskrecki: known from woodland savannas of Kenya and Tanzania. No source says rainforest. The Mirror line about a 'forest canopy' and the canopy colour palette inherit this error.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Intro: 'one of the largest praying mantis species'",
+      "verdict": "OK",
+      "note": "Females about 13 cm, males about 10 cm; possibly the largest flower mimic (Wikipedia; Chinese Wikipedia agrees).",
+      "source_ids": [
+        "s6",
+        "s15"
+      ]
+    },
+    {
+      "fact": "Fact 1: mimics a flower across its entire body; legs, thorax and abdomen shaped and coloured like petals and sepals; draws pollinators",
+      "verdict": "WRONG",
+      "note": "Overstated. The petal-like red pattern is on the raptorial front legs (Naskrecki); immatures look like a dry, withered leaf. It does hunt pollinators (bees, butterflies, flies, moths, beetles) by staying still and luring them. Say 'its front legs carry petal-coloured patterns' and keep the lure.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Fact 2: deimatic display, spreads wings to reveal red, black and white",
+      "verdict": "WRONG",
+      "note": "Display is mainly the raised front femora exposing patterned undersides of the thorax and abdomen, with wings shifted side to side; colours given as red, white, blue, purple and black (Wikipedia). Correct the mechanism and palette. The idea that the flower signal and the threat signal share the same body part is actually supported (the forelegs carry both).",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "fact": "Fact 3: mantises are the only invertebrates known to have stereoscopic vision, confirmed by Rossel (1983)",
+      "verdict": "OK",
+      "note": "Rossel 1983 (Nature, 'Binocular stereopsis in an insect') and Nityananda et al. 2016 confirm stereopsis; ScienceAlert states they are the only invertebrates known with it, though Wikipedia and the Newcastle release do not make the 'only' claim. Safer: 'the only insects proven to see in 3D'. 'In the Devil's Flower Mantis this serves both camouflage and strike' is unsourced for this species; studies used other mantids.",
+      "source_ids": [
+        "s8",
+        "s9",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Fact 4: foreleg strike of 30 to 180 milliseconds, after stillness lasting hours, with no visible preparation",
+      "verdict": "WRONG",
+      "note": "No source for 30 to 180 ms. Rossoni and Niven 2020 (Biology Letters) measured about 60 to 290 ms in Polyspilota aeruginosa, with strike speed changing with prey speed. 'Hours of stillness' and 'no preparatory movement' are unsourced. Not measured in Idolomantis. Say 'a strike lasting a fraction of a second'.",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "fact": "Fact 5: females dramatically larger; frequently eat males during or after mating; decapitated male continues mating",
+      "verdict": "WRONG",
+      "note": "Females are about 13 cm against 10 cm, larger but not dramatically. Cannibalism in this species is documented as prominent among captive pairs (Wikipedia), not shown in the wild. The headless-male behaviour comes from other mantids; across mantises the field rate is about a quarter of encounters (Lawrence 1992, Mantis religiosa) and lab observation may exaggerate it. Rewrite as 'in captivity, females often eat the male'.",
+      "source_ids": [
+        "s6",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Fact 6: solitary ambush predator, waits among flowers without moving, does not chase",
+      "verdict": "OK",
+      "note": "Stays motionless to lure prey (Wikipedia); specialised hunter of fast-flying pollinators, ignores slow or crawling insects (Naskrecki). 'Among flowers' is not in a source; say 'on vegetation'.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Proverb 笑里藏刀 xiào lǐ cáng dāo tied to the Rooster year",
+      "verdict": "OK",
+      "note": "Origin verified: Old Book of Tang, Li Yifu. The Rooster tie is labelled as the site's own. Use traditional 笑裡藏刀 if the page uses traditional elsewhere.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "fact": "Page sources: Prete et al. 1999, The Praying Mantids; IUCN Mantodea Specialist Group species account for Idolomantis diabolica",
+      "verdict": "UNVERIFIABLE",
+      "note": "Neither was opened. The book is real (Johns Hopkins). The IUCN item links only to the iucn.org homepage, not to a species account; no Red List assessment for Idolomantis diabolica was located in this round. Do not cite either until a person opens them; cite s6 and s7 instead.",
+      "source_ids": []
+    },
+    {
+      "fact": "Purple Star / ZWDS claim",
+      "verdict": "OK",
+      "note": "No star assigned; page says a chart is cast from lunar birth date and hour.",
+      "source_ids": []
+    }
+  ]
+}

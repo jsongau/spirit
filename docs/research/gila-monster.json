@@ -1,0 +1,356 @@
+{
+  "slug": "gila-monster",
+  "name": "Gila Monster",
+  "sign": "Scorpio",
+  "year": "Dragon",
+  "element": "Earth (from the Dragon); Scorpio adds Water, fixed",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Scorpio (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Scorpio_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Scorpio zodiac sign, The Old Farmer's Almanac",
+      "url": "https://www.almanac.com/content/scorpio-zodiac-sign"
+    },
+    {
+      "id": "s3",
+      "title": "Dragon (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dragon_(zodiac)"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Dragon, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/dragon.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Chinese zodiac (table; trines, six harmonies, six clashes), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s6",
+      "title": "Gila monster, Wikipedia (predators, venom delivery, activity, myths, exenatide, Utah state reptile, Heloderma relatives)",
+      "url": "https://en.wikipedia.org/wiki/Gila_monster"
+    },
+    {
+      "id": "s7",
+      "title": "Animal Fact Sheet: Gila Monster, Arizona-Sonora Desert Museum",
+      "url": "https://www.desertmuseum.org/kids/oz/long-fact-sheets/Gila%20Monster.php"
+    },
+    {
+      "id": "s8",
+      "title": "Gila Monster: Myth and Legend, Natural History Museum of Utah blog (2017)",
+      "url": "https://nhmu.utah.edu/blog/2017/03/22/gila-monster-myth-legend"
+    },
+    {
+      "id": "s9",
+      "title": "The Gila Monster Had a Killer Reputation, HistoryNet",
+      "url": "https://historynet.com/the-gila-monster-had-a-killer-reputation/"
+    },
+    {
+      "id": "s10",
+      "title": "Heloderma suspectum account, Online Field Guide to the Reptiles and Amphibians of Arizona",
+      "url": "https://reptilesofaz.org/lizards-subpages/h-h-suspectum/"
+    },
+    {
+      "id": "s11",
+      "title": "Gila monster, Tony Hillerman Portal, University of New Mexico (cites Frisbie 1987; Hausman 1993; Levy, Neutra and Parker 1987)",
+      "url": "https://ehillerman.unm.edu/1602"
+    },
+    {
+      "id": "s12",
+      "title": "Navajo medicine, Wikipedia (hand tremblers draw on power received from the Gila monster; cites Davies 2001, Healing Ways, UNM Press)",
+      "url": "https://en.wikipedia.org/wiki/Navajo_medicine"
+    },
+    {
+      "id": "s13",
+      "title": "美國毒蜥 (Heloderma suspectum), Chinese Wikipedia via Wikiwand",
+      "url": "https://www.wikiwand.com/zh/articles/%E5%B8%8C%E6%8B%89%E6%AF%92%E8%9C%A5"
+    },
+    {
+      "id": "s14",
+      "title": "厚积而薄发 dictionary entry with source (Su Shi, 稼说送张琥), p8nda",
+      "url": "https://p8nda.com/dictionary/%E5%8E%9A%E7%A7%AF%E8%80%8C%E8%96%84%E5%8F%91"
+    },
+    {
+      "id": "s15",
+      "title": "Bogert and Martin del Campo 1956, The Gila Monster and Its Allies, AMNH Digital Library record (existence of the cited monograph only; text not read)",
+      "url": "https://digitallibrary.amnh.org/items/33739c2a-06a1-4f6f-96fb-c592c9974201/full"
+    },
+    {
+      "id": "s16",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Passionate, determined, loyal, protective, intuitive, magnetic. Shadow: secretive, suspicious, jealous, possessive, resentful, stubborn.",
+    "planet": "Mars (traditional), Pluto (modern)",
+    "element": "Water (with Cancer and Pisces)",
+    "modality": "Fixed; negative/feminine polarity; opposite sign Taurus",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Courageous, tenacious, intelligent, confident, enthusiastic, unafraid of challenge and risk, inclined to break with convention. Shadow (per element variants and forecasts in the same source): risk-taking that wastes effort, wanting to be seen, friction with others.",
+    "yinyang": "Yang",
+    "element": "Earth (fixed; Chinese zodiac table, s5). Note: the Dragon (zodiac) Wikipedia page lists Wood, which conflicts; the brief and the branch 辰 chén follow Earth.",
+    "trine": "Rat, Dragon, Monkey",
+    "secret_friend": "Rooster",
+    "clash": "Dog",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Navajo (Diné)",
+      "meaning": "The Gila monster is one of the Holy People and, in Flintway, the original medicine man. Hand tremblers, the Navajo diagnosticians, are said to draw on divine power received from the Gila monster; the UNM portal notes the lizard's foot is thought to shake as it walks. Tell it as Navajo tradition, with the sources named, and do not lay a 'this is you' reading over it.",
+      "source_ids": [
+        "s11",
+        "s12"
+      ]
+    },
+    {
+      "culture": "Tohono O'odham, Pima, Apache, Seri, Yaqui (as summarized by the Desert Museum and HistoryNet)",
+      "meaning": "Tohono O'odham and Pima held that the Gila monster had a spiritual power able to cause sickness; Apache held its breath could kill; Seri and Yaqui believed its hide had healing power. One animal read as both harm and cure. Secondary summaries only; name them as such.",
+      "source_ids": [
+        "s7",
+        "s8",
+        "s9"
+      ]
+    },
+    {
+      "culture": "Anglo-American frontier lore (1880s to 1900s)",
+      "meaning": "Newspapers and an 1890 Scientific American piece claimed fetid, stunning breath, an always-fatal bite, and a bite that would not let go until sundown or until it thundered. All myths. Mormon pioneers around St. George reportedly boiled Gila monsters for oil used in religious bathing (Tombstone Epitaph, 16 June 1881).",
+      "source_ids": [
+        "s8",
+        "s9",
+        "s6"
+      ]
+    },
+    {
+      "culture": "Modern medicine",
+      "meaning": "Exendin-4, isolated from Gila monster venom, became exenatide (Byetta), approved by the FDA in 2005 for type 2 diabetes. The feared venom turned into a slow, steady medicine: a rare honest bridge between the animal and a reading about stored power released carefully.",
+      "source_ids": [
+        "s6",
+        "s8"
+      ]
+    },
+    {
+      "culture": "Utah (civic)",
+      "meaning": "Utah named the Gila monster its official state reptile in 2019.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Chinese (naming)",
+      "meaning": "Chinese names are 美國毒蜥 Měiguó dúxī ('American venomous lizard'), also 希拉毒蜥 Xīlā dúxī (Gila, transliterated) and 鈍尾毒蜥 dùnwěi dúxī ('blunt-tailed venomous lizard'). The blunt tail is the fat store.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "'Gila monster spirit animal' meanings (patience, self-sufficiency, etc.) on totem blogs; 'Aztec lizard' framing (only a book title found). No traditional source.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Water (Scorpio) meets yang Earth (Dragon). The Dragon is the sky animal of the Chinese wheel, big, bold, built to be seen; Scorpio is the sign of what stays hidden. The Gila Monster settles the argument underground: the Dragon's force kept in a burrow, released in rare, vivid surface hours. Earth contains Water in the five-phase control cycle, so the Dragon's Earth gives Scorpio's depth a hard shell and a schedule.",
+    "gifts": "Our reading: stamina on very little; one decisive commitment instead of many small ones; a grip that holds when others let go; nerve that does not need an audience; the ability to turn something people fear into something useful (the exenatide story).",
+    "shadow": "Our reading: hoarding (energy, feelings, information) past the season that needed it; a grudge that keeps chewing after the bite should have ended; mistaking invisibility for safety; the Dragon's pride under Scorpio's secrecy, so help is refused even when the tail is thin.",
+    "love": "Our reading: slow to show up, then wholly present. Loves by preparing and provisioning, and by staying in once committed. Needs a partner who does not take long burrow seasons as rejection and who can handle intensity in short, bright bursts.",
+    "money": "Our reading: a reserve-builder. Few large, well-chosen moves a year beat constant trading. Risk: sitting on cash or a position long after it stopped serving, out of Scorpio control and Dragon pride.",
+    "conflict": "Our reading: avoids most fights entirely; when cornered, holds on and does not release quickly. Frontier lore said the bite lasted until thunder. Practice: name the exit before the bite, so the other person knows there is one."
+  },
+  "careers": [
+    {
+      "path": "Pharmacology, toxicology, biotech research",
+      "why": "Our reading: the venom-to-medicine story (exenatide) is the literal career map for a Scorpio Dragon: find the power others fear and make it useful."
+    },
+    {
+      "path": "Investigations, forensic accounting, audit",
+      "why": "Our reading: long quiet accumulation of evidence, then one decisive release; Scorpio depth with Dragon nerve."
+    },
+    {
+      "path": "Crisis and emergency management, wilderness or desert operations",
+      "why": "Our reading: runs on reserves, stays calm in scarcity, surfaces when conditions demand it."
+    },
+    {
+      "path": "Long-cycle investing, endowment or treasury roles",
+      "why": "Our reading: few large moves a year, built on stored capital, like three or four spring meals feeding a whole season."
+    },
+    {
+      "path": "Field herpetology, desert ecology, conservation",
+      "why": "Our reading: the animal's own world; patient tracking of rare surface appearances."
+    },
+    {
+      "path": "Writing or research with long solitary stretches",
+      "why": "Our reading: most of the work happens underground; the published result is the brief surface season."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Coconut Crab",
+      "slug": "coconut-crab",
+      "reason": "Cancer x Rat. Rat sits in the Dragon trine (Rat, Dragon, Monkey) and Cancer shares Scorpio's Water element. Double harmony."
+    },
+    {
+      "name": "Emperor Penguin",
+      "slug": "emperor-penguin",
+      "reason": "Cancer x Rooster. Rooster is the Dragon's secret friend (six harmonies) and Cancer is a fellow Water sign."
+    },
+    {
+      "name": "New Caledonian Crow",
+      "slug": "new-caledonian-crow",
+      "reason": "Virgo x Monkey. Monkey completes the Dragon trine; Virgo's Earth is the classic complement to Scorpio's Water."
+    },
+    {
+      "name": "Tarsier",
+      "slug": "tarsier",
+      "reason": "Scorpio x Rat. Same sun sign and a trine partner year: two night-and-burrow natures on the same rhythm."
+    },
+    {
+      "name": "Weaverbird",
+      "slug": "weaverbird",
+      "reason": "Virgo x Rooster. Secret-friend years plus Earth-Water complement; the builder pairs with the reserve-keeper."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Banded Mongoose",
+      "slug": "banded-mongoose",
+      "reason": "Taurus x Dog. Dragon-Dog is the traditional six-clash pair, and Taurus is Scorpio's opposite sign. Both systems pull against each other."
+    },
+    {
+      "name": "Tasmanian Devil",
+      "slug": "tasmanian-devil",
+      "reason": "Scorpio x Dog. Same sun sign, but the Dragon-Dog clash: recognition on the surface, a fight for the same burrow underneath."
+    }
+  ],
+  "candidate_lines": [
+    "Three or four good meals in spring and you can carry a whole year in that thick tail; people who need feeding every day cannot work out how you are still steady in August.",
+    "Most of your life happens under the rock, and the few hours you spend crossing open desert are the ones everyone remembers about you.",
+    "When you bite into something you do not strike and leave. You hold on and keep chewing until it is finished, and the people who know you have learned to respect the grip.",
+    "The Dragon in you wanted sky. The Scorpio in you chose a burrow under the creosote, and somehow both of them got what they wanted.",
+    "Old prospectors swore your bite lasted until thunder. Those who love you know the gentler truth: you let go when the weather inside you turns.",
+    "Every bead on your back hides a small bone, so the softness people see in you is armored all the way down."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 毒 (dú) in rail__han and serial-han",
+      "verdict": "WRONG",
+      "note": "毒 dú means poison/venom, not the animal. The Chinese name is 美國毒蜥 Měiguó dúxī, also 希拉毒蜥 Xīlā dúxī or 鈍尾毒蜥 dùnwěi dúxī. If one glyph pair is needed, 毒蜥 dúxī ('venomous lizard') names the genus. Pinyin dú is shown on the page, which is good.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "fact": "Intro: 'one of only two venomous lizards in North America'",
+      "verdict": "WRONG",
+      "note": "Outdated. Heloderma now has five species: the Gila monster plus four beaded lizards (H. horridum, H. exasperatum, H. alvarezi in Mexico; H. charlesbogerti in Guatemala). Correct, quotable form: the only venomous lizard native to the United States.",
+      "source_ids": [
+        "s6",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Intro and fact 03: 'no known natural predators in adulthood' / 'no documented natural predators... effectively invulnerable once full size'",
+      "verdict": "WRONG",
+      "note": "Wikipedia: coyotes, badgers and raptors prey on adults. Desert Museum: few natural predators; humans are the main threat. Say 'few natural predators'. Osteoderms are correct (bony beads in head, back and tail scales, not belly).",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Fact 01: tail fat sustains the animal 'three to four months without feeding'; tail visibly thins and refills",
+      "verdict": "UNVERIFIABLE",
+      "note": "Tail fat storage is confirmed (s6, s7). The 'three to four months' figure was not found; sources say three or four large meals sustain a season (s6, s8) or four or five meals a year (s10). The number looks like 'three to four meals' turned into months. Replace with the meals figure. Thinning and refilling is plausible but not in an opened source.",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s8",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Fact 02: venom via grooved teeth by capillary action during a chewing bite, 'documented in detail by Bogert and Martin del Campo (1956)'",
+      "verdict": "OK",
+      "note": "Mechanism confirmed: glands in the lower jaw, venom moves by capillary action into grooves in the teeth and is chewed in (s6; NHMU s8). The 1956 AMNH monograph exists (s15), but its text was not read, so keep the citation only as the general reference, not as the source of a specific sentence.",
+      "source_ids": [
+        "s6",
+        "s8",
+        "s15"
+      ]
+    },
+    {
+      "fact": "Fact 04: surface-active 'approximately two to four months per year'",
+      "verdict": "WRONG",
+      "note": "The active season is roughly 90 days, but animals are actually on the surface far less: in one Utah study they were active on only 10 days of it (s6); total surface activity may be about three weeks a year (s10); about 90 to 95 percent of life is spent in burrows or under rock (s6, s8). Correct to 'a few weeks of surface time a year'.",
+      "source_ids": [
+        "s6",
+        "s8",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Fact 05: forked tongue samples airborne chemicals for the Jacobson's organ, 'without the animal needing to move'",
+      "verdict": "OK",
+      "note": "Tongue and acute smell used to find prey by day or night (s6). The vomeronasal (Jacobson's) organ is standard squamate anatomy but was not named in an opened source. 'Without moving' is framing, not fact: the lizard tongue-flicks while foraging. Drop that clause.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "fact": "Fact 06: field studies document survival through dry seasons 'up to seven months' without surface activity or food",
+      "verdict": "UNVERIFIABLE",
+      "note": "No opened source gives a seven-month fast or names the field study. Cut, or replace with the sourced meals-per-year figure.",
+      "source_ids": []
+    },
+    {
+      "fact": "Intro/methodology: 'the five months underground'",
+      "verdict": "UNVERIFIABLE",
+      "note": "Sources frame underground time as about 90 to 95 percent of life (s6, s8), which is more than five months. Replace with that.",
+      "source_ids": [
+        "s6",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Range: Sonoran and Mojave deserts of the American Southwest and northern Mexico",
+      "verdict": "OK",
+      "note": "Range given as Sonora, Arizona and parts of California, Nevada, Utah and New Mexico (s6). 'Mojave' is not named in the opened sources but Washington County, Utah (s8) is on the Mojave edge. Fine as written.",
+      "source_ids": [
+        "s6",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Proverb 厚積薄發 hòu jī bó fā, labeled as our pairing",
+      "verdict": "OK",
+      "note": "Real line from Su Shi, 稼說送張琥: 博觀而約取，厚積而薄發 (bó guān ér yuē qǔ, hòu jī ér bó fā). Pinyin is on the page; the page honestly labels the year pairing as its own reading.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "fact": "Matches block: Rooster is the Dragon's secret friend; Monkey shares the Dragon trine",
+      "verdict": "OK",
+      "note": "Both are traditional (six harmonies; Rat-Dragon-Monkey trine). Archerfish (Virgo Dragon) is a same-year pick with no trine or harmony basis; it rests only on shared Earth.",
+      "source_ids": [
+        "s5"
+      ]
+    }
+  ]
+}
