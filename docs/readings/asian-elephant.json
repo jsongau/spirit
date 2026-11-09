@@ -1,0 +1,99 @@
+{
+  "title": "What the Asian Elephant carries",
+  "is_this_you": {
+    "pressure": "When bad news lands, your voice drops. The ones who matter feel it through the ground before they hear a word.",
+    "love": "You love by provisioning. The fridge is full and the tire is fixed before anyone thinks to ask.",
+    "cost": "You keep the white elephant. It costs more than it feeds you, and putting it down still feels like betrayal."
+  },
+  "opener": {
+    "moon": true,
+    "text": "On a second-century relief from Gandhara, now in the Metropolitan Museum, Queen Maya sleeps and dreams [s5]. A six-tusked elephant comes down from heaven and enters her right side, and the Buddha is conceived [s5]. Later tellings make the elephant white [s6]. You were born a Cancer in the year of the Ox, and like that dream elephant, you arrived already carrying someone."
+  },
+  "howto": "Three parts. Take them at walking pace.",
+  "tabs": [
+    {
+      "id": "herd",
+      "label": "The herd",
+      "intro": "Water that feels everything. Earth that keeps walking.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Cancer is cardinal Water, ruled by the Moon, the sign that builds a home and guards it [s1] [s2]. The Ox is yin Earth, patient and dependable [s3] [s4]. Earth holds Water in the five phases, so the Ox gives your tides banks to run between. You feel the whole load and keep walking."
+        },
+        {
+          "k": "Sound under the floor",
+          "text": "Payne, Langbauer and Thomas recorded captive Asian elephants calling mostly between 14 and 24 hertz, at the bottom edge of human hearing and below it [s14]. Your strongest signals travel that low. A family feels your mood shift before you speak."
+        }
+      ]
+    },
+    {
+      "id": "carry",
+      "label": "What you carry home",
+      "intro": "Long days, full arms, seeds dropped far away.",
+      "rows": [
+        {
+          "k": "The long day",
+          "text": "A wild Asian elephant spends about three quarters of its day eating or walking to food and water, taking in up to 150 kilograms of plants [s12] [s11]. Your days run that long. The Ox in you skips meals to finish the work [s4]."
+        },
+        {
+          "k": "The white elephant",
+          "text": "In Thailand and Myanmar white elephants are sacred and are presented to the king [s6]. A lesser white one could be handed to a rival, because it could not be worked and its keep could ruin the owner [s6]. That is your shadow. A duty nobody lets you set down."
+        },
+        {
+          "k": "At work",
+          "text": "About half the seeds an Asian elephant swallows travel more than 1.2 kilometres before they drop [s17]. What you plant lands far from you too. Nursing, elder care, trust work and archives all pay for stamina and a memory for who belongs."
+        }
+      ]
+    },
+    {
+      "id": "kin",
+      "label": "Who you let into the herd",
+      "intro": "Three who walk at your pace. One whose feet point elsewhere.",
+      "love_lead": "In love you open slowly, with the Moon's need for a home and the Ox's slow warmth [s1] [s4]. You want someone who notices the load without being told. Tradition offers three herd-mates.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "pangolin",
+        "chips": [
+          "Ox trine",
+          "Earth for your Water"
+        ],
+        "why": "The <b>Pangolin</b> (Taurus, Snake year) shares your trine of Ox, Snake and Rooster, and Taurus Earth gives your Water a bank [s3] [s1]."
+      },
+      {
+        "slug": "coconut-crab",
+        "chips": [
+          "Secret friend",
+          "Cancer like you"
+        ],
+        "why": "The <b>Coconut Crab</b> (Cancer, Rat year) is your secret friend, since the Rat is the Ox's hidden ally, and it shares your Cancer sun [s3]."
+      },
+      {
+        "slug": "slow-loris",
+        "chips": [
+          "Same trine",
+          "Water like you"
+        ],
+        "why": "The <b>Slow Loris</b> (Scorpio, Snake year) is trine kin through the Snake, and Scorpio is Water like you [s3] [s1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "hercules-beetle",
+        "chips": [
+          "Year clash",
+          "Opposite sign"
+        ],
+        "why": "The hard one is the <b>Hercules Beetle</b> (Capricorn, Goat year): the Goat clashes with the Ox, and Capricorn sits opposite Cancer [s3] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "Weighing the elephant",
+    "text": "The Records of the Three Kingdoms, 三國志 (Sānguózhì), tells how Sun Quan sent Cao Cao an elephant nobody could weigh [s10]. The boy Cao Chong led it onto a boat, marked the waterline, then loaded the boat with goods to the same mark and weighed those [s10]. The tale is 曹沖稱象 (Cáo Chōng chēng xiàng). Water measured the elephant. Your Moon side shows what the Ox has carried."
+  },
+  "closing": "Walk on at your own pace. The herd has always kept time by your feet."
+}

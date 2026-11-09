@@ -1,0 +1,99 @@
+{
+  "title": "What the Superb Lyrebird hears",
+  "is_this_you": {
+    "pressure": "Cornered, you answer in someone else's voice first. Your own comes out later, deep in the ferns, with nobody listening.",
+    "love": "When someone starts to leave, you fill the air with a whole forest of reasons to stay.",
+    "cost": "Some nights you hum a tune and cannot say which bird you learned it from."
+  },
+  "opener": {
+    "moon": false,
+    "text": "The D'harawal story recorded by Frances Bodkin and Gawaian Bodkin-Andrews tells of Wiritjiribin, an old woman with silver hair who led the children and old people to water-filled potholes when a bushfire came, then vanished into the smoke [s6]. Afterwards the People saw a dancing creature with her silver hair that chuckled with her voice, and that was how the lyrebird came to be [s6]. You were born a Gemini in a Dragon year, under Mercury and its quick tongue [s1] [s2]."
+  },
+  "howto": "Three parts. Tap one to hear it.",
+  "tabs": [
+    {
+      "id": "voices",
+      "label": "Every voice",
+      "intro": "Air that carries. Earth that holds the stage.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Gemini is mutable Air, the sign of the twins, one side talkative and one side reflective [s1] [s2]. The Dragon is yang Earth, brave and confident, happy to break from the usual way [s3] [s4]. In you the Air moves over the Earth. You build the ground first, then fill it with sound."
+        },
+        {
+          "k": "The false flock",
+          "text": "Researchers found that a male lyrebird will sometimes sing a whole mobbing flock at once, the alarm calls and wingbeats of many species together [s11]. He does it at two moments only: when a female tries to leave, and while they mate [s11]. The scientists read it as a false alarm that keeps her close [s11]. You have made that move too. When someone edges toward the gap in the ferns, you make the whole forest sound dangerous."
+        },
+        {
+          "k": "The qin bird",
+          "text": "In Chinese the bird is 琴鳥 (qínniǎo), named after the qin, a stringed instrument [s15]. A qin stays silent until someone plucks it. Part of you waits to be asked before you play."
+        }
+      ]
+    },
+    {
+      "id": "song",
+      "label": "Your own song",
+      "intro": "The borrowed phrase and the first one.",
+      "rows": [
+        {
+          "k": "The flute tune",
+          "text": "On the New England Tablelands people tell of a lyrebird chick raised on a farm in the 1920s that learned a household flute player's tunes, which then spread through the wild birds [s9]. Researchers in 2013 could not confirm it [s9]. You carry phrases like that, picked up from one person and kept until they became your accent."
+        },
+        {
+          "k": "At work",
+          "text": "Interpreting, sound design and voice work all pay for an ear that keeps a sound after hearing it once. Put one thing out under your own name."
+        }
+      ]
+    },
+    {
+      "id": "hears",
+      "label": "Who hears the real one",
+      "intro": "Three who wait for the first note. One who argues every bar.",
+      "love_lead": "In love you put on the full show, then worry the show is all they came for. You need someone who asks for the unrehearsed version and stays to hear it. The trines and secret friends give you three.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "satin-bowerbird",
+        "chips": [
+          "Secret friend",
+          "Air like you"
+        ],
+        "why": "The <b>Satin Bowerbird</b> (Libra, Rooster year) is your secret friend, since the Rooster is the Dragon's six-harmony partner, and Libra is Air like you [s5] [s1]."
+      },
+      {
+        "slug": "red-panda",
+        "chips": [
+          "Rat trine",
+          "A quiet branch"
+        ],
+        "why": "The <b>Red Panda</b> (Libra, Rat year) shares your trine of Rat, Dragon and Monkey, and gives you somewhere offstage to be plain [s5]."
+      },
+      {
+        "slug": "raven",
+        "chips": [
+          "Monkey trine",
+          "Third Air sign"
+        ],
+        "why": "The <b>Raven</b> (Aquarius, Monkey year) closes your trine, and Aquarius makes the third Air sign [s5] [s1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "caracara",
+        "chips": [
+          "Dog clash",
+          "Opposite sign"
+        ],
+        "why": "The hard one is the <b>Caracara</b> (Sagittarius, Dog year): the Dog clashes with the Dragon, and Sagittarius sits opposite Gemini [s5] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "The Yuin story",
+    "text": "On Djiringanj Country, Uncle Warren Ngarrae Foster tells of Goorgaty the frog, who used his mimicry to set the animals fighting, and Joolah the quiet lyrebird, who told the Creator the truth [s7]. The Creator took the frog's singing voice and gave it to Joolah, along with the fine tail [s7]."
+  },
+  "closing": "Sing every voice you have collected. When someone asks what you think, give them the one plain note."
+}

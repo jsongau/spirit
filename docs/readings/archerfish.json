@@ -1,0 +1,103 @@
+{
+  "title": "What the Archerfish sees",
+  "is_this_you": {
+    "pressure": "You go still under the surface and work out where the thing really is. Then you fire once.",
+    "love": "You show love by fixing the loose hinge and the typo in their email. Some partners hear that as criticism.",
+    "cost": "The complaint you held in too long comes out sideways, aimed at their shadow instead of their face."
+  },
+  "opener": {
+    "moon": false,
+    "text": "An old Chinese commentary tells of the 蜮 (yù), a creature in the water that holds sand in its mouth and spits it at people [s5] [s6]. From it comes the idiom 含沙射影 (hán shā shè yǐng), hold sand and shoot at the shadow, which now means attacking someone by insinuation [s5]. The real water-shooter is the archerfish, 射水魚 (shèshuǐyú) [s7]. You were born a Virgo in the year of the Dragon, and you carry both. One aims at shadows. The other hits the mark."
+  },
+  "howto": "Three parts. Aim at one, or take them in order.",
+  "tabs": [
+    {
+      "id": "shot",
+      "label": "The shot",
+      "intro": "Earth on Earth, holding still under moving water.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Virgo is mutable Earth, ruled by Mercury, precise and content to work out of sight [s1] [s2]. The Dragon is yang Earth, bold and tenacious [s3] [s4]. Double Earth keeps you steady. Virgo checks every variable, then the Dragon wants the decisive shot."
+        },
+        {
+          "k": "Tuned shot by shot",
+          "text": "The archerfish speeds up the back of its jet so the water gathers into one blob just before it hits, and it matches the force to the size of the prey [s12] [s9]. That is you at your best. Enough force, all of it arriving together."
+        },
+        {
+          "k": "The leap",
+          "text": "When an insect hangs within reach, the archerfish stops shooting and jumps for it, up to about two and a half body lengths [s14] [s9]. People who only know your careful side have never seen you leap."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "label": "Reading the surface",
+      "intro": "Light bends at the waterline. You correct for it.",
+      "rows": [
+        {
+          "k": "The bend",
+          "text": "An archerfish aims up through the surface and corrects for the way light bends there [s10] [s9]. You do the same with people. You hear what they said, then adjust for where they really stand."
+        },
+        {
+          "k": "The thief",
+          "text": "When one archerfish knocks prey down, the others race to where it will land, and a rival often steals it [s13] [s9]. Credit drifting to a quicker fish stings you more than a clean miss."
+        },
+        {
+          "k": "At work",
+          "text": "Editing, auditing, optics and surgery pay for one exact correction. Choose a place that records whose hand made it."
+        }
+      ]
+    },
+    {
+      "id": "pool",
+      "label": "Who shares your pool",
+      "intro": "Three who take precision as care. One who pulls against you.",
+      "love_lead": "In love you notice everything, and Mercury keeps the dates that matter for you [s1] [s2]. You need someone who hears a correction as care and says hard things to your face, so neither of you aims at shadows. Three pairings suit you.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "weaverbird",
+        "chips": [
+          "Secret friend",
+          "Virgo like you"
+        ],
+        "why": "The <b>Weaverbird</b> (Virgo, Rooster year) is your secret friend, since the Rooster is the Dragon's hidden ally, and it shares your Virgo sun [s3]."
+      },
+      {
+        "slug": "aardwolf",
+        "chips": [
+          "Same trine",
+          "Earth like you"
+        ],
+        "why": "The <b>Aardwolf</b> (Taurus, Rat year) sits in your trine of Rat, Dragon and Monkey, and Taurus is Earth like you [s3] [s1]."
+      },
+      {
+        "slug": "snowy-owl",
+        "chips": [
+          "Same trine",
+          "Third Earth sign"
+        ],
+        "why": "The <b>Snowy Owl</b> (Capricorn, Monkey year) closes the trine, and Capricorn completes the set of Earth signs [s3] [s1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "beluga",
+        "chips": [
+          "Year clash",
+          "Opposite sign"
+        ],
+        "why": "The hard one is the <b>Beluga</b> (Pisces, Dog year): the Dog clashes with the Dragon, and Pisces sits opposite Virgo [s3] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "Credit to the wrong fish",
+    "text": "After Schlosser reported the shooting fish to the Royal Society, European naturalists pinned the trick on the copperband butterflyfish [s8]. Philip Henry Gosse repeated the mistake in 1857 and put a spitting butterflyfish on his book cover [s8]. For decades a prettier fish took the archerfish's credit."
+  },
+  "closing": "Correct for the bend. Take one shot, and watch it land where you meant it to."
+}

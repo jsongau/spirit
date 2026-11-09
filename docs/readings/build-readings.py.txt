@@ -1,0 +1,293 @@
+#!/usr/bin/env python3
+"""Build the Zodi Animal reading section (Mary's v3 layout) from data.
+
+  python3 build-readings.py ROOT SLUG [SLUG...] --preview     write tools/_preview/<slug>-reading-v1.html
+  python3 build-readings.py ROOT SLUG [SLUG...] --apply       write into site/animals/<slug>/index.html
+  python3 build-readings.py ROOT SLUG [SLUG...] --check       quality gate only
+
+Content lives in ROOT/data/readings/<slug>.json (written by the writers). Citations in
+text are [sN] markers that point at ROOT/data/research/<slug>.json sources. Matches are
+named by slug only; names, crossings and element colours come from GRID, so they can't
+drift from the real 144.
+
+Reading JSON keys:
+  title, is_this_you {pressure, love, cost}, opener {moon: bool, text},
+  howto, tabs [{id, label, intro, rows [{k, text}], matches: bool, love_lead}],
+  matches {easy [{slug, chips [..], why}], hard [{slug, chips, why}]},
+  story {k, text} (optional), closing
+Idempotent: the section carries <!--w4-reading--> and is replaced on rebuild.
+"""
+import html, json, os, re, sys
+
+MARK = "<!--w4-reading-->"
+NOTAB = ' tabindex="-1"'
+EL_COLOR = {"Wood": "#5aa876", "Fire": "#d94436", "Earth": "#d6a13c", "Metal": "#b8bcc2", "Water": "#4b89a8"}
+FIXED_EL = {"Rat": "Water", "Ox": "Earth", "Tiger": "Wood", "Rabbit": "Wood", "Dragon": "Earth", "Snake": "Fire",
+            "Horse": "Fire", "Goat": "Earth", "Monkey": "Metal", "Rooster": "Metal", "Dog": "Earth", "Pig": "Water"}
+GLYPH = {"Aries": "♈", "Taurus": "♉", "Gemini": "♊", "Cancer": "♋", "Leo": "♌", "Virgo": "♍", "Libra": "♎",
+         "Scorpio": "♏", "Sagittarius": "♐", "Capricorn": "♑", "Aquarius": "♒", "Pisces": "♓"}
+BANNED = ["seamless", "unlock", "elevate", "journey", "empower", "embark", "delve", "tapestry", "testament",
+          "realm", "comprehensive", "leverage", "transform", "discover", "you tend to", "there are times when",
+          "people mistake your quiet", "nobody noticed", "everyone else catches up"]
+
+CSS = r"""
+/* w4-reading (2026-11-08): Zodi Animal reading section, Mary's v3 layout. Existing tokens only. */
+.kr-wrap{max-width:1040px}
+.kr-wrap > .eyebrow,.kr-wrap > h2{max-width:var(--measure)}
+.kr-open{display:flex;gap:1.2rem;align-items:flex-start;max-width:var(--measure);margin:0 0 2rem}
+.kr-moon{flex:0 0 auto;width:56px;height:56px;border-radius:50%;margin-top:.35rem;background:radial-gradient(circle at 38% 34%,var(--a-snow),var(--a-gold) 72%);box-shadow:inset -16px -4px 0 0 var(--a-night),0 0 36px 4px var(--animal-glow)}
+.kr-lede{font-family:var(--serif);font-size:clamp(1.12rem,2.2vw,1.3rem);line-height:1.6;color:var(--a-snow);margin:0}
+.kr-howto{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--a-mist);margin:0 0 .8rem}
+.kr-tabs button{display:inline-flex;align-items:center;gap:.55em}
+.kr-tabnum{display:inline-grid;place-items:center;width:1.5em;height:1.5em;border-radius:50%;border:1px solid currentColor;font-family:var(--mono);font-size:.7rem;line-height:1}
+body.js-on #meaning .rel-panel:not(.is-active){display:none}
+.kr-panel{scroll-margin-top:96px}
+.kr-panel--wide{max-width:none}
+.kr-panel .row p{max-width:62ch}
+.kr-intro{font-family:var(--serif);font-style:italic;font-size:clamp(1.25rem,2.4vw,1.55rem);line-height:1.35;color:var(--a-gold);margin:0 0 .6rem}
+.kr-love-lead{max-width:62ch;margin:0 0 .4rem}
+.kr-cards{padding-top:1rem}
+.kr-card::before{display:none}
+.kr-card .mplate__chips span{color:color-mix(in srgb,var(--mel) 70%,var(--a-snow))}
+.kr-card .mplate__why{color:var(--a-snow)}
+.kr-card .mplate__why b{font-weight:600;color:var(--a-snow)}
+.kr-hard-kicker{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a-mist);margin:2rem 0 .8rem}
+.kr-hard{max-width:26rem}
+.kr-card--hard{border-style:dashed}
+.kr-next{margin-top:1.6rem}
+.kr-coda{max-width:var(--measure);margin:3rem 0 0;border-top:1px solid var(--rule);padding-top:1.6rem}
+.kr-story{margin:0;color:var(--a-mist)}
+.kr-story .k{display:block;font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:var(--a-mist);margin:0 0 .4rem}
+.kr-close{margin:1.2rem 0 0}
+.kr-sources{margin:2.4rem 0 0}
+.kr-sources__list{font-size:.85rem;line-height:1.5;color:var(--a-mist);padding:0 1.2rem 1rem 2.4rem;margin:0}
+.kr-sources__list li{margin:0 0 .4rem}
+.kr-sources__list li:target{color:var(--a-snow)}
+.kr-sources__list a,.kr-ref a{text-decoration:none}
+.kr-ref a{color:var(--a-gold)}
+.kr-sources__list a{color:var(--a-mist)}
+@media (max-width:900px){.kr-cards{max-width:none;margin-inline:0}.kr-hard{max-width:none}}
+@media (max-width:600px){.kr-open{gap:.9rem}.kr-moon{width:40px;height:40px;box-shadow:inset -11px -3px 0 0 var(--a-night),0 0 28px 3px var(--animal-glow)}.kr-tabs{gap:.4rem}.kr-tabs button{padding:.45em .9em;font-size:.86rem}}
+@media (prefers-reduced-motion:reduce){.kr-card{transition:none}.kr-card:hover{transform:none}}
+"""
+
+JS = """<script>
+(function(){var sec=document.getElementById('meaning');if(!sec)return;
+sec.addEventListener('click',function(e){var nx=e.target.closest('.kr-next');
+if(nx){var t=document.getElementById(nx.getAttribute('data-next'));if(t){t.click();t.focus({preventScroll:true});
+var tl=sec.querySelector('.kr-tabs');var r=tl.getBoundingClientRect();
+if(r.top<0||r.top>window.innerHeight*0.6)tl.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}return;}
+var a=e.target.closest('sup a[href^="#kr-s"]');if(a){var d=document.getElementById('kr-sources');if(d)d.open=true;}});})();
+</script>"""
+
+SHARE_JS = '<script type="module" src="/js/modules/reading-share.js"></script>'
+
+SHARE_CSS = r"""
+/* w4-share (2026-11-08): reading share hooks. Existing tokens only. */
+.kr-send{display:inline-flex;align-items:center;min-height:44px;margin-top:.4rem;padding:0;border:0;background:transparent;color:var(--a-mist);font:inherit;font-size:.88rem;cursor:pointer;text-align:left}
+.kr-send:hover,.kr-send:focus-visible{color:var(--a-snow)}
+.kr-card--hard .kr-send{padding:0 1.1em;margin-top:.9rem;border:1px solid var(--a-mist);border-radius:999px;color:var(--a-snow)}
+.kr-card--hard .kr-send:hover,.kr-card--hard .kr-send:focus-visible{border-color:var(--a-snow)}
+.kr-share .btn--ghost{background:transparent;border:1px solid var(--rule);color:var(--a-snow)}
+.kr-share{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.8rem 0 0}
+@media (max-width:600px){.kr-share .btn{flex:1 1 100%;justify-content:center}}
+"""
+
+def art_attr(root, slug):
+    rel = f"/img/animals/{slug}/{slug}-hero.svg"
+    try:
+        real = re.search(r"<(path|polygon|ellipse|circle|polyline)\b", open(os.path.join(root, "site" + rel), encoding="utf-8").read())
+    except OSError:
+        real = None
+    return f' data-art="{rel}"' if real else ""
+
+
+def load_grid(root):
+    src = open(os.path.join(root, "site/js/modules/zodi-map.js"), encoding="utf-8").read()
+    g = json.loads(re.search(r"export const GRID=(\{.*?\});", src, re.S).group(1))
+    out = {}
+    for w, row in g.items():
+        for y, c in row.items():
+            out[c["s"]] = {"name": c["n"], "sign": w, "year": y}
+    return out
+
+
+class Refs:
+    def __init__(self, sources):
+        self.sources = {s["id"]: s for s in sources}
+        self.order = []
+        self.missing = set()
+
+    def sub(self, text):
+        def one(m):
+            ids = re.findall(r"\[([A-Za-z][\w-]*)\]", m.group(0))
+            parts = []
+            for i in ids:
+                if i not in self.sources:
+                    self.missing.add(i)
+                    continue
+                if i not in self.order:
+                    self.order.append(i)
+                parts.append(f'<a href="#kr-{i}">{self.order.index(i) + 1}</a>')
+            return f'<sup class="kr-ref">{",".join(parts)}</sup>' if parts else ""
+        return re.sub(r"(?: ?\[[A-Za-z][\w-]*\])+", one, text)
+
+
+def card(m, grid, refs, kind, n, total):
+    c = grid[m["slug"]]
+    color = EL_COLOR[FIXED_EL[c["year"]]]
+    chips = "".join(f"<span>{html.escape(x)}</span>" for x in m.get("chips", []))
+    serial = "Hard match" if kind == "hard" else f"Easy match · {n} of {total}"
+    cls = "mplate kr-card kr-card--hard" if kind == "hard" else "mplate kr-card"
+    hardattr = ' data-kr-hard="1"' if kind == "hard" else ""
+    return (f'<article class="{cls}" style="--mel:{color}">'
+            f'<p class="mplate__serial">{serial}</p>'
+            f'<h4 class="mplate__name">{html.escape(c["name"])}</h4>'
+            f'<p class="mplate__cross"><span aria-hidden="true">{GLYPH[c["sign"]]}︎</span> {c["sign"]} × {c["year"]} year</p>'
+            f'<p class="mplate__chips">{chips}</p>'
+            f'<p class="mplate__why">{refs.sub(m["why"])}</p>'
+            f'<a class="mplate__link" href="/animals/{m["slug"]}/">Read the {html.escape(c["name"])}</a>'
+            f'<button type="button" class="kr-send" data-kr-send="{html.escape(c["name"])}"{hardattr}>'
+            f'{"Dare a friend" if kind == "hard" else "Ask a friend if they are your " + html.escape(c["name"])}</button></article>')
+
+
+def build_section(root, slug, grid):
+    r = json.load(open(os.path.join(root, "data/readings", f"{slug}.json"), encoding="utf-8"))
+    dossier = json.load(open(os.path.join(root, "data/research", f"{slug}.json"), encoding="utf-8"))
+    me = grid[slug]
+    refs = Refs(dossier["sources"])
+    art = "an" if me["year"][0] in "AEIOU" else "a"
+    eyebrow = f"Zodi Animal reading · {me['sign']} born in {art} {me['year']} year"
+    op = r["opener"]
+    moon = '<span class="kr-moon" aria-hidden="true"></span>' if op.get("moon") else ""
+    opener = f'<div class="kr-open">{moon}<p class="kr-lede">{refs.sub(op["text"])}</p></div>'
+    tabs = r["tabs"]
+    btns, panels = [], []
+    for i, t in enumerate(tabs):
+        sel = i == 0
+        btns.append(f'<button role="tab" id="ktab-{t["id"]}" aria-controls="kr-{t["id"]}" aria-selected="{"true" if sel else "false"}"'
+                    f'{"" if sel else NOTAB}><span class="kr-tabnum" aria-hidden="true">{i + 1}</span>{html.escape(t["label"])}</button>')
+        body = f'<p class="kr-intro">{html.escape(t["intro"])}</p>' if t.get("intro") else ""
+        if t.get("love_lead"):
+            body += f'<p class="kr-love-lead">{refs.sub(t["love_lead"])}</p>'
+        for row in t.get("rows", []):
+            body += f'<div class="row"><span class="k">{html.escape(row["k"])}</span><p>{refs.sub(row["text"])}</p></div>'
+        if t.get("matches"):
+            easy = r["matches"].get("easy", [])
+            body += '<div class="mplates kr-cards">' + "".join(card(m, grid, refs, "easy", n + 1, len(easy)) for n, m in enumerate(easy)) + "</div>"
+            hard = r["matches"].get("hard", [])
+            if hard:
+                body += '<p class="kr-hard-kicker">And the hard one</p><div class="kr-hard">' + "".join(card(m, grid, refs, "hard", 1, 1) for m in hard) + "</div>"
+        nxt = tabs[(i + 1) % len(tabs)]
+        label = f"Next: {html.escape(nxt['label'])}" if i + 1 < len(tabs) else "Back to part 1"
+        body += f'<button class="btn btn--ghost kr-next" type="button" data-next="ktab-{nxt["id"]}">{label}</button>'
+        wide = " kr-panel--wide" if t.get("matches") else ""
+        panels.append(f'<div role="tabpanel" id="kr-{t["id"]}" class="rel-panel kr-panel{wide}{" is-active" if sel else ""}" '
+                      f'aria-labelledby="ktab-{t["id"]}" tabindex="0">{body}</div>')
+    coda = '<div class="kr-coda">'
+    if r.get("story"):
+        coda += f'<p class="kr-story"><span class="k">{html.escape(r["story"]["k"])}</span>{refs.sub(r["story"]["text"])}</p>'
+    coda += f'<blockquote class="bond-monument kr-close"><p><em>{html.escape(r["closing"])}</em></p></blockquote>'
+    coda += ('<div class="kr-share"><button type="button" class="btn kr-share__main" data-kr-share>Share this reading</button>'
+             '<button type="button" class="btn btn--ghost" data-kr-card>Save as a story image</button></div></div>')
+    srcs = "".join(f'<li id="kr-{i}"><a href="{html.escape(refs.sources[i]["url"])}">{html.escape(refs.sources[i]["title"])}</a></li>'
+                   for i in refs.order)
+    q = lambda v: html.escape(v, quote=True)
+    data = (f' data-slug="{slug}" data-name="{q(me["name"])}" data-cross="{q(me["sign"])} × {q(me["year"])} year"'
+            f' data-line="{q(r["is_this_you"]["love"])}" data-close="{q(r["closing"])}"{art_attr(root, slug)}')
+    section = (f'{MARK}\n<section id="meaning" class="section rule-top kr" aria-labelledby="kr-title"{data}><div class="wrap kr-wrap">'
+               f'<p class="eyebrow">{eyebrow}</p><h2 id="kr-title">{html.escape(r["title"])}</h2>{opener}'
+               f'<p class="kr-howto">{html.escape(r.get("howto", "Tap a part, or read them in order."))}</p>'
+               f'<div class="pf-bonds__tabs kr-tabs" role="tablist" aria-label="Parts of the {html.escape(me["name"])} reading">{"".join(btns)}</div>'
+               f'{"".join(panels)}{coda}'
+               f'<details class="el-derivation kr-sources" id="kr-sources"><summary>Sources for this reading · {len(refs.order)}</summary>'
+               f'<ol class="kr-sources__list">{srcs}</ol></details>{JS}{SHARE_JS}</div></section>\n<!--/w4-reading-->')
+    return r, section, refs
+
+
+def gate(slug, r, section, refs, others):
+    issues = []
+    text = html.unescape(re.sub(r"<script.*?</script>|<[^>]+>", " ", section, flags=re.S))
+    # Writing rules apply to our prose, not to the titles of the sources we cite.
+    prose = re.sub(r'<details class="el-derivation kr-sources".*?</details>|<button.*?</button>|<p class="kr-howto">.*?</p>', " ", section, flags=re.S)
+    text = html.unescape(re.sub(r"<script.*?</script>|<[^>]+>", " ", prose, flags=re.S))
+    low = text.lower()
+    for b in BANNED:
+        if b in low:
+            issues.append(f"banned: {b}")
+    if "—" in text or "–" in text:
+        issues.append("em/en dash")
+    if re.search(r"(→|->|↗)", text):
+        issues.append("arrow")
+    if re.search(r"[一-鿿]", text) and not re.search(r"[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]", text):
+        issues.append("hanzi without pinyin")
+    if "[" in text or "]" in text:
+        issues.append("raw bracket left in visible text")
+    if not refs.order:
+        issues.append("no sources cited")
+    if refs.missing:
+        issues.append(f"unknown source ids {sorted(refs.missing)}")
+    if re.search(r"\bnot (just )?\w+[^.]{0,40}, (it'?s|but) ", low):
+        issues.append("possible 'not X, it's Y' shape")
+    sents = {s.strip().lower() for s in re.split(r"(?<=[.!?])\s+", text) if len(s.split()) >= 4}
+    for o, osents in others.items():
+        shared = sents & osents
+        if shared:
+            issues.append(f"shares {len(shared)} sentence(s) with {o}")
+    words = len(text.split())
+    return issues, sents, words
+
+
+def apply_to_page(page, r, section):
+    page = re.sub(r"<!--w4-reading-->.*?<!--/w4-reading-->\n?", "", page, flags=re.S)
+    i = page.find("</section>", page.find('<section id="recognition"')) + len("</section>")
+    page = page[:i] + "\n" + section + page[i:]
+    for k, lab in (("pressure", "Under pressure"), ("love", "In love"), ("cost", "The cost")):
+        v = r["is_this_you"][k]
+        page = re.sub(r'(<li><span class="k">' + lab + r'</span><p>)(.*?)(</p></li>)',
+                      lambda m: m.group(1) + html.escape(v, quote=False) + m.group(3), page, count=1, flags=re.S)
+    page = page.replace('aria-label="Matches the wheel favors"', 'aria-label="More animals the wheel favors"')
+    page = page.replace('<h3 class="bond-matches__title">Matches the wheel favors</h3>',
+                        '<h3 class="bond-matches__title">More animals the wheel favors</h3>')
+    return page
+
+
+def main():
+    root = sys.argv[1]
+    slugs = [a for a in sys.argv[2:] if not a.startswith("--")]
+    mode = next((a for a in sys.argv if a in ("--preview", "--apply", "--check")), "--check")
+    grid = load_grid(root)
+    seen = {}
+    for slug in slugs:
+        r, section, refs = build_section(root, slug, grid)
+        issues, sents, words = gate(slug, r, section, refs, seen)
+        seen[slug] = sents
+        print(f"{slug}: {words} words, {len(refs.order)} sources, issues: {issues or 'none'}")
+        page_path = os.path.join(root, "site/animals", slug, "index.html")
+        page = apply_to_page(open(page_path, encoding="utf-8").read(), r, section)
+        if mode == "--preview":
+            banner = (f'<div style="position:fixed;top:0;left:0;right:0;z-index:9999;background:#d6c18c;color:#0d0e18;'
+                      f'font:600 13px/1.6 system-ui;text-align:center;padding:4px 8px">Preview v1 · {grid[slug]["name"]} reading · not live</div>')
+            p = page.replace("<head>", '<head>\n<base href="https://www.zodianimal.com/">', 1)
+            p = p.replace("</head>", f"<style>{CSS}{SHARE_CSS}</style>\n</head>", 1)
+            mod = open(os.path.join(root, "site/js/modules/reading-share.js"), encoding="utf-8").read()
+            p = p.replace(SHARE_JS, f'<script type="module">{mod}</script>')
+            p = re.sub(r"(<body[^>]*>)", lambda m: m.group(1) + banner, p, count=1)
+            out = os.path.join(root, "tools/_preview", f"{slug}-reading-v1.html")
+            open(out, "w", encoding="utf-8").write(p)
+        elif mode == "--apply":
+            open(page_path, "w", encoding="utf-8").write(page)
+            # rebuild safety: the template renderer injects this saved fragment
+            open(os.path.join(root, "data/readings", f"{slug}.section.html"), "w", encoding="utf-8").write(section)
+    if mode == "--apply":
+        css = os.path.join(root, "site/css/animal-components.css")
+        c = open(css, encoding="utf-8").read()
+        if "w4-reading" not in c:
+            c = c.rstrip("\n") + "\n" + CSS
+        if "w4-share" not in c:
+            c = c.rstrip("\n") + "\n" + SHARE_CSS
+        open(css, "w", encoding="utf-8").write(c)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,103 @@
+{
+  "title": "What the Tuatara guards",
+  "is_this_you": {
+    "pressure": "When the cold comes, you keep working at the mouth of the burrow after everyone else has gone in.",
+    "love": "Someone can wait at your burrow for years. The day you let them in, they stay for decades.",
+    "cost": "Your plans take a year or more to hatch, and by then nobody remembers whose they were."
+  },
+  "opener": {
+    "moon": false,
+    "text": "When scientists read the tuatara genome in 2020, they did it in partnership with Ngātiwai, the iwi who hold kaitiakitanga, or guardianship, over tuatara populations, and Ngātiwai decided how the data could be used [s9]. The last of a very old line still has its guardians. You were born a Capricorn in a Snake year, and you keep long watches of your own."
+  },
+  "howto": "Three parts. Take them slowly.",
+  "tabs": [
+    {
+      "id": "eye",
+      "label": "The third eye",
+      "intro": "Earth that plans, Fire that waits.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Capricorn is cardinal Earth, ruled by Saturn, the planet of time and limits [s1]. The Snake is yin Fire, composed in a crisis and slow to move until it is sure [s4] [s5]. Saturn gives you the long clock, and the Snake keeps the heat low enough to last it."
+        },
+        {
+          "k": "The eye on top",
+          "text": "A hatchling tuatara has a parietal eye on top of its skull, with a lens and a light-sensing retina [s10] [s8]. Within four to six months, scales and pigment cover it [s10]. It probably cannot form images and is thought to track day and night [s8]. Part of you learned the light that early and still keeps time by it."
+        },
+        {
+          "k": "The shadow",
+          "text": "The idiom 杯弓蛇影 (bēi gōng shé yǐng) comes from Ying Shao's Fengsu Tong [s13]. Du Xuan saw a bow reflected in his wine, took it for a snake, and lay ill until he learned the truth [s13]. Your guarded side can lose a whole season that way. Look into the cup twice."
+        }
+      ]
+    },
+    {
+      "id": "slow",
+      "label": "Slow time",
+      "intro": "Cold blood, long years, one clutch at a time.",
+      "rows": [
+        {
+          "k": "Cold and still working",
+          "text": "Tuatara prefer a body temperature of about 16 to 21 °C, the lowest of any reptile, and stay active down to about 5 °C [s10]. They commonly live 60 years or more [s8]. You keep working in weather that sends others home, and nobody ever sees you hurry."
+        },
+        {
+          "k": "Eggs that take a year",
+          "text": "A female lays only every two to five years, and the eggs take 11 to 16 months to hatch [s10] [s8]. It is one of the slowest reproductive cycles of any reptile [s10] [s7]. What finally hatches from you has been ready for a long time."
+        },
+        {
+          "k": "At work",
+          "text": "Conservation and deep-time science suit you, where decades are the normal unit. The Snake's career lists lean toward law, finance and research [s5]."
+        }
+      ]
+    },
+    {
+      "id": "guard",
+      "label": "Who guards with you",
+      "intro": "Three who keep the long watch. One who would hurry you.",
+      "matches": true,
+      "love_lead": "Capricorn is loyal [s1] [s2], and the Snake is slow to fall in love and loyal once it commits [s5]. You need someone who will not rush the clock. The traditional table gives you three like that."
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "giant-salamander",
+        "chips": [
+          "Same trine",
+          "Scorpio Water"
+        ],
+        "why": "The <b>Giant Salamander</b> (Scorpio, Ox year) shares your trine of Ox, Snake and Rooster, and Scorpio's Water keeps your Earth from drying out [s3] [s1]."
+      },
+      {
+        "slug": "weaverbird",
+        "chips": [
+          "Same trine",
+          "Virgo Earth"
+        ],
+        "why": "The <b>Weaverbird</b> (Virgo, Rooster year) completes that trine through the Rooster, and Virgo is Earth like you [s3] [s1]."
+      },
+      {
+        "slug": "new-caledonian-crow",
+        "chips": [
+          "Secret friend",
+          "Earth again"
+        ],
+        "why": "The <b>New Caledonian Crow</b> (Virgo, Monkey year) is your secret friend, since the Monkey and the Snake are a Six Harmonies pair [s3]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "capybara",
+        "chips": [
+          "Year clash",
+          "Opposite sign"
+        ],
+        "why": "The <b>Capybara</b> (Cancer, Pig year) is your hard match: the Pig clashes with the Snake, and Cancer faces Capricorn across the wheel [s3] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "Guarding the dead",
+    "text": "Te Ara, in Bradford Haami's account, records that Māori saw lizards as representatives of Whiro, god of darkness and death, and feared them [s12]. Yet tuatara and lizards were also released near burial caves to watch over the dead [s12]."
+  },
+  "closing": "Stay at the mouth of the cave. What you guard has lasted this long because you did."
+}

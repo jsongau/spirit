@@ -1,0 +1,99 @@
+{
+  "title": "What the Wolverine finishes",
+  "is_this_you": {
+    "pressure": "Something three times your size wants what is yours. You plant your feet before you have checked the odds.",
+    "love": "You fight for your people and still need your own range. A partner who crowds it gets a growl.",
+    "cost": "Ten projects open by spring. You hand the last three to whoever is standing nearest."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Chinese has a saying for a fierce start and a weak finish: 虎頭蛇尾 (hǔ tóu shé wěi), a tiger's head and a snake's tail [w19]. Western astrology says much the same of Aries, the sign that would rather start ten jobs and let someone else finish them [w2]. You were born an Aries in the year of the Tiger, so both traditions are pointing at you. Take it kindly. A head that big is a gift. The wolverine's whole life is about the tail."
+  },
+  "howto": "Three parts. Charge one. Then finish the rest.",
+  "tabs": [
+    {
+      "id": "charge",
+      "label": "The charge",
+      "intro": "Wood that feeds Fire. Two starters in one coat.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Aries is cardinal Fire, ruled by Mars, fast and direct and able to be alone [w1] [w2]. The Tiger is yang Wood, brave and competitive [w3] [w4]. In the five phases Wood feeds Fire, so your Tiger half is fuel for the Aries flame. Both halves are starters. Nothing in you was built to wait for permission."
+        },
+        {
+          "k": "Small body, big claims",
+          "text": "An adult wolverine weighs about 9 to 30 kilograms, yet it is reported to take carcasses from bears, cougars and even packs of wolves [w6]. Wolves also kill wolverines [w5]. You square up to bigger things too. Pick which carcass is worth the bear."
+        }
+      ]
+    },
+    {
+      "id": "finish",
+      "label": "Finishing",
+      "intro": "The snake's tail is where your strength gets tested.",
+      "rows": [
+        {
+          "k": "Six caches",
+          "text": "Researchers in Scandinavia followed 38 collared wolverines and found they split one food source into as many as six caches, in every season [w9]. The big kill is the head. The small caches dug up later are the tail, and they carry you through March."
+        },
+        {
+          "k": "The long walk",
+          "text": "In 2009 a young male left Wyoming and walked about 500 miles into Colorado in two months, crossing Interstate 80 [w11] [w12]. He was the first wolverine confirmed there since 1919 [w11]. The charge gets you moving. Stamina is what gets you there."
+        },
+        {
+          "k": "At work",
+          "text": "Launch roles, rescue crews, salvage and turnarounds all want someone who walks in first. Hire a finisher beside you, or become one on purpose."
+        }
+      ]
+    },
+    {
+      "id": "distance",
+      "label": "Who stays the distance",
+      "intro": "Three who keep pace over the long haul. One who wants to talk you out of it.",
+      "love_lead": "In love your temper burns hot and cools fast, but the Tiger's trust comes slowly [w2] [w4]. You need a partner who does not need managing and leaves you range of your own. Three animals can go the whole way with you.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "honey-badger",
+        "chips": [
+          "Secret friend",
+          "Aries like you"
+        ],
+        "why": "The <b>Honey Badger</b> (Aries, Pig year) is your secret friend, since the Pig is the Tiger's hidden ally, and it shares your Aries sun [w3]."
+      },
+      {
+        "slug": "albatross",
+        "chips": [
+          "Same trine",
+          "Fire like you"
+        ],
+        "why": "The <b>Albatross</b> (Sagittarius, Horse year) sits in your trine of Tiger, Horse and Dog, and Sagittarius burns with the same Fire [w3] [w1]."
+      },
+      {
+        "slug": "golden-snub-nosed-monkey",
+        "chips": [
+          "Secret friend",
+          "Leo's Fire"
+        ],
+        "why": "The <b>Golden Snub-nosed Monkey</b> (Leo, Pig year) is a second Pig ally, and Leo is a fellow Fire sign [w3] [w1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "kissing-gourami",
+        "chips": [
+          "Year clash",
+          "Opposite sign"
+        ],
+        "why": "Expect friction with the <b>Kissing Gourami</b> (Libra, Monkey year): the Monkey clashes with the Tiger, and Libra sits opposite Aries [w3] [w1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "Kuekuatsheu",
+    "text": "Among the Innu of Labrador and Quebec, Kuekuatsheu the wolverine is the trickster of many stories, sometimes a hero and sometimes a scoundrel [w5] [w7]. In the creation story, as Annie Picard of Natuashish retells it from her grandmother, he survives a great flood with the animals and the world is rebuilt from mud brought up from below [w8] [w5]."
+  },
+  "closing": "Charge if you have to. Then keep walking until the last cache is dug up and the snow lets go."
+}

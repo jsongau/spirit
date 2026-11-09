@@ -1,0 +1,99 @@
+{
+  "title": "What the Weaverbird makes",
+  "is_this_you": {
+    "pressure": "When the words jam, your hands start. By evening something is mended that nobody asked you to fix.",
+    "love": "You say it with something you made, then hang on the branch and watch them look it over.",
+    "cost": "Your own work looks brown to you within days, so you tear it down before anyone can call it old."
+  },
+  "opener": {
+    "moon": false,
+    "text": "A female weaver will usually accept only a green nest, one built within the last few days [v11]. The grass soon fades to brown, and once it does, that nest has had its chance [v11]. So the male keeps his hands moving. You were born a Virgo in a Rooster year, and you know this bird's hurry from the inside. Fresh work is how you say you are still here."
+  },
+  "howto": "Three parts. Pick one up and turn it over.",
+  "tabs": [
+    {
+      "id": "nest",
+      "label": "The nest",
+      "intro": "Earth for the patience, Metal for the edge.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Virgo is mutable Earth, ruled by Mercury, a sign known for technical skill [v1] [v2]. The Rooster is yin Metal, hardworking and resourceful [v3] [v4]. Virgo hides a feeling to keep the peace [v2], and the Rooster wants to be heard [v4]. You settle it with your hands. The thing you make does the talking."
+        },
+        {
+          "k": "The weaverbird does it too",
+          "text": "A male baya cuts, weaves and knots strips of grass between 20 and 60 centimetres long, and one nest can take him up to 500 trips [v9]. For a weaver, the nest is the courtship display [v5]. Plenty of your feeling goes into the knots. The words turn up late, if at all."
+        },
+        {
+          "k": "At work",
+          "text": "Joinery and bookbinding reward your hands, and so does any bench where a thing is judged by whether it holds."
+        }
+      ]
+    },
+    {
+      "id": "again",
+      "label": "Starting over",
+      "intro": "Twenty minutes to pull it down. Then the next strip.",
+      "rows": [
+        {
+          "k": "Tearing it down",
+          "text": "When a nest goes unchosen, the male tears it down in 20 to 30 minutes and builds a fresh one, sometimes right beneath the old [v11]. You have done both. You scrap the draft that sat too long, or you build the next one in its shadow."
+        },
+        {
+          "k": "The shadow",
+          "text": "Virgo can nitpick, and the Rooster can brag [v2] [v4]. So you say nothing about your work, or far too much. The Ghanaian poet Kofi Awoonor, writing in the Ewe dirge tradition, made the weaver bird an intruder that builds in a house where nobody invited it [v10]. Ask whose tree it is before you weave."
+        }
+      ]
+    },
+    {
+      "id": "home",
+      "label": "Who moves in",
+      "intro": "Three who will live in what you build. One who will judge the weave.",
+      "matches": true,
+      "love_lead": "A baya female looks the nest over while it is still half-built, at the helmet stage, and signals whether she accepts it [v9]. You need a partner like her, who comes early, looks closely and says yes out loud. Three traditional pairings fit that bill."
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "galapagos-tortoise",
+        "chips": [
+          "Secret friend",
+          "Taurus Earth"
+        ],
+        "why": "The <b>Galápagos Tortoise</b> (Taurus, Dragon year) is your secret friend, since the Dragon and the Rooster are a Six Harmonies pair, and Taurus is Earth like you [v3] [v1]."
+      },
+      {
+        "slug": "beaver",
+        "chips": [
+          "Same trine",
+          "Your own sign"
+        ],
+        "why": "The <b>Beaver</b> (Virgo, Ox year) shares your trine of Rooster, Ox and Snake, and it builds under your own sign [v3]."
+      },
+      {
+        "slug": "shoebill",
+        "chips": [
+          "Same trine",
+          "Capricorn Earth"
+        ],
+        "why": "The <b>Shoebill</b> (Capricorn, Ox year) comes in through the Ox as well, and Capricorn is the third Earth sign [v3] [v1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "moon-jellyfish",
+        "chips": [
+          "Year clash",
+          "Opposite sign"
+        ],
+        "why": "The <b>Moon Jellyfish</b> (Pisces, Rabbit year) is the hard one: the Rabbit clashes with the Rooster, and Pisces sits across the wheel from Virgo [v3] [v1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "A light in the nest",
+    "text": "A widespread folk belief in India says the baya sticks fireflies to its nest walls with mud, to light the chamber at night [v9]. The fireflies belong to the story. The mud is real, and may help steady the nest in wind [v9]."
+  },
+  "closing": "Tie off the last strip while the grass is green. Then hang beneath it and let them look."
+}

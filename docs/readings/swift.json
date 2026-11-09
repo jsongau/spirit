@@ -1,0 +1,107 @@
+{
+  "title": "What the Swift never lands for",
+  "is_this_you": {
+    "pressure": "Trouble on the ground sends you upward. You change altitude before anyone finishes the sentence.",
+    "love": "Your love outlasts months of absence. Then you land back on the ledge where you left it, as if no time passed.",
+    "cost": "People below hear you screaming overhead all summer and still ask where you have been."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Heralds drew the martlet without feet, a bird modelled on swifts and martins and said never to roost from birth to death [s7]. It came to mark a fourth son who had to leave home and make his own way, though modern writers doubt that reading [s7]. You were born a Gemini in a Horse year. You know that crest from the inside."
+  },
+  "howto": "Three parts. Take them fast.",
+  "tabs": [
+    {
+      "id": "aloft",
+      "label": "Never landing",
+      "intro": "Air feeding Fire, and nowhere to sit.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Gemini is mutable Air under Mercury, a mind that keeps many threads going [s1] [s2]. The Horse is yang Fire, sociable and quick to take a risk [s3] [s4] [s5]. Air feeds Fire. Your mind outruns your body, and the body keeps up anyway."
+        },
+        {
+          "k": "The swift does it too",
+          "text": "Outside the breeding season a common swift stays airborne for about ten months, and some never land at all [s12]. It often sleeps and mates on the wing [s6]. Ground feels slow to you, so you spend as little time on it as you can."
+        },
+        {
+          "k": "The hidden stop",
+          "text": "The legend says the swift never rests. Tracking found that in spring nearly every tagged bird fed at a stopover in West Africa before the last leg home [s13]. You refuel the same way, briefly and out of sight, so people decide you never stop."
+        }
+      ]
+    },
+    {
+      "id": "way",
+      "label": "Your own way",
+      "intro": "Gathered on the wing, glued fast at home.",
+      "rows": [
+        {
+          "k": "The nest",
+          "text": "A swift builds from feathers and plant scraps caught in the air, bonded with its own saliva in a crevice [s6]. You build a life like that, gathered on the move and then fixed hard."
+        },
+        {
+          "k": "Weather",
+          "text": "In cold, wet or windy weather swifts fly low, and in fair weather they climb high [s14]. When things go badly you come down close enough to touch, and your people get the most of you."
+        },
+        {
+          "k": "The shadow",
+          "text": "Gemini can spread itself thin, and the Horse dislikes taking orders [s2] [s4]. People are left unsure when you will be back. A return date said out loud settles a lot of nerves."
+        },
+        {
+          "k": "At work",
+          "text": "Correspondents, interpreters and flight crews all gather on the move and file from home. Any of them would suit you."
+        }
+      ]
+    },
+    {
+      "id": "sky",
+      "label": "Who flies your sky",
+      "intro": "Three who trust the return. One who wants you pinned down.",
+      "love_lead": "In love you need someone who trusts the return. Swifts often come back to the same site and the same partner year after year [s6] [s14]. The old pairings name three who never ask you to land daily.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "luna-moth",
+        "chips": [
+          "Secret friend",
+          "Air like you"
+        ],
+        "why": "The <b>Luna Moth</b> (Libra, Goat year) is your secret friend, since the Goat is the Horse's hidden ally, and Libra is Air like you [s3] [s1]."
+      },
+      {
+        "slug": "maned-wolf",
+        "chips": [
+          "Tiger trine",
+          "Air sign"
+        ],
+        "why": "The <b>Maned Wolf</b> (Aquarius, Tiger year) carries the Tiger of your trine of Tiger, Horse and Dog, and Aquarius is a fellow Air sign [s3] [s1]."
+      },
+      {
+        "slug": "duetting-frog",
+        "chips": [
+          "Dog trine",
+          "A faithful pair"
+        ],
+        "why": "The <b>Duetting Frog</b> (Libra, Dog year) closes your trine with the Dog, and Libra gives you Air on both sides [s3] [s1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "sandgrouse",
+        "chips": [
+          "Rat clash",
+          "Opposite sign"
+        ],
+        "why": "The hard one is the <b>Sandgrouse</b> (Sagittarius, Rat year): the Rat clashes with the Horse, and Sagittarius sits opposite Gemini [s3] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "The tower swallow",
+    "text": "Beijing's swifts have nested on 正陽門 (Zhèngyáng Mén) for more than 600 years, by local account [s8]. Old Beijingers called them 樓燕 (lóuyàn), tower swallows [s8]. In 2008 the bird was the model for Nini, a Beijing Olympic mascot [s8] [s9]. Each July they leave for southern Africa, and still the gate gets them back [s8] [s9]."
+  },
+  "closing": "Climb into the evening air and sleep up there. You have always been at home on the wing."
+}

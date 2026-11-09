@@ -1,0 +1,99 @@
+{
+  "title": "What the Sun Bear mirrors",
+  "is_this_you": {
+    "pressure": "Your temper lights fast and burns out by evening. The Ox in you still remembers where the line was.",
+    "love": "You fall for whoever plays gently, and you copy their smile before you know their name.",
+    "cost": "Your face says yes before your mouth checks the plan. Then you keep that promise for years."
+  },
+  "opener": {
+    "moon": false,
+    "text": "In 2019 researchers watched 22 sun bears at a conservation centre in Borneo and found they copied each other's faces exactly [s11]. Before that, exact facial mimicry was known only in humans and gorillas [s11]. The surprise was that the sun bear is not a social animal [s11]. You were born an Aries in an Ox year. You work best alone, and your face still answers a friend's before you have decided anything."
+  },
+  "howto": "Three parts. Read whichever one smiles at you first.",
+  "tabs": [
+    {
+      "id": "mirror",
+      "label": "The mirror face",
+      "intro": "Fire on top. Earth underneath, warming slowly.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Aries is cardinal Fire, ruled by Mars, direct and quick to start [s1] [s2]. The Ox is yin Earth, patient, and gets where it is going by steady effort [s3] [s4]. Your Fire keeps the Ox's field warm. You start things hot and finish them slowly, which few people manage in one body."
+        },
+        {
+          "k": "The copied face",
+          "text": "In the Borneo study the copying showed up mostly in gentle play [s11]. A loner that reads faces that well has been paying attention the whole time. So have you. You catch a shift in someone's face across the clearing, and yours answers before you have chosen what to say."
+        },
+        {
+          "k": "The cost of it",
+          "text": "The Ox is a poor talker and would rather be alone than in a crowd [s3]. So your face does the talking for you. Sometimes it agrees to things your words would have questioned."
+        }
+      ]
+    },
+    {
+      "id": "high",
+      "label": "Sitting high",
+      "intro": "Up in the branches, where the sun comes through.",
+      "rows": [
+        {
+          "k": "Where you rest",
+          "text": "The sun bear is the most at home in trees of all the bears, and it sleeps and sunbathes in them, often two to seven metres up [s9] [s12]. Left in peace, it also rests on the ground or in a hollow log [s6]. You take height when you need to think. You come back down for the few who have earned the ground floor."
+        },
+        {
+          "k": "At work",
+          "text": "Solo specialist work suits you: restoration, audit, field conservation. Aries nerve starts it and Ox patience finishes it. Let one person watch the work now and then."
+        }
+      ]
+    },
+    {
+      "id": "copy",
+      "label": "Who you mirror",
+      "intro": "Three faces worth copying. One you keep pulling against.",
+      "love_lead": "In love you show care by handing over what you found, and only much later do you let a partner watch the search. You need someone whose smile you are glad to copy. Three matches stand out in the old system.",
+      "matches": true
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "sand-cat",
+        "chips": [
+          "Snake trine",
+          "Fire like you"
+        ],
+        "why": "The <b>Sand Cat</b> (Sagittarius, Snake year) shares your trine of Ox, Snake and Rooster, and Sagittarius is Fire like you [s5] [s1]."
+      },
+      {
+        "slug": "sunset-moth",
+        "chips": [
+          "Rooster trine",
+          "Fire like you"
+        ],
+        "why": "The <b>Sunset Moth</b> (Leo, Rooster year) closes the Ox's trine, and Leo makes the third Fire sign [s5] [s1]."
+      },
+      {
+        "slug": "sandgrouse",
+        "chips": [
+          "Secret friend",
+          "Carries water home"
+        ],
+        "why": "The <b>Sandgrouse</b> (Sagittarius, Rat year) is your secret friend, since the Rat is the Ox's six-harmony partner, and Sagittarius shares your Fire [s5] [s1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "luna-moth",
+        "chips": [
+          "Goat clash",
+          "Opposite sign"
+        ],
+        "why": "The hard one is the <b>Luna Moth</b> (Libra, Goat year): the Goat clashes with the Ox, and Libra sits opposite Aries [s5] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "He who likes to sit high",
+    "text": "San Diego Zoo records a local name for the sun bear, basindo nan tenggil, which means he who likes to sit high [s6]. The smallest bear in the forest, and its name gives it the top seat [s9]."
+  },
+  "closing": "Sit as high as you like. When a friendly face looks up at you, let yours answer it."
+}

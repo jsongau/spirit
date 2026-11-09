@@ -1,0 +1,103 @@
+{
+  "title": "What the Vampire Squid keeps",
+  "is_this_you": {
+    "pressure": "Trouble comes and you sink below it. Whatever was hunting you is left snapping at a blue glow.",
+    "love": "You remember the small thing they let fall three winters ago, and you still have it.",
+    "cost": "You live so far down that the people who love you give up asking the way."
+  },
+  "opener": {
+    "moon": false,
+    "text": "Vilém Flusser and Louis Bec wrote a fable about this animal, part treatise and part spoof [s14]. In it the vampire squid is our counterpart, banished down into the abyss while we were banished up onto the continents [s14]. You were born a Pisces in a Rat year, and you have always lived a little upside down. What others call the bottom feels like home."
+  },
+  "howto": "Three parts. Let each one sink before the next.",
+  "tabs": [
+    {
+      "id": "below",
+      "label": "Below the light",
+      "intro": "Water on Water, both halves pointing down.",
+      "rows": [
+        {
+          "k": "Your temperament",
+          "text": "Pisces is mutable Water, the sign of Jupiter and, for modern astrologers, Neptune [s1]. It is compassionate and intuitive [s1] [s2]. The Rat is yang Water, quick-witted and observant, and careful enough to be suspicious [s4] [s5]. So you are Water twice. One half lets everything in. The other half counts it."
+        },
+        {
+          "k": "Where it lives",
+          "text": "The vampire squid lives in the oxygen minimum zone, mostly 600 to 1,200 metres down, where oxygen falls to about 0.4 millilitres per litre [s9] [s7]. It thrives there [s7]. Water that thin is where your breathing finally slows."
+        },
+        {
+          "k": "The name",
+          "text": "Carl Chun named it Vampyroteuthis infernalis in 1903, roughly the vampire squid from hell [s13]. The name came from its dark colour and webbed cloak, and has nothing to do with its diet [s13]. People hear your name and brace. Then they meet you."
+        }
+      ]
+    },
+    {
+      "id": "drift",
+      "label": "What drifts down",
+      "intro": "Marine snow, and a long, patient line.",
+      "rows": [
+        {
+          "k": "How it eats",
+          "text": "Hoving and Robison call it primarily a detritivore, feeding in a way unlike any other cephalopod [s7]. It lets out a sticky filament up to eight times its body length and gathers what sinks past [s7] [s6]. You live the same way. You keep what others let fall, and you know what every scrap is worth."
+        },
+        {
+          "k": "At work",
+          "text": "Archives and salvage suit you. So does translation, where you shape what others made and your own hand stays hidden."
+        },
+        {
+          "k": "The shadow",
+          "text": "The Rat can be stingy [s5], and Pisces can slide into escape [s1] [s2]. Together you can sit on a store of things long after it could have fed anyone. Send one parcel up while it still helps."
+        }
+      ]
+    },
+    {
+      "id": "dark",
+      "label": "Who finds you in the dark",
+      "intro": "Three who will make the trip down. One who lives in the wind.",
+      "matches": true,
+      "love_lead": "In love you hold every detail and say very little about what you need. The Rat can feel unsure in love [s5]. You need someone steady enough to come down and stay. Tradition sends three who will make that dive."
+    }
+  ],
+  "matches": {
+    "easy": [
+      {
+        "slug": "humpback-whale",
+        "chips": [
+          "Same trine",
+          "Cancer Water"
+        ],
+        "why": "The <b>Humpback Whale</b> (Cancer, Dragon year) shares your trine of Rat, Dragon and Monkey, and Cancer is Water like you [s3] [s1]."
+      },
+      {
+        "slug": "dumbo-octopus",
+        "chips": [
+          "Same trine",
+          "Your own sign"
+        ],
+        "why": "The <b>Dumbo Octopus</b> (Pisces, Monkey year) closes the trine through the Monkey and swims under your own sign [s3]."
+      },
+      {
+        "slug": "asian-elephant",
+        "chips": [
+          "Secret friend",
+          "Water again"
+        ],
+        "why": "The <b>Asian Elephant</b> (Cancer, Ox year) is your secret friend, since the Ox and the Rat are a Six Harmonies pair, and Cancer shares your Water [s3] [s1]."
+      }
+    ],
+    "hard": [
+      {
+        "slug": "avocet",
+        "chips": [
+          "Year clash",
+          "Opposite sign"
+        ],
+        "why": "The <b>Avocet</b> (Virgo, Horse year) pulls against you: the Horse clashes with the Rat, and Virgo is the sign opposite Pisces [s3] [s1]."
+      }
+    ]
+  },
+  "story": {
+    "k": "The nine-minute light",
+    "text": "The vampire squid has no ink [s6]. Disturb it and it lets off a cloud of glowing particles from its arm tips [s8] [s9]. In the 2003 study the cloud glowed for two to three minutes, and single particles lasted up to nine [s9]. The hunter bites the light. The squid has already drifted off."
+  },
+  "closing": "Leave a soft light where you were. Whoever follows it down will find you gentle."
+}
