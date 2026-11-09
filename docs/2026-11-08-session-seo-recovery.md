@@ -86,3 +86,25 @@ Batch size 12 or fewer, roughly 10 days apart, owner approves every page.
 2. Pair image on vs.html (Ross #2), after plan approval.
 3. Template pinyin slot for header and rail hanzi.
 4. Research batch 4 (next 10 by inbound match links).
+
+## Late evening: fan-out to batch 8
+
+**Pipeline per batch:** research dossiers (5 agents, 2 animals each), then fact pass (2 agents, 5 pages each, backups in ~/factfix-backup-rN*), then writers (4 agents) from data/readings/BATCHn-BRIEF.md, then one combined check over every reading plus the match-rule check, then previews.
+
+**State (all committed, not pushed; origin still 3e8cd5e23):**
+- Readings written and checked: 70 (batches 1 to 7). Batch 1 is applied to pages; batches 2 to 7 are data in data/readings (copies in docs/readings), ready for --apply at the 10-day pace.
+- Pages fact-checked: 90 of 144 (rounds 1 to 8). Batch 8 has research and fact fixes but no readings (owner can ask).
+- Sitewide fixes: 6c Related Animals cards from GRID (86 labels, 58 misplaced cards; template data too), 6d unescaped "<b>" on 142 pages, 5c Purple Star wording, 6b pinyin and pronounce on every page's own character (tools/han-pinyin.json is the map; keep it in sync when a header changes).
+- Checker (tools/build-readings.py): writing rules apply to prose only (not source titles, buttons or the howto line); shared-sentence check now down to 4 words.
+
+**Traps:**
+- Parallel writers cannot see each other; always run the combined check after a batch.
+- Short stock lines slip past a 6-word check ("The old pairings name three." was in 17 readings).
+- When a header changes, update rail__han, serial-han, keepsake-han (.h, .py, data-say), rail__py, the rail button, template animalHan/animalHanPy and tools/han-pinyin.json.
+- Mountain pygmy possum still shows 鼠 shǔ; no sourced Chinese name exists.
+
+**Next:**
+1. Owner pushes (23+ commits).
+2. Fact-pass-only rounds for the remaining 54 pages.
+3. Pair image on vs.html is built but uncommitted, waiting on owner approval.
+4. Hero art for the 65 animals with placeholder SVGs (share cards fall back to the moon).
