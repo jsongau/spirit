@@ -1,0 +1,378 @@
+{
+  "slug": "mountain-pygmy-possum",
+  "name": "Mountain Pygmy Possum",
+  "sign": "Capricorn",
+  "year": "Rabbit",
+  "element": "Wood (from the Rabbit); Capricorn adds Earth, cardinal",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Capricorn (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Capricorn_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Capricorn zodiac sign: personality traits, love, compatibility, Bustle",
+      "url": "https://www.bustle.com/life/capricorn-zodiac-signs-personality-traits-love-compatibility-astrology"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (Rabbit row, compatibility table, Great Race), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Rabbit, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/rabbit.htm"
+    },
+    {
+      "id": "s5",
+      "title": "The many faces of the rabbit in Chinese history and culture, The World of Chinese (2023)",
+      "url": "https://www.theworldofchinese.com/2023/01/the-many-faces-of-the-rabbit-in-chinese-history-and-culture/"
+    },
+    {
+      "id": "s6",
+      "title": "Mountain pygmy possum, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mountain_pygmy_possum"
+    },
+    {
+      "id": "s7",
+      "title": "Burramys parvus, Animal Diversity Web (cited on live page)",
+      "url": "https://animaldiversity.org/accounts/Burramys_parvus/"
+    },
+    {
+      "id": "s8",
+      "title": "Körtner and Geiser 1998, Ecology of natural hibernation in the marsupial mountain pygmy-possum (Burramys parvus), Oecologia (author PDF, UNE)",
+      "url": "https://www.une.edu.au/about-une/faculty-of-science-agriculture-business-and-law/school-of-environmental-and-rural-science/media/documents/files/burramysfieldoecol98.pdf"
+    },
+    {
+      "id": "s9",
+      "title": "NSW Scientific Committee, Mountain pygmy-possum review report (2024)",
+      "url": "https://www.environment.nsw.gov.au/sites/default/files/2024-09/sc-mountain-pygmy-possum-burramys-parvus-review-report.pdf"
+    },
+    {
+      "id": "s10",
+      "title": "NSW Scientific Committee final determination, Mountain pygmy-possum endangered species listing",
+      "url": "https://www.environment.nsw.gov.au/topics/animals-and-plants/threatened-species/nsw-threatened-species-scientific-committee/determinations/final-determinations/2000-2003/mountain-pygmy-possum-burramys-parvus-endangered-species-listing"
+    },
+    {
+      "id": "s11",
+      "title": "Back from the dead and back again? A Mountain Pygmy Possum's tail, Parks Victoria (Sept 2023)",
+      "url": "https://www.parks.vic.gov.au/news/2023/09/04/01/47/back-from-the-dead-and-back-again"
+    },
+    {
+      "id": "s12",
+      "title": "The critically endangered mountain pygmy possum tunnel, Cesar Australia (May 2018)",
+      "url": "https://cesaraustralia.com/blog/the-critically-endangered-mountain-pygmy-possum-tunnel/"
+    },
+    {
+      "id": "s13",
+      "title": "Geiser 2007, Yearlong hibernation in a marsupial mammal, Naturwissenschaften 94:941-944 (UNE record)",
+      "url": "https://researchers.une.edu.au/en/publications/yearlong-hibernation-in-a-marsupial-mammal-5/"
+    },
+    {
+      "id": "s14",
+      "title": "Could the world's smallest possum be living on the Yorke Peninsula?, University of Adelaide (2026)",
+      "url": "https://adelaide.edu.au/about/news/2026/could-the-world-s-smallest-possum-be-living-on-the-yorke-peninsu/"
+    },
+    {
+      "id": "s15",
+      "title": "Aboriginal populations used Bogong moths as a food source 2,000 years ago, Monash University (on Stephenson et al. 2020, Scientific Reports)",
+      "url": "https://www.monash.edu/news/articles/aboriginal-populations-used-bogong-moths-as-a-food-source-2,000-years-ago,-researchers-find"
+    },
+    {
+      "id": "s16",
+      "title": "袋貂科 dàidiāo kē (Phalangeridae), Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/袋貂科"
+    },
+    {
+      "id": "s17",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Patient, disciplined, practical, reliable, good with money; takes responsibility early, composed, dry dark humour. Shadow: guarded, holds feelings back behind a 'hard shell', so focused on work it forgets to have fun.",
+    "planet": "Saturn",
+    "element": "Earth (with Taurus and Virgo)",
+    "modality": "Cardinal; opposite sign Cancer. Symbol the sea-goat (Greek Aigokeros, 'horned goat').",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Gentle, quiet, alert, patient, very responsible, faithful to those around them. Shadow: reluctant to reveal their minds, can escape reality. In the Great Race the Rabbit crossed by hopping stone to stone and rode a floating log ashore for fourth place.",
+    "yinyang": "Yin",
+    "element": "Wood (fixed); branch 卯 mǎo",
+    "trine": "Rabbit, Goat, Pig",
+    "secret_friend": "Dog",
+    "clash": "Rooster (Wikipedia also lists Dragon as the harm pair; China Highlights adds Rat as a poor match)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Australian natural history (modern lore)",
+      "meaning": "Known to science first from a fossil jaw in a small limestone block from NSW cave deposits (described 1890s, thought extinct). In August 1966 skiers found a 'strange looking rat' in their ski hut on Mt Hotham; the animal, named George, was studied by Norman Wakefield and the species was recognised as alive. Parks Victoria titles its account 'Back from the dead and back again?'",
+      "source_ids": [
+        "s11",
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "culture": "Mt Hotham, Victoria (conservation lore)",
+      "meaning": "The 'tunnel of love': a rock-filled corridor under the Great Alpine Road, first built in the 1980s at Mt Higginbotham, lets males reach the higher-altitude females. Genetic work found the road was a major barrier to breeding; a second tunnel followed around 2018.",
+      "source_ids": [
+        "s12",
+        "s6"
+      ]
+    },
+    {
+      "culture": "GunaiKurnai (Krauatungalung clan) and other south-eastern nations; the moth, not the possum",
+      "meaning": "The Bogong moth that feeds the possum each spring was also a human feast: ground moth remains 1,600 to 2,100 years old on a grindstone in Cloggs Cave, and 1830s to 1850s accounts of Aboriginal gatherings in the Alps during the migration. Use only as shared ground (the possum and people waited for the same moth), never as possum totem lore.",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "culture": "Chinese (Rabbit half)",
+      "meaning": "狡兔三窟 jiǎo tù sān kū, 'the crafty rabbit keeps three burrows', from Feng Xuan's advice in the Zhanguo Ce (戰國策 Zhànguó Cè). It now describes keeping several escape routes, with a slightly derogatory colour. It fits the possum's real habit of changing hibernation crevices up to 12 times a winter (s8).",
+      "source_ids": [
+        "s5",
+        "s8"
+      ]
+    },
+    {
+      "culture": "Chinese (proverb on the page)",
+      "meaning": "守株待兔 shǒu zhū dài tù, the farmer waiting by the stump. The page turns it around (the possum waits only after stocking the den). Honest use, labelled as its own reading.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "Name",
+      "meaning": "Burramys parvus is translated by ADW as 'small rock mouse' (s7). Usable as a gloss, not as a hook.",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "No Aboriginal story specific to Burramys was found. Possum-skin cloaks and possum totems in the literature concern brushtail and ringtail possums, other families; do not borrow them. Generic 'pygmy possum spirit animal' blog meanings: no source.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: cardinal Earth (Capricorn) under yin Wood (Rabbit). Saturn's long timeline and the Rabbit's caution meet in an animal that stocks a rock crevice in autumn and sleeps under snow until the melt. Wood controls Earth in the five phases; here the Rabbit's restlessness keeps Capricorn from trusting one structure blindly, which matches the real possum walking out mid-winter to change dens.",
+    "gifts": "Our reading: foresight, provisioning, exactness about what will hold, endurance through long lean stretches, loyalty to a small circle on home ground.",
+    "shadow": "Our reading: the recount. Capricorn guardedness plus Rabbit reluctance to show the mind means re-testing proven ground, hoarding reserves as worry, and hiding plans from the people who share the den.",
+    "love": "Our reading: slow to commit (Capricorn wants long-term stability, s2; the Rabbit is faithful, s4). Will cross real obstacles for the one (the tunnel). Needs a partner who does not take the long winter silences personally.",
+    "money": "Our reading: a natural cacher. Builds reserves early and stores them where no one else looks; risk is under-spending a surplus that was meant to be lived on.",
+    "conflict": "Our reading: avoids open fights, relocates quietly instead. When cornered the soft one bites (兔子急了還咬人 tùzi jí le hái yǎo rén, s5). Practice: name the problem before moving dens."
+  },
+  "careers": [
+    {
+      "path": "Logistics, supply planning, emergency and disaster preparedness",
+      "why": "Our reading: caching for a season you cannot watch; Capricorn's planning."
+    },
+    {
+      "path": "Accounting, actuarial work, conservative finance",
+      "why": "Our reading: Capricorn's skill with money (s2) and the Rabbit's caution."
+    },
+    {
+      "path": "Alpine ecology, conservation, park ranger or seed-bank work",
+      "why": "Our reading: the animal's own world; Rabbit's traditional fit with cultivation and breeding (s4)."
+    },
+    {
+      "path": "Building surveying, structural inspection, quality assurance",
+      "why": "Our reading: the instinct to test whether a gap will hold before trusting it."
+    },
+    {
+      "path": "Health care, medicine, education",
+      "why": "Our reading: China Highlights lists these for the Rabbit (s4); Capricorn's responsibility makes them a long-haul career."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Clark's Nutcracker",
+      "slug": "clarks-nutcracker",
+      "reason": "Virgo x Goat. Goat is in the Rabbit trine; Virgo shares Capricorn's Earth. Another mountain seed-cacher: two animals that survive winter on what they stored in autumn."
+    },
+    {
+      "name": "Tibetan Blue Bear",
+      "slug": "tibetan-blue-bear",
+      "reason": "Capricorn x Dog. Same sign, and Dog is the Rabbit's secret friend (six harmonies). Two high-country winter sleepers."
+    },
+    {
+      "name": "Snow Leopard",
+      "slug": "snow-leopard",
+      "reason": "Scorpio x Goat. Rabbit trine; Scorpio Water complements Capricorn Earth. Both live in boulder country above the treeline."
+    },
+    {
+      "name": "Bongo",
+      "slug": "bongo",
+      "reason": "Taurus x Pig. Pig is in the Rabbit trine; Taurus is Earth like Capricorn. Already on the live page."
+    },
+    {
+      "name": "Star-nosed Mole",
+      "slug": "star-nosed-mole",
+      "reason": "Virgo x Pig. Rabbit trine plus Earth sign. Precision workers in cramped dark spaces."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Andean Condor",
+      "slug": "andean-condor",
+      "reason": "Capricorn x Rooster. Same sign, but Rabbit and Rooster are the traditional six-clash pair. Both mountain animals; one soars in the open, one hides in the cracks."
+    },
+    {
+      "name": "Emperor Penguin",
+      "slug": "emperor-penguin",
+      "reason": "Cancer x Rooster. Rabbit-Rooster clash, and Cancer is Capricorn's opposite sign."
+    }
+  ],
+  "candidate_lines": [
+    "For seventy years your kind was a jawbone in a block of limestone, written off. Then skiers found one alive in their hut on Mt Hotham. Being counted out early has never worried you much.",
+    "In the middle of winter you wake, walk out across the snow-covered rocks, find a crack two boulders over that holds a steadier cold, and go back to sleep. The Rabbit in you calls it the third burrow.",
+    "Every autumn you stock a crevice with plum-pine seed you will barely be awake to eat, and you hide it where only you would think to look.",
+    "You go under in April, months before the first real snow, because your body reads the turn of the season sooner than the mountain admits it.",
+    "Your whole spring hangs on a moth flying up from the plains, hundreds of kilometres below. You cannot hurry it. You just make sure the den is ready the night it lands.",
+    "Two degrees above freezing, under a roof of snow, heart barely moving: this is the one stretch when the Capricorn in you rests, because the count was finished in autumn."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 鼠 (rail__han and serial-han), pinyin shǔ.",
+      "verdict": "WRONG",
+      "note": "鼠 shǔ means rat or mouse and is the Chinese zodiac Rat glyph, which is confusing on a Rabbit-year page. The possum is a marsupial in Burramyidae, not a rodent. I could not open any source giving a Chinese name for Burramys parvus (zh.wikipedia has no article I could reach). Chinese Wikipedia uses 袋貂 dàidiāo for Phalangeridae (s16), a different possum family, so even that is only approximate. Recommend: remove 鼠, and have a Chinese-reading editor confirm a name from a zoological dictionary before showing any glyph. Unverified candidate, do not ship without a check: 山侏儒袋貂 (shān zhūrú dàidiāo).",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "fact": "Intro: 'The smallest possum alive'.",
+      "verdict": "WRONG",
+      "note": "At about 45 g (s6, s7) it is the largest pygmy possum. The University of Adelaide calls the little pygmy-possum, Cercartetus lepidus, the world's smallest possum, weighing a few grams (s14).",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s14"
+      ]
+    },
+    {
+      "fact": "Intro: 'the only marsupial that hibernates at all'.",
+      "verdict": "WRONG",
+      "note": "The eastern pygmy-possum, Cercartetus nanus, hibernates, in captivity for up to 367 days (Geiser 2007, s13). Defensible version: 'the only Australian mammal restricted to alpine habitat' (s6), which the page already says elsewhere.",
+      "source_ids": [
+        "s13",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Intro: 'sleeps longer than almost any mammal its size'.",
+      "verdict": "UNVERIFIABLE / likely WRONG",
+      "note": "Its 5 to 7 month season (s8, s9) is shorter than the eastern pygmy-possum's (310 days average in Geiser 2007, s13). Cut.",
+      "source_ids": [
+        "s8",
+        "s9",
+        "s13"
+      ]
+    },
+    {
+      "fact": "Lives only in boulderfields formed by repeated freeze-thaw fracturing of alpine rock, nesting in crevices rather than digging burrows.",
+      "verdict": "OK",
+      "note": "NSW determination: 'boulderfield-heath, formed below mountain peaks or in gullies by periglacial weathering processes', above 1,600 m in NSW, not below the winter snowline (s10). Also uses Mountain Plum-pine heath over rocks where boulderfields are absent, so 'only' is slightly strong.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "fact": "Hibernates roughly six months, from February into winter's end; torpor body temperature near 2°C while the den holds at 4 to 7°C.",
+      "verdict": "WRONG (start month and den temperature)",
+      "note": "Körtner and Geiser: hibernation began around April, several months before snow, and ended with snowmelt in mid-September to November (s8). NSW review: adult females start around March to April, males and juveniles one or two months later; adults up to seven months (s9). 'February' comes from a contradictory line on ADW (s7). Torpor Tb about 2°C: OK (s8). Den 4 to 7°C applies only early in the season; mid-winter hibernacula were usually 1.5 to 2.5°C and never below 0.6°C (s8).",
+      "source_ids": [
+        "s7",
+        "s8",
+        "s9"
+      ]
+    },
+    {
+      "fact": "Between torpor bouts, possums leave dens for up to five days, often relocating to another hibernation site for a more exact microclimate, especially early in the season.",
+      "verdict": "OK (motive softened)",
+      "note": "Both sexes left hibernacula for periods of up to 5 days; they changed hibernacula 0 to 12 times, most often early in the season (s8). The paper measured a bigger change in body temperature after a site change but does not state the motive; say 'often moving to a different crevice'.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "fact": "Only marsupial known to cache non-perishable food; seeds and berries are over three-quarters of its diet during the hibernation season.",
+      "verdict": "OK (single source)",
+      "note": "ADW: 'the only marsupial found to cache non-perishable food items (Menkhorst 1995)' and seeds and berries 'over 75% of their diet from May-October' (s7). Wikipedia confirms caching of seeds and berries eaten during arousals (s6). Attribute: 'the only marsupial known to cache food, according to Menkhorst (1995)'.",
+      "source_ids": [
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Spring breeding diet may be almost entirely Bogong moths, which migrate in from hundreds of kilometres away.",
+      "verdict": "OK (hedged)",
+      "note": "ADW: Smith et al. 1992 suggested moths may be the only food in the October to December breeding season; Mansergh et al. 1990 put moths at over a third of the active-season diet (s7). Wikipedia: about a third of the diet; moth numbers crashed in 2017 to 2019 (s6). Parks Victoria: up to 99% of moths disappeared (s11). Keep 'may'.",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Critically Endangered; whole population in less than 10 square kilometres split across three isolated alpine populations.",
+      "verdict": "OK (with nuance)",
+      "note": "IUCN Critically Endangered and three isolated populations (s6, s9). ADW: habitat 'less than 10 square kilometers' (s7). The NSW review says total habitat is likely under 4 km2 while IUCN's area of occupancy is up to 120 km2 on a grid method (s9); federal EPBC listing is Endangered (s9). Say 'IUCN Critically Endangered'.",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s9"
+      ]
+    },
+    {
+      "fact": "'The only Australian mammal confined entirely to alpine boulderfields'.",
+      "verdict": "OK (reword)",
+      "note": "Wikipedia: the only Australian mammal restricted to alpine habitat (s6). 'Boulderfields' is narrower than the source; use 'alpine and subalpine habitat'.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "fact": "Element chapter: alpine shrub roots bind the boulder-field scree.",
+      "verdict": "UNVERIFIABLE",
+      "note": "Presented as interpretation of Wood controlling Earth; no source on root binding in these boulderfields. Keep as 'our reading' or drop the 'quite physically' wording.",
+      "source_ids": []
+    },
+    {
+      "fact": "Purple Star (Zi Wei Dou Shu) star claims.",
+      "verdict": "OK (none found)",
+      "note": "No sun-sign star pairing; the page says a chart is cast from lunar birth date and hour. No 'Primal Zodiac' string found.",
+      "source_ids": []
+    },
+    {
+      "fact": "Lunar New Year note ('a birthday in those weeks can belong to the Tiger').",
+      "verdict": "INCOMPLETE",
+      "note": "True for January births in 1999, 2011 and 2023 (lunar New Year fell later). The other direction is missing: a Capricorn born 1 to 19 January 2000, 2012 or 2024 was born before that year's lunar New Year and is still a Rabbit, but the page lists only 1999, 2011, 2023. Add that line.",
+      "source_ids": [
+        "s17"
+      ]
+    },
+    {
+      "fact": "Live page match Sea Otter (Cancer x Rabbit).",
+      "verdict": "WEAK",
+      "note": "Same year, but Cancer is Capricorn's opposite sign (s1). Keep Bongo and Cleaner Wrasse; replace Sea Otter with a trine or secret-friend pick.",
+      "source_ids": [
+        "s1",
+        "s3"
+      ]
+    }
+  ]
+}

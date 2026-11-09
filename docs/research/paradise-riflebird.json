@@ -1,0 +1,345 @@
+{
+  "slug": "paradise-riflebird",
+  "name": "Paradise Riflebird",
+  "sign": "Leo",
+  "year": "Horse",
+  "element": "Fire (from the Horse); Leo adds Fire, fixed: the same element twice",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Leo (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Leo_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Leo traits and personality, TODAY",
+      "url": "https://www.today.com/life/astrology/leo-traits-personality-rcna39027"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (Horse row: yang, Fire, branch 午; Six Harmonies; Six Clashes), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Horse, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/horse.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Paradise riflebird, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Paradise_riflebird"
+    },
+    {
+      "id": "s6",
+      "title": "Paradise Riflebird, eBird (Cornell Lab)",
+      "url": "https://ebird.org/species/parrif1"
+    },
+    {
+      "id": "s7",
+      "title": "Paradise Riflebird, Australian Museum",
+      "url": "https://australian.museum/about/history/exhibitions/birds-of-paradise/paradise-riflebird/"
+    },
+    {
+      "id": "s8",
+      "title": "Paradise Riflebird, Birds in Backyards (BirdLife Australia)",
+      "url": "https://www.birdsinbackyards.net/species/Ptiloris-paradiseus"
+    },
+    {
+      "id": "s9",
+      "title": "McCoy, Feo, Harvey and Prum 2018, Structural absorption by barbule microstructures of super black bird of paradise feathers, Nature Communications 9:1, doi 10.1038/s41467-017-02088-w (summary and figure captions via NovaTaxa)",
+      "url": "https://novataxa.blogspot.com/2018/01/super-black-paradisaeidae.html"
+    },
+    {
+      "id": "s10",
+      "title": "Vetmeduni Vienna press release (23 Oct 2024) on MacGillavry, Frith and Fusani, Biological Journal of the Linnean Society",
+      "url": "https://www.vetmeduni.ac.at/en/university/infoservice/press-releases/press/birds-of-paradise-sex-and-the-wonderful-mechanics-of-circular-wings-display"
+    },
+    {
+      "id": "s11",
+      "title": "Science News, Science has finally cracked male riflebirds' flirty secrets",
+      "url": "https://www.sciencenews.org/article/male-riflebirds-secrets"
+    },
+    {
+      "id": "s12",
+      "title": "Bundjalung dictionary entry yahdj: catbird, satin bowerbird, rifle bird (Muurrbay Aboriginal Language and Culture Cooperative)",
+      "url": "https://bundjalung.dalang.com.au/language/view_word/4886"
+    },
+    {
+      "id": "s13",
+      "title": "Bird-of-paradise, Wikipedia (European history, Pigafetta, legless skins)",
+      "url": "https://en.wikipedia.org/wiki/Bird-of-paradise"
+    },
+    {
+      "id": "s14",
+      "title": "BirdNET taxonomy, Ptiloris paradiseus (names in all languages), Cornell Lab",
+      "url": "https://birdnet.cornell.edu/taxonomy/species/Ptiloris%20paradiseus"
+    },
+    {
+      "id": "s15",
+      "title": "tropicals.cn species page, Ptiloris paradiseus (Chinese name)",
+      "url": "https://tropicals.cn/en/species/compare/ptiloris-paradiseus/ploceus-burnieri"
+    },
+    {
+      "id": "s16",
+      "title": "The old man lost his horse (塞翁失馬), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/The_old_man_lost_his_horse"
+    },
+    {
+      "id": "s17",
+      "title": "Zodi Animal GRID, site/js/modules/zodi-map.js (internal)",
+      "url": "site/js/modules/zodi-map.js"
+    }
+  ],
+  "western": {
+    "temperament": "Generous, loyal, honest, warm, big-hearted and funny; a leader at heart who woos with extravagance. Fixed: holds to its foundations and is slow to change its mind. Shadow: attention-seeking, dramatic, bossy, vain, jealous, competitive, touchy.",
+    "planet": "The Sun",
+    "element": "Fire (with Aries and Sagittarius)",
+    "modality": "Fixed; classic opposite Aquarius",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Animated, active, energetic, sociable, a good communicator; values honesty and loyalty; drawn to risk and new experience; dislikes taking orders. Fire Horse: smart, charismatic, lively, enthusiastic, but stubborn.",
+    "yinyang": "Yang",
+    "element": "Fire (fixed); earthly branch 午 wǔ; Horse hour 11:00 to 12:59, when the sun is overhead and horses are still standing",
+    "trine": "Tiger, Horse, Dog",
+    "secret_friend": "Goat (Six Harmonies)",
+    "clash": "Rat (Six Clashes); China Highlights also lists Ox and Snake as poor matches",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "British Army naming",
+      "meaning": "'Riflebird' comes from the likeness of the male's black velvety plumage to the dark uniform of the British Army's Rifle Brigade (Wikipedia; the Australian Museum says 'allegedly'). The species name paradiseus is Latin for paradise. A soldier's coat on a dancer: usable for a Leo Horse who looks severe until the display opens.",
+      "source_ids": [
+        "s5",
+        "s7"
+      ]
+    },
+    {
+      "culture": "Bundjalung (northeast NSW and Gold Coast/Tweed)",
+      "meaning": "The Bundjalung dictionary records yahdj (Gold Coast Tweed yaheh) for catbird, satin bowerbird and rifle bird. One word for this bird and the Satin Bowerbird, the other animal in this batch, from the country where both live. Dictionary entry only, no story; do not build a myth on it.",
+      "source_ids": [
+        "s12"
+      ]
+    },
+    {
+      "culture": "Bird-of-paradise family lore (Europe, 16th century)",
+      "meaning": "Magellan's crew brought back skins traders had stripped of feet and wings; Pigafetta recorded the local name bolon diuata, 'birds of God', said to come from paradise. Europeans believed the birds never landed. That is the root of 'paradise' in the family and species names. Caution: the riflebird is Australian and was not part of that trade, so frame it as the family's story, not this bird's.",
+      "source_ids": [
+        "s13",
+        "s7"
+      ]
+    },
+    {
+      "culture": "Nest lore (natural history)",
+      "meaning": "Paradise Riflebirds drape cast-off snake skins on the rims of their nests; the purpose is unknown, perhaps decoration or a deterrent to nest robbers (Birds in Backyards). Only the female builds and attends the nest (Australian Museum), so this belongs to her, not the displaying male.",
+      "source_ids": [
+        "s8",
+        "s7"
+      ]
+    },
+    {
+      "culture": "Horse-year classical text (page proverb)",
+      "meaning": "塞翁失馬 sài wēng shī mǎ, from Huainanzi ch. 18 人間訓 Rénjiān xùn: the frontier man's lost horse returns with a herd, his son breaks a leg riding one, and the injury spares him from war. Fortune and misfortune turn into each other. Year-animal lore that would sit on all twelve Horse pages; use sparingly.",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "culture": "Aboriginal story specifically about the riflebird",
+      "meaning": "Unsourced, do not use. None found in a source I could open.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: double Fire. Leo wants to be witnessed; the Horse wants open ground and no orders. In the riflebird that becomes one exact, all-out display from a traditional perch, then back to foraging alone along trunks and branches. The heat is real and it is spent in bursts.",
+    "gifts": "Total commitment when the moment is right; presence that reorganizes attention; honesty and loyalty (both traditions name them); stamina for distance and seasons (moves from above 500 m in summer to below 200 m in winter).",
+    "shadow": "Leo vanity plus Fire Horse stubbornness. Can perform for anyone who lands on the branch, or refuse to perform at all because standing still feels like a fence. The polygynous male who leaves the nesting entirely to the female is a fair warning image about showing up for the courtship and not the rest.",
+    "love": "Courts in a single dazzling, physical gesture, wings curved overhead, head thrown back. Romance needs freedom built in: a partner with her own branch. Six Harmonies with the Goat suggests a gentler, home-making partner steadies it.",
+    "money": "Our reading: big generous spender in bursts (Leo extravagance), restless with long commitments (Horse); does best with a few bold bets and an automatic floor of savings.",
+    "conflict": "Flares fast and loud, a single harsh call, then moves on. Fixed Leo holds the grudge longer than the Horse would; the Horse's dislike of orders means ultimatums backfire."
+  },
+  "careers": [
+    {
+      "path": "Performer, choreographer or presenter",
+      "why": "Leo stage plus a display built on precise body mechanics; China Highlights lists performer for Horses."
+    },
+    {
+      "path": "Tour operator, expedition or field guide",
+      "why": "Horse need for range and novelty; China Highlights lists tour operator and pilot."
+    },
+    {
+      "path": "Photographer or lighting designer",
+      "why": "The bird's whole effect depends on angle and light; super black feathers sharpen the bright patch beside them."
+    },
+    {
+      "path": "Brand launch or campaign lead",
+      "why": "One big reveal, then on to the next; matches the burst pattern of a Fire-Fire nature."
+    },
+    {
+      "path": "Sales or publicist",
+      "why": "China Highlights lists communication-heavy roles for Horses; Leo warmth closes."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Lanner Falcon",
+      "slug": "lanner-falcon",
+      "reason": "Sagittarius Tiger. The Tiger shares the Horse's trine and Sagittarius is fellow Fire; speed and nerve matched, neither asks the other to sit still."
+    },
+    {
+      "name": "Giant Otter",
+      "slug": "giant-otter",
+      "reason": "Aries Dog. The Dog completes the Horse's trine and Aries is Fire; loyal, loud, and fine with your exits."
+    },
+    {
+      "name": "Wolverine",
+      "slug": "wolverine",
+      "reason": "Aries Tiger. Trine partner, Fire sign; the one creature as stubborn as you and glad of it."
+    },
+    {
+      "name": "Rock Wren",
+      "slug": "rock-wren",
+      "reason": "Gemini Goat. The Goat is the Horse's Six Harmonies partner and Gemini Air feeds Leo Fire; it keeps the flame going without wanting the stage."
+    },
+    {
+      "name": "Luna Moth",
+      "slug": "luna-moth",
+      "reason": "Libra Goat. Six Harmonies partner again, Air feeding Fire; a quiet beauty who does not compete with the display."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Golden Lion Tamarin",
+      "slug": "golden-lion-tamarin",
+      "reason": "Leo Rat. Same sign, same love of being seen, but Horse and Rat are a Six Clashes pair: two shows booked on one branch."
+    },
+    {
+      "name": "Sonoran Desert Toad",
+      "slug": "sonoran-desert-toad",
+      "reason": "Aquarius Rat. The Rat clash on top of the Leo and Aquarius opposition: it stays cool and detached exactly when you need a reaction."
+    }
+  ],
+  "candidate_lines": [
+    "One thick branch high in the canopy is yours, used season after season, and the rest of the forest is just the ground you cross between showings.",
+    "From most angles you pass for a soldier in black; tilt toward the sun and the throat flashes green-blue, and you know almost to the inch where a watcher has to stand.",
+    "When you finally open, you open past what the joint is meant to allow, wings curved over your head like a cape, and then it is over and you are gone down the ridge.",
+    "Your call is one long harsh yaaass across the gully. You say it once and do not repeat it for anyone who was not listening.",
+    "Fire from the Leo sky and Fire again from the Horse year, and those velvet black feathers are there to hold that much heat in until the branch is right.",
+    "Summer up above five hundred metres, winter down in the gullies, and every spring you come back to the same perch as though you never left."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 鸟 (rail__han and serial-han), shown with pinyin niǎo",
+      "verdict": "WEAK (generic)",
+      "note": "鸟 niǎo means 'bird' in general. BirdNET (Cornell) and tropicals.cn give 大掩鼻风鸟 for Ptiloris paradiseus; traditional 大掩鼻風鳥 dà yǎnbí fēngniǎo, roughly 'great nose-covered wind bird' (風鳥 fēngniǎo is the bird-of-paradise family; 掩鼻 'covered nose' matches the genus name, feathers over the base of the bill). Traditional form is my conversion. Caution: 大 'great' is an odd fit for this species and I could not open a mainland checklist to rule out a mix-up with the Magnificent Riflebird; confirm before shipping. If the full name cannot be confirmed, 風鳥 fēngniǎo (bird of paradise) is a safer header than plain 鳥 niǎo.",
+      "source_ids": [
+        "s14",
+        "s15",
+        "s7"
+      ]
+    },
+    {
+      "fact": "The male stages courtship from a single exposed branch or stump, holding both wings up and fanned above his head.",
+      "verdict": "OK (soften 'single' and 'stump')",
+      "note": "eBird: displays from a prominent branch, both wings high above the head. Australian Museum: traditional perches dispersed through forest. Birds in Backyards: thick horizontal branches high in tall trees. 'Stump' is not in any source I opened. Fix: 'a traditional display perch, usually a thick exposed branch high in the canopy'.",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "fact": "A study of Ptiloris riflebird courtship found the display requires hyperextending the wrist further than any other bird on record.",
+      "verdict": "OK (add 'as far as known' and species detail)",
+      "note": "MacGillavry, Frith and Fusani 2024, Biological Journal of the Linnean Society: wrist hyperextension 'goes far beyond' all other known birds. Filmed bird was a Victoria's riflebird; a specimen flexed 237.1 degrees, and other Ptiloris specimens bent a few degrees more (Science News). Applies to the genus, so fair for this species, but say 'among known birds'. PMC link could not be opened (captcha); verified via the university press release.",
+      "source_ids": [
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Five bird-of-paradise species, the Paradise Riflebird among them, have black feathers structured at barbule level to absorb almost all light.",
+      "verdict": "OK",
+      "note": "McCoy et al. 2018, Nature Communications 9:1: five species including Ptiloris paradiseus; directional reflectance 0.05 to 0.31 percent; hypothesized to make adjacent colour patches look brighter. Wikipedia agrees. Opened via the NovaTaxa summary; PMC itself was captcha-blocked.",
+      "source_ids": [
+        "s9",
+        "s5"
+      ]
+    },
+    {
+      "fact": "Throat, crown and belly carry an iridescent green and blue sheen that exists only as structural color, reading as ordinary black from any angle outside the narrow one that catches it.",
+      "verdict": "OK for the parts; UNVERIFIABLE (overstated) for 'only one narrow angle'",
+      "note": "eBird: green and blue metallic sheen on belly, throat and crown; Australian Museum: crown and triangular breast shield. Iridescence is angle-dependent, but no source says it reads as plain black from every other angle; Birds in Backyards says it shimmers green, blue or purple in sunlight. The page's tagline 'black from every angle except the one it chooses' is a reading dressed as fact; label it ours.",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Strongly dimorphic: male almost entirely black with metallic sheen; female brown above, pale below, finely scaled, no shield.",
+      "verdict": "OK",
+      "note": "eBird word for word in substance; Birds in Backyards adds rufous wings and black horseshoe marks below.",
+      "source_ids": [
+        "s6",
+        "s8"
+      ]
+    },
+    {
+      "fact": "eBird records the voice as a single loud, explosive hiss, in a species that otherwise moves through the canopy without much sound at all.",
+      "verdict": "OK in part; WRONG on 'otherwise silent'",
+      "note": "eBird: 'Call a loud, explosive hiss.' Wikipedia: a powerful 'yaassss' about 2 seconds. But Birds in Backyards says calls and rustling flight help locate them, and the display itself produces wing sounds (Science News). Cut 'otherwise moves without much sound'.",
+      "source_ids": [
+        "s6",
+        "s5",
+        "s8",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Range: rainforest canopy of eastern Australia; habitat page says rainforest and drier forest at its edge",
+      "verdict": "OK",
+      "note": "Southeastern Queensland and northeastern NSW, rainforest and nearby drier forest (eBird); above 500 m, below 200 m in winter (Wikipedia, Australian Museum).",
+      "source_ids": [
+        "s5",
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Source line: 'IUCN Red List · Lophorina paradisea (Ptiloris paradiseus)'",
+      "verdict": "WRONG (citation label)",
+      "note": "Lophorina is the superb bird-of-paradise genus. The species is Ptiloris paradiseus Swainson 1825 (Wikipedia, Australian Museum). I could not open the IUCN page to confirm the ID 22706196 points at this species. Relabel and check the link.",
+      "source_ids": [
+        "s5",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Proverb 塞翁失马 sài wēng shī mǎ and its story",
+      "verdict": "OK",
+      "note": "Huainanzi ch. 18; lost horse, returning herd, broken leg, spared from war. The page labels the Horse pairing as its own reading. ctext was blocked; verified via Wikipedia.",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "fact": "Recent Horse years 2002, 2014, 2026; matches Wolverine (Tiger, trine), Rock Wren (Goat, secret friend), Sunbittern (Dog, trine)",
+      "verdict": "OK",
+      "note": "All correct per Wikipedia and GRID. No Purple Star star-pairing claim on this page. No 'Primal Zodiac' string found.",
+      "source_ids": [
+        "s3",
+        "s17"
+      ]
+    }
+  ]
+}

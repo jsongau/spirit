@@ -1,0 +1,313 @@
+{
+  "slug": "glasswing-butterfly",
+  "name": "Glasswing Butterfly",
+  "sign": "Cancer",
+  "year": "Goat",
+  "element": "Earth (from the Goat); Cancer adds Water, cardinal",
+  "sources": [
+    {
+      "id": "s0",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    },
+    {
+      "id": "s1",
+      "title": "Cancer (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cancer_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Cancer sign profile, Astrology.com",
+      "url": "https://www.astrology.com/zodiac-signs/cancer"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (animal table and compatibility grid), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Goat, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/goat.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Greta oto, Wikipedia (cites Henderson 2002, Hall 1996, Lamas 2004, Schulz et al. 2004, Ingram and Parker 2006)",
+      "url": "https://en.wikipedia.org/wiki/Greta_oto"
+    },
+    {
+      "id": "s6",
+      "title": "Low-reflection wings make butterflies nearly invisible, KIT press release 037/2015 (on Siddique, Gomard and Holscher 2015, Nature Communications 6:6909)",
+      "url": "https://www.kit.edu/kit/english/pi_2015_037_nature--low-reflection-wings-make-butterflies-nearly-invisible.php"
+    },
+    {
+      "id": "s7",
+      "title": "Arias et al. 2019, Transparency reduces predator detection in mimetic clearwing butterflies, Functional Ecology (accepted manuscript, JYX)",
+      "url": "https://jyx.jyu.fi/bitstream/123456789/64527/1/ariasetal2019functionalecology.pdf"
+    },
+    {
+      "id": "s8",
+      "title": "Larval hooks hold on tight (Greta oto pupal attachment), AskNature",
+      "url": "https://asknature.org/strategy/larval-hooks-hold-on-tight/"
+    },
+    {
+      "id": "s9",
+      "title": "宽纹黑脉绡蝶 (Greta oto), Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/寬紋黑脈綃蝶"
+    },
+    {
+      "id": "s10",
+      "title": "Zhuangzi, Qi Wu Lun (The Adjustment of Controversies), Chinese Text Project",
+      "url": "https://ctext.org/zhuangzi/adjustment-of-controversies"
+    },
+    {
+      "id": "s11",
+      "title": "Butterfly, Gotheborg.com glossary of Chinese porcelain symbols",
+      "url": "https://www.gotheborg.com/glossary/butterfly.shtml"
+    },
+    {
+      "id": "s12",
+      "title": "Cat with kitten and butterfly, Asian Art Museum of San Francisco",
+      "url": "https://asianart.emuseum.com/objects/2338/cat-with-kitten-and-butterfly"
+    },
+    {
+      "id": "s13",
+      "title": "ψυχή, Wiktionary (Ancient Greek, citing Aristotle, History of Animals 5.19)",
+      "url": "https://en.wiktionary.org/wiki/ψυχή"
+    },
+    {
+      "id": "s14",
+      "title": "Itzpapalotl, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Itzpapalotl"
+    },
+    {
+      "id": "s15",
+      "title": "綿裡藏針, Jyut Dictionary (CC-CEDICT entry)",
+      "url": "https://jyutdictionary.com/dictionary/entry/%E7%B6%BF%E8%A3%A1%E8%97%8F%E9%87%9D"
+    }
+  ],
+  "western": {
+    "temperament": "Giving, sympathetic, protective of the vulnerable, a natural host, loyal for life once you are inside. Shadow: hard to let go, over-identifies with being needed, long memory that turns into grudges, slow to trust outsiders, can turn smothering or controlling.",
+    "planet": "The Moon (Jupiter is exalted in Cancer)",
+    "element": "Water (with Scorpio and Pisces)",
+    "modality": "Cardinal; opposite sign Capricorn",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Gentle, mild-mannered, shy, stable, sympathetic, creative and persevering; soft outside and tough inside. Shadow: stubborn, reserved, seldom shares personal life, few close friends.",
+    "yinyang": "Yin",
+    "element": "Earth (fixed); earthly branch 未 wèi",
+    "trine": "Goat, Rabbit, Pig",
+    "secret_friend": "Horse (six harmonies)",
+    "clash": "Ox (Wikipedia also lists Rat as the harm pair)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Spanish-speaking Central and South America",
+      "meaning": "The glasswing is called espejitos, 'little mirrors' (Henderson 2002, via Wikipedia). The one item here that is about this species itself.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "Chinese classical (Zhuangzi, ch. 2)",
+      "meaning": "莊周夢蝶 Zhuāng Zhōu mèng dié: Zhuang Zhou dreams he is a butterfly, wakes, and cannot tell whether he dreamed the butterfly or the butterfly dreams him; the chapter calls it 物化 wù huà, the changing of things. Butterflies generally, not glasswings.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "culture": "Chinese decorative rebus",
+      "meaning": "蝶 dié sounds like 耋 dié, a word for someone over seventy or eighty, so butterflies wish long life; paired with a cat (貓 māo, like 耄 mào) they make 耄耋 mào dié, a longevity pun. Butterflies also stand for married happiness and lasting love (the Butterfly Lovers).",
+      "source_ids": [
+        "s11",
+        "s12"
+      ]
+    },
+    {
+      "culture": "Ancient Greek",
+      "meaning": "ψυχή psūkhḗ means soul, and rarely butterfly: Aristotle, History of Animals 5.19, 'those which one calls psychai' come from caterpillars. The soul and the butterfly share one word.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "culture": "Aztec (Mesoamerica, the glasswing's range)",
+      "meaning": "Itzpapalotl, 'obsidian butterfly' or 'clawed butterfly', a skeletal warrior goddess who rules Tamoanchan; associated with the moth Rothschildia orizaba. A fierce butterfly figure, not a glasswing one: use only as 'butterflies in Mesoamerican myth', never as glasswing lore.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "'Glasswing spirit animal means transparency and honesty' appears on blogs only. The claim that Aztecs saw butterflies as souls of fallen warriors was not supported by the source opened (Wikipedia Itzpapalotl does not say it).",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: yin Earth (Goat) under cardinal Water (Cancer). Cancer wants a shell; the Goat wants a quiet pasture and no argument. The Glasswing is the animal that gave up the shell and kept the protection somewhere else: open to look at, bitter to bite. Both halves are read as soft outside and tough inside (s2, s4), which the Goat proverb 綿裡藏針 mián lǐ cáng zhēn (a needle hidden in silk floss) states exactly.",
+    "gifts": "Our reading: lets people see in without feeling exposed, reads the shade and the light of a place, builds anchors before any big change, carries more than it looks able to.",
+    "shadow": "Our reading: so easy to look through that people stop looking for you. Cestrum-or-nothing pickiness turned on people. Goat stubbornness plus Cancer grudge-memory: rarely fights, rarely forgets.",
+    "love": "Our reading: Moon-ruled, with a yin year animal. Courtship by preparation, not pursuit (the lek). Needs one specific kind of care and will not thrive on a substitute, however kindly offered. Loyal for life once the silk pad is spun.",
+    "money": "Our reading: Earth saver with a Cancer instinct to stock the home; prefers secured, anchored positions to speculative ones. Risk: holding on to a familiar arrangement long after it stopped feeding you.",
+    "conflict": "Our reading: goes still and transparent, hoping trouble looks past. When cornered the bitterness shows. Practice: name the boundary out loud instead of relying on being unpalatable."
+  },
+  "careers": [
+    {
+      "path": "Nursing, midwifery, palliative and home care",
+      "why": "Our reading: Cancer's caretaking plus the Goat's gentleness; calm presence in hard rooms of a life."
+    },
+    {
+      "path": "Translation, interpreting, editing",
+      "why": "Our reading: the window role: let meaning pass through cleanly with your own mark kept underneath."
+    },
+    {
+      "path": "Optics, materials science, design of glass and light",
+      "why": "Our reading: the nanopillar wing (s6) as a calling card; Earth patience for fine work."
+    },
+    {
+      "path": "Perfumery, botany, horticulture",
+      "why": "Our reading: the male's pheromone made from plant chemistry (s5) and the caterpillar's one host plant."
+    },
+    {
+      "path": "Counselling, social work, child protection",
+      "why": "Our reading: Cancer's 'claws come out when protecting the vulnerable' (s2) inside a soft-looking practice."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Capybara",
+      "slug": "capybara",
+      "reason": "Cancer x Pig. Same Western sign, and Pig sits in the Goat trine."
+    },
+    {
+      "name": "Green Sea Turtle",
+      "slug": "green-sea-turtle",
+      "reason": "Cancer x Horse. Horse is the Goat's six-harmony partner (secret friend); same Western sign."
+    },
+    {
+      "name": "Moon Jellyfish",
+      "slug": "moon-jellyfish",
+      "reason": "Pisces x Rabbit. Rabbit is in the Goat trine; Pisces shares Cancer's Water. Another see-through animal."
+    },
+    {
+      "name": "Pallas's Cat",
+      "slug": "pallass-cat",
+      "reason": "Scorpio x Rabbit. Rabbit trine; Scorpio is the third Water sign."
+    },
+    {
+      "name": "Koala",
+      "slug": "koala",
+      "reason": "Taurus x Rabbit. Rabbit trine; Taurus Earth complements Cancer Water."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Shoebill",
+      "slug": "shoebill",
+      "reason": "Capricorn x Ox. Capricorn is Cancer's opposite sign and Ox is the Goat's six-clash: pulled apart on both axes."
+    },
+    {
+      "name": "Asian Elephant",
+      "slug": "asian-elephant",
+      "reason": "Cancer x Ox. Same Western sign, but the Goat and Ox clash: easy recognition, friction underneath."
+    }
+  ],
+  "candidate_lines": [
+    "In the shade of the understory you let the light pass straight through your wings, and the bird hunting for color looks right past you.",
+    "You open your whole surface to the forest and keep the bitter part where it has always been kept, in the blood.",
+    "Close enough is a different plant to you; the caterpillar you were would sooner fail on the first leaf than live on a substitute.",
+    "Before any change you spin the small silk pad first and hook in, and only then let the old skin split.",
+    "In the lek you wait in the shade and let the scent you made do the courting; chasing was never how you meant to be chosen.",
+    "Some days you are more mirror than window, and the one beside you sees their own face in your wing before they see you."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 蝶 (rail__han and serial-han), shown with pinyin dié",
+      "verdict": "OK (generic)",
+      "note": "蝶 dié means butterfly, so it is not wrong, but it is not this animal. The species name is 寬紋黑脈綃蝶 kuān wén hēi mài xiāo dié; Chinese Wikipedia also gives 玻璃翼蝶 bō lí yì dié, 'glass-wing butterfly', the better header. Note the page uses traditional characters elsewhere; both forms are traditional-safe.",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "fact": "Range: Central American rainforest from Mexico down through Panama",
+      "verdict": "WRONG (too narrow)",
+      "note": "Wikipedia: mainly Central America and northern South America, most common from Central America south as far as Chile, with records north to Mexico and Texas.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "fact": "Clear wing zones carry irregular nanopillars 150 to 250 nm tall that reflect almost no light at any angle",
+      "verdict": "WRONG (numbers)",
+      "note": "KIT on Siddique et al. 2015: pillar height typically 400 to 600 nm, spacing 100 to 140 nm; specular reflection 2 to 5 percent depending on angle (glass: 8 to 100 percent). 'Almost no light' is fair; the heights are wrong.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "fact": "Despite carrying toxins, the Glasswing is attacked less often than opaque, equally toxic relatives; transparency measurably lowers detection (Arias et al. 2019)",
+      "verdict": "WRONG (wrong species, wrong comparison)",
+      "note": "Arias et al. tested four other ithomiines (Hypothyris ninonia, Ceratinia tutia, Ithomia salapia, Brevioleria seba); Greta oto is not in the paper. They used artificial butterflies built from real wings, shown to wild-caught great tits in Finland and to humans; more transparent species were found later and less often. Toxicity was not compared. Say: 'in tests with related clearwings, the more transparent species were spotted less'.",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "fact": "Caterpillar feeds almost only on Cestrum (toxic nightshade genus); larvae on other hosts often die in the first instar or develop poorly",
+      "verdict": "OK (fix citation)",
+      "note": "Wikipedia attributes the host and the first-instar deaths to Hall 1996 and the egg-laying on Cestrum to Henderson 2002. The live page cites Dyer 1995 (a paper on larval antipredator defences), which looks like the wrong paper for this claim. 'Toxic' was not checked.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "fact": "Before pupating the caterpillar spins a silk pad and hooks in with the cremaster, strong enough to survive wind and a predator's pull",
+      "verdict": "OK (cut 'predator')",
+      "note": "Ingram and Parker 2006 (via Wikipedia) found high tensile strength and toughness; AskNature reports at least 50 times what the chrysalis weight needs, likely against strong winds. The predator clause is UNVERIFIABLE.",
+      "source_ids": [
+        "s5",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Males gather in shaded leks and convert plant pyrrolizidine alkaloids into a courtship pheromone; females choose on display, not a chase",
+      "verdict": "OK (cut last clause)",
+      "note": "Leks and the alkaloid-derived pheromone (pyrrole ring formation, ester cleavage, oxidation) are Schulz et al. 2004 via Wikipedia. 'Females choose based on the display, not a chase' is UNVERIFIABLE.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "fact": "Adults fly up to twelve miles a day migrating between elevations and can carry about forty times body weight",
+      "verdict": "OK (secondary only)",
+      "note": "Wikipedia gives up to 12 mi (19 km) a day at up to 8 mph (Henderson 2002) and up to 40 times its weight (Lamas 2004 atlas). Primaries not opened; the 40x figure is widely repeated and should be attributed. 'Between elevations' not found.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "fact": "Proverb of the year: 綿裡藏針 mián lǐ cáng zhēn, a needle hidden inside silk floss",
+      "verdict": "OK",
+      "note": "Real idiom: a ruthless or firm character behind a gentle appearance. The page labels the Goat pairing as its own reading, which is honest.",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "fact": "Purple Star (Zi Wei Dou Shu) star assigned from sign plus year",
+      "verdict": "OK (none present)",
+      "note": "Only links to the Purple Star chart tool; no star claim.",
+      "source_ids": []
+    }
+  ]
+}

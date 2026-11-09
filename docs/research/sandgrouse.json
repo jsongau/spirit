@@ -1,0 +1,370 @@
+{
+ "slug": "sandgrouse",
+ "name": "Sandgrouse",
+ "sign": "Sagittarius",
+ "year": "Rat",
+ "element": "Water (from the Rat); Sagittarius adds Fire, mutable. Water checks Fire in the controlling cycle.",
+ "sources": [
+  {
+   "id": "s1",
+   "title": "Sagittarius (astrology), Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Sagittarius_(astrology)"
+  },
+  {
+   "id": "s2",
+   "title": "Sagittarius zodiac sign, Cafe Astrology",
+   "url": "https://cafeastrology.com/zodiacsagittarius.html"
+  },
+  {
+   "id": "s3",
+   "title": "Chinese zodiac (main table and compatibility grid), Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+  },
+  {
+   "id": "s4",
+   "title": "Year of the Rat, China Highlights",
+   "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/rat.htm"
+  },
+  {
+   "id": "s5",
+   "title": "Sandgrouse, Wikipedia (cites Cade and Maclean 1967 Condor; Ward 1972 Ibis; Creagrus Bird Families of the World)",
+   "url": "https://en.wikipedia.org/wiki/Sandgrouse"
+  },
+  {
+   "id": "s6",
+   "title": "Namaqua sandgrouse, Wikipedia (cites Lloyd, Little and Crowe 2001)",
+   "url": "https://en.wikipedia.org/wiki/Namaqua_sandgrouse"
+  },
+  {
+   "id": "s7",
+   "title": "Scientists uncover the amazing way sandgrouse hold water in their feathers, MIT News 2023-04-11 (on Mueller and Gibson 2023)",
+   "url": "https://news.mit.edu/2023/scientists-uncover-sandgrouse-hold-water-feathers-0411"
+  },
+  {
+   "id": "s8",
+   "title": "How the Namaqua sandgrouse defies the desert, Royal Society blog 2023 (on Mueller and Gibson, J. R. Soc. Interface 20:20220878)",
+   "url": "https://royalsociety.org/blog/2023/05/how-the-namaqua-sandgrouse-defies-the-desert-with-its-water-carrying-capabilities/"
+  },
+  {
+   "id": "s9",
+   "title": "Research News: sandgrouse feathers, Physics (APS) v16/95, 2023",
+   "url": "https://physics.aps.org/articles/v16/95"
+  },
+  {
+   "id": "s10",
+   "title": "Joubert and Maclean 1973, The structure of the water-holding feathers of the Namaqua sandgrouse, Zoologica Africana 8(2):141-152",
+   "url": "https://core.ac.uk/download/478464117.pdf"
+  },
+  {
+   "id": "s11",
+   "title": "Sandgrouse: An inspirational symbol of beauty and resilience in Jazan, Arab News (SPA)",
+   "url": "https://www.arabnews.pk/node/2590394"
+  },
+  {
+   "id": "s12",
+   "title": "Abd Elrhman 2011, Grouse Birds [sandgrouse] in Pre-Islamic Poetry, Annals of the Faculty of Arts, Ain Shams University 39:27-63, doi 10.21608/aafu.2011.5978",
+   "url": "https://aafu.journals.ekb.eg/article_5978.html?lang=en"
+  },
+  {
+   "id": "s13",
+   "title": "al-Shanfara, Lamiyyat al-Arab, trans. J. W. Redhouse, The L-Poem of the Arabs (1881), Wikisource text (mirror)",
+   "url": "https://kwx.liehendr.com/content/wikisource_en_all_maxi_2022-09/A/Lamiyyat_al-Arab"
+  },
+  {
+   "id": "s14",
+   "title": "Sandgrouse, Encyclopaedia Iranica (E. Firouz, 2008), incl. Hamd-Allah Mostawfi",
+   "url": "https://www.iranicaonline.org/?p=1487"
+  },
+  {
+   "id": "s15",
+   "title": "Pteroclididae: Sandgrouse, British Trust for Ornithology",
+   "url": "https://www.bto.org/learn/about-birds/bird-families/pteroclididae-sandgrouse"
+  },
+  {
+   "id": "s16",
+   "title": "Pallas's Sandgrouse, Historical Rare Birds (Witherby 1924; Patterson 1900; Newton)",
+   "url": "https://www.historicalrarebirds.info/cat-ac/pallas-s-sandgrouse"
+  },
+  {
+   "id": "s17",
+   "title": "沙鸡科 (shājī kē), Chinese Wikipedia",
+   "url": "https://zh.wikipedia.org/wiki/沙鸡科"
+  },
+  {
+   "id": "s18",
+   "title": "毛腿沙鸡 (máotuǐ shājī, Pallas's sandgrouse), Chinese Wikipedia",
+   "url": "https://zh.wikipedia.org/wiki/毛腿沙鸡"
+  },
+  {
+   "id": "s19",
+   "title": "千里送鹅毛 origin story (Mian Bogao, Tang Taizong), Our China Story",
+   "url": "https://www.ourchinastory.com/cn/7927"
+  },
+  {
+   "id": "s20",
+   "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+   "url": "data/research/BRIEF.md"
+  }
+ ],
+ "western": {
+  "temperament": "Optimistic, honest and direct, adventurous, curious, good-humoured, independent and generous. Shadow: restless, escapes routine, weak follow-through, blind optimism, quick but short temper, blunt or preachy.",
+  "planet": "Jupiter",
+  "element": "Fire",
+  "modality": "Mutable; about 22/23 November to 21 December",
+  "source_ids": [
+   "s1",
+   "s2"
+  ]
+ },
+ "chinese": {
+  "temperament": "Quick-witted, resourceful, smart, imaginative, sharp observer, spots and uses opportunities, diligent and thrifty. Shadow: lacks courage, struggles to deepen relationships, ends them easily.",
+  "yinyang": "Yang",
+  "element": "Water (fixed); earthly branch 子 zǐ",
+  "trine": "Rat, Dragon, Monkey",
+  "secret_friend": "Ox",
+  "clash": "Horse (Wikipedia also lists Goat as the harm pair and Rabbit as punishment)",
+  "lucky": null,
+  "source_ids": [
+   "s3",
+   "s4"
+  ]
+ },
+ "symbolism": [
+  {
+   "culture": "Arabia, pre-Islamic poetry",
+   "meaning": "The sandgrouse (qaṭā) is a recurring figure in pre-Islamic poetry, met at water springs and flushed from desert roosts; a 2011 Ain Shams University study treats its similes and metaphors. Arab News reports it has stood for patience, endurance, loyalty, departure and longing since that period.",
+   "source_ids": [
+    "s12",
+    "s11"
+   ]
+  },
+  {
+   "culture": "al-Shanfara, Lamiyyat al-Arab (pre-Islamic ode)",
+   "meaning": "The outlaw poet boasts that 'the cinereous sandgrouse birds drink my leavings, after they have travelled a whole night' (stanza 39, Redhouse 1881). The fastest water-seeker in the desert is the yardstick he beats. A primary text, attributable and quotable.",
+   "source_ids": [
+    "s13"
+   ]
+  },
+  {
+   "culture": "Jazan, Saudi Arabia (oral tradition)",
+   "meaning": "A saying holds: 'If you see a sandgrouse, know that water is near.' The bird is a guide to water for desert travellers, and Saudi literature uses it for a free spirit that roams but is drawn home (poet Mohammed bin Ali Al-Sanousi).",
+   "source_ids": [
+    "s11"
+   ]
+  },
+  {
+   "culture": "Medieval Persia (Hamd-Allah Mostawfi)",
+   "meaning": "Mostawfi called the qaṭāt 'very smart' and wrote that it hides its eggs in desert sand and finds them again; he also recorded folk-medicine uses. The cleverness fits the Rat half; the medicine items should not be used.",
+   "source_ids": [
+    "s14"
+   ]
+  },
+  {
+   "culture": "Victorian Britain",
+   "meaning": "Pallas's sandgrouse irrupted from the Central Asian steppes in 1863 and 1888; in 1888 over 1,100 were seen in Norfolk alone and a few pairs bred in Yorkshire and north-east Scotland. A bird that turns up a continent away from home. Pallas's sandgrouse (毛腿沙雞 máotuǐ shājī) breeds in Inner Mongolia, Gansu, Qinghai and Xinjiang.",
+   "source_ids": [
+    "s15",
+    "s16",
+    "s18"
+   ]
+  },
+  {
+   "culture": "Science history",
+   "meaning": "E. G. B. Meade-Waldo reported chicks drinking from the male's belly feathers in 1896; nobody believed him until Cade and Maclean confirmed it in 1967. Fact, not folklore; a good honest hook if told briefly.",
+   "source_ids": [
+    "s7",
+    "s9"
+   ]
+  },
+  {
+   "culture": "Unsourced, do not use",
+   "meaning": "The Arabic proverbs often quoted online, 'more truthful than the sandgrouse' (because it calls its own name) and 'better guided than the sandgrouse'. I could not open a source that states them. Also any 'sandgrouse spirit animal' meaning, and any San or Khoekhoe story about the Namaqua sandgrouse: none found.",
+   "source_ids": []
+  }
+ ],
+ "fusion": {
+  "temperament": "Our reading: the Rat is the Water animal, and the Sandgrouse is the bird that carries water. That is the cleanest fit in the grid. Mutable Fire (Sagittarius, ruled by Jupiter) gives the range and the morning flight; the Rat gives the resourcefulness that turns range into provision. Water checks Fire: the restlessness is given a job.",
+  "gifts": "Our reading: endurance over distance; practical generosity (bringing the actual thing that is needed); a sense for where the water is when others see only gravel; knowing when to arrive with the flock.",
+  "shadow": "Our reading: about half the water evaporates on the flight home (s7). The shadow is spending so much on the crossing that little arrives, or carrying for others while never drinking yourself. The Rat's thin courage in relationships plus Sagittarian escape: provision as a way of not staying.",
+  "love": "Our reading: shows love by fetching and delivering, often from far away. Needs a partner who values presence as much as supply. Long-distance can suit this crossing better than it suits most.",
+  "money": "Our reading: Rat thrift with Sagittarian optimism. Good at finding the resource in a dry year; risk is overextending on the long trip and losing half in transit.",
+  "conflict": "Our reading: Fire flares and fades quickly; the Rat reads the exits. Tends to leave and come back with something useful rather than argue it out. Has to learn to stay at the waterhole long enough to talk."
+ },
+ "careers": [
+  {
+   "path": "Humanitarian logistics, water and sanitation projects, aid supply chains",
+   "why": "Our reading: the literal water carrier; Rat resourcefulness with Sagittarian range."
+  },
+  {
+   "path": "Field guide, expedition leader, desert or wilderness ranger",
+   "why": "Our reading: 'if you see a sandgrouse, water is near'; the one others follow across dry country."
+  },
+  {
+   "path": "Long-haul pilot, courier, freight",
+   "why": "Our reading: daily round trips with something precious aboard."
+  },
+  {
+   "path": "Midwifery, paediatric or neonatal nursing",
+   "why": "Our reading: the male that brings water to chicks who cannot yet fly; direct, material care."
+  },
+  {
+   "path": "Procurement, trading, import-export",
+   "why": "Our reading: the Rat's eye for opportunity across Jupiter's foreign distances."
+  }
+ ],
+ "best_matches": [
+  {
+   "name": "Secretary Bird",
+   "slug": "secretary-bird",
+   "reason": "Aries x Dragon. Dragon is in the Rat's trine, and Aries shares Sagittarius's Fire. Another bird of open African country."
+  },
+  {
+   "name": "Regal Jumping Spider",
+   "slug": "regal-jumping-spider",
+   "reason": "Leo x Monkey. Monkey completes the Rat trine; Leo is the third Fire sign."
+  },
+  {
+   "name": "Swan",
+   "slug": "swan",
+   "reason": "Libra x Ox. Ox is the Rat's secret friend (six harmonies), and Libra's Air feeds Sagittarius's Fire."
+  },
+  {
+   "name": "Arctic Tern",
+   "slug": "arctic-tern",
+   "reason": "Sagittarius x Ox. Same sign plus the Ox secret friend; two long-distance commuters."
+  },
+  {
+   "name": "Frigatebird",
+   "slug": "frigatebird",
+   "reason": "Sagittarius x Dragon. Same sign and the Dragon trine."
+  }
+ ],
+ "hard_matches": [
+  {
+   "name": "Swift",
+   "slug": "swift",
+   "reason": "Gemini x Horse. Rat and Horse are the traditional six-clash pair, and Gemini is Sagittarius's opposite sign."
+  },
+  {
+   "name": "Albatross",
+   "slug": "albatross",
+   "reason": "Sagittarius x Horse. Same sign, so the wanderlust matches, but the Rat-Horse clash sits underneath."
+  }
+ ],
+ "candidate_lines": [
+  "At first light you are already in the air, flying to water for someone who cannot fly yet, and you count the trip as a gift.",
+  "Half of what you carry dries off on the way home. You go back for more anyway, which is the most Rat thing and the most Sagittarius thing about you at once.",
+  "Desert travellers used to say that where a sandgrouse appears, water is close. People feel that about you before they can explain it.",
+  "On the gravel you disappear into the ground, and then you come down to the water with the whole flock inside the same few minutes.",
+  "Your chicks press their beaks into your wet feathers and drink. That is how you love: something real, delivered in person, still cold from the source.",
+  "You can cross thirty kilometres of heat without complaint, so the hard lesson is a short one: drink before you fly back."
+ ],
+ "fact_audit": [
+  {
+   "fact": "Header hanzi 飛 (fēi) shown in rail__han and serial-han as the animal's character.",
+   "verdict": "WRONG",
+   "note": "飛 fēi means fly; it is not the bird's name. Sandgrouse are 沙雞 shājī (simplified 沙鸡), family 沙雞科 shājī kē. Pallas's sandgrouse is 毛腿沙雞 máotuǐ shājī. I found no sourced Chinese name for Pterocles namaqua specifically, so use 沙雞 shājī.",
+   "source_ids": [
+    "s17",
+    "s18"
+   ]
+  },
+  {
+   "fact": "Intro: 'The only bird in its family that carries water for its young in its own feathers.'",
+   "verdict": "WRONG",
+   "note": "In 15 of the 16 living sandgrouse species the adult male carries water in his belly feathers; only the Tibetan sandgrouse is not known to (Wikipedia citing Cade and Maclean 1967). Correct: sandgrouse are the only birds known to carry water this way (s7).",
+   "source_ids": [
+    "s5",
+    "s7"
+   ]
+  },
+  {
+   "fact": "Intro: temperatures swing by forty degrees between dawn and noon; round trip to water can cover 160 km.",
+   "verdict": "WRONG / UNVERIFIABLE",
+   "note": "40-degree swing: no source found. 160 km: for the Namaqua sandgrouse, nests are up to about 30 km from water (APS Physics) and males fly more than 20 km home (MIT). The 160 km daily figure in Wikipedia is given for Burchell's sandgrouse, a different species, via a secondary site.",
+   "source_ids": [
+    "s7",
+    "s9",
+    "s5"
+   ]
+  },
+  {
+   "fact": "Male breast feathers have a spiralling microstructure holding up to 20 mL; female's feathers lack the adaptation entirely; water transport exclusively male.",
+   "verdict": "WRONG (two parts)",
+   "note": "Spiral: OK, inner-zone barbules coil helically and unwind when wet (s8). Amount: about 25 mL, roughly 15% of body weight (Cade and Maclean 1967, via s7, s8); 'up to 20' understates. Females: same structure, but the area of specialised barbules is smaller (Joubert and Maclean 1973, s10); 'lack it entirely' is false. Males are the ones that transport water in the Namaqua sandgrouse (s7, s8): OK.",
+   "source_ids": [
+    "s7",
+    "s8",
+    "s10"
+   ]
+  },
+  {
+   "fact": "Breeding males tracked flying up to 80 km each way, round trip of 160 km daily during chick-rearing.",
+   "verdict": "WRONG",
+   "note": "Sourced figures for the Namaqua sandgrouse: nests up to about 30 km from water, a roughly half-hour flight (s9); more than 20 km (s7); about 20 miles (ScienceDaily on the same paper). BTO says sandgrouse may fly 20 miles or more. 'Tracked ... 80 km' has no source; 'tracked' implies telemetry that I did not find.",
+   "source_ids": [
+    "s7",
+    "s9",
+    "s15"
+   ]
+  },
+  {
+   "fact": "Arrive at waterholes in coordinated flocks, sometimes thousands, within minutes, overwhelming predators by density.",
+   "verdict": "OK (soften)",
+   "note": "'Many hundreds or thousands synchronise their arrival at the drinking site' (Wikipedia citing Ward 1972, Ibis, 'The functional significance of mass drinking flights by sandgrouse'); BTO: flocks of thousands at waterholes. For the Namaqua specifically, Wikipedia says dozens or hundreds in early morning. The predator-swamping explanation is the subject of Ward's paper but I could not open it; say 'probably helps against predators'.",
+   "source_ids": [
+    "s5",
+    "s6",
+    "s15"
+   ]
+  },
+  {
+   "fact": "Plumage camouflaged so precisely that a roosting bird is routinely invisible at two metres.",
+   "verdict": "UNVERIFIABLE",
+   "note": "No source for the two-metre figure. Sourced: the female and juvenile are more cryptic than the male (Wikipedia, Namaqua sandgrouse). Cut the number.",
+   "source_ids": [
+    "s6"
+   ]
+  },
+  {
+   "fact": "Namaqua sandgrouse ranges across arid sub-Saharan Africa; related species from the Canary Islands to the Indian subcontinent; 'three continents'.",
+   "verdict": "WRONG (range)",
+   "note": "Namaqua sandgrouse is a bird of south-western Africa: Kalahari, Nama Karoo, Namibia, Botswana, Angola, Zimbabwe, South Africa (s6), not sub-Saharan Africa broadly. The family reaches well beyond India: Africa, Madagascar, the Middle East and central Asia (s5, s15), with Pallas's sandgrouse breeding in north-west China (s18). 'Three continents' is fine.",
+   "source_ids": [
+    "s5",
+    "s6",
+    "s15",
+    "s18"
+   ]
+  },
+  {
+   "fact": "Chicks drink directly from the male's wet breast feathers on his return; feeding behaviour unique among birds. Headline: 'The only bird that feeds its young with its body.'",
+   "verdict": "OK (fact) / WRONG (headline)",
+   "note": "Chicks put their beaks to the belly feathers and drink (Meade-Waldo 1896, confirmed 1967; s9). Sandgrouse are the only birds known to hold water this way (s7). The headline overreaches: other birds also feed young from their own bodies (e.g. crop secretions), so restrict it to water carried in feathers.",
+   "source_ids": [
+    "s7",
+    "s9"
+   ]
+  },
+  {
+   "fact": "Proverb section: 'The male sandgrouse crosses 160 kilometres for water his chicks will drink in thirty seconds.'",
+   "verdict": "WRONG",
+   "note": "160 km, see above (use about 30 km). 'Thirty seconds' has no source. The proverb 千里送鵝毛 (qiān lǐ sòng é máo) itself is real: from the Tang story of envoy Mian Bogao, whose tribute swan escaped leaving only feathers; the full saying is 物輕人意重 (wù qīng rén yì zhòng), the gift is light but the feeling heavy (s19). Pairing labelled as ours: honest.",
+   "source_ids": [
+    "s9",
+    "s19"
+   ]
+  },
+  {
+   "fact": "Purple Star sections.",
+   "verdict": "OK",
+   "note": "Both blocks say the chart is cast from lunar birth date and hour and call the crossing reading 'our outline'. No star is assigned from the sign pair.",
+   "source_ids": []
+  }
+ ],
+ "page_bugs": [
+  "Header hanzi 飛 is a verb, not the bird's name.",
+  "Many em dashes in body copy.",
+  "Five of six 'Animal fact' blocks rest on Namaqua-specific numbers that are inflated or borrowed from Burchell's sandgrouse; the reading's 'distance' theme should be rebuilt on about 30 km and the 25 mL load, half lost to evaporation (MIT)."
+ ]
+}

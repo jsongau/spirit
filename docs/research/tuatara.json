@@ -1,0 +1,327 @@
+{
+  "slug": "tuatara",
+  "name": "Tuatara",
+  "sign": "Capricorn",
+  "year": "Snake",
+  "element": "Fire (from the Snake); Capricorn adds Earth, cardinal",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Capricorn (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Capricorn_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Capricorn personality traits, VICE",
+      "url": "https://www.vice.com/en/article/capricorn-personality-traits-everything-you-need-to-know/"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (trines, six harmonies, six clashes), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Snake (zodiac), Wikipedia (branch, yin, Fire, trine, hour)",
+      "url": "https://en.wikipedia.org/wiki/Snake_(zodiac)"
+    },
+    {
+      "id": "s5",
+      "title": "Year of the Snake, Travel China Guide",
+      "url": "https://www.travelchinaguide.com/intro/social_customs/zodiac/snake.htm"
+    },
+    {
+      "id": "s6",
+      "title": "Tuatara, Department of Conservation (NZ)",
+      "url": "https://www.doc.govt.nz/nature/native-animals/reptiles-and-frogs/tuatara/"
+    },
+    {
+      "id": "s7",
+      "title": "Sphenodon punctatus, Animal Diversity Web (cited on live page)",
+      "url": "https://animaldiversity.org/accounts/Sphenodon_punctatus/"
+    },
+    {
+      "id": "s8",
+      "title": "Tuatara, Britannica",
+      "url": "https://www.britannica.com/animal/tuatara"
+    },
+    {
+      "id": "s9",
+      "title": "Gemmell et al. 2020, The tuatara genome reveals ancient features of amniote evolution, Nature 584:403-409",
+      "url": "https://www.nature.com/articles/s41586-020-2561-9"
+    },
+    {
+      "id": "s10",
+      "title": "Tuatara, Wikipedia (body temperature, parietal eye timing, breeding interval, fossils)",
+      "url": "https://en.wikipedia.org/wiki/Tuatara"
+    },
+    {
+      "id": "s11",
+      "title": "Bradford Haami, 'Ngārara: reptiles: What are ngārara?', Te Ara, 2012",
+      "url": "https://teara.govt.nz/en/ngarara-reptiles/page-1"
+    },
+    {
+      "id": "s12",
+      "title": "Bradford Haami, 'Ngārara: reptiles: Guardians or enemies?', Te Ara, 2012",
+      "url": "https://teara.govt.nz/en/ngarara-reptiles/page-3"
+    },
+    {
+      "id": "s13",
+      "title": "杯弓蛇影 idiom, China Daily bilingual (source Fengsu Tong, Ying Shao, Eastern Han)",
+      "url": "https://language.chinadaily.com.cn/a/202306/21/WS64929f12a310bf8a75d6b1ff_6.html"
+    },
+    {
+      "id": "s14",
+      "title": "Chinese Wikipedia (IPFS mirror), 喙頭蜥 article",
+      "url": "https://zh-wikipedia--on--ipfs-org.ipns.dweb.link/wiki/%E5%96%99%E9%A0%AD%E8%9C%A5"
+    },
+    {
+      "id": "s15",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Level-headed, hard-working, goal-driven, practical, dry and deadpan; loyal, patient, reliable, good at patterns, a natural leader. Shadow: workaholic, takes on too much, bossy, guarded with feeling, can cut people off, overly serious.",
+    "planet": "Saturn (responsibility, maturity, time, limits); Mars exalted",
+    "element": "Earth (with Taurus and Virgo)",
+    "modality": "Cardinal; symbol the sea-goat (Greek Aigokeros, 'horned goat'); opposite sign Cancer",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Perceptive, strategic, composed in a crisis, graceful with quiet humour. Shadow: guarded, distrustful, possessive, waits for the perfect moment and misses it. Slow to fall in love, loyal once committed. Wikipedia's one-liner: intelligent, with a tendency to lack scruples.",
+    "yinyang": "Yin",
+    "element": "Fire (fixed); earthly branch 巳 sì; Snake hour 09:00 to 11:00, when the sun warms the earth",
+    "trine": "Ox, Snake, Rooster",
+    "secret_friend": "Monkey",
+    "clash": "Pig",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Māori (the name; Te Ara, Bradford Haami)",
+      "meaning": "Tuatara: tua 'back', tara 'spiny', so 'peaks on the back' (Britannica). The name is the crest, which matters for the page's crest trait.",
+      "source_ids": [
+        "s11",
+        "s8"
+      ]
+    },
+    {
+      "culture": "Māori (origin; Te Ara, Bradford Haami; 'some tribes', no iwi named)",
+      "meaning": "Ngārara (reptiles) are said to descend from Punga, son of Tangaroa; Punga's son Tū-te-wanawana with Tūpari produced offspring including tuatara. A separate tradition: Peketua made a clay egg, Tāne gave it life, and it produced the first tuatara. Tell briefly, attributed to Te Ara, no 'you' reading laid over it.",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "culture": "Māori (fear and guardianship; Te Ara, Bradford Haami)",
+      "meaning": "Lizards were seen as representatives of Whiro, god of darkness, evil and death, and were feared. Yet lizards and tuatara were released near burial caves to watch over the dead. Te Ara names no single iwi for these points; say 'Māori tradition recorded in Te Ara'.",
+      "source_ids": [
+        "s12"
+      ]
+    },
+    {
+      "culture": "Ngātiwai (present-day kaitiakitanga)",
+      "meaning": "Ngātiwai, the iwi who hold kaitiakitanga (guardianship) over tuatara populations, partnered on the 2020 tuatara genome and decided how its data could be used (Gemmell et al. 2020, Nature). A strong, current, named-iwi fact.",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "culture": "Chinese (Snake half; the page's proverb)",
+      "meaning": "杯弓蛇影 bēi gōng shé yǐng, 'cup, bow, snake, shadow': Du Xuan saw a bow's reflection in his wine, took it for a snake, drank, fell ill, and recovered when he learned the truth. From Ying Shao's Fengsu Tong (Eastern Han). Used for people who frighten themselves. Verified; the page labels the tie as its own.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "'Tuatara spirit animal' or totem meanings found on blogs (ancient wisdom, third-eye intuition) have no traditional source. The third-eye link is a modern pop association, not Māori tradition. Ngāti Koata custodianship of Takapourewa (Stephens Island) is widely reported, but the DOC page I tried did not load, so it is not used here.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: cardinal Earth meets yin Fire. Capricorn sets the long goal and Saturn hands it a long clock; the Snake banks its heat and moves only when sure. The Tuatara is ambition run at low temperature: a slow, steady burn that keeps going when the weather stops everything else.",
+    "gifts": "Our reading: endurance across years, calm under cold pressure, strategic patience, a quiet eye for threats, finishing what others abandoned at month three.",
+    "shadow": "Our reading: 杯弓蛇影. Treating a reflection as a snake, suspicion that costs whole seasons, and a Capricorn guardedness that hides the work until nobody remembers to credit it.",
+    "love": "Our reading: slow to let anyone near the burrow, loyal once they are in (both halves agree on this). Needs a partner who will not rush the clock and who reads stillness as commitment.",
+    "money": "Our reading: long horizon, low burn rate. Builds slowly through property, pensions or a single skill compounded over decades. Risk: waiting so long for certainty that the season passes.",
+    "conflict": "Our reading: goes still and cold first. The crest comes up only when the territory itself is at stake, and then the display is clear. Needs to check whether the threat is a snake or a bow in the cup before spending a season on it."
+  },
+  "careers": [
+    {
+      "path": "Conservation, ecology, long-term field monitoring",
+      "why": "Our reading: work measured in decades; island patience."
+    },
+    {
+      "path": "Law, finance, actuarial and pension work",
+      "why": "Our reading: Snake careers lean to law, finance and research (s5); Saturn's long clock fits compounding work."
+    },
+    {
+      "path": "Restoration, heritage carpentry, stonework, archival science",
+      "why": "Our reading: an animal whose line outlasted its order, tending things built to last."
+    },
+    {
+      "path": "Geology, palaeontology, deep-time research",
+      "why": "Our reading: comfortable with timescales most people cannot picture."
+    },
+    {
+      "path": "Negotiation, crisis management, security",
+      "why": "Our reading: the Snake's composure in a crisis (s5) with Capricorn's command; watch the suspicion."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Giant Salamander",
+      "slug": "giant-salamander",
+      "reason": "Scorpio x Ox. Ox shares the Snake trine (Ox, Snake, Rooster); Scorpio Water complements Capricorn Earth. Another ancient, slow survivor."
+    },
+    {
+      "name": "Beaver",
+      "slug": "beaver",
+      "reason": "Virgo x Ox. Ox trine; Virgo is a fellow Earth sign. Two long-term builders."
+    },
+    {
+      "name": "Weaverbird",
+      "slug": "weaverbird",
+      "reason": "Virgo x Rooster. Rooster trine; Earth with Earth. Patient construction shared."
+    },
+    {
+      "name": "New Caledonian Crow",
+      "slug": "new-caledonian-crow",
+      "reason": "Virgo x Monkey. Monkey is the Snake's secret friend (six harmonies) and Virgo is Earth. (Also on the live page; valid.)"
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Capybara",
+      "slug": "capybara",
+      "reason": "Cancer x Pig. Snake-Pig is the six-clash pair and Cancer is Capricorn's opposite sign: two systems pulling against each other."
+    },
+    {
+      "name": "Honey Badger",
+      "slug": "honey-badger",
+      "reason": "Aries x Pig. Snake-Pig clash, plus a fast cardinal Fire sign that charges where the Tuatara waits."
+    }
+  ],
+  "candidate_lines": [
+    "Your plans take longer to hatch than anyone else's, eleven months, sixteen, and you have stopped apologizing for the winter they sleep through.",
+    "At body temperatures that would leave most reptiles stranded, you are still out at the mouth of the burrow on your wind-scoured island, working.",
+    "The crest along your back stays flat for months. The night it rises, every male on the island knows what you came for.",
+    "You saw the light plainly once, very young, before a scale grew over that eye, and part of you still keeps time by it.",
+    "Saturn gave you the long clock and the Snake gave you the banked fire, so a decade of quiet in your burrow is simply you building.",
+    "Your line outlasted every cousin it ever had, and you wear that the way you wear the cold: without comment."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 蜥 (rail__han and serial-han), shown with pinyin xī.",
+      "verdict": "WRONG (generic, and a category error)",
+      "note": "蜥 xī means lizard (as in 蜥蜴 xīyì). The tuatara is not a lizard; it is the last rhynchocephalian. Chinese names: 喙頭蜥 huìtóuxī ('beak-head lizard', Chinese Wikipedia headword, simplified 喙头蜥) and 楔齒蜥 xiēchǐxī ('wedge-tooth lizard', simplified 楔齿蜥), also 紐西蘭鱷蜥 Niǔxīlán èxī. Recommend 喙頭蜥 huìtóuxī, or a single glyph that is not 'lizard'.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "fact": "Sole living member of Rhynchocephalia, which split from the lizard and snake lineage roughly 200 million years ago; every other branch gone by around 60 million years ago.",
+      "verdict": "WRONG (200 million)",
+      "note": "Sole survivor is OK. The split from squamates is about 250 million years ago, early Triassic (Gemmell et al. 2020; Britannica). The '200 million' figure is when the order was well represented (DOC), not the split. 'Gone by about 60 million years' is OK per DOC and ADW, with a caveat: Miocene sphenodontine fossils (about 19 to 16 million years) from St Bathans, NZ are likely a close tuatara relative.",
+      "source_ids": [
+        "s9",
+        "s8",
+        "s6",
+        "s7",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Lowest preferred body temperature of any reptile; active as low as 45°F (7°C).",
+      "verdict": "OK",
+      "note": "ADW: preferred 60 to 70°F, active down to about 45°F. Wikipedia: optimal 16 to 21°C is 'the lowest of any reptile', active down to 5°C. Britannica: one of the few reptile groups active at low body temperatures. Could say 'about 5 to 7°C'.",
+      "source_ids": [
+        "s7",
+        "s10",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Metabolism far slower than other reptiles its size.",
+      "verdict": "UNVERIFIABLE (comparison)",
+      "note": "ADW says 'a very slow metabolism' and Wikipedia ties it to low body temperature, but no opened source compares it with reptiles of the same size. Cut 'than other reptiles its size'.",
+      "source_ids": [
+        "s7",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Wild individuals are known to live well over 100 years.",
+      "verdict": "WRONG (wild)",
+      "note": "DOC: average about 60 years, 'can live up to 100'. Britannica: commonly 60 years or more. The over-100 cases are captive (ADW 'in captivity'; Henry at Southland Museum bred at about 111). Fix: 'can live past 100; one captive male, Henry, fathered young at about 111'.",
+      "source_ids": [
+        "s6",
+        "s8",
+        "s7",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Hatchlings carry a functional parietal eye with a lens and light-sensing retina, which becomes covered by scale and skin as the animal reaches adulthood.",
+      "verdict": "WRONG (timing; 'functional' overstated)",
+      "note": "Lens and retina are right. It is covered by scales and pigment after four to six months, not at adulthood (Wikipedia). It senses light but probably cannot form images; Britannica says it is thought to register the light-dark cycle for hormones and is not an organ of vision.",
+      "source_ids": [
+        "s10",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Females lay a clutch only once every two to five years; eggs take twelve to fifteen months to hatch, the longest incubation of any living reptile.",
+      "verdict": "OK (interval, months) / UNVERIFIABLE (longest)",
+      "note": "Interval 2 to 5 years (Wikipedia); ADW says about every 4. Incubation 12 to 15 months (ADW); Britannica 11 to 16. 'Longest incubation of any reptile' is not stated in any opened source; ADW and Wikipedia call the reproductive cycle the slowest or longest. Reword to 'one of the slowest reproductive cycles of any reptile'.",
+      "source_ids": [
+        "s10",
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Males raise a fold of skin along the spine into a crest during territorial or courtship display.",
+      "verdict": "OK",
+      "note": "DOC: the male raises the spines to attract females or in fights. ADW: males raise their crests in fights and when approaching females. Wikipedia: soft folds of skin, larger in males.",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Proverb 杯弓蛇影 bēi gōng shé yǐng, someone frightening themselves with a reflection.",
+      "verdict": "OK",
+      "note": "Source is Ying Shao's Fengsu Tong (Eastern Han), Du Xuan story. Page labels the tie to the Snake as its own.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "fact": "'Recent Snake years: 2001, 2013, 2025' for a Capricorn x Snake.",
+      "verdict": "WRONG (misleading for Capricorn)",
+      "note": "A Capricorn (22 Dec to 19 Jan) born in January of 2001, 2013 or 2025 is a Dragon, because those lunar years began 24 Jan 2001, 10 Feb 2013 and 29 Jan 2025. Snake Capricorns are born late Dec 2001/2013/2025 or Jan 2002/2014/2026. The January note on the page points the right way (Dragon) but the year list contradicts it.",
+      "source_ids": [
+        "s4",
+        "s3"
+      ]
+    },
+    {
+      "fact": "Purple Star (Zi Wei Dou Shu) content.",
+      "verdict": "OK",
+      "note": "No star is assigned from the sign pair on this page; the text says a chart is cast from the exact birth hour. No false ZWDS claim found.",
+      "source_ids": []
+    }
+  ]
+}

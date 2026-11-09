@@ -1,0 +1,331 @@
+{
+  "slug": "narwhal",
+  "name": "Narwhal",
+  "sign": "Pisces",
+  "year": "Ox",
+  "element": "Earth (from the Ox); Pisces adds Water, mutable",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Pisces (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pisces_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Pisces zodiac sign: personality traits, TODAY",
+      "url": "https://www.today.com/today/amp/rcna72001"
+    },
+    {
+      "id": "s3",
+      "title": "Chinese zodiac (Ox row, compatibility table, Great Race), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Ox, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/ox.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Narwhal, Wikipedia (tusk, tusking, dives, coloration, legend, unicorn trade, sea-ice entrapment)",
+      "url": "https://en.wikipedia.org/wiki/Narwhal"
+    },
+    {
+      "id": "s6",
+      "title": "Narwhal species page, NOAA Fisheries",
+      "url": "https://www.fisheries.noaa.gov/species/narwhal"
+    },
+    {
+      "id": "s7",
+      "title": "Secrets of the narwhal tusk, Harvard Gazette (March 2014, on Nweeia et al., Anatomical Record)",
+      "url": "https://news.harvard.edu/gazette/story/2014/03/secrets-of-the-narwhal-tusk/"
+    },
+    {
+      "id": "s8",
+      "title": "Mystery of 'Unicorn' Whale Solved, Live Science (13 Dec 2005, on Nweeia)",
+      "url": "https://www.livescience.com/3980-mystery-unicorn-whale-solved.html"
+    },
+    {
+      "id": "s9",
+      "title": "Laidre et al. 2003, Deep-diving by narwhals: differences in foraging behavior between wintering areas?, MEPS 261:269-281 (abstract)",
+      "url": "https://int-res.com/abstracts/meps/v261/p269-281"
+    },
+    {
+      "id": "s10",
+      "title": "How the Narwhal Got Its Tusk, Smithsonian Magazine (Rasmussen and Boas versions)",
+      "url": "https://www.smithsonianmag.com/smithsonian-institution/how-narwhal-got-its-tusk-180964331/"
+    },
+    {
+      "id": "s11",
+      "title": "Coronation Chair of Denmark, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Coronation_Chair_of_Denmark"
+    },
+    {
+      "id": "s12",
+      "title": "Grimes 2023, Narwhal Ivory as the Arctic Colonial Speciality of the Kingdom of Denmark-Norway, Journal18 issue 16",
+      "url": "https://www.journal18.org/6983"
+    },
+    {
+      "id": "s13",
+      "title": "一角鲸 yījiǎojīng (Monodon monoceros), Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/一角鲸"
+    },
+    {
+      "id": "s14",
+      "title": "厚积薄发 hòu jī bó fā, China Youth Daily 1 Sep 2025 (cites Su Shi, 稼说送张琥 Jià Shuō Sòng Zhāng Hǔ)",
+      "url": "https://zqb.cyol.com/pc/content/202509/01/content_415670.html"
+    },
+    {
+      "id": "s15",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Compassionate, tender, imaginative, adaptable, intuitive; selective about the inner circle and slow to change a settled feeling. Shadow: indecisive, moody, gullible, can retreat into its own stories. The two fish swimming opposite ways stand for a split nature.",
+    "planet": "Jupiter (traditional), Neptune (modern); Venus exalted",
+    "element": "Water (with Cancer and Scorpio)",
+    "modality": "Mutable; twelfth sign; opposite sign Virgo. Myth: Aphrodite and Eros became fish, tied by a cord, to escape Typhon.",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Diligent, dependable, strong, determined; plans carefully and persists. Prefers long-term bonds and solitude to crowds; dislikes frequent change. Shadow: stubborn, overworks, poor at resting. In the Great Race the kindhearted Ox carried the Rat across the river and came second.",
+    "yinyang": "Yin",
+    "element": "Earth (fixed); branch 丑 chǒu",
+    "trine": "Ox, Snake, Rooster",
+    "secret_friend": "Rat",
+    "clash": "Goat (Wikipedia also lists Horse as the harm pair)",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Inuit (Cape York, NW Greenland, recorded by Knud Rasmussen; Cumberland Sound, Baffin Island, recorded by Franz Boas)",
+      "meaning": "The first narwhal was a cruel mother (a stepmother in Boas's version) who starved her blind son. When he could see again he tied her to a white whale on the harpoon line; dragged under, she twisted her hair into a horn and became the narwhal. In Rasmussen's version white whales were the only whales before her. Tell it as theirs, attributed, with no 'you' reading laid over it.",
+      "source_ids": [
+        "s10",
+        "s5"
+      ]
+    },
+    {
+      "culture": "Medieval and early modern Europe",
+      "meaning": "Narwhal tusks were sold as unicorn horn, used against poison and disease, given as state gifts and worn on staffs and thrones. Martin Frobisher gave Elizabeth I a tusk allegedly valued at 10,000 pounds; Ivan the Terrible reportedly had a jewelled one at his deathbed.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "Denmark-Norway",
+      "meaning": "The Danish Coronation Chair (Bendix Grodtschilling, 1662 to 1671, Rosenborg Castle) is built of narwhal tusk said to be unicorn horn, modelled on Solomon's throne, and used to anoint kings from 1671 to 1840. Grimes (2023) calls narwhal ivory the 'territorial speciality' of Denmark-Norway's Arctic colonies.",
+      "source_ids": [
+        "s11",
+        "s12"
+      ]
+    },
+    {
+      "culture": "Greenland (Porsild 1918)",
+      "meaning": "Savssat: the crowding of Arctic animals at the last holes in freezing sea ice. About 1,000 narwhal carcasses were found after entrapments in 1914 to 1915, mostly in Disko Bay. The page's 'breathing hole' warning rests on a real, named phenomenon.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "culture": "Chinese (proverb on the page)",
+      "meaning": "厚積薄發 hòu jī bó fā, 'gather deep, release little', from Su Shi's essay 稼說送張琥 (Jià Shuō Sòng Zhāng Hǔ): 博觀而約取，厚積而薄發 (bó guān ér yuē qǔ, hòu jī ér bó fā). The page honestly labels the Ox pairing as its own; it could name Su Shi.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "'Narwhal spirit animal means psychic gifts / unicorn magic' claims on totem blogs; no named tradition found. Also no sourced Inuit name gloss was opened this session, so leave out any 'corpse whale' etymology.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: yin Earth (Ox) holds mutable Water (Pisces). Both halves are yin and inward. Pisces picks up the change in the water; the Ox will not surface until the reading is finished. The tusk that tastes salinity (s7) is the bridge: a sense organ everyone mistakes for a weapon. Earth controls Water in the five phases, so the Ox gives the Pisces flood a channel.",
+    "gifts": "Our reading: early detection of shifts in people and situations, endurance under pressure, loyalty to a small pod, patience to finish a long piece of work, the ability to settle a dispute with one quiet gesture.",
+    "shadow": "Our reading: the dive that lasts too long. Ox stubbornness plus Pisces retreat means holding a true reading until the moment to use it has frozen over (savssat). Overwork as a way of not speaking.",
+    "love": "Our reading: slow, selective, then fixed. Pisces devotion with Ox constancy; dislikes partner churn (s4). Shows love by long attention, not display. Needs a partner who reads silence as presence and checks in without accusing.",
+    "money": "Our reading: Ox planning tempers Pisces drift. Saves steadily and dislikes speculation, but may give money away to whoever is struggling in the pod. Risk: staying in an underpaid post out of loyalty.",
+    "conflict": "Our reading: withdraws to depth, processes alone, returns with a finished view that can land like a verdict. Prefers the slow cross of tusks to a fight. Practice: surface the half-finished reading."
+  },
+  "careers": [
+    {
+      "path": "Ocean, polar or climate science; hydrography; sensor and instrument work",
+      "why": "Our reading: the tusk as an instrument that reads salinity and temperature; Ox patience for long field seasons."
+    },
+    {
+      "path": "Counselling, chaplaincy, palliative or hospice care",
+      "why": "Our reading: Pisces compassion with Ox steadiness; reads the room before speaking."
+    },
+    {
+      "path": "Archival, conservation and museum work (ivory, textiles, manuscripts)",
+      "why": "Our reading: the tusk's own afterlife in royal collections; Earth's care for objects that last."
+    },
+    {
+      "path": "Sound design, sonar, acoustic or music production",
+      "why": "Our reading: a deep-water animal that feeds in the dark, in winter, far below the light; work done by ear rather than by display."
+    },
+    {
+      "path": "Long-cycle engineering, surveying, agriculture",
+      "why": "Our reading: the Ox's traditional fields (s4) given a Pisces eye for what is changing beneath the surface."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Chambered Nautilus",
+      "slug": "chambered-nautilus",
+      "reason": "Cancer x Snake. Snake is in the Ox trine; Cancer shares Pisces's Water. Two deep-water animals that rise and sink on their own schedule."
+    },
+    {
+      "name": "Slow Loris",
+      "slug": "slow-loris",
+      "reason": "Scorpio x Snake. Ox trine plus the third Water sign. Both prefer the dark and move deliberately."
+    },
+    {
+      "name": "Coconut Crab",
+      "slug": "coconut-crab",
+      "reason": "Cancer x Rat. Rat is the Ox's secret friend (six harmonies); Cancer is Water like Pisces."
+    },
+    {
+      "name": "Pangolin",
+      "slug": "pangolin",
+      "reason": "Taurus x Snake. Ox trine, and Taurus Earth is the classic complement to Pisces Water. Already on the live page."
+    },
+    {
+      "name": "Shoebill",
+      "slug": "shoebill",
+      "reason": "Capricorn x Ox. Same year animal; Capricorn Earth complements Pisces Water. Patience recognizing patience."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Ghost Pipefish",
+      "slug": "ghost-pipefish",
+      "reason": "Pisces x Goat. Same sign, but Ox and Goat are the traditional six-clash pair: alike in the water, opposed in the year."
+    },
+    {
+      "name": "Clark's Nutcracker",
+      "slug": "clarks-nutcracker",
+      "reason": "Virgo x Goat. Ox-Goat clash, and Virgo is Pisces's opposite sign. Both systems pull apart."
+    }
+  ],
+  "candidate_lines": [
+    "Kings sat on your ivory and called it unicorn. You let them. What you really do with it, tasting the salt in the water days before the ice comes, you keep for yourself.",
+    "Fifteen hundred meters down in a Baffin Bay winter is where your best work gets done, and the Ox in you feels no hurry to come up and report it.",
+    "Two tusks crossed slowly at the surface settle more between you and someone than an hour of talk. You would rather rub the crust off an old argument than win it.",
+    "Your white came in late, one patch at a time, long after the mottled years. People who knew you young still look twice.",
+    "Greenlanders had a word, savssat, for the crowding at the last open holes before freeze-up. You feel a friendship start to ice over weeks early, and the Pisces in you swims toward the opening while there still is one.",
+    "Under the pack ice you keep the whole route to every breathing hole in your head, and the person who follows you through a dark winter never learns how close the ice came."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 独角鲸 (rail__han and serial-han), pinyin dújiǎojīng.",
+      "verdict": "OK (simplified form)",
+      "note": "独角鲸 is a real Chinese name for the narwhal; Chinese Wikipedia titles the article 一角鲸 and opens with 独角鲸 (s13). Traditional form: 獨角鯨 dújiǎojīng (alternative 一角鯨 yījiǎojīng, used in the article body). Pinyin is present on the page. Switch to 獨角鯨 if the site standard is traditional.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "fact": "Tusk is a modified left upper canine with approximately ten million nerve endings; detects pressure, temperature and salinity gradients.",
+      "verdict": "PARTLY WRONG / UNVERIFIABLE",
+      "note": "Left upper canine: OK (s5, s6). 'Ten million' traces to a 2005 Live Science piece that says 'ten million tiny nerve connections' (s8), not a paper; Wikipedia says only 'millions' (s5); the 2014 Harvard report gives no count (s7). Only salinity was tested in vivo (heart rate changed, s7); temperature and pressure remain hypotheses. 'One of the most densely innervated structures in the animal kingdom' is unsourced. Rewrite: 'a canine tooth with millions of nerve connections; in a 2014 field test the heart rate of a narwhal changed when salt water of different strength washed over the tusk.'",
+      "source_ids": [
+        "s5",
+        "s6",
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "fact": "Dives to approximately 1,800 m and stays under up to 25 minutes, hunting under pack ice in near darkness.",
+      "verdict": "OK (number soft)",
+      "note": "25 minutes: OK (s5, s6). Depth: Wikipedia gives a recorded maximum of 2,370 m and says many winter dives reach 1,500 m (s5, citing Laidre 2003 and Davis 2019); NOAA says 1,200 m (s6); the Laidre abstract says 'at least 800 m' (s9). I found no source for exactly 1,800 m. Safer: 'routinely past 800 m, many dives to 1,500 m'.",
+      "source_ids": [
+        "s5",
+        "s6",
+        "s9"
+      ]
+    },
+    {
+      "fact": "Male tusk-to-tusk contact called tusking is slow and deliberate and serves social and sensory functions rather than combat.",
+      "verdict": "OK (softened)",
+      "note": "Tusking is observed; Nweeia suggests it may clean encrustations rather than signal aggression (s5). Wikipedia also says consensus treats the tusk as a secondary sexual trait for status, and some biologists think it is used in fights (s5). 'Rather than combat' overstates; say 'often gentle, possibly cleaning or social'.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "fact": "Live in tight groups of five to ten that keep long-term bonds over many years of migration.",
+      "verdict": "WRONG (group size) / UNVERIFIABLE (bonds)",
+      "note": "NOAA: pods usually 2 to 10, with aggregations of hundreds to thousands, smaller in winter, sometimes segregated by age and sex (s6). Wikipedia: usually 3 to 8, summer gatherings of 500 to over 1,000 (s5). No source I opened documents multi-year stable pod bonds. Cut 'long-term bonds over many years'.",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Tusk spirals counter-clockwise along its whole length, up to three meters; spiral increases surface area and may amplify sensory resolution.",
+      "verdict": "PARTLY UNVERIFIABLE",
+      "note": "Left-handed (counter-clockwise) spiral and 1.5 to 3 m length: OK (s5, s6). Wikipedia explains the opposing helices as helping the tusk grow straight (s5). The surface-area / sensory-resolution claim has no source I could find; cut it.",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Calves born dark grey-brown, lighten to mottled grey-white; oldest animals near-white.",
+      "verdict": "OK",
+      "note": "NOAA: young uniformly brownish-grey, juveniles darken and mottle, adults lighten (s6). Wikipedia says newborns light grey and whitening continues through life, old animals almost entirely white (s5). Sources differ on newborn shade; keep 'grey'.",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Intro: Arctic and sub-Arctic waters, 'unicorn of the sea', 1,800 m.",
+      "verdict": "OK except depth",
+      "note": "Range and nickname fine (s5); depth as above.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "fact": "Psychic reading: 'Ten million nerve endings'; feeding 'a thousand meters down, hunting by sound'; ice closing over the breathing hole.",
+      "verdict": "Mixed",
+      "note": "Ten million: see above. Deep winter foraging and echolocation-based hunting are consistent with s5/s9. Ice entrapment is real (savssat, s5).",
+      "source_ids": [
+        "s5",
+        "s9"
+      ]
+    },
+    {
+      "fact": "Purple Star (Zi Wei Dou Shu) star claims.",
+      "verdict": "OK (none found)",
+      "note": "No sun-sign star pairing; the page says a chart is cast from lunar birth date and hour. No 'Primal Zodiac' string found.",
+      "source_ids": []
+    },
+    {
+      "fact": "Moon phase consistency.",
+      "verdict": "PAGE BUG",
+      "note": "The dossier and Moon Rhythm give Waxing Gibbous as the power moon; the Psychic Reading's lucky window says waning crescent. Pick one.",
+      "source_ids": []
+    },
+    {
+      "fact": "Lunar New Year note.",
+      "verdict": "MISSING (minor)",
+      "note": "Pisces is one of the three signs the brief says need the note. For Ox years it rarely bites (Pisces starts Feb 18 to 20; e.g. a Pisces born 19 Feb 1985 is a Rat, LNY was 20 Feb), so a one-line check-your-year link is enough.",
+      "source_ids": [
+        "s15"
+      ]
+    }
+  ]
+}

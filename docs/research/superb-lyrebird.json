@@ -1,0 +1,329 @@
+{
+  "slug": "superb-lyrebird",
+  "name": "Superb Lyrebird",
+  "sign": "Gemini",
+  "year": "Dragon",
+  "element": "Earth (from the Dragon); Gemini adds Air, mutable",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Gemini (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Gemini_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Zodiac Zone: meet Gemini, Farmers' Almanac",
+      "url": "https://www.farmersalmanac.com/zodiac-zone-meet-gemini-11114"
+    },
+    {
+      "id": "s3",
+      "title": "Year of the Dragon, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/dragon.htm"
+    },
+    {
+      "id": "s4",
+      "title": "Earthly Branches, Wikipedia (辰 chén: Dragon, Earth, Yang, 07:00 to 09:00)",
+      "url": "https://en.wikipedia.org/wiki/Earthly_Branches"
+    },
+    {
+      "id": "s5",
+      "title": "Zodi Animal research brief: trines, secret friends, clashes, Western element pairs (internal)",
+      "url": "data/research/BRIEF.md"
+    },
+    {
+      "id": "s6",
+      "title": "Wiritjiribin, D'harawal Dreaming Stories (Frances Bodkin and Gawaian Bodkin-Andrews), dharawalstories.com PDF",
+      "url": "https://dharawalstories.com/wp-content/uploads/2018/05/wiritjiribin-1-5mb.pdf"
+    },
+    {
+      "id": "s7",
+      "title": "Joolah and Goorgaty (The Lyrebird and the Frog), told by Uncle Warren Ngarrae Foster, Australian Museum",
+      "url": "https://australian.museum/learn/first-nations/joolah-googarty-lyrebird-frog/"
+    },
+    {
+      "id": "s8",
+      "title": "The lyrebird of Mt Annan, part 1: Frances Bodkin, History of Aboriginal Sydney (video page)",
+      "url": "https://www.historyofaboriginalsydney.edu.au/south-west/lyrebird-mt-annan-part-1-frances-bodkin"
+    },
+    {
+      "id": "s9",
+      "title": "Powys, Taylor and Probets 2013, A Little Flute Music: Mimicry, Memory, and Narrativity, Environmental Humanities 3:43-70",
+      "url": "https://www.environmentandsociety.org/sites/default/files/key_docs/environmental_humanities-2013-powys-43-70.pdf"
+    },
+    {
+      "id": "s10",
+      "title": "Superb lyrebird, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Superb_lyrebird"
+    },
+    {
+      "id": "s11",
+      "title": "Male superb lyrebirds, master mimics, found to trick females into mating, Mongabay 2021 (on Dalziell et al. 2021, Current Biology, doi 10.1016/j.cub.2021.02.003)",
+      "url": "https://news.mongabay.com/2021/03/male-superb-lyrebirds-master-mimics-found-to-trick-females-into-mating/"
+    },
+    {
+      "id": "s12",
+      "title": "Superb Lyrebird, Australian Museum",
+      "url": "https://australian.museum/learn/animals/birds/superb-lyrebird/"
+    },
+    {
+      "id": "s13",
+      "title": "Lyrebirds, NSW Department of Climate Change, Energy, the Environment and Water",
+      "url": "https://www.environment.nsw.gov.au/topics/animals-and-plants/native-animals/native-animal-facts/birds/lyrebirds"
+    },
+    {
+      "id": "s14",
+      "title": "Maisey et al. 2022, Differential effects of ecosystem engineering by the superb lyrebird..., Ecology and Evolution 12(6):e8956 (cited on live page)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9163197/"
+    },
+    {
+      "id": "s15",
+      "title": "华丽琴鸟 (Superb lyrebird), Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/%E5%8D%8E%E4%B8%BD%E7%90%B4%E9%B8%9F"
+    },
+    {
+      "id": "s16",
+      "title": "GRID, site/js/modules/zodi-map.js (internal)",
+      "url": "site/js/modules/zodi-map.js"
+    }
+  ],
+  "western": {
+    "temperament": "Curious, quick-witted, a strong communicator, playful, adaptable and sociable. Older folklore calls Gemini inconstant, restless, easily bored and prone to changing its mind. The twins (Castor and Pollux) give the sign a double nature: one side outgoing and talkative, one quieter and reflective.",
+    "planet": "Mercury (detriment: Jupiter)",
+    "element": "Air",
+    "modality": "Mutable, positive polarity; opposite sign Sagittarius",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Courage, tenacity and intelligence (China Highlights); enthusiastic, confident, unafraid of challenges, willing to take risks and to break from traditional norms. The page has no general weakness list; for the Metal (Gold) Dragon it notes a 'desire to be seen'.",
+    "yinyang": "Yang",
+    "element": "Earth (fixed); earthly branch 辰 chén; Dragon hour 07:00 to 09:00",
+    "trine": "Rat, Dragon, Monkey",
+    "secret_friend": "Rooster",
+    "clash": "Dog",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "D'harawal (Sydney and South Coast, NSW)",
+      "meaning": "Wiritjiribin, an old woman with silver hair and a ready chuckle, leads the children and old people to safety in water-filled potholes during a bushfire, then vanishes into the smoke. Afterwards the People see a dancing creature with her silver hair and shell necklace that 'chuckled, with Wiritjiribin's voice'. That is how the Lyrebird came to be, and the source states 'the Lyrebird is the totem of the D'harawals'. Strongest item: the lyrebird as a guardian elder whose own voice survives inside the bird.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Yuin, Djiringanj Country (NSW South Coast)",
+      "meaning": "Joolah and Goorgaty, told by Uncle Warren Ngarrae Foster. Goorgaty the frog uses his gift for mimicry to impersonate kangaroo and emu and set the animals fighting. Joolah the lyrebird, quiet and lacking confidence, tells the Creator the truth. The Creator takes the frog's singing voice and gives it to Joolah, with the fine tail. A rare story where mimicry is the vice and the honest plain voice is what earns the song. Tell it as theirs, attributed, with no 'you' reading laid over it.",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "culture": "D'harawal (Auntie Frances Bodkin)",
+      "meaning": "A second D'harawal story, recorded on video at Mount Annan, tells 'how [the lyrebird] came to speak all languages'. Only the title-level description could be read; the video is not transcribed. Use only as 'there is a D'harawal story of how the lyrebird came to speak all languages', or leave out.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "culture": "Settler Australia, New England Tablelands NSW",
+      "meaning": "The 'flute lyrebird' legend: a chick supposedly raised on a farm in the 1920s learned flute tunes from a household flute player, and the flute-like song spread through the wild population, recorded by ranger Neville Fenton from 1969. Powys, Taylor and Probets (2013) investigated it and found it unverified, with conflicting family testimony. The flute-like timbre of New England birds is real (Wikipedia); the origin story is folklore. Good as a story about a borrowed sound becoming a local dialect.",
+      "source_ids": [
+        "s9",
+        "s10"
+      ]
+    },
+    {
+      "culture": "Australia (national emblems)",
+      "meaning": "A male lyrebird is on the reverse of the Australian 10-cent coin and is the emblem of the NSW National Parks and Wildlife Service. The Woiwurrung name lies behind the Victorian county of Buln Buln. Filler for the page, useful only as one line.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "culture": "Chinese name",
+      "meaning": "In Chinese the bird is named after a stringed instrument: 琴鳥 qínniǎo, 'qin bird' (華麗琴鳥 huálì qínniǎo for this species; Chinese Wikipedia uses simplified 华丽琴鸟). This is a naming fact, not folklore.",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "culture": "Science bridge (not folklore)",
+      "meaning": "Dalziell et al. 2021 (Current Biology): males imitate a whole mobbing flock, the alarm calls and wingbeats of many species at once, but only in two moments: when a female tries to leave without mating, and during copulation. The authors read it as a false alarm that keeps her close ('baby, it's dangerous out there'). The perfect Gemini shadow bridge: range used to hold someone rather than to speak plainly.",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Generic 'lyrebird spirit animal means self-expression, creativity, authenticity' meanings from totem blogs. No traditional source found. Do not use.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: mutable Air (Gemini, Mercury) over yang Earth (Dragon). Gemini collects voices; the Dragon wants a stage and the centre of it. The Lyrebird is the performer who builds its own ground first and then fills it with everyone else's sounds. Both halves are double: Gemini's twins and the Dragon's public magnificence over a private animal that is shy and hard to see. Air sits outside the five phases, so in this system it moves across the Earth rather than feeding or checking it.",
+    "gifts": "Our reading: an ear that catches a sound once and keeps it; fluency in many registers; patience to prepare ground before performing; the rare ability to hold attention alone for a long time; usefulness to the whole forest floor (the ecosystem-engineer fact), so the work leaves the ground better.",
+    "shadow": "Our reading: the Yuin story names it exactly. Mimicry used to stir trouble or to keep someone near (the mobbing-flock illusion) is the Lyrebird's temptation. The deeper shadow is losing track of the first note, and choosing performance over a plain answer when someone asks what you think.",
+    "love": "Our reading: courtship as a full show. Devoted to the ground and to the moment of being chosen; the risk is filling the air with reasons to stay when a partner wants one honest sentence. Needs someone who asks for the unrehearsed version and stays for it.",
+    "money": "Our reading: Earth from the Dragon gives a builder who invests in a home base and tools of the trade; Gemini's restlessness spreads income across several gigs. The risk is spending on the stage (gear, image, setting) before the act has paid. Keeps several small mounds rather than one big bet.",
+    "conflict": "Our reading: talks its way around a fight, matching tone to calm things down, and may voice the real disagreement later somewhere else. When cornered it shrieks and runs into the ferns (the NSW fact) rather than standing to fight. Practice: say the plain version in the room."
+  },
+  "careers": [
+    {
+      "path": "Voice acting, dubbing, impressions, sound design",
+      "why": "Our reading: the 80% mimicry song; Gemini's quick tongue; the Dragon's ease on a stage."
+    },
+    {
+      "path": "Interpreting and translation",
+      "why": "Our reading: moving one meaning between many voices without losing it; the D'harawal story of the bird that came to speak all languages (cite only as a story title)."
+    },
+    {
+      "path": "Field recording, bioacoustics, podcast or radio production",
+      "why": "Our reading: an ear for every sound in the gully, and a preference for being heard more than seen."
+    },
+    {
+      "path": "Stage management, event production, set building",
+      "why": "Our reading: the raked display mounds, 10 to 15 per territory, visited in turn; preparing the ground is half the art."
+    },
+    {
+      "path": "Bush regeneration, landscape restoration, soil work",
+      "why": "Our reading: the ecosystem-engineer fact; Dragon Earth; the work quietly reshapes the forest floor."
+    },
+    {
+      "path": "Speechwriting and ghostwriting, with a caution",
+      "why": "Our reading: a natural fit for writing in other people's voices; the growth edge is also publishing something in your own."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Satin Bowerbird",
+      "slug": "satin-bowerbird",
+      "reason": "Libra x Rooster. The Rooster is the Dragon's secret friend (six harmonies) and Libra shares Gemini's Air. Two Australian forest birds that build a stage on the ground before they court: they understand each other's preparation."
+    },
+    {
+      "name": "Red Panda",
+      "slug": "red-panda",
+      "reason": "Libra x Rat. Rat sits in the Dragon trine; Libra shares Air. A quiet, private partner who gives the performer somewhere off-stage to be plain."
+    },
+    {
+      "name": "Raven",
+      "slug": "raven",
+      "reason": "Aquarius x Monkey. Monkey sits in the Dragon trine; Aquarius shares Air. Another gifted vocal mimic, so neither has to explain the habit."
+    },
+    {
+      "name": "Golden Lion Tamarin",
+      "slug": "golden-lion-tamarin",
+      "reason": "Leo x Rat. Rat trine; Leo is Fire, the classic complement to Air. Fire also feeds the Dragon's Earth in the five-phase cycle."
+    },
+    {
+      "name": "Kea",
+      "slug": "kea",
+      "reason": "Gemini x Monkey. Same sign and a Dragon-trine year: fast, playful, easy company (already used on the live page)."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "African Grey Parrot",
+      "slug": "african-grey-parrot",
+      "reason": "Gemini x Dog. Same sign, but Dragon and Dog are the traditional six-clash pair. Two mimics in one clearing, each waiting for the other to say something original."
+    },
+    {
+      "name": "Caracara",
+      "slug": "caracara",
+      "reason": "Sagittarius x Dog. Dragon-Dog clash, and Sagittarius is Gemini's opposite sign: pulled together and pushed apart by both systems."
+    }
+  ],
+  "candidate_lines": [
+    "Somewhere under all the borrowed calls is the chuckle you had before you learned a single song, and the people worth keeping are the ones who wait in the gully until they hear it.",
+    "You can rake the same patch of ground clean ten mornings running and call it getting ready, while part of you hopes nobody comes to watch.",
+    "When a love starts to walk out of the clearing, your first move is to fill the air with a whole forest of reasons to stay. One honest note would hold them longer.",
+    "The Dragon in you wants the mound in the middle of the gully, and the Twin in you would rather sing from deep in the ferns. Both are you, and neither has to win.",
+    "Hear a sound once at the edge of the scrub and by next week it lives in your mouth better than it lived in the bird that made it.",
+    "Wings you rarely use are still wings. You keep leaving in reserve and choose the ground anyway, season after season."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi: 琴 (qín) in rail__han and serial-han, shown as the animal's character.",
+      "verdict": "PARTLY WRONG (half the name)",
+      "note": "琴 qín means a stringed instrument (the guqin zither, by extension lyre or piano). The bird is 琴鳥 qínniǎo, 'qin bird'; the species is 華麗琴鳥 huálì qínniǎo (Chinese Wikipedia, simplified 华丽琴鸟). Pinyin is present. Recommend 琴鳥 qínniǎo if two glyphs fit, or keep 琴 qín but label it 'the qin, as in 琴鳥 qínniǎo'.",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "fact": "Male song built largely from mimicry, incorporating accurate imitations of the calls of dozens of other bird species.",
+      "verdict": "OK (soften the count)",
+      "note": "About 80% of the song is mimicry (Australian Museum); Wikipedia gives 70 to 80%. 'Dozens of species' is UNVERIFIABLE from what I could open: Wikipedia cites Attenborough at about twenty species. Say 'about 80 percent of his song is borrowed from other birds' or 'more than twenty species'.",
+      "source_ids": [
+        "s10",
+        "s12"
+      ]
+    },
+    {
+      "fact": "Males build and maintain cleared earthen display mounds, raking them free of litter and returning to the same handful of mounds within a territory for years.",
+      "verdict": "WRONG (count) / UNVERIFIABLE (years)",
+      "note": "NSW government: each territory may hold 10 to 15 display mounds, which the male may visit in turn. That is more than a 'handful'. Reuse 'for years' not found in any source opened. Rewrite: 'keeps 10 to 15 scraped display mounds in his territory and visits them in turn.'",
+      "source_ids": [
+        "s13",
+        "s10"
+      ]
+    },
+    {
+      "fact": "During courtship the male fans his long tail feathers up and forward over his entire body and head while singing.",
+      "verdict": "OK",
+      "note": "Wikipedia: fans the tail to cover his entire body and head; Australian Museum: throws the tail forward over the body; NSW: spreads its tail over its head. 'Holding the display for long, uninterrupted stretches' is not stated in sources opened; minor, can stay as description or be cut.",
+      "source_ids": [
+        "s10",
+        "s12",
+        "s13"
+      ]
+    },
+    {
+      "fact": "Largely ground-dwelling and rarely flies any real distance, typically only taking to the canopy to roost or to escape immediate danger.",
+      "verdict": "OK",
+      "note": "Weak flight, wings used mainly for balance and gliding down from trees (Wikipedia); roosts in trees at night (Australian Museum); rarely flies, jumps onto branches and glides down (NSW).",
+      "source_ids": [
+        "s10",
+        "s12",
+        "s13"
+      ]
+    },
+    {
+      "fact": "Moves substantial volumes of litter and soil across a forest stand, a recognized ecosystem engineer of the eucalypt forest floor.",
+      "verdict": "OK",
+      "note": "Maisey et al. 2022 (the page's own PMC source) calls it 'an ecosystem engineer in wet forests of south-eastern Australia' and cites a mean of 155 tonnes per hectare per year (Maisey et al. 2021). Wikipedia's 'up to 200 tonnes' is a looser figure; if a number is used, use 155 t/ha/yr with the 2021 citation.",
+      "source_ids": [
+        "s14",
+        "s10"
+      ]
+    },
+    {
+      "fact": "Call carries clearly through a gully, but the bird is notoriously difficult to see, staying low in dense fern and quick to fall silent or withdraw if watched.",
+      "verdict": "OK (soften)",
+      "note": "NSW: 'Lyrebirds are shy birds' and flee through undergrowth with high-pitched shrieks when threatened. 'Quick to fall silent if watched' is not stated; habituated birds (Sherbrooke Forest) are easy to see. Say 'shy, and quick to run for the undergrowth'.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "fact": "Purple Star (Zi Wei Dou Shu) claim",
+      "verdict": "OK",
+      "note": "No 'Purple Star already suspects' star assignment on this page. The Purple Star block says a chart is cast from lunar birth date and hour, which is correct.",
+      "source_ids": []
+    }
+  ],
+  "page_bugs": [
+    "No 'Primal Zodiac' strings found in this page's HTML.",
+    "The January/February lunar New Year note does not appear (correct for Gemini).",
+    "Proverb 畫龍點睛 huà lóng diǎn jīng is labelled as our own pairing, which is honest; it fits well.",
+    "Match III Rhinoceros Hornbill (Leo x Dragon) is a same-year pick; acceptable (Leo Fire complements Gemini Air), but trine or secret-friend picks are stronger.",
+    "'Echoing Sovereign' and 'dozens of species' phrasing repeat across the hero and Meet section; when rewriting, use the 80% figure once."
+  ]
+}

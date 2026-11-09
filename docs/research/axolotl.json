@@ -1,0 +1,330 @@
+{
+  "slug": "axolotl",
+  "name": "Axolotl",
+  "sign": "Aquarius",
+  "year": "Rabbit",
+  "element": "Wood (from the Rabbit); Aquarius adds Air, fixed.",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Aquarius (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aquarius_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Unconventional, optimistic and fun: what to know about the Aquarius personality, TODAY (via Yahoo Life)",
+      "url": "https://www.yahoo.com/lifestyle/articles/unconventional-optimistic-fun-know-aquarius-143052022.html"
+    },
+    {
+      "id": "s3",
+      "title": "Rabbit (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rabbit_(zodiac)"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Rabbit, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/rabbit.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Chinese zodiac (compatibility: trines, six harmonies, six clashes), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s6",
+      "title": "Axolotl, Wikipedia (respiration, regeneration, neoteny, surveys, culture)",
+      "url": "https://en.wikipedia.org/wiki/Axolotl"
+    },
+    {
+      "id": "s7",
+      "title": "Xolotl, Wikipedia (Florentine Codex account of his changes of form)",
+      "url": "https://en.wikipedia.org/wiki/Xolotl"
+    },
+    {
+      "id": "s8",
+      "title": "Samuels, Xolotl, World History Encyclopedia, 15 Sept 2025",
+      "url": "https://www.worldhistory.org/Xolotl/"
+    },
+    {
+      "id": "s9",
+      "title": "Axolotl (FCbk11f241v), Visual Lexicon of Aztec Hieroglyphs, Wired Humanities (Florentine Codex Book 11, Dibble and Anderson translation)",
+      "url": "https://aztecglyphs.wired-humanities.org/content/axolotl-fcbk11f241v"
+    },
+    {
+      "id": "s10",
+      "title": "Axolotl (short story), Wikipedia (Cortázar, Final del juego, 1956)",
+      "url": "https://en.wikipedia.org/wiki/Axolotl_(short_story)"
+    },
+    {
+      "id": "s11",
+      "title": "Mexico's axolotl 50-peso bill recognized as Bank Note of the Year, KJZZ / Fronteras Desk, 4 April 2022",
+      "url": "https://www.kjzz.org/2022-04-04/content-1769527-mexicos-axolotl-50-peso-bill-recognized-bank-note-year"
+    },
+    {
+      "id": "s12",
+      "title": "Anfibium: Axolotl Museum and Amphibian Conservation Center, Bosque de Chapultepec",
+      "url": "https://www.chapultepec.org.mx/en/espacio/anfibium-museo-del-axolote-y-centro-de-conservacion-de-anfibios/"
+    },
+    {
+      "id": "s13",
+      "title": "How long does it take for a salamander to regenerate a limb?, Ambystoma Genetic Stock Center, University of Kentucky",
+      "url": "https://ambystoma.uky.edu/19-fun-facts-cat/71-how-long-does-it-take-for-a-salamander-to-regenerate-a-limb"
+    },
+    {
+      "id": "s14",
+      "title": "Jørgensen and Flock 1976, Non-innervated sense organs of the lateral line: development in the regenerating tail of Ambystoma mexicanum, Journal of Neurocytology 5:33-41",
+      "url": "https://link.springer.com/article/10.1007/BF01176181"
+    },
+    {
+      "id": "s15",
+      "title": "歸真反璞, Ministry of Education Dictionary of Chinese Idioms (Taiwan), source 戰國策·齊策四",
+      "url": "https://dict.idioms.moe.edu.tw/idiomView.jsp?ID=10733"
+    },
+    {
+      "id": "s16",
+      "title": "axolotl, Youdao dictionary (Chinese names 美西螈, 墨西哥钝口螈)",
+      "url": "https://dict.youdao.com/w/axolotl"
+    },
+    {
+      "id": "s17",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Unique, humanitarian, independent, unconventional, progressive, loyal, intelligent; associated with innovation and persistence. Shadow: aloof, hard to read, detached, rigid.",
+    "planet": "Saturn (traditional), Uranus (modern)",
+    "element": "Air (with Gemini and Libra)",
+    "modality": "Fixed; opposite sign Leo",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Faithful, kind, patient, responsible, quick and skilful; persistent through hard times. Shadow: slow to reveal their mind, a tendency to escape reality.",
+    "yinyang": "Yin",
+    "element": "Wood (fixed); earthly branch 卯 mǎo",
+    "trine": "Rabbit, Goat, Pig",
+    "secret_friend": "Dog",
+    "clash": "Rooster",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Aztec (Nahua), Florentine Codex",
+      "meaning": "When the Fifth Sun would not move, the gods were sacrificed to set it going. Xolotl refused to die and fled by changing form three times: a maize plant with two stalks, a doubled maguey, and finally the axolotl in the water, where he was caught and killed. Xolotl is the god of fire, lightning, twins, deformity and the dead, and guides the sun through the underworld. The animal is the last hiding place of a god who would not accept his ending.",
+      "source_ids": [
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "culture": "Nahuatl language",
+      "meaning": "Axolotl joins atl, water, with xolotl. Glosses differ: 'water dog', 'water servant' or 'water slave', and 'water twin'. Present the meaning as disputed, and the link to the god as the accepted part.",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "culture": "Aztec, Florentine Codex Book 11",
+      "meaning": "Sahagún's Nahua co-authors describe it as like a lizard with legs and a wide tail, large-mouthed, and call it 'good, fine, edible, savory: what one deserves'. A food of the lake before it was a symbol.",
+      "source_ids": [
+        "s9"
+      ]
+    },
+    {
+      "culture": "Latin American literature",
+      "meaning": "Julio Cortázar's story 'Axolotl' (Final del juego, 1956): a man watches the axolotls in the Jardin des Plantes aquarium every day until he finds himself inside the tank, looking out. The axolotl as the creature that pulls the watcher across.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "culture": "Modern Mexico",
+      "meaning": "The back of the 50-peso note (issued 2021) shows an axolotl in the Xochimilco canals; it was named the International Bank Note Society's Bank Note of the Year in April 2022. The axolotl became Mexico City's official emoji in 2017, and the Chapultepec Zoo opened Anfibium, a museum and conservation centre for it, as part of the zoo's centenary.",
+      "source_ids": [
+        "s11",
+        "s6",
+        "s12"
+      ]
+    },
+    {
+      "culture": "Chinese (the page's proverb)",
+      "meaning": "返璞歸真 fǎn pú guī zhēn, return to the uncut jade, return to the true. The classical form is 歸真反璞 guī zhēn fǎn pú, from 戰國策·齊策四 (Zhànguó Cè, Qí Cè 4): 歸真反璞，則終身不辱 (guī zhēn fǎn pú, zé zhōngshēn bù rǔ), 'return to the true and the unworked, and you will never be shamed'. Note the MOE dictionary's second sense: it can also mean death, used on mourning couplets.",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "'Axolotl spirit animal' meanings (healing, playfulness, youth) from totem blogs. The Pátzcuaro nuns' axolotl syrup is a different species (the achoque, Ambystoma dumerilii) and must not be told as axolotl lore.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Air meets yin Wood. Aquarius goes its own way and keeps to it (fixed); the Rabbit is gentle, faithful and would rather slip away than fight. The Axolotl refuses the change everyone expects without ever making a scene about it. It simply stays as it is, in the water it knows.",
+    "gifts": "Our reading: regeneration as a temperament. Rebuilds after loss rather than returning to the old shape; keeps an original, unfinished-looking openness that turns out to be the working form; sensitive to small shifts in the people around it (the lateral line).",
+    "shadow": "Our reading: Aquarian detachment and the Rabbit's habit of escaping reality add up to someone who drifts at the bottom of the canal while the lake drains around them. Refusing to change can be wisdom or avoidance, and from outside they look the same.",
+    "love": "Our reading: shows up soft and exposed, gills out, and needs a partner who will not demand a change of shape. Faithful once settled (Rabbit), but needs room to think its own thoughts (Aquarius). Pushing it to 'grow up' on schedule is the fastest way to lose it.",
+    "money": "Our reading: unconventional earner, careful keeper. Happy to live small in one good habitat; the risk is ignoring a slow decline until little of the lake is left.",
+    "conflict": "Our reading: avoids the fight and goes quiet at the bottom. Aquarius holds the position stubbornly anyway. Under real threat it does what Xolotl did: changes form and slips away rather than standing to be sacrificed."
+  },
+  "careers": [
+    {
+      "path": "Regenerative medicine, biotech, lab research",
+      "why": "Our reading: the axolotl is itself a research model; Aquarius loves the unconventional question and the Rabbit has the patience for long experiments."
+    },
+    {
+      "path": "Physical and occupational therapy, rehabilitation",
+      "why": "Our reading: helping people rebuild after damage, at the pace the body sets."
+    },
+    {
+      "path": "Conservation and wetland restoration",
+      "why": "Our reading: guardian of a habitat that is nearly gone; Aquarian humanitarian streak with the Rabbit's quiet persistence."
+    },
+    {
+      "path": "Independent design, illustration, game art",
+      "why": "Our reading: keeps the original, unpolished form and makes it the style; the axolotl's own afterlife in pop culture."
+    },
+    {
+      "path": "Teaching younger children, youth work",
+      "why": "Our reading: an adult who never lost the open larval curiosity, and who is gentle about it."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Luna Moth",
+      "slug": "luna-moth",
+      "reason": "Libra x Goat. Goat sits in the Rabbit trine (Rabbit, Goat, Pig), and Libra shares Aquarius's Air element."
+    },
+    {
+      "name": "Cacomistle",
+      "slug": "cacomistle",
+      "reason": "Gemini x Pig. Pig is in the Rabbit trine, Gemini is Air, and the Pig's Water feeds the Rabbit's Wood."
+    },
+    {
+      "name": "Duetting Frog",
+      "slug": "duetting-frog",
+      "reason": "Libra x Dog. Rabbit and Dog are a six-harmony secret-friend pair; Libra is Air. A fellow amphibian."
+    },
+    {
+      "name": "African Grey Parrot",
+      "slug": "african-grey-parrot",
+      "reason": "Gemini x Dog. Secret-friend pair (Rabbit and Dog) plus Gemini Air."
+    },
+    {
+      "name": "Bar-headed Goose",
+      "slug": "bar-headed-goose",
+      "reason": "Sagittarius x Goat. Goat trine, and Sagittarius Fire is the classic complement to Aquarius Air."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Sunset Moth",
+      "slug": "sunset-moth",
+      "reason": "Leo x Rooster. Rabbit-Rooster is a six clash, and Leo is Aquarius's opposite sign. Pull and friction on both axes."
+    },
+    {
+      "name": "Hoatzin",
+      "slug": "hoatzin",
+      "reason": "Aquarius x Rooster. Same Western sign, so the minds meet, but the Rabbit-Rooster clash runs underneath."
+    }
+  ],
+  "candidate_lines": [
+    "You kept your feathery gills in a lake the city nearly drained, and you still use them every single day.",
+    "When something is torn from you, you regrow it over months, and the new limb works.",
+    "Like Xolotl hiding in the canal water, you have slipped out of an ending other people had already planned for you.",
+    "Pushed hard enough, you could change shape; you keep the soft open form because it is the one that heals.",
+    "The lateral line along your flanks reads every small current in the channel, so a mood shift reaches you as movement in the water.",
+    "An Aquarius mind in a Rabbit-year body: your ideas swim off toward the far canals while your heart stays in the reeds of home."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 美西螈 (měixīyuán) in rail__han and serial-han",
+      "verdict": "OK",
+      "note": "美西螈 is the standard Chinese name for the axolotl (also 墨西哥鈍口螈 mòxīgē dùnkǒuyuán). Traditional and simplified forms are the same. Pinyin is shown on the page.",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "fact": "Retains external gills throughout adult life, never replacing them with lungs; breathes through them for its entire lifespan",
+      "verdict": "WRONG",
+      "note": "The gills are kept and used, but axolotls also have lungs and gulp air at the surface (buccal pumping). They do not lack lungs. Rewrite: 'keeps its gills for life, alongside lungs it fills by gulping air'.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "fact": "Regenerates entire limbs, heart muscle, portions of brain and spinal cord without scarring; capacity does not diminish with age",
+      "verdict": "WRONG",
+      "note": "The organ list and no-scar healing are supported. The age claim is wrong: regeneration 'declines with age but does not completely disappear' (Wikipedia), and 'as a salamander gets older, its ability to regenerate decreases' (Ambystoma Genetic Stock Center). It is also greatly reduced after metamorphosis.",
+      "source_ids": [
+        "s6",
+        "s13"
+      ]
+    },
+    {
+      "fact": "Sexually mature and adult while keeping the larval form: paedomorphosis, specifically neoteny",
+      "verdict": "OK",
+      "note": "Wikipedia: reaching sexual maturity without metamorphosis is called neoteny.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "fact": "Can be induced to metamorphose with thyroid hormone; forced metamorphosis is damaging: organ stress, shortened lifespan, sometimes organ failure",
+      "verdict": "UNVERIFIABLE",
+      "note": "Induction by thyroid hormone is confirmed. Harm is supported only loosely: among hobbyists induced metamorphosis 'can often result in death during or even following' the attempt, and thyroxine inhibits regeneration. No opened source names organ failure or measures shortened lifespan. Keep 'often fatal in amateur hands', cut the rest.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "fact": "Critically Endangered (IUCN); native lake complex reduced to canals and chinampas in Xochimilco; captive populations number in the millions",
+      "verdict": "UNVERIFIABLE",
+      "note": "Critically Endangered and the Xochimilco canals are confirmed (native to Xochimilco and Chalco; Xochimilco surveys found 6,000, 1,000 and 100 per km2 in 1998, 2003, 2008). 'Millions' in captivity has no source; Wikipedia says only 'a large captive population', most descended from fewer than 36 animals. Replace the number with the founder fact.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "fact": "Retains a functional lateral line in adulthood, typically only present in fish and larval amphibians",
+      "verdict": "OK",
+      "note": "Lateral line organs in axolotls are documented (Jørgensen and Flock 1976, with earlier work on adult axolotls in its references). The clause 'typically only fish and larval amphibians' is an overstatement, since some fully aquatic adult amphibians (Xenopus is studied in the same literature) keep them; say 'unlike most adult salamanders'.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "fact": "Proverb 返璞歸真 (fǎn pú guī zhēn)",
+      "verdict": "OK",
+      "note": "Real idiom; classical form 歸真反璞 from 戰國策·齊策四. The MOE dictionary adds that it can mean death (mourning couplets), worth knowing before it is shown as a life motto.",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "fact": "Intro: native to the lake complex beneath Mexico City",
+      "verdict": "OK",
+      "note": "Native to Lakes Xochimilco and Chalco in the Valley of Mexico; 'beneath' is loose, 'in and around' is better.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "fact": "Purple Star section",
+      "verdict": "OK",
+      "note": "No Zi Wei star is assigned from the sign pair on this page.",
+      "source_ids": []
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "slug": "sun-bear",
+  "name": "Sun Bear",
+  "sign": "Aries",
+  "year": "Ox",
+  "element": "Earth (from the Ox); Aries adds Fire, cardinal",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Aries (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aries_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Ep. 347 transcript: Aries in Astrology, Meaning and Traits, The Astrology Podcast (Chris Brennan)",
+      "url": "https://theastrologypodcast.com/transcripts/tap-ep-347-transcript-aries-zodiac-sign-in-astrology-meaning-and-traits/"
+    },
+    {
+      "id": "s3",
+      "title": "Year of the Ox, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/ox.htm"
+    },
+    {
+      "id": "s4",
+      "title": "Earthly Branches, Wikipedia (丑 chǒu: Ox, Earth, Yin, 01:00 to 03:00)",
+      "url": "https://en.wikipedia.org/wiki/Earthly_Branches"
+    },
+    {
+      "id": "s5",
+      "title": "Zodi Animal research brief: trines, secret friends, clashes, Western element pairs (internal)",
+      "url": "data/research/BRIEF.md"
+    },
+    {
+      "id": "s6",
+      "title": "Sun bear, San Diego Zoo Wildlife Alliance Animals and Plants",
+      "url": "https://animals.sandiegozoo.org/animals/sun-bear"
+    },
+    {
+      "id": "s7",
+      "title": "Sun bear facts, National Geographic",
+      "url": "https://www.nationalgeographic.com/animals/mammals/facts/sun-bear"
+    },
+    {
+      "id": "s8",
+      "title": "Five facts about Malayan sun bears, Smithsonian Magazine (2023)",
+      "url": "https://www.smithsonianmag.com/smart-news/five-facts-about-malayan-sun-bears-the-least-studied-bears-in-the-world-180982655/"
+    },
+    {
+      "id": "s9",
+      "title": "Sun bear, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sun_bear"
+    },
+    {
+      "id": "s10",
+      "title": "Si Gan 斯干, Book of Songs (Shijing), Legge translation, Chinese Notes",
+      "url": "https://chinesenotes.com/shijing/shijing194.html"
+    },
+    {
+      "id": "s11",
+      "title": "Sun bears copy each other's facial expressions, ScienceDaily 2019 (on Taylor et al. 2019, Facial Complexity in Sun Bears: Exact Facial Mimicry and Social Sensitivity, Scientific Reports)",
+      "url": "https://www.sciencedaily.com/releases/2019/03/190321102835.htm"
+    },
+    {
+      "id": "s12",
+      "title": "Helarctos malayanus, Animal Diversity Web (cited on live page)",
+      "url": "https://animaldiversity.org/accounts/Helarctos_malayanus/"
+    },
+    {
+      "id": "s13",
+      "title": "Helarctos malayanus (Sun bear), International Association for Bear Research and Management (bearbiology.org, cited on live page)",
+      "url": "https://www.bearbiology.org/the-eight-bear-species/helarctos-malayanus-sun-bear/"
+    },
+    {
+      "id": "s14",
+      "title": "Longest tongue on a bear, Guinness World Records",
+      "url": "https://www.guinnessworldrecords.com/world-records/544278-longest-tongue-on-a-bear"
+    },
+    {
+      "id": "s15",
+      "title": "Rare footage of the sun bear making a nest in the canopy, Mongabay 2009 (quotes Wong Siew Te)",
+      "url": "https://news.mongabay.com/2009/12/video-rare-footage-of-the-sun-bear-the-worlds-smallest-making-a-nest-in-the-canopy/"
+    },
+    {
+      "id": "s16",
+      "title": "马来熊 (Sun bear), Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/%E9%A9%AC%E6%9D%A5%E7%86%8A"
+    },
+    {
+      "id": "s17",
+      "title": "GRID, site/js/modules/zodi-map.js (internal)",
+      "url": "site/js/modules/zodi-map.js"
+    }
+  ],
+  "western": {
+    "temperament": "First sign; pioneering and enterprising, courageous, direct ('straight to the point'), high energy, competitive, independent and self-sufficient, defends the underdog. Shadow: impatience, starting ten jobs and leaving others to finish them, brusqueness, recklessness, quick anger that does not hold grudges, and overcompensation, hiding insecurity behind toughness (the podcast's 'Napoleon complex'). Rules the head.",
+    "planet": "Mars (Sun exalted)",
+    "element": "Fire (with Leo and Sagittarius)",
+    "modality": "Cardinal; opposite sign Libra",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Diligent, dependable, strong and determined; patient and goal-driven, achieves goals 'by consistent effort'; plans ahead then acts with stamina. Shadow: stubbornness that leads to overwork, weak at communicating, prefers solitude to group activity.",
+    "yinyang": "Yin",
+    "element": "Earth (fixed); earthly branch 丑 chǒu; Ox hour 01:00 to 03:00",
+    "trine": "Ox, Snake, Rooster",
+    "secret_friend": "Rat",
+    "clash": "Goat",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Malay (as recorded by San Diego Zoo)",
+      "meaning": "The sun bear is called basindo nan tenggil, 'he who likes to sit high'. A local name that already sounds like a reading: the small bear that rests above everyone. San Diego Zoo labels it Malay; the phrasing looks Minangkabau, so attribute it to the zoo's record rather than asserting the language.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Malay and Indonesian",
+      "meaning": "Beruang madu, 'honey bear', named for the long tongue that reaches honey inside trees. Other nicknames: dog-face bear, Malay bear.",
+      "source_ids": [
+        "s6",
+        "s8",
+        "s9"
+      ]
+    },
+    {
+      "culture": "Local legend (people not named in source)",
+      "meaning": "National Geographic: 'local legend' says the chest patch represents the rising sun; San Diego Zoo says many people think it looks like the rising or setting sun. The genus name Helarctos means 'sun bear' in Greek. The patch is unique to each bear and stays the same for life (San Diego Zoo, IBA). Strongest anchor for a 'mark over the heart' reading.",
+      "source_ids": [
+        "s7",
+        "s6",
+        "s9",
+        "s13"
+      ]
+    },
+    {
+      "culture": "Classical Chinese (Shijing, Si Gan 斯干 sī gān)",
+      "meaning": "'吉夢維何？維熊維羆' jí mèng wéi hé? wéi xióng wéi pí, 'What dreams are lucky? Bears and brown bears', and '維熊維羆，男子之祥' wéi xióng wéi pí, nánzǐ zhī xiáng, bears are 'the auspicious intimations of sons' (Legge). Bears in general, not the sun bear; so it fits the header glyph 熊 xióng, and the sun bear page can use it only as 'the bear in Chinese dream lore'.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "culture": "Science bridge (not folklore)",
+      "meaning": "Taylor et al. 2019 (Scientific Reports): 22 sun bears at the Bornean Sun Bear Conservation Centre exactly mimicked each other's facial expressions, mostly in gentle play, the first exact facial mimicry known outside humans and gorillas. 'What's most surprising is the sun bear is not a social animal.' A solitary animal that reads faces well: a strong, specific hook for the Aries-Ox loner.",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "culture": "Shadow context (record as threat, not symbol)",
+      "meaning": "Sun bear gall bladders and bile are used in some Chinese folk medicine and paws as a delicacy; ADW states the parts have been shown to have no medicinal value. IUCN Vulnerable. Mention only as conservation context.",
+      "source_ids": [
+        "s8",
+        "s12",
+        "s9"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Dayak, Thai or other Indigenous sun bear beliefs: none found in any source I could open. Spirit-animal blog meanings (sun bear = 'inner light', 'joy'): unsourced. Hangzhou Zoo 2023 'bear in a costume' story: real but meme filler; drop.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: cardinal Fire (Aries, Mars) feeding yin Earth (Ox); Fire generates Earth, so the two halves cooperate more than most crossings. Aries supplies the first strike and the nerve; the Ox supplies the long, quiet working of a sealed problem. The Sun Bear is the small, fierce specialist who starts alone, keeps going alone, and does not need to be watched.",
+    "gifts": "Our reading: reach into what others abandoned (the longest tongue of any bear); grip and commitment once something is worth it (10 cm claws); composure when caught, turning to face the threat (the loose-skin defense); a warmth people notice once they see past the black coat (the chest mark).",
+    "shadow": "Our reading: the Aries overcompensation the tradition names, proving a small frame is no limit; the Ox's stubborn overwork and poor communication. Together: doing the whole reach alone, out of sight, and refusing a friendly hand because accepting help feels like being caught.",
+    "love": "Our reading: shows love by solving and delivering, the honey without the climb. Slow to let a partner watch the work. Fierce when a loved one is threatened. Needs a partner who notices the effort and does not grab from behind.",
+    "money": "Our reading: Ox patience and Aries initiative make a steady earner who starts ventures early and works them for years; the risk is pouring effort into one log long after it has given what it has. Good at finding value others walked past.",
+    "conflict": "Our reading: slow to start a fight, explosive once seized. The Aries anger flares and clears; the Ox remembers the line that was crossed. Practice: say 'let go' before turning to bite."
+  },
+  "careers": [
+    {
+      "path": "Forensic accounting, audit, investigative journalism",
+      "why": "Our reading: the long tongue into crevices other bears cannot reach; Ox patience with sealed records; Aries nerve to publish."
+    },
+    {
+      "path": "Carpentry, restoration, demolition and salvage",
+      "why": "Our reading: the claws that tear rotten logs open; Earth work done with the hands."
+    },
+    {
+      "path": "Emergency response, security, wilderness rescue",
+      "why": "Our reading: calm and fierce when gripped (the loose-skin defense); Mars courage."
+    },
+    {
+      "path": "Field conservation and wildlife rehabilitation",
+      "why": "Our reading: solitary forest work, a seed-dispersing animal's care for the forest it lives in."
+    },
+    {
+      "path": "Solo founder or specialist contractor",
+      "why": "Our reading: cardinal Fire starts it, the Ox finishes it, and the work is best done without an audience."
+    },
+    {
+      "path": "Research on hard, unglamorous problems",
+      "why": "Our reading: grind the pestle into a needle (the page's own proverb pairing, 磨杵成針 mó chǔ chéng zhēn)."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Sand Cat",
+      "slug": "sand-cat",
+      "reason": "Sagittarius x Snake. Snake sits in the Ox trine; Sagittarius shares Aries's Fire. Another small, solitary animal that is tougher than it looks."
+    },
+    {
+      "name": "Sunset Moth",
+      "slug": "sunset-moth",
+      "reason": "Leo x Rooster. Rooster sits in the Ox trine; Leo shares Fire. The display the Sun Bear withholds, offered by someone safe."
+    },
+    {
+      "name": "Sandgrouse",
+      "slug": "sandgrouse",
+      "reason": "Sagittarius x Rat. Rat is the Ox's secret friend (six harmonies); Sagittarius shares Fire. A provider that carries water home to its chicks, which the Sun Bear's deliver-the-result love recognises."
+    },
+    {
+      "name": "Golden Lion Tamarin",
+      "slug": "golden-lion-tamarin",
+      "reason": "Leo x Rat. Secret friend plus Fire with Fire (already used on the live page)."
+    },
+    {
+      "name": "Fork-tailed Drongo",
+      "slug": "fork-tailed-drongo",
+      "reason": "Gemini x Rooster. Rooster trine; Gemini's Air fans Aries's Fire (already used on the live page)."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Wallcreeper",
+      "slug": "wallcreeper",
+      "reason": "Aries x Goat. Same sign, but Ox and Goat are the traditional six-clash pair: two climbers who each want the same rock face on their own terms."
+    },
+    {
+      "name": "Luna Moth",
+      "slug": "luna-moth",
+      "reason": "Libra x Goat. Ox-Goat clash, and Libra is Aries's opposite sign. Both systems pull against the pairing."
+    }
+  ],
+  "candidate_lines": [
+    "Grab you by the scruff and you turn inside your own skin to face whoever thought that was the end of it.",
+    "You will tear into a log for an hour with no one watching, then come down out of the canopy acting as if the honey just happened.",
+    "Being the smallest bear in the forest has never been the number you measure yourself by, though some days you spend real energy making sure everyone else knows it.",
+    "Your mark sits over your heart, gold on black, shaped like no one else's. The few who get close enough to see it usually stay.",
+    "Someone across the clearing pulls a face and yours answers before you have thought about it. For a creature that prefers to work alone, you read faces unusually well.",
+    "The Ox year gave you the long reach and the Aries sky gave you the nerve to start before anyone agreed the tree was worth opening."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi: 熊 (xióng) in rail__han and serial-han, shown as the animal's character.",
+      "verdict": "OK but generic",
+      "note": "熊 xióng means 'bear', any bear; pinyin is present. The sun bear's Chinese name is 馬來熊 mǎláixióng, 'Malay bear' (Chinese Wikipedia, simplified 马来熊). Not wrong, but the Moon Bear and Tibetan Blue Bear pages could carry the same glyph. If a specific name is wanted, use 馬來熊 mǎláixióng. Note the popular nickname 太陽熊 tàiyángxióng was NOT found in any source I opened; do not use it without a source.",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "fact": "Pale orange, cream or gold chest patch, often U- or crescent-shaped; source of the common name, thought to evoke a rising sun; the exact shape differs on every individual.",
+      "verdict": "OK",
+      "note": "San Diego Zoo: crescent markings that many think look like the rising or setting sun; 'Each bear's crest is unique, like our fingerprints.' NatGeo: local legend says the patch represents the rising sun. IBA: patch unique and unchanged for life. ADW and Wikipedia add that some bears lack the patch.",
+      "source_ids": [
+        "s6",
+        "s7",
+        "s13",
+        "s12"
+      ]
+    },
+    {
+      "fact": "Extremely long, narrow tongue, commonly cited between 20 and 25 centimetres, reaching places no other bear can access.",
+      "verdict": "OK",
+      "note": "Guinness World Records: 20 to 25 cm when feeding, longest tongue on a bear. Note bearbiology.org (cited on the page) says 'up to 46 cm', which conflicts with Guinness; keep 20 to 25.",
+      "source_ids": [
+        "s14",
+        "s13"
+      ]
+    },
+    {
+      "fact": "Long, sharply curved claws, sometimes exceeding ten centimetres; disproportionately large forearms.",
+      "verdict": "OK",
+      "note": "NatGeo and Smithsonian: claws exceeding four inches; San Diego Zoo: 4-inch (10 cm) claws. IBA: 'many disproportionately large physical features'.",
+      "source_ids": [
+        "s7",
+        "s8",
+        "s6",
+        "s13"
+      ]
+    },
+    {
+      "fact": "Loose skin around neck and shoulders lets it twist inside its hide and bite back while pinned, noted in several accounts of encounters with tigers.",
+      "verdict": "OK (mechanism) / UNVERIFIABLE (tiger accounts)",
+      "note": "San Diego Zoo: 'a sun bear can turn in its loose skin and bite its attacker.' Wikipedia names tigers as the main predator. No source opened documents 'several accounts' of this defense against tigers. Cut the tiger-accounts clause.",
+      "source_ids": [
+        "s6",
+        "s9"
+      ]
+    },
+    {
+      "fact": "Smallest living bear, under a metre at the shoulder, roughly 25 to 65 kg, adult males around a quarter larger than females.",
+      "verdict": "WRONG (dimorphism)",
+      "note": "Smallest bear, about 70 cm at the shoulder and 25 to 65 kg are OK (Wikipedia, ADW). Males are 10 to 20 percent larger (Wikipedia, ADW, San Diego Zoo); IBA says about one third. 'A quarter' matches neither. Say 'males are 10 to 20 percent larger'.",
+      "source_ids": [
+        "s9",
+        "s12",
+        "s6",
+        "s13"
+      ]
+    },
+    {
+      "fact": "Most arboreal of all bears; bends and breaks branches into rough platform nests two to seven metres up, where it feeds, sunbathes and rests, largely alone.",
+      "verdict": "WRONG (conflation)",
+      "note": "'Most arboreal of all bears' is OK (Wikipedia). But 2 to 7 m is the height at which sun bears sleep or sunbathe in trees (Wikipedia, ADW), not a nest height. Wong Siew Te reports tree nests up to 40 m, built at a fork near the trunk, and says sun bears avoid breaking nearby branches; nest building is 'rarely seen' (Mongabay). San Diego Zoo adds that undisturbed bears often rest on the ground or in hollow logs. Rewrite: 'sleeps and sunbathes in trees, and sometimes builds a branch platform high in the canopy.'",
+      "source_ids": [
+        "s9",
+        "s12",
+        "s15",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Purple Star (Zi Wei Dou Shu) claim",
+      "verdict": "OK",
+      "note": "No 'Purple Star already suspects' star assignment on this page; only the sitewide Purple Star navigation.",
+      "source_ids": []
+    }
+  ],
+  "page_bugs": [
+    "No 'Primal Zodiac' strings found in this page's HTML.",
+    "The January/February lunar New Year note does not appear (correct for Aries).",
+    "The chapter nav lists 'Your Love Pairing' and the page has 15 chapters, but no Love Pairing section text appears in the static HTML (may be JS-rendered; check).",
+    "Keeper Stones chapter (amber, citrine, fire agate, bronzite) assigns crystal meanings with no source; treat as our own reading or cut.",
+    "Proverb 磨杵成針 mó chǔ chéng zhēn is labelled as our own pairing, which is honest.",
+    "The hero intro says the sun bear 'reaches deeper into hidden places than any other bear'; fine if tied to the Guinness tongue record."
+  ]
+}

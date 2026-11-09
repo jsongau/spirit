@@ -1,0 +1,329 @@
+{
+  "slug": "mantis-shrimp",
+  "name": "Mantis Shrimp",
+  "sign": "Aquarius",
+  "year": "Dragon",
+  "element": "Earth (from the Dragon); Aquarius adds Air, fixed.",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Aquarius zodiac sign, Farmers' Almanac",
+      "url": "https://www.farmersalmanac.com/aquarius-zodiac-sign"
+    },
+    {
+      "id": "s2",
+      "title": "Chinese zodiac (Dragon row, compatibility table), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s3",
+      "title": "Year of the Dragon, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/dragon.htm"
+    },
+    {
+      "id": "s4",
+      "title": "Mantis shrimp, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mantis_shrimp"
+    },
+    {
+      "id": "s5",
+      "title": "Patek, Korff and Caldwell 2004, Deadly strike mechanism of a mantis shrimp, Nature 428:819-820, doi 10.1038/428819a (RePEc record)",
+      "url": "https://ideas.repec.org/a/nat/nature/v428y2004i6985d10.1038_428819a.html"
+    },
+    {
+      "id": "s6",
+      "title": "UC Berkeley news release on Patek et al. 2004 (21 April 2004)",
+      "url": "https://newsarchive.berkeley.edu/news/media/releases/2004/04/21_shrimp.shtml"
+    },
+    {
+      "id": "s7",
+      "title": "Patek and Caldwell 2005, Extreme impact and cavitation forces of a biological hammer, peacock mantis shrimp (eScholarship abstract)",
+      "url": "https://www.escholarship.org/uc/item/9938507n"
+    },
+    {
+      "id": "s8",
+      "title": "Lohse, Schmitz and Versluis 2001, Snapping shrimp make flashing bubbles, Nature 413:477-478",
+      "url": "https://www.nature.com/nature/journal/v413/n6855/full/413477a0.html"
+    },
+    {
+      "id": "s9",
+      "title": "The mantis shrimp sees like a satellite, National Geographic (on Thoen et al., Science)",
+      "url": "https://www.nationalgeographic.com/science/article/the-mantis-shrimp-sees-like-a-satellite"
+    },
+    {
+      "id": "s10",
+      "title": "Most complex eyes of any animal, Guinness World Records",
+      "url": "https://guinnessworldrecords.com/world-records/83127-most-sophisticated-eyes-of-any-animal"
+    },
+    {
+      "id": "s11",
+      "title": "Shrimp Sight, The Scientist (trinocular vision)",
+      "url": "https://www.the-scientist.com/shrimp-sight-38079"
+    },
+    {
+      "id": "s12",
+      "title": "Mantis shrimp vision reveals new way that animals can see, ScienceDaily (Chiou et al. 2008, Current Biology 18, doi 10.1016/j.cub.2008.02.066)",
+      "url": "https://www.sciencedaily.com/releases/2008/03/080320120732.htm"
+    },
+    {
+      "id": "s13",
+      "title": "Stomatopod biology: bluffing by newly moulted stomatopods (summary of Steger and Caldwell 1983, Science), keyapa.com, web author A. Sunjian",
+      "url": "https://www.keyapa.com/mantis/bio/bluff.htm"
+    },
+    {
+      "id": "s14",
+      "title": "虾兵蟹将 xiā bīng xiè jiàng, 漢典 zdic (cites 西遊記 Journey to the West ch. 3)",
+      "url": "https://www.zdic.net/hant/虾兵蟹将"
+    },
+    {
+      "id": "s15",
+      "title": "蝦蛄 article on mantis shrimp names (螳螂蝦, 瀨尿蝦, 撒尿蝦), FoodNEXT 食力",
+      "url": "https://www.foodnext.net/life/culture/paper/5111761214"
+    },
+    {
+      "id": "s16",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Friendly, honest, loyal, unconventional, inventive, independent, intellectual, humanitarian and original. Shadow: more at ease with ideas than feelings; independence turns into distance, inventiveness into restlessness; can read as aloof.",
+    "planet": "Uranus (modern ruler), Saturn (traditional ruler)",
+    "element": "Air (the water imagery belongs to the Water-Bearer symbol, not the element)",
+    "modality": "Fixed. Dates 20 January to 18 February. Classic opposite: Leo.",
+    "source_ids": [
+      "s1"
+    ]
+  },
+  "chinese": {
+    "temperament": "Courage, tenacity and intelligence; enthusiastic, confident, willing to take risks. Traditionally the emperor's animal, holder of power over wind and rain, a symbol of power, nobility and success. Shadow in the same source: can easily get into conflicts.",
+    "yinyang": "Yang",
+    "element": "Earth (fixed); earthly branch 辰 chén",
+    "trine": "Rat, Dragon, Monkey",
+    "secret_friend": "Rooster (China Highlights best match; Wikipedia's grid lists Dragon under Rooster's harmony)",
+    "clash": "Dog (Wikipedia also lists Rabbit as the harm pair)",
+    "lucky": null,
+    "source_ids": [
+      "s2",
+      "s3"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Chinese mythology (the Dragon King's court)",
+      "meaning": "蝦兵蟹將 xiā bīng xiè jiàng, 'shrimp soldiers and crab generals', are the troops of the Dragon King of the Eastern Sea. In 西遊記 Xīyóu Jì (Journey to the West) ch. 3, Dragon King Ao Guang comes out with his sons, grandsons and shrimp soldiers and crab generals to greet Sun Wukong. The idiom later came to mean useless underlings. For a Dragon-year shrimp that hits harder than almost anything its size, the irony is the hook: the Dragon's lowliest foot soldier turned out to be the heavyweight. The idiom names shrimp in general, not mantis shrimp.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "culture": "Chinese and Japanese names",
+      "meaning": "Header name 螳螂蝦 tángláng xiā, 'praying-mantis shrimp', for its mantis-like posture and strike. In Taiwan, Hong Kong and Guangdong it is popularly 瀨尿蝦 lài niào xiā or 撒尿蝦 sā niào xiā, 'peeing shrimp'; FoodNEXT ties the Taiwan name's spread to a film. In Japanese cuisine it is shako 蝦蛄 (xiāgū in Mandarin), a sushi item.",
+      "source_ids": [
+        "s15",
+        "s4"
+      ]
+    },
+    {
+      "culture": "Folk names (Assyrian, fishers)",
+      "meaning": "Wikipedia records that Assyrians called them 'sea locusts', fishers call them 'thumb splitters' for the injuries they cause when handled, and Australians 'prawn killers'. The Assyrian claim rests on Wikipedia alone; check its footnote before publishing.",
+      "source_ids": [
+        "s4"
+      ]
+    },
+    {
+      "culture": "Science as symbol (a private channel)",
+      "meaning": "Chiou et al. (2008, Current Biology) found mantis shrimp can see circularly polarized light, and in three Odontodactylus species males reflect it from body parts used in displays. The researchers suggested a 'secret communication channel'; its exact function is not yet known. A strong Aquarius image, but state the uncertainty.",
+      "source_ids": [
+        "s12"
+      ]
+    },
+    {
+      "culture": "Science as symbol (long partnership)",
+      "meaning": "Wikipedia: in the monogamous species, mantis shrimp stay with the same partner up to 20 years. Species-specific (not all stomatopods); fine for the love section if worded 'some mantis shrimp'.",
+      "source_ids": [
+        "s4"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Mantis shrimp 'spirit animal' or totem meanings (blogs only). Any 'punch as hot as the sun' claim: that temperature (at least 5,000 K) was estimated for snapping shrimp bubbles, a different animal. The 皮皮蝦 pípíxiā internet meme was not opened from a reliable source.",
+      "source_ids": [
+        "s8"
+      ]
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: fixed Air meets yang Earth. Aquarius brings the different eye and the comfort of standing apart; the Dragon brings power and the urge to strike first. The mantis shrimp fits both: a perceiver whose visual system is unlike any other (s9, s10) and a striker that lives at one fixed burrow address (s4).",
+    "gifts": "Our reading: fast, categorical reads (the wavelength-by-wavelength colour system, s9); force that lands twice, once on impact and once in the aftermath (s7); a nerve to hold ground even when soft, as newly moulted animals bluff off intruders (s13).",
+    "shadow": "Our reading: fast categories miss fine shades (they discriminate colours only 15 to 25 nm apart, worse than humans, s9). The Dragon's easy conflict (s3) plus Aquarian distance can turn into striking first and explaining never.",
+    "love": "Our reading: guarded at the burrow mouth, then strikingly loyal; some mantis shrimp keep one partner up to 20 years (s4). Signals love on channels only a close partner learns to read (s12).",
+    "money": "Our reading: decisive and early; sees value before the market names it, then defends the position hard. Risk: a fixed burrow becomes a fixed opinion.",
+    "conflict": "Our reading: the meral spread first, the display of the weapon; the strike only if the display fails. When weakened, bluffs rather than retreats, and the bluff often holds (s13)."
+  },
+  "careers": [
+    {
+      "path": "Optics, imaging, colour science, remote sensing",
+      "why": "Our reading: Thoen's satellite-like colour system (s9) as a working style; reads spectra others blend."
+    },
+    {
+      "path": "Emergency medicine, triage, incident response",
+      "why": "Our reading: fast categorical calls under pressure; a strike measured in microseconds (s7)."
+    },
+    {
+      "path": "Materials testing, forensic engineering, quality inspection",
+      "why": "Our reading: the animal that cracks shells for a living; knows where a structure fails."
+    },
+    {
+      "path": "Product research and invention",
+      "why": "Our reading: Uranus-ruled Aquarius plus the Dragon's risk appetite; sees the thing before it has a name."
+    },
+    {
+      "path": "Combat sports, striking coaching, fight analysis",
+      "why": "Our reading: the two-impact punch (s7); timing and the second wave."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Raven",
+      "slug": "raven",
+      "reason": "Aquarius x Monkey. Same sign, and Monkey is in the Dragon trine (s2). Two minds the reef and the sky cannot quite read."
+    },
+    {
+      "name": "Kea",
+      "slug": "kea",
+      "reason": "Gemini x Monkey. Monkey trine (s2); Gemini is Air like Aquarius."
+    },
+    {
+      "name": "Red Panda",
+      "slug": "red-panda",
+      "reason": "Libra x Rat. Rat trine (s2); Libra is Air."
+    },
+    {
+      "name": "Fork-tailed Drongo",
+      "slug": "fork-tailed-drongo",
+      "reason": "Gemini x Rooster. Rooster is the Dragon's six-harmony partner (s3); Gemini Air matches Aquarius. Two famous signallers and bluffers."
+    },
+    {
+      "name": "Regal Jumping Spider",
+      "slug": "regal-jumping-spider",
+      "reason": "Leo x Monkey. Monkey trine (s2); Leo is Aquarius's classic opposite and Fire feeds Air. Two small animals built around extraordinary eyes and a sudden strike."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Banded Mongoose",
+      "slug": "banded-mongoose",
+      "reason": "Taurus x Dog. Dragon-Dog is the six-clash pair (s2); Taurus (fixed Earth) squares Aquarius (fixed Air). A loyal crowd animal facing a loner in a burrow."
+    },
+    {
+      "name": "Tasmanian Devil",
+      "slug": "tasmanian-devil",
+      "reason": "Scorpio x Dog. Dragon-Dog clash (s2); Scorpio, fixed Water, squares Aquarius. Two who strike first."
+    }
+  ],
+  "candidate_lines": [
+    "Some of what you signal only reads to your own kind, like the polarized gleam on a stomatopod's shell that the reef fish swim straight past.",
+    "Your first hit is the claw. The second is the water folding shut behind it less than half a millisecond later, and that is the one people end up telling stories about.",
+    "Fresh out of a molt and still soft, you guard the burrow by flourishing a claw you could not safely swing, and the bluff holds more often than it has any right to.",
+    "The Dragon in you wanted the sky and the Aquarian settled for a hole in the coral with a perfect view. From there you see more of the reef than the reef sees of you.",
+    "When you finally share a burrow, you can keep that one address together for twenty years while the whole reef rearranges itself overhead.",
+    "Your eye names each colour on sight instead of weighing shade against shade. The calls come fast, and once in a while a subtle one slips by you."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 螳螂蝦, aria-label 'tángláng xiā'",
+      "verdict": "OK",
+      "note": "螳螂蝦 tángláng xiā is a real Chinese name for mantis shrimp (FoodNEXT renders 'mantis shrimp' as 螳螂蝦). Other names: 蝦蛄 xiāgū, 瀨尿蝦 lài niào xiā. Pinyin is present in the aria-label; make it visible beside the glyph per the house rule.",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "fact": "Subtitle: 'a punch that creates miniature suns'.",
+      "verdict": "WRONG (borrowed species)",
+      "note": "The sun-like temperature (at least 5,000 K inside the collapsing bubble) was estimated for snapping shrimp (Lohse et al. 2001), not mantis shrimp. For mantis shrimp, Wikipedia says the collapsing bubbles produce light (sonoluminescence); no temperature measurement was found. Rewrite to 'a punch that boils the water into bubbles that flash' only if sourced, or simply 'a punch that hits twice'.",
+      "source_ids": [
+        "s8",
+        "s4"
+      ]
+    },
+    {
+      "fact": "Up to sixteen types of photoreceptor cells; humans three, birds four; identifies wavelengths independently, faster at colour decisions, less able to distinguish fine gradations.",
+      "verdict": "OK (soften)",
+      "note": "Guinness and Wikipedia give 12 to 16 photoreceptor types; 12 are colour types (8 visible, 4 UV), the rest polarization. Thoen et al. showed poor discrimination (15 to 25 nm apart vs about 5 nm for humans). 'Faster' is Marshall's hypothesis, not a measurement; say 'probably faster'. Live page cites Cronin and Marshall 1989 (Nature 339:137), which reported at least ten spectral types; that citation does not support sixteen.",
+      "source_ids": [
+        "s9",
+        "s10",
+        "s4"
+      ]
+    },
+    {
+      "fact": "Smashing claw accelerates up to 10,400 g, 23 m/s; cavitation bubbles collapse at near-boiling temperatures and give a second impact; target is hit twice.",
+      "verdict": "OK / UNVERIFIABLE (temperature)",
+      "note": "10,400 g and 23 m/s for the peacock mantis shrimp per Wikipedia citing Patek et al. 2004. Caution: the Berkeley release on the same study gives peak accelerations of 6,300 to 8,000 g and speeds of 14 to 23 m/s; a human should check the Nature PDF. Two force peaks 390 to 480 microseconds apart, the second from bubble collapse, confirmed by Patek and Caldwell 2005. 'Near-boiling temperatures' has no source and contradicts the snapping shrimp estimate; cut it. Applies to smashers, not spearers; name the species.",
+      "source_ids": [
+        "s4",
+        "s5",
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Complex iridescent body patterns used for species recognition, territorial communication and mating; they broadcast on the channels their eyes receive best.",
+      "verdict": "UNVERIFIABLE as written",
+      "note": "What is documented: males of three Odontodactylus species reflect circularly polarized light from display body parts, and the eyes detect it (Chiou et al. 2008); the researchers say the precise function is not yet known. Rewrite around that finding and drop the three listed functions.",
+      "source_ids": [
+        "s12"
+      ]
+    },
+    {
+      "fact": "Excavate or occupy burrows in reef substrate, defend them with threat displays, meral spread and physical engagement.",
+      "verdict": "OK",
+      "note": "Wikipedia: live in burrows where they spend most of their time. Meral spread in cavity defence: Steger and Caldwell summary.",
+      "source_ids": [
+        "s4",
+        "s13"
+      ]
+    },
+    {
+      "fact": "Must molt to grow; afterwards soft and cannot use the strike at full force, vulnerability lasting several days.",
+      "verdict": "OK / UNVERIFIABLE (duration)",
+      "note": "Newly moulted animals could not use their raptorial appendages without serious self-damage and instead bluffed with the meral spread, often deterring intruders (Steger and Caldwell 1983, via keyapa summary). No source found for 'several days'; cut the duration or find one.",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "fact": "Eyes trinocular with independently moving components; each eye assesses distance, direction and colour across a full hemisphere; eyes point in different directions.",
+      "verdict": "OK (narrow it)",
+      "note": "Eyes on mobile stalks move independently; each eye has trinocular vision and depth perception for objects near its mid-plane (Wikipedia; The Scientist). 'Across a full hemisphere' is not supported; cut it.",
+      "source_ids": [
+        "s4",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Intro: most complex visual system of any animal.",
+      "verdict": "OK",
+      "note": "Guinness record 'most complex eyes of any animal', for certain stomatopod species.",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "fact": "Lunar New Year note: January or early February birthdays can belong to the Rabbit.",
+      "verdict": "OK",
+      "note": "Applies to Aquarius; the year before the Dragon is the Rabbit.",
+      "source_ids": [
+        "s2"
+      ]
+    },
+    {
+      "fact": "Style: page body uses em dashes (about 92 in rendered text).",
+      "verdict": "STYLE",
+      "note": "Breaks the house writing rules; fix in the rewrite.",
+      "source_ids": []
+    }
+  ]
+}

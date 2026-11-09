@@ -1,0 +1,295 @@
+{
+  "slug": "marbled-polecat",
+  "name": "Marbled Polecat",
+  "sign": "Capricorn",
+  "year": "Rat",
+  "element": "Water (from the Rat); Capricorn adds Earth, cardinal. Earth controls Water in the five-phase cycle.",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Capricorn sign, Kerykeion astrology reference",
+      "url": "https://kerykeion.net/content/learn-astrology/signs-capricorn"
+    },
+    {
+      "id": "s2",
+      "title": "Chinese zodiac (Rat row, compatibility table), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s3",
+      "title": "Year of the Rat, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/rat.htm"
+    },
+    {
+      "id": "s4",
+      "title": "Vormela peregusna account, Animal Diversity Web (cited on live page)",
+      "url": "https://animaldiversity.org/accounts/Vormela_peregusna/"
+    },
+    {
+      "id": "s5",
+      "title": "Marbled polecat, Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Marbled_polecat"
+    },
+    {
+      "id": "s6",
+      "title": "Species of the week: marbled polecat, One Earth",
+      "url": "https://www.oneearth.org/species-of-the-week-marbled-polecat/"
+    },
+    {
+      "id": "s7",
+      "title": "Cheng et al. 2023, Time to Step Up Conservation (Vormela peregusna habitat modelling), Animals 13(14):2341, doi 10.3390/ani13142341 (cited on live page)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10376176"
+    },
+    {
+      "id": "s8",
+      "title": "虎鼬 hǔ yòu, Chinese Wikipedia",
+      "url": "https://zh.wikipedia.org/wiki/虎鼬"
+    },
+    {
+      "id": "s9",
+      "title": "Wudaxian (Five Great Immortals), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Wudaxian"
+    },
+    {
+      "id": "s10",
+      "title": "黄仙 Huáng Xiān, Beijing weasel belief, USC Digital Folklore Archives (informant account, 2025)",
+      "url": "https://folklore.usc.edu/?p=86430"
+    },
+    {
+      "id": "s11",
+      "title": "Newman, Buesching and Wolff 2005, The function of facial masks in midguild carnivores, Oikos (Oxford Biology summary)",
+      "url": "https://www.biology.ox.ac.uk/node/2515826"
+    },
+    {
+      "id": "s12",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Cardinal Earth: the initiating drive pointed at material results. Mature Capricorn shows earned authority, responsibility and steady ascent; the shadow is ambition without a compass, compulsive overwork, held-back feeling, a harsh inner critic and status used as a stand-in for self-worth.",
+    "planet": "Saturn (time, structure, consequence)",
+    "element": "Earth (with Taurus and Virgo)",
+    "modality": "Cardinal. Symbol the sea-goat (mountain-goat body, fish tail). Classic opposite: Cancer.",
+    "source_ids": [
+      "s1"
+    ]
+  },
+  "chinese": {
+    "temperament": "Quick-witted, resourceful, smart, sharp observer with a rich imagination; seizes opportunities; diligent and thrifty. Shadow: can lack courage, seldom deepens friendships and ends relationships easily.",
+    "yinyang": "Yang",
+    "element": "Water (fixed); earthly branch 子 zǐ",
+    "trine": "Rat, Dragon, Monkey",
+    "secret_friend": "Ox",
+    "clash": "Horse (Wikipedia also lists Goat as the harm pair)",
+    "lucky": null,
+    "source_ids": [
+      "s2",
+      "s3"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Chinese naming",
+      "meaning": "The species' Chinese name is 虎鼬 hǔ yòu, 'tiger weasel', given for its yellow body spotted brown and red like a tiger. A Rat-year animal in a tiger's coat is a strong, honest image for the bluff display. The live page's header 鼬 yòu means weasel in general, not this species.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "culture": "Northern Chinese folk religion (Wudaxian, the Five Great Immortals)",
+      "meaning": "The weasel 黃仙 Huáng Xiān (Yellow Immortal) and the rat 灰仙 Huī Xiān (Grey Immortal) are both counted among the Five Great Immortals with the fox, hedgehog and snake; all five are treated as small wealth gods. A Beijing folklore record says a weasel that enters a house should be left alone and not provoked. Caution: the weasel of this cult is the yellow weasel 黃鼠狼 huáng shǔ láng, not the marbled polecat. Use only as 'the weasel family', and the Rat link is the real hook: this crossing holds two of the five immortal animals.",
+      "source_ids": [
+        "s9",
+        "s10"
+      ]
+    },
+    {
+      "culture": "European naming",
+      "meaning": "Vormela comes from German Würmlein, 'little worm'; peregusna from Ukrainian перегузня (perehuznya), 'polecat'. The fur was traded as 'fitch' or 'perwitsky'. Thin as symbol; usable as one line at most.",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "culture": "Science as symbol (warning coat)",
+      "meaning": "Newman, Buesching and Wolff (2005, Oikos) found that the bold face masks of mid-sized carnivores fit the aposematic hypothesis best: a warning that attacking the animal costs more than it looks, through fierceness or a noxious discharge. The paper's summary does not name the marbled polecat, so say 'mid-sized carnivores like it', never 'scientists proved the polecat's mask is a warning'.",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "Polecat 'spirit animal' meanings on totem blogs; Shakespeare's 'polecat' insult and English polecat lore, which concern the European polecat (Mustela putorius), not this species. No folklore specific to Vormela was found for Mongolia, Kazakhstan, Turkey or Iran.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: Capricorn's cardinal Earth meets the Rat's yang Water, and Earth dams Water. The Rat sees the opening first; Capricorn insists on holding only what it can maintain. The polecat lives this literally: an opportunist that moves into rodent burrows yet keeps a small, fiercely defended home range of 0.5 to 0.6 km2 (s4).",
+    "gifts": "Our reading: turns borrowed or inherited ground into something well kept; reads which openings are real; a warning display that settles most disputes before any cost is paid; patience to delay a commitment until conditions are right (the delayed implantation, s4, s5).",
+    "shadow": "Our reading: the coat can become the whole self, so people meet the warning and never the animal. Capricorn's status hunger plus the Rat's tendency to drop relationships easily (s3) can make territory matter more than the people inside it.",
+    "love": "Our reading: slow to commit, then territorial and loyal; tests a partner the way it tests a burrow, by how it holds under pressure. Needs a partner who is not frightened off by the hiss and does not take it personally.",
+    "money": "Our reading: Rat thrift (s3) plus Saturn's long view: buys existing assets rather than starting from bare ground, maintains them well, and resists speculation. Risk: holding a position past its season because letting go looks like losing ground.",
+    "conflict": "Our reading: display first, escalate last. Arches, hisses, makes the cost visible; real force is a second weapon kept in reserve (the anal-gland secretion, s4, s5). Rarely starts a fight over ground it does not mean to keep."
+  },
+  "careers": [
+    {
+      "path": "Acquisitions, turnarounds, taking over an existing business or team",
+      "why": "Our reading: the borrowed burrow; skill lies in occupying and then truly maintaining what someone else built."
+    },
+    {
+      "path": "Property management, estate or facilities stewardship",
+      "why": "Our reading: a modest, defined territory run to a high standard; Capricorn upkeep plus Rat resourcefulness."
+    },
+    {
+      "path": "Security, risk, compliance or enforcement",
+      "why": "Our reading: deterrence by visible signal; the warning coat as policy."
+    },
+    {
+      "path": "Early-shift or late-shift operations (logistics, hospitals, markets)",
+      "why": "Our reading: the crepuscular hunter (s4); works best at the edges of the day."
+    },
+    {
+      "path": "Negotiation and procurement",
+      "why": "Our reading: the bluff display, used honestly; knows exactly what ground it will not give up."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Beaver",
+      "slug": "beaver",
+      "reason": "Virgo x Ox. Ox is the Rat's secret friend (six harmonies, s2); Virgo shares Capricorn's Earth. Two builders of defended homes."
+    },
+    {
+      "name": "Shoebill",
+      "slug": "shoebill",
+      "reason": "Capricorn x Ox. Same sign, and Ox is the Rat's secret friend (s2)."
+    },
+    {
+      "name": "Galápagos Tortoise",
+      "slug": "galapagos-tortoise",
+      "reason": "Taurus x Dragon. Dragon is in the Rat trine (s2); Taurus is Earth like Capricorn. Patience meets patience."
+    },
+    {
+      "name": "New Caledonian Crow",
+      "slug": "new-caledonian-crow",
+      "reason": "Virgo x Monkey. Monkey is in the Rat trine (s2); Virgo is Earth. Two opportunists who make use of what is already there."
+    },
+    {
+      "name": "Whale Shark",
+      "slug": "whale-shark",
+      "reason": "Pisces x Dragon. Dragon trine (s2); Pisces Water is the classic complement to Capricorn Earth, and matches the Rat's Water."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Pronghorn",
+      "slug": "pronghorn",
+      "reason": "Aries x Horse. Rat-Horse is the six-clash pair (s2); Aries (cardinal Fire) squares Capricorn (cardinal Earth). A runner of open plains facing a holder of small ground."
+    },
+    {
+      "name": "Flamingo",
+      "slug": "flamingo",
+      "reason": "Libra x Horse. Rat-Horse clash (s2); Libra, cardinal Air, squares Capricorn. Display meets display, with no shared element."
+    }
+  ],
+  "candidate_lines": [
+    "Somebody else dug the tunnels you live in, and within a season the steppe forgets that. You never quite do, which is why you keep them swept.",
+    "Your warning comes in tiger stripes before it ever comes in teeth. Most challengers read the coat at the burrow mouth and decide the gerbils elsewhere are easier.",
+    "Half a square kilometre is enough for you, as long as every metre of it answers to your name.",
+    "A yes from you can sit unplanted for months, like a polecat litter waiting out the winter, and arrive the week the ground finally softens.",
+    "Your best moves come at grey light on the steppe, when the bold ones have gone to ground and the careful ones have not started counting yet.",
+    "You hiss at the doorway long before you would bite, and the people who live closest to you have learned that the hiss is the courtesy."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 鼬 (rail__han and serial-han), aria-label 'yòu'",
+      "verdict": "WRONG (imprecise)",
+      "note": "鼬 yòu means weasel in general. The marbled polecat's Chinese name is 虎鼬 hǔ yòu, 'tiger weasel', named for its tiger-like spotted coat. Replace with 虎鼬 (hǔ yòu); traditional and simplified are the same.",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "fact": "Digs its own burrows but often takes over burrow systems of ground squirrels and great gerbils.",
+      "verdict": "OK",
+      "note": "ADW: digs dens but is opportunistic and may use prey den systems (large ground squirrels, great gerbils). Wikipedia adds Libyan jird burrows and irrigation tunnels.",
+      "source_ids": [
+        "s4",
+        "s5"
+      ]
+    },
+    {
+      "fact": "Threat display: does not flee first; raises tail, arches back, fur on end; bold marbling; backed by a foul anal-gland secretion.",
+      "verdict": "OK (soften one clause)",
+      "note": "Display confirmed (fur erect, back arched, tail raised or curled over the back, hissing, teeth bared). ADW calls the secretion 'possibly' defensive; Wikipedia and One Earth state it as defensive. 'Does not flee first' is not stated in any source; cut it.",
+      "source_ids": [
+        "s4",
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "White band across the forehead, black eye mask; no two individuals carry an identical pattern.",
+      "verdict": "OK / UNVERIFIABLE",
+      "note": "Forehead band and mask: ADW. 'No two identical' is not in ADW, Wikipedia or One Earth; cut it.",
+      "source_ids": [
+        "s4",
+        "s5"
+      ]
+    },
+    {
+      "fact": "Home range of 0.5 to 0.6 km2, patrolled and defended aggressively against rival polecats, stands its ground even when approached by humans.",
+      "verdict": "OK",
+      "note": "All three points in ADW; range figure also in Wikipedia.",
+      "source_ids": [
+        "s4",
+        "s5"
+      ]
+    },
+    {
+      "fact": "Mates in spring, delayed implantation, gestation recorded at 56 to 327 days.",
+      "verdict": "WRONG (lower bound)",
+      "note": "Wild gestation is 243 to 327 days (Wikipedia, One Earth) or 8 to 11 months (ADW), because of delayed implantation. ADW gives about 40 days in captivity. No source found for 56 days. Births late January to mid March (One Earth). Spring mating not confirmed in the sources opened. Rewrite: 'gestation of 243 to 327 days in the wild'.",
+      "source_ids": [
+        "s4",
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "fact": "Largely crepuscular; hunts rodents, ground squirrels, birds, lizards, insects; approaches prey from the side, strikes the throat if it struggles.",
+      "verdict": "OK",
+      "note": "All in ADW ('mostly active during mornings and evenings'; approaches from the side; throat targeted if prey struggles). Cheng et al. 2023 adds that activity tracks the great gerbil, its main prey in China.",
+      "source_ids": [
+        "s4",
+        "s7"
+      ]
+    },
+    {
+      "fact": "Range: southeastern Europe through Central Asia to Mongolia and China.",
+      "verdict": "OK",
+      "note": "Wikipedia: Balkans to southern Mongolia and northern China.",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "fact": "Cited source PMC10376176",
+      "verdict": "OK (but not a behaviour source)",
+      "note": "It is Cheng et al. 2023, a climate habitat-modelling paper. It supports conservation status, not the six behaviour facts; ADW does that work.",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "fact": "Lunar New Year note: January birthdays can belong to the Pig.",
+      "verdict": "OK",
+      "note": "Applies to Capricorn; the year before the Rat is the Pig.",
+      "source_ids": [
+        "s2"
+      ]
+    }
+  ]
+}

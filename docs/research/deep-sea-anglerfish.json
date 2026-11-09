@@ -1,0 +1,343 @@
+{
+  "slug": "deep-sea-anglerfish",
+  "name": "Deep Sea Anglerfish",
+  "sign": "Scorpio",
+  "year": "Pig",
+  "element": "Water (from the Pig); Scorpio adds Water, fixed. A double-Water crossing.",
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Scorpio (astrology), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Scorpio_(astrology)"
+    },
+    {
+      "id": "s2",
+      "title": "Scorpio zodiac sign, The Old Farmer's Almanac",
+      "url": "https://www.almanac.com/content/scorpio-zodiac-sign"
+    },
+    {
+      "id": "s3",
+      "title": "Pig (zodiac), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pig_(zodiac)"
+    },
+    {
+      "id": "s4",
+      "title": "Year of the Pig, China Highlights",
+      "url": "https://www.chinahighlights.com/travelguide/chinese-zodiac/pig.htm"
+    },
+    {
+      "id": "s5",
+      "title": "Chinese zodiac (compatibility: trines, six harmonies, six clashes), Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinese_zodiac"
+    },
+    {
+      "id": "s6",
+      "title": "Baker et al. 2019, Diverse deep-sea anglerfishes share a genetically reduced luminous symbiont that is acquired from the environment, eLife 8:e47606",
+      "url": "https://elifesciences.org/articles/47606"
+    },
+    {
+      "id": "s7",
+      "title": "Deep-sea anglerfishes have evolved a new type of immune system, University of Washington News, 30 July 2020 (on Swann et al. 2020, Science)",
+      "url": "https://www.washington.edu/news/2020/07/30/deep-sea-anglerfishes-have-evolved-a-new-type-of-immune-system/"
+    },
+    {
+      "id": "s8",
+      "title": "Pietsch 2005, Dimorphism, parasitism, and sex revisited: modes of reproduction among deep-sea ceratioid anglerfishes, Ichthyological Research 52 (abstract)",
+      "url": "https://link.springer.com/article/10.1007/s10228-005-0286-2"
+    },
+    {
+      "id": "s9",
+      "title": "Animal Sex: How Anglerfish Do It, Live Science (quotes Ted Pietsch)",
+      "url": "https://www.livescience.com/49330-animal-sex-anglerfish.html"
+    },
+    {
+      "id": "s10",
+      "title": "Flap over fishes: who's the smallest of them all, University of Washington News, 27 Jan 2006 (Photocorynus spiniceps)",
+      "url": "https://www.washington.edu/news/2006/01/27/flap-over-fishes-whos-the-smallest-of-them-all/"
+    },
+    {
+      "id": "s11",
+      "title": "The horrors of anglerfish mating, Mental Floss (Saemundsson 1922, Regan)",
+      "url": "https://www.mentalfloss.com/animals/fish/horrors-anglerfish-mating"
+    },
+    {
+      "id": "s12",
+      "title": "Regan 1925, Dwarfed males parasitic on the females in oceanic angler-fishes, Proc. Royal Society of London B 97:386-400 (Plazi record)",
+      "url": "https://publication.plazi.org/GgServer/summary/564734E5C800498A95D969FB3C6BBBBE"
+    },
+    {
+      "id": "s13",
+      "title": "Anglerfish, Wikipedia (lure wiggling, ambush hunting, size dimorphism)",
+      "url": "https://en.wikipedia.org/wiki/Anglerfish"
+    },
+    {
+      "id": "s14",
+      "title": "Caruso, Lophiiformes (Anglerfishes), Grzimek's Animal Life Encyclopedia via Encyclopedia.com",
+      "url": "https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/lophiiformes-anglerfishes"
+    },
+    {
+      "id": "s15",
+      "title": "Anglerfish Dish (Ibaraki), Ibaraki tourism guide",
+      "url": "https://ibaraki-en.mytabi.net/anglerfish-dish.php"
+    },
+    {
+      "id": "s16",
+      "title": "鮟鱇 entry, Weblio (デジタル大辞泉 and 隠語大辞典)",
+      "url": "https://www.weblio.jp/content/%E9%AE%9F%E9%B1%87"
+    },
+    {
+      "id": "s17",
+      "title": "Ceratias holboelli 霍氏角鮟鱇 (common name 深海鮟鱇), TaiBIF species page",
+      "url": "https://knowledge.taibif.tw/node/34"
+    },
+    {
+      "id": "s18",
+      "title": "厚积而薄发 dictionary entry with source (Su Shi, 稼说送张琥), p8nda",
+      "url": "https://p8nda.com/dictionary/%E5%8E%9A%E7%A7%AF%E8%80%8C%E8%96%84%E5%8F%91"
+    },
+    {
+      "id": "s19",
+      "title": "Zodi Animal research brief and site/js/modules/zodi-map.js GRID (internal)",
+      "url": "data/research/BRIEF.md"
+    }
+  ],
+  "western": {
+    "temperament": "Passionate, determined, loyal, protective, intuitive, magnetic. Shadow: secretive, suspicious, jealous, possessive, resentful, stubborn.",
+    "planet": "Mars (traditional), Pluto (modern)",
+    "element": "Water",
+    "modality": "Fixed; negative/feminine polarity; opposite sign Taurus",
+    "source_ids": [
+      "s1",
+      "s2"
+    ]
+  },
+  "chinese": {
+    "temperament": "Diligent, compassionate, generous, concentrated, calm in trouble, responsible; linked to feeling and gut instinct. Shadow: trusts too easily and is easily fooled, rarely asks for help, can run short on patience.",
+    "yinyang": "Yin",
+    "element": "Water (fixed); earthly branch 亥 hài",
+    "trine": "Rabbit, Goat, Pig",
+    "secret_friend": "Tiger",
+    "clash": "Snake",
+    "lucky": null,
+    "source_ids": [
+      "s3",
+      "s4",
+      "s5"
+    ]
+  },
+  "symbolism": [
+    {
+      "culture": "Science history (Iceland and Britain, 1922 to 1925)",
+      "meaning": "For a century every deep-sea anglerfish caught was female. In 1922 Icelandic biologist Bjarni Saemundsson found two small fish fixed to a female's belly and took them for her young. C. Tate Regan dissected one and showed it was her mate, 'merely an appendage of the female' (Regan, Proc. Royal Society, 1925). The hidden partner who was there all along is a usable image for this crossing.",
+      "source_ids": [
+        "s11",
+        "s12"
+      ]
+    },
+    {
+      "culture": "Modern genetics (Swann et al. 2020, Science)",
+      "meaning": "Species with permanent attachment have largely lost the MHC genes the immune system uses to recognise foreign tissue, and killer T cell function is greatly reduced. They gave up the tools of rejection so a mate could become part of the body. Strong bridge to the Scorpio love reading.",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "culture": "Modern microbiology (Baker et al. 2019, eLife)",
+      "meaning": "The glowing bacteria are Candidatus Enterovibrio escacola (and Ca. E. luxaltus in Cryptopsaras). They are picked up from the surrounding seawater, not passed from parent to young; the fish grows its lure only as it nears maturity and descends to bathypelagic depth. The light is gathered from the deep, at the point of growing up.",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "culture": "Japan (shallow-water relative, the ankō monkfish, Lophius)",
+      "meaning": "Not a deep-sea species, but the same order. A winter delicacy in Ibaraki, where the saying sets 'blowfish of the West, anglerfish of the East'; the fish is cut while hanging (tsurushi-giri) and every part but the bones is eaten. Use only with the species named honestly.",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "culture": "Japanese language",
+      "meaning": "デジタル大辞泉 records 鮟鱇 (ankō) used figuratively for a foolish person, from the fish's sluggish movement; slang also uses it for 'mouth', from its huge jaw. Stillness read from outside as dullness, which the deep-sea reading can answer. Again this is the Lophius relative.",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "culture": "Chinese (the page's proverb)",
+      "meaning": "厚積薄發 hòu jī bó fā, 'store thickly, release thinly', from Su Shi's essay 稼說送張琥 (Jià shuō sòng Zhāng Hǔ): 博觀而約取，厚積而薄發 (bó guān ér yuē qǔ, hòu jī ér bó fā). Verified; the page's use stands.",
+      "source_ids": [
+        "s18"
+      ]
+    },
+    {
+      "culture": "Unsourced, do not use",
+      "meaning": "'Anglerfish spirit animal' and totem meanings (illumination, hidden truth, patience) found only on spirit-animal blogs. No traditional or Indigenous lore exists for ceratioid anglerfishes, which were unknown to science until the 19th century and live below any fishery. Pig folklore (Zhu Bajie, the Great Race) belongs on the year hub, not here.",
+      "source_ids": []
+    }
+  ],
+  "fusion": {
+    "temperament": "Our reading: a double-Water crossing with two different waters in it. Scorpio is fixed, Mars and Pluto ruled, suspicious and private; the Pig is yin, warm, generous and, per the tradition, too quick to trust. The Anglerfish holds both: a guarded animal in the most hostile water on Earth that, once it chooses, drops every defence. It waits more than it chases.",
+    "gifts": "Our reading: patience at depth, focus that does not drift (the Pig's 'great concentration' meeting Scorpio determination), a quiet pull on people who come close, loyalty that runs all the way through, and the ability to stay calm in pressure that would crush others.",
+    "shadow": "Our reading: two waters can pool and go stagnant. Scorpio secrecy plus the Pig's habit of not asking for help makes a person who suffers alone in the dark. The Pig's easy trust inside a Scorpio's all-or-nothing bond can mean merging with someone before checking who they are; the immune system is off by then.",
+    "love": "Our reading: slow to let anyone near the light, then total. This crossing does not do casual. Partners feel chosen and held, and sometimes absorbed. The work is keeping two bodies while sharing one bloodstream: a self that stays visible inside the union.",
+    "money": "Our reading: 厚積薄發 is the money style. Builds reserves quietly over years and spends in single, exact moves. The Pig's generosity is the leak: lends to people who will not repay, and is too proud to ask for it back.",
+    "conflict": "Our reading: goes still and dark rather than loud. Scorpio remembers; the Pig forgives more than you would expect, but only once. When it does strike it is fast and final, like jaws closing on prey that came too near."
+  },
+  "careers": [
+    {
+      "path": "Psychotherapy, crisis counselling, hospice and grief work",
+      "why": "Our reading: comfortable in the dark places others avoid; the Pig's compassion and Scorpio intensity let people bring hard things into the light."
+    },
+    {
+      "path": "Investigative journalism, forensic accounting, intelligence analysis",
+      "why": "Our reading: patience at depth and Scorpio suspicion; waits for the evidence to come to the lure."
+    },
+    {
+      "path": "Deep research: oceanography, microbiology, archives",
+      "why": "Our reading: long, solitary focus in conditions others find airless; a direct echo of the symbiont and immune-gene findings."
+    },
+    {
+      "path": "Night work: emergency medicine, night-shift nursing, lighting and stage design",
+      "why": "Our reading: one point of light in the dark is literally the job."
+    },
+    {
+      "path": "Sales or fundraising built on long relationships",
+      "why": "Our reading: draws people in without chasing; trust once given is deep and returned."
+    }
+  ],
+  "best_matches": [
+    {
+      "name": "Ghost Pipefish",
+      "slug": "ghost-pipefish",
+      "reason": "Pisces x Goat. Goat sits in the Pig trine (Rabbit, Goat, Pig), and Pisces is a Water sign like Scorpio. Two still, hidden water animals."
+    },
+    {
+      "name": "Moon Jellyfish",
+      "slug": "moon-jellyfish",
+      "reason": "Pisces x Rabbit. Rabbit is in the Pig trine; Pisces shares Scorpio's Water. A soft drifter that does not threaten the guarded one."
+    },
+    {
+      "name": "Moon Bear",
+      "slug": "moon-bear",
+      "reason": "Cancer x Tiger. Tiger and Pig are a six-harmony secret-friend pair; Cancer is the third Water sign."
+    },
+    {
+      "name": "Sea Otter",
+      "slug": "sea-otter",
+      "reason": "Cancer x Rabbit. Rabbit trine plus Cancer Water; also, Pig's Water feeds the Rabbit's Wood in the five-phase cycle."
+    },
+    {
+      "name": "Clark's Nutcracker",
+      "slug": "clarks-nutcracker",
+      "reason": "Virgo x Goat. Goat trine, and Virgo Earth is the classic complement to Water. A fellow hoarder who also stores thickly and spends thinly."
+    }
+  ],
+  "hard_matches": [
+    {
+      "name": "Pangolin",
+      "slug": "pangolin",
+      "reason": "Taurus x Snake. Snake-Pig is one of the six clashes, and Taurus is Scorpio's opposite sign. Both systems pull apart."
+    },
+    {
+      "name": "Slow Loris",
+      "slug": "slow-loris",
+      "reason": "Scorpio x Snake. Same sign, so the pull is strong and familiar, but Snake-Pig is a six clash: two secretive animals with a fault line under them."
+    }
+  ],
+  "candidate_lines": [
+    "Down where no sunlight reaches, you made one small light of your own and let the right ones swim toward it.",
+    "Your glow was gathered from the black water around you when you first went deep, and the people who love you can tell it was earned.",
+    "A Pig-year heart in Scorpio water: you trust like the Pig and test like the scorpion, sometimes in the same breath.",
+    "From the surface your stillness looks like idling; at depth it is a hunter holding its place, lure steady, until the moment arrives.",
+    "When you let someone in, you lower your defences on purpose, the way these fish set aside the very genes that would reject a mate.",
+    "You store a great deal and give off very little at once, a single point of light in a mile of dark."
+  ],
+  "fact_audit": [
+    {
+      "fact": "Header hanzi 光 (guāng) in rail__han and serial-han",
+      "verdict": "WRONG",
+      "note": "光 means 'light', not anglerfish. Anglerfish is 鮟鱇 ānkāng; the deep-sea anglerfish is 深海鮟鱇 shēnhǎi ānkāng (TaiBIF uses 深海鮟鱇 as the common name for Ceratias holboelli, 霍氏角鮟鱇). Use 深海鮟鱇 with pinyin, or 鮟鱇 if space is tight.",
+      "source_ids": [
+        "s17"
+      ]
+    },
+    {
+      "fact": "The esca's light comes from symbiotic bacteria, primarily Photobacterium mandapamensis, living in the lure tip; the fish does not make the light itself",
+      "verdict": "WRONG",
+      "note": "Bacterial light is right; the species is wrong. Deep-sea anglerfish symbionts are Candidatus Enterovibrio escacola (most genera sampled) and Ca. Enterovibrio luxaltus (Cryptopsaras couesii), acquired from seawater (Baker et al. 2019, eLife). P. mandapamensis does not appear in that study; it is a Photobacterium known from other, shallow-water light-organ fishes (our recollection, not checked here, so do not print it).",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "fact": "Hunts by remaining nearly motionless, using passive drag to hold depth while the lure dangles; documented in Pietsch (2009)",
+      "verdict": "OK",
+      "note": "Ambush hunting and passive floating are supported (Wikipedia, Grzimek). 'Passive drag to maintain depth' is odd wording and was not found in an opened source; Pietsch 2009 (Oceanic Anglerfishes, UC Press) is a real book but its page was not checked. Keep the stillness, drop the drag mechanism.",
+      "source_ids": [
+        "s13",
+        "s14"
+      ]
+    },
+    {
+      "fact": "In ceratioid anglerfishes the male is roughly 6 to 7% of the female's body mass; he bites in, circulatory systems fuse, body degenerates except testes (Pietsch 2005)",
+      "verdict": "WRONG",
+      "note": "Overgeneralised. Pietsch 2005 finds permanent attachment in only 5 of 11 ceratioid families, 10 of 35 genera, 23 of 160 species; other species use facultative parasitism or temporary non-parasitic attachment, and Live Science quotes Pietsch that 'many other ceratioid anglerfish are nonparasitic'. The 6 to 7% mass figure is unsourced; Photocorynus spiniceps males are 6.2 mm against a 46 mm female (length), and Grzimek gives females 3 to 13 times male length. Rewrite as 'in some species'.",
+      "source_ids": [
+        "s8",
+        "s9",
+        "s10",
+        "s14"
+      ]
+    },
+    {
+      "fact": "Live in mesopelagic and bathypelagic zones, 200 to 2,000 m; pressure 20 to 200 atmospheres; 2 to 4 C",
+      "verdict": "OK",
+      "note": "Zones confirmed (Grzimek). The range is narrow: the seadevil Cryptopsaras couesii is recorded from 75 to 4,000 m, most often 500 to 1,250 m. Pressure follows from depth (about 1 atm per 10 m). The temperature figure was not checked against a source; drop it or soften.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "fact": "Can control the movement of the esca to mimic smaller prey",
+      "verdict": "OK",
+      "note": "Wikipedia: anglerfish 'can wiggle the esca to make it resemble a prey animal'; Grzimek describes the illicium thrashing the bait.",
+      "source_ids": [
+        "s13",
+        "s14"
+      ]
+    },
+    {
+      "fact": "After fusion the male loses his eyes, digestive system and most internal organs; only the gonads remain; the female's immune system does not reject him",
+      "verdict": "WRONG",
+      "note": "Partly right. No rejection is supported: permanently attaching species largely lack MHC genes and have reduced killer T cell function (Swann et al. 2020). The organ claim is overstated: popular accounts say eyes, fins and some internal organs atrophy (Mental Floss), Pietsch says the exact nature of fusion has never been studied, and it applies only to the minority of species with permanent attachment. 'Only the gonads remain' is not supported; say the male becomes largely a sperm source fed by her blood.",
+      "source_ids": [
+        "s7",
+        "s9",
+        "s11"
+      ]
+    },
+    {
+      "fact": "Proverb section: 'The bacteria accumulate for years in the esca'",
+      "verdict": "UNVERIFIABLE",
+      "note": "No source found for a years-long accumulation; the eLife study says symbionts are acquired from the environment as the fish matures. The proverb itself (厚積薄發, Su Shi) is verified. Cut the bacterial timeline.",
+      "source_ids": [
+        "s6",
+        "s18"
+      ]
+    },
+    {
+      "fact": "Intro: 'deep sea anglerfish (order Lophiiformes) ... at depths from 200 to 2,000 meters'",
+      "verdict": "OK",
+      "note": "Lophiiformes is the order but it includes shallow-water monkfish and frogfish; the deep-sea group is the suborder Ceratioidei. Say 'deep-sea anglerfishes (suborder Ceratioidei)'. Depth caveat as above.",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "fact": "Purple Star section",
+      "verdict": "OK",
+      "note": "This page does not assign a Zi Wei star from the sign pair; it says a chart is cast from lunar birth date and hour, which is correct.",
+      "source_ids": []
+    }
+  ]
+}
